@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, KeyboardAvoidingView, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { auth } from '../../../../firebase';
 import { useNavigation } from '@react-navigation/native';
@@ -53,39 +53,40 @@ const LoginScreen = () => {
         style={styles.container}
         behaivor="padding"
     >
-        <View style={styles.inputContainer}>
-            <TextInput 
-                placeholder="Email"
-                value= {email}
-                onChangeText={text => setEmail(text)}
-                style={styles.input}
-            />
-            <TextInput 
-                placeholder="Password"
-                value= {password}
-                onChangeText={text => setPassword(text)}
-                style={styles.input}
-                secureTextEntry
-            />
-        </View>
+        <ImageBackground source={require("../../../../assets/loginBackground.png")} style={styles.imageBackground}>
+            <View style={styles.inputContainer}>
+                <TextInput 
+                    placeholder="Email"
+                    value= {email}
+                    onChangeText={text => setEmail(text)}
+                    style={styles.input}
+                />
+                <TextInput 
+                    placeholder="Password"
+                    value= {password}
+                    onChangeText={text => setPassword(text)}
+                    style={styles.input}
+                    secureTextEntry
+                />
+            </View>
 
-        <View style={styles.buttonContainer}>
-            <TouchableOpacity
-                style={styles.button}
-                onPress={handleLogin}
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                    style={styles.button}
+                    onPress={handleLogin}
+                >
+                    <Text style={styles.buttonText}>Login</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                onPress={handleSignup}
+                style={[styles.button, styles.buttonOutline]}
             >
-                <Text style={styles.buttonText}>Login</Text>
+                <Text style={styles.buttonOutlineText}>Register</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-            onPress={handleSignup}
-            style={[styles.button, styles.buttonOutline]}
-          >
-            <Text style={styles.buttonOutlineText}>Register</Text>
-          </TouchableOpacity>
-
-        </View>
-      
+            </View>
+        </ImageBackground>
     </KeyboardAvoidingView>
   );
 };
@@ -93,6 +94,13 @@ const LoginScreen = () => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+    imageBackground: {
+        flex: 1,
+        width: '100%', 
+        height: '100%',
+        justifyContent: 'center',
+       alignItems: 'center',
+    },
     container: {
         flex: 1,
        justifyContent: 'center',
