@@ -1,10 +1,51 @@
 import { Text, View, StyleSheet, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { auth } from '../../../../firebase';
+import { useNavigation } from '@react-navigation/native';
+
+
+/*
+
+*/
+
+
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const onPress = () => console.log("yay");
+
+    const navigation = useNavigation();
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                navigation.replace("Home");
+
+            }
+        });
+
+        return unsubscribe;
+    }, []);
+    
+    const handleSignup = () => {
+        auth
+        .createUserWithEmailAndPassword(email, password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log(user.email);
+        })
+        .catch(error => alert(error.message));
+    };
+
+    const handleLogin = () => {
+        auth
+        .signInWithEmailAndPassword(email, password)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Logged in with:', user.email);
+        })
+        .catch(error => alert(error.message));
+    };
 
   return (
       // TODO: Change View to SaveView or figureout universal safeView for all pages in navigation... i think Udemy tutorial has that implemented.
@@ -31,13 +72,13 @@ const LoginScreen = () => {
         <View style={styles.buttonContainer}>
             <TouchableOpacity
                 style={styles.button}
-                onPress={() => { }}
+                onPress={handleLogin}
             >
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={() => { }}
+            onPress={handleSignup}
             style={[styles.button, styles.buttonOutline]}
           >
             <Text style={styles.buttonOutlineText}>Register</Text>
