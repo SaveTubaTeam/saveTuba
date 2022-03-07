@@ -27,14 +27,14 @@ const Container = styled.KeyboardAvoidingView`
   align-items: center;
 `;
 const InputContainer = styled.View`
-  width: 80%;
+  width: 60%;
 `;
 
 const Input = styled.TextInput`
   font-family: ${(props) => props.theme.fonts.body};
   background-color: ${(props) => props.theme.colors.bg.tertiary};
-  padding: ${(props) => props.theme.sizes[0]} ${(props) => props.theme.sizes[1]};
-  border-radius: ${(props) => props.theme.sizes[1]};
+  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
+  border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
 `;
 
@@ -46,10 +46,10 @@ const ButtonContainer = styled.View`
 `;
 
 const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.primary};
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
   width: 100%;
-  padding: ${(props) => props.theme.space[2]};
-  border-radius: ${(props) => props.theme.sizes[1]};
   align-items: center;
 `;
 
@@ -61,7 +61,7 @@ const ButtonText = styled.Text`
 `;
 
 const ButtonOutLineText = styled.Text`
-  color: ${(props) => props.theme.colors.ui.primary};
+  color: ${(props) => props.theme.colors.text.primary};
   font-weight: 700;
   font-size: ${(props) => props.theme.fontSizes.body};
   font-family: ${(props) => props.theme.fonts.heading};
@@ -70,10 +70,10 @@ const ButtonOutLineText = styled.Text`
 const ButtonOutLine = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.bg.tertiary};
   margin-top: ${(props) => props.theme.space[1]};
-  border-color: ${(props) => props.theme.colors.ui.primary};
+  border-color: ${(props) => props.theme.colors.ui.tertiary};
   border-width: ${(props) => props.theme.space[1]};
   width: 100%;
-  padding: ${(props) => props.theme.space[2]};
+  padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
   align-items: center;
 `;
@@ -123,11 +123,13 @@ const LoginScreen = () => {
               placeholder="Email"
               value={email}
               onChangeText={(text) => setEmail(text)}
+              autoCapitalize="none"
             />
             <Input
               placeholder="Password"
               value={password}
               onChangeText={(text) => setPassword(text)}
+              autoCapitalize="none"
               secureTextEntry
             />
           </InputContainer>
