@@ -1,7 +1,7 @@
 export const colors = {
   ui: {
-    primary: "#C1D542", // light green
-    secondary: "#C1E367", // even lighter green
+    primary: "#C6DC3B", // light green
+    secondary: "#CCE882", // even lighter green
     tertiary: "#748816", // dark green
     quaternary: "#E4C46B", // brown ish
   },
