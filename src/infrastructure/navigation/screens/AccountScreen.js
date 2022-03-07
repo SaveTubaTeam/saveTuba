@@ -19,17 +19,17 @@ const Container = styled.View`
 const Button = styled(TouchableOpacity)`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   width: 60%;
-  padding: 15px;
-  border-radius: 10px;
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
   align-items: center;
-  margin-top: 40px;
+  margin-top: ${(props) => props.theme.space[3]};
 `;
 
 const ButtonText = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading}
   color: white;
   font-weight: 700;
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
 const AccountScreen = () => {
