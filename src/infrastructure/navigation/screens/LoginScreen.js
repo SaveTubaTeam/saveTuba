@@ -40,9 +40,7 @@ const Input = styled.TextInput`
 
 const ButtonContainer = styled.View`
   width: 60%;
-  justify-content: center;
-  align-items: center;
-  margin-top: ${(props) => props.theme.sizes[3]};
+  margin-top: ${(props) => props.theme.sizes[2]};
 `;
 
 const Button = styled.TouchableOpacity`
@@ -54,14 +52,10 @@ const Button = styled.TouchableOpacity`
 `;
 
 const ButtonText = styled.Text`
-  color: ${(props) => props.theme.colors.text.secondary};
-  font-weight: 700;
-  font-size: ${(props) => props.theme.fontSizes.body};
-  font-family: ${(props) => props.theme.fonts.heading};
-`;
-
-const ButtonOutLineText = styled.Text`
-  color: ${(props) => props.theme.colors.text.primary};
+  color: ${(props) =>
+    props.text == "primary"
+      ? props.theme.colors.text.primary
+      : props.theme.colors.text.secondary};
   font-weight: 700;
   font-size: ${(props) => props.theme.fontSizes.body};
   font-family: ${(props) => props.theme.fonts.heading};
@@ -70,8 +64,8 @@ const ButtonOutLineText = styled.Text`
 const ButtonOutLine = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.bg.tertiary};
   margin-top: ${(props) => props.theme.space[1]};
-  border-color: ${(props) => props.theme.colors.ui.tertiary};
-  border-width: ${(props) => props.theme.space[1]};
+  border: ${(props) => props.theme.space[1]} solid
+    ${(props) => props.theme.colors.ui.tertiary};
   width: 100%;
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
@@ -136,11 +130,11 @@ const LoginScreen = () => {
 
           <ButtonContainer>
             <Button onPress={handleLogin}>
-              <ButtonText>Login</ButtonText>
+              <ButtonText text="secondary">Login</ButtonText>
             </Button>
 
             <ButtonOutLine onPress={handleSignup}>
-              <ButtonOutLineText>Register</ButtonOutLineText>
+              <ButtonText text="primary">Register</ButtonText>
             </ButtonOutLine>
           </ButtonContainer>
         </ImageBg>
