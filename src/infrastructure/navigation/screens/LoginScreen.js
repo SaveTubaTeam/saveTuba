@@ -8,13 +8,75 @@ import {
   ImageBackground,
 } from "react-native";
 import React, { useEffect, useState } from "react";
+import styled from "styled-components/native";
 import { auth } from "../../../../firebase";
 import { SafeArea } from "../../../components/safe-area.component";
 import { useNavigation } from "@react-navigation/native";
 
-/*
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 
-*/
+const Container = styled.KeyboardAvoidingView`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+const InputContainer = styled.View`
+  width: 80%;
+`;
+
+const Input = styled.TextInput`
+  font-family: ${(props) => props.theme.fonts.body};
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  padding: ${(props) => props.theme.sizes[0]} ${(props) => props.theme.sizes[1]};
+  border-radius: ${(props) => props.theme.sizes[1]};
+  margin-top: ${(props) => props.theme.space[2]};
+`;
+
+const ButtonContainer = styled.View`
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  margin-top: ${(props) => props.theme.sizes[3]};
+`;
+
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.ui.primary};
+  width: 100%;
+  padding: ${(props) => props.theme.space[2]};
+  border-radius: ${(props) => props.theme.sizes[1]};
+  align-items: center;
+`;
+
+const ButtonText = styled.Text`
+  color: ${(props) => props.theme.colors.text.secondary};
+  font-weight: 700;
+  font-size: ${(props) => props.theme.fontSizes.body};
+  font-family: ${(props) => props.theme.fonts.heading};
+`;
+
+const ButtonOutLineText = styled.Text`
+  color: ${(props) => props.theme.colors.ui.primary};
+  font-weight: 700;
+  font-size: ${(props) => props.theme.fontSizes.body};
+  font-family: ${(props) => props.theme.fonts.heading};
+`;
+
+const ButtonOutLine = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  margin-top: ${(props) => props.theme.space[1]};
+  border-color: ${(props) => props.theme.colors.ui.primary};
+  border-width: ${(props) => props.theme.space[1]};
+  width: 100%;
+  padding: ${(props) => props.theme.space[2]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  align-items: center;
+`;
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -54,97 +116,35 @@ const LoginScreen = () => {
 
   return (
     <SafeArea>
-      <KeyboardAvoidingView style={styles.container} behaivor="padding">
-        <ImageBackground
-          source={require("../../../../assets/loginBackground.png")}
-          style={styles.imageBackground}
-        >
-          <View style={styles.inputContainer}>
-            <TextInput
+      <Container behavior="padding">
+        <ImageBg source={require("../../../../assets/loginBackground.png")}>
+          <InputContainer>
+            <Input
               placeholder="Email"
               value={email}
               onChangeText={(text) => setEmail(text)}
-              style={styles.input}
             />
-            <TextInput
+            <Input
               placeholder="Password"
               value={password}
               onChangeText={(text) => setPassword(text)}
-              style={styles.input}
               secureTextEntry
             />
-          </View>
+          </InputContainer>
 
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
-              <Text style={styles.buttonText}>Login</Text>
-            </TouchableOpacity>
+          <ButtonContainer>
+            <Button onPress={handleLogin}>
+              <ButtonText>Login</ButtonText>
+            </Button>
 
-            <TouchableOpacity
-              onPress={handleSignup}
-              style={[styles.button, styles.buttonOutline]}
-            >
-              <Text style={styles.buttonOutlineText}>Register</Text>
-            </TouchableOpacity>
-          </View>
-        </ImageBackground>
-      </KeyboardAvoidingView>
+            <ButtonOutLine onPress={handleSignup}>
+              <ButtonOutLineText>Register</ButtonOutLineText>
+            </ButtonOutLine>
+          </ButtonContainer>
+        </ImageBg>
+      </Container>
     </SafeArea>
   );
 };
 
 export default LoginScreen;
-
-const styles = StyleSheet.create({
-  imageBackground: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  inputContainer: {
-    width: "80%",
-  },
-  input: {
-    backgroundColor: "white",
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    borderRadius: 10,
-    marginTop: 5,
-  },
-  buttonContainer: {
-    width: "60%",
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 40,
-  },
-  button: {
-    backgroundColor: "#0782F9",
-    width: "100%",
-    padding: 15,
-    borderRadius: 10,
-    alignItems: "center",
-  },
-  buttonOutline: {
-    backgroundColor: "white",
-    marginTop: 5,
-    borderColor: "#0782F9",
-    borderWidth: 2,
-  },
-  buttonText: {
-    color: "white",
-    fontWeight: "700",
-    fontSize: 16,
-  },
-  buttonOutlineText: {
-    color: "#0782F9",
-    fontWeight: "700",
-    fontSize: 16,
-  },
-});
