@@ -24,9 +24,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Different Screens thus far
-import LoginScreen from "./src/infrastructure/navigation/screens/LoginScreen";
-import HomeScreen from "./src/infrastructure/navigation/screens/HomeScreen";
-import AccountScreen from "./src/infrastructure/navigation/screens/AccountScreen";
+import LoginScreen from "./src/infrastructure/navigation/features/Login/LoginScreen";
+import HomeScreen from "./src/infrastructure/navigation/features/Home/HomeScreen";
+import AccountScreen from "./src/infrastructure/navigation/features/Account/Screens/AccountScreen";
 
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();

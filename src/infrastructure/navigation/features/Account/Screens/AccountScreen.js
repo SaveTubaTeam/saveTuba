@@ -1,13 +1,19 @@
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
-import { SafeArea } from "../../../components/safe-area.component";
-import { auth } from "../../../../firebase";
+import { SafeArea } from "../../../../../components/safe-area.component";
+import { auth } from "../../../../../../firebase";
 import { useNavigation } from "@react-navigation/native";
+import { List, Avatar } from "react-native-paper";
+// import { Spacer } from "../../../components/spacer.component";
+import { theme } from "../../../../theme";
+import { SettingsInfoCard } from "../Components/settings-info-card.component";
+const SettingsItem = styled(List.Item)`
+  padding: ${(props) => props.theme.space[3]};
+`;
 
-const Body = styled.Text`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
+const AvatarContainer = styled.View`
+  align-items: center;
 `;
 
 const Container = styled.View`
@@ -46,10 +52,28 @@ const AccountScreen = () => {
 
   return (
     <SafeArea>
+
+      <AvatarContainer>
+        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+          <Avatar.Icon size={180} icon="head" backgroundColor={theme.colors.ui.tertiary} />
+        </TouchableOpacity>
+        <Text>Email: {auth.currentUser?.email}</Text>
+      </AvatarContainer>
+
+      <SettingsInfoCard />
+
+
+      <List.Section>
+        <SettingsItem
+          title="Logout"
+          left={(props) => <List.Icon {...props} color="black" icon="door" />}
+          onPress={handleSignOut}
+        />
+      </List.Section>
+
       <Container>
-        <Body>Email: {auth.currentUser?.email}</Body>
         <Button onPress={handleSignOut}>
-          <ButtonText>Sign out</ButtonText>
+          <ButtonText>Sign Out</ButtonText>
         </Button>
       </Container>
     </SafeArea>

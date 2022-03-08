@@ -7,10 +7,12 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+
+
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
-import { auth } from "../../../../firebase";
-import { SafeArea } from "../../../components/safe-area.component";
+import { auth } from "../../../../../firebase"
+import { SafeArea } from "../../../../components/safe-area.component";
 import { useNavigation } from "@react-navigation/native";
 
 const ImageBg = styled.ImageBackground`
@@ -111,7 +113,7 @@ const LoginScreen = () => {
   return (
     <SafeArea>
       <Container behavior="padding">
-        <ImageBg source={require("../../../../assets/loginBackground.png")}>
+        <ImageBg source={require("../../../../../assets/loginBackground.png")}>
           <InputContainer>
             <Input
               placeholder="Email"

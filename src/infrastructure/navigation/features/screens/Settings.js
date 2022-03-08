@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { SafeArea } from '../../../components/Utility/safe-area.components';
 import styled from "styled-components/native";
 import { List, Avatar } from "react-native-paper";
-import { auth } from '../../../../firebase';
+import { auth } from '../../../firebase';
 
 const SettingsItem = styled(List.Item)`
   padding: 8px;
