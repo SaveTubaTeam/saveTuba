@@ -50,7 +50,10 @@ const AccountScreen = () => {
 
   return (
     <SafeArea>
-      <SettingsInfoCard />
+      <Container>
+        <SettingsInfoCard />
+      </Container>
+
 
 
       {/* 

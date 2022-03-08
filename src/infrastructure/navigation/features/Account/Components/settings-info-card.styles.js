@@ -5,6 +5,7 @@ import { Card } from "react-native-paper";
 export const SettingsCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
   padding: ${(props) => props.theme.space[3]};
+  borderRadius: ${(props) => props.theme.space[4]} ;
 `;
 
 export const Icon = styled.Image`
