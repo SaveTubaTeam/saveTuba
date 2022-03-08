@@ -55,15 +55,6 @@ const AccountScreen = () => {
       </Container>
 
 
-
-      {/* 
-      <List.Section>
-        <SettingsItem
-          title="Logout"
-          left={(props) => <List.Icon {...props} color="black" icon="door" />}
-          onPress={handleSignOut}
-        />
-      </List.Section> */}
       <Container>
         <Button onPress={handleSignOut}>
           <ButtonText>Sign Out</ButtonText>
