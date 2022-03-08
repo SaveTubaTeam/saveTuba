@@ -3,5 +3,6 @@ import styled from "styled-components";
 
 export const SafeArea = styled(SafeAreaView)`
   flex: 1;
+  padding: 16px;
   ${StatusBar.currentHeight && `margin-top; ${StatusBar.currentHeight}px`};
 `;

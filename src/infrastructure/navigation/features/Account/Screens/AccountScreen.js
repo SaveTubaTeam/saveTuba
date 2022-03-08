@@ -8,6 +8,7 @@ import { List, Avatar } from "react-native-paper";
 // import { Spacer } from "../../../components/spacer.component";
 import { theme } from "../../../../theme";
 import { SettingsInfoCard } from "../Components/settings-info-card.component";
+import { Language } from "../Components/settings-info-card.styles";
 const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
 `;
@@ -34,6 +35,7 @@ const ButtonText = styled.Text`
   font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
+
 const AccountScreen = () => {
   const navigation = useNavigation();
 
@@ -48,18 +50,17 @@ const AccountScreen = () => {
 
   return (
     <SafeArea>
-
       <SettingsInfoCard />
 
 
+      {/* 
       <List.Section>
         <SettingsItem
           title="Logout"
           left={(props) => <List.Icon {...props} color="black" icon="door" />}
           onPress={handleSignOut}
         />
-      </List.Section>
-
+      </List.Section> */}
       <Container>
         <Button onPress={handleSignOut}>
           <ButtonText>Sign Out</ButtonText>
