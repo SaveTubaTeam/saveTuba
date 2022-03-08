@@ -1,9 +1,11 @@
 import React from "react";
-import { View } from "react-native";
-
+import { View, TouchableOpacity } from "react-native";
 import { Spacer } from "../../../../../components/spacer.component";
 import styled from "styled-components";
-
+import { Avatar } from "react-native-paper";
+import { theme } from "../../../../theme";
+import { auth } from "../../../../../../firebase";
+import { useNavigation } from "@react-navigation/core";
 import {
     SettingsCard,
     SettingsCardCover,
@@ -21,13 +23,22 @@ const Text = styled.Text`
   font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
+const AvatarContainer = styled.View`
+  align-items: center;
+`;
+
 export const SettingsInfoCard = () => {
+    const navigation = useNavigation();
+
     // Udemy video 100 when its time to inport users profile picture
     return (
         <SettingsCard elevation={5}>
-            <View>
-                <SettingsCardCover key="hard code?" source={{ uri: "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg" }} />
-            </View>
+            <AvatarContainer>
+                <TouchableOpacity onPress={() => navigation.navigate("Home")}>
+                    <Avatar.Icon size={180} icon="head" backgroundColor={theme.colors.ui.tertiary} />
+                </TouchableOpacity>
+                <Text>Email: {auth.currentUser?.email}</Text>
+            </AvatarContainer>
             <Info>
                 <Title>Title</Title>
                 <Section>

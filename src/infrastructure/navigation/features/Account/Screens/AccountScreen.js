@@ -12,10 +12,6 @@ const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
 `;
 
-const AvatarContainer = styled.View`
-  align-items: center;
-`;
-
 const Container = styled.View`
   flex: 1;
   justify-content: center;
@@ -52,13 +48,6 @@ const AccountScreen = () => {
 
   return (
     <SafeArea>
-
-      <AvatarContainer>
-        <TouchableOpacity onPress={() => navigation.navigate("Home")}>
-          <Avatar.Icon size={180} icon="head" backgroundColor={theme.colors.ui.tertiary} />
-        </TouchableOpacity>
-        <Text>Email: {auth.currentUser?.email}</Text>
-      </AvatarContainer>
 
       <SettingsInfoCard />
 
