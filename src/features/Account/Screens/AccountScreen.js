@@ -1,20 +1,22 @@
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
-import { SafeArea } from "../../../../../components/safe-area.component";
-import { auth } from "../../../../../../firebase";
+import { SafeArea } from "../../../components/safe-area.component";
+import { auth } from "../../../../firebase";
 import { useNavigation } from "@react-navigation/native";
 import { List, Avatar } from "react-native-paper";
 // import { Spacer } from "../../../components/spacer.component";
-import { theme } from "../../../../theme";
+import { theme } from "../../../infrastructure/theme";
 import { SettingsInfoCard } from "../Components/settings-info-card.component";
 import { Language } from "../Components/settings-info-card.styles";
+
 const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
 `;
 
 const Container = styled.View`
   flex: 1;
+  padding: 50px;
   justify-content: center;
   align-items: center;
 `;
@@ -52,10 +54,8 @@ const AccountScreen = () => {
     <SafeArea>
       <Container>
         <SettingsInfoCard />
-      </Container>
 
 
-      <Container>
         <Button onPress={handleSignOut}>
           <ButtonText>Sign Out</ButtonText>
         </Button>

@@ -1,10 +1,15 @@
-import React from "react";
-import { View, TouchableOpacity } from "react-native";
-import { Spacer } from "../../../../../components/spacer.component";
-import styled from "styled-components";
+import React, { Component, useState } from "react";
+import {
+    TouchableOpacity,
+    View,
+    Switch,
+} from 'react-native';
 import { Avatar } from "react-native-paper";
-import { theme } from "../../../../theme";
-import { auth } from "../../../../../../firebase";
+import { ToggleSwitch } from "../../../components/toggle-switch";
+import { Spacer } from "../../../components/spacer.component";
+import styled from "styled-components";
+import { theme } from "../../../infrastructure/theme";
+import { auth } from "../../../../firebase";
 import { useNavigation } from "@react-navigation/core";
 import {
     SettingsCard,
@@ -44,20 +49,16 @@ export const SettingsInfoCard = () => {
                 <Text>Username: {auth.currentUser?.displayName}</Text>
             </AvatarContainer>
             <Info>
-                <Title>Soon to be a switch</Title>
+                <Title>Change to inline view (quick fix)</Title>
+
+
                 <Title>Languages</Title>
                 <Title>Help</Title>
                 <Title>About</Title>
                 <Title>Reminders (switch)</Title>
-                <Title>Sound Effect (Switch)</Title>
-                <Section>
-                    {/* This section here is just me testing to see if I could put an image on the right side of the card */}
-                    <SectionEnd>
-                        <Spacer position="left" size="large">
-                            <Icon source={{ uri: "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png" }} />
-                        </Spacer>
-                    </SectionEnd>
-                </Section>
+                <Spacer position="top" size="large">
+                    <ToggleSwitch />
+                </Spacer>
             </Info>
         </SettingsCard>
     );

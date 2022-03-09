@@ -11,8 +11,8 @@ import {
 
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
-import { auth } from "../../../../../firebase"
-import { SafeArea } from "../../../../components/safe-area.component";
+import { auth } from "../../../firebase"
+import { SafeArea } from "../../components/safe-area.component";
 import { useNavigation } from "@react-navigation/native";
 
 const ImageBg = styled.ImageBackground`

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import { SafeArea } from "../../../../components/safe-area.component";
+import { SafeArea } from "../../components/safe-area.component";
 // import { auth } from "../../../firebase";
 import { useNavigation } from "@react-navigation/native";
 
