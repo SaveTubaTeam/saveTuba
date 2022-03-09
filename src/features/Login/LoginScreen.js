@@ -113,7 +113,7 @@ const LoginScreen = () => {
   return (
     <SafeArea>
       <Container behavior="padding">
-        <ImageBg source={require("../../../../../assets/loginBackground.png")}>
+        <ImageBg source={require("../../../assets/loginBackground.png")}>
           <InputContainer>
             <Input
               placeholder="Email"
