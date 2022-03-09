@@ -111,37 +111,37 @@ const LoginScreen = () => {
   };
 
   return (
-    <SafeArea>
-      <Container behavior="padding">
-        <ImageBg source={require("../../../assets/loginBackground.png")}>
-          <InputContainer>
-            <Input
-              placeholder="Email"
-              value={email}
-              onChangeText={(text) => setEmail(text)}
-              autoCapitalize="none"
-            />
-            <Input
-              placeholder="Password"
-              value={password}
-              onChangeText={(text) => setPassword(text)}
-              autoCapitalize="none"
-              secureTextEntry
-            />
-          </InputContainer>
+    // <SafeArea>
+    <Container behavior="padding">
+      <ImageBg source={require("../../../assets/loginBackground.png")}>
+        <InputContainer>
+          <Input
+            placeholder="Email"
+            value={email}
+            onChangeText={(text) => setEmail(text)}
+            autoCapitalize="none"
+          />
+          <Input
+            placeholder="Password"
+            value={password}
+            onChangeText={(text) => setPassword(text)}
+            autoCapitalize="none"
+            secureTextEntry
+          />
+        </InputContainer>
 
-          <ButtonContainer>
-            <Button onPress={handleLogin}>
-              <ButtonText text="secondary">Login</ButtonText>
-            </Button>
+        <ButtonContainer>
+          <Button onPress={handleLogin}>
+            <ButtonText text="secondary">Login</ButtonText>
+          </Button>
 
-            <ButtonOutLine onPress={handleSignup}>
-              <ButtonText text="primary">Register</ButtonText>
-            </ButtonOutLine>
-          </ButtonContainer>
-        </ImageBg>
-      </Container>
-    </SafeArea>
+          <ButtonOutLine onPress={handleSignup}>
+            <ButtonText text="primary">Register</ButtonText>
+          </ButtonOutLine>
+        </ButtonContainer>
+      </ImageBg>
+    </Container>
+    // </SafeArea> // safe area is not needed because we want the background to go to the border
   );
 };
 
