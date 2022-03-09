@@ -23,7 +23,7 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-const Container = styled.KeyboardAvoidingView`
+const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
