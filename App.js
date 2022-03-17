@@ -27,6 +27,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import LoginScreen from "./src/features/Login/LoginScreen";
 import HomeScreen from "./src/features/Home/HomeScreen";
 import AccountScreen from "./src/features/Account/Screens/AccountScreen";
+import ProfileScreen from "./src/features/Profile/Screens/ProfileScreen";
 
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,15 @@ function Home() {
       }}
     >
       <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
@@ -54,11 +64,11 @@ function Home() {
       />
       {/* <Tab.Screen name="Unity" component={null} /> */}
       <Tab.Screen
-        name="Account"
+        name="Settings"
         component={AccountScreen}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" color={color} size={size} />
+            <Ionicons name="settings" color={color} size={size} />
           ),
         }}
       />
