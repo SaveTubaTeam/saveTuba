@@ -1,6 +1,6 @@
 import React from "react";
-import { Text, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
+import { Text, TouchableOpacity } from "react-native";
 
 import { Avatar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
