@@ -12,6 +12,9 @@
   "dependencies": {
     "@expo-google-fonts/gabriela": "^0.2.2",
     "@expo-google-fonts/raleway": "^0.2.2",
+    "@fortawesome/fontawesome-svg-core": "^6.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "@fortawesome/react-native-fontawesome": "^0.2.7",
     "@react-navigation/bottom-tabs": "^6.2.0",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
@@ -28,6 +31,7 @@
     "react-native-paper": "^4.11.2",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-svg": "^12.3.0",
     "react-native-switch-toggle": "^2.2.1",
     "react-native-vector-icons": "^9.1.0",
     "react-native-web": "0.17.1",
