@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, TouchableOpacity, ScrollView } from "react-native";
+import { TouchableOpacity, ScrollView } from "react-native";
 
 import { Avatar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
@@ -20,6 +20,23 @@ const Container = styled.View`
   align-items: center;
 `;
 
+const Friends = styled.View`
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  border-radius: 15px;
+  width: 50%;
+  align-items: center;
+  margin-right: 10;
+  justify-content: center;
+`;
+
+const Achievements = styled.View`
+  background-color: ${(props) => props.theme.colors.ui.primary};
+  border-radius: 15px;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+`;
+
 const AvatarContainer = styled.View`
   align-items: center;
 `;
@@ -32,7 +49,7 @@ const TitleText = styled.Text`
 `;
 
 const BodyText = styled.Text`
-  color: ${(props) => props.theme.colors.text.primary};
+  color: red;
   padding-bottom: ${(props) => props.theme.sizes[1]};
   font-family: ${(props) => props.theme.fonts.body};
   font-size: ${(props) => props.theme.fontSizes.body};
@@ -74,8 +91,12 @@ const ProfileScreen = () => {
                 />
               </Row>
               <Row>
-                <BodyText>28 friends</BodyText>
-                <BodyText>6 achievements</BodyText>
+                <Friends>
+                  <BodyText>28 friends</BodyText>
+                </Friends>
+                <Achievements>
+                  <BodyText>6 achievements</BodyText>
+                </Achievements>
               </Row>
             </AvatarContainer>
           </Card>
