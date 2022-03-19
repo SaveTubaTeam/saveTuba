@@ -1,9 +1,11 @@
 import React from "react";
+import { View, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Leaderboard from "react-native-leaderboard";
 
 import { TitleText } from "../../../components/title-text.component";
 import { Card } from "../../../components/card.component";
+import { Center } from "native-base";
 
 export const LeaderboardCard = () => {
   const navigation = useNavigation();
@@ -11,6 +13,18 @@ export const LeaderboardCard = () => {
   return (
     <Card>
       <TitleText>Leaderboard</TitleText>
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          paddingBottom: 10,
+        }}
+      >
+        <Image
+          style={{ height: 200, width: 200, borderRadius: 20 }}
+          source={require("../../../../assets/leaderboard.png")}
+        />
+      </View>
       {/*<Leaderboard
             data={[
               { userName: "Natalya", highScore: 342 },
