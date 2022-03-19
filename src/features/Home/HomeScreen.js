@@ -1,26 +1,19 @@
 import React from "react";
-import styled from "styled-components/native";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import { SafeArea } from "../../components/safe-area.component";
-// import { auth } from "../../../firebase";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-const TitleText = styled.Text`
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-`;
-
-const Body = styled.Text`
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
-`;
+import { TitleText } from "../../components/title-text.component";
+import { BodyText } from "../../components/body-text.component";
+import { SafeArea } from "../../components/safe-area.component";
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
     <SafeArea>
       <View style={{ alignContent: "center", alignItems: "center" }}>
         <TitleText>Title</TitleText>
-        <Body>Lorem ipsum dolor sit amet</Body>
+        <BodyText>Lorem ipsum dolor sit amet</BodyText>
       </View>
     </SafeArea>
   );

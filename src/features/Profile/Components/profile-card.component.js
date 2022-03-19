@@ -7,6 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { auth } from "../../../../firebase";
 
+import { TitleText } from "../../../components/title-text.component";
+import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
@@ -18,6 +20,7 @@ const Friends = styled.View`
   align-items: center;
   margin-right: ${(props) => props.theme.space[2]};
   justify-content: center;
+  padding: ${(props) => props.theme.sizes[0]};
 `;
 
 const Achievements = styled.View`
@@ -30,20 +33,6 @@ const Achievements = styled.View`
 
 const AvatarContainer = styled.View`
   align-items: center;
-`;
-
-const TitleText = styled.Text`
-  color: ${(props) => props.theme.colors.text.primary};
-  padding-bottom: ${(props) => props.theme.sizes[1]};
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-`;
-
-const BodyText = styled.Text`
-  color: red;
-  padding-bottom: ${(props) => props.theme.sizes[1]};
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
 const Row = styled.View`
@@ -69,19 +58,20 @@ export const ProfileCard = () => {
         {/* should be username */}
         {/* We can soon have a part on login with username as well*/}
         <Row>
-          <BodyText>328 </BodyText>
+          <BodyText color="primary">328 </BodyText>
           <FontAwesomeIcon
             icon={faLeaf}
             size={18}
             color={theme.colors.ui.primary}
           />
         </Row>
+        <Spacer size="medium" />
         <Row>
           <Friends>
-            <BodyText>28 friends</BodyText>
+            <BodyText color="secondary">28 friends</BodyText>
           </Friends>
           <Achievements>
-            <BodyText>6 achievements</BodyText>
+            <BodyText color="secondary">6 achievements</BodyText>
           </Achievements>
         </Row>
       </AvatarContainer>

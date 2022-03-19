@@ -1,19 +1,11 @@
-import {
-  Text,
-  View,
-  StyleSheet,
-  KeyboardAvoidingView,
-  TextInput,
-  TouchableOpacity,
-  ImageBackground,
-} from "react-native";
-
-
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
-import { auth } from "../../../firebase"
-import { SafeArea } from "../../components/safe-area.component";
+import { auth } from "../../../firebase";
 import { useNavigation } from "@react-navigation/native";
+
+import { TitleText } from "../../components/title-text.component";
+import { BodyText } from "../../components/body-text.component";
+import { SafeArea } from "../../components/safe-area.component";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -51,16 +43,6 @@ const Button = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   width: 100%;
   align-items: center;
-`;
-
-const ButtonText = styled.Text`
-  color: ${(props) =>
-    props.text == "primary"
-      ? props.theme.colors.text.primary
-      : props.theme.colors.text.secondary};
-  font-weight: 700;
-  font-size: ${(props) => props.theme.fontSizes.body};
-  font-family: ${(props) => props.theme.fonts.heading};
 `;
 
 const ButtonOutLine = styled.TouchableOpacity`
@@ -132,11 +114,15 @@ const LoginScreen = () => {
 
         <ButtonContainer>
           <Button onPress={handleLogin}>
-            <ButtonText text="secondary">Login</ButtonText>
+            <TitleText color="secondary" size="body">
+              Login
+            </TitleText>
           </Button>
 
           <ButtonOutLine onPress={handleSignup}>
-            <ButtonText text="primary">Register</ButtonText>
+            <TitleText color="primary" size="body">
+              Register
+            </TitleText>
           </ButtonOutLine>
         </ButtonContainer>
       </ImageBg>
