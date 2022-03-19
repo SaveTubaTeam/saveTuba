@@ -40,16 +40,22 @@ function Home() {
     <Tab.Navigator
       screenOptions={{
         tabBarActiveTintColor: theme.colors.ui.tertiary,
-        tabBarInactiveTintColor: "#999",
+        tabBarInactiveTintColor: "#fff",
         headerShown: false,
+        tabBarIconStyle: {
+          marginTop: 5,
+        },
+        tabBarStyle: {
+          backgroundColor: "#C6DC3B",
+        },
       }}
     >
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person" color={color} size={32} />
           ),
         }}
       />
@@ -57,8 +63,8 @@ function Home() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="home" color={color} size={32} />
           ),
         }}
       />
@@ -67,8 +73,8 @@ function Home() {
         name="Settings"
         component={AccountScreen}
         options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings" color={color} size={size} />
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="settings" color={color} size={32} />
           ),
         }}
       />
