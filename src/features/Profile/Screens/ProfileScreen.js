@@ -16,25 +16,35 @@ const Container = styled.View`
   align-items: center;
 `;
 
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
 const ProfileScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <SafeArea>
-      <ScrollView>
-        <Container>
-          <ProfileCard />
+    <ImageBg source={require("../../../../assets/basic-bg.png")}>
+      <SafeArea>
+        <ScrollView>
+          <Container>
+            <ProfileCard />
 
-          <Spacer size="large" />
+            <Spacer size="large" />
 
-          <Badges />
+            <Badges />
 
-          <Spacer size="large" />
+            <Spacer size="large" />
 
-          <LeaderboardCard />
-        </Container>
-      </ScrollView>
-    </SafeArea>
+            <LeaderboardCard />
+          </Container>
+        </ScrollView>
+      </SafeArea>
+    </ImageBg>
   );
 };
 
