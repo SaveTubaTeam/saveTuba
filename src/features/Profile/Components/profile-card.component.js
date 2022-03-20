@@ -71,7 +71,7 @@ export const ProfileCard = () => {
             <BodyText color="secondary">28 friends</BodyText>
           </Friends>
           <Achievements>
-            <BodyText color="secondary">6 achievements</BodyText>
+            <BodyText color="secondary">level 2</BodyText>
           </Achievements>
         </Row>
       </AvatarContainer>
