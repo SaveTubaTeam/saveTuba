@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { ProfileCard } from "../Components/profile-card.component";
 import { Badges } from "../Components/badges.component";
-import { LeaderboardCard } from "../Components/leaderboard.component";
+import LeaderboardCard from "../Components/leaderboard.component";
 
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
