@@ -11,7 +11,7 @@ export default class LeaderborardCard extends Component {
   state = {
     leaderboardData: [],
   };
-
+  // sample API data
   componentDidMount() {
     axios
       .get("http://dusoccer.dribbleup.com/sampleAPI/")
@@ -67,8 +67,10 @@ export default class LeaderborardCard extends Component {
     return (
       <Card style={{ marginBottom: 20 }}>
         <TitleText>Leaderboard</TitleText>
+
         <Spacer size="large"></Spacer>
-        <ScrollView style={{ height: 300 }}>
+
+        <ScrollView style={{ height: 300 }} nestedScrollEnabled>
           <StatsView
             leaderboardData={leaderboardData}
             styleRank={this.styleRank}

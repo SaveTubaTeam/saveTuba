@@ -14,9 +14,11 @@ export default class StatsView extends Component {
                 style={[
                   this.props.styleRank(data.rank),
                   {
-                    flex: 0.09,
+                    flex: 0.15,
                     justifyContent: "center",
                     alignItems: "center",
+                    borderTopLeftRadius: 15,
+                    borderBottomLeftRadius: 15,
                   },
                 ]}
               >
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   playersStats: {
-    flex: 1,
+    flex: 0.8,
     flexDirection: "row",
   },
   playersName: {
