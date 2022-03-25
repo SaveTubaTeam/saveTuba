@@ -10,7 +10,7 @@ const weightVariant = {
 const sizeVariant = {
   caption: 12,
   button: 14,
-  body: 18,
+  body: 16,
   title: 24,
   h5: 24,
   h4: 34,

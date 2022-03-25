@@ -61,7 +61,7 @@ export const ProfileCard = () => {
           <BodyText color="primary">328 </BodyText>
           <FontAwesomeIcon
             icon={faLeaf}
-            size={18}
+            size={16}
             color={theme.colors.ui.primary}
           />
         </Row>

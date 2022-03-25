@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   playersStats: {
-    flex: 0.8,
+    flex: 1,
     flexDirection: "row",
   },
   playersName: {
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   leaf: {
-    width: 18,
-    height: 18,
+    width: 16,
+    height: 16,
     marginRight: 5,
   },
   styleListItemProps: {
