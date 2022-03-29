@@ -13,5 +13,6 @@ export const colors = {
   text: {
     primary: "#748816", // dark green
     secondary: "#ffffff", // white
+    tertiary: "#C6DC3B",
   },
 };

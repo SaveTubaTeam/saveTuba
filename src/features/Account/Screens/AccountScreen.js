@@ -37,6 +37,13 @@ const ButtonText = styled.Text`
   font-size: ${(props) => props.theme.fontSizes.body};
 `;
 
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
 
 const AccountScreen = () => {
   const navigation = useNavigation();
@@ -51,16 +58,17 @@ const AccountScreen = () => {
   };
 
   return (
-    <SafeArea>
-      <Container>
-        <SettingsInfoCard />
+    <ImageBg source={require("../../../../assets/basic-bg.png")}>
+      <SafeArea>
+        <Container>
+          <SettingsInfoCard />
 
-
-        <Button onPress={handleSignOut}>
-          <ButtonText>Sign Out</ButtonText>
-        </Button>
-      </Container>
-    </SafeArea>
+          <Button onPress={handleSignOut}>
+            <ButtonText>Sign Out</ButtonText>
+          </Button>
+        </Container>
+      </SafeArea>
+    </ImageBg>
   );
 };
 

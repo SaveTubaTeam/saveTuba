@@ -1,8 +1,12 @@
 import React from "react";
+<<<<<<< HEAD
 import styled from "styled-components/native";
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { SafeArea } from "../../components/safe-area.component";
 // import { auth } from "../../../firebase";
+=======
+import { View } from "react-native";
+>>>>>>> origin/master
 import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -10,6 +14,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ScreenOne from '../Levels/LevelOne';
 import ScreenTwo from '../Levels/LevelTwo';
 
+<<<<<<< HEAD
 const Stack = createNativeStackNavigator();
 
 function HomeView() {
@@ -28,9 +33,17 @@ function HomeView() {
     </SafeArea>
   );
 }
+=======
+import { TitleText } from "../../components/title-text.component";
+import { BodyText } from "../../components/body-text.component";
+import { SafeArea } from "../../components/safe-area.component";
+>>>>>>> origin/master
 
 const HomeScreen = () => {
+  const navigation = useNavigation();
+
   return (
+<<<<<<< HEAD
     <NavigationContainer independent ={true}>
       <Stack.Navigator>
         <Stack.Screen
@@ -49,6 +62,14 @@ const HomeScreen = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
+=======
+    <SafeArea>
+      <View style={{ alignContent: "center", alignItems: "center" }}>
+        <TitleText>Title</TitleText>
+        <BodyText>Lorem ipsum dolor sit amet</BodyText>
+      </View>
+    </SafeArea>
+>>>>>>> origin/master
   );
 };
 
