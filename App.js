@@ -29,6 +29,19 @@ import HomeScreen from "./src/features/Home/HomeScreen";
 import AccountScreen from "./src/features/Account/Screens/AccountScreen";
 import ProfileScreen from "./src/features/Profile/Screens/ProfileScreen";
 
+// Registration Screen
+import Register from "./src/features/Login/Register";
+
+// Redux Imports
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from "./redux/reducers";
+import thunk from "redux-thunk";
+const store = createStore(rootReducer, applyMiddleware(thunk));
+
+// Import Main Redux Controller
+import MainScreen from "./src/components/Main";
+
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
 
@@ -37,48 +50,9 @@ const Tab = createBottomTabNavigator();
 
 function Home() {
   return (
-    <Tab.Navigator
-      screenOptions={{
-        tabBarActiveTintColor: theme.colors.ui.tertiary,
-        tabBarInactiveTintColor: "#fff",
-        headerShown: false,
-        tabBarIconStyle: {
-          marginTop: 5,
-        },
-        tabBarStyle: {
-          backgroundColor: "#C6DC3B",
-        },
-      }}
-    >
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="person" color={color} size={32} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="home" color={color} size={32} />
-          ),
-        }}
-      />
-      {/* <Tab.Screen name="Unity" component={null} /> */}
-      <Tab.Screen
-        name="Settings"
-        component={AccountScreen}
-        options={{
-          tabBarIcon: ({ color }) => (
-            <Ionicons name="settings" color={color} size={32} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
+    <Provider store={store}>
+      <MainScreen/>
+    </Provider>
   );
 }
 
@@ -98,20 +72,25 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Login"
-              component={LoginScreen}
-            />
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="HomePage"
-              component={Home}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Login"
+                component={LoginScreen}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Register"
+                component={Register}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="HomePage"
+                component={Home}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

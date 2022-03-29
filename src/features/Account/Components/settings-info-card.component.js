@@ -17,6 +17,8 @@ import {
   SectionEnd,
 } from "./settings-info-card.styles";
 
+import { connect } from "react-redux";
+
 const Text = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading}
   color: black;
@@ -28,9 +30,13 @@ const AvatarContainer = styled.View`
   align-items: center;
 `;
 
-export const SettingsInfoCard = () => {
+export function SettingsInfoCard(props) {
   const navigation = useNavigation();
 
+  const {currentUser} = props;
+
+  // const { currentUser } = props;
+  // console.log({props.currentUser});
   // Udemy video 100 when its time to inport users profile picture !!! NEED TO STORE LOG IN DATA !!!!
   return (
     <SettingsCard elevation={5}>
@@ -44,9 +50,9 @@ export const SettingsInfoCard = () => {
             />
           </TouchableOpacity>
         </Spacer>
-        <Text>Email: {auth.currentUser?.email}</Text>
+        <Text>Email: {currentUser.email}</Text>
         {/* We can soon have a part on login with username as well*/}
-        <Text>Username: {auth.currentUser?.displayName}</Text>
+        <Text>Username: {currentUser.username}</Text>
       </AvatarContainer>
       <Info>
         <Title>Change to inline view (quick fix)</Title>
@@ -61,4 +67,10 @@ export const SettingsInfoCard = () => {
       </Info>
     </SettingsCard>
   );
-};
+}
+
+// const mapStateToProps = (store) => ({
+//   currentUser: store.userState.currentUser
+// });
+
+// export default connect(mapStateToProps, null)(SettingsInfoCard);
