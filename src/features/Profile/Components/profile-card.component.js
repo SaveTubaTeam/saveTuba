@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components/native";
+import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { Avatar } from "react-native-paper";
@@ -39,42 +41,48 @@ const Row = styled.View`
   flex-direction: row;
 `;
 
-export const ProfileCard = () => {
+export function ProfileCard(props) {
   const navigation = useNavigation();
+  const {currentUser} = props;
 
-  return (
-    <Card>
-      <AvatarContainer>
-        <Spacer position="bottom" size="large">
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-            <Avatar.Icon
-              size={180}
-              icon="head"
-              backgroundColor={theme.colors.ui.tertiary}
+  console.log("obj: ", currentUser);
+  if (currentUser) {
+    return (
+      <Card>
+        <AvatarContainer>
+          <Spacer position="bottom" size="large">
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Avatar.Icon
+                size={180}
+                icon="head"
+                backgroundColor={theme.colors.ui.tertiary}
+              />
+            </TouchableOpacity>
+          </Spacer>
+          <TitleText>{currentUser.username }</TitleText>
+          {/* should be username */}
+          {/* We can soon have a part on login with username as well*/}
+          <Row>
+            <BodyText color="primary">{currentUser.currentScore}</BodyText>
+            <FontAwesomeIcon
+              icon={faLeaf}
+              size={16}
+              color={theme.colors.ui.primary}
             />
-          </TouchableOpacity>
-        </Spacer>
-        <TitleText>{auth.currentUser?.email}</TitleText>
-        {/* should be username */}
-        {/* We can soon have a part on login with username as well*/}
-        <Row>
-          <BodyText color="primary">328 </BodyText>
-          <FontAwesomeIcon
-            icon={faLeaf}
-            size={16}
-            color={theme.colors.ui.primary}
-          />
-        </Row>
-        <Spacer size="medium" />
-        <Row>
-          <Friends>
-            <BodyText color="secondary">28 friends</BodyText>
-          </Friends>
-          <Achievements>
-            <BodyText color="secondary">level 2</BodyText>
-          </Achievements>
-        </Row>
-      </AvatarContainer>
-    </Card>
-  );
+          </Row>
+          <Spacer size="medium" />
+          <Row>
+            <Friends>
+              <BodyText color="secondary">28 friends</BodyText>
+            </Friends>
+            <Achievements>
+              <BodyText color="secondary">level 2</BodyText>
+            </Achievements>
+          </Row>
+        </AvatarContainer>
+      </Card>
+    );
+  } else {
+    return <View></View>;
+  }
 };

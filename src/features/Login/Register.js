@@ -14,7 +14,7 @@ export class Register extends Component {
 
     constructor(props) {
         super(props);
-
+        // badges.set("1", "Time to Save the Tuba!");
         this.state = {
             email: '',
             password: '',
@@ -22,6 +22,10 @@ export class Register extends Component {
             lastName: '',
             classCode: '',
             username: '',
+            badges: '',
+            friends: '',
+            friendCount: '',
+
         };
         
         // Need to do this to add functions that can use the this.state stuff
@@ -30,6 +34,7 @@ export class Register extends Component {
 
     onSignUp() {
         const { email, password, firstName, lastName, classCode, username } = this.state;
+        
         auth.createUserWithEmailAndPassword(email, password)
             .then((result) => {
                 setDoc(doc(db, "users", auth.currentUser.uid), {
@@ -39,6 +44,16 @@ export class Register extends Component {
                     class_code: classCode,
                     username: username,
                     currentScore: 0,
+                    friendCount: 0,
+                    level: 1,
+
+                    // Maps in the Firebase database, need initial values
+                    badges: {
+                      RegistrationBadge: true,
+                    },
+                    friends: {
+                      initialized: true,
+                    },
                 });
                 console.log(result);
             })

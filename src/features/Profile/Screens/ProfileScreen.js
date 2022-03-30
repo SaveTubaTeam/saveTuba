@@ -10,6 +10,8 @@ import LeaderboardCard from "../Components/leaderboard.component";
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
 
+import { connect } from "react-redux";
+
 const Container = styled.View`
   flex: 1;
   justify-content: center;
@@ -24,15 +26,16 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-const ProfileScreen = () => {
+function ProfileScreen(props) {
   const navigation = useNavigation();
+  const { currentUser } = props;
 
   return (
     <ImageBg source={require("../../../../assets/basic-bg.png")}>
       <SafeArea>
         <ScrollView>
           <Container>
-            <ProfileCard />
+            <ProfileCard currentUser={currentUser}/>
 
             <Spacer size="large" />
 
@@ -48,4 +51,8 @@ const ProfileScreen = () => {
   );
 };
 
-export default ProfileScreen;
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser
+});
+
+export default connect(mapStateToProps, null)(ProfileScreen);

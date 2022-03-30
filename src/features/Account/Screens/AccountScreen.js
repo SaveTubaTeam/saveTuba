@@ -65,7 +65,6 @@ function AccountScreen(props) {
       <SafeArea>
         <Container>
           <SettingsInfoCard currentUser={currentUser}/>
-          <Text>Username: {currentUser.username}</Text>
           <Button onPress={handleSignOut}>
             <ButtonText>Sign Out</ButtonText>
           </Button>
