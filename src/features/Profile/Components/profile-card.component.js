@@ -45,8 +45,7 @@ export function ProfileCard(props) {
   const navigation = useNavigation();
   const {currentUser} = props;
 
-  console.log("obj: ", currentUser);
-  if (currentUser) {
+  
     return (
       <Card>
         <AvatarContainer>
@@ -59,11 +58,11 @@ export function ProfileCard(props) {
               />
             </TouchableOpacity>
           </Spacer>
-          <TitleText>{currentUser.username }</TitleText>
+          <TitleText>{currentUser?.username }</TitleText>
           {/* should be username */}
           {/* We can soon have a part on login with username as well*/}
           <Row>
-            <BodyText color="primary">{currentUser.currentScore}</BodyText>
+            <BodyText color="primary">{currentUser?.currentScore}</BodyText>
             <FontAwesomeIcon
               icon={faLeaf}
               size={16}
@@ -73,16 +72,14 @@ export function ProfileCard(props) {
           <Spacer size="medium" />
           <Row>
             <Friends>
-              <BodyText color="secondary">28 friends</BodyText>
+              <BodyText color="secondary">{currentUser?.friendCount} friends</BodyText>
             </Friends>
             <Achievements>
-              <BodyText color="secondary">level 2</BodyText>
+              <BodyText color="secondary">level {currentUser?.level}</BodyText>
             </Achievements>
           </Row>
         </AvatarContainer>
       </Card>
     );
-  } else {
-    return <View></View>;
-  }
-};
+  
+}
