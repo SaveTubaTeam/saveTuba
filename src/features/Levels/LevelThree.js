@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const LevelTwo = () => {
+const LevelThree = () => {
   return (
     <View
       style={{
@@ -9,8 +9,8 @@ const LevelTwo = () => {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <Text>LevelTwo!</Text>
+      <Text>LevelThree!</Text>
     </View>
   );
 };
-export default LevelTwo;
+export default LevelThree;

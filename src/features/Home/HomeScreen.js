@@ -1,49 +1,60 @@
 import React from "react";
-<<<<<<< HEAD
 import styled from "styled-components/native";
 import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { SafeArea } from "../../components/safe-area.component";
 // import { auth } from "../../../firebase";
-=======
-import { View } from "react-native";
->>>>>>> origin/master
 import { useNavigation } from "@react-navigation/native";
-import { NavigationContainer, TabActions } from "@react-navigation/native";
+import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import ScreenOne from '../Levels/LevelOne';
 import ScreenTwo from '../Levels/LevelTwo';
+import ScreenThree from '../Levels/LevelThree';
+import ScreenFour from '../Levels/LevelFour';
+import ScreenFive from '../Levels/LevelFive';
+import ScreenSix from '../Levels/LevelSix';
 
-<<<<<<< HEAD
+
 const Stack = createNativeStackNavigator();
+
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+`;
 
 function HomeView() {
   const navigation = useNavigation();
   return (
     <SafeArea style={{backgroundColor: "#CCE882"}}>
       <ScrollView style={{ alignContent: "center"}}>
-        <TouchableOpacity onPress={() => navigation.push("ScreenOne")}
-          style={style.roundButton1}>
+      <ImageBg source={require("../../../assets/homepagebackground.png")}>
+        <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenOne")}>
           <Text>LevelOne</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenTwo")}>
           <Text>LevelTwo</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenThree")}>
+          <Text>LevelThree</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenFour")}>
+          <Text>LevelFour</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenFive")}>
+          <Text>LevelFive</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenSix")}>
+          <Text>LevelSix</Text>
+        </TouchableOpacity>
+        </ImageBg>
       </ScrollView>
     </SafeArea>
   );
 }
-=======
-import { TitleText } from "../../components/title-text.component";
-import { BodyText } from "../../components/body-text.component";
-import { SafeArea } from "../../components/safe-area.component";
->>>>>>> origin/master
 
 const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-<<<<<<< HEAD
     <NavigationContainer independent ={true}>
       <Stack.Navigator>
         <Stack.Screen
@@ -59,17 +70,30 @@ const HomeScreen = () => {
         <Stack.Screen
           name = "ScreenTwo"
           component = {ScreenTwo}
+          options={{headerShown: true}}
+        />
+        <Stack.Screen
+          name = "ScreenThree"
+          component = {ScreenThree}
+          options={{headerShown: true}}
+        />
+        <Stack.Screen
+          name = "ScreenFour"
+          component = {ScreenFour}
+          options={{headerShown: true}}
+        />
+        <Stack.Screen
+          name = "ScreenFive"
+          component = {ScreenFive}
+          options={{headerShown: true}}
+        />
+        <Stack.Screen
+          name = "ScreenSix"
+          component = {ScreenSix}
+          options={{headerShown: true}}
         />
       </Stack.Navigator>
     </NavigationContainer>
-=======
-    <SafeArea>
-      <View style={{ alignContent: "center", alignItems: "center" }}>
-        <TitleText>Title</TitleText>
-        <BodyText>Lorem ipsum dolor sit amet</BodyText>
-      </View>
-    </SafeArea>
->>>>>>> origin/master
   );
 };
 
@@ -77,22 +101,23 @@ export default HomeScreen;
 
 const style = StyleSheet.create({
   roundButton1: {
-    width: 100,
-    height: 100,
+    width: 125,
+    height: 125,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
+    left: 10,
     borderRadius: 100,
-    backgroundColor: '#748816',
+    backgroundColor: '#C6DC3B'
   },
   roundButton2: {
-    width: 100,
-    height: 100,
+    width: 125,
+    height: 125,
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
+    left: 255,
     borderRadius: 100,
-    backgroundColor: '#748816'
+    backgroundColor: '#C6DC3B'
   }
-
 });

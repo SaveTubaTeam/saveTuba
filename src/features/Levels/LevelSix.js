@@ -9,7 +9,7 @@ const LevelTwo = () => {
         justifyContent: "center",
         alignItems: "center"
       }}>
-      <Text>LevelTwo!</Text>
+      <Text>LevelSix!</Text>
     </View>
   );
 };
