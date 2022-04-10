@@ -1,5 +1,5 @@
-import {View, Text} from 'react-native';
-import React, { Component } from "react";
+import {View, Text, Switch} from 'react-native';
+import React, { Component, useState } from "react";
 
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
@@ -8,10 +8,10 @@ import firebase from "firebase/app";
 import { setDoc, doc } from 'firebase/firestore';
 
 import { auth, db } from "../../../firebase";
+import { Title } from 'react-native-paper';
 
 
 export class Register extends Component {
-
     constructor(props) {
         super(props);
         // badges.set("1", "Time to Save the Tuba!");
@@ -25,7 +25,8 @@ export class Register extends Component {
             badges: '',
             friends: '',
             friendCount: '',
-
+            isTeacher: false,
+          
         };
         
         // Need to do this to add functions that can use the this.state stuff
@@ -33,8 +34,7 @@ export class Register extends Component {
     }
 
     onSignUp() {
-        const { email, password, firstName, lastName, classCode, username } = this.state;
-        
+        const { email, password, firstName, lastName, classCode, username, isTeacher } = this.state;
         auth.createUserWithEmailAndPassword(email, password)
             .then((result) => {
                 setDoc(doc(db, "users", auth.currentUser.uid), {
@@ -46,7 +46,7 @@ export class Register extends Component {
                     currentScore: 0,
                     friendCount: 0,
                     level: 1,
-
+                    teacher: isTeacher,
                     // Maps in the Firebase database, need initial values
                     badges: {
                       RegistrationBadge: true,
@@ -66,7 +66,7 @@ export class Register extends Component {
         return (
             <Container>
             <ImageBg source={require("../../../assets/homepagebackground.png")}>
-
+                
                 <TitleText color="secondary" size="title">Register For Save Tuba</TitleText>
                 <Input
                   placeholder="Email"
@@ -98,6 +98,16 @@ export class Register extends Component {
                     onPress={() => this.onSignUp()}
                 >
                   <TitleText color="secondary">Register</TitleText>
+                </Button>
+                <Button
+                  onPress={() => {
+                    this.setState(prevState => ({
+                      isTeacher: !prevState.isTeacher
+                    }));
+                    this.onSignUp();
+                  }}
+                >
+                  <TitleText color="secondary">Teacher Sign Up</TitleText>
                 </Button>
                 </ImageBg>
             </Container>

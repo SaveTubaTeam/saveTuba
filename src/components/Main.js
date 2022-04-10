@@ -77,6 +77,8 @@ export class Main extends Component {
     );
   }
 }
+
+
 const mapStateToProps = (store) => ({
     currentUser: store.userState.currentUser
 });
