@@ -63,6 +63,9 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   useEffect(() => {
+    if (auth.currentUser) {
+      navigation.replace("HomePage");
+    }
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         navigation.replace("HomePage");
@@ -72,15 +75,15 @@ const LoginScreen = () => {
     return unsubscribe;
   }, []);
 
-  const handleSignup = () => {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredentials) => {
-        const user = userCredentials.user;
-        console.log(user.email);
-      })
-      .catch((error) => alert(error.message));
-  };
+  // const handleSignup = () => {
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((userCredentials) => {
+  //       const user = userCredentials.user;
+  //       console.log(user.email);
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
 
   const handleLogin = () => {
     auth
@@ -119,7 +122,7 @@ const LoginScreen = () => {
             </TitleText>
           </Button>
 
-          <ButtonOutLine onPress={handleSignup}>
+          <ButtonOutLine onPress={() => navigation.push("Register")}>
             <TitleText color="primary" size="body">
               Register
             </TitleText>

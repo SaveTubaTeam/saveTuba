@@ -10,6 +10,8 @@ import { theme } from "../../../infrastructure/theme";
 import { SettingsInfoCard } from "../Components/settings-info-card.component";
 import { Language } from "../Components/settings-info-card.styles";
 
+import { connect } from "react-redux";
+
 const SettingsItem = styled(List.Item)`
   padding: ${(props) => props.theme.space[3]};
 `;
@@ -45,9 +47,10 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-const AccountScreen = () => {
+function AccountScreen(props) {
   const navigation = useNavigation();
-
+  const { currentUser } = props;
+  // console.log(currentUser);
   const handleSignOut = () => {
     auth
       .signOut()
@@ -56,13 +59,13 @@ const AccountScreen = () => {
       })
       .catch((error) => alert(error.message));
   };
-
+  
   return (
     <ImageBg source={require("../../../../assets/basic-bg.png")}>
       <SafeArea>
         <Container>
-          <SettingsInfoCard />
-
+          <SettingsInfoCard currentUser={currentUser}/>
+          <Text>Username: {currentUser.username}</Text>
           <Button onPress={handleSignOut}>
             <ButtonText>Sign Out</ButtonText>
           </Button>
@@ -72,4 +75,10 @@ const AccountScreen = () => {
   );
 };
 
-export default AccountScreen;
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser
+});
+
+export default connect(mapStateToProps, null)(AccountScreen);
+
+// export default AccountScreen;
