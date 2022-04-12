@@ -19,6 +19,7 @@ import {
 
 import { connect } from "react-redux";
 
+
 const Text = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading}
   color: black;
@@ -33,7 +34,7 @@ const AvatarContainer = styled.View`
 export function SettingsInfoCard(props) {
   const navigation = useNavigation();
 
-  const {currentUser} = props;
+  const { currentUser } = props;
 
   // const { currentUser } = props;
   // console.log({props.currentUser});
@@ -50,9 +51,6 @@ export function SettingsInfoCard(props) {
             />
           </TouchableOpacity>
         </Spacer>
-        <Text>Email: {currentUser.email}</Text>
-        {/* We can soon have a part on login with username as well*/}
-        <Text>Username: {currentUser.username}</Text>
       </AvatarContainer>
       <Info>
         <Title>Change to inline view (quick fix)</Title>
