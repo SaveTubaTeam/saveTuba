@@ -8,6 +8,7 @@ import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo, faCircleQuestion, faInfo, faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { moderateScale } from 'react-native-size-matters';
+import CountryFlag from "react-native-country-flag";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -50,29 +51,19 @@ export const GeneralCard = () => {
                     <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
                         {/* This will need to also be a feature in the firebase - language */}
                         {/* it will change from navigation to just changing feature in database */}
-                        <Avatar.Icon
-                            size={40}
-                            icon="flag"
-                            backgroundColor={theme.colors.ui.tertiary}
-                        />
+                        <CountryFlag isoCode="us" size={25} />
+
                     </TouchableOpacity>
                     <Spacer position="right" size="medium" />
                     <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
                         {/* This will need to also be a feature in the firebase - language */}
-                        <Avatar.Icon
-                            size={40}
-                            icon="flag"
-                            backgroundColor={theme.colors.ui.tertiary}
-                        />
+                        <CountryFlag isoCode="ua" size={25} />
+
                     </TouchableOpacity>
                     <Spacer position="left" size="medium" />
                     <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
                         {/* This will need to also be a feature in the firebase - language */}
-                        <Avatar.Icon
-                            size={40}
-                            icon="flag"
-                            backgroundColor={theme.colors.ui.tertiary}
-                        />
+                        <CountryFlag isoCode="ru" size={25} />
                     </TouchableOpacity>
                 </Row>
                 <Spacer size="large" />
