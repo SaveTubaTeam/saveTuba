@@ -22,6 +22,7 @@ import { theme } from "../../../infrastructure/theme";
 
 const AvatarContainer = styled.View`
   align-items: center;
+  width: 100%;
 `;
 
 const RowContainer = styled.View`
@@ -86,6 +87,7 @@ export const GeneralCard = () => {
     const toggleSwitchR = () => setIsRemindersEnabled(previousState => !previousState);
 
     const [modalHelpVisible, setModalHelpVisible] = useState(false);
+    const [modalAboutVisible, setModalAboutVisible] = useState(false);
 
     return (
         <Card>
@@ -104,7 +106,7 @@ export const GeneralCard = () => {
                     <Spacer position="right" size="medium" />
                     <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
                         {/* This will need to also be a feature in the firebase - language */}
-                        <CountryFlag isoCode="ua" size={25} />
+                        <CountryFlag isoCode="kz" size={25} />
 
                     </TouchableOpacity>
                     <Spacer position="left" size="medium" />
@@ -196,7 +198,7 @@ export const GeneralCard = () => {
                 <Row>
                     <BodyText>About</BodyText>
                     <Spacer position="right" size="medium" />
-                    <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
+                    <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
                         <FontAwesomeIcon
                             icon={faCircleInfo}
@@ -204,6 +206,27 @@ export const GeneralCard = () => {
                             color={theme.colors.ui.primary}
                         />
                     </TouchableOpacity>
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalAboutVisible}
+                        onRequestClose={() => {
+                            Alert.alert("Modal has been closed.");
+                            setModalAboutVisible(!modalAboutVisible);
+                        }}
+                    >
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <Text style={styles.modalText}>WE ARE SAVE TUBA!!!!! this needs to be in a separate JSON folder to make this text longer</Text>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => setModalAboutVisible(!modalAboutVisible)}
+                                >
+                                    <Text style={styles.textStyle}>Close</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </Modal>
                 </Row>
                 <Spacer size="medium" />
 

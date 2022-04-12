@@ -1,9 +1,8 @@
-import {View, Text, Switch} from 'react-native';
+import { View, Text, Switch } from 'react-native';
 import React, { Component, useState } from "react";
 
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-
 import firebase from "firebase/app";
 import { setDoc, doc } from 'firebase/firestore';
 
@@ -12,107 +11,112 @@ import { Title } from 'react-native-paper';
 
 
 export class Register extends Component {
-    constructor(props) {
-        super(props);
-        // badges.set("1", "Time to Save the Tuba!");
-        this.state = {
-            email: '',
-            password: '',
-            firstName: '',
-            lastName: '',
-            classCode: '',
-            username: '',
-            badges: '',
-            friends: '',
-            friendCount: '',
-            isTeacher: false,
-          
-        };
-        
-        // Need to do this to add functions that can use the this.state stuff
-        this.onSignUp = this.onSignUp.bind(this);
-    }
 
-    onSignUp() {
-        const { email, password, firstName, lastName, classCode, username, isTeacher } = this.state;
-        auth.createUserWithEmailAndPassword(email, password)
-            .then((result) => {
-                setDoc(doc(db, "users", auth.currentUser.uid), {
-                    email,
-                    first_name: firstName,
-                    last_name: lastName,
-                    class_code: classCode,
-                    username: username,
-                    currentScore: 0,
-                    friendCount: 0,
-                    level: 1,
-                    teacher: isTeacher,
-                    // Maps in the Firebase database, need initial values
-                    badges: {
-                      RegistrationBadge: true,
-                    },
-                    friends: {
-                      initialized: true,
-                    },
-                });
-                console.log(result);
-            })
-            .catch((err) => {
-                alert(err);
-            });
-    }
+  constructor(props) {
+    super(props);
+    // badges.set("1", "Time to Save the Tuba!");
+    this.state = {
+      email: '',
+      password: '',
+      firstName: '',
+      lastName: '',
+      classCode: '',
+      username: '',
+      badges: '',
+      friends: '',
+      friendCount: '',
+      isTeacher: false,
 
-    render() {
-        return (
-            <Container>
-            <ImageBg source={require("../../../assets/homepagebackground.png")}>
-                
-                <TitleText color="secondary" size="title">Register For Save Tuba</TitleText>
-                <Input
-                  placeholder="Email"
-                  onChangeText={(email) => this.setState({email})}
-                />
-                <Input 
-                  placeholder="Password"
-                  secureTextEntry={true}
-                onChangeText={(password) => this.setState({password})}
-                />
-                <Input 
-                  placeholder="Username"
-                onChangeText={(username) => this.setState({username})}
-                />
-                <Input 
-                  placeholder="First Name"
-                onChangeText={(firstName) => this.setState({firstName})}
-                />
-                <Input 
-                  placeholder="Last Name"
-                onChangeText={(lastName) => this.setState({lastName})}
+    };
 
-                />
-                <Input 
-                  placeholder="Class Code"
-                    onChangeText={(classCode) => this.setState({classCode})}
-                />
-                <Button
-                    onPress={() => this.onSignUp()}
-                >
-                  <TitleText color="secondary">Register</TitleText>
-                </Button>
-                <Button
-                  onPress={() => {
-                    this.setState(prevState => ({
-                      isTeacher: !prevState.isTeacher
-                    }));
-                    this.onSignUp();
-                  }}
-                >
-                  <TitleText color="secondary">Teacher Sign Up</TitleText>
-                </Button>
-                </ImageBg>
-            </Container>
-          );
-    }
+    // Need to do this to add functions that can use the this.state stuff
+    this.onSignUp = this.onSignUp.bind(this);
+  }
+
+  onSignUp() {
+    const { email, password, firstName, lastName, classCode, username, isTeacher } = this.state;
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        setDoc(doc(db, "users", auth.currentUser.uid), {
+          email,
+          first_name: firstName,
+          last_name: lastName,
+          class_code: classCode,
+          username: username,
+          currentScore: 0,
+          friendCount: 0,
+          level: 1,
+          teacher: isTeacher,
+          // Maps in the Firebase database, need initial values
+          badges: {
+            RegistrationBadge: true,
+          },
+          friends: {
+            initialized: true,
+          },
+        });
+        console.log(result);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }
+
+  render() {
+    return (
+      <Container>
+        <ImageBg source={require("../../../assets/homepagebackground.png")}>
+
+          <TitleText color="secondary" size="title">Register For Save Tuba</TitleText>
+          <Input
+            placeholder="Email"
+            onChangeText={(email) => this.setState({ email })}
+          />
+          <Input
+            placeholder="Password"
+            secureTextEntry={true}
+            onChangeText={(password) => this.setState({ password })}
+          />
+          <Input
+            placeholder="Username"
+            onChangeText={(username) => this.setState({ username })}
+          />
+          <Input
+            placeholder="First Name"
+            onChangeText={(firstName) => this.setState({ firstName })}
+          />
+          <Input
+            placeholder="Last Name"
+            onChangeText={(lastName) => this.setState({ lastName })}
+
+          />
+          <Input
+            placeholder="Class Code"
+            onChangeText={(classCode) => this.setState({ classCode })}
+          />
+          <Button
+            onPress={() => this.onSignUp()}
+          >
+            <TitleText color="secondary">Register</TitleText>
+          </Button>
+          <Button
+            onPress={() => {
+              this.setState(prevState => ({
+                isTeacher: !prevState.isTeacher
+              }));
+              this.onSignUp();
+            }}
+          >
+            <TitleText color="secondary">Teacher Sign Up</TitleText>
+          </Button>
+          <BackButton
+          >
+            <TitleText color="secondary">Back</TitleText>
+          </BackButton>
+        </ImageBg>
+      </Container>
+    );
+  }
 }
 
 const Button = styled.TouchableOpacity`
@@ -121,6 +125,19 @@ const Button = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: 10px;
   width: 100%;
+  align-items: center;
+`;
+const BackButton = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  width: 100%;
+  align-items: center;
+  flex: 1;
+  justifyContent: flex-end;
+  marginBottom: 30px;
+  position: absolute;
+  bottom:0
   align-items: center;
 `;
 
