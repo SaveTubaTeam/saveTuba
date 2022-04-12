@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { Text, View, Switch } from "react-native";
+import { Switch, Button, Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { Avatar } from "react-native-paper";
@@ -9,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo, faCircleQuestion, faInfo, faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { moderateScale } from 'react-native-size-matters';
 import CountryFlag from "react-native-country-flag";
+
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -30,6 +32,49 @@ const Row = styled.View`
   flex-direction: row;
 `;
 
+const styles = StyleSheet.create({
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22
+    },
+    modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+    button: {
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+    },
+    buttonOpen: {
+        backgroundColor: "#F194FF",
+    },
+    buttonClose: {
+        backgroundColor: "#2196F3",
+    },
+    textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+    },
+    modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+    }
+});
 
 
 export const GeneralCard = () => {
@@ -39,6 +84,8 @@ export const GeneralCard = () => {
 
     const [isRemindersEnabled, setIsRemindersEnabled] = useState(false);
     const toggleSwitchR = () => setIsRemindersEnabled(previousState => !previousState);
+
+    const [modalVisible, setModalVisible] = useState(false);
 
     return (
         <Card>
@@ -97,6 +144,7 @@ export const GeneralCard = () => {
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={toggleSwitchR}
                         value={isRemindersEnabled}
+                        // figure out flex in order to make switch more inlign
                         style={{
                             transform: [{ scaleX: moderateScale(.8, 0.2) }, {
                                 scaleY:
@@ -112,7 +160,7 @@ export const GeneralCard = () => {
                 <Row>
                     <BodyText>Help</BodyText>
                     <Spacer position="right" size="medium" />
-                    <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
+                    <TouchableOpacity onPress={() => setModalVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
                         <FontAwesomeIcon
                             icon={faCircleQuestion}
@@ -120,6 +168,32 @@ export const GeneralCard = () => {
                             color={theme.colors.ui.primary}
                         />
                     </TouchableOpacity>
+                    {/* <Button title="Show modal" onPress={toggleModal} /> */}
+
+
+
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={() => {
+                            Alert.alert("Modal has been closed.");
+                            setModalVisible(!modalVisible);
+                        }}
+                    >
+                        <View style={styles.centeredView}>
+                            <View style={styles.modalView}>
+                                <Text style={styles.modalText}>Hello World!</Text>
+                                <Pressable
+                                    style={[styles.button, styles.buttonClose]}
+                                    onPress={() => setModalVisible(!modalVisible)}
+                                >
+                                    <Text style={styles.textStyle}>Hide Modal</Text>
+                                </Pressable>
+                            </View>
+                        </View>
+                    </Modal>
+
                 </Row>
                 <Spacer size="medium" />
 

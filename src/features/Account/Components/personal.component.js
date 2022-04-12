@@ -2,6 +2,7 @@
 import React, { setState } from "react";
 import styled from "styled-components/native";
 import { Text, View } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { Avatar } from "react-native-paper";
@@ -23,6 +24,8 @@ const AvatarContainer = styled.View`
 const Row = styled.View`
   flex-direction: row;
   align-items: center;
+
+  
 `;
 
 const Input = styled.TextInput`

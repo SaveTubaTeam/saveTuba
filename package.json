@@ -33,6 +33,7 @@
     "react-native-country-flag": "^1.1.6",
     "react-native-gesture-handler": "~2.1.0",
     "react-native-leaderboard": "^1.0.6",
+    "react-native-modal": "^13.0.1",
     "react-native-paper": "^4.11.2",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
@@ -49,8 +50,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@types/react-native": "~0.64.12",
     "eslint": "^8.9.0",
-    "eslint-plugin-react": "^7.28.0"
+    "eslint-plugin-react": "^7.28.0",
+    "typescript": "~4.3.5"
   },
   "private": true
 }
