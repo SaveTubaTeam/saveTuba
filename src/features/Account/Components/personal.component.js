@@ -21,11 +21,20 @@ const AvatarContainer = styled.View`
   align-items: center;
 `;
 
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+`;
+
 const Row = styled.View`
   flex-direction: row;
   align-items: center;
+`;
 
-  
+const InputContainer = styled.View`
+  width: 40%;
 `;
 
 const Input = styled.TextInput`
@@ -36,7 +45,6 @@ const Input = styled.TextInput`
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
 `;
-
 
 
 export function PersonalCard(props) {
@@ -59,19 +67,13 @@ export function PersonalCard(props) {
 
                 <TitleText>Email: {currentUser?.email}</TitleText>
                 <Row>
-
                     <TitleText>Change Username: </TitleText>
-                    <Input
-                        placeholder={currentUser?.username}
-                    // onChange={event => { this.setState({ query: event.target.value }) }}
-                    // onKeyPress={event => {
-                    //     if (event.key === 'Enter') {
-                    //         { (Username) => this.setState({ Username }) }
-                    //     }
-                    // }}
-                    />
+                    <InputContainer>
+                        <Input
+                            placeholder={currentUser?.username}
+                        />
+                    </InputContainer>
                 </Row>
-
             </AvatarContainer>
         </Card>
     );

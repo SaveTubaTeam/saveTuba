@@ -1,6 +1,7 @@
 import { View, Text, Switch } from 'react-native';
 import React, { Component, useState } from "react";
 
+import { useNavigation } from '@react-navigation/core';
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import firebase from "firebase/app";
@@ -109,8 +110,7 @@ export class Register extends Component {
           >
             <TitleText color="secondary">Teacher Sign Up</TitleText>
           </Button>
-          <BackButton
-          >
+          <BackButton>
             <TitleText color="secondary">Back</TitleText>
           </BackButton>
         </ImageBg>
@@ -133,13 +133,10 @@ const BackButton = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   width: 100%;
   align-items: center;
-  flex: 1;
   justifyContent: flex-end;
-  marginBottom: 30px;
-  position: absolute;
+  marginTop: ${(props) => props.theme.space[5]};
   bottom:0
-  align-items: center;
-`;
+  `;
 
 const Input = styled.TextInput`
   font-family: ${(props) => props.theme.fonts.body};
