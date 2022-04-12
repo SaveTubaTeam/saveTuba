@@ -85,7 +85,7 @@ export const GeneralCard = () => {
     const [isRemindersEnabled, setIsRemindersEnabled] = useState(false);
     const toggleSwitchR = () => setIsRemindersEnabled(previousState => !previousState);
 
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalHelpVisible, setModalHelpVisible] = useState(false);
 
     return (
         <Card>
@@ -160,7 +160,7 @@ export const GeneralCard = () => {
                 <Row>
                     <BodyText>Help</BodyText>
                     <Spacer position="right" size="medium" />
-                    <TouchableOpacity onPress={() => setModalVisible(true)}>
+                    <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
                         <FontAwesomeIcon
                             icon={faCircleQuestion}
@@ -168,27 +168,23 @@ export const GeneralCard = () => {
                             color={theme.colors.ui.primary}
                         />
                     </TouchableOpacity>
-                    {/* <Button title="Show modal" onPress={toggleModal} /> */}
-
-
-
                     <Modal
                         animationType="slide"
                         transparent={true}
-                        visible={modalVisible}
+                        visible={modalHelpVisible}
                         onRequestClose={() => {
                             Alert.alert("Modal has been closed.");
-                            setModalVisible(!modalVisible);
+                            setModalHelpVisible(!modalHelpVisible);
                         }}
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>Hello World!</Text>
+                                <Text style={styles.modalText}>RN just ask Artur for help. also this text needs to be imported from a JSON file because rn it is inefficent.</Text>
                                 <Pressable
                                     style={[styles.button, styles.buttonClose]}
-                                    onPress={() => setModalVisible(!modalVisible)}
+                                    onPress={() => setModalHelpVisible(!modalHelpVisible)}
                                 >
-                                    <Text style={styles.textStyle}>Hide Modal</Text>
+                                    <Text style={styles.textStyle}>Close</Text>
                                 </Pressable>
                             </View>
                         </View>
