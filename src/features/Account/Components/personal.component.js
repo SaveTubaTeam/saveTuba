@@ -7,8 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faSolid, faCamera, faCircleInfo, faCircleQuestion, faInfo, faLeaf } from "@fortawesome/free-solid-svg-icons";
 
+import { StyleSheet } from "react-native";
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
@@ -56,13 +57,25 @@ export function PersonalCard(props) {
         <Card>
             <AvatarContainer>
                 <Spacer position="bottom" size="large">
-                    <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                    <Row>
                         <Avatar.Icon
                             size={180}
                             icon="head"
                             backgroundColor={theme.colors.ui.tertiary}
                         />
-                    </TouchableOpacity>
+
+                        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                            {/* This will need to also be a feature in the firebase - language */}
+                            <FontAwesomeIcon
+                                position="absolute"
+                                icon={faCamera}
+                                size={60}
+                                top={20}
+                                right={-10}
+                                color={theme.colors.ui.primary}
+                            />
+                        </TouchableOpacity>
+                    </Row>
                 </Spacer>
 
                 <TitleText>Email: {currentUser?.email}</TitleText>

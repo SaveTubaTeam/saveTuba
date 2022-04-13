@@ -195,6 +195,7 @@ export const GeneralCard = () => {
                 </Row>
                 <Spacer size="medium" />
 
+
                 <Row>
                     <BodyText>About</BodyText>
                     <Spacer position="right" size="medium" />
