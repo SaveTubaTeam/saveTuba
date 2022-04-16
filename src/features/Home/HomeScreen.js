@@ -60,12 +60,12 @@ const HomeScreen = () => {
         <Stack.Screen
           name = "Home"
           component = {HomeView}
-          options={{ headerShown: true}}
+          options={{ headerShown: false}}
         />
         <Stack.Screen
           name = "ScreenOne"
           component = {ScreenOne}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name = "ScreenTwo"
