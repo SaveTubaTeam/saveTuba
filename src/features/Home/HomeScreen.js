@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ScreenOne from '../Levels/LevelOne';
+import LevelOne from '../Levels/LevelOne';
 import ScreenTwo from '../Levels/LevelTwo';
 import ScreenThree from '../Levels/LevelThree';
 import ScreenFour from '../Levels/LevelFour';
@@ -64,7 +64,7 @@ const HomeScreen = () => {
         />
         <Stack.Screen
           name = "ScreenOne"
-          component = {ScreenOne}
+          component = {LevelOne}
           options={{headerShown: false}}
         />
         <Stack.Screen

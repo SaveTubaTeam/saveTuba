@@ -7,14 +7,31 @@ import { BodyText } from "../../components/body-text.component";
 import { Card } from "../../components/card.component";
 import {Spacer} from "../../components/spacer.component";
 import { Alert } from 'native-base';
-
+import {TestScreen} from "./levelOne/TestScreen";
 import JsonData from "./TestData";
 import { Axios } from 'axios';
+
+import { useNavigation } from "@react-navigation/native";
+import { NavigationContainer} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+const Stack = createNativeStackNavigator();
+
+
+function getLinkToScreen(selectedItem) {
+  const navigation = useNavigation();
+  
+  if (selectedItem.map(obj => obj.title) == 'Crossword') {
+    // return (
+      navigation.push('Crossword');
+    // );
+  }
+}
 
 const DATA  = [
   {
     title: "Crossword",
-    nextScreen: "blank",
+    nextScreen: "./levelOne/testScreen",
     description: "A crossword game... duh?",
     key: "testkey",
     data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
@@ -50,6 +67,7 @@ const DATA  = [
 
 const LevelOne = () => {
   const [selectedItem, setSelectedItem] = useState([{title: null, description: null, nextScreen: null, key: null  }]);
+  const navigation = useNavigation();
 
   const handleOnSelectedItem = (title, nextScreen, key, description) => {
     setSelectedItem([{title: title, nextScreen: nextScreen, key: key, description: description}]);
@@ -57,7 +75,7 @@ const LevelOne = () => {
   const handeOnCloseModal = () => {
     setSelectedItem(null);
   };
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item, navigation }) => {
     // if (item.key == selectedItem) {
       return (
         <View>
@@ -74,6 +92,7 @@ const LevelOne = () => {
 
   function RenderModal (props) {
     const { selectedItem, onClose } = props;
+    const navigation = useNavigation();
     const [modalVisible, setModalVisible] = useState(()=> {
       return selectedItem != null;
     });
@@ -100,7 +119,9 @@ const LevelOne = () => {
             
             )}
             <Button
-              
+              onPress={() => {
+                navigation.push("Crossword");
+              }}
             >
               <BodyText color="secondary">Start</BodyText>
             </Button>
@@ -118,7 +139,7 @@ const LevelOne = () => {
     );
   };
 
-  const Item = ({title, nextScreen, key, description, item }) => (
+  const Item = ({title, nextScreen, key, description, item, navigation }) => (
     <TouchableOpacity style={{
       backgroundColor: "#748816",
       paddingTop: 58,
@@ -140,6 +161,15 @@ const LevelOne = () => {
 
   return (
     <Container>
+      <NavigationContainer independent={true}>
+        <Stack.Navigator>
+          <Stack.Screen 
+            name = "Crossword"
+            component={TestScreen}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
       <TitleText size="title" color="secondary">Enviroment</TitleText>
       <TitleText size="body" color="secondary">and</TitleText>
       <TitleText size="title" color="secondary">Sustainability</TitleText>
@@ -177,7 +207,7 @@ const LevelOne = () => {
           key={item => item.key}
           style={{padding: 0, paddingLeft: 10, paddingRight: 10}}
         />
-        <RenderModal isVisible={selectedItem} selectedItem={selectedItem} onClose={handeOnCloseModal}/>
+        <RenderModal isVisible={selectedItem} selectedItem={selectedItem} onClose={handeOnCloseModal} navigation={navigation}/>
         <TouchableOpacity style={{
           backgroundColor: "#748816",
           paddingTop: 0,
