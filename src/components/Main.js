@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import {Text, View} from "react-native";
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 // Theme stuff
 import { theme } from "../infrastructure/theme";
@@ -20,19 +20,19 @@ import thunk from "redux-thunk";
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
-import { fetchUser } from '../../redux/actions/index';
+import { bindActionCreators } from "redux";
+import { fetchUser } from "../../redux/actions/index";
 
 const Tab = createBottomTabNavigator();
 
-
 export class Main extends Component {
-    componentDidMount() {
-        this.props.fetchUser();
-    }
+  componentDidMount() {
+    this.props.fetchUser();
+  }
   render() {
     return (
-        <Tab.Navigator
+      <Tab.Navigator
+        initialRouteName="Home"
         screenOptions={{
           tabBarActiveTintColor: theme.colors.ui.tertiary,
           tabBarInactiveTintColor: "#fff",
@@ -78,11 +78,11 @@ export class Main extends Component {
   }
 }
 
-
 const mapStateToProps = (store) => ({
-    currentUser: store.userState.currentUser
+  currentUser: store.userState.currentUser,
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ fetchUser }, dispatch);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ fetchUser }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
