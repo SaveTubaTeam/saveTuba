@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, View, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView, Image } from "react-native";
 import { SafeArea } from "../../components/safe-area.component";
 // import { auth } from "../../../firebase";
 import { useNavigation } from "@react-navigation/native";
@@ -28,22 +28,22 @@ function HomeView() {
       <ScrollView style={{ alignContent: "center"}}>
       <ImageBg source={require("../../../assets/homepagebackground.png")}>
         <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenOne")}>
-          <Text>LevelOne</Text>
+          <Text style={style.baseText}>1</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenTwo")}>
-          <Text>LevelTwo</Text>
+          <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenThree")}>
-          <Text>LevelThree</Text>
+          <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenFour")}>
-          <Text>LevelFour</Text>
+          <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenFive")}>
-          <Text>LevelFive</Text>
+          <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenSix")}>
-          <Text>LevelSix</Text>
+          <Text style={style.baseText}>6</Text>
         </TouchableOpacity>
         </ImageBg>
       </ScrollView>
@@ -55,17 +55,21 @@ const HomeScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <NavigationContainer independent ={true}>
+    //<NavigationContainer independent ={true}>
       <Stack.Navigator>
         <Stack.Screen
-          name = "Home"
+          name = "Levels"
           component = {HomeView}
-          options={{ headerShown: true}}
+          options={{ headerShown: true,
+            headerStyle: {
+              backgroundColor: '#C6DC3B',
+            }
+          }}
         />
         <Stack.Screen
           name = "ScreenOne"
           component = {ScreenOne}
-          options={{headerShown: true}}
+          options={{headerShown: false}}
         />
         <Stack.Screen
           name = "ScreenTwo"
@@ -93,7 +97,7 @@ const HomeScreen = () => {
           options={{headerShown: true}}
         />
       </Stack.Navigator>
-    </NavigationContainer>
+    //</NavigationContainer>
   );
 };
 
@@ -108,7 +112,7 @@ const style = StyleSheet.create({
     padding: 10,
     left: 10,
     borderRadius: 100,
-    backgroundColor: '#C6DC3B'
+    backgroundColor: '#CCE882'
   },
   roundButton2: {
     width: 125,
@@ -118,6 +122,10 @@ const style = StyleSheet.create({
     padding: 10,
     left: 255,
     borderRadius: 100,
-    backgroundColor: '#C6DC3B'
+    backgroundColor: '#CCE882'
+  },
+  baseText: {
+    fontSize: 50,
+    color: 'white',
   }
 });
