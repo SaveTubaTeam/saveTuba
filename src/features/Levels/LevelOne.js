@@ -7,7 +7,7 @@ import { BodyText } from "../../components/body-text.component";
 import { Card } from "../../components/card.component";
 import {Spacer} from "../../components/spacer.component";
 import { Alert } from 'native-base';
-import {TestScreen} from "./levelOne/TestScreen";
+// import {TestScreen} from "./levelOne/TestScreen";
 import JsonData from "./TestData";
 import { Axios } from 'axios';
 
@@ -17,14 +17,23 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const Stack = createNativeStackNavigator();
 
+function TestScreen({navigation, route}) {
+  const { data } = route.params;
+  return (
+    <View>
+      <Button onPress={() => navigation.goBack()} />
+      <Text>{JSON.parse(JSON.stringify(data))} </Text>
+    </View>
+  );
+}
 
-function getLinkToScreen(selectedItem) {
-  const navigation = useNavigation();
-  
+
+function getLinkToScreen(selectedItem, navigation) {
+  // const navigation = useNavigation();
   if (selectedItem.map(obj => obj.title) == 'Crossword') {
-    // return (
-      navigation.push('Crossword');
-    // );
+      navigation.navigate('Crossword', {
+        data: 'test will u work now plz... im sorry for being stupid'
+      });
   }
 }
 
@@ -63,8 +72,6 @@ const DATA  = [
   },
 ];
 
-// var myObject = JSON.parse(JsonData);
-
 const LevelOne = () => {
   const [selectedItem, setSelectedItem] = useState([{title: null, description: null, nextScreen: null, key: null  }]);
   const navigation = useNavigation();
@@ -93,9 +100,11 @@ const LevelOne = () => {
   function RenderModal (props) {
     const { selectedItem, onClose } = props;
     const navigation = useNavigation();
+    var key;
     const [modalVisible, setModalVisible] = useState(()=> {
-      return selectedItem != null;
+      return selectedItem[0].description != null;
     });
+    selectedItem.map(obj => key =obj.key ); // sets the key because I kept getting warnings about it
     return (
       <Modal
         animationType='slide'
@@ -120,7 +129,9 @@ const LevelOne = () => {
             )}
             <Button
               onPress={() => {
-                navigation.push("Crossword");
+                onClose;
+                setModalVisible(!modalVisible);
+                getLinkToScreen(selectedItem, navigation );
               }}
             >
               <BodyText color="secondary">Start</BodyText>
@@ -161,15 +172,7 @@ const LevelOne = () => {
 
   return (
     <Container>
-      <NavigationContainer independent={true}>
-        <Stack.Navigator>
-          <Stack.Screen 
-            name = "Crossword"
-            component={TestScreen}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      
       <TitleText size="title" color="secondary">Enviroment</TitleText>
       <TitleText size="body" color="secondary">and</TitleText>
       <TitleText size="title" color="secondary">Sustainability</TitleText>
@@ -228,7 +231,32 @@ const LevelOne = () => {
 
 // Maybe have Data JSON files somewhere else that we import here? or can we automate this to an extreme???
 
-export default LevelOne;
+export default LevelNav;
+
+function LevelNav({route}) {  // 
+  return (
+    <NavigationContainer independent={true}>
+        <Stack.Navigator initialRouteName='Level'>
+
+          
+          <Stack.Screen 
+              name = "Level"
+              component={LevelOne}
+              options={{ headerShown: false }}
+              
+            />
+            <Stack.Screen 
+              name = "Crossword"
+              options={{ headerShown: true }}
+              component={TestScreen}
+            >
+              {/* {() => <TestScreen message={"Here is an example of data being passed through -- fuck u arlan"}/>} */}
+            </Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+  );
+}
+
 
 const styles = StyleSheet.create({
   centeredView: {
