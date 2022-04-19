@@ -1,16 +1,17 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
-const lessonthreeScreen = () => {
+const LessonThreeScreen = () => {
   return (
     <View
       style={{
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
-      }}>
+        alignItems: "center",
+      }}
+    >
       <Text>LessonThree!</Text>
     </View>
   );
 };
-export default lessonthreeScreen;
+export default LessonThreeScreen;
