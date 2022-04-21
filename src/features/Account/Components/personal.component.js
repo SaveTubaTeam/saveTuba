@@ -15,7 +15,7 @@ import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
-
+import { AccountNavigator } from "../accountNav/accountNav";
 
 
 const AvatarContainer = styled.View`
@@ -64,7 +64,7 @@ export function PersonalCard(props) {
                             backgroundColor={theme.colors.ui.tertiary}
                         />
 
-                        <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+                        <TouchableOpacity onPress={() => navigation.navigate("CameraScreen")}>
                             {/* This will need to also be a feature in the firebase - language */}
                             <FontAwesomeIcon
                                 position="absolute"
