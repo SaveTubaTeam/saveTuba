@@ -14,6 +14,8 @@ import ScreenFour from '../Levels/LevelFour';
 import ScreenFive from '../Levels/LevelFive';
 import ScreenSix from '../Levels/LevelSix';
 
+import { connect } from "react-redux";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -97,7 +99,11 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser
+});
+
+export default connect(mapStateToProps, null)(HomeScreen);
 
 const style = StyleSheet.create({
   roundButton1: {
