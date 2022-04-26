@@ -8,14 +8,21 @@ import LevelComponent from "./LevelComponent";
 
 import { connect } from 'react-redux';
 
+import SummaryScreen from "./levelOne/lessonOne/Screens/Summary/summary";
+import { AdventureImages } from './IMAGES';
+
 const Stack = createNativeStackNavigator();
 
+// want to import data here?
+import { LevelOneTest, LevelTwoTest } from "./TestLevel";
+
+
+
 function TestScreen({navigation, route}) {
-  const { data } = route.params;
   return (
     <View>
       <Button onPress={() => navigation.goBack()} />
-      <Text>{JSON.parse(JSON.stringify(data))} </Text>
+      
     </View>
   );
 }
@@ -34,14 +41,25 @@ function MultipleChoice({navigation, route}) {
 
 function LevelNav(props) {  // 
   const { currentUser } = props;
+  const Level = LevelTwoTest;
+  const level = 2;
+
   return (
     <NavigationContainer independent={true}>
         <Stack.Navigator initialRouteName='Level'>
           <Stack.Screen 
               name = "Level"
               component={LevelComponent}
-              options={{ headerShown: false }}
-              initialParams={{datalink: require("./TestData.json")}}
+              options={{
+                headerTintColor: "#748816",
+                headerTitleStyle: {
+                  fontFamily: "Raleway_400Regular",
+                },
+                headerBackTitleStyle: {
+                  fontFamily: "Raleway_400Regular",
+                },
+              }}
+              initialParams={{level: level}}
             />
             <Stack.Screen 
               name = "Crossword"
@@ -56,7 +74,13 @@ function LevelNav(props) {  //
                 component={MultipleChoice}
                 options={{headerShown: true}}
               >
-              </Stack.Screen>
+            </Stack.Screen>
+            <Stack.Screen 
+                name = {Level.summaryComponent.route}
+                component={Level.summaryComponent.component}
+                options={{headerShown: true}}
+              >
+            </Stack.Screen>
         </Stack.Navigator>
       </NavigationContainer>
   );

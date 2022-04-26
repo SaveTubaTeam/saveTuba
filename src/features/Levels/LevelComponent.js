@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Text, View, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+import { Text, View, FlatList, TouchableOpacity, Modal, StyleSheet, Image } from 'react-native';
 import styled from "styled-components/native";
 import { theme } from "../../infrastructure/theme";
 import { TitleText } from "../../components/title-text.component";
@@ -14,16 +14,31 @@ import { Axios } from 'axios';
 import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { AdventureImages } from './IMAGES';
+
 
 
 import { connect } from "react-redux";
 
+import {
+  Container,
+  Summary,
+  Mastery,
+  Row,
+  Adventure,
+  ImageBg,
+} from "../../components/Levels/levels.styles";
+
+import { LevelOneTest, LevelTwoTest } from "./TestLevel";
+
+
+
+const testVariable = React.lazy(() => import('./TestData.json'));
 
 function getLinkToScreen(selectedItem, navigation) {
-  // const navigation = useNavigation();
   if (selectedItem.map(obj => obj.title) == 'Crossword') {
       navigation.navigate('Crossword', {
-        data: 'test will u work now plz... im sorry for being stupid'
+        data: selectedItem.map(obj => obj.image)
       });
   } else if (selectedItem.map(obj => obj.title) == "Multiple Choice") {
     navigation.navigate("MultipleChoice", {
@@ -33,26 +48,68 @@ function getLinkToScreen(selectedItem, navigation) {
 }
 
 function LevelComponent(props) {
-  
-  const [selectedItem, setSelectedItem] = useState([{title: null, description: null, nextScreen: null, key: null  }]);
+  const [selectedItem, setSelectedItem] = useState([{title: null, description: null, key: null  }]);
   const { currentUser, navigation, route } = props;
-  const data = route.params.datalink
-  console.warn(data);
-  const DATA = require("./TestData");
 
+  const {level} = route.params;
+  const [selectedLevel, setSelectedLevel] = useState(null);
 
-  const handleOnSelectedItem = (title, nextScreen, key, description) => {
-    setSelectedItem([{title: title, nextScreen: nextScreen, key: key, description: description}]);
+  useEffect(() => {
+    switch (level) {
+      case 1: 
+        setSelectedLevel(LevelOneTest);
+        break;
+      case 2:
+        setSelectedLevel(LevelTwoTest);
+        break;
+      default: 
+        setSelectedItem(null);
+        break;
+    }
+  }, []);
+
+  const handleOnSelectedItem = (title, key, description) => {
+    setSelectedItem([{title: title, key: key, description: description}]);
   };
   const handeOnCloseModal = () => {
     setSelectedItem(null);
   };
   const renderItem = ({ item, navigation }) => {
     // if (item.key == selectedItem) {
+      const title = item.title;
+      const description = item.description;
+      const key = item.key;
+      
+
       return (
-        <View>
-        <Item title={item.title} description={item.description}/>
-      </View>
+        <View style={{
+          height: 80,
+          width: 120,
+          margin: 5,
+          alignContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Adventure
+            style={{
+              width: '100%',
+              height: '100%',
+            }} 
+            onPress={() => (
+              handleOnSelectedItem(title, key, description)
+            )}
+          >
+          <ImageBg
+            source={item.image}
+            imageStyle={{ borderRadius: 16 }}
+            resizeMode="cover"
+          >
+            <TitleText size='body' color='secondary' >{item.title}</TitleText>
+          </ImageBg>
+            {/* <GetBackgroundImage imageName={item.title} >
+              <TitleText color='secondary' >Test Please Work</TitleText>
+            </GetBackgroundImage> */}
+          </Adventure>
+        </View>
       );
   };
 
@@ -107,53 +164,54 @@ function LevelComponent(props) {
     );
   };
 
-  const Item = ({title, nextScreen, key, description, item, navigation }) => (
-    <TouchableOpacity style={{
-      backgroundColor: "#748816",
-      paddingTop: 58,
-      paddingBottom: 0,
-      height: 80,
-      width: 150,
-      paddingRight: 1,
-      paddingLeft: 5,
-      margin: 5,
-      borderRadius: 5,
-    }} 
-      onPress={() => (
-        handleOnSelectedItem(title, nextScreen, key, description)
-      )}
-    >
-      <TitleText size="body" color="secondary">{title}</TitleText>
-    </TouchableOpacity>
-  );
+  // HORRIFIC FIX TO selectedLEVEL being NULL AT START
+  if (selectedLevel == null) {
+    return (
+      <View>
+
+      </View>
+    );
+  }
 
   return (
     <Container>
+      <TitleText size="h4" color="primary">{selectedLevel.title}</TitleText>
+      <Spacer size='small'/>
+      <BodyText>
+        {selectedLevel.summary}
+      </BodyText>
+      <Summary onPress={() => navigation.navigate(selectedLevel.summaryComponent.route)}>
+        <BodyText weight="bold" color="secondary">
+          Full Summary
+        </BodyText>
+      </Summary>
+
+      <Spacer size="small"/>
+      <FlatList
+        data={selectedLevel.minigames}
+        renderItem={renderItem}
+        numColumns={2}
+        keyExtractor={item => item.key}
+        key={item => item.key}
+        style={{padding: 0, paddingLeft: 0, paddingRight: 0}}
+      />
       
-      <TitleText size="title" color="secondary">Enviroment</TitleText>
-      <TitleText size="body" color="secondary">and</TitleText>
-      <TitleText size="title" color="secondary">Sustainability</TitleText>
-      <View style={styles.container} >
-        
-        <TouchableOpacity style={styles.wideButton} >
-          <TitleText color="secondary">Summary</TitleText>
-        </TouchableOpacity>
-        <Spacer size="large"/>
-        <TitleText color="primary" size="body">Adventures</TitleText>
-        <FlatList
-          data={DATA}
-          renderItem={renderItem}
-          numColumns={2}
-          keyExtractor={item => item.key}
-          key={item => item.key}
-          style={{padding: 0, paddingLeft: 10, paddingRight: 10}}
+      <Mastery>
+        <BodyText weight="bold" size="title" color="secondary">
+          Mastery
+        </BodyText>
+      </Mastery>
+ 
+      
+      <View style={{ width: "70%" }}>
+        <Image
+          style={{ width: "100%", height: undefined, aspectRatio: 3 / 2 }}
+          source={require("../../../assets/tourist.png")}
         />
-        <RenderModal isVisible={selectedItem} selectedItem={selectedItem} onClose={handeOnCloseModal} navigation={navigation} key={selectedItem.key}/>
-        <TouchableOpacity style={styles.wideButton} >
-          <TitleText color="secondary">Adventures</TitleText>
-        </TouchableOpacity>
       </View>
-      <Spacer size="large"/>
+
+      <RenderModal isVisible={selectedItem} selectedItem={selectedItem} onClose={handeOnCloseModal} navigation={navigation} key={selectedItem.key}/>
+
     </Container>
   );
 };
@@ -218,63 +276,3 @@ const Button = styled.TouchableOpacity`
   width: 50%;
   align-items: center;
 `;
-
-const Input = styled.TextInput`
-  font-family: ${(props) => props.theme.fonts.body};
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: ${(props) => props.theme.space[2]};
-`;
-
-const ImageBg = styled.ImageBackground`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  padding-top: ${(props) => props.theme.space[5]};
-  padding-horizontal: 20px;
-
-`;
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  background-color: ${(props) => props.theme.colors.bg.secondary};
-`;
-
-// const DATA  = [
-//   {
-//     title: "Crossword",
-//     nextScreen: "./levelOne/testScreen",
-//     description: "A crossword game... duh?",
-//     key: "testkey",
-//     data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
-
-//   },
-//   {
-//     title: "Puzzle",
-//     nextScreen: "blank",
-//     description: "A puzzle",
-//     key: "testkey2",
-//     data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
-//   },
-//   {
-//     title: "Matching",
-//     nextScreen: "blank",
-//     description: "Match it",
-//     key: "testkey3",
-//     data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
-
-
-//   },
-//   {
-//     title: "Multiple Choice",
-//     nextScreen: "blank",
-//     description: "Take a guess",
-//     key: "testkey4",
-//     data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
-
-//   },
-// ];
