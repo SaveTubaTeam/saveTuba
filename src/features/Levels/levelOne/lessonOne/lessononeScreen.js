@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components/native";
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 //import { useNavigation } from "@react-navigation/native";
 //import { NavigationContainer} from "@react-navigation/native";
 //import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -13,43 +13,43 @@ const Button = styled.TouchableOpacity`
   align-items: center;
 `;
 
-const lessononeScreen = ({navigation}) => {
+const LessonOneScreen = ({ navigation }) => {
   return (
     <View
       style={{
         flex: 1,
         justifyContent: "center",
-        alignItems: "center"
-      }}>
-        <Button onPress={() => navigation.goBack()}>
-          <Text>Return</Text>
-        </Button>
+        alignItems: "center",
+      }}
+    >
+      <Button onPress={() => navigation.goBack()}>
+        <Text>Return</Text>
+      </Button>
       <Text>LessonOne!</Text>
     </View>
   );
 };
-export default lessononeScreen;
+export default LessonOneScreen;
 
 const style = StyleSheet.create({
-    roundButton1: {
-      width: 125,
-      height: 125,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 10,
-      left: 10,
-      borderRadius: 100,
-      backgroundColor: '#C6DC3B'
-    },
-    roundButton2: {
-      width: 125,
-      height: 125,
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 10,
-      left: 255,
-      borderRadius: 100,
-      backgroundColor: '#C6DC3B'
-    }
-  });
-  
+  roundButton1: {
+    width: 125,
+    height: 125,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    left: 10,
+    borderRadius: 100,
+    backgroundColor: "#C6DC3B",
+  },
+  roundButton2: {
+    width: 125,
+    height: 125,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    left: 255,
+    borderRadius: 100,
+    backgroundColor: "#C6DC3B",
+  },
+});
