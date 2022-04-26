@@ -63,7 +63,7 @@ function LevelComponent(props) {
         setSelectedLevel(LevelTwoTest);
         break;
       default: 
-        setSelectedItem(null);
+        setSelectedLevel(null);
         break;
     }
   }, []);

@@ -33,6 +33,7 @@
     "react-native-gesture-handler": "~2.1.0",
     "react-native-leaderboard": "^1.0.6",
     "react-native-paper": "^4.11.2",
+    "react-native-quiz-maker": "^0.1.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
     "react-native-svg": "12.1.1",

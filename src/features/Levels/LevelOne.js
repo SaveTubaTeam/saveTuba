@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Text, View, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
 import styled from "styled-components/native";
 import { NavigationContainer} from "@react-navigation/native";
@@ -15,6 +15,7 @@ const Stack = createNativeStackNavigator();
 
 // want to import data here?
 import { LevelOneTest, LevelTwoTest } from "./TestLevel";
+import {QuizScreen} from "../../components/LevelOne/quiz-screen.component";
 
 
 
@@ -41,10 +42,45 @@ function MultipleChoice({navigation, route}) {
 
 function LevelNav(props) {  // 
   const { currentUser } = props;
-  const Level = LevelTwoTest;
-  const level = 2;
+
+  const level = 2;  // will need to be an input from the lessonOne when navigation ie. onPress ... navigte('level', 
+    // initialParams(level: 1 or 2 etc....))
+
+  const [selectedLevel, setSelectedLevel] = useState(null);
+
+  useEffect(() => {
+    switch (level) {
+      case 1: 
+        setSelectedLevel(LevelOneTest);
+        break;
+      case 2:
+        setSelectedLevel(LevelTwoTest);
+        break;
+      default: 
+        setSelectedLevel(null);
+        break;
+    }
+  }, []);
+
+  const [score, setScore] = useState(0);
+
+  function changeScore(value) {
+    setScore(value);
+  }
+
+  if (selectedLevel == null) {
+    return (
+      <View>
+
+      </View>
+    );
+  }
+
+  
 
   return (
+
+    
     <NavigationContainer independent={true}>
         <Stack.Navigator initialRouteName='Level'>
           <Stack.Screen 
@@ -61,12 +97,11 @@ function LevelNav(props) {  //
               }}
               initialParams={{level: level}}
             />
-            <Stack.Screen 
+            <Stack.Screen // TO FIX CRASH REMOVE THE QUIZ SCREEN PORTION AND PUT THE COMPONENET AS TESTSCREEN
               name = "Crossword"
-              options={{ headerShown: true }}
-              component={TestScreen}
+              options={{ headerShown: false }}
             >
-              
+              {() => <QuizScreen score={score} onStateChange={changeScore} />}
               {/* {() => <TestScreen message={"Here is an example of data being passed through -- fuck u arlan"}/>} */}
             </Stack.Screen>
             <Stack.Screen 
@@ -76,11 +111,14 @@ function LevelNav(props) {  //
               >
             </Stack.Screen>
             <Stack.Screen 
-                name = {Level.summaryComponent.route}
-                component={Level.summaryComponent.component}
+                name = {selectedLevel.summaryComponent.route}
+                component={selectedLevel.summaryComponent.component}
                 options={{headerShown: true}}
               >
             </Stack.Screen>
+
+            {/* Here will be a stack screen for the adventureComponent*/}
+
         </Stack.Navigator>
       </NavigationContainer>
   );
