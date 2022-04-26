@@ -8,6 +8,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 // Different Screens thus far
 import HomeScreen from "../features/Home/HomeScreen";
 import AccountScreen from "../features/Account/Screens/AccountScreen";
+import AccountNav from "../features/Account/accountNav/accountNav";
 import ProfileScreen from "../features/Profile/Screens/ProfileScreen";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -66,7 +67,7 @@ export class Main extends Component {
         {/* <Tab.Screen name="Unity" component={null} /> */}
         <Tab.Screen
           name="Settings"
-          component={AccountScreen}
+          component={AccountNav}
           options={{
             tabBarIcon: ({ color }) => (
               <Ionicons name="settings" color={color} size={32} />

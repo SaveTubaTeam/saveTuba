@@ -41,6 +41,8 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
+
+
 function AccountScreen(props) {
   const navigation = useNavigation();
   const { currentUser } = props;

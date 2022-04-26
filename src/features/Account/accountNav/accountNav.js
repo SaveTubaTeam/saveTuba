@@ -1,30 +1,32 @@
 import React from "react";
+// import { auth } from "../../../firebase";
+import { useNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import AccountScreen from "../Screens/AccountScreen";
 import CameraScreen from "../Screens/CameraScreen";
 
-import {
-    createStackNavigator,
-    CardStyleInterpolators,
-} from "@react-navigation/stack";
+const Stack = createNativeStackNavigator();
 
-const AccountStack = createStackNavigator();
+const AccountNav = () => {
+    const navigation = useNavigation();
 
-export const AccountNavigator = ({ route, navigation }) => {
     return (
-        <AccountStack.Navigator
-            headerMode="screen"
-            screenOptions={{
-                cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-            }}
-        >
-            <AccountStack.Screen
-                options={{
-                    header: () => null,
-                }}
-                name="Account"
+        <Stack.Navigator>
+            <Stack.Screen
+                name="AccountScreen"
                 component={AccountScreen}
+                options={{
+                    headerShown: false,
+                }}
             />
-            <AccountStack.Screen name="Camera" component={CameraScreen} />
-        </AccountStack.Navigator>
+            <Stack.Screen
+                name="CameraScreen"
+                component={CameraScreen}
+                options={{ headerShown: false }}
+            />
+        </Stack.Navigator>
     );
 };
+
+export default AccountNav;

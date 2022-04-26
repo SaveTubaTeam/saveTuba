@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import React, { setState } from "react";
+import React, { setState, useState } from "react";
+import { useFocusEffect } from "@react-navigation/native";
 import styled from "styled-components/native";
 import { Text, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, ScrollView } from "react-native";
@@ -15,7 +17,6 @@ import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
-import { AccountNavigator } from "../accountNav/accountNav";
 
 
 const AvatarContainer = styled.View`
@@ -53,16 +54,48 @@ export function PersonalCard(props) {
     const { currentUser } = props;
 
 
+    const [photo, setPhoto] = useState(null);
+
+    const getProfilePicture = async (currentUser) => {
+        const photoUri = await AsyncStorage.getItem(`${currentUser?.firstName}-photo`);
+        setPhoto(photoUri);
+    };
+
+    useFocusEffect(
+        React.useCallback(() => {
+            getProfilePicture(currentUser);
+        }, [currentUser])
+    );
+
+
+
     return (
         <Card>
             <AvatarContainer>
                 <Spacer position="bottom" size="large">
                     <Row>
-                        <Avatar.Icon
+                        {/* <Avatar.Icon
                             size={180}
                             icon="head"
                             backgroundColor={theme.colors.ui.tertiary}
-                        />
+                        /> */}
+
+                        {!photo && (
+                            <Avatar.Icon
+                                size={180}
+                                icon="head"
+                                backgroundColor={theme.colors.ui.tertiary}
+                            />
+                        )}
+                        {photo && (
+                            <Avatar.Image
+                                size={180}
+                                source={{ uri: photo }}
+                                backgroundColor="#2182BD"
+                            />
+                        )}
+
+
 
                         <TouchableOpacity onPress={() => navigation.navigate("CameraScreen")}>
                             {/* This will need to also be a feature in the firebase - language */}
