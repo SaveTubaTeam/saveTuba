@@ -10,7 +10,9 @@ import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 
 
-import { LevelOneTest, LevelTwoTest } from "./TestLevel";
+
+import { LessonOne } from './levelOne/lessonOne/LessonOne';
+import { LessonTwo } from './levelOne/lessonTwo/LessonTwo';
 
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
@@ -36,10 +38,10 @@ function LessonComponent(props) {
   useEffect(() => {
     switch (level) {
       case 1: 
-        setSelectedLevel(LevelOneTest);
+        setSelectedLevel(LessonOne);
         break;
       case 2:
-        setSelectedLevel(LevelTwoTest);
+        setSelectedLevel(LessonTwo);
         break;
       default: 
         setSelectedLevel(null);
@@ -138,7 +140,9 @@ function LessonComponent(props) {
       <BodyText>
         {selectedLevel.summary}
       </BodyText>
-      <Summary onPress={() => navigation.navigate(selectedLevel.summaryComponent.route)}>
+      <Summary onPress={() => {
+          navigation.navigate(selectedLevel.summaryComponent.route);
+        }}>
         <BodyText weight="bold" color="secondary">Full Summary</BodyText>
       </Summary>
 

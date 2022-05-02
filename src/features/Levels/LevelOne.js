@@ -68,7 +68,7 @@ function LeveloneView(){
 const LevelOne = () => {
   const navigation = useNavigation();
   return(
-    //<NavigationContainer independent ={false}>
+    <NavigationContainer independent ={true}>
       <Stack.Navigator>
         <Stack.Screen
             name = "Level One"
@@ -86,7 +86,7 @@ const LevelOne = () => {
             initialParams={{level: 1}}
           />
       </Stack.Navigator>
-    //</NavigationContainer>
+    </NavigationContainer>
   );
 };
 

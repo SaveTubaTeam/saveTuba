@@ -9,7 +9,8 @@ import LessonComponent from "./LessonComponent";
 import { connect } from 'react-redux';
 
 // want to import data here?
-import { LevelOneTest, LevelTwoTest } from "./TestLevel";
+import { LessonOne } from './levelOne/lessonOne/LessonOne';
+import { LessonTwo } from './levelOne/lessonTwo/LessonTwo';
 import {QuizScreen} from "../../components/LevelOne/quiz-screen.component";
 
 
@@ -46,10 +47,10 @@ function LessonHandler(props) {  //
   useEffect(() => { // Function called on LessonHandler mount to determine data to select for lesson component
     switch (level) {
       case 1: 
-        setSelectedLevel(LevelOneTest);
+        setSelectedLevel(LessonOne);
         break;
       case 2:
-        setSelectedLevel(LevelTwoTest);
+        setSelectedLevel(LessonTwo);
         break;
       default: 
         setSelectedLevel(null);
