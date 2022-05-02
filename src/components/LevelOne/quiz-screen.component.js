@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import { AnswerModal } from "./answer.modal";
 import { FinishModal } from "./finish.modal";
-import { questionSet } from "./QuestionSet";
+// import { questionSet } from "./QuestionSet";
 
 const Container = styled.View`
   flex: 1;
@@ -30,6 +30,8 @@ export const QuizScreen = (props) => {
   function changeScore(value) {
     props.onStateChange(value);
   }
+
+  const {questionSet} = props;
 
   return (
     <Container>

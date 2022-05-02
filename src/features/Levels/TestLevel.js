@@ -1,16 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react';
-
-const test = () => {
-    return (
-        <View>
-            <Text>Howdy</Text>
-        </View>
-    );
-};
-
-
-
+import { questionSet } from "./../../components/LevelOne/QuestionSet";
+import { questionSetPollution } from "./../../components/LevelOne/QuestionSetPollution";
 import { AdventureImages } from './IMAGES';
 
 import SummaryScreen from "./levelOne/lessonOne/Screens/Summary/summary";
@@ -45,7 +36,7 @@ export const LevelOneTest = {
             title: "Crossword",
             description: "A crossword game... duh?",
             key: "testkey1",
-            data: "require('crosswordPollutionQuestions')",
+            data: questionSet,
             image: AdventureImages.crossword,
         },
         {
@@ -72,13 +63,7 @@ export const LevelTwoTest = {
     },
 
     minigames: [
-        {
-            title: "Crossword",
-            description: "A crossword game... duh?",
-            key: "testkey1",
-            data: "require('crosswordPollutionQuestions')",
-            image: AdventureImages.crossword,
-        },
+        
         {
             title: "Puzzle",
             description: "Solve the puzzle",
@@ -93,6 +78,13 @@ export const LevelTwoTest = {
             data: "require('matchingPollution')",
             image: AdventureImages.matching,
 
+        },
+        {
+            title: "Crossword",
+            description: "A crossword game... duh?",
+            key: "testkey1",
+            data: questionSetPollution,
+            image: AdventureImages.crossword,
         },
         {
             title: "Multiple Choice",

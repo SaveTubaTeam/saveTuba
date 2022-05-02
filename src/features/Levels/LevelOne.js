@@ -1,173 +1,134 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import React from "react";
 import styled from "styled-components/native";
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView, Touchable, Image } from "react-native";
+import { SafeArea } from "../../components/safe-area.component";
+// import { auth } from "../../../firebase";
+import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import LevelComponent from "./LevelComponent";
+import { styles } from "styled-system";
 
-import { connect } from 'react-redux';
-
-import SummaryScreen from "./levelOne/lessonOne/Screens/Summary/summary";
-import { AdventureImages } from './IMAGES';
+import LessonHandler from "./LessonHandler";
 
 const Stack = createNativeStackNavigator();
-
-// want to import data here?
-import { LevelOneTest, LevelTwoTest } from "./TestLevel";
-import {QuizScreen} from "../../components/LevelOne/quiz-screen.component";
-
-
-
-function TestScreen({navigation, route}) {
-  return (
-    <View>
-      <Button onPress={() => navigation.goBack()} />
-      
-    </View>
-  );
-}
-
-function MultipleChoice({navigation, route}) {
-  // const { data } = route.params.data;
-  // console.log(data);
-  // console.warn(require(data));
-  return (
-    <View>
-      <Button onPress={() => navigation.goBack()} />
-      <Text>Multiple Choice Screen </Text>
-    </View>
-  );
-}
-
-function LevelNav(props) {  // 
-  const { currentUser } = props;
-
-  const level = 2;  // will need to be an input from the lessonOne when navigation ie. onPress ... navigte('level', 
-    // initialParams(level: 1 or 2 etc....))
-
-  const [selectedLevel, setSelectedLevel] = useState(null);
-
-  useEffect(() => {
-    switch (level) {
-      case 1: 
-        setSelectedLevel(LevelOneTest);
-        break;
-      case 2:
-        setSelectedLevel(LevelTwoTest);
-        break;
-      default: 
-        setSelectedLevel(null);
-        break;
-    }
-  }, []);
-
-  const [score, setScore] = useState(0);
-
-  function changeScore(value) {
-    setScore(value);
-  }
-
-  if (selectedLevel == null) {
-    return (
-      <View>
-
-      </View>
-    );
-  }
-
-  
-
-  return (
-
-    
-    <NavigationContainer independent={true}>
-        <Stack.Navigator initialRouteName='Level'>
-          <Stack.Screen 
-              name = "Level"
-              component={LevelComponent}
-              options={{
-                headerTintColor: "#748816",
-                headerTitleStyle: {
-                  fontFamily: "Raleway_400Regular",
-                },
-                headerBackTitleStyle: {
-                  fontFamily: "Raleway_400Regular",
-                },
-              }}
-              initialParams={{level: level}}
-            />
-            <Stack.Screen // TO FIX CRASH REMOVE THE QUIZ SCREEN PORTION AND PUT THE COMPONENET AS TESTSCREEN
-              name = "Crossword"
-              options={{ headerShown: false }}
-            >
-              {() => <QuizScreen score={score} onStateChange={changeScore} />}
-              {/* {() => <TestScreen message={"Here is an example of data being passed through -- fuck u arlan"}/>} */}
-            </Stack.Screen>
-            <Stack.Screen 
-                name = "MultipleChoice"
-                component={MultipleChoice}
-                options={{headerShown: true}}
-              >
-            </Stack.Screen>
-            <Stack.Screen 
-                name = {selectedLevel.summaryComponent.route}
-                component={selectedLevel.summaryComponent.component}
-                options={{headerShown: true}}
-              >
-            </Stack.Screen>
-
-            {/* Here will be a stack screen for the adventureComponent*/}
-
-        </Stack.Navigator>
-      </NavigationContainer>
-  );
-}
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser
-});
-
-export default connect(mapStateToProps, null)(LevelNav);
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+`;
 const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  background-color: ${(props) => props.theme.colors.ui.secondary};
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: 10px;
-  width: 50%;
+  width: 20%;
   align-items: center;
 `;
-const DATA  = [
-  {
-    title: "Crossword",
-    nextScreen: "./levelOne/testScreen",
-    description: "A crossword game... duh?",
-    key: "testkey",
-    data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
 
+function LeveloneView(){
+  const navigation = useNavigation();
+  return(
+    <SafeArea style={{backgroundColor: "#CCE882"}}>
+      <ScrollView style={{ alignContent: "center"}}>
+        <ImageBg source={require("../../../assets/leveloneBack.png")}>
+          <Button onPress={() => navigation.goBack()}>
+            <Text style={style.backText}>Back</Text>
+          </Button>
+          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 1 })}>
+            <Text style={style.baseText}>1</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 2 })}>
+            <Text style={style.baseText}>2</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton3} onPress={() => navigation.push("LessonHandler", {level: 3 })}>
+            <Text style={style.baseText}>3</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 4 })}>
+            <Text style={style.baseText}>4</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 5 })}>
+            <Text style={style.baseText}>5</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 6 })}>
+            <Text style={style.baseText}>6</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton3} onPress={() => navigation.push("LessonHandler", {level: 7 })}>
+            <Text style={style.baseText}>7</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 8 })}>
+            <Text style={style.baseText}>8</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 9 })}>
+            <Text style={style.baseText}>9</Text>
+          </TouchableOpacity>
+        </ImageBg>
+      </ScrollView>
+    </SafeArea>
+  );
+}
+
+const LevelOne = () => {
+  const navigation = useNavigation();
+  return(
+    //<NavigationContainer independent ={false}>
+      <Stack.Navigator>
+        <Stack.Screen
+            name = "Level One"
+            component = {LeveloneView}
+            options={{ headerShown: true,
+              headerStyle: {
+                backgroundColor: '#C6DC3B',
+              }
+            }}
+          />
+          <Stack.Screen
+            name = "LessonHandler"
+            component = {LessonHandler}
+            options={{headerShown: false}}
+            initialParams={{level: 1}}
+          />
+      </Stack.Navigator>
+    //</NavigationContainer>
+  );
+};
+
+export default LevelOne;
+
+const style = StyleSheet.create({
+  roundButton1: {
+    width: 100,
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    left: 10,
+    borderRadius: 100,
+    backgroundColor: '#CCE882'
   },
-  {
-    title: "Puzzle",
-    nextScreen: "blank",
-    description: "A puzzle",
-    key: "testkey2",
-    data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
+  roundButton2: {
+    width: 100,
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    left: 150,
+    borderRadius: 100,
+    backgroundColor: '#CCE882'
   },
-  {
-    title: "Matching",
-    nextScreen: "blank",
-    description: "Match it",
-    key: "testkey3",
-    data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
-
-
+  roundButton3: {
+    width: 100,
+    height: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    left: 280,
+    borderRadius: 100,
+    backgroundColor: '#CCE882'
   },
-  {
-    title: "Multiple Choice",
-    nextScreen: "blank",
-    description: "Take a guess",
-    key: "testkey4",
-    data: "No data -- would contain link to json of lesson's crossword -- would be set as reference to crossword game to interpret",
-
+  baseText: {
+    fontSize: 50,
+    color: 'white',
   },
-];
-
+  backText: {
+    fontSize: 15,
+    color: 'white',
+  }
+});

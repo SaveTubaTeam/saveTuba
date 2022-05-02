@@ -7,7 +7,8 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer} from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LevelOne from '../Levels/LevelOne';
+import LessonHandler from '../Levels/LessonHandler';
+import LevelOne from "../Levels/LevelOne";
 import ScreenTwo from '../Levels/LevelTwo';
 import ScreenThree from '../Levels/LevelThree';
 import ScreenFour from '../Levels/LevelFour';
@@ -29,10 +30,10 @@ function HomeView() {
     <SafeArea style={{backgroundColor: "#CCE882"}}>
       <ScrollView style={{ alignContent: "center"}}>
       <ImageBg source={require("../../../assets/homepagebackground.png")}>
-        <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenOne")}>
+        <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LevelOne")}>
           <Text>LevelOne</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("ScreenTwo")}>
+        <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 2})}>
           <Text>LevelTwo</Text>
         </TouchableOpacity>
         <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("ScreenThree")}>
@@ -65,7 +66,7 @@ const HomeScreen = () => {
           options={{ headerShown: false}}
         />
         <Stack.Screen
-          name = "ScreenOne"
+          name = "LevelOne"
           component = {LevelOne}
           options={{headerShown: false}}
         />

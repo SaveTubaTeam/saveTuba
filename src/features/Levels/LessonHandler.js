@@ -1,0 +1,129 @@
+import React, { useState, useEffect } from 'react';
+import { Text, View, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import styled from "styled-components/native";
+import { NavigationContainer} from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import LessonComponent from "./LessonComponent";
+
+import { connect } from 'react-redux';
+
+// want to import data here?
+import { LevelOneTest, LevelTwoTest } from "./TestLevel";
+import {QuizScreen} from "../../components/LevelOne/quiz-screen.component";
+
+
+
+function TestScreen({navigation, route}) {
+  return (
+    <View>
+      <Button onPress={() => navigation.goBack()} />
+      
+    </View>
+  );
+}
+
+function MultipleChoice({navigation, route}) {
+  // const { data } = route.params.data;
+  // console.log(data);
+  // console.warn(require(data));
+  return (
+    <View>
+      <Button onPress={() => navigation.goBack()} />
+      <Text>Multiple Choice Screen </Text>
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+
+function LessonHandler(props) {  // 
+  const { currentUser, navigation, route } = props; // the available props in the lesson
+  const {level} = route.params; // Level selected from Lesson navigation screen
+  const [selectedLevel, setSelectedLevel] = useState(null);
+
+  useEffect(() => { // Function called on LessonHandler mount to determine data to select for lesson component
+    switch (level) {
+      case 1: 
+        setSelectedLevel(LevelOneTest);
+        break;
+      case 2:
+        setSelectedLevel(LevelTwoTest);
+        break;
+      default: 
+        setSelectedLevel(null);
+        break;
+    }
+  }, []);
+
+  // variables and function to change minigame scores **Needs to be moved
+  const [score, setScore] = useState(0);
+  function changeScore(value) {
+    setScore(value);
+  }
+
+  // Allows useEffect to change selected Level **Needs to be replaced with animation for loading
+  if (selectedLevel == null) { return (<View></View>); }
+  
+  return (    
+    <NavigationContainer independent={true}>
+        <Stack.Navigator initialRouteName='Level'>
+          {/*  Need to improve this part here with a map for the minigames screen */}
+          <Stack.Screen 
+              name = "Level"
+              component={LessonComponent}
+              options={{
+                headerTitle: selectedLevel.title,
+                headerTintColor: "#748816",
+                headerTitleStyle: {
+                  fontFamily: "Raleway_400Regular",
+                },
+                headerBackTitleStyle: {
+                  fontFamily: "Raleway_400Regular",
+                },
+              }}
+              initialParams={{level: level}}
+            />
+            <Stack.Screen
+              name = "Crossword"
+              options={{ headerShown: false }}
+            >
+              {() => <QuizScreen score={score} onStateChange={changeScore} questionSet={selectedLevel.minigames[2].data}/>}
+            </Stack.Screen>
+            <Stack.Screen 
+                name = "MultipleChoice"
+                component={MultipleChoice}
+                options={{headerShown: true}}
+              >
+            </Stack.Screen>
+            {/*  Summary Component based of selectedLevel */}
+            <Stack.Screen 
+                name = {selectedLevel.summaryComponent.route}
+                component={selectedLevel.summaryComponent.component}
+                options={{headerShown: true}}
+              >
+            </Stack.Screen>
+            {/* Here will be a stack screen for the adventureComponent*/}
+        </Stack.Navigator>
+      </NavigationContainer>
+  );
+}
+
+// Boiler Plate code to include redux and firebase functions and data
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser
+});
+
+// Last function to connect the component to props of redux/firebase
+export default connect(mapStateToProps, null)(LessonHandler);
+
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: 10px;
+  width: 50%;
+  align-items: center;
+`;
+
