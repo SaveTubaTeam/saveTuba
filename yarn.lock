@@ -11018,6 +11018,11 @@ prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
+proptypes@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proptypes/-/proptypes-1.1.0.tgz#78b3828a5aa6bb1308939e0de3c6044dfd4bd239"
+  integrity sha1-eLOCilqmuxMIk54N48YETf1L0jk=
+
 protobufjs@^6.10.0:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.11.2.tgz#de39fabd4ed32beaa08e9bb1e30d08544c1edf8b"
@@ -11296,6 +11301,13 @@ react-is@^17.0.1, react-is@^17.0.2:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-animated-typewriter@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-animated-typewriter/-/react-native-animated-typewriter-1.0.6.tgz#658669ed0d86cb0ba90fca3521d6805846bf4913"
+  integrity sha512-+Uii6QJ2UUXFL9QeMHWFfY7O0+vEug6oGZMjx+p7LjVOa5pUWUhf3GfJnRJRXBL8ovf3ttXv7zcYTn/zKv7vfQ==
+  dependencies:
+    proptypes "1.1.0"
+
 react-native-codegen@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.6.tgz"
@@ -11390,6 +11402,11 @@ react-native-switch-toggle@^2.2.1:
   integrity sha512-Y/RQ1Pb/KDVZhBSNjc16LKtUi7MGZb0MYxouZLj/THpiSQLsy5pUyTwbIKRjNuZDNSxmMDXyRX1QfLt+oup4Uw==
   dependencies:
     dooboolab-welcome "^1.3.0"
+
+react-native-typing-animation-effect@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-typing-animation-effect/-/react-native-typing-animation-effect-1.0.5.tgz#2592d126613298a24f30d5a65a554727b20ed7c3"
+  integrity sha512-y/Ls2f3DZFSps7+dxqSRw6ZewqDlcRc21y5s2nPKpkA4NH4F4eqibwfvdz/Jm4h1Hp9r4InLA+BqlRjeldAyGQ==
 
 react-native-vector-icons@^9.1.0:
   version "9.1.0"
