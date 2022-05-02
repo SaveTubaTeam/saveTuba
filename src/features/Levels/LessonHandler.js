@@ -11,6 +11,19 @@ import { connect } from 'react-redux';
 // want to import data here?
 import { LessonOne } from './levelOne/lessonOne/LessonOne';
 import { LessonTwo } from './levelOne/lessonTwo/LessonTwo';
+import { LessonThree } from "./levelOne/lessonThree/LessonThree";
+import { LessonFour } from "./levelOne/lessonFour/LessonFour";
+
+
+/*
+To add Lessons: 
+  1: First create the Lesson<number>.js within the folder (Imports will work automatically if you copy LessonOne or Two).
+  2: Create A summary componenet (imports will work automatically if you copy other summary component)
+  3: Import Lesson<N> into this screen and into LessonComponent
+  4: Add Lesson<N> into the switch statement for the levelselector
+  5: Done?
+*/
+
 import {QuizScreen} from "../../components/LevelOne/quiz-screen.component";
 
 
@@ -51,6 +64,12 @@ function LessonHandler(props) {  //
         break;
       case 2:
         setSelectedLevel(LessonTwo);
+        break;
+      case 3:
+          setSelectedLevel(LessonThree);
+          break;
+      case 4:
+        setSelectedLevel(LessonFour);
         break;
       default: 
         setSelectedLevel(null);

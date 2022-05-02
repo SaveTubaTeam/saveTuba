@@ -13,6 +13,8 @@ import { connect } from "react-redux";
 
 import { LessonOne } from './levelOne/lessonOne/LessonOne';
 import { LessonTwo } from './levelOne/lessonTwo/LessonTwo';
+import { LessonThree } from "./levelOne/lessonThree/LessonThree";
+import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
@@ -42,6 +44,12 @@ function LessonComponent(props) {
         break;
       case 2:
         setSelectedLevel(LessonTwo);
+        break;
+      case 3:
+        setSelectedLevel(LessonThree);
+        break;
+      case 4:
+        setSelectedLevel(LessonFour);
         break;
       default: 
         setSelectedLevel(null);
