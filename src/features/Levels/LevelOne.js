@@ -38,68 +38,40 @@ const Button = styled.TouchableOpacity`
   align-items: center;
 `;
 
-function LeveloneView() {
+function LeveloneView(){
   const navigation = useNavigation();
-  return (
-    <SafeArea style={{ backgroundColor: "#CCE882" }}>
-      <ScrollView style={{ alignContent: "center" }}>
-        {/* Attribution: <a href="https://www.freepik.com/vectors/spring-season">Spring season vector created by freepik - www.freepik.com</a> */}
-        <ImageBg source={require("../../../assets/lessonbg.png")}>
+  return(
+    <SafeArea style={{backgroundColor: "#CCE882"}}>
+      <ScrollView style={{ alignContent: "center"}}>
+        <ImageBg source={require("../../../assets/leveloneBack.png")}>
           <Button onPress={() => navigation.goBack()}>
             <Text style={style.backText}>Back</Text>
           </Button>
-          <TouchableOpacity
-            style={style.roundButton1}
-            onPress={() => navigation.push("LessonOne")}
-          >
+          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 1 })}>
             <Text style={style.baseText}>1</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton2}
-            onPress={() => navigation.push("Two")}
-          >
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 2 })}>
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton3}
-            onPress={() => navigation.push("Three")}
-          >
+          <TouchableOpacity style={style.roundButton3} onPress={() => navigation.push("LessonHandler", {level: 3 })}>
             <Text style={style.baseText}>3</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton2}
-            onPress={() => navigation.push("Four")}
-          >
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 4 })}>
             <Text style={style.baseText}>4</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton1}
-            onPress={() => navigation.push("Five")}
-          >
+          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 5 })}>
             <Text style={style.baseText}>5</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton2}
-            onPress={() => navigation.push("Six")}
-          >
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 6 })}>
             <Text style={style.baseText}>6</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton3}
-            onPress={() => navigation.push("Seven")}
-          >
+          <TouchableOpacity style={style.roundButton3} onPress={() => navigation.push("LessonHandler", {level: 7 })}>
             <Text style={style.baseText}>7</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton2}
-            onPress={() => navigation.push("Eight")}
-          >
+          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 8 })}>
             <Text style={style.baseText}>8</Text>
           </TouchableOpacity>
-          <TouchableOpacity
-            style={style.roundButton1}
-            onPress={() => navigation.push("Nine")}
-          >
+          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 9 })}>
             <Text style={style.baseText}>9</Text>
           </TouchableOpacity>
         </ImageBg>

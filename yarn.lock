@@ -11065,6 +11065,11 @@ prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
     object-assign "^4.1.1"
     react-is "^16.13.1"
 
+proptypes@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/proptypes/-/proptypes-1.1.0.tgz#78b3828a5aa6bb1308939e0de3c6044dfd4bd239"
+  integrity sha1-eLOCilqmuxMIk54N48YETf1L0jk=
+
 protobufjs@^6.10.0:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.11.2.tgz#de39fabd4ed32beaa08e9bb1e30d08544c1edf8b"
@@ -11343,12 +11348,12 @@ react-is@^17.0.1, react-is@^17.0.2:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-animatable@1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.3.tgz#a13a4af8258e3bb14d0a9d839917e9bb9274ec8a"
-  integrity sha512-2ckIxZQAsvWn25Ho+DK3d1mXIgj7tITkrS4pYDvx96WyOttSvzzFeQnM2od0+FUMzILbdHDsDEqZvnz1DYNQ1w==
+react-native-animated-typewriter@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-animated-typewriter/-/react-native-animated-typewriter-1.0.6.tgz#658669ed0d86cb0ba90fca3521d6805846bf4913"
+  integrity sha512-+Uii6QJ2UUXFL9QeMHWFfY7O0+vEug6oGZMjx+p7LjVOa5pUWUhf3GfJnRJRXBL8ovf3ttXv7zcYTn/zKv7vfQ==
   dependencies:
-    prop-types "^15.7.2"
+    proptypes "1.1.0"
 
 react-native-codegen@^0.0.6:
   version "0.0.6"
@@ -11359,10 +11364,16 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-country-flag@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/react-native-country-flag/-/react-native-country-flag-1.1.6.tgz#ca2aae3752f6e8621fab461e50a60aa7a9a4528f"
-  integrity sha512-0PJ8W6o0+fQzDAnT5obzdPh+PsaYWRwRrIvOFwgqhU7Y/nu+Tkp26CSA69CktBJUB+8/JrAQAKqjDqXT/fJ2oQ==
+react-native-gesture-handler@^1.10.3:
+  version "1.10.3"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.10.3.tgz#942bbf2963bbf49fa79593600ee9d7b5dab3cfc0"
+  integrity sha512-cBGMi1IEsIVMgoox4RvMx7V2r6bNKw0uR1Mu1o7NbuHS6BRSVLq0dP34l2ecnPlC+jpWd3le6Yg1nrdCjby2Mw==
+  dependencies:
+    "@egjs/hammerjs" "^2.0.17"
+    fbjs "^3.0.0"
+    hoist-non-react-statics "^3.3.0"
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
 
 react-native-gesture-handler@~2.1.0:
   version "2.1.3"
@@ -11412,6 +11423,13 @@ react-native-paper@^4.11.2:
     color "^3.1.2"
     react-native-iphone-x-helper "^1.3.1"
 
+react-native-quiz-maker@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-quiz-maker/-/react-native-quiz-maker-0.1.0.tgz#7dd4ebc61f4f73816ab6475ec8463e02d9139d65"
+  integrity sha512-Md+DMbE+6B87BeqQ90E+9vSUHRCclo9F6AjC31Cnb+mwApfvcuv8r8AgddPkczCkicnE6tjfsQBO3GE31pXsSQ==
+  dependencies:
+    react-native-gesture-handler "^1.10.3"
+
 react-native-safe-area-context@3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.3.2.tgz#9549a2ce580f2374edb05e49d661258d1b8bcaed"
@@ -11444,6 +11462,11 @@ react-native-switch-toggle@^2.2.1:
   integrity sha512-Y/RQ1Pb/KDVZhBSNjc16LKtUi7MGZb0MYxouZLj/THpiSQLsy5pUyTwbIKRjNuZDNSxmMDXyRX1QfLt+oup4Uw==
   dependencies:
     dooboolab-welcome "^1.3.0"
+
+react-native-typing-animation-effect@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-typing-animation-effect/-/react-native-typing-animation-effect-1.0.5.tgz#2592d126613298a24f30d5a65a554727b20ed7c3"
+  integrity sha512-y/Ls2f3DZFSps7+dxqSRw6ZewqDlcRc21y5s2nPKpkA4NH4F4eqibwfvdz/Jm4h1Hp9r4InLA+BqlRjeldAyGQ==
 
 react-native-vector-icons@^9.1.0:
   version "9.1.0"

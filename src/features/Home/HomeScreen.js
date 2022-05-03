@@ -14,12 +14,15 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ScreenOne from "../Levels/LevelOne";
-import ScreenTwo from "../Levels/LevelTwo";
-import ScreenThree from "../Levels/LevelThree";
-import ScreenFour from "../Levels/LevelFour";
-import ScreenFive from "../Levels/LevelFive";
-import ScreenSix from "../Levels/LevelSix";
+import LessonHandler from '../Levels/LessonHandler';
+import LevelOne from "../Levels/LevelOne";
+import ScreenTwo from '../Levels/LevelTwo';
+import ScreenThree from '../Levels/LevelThree';
+import ScreenFour from '../Levels/LevelFour';
+import ScreenFive from '../Levels/LevelFive';
+import ScreenSix from '../Levels/LevelSix';
+
+import { connect } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
@@ -133,7 +136,11 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser,
+});
+
+export default connect(mapStateToProps, null)(HomeScreen);
 
 const style = StyleSheet.create({
   roundButton1: {
