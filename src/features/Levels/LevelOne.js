@@ -24,6 +24,8 @@ import LessonsevenScreen from "../Levels/levelOne/lessonSeven/lessonsevenScreen"
 import LessoneightScreen from "../Levels/levelOne/lessonEight/lessoneightScreen";
 import LessonnineScreen from "../Levels/levelOne/lessonNine/lessonnineScreen";
 
+import LessonHandler from "./LessonHandler";
+
 import { styles } from "styled-system";
 
 const Stack = createNativeStackNavigator();
@@ -102,9 +104,10 @@ const LevelOne = () => {
         }}
       />
       <Stack.Screen
-        name="LessonOne"
-        component={LessononeScreen}
+        name="LessonHandler"
+        component={LessonHandler}
         options={{ headerShown: false }}
+        initialParams={{level: 1}}
       />
       <Stack.Screen
         name="Two"

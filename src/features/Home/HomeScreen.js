@@ -16,11 +16,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import LessonHandler from '../Levels/LessonHandler';
 import LevelOne from "../Levels/LevelOne";
-import ScreenTwo from '../Levels/LevelTwo';
-import ScreenThree from '../Levels/LevelThree';
-import ScreenFour from '../Levels/LevelFour';
-import ScreenFive from '../Levels/LevelFive';
-import ScreenSix from '../Levels/LevelSix';
+import LevelTwo from "../Levels/LevelTwo";
+import LevelThree from "../Levels/LevelThree";
+import LevelFour from "../Levels/LevelFour";
+import LevelFive from "../Levels/LevelFive";
+import LevelSix from "../Levels/LevelSix";
+
 
 import { connect } from "react-redux";
 
@@ -39,37 +40,38 @@ function HomeView() {
         <ImageBg source={require("../../../assets/homebg.png")}>
           <TouchableOpacity
             style={style.roundButton1}
-            onPress={() => navigation.push("ScreenOne")}
+            onPress={() => navigation.push("LevelOne")}
           >
             <Text style={style.baseText}>1</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("ScreenTwo")}
+            onPress={() => navigation.push("LevelTwo")}
           >
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
+          
           <TouchableOpacity
             style={style.roundButton1}
-            onPress={() => navigation.push("ScreenThree")}
+            onPress={() => navigation.push("LevelThree")}
           >
             <Text style={style.baseText}>3</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("ScreenFour")}
+            onPress={() => navigation.push("LevelFour")}
           >
             <Text style={style.baseText}>4</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={style.roundButton1}
-            onPress={() => navigation.push("ScreenFive")}
+            onPress={() => navigation.push("LevelFive")}
           >
             <Text style={style.baseText}>5</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("ScreenSix")}
+            onPress={() => navigation.push("LevelSix")}
           >
             <Text style={style.baseText}>6</Text>
           </TouchableOpacity>
@@ -102,33 +104,34 @@ const HomeScreen = () => {
         }}
       />
       <Stack.Screen
-        name="ScreenOne"
-        component={ScreenOne}
+        name="LevelOne"
+        component={LevelOne}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="ScreenTwo"
-        component={ScreenTwo}
+        name="LevelTwo"
+        component={LevelTwo}
+        options={{ headerShown: true }}
+      />
+      
+      <Stack.Screen
+        name="LevelThree"
+        component={LevelThree}
         options={{ headerShown: true }}
       />
       <Stack.Screen
-        name="ScreenThree"
-        component={ScreenThree}
+        name="LevelFour"
+        component={LevelFour}
         options={{ headerShown: true }}
       />
       <Stack.Screen
-        name="ScreenFour"
-        component={ScreenFour}
+        name="LevelFive"
+        component={LevelFive}
         options={{ headerShown: true }}
       />
       <Stack.Screen
-        name="ScreenFive"
-        component={ScreenFive}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="ScreenSix"
-        component={ScreenSix}
+        name="LevelSix"
+        component={LevelSix}
         options={{ headerShown: true }}
       />
     </Stack.Navigator>

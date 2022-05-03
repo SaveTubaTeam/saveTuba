@@ -146,4 +146,3 @@ const Button = styled.TouchableOpacity`
   width: 50%;
   align-items: center;
 `;
-
