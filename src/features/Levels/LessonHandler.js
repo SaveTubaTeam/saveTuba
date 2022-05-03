@@ -105,11 +105,13 @@ function LessonHandler(props) {  //
               }}
               initialParams={{level: level}}
             />
+            {/* Insert Screens below based off minigame. Need to be able to send data to the component in the same way that the quiz screen works */}
             <Stack.Screen
               name = "Crossword"
               options={{ headerShown: false }}
             >
-              {() => <QuizScreen score={score} onStateChange={changeScore} questionSet={selectedLevel.minigames[2].data}/>}
+              {() => <QuizScreen score={score} onStateChange={changeScore} questionSet={selectedLevel.minigames[2].data}/>} 
+              {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
             </Stack.Screen>
             <Stack.Screen 
                 name = "MultipleChoice"

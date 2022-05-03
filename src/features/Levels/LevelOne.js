@@ -109,46 +109,6 @@ const LevelOne = () => {
         options={{ headerShown: false }}
         initialParams={{level: 1}}
       />
-      <Stack.Screen
-        name="Two"
-        component={LessontwoScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Three"
-        component={LessonthreeScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Four"
-        component={LessonfourScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Five"
-        component={LessonfiveScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Six"
-        component={LessonsixScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Seven"
-        component={LessonsevenScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Eight"
-        component={LessoneightScreen}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="Nine"
-        component={LessonnineScreen}
-        options={{ headerShown: true }}
-      />
     </Stack.Navigator>
     //</NavigationContainer>
   );
