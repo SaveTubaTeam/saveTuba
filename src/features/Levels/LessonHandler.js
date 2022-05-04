@@ -1,19 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View, FlatList, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from "react";
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Modal,
+  StyleSheet,
+} from "react-native";
 import styled from "styled-components/native";
-import { NavigationContainer} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import LessonComponent from "./LessonComponent";
 
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
 // want to import data here?
-import { LessonOne } from './levelOne/lessonOne/LessonOne';
-import { LessonTwo } from './levelOne/lessonTwo/LessonTwo';
+import { LessonOne } from "./levelOne/lessonOne/LessonOne";
+import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { LessonThree } from "./levelOne/lessonThree/LessonThree";
 import { LessonFour } from "./levelOne/lessonFour/LessonFour";
-
 
 /*
 To add Lessons: 
@@ -24,20 +30,17 @@ To add Lessons:
   5: Done?
 */
 
-import {QuizScreen} from "../../components/LevelOne/quiz-screen.component";
+import { QuizScreen } from "../../components/LevelOne/quiz-screen.component";
 
-
-
-function TestScreen({navigation, route}) {
+function TestScreen({ navigation, route }) {
   return (
     <View>
       <Button onPress={() => navigation.goBack()} />
-      
     </View>
   );
 }
 
-function MultipleChoice({navigation, route}) {
+function MultipleChoice({ navigation, route }) {
   // const { data } = route.params.data;
   // console.log(data);
   // console.warn(require(data));
@@ -51,27 +54,28 @@ function MultipleChoice({navigation, route}) {
 
 const Stack = createNativeStackNavigator();
 
-
-function LessonHandler(props) {  // 
+function LessonHandler(props) {
+  //
   const { currentUser, navigation, route } = props; // the available props in the lesson
-  const {level} = route.params; // Level selected from Lesson navigation screen
+  const { level } = route.params; // Level selected from Lesson navigation screen
   const [selectedLevel, setSelectedLevel] = useState(null);
 
-  useEffect(() => { // Function called on LessonHandler mount to determine data to select for lesson component
+  useEffect(() => {
+    // Function called on LessonHandler mount to determine data to select for lesson component
     switch (level) {
-      case 1: 
+      case 1:
         setSelectedLevel(LessonOne);
         break;
       case 2:
         setSelectedLevel(LessonTwo);
         break;
       case 3:
-          setSelectedLevel(LessonThree);
-          break;
+        setSelectedLevel(LessonThree);
+        break;
       case 4:
         setSelectedLevel(LessonFour);
         break;
-      default: 
+      default:
         setSelectedLevel(null);
         break;
     }
@@ -84,57 +88,66 @@ function LessonHandler(props) {  //
   }
 
   // Allows useEffect to change selected Level **Needs to be replaced with animation for loading
-  if (selectedLevel == null) { return (<View></View>); }
-  
-  return (    
+  if (selectedLevel == null) {
+    return <View></View>;
+  }
+
+  return (
     <NavigationContainer independent={true}>
-        <Stack.Navigator initialRouteName='Level'>
-          {/*  Need to improve this part here with a map for the minigames screen */}
-          <Stack.Screen 
-              name = "Level"
-              component={LessonComponent}
-              options={{
-                headerTitle: selectedLevel.title,
-                headerTintColor: "#748816",
-                headerTitleStyle: {
-                  fontFamily: "Raleway_400Regular",
-                },
-                headerBackTitleStyle: {
-                  fontFamily: "Raleway_400Regular",
-                },
-              }}
-              initialParams={{level: level}}
+      <Stack.Navigator initialRouteName="Level">
+        {/*  Need to improve this part here with a map for the minigames screen */}
+        <Stack.Screen
+          name="Level"
+          component={LessonComponent}
+          options={{
+            headerTitle: selectedLevel.title,
+            headerTintColor: "#748816",
+            headerTitleStyle: {
+              fontFamily: "Raleway_400Regular",
+            },
+            headerBackTitleStyle: {
+              fontFamily: "Raleway_400Regular",
+            },
+          }}
+          initialParams={{ level: level }}
+        />
+        {/* Insert Screens below based off minigame. Need to be able to send data to the component in the same way that the quiz screen works */}
+        <Stack.Screen name="Crossword" options={{ headerShown: false }}>
+          {() => (
+            <QuizScreen
+              score={score}
+              onStateChange={changeScore}
+              questionSet={selectedLevel.minigames[2].data}
             />
-            {/* Insert Screens below based off minigame. Need to be able to send data to the component in the same way that the quiz screen works */}
-            <Stack.Screen
-              name = "Crossword"
-              options={{ headerShown: false }}
-            >
-              {() => <QuizScreen score={score} onStateChange={changeScore} questionSet={selectedLevel.minigames[2].data}/>} 
-              {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
-            </Stack.Screen>
-            <Stack.Screen 
-                name = "MultipleChoice"
-                component={MultipleChoice}
-                options={{headerShown: true}}
-              >
-            </Stack.Screen>
-            {/*  Summary Component based of selectedLevel */}
-            <Stack.Screen 
-                name = {selectedLevel.summaryComponent.route}
-                component={selectedLevel.summaryComponent.component}
-                options={{headerShown: true}}
-              >
-            </Stack.Screen>
-            {/* Here will be a stack screen for the adventureComponent*/}
-        </Stack.Navigator>
-      </NavigationContainer>
+          )}
+          {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
+        </Stack.Screen>
+        <Stack.Screen
+          name="MultipleChoice"
+          component={MultipleChoice}
+          options={{ headerShown: true }}
+        ></Stack.Screen>
+        {/*  Summary Component based of selectedLevel */}
+        <Stack.Screen
+          name={selectedLevel.summaryComponent.route}
+          component={selectedLevel.summaryComponent.component}
+          options={{ headerShown: true }}
+        ></Stack.Screen>
+        {/* Here will be a stack screen for the adventureComponent*/}
+        {/* Mastery Component based of selectedLevel */}
+        <Stack.Screen
+          name={selectedLevel.masteryComponent.route}
+          component={selectedLevel.masteryComponent.component}
+          options={{ headerShown: true }}
+        ></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 // Boiler Plate code to include redux and firebase functions and data
 const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser
+  currentUser: store.userState.currentUser,
 });
 
 // Last function to connect the component to props of redux/firebase

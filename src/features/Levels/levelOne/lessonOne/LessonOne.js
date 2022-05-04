@@ -2,6 +2,7 @@ import { questionSet } from "../../../../components/LevelOne/QuestionSet";
 import { AdventureImages } from "../../IMAGES";
 
 import SummaryScreen from "./Screens/Summary/summary";
+import MasteryScreen from "./Screens/Mastery/mastery";
 
 export const LessonOne = {
   title: "Sustainability",
@@ -10,6 +11,11 @@ export const LessonOne = {
   summaryComponent: {
     route: "Lesson Summary",
     component: SummaryScreen,
+  },
+
+  masteryComponent: {
+    route: "Mastery",
+    component: MasteryScreen,
   },
 
   minigames: [

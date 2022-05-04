@@ -2,6 +2,7 @@ import { AdventureImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
 import SummaryScreen from "./Screens/Summary/summary";
+import MasteryScreen from "./Screens/Mastery/mastery";
 
 export const LessonTwo = {
   title: "Air Pollution",
@@ -10,6 +11,11 @@ export const LessonTwo = {
   summaryComponent: {
     route: "Summary",
     component: SummaryScreen,
+  },
+
+  masteryComponent: {
+    route: "Mastery",
+    component: MasteryScreen,
   },
 
   minigames: [

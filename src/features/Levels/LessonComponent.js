@@ -1,13 +1,5 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  Modal,
-  StyleSheet,
-  Image,
-} from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, FlatList, Modal, StyleSheet, Image } from "react-native";
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
@@ -16,7 +8,6 @@ import {
   Container,
   Summary,
   Mastery,
-  Row,
   Adventure,
   ImageBg,
 } from "../../components/Levels/levels.styles";
@@ -28,8 +19,6 @@ import { LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { LessonThree } from "./levelOne/lessonThree/LessonThree";
 import { LessonFour } from "./levelOne/lessonFour/LessonFour";
-import { Title } from "react-native-paper";
-import { faLeftLong } from "@fortawesome/free-solid-svg-icons";
 
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
@@ -201,7 +190,11 @@ function LessonComponent(props) {
         style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
       />
 
-      <Mastery>
+      <Mastery
+        onPress={() => {
+          navigation.navigate(selectedLevel.masteryComponent.route);
+        }}
+      >
         <BodyText weight="bold" size="subtitle" color="secondary">
           Mastery
         </BodyText>
