@@ -8,7 +8,7 @@ export const LessonTwo = {
   summary: "Why is protecting the environment important?",
 
   summaryComponent: {
-    route: "AirPollutionSummary",
+    route: "Summary",
     component: SummaryScreen,
   },
 
