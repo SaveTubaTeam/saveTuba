@@ -37,6 +37,7 @@ const getVariant = (weight, size, color) => {
 const BText = styled.Text`
   ${({ variant }) => variant}
   font-family: ${(props) => props.theme.fonts.body};
+  text-align: center;
 `;
 
 export const BodyText = ({ weight, size, color, children }) => {

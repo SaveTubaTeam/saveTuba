@@ -131,14 +131,36 @@ function LessonHandler(props) {
         <Stack.Screen
           name={selectedLevel.summaryComponent.route}
           component={selectedLevel.summaryComponent.component}
-          options={{ headerShown: true }}
+          options={{
+            headerShown: true,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerBackTitleVisible: false,
+            headerTintColor: "#748816",
+            headerTitleStyle: {
+              fontSize: 20,
+              fontFamily: "Gabriela_400Regular",
+            },
+          }}
         ></Stack.Screen>
         {/* Here will be a stack screen for the adventureComponent*/}
         {/* Mastery Component based of selectedLevel */}
         <Stack.Screen
           name={selectedLevel.masteryComponent.route}
           component={selectedLevel.masteryComponent.component}
-          options={{ headerShown: true }}
+          options={{
+            headerShown: true,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerBackTitleVisible: false,
+            headerTintColor: "#748816",
+            headerTitleStyle: {
+              fontSize: 20,
+              fontFamily: "Gabriela_400Regular",
+            },
+          }}
         ></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
