@@ -14,14 +14,13 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LessonHandler from '../Levels/LessonHandler';
+import LessonHandler from "../Levels/LessonHandler";
 import LevelOne from "../Levels/LevelOne";
 import LevelTwo from "../Levels/LevelTwo";
 import LevelThree from "../Levels/LevelThree";
 import LevelFour from "../Levels/LevelFour";
 import LevelFive from "../Levels/LevelFive";
 import LevelSix from "../Levels/LevelSix";
-
 
 import { connect } from "react-redux";
 
@@ -44,13 +43,13 @@ function HomeView() {
           >
             <Text style={style.baseText}>1</Text>
           </TouchableOpacity>
-           <TouchableOpacity
+          <TouchableOpacity
             style={style.roundButton2}
             onPress={() => navigation.push("LevelTwo")}
           >
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
-          
+
           <TouchableOpacity
             style={style.roundButton1}
             onPress={() => navigation.push("LevelThree")}
@@ -113,7 +112,7 @@ const HomeScreen = () => {
         component={LevelTwo}
         options={{ headerShown: true }}
       />
-      
+
       <Stack.Screen
         name="LevelThree"
         component={LevelThree}
