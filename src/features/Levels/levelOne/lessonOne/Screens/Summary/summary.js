@@ -57,7 +57,10 @@ const Storyline = (props) => {
   return (
     <>
       <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container onPress={() => navigation.navigate(props.whereTo)}>
+        <Container
+          onPress={() => navigation.navigate(props.whereTo)}
+          activeOpacity="1"
+        >
           <DialogBox source={require(dialogBoxUrl)} resizeMode="contain">
             <Text style={{ fontSize: 18, margin: 105 }}>{props.text}</Text>
           </DialogBox>
