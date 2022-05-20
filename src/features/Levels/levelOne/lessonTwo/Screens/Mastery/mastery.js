@@ -6,7 +6,7 @@ import BouncyCheckbox from "react-native-bouncy-checkbox";
 import { BodyText } from "../../../../../../components/body-text.component";
 import { Spacer } from "../../../../../../components/spacer.component";
 
-const Container = styled.TouchableOpacity`
+const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
