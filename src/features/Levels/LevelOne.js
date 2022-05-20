@@ -40,40 +40,64 @@ const Button = styled.TouchableOpacity`
   align-items: center;
 `;
 
-function LeveloneView(){
+function LeveloneView() {
   const navigation = useNavigation();
-  return(
-    <SafeArea style={{backgroundColor: "#CCE882"}}>
-      <ScrollView style={{ alignContent: "center"}}>
+  return (
+    <SafeArea style={{ backgroundColor: "#CCE882" }}>
+      <ScrollView style={{ alignContent: "center" }}>
         <ImageBg source={require("../../../assets/leveloneBack.png")}>
-          <Button onPress={() => navigation.goBack()}>
-            <Text style={style.backText}>Back</Text>
-          </Button>
-          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 1 })}>
+          <TouchableOpacity
+            style={style.roundButton1}
+            onPress={() => navigation.push("LessonHandler", { level: 1 })}
+          >
             <Text style={style.baseText}>1</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 2 })}>
+          <TouchableOpacity
+            style={style.roundButton2}
+            onPress={() => navigation.push("LessonHandler", { level: 2 })}
+          >
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton3} onPress={() => navigation.push("LessonHandler", {level: 3 })}>
+          <TouchableOpacity
+            style={style.roundButton3}
+            onPress={() => navigation.push("LessonHandler", { level: 3 })}
+          >
             <Text style={style.baseText}>3</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 4 })}>
+          <TouchableOpacity
+            style={style.roundButton2}
+            onPress={() => navigation.push("LessonHandler", { level: 4 })}
+          >
             <Text style={style.baseText}>4</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 5 })}>
+          <TouchableOpacity
+            style={style.roundButton1}
+            onPress={() => navigation.push("LessonHandler", { level: 5 })}
+          >
             <Text style={style.baseText}>5</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 6 })}>
+          <TouchableOpacity
+            style={style.roundButton2}
+            onPress={() => navigation.push("LessonHandler", { level: 6 })}
+          >
             <Text style={style.baseText}>6</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton3} onPress={() => navigation.push("LessonHandler", {level: 7 })}>
+          <TouchableOpacity
+            style={style.roundButton3}
+            onPress={() => navigation.push("LessonHandler", { level: 7 })}
+          >
             <Text style={style.baseText}>7</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton2} onPress={() => navigation.push("LessonHandler", {level: 8 })}>
+          <TouchableOpacity
+            style={style.roundButton2}
+            onPress={() => navigation.push("LessonHandler", { level: 8 })}
+          >
             <Text style={style.baseText}>8</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={style.roundButton1} onPress={() => navigation.push("LessonHandler", {level: 9 })}>
+          <TouchableOpacity
+            style={style.roundButton1}
+            onPress={() => navigation.push("LessonHandler", { level: 9 })}
+          >
             <Text style={style.baseText}>9</Text>
           </TouchableOpacity>
         </ImageBg>
@@ -107,7 +131,7 @@ const LevelOne = () => {
         name="LessonHandler"
         component={LessonHandler}
         options={{ headerShown: false }}
-        initialParams={{level: 1}}
+        initialParams={{ level: 1 }}
       />
     </Stack.Navigator>
     //</NavigationContainer>
@@ -153,6 +177,5 @@ const style = StyleSheet.create({
   },
   backText: {
     fontSize: 15,
-    color: "white",
   },
 });

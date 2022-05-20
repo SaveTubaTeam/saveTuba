@@ -1,6 +1,6 @@
 export const AdventureImages = {
-    crossword: require("../../../assets/memory.jpg"),
-    puzzle: require("../../../assets/sorting.jpg"),
-    matching: require("../../../assets/panels.jpg"),
-    multiplechoice: require("../../../assets/windmill.jpg"),
+  crossword: require("../../../assets/crosswordbg.jpg"),
+  puzzle: require("../../../assets/puzzlebg.jpg"),
+  matching: require("../../../assets/matchingbg.jpg"),
+  multiplechoice: require("../../../assets/mcqbg.jpg"),
 };
