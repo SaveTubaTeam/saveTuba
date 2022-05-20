@@ -1,22 +1,23 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { Switch, Button, Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Switch, Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity, ScrollView } from "react-native";
-import { Avatar } from "react-native-paper";
+import { TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faCircleInfo, faCircleQuestion, faInfo, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 import { moderateScale } from 'react-native-size-matters';
-import CountryFlag from "react-native-country-flag";
-
+import { useTranslation } from 'react-i18next';
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
+
+import Selector from "./LanguageSelector";
+
 
 
 
@@ -79,6 +80,8 @@ const styles = StyleSheet.create({
 
 
 export const GeneralCard = () => {
+    const { t } = useTranslation();
+
     const navigation = useNavigation();
     const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(false);
     const toggleSwitchSE = () => setIsSoundEffectsEnabled(previousState => !previousState);
@@ -93,33 +96,15 @@ export const GeneralCard = () => {
         <Card>
             <AvatarContainer>
                 <Spacer position="bottom" size="large">
-                    <TitleText>General</TitleText>
+                    <TitleText>{t('general')}</TitleText>
                 </Spacer>
+
+                <Selector />
+
                 <Spacer position="bottom" size="medium" />
-                <Row>
-                    <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
-                        {/* This will need to also be a feature in the firebase - language */}
-                        {/* it will change from navigation to just changing feature in database */}
-                        <CountryFlag isoCode="us" size={25} />
-
-                    </TouchableOpacity>
-                    <Spacer position="right" size="medium" />
-                    <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
-                        {/* This will need to also be a feature in the firebase - language */}
-                        <CountryFlag isoCode="kz" size={25} />
-
-                    </TouchableOpacity>
-                    <Spacer position="left" size="medium" />
-                    <TouchableOpacity onPress={() => navigation.navigate("AccountScreen")}>
-                        {/* This will need to also be a feature in the firebase - language */}
-                        <CountryFlag isoCode="ru" size={25} />
-                    </TouchableOpacity>
-                </Row>
-                <Spacer size="large" />
-                <Spacer size="large" />
 
                 <Row>
-                    <BodyText>Sound Effects</BodyText>
+                    <BodyText>{t('sound effects')}</BodyText>
                     <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isSoundEffectsEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -139,7 +124,7 @@ export const GeneralCard = () => {
 
 
                 <Row>
-                    <BodyText>Reminders</BodyText>
+                    <BodyText>{t('reminders')}</BodyText>
                     <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isRemindersEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -160,7 +145,7 @@ export const GeneralCard = () => {
                 <Spacer size="medium" />
 
                 <Row>
-                    <BodyText>Help</BodyText>
+                    <BodyText>{t('help')}</BodyText>
                     <Spacer position="right" size="medium" />
                     <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
@@ -197,7 +182,7 @@ export const GeneralCard = () => {
 
 
                 <Row>
-                    <BodyText>About</BodyText>
+                    <BodyText>{t("about")}</BodyText>
                     <Spacer position="right" size="medium" />
                     <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
