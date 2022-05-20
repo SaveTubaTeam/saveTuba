@@ -1,10 +1,12 @@
 {
   "expo": {
-    "name": "SaveTuba",
+    "name": "Save Tuba",
+    "primaryColor": "#C6DC3B",
+    "description": "A sustainability learning experience for Almaty's youngest citizens.",
     "slug": "SaveTuba",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/tuba-icon.png",
     "splash": {
       "image": "./assets/splashScreen.png",
       "resizeMode": "cover",
@@ -17,13 +19,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.nadjastojanov.SaveTuba"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.nadjastojanov.SaveTuba"
     },
     "web": {
       "favicon": "./assets/favicon.png"

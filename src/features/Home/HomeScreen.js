@@ -23,9 +23,17 @@ import LevelFive from "../Levels/LevelFive";
 import LevelSix from "../Levels/LevelSix";
 
 import { connect } from "react-redux";
+import { contains } from "@firebase/util";
 
 const Stack = createNativeStackNavigator();
 
+const Lock = styled.Image`
+  z-index: 100;
+  position: absolute;
+  width: 15%;
+  height: undefined;
+  aspect-ratio: 1;
+`;
 const ImageBg = styled.ImageBackground`
   flex: 1;
 `;
@@ -50,27 +58,46 @@ function HomeView() {
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
 
+          <Lock
+            style={{ top: 250, left: 90 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton1}
-            onPress={() => navigation.push("LevelThree")}
+            /*onPress={() => navigation.push("LevelThree")}*/
           >
             <Text style={style.baseText}>3</Text>
           </TouchableOpacity>
+
+          <Lock
+            style={{ top: 370, left: 330 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("LevelFour")}
+            /*onPress={() => navigation.push("LevelFour")}*/
           >
             <Text style={style.baseText}>4</Text>
           </TouchableOpacity>
+
+          <Lock
+            style={{ top: 500, left: 90 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton1}
-            onPress={() => navigation.push("LevelFive")}
+            /*onPress={() => navigation.push("LevelFive")}*/
           >
             <Text style={style.baseText}>5</Text>
           </TouchableOpacity>
+
+          <Lock
+            style={{ top: 620, left: 330 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("LevelSix")}
+            /*onPress={() => navigation.push("LevelSix")}*/
           >
             <Text style={style.baseText}>6</Text>
           </TouchableOpacity>

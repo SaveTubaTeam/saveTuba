@@ -31,7 +31,7 @@ export const QuizScreen = (props) => {
     props.onStateChange(value);
   }
 
-  const {questionSet} = props;
+  const { questionSet } = props;
 
   return (
     <Container>
