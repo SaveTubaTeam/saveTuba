@@ -1,7 +1,8 @@
 import { View, Text, Switch } from 'react-native';
 import React, { Component, useState } from "react";
 
-import { useNavigation } from '@react-navigation/core';
+import { useNavigation } from "@react-navigation/core";
+
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import firebase from "firebase/app";
@@ -10,11 +11,13 @@ import { setDoc, doc } from 'firebase/firestore';
 import { auth, db } from "../../../firebase";
 import { Title } from 'react-native-paper';
 
+// import { withNavigation } from '@react-navigation';
 
 export class Register extends Component {
 
   constructor(props) {
     super(props);
+    // const navigation = useNavigation();
     // badges.set("1", "Time to Save the Tuba!");
     this.state = {
       email: '',
@@ -27,7 +30,6 @@ export class Register extends Component {
       friends: '',
       friendCount: '',
       isTeacher: false,
-
     };
 
     // Need to do this to add functions that can use the this.state stuff
@@ -64,6 +66,8 @@ export class Register extends Component {
   }
 
   render() {
+    // const navigation = useNavigation();
+
     return (
       <Container>
         <ImageBg source={require("../../../assets/homepagebackground.png")}>
@@ -110,7 +114,11 @@ export class Register extends Component {
           >
             <TitleText color="secondary">Teacher Sign Up</TitleText>
           </Button>
-          <BackButton>
+          <BackButton 
+            onPress={() => {
+              this.props.navigation.navigate("Login");
+            }}
+          >
             <TitleText color="secondary">Back</TitleText>
           </BackButton>
         </ImageBg>

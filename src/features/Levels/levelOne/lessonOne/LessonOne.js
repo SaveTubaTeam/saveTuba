@@ -19,7 +19,6 @@ export const LessonOne = {
             key: "testkey3",
             data: "require('matchingPollution')",
             image: AdventureImages.matching,
-
         },
         {
             title: "Multiple Choice",
