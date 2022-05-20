@@ -20,29 +20,29 @@ export const LessonOne = {
 
   minigames: [
     {
-      title: "Matching",
-      description: "Match the pairs together",
+      title: "Quiz",
+      description: "Reinforce your knowledge!",
       key: "testkey3",
       data: "require('matchingPollution')",
-      image: AdventureImages.matching,
+      image: AdventureImages.crossword,
     },
     {
-      title: "Multiple Choice",
-      description: "Guess if you don't know",
+      title: "Sorting",
+      description: "Sort items into categories!",
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
     },
     {
       title: "Crossword",
-      description: "A crossword game... duh?",
+      description: "Have a go at a crossword!",
       key: "testkey1",
       data: questionSet,
-      image: AdventureImages.crossword,
+      image: AdventureImages.matching,
     },
     {
       title: "Puzzle",
-      description: "Solve the puzzle",
+      description: "Solve the puzzle!",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,
