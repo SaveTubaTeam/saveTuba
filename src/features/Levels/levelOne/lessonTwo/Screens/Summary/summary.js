@@ -1,7 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
 import styled from "styled-components";
-import TypingEffectText from "react-native-typing-animation-effect";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 
