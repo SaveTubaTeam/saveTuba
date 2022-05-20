@@ -67,7 +67,7 @@ function AccountScreen(props) {
 
             <GeneralCard />
             <Button onPress={handleSignOut}>
-              <ButtonText>Sign Out</ButtonText>
+              {/* <ButtonText>Sign Out</ButtonText> */}
             </Button>
           </Container>
         </ScrollView>
