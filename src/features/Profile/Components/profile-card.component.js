@@ -43,43 +43,43 @@ const Row = styled.View`
 
 export function ProfileCard(props) {
   const navigation = useNavigation();
-  const {currentUser} = props;
+  const { currentUser } = props;
 
-  
-    return (
-      <Card>
-        <AvatarContainer>
-          <Spacer position="bottom" size="large">
-            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-              <Avatar.Icon
-                size={180}
-                icon="head"
-                backgroundColor={theme.colors.ui.tertiary}
-              />
-            </TouchableOpacity>
-          </Spacer>
-          <TitleText>{currentUser?.username }</TitleText>
-          {/* should be username */}
-          {/* We can soon have a part on login with username as well*/}
-          <Row>
-            <BodyText color="primary">{currentUser?.currentScore}</BodyText>
-            <FontAwesomeIcon
-              icon={faLeaf}
-              size={16}
-              color={theme.colors.ui.primary}
+  return (
+    <Card>
+      <AvatarContainer>
+        <Spacer position="bottom" size="large">
+          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+            <Avatar.Icon
+              size={180}
+              icon="head"
+              backgroundColor={theme.colors.ui.tertiary}
             />
-          </Row>
-          <Spacer size="medium" />
-          <Row>
-            <Friends>
-              <BodyText color="secondary">{currentUser?.friendCount} friends</BodyText>
-            </Friends>
-            <Achievements>
-              <BodyText color="secondary">level {currentUser?.level}</BodyText>
-            </Achievements>
-          </Row>
-        </AvatarContainer>
-      </Card>
-    );
-  
+          </TouchableOpacity>
+        </Spacer>
+        <TitleText>{currentUser?.username}</TitleText>
+        {/* should be username */}
+        {/* We can soon have a part on login with username as well*/}
+        <Row>
+          <BodyText color="primary">{currentUser?.currentScore}</BodyText>
+          <FontAwesomeIcon
+            icon={faLeaf}
+            size={16}
+            color={theme.colors.ui.primary}
+          />
+        </Row>
+        <Spacer size="medium" />
+        <Row>
+          <Friends>
+            <BodyText color="secondary">
+              {currentUser?.friendCount} friends
+            </BodyText>
+          </Friends>
+          <Achievements>
+            <BodyText color="secondary">level {currentUser?.level}</BodyText>
+          </Achievements>
+        </Row>
+      </AvatarContainer>
+    </Card>
+  );
 }
