@@ -34,6 +34,7 @@ const Lock = styled.Image`
   height: undefined;
   aspect-ratio: 1;
 `;
+
 const ImageBg = styled.ImageBackground`
   flex: 1;
 `;
@@ -51,9 +52,14 @@ function HomeView() {
           >
             <Text style={style.baseText}>1</Text>
           </TouchableOpacity>
+
+          <Lock
+            style={{ top: 120, left: 330 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("LevelTwo")}
+            /*onPress={() => navigation.push("LevelTwo")}*/
           >
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>

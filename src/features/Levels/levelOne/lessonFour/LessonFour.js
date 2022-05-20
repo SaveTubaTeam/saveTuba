@@ -5,11 +5,11 @@ import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
 export const LessonFour = {
-  title: "This do be Lesson4",
-  summary: "Blank Summary to be filled in later",
+  title: "Sustainable Agriculture",
+  summary: "What are the ways to make agriculture more sustainable?",
 
   summaryComponent: {
-    route: "LessonFourSummary",
+    route: "Summary",
     component: SummaryScreen,
   },
 
