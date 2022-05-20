@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, FlatList, Modal, StyleSheet, Image } from "react-native";
+import {
+  View,
+  FlatList,
+  Modal,
+  StyleSheet,
+  Image,
+  ScrollView,
+} from "react-native";
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
@@ -163,58 +170,61 @@ function LessonComponent(props) {
   }
 
   return (
-    <Container>
-      <TitleText size="h4" color="primary">
-        {selectedLevel.title}
-      </TitleText>
-      <Spacer size="small" />
-      <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
-      <Summary
-        onPress={() => {
-          navigation.navigate(selectedLevel.summaryComponent.route);
-        }}
-      >
-        <BodyText weight="bold" color="primary" size="subtitle">
-          Full Summary
-        </BodyText>
-      </Summary>
-      <Spacer size="large" />
-      <TitleText>Adventures</TitleText>
-      <Spacer size="small" />
-      <FlatList // The flatlist used to load minigames and their data.
-        data={selectedLevel.minigames}
-        renderItem={renderItem}
-        numColumns={2}
-        keyExtractor={(item) => item.key}
-        key={(item) => item.key}
-        style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
-      />
-
-      <Mastery
-        onPress={() => {
-          navigation.navigate(selectedLevel.masteryComponent.route);
-        }}
-      >
-        <BodyText weight="bold" size="subtitle" color="secondary">
-          Mastery
-        </BodyText>
-      </Mastery>
-
-      <View style={{ width: "70%", alignItems: "center" }}>
-        <Image
-          style={{ width: "75%", height: undefined, aspectRatio: 3 / 3 }}
-          source={require("../../../assets/earth.png")}
+    <ScrollView>
+      <Container>
+        <TitleText size="h4" color="primary">
+          {selectedLevel.title}
+        </TitleText>
+        <Spacer size="small" />
+        <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
+        <Summary
+          onPress={() => {
+            navigation.navigate(selectedLevel.summaryComponent.route);
+          }}
+        >
+          <BodyText weight="bold" color="primary" size="subtitle">
+            Full Summary
+          </BodyText>
+        </Summary>
+        <Spacer size="large" />
+        <TitleText>Adventures</TitleText>
+        <Spacer size="small" />
+        <FlatList // The flatlist used to load minigames and their data.
+          data={selectedLevel.minigames}
+          renderItem={renderItem}
+          numColumns={2}
+          keyExtractor={(item) => item.key}
+          key={(item) => item.key}
+          style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
+          scrollEnabled={false}
         />
-      </View>
 
-      <RenderModal
-        isVisible={selectedItem}
-        selectedItem={selectedItem}
-        onClose={handeOnCloseModal}
-        navigation={navigation}
-        key={selectedItem.key}
-      />
-    </Container>
+        <Mastery
+          onPress={() => {
+            navigation.navigate(selectedLevel.masteryComponent.route);
+          }}
+        >
+          <BodyText weight="bold" size="subtitle" color="secondary">
+            Mastery
+          </BodyText>
+        </Mastery>
+
+        <View style={{ width: "70%", alignItems: "center" }}>
+          <Image
+            style={{ width: "75%", height: undefined, aspectRatio: 3 / 3 }}
+            source={require("../../../assets/earth.png")}
+          />
+        </View>
+
+        <RenderModal
+          isVisible={selectedItem}
+          selectedItem={selectedItem}
+          onClose={handeOnCloseModal}
+          navigation={navigation}
+          key={selectedItem.key}
+        />
+      </Container>
+    </ScrollView>
   );
 }
 
