@@ -216,7 +216,7 @@ function LessonComponent(props) {
               selectedItem={selectedItem}
               onClose={handeOnCloseModal}
               navigation={navigation}
-              key={selectedItem.key}
+              key={selectedLevel.info.key}
             />
           </>
         }

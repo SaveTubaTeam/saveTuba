@@ -12,10 +12,16 @@ export const LessonThree = {
     route: "Summary",
     component: SummaryScreen,
   },
+
   masteryComponent: {
     route: "Mastery",
     component: MasteryScreen,
   },
+
+  info: {
+    key: "lesson3",
+  },
+
   minigames: [
     {
       title: "Puzzle",

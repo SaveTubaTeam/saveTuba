@@ -18,6 +18,10 @@ export const LessonTwo = {
     component: MasteryScreen,
   },
 
+  info: {
+    key: "lesson2",
+  },
+
   minigames: [
     {
       title: "Puzzle",
