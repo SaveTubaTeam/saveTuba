@@ -17,7 +17,7 @@ import {
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
+import i18n from "./src/components/Translations/i18n";
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -51,7 +51,7 @@ const Tab = createBottomTabNavigator();
 function Home() {
   return (
     <Provider store={store}>
-      <MainScreen/>
+      <MainScreen />
     </Provider>
   );
 }
@@ -72,25 +72,25 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-          <NavigationContainer>
-            <Stack.Navigator>
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="Login"
-                component={LoginScreen}
-              />
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="Register"
-                component={Register}
-              />
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="HomePage"
-                component={Home}
-              />
-            </Stack.Navigator>
-          </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="Login"
+              component={LoginScreen}
+            />
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="Register"
+              component={Register}
+            />
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="HomePage"
+              component={Home}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
