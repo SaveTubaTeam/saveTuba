@@ -11,18 +11,15 @@ import { connect } from "react-redux";
 import Sorting from "../../components/Levels/Adventures/sorting.component";
 
 // want to import data here?
-<<<<<<< HEAD
 import { LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { LessonThree } from "./levelOne/lessonThree/LessonThree";
 import { LessonFour } from "./levelOne/lessonFour/LessonFour";
-import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
-=======
+import { AdventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
->>>>>>> 2f21b17e7cacf6f4ac14b0d83eb8925f8b772169
 
 /*
 To add Lessons: 
@@ -112,8 +109,11 @@ function LessonHandler(props) {
           )}
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
-        <Stack.Screen component={adventureOne} name="Memory" options={{ headerShown: false }}>
-          
+        <Stack.Screen
+          component={AdventureOne}
+          name="Memory"
+          options={{ headerShown: false }}
+        >
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
         <Stack.Screen
