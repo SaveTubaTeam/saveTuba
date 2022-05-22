@@ -3,6 +3,7 @@ import { AdventureImages } from "../../IMAGES";
 
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
+import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 
 export const Lvl_1_LessonOne = {
   title: "Sustainability",
@@ -11,6 +12,10 @@ export const Lvl_1_LessonOne = {
   summaryComponent: {
     route: "Lesson Summary",
     component: SummaryScreen,
+  },
+
+  sorting: {
+    component: Sorting,
   },
 
   masteryComponent: {
@@ -32,7 +37,7 @@ export const Lvl_1_LessonOne = {
     },
     {
       title: "Sorting",
-      description: "Sort items into categories!",
+      description: "Choose the corresponding category.",
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,

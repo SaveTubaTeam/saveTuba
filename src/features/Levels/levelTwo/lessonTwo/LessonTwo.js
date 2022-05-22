@@ -3,6 +3,7 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
+import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 
 export const Lvl_2_LessonTwo = {
   title: "Sustainable Agriculture",
@@ -11,6 +12,9 @@ export const Lvl_2_LessonTwo = {
   summaryComponent: {
     route: "Summary",
     component: SummaryScreen,
+  },
+  sorting: {
+    component: Sorting,
   },
 
   masteryComponent: {
@@ -38,8 +42,8 @@ export const Lvl_2_LessonTwo = {
       image: AdventureImages.matching,
     },
     {
-      title: "Crossword",
-      description: "A crossword game... duh?",
+      title: "Sorting",
+      description: "Choose the corresponding category.",
       key: "testkey1",
       data: questionSetPollution,
       image: AdventureImages.crossword,

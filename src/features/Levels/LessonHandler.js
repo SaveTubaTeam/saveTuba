@@ -8,13 +8,10 @@ import LessonComponent from "./LessonComponent";
 
 import { connect } from "react-redux";
 
-import Sorting from "../../components/Levels/Adventures/sorting.component";
+import Sorting from "./levelOne/lessonOne/Screens/Adventures/adventureTwo/sorting.component";
 
 // want to import data here?
-import { LessonOne } from "./levelOne/lessonOne/LessonOne";
-import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
-import { LessonThree } from "./levelOne/lessonThree/LessonThree";
-import { LessonFour } from "./levelOne/lessonFour/LessonFour";
+
 import { AdventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
@@ -118,7 +115,7 @@ function LessonHandler(props) {
         </Stack.Screen>
         <Stack.Screen
           name="Sorting"
-          component={Sorting}
+          component={selectedLevel.sorting.component}
           options={{ headerShown: false }}
         />
         <Stack.Screen
