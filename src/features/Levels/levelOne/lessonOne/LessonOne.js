@@ -19,7 +19,7 @@ export const LessonOne = {
   },
 
   info: {
-    key: "lesson1",
+    key: "lessonUno",
   },
 
   minigames: [
