@@ -16,11 +16,18 @@ import LessonComponent from "./LessonComponent";
 import { connect } from "react-redux";
 
 // want to import data here?
+<<<<<<< HEAD
 import { LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { LessonThree } from "./levelOne/lessonThree/LessonThree";
 import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
+=======
+import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
+import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
+import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
+import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
+>>>>>>> 2f21b17e7cacf6f4ac14b0d83eb8925f8b772169
 
 /*
 To add Lessons: 
@@ -65,16 +72,16 @@ function LessonHandler(props) {
     // Function called on LessonHandler mount to determine data to select for lesson component
     switch (level) {
       case 1:
-        setSelectedLevel(LessonOne);
+        setSelectedLevel(Lvl_1_LessonOne);
         break;
       case 2:
-        setSelectedLevel(LessonTwo);
+        setSelectedLevel(Lvl_1_LessonTwo);
         break;
       case 3:
-        setSelectedLevel(LessonThree);
+        setSelectedLevel(Lvl_2_LessonOne);
         break;
       case 4:
-        setSelectedLevel(LessonFour);
+        setSelectedLevel(Lvl_2_LessonTwo);
         break;
       default:
         setSelectedLevel(null);
@@ -104,9 +111,6 @@ function LessonHandler(props) {
             headerTitle: selectedLevel.title,
             headerTintColor: "#748816",
             headerTitleStyle: {
-              fontFamily: "Raleway_400Regular",
-            },
-            headerBackTitleStyle: {
               fontFamily: "Raleway_400Regular",
             },
           }}

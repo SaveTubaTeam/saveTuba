@@ -5,16 +5,21 @@ import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
 export const LessonThree = {
-  title: "Lesson Three Stuff",
-  summary: "Blank Summary to be filled in later",
+  title: "Climate Change",
+  summary: "How does greenhouse effect relate to global warming?",
 
   summaryComponent: {
-    route: "LessonThreeSummary",
+    route: "Summary",
     component: SummaryScreen,
   },
+
   masteryComponent: {
     route: "Mastery",
     component: MasteryScreen,
+  },
+
+  info: {
+    key: "lesson3",
   },
 
   minigames: [

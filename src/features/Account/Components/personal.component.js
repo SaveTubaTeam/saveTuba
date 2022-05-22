@@ -17,6 +17,7 @@ import {
   faInfo,
   faLeaf,
 } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 import { StyleSheet } from "react-native";
 import { TitleText } from "../../../components/title-text.component";
@@ -46,15 +47,17 @@ const InputContainer = styled.View`
 `;
 
 const Input = styled.TextInput`
-  font-size: 20px;
   font-family: ${(props) => props.theme.fonts.body};
-  background-color: ${(props) => props.theme.colors.ui.secondary};
-  padding: ${(props) => props.theme.sizes[0]} ${(props) => props.theme.sizes[1]};
+  color: ${(props) => props.theme.colors.text.tertiary};
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
 `;
 
 export function PersonalCard(props) {
+  const { t } = useTranslation();
+
   const navigation = useNavigation();
   const { currentUser } = props;
 
@@ -115,9 +118,9 @@ export function PersonalCard(props) {
           </Row>
         </Spacer>
 
-        <BodyText size="subtitle">Email: {currentUser?.email}</BodyText>
+        <TitleText size="subtitle">{currentUser?.email}</TitleText>
         <Row>
-          <BodyText size="subtitle">Change Username: </BodyText>
+          <TitleText size="subtitle">{t("change username")}: </TitleText>
           <InputContainer>
             <Input placeholder={currentUser?.username} />
           </InputContainer>

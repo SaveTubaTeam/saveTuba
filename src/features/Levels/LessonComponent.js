@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, FlatList, Modal, StyleSheet, Image } from "react-native";
+import { View, FlatList, Modal, StyleSheet, Image, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
@@ -11,14 +11,18 @@ import {
   Adventure,
   ImageBg,
 } from "../../components/Levels/levels.styles";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
 
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 
-import { LessonOne } from "./levelOne/lessonOne/LessonOne";
-import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
-import { LessonThree } from "./levelOne/lessonThree/LessonThree";
-import { LessonFour } from "./levelOne/lessonFour/LessonFour";
+import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
+import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
+import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
+import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
+
+// import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
@@ -51,16 +55,16 @@ function LessonComponent(props) {
   useEffect(() => {
     switch (level) {
       case 1:
-        setSelectedLevel(LessonOne);
+        setSelectedLevel(Lvl_1_LessonOne);
         break;
       case 2:
-        setSelectedLevel(LessonTwo);
+        setSelectedLevel(Lvl_1_LessonTwo);
         break;
       case 3:
-        setSelectedLevel(LessonThree);
+        setSelectedLevel(Lvl_2_LessonOne);
         break;
       case 4:
-        setSelectedLevel(LessonFour);
+        setSelectedLevel(Lvl_2_LessonTwo);
         break;
       default:
         setSelectedLevel(null);
@@ -169,23 +173,6 @@ function LessonComponent(props) {
 
   return (
     <Container>
-      <TitleText size="h4" color="primary">
-        {selectedLevel.title}
-      </TitleText>
-      <Spacer size="small" />
-      <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
-      <Summary
-        onPress={() => {
-          navigation.navigate(selectedLevel.summaryComponent.route);
-        }}
-      >
-        <BodyText weight="bold" color="primary" size="subtitle">
-          Full Summary
-        </BodyText>
-      </Summary>
-      <Spacer size="large" />
-      <TitleText>Adventures</TitleText>
-      <Spacer size="small" />
       <FlatList // The flatlist used to load minigames and their data.
         data={selectedLevel.minigames}
         renderItem={renderItem}
@@ -193,31 +180,66 @@ function LessonComponent(props) {
         keyExtractor={(item) => item.key}
         key={(item) => item.key}
         style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
-      />
-
-      <Mastery
-        onPress={() => {
-          navigation.navigate(selectedLevel.masteryComponent.route);
+        // putting everything before and after the flatlist
+        // in header and footer fixes the nested virtualized
+        // lists error: color: "#C6DC3B"
+        ListHeaderComponent={
+          <>
+            {/* <View style={{ flexDirection: 'row' }} > 
+            <TouchableOpacity onPress={() =>  {
+              console.warn(navigation);
+              navigation.navigate("Level One");
+            } }>
+              <Ionicons name="arrow-back" color={"#C6DC3B"} size={32} />
+            </TouchableOpacity>  
+            <TitleText size="h4" color="primary"> {selectedLevel.title} </TitleText>
+            </View> */}
+            <TitleText size="h4" color="primary"> {selectedLevel.title} </TitleText>
+            <Spacer size="small" />
+            <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
+            <Summary
+              onPress={() => {
+                navigation.navigate(selectedLevel.summaryComponent.route);
+              }}
+            >
+              <BodyText weight="bold" color="primary" size="subtitle">
+                Full Summary
+              </BodyText>
+            </Summary>
+            <Spacer size="large" />
+            <TitleText>Adventures</TitleText>
+            <Spacer size="small" />
+          </>
+        }
+        ListHeaderComponentStyle={{
+          justifyContent: "center",
+          alignItems: "center",
         }}
-      >
-        <BodyText weight="bold" size="subtitle" color="secondary">
-          Mastery
-        </BodyText>
-      </Mastery>
+        ListFooterComponent={
+          <>
+            <Mastery
+              onPress={() => {
+                navigation.navigate(selectedLevel.masteryComponent.route);
+              }}
+            >
+              <BodyText weight="bold" size="subtitle" color="secondary">
+                Mastery
+              </BodyText>
+            </Mastery>
 
-      <View style={{ width: "70%", alignItems: "center" }}>
-        <Image
-          style={{ width: "75%", height: undefined, aspectRatio: 3 / 3 }}
-          source={require("../../../assets/earth.png")}
-        />
-      </View>
-
-      <RenderModal
-        isVisible={selectedItem}
-        selectedItem={selectedItem}
-        onClose={handeOnCloseModal}
-        navigation={navigation}
-        key={selectedItem.key}
+            <RenderModal
+              isVisible={selectedItem}
+              selectedItem={selectedItem}
+              onClose={handeOnCloseModal}
+              navigation={navigation}
+              key={selectedLevel.info.key}
+            />
+          </>
+        }
+        ListFooterComponentStyle={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       />
     </Container>
   );

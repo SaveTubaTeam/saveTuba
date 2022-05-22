@@ -4,7 +4,7 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
-export const LessonFour = {
+export const Lvl_2_LessonTwo = {
   title: "Sustainable Agriculture",
   summary: "What are the ways to make agriculture more sustainable?",
 
@@ -19,7 +19,7 @@ export const LessonFour = {
   },
 
   info: {
-    key: "lesson4",
+    key: "lesson2",
   },
 
   minigames: [

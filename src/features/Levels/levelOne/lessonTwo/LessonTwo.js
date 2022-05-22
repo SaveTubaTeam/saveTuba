@@ -4,7 +4,7 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
-export const LessonTwo = {
+export const Lvl_1_LessonTwo = {
   title: "Air Pollution",
   summary: "Why is protecting the environment important?",
 
@@ -16,6 +16,10 @@ export const LessonTwo = {
   masteryComponent: {
     route: "Mastery",
     component: MasteryScreen,
+  },
+
+  info: {
+    key: "lesson2",
   },
 
   minigames: [

@@ -41,8 +41,6 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-
-
 function AccountScreen(props) {
   const navigation = useNavigation();
   const { currentUser } = props;
@@ -60,24 +58,25 @@ function AccountScreen(props) {
       <SafeArea>
         <ScrollView>
           <Container>
-
             <PersonalCard currentUser={currentUser} />
 
             <Spacer size="large" />
 
             <GeneralCard />
+            {/*
             <Button onPress={handleSignOut}>
               <ButtonText>Sign Out</ButtonText>
             </Button>
+  */}
           </Container>
         </ScrollView>
       </SafeArea>
     </ImageBg>
   );
-};
+}
 
 const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser
+  currentUser: store.userState.currentUser,
 });
 
 export default connect(mapStateToProps, null)(AccountScreen);

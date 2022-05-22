@@ -1,0 +1,21 @@
+{
+    "translation": {
+        "hello": "Сәлем",
+        "this line is translated": "бұл жол аударылған",
+        "reminders": "Еске салулар",
+        "sound effects": "Дыбыс әсерлері",
+        "help": "Көмектесіңдер",
+        "about": "туралы",
+        "sign out": "Шығу",
+        "general": "Жалпы",
+        "email": "Электрондық пошта",
+        "change username": "Пайдаланушы атын өзгерту",
+        "level": "Деңгейлер",
+        "friends": "Достар",
+        "badges": "марапаттары",
+        "leaderboard": "Көшбасшылар тақтасы",
+        "home": "Үй",
+        "profile": "Профиль",
+        "settings": "Параметрлер"
+    }
+}
