@@ -45,8 +45,8 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.matching,
     },
     {
-      title: "Puzzle",
-      description: "Solve the puzzle!",
+      title: "Memory",
+      description: "Solve the puzzle",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,
