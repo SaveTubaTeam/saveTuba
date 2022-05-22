@@ -4,6 +4,7 @@ import { AdventureImages } from "../../IMAGES";
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
+import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 
 export const Lvl_1_LessonOne = {
   title: "Sustainability",
@@ -12,6 +13,10 @@ export const Lvl_1_LessonOne = {
   summaryComponent: {
     route: "Lesson Summary",
     component: SummaryScreen,
+  },
+
+  memory: {
+    component: AdventureOne,
   },
 
   sorting: {
@@ -51,7 +56,7 @@ export const Lvl_1_LessonOne = {
     },
     {
       title: "Memory",
-      description: "Solve the puzzle",
+      description: "Match the word with its definition.",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,

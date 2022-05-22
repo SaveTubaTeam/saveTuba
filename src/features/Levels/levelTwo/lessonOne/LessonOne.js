@@ -4,6 +4,7 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
+import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 
 export const Lvl_2_LessonOne = {
   title: "Climate Change",
@@ -16,6 +17,10 @@ export const Lvl_2_LessonOne = {
 
   sorting: {
     component: Sorting,
+  },
+
+  memory: {
+    component: AdventureOne,
   },
 
   masteryComponent: {
@@ -36,8 +41,8 @@ export const Lvl_2_LessonOne = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Matching",
-      description: "Match the pairs together",
+      title: "Memory",
+      description: "Match the word to its definition.",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,

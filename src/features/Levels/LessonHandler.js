@@ -12,7 +12,6 @@ import Sorting from "./levelOne/lessonOne/Screens/Adventures/adventureTwo/sortin
 
 // want to import data here?
 
-import { AdventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
@@ -96,7 +95,7 @@ function LessonHandler(props) {
           initialParams={{ level: level }}
         />
         {/* Insert Screens below based off minigame. Need to be able to send data to the component in the same way that the quiz screen works */}
-        <Stack.Screen name="Crossword" options={{ headerShown: false }}>
+        <Stack.Screen name="Quiz" options={{ headerShown: false }}>
           {() => (
             <QuizScreen
               score={score}
@@ -107,7 +106,7 @@ function LessonHandler(props) {
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
         <Stack.Screen
-          component={AdventureOne}
+          component={selectedLevel.memory.component}
           name="Memory"
           options={{ headerShown: false }}
         >

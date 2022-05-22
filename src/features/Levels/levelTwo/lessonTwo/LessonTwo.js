@@ -4,6 +4,7 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
+import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 
 export const Lvl_2_LessonTwo = {
   title: "Sustainable Agriculture",
@@ -13,6 +14,11 @@ export const Lvl_2_LessonTwo = {
     route: "Summary",
     component: SummaryScreen,
   },
+
+  memory: {
+    component: AdventureOne,
+  },
+
   sorting: {
     component: Sorting,
   },
@@ -35,8 +41,8 @@ export const Lvl_2_LessonTwo = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Matching",
-      description: "Match the pairs together",
+      title: "Memory",
+      description: "Match the word to its definition.",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,
