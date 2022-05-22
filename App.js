@@ -1,4 +1,4 @@
-import React from "react-native";
+import React from "react";
 
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
@@ -18,6 +18,7 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import i18n from "./src/components/Translations/i18n";
+import { LogBox } from "react-native";
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -47,6 +48,8 @@ const Stack = createNativeStackNavigator();
 
 // Tab Navigator used for creating the bottom tab where home and other settings are visible
 const Tab = createBottomTabNavigator();
+
+LogBox.ignoreLogs(["Setting a timer"]);
 
 function Home() {
   return (
