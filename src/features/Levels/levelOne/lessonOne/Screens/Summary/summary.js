@@ -1,18 +1,12 @@
 import React from "react";
-import { ImageBackground, Text, Image, View, ScrollView } from "react-native";
+import { Text, Image, View, TouchableOpacity } from "react-native";
 import styled from "styled-components";
-import TypingEffectText from "react-native-typing-animation-effect";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 
-import { Spacer } from "../../../../../../components/spacer.component";
-import { TitleText } from "../../../../../../components/title-text.component";
-import { BodyText } from "../../../../../../components/body-text.component";
-import { Card } from "../../../../../../components/card.component";
-
 const Stack = createNativeStackNavigator();
 
-const Container = styled.TouchableOpacity`
+const Container = styled.View`
   flex: 0.8;
   justify-content: center;
   align-items: center;
@@ -50,17 +44,49 @@ const TubaLeft = styled.Image`
   left: -75px;
 `;
 
+const Forward = styled.TouchableOpacity`
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 10px;
+`;
+
+const Back = styled.TouchableOpacity`
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 10px;
+`;
+
+const Btn = styled.Image`
+  width: 100%;
+  height: 100%;
+`;
+
 const Storyline = (props) => {
   const navigation = useNavigation();
   const bgUrl = "../../../../../../../assets/naturebackground.jpg";
   const dialogBoxUrl = "../../../../../../../assets/dialogbox.png";
+  const forwardButtonUrl = "../../../../../../../assets/right.png";
+  const backButtonUrl = "../../../../../../../assets/left.png";
   return (
     <>
       <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container
-          onPress={() => navigation.navigate(props.whereTo)}
-          activeOpacity="1"
-        >
+        <Container activeOpacity="1">
+          <Forward
+            style={{ zIndex: 100 }}
+            onPress={() => navigation.navigate(props.next)}
+          >
+            <Btn source={require(forwardButtonUrl)} />
+          </Forward>
+
+          <Back
+            style={{ zIndex: 100 }}
+            onPress={() => navigation.navigate(props.back)}
+          >
+            <Btn source={require(backButtonUrl)} />
+          </Back>
+
           <DialogBox source={require(dialogBoxUrl)} resizeMode="contain">
             <Text style={{ fontSize: 18, margin: 105 }}>{props.text}</Text>
           </DialogBox>
@@ -74,10 +100,32 @@ const Storyline = (props) => {
 const StoryImage = (props) => {
   const navigation = useNavigation();
   const bgUrl = "../../../../../../../assets/naturebackground.jpg";
+  const forwardButtonUrl = "../../../../../../../assets/right.png";
+  const backButtonUrl = "../../../../../../../assets/left.png";
   return (
     <>
       <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container onPress={() => navigation.navigate(props.whereTo)}>
+        <Container>
+          <Forward
+            style={{ zIndex: 100 }}
+            onPress={() => navigation.navigate(props.next)}
+          >
+            <Image
+              style={{ height: 40, width: 40 }}
+              source={require(forwardButtonUrl)}
+            />
+          </Forward>
+
+          <Back
+            style={{ zIndex: 100 }}
+            onPress={() => navigation.navigate(props.back)}
+          >
+            <Image
+              style={{ height: 40, width: 40 }}
+              source={require(backButtonUrl)}
+            />
+          </Back>
+
           <View style={{ alignItems: "center", padding: 10 }}>
             <Image
               style={{ width: 300, height: 280 }}
@@ -98,7 +146,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Hi, I'm Tuba!"
-            whereTo="SecondScreen"
+            next="SecondScreen"
+            back="Start"
             Tuba={
               <TubaLeft
                 source={require("../../../../../../../assets/tuba1.png")}
@@ -111,7 +160,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Let's learn together!"
-            whereTo="ThirdScreen"
+            next="ThirdScreen"
+            back="Start"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -124,7 +174,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Sustainability is all about  balance."
-            whereTo="FourthScreen"
+            next="FourthScreen"
+            back="SecondScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -136,7 +187,8 @@ const SummaryScreen = () => {
       <Stack.Screen name="FourthScreen" options={{ headerShown: false }}>
         {() => (
           <StoryImage
-            whereTo="FifthScreen"
+            next="FifthScreen"
+            back="ThirdScreen"
             Tuba={
               <TubaRotated
                 source={require("../../../../../../../assets/tuba3.png")}
@@ -149,7 +201,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="The environment provides us with all the resources that we require to fulfill our basic human needs, such as food, water, and housing."
-            whereTo="SixthScreen"
+            next="SixthScreen"
+            back="FourthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -162,7 +215,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="However, people are consuming more resources than they can replenish."
-            whereTo="SeventhScreen"
+            next="SeventhScreen"
+            back="FifthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -175,7 +229,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Sustainability plays a key role in preserving the environment for future generations."
-            whereTo="EighthScreen"
+            next="EighthScreen"
+            back="SixthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -188,7 +243,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="It means consuming resources at a rate that gives them time to replenish."
-            whereTo="NinthScreen"
+            next="NinthScreen"
+            back="SeventhScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -201,7 +257,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="That is why we need to be thoughtful about the consumption of resources and conserve them."
-            whereTo="NinthScreen"
+            next="NinthScreen"
+            back="EighthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
