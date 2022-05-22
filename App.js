@@ -14,10 +14,10 @@ import {
   Raleway_400Regular,
 } from "@expo-google-fonts/raleway";
 
+import './src/components/Translations/IMLocalize'
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import i18n from "./src/components/Translations/i18n";
 import { LogBox } from "react-native";
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";

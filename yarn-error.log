@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add ExpoLocalization
+  /usr/local/bin/node /usr/local/bin/yarn add react-native-vector-icons/dist/Ionicons
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/trevorlachman/opt/anaconda3/bin:/Users/trevorlachman/opt/anaconda3/condabin
@@ -14,8 +14,8 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/ExpoLocalization: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:67029:18)
+  Error: https://registry.yarnpkg.com/react-native-vector-icons%2fdist/Ionicons: Request "https://registry.yarnpkg.com/react-native-vector-icons%2fdist/Ionicons" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:67038:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140883:22)
       at Request.emit (node:events:365:28)
       at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141855:10)
@@ -41,20 +41,21 @@ npm manifest:
       "@expo-google-fonts/gabriela": "^0.2.2",
       "@expo-google-fonts/raleway": "^0.2.2",
       "@fortawesome/fontawesome-svg-core": "^6.1.0",
-      "@fortawesome/free-solid-svg-icons": "^6.1.0",
+      "@fortawesome/free-solid-svg-icons": "^6.1.1",
       "@fortawesome/react-native-fontawesome": "^0.2.7",
-      "@react-native-async-storage/async-storage": "^1.17.3",
+      "@react-native-async-storage/async-storage": "~1.15.0",
       "@react-native-community/masked-view": "^0.1.11",
       "@react-navigation/bottom-tabs": "^6.2.0",
       "@react-navigation/native": "^6.0.8",
       "@react-navigation/native-stack": "^6.5.0",
       "axios": "^0.26.1",
+      "cocoapods": "^0.0.0",
       "expo": "~44.0.0",
       "expo-app-loading": "~1.3.0",
       "expo-camera": "^12.1.2",
       "expo-cli": "^5.3.0",
       "expo-font": "~10.0.4",
-      "expo-localization": "^13.0.0",
+      "expo-localization": "~12.0.0",
       "expo-splash-screen": "~0.14.1",
       "expo-status-bar": "~1.2.0",
       "expo-updates": "~0.11.7",
@@ -71,6 +72,7 @@ npm manifest:
       "react-native-country-flag": "^1.1.6",
       "react-native-elements": "^3.4.2",
       "react-native-leaderboard": "^1.0.6",
+      "react-native-localize": "^2.2.1",
       "react-native-modal": "^13.0.1",
       "react-native-paper": "^4.11.2",
       "react-native-quiz-maker": "^0.1.0",
@@ -2050,6 +2052,11 @@ Lockfile:
     resolved "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.1.0.tgz"
     integrity sha512-lFIJ5opxOKG9q88xOsuJJAdRZ+2WRldsZwUR/7MJoOMUMhF/LkHUjwWACIEPTa5Wo6uTDHvGRIX+XutdN7zYxA==
   
+  "@fortawesome/fontawesome-common-types@6.1.1":
+    version "6.1.1"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.1.1.tgz#7dc996042d21fc1ae850e3173b5c67b0549f9105"
+    integrity sha512-wVn5WJPirFTnzN6tR95abCx+ocH+3IFLXAgyavnf9hUmN0CfWoDjPT/BAWsUVwSlYYVBeCLJxaqi7ZGe4uSjBA==
+  
   "@fortawesome/fontawesome-svg-core@^6.1.0":
     version "6.1.0"
     resolved "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.1.0.tgz"
@@ -2057,16 +2064,16 @@ Lockfile:
     dependencies:
       "@fortawesome/fontawesome-common-types" "6.1.0"
   
-  "@fortawesome/free-solid-svg-icons@^6.1.0":
-    version "6.1.0"
-    resolved "https://registry.npmjs.org/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.1.0.tgz"
-    integrity sha512-OOr0jRHl5d41RzBS3sZh5Z3HmdPjMr43PxxKlYeLtQxFSixPf4sJFVM12/rTepB2m0rVShI0vtjHQmzOTlBaXg==
+  "@fortawesome/free-solid-svg-icons@^6.1.1":
+    version "6.1.1"
+    resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.1.1.tgz#3369e673f8fe8be2fba30b1ec274d47490a830a6"
+    integrity sha512-0/5exxavOhI/D4Ovm2r3vxNojGZioPwmFrKg0ZUH69Q68uFhFPs6+dhAToh6VEQBntxPRYPuT5Cg1tpNa9JUPg==
     dependencies:
-      "@fortawesome/fontawesome-common-types" "6.1.0"
+      "@fortawesome/fontawesome-common-types" "6.1.1"
   
   "@fortawesome/react-native-fontawesome@^0.2.7":
     version "0.2.7"
-    resolved "https://registry.npmjs.org/@fortawesome/react-native-fontawesome/-/react-native-fontawesome-0.2.7.tgz"
+    resolved "https://registry.yarnpkg.com/@fortawesome/react-native-fontawesome/-/react-native-fontawesome-0.2.7.tgz#2fea96c4afeb19cdab641b8fbb6022a8e6ee4aec"
     integrity sha512-H3FjE01PDKGTZW+pXMsaCklT0FADaHo4D+Ni63BSXNQclmFgKj2Xlky37cx0s1BaIIw1geuHcyg0hdFxbACusw==
     dependencies:
       humps "^2.0.1"
@@ -2660,10 +2667,10 @@ Lockfile:
       "@react-aria/ssr" "^3.0.1"
       "@react-aria/utils" "^3.3.0"
   
-  "@react-native-async-storage/async-storage@^1.17.3":
-    version "1.17.3"
-    resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.17.3.tgz#fa7010aa9b6a811ff653df3698a90d3c173dd6a6"
-    integrity sha512-2dxdlGwBjBP2qYu6F72U7cRRFshISYiNEWCaQNOJtxUERCMaYRWcniYqhL248KSbGUMpRhFCEtliztsiGoYYMA==
+  "@react-native-async-storage/async-storage@~1.15.0":
+    version "1.15.17"
+    resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.17.tgz#0dae263a52e476ffce871086f1fef5b8e44708eb"
+    integrity sha512-NQCFs47aFEch9kya/bqwdpvSdZaVRtzU7YB02L8VrmLSLpKgQH/1VwzFUBPcc1/JI1s3GU4yOLVrEbwxq+Fqcw==
     dependencies:
       merge-options "^3.0.4"
   
@@ -5037,6 +5044,11 @@ Lockfile:
       chalk "^2.4.1"
       q "^1.1.2"
   
+  cocoapods@^0.0.0:
+    version "0.0.0"
+    resolved "https://registry.yarnpkg.com/cocoapods/-/cocoapods-0.0.0.tgz#394adb14507abe6cc238736980e1152a4107b7b3"
+    integrity sha512-nsdKucT3oTSvS5s+W3/uxSn57+0e2LxMo2XcTsHwDCdYHB+T21haL11AkioVBACloAMQr00EDBZ//2DnynD9SQ==
+  
   collection-visit@^1.0.0:
     version "1.0.0"
     resolved "https://registry.npmjs.org/collection-visit/-/collection-visit-1.0.0.tgz"
@@ -6559,10 +6571,10 @@ Lockfile:
     resolved "https://registry.npmjs.org/expo-keep-awake/-/expo-keep-awake-10.0.2.tgz"
     integrity sha512-Ro1lgyKldbFs4mxhWM+goX9sg0S2SRR8FiJJeOvaRzf8xNhrZfWA00Zpr+/3ocCoWQ3eEL+X9UF4PXXHf0KoOg==
   
-  expo-localization@^13.0.0:
-    version "13.0.0"
-    resolved "https://registry.yarnpkg.com/expo-localization/-/expo-localization-13.0.0.tgz#f78969151e8db18abc2ebb8fc423b836e21ab918"
-    integrity sha512-SlgHQYaX1D/4d78EQB836Yfx6iuC04pHdMNKoY7pxqEE+hC/X4Mnu0FfhbelfwXTPHFNNFFU1kV6XVF2Mu3dlg==
+  expo-localization@~12.0.0:
+    version "12.0.1"
+    resolved "https://registry.yarnpkg.com/expo-localization/-/expo-localization-12.0.1.tgz#81799920abe4f8de790da01a0d4a1c9ca63854bf"
+    integrity sha512-nfTalbofqXrT8kgoFZDUxgIvs+YDmZx99IWLiKrd9jFacGn/B7KoO1f0hSAu89kmuo8DCxt53WHaqKqlytQQPg==
     dependencies:
       rtl-detect "^1.0.2"
   
@@ -11429,6 +11441,11 @@ Lockfile:
     dependencies:
       prop-types "^15.6.0"
   
+  react-native-localize@^2.2.1:
+    version "2.2.1"
+    resolved "https://registry.yarnpkg.com/react-native-localize/-/react-native-localize-2.2.1.tgz#6fe646833691c6ee8a474df3c8b069402cb1dba8"
+    integrity sha512-BuPaQWvxLZG1NrCDGqgAnecDrNQu3LED9/Pyl4H2LwTMHcEngXpE5PfVntW2GiLumdr6nUOkWmMnh8PynZqrsw==
+  
   react-native-modal@^13.0.1:
     version "13.0.1"
     resolved "https://registry.npmjs.org/react-native-modal/-/react-native-modal-13.0.1.tgz"
@@ -11480,7 +11497,7 @@ Lockfile:
   
   react-native-size-matters@^0.4.0:
     version "0.4.0"
-    resolved "https://registry.npmjs.org/react-native-size-matters/-/react-native-size-matters-0.4.0.tgz"
+    resolved "https://registry.yarnpkg.com/react-native-size-matters/-/react-native-size-matters-0.4.0.tgz#01bfd0d59454318f4e0b13fe9c1eb0523d70f2e0"
     integrity sha512-8/C0htHrFWeUm9N8JegmadovUfgTWkGBkDPZ1N3YkXtDWb+98Ya2gThiKcu445r8c7YhcrBfnHz/mYsXIusaOQ==
   
   react-native-svg@12.1.1:
