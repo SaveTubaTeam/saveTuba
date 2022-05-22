@@ -8,7 +8,6 @@ export default {
     signout: "Sign Out",
     general: "General",
     email: "Email",
-    changeusername: "Change Username",
     levels: "Levels",
     friends: "Friends",
     badges: "Badges",

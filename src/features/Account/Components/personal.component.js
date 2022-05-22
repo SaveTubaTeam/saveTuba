@@ -120,7 +120,7 @@ export function PersonalCard(props) {
 
         <TitleText size="subtitle">{currentUser?.email}</TitleText>
         <Row>
-          <TitleText size="subtitle">{t("common:changeusername")}: </TitleText>
+          <TitleText size="subtitle">{t("personal:changeusername")}: </TitleText>
           <InputContainer>
             <Input placeholder={currentUser?.username} />
           </InputContainer>
