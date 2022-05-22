@@ -1,4 +1,4 @@
-import React from "react-native";
+import React from "react";
 
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
@@ -15,8 +15,7 @@ import {
 } from "@expo-google-fonts/raleway";
 
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { LogBox } from "react-native";
 
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";
@@ -48,10 +47,12 @@ const Stack = createNativeStackNavigator();
 // Tab Navigator used for creating the bottom tab where home and other settings are visible
 const Tab = createBottomTabNavigator();
 
+LogBox.ignoreLogs(["Setting a timer"]);
+
 function Home() {
   return (
     <Provider store={store}>
-      <MainScreen/>
+      <MainScreen />
     </Provider>
   );
 }
@@ -72,25 +73,25 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-          <NavigationContainer>
-            <Stack.Navigator>
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="Login"
-                component={LoginScreen}
-              />
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="Register"
-                component={Register}
-              />
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="HomePage"
-                component={Home}
-              />
-            </Stack.Navigator>
-          </NavigationContainer>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="Login"
+              component={LoginScreen}
+            />
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="Register"
+              component={Register}
+            />
+            <Stack.Screen
+              options={{ headerShown: false }}
+              name="HomePage"
+              component={Home}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

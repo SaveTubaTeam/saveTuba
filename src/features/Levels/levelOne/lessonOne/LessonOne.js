@@ -19,7 +19,7 @@ export const Lvl_1_LessonOne = {
   },
 
   info: {
-    key: "lesson1",
+    key: "lessonUno",
   },
 
   minigames: [

@@ -37,21 +37,22 @@ const Lock = styled.Image`
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 
 function HomeView() {
   const navigation = useNavigation();
   return (
-    <SafeArea style={{ backgroundColor: "#CCE882" }}>
-      <ScrollView style={{ alignContent: "center" }}>
-        {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
-        <ImageBg source={require("../../../assets/homebg.png")}>
-          <TouchableOpacity
-            style={style.roundButton1}
-            onPress={() => navigation.push("LevelOne")}
-          >
-            <Text style={style.baseText}>1</Text>
-          </TouchableOpacity>
+    <ScrollView style={{ alignContent: "center" }}>
+      {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
+      <ImageBg source={require("../../../assets/homebg.png")}>
+        <TouchableOpacity
+          style={style.roundButton1}
+          onPress={() => navigation.push("LevelOne")}
+        >
+          <Text style={style.baseText}>1</Text>
+        </TouchableOpacity>
 
           {/* <Lock
             style={{ top: 120, left: 330 }}
@@ -64,52 +65,51 @@ function HomeView() {
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
 
-          <Lock
-            style={{ top: 250, left: 90 }}
-            source={require("../../../assets/lock.png")}
-          />
-          <TouchableOpacity
-            style={style.roundButton1}
-            /*onPress={() => navigation.push("LevelThree")}*/
-          >
-            <Text style={style.baseText}>3</Text>
-          </TouchableOpacity>
+        <Lock
+          style={{ top: 250, left: 90 }}
+          source={require("../../../assets/lock.png")}
+        />
+        <TouchableOpacity
+          style={style.roundButton1}
+          /*onPress={() => navigation.push("LevelThree")}*/
+        >
+          <Text style={style.baseText}>3</Text>
+        </TouchableOpacity>
 
-          <Lock
-            style={{ top: 370, left: 330 }}
-            source={require("../../../assets/lock.png")}
-          />
-          <TouchableOpacity
-            style={style.roundButton2}
-            /*onPress={() => navigation.push("LevelFour")}*/
-          >
-            <Text style={style.baseText}>4</Text>
-          </TouchableOpacity>
+        <Lock
+          style={{ top: 370, left: 330 }}
+          source={require("../../../assets/lock.png")}
+        />
+        <TouchableOpacity
+          style={style.roundButton2}
+          /*onPress={() => navigation.push("LevelFour")}*/
+        >
+          <Text style={style.baseText}>4</Text>
+        </TouchableOpacity>
 
-          <Lock
-            style={{ top: 500, left: 90 }}
-            source={require("../../../assets/lock.png")}
-          />
-          <TouchableOpacity
-            style={style.roundButton1}
-            /*onPress={() => navigation.push("LevelFive")}*/
-          >
-            <Text style={style.baseText}>5</Text>
-          </TouchableOpacity>
+        <Lock
+          style={{ top: 500, left: 90 }}
+          source={require("../../../assets/lock.png")}
+        />
+        <TouchableOpacity
+          style={style.roundButton1}
+          /*onPress={() => navigation.push("LevelFive")}*/
+        >
+          <Text style={style.baseText}>5</Text>
+        </TouchableOpacity>
 
-          <Lock
-            style={{ top: 620, left: 330 }}
-            source={require("../../../assets/lock.png")}
-          />
-          <TouchableOpacity
-            style={style.roundButton2}
-            /*onPress={() => navigation.push("LevelSix")}*/
-          >
-            <Text style={style.baseText}>6</Text>
-          </TouchableOpacity>
-        </ImageBg>
-      </ScrollView>
-    </SafeArea>
+        <Lock
+          style={{ top: 620, left: 330 }}
+          source={require("../../../assets/lock.png")}
+        />
+        <TouchableOpacity
+          style={style.roundButton2}
+          /*onPress={() => navigation.push("LevelSix")}*/
+        >
+          <Text style={style.baseText}>6</Text>
+        </TouchableOpacity>
+      </ImageBg>
+    </ScrollView>
   );
 }
 
