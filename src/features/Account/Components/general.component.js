@@ -96,7 +96,7 @@ export const GeneralCard = () => {
         <Card>
             <AvatarContainer>
                 <Spacer position="bottom" size="large">
-                    <TitleText>{t('common:general')}</TitleText>
+                    <TitleText>{t('general:general')}</TitleText>
                 </Spacer>
 
                 <Selector />
@@ -104,7 +104,7 @@ export const GeneralCard = () => {
                 <Spacer position="bottom" size="medium" />
 
                 <Row>
-                    <BodyText>{t('common:soundeffects')}</BodyText>
+                    <BodyText>{t('general:soundeffects')}</BodyText>
                     <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isSoundEffectsEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -124,7 +124,7 @@ export const GeneralCard = () => {
 
 
                 <Row>
-                    <BodyText>{t('common:reminders')}</BodyText>
+                    <BodyText>{t('general:reminders')}</BodyText>
                     <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isRemindersEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -145,7 +145,7 @@ export const GeneralCard = () => {
                 <Spacer size="medium" />
 
                 <Row>
-                    <BodyText>{t('common:help')}</BodyText>
+                    <BodyText>{t('general:help')}</BodyText>
                     <Spacer position="right" size="medium" />
                     <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
@@ -182,7 +182,7 @@ export const GeneralCard = () => {
 
 
                 <Row>
-                    <BodyText>{t("common:about")}</BodyText>
+                    <BodyText>{t("general:about")}</BodyText>
                     <Spacer position="right" size="medium" />
                     <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
                         {/* This will need to also be a feature in the firebase - language */}
