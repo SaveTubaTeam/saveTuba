@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { TitleText } from "../../../../../../../../components/title-text.component";
 
 export default class Header extends React.Component {
