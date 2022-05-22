@@ -7,14 +7,20 @@ import styled from "styled-components/native";
 import { Spacer } from '../../../components/spacer.component';
 import { theme } from '../../../infrastructure/theme';
 
+// import * as Localization from 'expo-localization';
+// import i18n from 'i18n-js';
+
 const Row = styled.View`
   flex-direction: row;
 `;
 
+// // Set the locale once at the beginning of your app.
+// i18n.locale = Localization.locale;
+// // When a value is missing from a language it'll fallback to another language with the key present.
+// i18n.fallbacks = true;
+
 const Selector = () => {
-
     const { t, i18n } = useTranslation();
-
     const [currentLanguage, setLanguage] = useState('en');
 
     const changeLanguage = value => {

@@ -4937,6 +4937,11 @@ coa@^2.0.2:
     chalk "^2.4.1"
     q "^1.1.2"
 
+cocoapods@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/cocoapods/-/cocoapods-0.0.0.tgz#394adb14507abe6cc238736980e1152a4107b7b3"
+  integrity sha512-nsdKucT3oTSvS5s+W3/uxSn57+0e2LxMo2XcTsHwDCdYHB+T21haL11AkioVBACloAMQr00EDBZ//2DnynD9SQ==
+
 collection-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/collection-visit/-/collection-visit-1.0.0.tgz"
