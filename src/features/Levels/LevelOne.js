@@ -15,19 +15,8 @@ import { SafeArea } from "../../components/safe-area.component";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LessononeScreen from "../Levels/levelOne/lessonOne/lessononeScreen";
-import LessontwoScreen from "../Levels/levelOne/lessonTwo/lessontwoScreen";
-import LessonthreeScreen from "../Levels/levelOne/lessonThree/lessonthreeScreen";
-import LessonfourScreen from "../Levels/levelOne/lessonFour/lessonfourScreen";
-import LessonfiveScreen from "../Levels/levelOne/lessonFive/lessonfiveScreen";
-import LessonsixScreen from "../Levels/levelOne/lessonSix/lessonsixScreen";
-import LessonsevenScreen from "../Levels/levelOne/lessonSeven/lessonsevenScreen";
-import LessoneightScreen from "../Levels/levelOne/lessonEight/lessoneightScreen";
-import LessonnineScreen from "../Levels/levelOne/lessonNine/lessonnineScreen";
 
 import LessonHandler from "./LessonHandler";
-
-import { styles } from "styled-system";
 
 const Stack = createNativeStackNavigator();
 const ImageBg = styled.ImageBackground`
@@ -59,7 +48,7 @@ const Lock = styled.Image`
 function LeveloneView() {
   const navigation = useNavigation();
   return (
-    <SafeArea style={{ backgroundColor: "#CCE882" }}>
+    <>
       <ScrollView style={{ alignContent: "center" }}>
         <TouchableOpacity
           style={style.roundButton1}
@@ -149,7 +138,7 @@ function LeveloneView() {
         </TouchableOpacity>
       </ScrollView>
       <ImageBg source={require("../../../assets/lessonbg.png")} />
-    </SafeArea>
+    </>
   );
 }
 
