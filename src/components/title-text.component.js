@@ -37,6 +37,7 @@ const getVariant = (weight, size, color) => {
 const TText = styled.Text`
   ${({ variant }) => variant}
   font-family: ${(props) => props.theme.fonts.heading};
+  text-align: center;
 `;
 
 export const TitleText = ({ weight, size, color, children }) => {

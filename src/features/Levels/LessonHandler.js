@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  Modal,
-  StyleSheet,
-} from "react-native";
+import { Text, View } from "react-native";
 import styled from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -14,6 +7,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LessonComponent from "./LessonComponent";
 
 import { connect } from "react-redux";
+
+import Sorting from "../../components/Levels/Adventures/sorting.component";
 
 // want to import data here?
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
@@ -29,16 +24,6 @@ To add Lessons:
   4: Add Lesson<N> into the switch statement for the levelselector
   5: Done?
 */
-
-import { QuizScreen } from "../../components/LevelOne/quiz-screen.component";
-
-function TestScreen({ navigation, route }) {
-  return (
-    <View>
-      <Button onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
 
 function MultipleChoice({ navigation, route }) {
   // const { data } = route.params.data;
@@ -115,6 +100,11 @@ function LessonHandler(props) {
           options={{ headerShown: false }}
         />
         {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
+        <Stack.Screen
+          name="Sorting"
+          component={Sorting}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="MultipleChoice"
           component={MultipleChoice}
