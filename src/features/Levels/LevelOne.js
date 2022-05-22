@@ -28,6 +28,7 @@ import LessonHandler from "./LessonHandler";
 
 import { styles } from "styled-system";
 
+
 const Stack = createNativeStackNavigator();
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -67,16 +68,25 @@ function LeveloneView() {
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
 
+
+          <Lock
+            style={{ top: 200, left: 350 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton3}
-            onPress={() => navigation.push("LessonHandler", { level: 3 })}
+            // onPress={() => navigation.push("LessonHandler", { level: 3 })}
           >
             <Text style={style.baseText}>3</Text>
           </TouchableOpacity>
 
+          <Lock
+            style={{ top: 300, left: 220 }}
+            source={require("../../../assets/lock.png")}
+          />
           <TouchableOpacity
             style={style.roundButton2}
-            onPress={() => navigation.push("LessonHandler", { level: 4 })}
+            // onPress={() => navigation.push("LessonHandler", { level: 4 })}
           >
             <Text style={style.baseText}>4</Text>
           </TouchableOpacity>

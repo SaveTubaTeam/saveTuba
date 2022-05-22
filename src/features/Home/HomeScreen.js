@@ -53,13 +53,13 @@ function HomeView() {
             <Text style={style.baseText}>1</Text>
           </TouchableOpacity>
 
-          <Lock
+          {/* <Lock
             style={{ top: 120, left: 330 }}
             source={require("../../../assets/lock.png")}
-          />
+          /> */}
           <TouchableOpacity
             style={style.roundButton2}
-            /*onPress={() => navigation.push("LevelTwo")}*/
+            onPress={() => navigation.push("LevelTwo")}
           >
             <Text style={style.baseText}>2</Text>
           </TouchableOpacity>
@@ -143,7 +143,7 @@ const HomeScreen = () => {
       <Stack.Screen
         name="LevelTwo"
         component={LevelTwo}
-        options={{ headerShown: true }}
+        options={{ headerShown: false }}
       />
 
       <Stack.Screen

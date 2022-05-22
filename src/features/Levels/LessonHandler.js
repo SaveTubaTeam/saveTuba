@@ -16,10 +16,10 @@ import LessonComponent from "./LessonComponent";
 import { connect } from "react-redux";
 
 // want to import data here?
-import { LessonOne } from "./levelOne/lessonOne/LessonOne";
-import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
-import { LessonThree } from "./levelOne/lessonThree/LessonThree";
-import { LessonFour } from "./levelOne/lessonFour/LessonFour";
+import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
+import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
+import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
+import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 
 /*
 To add Lessons: 
@@ -64,16 +64,16 @@ function LessonHandler(props) {
     // Function called on LessonHandler mount to determine data to select for lesson component
     switch (level) {
       case 1:
-        setSelectedLevel(LessonOne);
+        setSelectedLevel(Lvl_1_LessonOne);
         break;
       case 2:
-        setSelectedLevel(LessonTwo);
+        setSelectedLevel(Lvl_1_LessonTwo);
         break;
       case 3:
-        setSelectedLevel(LessonThree);
+        setSelectedLevel(Lvl_2_LessonOne);
         break;
       case 4:
-        setSelectedLevel(LessonFour);
+        setSelectedLevel(Lvl_2_LessonTwo);
         break;
       default:
         setSelectedLevel(null);
