@@ -5,6 +5,7 @@ import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
+import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_2_LessonTwo = {
   title: "Sustainable Agriculture",
@@ -17,6 +18,9 @@ export const Lvl_2_LessonTwo = {
 
   memory: {
     component: AdventureOne,
+  },
+  puzzle: {
+    component: Puzzle,
   },
 
   sorting: {

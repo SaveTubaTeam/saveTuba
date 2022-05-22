@@ -26,18 +26,6 @@ To add Lessons:
   5: Done?
 */
 
-function MultipleChoice({ navigation, route }) {
-  // const { data } = route.params.data;
-  // console.log(data);
-  // console.warn(require(data));
-  return (
-    <View>
-      <Button onPress={() => navigation.goBack()} />
-      <Text>Multiple Choice Screen </Text>
-    </View>
-  );
-}
-
 const Stack = createNativeStackNavigator();
 
 function LessonHandler(props) {
@@ -108,19 +96,37 @@ function LessonHandler(props) {
         <Stack.Screen
           component={selectedLevel.memory.component}
           name="Memory"
-          options={{ headerShown: false }}
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
         >
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
         <Stack.Screen
           name="Sorting"
           component={selectedLevel.sorting.component}
-          options={{ headerShown: false }}
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
         />
         <Stack.Screen
-          name="MultipleChoice"
-          component={MultipleChoice}
-          options={{ headerShown: true }}
+          name="Puzzle"
+          component={selectedLevel.puzzle.component}
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
         ></Stack.Screen>
         {/*  Summary Component based of selectedLevel */}
         <Stack.Screen

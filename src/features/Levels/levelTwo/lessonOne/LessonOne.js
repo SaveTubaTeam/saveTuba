@@ -5,6 +5,7 @@ import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
+import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_2_LessonOne = {
   title: "Climate Change",
@@ -17,6 +18,10 @@ export const Lvl_2_LessonOne = {
 
   sorting: {
     component: Sorting,
+  },
+
+  puzzle: {
+    component: Puzzle,
   },
 
   memory: {
@@ -35,7 +40,7 @@ export const Lvl_2_LessonOne = {
   minigames: [
     {
       title: "Puzzle",
-      description: "Solve the puzzle",
+      description: "Solve the puzzle!",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,

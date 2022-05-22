@@ -5,6 +5,7 @@ import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
+import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_1_LessonOne = {
   title: "Sustainability",
@@ -13,6 +14,10 @@ export const Lvl_1_LessonOne = {
   summaryComponent: {
     route: "Lesson Summary",
     component: SummaryScreen,
+  },
+
+  puzzle: {
+    component: Puzzle,
   },
 
   memory: {
@@ -48,8 +53,8 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.multiplechoice,
     },
     {
-      title: "Crossword",
-      description: "Have a go at a crossword!",
+      title: "Puzzle",
+      description: "Solve the puzzle!",
       key: "testkey1",
       data: questionSet,
       image: AdventureImages.matching,

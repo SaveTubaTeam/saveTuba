@@ -25,8 +25,8 @@ import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
 function getLinkToScreen(selectedItem, navigation) {
-  if (selectedItem.map((obj) => obj.title) == "Crossword") {
-    navigation.navigate("Crossword", {
+  if (selectedItem.map((obj) => obj.title) == "Puzzle") {
+    navigation.navigate("Puzzle", {
       data: selectedItem.map((obj) => obj.image),
     });
   } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") {
@@ -37,8 +37,7 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("Sorting", {
       data: "./TestData.json",
     });
-  }
-  else if (selectedItem.map((obj) => obj.title) == "Memory") {
+  } else if (selectedItem.map((obj) => obj.title) == "Memory") {
     navigation.navigate("Memory", {
       data: "./TestData.json",
     });

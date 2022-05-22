@@ -3,10 +3,8 @@ import { StyleSheet, View, Button } from "react-native";
 import { Ionicons, FontAwesome, Entypo } from "@expo/vector-icons"; // 6.2.2
 
 //import Header from './components/Header';
-import Header from "../adventureOne/components/header";
 import Score from "../adventureOne/components/Score";
 import Card from "../adventureOne/components/Card";
-import helpers from "../adventureOne/helpers";
 
 export class AdventureOne extends React.Component {
   constructor(props) {
@@ -90,7 +88,6 @@ export class AdventureOne extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Header />
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
         <Button onPress={this.resetCards} title="Reset" color="#008CFA" />
