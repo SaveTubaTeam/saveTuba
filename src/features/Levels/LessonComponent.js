@@ -211,17 +211,6 @@ function LessonComponent(props) {
               </BodyText>
             </Mastery>
 
-            <View style={{ width: "70%", alignItems: "center" }}>
-              <Image
-                style={{
-                  width: "75%",
-                  height: undefined,
-                  aspectRatio: 3 / 3,
-                }}
-                source={require("../../../assets/earth.png")}
-              />
-            </View>
-
             <RenderModal
               isVisible={selectedItem}
               selectedItem={selectedItem}

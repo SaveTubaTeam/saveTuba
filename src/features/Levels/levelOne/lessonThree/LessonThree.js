@@ -16,7 +16,6 @@ export const LessonThree = {
     route: "Mastery",
     component: MasteryScreen,
   },
-
   minigames: [
     {
       title: "Puzzle",
