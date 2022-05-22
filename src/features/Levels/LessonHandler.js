@@ -20,6 +20,7 @@ import { LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { LessonThree } from "./levelOne/lessonThree/LessonThree";
 import { LessonFour } from "./levelOne/lessonFour/LessonFour";
+import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 
 /*
 To add Lessons: 
@@ -120,6 +121,10 @@ function LessonHandler(props) {
               questionSet={selectedLevel.minigames[2].data}
             />
           )}
+          {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
+        </Stack.Screen>
+        <Stack.Screen component={adventureOne} name="Memory" options={{ headerShown: false }}>
+          
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
         <Stack.Screen

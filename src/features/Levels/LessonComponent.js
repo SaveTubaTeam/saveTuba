@@ -32,6 +32,11 @@ function getLinkToScreen(selectedItem, navigation) {
       data: "./TestData.json",
     });
   }
+  else if (selectedItem.map((obj) => obj.title) == "Memory") {
+    navigation.navigate("Memory", {
+      data: "./TestData.json",
+    });
+  }
 }
 
 function LessonComponent(props) {
