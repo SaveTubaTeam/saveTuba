@@ -4,7 +4,7 @@ import { AdventureImages } from "../../IMAGES";
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
-export const LessonOne = {
+export const Lvl_1_LessonOne = {
   title: "Sustainability",
   summary: "What is sustainability and why is it important?",
 

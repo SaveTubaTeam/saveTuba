@@ -4,9 +4,9 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
-export const Lvl_1_LessonTwo = {
-  title: "Air Pollution",
-  summary: "Why is protecting the environment important?",
+export const Lvl_2_LessonOne = {
+  title: "Climate Change",
+  summary: "How does greenhouse effect relate to global warming?",
 
   summaryComponent: {
     route: "Summary",
@@ -19,7 +19,7 @@ export const Lvl_1_LessonTwo = {
   },
 
   info: {
-    key: "lesson2",
+    key: "lesson1",
   },
 
   minigames: [
