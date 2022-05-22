@@ -20,7 +20,6 @@ import LessonHandler from "./LessonHandler";
 
 import { styles } from "styled-system";
 
-
 const Stack = createNativeStackNavigator();
 const ImageBg = styled.ImageBackground`
   width: ${Dimensions.get("window").width}px;
@@ -31,13 +30,6 @@ const ImageBg = styled.ImageBackground`
   left: 0;
   right: 0;
   bottom: 0;
-`;
-const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.secondary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 20%;
-  align-items: center;
 `;
 
 const Lock = styled.Image`
@@ -66,28 +58,27 @@ function LeveloneView() {
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
+        <Lock
+          style={{ top: 200, left: 350 }}
+          source={require("../../../assets/lock.png")}
+        />
+        <TouchableOpacity
+          style={style.roundButton3}
+          // onPress={() => navigation.push("LessonHandler", { level: 3 })}
+        >
+          <Text style={style.baseText}>3</Text>
+        </TouchableOpacity>
 
-          <Lock
-            style={{ top: 200, left: 350 }}
-            source={require("../../../assets/lock.png")}
-          />
-          <TouchableOpacity
-            style={style.roundButton3}
-            // onPress={() => navigation.push("LessonHandler", { level: 3 })}
-          >
-            <Text style={style.baseText}>3</Text>
-          </TouchableOpacity>
-
-          <Lock
-            style={{ top: 300, left: 220 }}
-            source={require("../../../assets/lock.png")}
-          />
-          <TouchableOpacity
-            style={style.roundButton2}
-            // onPress={() => navigation.push("LessonHandler", { level: 4 })}
-          >
-            <Text style={style.baseText}>4</Text>
-          </TouchableOpacity>
+        <Lock
+          style={{ top: 300, left: 220 }}
+          source={require("../../../assets/lock.png")}
+        />
+        <TouchableOpacity
+          style={style.roundButton2}
+          // onPress={() => navigation.push("LessonHandler", { level: 4 })}
+        >
+          <Text style={style.baseText}>4</Text>
+        </TouchableOpacity>
 
         <Lock
           style={{ top: 400, left: 75 }}

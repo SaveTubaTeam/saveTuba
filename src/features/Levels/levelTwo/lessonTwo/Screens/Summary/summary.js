@@ -21,37 +21,63 @@ const ImageBg = styled.ImageBackground`
 const DialogBox = styled.ImageBackground``;
 
 const TubaRight = styled.Image`
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   position: absolute;
-  bottom: -175px;
-  right: -75px;
-`;
-
-const TubaRotated = styled.Image`
-  position: absolute;
-  width: 285px;
-  height: 250px;
-  bottom: -150px;
-  left: 0;
+  bottom: -160px;
+  right: -50px;
 `;
 
 const TubaLeft = styled.Image`
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   position: absolute;
-  bottom: -175px;
-  left: -75px;
+  bottom: -160px;
+  left: -50px;
+`;
+
+const Forward = styled.TouchableOpacity`
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 10px;
+`;
+
+const Back = styled.TouchableOpacity`
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 10px;
+`;
+
+const Btn = styled.Image`
+  width: 100%;
+  height: 100%;
 `;
 
 const Storyline = (props) => {
   const navigation = useNavigation();
   const bgUrl = "../../../../../../../assets/naturebackground.jpg";
   const dialogBoxUrl = "../../../../../../../assets/dialogbox.png";
+  const forwardButtonUrl = "../../../../../../../assets/right.png";
+  const backButtonUrl = "../../../../../../../assets/left.png";
   return (
     <>
       <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container onPress={() => navigation.navigate(props.whereTo)}>
+        <Container onPress={() => navigation.navigate(props.next)}>
+          <Forward
+            style={{ zIndex: 100 }}
+            onPress={() => navigation.navigate(props.next)}
+          >
+            <Btn source={require(forwardButtonUrl)} />
+          </Forward>
+
+          <Back
+            style={{ zIndex: 100 }}
+            onPress={() => navigation.navigate(props.back)}
+          >
+            <Btn source={require(backButtonUrl)} />
+          </Back>
           <DialogBox source={require(dialogBoxUrl)} resizeMode="contain">
             <Text style={{ fontSize: 18, margin: 105 }}>{props.text}</Text>
           </DialogBox>
@@ -68,8 +94,9 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="The Earth's average surface temperature is gradually rising. Global warming is the term for this process."
-            whereTo="SecondScreen"
+            text="The products of agriculture that people eat come from both plants and animals."
+            next="SecondScreen"
+            back="Start"
             Tuba={
               <TubaLeft
                 source={require("../../../../../../../assets/tuba1.png")}
@@ -82,7 +109,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Plant foods include fruits, vegetables, and grains. Meat, dairy (milk) products, and eggs are some of the most common animal foods."
-            whereTo="ThirdScreen"
+            next="ThirdScreen"
+            back="Start"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -95,7 +123,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Plants and animals also supply such natural materials as cotton, flax, wool, and hides."
-            whereTo="FourthScreen"
+            next="FourthScreen"
+            back="SecondScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -108,7 +137,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Workers process these materials into thread, cloth, and leather."
-            whereTo="FifthScreen"
+            next="FifthScreen"
+            back="ThirdScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -121,7 +151,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text=" Then people use the materials to make such things as clothing, draperies, shoes, furniture coverings, and many other items"
-            whereTo="SixthScreen"
+            next="SixthScreen"
+            back="FourthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -134,7 +165,8 @@ const SummaryScreen = () => {
         {() => (
           <Storyline
             text="Growing trees is another important agricultural job."
-            whereTo="SeventhScreen"
+            next="SeventhScreen"
+            back="FifthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -148,7 +180,8 @@ const SummaryScreen = () => {
           <Storyline
             text="Lumber from tree farms is used to make buildings, furniture, boats, and many other things. 
 "
-            whereTo="SeventhScreen"
+            next="SeventhScreen"
+            back="SixthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}

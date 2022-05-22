@@ -105,9 +105,6 @@ function LessonHandler(props) {
             headerTitleStyle: {
               fontFamily: "Raleway_400Regular",
             },
-            headerBackTitleStyle: {
-              fontFamily: "Raleway_400Regular",
-            },
           }}
           initialParams={{ level: level }}
         />

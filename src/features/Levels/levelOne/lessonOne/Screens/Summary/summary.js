@@ -21,11 +21,11 @@ const ImageBg = styled.ImageBackground`
 const DialogBox = styled.ImageBackground``;
 
 const TubaRight = styled.Image`
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   position: absolute;
-  bottom: -175px;
-  right: -75px;
+  bottom: -160px;
+  right: -50px;
 `;
 
 const TubaRotated = styled.Image`
@@ -37,11 +37,11 @@ const TubaRotated = styled.Image`
 `;
 
 const TubaLeft = styled.Image`
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
   position: absolute;
-  bottom: -175px;
-  left: -75px;
+  bottom: -160px;
+  left: -50px;
 `;
 
 const Forward = styled.TouchableOpacity`
