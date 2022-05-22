@@ -4,4 +4,5 @@ export default {
     reminders: "напоминания",
     help: "Помощь",
     about: "О нас",
+    languageSelector: "Выбор языка",
 };

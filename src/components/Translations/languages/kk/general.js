@@ -4,4 +4,5 @@ export default {
     reminders: "Еске салулар",
     help: "Көмектесіңдер",
     about: "туралы",
+    languageSelector: "Тіл таңдау",
 };

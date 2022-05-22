@@ -4,4 +4,5 @@ export default {
     reminders: "Reminders",
     help: "Help",
     about: "About",
+    languageSelector: "Language Selection",
 };

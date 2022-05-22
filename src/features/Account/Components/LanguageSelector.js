@@ -13,8 +13,8 @@ const Row = styled.View`
 
 const LANGUAGES = [
     { code: 'en', label: 'English' },
-    { code: 'ru', label: 'Russian' },
-    { code: 'kk', label: 'Kazak' }
+    { code: 'ru', label: 'Русский' },
+    { code: 'kk', label: 'қазақ' }
 ];
 
 const Selector = () => {
@@ -28,7 +28,7 @@ const Selector = () => {
     return (
         <View style={styles.container}>
             <View style={styles.row}>
-                <Text style={styles.title}>{t('common:languageSelector')}</Text>
+                <Text style={styles.title}>{t('general:languageSelector')}</Text>
             </View>
             {LANGUAGES.map(language => {
                 const selectedLanguage = language.code === selectedLanguageCode;
@@ -120,7 +120,6 @@ const Selector = () => {
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 60,
         paddingHorizontal: 16
     },
     row: {
@@ -134,7 +133,8 @@ const styles = StyleSheet.create({
         fontWeight: '600'
     },
     buttonContainer: {
-        marginTop: 10
+        marginTop: 5,
+        alignItems: 'center',
     },
     text: {
         fontSize: 18,

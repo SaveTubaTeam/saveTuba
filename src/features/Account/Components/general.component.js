@@ -203,7 +203,7 @@ export const GeneralCard = () => {
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>WE ARE SAVE TUBA!!!!! this needs to be in a separate JSON folder to make this text longer</Text>
+                                <Text style={styles.modalText}>{t("about:about")}</Text>
                                 <Pressable
                                     style={[styles.button, styles.buttonClose]}
                                     onPress={() => setModalAboutVisible(!modalAboutVisible)}
