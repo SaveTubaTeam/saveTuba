@@ -9,7 +9,14 @@ import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faSolid, faCamera, faCircleInfo, faCircleQuestion, faInfo, faLeaf } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSolid,
+  faCamera,
+  faCircleInfo,
+  faCircleQuestion,
+  faInfo,
+  faLeaf,
+} from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
 import { StyleSheet } from "react-native";
@@ -18,7 +25,6 @@ import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
-
 
 const AvatarContainer = styled.View`
   align-items: center;
@@ -49,18 +55,18 @@ const Input = styled.TextInput`
   margin-top: ${(props) => props.theme.space[2]};
 `;
 
-
 export function PersonalCard(props) {
   const { t } = useTranslation();
 
   const navigation = useNavigation();
   const { currentUser } = props;
 
-
   const [photo, setPhoto] = useState(null);
 
   const getProfilePicture = async (currentUser) => {
-    const photoUri = await AsyncStorage.getItem(`${currentUser?.firstName}-photo`);
+    const photoUri = await AsyncStorage.getItem(
+      `${currentUser?.firstName}-photo`
+    );
     setPhoto(photoUri);
   };
 
@@ -69,8 +75,6 @@ export function PersonalCard(props) {
       getProfilePicture(currentUser);
     }, [currentUser])
   );
-
-
 
   return (
     <Card>
@@ -98,9 +102,9 @@ export function PersonalCard(props) {
               />
             )}
 
-
-
-            <TouchableOpacity onPress={() => navigation.navigate("CameraScreen")}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("CameraScreen")}
+            >
               {/* This will need to also be a feature in the firebase - language */}
               <FontAwesomeIcon
                 position="absolute"
@@ -114,17 +118,14 @@ export function PersonalCard(props) {
           </Row>
         </Spacer>
 
-        <TitleText>{t('email')}: {currentUser?.email}</TitleText>
+        <TitleText size="subtitle">{currentUser?.email}</TitleText>
         <Row>
-          <TitleText>{t('change username')}: </TitleText>
+          <TitleText size="subtitle">{t("change username")}: </TitleText>
           <InputContainer>
-            <Input
-              placeholder={currentUser?.username}
-            />
+            <Input placeholder={currentUser?.username} />
           </InputContainer>
         </Row>
       </AvatarContainer>
     </Card>
   );
-
 }

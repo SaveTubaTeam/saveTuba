@@ -172,23 +172,6 @@ function LessonComponent(props) {
   return (
     <ScrollView>
       <Container>
-        <TitleText size="h4" color="primary">
-          {selectedLevel.title}
-        </TitleText>
-        <Spacer size="small" />
-        <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
-        <Summary
-          onPress={() => {
-            navigation.navigate(selectedLevel.summaryComponent.route);
-          }}
-        >
-          <BodyText weight="bold" color="primary" size="subtitle">
-            Full Summary
-          </BodyText>
-        </Summary>
-        <Spacer size="large" />
-        <TitleText>Adventures</TitleText>
-        <Spacer size="small" />
         <FlatList // The flatlist used to load minigames and their data.
           data={selectedLevel.minigames}
           renderItem={renderItem}
@@ -197,31 +180,70 @@ function LessonComponent(props) {
           key={(item) => item.key}
           style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
           scrollEnabled={false}
-        />
-
-        <Mastery
-          onPress={() => {
-            navigation.navigate(selectedLevel.masteryComponent.route);
+          // putting everything before and after the flatlist
+          // in header and footer fixes the nested virtualized
+          // lists error
+          ListHeaderComponent={
+            <>
+              <TitleText size="h4" color="primary">
+                {selectedLevel.title}
+              </TitleText>
+              <Spacer size="small" />
+              <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
+              <Summary
+                onPress={() => {
+                  navigation.navigate(selectedLevel.summaryComponent.route);
+                }}
+              >
+                <BodyText weight="bold" color="primary" size="subtitle">
+                  Full Summary
+                </BodyText>
+              </Summary>
+              <Spacer size="large" />
+              <TitleText>Adventures</TitleText>
+              <Spacer size="small" />
+            </>
+          }
+          ListHeaderComponentStyle={{
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        >
-          <BodyText weight="bold" size="subtitle" color="secondary">
-            Mastery
-          </BodyText>
-        </Mastery>
+          ListFooterComponent={
+            <>
+              <Mastery
+                onPress={() => {
+                  navigation.navigate(selectedLevel.masteryComponent.route);
+                }}
+              >
+                <BodyText weight="bold" size="subtitle" color="secondary">
+                  Mastery
+                </BodyText>
+              </Mastery>
 
-        <View style={{ width: "70%", alignItems: "center" }}>
-          <Image
-            style={{ width: "75%", height: undefined, aspectRatio: 3 / 3 }}
-            source={require("../../../assets/earth.png")}
-          />
-        </View>
+              <View style={{ width: "70%", alignItems: "center" }}>
+                <Image
+                  style={{
+                    width: "75%",
+                    height: undefined,
+                    aspectRatio: 3 / 3,
+                  }}
+                  source={require("../../../assets/earth.png")}
+                />
+              </View>
 
-        <RenderModal
-          isVisible={selectedItem}
-          selectedItem={selectedItem}
-          onClose={handeOnCloseModal}
-          navigation={navigation}
-          key={selectedItem.key}
+              <RenderModal
+                isVisible={selectedItem}
+                selectedItem={selectedItem}
+                onClose={handeOnCloseModal}
+                navigation={navigation}
+                key={selectedItem.key}
+              />
+            </>
+          }
+          ListFooterComponentStyle={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}
         />
       </Container>
     </ScrollView>
