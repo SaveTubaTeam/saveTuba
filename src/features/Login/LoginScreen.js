@@ -101,13 +101,13 @@ const LoginScreen = () => {
       <ImageBg source={require("../../../assets/loginBackground.png")}>
         <InputContainer>
           <Input
-            placeholder="Email"
+            placeholder="Эл." //Email
             value={email}
             onChangeText={(text) => setEmail(text)}
             autoCapitalize="none"
           />
           <Input
-            placeholder="Password"
+            placeholder="Пароль" //Password
             value={password}
             onChangeText={(text) => setPassword(text)}
             autoCapitalize="none"
@@ -118,13 +118,15 @@ const LoginScreen = () => {
         <ButtonContainer>
           <Button onPress={handleLogin}>
             <TitleText color="secondary" size="body">
-              Login
+              Авторизоваться
+              {/* Login */}
             </TitleText>
           </Button>
 
           <ButtonOutLine onPress={() => navigation.push("Register")}>
             <TitleText color="primary" size="body">
-              Register
+              регистр
+              {/* Register */}
             </TitleText>
           </ButtonOutLine>
         </ButtonContainer>
