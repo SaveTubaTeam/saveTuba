@@ -18,6 +18,22 @@ import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
+import { TitleText } from "../../components/title-text.component";
+import { IconButton } from "react-native-paper";
+
+const TempScreen = ({navigation})  => {
+
+  return (
+    <View style={{
+      alignContent: "center",
+      alignItems: "center",
+      flex: 1,
+    }}>
+      <TitleText>В разработке</TitleText>
+    </View>
+  );
+};
+
 /*
 To add Lessons: 
   1: First create the Lesson<number>.js within the folder (Imports will work automatically if you copy LessonOne or Two).
@@ -110,6 +126,17 @@ function LessonHandler(props) {
         <Stack.Screen
           name="Sorting"
           component={selectedLevel.sorting.component}
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="MultipleChoice"
+          component={TempScreen}
           options={{
             headerTintColor: "white",
             headerBackTitleVisible: false,

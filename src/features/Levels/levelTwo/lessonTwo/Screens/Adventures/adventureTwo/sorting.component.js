@@ -157,7 +157,7 @@ const Start = () => {
               }}
             >
               <TitleText size="title">
-                Click on the corresponding category:
+                Нажмите на соответствующую категорию:
               </TitleText>
             </View>
             <View style={{ flexDirection: "row", paddingTop: 100 }}>
