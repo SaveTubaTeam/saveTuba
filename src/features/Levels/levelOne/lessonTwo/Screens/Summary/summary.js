@@ -94,7 +94,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="There are a limited amount of resources in the world."
+            text="Количество ресурсов в мире ограничено." //There are a limited amount of resources in the world.
             next="SecondScreen"
             back="Start"
             Tuba={
@@ -109,8 +109,9 @@ const SummaryScreen = () => {
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Humans must extract these resources from the very Earth in order to produce houses,
-      cars, computers, and pretty much everything else."
+            text="Люди должны добывать эти ресурсы из самой Земли, чтобы строить дома,
+            автомобили, компьютеры и многое другое." //Humans must extract these resources from the very Earth in order to produce houses,
+            //cars, computers, and pretty much everything else.
             next="ThirdScreen"
             back="Start"
             Tuba={
@@ -124,7 +125,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="ThirdScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="When we use the word sustainability to mean maintain, it means to maintain it forever."
+            text="Когда мы используем слово «устойчивость» для обозначения «поддерживать», это означает «поддерживать ее навсегда»." //When we use the word sustainability to mean maintain, it means to maintain it forever.
             next="FourthScreen"
             back="SecondScreen"
             Tuba={
@@ -138,7 +139,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FourthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="This is because our actions have a lasting effect on the environment and we should protect it for our future generations."
+            text="Это потому, что наши действия оказывают долгосрочное воздействие на окружающую среду, и мы должны защищать ее для наших будущих поколений." //This is because our actions have a lasting effect on the environment and we should protect it for our future generations.
             next="FourthScreen"
             back="ThirdScreen"
             Tuba={
