@@ -157,7 +157,8 @@ const Start = () => {
               }}
             >
               <TitleText size="title">
-                Click on the corresponding category:
+                Нажмите на соответствующую категорию
+                {/* Click on the corresponding category: */}
               </TitleText>
             </View>
             <View style={{ flexDirection: "row", paddingTop: 100 }}>
@@ -169,7 +170,10 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Reuse</BodyText>
+                <BodyText size="title">
+                  Повторное использование
+                  {/* Reuse */}
+                </BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -179,7 +183,10 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Reduce</BodyText>
+                <BodyText size="title">
+                  Уменьшать
+                  {/* Reduce */}
+                </BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -189,7 +196,10 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Recycle</BodyText>
+                <BodyText size="title">
+                  Рециркулировать
+                  {/* Recycle */}
+                </BodyText>
               </Category>
             </View>
 
@@ -201,15 +211,21 @@ const Start = () => {
           </Container>
           <Option style={{ opacity: visibleOne }}>
             <TitleText size="body">
-              Refill a water bottle with water from home instead of buying a new
-              one
+              Наполните бутылку водой из дома вместо того, чтобы покупать новую
+              один
+              {/* Refill a water bottle with water from home instead of buying a new
+              one */}
             </TitleText>
           </Option>
           <Option style={{ opacity: visibleTwo }}>
-            <TitleText size="body">Only buy what you need</TitleText>
+            <TitleText size="body">
+              Покупайте только то, что вам нужно
+              {/* Only buy what you need */}
+            </TitleText>
           </Option>
           <Option style={{ opacity: visibleThree }}>
             <TitleText size="body">
+              Отделение картона для отправки на переработку :
               Separating cardboard to put in recycling facility
             </TitleText>
           </Option>
