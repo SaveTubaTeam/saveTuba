@@ -30,7 +30,7 @@ const MasteryScreen = () => {
       <ScrollView directionalLockEnabled={true}>
         <Container>
           <BodyText size="subtitle">
-            Supermarkets make grocery shopping simple.
+            Супермаркеты упрощают покупку продуктов.
           </BodyText>
           <BodyText size="subtitle">
             Но легко забыть, что все, что мы покупаем, не появляется на
