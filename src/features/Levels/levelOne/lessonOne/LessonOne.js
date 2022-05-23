@@ -12,7 +12,7 @@ export const Lvl_1_LessonOne = {
   summary: "Что такое устойчивое развитие и почему это важно?", //What is sustainability and why is it important?
 
   summaryComponent: {
-    route: "Lesson Summary",
+    route: "Резюме урока", //Lesson Summary
     component: SummaryScreen,
   },
 
@@ -29,7 +29,7 @@ export const Lvl_1_LessonOne = {
   },
 
   masteryComponent: {
-    route: "Mastery",
+    route: "Мастерство", //Mastery
     component: MasteryScreen,
   },
 

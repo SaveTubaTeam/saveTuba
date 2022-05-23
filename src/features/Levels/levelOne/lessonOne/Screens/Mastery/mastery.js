@@ -29,9 +29,12 @@ const MasteryScreen = () => {
       <ScrollView directionalLockEnabled={true}>
         <Container>
           <BodyText size="subtitle">
-            Come up with 3 sustainable habits that improve the environment.
+            Придумайте 3 устойчивые привычки, которые улучшат окружающую среду.
+            Создайте трекер привычек на месяц, где вы будете отслеживать свои
+            прогресс.
+            {/* Come up with 3 sustainable habits that improve the environment.
             Create a habit tracker for a month where you will track your
-            progress.
+            progress. */}
           </BodyText>
           <Image
             style={{
@@ -45,10 +48,12 @@ const MasteryScreen = () => {
             source={require("../../../../../../../assets/habittracker.png")}
           />
           <BodyText size="subtitle">
-            Feel free to draw illustrations, make origami figures and glue them
+            Смело рисуйте иллюстрации, делайте фигурки оригами и приклеивайте их к плакату, украшайте его природным материалом, например, сухими листьями, цветами и т. д. Будьте изобретательны! После того, как вы закончите украшать, повесьте трекер привычек на стену.
+
+            {/* Feel free to draw illustrations, make origami figures and glue them
             to the poster, decorate it with natural material such as dry leaves,
             flowers, etc. Be creative! After you are done decorating, put your
-            Habit Tracker on the wall.
+            Habit Tracker on the wall. */}
           </BodyText>
           <Spacer size="large" />
           <View
@@ -61,40 +66,47 @@ const MasteryScreen = () => {
             }}
           >
             <BodyText size="subtitle" color="tertiary">
-              Show four pictures to your teacher:
+              Отправьте четыре изображения
+              {/* Show four pictures to your teacher: */}
             </BodyText>
             <Checklist>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" />
                 <BodyText size="subtitle" color="tertiary">
-                  Your Habit Tracker
+                  Изображение вашего трекера привычек
+                  {/* Your Habit Tracker */}
                 </BodyText>
               </Item>
               <Item>
-                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
+                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => { }} />
                 <BodyText size="subtitle" color="tertiary">
-                  You performing activity 1
+                  Изображение, на котором вы выполняете действие 1
+                  {/* You performing activity 1 */}
                 </BodyText>
               </Item>
               <Item>
-                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
+                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => { }} />
                 <BodyText size="subtitle" color="tertiary">
-                  You performing activity 1
+                  Изображение, на котором вы выполняете действие 2
+                  {/* You performing activity 1 */}
                 </BodyText>
               </Item>
               <Item>
-                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
+                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => { }} />
                 <BodyText size="subtitle" color="tertiary">
-                  You performing activity 1
+                  Изображение, на котором вы выполняете действие 3
+                  {/* You performing activity 1 */}
                 </BodyText>
               </Item>
             </Checklist>
           </View>
           <BodyText size="subtitle">
-            It is ok if you forget to do one of the activities every once in a
+            Это нормально, если вы время от времени забываете сделать одно из занятий, привычки не формируются за одну ночь :) Делайте все возможное и делитесь своими замечательными новыми привычками с родителями и одноклассниками! Что они придумали?
+
+            {/* It is ok if you forget to do one of the activities every once in a
             while, habits don't form overnight :) Do your best and share your
             amazing new habits with your parents and classmates! What did they
-            come up with?
+            come up with? */}
           </BodyText>
         </Container>
       </ScrollView>
