@@ -145,7 +145,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Hi, I'm Tuba!"
+            text="Привет, я Тuba!" //Hi, I'm Tuba!
             next="SecondScreen"
             back="Start"
             Tuba={
@@ -159,7 +159,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Let's learn together!"
+            text="Давайте учиться вместе!" //Let's learn together!
             next="ThirdScreen"
             back="Start"
             Tuba={
@@ -173,7 +173,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="ThirdScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Sustainability is all about  balance."
+            text="Устойчивое развитие — это баланс" //Sustainability is all about  balance.
             next="FourthScreen"
             back="SecondScreen"
             Tuba={
@@ -200,7 +200,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FifthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="The environment provides us with all the resources that we require to fulfill our basic human needs, such as food, water, and housing."
+            text="Окружающая среда обеспечивает нас всеми ресурсами, необходимыми для удовлетворения наших основных человеческих потребностей, таких как пища, вода и жилье" //The environment provides us with all the resources that we require to fulfill our basic human needs, such as food, water, and housing.
             next="SixthScreen"
             back="FourthScreen"
             Tuba={
@@ -214,7 +214,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SixthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="However, people are consuming more resources than they can replenish."
+            text="Однако люди потребляют больше ресурсов, чем могут восполнить." //However, people consume more resources than they can replenish.
             next="SeventhScreen"
             back="FifthScreen"
             Tuba={
@@ -228,7 +228,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SeventhScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Sustainability plays a key role in preserving the environment for future generations."
+            text="Устойчивое развитие играет ключевую роль в сохранении окружающей среды для будущих поколений." //Sustainability plays a key role in preserving the environment for future generations.
             next="EighthScreen"
             back="SixthScreen"
             Tuba={
@@ -242,7 +242,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="EighthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="It means consuming resources at a rate that gives them time to replenish."
+            text="Это означает потребление ресурсов со скоростью, которая дает им время для восполнения." //It means consuming resources at a rate that gives them time to replenish.
             next="NinthScreen"
             back="SeventhScreen"
             Tuba={
@@ -256,7 +256,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="NinthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="That is why we need to be thoughtful about the consumption of resources and conserve them."
+            text="Вот почему мы должны думать о потреблении ресурсов и экономить их." //That is why we need to be thoughtful about the consumption of resources and conserve them.
             next="NinthScreen"
             back="EighthScreen"
             Tuba={
