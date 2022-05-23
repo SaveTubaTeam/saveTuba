@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { QuizContainer } from "react-native-quiz-maker";
 import { useNavigation } from "@react-navigation/native";
 
+
 import { AnswerModal } from "./answer.modal";
 import { FinishModal } from "./finish.modal";
 // import { questionSet } from "./QuestionSet";
