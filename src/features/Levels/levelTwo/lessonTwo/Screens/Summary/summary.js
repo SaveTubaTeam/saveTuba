@@ -94,7 +94,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="The products of agriculture that people eat come from both plants and animals."
+            text="Продукты сельского хозяйства, которые едят люди, происходят как от растений, так и от животных."
             next="SecondScreen"
             back="Start"
             Tuba={
@@ -108,7 +108,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Plant foods include fruits, vegetables, and grains. Meat, dairy (milk) products, and eggs are some of the most common animal foods."
+            text="К растительной пище относятся фрукты, овощи и злаки. Мясо, молочные (молочные) продукты и яйца являются одними из наиболее распространенных продуктов животного происхождения."
             next="ThirdScreen"
             back="Start"
             Tuba={
@@ -122,7 +122,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="ThirdScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Plants and animals also supply such natural materials as cotton, flax, wool, and hides."
+            text="Растения и животные также поставляют такие природные материалы, как хлопок, лен, шерсть и шкуры."
             next="FourthScreen"
             back="SecondScreen"
             Tuba={
@@ -136,7 +136,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FourthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Workers process these materials into thread, cloth, and leather."
+            text="Рабочие перерабатывают эти материалы в нить, ткань и кожу."
             next="FifthScreen"
             back="ThirdScreen"
             Tuba={
@@ -150,7 +150,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FifthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text=" Then people use the materials to make such things as clothing, draperies, shoes, furniture coverings, and many other items"
+            text="Затем люди используют материалы для изготовления таких вещей, как одежда, драпировки, обувь, мебельные покрытия и многие другие предметы."
             next="SixthScreen"
             back="FourthScreen"
             Tuba={
@@ -164,7 +164,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SixthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Growing trees is another important agricultural job."
+            text="Выращивание деревьев — еще одна важная сельскохозяйственная работа."
             next="SeventhScreen"
             back="FifthScreen"
             Tuba={
@@ -178,8 +178,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SeventhScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Lumber from tree farms is used to make buildings, furniture, boats, and many other things. 
-"
+            text="Пиломатериалы с лесных ферм используются для изготовления зданий, мебели, лодок и многого другого."
             next="SeventhScreen"
             back="SixthScreen"
             Tuba={
