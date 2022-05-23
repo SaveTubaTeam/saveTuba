@@ -6,7 +6,7 @@ import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
-
+import { TestImages } from "../../IMAGES";
 export const Lvl_1_LessonOne = {
   title: "устойчивость", //Sustainability
   summary: "Что такое устойчивое развитие и почему это важно?", //What is sustainability and why is it important?
@@ -53,11 +53,38 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.multiplechoice,
     },
     {
-      title: "Головоломка", //Puzzle
-      description: "Решите головоломку!", //Solve the puzzle!
-      key: "testkey1",
-      data: questionSet,
-      image: AdventureImages.matching,
+      title: "Изображение Бананза",
+      description: "Отвечать открыто",
+      key: "testkey2",
+      data: {
+        prompts: [
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.bikingPic,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.faucetPic,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.recyclingPic,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.lightsPic,
+          },
+        ]
+      },
+      image: AdventureImages.puzzle,
     },
     {
       title: "объем памяти", //Memory

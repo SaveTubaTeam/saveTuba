@@ -6,6 +6,7 @@ import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
+import { TestImages } from "../../IMAGES";
 
 export const Lvl_2_LessonOne = {
   title: "Изменение климата", // climate change
