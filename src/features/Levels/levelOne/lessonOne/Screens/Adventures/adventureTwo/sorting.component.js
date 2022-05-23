@@ -62,14 +62,14 @@ const SecondScreen = ({ navigation }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
-            Congratulations! You have completed your first sorting game!
+            Поздравляем! Вы завершили свою первую сортировочную игру!
           </TitleText>
           <Spacer size="large" />
           <Pressable
             onPress={() => navigation.navigate("Level")}
             style={styles.next}
           >
-            <BodyText color="secondary">Go back</BodyText>
+            <BodyText color="secondary">Вернитесь назад</BodyText>
           </Pressable>
         </Container2>
       </SafeArea>
@@ -78,7 +78,7 @@ const SecondScreen = ({ navigation }) => {
 };
 
 const Start = () => {
-  const [correctAnswer, setCorrectAnswer] = useState("Non-living");
+  const [correctAnswer, setCorrectAnswer] = useState("Не живой");
   const [answer, setAnswer] = useState("");
   const [visible, setVisible] = useState(false);
 
@@ -122,13 +122,13 @@ const Start = () => {
                   setVisibleOne(0);
                   setVisibleTwo(1);
                   setVisible(false);
-                  setCorrectAnswer("Living");
+                  setCorrectAnswer("Жизнь");
                   setCount(1);
                 } else if (count == 1) {
                   setVisibleTwo(0);
                   setVisibleThree(1);
                   setVisible(false);
-                  setCorrectAnswer("Living");
+                  setCorrectAnswer("Жизнь");
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -136,7 +136,7 @@ const Start = () => {
                 }
               }}
             >
-              <BodyText color="secondary">Next</BodyText>
+              <BodyText color="secondary">Следующий</BodyText>
             </Pressable>
           </View>
         </View>
@@ -150,28 +150,28 @@ const Start = () => {
         <SafeArea>
           <Container>
             <TitleText size="title">
-              Click on the corresponding category:
+              Нажмите на соответствующую категорию:
             </TitleText>
             <View style={{ flexDirection: "row", paddingTop: 100 }}>
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Living");
-                  checkAnswer("Living");
+                  setAnswer("Жизнь");
+                  checkAnswer("Жизнь");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Living</BodyText>
+                <BodyText size="title">Жизнь</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Non-living");
-                  checkAnswer("Non-living");
+                  setAnswer("Не живой");
+                  checkAnswer("Не живой");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Non-living</BodyText>
+                <BodyText size="title">Не живой</BodyText>
               </Category>
             </View>
 
@@ -182,21 +182,21 @@ const Start = () => {
             />
           </Container>
           <Option style={{ opacity: visibleOne }}>
-            <TitleText>Water</TitleText>
+            <TitleText>Вода</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/wave.jpg")}
             />
           </Option>
           <Option style={{ opacity: visibleTwo }}>
-            <TitleText>Animals</TitleText>
+            <TitleText>Животные</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/animals.png")}
             />
           </Option>
           <Option style={{ opacity: visibleThree }}>
-            <TitleText>Plants</TitleText>
+            <TitleText>Растения</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/pots.png")}
