@@ -64,7 +64,7 @@ function LeveloneView() {
         />
         <TouchableOpacity
           style={style.roundButton3}
-          // onPress={() => navigation.push("LessonHandler", { level: 3 })}
+        // onPress={() => navigation.push("LessonHandler", { level: 3 })}
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
@@ -75,7 +75,7 @@ function LeveloneView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          // onPress={() => navigation.push("LessonHandler", { level: 4 })}
+        // onPress={() => navigation.push("LessonHandler", { level: 4 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -87,7 +87,7 @@ function LeveloneView() {
 
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LessonHandler", { level: 5 })}*/
+        /*onPress={() => navigation.push("LessonHandler", { level: 5 })}*/
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
@@ -99,7 +99,7 @@ function LeveloneView() {
 
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LessonHandler", { level: 6 })}*/
+        /*onPress={() => navigation.push("LessonHandler", { level: 6 })}*/
         >
           <Text style={style.baseText}>6</Text>
         </TouchableOpacity>
@@ -111,7 +111,7 @@ function LeveloneView() {
 
         <TouchableOpacity
           style={style.roundButton3}
-          /*onPress={() => navigation.push("LessonHandler", { level: 7 })}*/
+        /*onPress={() => navigation.push("LessonHandler", { level: 7 })}*/
         >
           <Text style={style.baseText}>7</Text>
         </TouchableOpacity>
@@ -123,7 +123,7 @@ function LeveloneView() {
 
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LessonHandler", { level: 8 })}*/
+        /*onPress={() => navigation.push("LessonHandler", { level: 8 })}*/
         >
           <Text style={style.baseText}>8</Text>
         </TouchableOpacity>
@@ -135,7 +135,7 @@ function LeveloneView() {
 
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LessonHandler", { level: 9 })}*/
+        /*onPress={() => navigation.push("LessonHandler", { level: 9 })}*/
         >
           <Text style={style.baseText}>9</Text>
         </TouchableOpacity>
@@ -154,7 +154,7 @@ const LevelOne = () => {
         name="Level One"
         component={LeveloneView}
         options={{
-          title: "Level 1",
+          title: "Уровень 1", //level 1
           headerShown: true,
           headerStyle: {
             backgroundColor: "#C6DC3B",
