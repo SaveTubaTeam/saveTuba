@@ -68,7 +68,10 @@ export default class LeaderborardCard extends Component {
 
     return (
       <Card style={{ marginBottom: 20 }}>
-        <TitleText>Leaderboard</TitleText>
+        <TitleText>
+          Таблица лидеров
+          {/* Leaderboard */}
+        </TitleText>
 
         <Spacer size="large"></Spacer>
 
