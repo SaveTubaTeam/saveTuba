@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, FlatList, Modal, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, FlatList, Modal, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
@@ -11,8 +11,6 @@ import {
   Adventure,
   ImageBg,
 } from "../../components/Levels/levels.styles";
-import Ionicons from "@expo/vector-icons/Ionicons";
-
 
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -27,16 +25,19 @@ import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
 function getLinkToScreen(selectedItem, navigation) {
-  if (selectedItem.map((obj) => obj.title) == "Crossword") {
-    navigation.navigate("Crossword", {
+  if (selectedItem.map((obj) => obj.title) == "Puzzle") {
+    navigation.navigate("Puzzle", {
       data: selectedItem.map((obj) => obj.image),
     });
   } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") {
     navigation.navigate("MultipleChoice", {
       data: "./TestData.json",
     });
-  }
-  else if (selectedItem.map((obj) => obj.title) == "Memory") {
+  } else if (selectedItem.map((obj) => obj.title) == "Sorting") {
+    navigation.navigate("Sorting", {
+      data: "./TestData.json",
+    });
+  } else if (selectedItem.map((obj) => obj.title) == "Memory") {
     navigation.navigate("Memory", {
       data: "./TestData.json",
     });
@@ -194,7 +195,10 @@ function LessonComponent(props) {
             </TouchableOpacity>  
             <TitleText size="h4" color="primary"> {selectedLevel.title} </TitleText>
             </View> */}
-            <TitleText size="h4" color="primary"> {selectedLevel.title} </TitleText>
+            <TitleText size="h4" color="primary">
+              {" "}
+              {selectedLevel.title}{" "}
+            </TitleText>
             <Spacer size="small" />
             <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
             <Summary

@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  View,
-  FlatList,
-  TouchableOpacity,
-  Modal,
-  StyleSheet,
-} from "react-native";
+import { Text, View } from "react-native";
 import styled from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -15,13 +8,14 @@ import LessonComponent from "./LessonComponent";
 
 import { connect } from "react-redux";
 
+import Sorting from "./levelOne/lessonOne/Screens/Adventures/adventureTwo/sorting.component";
+
 // want to import data here?
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
-
 /*
 To add Lessons: 
   1: First create the Lesson<number>.js within the folder (Imports will work automatically if you copy LessonOne or Two).
@@ -30,28 +24,6 @@ To add Lessons:
   4: Add Lesson<N> into the switch statement for the levelselector
   5: Done?
 */
-
-import { QuizScreen } from "../../components/LevelOne/quiz-screen.component";
-
-function TestScreen({ navigation, route }) {
-  return (
-    <View>
-      <Button onPress={() => navigation.goBack()} />
-    </View>
-  );
-}
-
-function MultipleChoice({ navigation, route }) {
-  // const { data } = route.params.data;
-  // console.log(data);
-  // console.warn(require(data));
-  return (
-    <View>
-      <Button onPress={() => navigation.goBack()} />
-      <Text>Multiple Choice Screen </Text>
-    </View>
-  );
-}
 
 const Stack = createNativeStackNavigator();
 
@@ -94,7 +66,7 @@ function LessonHandler(props) {
   }
 
   return (
-    <NavigationContainer independent={true}>
+    <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Level">
         {/*  Need to improve this part here with a map for the minigames screen */}
         <Stack.Screen
@@ -110,7 +82,7 @@ function LessonHandler(props) {
           initialParams={{ level: level }}
         />
         {/* Insert Screens below based off minigame. Need to be able to send data to the component in the same way that the quiz screen works */}
-        <Stack.Screen name="Crossword" options={{ headerShown: false }}>
+        <Stack.Screen name="Quiz" options={{ headerShown: false }}>
           {() => (
             <QuizScreen
               score={score}
@@ -120,14 +92,40 @@ function LessonHandler(props) {
           )}
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
-        <Stack.Screen component={adventureOne} name="Memory" options={{ headerShown: false }}>
-          
+        <Stack.Screen
+          component={selectedLevel.memory.component}
+          name="Memory"
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
+        >
           {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
         <Stack.Screen
-          name="MultipleChoice"
-          component={MultipleChoice}
-          options={{ headerShown: true }}
+          name="Sorting"
+          component={selectedLevel.sorting.component}
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
+        />
+        <Stack.Screen
+          name="Puzzle"
+          component={selectedLevel.puzzle.component}
+          options={{
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
         ></Stack.Screen>
         {/*  Summary Component based of selectedLevel */}
         <Stack.Screen

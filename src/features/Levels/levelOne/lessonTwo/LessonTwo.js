@@ -3,14 +3,29 @@ import { questionSetPollution } from "../../../../components/LevelOne/QuestionSe
 
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
+import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
+import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
+import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_1_LessonTwo = {
-  title: "Air Pollution",
+  title: "Sustainable Practices",
   summary: "Why is protecting the environment important?",
 
   summaryComponent: {
     route: "Summary",
     component: SummaryScreen,
+  },
+
+  memory: {
+    component: AdventureOne,
+  },
+
+  puzzle: {
+    component: Puzzle,
+  },
+
+  sorting: {
+    component: Sorting,
   },
 
   masteryComponent: {
@@ -31,15 +46,15 @@ export const Lvl_1_LessonTwo = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Matching",
-      description: "Match the pairs together",
+      title: "Memory",
+      description: "Match the word to its definition",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,
     },
     {
-      title: "Crossword",
-      description: "A crossword game... duh?",
+      title: "Sorting",
+      description: "Choose the corresponding category.",
       key: "testkey1",
       data: questionSetPollution,
       image: AdventureImages.crossword,
