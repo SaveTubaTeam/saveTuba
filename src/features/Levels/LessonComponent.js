@@ -40,13 +40,14 @@ function getLinkToScreen(selectedItem, navigation) {
   } else if (selectedItem.map((obj) => obj.title) == "Сортировка") {
     navigation.navigate("Sorting", {
       data: "./TestData.json",
-    });
+    }); 
   } else if (selectedItem.map((obj) => obj.title) == "объем памяти") {
     navigation.navigate("Memory", {
       data: "./TestData.json",
     });
+  } else if (selectedItem.map((obj) => obj.title) == "Контрольный опрос") {
+    navigation.navigate("QuizScreen");  
   }
-
 }
 
 
