@@ -118,7 +118,7 @@ const Start = () => {
                   setVisibleTwo("none");
                   setVisibleThree("flex");
                   setVisible(false);
-                  setCorrectAnswer(1);
+                  setCorrectAnswer(2);
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -140,7 +140,10 @@ const Start = () => {
         <SafeArea>
           <Container>
             <Question style={{ display: visibleOne }}>
-              <TitleText size="title">Устойчивый город – это:</TitleText>
+              <TitleText size="title">
+                Изменение климата вызывает экстремальные погодные условия, такие
+                как:
+              </TitleText>
             </Question>
             <Answers style={{ display: visibleOne }}>
               <Category
@@ -151,9 +154,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, использующий чистую энергию
-                </BodyText>
+                <BodyText size="subtitle">наводнение</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -163,9 +164,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, который перерабатывает, повторно использует и сокращает
-                </BodyText>
+                <BodyText size="subtitle">Тепловые волны</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -175,9 +174,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, который уменьшает загрязнение, которое они производят
-                </BodyText>
+                <BodyText size="subtitle">Ураганы</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -192,7 +189,9 @@ const Start = () => {
             </Answers>
 
             <Question style={{ display: visibleTwo }}>
-              <TitleText size="title">Что такое свалка?</TitleText>
+              <TitleText size="title">
+                Почему вырубка деревьев увеличивает глобальное потепление?
+              </TitleText>
             </Question>
             <Answers style={{ display: visibleTwo }}>
               <Category
@@ -204,7 +203,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Место, где скапливается мусор
+                  деревья поглощают углекислый газ
                 </BodyText>
               </Category>
               <Category
@@ -216,7 +215,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Место, где уменьшается количество мусора
+                  деревья дают тень, противодействующую глобальному потеплению
                 </BodyText>
               </Category>
               <Category
@@ -228,7 +227,8 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Место, где перерабатывается мусор
+                  деревья поглощают солнечную энергию, не излучая обратно в
+                  атмосферу
                 </BodyText>
               </Category>
               <Category
@@ -240,14 +240,14 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Место, где повторно используется мусор
+                  деревья поглощают парниковые газы, такие как метан из почвы
                 </BodyText>
               </Category>
             </Answers>
 
             <Question style={{ display: visibleThree }}>
               <TitleText size="title">
-                Что поможет вам экономить воду?
+                Общие погодные условия для данного региона называются:
               </TitleText>
             </Question>
             <Answers style={{ display: visibleThree }}>
@@ -259,9 +259,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Правильно закройте краны и устраните протекающие трубы
-                </BodyText>
+                <BodyText size="subtitle">погода</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -271,7 +269,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Смыть унитаз 3 раза</BodyText>
+                <BodyText size="subtitle">климат</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -281,7 +279,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Принимайте долгий душ</BodyText>
+                <BodyText size="subtitle">гидросфера</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -291,9 +289,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Не закрывайте кран, пока чистите зубы
-                </BodyText>
+                <BodyText size="subtitle">температура</BodyText>
               </Category>
             </Answers>
 

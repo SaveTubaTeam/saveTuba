@@ -126,6 +126,18 @@ function LessonHandler(props) {
           }}
         />
         <Stack.Screen
+          name="QuizScreen"
+          component={selectedLevel.quiz.component}
+          options={{
+            title: "Викторина",
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
+        />
+        <Stack.Screen
           name="MultipleChoice"
           component={TempScreen}
           options={{

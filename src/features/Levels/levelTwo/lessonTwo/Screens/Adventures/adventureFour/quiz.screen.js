@@ -140,7 +140,7 @@ const Start = () => {
         <SafeArea>
           <Container>
             <Question style={{ display: visibleOne }}>
-              <TitleText size="title">Устойчивый город – это:</TitleText>
+              <TitleText size="title">Что такое СО2?</TitleText>
             </Question>
             <Answers style={{ display: visibleOne }}>
               <Category
@@ -151,9 +151,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, использующий чистую энергию
-                </BodyText>
+                <BodyText size="subtitle">Углерод</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -163,9 +161,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, который перерабатывает, повторно использует и сокращает
-                </BodyText>
+                <BodyText size="subtitle">Кислород</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -175,9 +171,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, который уменьшает загрязнение, которое они производят
-                </BodyText>
+                <BodyText size="subtitle">Тип газированного напитка</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -187,12 +181,14 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Все вышеперечисленное</BodyText>
+                <BodyText size="subtitle">Углекислый газ</BodyText>
               </Category>
             </Answers>
 
             <Question style={{ display: visibleTwo }}>
-              <TitleText size="title">Что такое свалка?</TitleText>
+              <TitleText size="title">
+                Какой из них не добавляет CO2 в атмосферу?
+              </TitleText>
             </Question>
             <Answers style={{ display: visibleTwo }}>
               <Category
@@ -203,9 +199,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где скапливается мусор
-                </BodyText>
+                <BodyText size="subtitle">сажать деревья</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -215,9 +209,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где уменьшается количество мусора
-                </BodyText>
+                <BodyText size="subtitle">приготовление пищи на газу</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -227,9 +219,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где перерабатывается мусор
-                </BodyText>
+                <BodyText size="subtitle">горящее дерево</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -239,15 +229,14 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где повторно используется мусор
-                </BodyText>
+                <BodyText size="subtitle">ехать в автобусе</BodyText>
               </Category>
             </Answers>
 
             <Question style={{ display: visibleThree }}>
               <TitleText size="title">
-                Что поможет вам экономить воду?
+                Почему избыток углекислого газа в атмосфере вызывает изменение
+                климата?
               </TitleText>
             </Question>
             <Answers style={{ display: visibleThree }}>
@@ -260,7 +249,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Правильно закройте краны и устраните протекающие трубы
+                  Он удерживает тепло и согревает нашу планету
                 </BodyText>
               </Category>
               <Category
@@ -271,7 +260,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Смыть унитаз 3 раза</BodyText>
+                <BodyText size="subtitle">Охлаждает нашу планету</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -281,7 +270,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Принимайте долгий душ</BodyText>
+                <BodyText size="subtitle">Он блокирует УФ-лучи</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -292,7 +281,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Не закрывайте кран, пока чистите зубы
+                  Он пропускает солнечный свет
                 </BodyText>
               </Category>
             </Answers>

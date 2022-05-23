@@ -94,7 +94,7 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Контрольный опрос", //Quiz
+      title: "Викторина", //Quiz
       description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
       key: "testkey3",
       data: "require('matchingPollution')",

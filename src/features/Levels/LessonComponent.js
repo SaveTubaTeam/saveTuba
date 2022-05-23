@@ -45,9 +45,9 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("Memory", {
       data: "./TestData.json",
     });
-  } /*else if (selectedItem.map((obj) => obj.title) == "Контрольный опрос") {
-    navigation.navigate("QuizScreen");  
-  }*/
+  } else if (selectedItem.map((obj) => obj.title) == "Викторина") {
+    navigation.navigate("QuizScreen");
+  }
 }
 
 function LessonComponent(props) {

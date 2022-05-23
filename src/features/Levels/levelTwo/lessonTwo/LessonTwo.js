@@ -6,6 +6,7 @@ import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
+import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_2_LessonTwo = {
   title: "Устойчивое сельское хозяйство",
@@ -14,6 +15,10 @@ export const Lvl_2_LessonTwo = {
   summaryComponent: {
     route: "Summary",
     component: SummaryScreen,
+  },
+
+  quiz: {
+    component: Quiz,
   },
 
   memory: {
@@ -67,7 +72,7 @@ export const Lvl_2_LessonTwo = {
             imageType: "svg",
             image: TestImages.lvl_2_les_2_img_4,
           },
-        ]
+        ],
       },
       image: AdventureImages.puzzle,
     },
@@ -86,11 +91,11 @@ export const Lvl_2_LessonTwo = {
       image: AdventureImages.crossword,
     },
     {
-      title: "Большой выбор",
-      description: "Угадай, если не знаешь",
-      key: "testkey4",
-      data: "require('mutliple choice pollution')",
-      image: AdventureImages.multiplechoice,
+      title: "Викторина", //Quiz
+      description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
+      key: "testkey3",
+      data: "require('matchingPollution')",
+      image: AdventureImages.crossword,
     },
   ],
 };

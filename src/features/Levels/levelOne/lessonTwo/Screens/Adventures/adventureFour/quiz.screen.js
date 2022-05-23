@@ -112,13 +112,13 @@ const Start = () => {
                   setVisibleOne("none");
                   setVisibleTwo("flex");
                   setVisible(false);
-                  setCorrectAnswer(1);
+                  setCorrectAnswer(4);
                   setCount(1);
                 } else if (count == 1) {
                   setVisibleTwo("none");
                   setVisibleThree("flex");
                   setVisible(false);
-                  setCorrectAnswer(1);
+                  setCorrectAnswer(3);
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -140,7 +140,7 @@ const Start = () => {
         <SafeArea>
           <Container>
             <Question style={{ display: visibleOne }}>
-              <TitleText size="title">Устойчивый город – это:</TitleText>
+              <TitleText size="title">Что такое устойчивость?</TitleText>
             </Question>
             <Answers style={{ display: visibleOne }}>
               <Category
@@ -152,7 +152,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Город, использующий чистую энергию
+                  удовлетворить потребности настоящего
                 </BodyText>
               </Category>
               <Category
@@ -164,7 +164,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  Город, который перерабатывает, повторно использует и сокращает
+                  удовлетворить потребности будущего
                 </BodyText>
               </Category>
               <Category
@@ -175,9 +175,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Город, который уменьшает загрязнение, которое они производят
-                </BodyText>
+                <BodyText size="subtitle">has three pillars</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -192,7 +190,9 @@ const Start = () => {
             </Answers>
 
             <Question style={{ display: visibleTwo }}>
-              <TitleText size="title">Что такое свалка?</TitleText>
+              <TitleText size="title">
+                Что НЕ является устойчивой практикой?
+              </TitleText>
             </Question>
             <Answers style={{ display: visibleTwo }}>
               <Category
@@ -203,9 +203,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где скапливается мусор
-                </BodyText>
+                <BodyText size="subtitle">утилизация отходов</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -215,9 +213,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где уменьшается количество мусора
-                </BodyText>
+                <BodyText size="subtitle">сокращение</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -227,9 +223,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где перерабатывается мусор
-                </BodyText>
+                <BodyText size="subtitle">повторное использование</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -239,15 +233,13 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Место, где повторно используется мусор
-                </BodyText>
+                <BodyText size="subtitle">покупка</BodyText>
               </Category>
             </Answers>
 
             <Question style={{ display: visibleThree }}>
               <TitleText size="title">
-                Что поможет вам экономить воду?
+                Что не является основой устойчивого развития?
               </TitleText>
             </Question>
             <Answers style={{ display: visibleThree }}>
@@ -259,9 +251,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Правильно закройте краны и устраните протекающие трубы
-                </BodyText>
+                <BodyText size="subtitle">Окружающая среда</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -271,7 +261,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Смыть унитаз 3 раза</BodyText>
+                <BodyText size="subtitle">экономический</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -281,7 +271,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Принимайте долгий душ</BodyText>
+                <BodyText size="subtitle">образование</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -291,9 +281,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Не закрывайте кран, пока чистите зубы
-                </BodyText>
+                <BodyText size="subtitle">Социальное</BodyText>
               </Category>
             </Answers>
 

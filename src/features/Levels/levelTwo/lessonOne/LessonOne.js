@@ -7,6 +7,7 @@ import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 import { TestImages } from "../../IMAGES";
+import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_2_LessonOne = {
   title: "Изменение климата", // climate change
@@ -19,6 +20,10 @@ export const Lvl_2_LessonOne = {
 
   sorting: {
     component: Sorting,
+  },
+
+  quiz: {
+    component: Quiz,
   },
 
   puzzle: {
@@ -69,7 +74,7 @@ export const Lvl_2_LessonOne = {
             imageType: "svg",
             image: TestImages.lvl_2_les_1_img_4,
           },
-        ]
+        ],
       },
       image: AdventureImages.puzzle,
     },
@@ -88,11 +93,11 @@ export const Lvl_2_LessonOne = {
       image: AdventureImages.crossword,
     },
     {
-      title: "Большой выбор",
-      description: "Угадай, если не знаешь",
-      key: "testkey4",
-      data: "require('mutliple choice pollution')",
-      image: AdventureImages.multiplechoice,
+      title: "Викторина", //Quiz
+      description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
+      key: "testkey3",
+      data: "require('matchingPollution')",
+      image: AdventureImages.crossword,
     },
   ],
 };
@@ -108,6 +113,10 @@ export const Lvl_2_LessonOne_english = {
 
   sorting: {
     component: Sorting,
+  },
+
+  quiz: {
+    component: Quiz,
   },
 
   puzzle: {
