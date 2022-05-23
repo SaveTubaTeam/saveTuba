@@ -72,37 +72,43 @@ export class Register extends Component {
       <Container>
         <ImageBg source={require("../../../assets/homepagebackground.png")}>
 
-          <TitleText color="secondary" size="title">Register For Save Tuba</TitleText>
+          <TitleText color="secondary" size="title">
+            Зарегистрируйтесь, чтобы сохранить Tuba
+            {/* Register For Save Tuba */}
+          </TitleText>
           <Input
-            placeholder="Email"
+            placeholder="Эл." //Email
             onChangeText={(email) => this.setState({ email })}
           />
           <Input
-            placeholder="Password"
+            placeholder="Пароль" //Password
             secureTextEntry={true}
             onChangeText={(password) => this.setState({ password })}
           />
           <Input
-            placeholder="Username"
+            placeholder="Имя пользователя" //Username
             onChangeText={(username) => this.setState({ username })}
           />
           <Input
-            placeholder="First Name"
+            placeholder="Первый Имя" //first name
             onChangeText={(firstName) => this.setState({ firstName })}
           />
           <Input
-            placeholder="Last Name"
+            placeholder="Прошлой Имя" //last name
             onChangeText={(lastName) => this.setState({ lastName })}
 
           />
           <Input
-            placeholder="Class Code"
+            placeholder="Код класса" //Class Code
             onChangeText={(classCode) => this.setState({ classCode })}
           />
           <Button
             onPress={() => this.onSignUp()}
           >
-            <TitleText color="secondary">Register</TitleText>
+            <TitleText color="secondary">
+              регистр
+              {/* Register */}
+            </TitleText>
           </Button>
           <Button
             onPress={() => {
@@ -112,14 +118,20 @@ export class Register extends Component {
               this.onSignUp();
             }}
           >
-            <TitleText color="secondary">Teacher Sign Up</TitleText>
+            <TitleText color="secondary">
+              Учитель Зарегистрироваться
+              {/* Teacher Sign Up */}
+            </TitleText>
           </Button>
-          <BackButton 
+          <BackButton
             onPress={() => {
               this.props.navigation.navigate("Login");
             }}
           >
-            <TitleText color="secondary">Back</TitleText>
+            <TitleText color="secondary">
+              Назад
+              {/* Back */}
+            </TitleText>
           </BackButton>
         </ImageBg>
       </Container>
