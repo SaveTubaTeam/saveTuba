@@ -40,28 +40,28 @@ export const Lvl_1_LessonOne = {
   minigames: [
     {
       title: "Контрольный опрос", //Quiz
-      description: "Reinforce your knowledge!",
+      description: "Закрепите свои знания!", //Reinforce your knowledge!
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.crossword,
     },
     {
       title: "Сортировка", //Sorting
-      description: "Choose the corresponding category.",
+      description: "Выберите соответствующую категорию", //Choose the corresponding category.
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
     },
     {
       title: "Головоломка", //Puzzle
-      description: "Solve the puzzle!",
+      description: "Решите головоломку!", //Solve the puzzle!
       key: "testkey1",
       data: questionSet,
       image: AdventureImages.matching,
     },
     {
       title: "объем памяти", //Memory
-      description: "Match the word with its definition.",
+      description: "Соотнесите слово с его определением", //Match the word with its definition.
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,
