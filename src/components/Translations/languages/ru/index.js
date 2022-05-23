@@ -4,6 +4,7 @@ import personal from './personal';
 import general from './general';
 import about from './about';
 import profile from './profile';
+import alllevels from './alllevels';
 
 
 export default {
@@ -13,4 +14,5 @@ export default {
     general,
     about,
     profile,
+    alllevels,
 };

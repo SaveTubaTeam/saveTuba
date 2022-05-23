@@ -14,6 +14,7 @@ import {
   Raleway_400Regular,
 } from "@expo-google-fonts/raleway";
 
+import { useTranslation } from "react-i18next";
 import './src/components/Translations/IMLocalize'
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
