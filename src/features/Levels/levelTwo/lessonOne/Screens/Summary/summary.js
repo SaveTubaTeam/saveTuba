@@ -94,7 +94,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="The Earth's average surface temperature is gradually rising. Global warming is the term for this process."
+            text="Средняя температура поверхности Земли постепенно повышается. Глобальное потепление является термином для этого процесса."
             next="SecondScreen"
             back="Start"
             Tuba={
@@ -108,7 +108,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Understanding the greenhouse effect is helpful in understanding global warming. A greenhouse is a glass house where plants grow. "
+            text="Понимание парникового эффекта полезно для понимания глобального потепления. Теплица – это стеклянный дом, в котором растут растения. "
             next="ThirdScreen"
             back="Start"
             Tuba={
@@ -122,7 +122,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="ThirdScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Glass lets light in while keeping heat out. Even when it's freezing outside, the retained heat keeps the plants warm."
+            text="Стекло пропускает свет, сохраняя при этом тепло. Даже когда на улице мороз, сохраненное тепло сохраняет растения в тепле."
             next="FourthScreen"
             back="SecondScreen"
             Tuba={
@@ -136,7 +136,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FourthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Similarly, the Earth's atmosphere captures solar energy. "
+            text="Точно так же атмосфера Земли улавливает солнечную энергию. "
             next="FifthScreen"
             back="ThirdScreen"
             Tuba={
@@ -150,7 +150,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FifthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="This trapping is accomplished by carbon dioxide and other gases in the air, collectively known as greenhouse gases."
+            text="Это улавливание осуществляется углекислым газом и другими газами в воздухе, известными как парниковые газы."
             next="SixthScreen"
             back="FourthScreen"
             Tuba={
@@ -164,7 +164,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SixthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Without these gases, too much heat would escape into space, making life impossible to sustain. "
+            text="Без этих газов в космос ушло бы слишком много тепла, что сделало бы невозможной жизнь."
             next="SeventhScreen"
             back="FifthScreen"
             Tuba={
@@ -178,7 +178,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SeventhScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="However, when more greenhouse gases are released into the atmosphere, more heat is trapped."
+            text="Однако, когда в атмосферу выбрасывается больше парниковых газов, задерживается больше тепла."
             next="EighthScreen"
             back="SixthScreen"
             Tuba={
@@ -192,7 +192,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="EighthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="As a result, global warming occurs."
+            text="В результате происходит глобальное потепление."
             next="NinthScreen"
             back="SeventhScreen"
             Tuba={
@@ -206,7 +206,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="NinthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Warmer weather may be harmful to living organisms."
+            text="Теплая погода может быть вредна для живых организмов."
             next="TenthScreen"
             back="EighthScreen"
             Tuba={
@@ -220,7 +220,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="TenthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="It might also melt the polar ice caps. Sea levels would rise as a result of this."
+            text="Это может также растопить полярные ледяные шапки. В результате уровень моря поднимется."
             next="EleventhScreen"
             back="NinthScreen"
             Tuba={
@@ -234,7 +234,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="EleventhScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Coastal plants, animals, and structures would be endangered."
+            text="Прибрежные растения, животные и сооружения окажутся под угрозой исчезновения."
             next="EleventhScreen"
             back="TenthScreen"
             Tuba={
