@@ -90,7 +90,11 @@ export class AdventureOne extends React.Component {
       <View style={styles.container}>
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
-        <Button onPress={this.resetCards} title="Reset" color="#008CFA" />
+        <Button
+          onPress={this.resetCards}
+          title="Начать заново"
+          color="#748816"
+        />
       </View>
     );
   }

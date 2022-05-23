@@ -8,6 +8,7 @@ import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.scr
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 import { TestImages } from "../../IMAGES";
+import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_1_LessonOne = {
   title: "устойчивость", //Sustainability
@@ -26,6 +27,10 @@ export const Lvl_1_LessonOne = {
     component: AdventureOne,
   },
 
+  quiz: {
+    component: Quiz,
+  },
+
   sorting: {
     component: Sorting,
   },
@@ -41,18 +46,18 @@ export const Lvl_1_LessonOne = {
 
   minigames: [
     {
-      title: "Контрольный опрос", //Quiz
-      description: "Закрепите свои знания!", //Reinforce your knowledge!
-      key: "testkey3",
-      data: "require('matchingPollution')",
-      image: AdventureImages.crossword,
-    },
-    {
       title: "Сортировка", //Sorting
       description: "Выберите соответствующую категорию", //Choose the corresponding category.
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
+    },
+    {
+      title: "объем памяти", //Memory
+      description: "Соотнесите слово с его определением", //Match the word with its definition.
+      key: "testkey2",
+      data: "require('puzzlePollutionQuestions')",
+      image: AdventureImages.puzzle,
     },
     {
       title: "Изображение Бананза",
@@ -84,16 +89,16 @@ export const Lvl_1_LessonOne = {
             imageType: "svg",
             image: TestImages.lightsPic,
           },
-        ]
+        ],
       },
       image: AdventureImages.puzzle,
     },
     {
-      title: "объем памяти", //Memory
-      description: "Соотнесите слово с его определением", //Match the word with its definition.
-      key: "testkey2",
-      data: "require('puzzlePollutionQuestions')",
-      image: AdventureImages.puzzle,
+      title: "Контрольный опрос", //Quiz
+      description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
+      key: "testkey3",
+      data: "require('matchingPollution')",
+      image: AdventureImages.crossword,
     },
   ],
 };

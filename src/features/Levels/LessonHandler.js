@@ -22,14 +22,15 @@ import { TitleText } from "../../components/title-text.component";
 import { IconButton } from "react-native-paper";
 import { QuizScreen } from "../../components/LevelOne/quiz-screen.component";
 
-const TempScreen = ({navigation})  => {
-
+const TempScreen = ({ navigation }) => {
   return (
-    <View style={{
-      alignContent: "center",
-      alignItems: "center",
-      flex: 1,
-    }}>
+    <View
+      style={{
+        alignContent: "center",
+        alignItems: "center",
+        flex: 1,
+      }}
+    >
       <TitleText>В разработке</TitleText>
     </View>
   );
@@ -78,7 +79,6 @@ function LessonHandler(props) {
   }, []);
 
   // variables and function to change minigame scores **Needs to be moved
-  
 
   // Allows useEffect to change selected Level **Needs to be replaced with animation for loading
   if (selectedLevel == null) {
@@ -105,18 +105,19 @@ function LessonHandler(props) {
           component={selectedLevel.memory.component}
           name="Memory"
           options={{
+            title: "Игра на запоминание",
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
               backgroundColor: "#C6DC3B",
             },
           }}
-        >
-        </Stack.Screen>
+        ></Stack.Screen>
         <Stack.Screen
           name="Sorting"
           component={selectedLevel.sorting.component}
           options={{
+            title: "Сортировка",
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -135,25 +136,11 @@ function LessonHandler(props) {
             },
           }}
         />
-        <Stack.Screen
-          name="Image Bananza"
-          options={{ headerShown: false }}
-        >
+        <Stack.Screen name="Image Bananza" options={{ headerShown: false }}>
           {() => (
             <OpenResponseHandler
-              questionSet={selectedLevel.minigames[0].data} navigation={navigation}
-            />
-          )}
-        </Stack.Screen>
-        <Stack.Screen
-          name="QuizScreen"
-          options={{ headerShown: false }}
-        >
-          {() => (
-            <QuizScreen 
-              score={score}
-              onStateChange={changeScore}
-              questionSet={selectedLevel.minigames[2].data}
+              questionSet={selectedLevel.minigames[0].data}
+              navigation={navigation}
             />
           )}
         </Stack.Screen>
