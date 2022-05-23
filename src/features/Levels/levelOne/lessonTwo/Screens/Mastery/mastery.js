@@ -27,7 +27,8 @@ export default class MasteryScreen extends Component {
     return (
       <Container>
         <BodyText size="subtitle">
-          This week's challenge will be connected to water conservation.
+          Задача этой недели будет связана с сохранением воды
+          {/* This week's challenge will be connected to water conservation. */}
         </BodyText>
         <Image
           style={{ flex: 1 }}
@@ -35,40 +36,43 @@ export default class MasteryScreen extends Component {
           source={require("../../../../../../../assets/water-drop.png")}
         />
         <BodyText size="subtitle">
-          The length of your showers should not be longer than one song.
+          Создайте плейлист для душа на неделю. Задача состоит в том, что ваш душ должен состоять не более чем из 2 песен.
+          {/* The length of your showers should not be longer than one song. */}
         </BodyText>
         <Spacer size="large" />
         <BodyText size="subtitle">
-          Tick the box each day you complete the challenge.
+          Ставьте галочку каждый день, когда вы выполняете задание.
+
+          {/* Tick the box each day you complete the challenge. */}
         </BodyText>
         <Checklist>
           <Item>
             <BouncyCheckbox fillColor="#748816" />
-            <BodyText size="subtitle">Day 1</BodyText>
+            <BodyText size="subtitle">День 1</BodyText>
           </Item>
           <Item>
-            <BouncyCheckbox fillColor="#748816" onPress={() => {}} />
-            <BodyText size="subtitle">Day 2</BodyText>
+            <BouncyCheckbox fillColor="#748816" onPress={() => { }} />
+            <BodyText size="subtitle">День 2</BodyText>
           </Item>
           <Item>
-            <BouncyCheckbox fillColor="#748816" onPress={() => {}} />
-            <BodyText size="subtitle">Day 3</BodyText>
+            <BouncyCheckbox fillColor="#748816" onPress={() => { }} />
+            <BodyText size="subtitle">День 3</BodyText>
           </Item>
           <Item>
-            <BouncyCheckbox fillColor="#748816" onPress={() => {}} />
-            <BodyText size="subtitle">Day 4</BodyText>
+            <BouncyCheckbox fillColor="#748816" onPress={() => { }} />
+            <BodyText size="subtitle">День 4</BodyText>
           </Item>
           <Item>
-            <BouncyCheckbox fillColor="#748816" onPress={() => {}} />
-            <BodyText size="subtitle">Day 5</BodyText>
+            <BouncyCheckbox fillColor="#748816" onPress={() => { }} />
+            <BodyText size="subtitle">День 5</BodyText>
           </Item>
           <Item>
-            <BouncyCheckbox fillColor="#748816" onPress={() => {}} />
-            <BodyText size="subtitle">Day 6</BodyText>
+            <BouncyCheckbox fillColor="#748816" onPress={() => { }} />
+            <BodyText size="subtitle">День 6</BodyText>
           </Item>
           <Item>
-            <BouncyCheckbox fillColor="#748816" onPress={() => {}} />
-            <BodyText size="subtitle">Day 7</BodyText>
+            <BouncyCheckbox fillColor="#748816" onPress={() => { }} />
+            <BodyText size="subtitle">День 7</BodyText>
           </Item>
         </Checklist>
       </Container>
