@@ -149,11 +149,11 @@ function LessonHandler(props) {
           name="Image Bananza"
           options={{ headerShown: false }}
         >
-        {() => (
-        <OpenResponseHandler
-            questionSet={selectedLevel.minigames[0].data} navigation={navigation}
-        />  
-        )}
+          {() => (
+            <OpenResponseHandler
+              questionSet={selectedLevel.minigames[0].data} navigation={navigation}
+            />
+          )}
         </Stack.Screen>
         {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         <Stack.Screen
