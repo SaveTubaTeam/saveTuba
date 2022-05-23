@@ -62,14 +62,14 @@ const SecondScreen = ({ navigation }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
-            Good job! Go back to the lesson to continue learning!
+            Отличная работа! Вернитесь к уроку, чтобы продолжить обучение!
           </TitleText>
           <Spacer size="large" />
           <Pressable
             onPress={() => navigation.navigate("Level")}
             style={styles.next}
           >
-            <BodyText color="secondary">Go back</BodyText>
+            <BodyText color="secondary">Назад</BodyText>
           </Pressable>
         </Container2>
       </SafeArea>
@@ -111,8 +111,8 @@ const Start = () => {
             <View style={styles.correctContainer}>
               <Text style={styles.modalText}>
                 {correctAnswer == answer
-                  ? "Correct answer! Good job ✨"
-                  : "Incorrect answer! Better luck next time 🍀"}
+                  ? "Правильный ответ! Хорошая работа ✨"
+                  : "Неправильный ответ! Повезет в следующий раз 🍀"}
               </Text>
             </View>
             <Pressable
@@ -136,7 +136,7 @@ const Start = () => {
                 }
               }}
             >
-              <BodyText color="secondary">Next</BodyText>
+              <BodyText color="secondary">Следующий</BodyText>
             </Pressable>
           </View>
         </View>
@@ -225,8 +225,8 @@ const Start = () => {
           </Option>
           <Option style={{ opacity: visibleThree }}>
             <TitleText size="body">
-              Отделение картона для отправки на переработку :
-              Separating cardboard to put in recycling facility
+              Отделение картона для отправки на переработку : Separating
+              cardboard to put in recycling facility
             </TitleText>
           </Option>
         </SafeArea>

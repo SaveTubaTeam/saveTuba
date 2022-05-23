@@ -62,14 +62,14 @@ const SecondScreen = ({ navigation }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
-            Good job! Go back to the lesson to continue learning!
+            Отличная работа! Вернитесь к уроку, чтобы продолжить обучение!
           </TitleText>
           <Spacer size="large" />
           <Pressable
             onPress={() => navigation.navigate("Level")}
             style={styles.next}
           >
-            <BodyText color="secondary">Go back</BodyText>
+            <BodyText color="secondary">Назад</BodyText>
           </Pressable>
         </Container2>
       </SafeArea>
@@ -136,7 +136,7 @@ const Start = () => {
                 }
               }}
             >
-              <BodyText color="secondary">Next</BodyText>
+              <BodyText color="secondary">Следующий</BodyText>
             </Pressable>
           </View>
         </View>
@@ -157,7 +157,7 @@ const Start = () => {
               }}
             >
               <TitleText size="title">
-                Click on the corresponding category:
+                Нажмите на соответствующую категорию:
               </TitleText>
             </View>
             <View style={{ flexDirection: "row", paddingTop: 100 }}>
@@ -189,7 +189,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Trash</BodyText>
+                <BodyText size="title">Мусор</BodyText>
               </Category>
             </View>
 
