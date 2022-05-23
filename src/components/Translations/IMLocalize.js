@@ -32,7 +32,7 @@ const LANGUAGE_DETECTOR = {
                 //     RNLocalize.findBestAvailableLanguage(LANG_CODES);
 
                 // callback(findBestAvailableLanguage.languageTag || 'en');
-                callback('en');
+                callback('ru');
 
                 return;
             }
