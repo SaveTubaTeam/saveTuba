@@ -7,9 +7,9 @@ import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
-export const Lvl_1_LessonTwo = {
-  title: "Sustainable Practices",
-  summary: "Why is protecting the environment important?",
+export const Lvl_2_LessonTwo = {
+  title: "Sustainable Agriculture",
+  summary: "What are the ways to make agriculture more sustainable?",
 
   summaryComponent: {
     route: "Summary",
@@ -19,7 +19,6 @@ export const Lvl_1_LessonTwo = {
   memory: {
     component: AdventureOne,
   },
-
   puzzle: {
     component: Puzzle,
   },
@@ -47,7 +46,7 @@ export const Lvl_1_LessonTwo = {
     },
     {
       title: "Memory",
-      description: "Match the word to its definition",
+      description: "Match the word to its definition.",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,

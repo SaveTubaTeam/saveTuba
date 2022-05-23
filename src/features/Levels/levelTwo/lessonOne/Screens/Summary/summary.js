@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Image, View, TouchableOpacity } from "react-native";
+import { Text } from "react-native";
 import styled from "styled-components";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
@@ -24,16 +24,8 @@ const TubaRight = styled.Image`
   width: 350px;
   height: 350px;
   position: absolute;
-  bottom: -160px;
+  bottom: -165px;
   right: -50px;
-`;
-
-const TubaRotated = styled.Image`
-  position: absolute;
-  width: 285px;
-  height: 250px;
-  bottom: -150px;
-  left: 0;
 `;
 
 const TubaLeft = styled.Image`
@@ -72,7 +64,7 @@ const Storyline = (props) => {
   return (
     <>
       <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container activeOpacity="1">
+        <Container>
           <Forward
             style={{ zIndex: 100 }}
             onPress={() => navigation.navigate(props.next)}
@@ -86,52 +78,9 @@ const Storyline = (props) => {
           >
             <Btn source={require(backButtonUrl)} />
           </Back>
-
           <DialogBox source={require(dialogBoxUrl)} resizeMode="contain">
             <Text style={{ fontSize: 18, margin: 105 }}>{props.text}</Text>
           </DialogBox>
-          {props.Tuba}
-        </Container>
-      </ImageBg>
-    </>
-  );
-};
-
-const StoryImage = (props) => {
-  const navigation = useNavigation();
-  const bgUrl = "../../../../../../../assets/naturebackground.jpg";
-  const forwardButtonUrl = "../../../../../../../assets/right.png";
-  const backButtonUrl = "../../../../../../../assets/left.png";
-  return (
-    <>
-      <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container>
-          <Forward
-            style={{ zIndex: 100 }}
-            onPress={() => navigation.navigate(props.next)}
-          >
-            <Image
-              style={{ height: 40, width: 40 }}
-              source={require(forwardButtonUrl)}
-            />
-          </Forward>
-
-          <Back
-            style={{ zIndex: 100 }}
-            onPress={() => navigation.navigate(props.back)}
-          >
-            <Image
-              style={{ height: 40, width: 40 }}
-              source={require(backButtonUrl)}
-            />
-          </Back>
-
-          <View style={{ alignItems: "center", padding: 10 }}>
-            <Image
-              style={{ width: 300, height: 280 }}
-              source={require("../../../../../../../assets/sustainability.png")}
-            />
-          </View>
           {props.Tuba}
         </Container>
       </ImageBg>
@@ -145,7 +94,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Hi, I'm Tuba!"
+            text="The Earth's average surface temperature is gradually rising. Global warming is the term for this process."
             next="SecondScreen"
             back="Start"
             Tuba={
@@ -159,7 +108,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Let's learn together!"
+            text="Understanding the greenhouse effect is helpful in understanding global warming. A greenhouse is a glass house where plants grow. "
             next="ThirdScreen"
             back="Start"
             Tuba={
@@ -173,7 +122,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="ThirdScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Sustainability is all about  balance."
+            text="Glass lets light in while keeping heat out. Even when it's freezing outside, the retained heat keeps the plants warm."
             next="FourthScreen"
             back="SecondScreen"
             Tuba={
@@ -186,12 +135,13 @@ const SummaryScreen = () => {
       </Stack.Screen>
       <Stack.Screen name="FourthScreen" options={{ headerShown: false }}>
         {() => (
-          <StoryImage
+          <Storyline
+            text="Similarly, the Earth's atmosphere captures solar energy. "
             next="FifthScreen"
             back="ThirdScreen"
             Tuba={
-              <TubaRotated
-                source={require("../../../../../../../assets/tuba3.png")}
+              <TubaRight
+                source={require("../../../../../../../assets/tuba2.png")}
               />
             }
           />
@@ -200,7 +150,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="FifthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="The environment provides us with all the resources that we require to fulfill our basic human needs, such as food, water, and housing."
+            text="This trapping is accomplished by carbon dioxide and other gases in the air, collectively known as greenhouse gases."
             next="SixthScreen"
             back="FourthScreen"
             Tuba={
@@ -214,7 +164,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SixthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="However, people are consuming more resources than they can replenish."
+            text="Without these gases, too much heat would escape into space, making life impossible to sustain. "
             next="SeventhScreen"
             back="FifthScreen"
             Tuba={
@@ -228,7 +178,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="SeventhScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Sustainability plays a key role in preserving the environment for future generations."
+            text="However, when more greenhouse gases are released into the atmosphere, more heat is trapped."
             next="EighthScreen"
             back="SixthScreen"
             Tuba={
@@ -242,7 +192,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="EighthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="It means consuming resources at a rate that gives them time to replenish."
+            text="As a result, global warming occurs."
             next="NinthScreen"
             back="SeventhScreen"
             Tuba={
@@ -256,9 +206,37 @@ const SummaryScreen = () => {
       <Stack.Screen name="NinthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="That is why we need to be thoughtful about the consumption of resources and conserve them."
-            next="NinthScreen"
+            text="Warmer weather may be harmful to living organisms."
+            next="TenthScreen"
             back="EighthScreen"
+            Tuba={
+              <TubaRight
+                source={require("../../../../../../../assets/tuba2.png")}
+              />
+            }
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="TenthScreen" options={{ headerShown: false }}>
+        {() => (
+          <Storyline
+            text="It might also melt the polar ice caps. Sea levels would rise as a result of this."
+            next="EleventhScreen"
+            back="NinthScreen"
+            Tuba={
+              <TubaRight
+                source={require("../../../../../../../assets/tuba2.png")}
+              />
+            }
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="EleventhScreen" options={{ headerShown: false }}>
+        {() => (
+          <Storyline
+            text="Coastal plants, animals, and structures would be endangered."
+            next="EleventhScreen"
+            back="TenthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}
@@ -270,39 +248,5 @@ const SummaryScreen = () => {
     </Stack.Navigator>
   );
 };
-
-// const SummaryScreen = () => {
-//   return (
-//     <>
-//       <ScrollView>
-//         <Container>
-//           <Spacer size="large" />
-//           <Card>
-//             <BodyText>Sustainability is all about balance.</BodyText>
-//             <View style={{ alignItems: "center", padding: 10 }}>
-//               <Image
-//                 style={{ width: 300, height: 300 }}
-//                 source={require("../../../../../../../assets/sustainability.png")}
-//               />
-//             </View>
-//             <BodyText>
-//               The environment provides us with all the resources that we require
-//               to fulfill our basic human needs, such as food, water, and
-//               housing. However, people are consuming more resources than they
-//               can replenish.{" "}
-//             </BodyText>
-//             <Spacer size="large" />
-//             <BodyText>
-//               Sustainability plays a key role in preserving the environment for
-//               future generations; it essentially means consuming resources at a
-//               rate that gives them time to replenish. That is why we need to be
-//               thoughtful about the consumption of resources and conserve them.
-//             </BodyText>
-//           </Card>
-//         </Container>
-//       </ScrollView>
-//     </>
-//   );
-// };
 
 export default SummaryScreen;

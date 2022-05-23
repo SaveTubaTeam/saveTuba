@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
-const Container = styled.View`
+const Container = styled.TouchableOpacity`
   flex: 0.8;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@ const Storyline = (props) => {
   return (
     <>
       <ImageBg source={require(bgUrl)} resizeMode="cover">
-        <Container>
+        <Container onPress={() => navigation.navigate(props.next)}>
           <Forward
             style={{ zIndex: 100 }}
             onPress={() => navigation.navigate(props.next)}
@@ -94,7 +94,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="There are a limited amount of resources in the world."
+            text="The products of agriculture that people eat come from both plants and animals."
             next="SecondScreen"
             back="Start"
             Tuba={
@@ -105,12 +105,10 @@ const SummaryScreen = () => {
           />
         )}
       </Stack.Screen>
-
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="Humans must extract these resources from the very Earth in order to produce houses,
-      cars, computers, and pretty much everything else."
+            text="Plant foods include fruits, vegetables, and grains. Meat, dairy (milk) products, and eggs are some of the most common animal foods."
             next="ThirdScreen"
             back="Start"
             Tuba={
@@ -124,7 +122,7 @@ const SummaryScreen = () => {
       <Stack.Screen name="ThirdScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="When we use the word sustainability to mean maintain, it means to maintain it forever."
+            text="Plants and animals also supply such natural materials as cotton, flax, wool, and hides."
             next="FourthScreen"
             back="SecondScreen"
             Tuba={
@@ -138,9 +136,52 @@ const SummaryScreen = () => {
       <Stack.Screen name="FourthScreen" options={{ headerShown: false }}>
         {() => (
           <Storyline
-            text="This is because our actions have a lasting effect on the environment and we should protect it for our future generations."
-            next="FourthScreen"
+            text="Workers process these materials into thread, cloth, and leather."
+            next="FifthScreen"
             back="ThirdScreen"
+            Tuba={
+              <TubaRight
+                source={require("../../../../../../../assets/tuba2.png")}
+              />
+            }
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="FifthScreen" options={{ headerShown: false }}>
+        {() => (
+          <Storyline
+            text=" Then people use the materials to make such things as clothing, draperies, shoes, furniture coverings, and many other items"
+            next="SixthScreen"
+            back="FourthScreen"
+            Tuba={
+              <TubaRight
+                source={require("../../../../../../../assets/tuba2.png")}
+              />
+            }
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="SixthScreen" options={{ headerShown: false }}>
+        {() => (
+          <Storyline
+            text="Growing trees is another important agricultural job."
+            next="SeventhScreen"
+            back="FifthScreen"
+            Tuba={
+              <TubaRight
+                source={require("../../../../../../../assets/tuba2.png")}
+              />
+            }
+          />
+        )}
+      </Stack.Screen>
+      <Stack.Screen name="SeventhScreen" options={{ headerShown: false }}>
+        {() => (
+          <Storyline
+            text="Lumber from tree farms is used to make buildings, furniture, boats, and many other things. 
+"
+            next="SeventhScreen"
+            back="SixthScreen"
             Tuba={
               <TubaRight
                 source={require("../../../../../../../assets/tuba2.png")}

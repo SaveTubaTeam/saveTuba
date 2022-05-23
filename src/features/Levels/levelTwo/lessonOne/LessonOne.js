@@ -7,25 +7,25 @@ import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
-export const Lvl_1_LessonTwo = {
-  title: "Sustainable Practices",
-  summary: "Why is protecting the environment important?",
+export const Lvl_2_LessonOne = {
+  title: "Climate Change",
+  summary: "How does greenhouse effect relate to global warming?",
 
   summaryComponent: {
     route: "Summary",
     component: SummaryScreen,
   },
 
-  memory: {
-    component: AdventureOne,
+  sorting: {
+    component: Sorting,
   },
 
   puzzle: {
     component: Puzzle,
   },
 
-  sorting: {
-    component: Sorting,
+  memory: {
+    component: AdventureOne,
   },
 
   masteryComponent: {
@@ -34,20 +34,20 @@ export const Lvl_1_LessonTwo = {
   },
 
   info: {
-    key: "lesson2",
+    key: "lesson1",
   },
 
   minigames: [
     {
       title: "Puzzle",
-      description: "Solve the puzzle",
+      description: "Solve the puzzle!",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,
     },
     {
       title: "Memory",
-      description: "Match the word to its definition",
+      description: "Match the word to its definition.",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,

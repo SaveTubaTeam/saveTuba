@@ -21,6 +21,21 @@ export class AdventureOne extends React.Component {
 
     let cards = [
       {
+        src: "ionicons",
+        name: "paw",
+        color: "pink",
+      },
+      {
+        src: "entypo",
+        name: "leaf",
+        color: "green",
+      },
+      {
+        src: "entypo",
+        name: "water",
+        color: "#00bfff",
+      },
+      {
         src: "entypo",
         name: "flower",
         color: "#37b24d",
@@ -43,27 +58,12 @@ export class AdventureOne extends React.Component {
       {
         src: "ionicons",
         name: "boat",
-        color: "deepskyblue",
+        color: "blue",
       },
       {
         src: "ionicons",
         name: "cart",
         color: "grey",
-      },
-      {
-        src: "ionicons",
-        name: "trash",
-        color: "grey",
-      },
-      {
-        src: "ionicons",
-        name: "planet",
-        color: "brown",
-      },
-      {
-        src: "ionicons",
-        name: "car",
-        color: "rebeccapurple",
       },
     ];
 

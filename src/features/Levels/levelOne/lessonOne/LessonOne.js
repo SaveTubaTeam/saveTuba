@@ -3,14 +3,29 @@ import { AdventureImages } from "../../IMAGES";
 
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
+import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
+import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
+import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
-export const LessonOne = {
+export const Lvl_1_LessonOne = {
   title: "Sustainability",
   summary: "What is sustainability and why is it important?",
 
   summaryComponent: {
     route: "Lesson Summary",
     component: SummaryScreen,
+  },
+
+  puzzle: {
+    component: Puzzle,
+  },
+
+  memory: {
+    component: AdventureOne,
+  },
+
+  sorting: {
+    component: Sorting,
   },
 
   masteryComponent: {
@@ -32,21 +47,21 @@ export const LessonOne = {
     },
     {
       title: "Sorting",
-      description: "Sort items into categories!",
+      description: "Choose the corresponding category.",
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
     },
     {
-      title: "Crossword",
-      description: "Have a go at a crossword!",
+      title: "Puzzle",
+      description: "Solve the puzzle!",
       key: "testkey1",
       data: questionSet,
       image: AdventureImages.matching,
     },
     {
-      title: "Puzzle",
-      description: "Solve the puzzle!",
+      title: "Memory",
+      description: "Match the word with its definition.",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,
