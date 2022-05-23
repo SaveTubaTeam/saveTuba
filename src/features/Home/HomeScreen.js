@@ -54,16 +54,16 @@ function HomeView() {
           <Text style={style.baseText}>1</Text>
         </TouchableOpacity>
 
-          {/* <Lock
+        {/* <Lock
             style={{ top: 120, left: 330 }}
             source={require("../../../assets/lock.png")}
           /> */}
-          <TouchableOpacity
-            style={style.roundButton2}
-            onPress={() => navigation.push("LevelTwo")}
-          >
-            <Text style={style.baseText}>2</Text>
-          </TouchableOpacity>
+        <TouchableOpacity
+          style={style.roundButton2}
+          onPress={() => navigation.push("LevelTwo")}
+        >
+          <Text style={style.baseText}>2</Text>
+        </TouchableOpacity>
 
         <Lock
           style={{ top: 250, left: 90 }}
@@ -71,7 +71,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelThree")}*/
+        /*onPress={() => navigation.push("LevelThree")}*/
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
@@ -82,7 +82,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelFour")}*/
+        /*onPress={() => navigation.push("LevelFour")}*/
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -93,7 +93,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelFive")}*/
+        /*onPress={() => navigation.push("LevelFive")}*/
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
@@ -104,7 +104,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelSix")}*/
+        /*onPress={() => navigation.push("LevelSix")}*/
         >
           <Text style={style.baseText}>6</Text>
         </TouchableOpacity>
@@ -123,7 +123,7 @@ const HomeScreen = () => {
         name="Levels"
         component={HomeView}
         options={{
-          title: "Levels",
+          title: "Уровни", //Levels
           headerShown: true,
           headerStyle: {
             backgroundColor: "#C6DC3B",
