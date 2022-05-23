@@ -19,6 +19,7 @@ import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
+import { questionSet } from "../../components/LevelOne/QuestionSet";
 
 // import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 
@@ -29,10 +30,12 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("Puzzle", {
       data: selectedItem.map((obj) => obj.image),
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") {
+  } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") { 
     navigation.navigate("MultipleChoice", {
       data: "./TestData.json",
     });
+  } else if (selectedItem.map((obj) => obj.title) == "Image Bananza") { 
+    navigation.navigate("Image Bananza");
   } else if (selectedItem.map((obj) => obj.title) == "Sorting") {
     navigation.navigate("Sorting", {
       data: "./TestData.json",
@@ -42,6 +45,7 @@ function getLinkToScreen(selectedItem, navigation) {
       data: "./TestData.json",
     });
   }
+  
 }
 
 function LessonComponent(props) {
@@ -88,7 +92,7 @@ function LessonComponent(props) {
     const title = item.title;
     const description = item.description;
     const key = item.key; // Error/Warning about items not having Key not sure how to fix
-
+    // console.warn(item.image);
     return (
       <View
         style={{
@@ -186,19 +190,7 @@ function LessonComponent(props) {
         // lists error: color: "#C6DC3B"
         ListHeaderComponent={
           <>
-            {/* <View style={{ flexDirection: 'row' }} > 
-            <TouchableOpacity onPress={() =>  {
-              console.warn(navigation);
-              navigation.navigate("Level One");
-            } }>
-              <Ionicons name="arrow-back" color={"#C6DC3B"} size={32} />
-            </TouchableOpacity>  
             <TitleText size="h4" color="primary"> {selectedLevel.title} </TitleText>
-            </View> */}
-            <TitleText size="h4" color="primary">
-              {" "}
-              {selectedLevel.title}{" "}
-            </TitleText>
             <Spacer size="small" />
             <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
             <Summary

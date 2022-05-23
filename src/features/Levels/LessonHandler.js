@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import LessonComponent from "./LessonComponent";
 
+import OpenResponseHandler from "../../components/minigames/OpenResponse/OpenResponseHandler";
+
 import { connect } from "react-redux";
 
 import Sorting from "./levelOne/lessonOne/Screens/Adventures/adventureTwo/sorting.component";
@@ -116,6 +118,17 @@ function LessonHandler(props) {
             },
           }}
         />
+        <Stack.Screen
+          name="Image Bananza"
+          options={{ headerShown: false }}
+        >
+        {() => (
+        <OpenResponseHandler
+            questionSet={selectedLevel.minigames[0].data} navigation={navigation}
+        />  
+        )}
+        </Stack.Screen>
+        {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         <Stack.Screen
           name="Puzzle"
           component={selectedLevel.puzzle.component}

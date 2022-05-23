@@ -1,4 +1,4 @@
-import { AdventureImages } from "../../IMAGES";
+import { AdventureImages, TestImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
 import SummaryScreen from "./Screens/Summary/summary";
@@ -38,10 +38,37 @@ export const Lvl_2_LessonTwo = {
 
   minigames: [
     {
-      title: "Puzzle",
-      description: "Solve the puzzle",
+      title: "Image Bananza",
+      description: "Respond Openly",
       key: "testkey2",
-      data: "require('puzzlePollutionQuestions')",
+      data: {
+        prompts: [
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.bikingPic,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.faucetPic,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.recyclingPic,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.lightsPic,
+          },
+        ]
+      },
       image: AdventureImages.puzzle,
     },
     {
