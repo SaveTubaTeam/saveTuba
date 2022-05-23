@@ -62,7 +62,7 @@ const SecondScreen = ({ navigation }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
-            Good job! Go back to the lesson to continue learning!
+            Отличная работа! Вернитесь к уроку, чтобы продолжить обучение!
           </TitleText>
           <Spacer size="large" />
           <Pressable
@@ -78,7 +78,7 @@ const SecondScreen = ({ navigation }) => {
 };
 
 const Start = () => {
-  const [correctAnswer, setCorrectAnswer] = useState("Animal");
+  const [correctAnswer, setCorrectAnswer] = useState("Животное");
   const [answer, setAnswer] = useState("");
   const [visible, setVisible] = useState(false);
 
@@ -111,8 +111,8 @@ const Start = () => {
             <View style={styles.correctContainer}>
               <Text style={styles.modalText}>
                 {correctAnswer == answer
-                  ? "Correct answer! Good job ✨"
-                  : "Incorrect answer! Better luck next time 🍀"}
+                  ? "Правильный ответ! Хорошая работа ✨"
+                  : "Неправильный ответ! Повезет в следующий раз 🍀"}
               </Text>
             </View>
             <Pressable
@@ -122,13 +122,13 @@ const Start = () => {
                   setVisibleOne(0);
                   setVisibleTwo(1);
                   setVisible(false);
-                  setCorrectAnswer("Plant");
+                  setCorrectAnswer("Растение");
                   setCount(1);
                 } else if (count == 1) {
                   setVisibleTwo(0);
                   setVisibleThree(1);
                   setVisible(false);
-                  setCorrectAnswer("Plant");
+                  setCorrectAnswer("Растение");
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -164,22 +164,22 @@ const Start = () => {
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Animal");
-                  checkAnswer("Animal");
+                  setAnswer("Животное");
+                  checkAnswer("Животное");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Animal products</BodyText>
+                <BodyText size="title">Животные продукты</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Plant");
-                  checkAnswer("Plant");
+                  setAnswer("Растение");
+                  checkAnswer("Растение");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Plant products</BodyText>
+                <BodyText size="title">растительные продукты</BodyText>
               </Category>
             </View>
 
@@ -190,21 +190,21 @@ const Start = () => {
             />
           </Container>
           <Option style={{ opacity: visibleOne }}>
-            <TitleText size="body">Dairy</TitleText>
+            <TitleText size="body">Молочный</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/dairy.png")}
             />
           </Option>
           <Option style={{ opacity: visibleTwo }}>
-            <TitleText size="body">Cotton</TitleText>
+            <TitleText size="body">Хлопок</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/cotton.png")}
             />
           </Option>
           <Option style={{ opacity: visibleThree }}>
-            <TitleText size="body">Grains</TitleText>
+            <TitleText size="body">Зерновые</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/wheat.png")}
