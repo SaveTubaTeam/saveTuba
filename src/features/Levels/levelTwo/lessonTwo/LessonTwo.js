@@ -8,8 +8,8 @@ import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.scr
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_2_LessonTwo = {
-  title: "Sustainable Agriculture",
-  summary: "What are the ways to make agriculture more sustainable?",
+  title: "Устойчивое сельское хозяйство",
+  summary: "Как сделать сельское хозяйство более устойчивым?",
 
   summaryComponent: {
     route: "Summary",
@@ -38,8 +38,8 @@ export const Lvl_2_LessonTwo = {
 
   minigames: [
     {
-      title: "Image Bananza",
-      description: "Respond Openly",
+      title: "Изображение Бананза",
+      description: "Отвечать открыто",
       key: "testkey2",
       data: {
         prompts: [
@@ -72,22 +72,22 @@ export const Lvl_2_LessonTwo = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Memory",
-      description: "Match the word to its definition.",
+      title: "объем памяти",
+      description: "Соотнесите слово с его определением.",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,
     },
     {
-      title: "Sorting",
-      description: "Choose the corresponding category.",
+      title: "Сортировка",
+      description: "Выберите соответствующую категорию.",
       key: "testkey1",
       data: questionSetPollution,
       image: AdventureImages.crossword,
     },
     {
-      title: "Multiple Choice",
-      description: "Guess if you don't know",
+      title: "Большой выбор",
+      description: "Угадай, если не знаешь",
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
