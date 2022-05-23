@@ -30,11 +30,11 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("Puzzle", {
       data: selectedItem.map((obj) => obj.image),
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") { 
+  } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") {
     navigation.navigate("MultipleChoice", {
       data: "./TestData.json",
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Image Bananza") { 
+  } else if (selectedItem.map((obj) => obj.title) == "Image Bananza") {
     navigation.navigate("Image Bananza");
   } else if (selectedItem.map((obj) => obj.title) == "Sorting") {
     navigation.navigate("Sorting", {
@@ -45,7 +45,7 @@ function getLinkToScreen(selectedItem, navigation) {
       data: "./TestData.json",
     });
   }
-  
+
 }
 
 function LessonComponent(props) {
@@ -199,11 +199,15 @@ function LessonComponent(props) {
               }}
             >
               <BodyText weight="bold" color="primary" size="subtitle">
-                Full Summary
+                Краткое изложение
+                {/* Full Summary */}
               </BodyText>
             </Summary>
             <Spacer size="large" />
-            <TitleText>Adventures</TitleText>
+            <TitleText>
+              Приключения
+              {/* Adventures */}
+            </TitleText>
             <Spacer size="small" />
           </>
         }
@@ -219,7 +223,8 @@ function LessonComponent(props) {
               }}
             >
               <BodyText weight="bold" size="subtitle" color="secondary">
-                Mastery
+                Мастерство
+                {/* Mastery */}
               </BodyText>
             </Mastery>
 
