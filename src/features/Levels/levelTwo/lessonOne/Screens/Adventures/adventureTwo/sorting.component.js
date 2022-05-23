@@ -78,7 +78,7 @@ const SecondScreen = ({ navigation }) => {
 };
 
 const Start = () => {
-  const [correctAnswer, setCorrectAnswer] = useState("Compost");
+  const [correctAnswer, setCorrectAnswer] = useState("Компост");
   const [answer, setAnswer] = useState("");
   const [visible, setVisible] = useState(false);
 
@@ -111,8 +111,8 @@ const Start = () => {
             <View style={styles.correctContainer}>
               <Text style={styles.modalText}>
                 {correctAnswer == answer
-                  ? "Correct answer! Good job ✨"
-                  : "Incorrect answer! Better luck next time 🍀"}
+                  ? "Правильный ответ! Отличная работа ✨"
+                  : "Неправильный ответ! Повезет в следующий раз 🍀"}
               </Text>
             </View>
             <Pressable
@@ -122,13 +122,13 @@ const Start = () => {
                   setVisibleOne(0);
                   setVisibleTwo(1);
                   setVisible(false);
-                  setCorrectAnswer("Trash");
+                  setCorrectAnswer("Мусор");
                   setCount(1);
                 } else if (count == 1) {
                   setVisibleTwo(0);
                   setVisibleThree(1);
                   setVisible(false);
-                  setCorrectAnswer("Recycle");
+                  setCorrectAnswer("Рециркулировать");
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -164,28 +164,28 @@ const Start = () => {
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Recycle");
-                  checkAnswer("Recycle");
+                  setAnswer("Рециркулировать");
+                  checkAnswer("Рециркулировать");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Recycle</BodyText>
+                <BodyText size="title">Рециркулировать</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Compost");
-                  checkAnswer("Compost");
+                  setAnswer("Компост");
+                  checkAnswer("Компост");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Compost</BodyText>
+                <BodyText size="title">Компост</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Trash");
-                  checkAnswer("Trash");
+                  setAnswer("Мусор");
+                  checkAnswer("Мусор");
                   setVisible(true);
                 }}
               >
@@ -200,21 +200,21 @@ const Start = () => {
             />
           </Container>
           <Option style={{ opacity: visibleOne }}>
-            <TitleText size="body">Banana peel</TitleText>
+            <TitleText size="body">Банановая кожура</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/banana.png")}
             />
           </Option>
           <Option style={{ opacity: visibleTwo }}>
-            <TitleText size="body">Meat</TitleText>
+            <TitleText size="body">Мясо</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/meat.png")}
             />
           </Option>
           <Option style={{ opacity: visibleThree }}>
-            <TitleText size="body">Plastic bottle</TitleText>
+            <TitleText size="body">Пластиковая бутылка</TitleText>
             <Img
               resizeMode="contain"
               source={require("../../../../../../../../assets/bottle.png")}
