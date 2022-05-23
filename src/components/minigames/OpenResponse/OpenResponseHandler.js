@@ -16,6 +16,7 @@ import { Button } from 'react-native-paper';
 
 
 
+
 const HEADER_BLUE                   = "#0EABD9";
 const HEADER_BLUE_SHADOW            = "#12A5D1";
 
@@ -43,7 +44,7 @@ const renderPrompts = ({item}) => {
       <TextInput style={{flex: 1}}
         // onChangeText={onChangeText}
         // value={text}
-        placeholder="Enter answer..."
+        placeholder="Введите ответ..."
         multiline={true}
       >
 
@@ -70,7 +71,7 @@ const OpenResponseHandler = (props) => {
         <HeaderBacker>
             <Header>
                 <Text>
-                    What is the image?{'\n'}Why is it important?{'\n'}{'\n'}Answer: Solar Panel{'\n'}Makes Clean Energy
+                Что такое имидж?{'\n'}Почему это важно?{'\n'}{'\n'}Ответ: Солнечная панель{'\n'}Производит чистую энергию
                 </Text>
                 <Text>
                 </Text>
@@ -105,7 +106,7 @@ const OpenResponseHandler = (props) => {
           <Button mode="contained" style={{width: "80%", backgroundColor: "#748816"}} onPress={
             () => navigation.goBack()
           }>
-              <Text>Submit</Text>
+              <Text>Войти</Text>
           </Button>
         </View>
         

@@ -20,6 +20,7 @@ import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 import { questionSet } from "../../components/LevelOne/QuestionSet";
+import { IconButton } from "react-native-paper";
 
 // import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 
@@ -34,7 +35,7 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("MultipleChoice", {
       data: "./TestData.json",
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Image Bananza") {
+  } else if (selectedItem.map((obj) => obj.title) == "Изображение Бананза") {
     navigation.navigate("Image Bananza");
   } else if (selectedItem.map((obj) => obj.title) == "Сортировка") {
     navigation.navigate("Sorting", {
@@ -47,6 +48,10 @@ function getLinkToScreen(selectedItem, navigation) {
   }
 
 }
+
+
+
+
 
 function LessonComponent(props) {
   const [selectedItem, setSelectedItem] = useState([
