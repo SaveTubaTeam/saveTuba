@@ -3,6 +3,8 @@ import navigate from './navigate';
 import personal from './personal';
 import general from './general';
 import about from './about';
+import profile from './profile';
+
 
 export default {
     common,
@@ -10,4 +12,5 @@ export default {
     personal,
     general,
     about,
+    profile,
 };

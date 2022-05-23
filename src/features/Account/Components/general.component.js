@@ -166,12 +166,12 @@ export const GeneralCard = () => {
                     >
                         <View style={styles.centeredView}>
                             <View style={styles.modalView}>
-                                <Text style={styles.modalText}>RN just ask Artur for help. also this text needs to be imported from a JSON file because rn it is inefficent.</Text>
+                                <Text style={styles.modalText}>{t("about:help")}</Text>
                                 <Pressable
                                     style={[styles.button, styles.buttonClose]}
                                     onPress={() => setModalHelpVisible(!modalHelpVisible)}
                                 >
-                                    <Text style={styles.textStyle}>Close</Text>
+                                    <Text style={styles.textStyle}>{t("about:close")}</Text>
                                 </Pressable>
                             </View>
                         </View>
@@ -208,7 +208,7 @@ export const GeneralCard = () => {
                                     style={[styles.button, styles.buttonClose]}
                                     onPress={() => setModalAboutVisible(!modalAboutVisible)}
                                 >
-                                    <Text style={styles.textStyle}>Close</Text>
+                                    <Text style={styles.textStyle}>{t("about:close")}</Text>
                                 </Pressable>
                             </View>
                         </View>

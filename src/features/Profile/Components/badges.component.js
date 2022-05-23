@@ -2,6 +2,7 @@ import React from "react";
 import { Text, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
+import { useTranslation } from 'react-i18next';
 
 import { TitleText } from "../../../components/title-text.component";
 import { Card } from "../../../components/card.component";
@@ -15,10 +16,10 @@ const Badge = styled.Image`
 
 export const Badges = () => {
   const navigation = useNavigation();
-
+  const { t } = useTranslation();
   return (
     <Card>
-      <TitleText>Badges</TitleText>
+      <TitleText>{t("profile:badges")}</TitleText>
       <ScrollView style={{ width: "100%" }} horizontal independent>
         <Badge source={require("../../../../assets/badge1.png")} />
         <Badge source={require("../../../../assets/badge2.png")} />

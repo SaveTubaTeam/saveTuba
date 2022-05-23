@@ -8,6 +8,7 @@ import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { auth } from "../../../../firebase";
+import { useTranslation } from 'react-i18next';
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -44,6 +45,7 @@ const Row = styled.View`
 export function ProfileCard(props) {
   const navigation = useNavigation();
   const { currentUser } = props;
+  const { t } = useTranslation();
 
   return (
     <Card>
@@ -72,11 +74,11 @@ export function ProfileCard(props) {
         <Row>
           <Friends>
             <BodyText color="secondary">
-              {currentUser?.friendCount} friends
+              {t("profile:friends")}  {currentUser?.friendCount}
             </BodyText>
           </Friends>
           <Achievements>
-            <BodyText color="secondary">level {currentUser?.level}</BodyText>
+            <BodyText color="secondary">{t("profile:level")} {currentUser?.level}</BodyText>
           </Achievements>
         </Row>
       </AvatarContainer>
