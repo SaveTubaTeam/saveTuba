@@ -6,6 +6,7 @@ import MasteryScreen from "./Screens/Mastery/mastery";
 import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
+import { TestImages } from "../../IMAGES";
 
 export const Lvl_1_LessonTwo = {
   title: "устойчивость", //Sustainable Practices
@@ -39,10 +40,37 @@ export const Lvl_1_LessonTwo = {
 
   minigames: [
     {
-      title: "Головоломка", //Puzzle
-      description: "Решить головоломку", //Solve the puzzle
+      title: "Изображение Бананза",
+      description: "Отвечать открыто",
       key: "testkey2",
-      data: "require('puzzlePollutionQuestions')",
+      data: {
+        prompts: [
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.lvl_1_les_2_img_1,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.lvl_1_les_2_img_2,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.lvl_1_les_2_img_3,
+          },
+          {
+            prompt: "Bro can u just work please",
+            maxChar: 500,
+            imageType: "svg",
+            image: TestImages.lvl_1_les_2_img_4,
+          },
+        ]
+      },
       image: AdventureImages.puzzle,
     },
     {
