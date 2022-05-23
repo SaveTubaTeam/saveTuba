@@ -111,8 +111,8 @@ const Start = () => {
             <View style={styles.correctContainer}>
               <Text style={styles.modalText}>
                 {correctAnswer == answer
-                  ? "Correct answer! Good job ✨"
-                  : "Incorrect answer! Better luck next time 🍀"}
+                  ? "Правильный ответ! Хорошая работа ✨"
+                  : "Неправильный ответ! Повезет в следующий раз 🍀"}
               </Text>
             </View>
             <Pressable
