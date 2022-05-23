@@ -26,21 +26,21 @@ import { questionSet } from "../../components/LevelOne/QuestionSet";
 // Depending on the minigame selected will navigate to the game
 // Might be able to make it more dynamic by using obj.title as route name as well **Needs to be worked in lessonHandler component
 function getLinkToScreen(selectedItem, navigation) {
-  if (selectedItem.map((obj) => obj.title) == "Puzzle") {
+  if (selectedItem.map((obj) => obj.title) == "Головоломка") {
     navigation.navigate("Puzzle", {
       data: selectedItem.map((obj) => obj.image),
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Multiple Choice") {
+  } else if (selectedItem.map((obj) => obj.title) == "Большой выбор") {
     navigation.navigate("MultipleChoice", {
       data: "./TestData.json",
     });
   } else if (selectedItem.map((obj) => obj.title) == "Image Bananza") {
     navigation.navigate("Image Bananza");
-  } else if (selectedItem.map((obj) => obj.title) == "Sorting") {
+  } else if (selectedItem.map((obj) => obj.title) == "Сортировка") {
     navigation.navigate("Sorting", {
       data: "./TestData.json",
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Memory") {
+  } else if (selectedItem.map((obj) => obj.title) == "объем памяти") {
     navigation.navigate("Memory", {
       data: "./TestData.json",
     });
