@@ -30,21 +30,21 @@ const MasteryScreen = () => {
       <ScrollView directionalLockEnabled={true}>
         <Container>
           <BodyText size="subtitle">
-            Supermarkets make grocery shopping simple.
+            Супермаркеты упрощают покупку продуктов.
           </BodyText>
           <BodyText size="subtitle">
-            But it's easy to forget that everything we buy doesn't appear on the
-            shelves by itself. Everything we consume takes time, energy, and
-            resources to cultivate and make.
+            Но легко забыть, что все, что мы покупаем, не появляется на
+            полки само собой. Все, что мы потребляем, требует времени, энергии и
+            ресурсы для выращивания и производства.
           </BodyText>
           <BodyText size="subtitle">
-            We waste these resources when we discard food. When food waste rots
-            in landfills, it emits greenhouse gases, contributing to climate
-            change.
+            Мы растрачиваем эти ресурсы, когда выбрасываем пищу. Когда гниют пищевые отходы
+            на свалках он выделяет парниковые газы, способствуя изменению климата
+            сдача.
           </BodyText>
           <BodyText size="subtitle">
-            So let’s try to grow our own food. Did you know that you can grow
-            herbs, such as mint, coriander and basil on your windowsill?
+            Итак, давайте попробуем вырастить себе еду. Знаете ли вы, что вы можете расти
+            травы, такие как мята, кориандр и базилик на вашем подоконнике?
           </BodyText>
           <Image
             style={{
@@ -58,9 +58,9 @@ const MasteryScreen = () => {
             source={require("../../../../../../../assets/garden.png")}
           />
           <BodyText size="subtitle">
-            Think about in what ways growing your own food helps to decrease the
-            impacts of global warming. Come up with 5 points and write them
-            down.
+            Подумайте, каким образом выращивание собственной пищи помогает уменьшить
+            последствия глобального потепления. Придумайте 5 пунктов и напишите их
+            вниз.
           </BodyText>
           <Spacer size="large" />
           <View
@@ -73,59 +73,59 @@ const MasteryScreen = () => {
             }}
           >
             <BodyText size="subtitle" color="tertiary">
-              Now let's start our gardening journey. Follow these steps:
+            Теперь давайте начнем наше садоводческое путешествие. Следуй этим шагам:
             </BodyText>
             <Checklist>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" />
                 <BodyText size="subtitle" color="tertiary">
-                  Decide on seeds or a plant
+                  Определитесь с семенами или растением
                 </BodyText>
               </Item>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
-                  Find a sunny windowsill
+                  Найдите солнечный подоконник
                 </BodyText>
               </Item>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
-                  Find small pots for your plants.
+                  Найдите небольшие горшки для ваших растений.
                 </BodyText>
               </Item>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
-                  Get a soil mixture
+                  Получите почвенную смесь
                 </BodyText>
               </Item>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
-                  In your pots, mix soil with some water
+                  В горшках смешайте почву с небольшим количеством воды.
                 </BodyText>
               </Item>
               <Item>
                 <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
-                  Put your seeds in
+                  Положите свои семена в
                 </BodyText>
               </Item>
             </Checklist>
           </View>
           <BodyText size="subtitle">
-            Don't forget to read the instructions on the seed packets about how
-            far they need to be from each other and how deep you have to plant
-            them. Make sure to water your plants regularly and that they get
-            enough sunlight.
+            Не забудьте прочитать инструкции на пакетах с семенами о том, как
+            далеко они должны быть друг от друга и как глубоко надо сажать
+            их. Не забывайте регулярно поливать растения и получать
+            достаточно солнечного света.
           </BodyText>
           <BodyText size="subtitle">
-            Show a photo of your garden to your teacher.
+            фотографию своего сада учителю.
           </BodyText>
           <BodyText size="subtitle">
-            Congratulations, you just helped to decrease the amount of
-            greenhouse gases in the atmosphere!
+          Поздравляем, вы только что помогли уменьшить количество
+            парниковые газы в атмосфере!
           </BodyText>
         </Container>
       </ScrollView>
