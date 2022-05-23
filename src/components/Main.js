@@ -38,6 +38,8 @@ export class Main extends Component {
           tabBarActiveTintColor: theme.colors.ui.tertiary,
           tabBarInactiveTintColor: "#fff",
           headerShown: false,
+          tabBarHideOnKeyboard: true,
+
           tabBarIconStyle: {
             marginTop: 5,
           },

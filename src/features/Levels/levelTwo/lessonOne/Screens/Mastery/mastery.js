@@ -17,6 +17,7 @@ const Container = styled.View`
 const Checklist = styled.View`
   margin-top: 20px;
   margin: 20px;
+  padding-right: 20px;
 `;
 const Item = styled.View`
   flex-direction: row;
