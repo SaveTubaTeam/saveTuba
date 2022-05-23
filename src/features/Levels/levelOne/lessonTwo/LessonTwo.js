@@ -8,11 +8,11 @@ import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.scr
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_1_LessonTwo = {
-  title: "Sustainable Practices",
-  summary: "Why is protecting the environment important?",
+  title: "устойчивость", //Sustainable Practices
+  summary: "Почему важно защищать окружающую среду?", //Why is protecting the environment important?
 
   summaryComponent: {
-    route: "Summary",
+    route: "изложение", //Summary
     component: SummaryScreen,
   },
 
@@ -29,7 +29,7 @@ export const Lvl_1_LessonTwo = {
   },
 
   masteryComponent: {
-    route: "Mastery",
+    route: "Мастерство", //Mastery
     component: MasteryScreen,
   },
 
@@ -39,29 +39,29 @@ export const Lvl_1_LessonTwo = {
 
   minigames: [
     {
-      title: "Puzzle",
-      description: "Solve the puzzle",
+      title: "Головоломка", //Puzzle
+      description: "Решить головоломку", //Solve the puzzle
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
       image: AdventureImages.puzzle,
     },
     {
-      title: "Memory",
-      description: "Match the word to its definition",
+      title: "объем памяти", //Memory
+      description: "Соотнесите слово с его определением", //Match the word to its definition
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,
     },
     {
-      title: "Sorting",
-      description: "Choose the corresponding category.",
+      title: "Сортировка", //Sorting
+      description: "Выберите соответствующую категорию", //Choose the corresponding category.
       key: "testkey1",
       data: questionSetPollution,
       image: AdventureImages.crossword,
     },
     {
-      title: "Multiple Choice",
-      description: "Guess if you don't know",
+      title: "Большой выбор", //Multiple Choice
+      description: "Угадай, если не знаешь", //Guess if you don't know
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
