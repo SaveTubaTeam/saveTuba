@@ -6,12 +6,11 @@ export const AdventureImages = {
 };
 
 export const TestImages = {
-  solar_panel_1:    require("../../../assets/solar-panel.jpg"),
-  test:             require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_ridingbike.jpg"),
-  bikingPic:        require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_ridingbike.jpg"),
-  faucetPic:        require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_turnWaterOff.jpg"),
-  recyclingPic:     require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_recycling.png"),
-  lightsPic:        require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_turningLight.jpg"),
+  solar_panel_1:            require("../../../assets/solar-panel.jpg"),
+  bikingPic:                require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_ridingbike.jpg"),
+  faucetPic:                require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_turnWaterOff.jpg"),
+  recyclingPic:             require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_recycling.png"),
+  lightsPic:                require("../../../assets/imageResponseGame/Level_1_Lesson_1/desc_turningLight.jpg"),
 
   lvl_1_les_2_img_1:        require("../../../assets/imageResponseGame/Level_1_Lesson_2/LampAndLights.jpg"),
   lvl_1_les_2_img_2:        require("../../../assets/imageResponseGame/Level_1_Lesson_2/reusedTrash.jpg"),
