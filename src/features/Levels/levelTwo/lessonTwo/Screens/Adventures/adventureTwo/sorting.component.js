@@ -69,7 +69,7 @@ const SecondScreen = ({ navigation }) => {
             onPress={() => navigation.navigate("Level")}
             style={styles.next}
           >
-            <BodyText color="secondary">Go back</BodyText>
+            <BodyText color="secondary">Назад</BodyText>
           </Pressable>
         </Container2>
       </SafeArea>
@@ -136,7 +136,7 @@ const Start = () => {
                 }
               }}
             >
-              <BodyText color="secondary">Next</BodyText>
+              <BodyText color="secondary">Следующий</BodyText>
             </Pressable>
           </View>
         </View>

@@ -50,10 +50,6 @@ function getLinkToScreen(selectedItem, navigation) {
   }
 }
 
-
-
-
-
 function LessonComponent(props) {
   const [selectedItem, setSelectedItem] = useState([
     { title: null, description: null, key: null },
@@ -161,7 +157,7 @@ function LessonComponent(props) {
                 getLinkToScreen(selectedItem, navigation);
               }}
             >
-              <BodyText color="secondary">Start</BodyText>
+              <BodyText color="secondary">Начать</BodyText>
             </Button>
             <Button // Back Button
               onPress={() => {
@@ -169,7 +165,7 @@ function LessonComponent(props) {
                 setModalVisible(!modalVisible);
               }}
             >
-              <BodyText color="secondary">Back</BodyText>
+              <BodyText color="secondary">Назад</BodyText>
             </Button>
           </View>
         </View>
@@ -196,7 +192,10 @@ function LessonComponent(props) {
         // lists error: color: "#C6DC3B"
         ListHeaderComponent={
           <>
-            <TitleText size="h4" color="primary"> {selectedLevel.title} </TitleText>
+            <TitleText size="h4" color="primary">
+              {" "}
+              {selectedLevel.title}{" "}
+            </TitleText>
             <Spacer size="small" />
             <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
             <Summary

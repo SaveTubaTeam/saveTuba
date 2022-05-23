@@ -15,8 +15,8 @@ export const AnswerModal = ({ visible, correct, setModalVisible }) => {
           <View style={styles.correctContainer}>
             <Text style={styles.modalText}>
               {correct
-                ? "Correct answer! Good job ✨"
-                : "Incorrect answer! Better luck next time 🍀"}
+                ? "Правильный ответ! Хорошая работа ✨"
+                : "Неправильный ответ! Повезет в следующий раз 🍀"}
             </Text>
           </View>
         </View>
