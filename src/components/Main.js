@@ -49,7 +49,7 @@ export class Main extends Component {
         }}
       >
         <Tab.Screen
-          name="Profile"
+          name="Профиль" //Profile
           component={ProfileScreen}
           options={{
             tabBarIcon: ({ color }) => (
@@ -58,7 +58,7 @@ export class Main extends Component {
           }}
         />
         <Tab.Screen
-          name="Home"
+          name="Дом" //"Home"
           component={HomeScreen}
           options={{
             tabBarIcon: ({ color }) => (
@@ -68,7 +68,7 @@ export class Main extends Component {
         />
         {/* <Tab.Screen name="Unity" component={null} /> */}
         <Tab.Screen
-          name="Settings"
+          name="Настройки" //Settings
           component={AccountNav}
           options={{
             tabBarIcon: ({ color }) => (
