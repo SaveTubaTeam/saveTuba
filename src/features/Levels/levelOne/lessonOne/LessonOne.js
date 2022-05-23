@@ -8,8 +8,8 @@ import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.scr
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 export const Lvl_1_LessonOne = {
-  title: "Sustainability",
-  summary: "What is sustainability and why is it important?",
+  title: "устойчивость", //Sustainability
+  summary: "Что такое устойчивое развитие и почему это важно?", //What is sustainability and why is it important?
 
   summaryComponent: {
     route: "Lesson Summary",
@@ -39,28 +39,28 @@ export const Lvl_1_LessonOne = {
 
   minigames: [
     {
-      title: "Quiz",
+      title: "Контрольный опрос", //Quiz
       description: "Reinforce your knowledge!",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.crossword,
     },
     {
-      title: "Sorting",
+      title: "Сортировка", //Sorting
       description: "Choose the corresponding category.",
       key: "testkey4",
       data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
     },
     {
-      title: "Puzzle",
+      title: "Головоломка", //Puzzle
       description: "Solve the puzzle!",
       key: "testkey1",
       data: questionSet,
       image: AdventureImages.matching,
     },
     {
-      title: "Memory",
+      title: "объем памяти", //Memory
       description: "Match the word with its definition.",
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",
