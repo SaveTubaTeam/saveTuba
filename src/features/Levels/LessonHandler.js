@@ -16,18 +16,11 @@ import LessonComponent from "./LessonComponent";
 import { connect } from "react-redux";
 
 // want to import data here?
-<<<<<<< HEAD
-import { LessonOne } from "./levelOne/lessonOne/LessonOne";
-import { LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
-import { LessonThree } from "./levelOne/lessonThree/LessonThree";
-import { LessonFour } from "./levelOne/lessonFour/LessonFour";
-import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
-=======
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
->>>>>>> 2f21b17e7cacf6f4ac14b0d83eb8925f8b772169
+import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 
 /*
 To add Lessons: 
