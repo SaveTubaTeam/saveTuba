@@ -32,13 +32,8 @@ export class AdventureOne extends React.Component {
       },
       {
         src: "entypo",
-        name: "cloud",
-        color: "green",
-      },
-      {
-        src: "ionicons",
-        name: "flower",
-        color: "purple",
+        name: "drop",
+        color: "blue",
       },
       {
         src: "ionicons",

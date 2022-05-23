@@ -20,6 +20,7 @@ import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 import { TitleText } from "../../components/title-text.component";
 import { IconButton } from "react-native-paper";
+import { QuizScreen } from "../../components/LevelOne/quiz-screen.component";
 
 const TempScreen = ({navigation})  => {
 
@@ -50,6 +51,10 @@ function LessonHandler(props) {
   const { currentUser, navigation, route } = props; // the available props in the lesson
   const { level } = route.params; // Level selected from Lesson navigation screen
   const [selectedLevel, setSelectedLevel] = useState(null);
+  const [score, setScore] = useState(0);
+  function changeScore(value) {
+    setScore(value);
+  }
 
   useEffect(() => {
     // Function called on LessonHandler mount to determine data to select for lesson component
@@ -73,10 +78,7 @@ function LessonHandler(props) {
   }, []);
 
   // variables and function to change minigame scores **Needs to be moved
-  const [score, setScore] = useState(0);
-  function changeScore(value) {
-    setScore(value);
-  }
+  
 
   // Allows useEffect to change selected Level **Needs to be replaced with animation for loading
   if (selectedLevel == null) {
@@ -99,17 +101,6 @@ function LessonHandler(props) {
           }}
           initialParams={{ level: level }}
         />
-        {/* Insert Screens below based off minigame. Need to be able to send data to the component in the same way that the quiz screen works */}
-        <Stack.Screen name="Quiz" options={{ headerShown: false }}>
-          {() => (
-            <QuizScreen
-              score={score}
-              onStateChange={changeScore}
-              questionSet={selectedLevel.minigames[2].data}
-            />
-          )}
-          {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
-        </Stack.Screen>
         <Stack.Screen
           component={selectedLevel.memory.component}
           name="Memory"
@@ -121,7 +112,6 @@ function LessonHandler(props) {
             },
           }}
         >
-          {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
         </Stack.Screen>
         <Stack.Screen
           name="Sorting"
@@ -155,7 +145,18 @@ function LessonHandler(props) {
             />
           )}
         </Stack.Screen>
-        {/* ^^^^^^^^^^^^^^^^ Eventuallly needs to not be hardcoded i.e. [2]*/}
+        <Stack.Screen
+          name="QuizScreen"
+          options={{ headerShown: false }}
+        >
+          {() => (
+            <QuizScreen 
+              score={score}
+              onStateChange={changeScore}
+              questionSet={selectedLevel.minigames[2].data}
+            />
+          )}
+        </Stack.Screen>
         <Stack.Screen
           name="Puzzle"
           component={selectedLevel.puzzle.component}
