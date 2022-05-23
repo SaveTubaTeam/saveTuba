@@ -122,13 +122,13 @@ const Start = () => {
                   setVisibleOne(0);
                   setVisibleTwo(1);
                   setVisible(false);
-                  setCorrectAnswer("Жизнь");
+                  setCorrectAnswer("Живой");
                   setCount(1);
                 } else if (count == 1) {
                   setVisibleTwo(0);
                   setVisibleThree(1);
                   setVisible(false);
-                  setCorrectAnswer("Жизнь");
+                  setCorrectAnswer("Живой");
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -156,12 +156,12 @@ const Start = () => {
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer("Жизнь");
-                  checkAnswer("Жизнь");
+                  setAnswer("Живой");
+                  checkAnswer("Живой");
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">Жизнь</BodyText>
+                <BodyText size="title">Живой</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
