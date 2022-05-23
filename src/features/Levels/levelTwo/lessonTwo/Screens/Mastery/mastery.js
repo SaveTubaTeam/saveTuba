@@ -29,16 +29,11 @@ const MasteryScreen = () => {
       <ScrollView directionalLockEnabled={true}>
         <Container>
           <BodyText size="subtitle">
-            Greenhouse effect can be harmful if too much carbon dioxide is
-            trapped in the atmosphere. However, it can be useful for plants to
-            maintain the necessary temperature and humidity level if used in the
-            gardens.
+          Парниковый эффект может быть вредным, если в атмосферу попадает слишком много углекислого газа. Однако растениям может быть полезно поддерживать необходимый уровень температуры и влажности, если они используются в садах. 
           </BodyText>
           <Spacer size="large" />
           <BodyText size="subtitle">
-            Today we are going to build a tiny greenhouse for the plants we
-            planted in the previous lesson. It can be easily made out of the
-            plastic wrap and the wooden sticks.
+          Сегодня мы собираемся построить крошечную теплицу для растений, которые мы посадили на предыдущем уроке. Его легко сделать из полиэтиленовой пленки и деревянных палочек.
           </BodyText>
           <Image
             style={{
