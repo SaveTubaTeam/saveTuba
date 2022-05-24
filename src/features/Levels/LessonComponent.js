@@ -41,7 +41,7 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("Sorting", {
       data: "./TestData.json",
     });
-  } else if (selectedItem.map((obj) => obj.title) == "объем памяти") {
+  } else if (selectedItem.map((obj) => obj.title) == "Объем памяти") {
     navigation.navigate("Memory", {
       data: "./TestData.json",
     });
