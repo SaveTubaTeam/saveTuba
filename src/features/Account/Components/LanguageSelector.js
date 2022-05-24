@@ -1,16 +1,9 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Pressable,
-  TouchableOpacity,
-  StyleSheet,
-} from "react-native";
+import React from "react";
+import { View, Text, Pressable, StyleSheet } from "react-native";
 import { useTranslation } from "react-i18next";
 import CountryFlag from "react-native-country-flag";
 import styled from "styled-components/native";
-import { Spacer } from "../../../components/spacer.component";
-import { theme } from "../../../infrastructure/theme";
+
 import { BodyText } from "../../../components/body-text.component";
 
 const Row = styled.View`

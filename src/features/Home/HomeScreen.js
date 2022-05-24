@@ -2,19 +2,15 @@ import React from "react";
 import styled from "styled-components/native";
 import {
   Text,
-  View,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
   Image,
 } from "react-native";
-import { SafeArea } from "../../components/safe-area.component";
-// import { auth } from "../../../firebase";
+
 import { useNavigation } from "@react-navigation/native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-//import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LessonHandler from "../Levels/LessonHandler";
+
 import LevelOne from "../Levels/LevelOne";
 import LevelTwo from "../Levels/LevelTwo";
 import LevelThree from "../Levels/LevelThree";
@@ -23,7 +19,6 @@ import LevelFive from "../Levels/LevelFive";
 import LevelSix from "../Levels/LevelSix";
 
 import { connect } from "react-redux";
-import { contains } from "@firebase/util";
 
 const Stack = createNativeStackNavigator();
 
@@ -71,7 +66,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-        /*onPress={() => navigation.push("LevelThree")}*/
+          /*onPress={() => navigation.push("LevelThree")}*/
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
@@ -82,7 +77,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-        /*onPress={() => navigation.push("LevelFour")}*/
+          /*onPress={() => navigation.push("LevelFour")}*/
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -93,7 +88,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-        /*onPress={() => navigation.push("LevelFive")}*/
+          /*onPress={() => navigation.push("LevelFive")}*/
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
@@ -104,7 +99,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-        /*onPress={() => navigation.push("LevelSix")}*/
+          /*onPress={() => navigation.push("LevelSix")}*/
         >
           <Text style={style.baseText}>6</Text>
         </TouchableOpacity>

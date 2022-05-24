@@ -1,40 +1,23 @@
 /* eslint-disable react/prop-types */
-import React, { setState, useState } from "react";
+import React, { useState } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 import styled from "styled-components/native";
-import { Text, View } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity, ScrollView } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faSolid,
-  faCamera,
-  faCircleInfo,
-  faCircleQuestion,
-  faInfo,
-  faLeaf,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 
-import { StyleSheet } from "react-native";
 import { TitleText } from "../../../components/title-text.component";
-import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
 
 const AvatarContainer = styled.View`
   align-items: center;
-`;
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
 `;
 
 const Row = styled.View`
@@ -120,7 +103,9 @@ export function PersonalCard(props) {
 
         <TitleText size="subtitle">{currentUser?.email}</TitleText>
         <Row>
-          <TitleText size="subtitle">{t("personal:changeusername")}: </TitleText>
+          <TitleText size="subtitle">
+            {t("personal:changeusername")}:{" "}
+          </TitleText>
           <InputContainer>
             <Input placeholder={currentUser?.username} />
           </InputContainer>

@@ -7,14 +7,12 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 // Different Screens thus far
 import HomeScreen from "../features/Home/HomeScreen";
-import AccountScreen from "../features/Account/Screens/AccountScreen";
 import AccountNav from "../features/Account/accountNav/accountNav";
 import ProfileScreen from "../features/Profile/Screens/ProfileScreen";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Redux Imports
-import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "../../redux/reducers";
 import thunk from "redux-thunk";

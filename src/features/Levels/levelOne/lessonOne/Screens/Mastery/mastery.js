@@ -2,9 +2,7 @@ import React from "react";
 import { Image, ScrollView, View } from "react-native";
 import styled from "styled-components";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
-import { render } from "react-dom";
 import { BodyText } from "../../../../../../components/body-text.component";
-import { TitleText } from "../../../../../../components/title-text.component";
 import { Spacer } from "../../../../../../components/spacer.component";
 
 const Container = styled.View`
@@ -48,8 +46,10 @@ const MasteryScreen = () => {
             source={require("../../../../../../../assets/habittracker.png")}
           />
           <BodyText size="subtitle">
-            Смело рисуйте иллюстрации, делайте фигурки оригами и приклеивайте их к плакату, украшайте его природным материалом, например, сухими листьями, цветами и т. д. Будьте изобретательны! После того, как вы закончите украшать, повесьте трекер привычек на стену.
-
+            Смело рисуйте иллюстрации, делайте фигурки оригами и приклеивайте их
+            к плакату, украшайте его природным материалом, например, сухими
+            листьями, цветами и т. д. Будьте изобретательны! После того, как вы
+            закончите украшать, повесьте трекер привычек на стену.
             {/* Feel free to draw illustrations, make origami figures and glue them
             to the poster, decorate it with natural material such as dry leaves,
             flowers, etc. Be creative! After you are done decorating, put your
@@ -78,21 +78,21 @@ const MasteryScreen = () => {
                 </BodyText>
               </Item>
               <Item>
-                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => { }} />
+                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
                   Изображение, на котором вы выполняете действие 1
                   {/* You performing activity 1 */}
                 </BodyText>
               </Item>
               <Item>
-                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => { }} />
+                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
                   Изображение, на котором вы выполняете действие 2
                   {/* You performing activity 1 */}
                 </BodyText>
               </Item>
               <Item>
-                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => { }} />
+                <BouncyCheckbox fillColor="#C6DC3B" onPress={() => {}} />
                 <BodyText size="subtitle" color="tertiary">
                   Изображение, на котором вы выполняете действие 3
                   {/* You performing activity 1 */}
@@ -101,8 +101,10 @@ const MasteryScreen = () => {
             </Checklist>
           </View>
           <BodyText size="subtitle">
-            Это нормально, если вы время от времени забываете сделать одно из занятий, привычки не формируются за одну ночь :) Делайте все возможное и делитесь своими замечательными новыми привычками с родителями и одноклассниками! Что они придумали?
-
+            Это нормально, если вы время от времени забываете сделать одно из
+            занятий, привычки не формируются за одну ночь :) Делайте все
+            возможное и делитесь своими замечательными новыми привычками с
+            родителями и одноклассниками! Что они придумали?
             {/* It is ok if you forget to do one of the activities every once in a
             while, habits don't form overnight :) Do your best and share your
             amazing new habits with your parents and classmates! What did they

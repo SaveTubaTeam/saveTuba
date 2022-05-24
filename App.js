@@ -17,9 +17,8 @@ import {
 import { useTranslation } from "react-i18next";
 import "./src/components/Translations/IMLocalize";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
 import { LogBox } from "react-native";
+
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -27,9 +26,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Different Screens thus far
 import LoginScreen from "./src/features/Login/LoginScreen";
-import HomeScreen from "./src/features/Home/HomeScreen";
-import AccountScreen from "./src/features/Account/Screens/AccountScreen";
-import ProfileScreen from "./src/features/Profile/Screens/ProfileScreen";
 
 // Registration Screen
 import Register from "./src/features/Login/Register";
@@ -39,10 +35,11 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./redux/reducers";
 import thunk from "redux-thunk";
-const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // Import Main Redux Controller
 import MainScreen from "./src/components/Main";
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();

@@ -10,7 +10,7 @@ import { TestImages } from "../../IMAGES";
 import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_1_LessonTwo = {
-  title: "устойчивость", //Sustainable Practices
+  title: "Устойчивость", //Sustainable Practices
   summary: "Почему важно защищать окружающую среду?", //Why is protecting the environment important?
 
   summaryComponent: {
@@ -79,7 +79,7 @@ export const Lvl_1_LessonTwo = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "объем памяти", //Memory
+      title: "Объем памяти", //Memory
       description: "Соотнесите слово с его определением", //Match the word to its definition
       key: "testkey3",
       data: "require('matchingPollution')",

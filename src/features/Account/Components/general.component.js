@@ -34,10 +34,6 @@ const AvatarContainer = styled.View`
   width: 100%;
 `;
 
-const RowContainer = styled.View`
-  align-items: center;
-`;
-
 const Row = styled.View`
   flex-direction: row;
 `;

@@ -3,8 +3,6 @@ import { Text } from "react-native";
 
 export class Puzzle extends React.Component {
   render() {
-    return <Text>
-      russian
-    </Text>;
+    return <Text>russian</Text>;
   }
 }

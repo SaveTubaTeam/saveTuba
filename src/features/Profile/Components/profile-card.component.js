@@ -1,14 +1,12 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import styled from "styled-components/native";
-import { Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity, ScrollView } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
-import { auth } from "../../../../firebase";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -74,11 +72,13 @@ export function ProfileCard(props) {
         <Row>
           <Friends>
             <BodyText color="secondary">
-              {t("profile:friends")}  {currentUser?.friendCount}
+              {t("profile:friends")} {currentUser?.friendCount}
             </BodyText>
           </Friends>
           <Achievements>
-            <BodyText color="secondary">{t("profile:level")} {currentUser?.level}</BodyText>
+            <BodyText color="secondary">
+              {t("profile:level")} {currentUser?.level}
+            </BodyText>
           </Achievements>
         </Row>
       </AvatarContainer>

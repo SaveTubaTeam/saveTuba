@@ -1,4 +1,3 @@
-import { questionSet } from "../../../../components/LevelOne/QuestionSet";
 import { AdventureImages } from "../../IMAGES";
 
 import SummaryScreen from "./Screens/Summary/summary";
@@ -11,7 +10,7 @@ import { TestImages } from "../../IMAGES";
 import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_1_LessonOne = {
-  title: "устойчивость", //Sustainability
+  title: "Устойчивость", //Sustainability
   summary: "Что такое устойчивое развитие и почему это важно?", //What is sustainability and why is it important?
 
   summaryComponent: {
@@ -53,7 +52,7 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.multiplechoice,
     },
     {
-      title: "объем памяти", //Memory
+      title: "Объем памяти", //Memory
       description: "Соотнесите слово с его определением", //Match the word with its definition.
       key: "testkey2",
       data: "require('puzzlePollutionQuestions')",

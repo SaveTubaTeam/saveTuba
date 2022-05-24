@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Image, View, TouchableOpacity } from "react-native";
+import { Text, Image, View } from "react-native";
 import styled from "styled-components";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";

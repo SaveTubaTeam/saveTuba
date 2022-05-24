@@ -1,12 +1,7 @@
 import React from "react";
 import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
 
-export const FinishModal = ({
-  visible,
-  score,
-  setResultVisible,
-  navigation,
-}) => {
+export const FinishModal = ({ visible, setResultVisible, navigation }) => {
   return (
     <Modal transparent animationType="slide" visible={visible}>
       <View style={styles.centeredView}>

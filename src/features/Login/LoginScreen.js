@@ -4,8 +4,6 @@ import { auth } from "../../../firebase";
 import { useNavigation } from "@react-navigation/native";
 
 import { TitleText } from "../../components/title-text.component";
-import { BodyText } from "../../components/body-text.component";
-import { SafeArea } from "../../components/safe-area.component";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;

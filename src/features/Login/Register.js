@@ -1,34 +1,28 @@
-import { View, Text, Switch } from 'react-native';
-import React, { Component, useState } from "react";
-
-import { useNavigation } from "@react-navigation/core";
+import React, { Component } from "react";
 
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-import firebase from "firebase/app";
-import { setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc } from "firebase/firestore";
 
 import { auth, db } from "../../../firebase";
-import { Title } from 'react-native-paper';
 
 // import { withNavigation } from '@react-navigation';
 
 export class Register extends Component {
-
   constructor(props) {
     super(props);
     // const navigation = useNavigation();
     // badges.set("1", "Time to Save the Tuba!");
     this.state = {
-      email: '',
-      password: '',
-      firstName: '',
-      lastName: '',
-      classCode: '',
-      username: '',
-      badges: '',
-      friends: '',
-      friendCount: '',
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      classCode: "",
+      username: "",
+      badges: "",
+      friends: "",
+      friendCount: "",
       isTeacher: false,
     };
 
@@ -37,8 +31,17 @@ export class Register extends Component {
   }
 
   onSignUp() {
-    const { email, password, firstName, lastName, classCode, username, isTeacher } = this.state;
-    auth.createUserWithEmailAndPassword(email, password)
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      classCode,
+      username,
+      isTeacher,
+    } = this.state;
+    auth
+      .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         setDoc(doc(db, "users", auth.currentUser.uid), {
           email,
@@ -71,7 +74,6 @@ export class Register extends Component {
     return (
       <Container>
         <ImageBg source={require("../../../assets/homepagebackground.png")}>
-
           <TitleText color="secondary" size="title">
             Зарегистрируйтесь, чтобы сохранить Tuba
             {/* Register For Save Tuba */}
@@ -96,15 +98,12 @@ export class Register extends Component {
           <Input
             placeholder="Прошлой Имя" //last name
             onChangeText={(lastName) => this.setState({ lastName })}
-
           />
           <Input
             placeholder="Код класса" //Class Code
             onChangeText={(classCode) => this.setState({ classCode })}
           />
-          <Button
-            onPress={() => this.onSignUp()}
-          >
+          <Button onPress={() => this.onSignUp()}>
             <TitleText color="secondary">
               регистр
               {/* Register */}
@@ -112,8 +111,8 @@ export class Register extends Component {
           </Button>
           <Button
             onPress={() => {
-              this.setState(prevState => ({
-                isTeacher: !prevState.isTeacher
+              this.setState((prevState) => ({
+                isTeacher: !prevState.isTeacher,
               }));
               this.onSignUp();
             }}
@@ -153,10 +152,10 @@ const BackButton = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   width: 100%;
   align-items: center;
-  justifyContent: flex-end;
-  marginTop: ${(props) => props.theme.space[5]};
-  bottom:0
-  `;
+  justifycontent: flex-end;
+  margintop: ${(props) => props.theme.space[5]};
+  bottom: 0;
+`;
 
 const Input = styled.TextInput`
   font-family: ${(props) => props.theme.fonts.body};
@@ -172,7 +171,6 @@ const ImageBg = styled.ImageBackground`
   height: 100%;
   padding-top: ${(props) => props.theme.space[5]};
   padding-horizontal: 20px;
-
 `;
 
 const Container = styled.View`
@@ -183,4 +181,3 @@ const Container = styled.View`
 `;
 
 export default Register;
-

@@ -5,7 +5,6 @@ import { Ionicons, FontAwesome, Entypo } from "@expo/vector-icons"; // 6.2.2
 //import Header from './components/Header';
 import Score from "../adventureOne/components/Score";
 import Card from "../adventureOne/components/Card";
-import helpers from "../adventureOne/helpers";
 
 export class AdventureOne extends React.Component {
   constructor(props) {

@@ -79,7 +79,7 @@ export const Lvl_2_LessonOne = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "объем памяти",
+      title: "Объем памяти",
       description: "Соотнесите слово с его определением.",
       key: "testkey3",
       data: "require('matchingPollution')",

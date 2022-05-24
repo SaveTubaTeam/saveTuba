@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, ScrollView } from "react-native";
+import { ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import { TitleText } from "../../../components/title-text.component";
 import { Card } from "../../../components/card.component";

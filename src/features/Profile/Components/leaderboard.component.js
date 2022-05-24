@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ScrollView } from "react-native";
 import axios from "axios";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import { TitleText } from "../../../components/title-text.component";
 import StatsView from "./stats-view.component";
@@ -9,7 +9,6 @@ import { Card } from "../../../components/card.component";
 import { Spacer } from "../../../components/spacer.component";
 
 export default class LeaderborardCard extends Component {
-
   state = {
     leaderboardData: [],
   };
