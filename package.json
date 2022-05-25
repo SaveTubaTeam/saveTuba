@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo-google-fonts/gabriela": "^0.2.2",
     "@expo-google-fonts/raleway": "^0.2.2",
+    "@expo/vector-icons": "13.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-native-fontawesome": "^0.2.7",
@@ -49,8 +50,9 @@
     "react-native-quiz-maker": "^0.1.0",
     "react-native-safe-area-context": "3.3.2",
     "react-native-screens": "~3.10.1",
+    "react-native-shadow-2": "^6.0.5",
     "react-native-size-matters": "^0.4.0",
-    "react-native-svg": "12.1.1",
+    "react-native-svg": "^12.3.0",
     "react-native-switch-toggle": "^2.2.1",
     "react-native-typing-animation-effect": "^1.0.5",
     "react-native-vector-icons": "^9.1.0",
@@ -59,8 +61,7 @@
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.3",
-    "styled-system": "^5.1.5",
-    "@expo/vector-icons": "13.0.0"
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

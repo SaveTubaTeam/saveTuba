@@ -125,18 +125,34 @@ function LessonHandler(props) {
             },
           }}
         />
-        <Stack.Screen
-          name="QuizScreen"
-          component={selectedLevel.quiz.component}
-          options={{
-            title: "Викторина",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-          }}
-        />
+        {selectedLevel.drawing.component != null && (
+          <Stack.Screen
+            name="DrawingGame"
+            component={selectedLevel.drawing.component}
+            options={{
+              title: "Рисование",
+              headerTintColor: "white",
+              headerBackTitleVisible: false,
+              headerStyle: {
+                backgroundColor: "#C6DC3B",
+              },
+            }}
+          />
+        )}
+        {selectedLevel.quiz.component != null && (
+          <Stack.Screen
+            name="QuizScreen"
+            component={selectedLevel.quiz.component}
+            options={{
+              title: "Викторина",
+              headerTintColor: "white",
+              headerBackTitleVisible: false,
+              headerStyle: {
+                backgroundColor: "#C6DC3B",
+              },
+            }}
+          />
+        )}
         <Stack.Screen
           name="MultipleChoice"
           component={TempScreen}
@@ -148,10 +164,19 @@ function LessonHandler(props) {
             },
           }}
         />
-        <Stack.Screen name="Image Bananza" options={{ headerShown: false }}>
+        <Stack.Screen name="Image Bananza" 
+            options={{
+              title: "Изображение Бананза",
+              headerTintColor: "white",
+              headerBackTitleVisible: false,
+              headerStyle: {
+                backgroundColor: "#C6DC3B",
+              }
+            }}>
+
           {() => (
             <OpenResponseHandler
-              questionSet={selectedLevel.minigames[0].data}
+              questionSet={selectedLevel.minigames[2].data}
               navigation={navigation}
             />
           )}

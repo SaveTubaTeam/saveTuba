@@ -152,8 +152,8 @@ const BackButton = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   width: 100%;
   align-items: center;
-  justifycontent: flex-end;
-  margintop: ${(props) => props.theme.space[5]};
+  justify-content: flex-end;
+  margin-top: ${(props) => props.theme.space[5]};
   bottom: 0;
 `;
 

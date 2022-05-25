@@ -22,6 +22,10 @@ export const Lvl_1_LessonTwo = {
     component: Quiz,
   },
 
+  drawing: {
+    component: null,
+  },
+
   memory: {
     component: AdventureOne,
   },

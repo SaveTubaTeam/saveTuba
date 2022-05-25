@@ -152,7 +152,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  удовлетворить потребности настоящего
+                  Удовлетворить потребности настоящего
                 </BodyText>
               </Category>
               <Category
@@ -164,7 +164,7 @@ const Start = () => {
                 }}
               >
                 <BodyText size="subtitle">
-                  удовлетворить потребности будущего
+                  Удовлетворить потребности будущего
                 </BodyText>
               </Category>
               <Category
@@ -175,7 +175,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">has three pillars</BodyText>
+                <BodyText size="subtitle">Держится на трех столбах</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
