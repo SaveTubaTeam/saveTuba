@@ -61,23 +61,23 @@ function HomeView() {
         </TouchableOpacity>
 
         <Lock
-          style={{ top: 250, left: 90 }}
+          style={{ top: 250, left: 100 }}
           source={require("../../../assets/lock.png")}
         />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelThree")}*/
+        /*onPress={() => navigation.push("LevelThree")}*/
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
         <Lock
-          style={{ top: 370, left: 330 }}
+          style={{ top: 370, right: 30, alignSelf: 'flex-end' }}
           source={require("../../../assets/lock.png")}
         />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelFour")}*/
+        /*onPress={() => navigation.push("LevelFour")}*/
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -88,18 +88,18 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelFive")}*/
+        /*onPress={() => navigation.push("LevelFive")}*/
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
 
         <Lock
-          style={{ top: 620, left: 330 }}
+          style={{ top: 620, right: 30, alignSelf: 'flex-end' }}
           source={require("../../../assets/lock.png")}
         />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelSix")}*/
+        /*onPress={() => navigation.push("LevelSix")}*/
         >
           <Text style={style.baseText}>6</Text>
         </TouchableOpacity>
@@ -179,7 +179,7 @@ const style = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-    left: 10,
+    left: 25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
   },
@@ -189,9 +189,10 @@ const style = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-    left: 255,
+    left: -25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
+    alignSelf: 'flex-end',
   },
   baseText: {
     fontSize: 50,
