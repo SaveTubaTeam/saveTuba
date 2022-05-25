@@ -7,7 +7,7 @@ import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.scr
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 import { TestImages } from "../../IMAGES";
-import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
+import Drawing from "./Screens/Adventures/adventureFour/drawing.screen";
 
 export const Lvl_1_LessonOne = {
   title: "Устойчивость", //Sustainability
@@ -22,12 +22,16 @@ export const Lvl_1_LessonOne = {
     component: Puzzle,
   },
 
+  quiz: {
+    component: null,
+  },
+
   memory: {
     component: AdventureOne,
   },
 
-  quiz: {
-    component: Quiz,
+  drawing: {
+    component: Drawing,
   },
 
   sorting: {
@@ -93,8 +97,8 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Викторина", //Quiz
-      description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
+      title: "Рисование", // Drawing game
+      description: "Позвольте художнику в вас ожить!", // Let the artist in you come to life
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.crossword,
