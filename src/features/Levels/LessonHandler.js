@@ -148,10 +148,19 @@ function LessonHandler(props) {
             },
           }}
         />
-        <Stack.Screen name="Image Bananza" options={{ headerShown: false }}>
+        <Stack.Screen name="Image Bananza" 
+            options={{
+              title: "Изображение Бананза",
+              headerTintColor: "white",
+              headerBackTitleVisible: false,
+              headerStyle: {
+                backgroundColor: "#C6DC3B",
+              }
+            }}>
+
           {() => (
             <OpenResponseHandler
-              questionSet={selectedLevel.minigames[0].data}
+              questionSet={selectedLevel.minigames[2].data}
               navigation={navigation}
             />
           )}
