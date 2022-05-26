@@ -1,12 +1,17 @@
 import React from "react";
-import { StyleSheet, View, Button } from "react-native";
+import { StyleSheet, View, Button, Text } from "react-native";
 import { Ionicons, FontAwesome, Entypo } from "@expo/vector-icons"; // 6.2.2
-
+import styled from "styled-components/native";
 //import Header from './components/Header';
 import Score from "../adventureOne/components/Score";
 import Card from "../adventureOne/components/Card";
 import helpers from "../adventureOne/helpers";
 import { Lvl_1_LessonOne } from "../../../../../levelOne/lessonOne/LessonOne";
+
+const Row = styled.View`
+  flex-direction: row;
+  justify-content: center;
+`;
 
 export class AdventureOne extends React.Component {
   constructor(props) {
@@ -220,6 +225,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "stretch",
     backgroundColor: "#fff",
+  },
+  textContainer: {
+    alignSelf: "center",
+    // justifyContent: "center"
   },
   row: {
     flex: 1,

@@ -22,47 +22,47 @@ export class AdventureOne extends React.Component {
     let cards = [
       {
         src: "ionicons",
-        name: "лапа",
+        name: "paw",
         color: "pink",
       },
       {
         src: "entypo",
-        name: "лист",
+        name: "leaf",
         color: "green",
       },
       {
         src: "entypo",
-        name: "воды",
+        name: "water",
         color: "#00bfff",
       },
       {
         src: "entypo",
-        name: "цветок",
+        name: "flower",
         color: "#37b24d",
       },
       {
         src: "entypo",
-        name: "луна",
+        name: "moon",
         color: "#ffd43b",
       },
       {
         src: "entypo",
-        name: "облако",
+        name: "cloud",
         color: "green",
       },
       {
         src: "ionicons",
-        name: "цветок",
+        name: "flower",
         color: "purple",
       },
       {
         src: "ionicons",
-        name: "лодка",
+        name: "boat",
         color: "blue",
       },
       {
         src: "ionicons",
-        name: "тележка",
+        name: "cart",
         color: "grey",
       },
     ];
@@ -90,12 +90,8 @@ export class AdventureOne extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.body}>{this.renderRows.call(this)}</View>
-        <Score score={this.state.score} />
-        <Button
-          onPress={this.resetCards}
-          title="Начать заново"
-          color="#748816"
-        />
+        {/* <Score score={this.state.score} /> */}
+        <Button onPress={this.resetCards} title="Reset" color="#008CFA" />
       </View>
     );
   }
