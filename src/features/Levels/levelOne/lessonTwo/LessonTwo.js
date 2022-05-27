@@ -49,6 +49,20 @@ export const Lvl_1_LessonTwo = {
 
   minigames: [
     {
+      title: "Объем памяти", //Memory
+      description: "Соотнесите слово с его определением", //Match the word to its definition
+      key: "testkey3",
+      data: "require('matchingPollution')",
+      image: AdventureImages.matching,
+    },
+    {
+      title: "Сортировка", //Sorting
+      description: "Выберите соответствующую категорию", //Choose the corresponding category.
+      key: "testkey1",
+      data: questionSetPollution,
+      image: AdventureImages.crossword,
+    },
+    {
       title: "Изображение Бум",
       description: "Отвечать открыто",
       key: "testkey2",
@@ -82,20 +96,6 @@ export const Lvl_1_LessonTwo = {
         ],
       },
       image: AdventureImages.puzzle,
-    },
-    {
-      title: "Объем памяти", //Memory
-      description: "Соотнесите слово с его определением", //Match the word to its definition
-      key: "testkey3",
-      data: "require('matchingPollution')",
-      image: AdventureImages.matching,
-    },
-    {
-      title: "Сортировка", //Sorting
-      description: "Выберите соответствующую категорию", //Choose the corresponding category.
-      key: "testkey1",
-      data: questionSetPollution,
-      image: AdventureImages.crossword,
     },
     {
       title: "Викторина", //Quiz
