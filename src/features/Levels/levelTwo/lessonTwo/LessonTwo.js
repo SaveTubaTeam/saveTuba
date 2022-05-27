@@ -43,10 +43,25 @@ export const Lvl_2_LessonTwo = {
 
   minigames: [
     {
+      title: "Объем памяти",
+      description: "Соотнесите слово с его определением.",
+      key: "testkey3",
+      data: "require('matchingPollution')",
+      image: AdventureImages.matching,
+    },
+    {
+      title: "Сортировка",
+      description: "Выберите соответствующую категорию.",
+      key: "testkey1",
+      data: questionSetPollution,
+      image: AdventureImages.crossword,
+    },
+    {
       title: "Изображение Бананза",
       description: "Отвечать открыто",
       key: "testkey2",
       data: {
+        numberOfPrompts: 4,
         prompts: [
           {
             prompt: "Bro can u just work please",
@@ -75,20 +90,6 @@ export const Lvl_2_LessonTwo = {
         ],
       },
       image: AdventureImages.puzzle,
-    },
-    {
-      title: "Объем памяти",
-      description: "Соотнесите слово с его определением.",
-      key: "testkey3",
-      data: "require('matchingPollution')",
-      image: AdventureImages.matching,
-    },
-    {
-      title: "Сортировка",
-      description: "Выберите соответствующую категорию.",
-      key: "testkey1",
-      data: questionSetPollution,
-      image: AdventureImages.crossword,
     },
     {
       title: "Викторина", //Quiz
