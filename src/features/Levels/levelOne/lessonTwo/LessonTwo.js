@@ -49,10 +49,11 @@ export const Lvl_1_LessonTwo = {
 
   minigames: [
     {
-      title: "Изображение Бананза",
+      title: "Изображение Бум",
       description: "Отвечать открыто",
       key: "testkey2",
       data: {
+        numberOfPrompts: 4,
         prompts: [
           {
             prompt: "Bro can u just work please",

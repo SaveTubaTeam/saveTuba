@@ -164,16 +164,17 @@ function LessonHandler(props) {
             },
           }}
         />
-        <Stack.Screen name="Image Bananza" 
-            options={{
-              title: "Изображение Бананза",
-              headerTintColor: "white",
-              headerBackTitleVisible: false,
-              headerStyle: {
-                backgroundColor: "#C6DC3B",
-              }
-            }}>
-
+        <Stack.Screen
+          name="Image Bananza"
+          options={{
+            title: "Изображение Бум",
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
+        >
           {() => (
             <OpenResponseHandler
               questionSet={selectedLevel.minigames[2].data}
