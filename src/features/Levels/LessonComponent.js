@@ -47,6 +47,8 @@ function getLinkToScreen(selectedItem, navigation) {
     });
   } else if (selectedItem.map((obj) => obj.title) == "Викторина") {
     navigation.navigate("QuizScreen");
+  } else if (selectedItem.map((obj) => obj.title) == "Рисование") {
+    navigation.navigate("DrawingGame");
   }
 }
 

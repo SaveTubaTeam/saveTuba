@@ -1,11 +1,17 @@
 import React from "react";
-import { StyleSheet, View, Button } from "react-native";
+import { StyleSheet, View, Button, Text } from "react-native";
 import { Ionicons, FontAwesome, Entypo } from "@expo/vector-icons"; // 6.2.2
-
+import styled from "styled-components/native";
 //import Header from './components/Header';
 import Score from "../adventureOne/components/Score";
 import Card from "../adventureOne/components/Card";
 import helpers from "../adventureOne/helpers";
+import { Lvl_1_LessonOne } from "../../../../../levelOne/lessonOne/LessonOne";
+
+const Row = styled.View`
+  flex-direction: row;
+  justify-content: center;
+`;
 
 export class AdventureOne extends React.Component {
   constructor(props) {
@@ -82,6 +88,7 @@ export class AdventureOne extends React.Component {
       current_selection: [],
       selected_pairs: [],
       score: 0,
+      counter: 0,
       cards: this.cards,
     };
   }
@@ -91,6 +98,7 @@ export class AdventureOne extends React.Component {
       <View style={styles.container}>
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
+        <Score counter={this.state.counter} />
         <Button
           onPress={this.resetCards}
           title="Начать заново"
@@ -113,6 +121,7 @@ export class AdventureOne extends React.Component {
       selected_pairs: [],
       cards: cards,
       score: 0,
+      counter: 0,
     });
   }
 
@@ -146,6 +155,7 @@ export class AdventureOne extends React.Component {
     let selected_pairs = this.state.selected_pairs;
     let current_selection = this.state.current_selection;
     let score = this.state.score;
+    let counter = this.state.counter;
 
     let index = this.state.cards.findIndex((card) => {
       return card.id == id;
@@ -165,6 +175,7 @@ export class AdventureOne extends React.Component {
       });
 
       if (current_selection.length == 2) {
+        counter += 1;
         if (current_selection[0].name == current_selection[1].name) {
           score += 1;
           selected_pairs.push(cards[index].name);
@@ -185,6 +196,7 @@ export class AdventureOne extends React.Component {
       this.setState({
         score: score,
         cards: cards,
+        counter: counter,
         current_selection: current_selection,
       });
     }
@@ -213,6 +225,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: "stretch",
     backgroundColor: "#fff",
+  },
+  textContainer: {
+    alignSelf: "center",
+    // justifyContent: "center"
   },
   row: {
     flex: 1,
