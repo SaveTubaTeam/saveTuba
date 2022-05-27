@@ -35,7 +35,7 @@ function getLinkToScreen(selectedItem, navigation) {
     navigation.navigate("MultipleChoice", {
       data: "./TestData.json",
     });
-  } else if (selectedItem.map((obj) => obj.title) == "Изображение Бананза") {
+  } else if (selectedItem.map((obj) => obj.title) == "Изображение Бум") {
     navigation.navigate("Image Bananza");
   } else if (selectedItem.map((obj) => obj.title) == "Сортировка") {
     navigation.navigate("Sorting", {

@@ -63,7 +63,7 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Изображение Бананза",
+      title: "Изображение Бум",
       description: "Отвечать открыто",
       key: "testkey2",
       data: {

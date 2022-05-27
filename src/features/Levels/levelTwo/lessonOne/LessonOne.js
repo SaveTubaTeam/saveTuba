@@ -63,7 +63,7 @@ export const Lvl_2_LessonOne = {
       image: AdventureImages.crossword,
     },
     {
-      title: "Изображение Бананза",
+      title: "Изображение Бум",
       description: "Отвечать открыто",
       key: "testkey2",
       data: {

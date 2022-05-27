@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Modal } from "react-native";
+import { View, Text, TextInput, Modal, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { FlatList } from "react-native";
 import { TestImages } from "../../../features/Levels/IMAGES";
@@ -62,94 +62,23 @@ const ImagePrompt = ({ questions }) => {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        // backgroundColor: 'white',
-        // questionSet.prompts[currentPrompt].image
-        alignItems: "center",
-      }}
-    >
+    <ScrollView>
       <View
         style={{
-          width: "80%",
-          backgroundColor: "white",
-          marginTop: 20,
-          marginBottom: 10,
-          height: 300,
-          borderRadius: 30,
-          shadowColor: "black",
-          shadowOffset: { width: 200, height: 200 },
-          shadowRadius: 20,
-          elevation: 5,
+          flex: 1,
+          // backgroundColor: 'white',
+          // questionSet.prompts[currentPrompt].image
+          alignItems: "center",
         }}
       >
         <View
           style={{
-            width: "100%",
-            height: 200,
+            width: "80%",
             backgroundColor: "white",
-            borderRadius: 30,
-            alignItems: "center",
-            justifyContent: "center",
-            shadowColor: "black",
-            shadowOffset: { width: 200, height: 200 },
-            shadowRadius: 20,
-            elevation: 6,
-          }}
-        >
-          <View
-            style={{
-              width: 150,
-              height: 150,
-              borderRadius: 20,
-              overflow: "hidden",
-            }}
-          >
-            <ImageBg
-              source={questions.prompts[currentPrompt].image}
-              resizeMode="cover"
-            ></ImageBg>
-          </View>
-        </View>
-        <View
-          style={{
             marginTop: 20,
-            alignSelf: "center",
-            justifyContent: "center",
-            alignItems: "center",
-            alignContent: "center",
-            textAlignVertical: "center",
-          }}
-        >
-          <TitleText size="subtitle">
-            Что такое имидж? {"\n"}Почему это важно?
-          </TitleText>
-        </View>
-      </View>
-
-      <View
-        style={{
-          width: "90%",
-          backgroundColor: "white",
-          marginTop: 10,
-          marginBottom: 10,
-          height: 250,
-          borderRadius: 30,
-          shadowColor: "black",
-          shadowOffset: { width: 200, height: 200 },
-          shadowRadius: 20,
-          elevation: 5,
-        }}
-      >
-        <View
-          style={{
-            width: "100%",
-            height: 240,
-            backgroundColor: "white",
+            marginBottom: 10,
+            height: 300,
             borderRadius: 30,
-            // alignItems: 'center',
-            // justifyContent: 'center',
             shadowColor: "black",
             shadowOffset: { width: 200, height: 200 },
             shadowRadius: 20,
@@ -158,66 +87,139 @@ const ImagePrompt = ({ questions }) => {
         >
           <View
             style={{
-              flex: 1,
-              padding: 10,
-              paddingLeft: 20,
-              paddingRight: 20,
-              marginTop: 20,
-              alignContent: "flex-start",
-              alignItems: "flex-start",
+              width: "100%",
+              height: 200,
+              backgroundColor: "white",
+              borderRadius: 30,
+              alignItems: "center",
+              justifyContent: "center",
+              shadowColor: "black",
+              shadowOffset: { width: 200, height: 200 },
+              shadowRadius: 20,
+              elevation: 6,
             }}
           >
-            <TextInput
+            <View
               style={{
-                flex: 1,
-                fontFamily: "Gabriela_400Regular",
-                color: "#748816",
-                fontSize: 18,
-                flexShrink: 1,
-              }}
-              placeholder="Введите ответ..."
-              placeholderTextColor={"#748816"}
-              multiline={true}
-            />
-            <Button
-              style={{
-                width: "80%",
-                height: 40,
-                backgroundColor: "#748816",
-                alignSelf: "center",
+                width: 150,
+                height: 150,
                 borderRadius: 20,
-              }}
-              onPress={() => {
-                // console.log(questions.prompts[currentPrompt]);
-                if (currentPrompt < questions.numberOfPrompts - 1) {
-                  setPrompt(currentPrompt + 1);
-                } else {
-                  setModalVisible((modalVisible) => !modalVisible);
-                  console.log("Yo: " + modalVisible);
-                  // navigation.navigate("Level", {level: 1});
-                }
-                // try {
-                //   if (questions.prompts[currentPrompt] == undefined) {
-                //     console.log("Bro fucking work");
-                //     navigation.navigate("Level", {level: 1});
-                //   } else {
-                //     console.log("Bro fucking work please");
-                //     setPrompt(currentPrompt + 1);
-                //   }
-                // } catch (err) {
-                //   navigation.navigate("Level", {level: 1});
-                //   console.log("What the fuck stop throwing the stupid fucking error u cunt");
-                // }
+                overflow: "hidden",
               }}
             >
-              <BodyText color="secondary">Отправить</BodyText>
-            </Button>
+              <ImageBg
+                source={questions.prompts[currentPrompt].image}
+                resizeMode="cover"
+              ></ImageBg>
+            </View>
+          </View>
+          <View
+            style={{
+              marginTop: 20,
+              alignSelf: "center",
+              justifyContent: "center",
+              alignItems: "center",
+              alignContent: "center",
+              textAlignVertical: "center",
+            }}
+          >
+            <TitleText size="subtitle">
+              Что такое имидж? {"\n"}Почему это важно?
+            </TitleText>
           </View>
         </View>
-      </View>
-      {/*}
+
+        <View
+          style={{
+            width: "90%",
+            backgroundColor: "white",
+            marginTop: 10,
+            marginBottom: 10,
+            height: 250,
+            borderRadius: 30,
+            shadowColor: "black",
+            shadowOffset: { width: 200, height: 200 },
+            shadowRadius: 20,
+            elevation: 5,
+          }}
+        >
+          <View
+            style={{
+              width: "100%",
+              height: 240,
+              backgroundColor: "white",
+              borderRadius: 30,
+              // alignItems: 'center',
+              // justifyContent: 'center',
+              shadowColor: "black",
+              shadowOffset: { width: 200, height: 200 },
+              shadowRadius: 20,
+              elevation: 5,
+            }}
+          >
+            <View
+              style={{
+                flex: 1,
+                padding: 10,
+                paddingLeft: 20,
+                paddingRight: 20,
+                marginTop: 20,
+                alignContent: "flex-start",
+                alignItems: "flex-start",
+              }}
+            >
+              <TextInput
+                style={{
+                  flex: 1,
+                  fontFamily: "Gabriela_400Regular",
+                  color: "#748816",
+                  fontSize: 18,
+                  flexShrink: 1,
+                }}
+                placeholder="Введите ответ..."
+                placeholderTextColor={"#748816"}
+                multiline={true}
+              />
+              <Button
+                style={{
+                  width: "80%",
+                  height: 40,
+                  backgroundColor: "#748816",
+                  alignSelf: "center",
+                  borderRadius: 20,
+                }}
+                onPress={() => {
+                  // console.log(questions.prompts[currentPrompt]);
+                  if (currentPrompt < questions.numberOfPrompts - 1) {
+                    setPrompt(currentPrompt + 1);
+                  } else {
+                    setModalVisible((modalVisible) => !modalVisible);
+                    console.log("Yo: " + modalVisible);
+                    // navigation.navigate("Level", {level: 1});
+                  }
+                  // try {
+                  //   if (questions.prompts[currentPrompt] == undefined) {
+                  //     console.log("Bro fucking work");
+                  //     navigation.navigate("Level", {level: 1});
+                  //   } else {
+                  //     console.log("Bro fucking work please");
+                  //     setPrompt(currentPrompt + 1);
+                  //   }
+                  // } catch (err) {
+                  //   navigation.navigate("Level", {level: 1});
+                  //   console.log("What the fuck stop throwing the stupid fucking error u cunt");
+                  // }
+                }}
+              >
+                <BodyText color="secondary">Отправить</BodyText>
+              </Button>
+            </View>
+          </View>
+        </View>
+        {/*}
       <FinishedModal isVisible={modalVisible} />*/}
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
