@@ -6,6 +6,7 @@
     "slug": "SaveTuba",
     "version": "1.0.0",
     "orientation": "portrait",
+    "privacy": "public",
     "icon": "./assets/tuba-icon.png",
     "splash": {
       "image": "./assets/splashScreen.png",
