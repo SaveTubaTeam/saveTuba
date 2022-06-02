@@ -1,17 +1,11 @@
 import { AdventureImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
-import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
 export const LessonFour = {
   title: "Sustainable Agriculture",
   summary: "What are the ways to make agriculture more sustainable?",
-
-  summaryComponent: {
-    route: "Summary",
-    component: SummaryScreen,
-  },
 
   masteryComponent: {
     route: "Mastery",

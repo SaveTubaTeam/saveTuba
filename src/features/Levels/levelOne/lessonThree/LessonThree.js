@@ -1,17 +1,11 @@
 import { AdventureImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
-import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 
 export const LessonThree = {
   title: "Climate Change",
   summary: "How does greenhouse effect relate to global warming?",
-
-  summaryComponent: {
-    route: "Summary",
-    component: SummaryScreen,
-  },
 
   masteryComponent: {
     route: "Mastery",

@@ -7,14 +7,6 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const Summary = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.primary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 68%;
-  align-items: center;
-  margin-top: ${(props) => props.theme.space[3]};
-`;
 export const Mastery = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   padding: ${(props) => props.theme.space[3]};

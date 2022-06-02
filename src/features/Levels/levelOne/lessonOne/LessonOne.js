@@ -1,6 +1,5 @@
 import { AdventureImages, SortingImages } from "../../IMAGES";
 
-import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
@@ -11,11 +10,6 @@ import Quiz from "./Screens/Adventures/adventureFour/drawing.screen";
 export const Lvl_1_LessonOne = {
   title: "Устойчивость", //Sustainability
   summary: "Что такое устойчивое развитие и почему это важно?", //What is sustainability and why is it important?
-
-  summaryComponent: {
-    route: "Резюме урока", //Lesson Summary
-    component: SummaryScreen,
-  },
 
   puzzle: {
     component: Puzzle,

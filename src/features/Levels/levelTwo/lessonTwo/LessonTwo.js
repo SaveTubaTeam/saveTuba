@@ -1,7 +1,6 @@
 import { AdventureImages, SortingImages, TestImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
-import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
@@ -10,11 +9,6 @@ import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 export const Lvl_2_LessonTwo = {
   title: "Устойчивое сельское хозяйство",
   summary: "Как сделать сельское хозяйство более устойчивым?",
-
-  summaryComponent: {
-    route: "Summary",
-    component: SummaryScreen,
-  },
 
   quiz: {
     component: Quiz,

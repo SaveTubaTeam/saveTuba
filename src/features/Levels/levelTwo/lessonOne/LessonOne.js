@@ -1,7 +1,6 @@
 import { AdventureImages, SortingImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
-import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
@@ -11,11 +10,6 @@ import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 export const Lvl_2_LessonOne = {
   title: "Изменение климата", // climate change
   summary: "Как парниковый эффект связан с глобальным потеплением?",
-
-  summaryComponent: {
-    route: "Summary",
-    component: SummaryScreen,
-  },
 
   quiz: {
     component: Quiz,
@@ -122,11 +116,6 @@ export const Lvl_2_LessonOne = {
 export const Lvl_2_LessonOne_english = {
   title: "Climate Change", // climate change
   summary: "How does greenhouse effect relate to global warming?",
-
-  summaryComponent: {
-    route: "Summary",
-    component: SummaryScreen,
-  },
 
   quiz: {
     component: Quiz,

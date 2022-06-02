@@ -1,7 +1,6 @@
 import { AdventureImages, SortingImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
-import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
@@ -11,11 +10,6 @@ import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 export const Lvl_1_LessonTwo = {
   title: "Устойчивость", //Sustainable Practices
   summary: "Почему важно защищать окружающую среду?", //Why is protecting the environment important?
-
-  summaryComponent: {
-    route: "изложение", //Summary
-    component: SummaryScreen,
-  },
 
   quiz: {
     component: Quiz,
