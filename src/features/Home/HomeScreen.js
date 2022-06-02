@@ -9,8 +9,6 @@ import LevelOne from "../Levels/LevelOne";
 import LevelTwo from "../Levels/LevelTwo";
 import LevelThree from "../Levels/LevelThree";
 import LevelFour from "../Levels/LevelFour";
-import LevelFive from "../Levels/LevelFive";
-import LevelSix from "../Levels/LevelSix";
 
 import { connect } from "react-redux";
 

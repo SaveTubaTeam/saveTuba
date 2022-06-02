@@ -6,7 +6,6 @@ import { BodyText } from "../../components/body-text.component";
 import { Spacer } from "../../components/spacer.component";
 import {
   Container,
-  Summary,
   Mastery,
   Adventure,
   ImageBg,
@@ -19,8 +18,6 @@ import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
-import { questionSet } from "../../components/LevelOne/QuestionSet";
-import { IconButton } from "react-native-paper";
 
 // import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 
@@ -200,16 +197,7 @@ function LessonComponent(props) {
             </TitleText>
             <Spacer size="small" />
             <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
-            <Summary
-              onPress={() => {
-                navigation.navigate(selectedLevel.summaryComponent.route);
-              }}
-            >
-              <BodyText weight="bold" color="primary" size="subtitle">
-                Краткое изложение
-                {/* Full Summary */}
-              </BodyText>
-            </Summary>
+
             <Spacer size="large" />
             <TitleText>
               Приключения
