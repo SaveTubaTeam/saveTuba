@@ -1,9 +1,8 @@
-import { AdventureImages, TestImages } from "../../IMAGES";
+import { AdventureImages, SortingImages, TestImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
-import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
@@ -32,10 +31,6 @@ export const Lvl_2_LessonTwo = {
     component: Puzzle,
   },
 
-  sorting: {
-    component: Sorting,
-  },
-
   masteryComponent: {
     route: "Mastery",
     component: MasteryScreen,
@@ -47,18 +42,35 @@ export const Lvl_2_LessonTwo = {
 
   minigames: [
     {
+      title: "Сортировка",
+      description: "Выберите соответствующую категорию.",
+      key: "testkey1",
+      image: AdventureImages.multiplechoice,
+      content: [
+        {
+          imageBg: SortingImages.bg[0].lvl_2_les_2,
+          categoryOne: "Животные продукты",
+          categoryTwo: "Растительные продукты",
+        },
+        {
+          first: "Молочные",
+          firstAnswer: "Животные продукты",
+          firstImage: SortingImages.lvl_2_les_2[0].firstImage,
+          second: "Фрукты",
+          secondAnswer: "Растительные продукты",
+          secondImage: SortingImages.lvl_2_les_2[0].secondImage,
+          third: "Мясо",
+          thirdAnswer: "Животные продукты",
+          thirdImage: SortingImages.lvl_2_les_2[0].thirdImage,
+        },
+      ],
+    },
+    {
       title: "Объем памяти",
       description: "Соотнесите слово с его определением.",
       key: "testkey3",
       data: "require('matchingPollution')",
       image: AdventureImages.matching,
-    },
-    {
-      title: "Сортировка",
-      description: "Выберите соответствующую категорию.",
-      key: "testkey1",
-      data: questionSetPollution,
-      image: AdventureImages.crossword,
     },
     {
       title: "Изображение Бум",

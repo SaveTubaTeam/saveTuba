@@ -5,6 +5,31 @@ export const AdventureImages = {
   multiplechoice: require("../../../assets/mcqbg.jpg"),
 };
 
+export const SortingImages = {
+  bg: [
+    {
+      lvl_1_les_1: require("../../../assets/beach.jpg"),
+      lvl_1_les_2: require("../../../assets/rrr.jpg"),
+      lvl_2_les_1: require("../../../assets/waste.jpg"),
+      lvl_2_les_2: require("../../../assets/farm.jpeg"),
+    },
+  ],
+  lvl_1_les_1: [
+    {
+      firstImage: require("../../../assets/wave.jpg"),
+      secondImage: require("../../../assets/animals.png"),
+      thirdImage: require("../../../assets/pots.png"),
+    },
+  ],
+  lvl_2_les_2: [
+    {
+      firstImage: require("../../../assets/dairy.png"),
+      secondImage: require("../../../assets/fruit.png"),
+      thirdImage: require("../../../assets/meat.png"),
+    },
+  ],
+};
+
 export const TestImages = {
   solar_panel_1: require("../../../assets/solar-panel.jpg"),
   bikingPic: require("../../../assets/desc_ridingbike.jpg"),

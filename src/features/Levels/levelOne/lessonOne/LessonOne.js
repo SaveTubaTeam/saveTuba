@@ -1,8 +1,7 @@
-import { AdventureImages } from "../../IMAGES";
+import { AdventureImages, SortingImages } from "../../IMAGES";
 
 import SummaryScreen from "./Screens/Summary/summary";
 import MasteryScreen from "./Screens/Mastery/mastery";
-import Sorting from "./Screens/Adventures/adventureTwo/sorting.component";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
@@ -34,10 +33,6 @@ export const Lvl_1_LessonOne = {
     component: null,
   },
 
-  sorting: {
-    component: Sorting,
-  },
-
   masteryComponent: {
     route: "Мастерство", //Mastery
     component: MasteryScreen,
@@ -52,8 +47,25 @@ export const Lvl_1_LessonOne = {
       title: "Сортировка", //Sorting
       description: "Выберите соответствующую категорию", //Choose the corresponding category.
       key: "testkey4",
-      data: "require('mutliple choice pollution')",
       image: AdventureImages.multiplechoice,
+      content: [
+        {
+          imageBg: SortingImages.bg[0].lvl_1_les_1,
+          categoryOne: "Живой",
+          categoryTwo: "Не живой",
+        },
+        {
+          first: "Вода",
+          firstAnswer: "Не живой",
+          firstImage: SortingImages.lvl_1_les_1[0].firstImage,
+          second: "Животные",
+          secondAnswer: "Живой",
+          secondImage: SortingImages.lvl_1_les_1[0].secondImage,
+          third: "Растения",
+          thirdAnswer: "Живой",
+          thirdImage: SortingImages.lvl_1_les_1[0].thirdImage,
+        },
+      ],
     },
     {
       title: "Объем памяти", //Memory

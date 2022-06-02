@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
+import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -31,17 +25,16 @@ const Lock = styled.Image`
 `;
 
 const ImageBg = styled.ImageBackground`
-  flex: 1;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: 100%;
 `;
 
 function HomeView() {
   const navigation = useNavigation();
   return (
-    <ScrollView style={{ alignContent: "center" }}>
-      {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
-      <ImageBg source={require("../../../assets/homebg.png")}>
+    <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
+      <ScrollView style={{ paddingTop: 10, alignContent: "center" }}>
+        {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
+
         <TouchableOpacity
           style={style.roundButton1}
           onPress={() => navigation.push("LevelOne")}
@@ -66,45 +59,23 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-        /*onPress={() => navigation.push("LevelThree")}*/
+          /*onPress={() => navigation.push("LevelThree")}*/
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
         <Lock
-          style={{ top: 370, right: 30, alignSelf: 'flex-end' }}
+          style={{ top: 370, right: 30, alignSelf: "flex-end" }}
           source={require("../../../assets/lock.png")}
         />
         <TouchableOpacity
           style={style.roundButton2}
-        /*onPress={() => navigation.push("LevelFour")}*/
+          /*onPress={() => navigation.push("LevelFour")}*/
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
-
-        <Lock
-          style={{ top: 500, left: 90 }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton1}
-        /*onPress={() => navigation.push("LevelFive")}*/
-        >
-          <Text style={style.baseText}>5</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 620, right: 30, alignSelf: 'flex-end' }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton2}
-        /*onPress={() => navigation.push("LevelSix")}*/
-        >
-          <Text style={style.baseText}>6</Text>
-        </TouchableOpacity>
-      </ImageBg>
-    </ScrollView>
+      </ScrollView>
+    </ImageBg>
   );
 }
 
@@ -151,16 +122,6 @@ const HomeScreen = () => {
         component={LevelFour}
         options={{ headerShown: true }}
       />
-      <Stack.Screen
-        name="LevelFive"
-        component={LevelFive}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="LevelSix"
-        component={LevelSix}
-        options={{ headerShown: true }}
-      />
     </Stack.Navigator>
     //</NavigationContainer>
   );
@@ -192,7 +153,7 @@ const style = StyleSheet.create({
     left: -25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
-    alignSelf: 'flex-end',
+    alignSelf: "flex-end",
   },
   baseText: {
     fontSize: 50,

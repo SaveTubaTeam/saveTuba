@@ -10,7 +10,7 @@ import OpenResponseHandler from "../../components/minigames/OpenResponse/OpenRes
 
 import { connect } from "react-redux";
 
-import Sorting from "./levelOne/lessonOne/Screens/Adventures/adventureTwo/sorting.component";
+import SortingHandler from "../../components/minigames/Sorting/SortingHandler";
 
 // want to import data here?
 import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
@@ -115,7 +115,6 @@ function LessonHandler(props) {
         ></Stack.Screen>
         <Stack.Screen
           name="Sorting"
-          component={selectedLevel.sorting.component}
           options={{
             title: "Сортировка",
             headerTintColor: "white",
@@ -124,7 +123,14 @@ function LessonHandler(props) {
               backgroundColor: "#C6DC3B",
             },
           }}
-        />
+        >
+          {() => (
+            <SortingHandler
+              data={selectedLevel.minigames[0]}
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
         {selectedLevel.drawing.component != null && (
           <Stack.Screen
             name="DrawingGame"
