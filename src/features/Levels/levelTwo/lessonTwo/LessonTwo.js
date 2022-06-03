@@ -1,18 +1,16 @@
-import { AdventureImages, SortingImages, TestImages } from "../../IMAGES";
-import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
-
+import {
+  AdventureImages,
+  SortingImages,
+  TestImages,
+  QuizImages,
+} from "../../IMAGES";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
-import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_2_LessonTwo = {
   title: "Устойчивое сельское хозяйство",
   summary: "Как сделать сельское хозяйство более устойчивым?",
-
-  quiz: {
-    component: Quiz,
-  },
 
   drawing: {
     component: null,
@@ -102,11 +100,39 @@ export const Lvl_2_LessonTwo = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Викторина", //Quiz
-      description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
-      key: "testkey3",
-      data: "require('matchingPollution')",
-      image: AdventureImages.crossword,
+      title: "Викторина", // Quiz
+      description: "Выберите правильный ответ.", // Choose the correct answer.
+      key: "testkey4",
+      image: AdventureImages.multiplechoice,
+      content: [
+        {
+          imageBg: QuizImages.bg[0].lvl_2_les_2,
+        },
+        {
+          prompt: "Что не поможет уменьшить наш углеродный след?",
+          first: "Есть местную еду",
+          second: "Перерабатывать",
+          third: "Ездить в школу",
+          fourth: "Сажать деревья",
+          answer: 3,
+        },
+        {
+          prompt: "Название газа, который растения потребляют в:",
+          first: "Газе",
+          second: "Метан",
+          third: "Sniff Gate",
+          fourth: "Углекислый газ",
+          answer: 4,
+        },
+        {
+          prompt: "Что из перечисленного не добавляет CO2 в атмосферу?",
+          first: "Приготовление пищи на газу",
+          second: "Сажать деревья",
+          third: "Сжигать дрова",
+          fourth: "Ездить на автобусе",
+          answer: 2,
+        },
+      ],
     },
   ],
 };

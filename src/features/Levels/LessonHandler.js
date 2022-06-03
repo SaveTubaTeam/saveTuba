@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import styled from "styled-components/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -10,6 +10,7 @@ import OpenResponseHandler from "../../components/minigames/OpenResponse/OpenRes
 
 import { connect } from "react-redux";
 
+import QuizHandler from "../../components/minigames/Quiz/QuizHandler";
 import SortingHandler from "../../components/minigames/Sorting/SortingHandler";
 
 // want to import data here?
@@ -17,10 +18,7 @@ import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
-import { adventureOne } from "../Levels/levelOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 import { TitleText } from "../../components/title-text.component";
-import { IconButton } from "react-native-paper";
-import { QuizScreen } from "../../components/LevelOne/quiz-screen.component";
 
 const TempScreen = ({ navigation }) => {
   return (
@@ -93,10 +91,14 @@ function LessonHandler(props) {
           name="Level"
           component={LessonComponent}
           options={{
-            headerTitle: selectedLevel.title,
-            headerTintColor: "#748816",
+            title: "Уроки",
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
             headerTitleStyle: {
-              fontFamily: "Raleway_400Regular",
+              fontSize: 20,
+              fontFamily: "Gabriela_400Regular",
+              color: "#748816",
             },
           }}
           initialParams={{ level: level }}
@@ -145,20 +147,25 @@ function LessonHandler(props) {
             }}
           />
         )}
-        {selectedLevel.quiz.component != null && (
-          <Stack.Screen
-            name="QuizScreen"
-            component={selectedLevel.quiz.component}
-            options={{
-              title: "Викторина",
-              headerTintColor: "white",
-              headerBackTitleVisible: false,
-              headerStyle: {
-                backgroundColor: "#C6DC3B",
-              },
-            }}
-          />
-        )}
+
+        <Stack.Screen
+          name="QuizScreen"
+          options={{
+            title: "Викторина",
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+          }}
+        >
+          {() => (
+            <QuizHandler
+              data={selectedLevel.minigames[3]}
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
         <Stack.Screen
           name="MultipleChoice"
           component={TempScreen}

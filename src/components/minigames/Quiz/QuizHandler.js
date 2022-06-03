@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { View, Modal, Pressable, StyleSheet, Text } from "react-native";
-import styled from "styled-components";
+import { View, Modal, Pressable, TouchableOpacity } from "react-native";
+import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
+import { connect } from "react-redux";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { SafeArea } from "../../../../../../../components/safe-area.component";
-import { TitleText } from "../../../../../../../components/title-text.component";
-import { BodyText } from "../../../../../../../components/body-text.component";
-import { useNavigation } from "@react-navigation/native";
-import { Spacer } from "../../../../../../../components/spacer.component";
+import { TitleText } from "../../title-text.component";
+import { BodyText } from "../../body-text.component";
+import { SafeArea } from "../../safe-area.component";
+import { Spacer } from "../../spacer.component";
+
 const Stack = createNativeStackNavigator();
 
 const Container = styled.View`
@@ -43,11 +45,30 @@ const Answers = styled.View`
   align-items: center;
 `;
 
-const Question = styled.View``;
+const ModalContainer = styled.View`
+  background-color: white;
+  width: 60%;
+  padding: 30px;
+  border-radius: 20px;
+  shadow-color: #000;
+  shadow-offset: {
+    width: 0;
+    height: 2px;
+  }
+  shadow-opacity: 0.25;
+  shadow-radius: 4px;
+  elevation: 5;
+`;
 
-const SecondScreen = ({ navigation }) => {
+const Question = styled.View`
+  width: 90%;
+  margin-bottom: 20px;
+`;
+
+const SecondScreen = ({ data }) => {
+  const navigation = useNavigation();
   return (
-    <ImageBg source={require("../../../../../../../../assets/nat.jpg")}>
+    <ImageBg source={data.content[0].imageBg}>
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
@@ -55,11 +76,8 @@ const SecondScreen = ({ navigation }) => {
             опрос!
           </TitleText>
           <Spacer size="large" />
-          <Pressable
-            onPress={() => navigation.navigate("Level")}
-            style={styles.next}
-          >
-            <BodyText color="secondary">Вернитесь назад</BodyText>
+          <Pressable onPress={() => navigation.navigate("Level")}>
+            <BodyText color="primary">Назад</BodyText>
           </Pressable>
         </Container2>
       </SafeArea>
@@ -67,8 +85,10 @@ const SecondScreen = ({ navigation }) => {
   );
 };
 
-const Start = () => {
-  const [correctAnswer, setCorrectAnswer] = useState(4);
+const Start = ({ data }) => {
+  const navigation = useNavigation();
+
+  const [correctAnswer, setCorrectAnswer] = useState(data.content[1].answer);
   const [answer, setAnswer] = useState(0);
   const [visible, setVisible] = useState(false);
 
@@ -77,7 +97,6 @@ const Start = () => {
   const [visibleThree, setVisibleThree] = useState("none");
 
   const [count, setCount] = useState(0);
-  const navigation = useNavigation();
 
   const checkAnswer = (odg) => {
     if (odg == correctAnswer) {
@@ -90,35 +109,44 @@ const Start = () => {
   const Modko = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Pressable
-              style={styles.button}
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <ModalContainer>
+            <TouchableOpacity
+              style={{ position: "absolute", right: 10, top: 5 }}
               onPress={() => setVisible(!visible)}
             >
-              <BodyText style={styles.textStyle}>✖️</BodyText>
-            </Pressable>
-            <View style={styles.correctContainer}>
-              <Text style={styles.modalText}>
+              <BodyText>✖️</BodyText>
+            </TouchableOpacity>
+            <View>
+              <BodyText size="subtitle">
                 {correctAnswer == answer
                   ? "Правильный ответ! Хорошая работа ✨"
                   : "Неправильный ответ! Повезет в следующий раз 🍀"}
-              </Text>
+              </BodyText>
             </View>
-            <Pressable
-              style={styles.next}
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#748816",
+                borderRadius: 10,
+                marginTop: 10,
+                paddingTop: 5,
+                paddingBottom: 5,
+              }}
               onPress={() => {
                 if (count == 0) {
                   setVisibleOne("none");
                   setVisibleTwo("flex");
                   setVisible(false);
-                  setCorrectAnswer(4);
+                  setCorrectAnswer(data.content[2].answer);
                   setCount(1);
+                  console.log("hi");
                 } else if (count == 1) {
                   setVisibleTwo("none");
                   setVisibleThree("flex");
                   setVisible(false);
-                  setCorrectAnswer(3);
+                  setCorrectAnswer(data.content[3].answer);
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
@@ -126,9 +154,11 @@ const Start = () => {
                 }
               }}
             >
-              <BodyText color="secondary">Следующий</BodyText>
-            </Pressable>
-          </View>
+              <BodyText size="subtitle" color="secondary">
+                Следующий
+              </BodyText>
+            </TouchableOpacity>
+          </ModalContainer>
         </View>
       </Modal>
     );
@@ -136,11 +166,11 @@ const Start = () => {
 
   return (
     <>
-      <ImageBg source={require("../../../../../../../../assets/nat.jpg")}>
+      <ImageBg source={data.content[0].imageBg}>
         <SafeArea>
           <Container>
             <Question style={{ display: visibleOne }}>
-              <TitleText size="title">Что такое устойчивость?</TitleText>
+              <TitleText size="title">{data.content[1].prompt}</TitleText>
             </Question>
             <Answers style={{ display: visibleOne }}>
               <Category
@@ -151,9 +181,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Удовлетворить потребности настоящего
-                </BodyText>
+                <BodyText size="subtitle">{data.content[1].first}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -163,9 +191,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">
-                  Удовлетворить потребности будущего
-                </BodyText>
+                <BodyText size="subtitle">{data.content[1].second}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -175,7 +201,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Держится на трех столбах</BodyText>
+                <BodyText size="subtitle">{data.content[1].third}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -185,14 +211,12 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Все вышеперечисленное</BodyText>
+                <BodyText size="subtitle">{data.content[1].fourth}</BodyText>
               </Category>
             </Answers>
 
             <Question style={{ display: visibleTwo }}>
-              <TitleText size="title">
-                Что НЕ является устойчивой практикой?
-              </TitleText>
+              <TitleText size="title">{data.content[2].prompt}</TitleText>
             </Question>
             <Answers style={{ display: visibleTwo }}>
               <Category
@@ -203,7 +227,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">утилизация отходов</BodyText>
+                <BodyText size="subtitle">{data.content[2].first}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -213,7 +237,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">сокращение</BodyText>
+                <BodyText size="subtitle">{data.content[2].second}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -223,7 +247,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">повторное использование</BodyText>
+                <BodyText size="subtitle">{data.content[2].third}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -233,14 +257,12 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">покупка</BodyText>
+                <BodyText size="subtitle">{data.content[2].fourth}</BodyText>
               </Category>
             </Answers>
 
             <Question style={{ display: visibleThree }}>
-              <TitleText size="title">
-                Что не является основой устойчивого развития?
-              </TitleText>
+              <TitleText size="title">{data.content[3].prompt}</TitleText>
             </Question>
             <Answers style={{ display: visibleThree }}>
               <Category
@@ -251,7 +273,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Окружающая среда</BodyText>
+                <BodyText size="subtitle">{data.content[3].first}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -261,7 +283,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">экономический</BodyText>
+                <BodyText size="subtitle">{data.content[3].second}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -271,7 +293,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">образование</BodyText>
+                <BodyText size="subtitle">{data.content[3].third}</BodyText>
               </Category>
               <Category
                 activeOpacity="0.8"
@@ -281,7 +303,7 @@ const Start = () => {
                   setVisible(true);
                 }}
               >
-                <BodyText size="subtitle">Социальное</BodyText>
+                <BodyText size="subtitle">{data.content[3].fourth}</BodyText>
               </Category>
             </Answers>
 
@@ -297,81 +319,21 @@ const Start = () => {
   );
 };
 
-const Quiz = () => {
+const QuizHandler = ({ data, navigation }) => {
   return (
     <Stack.Navigator>
-      <Stack.Screen
-        name="Start"
-        options={{ headerShown: false }}
-        component={Start}
-      />
-      <Stack.Screen
-        name="SecondScreen"
-        options={{ headerShown: false }}
-        component={SecondScreen}
-      />
+      <Stack.Screen name="Start" options={{ headerShown: false }}>
+        {() => <Start data={data} />}
+      </Stack.Screen>
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
+        {() => <SecondScreen data={data} />}
+      </Stack.Screen>
     </Stack.Navigator>
   );
 };
 
-const styles = StyleSheet.create({
-  next: {
-    padding: 5,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderRadius: 10,
-    backgroundColor: "#748816",
-  },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  buttonClose: {
-    marginTop: 15,
-    backgroundColor: "#60BBDD",
-  },
-  modalView: {
-    alignItems: "flex-end",
-    width: "60%",
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 25,
-    paddingTop: 15,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  correctContainer: {
-    alignItems: "center",
-    width: "100%",
-  },
-  textStyle: {
-    color: "#000",
-    fontWeight: "bold",
-    fontSize: 16,
-  },
-  textCloseStyle: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 16,
-  },
-  modalText: {
-    textAlign: "center",
-    fontSize: 18,
-    paddingRight: 5,
-    paddingLeft: 5,
-  },
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser,
 });
 
-export default Quiz;
+export default connect(mapStateToProps, null)(QuizHandler);

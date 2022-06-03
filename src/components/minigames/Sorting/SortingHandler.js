@@ -38,7 +38,7 @@ const ModalContainer = styled.View`
     height: 2px;
   }
   shadow-opacity: 0.25;
-  shadow-radius: 4;
+  shadow-radius: 4px;
   elevation: 5;
 `;
 
@@ -55,7 +55,7 @@ const Category = styled.TouchableOpacity`
     height: 2px;
   }
   shadow-opacity: 0.25;
-  shadow-radius: 4;
+  shadow-radius: 4px;
   elevation: 5;
 `;
 
@@ -71,7 +71,7 @@ const Option = styled.View`
     height: 2px;
   }
   shadow-opacity: 0.25;
-  shadow-radius: 4;
+  shadow-radius: 4px;
   elevation: 5;
   align-items: center;
   justify-content: center;

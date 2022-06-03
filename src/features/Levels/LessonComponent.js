@@ -18,6 +18,7 @@ import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
 import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
+import { SafeArea } from "../../components/safe-area.component";
 
 // import { LessonFour } from "./levelOne/lessonFour/LessonFour";
 
@@ -178,66 +179,76 @@ function LessonComponent(props) {
   }
 
   return (
-    <Container>
-      <FlatList // The flatlist used to load minigames and their data.
-        data={selectedLevel.minigames}
-        renderItem={renderItem}
-        numColumns={2}
-        keyExtractor={(item) => item.key}
-        key={(item) => item.key}
-        style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
-        // putting everything before and after the flatlist
-        // in header and footer fixes the nested virtualized
-        // lists error: color: "#C6DC3B"
-        ListHeaderComponent={
-          <>
-            <TitleText size="h4" color="primary">
-              {" "}
-              {selectedLevel.title}{" "}
-            </TitleText>
-            <Spacer size="small" />
-            <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
+    <SafeArea>
+      <Container>
+        <FlatList // The flatlist used to load minigames and their data.
+          data={selectedLevel.minigames}
+          renderItem={renderItem}
+          numColumns={2}
+          keyExtractor={(item) => item.key}
+          key={(item) => item.key}
+          style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
+        />
+        <FlatList // The flatlist used to load minigames and their data.
+          data={selectedLevel.minigames}
+          renderItem={renderItem}
+          numColumns={2}
+          keyExtractor={(item) => item.key}
+          key={(item) => item.key}
+          style={{ padding: 0, paddingLeft: 0, paddingRight: 0 }}
+          // putting everything before and after the flatlist
+          // in header and footer fixes the nested virtualized
+          // lists error: color: "#C6DC3B"
+          ListHeaderComponent={
+            <>
+              <TitleText size="h4" color="primary">
+                {" "}
+                {selectedLevel.title}{" "}
+              </TitleText>
+              <Spacer size="small" />
+              <BodyText size="subtitle">{selectedLevel.summary}</BodyText>
 
-            <Spacer size="large" />
-            <TitleText>
-              Приключения
-              {/* Adventures */}
-            </TitleText>
-            <Spacer size="small" />
-          </>
-        }
-        ListHeaderComponentStyle={{
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        ListFooterComponent={
-          <>
-            <Mastery
-              onPress={() => {
-                navigation.navigate(selectedLevel.masteryComponent.route);
-              }}
-            >
-              <BodyText weight="bold" size="subtitle" color="secondary">
-                Мастерство
-                {/* Mastery */}
-              </BodyText>
-            </Mastery>
+              <Spacer size="large" />
+              <TitleText>
+                Приключения
+                {/* Adventures */}
+              </TitleText>
+              <Spacer size="small" />
+            </>
+          }
+          ListHeaderComponentStyle={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          ListFooterComponent={
+            <>
+              <Mastery
+                onPress={() => {
+                  navigation.navigate(selectedLevel.masteryComponent.route);
+                }}
+              >
+                <BodyText weight="bold" size="subtitle" color="secondary">
+                  Мастерство
+                  {/* Mastery */}
+                </BodyText>
+              </Mastery>
 
-            <RenderModal
-              isVisible={selectedItem}
-              selectedItem={selectedItem}
-              onClose={handeOnCloseModal}
-              navigation={navigation}
-              key={selectedLevel.info.key}
-            />
-          </>
-        }
-        ListFooterComponentStyle={{
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      />
-    </Container>
+              <RenderModal
+                isVisible={selectedItem}
+                selectedItem={selectedItem}
+                onClose={handeOnCloseModal}
+                navigation={navigation}
+                key={selectedLevel.info.key}
+              />
+            </>
+          }
+          ListFooterComponentStyle={{
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        />
+      </Container>
+    </SafeArea>
   );
 }
 

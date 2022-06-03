@@ -30,6 +30,17 @@ export const SortingImages = {
   ],
 };
 
+export const QuizImages = {
+  bg: [
+    {
+      lvl_1_les_1: require("../../../assets/nat.jpg"),
+      lvl_1_les_2: require("../../../assets/field.jpeg"),
+      lvl_2_les_1: require("../../../assets/path.jpg"),
+      lvl_2_les_2: require("../../../assets/sunrise.jpg"),
+    },
+  ],
+};
+
 export const TestImages = {
   solar_panel_1: require("../../../assets/solar-panel.jpg"),
   bikingPic: require("../../../assets/desc_ridingbike.jpg"),

@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import {
+  Text,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -30,7 +36,7 @@ function HomeView() {
   const navigation = useNavigation();
   return (
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
-      <ScrollView style={{ paddingTop: 10, alignContent: "center" }}>
+      <ScrollView>
         {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
 
         <TouchableOpacity
@@ -88,7 +94,6 @@ const HomeScreen = () => {
         component={HomeView}
         options={{
           title: "Уровни", //Levels
-          headerShown: true,
           headerStyle: {
             backgroundColor: "#C6DC3B",
           },
@@ -102,7 +107,9 @@ const HomeScreen = () => {
       <Stack.Screen
         name="LevelOne"
         component={LevelOne}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+        }}
       />
       <Stack.Screen
         name="LevelTwo"

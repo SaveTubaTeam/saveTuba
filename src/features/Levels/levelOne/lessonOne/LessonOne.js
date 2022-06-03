@@ -1,11 +1,10 @@
-import { AdventureImages, SortingImages } from "../../IMAGES";
+import { AdventureImages, SortingImages, QuizImages } from "../../IMAGES";
 
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 
 import { TestImages } from "../../IMAGES";
-import Quiz from "./Screens/Adventures/adventureFour/drawing.screen";
 
 export const Lvl_1_LessonOne = {
   title: "Устойчивость", //Sustainability
@@ -13,10 +12,6 @@ export const Lvl_1_LessonOne = {
 
   puzzle: {
     component: Puzzle,
-  },
-
-  quiz: {
-    component: Quiz,
   },
 
   memory: {
@@ -104,11 +99,44 @@ export const Lvl_1_LessonOne = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Викторина", // Drawing game
-      description: "Позвольте художнику в вас ожить!", // Let the artist in you come to life
-      key: "testkey3",
-      data: "require('matchingPollution')",
-      image: AdventureImages.crossword,
+      title: "Викторина", // Quiz
+      description: "Выберите правильный ответ.", // Choose the correct answer.
+      key: "testkey4",
+      image: AdventureImages.multiplechoice,
+      content: [
+        {
+          imageBg: QuizImages.bg[0].lvl_1_les_1,
+        },
+        {
+          prompt: "Устойчивый город — это:",
+          first: "Город, использующий чистую энергию",
+          second:
+            "Город, который перерабатывает, повторно использует и сокращает",
+          third: "Город, который уменьшает загрязнение, которое производят они",
+          fourth: "Все вышеперечисленное",
+          answer: 4,
+        },
+        {
+          prompt:
+            "Что из следующего является стратегией построения устойчивого будущего?",
+          first: "Импорт дополнительных ресурсов",
+          second: "Использование местных материалов",
+          third: "Строительство большего количества атомных электростанций",
+          fourth: "Создание большего количества отходов",
+          answer: 2,
+        },
+        {
+          prompt: "Каково официальное определение устойчивости?",
+          first:
+            "Понимание того, как удовлетворить потребности нынешнего поколения",
+          second:
+            "Понимание того, как удовлетворить потребности настоящего, не ставя под угрозу потребности будущих поколений, чтобы удовлетворить их собственные потребности",
+          third:
+            "Понимание того, как удовлетворить потребности будущих поколений",
+          fourth: "Ничего из вышеперечисленного",
+          answer: 2,
+        },
+      ],
     },
   ],
 };

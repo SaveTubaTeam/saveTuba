@@ -1,19 +1,14 @@
-import { AdventureImages, SortingImages } from "../../IMAGES";
+import { AdventureImages, SortingImages, QuizImages } from "../../IMAGES";
 import { questionSetPollution } from "../../../../components/LevelOne/QuestionSetPollution";
 
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
 import { TestImages } from "../../IMAGES";
-import Quiz from "./Screens/Adventures/adventureFour/quiz.screen";
 
 export const Lvl_1_LessonTwo = {
   title: "Устойчивость", //Sustainable Practices
   summary: "Почему важно защищать окружающую среду?", //Why is protecting the environment important?
-
-  quiz: {
-    component: Quiz,
-  },
 
   drawing: {
     component: null,
@@ -103,11 +98,39 @@ export const Lvl_1_LessonTwo = {
       image: AdventureImages.puzzle,
     },
     {
-      title: "Викторина", //Quiz
-      description: "Скоро.. Следи за обновлениями!", //Reinforce your knowledge!
-      key: "testkey3",
-      data: "require('matchingPollution')",
-      image: AdventureImages.crossword,
+      title: "Викторина", // Quiz
+      description: "Выберите правильный ответ.", // Choose the correct answer.
+      key: "testkey4",
+      image: AdventureImages.multiplechoice,
+      content: [
+        {
+          imageBg: QuizImages.bg[0].lvl_1_les_2,
+        },
+        {
+          prompt: "Что такое устойчивость?",
+          first: "Удовлетворение потребностей настоящего",
+          second: "Удовлетворение потребностей будущего",
+          third: "Имеет три столпа",
+          fourth: "Все варианты правильные",
+          answer: 4,
+        },
+        {
+          prompt: "Что из следующего не является столпом устойчивого развития?",
+          first: "Окружающая среда",
+          second: "Зкономическое",
+          third: "Образование",
+          fourth: "Социальное",
+          answer: 3,
+        },
+        {
+          prompt: "Что НЕ является устойчивой практикой?",
+          first: "Переработка",
+          second: "Сокращение",
+          third: "Пповторного использования",
+          fourth: "Покупка",
+          answer: 4,
+        },
+      ],
     },
   ],
 };
