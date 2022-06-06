@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Modal, ScrollView } from "react-native";
 import styled from "styled-components/native";
 import { FlatList } from "react-native";
-import { TestImages } from "../../../features/Levels/IMAGES";
+import { TestImages } from "../../../features/Grades/IMAGES";
 import { Shadow } from "react-native-shadow-2";
 
 import { useNavigation } from "@react-navigation/native";

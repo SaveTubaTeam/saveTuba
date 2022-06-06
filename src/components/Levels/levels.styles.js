@@ -5,6 +5,7 @@ export const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
+  background-color: #9cd1d0;
 `;
 
 export const Mastery = styled.TouchableOpacity`
@@ -26,9 +27,9 @@ export const Row = styled.View`
 `;
 
 export const Adventure = styled.TouchableOpacity`
-  margin: 5px;
-  width: ${(props) => props.theme.sizes[4]}
-  height: 100%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
 `;
 
 export const ImageBg = styled.ImageBackground`

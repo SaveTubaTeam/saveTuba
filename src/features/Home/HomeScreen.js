@@ -11,10 +11,10 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import LevelOne from "../Levels/LevelOne";
-import LevelTwo from "../Levels/LevelTwo";
-import LevelThree from "../Levels/LevelThree";
-import LevelFour from "../Levels/LevelFour";
+import GradeOne from "../Grades/GradeOne";
+import GradeTwo from "../Grades/GradeTwo";
+import GradeThree from "../Grades/GradeThree";
+import GradeFour from "../Grades/GradeFour";
 
 import { connect } from "react-redux";
 
@@ -41,7 +41,7 @@ function HomeView() {
 
         <TouchableOpacity
           style={style.roundButton1}
-          onPress={() => navigation.push("LevelOne")}
+          onPress={() => navigation.push("GradeOne")}
         >
           <Text style={style.baseText}>1</Text>
         </TouchableOpacity>
@@ -52,7 +52,7 @@ function HomeView() {
           /> */}
         <TouchableOpacity
           style={style.roundButton2}
-          onPress={() => navigation.push("LevelTwo")}
+          onPress={() => navigation.push("GradeTwo")}
         >
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
@@ -63,7 +63,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelThree")}*/
+          /*onPress={() => navigation.push("GradeThree")}*/
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
@@ -74,7 +74,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelFour")}*/
+          /*onPress={() => navigation.push("GradeFour")}*/
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -90,10 +90,10 @@ const HomeScreen = () => {
     //<NavigationContainer independent ={true}>
     <Stack.Navigator>
       <Stack.Screen
-        name="Levels"
+        name="Grades"
         component={HomeView}
         options={{
-          title: "Уровни", //Levels
+          title: "Классы", //Levels
           headerStyle: {
             backgroundColor: "#C6DC3B",
           },
@@ -105,27 +105,27 @@ const HomeScreen = () => {
         }}
       />
       <Stack.Screen
-        name="LevelOne"
-        component={LevelOne}
+        name="GradeOne"
+        component={GradeOne}
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="LevelTwo"
-        component={LevelTwo}
+        name="GradeTwo"
+        component={GradeTwo}
         options={{ headerShown: false }}
       />
 
       <Stack.Screen
-        name="LevelThree"
-        component={LevelThree}
-        options={{ headerShown: true }}
+        name="GradeThree"
+        component={GradeThree}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="LevelFour"
-        component={LevelFour}
-        options={{ headerShown: true }}
+        name="GradeFour"
+        component={GradeFour}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
     //</NavigationContainer>
