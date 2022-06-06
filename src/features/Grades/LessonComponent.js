@@ -13,10 +13,10 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 
-import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
-import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
-import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
-import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
+import { Lvl_1_LessonOne } from "./gradeOne/lessonOne/LessonOne";
+import { Lvl_1_LessonTwo } from "./gradeOne/lessonTwo/LessonTwo";
+import { Lvl_2_LessonOne } from "./gradeTwo/lessonOne/LessonOne";
+import { Lvl_2_LessonTwo } from "./gradeTwo/lessonTwo/LessonTwo";
 import { SafeArea } from "../../components/safe-area.component";
 
 const Container = styled.View`

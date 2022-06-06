@@ -14,10 +14,10 @@ import QuizHandler from "../../components/minigames/Quiz/QuizHandler";
 import SortingHandler from "../../components/minigames/Sorting/SortingHandler";
 
 // want to import data here?
-import { Lvl_1_LessonOne } from "./levelOne/lessonOne/LessonOne";
-import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
-import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
-import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
+import { Lvl_1_LessonOne } from "./gradeOne/lessonOne/LessonOne";
+import { Lvl_1_LessonTwo } from "./gradeOne/lessonTwo/LessonTwo";
+import { Lvl_2_LessonOne } from "./gradeTwo/lessonOne/LessonOne";
+import { Lvl_2_LessonTwo } from "./gradeTwo/lessonTwo/LessonTwo";
 import { TitleText } from "../../components/title-text.component";
 
 const TempScreen = ({ navigation }) => {
