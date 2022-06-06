@@ -76,7 +76,7 @@ const SecondScreen = ({ data }) => {
             опрос!
           </TitleText>
           <Spacer size="large" />
-          <Pressable onPress={() => navigation.navigate("Level")}>
+          <Pressable onPress={() => navigation.navigate("Grade")}>
             <BodyText color="primary">Назад</BodyText>
           </Pressable>
         </Container2>

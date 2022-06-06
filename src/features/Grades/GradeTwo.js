@@ -147,7 +147,7 @@ const GradeTwo = () => {
         name="Grade Two"
         component={GradeTwoView}
         options={{
-          title: "Уровень 2", //level 2
+          title: "Класс 2", // grade 2
           headerShown: true,
           headerStyle: {
             backgroundColor: "#C6DC3B",

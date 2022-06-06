@@ -77,7 +77,7 @@ export function ProfileCard(props) {
           </Friends>
           <Achievements>
             <BodyText color="secondary">
-              {t("profile:level")} {currentUser?.level}
+              {t("profile:grade")} {currentUser?.level}
             </BodyText>
           </Achievements>
         </Row>

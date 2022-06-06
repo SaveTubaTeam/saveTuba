@@ -40,7 +40,7 @@ const Lock = styled.Image`
   aspect-ratio: 1;
 `;
 
-function LeveloneView() {
+function GradeOneView() {
   const navigation = useNavigation();
   return (
     <>
@@ -151,10 +151,10 @@ const GradeOne = () => {
     //<NavigationContainer independent ={false}>
     <Stack.Navigator>
       <Stack.Screen
-        name="Level One"
-        component={LeveloneView}
+        name="Grade One"
+        component={GradeOneView}
         options={{
-          title: "Уровень 1", //level 1
+          title: "Класс 1", // grade 1
           headerShown: true,
           headerStyle: {
             backgroundColor: "#C6DC3B",

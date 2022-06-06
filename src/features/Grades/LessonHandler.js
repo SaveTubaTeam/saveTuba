@@ -85,7 +85,7 @@ function LessonHandler(props) {
 
   return (
     <NavigationContainer independent>
-      <Stack.Navigator initialRouteName="Level">
+      <Stack.Navigator initialRouteName="Grade">
         {/*  Need to improve this part here with a map for the minigames screen */}
         <Stack.Screen
           name="Level"

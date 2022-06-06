@@ -5,8 +5,6 @@ import styled from "styled-components/native";
 //import Header from './components/Header';
 import Score from "./components/Score";
 import Card from "./components/Card";
-import helpers from "./helpers";
-import { Lvl_1_LessonOne } from "../../../../../levelOne/lessonOne/LessonOne";
 
 const Row = styled.View`
   flex-direction: row;

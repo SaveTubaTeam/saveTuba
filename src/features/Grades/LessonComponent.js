@@ -5,11 +5,10 @@ import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
 import { Spacer } from "../../components/spacer.component";
 import {
-  Container,
   Mastery,
   Adventure,
   ImageBg,
-} from "../../components/Levels/levels.styles";
+} from "../../components/Grades/grades.styles";
 
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -19,6 +18,14 @@ import { Lvl_1_LessonTwo } from "./levelOne/lessonTwo/LessonTwo";
 import { Lvl_2_LessonOne } from "./levelTwo/lessonOne/LessonOne";
 import { Lvl_2_LessonTwo } from "./levelTwo/lessonTwo/LessonTwo";
 import { SafeArea } from "../../components/safe-area.component";
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #c5d9da;
+  padding: 20px;
+`;
 
 const Chunk = styled.View`
   margin-top: 5px;

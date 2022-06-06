@@ -93,7 +93,7 @@ const HomeScreen = () => {
         name="Grades"
         component={HomeView}
         options={{
-          title: "Классы", //Levels
+          title: "Классы", // Grades
           headerStyle: {
             backgroundColor: "#C6DC3B",
           },

@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Modal, ScrollView } from "react-native";
+import { View, TextInput, Modal, ScrollView } from "react-native";
 import styled from "styled-components/native";
-import { FlatList } from "react-native";
-import { TestImages } from "../../../features/Grades/IMAGES";
-import { Shadow } from "react-native-shadow-2";
 
 import { useNavigation } from "@react-navigation/native";
 
@@ -12,9 +9,8 @@ import { BodyText } from "../../body-text.component";
 // Firebase and redux imports for later use
 import { connect } from "react-redux";
 
-import { ImageBg } from "../../Levels/levels.styles";
+import { ImageBg } from "../../Grades/grades.styles";
 import { Button } from "react-native-paper";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 const HEADER_BLUE = "#0EABD9";
 const HEADER_BLUE_SHADOW = "#12A5D1";
@@ -38,7 +34,7 @@ const FinishedModal = ({ isVisible }) => {
       animationType="slide"
       visible={modalVisible}
       transparent={modalVisible}
-      onRequestClose={() => useNavigation().navigate("Level", { level: 1 })}
+      onRequestClose={() => useNavigation().navigate("Grade", { level: 1 })}
       style={{
         flex: 1,
         backgroundColor: "white",
@@ -258,30 +254,6 @@ const OpenResponseHandler = (props) => {
     </View>
   );
 };
-
-const Header = styled.View`
-  width: 100%;
-  height: 95%;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0px;
-  background-color: #0eabd9;
-`;
-
-const HeaderBacker = styled.View`
-  width: 100%;
-  height: 20%;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 0px;
-  background-color: #12a5d1;
-`;
 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,

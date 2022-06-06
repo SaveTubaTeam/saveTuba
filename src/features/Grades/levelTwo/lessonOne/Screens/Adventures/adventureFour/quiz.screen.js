@@ -56,7 +56,7 @@ const SecondScreen = ({ navigation }) => {
           </TitleText>
           <Spacer size="large" />
           <Pressable
-            onPress={() => navigation.navigate("Level")}
+            onPress={() => navigation.navigate("Grade")}
             style={styles.next}
           >
             <BodyText color="secondary">Вернитесь назад</BodyText>
