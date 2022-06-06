@@ -16,7 +16,7 @@ import { useNavigation } from "@react-navigation/native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import LessonHandler from "./LessonHandler";
+import IndividualLessonHandler from "./IndividualLessonHandler";
 
 import { styles } from "styled-system";
 
@@ -47,13 +47,17 @@ function GradeOneView() {
       <ScrollView style={{ alignContent: "center" }}>
         <TouchableOpacity
           style={style.roundButton1}
-          onPress={() => navigation.push("LessonHandler", { level: 1 })}
+          onPress={() =>
+            navigation.push("IndividualLessonHandler", { level: 1 })
+          }
         >
           <Text style={style.baseText}>1</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={style.roundButton2}
-          onPress={() => navigation.push("LessonHandler", { level: 2 })}
+          onPress={() =>
+            navigation.push("IndividualLessonHandler", { level: 2 })
+          }
         >
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
@@ -64,7 +68,7 @@ function GradeOneView() {
         />
         <TouchableOpacity
           style={style.roundButton3}
-          // onPress={() => navigation.push("LessonHandler", { level: 3 })}
+          // onPress={() => navigation.push("IndividualLessonHandler", { level: 3 })}
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
@@ -75,7 +79,7 @@ function GradeOneView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          // onPress={() => navigation.push("LessonHandler", { level: 4 })}
+          // onPress={() => navigation.push("IndividualLessonHandler", { level: 4 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -87,7 +91,7 @@ function GradeOneView() {
 
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LessonHandler", { level: 5 })}*/
+          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 5 })}*/
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
@@ -99,7 +103,7 @@ function GradeOneView() {
 
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LessonHandler", { level: 6 })}*/
+          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 6 })}*/
         >
           <Text style={style.baseText}>6</Text>
         </TouchableOpacity>
@@ -111,7 +115,7 @@ function GradeOneView() {
 
         <TouchableOpacity
           style={style.roundButton3}
-          /*onPress={() => navigation.push("LessonHandler", { level: 7 })}*/
+          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 7 })}*/
         >
           <Text style={style.baseText}>7</Text>
         </TouchableOpacity>
@@ -123,7 +127,7 @@ function GradeOneView() {
 
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("LessonHandler", { level: 8 })}*/
+          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 8 })}*/
         >
           <Text style={style.baseText}>8</Text>
         </TouchableOpacity>
@@ -135,7 +139,7 @@ function GradeOneView() {
 
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("LessonHandler", { level: 9 })}*/
+          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 9 })}*/
         >
           <Text style={style.baseText}>9</Text>
         </TouchableOpacity>
@@ -167,8 +171,8 @@ const GradeOne = () => {
         }}
       />
       <Stack.Screen
-        name="LessonHandler"
-        component={LessonHandler}
+        name="IndividualLessonHandler"
+        component={IndividualLessonHandler}
         options={{
           headerShown: false,
         }}

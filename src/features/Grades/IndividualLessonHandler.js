@@ -45,7 +45,7 @@ To add Lessons:
 
 const Stack = createNativeStackNavigator();
 
-function LessonHandler(props) {
+function IndividualLessonHandler(props) {
   //
   const { currentUser, navigation, route } = props; // the available props in the lesson
   const { level } = route.params; // Level selected from Lesson navigation screen
@@ -237,7 +237,7 @@ const mapStateToProps = (store) => ({
 });
 
 // Last function to connect the component to props of redux/firebase
-export default connect(mapStateToProps, null)(LessonHandler);
+export default connect(mapStateToProps, null)(IndividualLessonHandler);
 
 const Button = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.ui.tertiary};

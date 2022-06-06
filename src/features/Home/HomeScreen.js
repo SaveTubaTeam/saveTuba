@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import {
-  Text,
-  Button,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -36,9 +30,7 @@ function HomeView() {
   const navigation = useNavigation();
   return (
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
-      <ScrollView>
-        {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
-
+      <ScrollView style={{ paddingTop: 50 }}>
         <TouchableOpacity
           style={style.roundButton1}
           onPress={() => navigation.push("GradeOne")}
@@ -46,10 +38,6 @@ function HomeView() {
           <Text style={style.baseText}>1</Text>
         </TouchableOpacity>
 
-        {/* <Lock
-            style={{ top: 120, left: 330 }}
-            source={require("../../../assets/lock.png")}
-          /> */}
         <TouchableOpacity
           style={style.roundButton2}
           onPress={() => navigation.push("GradeTwo")}
@@ -104,6 +92,7 @@ const HomeScreen = () => {
           },
         }}
       />
+
       <Stack.Screen
         name="GradeOne"
         component={GradeOne}
