@@ -1,217 +1,30 @@
-import React from "react";
-import styled from "styled-components/native";
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Dimensions,
-} from "react-native";
-// import { auth } from "../../../firebase";
-import { useNavigation } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Test from "./Test";
 
-import IndividualLessonHandler from "./IndividualLessonHandler";
-
-const Stack = createNativeStackNavigator();
-const ImageBg = styled.ImageBackground`
-  width: ${Dimensions.get("window").width}px;
-  height: ${Dimensions.get("window").height}px;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-`;
-
-const Lock = styled.Image`
-  z-index: 100;
-  position: absolute;
-  width: 10%;
-  height: undefined;
-  aspect-ratio: 1;
-`;
-
-function GradeTwoView() {
-  const navigation = useNavigation();
-  return (
-    <>
-      <ScrollView style={{ alignContent: "center" }}>
-        <TouchableOpacity
-          style={style.roundButton1}
-          onPress={() =>
-            navigation.push("IndividualLessonHandler", { level: 3 })
-          }
-        >
-          <Text style={style.baseText}>1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={style.roundButton2}
-          onPress={() =>
-            navigation.push("IndividualLessonHandler", { level: 4 })
-          }
-        >
-          <Text style={style.baseText}>2</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 200, left: 350 }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton3}
-          // onPress={() => navigation.push("IndividualLessonHandler", { level: 3 })}
-        >
-          <Text style={style.baseText}>3</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 300, left: 220 }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton2}
-          // onPress={() => navigation.push("IndividualLessonHandler", { level: 4 })}
-        >
-          <Text style={style.baseText}>4</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 400, left: 75 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton1}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 5 })}*/
-        >
-          <Text style={style.baseText}>5</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 500, left: 220 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton2}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 6 })}*/
-        >
-          <Text style={style.baseText}>6</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 600, left: 350 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton3}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 7 })}*/
-        >
-          <Text style={style.baseText}>7</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 700, left: 220 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton2}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 8 })}*/
-        >
-          <Text style={style.baseText}>8</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 800, left: 70 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton1}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 9 })}*/
-        >
-          <Text style={style.baseText}>9</Text>
-        </TouchableOpacity>
-      </ScrollView>
-      <ImageBg source={require("../../../assets/lessonbg2.png")}></ImageBg>
-    </>
-  );
-}
-
-const GradeTwo = () => {
-  const navigation = useNavigation();
-  return (
-    //<NavigationContainer independent ={false}>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Grade Two"
-        component={GradeTwoView}
-        options={{
-          title: "Класс 2", // grade 2
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: "#C6DC3B",
-          },
-          headerTitleStyle: {
-            fontSize: 20,
-            fontFamily: "Gabriela_400Regular",
-            color: "#748816",
-          },
-        }}
-      />
-      <Stack.Screen
-        name="IndividualLessonHandler"
-        component={IndividualLessonHandler}
-        options={{ headerShown: false }}
-        initialParams={{ level: 1 }}
-      />
-    </Stack.Navigator>
-    //</NavigationContainer>
-  );
+export const Grade2 = {
+  chapters: [
+    {
+      navigation: "Chapter1", // you need to specify name or key when calling navigate
+      title: "Chapter One",
+      key: "C1",
+      component: Test,
+    },
+    {
+      navigation: "Chapter2",
+      title: "Chapter Two",
+      key: "C2",
+      component: Test,
+    },
+    {
+      navigation: "Chapter3",
+      title: "Chapter Three",
+      key: "C3",
+      component: Test,
+    },
+    {
+      navigation: "Chapter4",
+      title: "Chapter Four",
+      key: "C4",
+      component: Test,
+    },
+  ],
 };
-
-export default GradeTwo;
-
-const style = StyleSheet.create({
-  roundButton1: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    left: 10,
-    borderRadius: 100,
-    backgroundColor: "#CCE882",
-  },
-  roundButton2: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    left: 150,
-    borderRadius: 100,
-    backgroundColor: "#CCE882",
-  },
-  roundButton3: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    left: 280,
-    borderRadius: 100,
-    backgroundColor: "#CCE882",
-  },
-  baseText: {
-    fontSize: 50,
-    color: "white",
-  },
-  backText: {
-    fontSize: 15,
-  },
-});

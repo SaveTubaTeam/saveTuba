@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
-
 // Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -47,28 +45,30 @@ export class Main extends Component {
         }}
       >
         <Tab.Screen
-          name="Профиль" //Profile
+          name="Profile"
           component={ProfileScreen}
           options={{
+            title: "Профиль",
             tabBarIcon: ({ color }) => (
               <Ionicons name="person" color={color} size={32} />
             ),
           }}
         />
         <Tab.Screen
-          name="Дом" //"Home"
+          name="Home"
           component={HomeScreen}
           options={{
+            title: "Дом",
             tabBarIcon: ({ color }) => (
               <Ionicons name="home" color={color} size={32} />
             ),
           }}
         />
-        {/* <Tab.Screen name="Unity" component={null} /> */}
         <Tab.Screen
-          name="Настройки" //Settings
+          name="Settings"
           component={AccountNav}
           options={{
+            title: "Настройки",
             tabBarIcon: ({ color }) => (
               <Ionicons name="settings" color={color} size={32} />
             ),

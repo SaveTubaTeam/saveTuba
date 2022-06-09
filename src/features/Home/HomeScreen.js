@@ -1,26 +1,13 @@
 import React from "react";
 import styled from "styled-components/native";
 import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import GradeOne from "../Grades/GradeOne";
-import GradeTwo from "../Grades/GradeTwo";
-import GradeThree from "../Grades/GradeThree";
-import GradeFour from "../Grades/GradeFour";
-
 import { connect } from "react-redux";
 
-const Stack = createNativeStackNavigator();
+import ChaptersHandler from "../Grades/ChaptersHandler";
 
-const Lock = styled.Image`
-  z-index: 100;
-  position: absolute;
-  width: 15%;
-  height: undefined;
-  aspect-ratio: 1;
-`;
+const Stack = createNativeStackNavigator();
 
 const ImageBg = styled.ImageBackground`
   height: 100%;
@@ -33,36 +20,30 @@ function HomeView() {
       <ScrollView style={{ paddingTop: 50 }}>
         <TouchableOpacity
           style={style.roundButton1}
-          onPress={() => navigation.push("GradeOne")}
+          onPress={() => {
+            navigation.push("ChaptersHandler", { level: 1 });
+          }}
         >
           <Text style={style.baseText}>1</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={style.roundButton2}
-          onPress={() => navigation.push("GradeTwo")}
+          onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
         >
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-        <Lock
-          style={{ top: 250, left: 100 }}
-          source={require("../../../assets/lock.png")}
-        />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("GradeThree")}*/
+          onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
-        <Lock
-          style={{ top: 370, right: 30, alignSelf: "flex-end" }}
-          source={require("../../../assets/lock.png")}
-        />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("GradeFour")}*/
+          onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -72,10 +53,7 @@ function HomeView() {
 }
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
-
   return (
-    //<NavigationContainer independent ={true}>
     <Stack.Navigator>
       <Stack.Screen
         name="Grades"
@@ -94,30 +72,14 @@ const HomeScreen = () => {
       />
 
       <Stack.Screen
-        name="GradeOne"
-        component={GradeOne}
+        name="ChaptersHandler"
+        component={ChaptersHandler}
         options={{
           headerShown: false,
         }}
-      />
-      <Stack.Screen
-        name="GradeTwo"
-        component={GradeTwo}
-        options={{ headerShown: false }}
-      />
-
-      <Stack.Screen
-        name="GradeThree"
-        component={GradeThree}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="GradeFour"
-        component={GradeFour}
-        options={{ headerShown: false }}
+        initialParams={{ level: 1 }}
       />
     </Stack.Navigator>
-    //</NavigationContainer>
   );
 };
 

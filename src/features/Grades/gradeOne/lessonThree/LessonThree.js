@@ -1,4 +1,4 @@
-import { AdventureImages } from "../../IMAGES";
+import { AdventureImages } from "../../../../components/Grades/IMAGES";
 
 import MasteryScreen from "./Screens/Mastery/mastery";
 

@@ -1,17 +1,24 @@
-import React from "react";
-import { Text, View } from "react-native";
+import Test from "./Test";
 
-const GradeTwo = () => {
-  return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>GradeFour!</Text>
-    </View>
-  );
+export const Grade4 = {
+  chapters: [
+    {
+      navigation: "Chapter1",
+      title: "Chapter One",
+      key: "C1",
+      component: Test,
+    },
+    {
+      navigation: "Chapter2",
+      title: "Chapter Two",
+      key: "C2",
+      component: Test,
+    },
+    {
+      navigation: "Chapter3",
+      title: "Chapter Three",
+      key: "C3",
+      component: Test,
+    },
+  ],
 };
-export default GradeTwo;

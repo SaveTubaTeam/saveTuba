@@ -1,226 +1,213 @@
-import React from "react";
-import styled from "styled-components/native";
+import Test from "./Test";
 import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Touchable,
-  Image,
-  Dimensions,
-} from "react-native";
-import { SafeArea } from "../../components/safe-area.component";
-// import { auth } from "../../../firebase";
-import { useNavigation } from "@react-navigation/native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+  AdventureImages,
+  SortingImages,
+  QuizImages,
+  TestImages,
+} from "../../components/Grades/IMAGES";
 
-import IndividualLessonHandler from "./IndividualLessonHandler";
-
-import { styles } from "styled-system";
-
-const Stack = createNativeStackNavigator();
-const ImageBg = styled.ImageBackground`
-  width: ${Dimensions.get("window").width}px;
-  height: ${Dimensions.get("window").height}px;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-`;
-
-const Lock = styled.Image`
-  z-index: 100;
-  position: absolute;
-  width: 10%;
-  height: undefined;
-  aspect-ratio: 1;
-`;
-
-function GradeOneView() {
-  const navigation = useNavigation();
-  return (
-    <>
-      <ScrollView style={{ alignContent: "center" }}>
-        <TouchableOpacity
-          style={style.roundButton1}
-          onPress={() =>
-            navigation.push("IndividualLessonHandler", { level: 1 })
-          }
-        >
-          <Text style={style.baseText}>1</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={style.roundButton2}
-          onPress={() =>
-            navigation.push("IndividualLessonHandler", { level: 2 })
-          }
-        >
-          <Text style={style.baseText}>2</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 200, left: 350 }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton3}
-          // onPress={() => navigation.push("IndividualLessonHandler", { level: 3 })}
-        >
-          <Text style={style.baseText}>3</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 300, left: 220 }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton2}
-          // onPress={() => navigation.push("IndividualLessonHandler", { level: 4 })}
-        >
-          <Text style={style.baseText}>4</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 400, left: 75 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton1}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 5 })}*/
-        >
-          <Text style={style.baseText}>5</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 500, left: 220 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton2}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 6 })}*/
-        >
-          <Text style={style.baseText}>6</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 600, left: 350 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton3}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 7 })}*/
-        >
-          <Text style={style.baseText}>7</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 700, left: 220 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton2}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 8 })}*/
-        >
-          <Text style={style.baseText}>8</Text>
-        </TouchableOpacity>
-
-        <Lock
-          style={{ top: 800, left: 70 }}
-          source={require("../../../assets/lock.png")}
-        />
-
-        <TouchableOpacity
-          style={style.roundButton1}
-          /*onPress={() => navigation.push("IndividualLessonHandler", { level: 9 })}*/
-        >
-          <Text style={style.baseText}>9</Text>
-        </TouchableOpacity>
-      </ScrollView>
-      <ImageBg source={require("../../../assets/lessonbg.png")} />
-    </>
-  );
-}
-
-const GradeOne = () => {
-  const navigation = useNavigation();
-  return (
-    //<NavigationContainer independent ={false}>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Grade One"
-        component={GradeOneView}
-        options={{
-          title: "Класс 1", // grade 1
-          headerShown: true,
-          headerStyle: {
-            backgroundColor: "#C6DC3B",
+export const Grade1 = {
+  numChapter: 3,
+  chapters: [
+    {
+      navigation: "Chapter1", // name of the Stack Screen
+      title: "Chapter One",
+      key: "C1",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 1 Chapter 1 Lesson 1 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1",
+          title: "Lesson One",
+          key: "C1_L1",
+          minigames: {
+            memory: {
+              navigation: "Memory",
+              title: "Объем памяти",
+              key: "testkey0",
+              image: AdventureImages.matching,
+              component: Test,
+            },
+            sorting: {
+              navigation: "Sorting",
+              title: "Сортировка", // Sorting
+              description: "Выберите соответствующую категорию", // Choose the corresponding category.
+              key: "testkey1",
+              image: AdventureImages.multiplechoice,
+              content: [
+                {
+                  imageBg: SortingImages.bg[0].lvl_1_les_1,
+                  categoryOne: "Живой",
+                  categoryTwo: "Не живой",
+                },
+                {
+                  first: "Вода",
+                  firstAnswer: "Не живой",
+                  firstImage: SortingImages.lvl_1_les_1[0].firstImage,
+                  second: "Животные",
+                  secondAnswer: "Живой",
+                  secondImage: SortingImages.lvl_1_les_1[0].secondImage,
+                  third: "Растения",
+                  thirdAnswer: "Живой",
+                  thirdImage: SortingImages.lvl_1_les_1[0].thirdImage,
+                },
+              ],
+            },
           },
-          headerTitleStyle: {
-            fontSize: 20,
-            fontFamily: "Gabriela_400Regular",
-            color: "#748816",
+        },
+
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 1 Chapter 1 Lesson 2 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+
+        {
+          navigation: "Lesson2",
+          title: "Lesson Two",
+          key: "C1_L2",
+          minigames: {
+            sorting: {
+              navigation: "Sorting",
+              title: "Сортировка", // Sorting
+              description: "Выберите соответствующую категорию", // Choose the corresponding category.
+              key: "testkey1",
+              image: AdventureImages.multiplechoice,
+              content: [
+                {
+                  imageBg: SortingImages.bg[0].lvl_1_les_2,
+                  categoryOne: "Повторное использование",
+                  categoryTwo: "Переработка",
+                  categoryThree: "Сокращение",
+                },
+                {
+                  first: "Покупайте только то, что вам нужно",
+                  firstAnswer: "Сокращение",
+                  second: "Купить оптом",
+                  secondAnswer: "Сокращение",
+                  third: "Разделение стекла",
+                  thirdAnswer: "Переработка",
+                },
+              ],
+            },
+            memory: {
+              navigation: "Memory",
+              title: "Объем памяти",
+              key: "testkey0",
+              image: AdventureImages.matching,
+              component: Test,
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              title: "Викторина", // Quiz
+              description: "Выберите правильный ответ", // Choose the correct answer.
+              key: "testkey2",
+              image: AdventureImages.multiplechoice,
+              content: [
+                {
+                  imageBg: QuizImages.bg[0].lvl_1_les_1,
+                },
+                {
+                  prompt: "Устойчивый город — это:",
+                  first: "Город, использующий чистую энергию",
+                  second:
+                    "Город, который перерабатывает, повторно использует и сокращает",
+                  third:
+                    "Город, который уменьшает загрязнение, которое производят они",
+                  fourth: "Все вышеперечисленное",
+                  answer: 4,
+                },
+                {
+                  prompt:
+                    "Что из следующего является стратегией построения устойчивого будущего?",
+                  first: "Импорт дополнительных ресурсов",
+                  second: "Использование местных материалов",
+                  third:
+                    "Строительство большего количества атомных электростанций",
+                  fourth: "Создание большего количества отходов",
+                  answer: 2,
+                },
+                {
+                  prompt: "Каково официальное определение устойчивости?",
+                  first:
+                    "Понимание того, как удовлетворить потребности нынешнего поколения",
+                  second:
+                    "Понимание того, как удовлетворить потребности настоящего, не ставя под угрозу потребности будущих поколений, чтобы удовлетворить их собственные потребности",
+                  third:
+                    "Понимание того, как удовлетворить потребности будущих поколений",
+                  fourth: "Ничего из вышеперечисленного",
+                  answer: 2,
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: "Изображение Бум",
+              description: "Отвечать открыто", // Answer openly
+              image: AdventureImages.puzzle,
+              key: "testkey3",
+              data: {
+                numberOfPrompts: 4,
+                prompts: [
+                  {
+                    prompt: "Bro can u just work please",
+                    maxChar: 500,
+                    imageType: "svg",
+                    image: TestImages.bikingPic,
+                  },
+                  {
+                    prompt: "Bro can u just work please",
+                    maxChar: 500,
+                    imageType: "svg",
+                    image: TestImages.faucetPic,
+                  },
+                  {
+                    prompt: "Bro can u just work please",
+                    maxChar: 500,
+                    imageType: "svg",
+                    image: TestImages.recyclingPic,
+                  },
+                  {
+                    prompt: "Bro can u just work please",
+                    maxChar: 500,
+                    imageType: "svg",
+                    image: TestImages.lightsPic,
+                  },
+                ],
+              },
+            },
           },
-        }}
-      />
-      <Stack.Screen
-        name="IndividualLessonHandler"
-        component={IndividualLessonHandler}
-        options={{
-          headerShown: false,
-        }}
-        initialParams={{ level: 1 }}
-      />
-    </Stack.Navigator>
-    //</NavigationContainer>
-  );
+        },
+      ],
+    },
+    {
+      navigation: "Chapter2",
+      title: "Chapter Two", // later change the text in <Chapter> so it doesn't just say Chapter2
+      key: "C2",
+      lessons: [
+        {
+          navigation: "Lesson1",
+          title: "Lesson One",
+          key: "C2_L1",
+          component: Test,
+        },
+      ],
+    },
+    {
+      navigation: "Chapter3",
+      title: "Chapter Three",
+      key: "C3",
+      lessons: [
+        {
+          navigation: "Lesson1",
+          title: "Lesson One",
+          key: "C3_L1",
+          component: Test,
+        },
+      ],
+    },
+  ],
 };
-
-export default GradeOne;
-
-const style = StyleSheet.create({
-  roundButton1: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    left: 10,
-    borderRadius: 100,
-    backgroundColor: "#CCE882",
-  },
-  roundButton2: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    left: 150,
-    borderRadius: 100,
-    backgroundColor: "#CCE882",
-  },
-  roundButton3: {
-    width: 100,
-    height: 100,
-    justifyContent: "center",
-    alignItems: "center",
-    padding: 10,
-    left: 280,
-    borderRadius: 100,
-    backgroundColor: "#CCE882",
-  },
-  baseText: {
-    fontSize: 50,
-    color: "white",
-  },
-  backText: {
-    fontSize: 15,
-  },
-});

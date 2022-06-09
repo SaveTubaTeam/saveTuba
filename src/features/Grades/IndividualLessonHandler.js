@@ -1,111 +1,43 @@
-import React, { useState, useEffect } from "react";
-import { View } from "react-native";
+import React from "react";
 import styled from "styled-components/native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import LessonComponent from "./LessonComponent";
-
-import OpenResponseHandler from "../../components/minigames/OpenResponse/OpenResponseHandler";
-
 import { connect } from "react-redux";
 
-import QuizHandler from "../../components/minigames/Quiz/QuizHandler";
-import SortingHandler from "../../components/minigames/Sorting/SortingHandler";
-
-// want to import data here?
-import { Lvl_1_LessonOne } from "./gradeOne/lessonOne/LessonOne";
-import { Lvl_1_LessonTwo } from "./gradeOne/lessonTwo/LessonTwo";
-import { Lvl_2_LessonOne } from "./gradeTwo/lessonOne/LessonOne";
-import { Lvl_2_LessonTwo } from "./gradeTwo/lessonTwo/LessonTwo";
-import { TitleText } from "../../components/title-text.component";
-
-const TempScreen = ({ navigation }) => {
-  return (
-    <View
-      style={{
-        alignContent: "center",
-        alignItems: "center",
-        flex: 1,
-      }}
-    >
-      <TitleText>В разработке</TitleText>
-    </View>
-  );
-};
-
-/*
-To add Lessons: 
-  1: First create the Lesson<number>.js within the folder (Imports will work automatically if you copy LessonOne or Two).
-  2: Create A summary componenet (imports will work automatically if you copy other summary component)
-  3: Import Lesson<N> into this screen and into LessonComponent
-  4: Add Lesson<N> into the switch statement for the levelselector
-  5: Done?
-*/
+import LessonComponent from "./LessonComponent";
+import OpenResponseHandler from "../../components/Grades/minigames/OpenResponse/OpenResponseHandler";
+import QuizHandler from "../../components/Grades/minigames/Quiz/QuizHandler";
+import SortingHandler from "../../components/Grades/minigames/Sorting/SortingHandler";
 
 const Stack = createNativeStackNavigator();
 
-function IndividualLessonHandler(props) {
-  //
-  const { currentUser, navigation, route } = props; // the available props in the lesson
-  const { level } = route.params; // Level selected from Lesson navigation screen
-  const [selectedLevel, setSelectedLevel] = useState(null);
-  const [score, setScore] = useState(0);
-  function changeScore(value) {
-    setScore(value);
-  }
-
-  useEffect(() => {
-    // Function called on LessonHandler mount to determine data to select for lesson component
-    switch (level) {
-      case 1:
-        setSelectedLevel(Lvl_1_LessonOne);
-        break;
-      case 2:
-        setSelectedLevel(Lvl_1_LessonTwo);
-        break;
-      case 3:
-        setSelectedLevel(Lvl_2_LessonOne);
-        break;
-      case 4:
-        setSelectedLevel(Lvl_2_LessonTwo);
-        break;
-      default:
-        setSelectedLevel(null);
-        break;
-    }
-  }, []);
-
-  // variables and function to change minigame scores **Needs to be moved
-
-  // Allows useEffect to change selected Level **Needs to be replaced with animation for loading
-  if (selectedLevel == null) {
-    return <View></View>;
-  }
-
+function IndividualLessonHandler({
+  selectedGrade,
+  selectedChapter,
+  selectedLesson,
+}) {
+  const navigation = useNavigation();
   return (
     <NavigationContainer independent>
-      <Stack.Navigator initialRouteName="Grade">
+      <Stack.Navigator initialRouteName="Lesson">
         {/*  Need to improve this part here with a map for the minigames screen */}
         <Stack.Screen
-          name="Level"
-          component={LessonComponent}
+          name="Lesson"
           options={{
-            title: " ",
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerBackTitle: "Back",
-            headerTitleStyle: {
-              fontSize: 20,
-              fontFamily: "Gabriela_400Regular",
-              color: "#748816",
-            },
+            headerShown: false,
           }}
-          initialParams={{ level: level }}
-        />
+        >
+          {() => (
+            <LessonComponent
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={selectedLesson}
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
+
         <Stack.Screen
-          component={selectedLevel.memory.component}
           name="Memory"
           options={{
             title: "Игра на запоминание",
@@ -115,7 +47,19 @@ function IndividualLessonHandler(props) {
               backgroundColor: "#C6DC3B",
             },
           }}
-        ></Stack.Screen>
+        >
+          {() =>
+            "memory" in
+            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+              .minigames ? (
+              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                .minigames.memory.component
+            ) : (
+              <></>
+            )
+          }
+        </Stack.Screen>
+
         <Stack.Screen
           name="Sorting"
           options={{
@@ -129,25 +73,13 @@ function IndividualLessonHandler(props) {
         >
           {() => (
             <SortingHandler
-              data={selectedLevel.minigames[0]}
-              navigation={navigation}
+              data={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.sorting
+              }
             />
           )}
         </Stack.Screen>
-        {selectedLevel.drawing.component != null && (
-          <Stack.Screen
-            name="DrawingGame"
-            component={selectedLevel.drawing.component}
-            options={{
-              title: "Рисование",
-              headerTintColor: "white",
-              headerBackTitleVisible: false,
-              headerStyle: {
-                backgroundColor: "#C6DC3B",
-              },
-            }}
-          />
-        )}
 
         <Stack.Screen
           name="QuizScreen"
@@ -162,24 +94,16 @@ function IndividualLessonHandler(props) {
         >
           {() => (
             <QuizHandler
-              data={selectedLevel.minigames[3]}
-              navigation={navigation}
+              data={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.quiz
+              }
             />
           )}
         </Stack.Screen>
+
         <Stack.Screen
-          name="MultipleChoice"
-          component={TempScreen}
-          options={{
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-          }}
-        />
-        <Stack.Screen
-          name="Image Bananza"
+          name="Image Boom"
           options={{
             title: "Изображение Бум",
             headerTintColor: "white",
@@ -191,11 +115,30 @@ function IndividualLessonHandler(props) {
         >
           {() => (
             <OpenResponseHandler
-              questionSet={selectedLevel.minigames[2].data}
+              questionSet={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.openresponse.data
+              }
               navigation={navigation}
             />
           )}
         </Stack.Screen>
+        {/*
+        {selectedLevel.drawing.component != null && (
+          <Stack.Screen
+            name="DrawingGame"
+            component={selectedLevel.drawing.component}
+            options={{
+              title: "Рисование",
+              headerTintColor: "white",
+              headerBackTitleVisible: false,
+              headerStyle: {
+                backgroundColor: "#C6DC3B",
+              },
+            }}
+          />
+        )}
+        
         <Stack.Screen
           name="Puzzle"
           component={selectedLevel.puzzle.component}
@@ -208,8 +151,6 @@ function IndividualLessonHandler(props) {
           }}
         ></Stack.Screen>
 
-        {/* Here will be a stack screen for the adventureComponent*/}
-        {/* Mastery Component based of selectedLevel */}
         <Stack.Screen
           name={selectedLevel.masteryComponent.route}
           component={selectedLevel.masteryComponent.component}
@@ -225,7 +166,7 @@ function IndividualLessonHandler(props) {
               fontFamily: "Gabriela_400Regular",
             },
           }}
-        ></Stack.Screen>
+        ></Stack.Screen>*/}
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -238,12 +179,3 @@ const mapStateToProps = (store) => ({
 
 // Last function to connect the component to props of redux/firebase
 export default connect(mapStateToProps, null)(IndividualLessonHandler);
-
-const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: 10px;
-  width: 50%;
-  align-items: center;
-`;

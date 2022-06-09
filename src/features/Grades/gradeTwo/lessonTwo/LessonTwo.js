@@ -3,7 +3,7 @@ import {
   SortingImages,
   TestImages,
   QuizImages,
-} from "../../IMAGES";
+} from "../../../../components/Grades/IMAGES";
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";

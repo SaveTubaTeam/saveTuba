@@ -22,7 +22,6 @@ import { LogBox } from "react-native";
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Different Screens thus far
 import LoginScreen from "./src/features/Login/LoginScreen";
@@ -43,9 +42,6 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
-
-// Tab Navigator used for creating the bottom tab where home and other settings are visible
-const Tab = createBottomTabNavigator();
 
 LogBox.ignoreLogs(["Setting a timer"]);
 

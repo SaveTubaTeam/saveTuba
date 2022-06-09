@@ -1,59 +1,13 @@
 import React, { useState } from "react";
-import { View, TextInput, Modal, ScrollView } from "react-native";
-import styled from "styled-components/native";
-
-import { useNavigation } from "@react-navigation/native";
-
-import { TitleText } from "../../title-text.component";
-import { BodyText } from "../../body-text.component";
-// Firebase and redux imports for later use
+import { View, TextInput, ScrollView } from "react-native";
 import { connect } from "react-redux";
-
-import { ImageBg } from "../../Grades/grades.styles";
 import { Button } from "react-native-paper";
 
-const HEADER_BLUE = "#0EABD9";
-const HEADER_BLUE_SHADOW = "#12A5D1";
-
-const HEADER_SIDE_BLUE = "#51CAEE";
-const HEADER_SIDE_BLUE_SHADOW = "#51CAEE";
-
-const FinishedModal = ({ isVisible }) => {
-  console.log("Please!!: " + isVisible);
-  const [modalVisible, setModalVisible] = useState(() => {
-    if (isVisible) {
-      console.log("HERE");
-      return true;
-    } else {
-      return false;
-    }
-  });
-  console.log("bruh fuck u: " + modalVisible);
-  return (
-    <Modal
-      animationType="slide"
-      visible={modalVisible}
-      transparent={modalVisible}
-      onRequestClose={() => useNavigation().navigate("Grade", { level: 1 })}
-      style={{
-        flex: 1,
-        backgroundColor: "white",
-      }}
-    >
-      <Button
-        style={{
-          backgroundColor: "red",
-          width: 100,
-          height: 100,
-        }}
-        onPress={() => setModalVisible(!modalVisible)}
-      ></Button>
-    </Modal>
-  );
-};
+import { TitleText } from "../../../title-text.component";
+import { BodyText } from "../../../body-text.component";
+import { ImageBg } from "../../grades.styles";
 
 const ImagePrompt = ({ questions }) => {
-  // const navigation = useNavigation();
   const [currentPrompt, setPrompt] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -62,8 +16,6 @@ const ImagePrompt = ({ questions }) => {
       <View
         style={{
           flex: 1,
-          // backgroundColor: 'white',
-          // questionSet.prompts[currentPrompt].image
           alignItems: "center",
         }}
       >
@@ -145,8 +97,6 @@ const ImagePrompt = ({ questions }) => {
               height: 240,
               backgroundColor: "white",
               borderRadius: 30,
-              // alignItems: 'center',
-              // justifyContent: 'center',
               shadowColor: "black",
               shadowOffset: { width: 200, height: 200 },
               shadowRadius: 20,
@@ -185,26 +135,12 @@ const ImagePrompt = ({ questions }) => {
                   borderRadius: 20,
                 }}
                 onPress={() => {
-                  // console.log(questions.prompts[currentPrompt]);
                   if (currentPrompt < questions.numberOfPrompts - 1) {
                     setPrompt(currentPrompt + 1);
                   } else {
                     setModalVisible((modalVisible) => !modalVisible);
                     console.log("Yo: " + modalVisible);
-                    // navigation.navigate("Level", {level: 1});
                   }
-                  // try {
-                  //   if (questions.prompts[currentPrompt] == undefined) {
-                  //     console.log("Bro fucking work");
-                  //     navigation.navigate("Level", {level: 1});
-                  //   } else {
-                  //     console.log("Bro fucking work please");
-                  //     setPrompt(currentPrompt + 1);
-                  //   }
-                  // } catch (err) {
-                  //   navigation.navigate("Level", {level: 1});
-                  //   console.log("What the fuck stop throwing the stupid fucking error u cunt");
-                  // }
                 }}
               >
                 <BodyText color="secondary">Отправить</BodyText>
@@ -212,22 +148,16 @@ const ImagePrompt = ({ questions }) => {
             </View>
           </View>
         </View>
-        {/*}
-      <FinishedModal isVisible={modalVisible} />*/}
       </View>
     </ScrollView>
   );
 };
 
-const OpenResponseHandler = (props) => {
-  const { currentUser, questionSet } = props;
-
-  // console.warn(questionSet);
-  // console.warn(questionSet.prompts[0]); --- questionSet.prompts[0]
+const OpenResponseHandler = ({ questionSet }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBg
-        source={require("../../../../assets/promptBackground.jpg")}
+        source={require("../../../../../assets/promptBackground.jpg")}
         resizeMode="cover"
         style={{
           flex: 1,
@@ -240,15 +170,6 @@ const OpenResponseHandler = (props) => {
           }}
         >
           <ImagePrompt questions={questionSet} />
-          {/* <ImagePrompt2 questionSet={questionSet}/>  */}
-          {/* <View -- currentPrompt.image
-            style={{
-              width: 100,
-              height: 100,
-              backgroundColor: 'white',
-            }}
-          >
-          </View> */}
         </View>
       </ImageBg>
     </View>

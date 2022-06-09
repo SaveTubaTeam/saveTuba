@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { View, Modal, Pressable, TouchableOpacity } from "react-native";
+import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { TitleText } from "../../title-text.component";
-import { BodyText } from "../../body-text.component";
-import { SafeArea } from "../../safe-area.component";
-import { Spacer } from "../../spacer.component";
+import { TitleText } from "../../../title-text.component";
+import { BodyText } from "../../../body-text.component";
+import { SafeArea } from "../../../safe-area.component";
+import { Spacer } from "../../../spacer.component";
 
 const Stack = createNativeStackNavigator();
 
@@ -76,7 +76,7 @@ const SecondScreen = ({ data }) => {
             опрос!
           </TitleText>
           <Spacer size="large" />
-          <Pressable onPress={() => navigation.navigate("Grade")}>
+          <Pressable onPress={() => navigation.navigate("Lesson")}>
             <BodyText color="primary">Назад</BodyText>
           </Pressable>
         </Container2>
@@ -319,12 +319,21 @@ const Start = ({ data }) => {
   );
 };
 
-const QuizHandler = ({ data, navigation }) => {
+const Test = ({ data }) => {
+  return (
+    <TouchableOpacity onPress={() => console.log(data)}>
+      <Text>hi</Text>
+    </TouchableOpacity>
+  );
+};
+
+const QuizHandler = ({ data }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} />}
       </Stack.Screen>
+
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
         {() => <SecondScreen data={data} />}
       </Stack.Screen>

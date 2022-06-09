@@ -1,9 +1,13 @@
-import { AdventureImages, SortingImages, QuizImages } from "../../IMAGES";
+import {
+  AdventureImages,
+  SortingImages,
+  QuizImages,
+} from "../../../../components/Grades/IMAGES";
 
 import MasteryScreen from "./Screens/Mastery/mastery";
 import { AdventureOne } from "./Screens/Adventures/adventureOne/adventureOne.screen";
 import { Puzzle } from "./Screens/Adventures/adventureThree/puzzle.component";
-import { TestImages } from "../../IMAGES";
+import { TestImages } from "../../../../components/Grades/IMAGES";
 
 export const Lvl_2_LessonOne = {
   title: "Изменение климата", // climate change

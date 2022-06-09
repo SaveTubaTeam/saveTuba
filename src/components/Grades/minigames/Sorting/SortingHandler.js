@@ -5,11 +5,11 @@ import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { TitleText } from "../../title-text.component";
-import { BodyText } from "../../body-text.component";
-import { SafeArea } from "../../safe-area.component";
-import { ImageBg } from "../../Grades/grades.styles";
-import { Spacer } from "../../spacer.component";
+import { TitleText } from "../../../title-text.component";
+import { BodyText } from "../../../body-text.component";
+import { SafeArea } from "../../../safe-area.component";
+import { ImageBg } from "../../grades.styles";
+import { Spacer } from "../../../spacer.component";
 
 const Stack = createNativeStackNavigator();
 
@@ -97,7 +97,7 @@ const SecondScreen = ({ data }) => {
             Отличная работа! Вернитесь к уроку, чтобы продолжить обучение!
           </TitleText>
           <Spacer size="large" />
-          <Pressable onPress={() => navigation.navigate("Grade")}>
+          <Pressable onPress={() => navigation.navigate("Lesson")}>
             <BodyText color="primary">Назад</BodyText>
           </Pressable>
         </Container2>
