@@ -20,8 +20,7 @@ const Container = styled.View`
 `;
 
 const Container2 = styled.View`
-  width: 90%
-  padding: 20px;
+  width: 90%;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
@@ -188,77 +187,75 @@ const Start = ({ data }) => {
   return (
     <>
       <ImageBg source={data.content[0].imageBg}>
-        <SafeArea>
-          <Container>
-            <View
-              style={{
-                maxWidth: "100%",
-                paddingTop: 130,
+        <Container>
+          <View
+            style={{
+              maxWidth: "100%",
+              paddingTop: 130,
+            }}
+          >
+            <Category
+              activeOpacity="0.8"
+              onPress={() => {
+                setAnswer(data.content[0].categoryOne);
+                checkAnswer(data.content[0].categoryOne);
+                setVisible(true);
               }}
             >
+              <BodyText size="title">{data.content[0].categoryOne}</BodyText>
+            </Category>
+            <Category
+              activeOpacity="0.8"
+              onPress={() => {
+                setAnswer(data.content[0].categoryTwo);
+                checkAnswer(data.content[0].categoryTwo);
+                setVisible(true);
+              }}
+            >
+              <BodyText size="title">{data.content[0].categoryTwo}</BodyText>
+            </Category>
+
+            {/* OPTIONAL THIRD CATEGORY */}
+            {data.content[0].categoryThree != null && (
               <Category
                 activeOpacity="0.8"
                 onPress={() => {
-                  setAnswer(data.content[0].categoryOne);
-                  checkAnswer(data.content[0].categoryOne);
+                  setAnswer(data.content[0].categoryThree);
+                  checkAnswer(data.content[0].categoryThree);
                   setVisible(true);
                 }}
               >
-                <BodyText size="title">{data.content[0].categoryOne}</BodyText>
+                <BodyText size="title">
+                  {data.content[0].categoryThree}
+                </BodyText>
               </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(data.content[0].categoryTwo);
-                  checkAnswer(data.content[0].categoryTwo);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="title">{data.content[0].categoryTwo}</BodyText>
-              </Category>
+            )}
+          </View>
 
-              {/* OPTIONAL THIRD CATEGORY */}
-              {data.content[0].categoryThree != null && (
-                <Category
-                  activeOpacity="0.8"
-                  onPress={() => {
-                    setAnswer(data.content[0].categoryThree);
-                    checkAnswer(data.content[0].categoryThree);
-                    setVisible(true);
-                  }}
-                >
-                  <BodyText size="title">
-                    {data.content[0].categoryThree}
-                  </BodyText>
-                </Category>
-              )}
-            </View>
-
-            <Modko
-              visible={false}
-              correctAnswer={correctAnswer}
-              answer={answer}
-            />
-          </Container>
-          <Option style={{ opacity: visibleOne }}>
-            <TitleText>{data.content[1].first}</TitleText>
-            {data.content[1].firstImage && (
-              <Img resizeMode="contain" source={data.content[1].firstImage} />
-            )}
-          </Option>
-          <Option style={{ opacity: visibleTwo }}>
-            <TitleText>{data.content[1].second}</TitleText>
-            {data.content[1].secondImage && (
-              <Img resizeMode="contain" source={data.content[1].secondImage} />
-            )}
-          </Option>
-          <Option style={{ opacity: visibleThree }}>
-            <TitleText>{data.content[1].third}</TitleText>
-            {data.content[1].thirdImage && (
-              <Img resizeMode="contain" source={data.content[1].thirdImage} />
-            )}
-          </Option>
-        </SafeArea>
+          <Modko
+            visible={false}
+            correctAnswer={correctAnswer}
+            answer={answer}
+          />
+        </Container>
+        <Option style={{ opacity: visibleOne }}>
+          <TitleText>{data.content[1].first}</TitleText>
+          {data.content[1].firstImage && (
+            <Img resizeMode="contain" source={data.content[1].firstImage} />
+          )}
+        </Option>
+        <Option style={{ opacity: visibleTwo }}>
+          <TitleText>{data.content[1].second}</TitleText>
+          {data.content[1].secondImage && (
+            <Img resizeMode="contain" source={data.content[1].secondImage} />
+          )}
+        </Option>
+        <Option style={{ opacity: visibleThree }}>
+          <TitleText>{data.content[1].third}</TitleText>
+          {data.content[1].thirdImage && (
+            <Img resizeMode="contain" source={data.content[1].thirdImage} />
+          )}
+        </Option>
       </ImageBg>
     </>
   );

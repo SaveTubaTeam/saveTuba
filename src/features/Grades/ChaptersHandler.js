@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 
@@ -15,6 +15,7 @@ import { Grade4 } from "./GradeFour";
 const Stack = createNativeStackNavigator();
 
 function ChaptersHandler({ route }) {
+  const navigation = useNavigation();
   const { level } = route.params; // Level selected from Lesson navigation screen
   const [selectedGrade, setSelectedGrade] = useState(null);
 
@@ -46,18 +47,18 @@ function ChaptersHandler({ route }) {
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Grade">
         <Stack.Screen name="Grade" options={{ headerShown: false }}>
-          {() => <ChaptersComponent selectedGrade={selectedGrade} />}
+          {() => (
+            <ChaptersComponent
+              navigation={navigation}
+              selectedGrade={selectedGrade}
+            />
+          )}
         </Stack.Screen>
 
         <Stack.Screen
           name="Chapter1"
           options={{
-            title: "Раздел 1",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (
@@ -68,12 +69,7 @@ function ChaptersHandler({ route }) {
         <Stack.Screen
           name="Chapter2"
           options={{
-            title: "Раздел 2",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (
@@ -84,12 +80,7 @@ function ChaptersHandler({ route }) {
         <Stack.Screen
           name="Chapter3"
           options={{
-            title: "Раздел 3",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (
@@ -100,12 +91,7 @@ function ChaptersHandler({ route }) {
         <Stack.Screen
           name="Chapter4"
           options={{
-            title: "Раздел 4",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (
@@ -116,12 +102,7 @@ function ChaptersHandler({ route }) {
         <Stack.Screen
           name="Chapter5"
           options={{
-            title: "Раздел 5",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (
@@ -132,12 +113,7 @@ function ChaptersHandler({ route }) {
         <Stack.Screen
           name="Chapter6"
           options={{
-            title: "Раздел 6",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (
@@ -148,12 +124,7 @@ function ChaptersHandler({ route }) {
         <Stack.Screen
           name="Chapter7"
           options={{
-            title: "Раздел 7",
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
+            headerShown: false,
           }}
         >
           {() => (

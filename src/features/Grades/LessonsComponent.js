@@ -4,6 +4,8 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 
+import { SafeArea } from "../../components/safe-area.component";
+import { Header } from "../../components/Grades/grades.styles";
 import { TitleText } from "../../components/title-text.component";
 
 const Container = styled.View`
@@ -11,7 +13,6 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
   background-color: #c5d9da;
-  padding: 20px;
 `;
 
 const Lesson = styled.TouchableOpacity`
@@ -19,15 +20,15 @@ const Lesson = styled.TouchableOpacity`
   border: 2px solid green;
 `;
 
-function LessonsComponent({ selectedGrade, selectedChapter }) {
-  const navigation = useNavigation();
+function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
+  const nav = useNavigation();
 
   const renderItem = ({ item }) => {
     // keep the item there
     return (
       <Lesson
         onPress={() => {
-          navigation.navigate(item.navigation);
+          nav.navigate(item.navigation);
         }}
       >
         <TitleText size="subtitle" color="secondary">
@@ -38,13 +39,16 @@ function LessonsComponent({ selectedGrade, selectedChapter }) {
   };
 
   return (
-    <Container>
-      <FlatList // The flatlist used to load minigames and their data.
-        data={selectedGrade.chapters[selectedChapter].lessons}
-        renderItem={renderItem}
-        key={(item) => item.key}
-      />
-    </Container>
+    <SafeArea>
+      <Container>
+        <Header title="Lessons" back="Grade" navigation={navigation} />
+        <FlatList // The flatlist used to load minigames and their data.
+          data={selectedGrade.chapters[selectedChapter].lessons}
+          renderItem={renderItem}
+          key={(item) => item.key}
+        />
+      </Container>
+    </SafeArea>
   );
 }
 

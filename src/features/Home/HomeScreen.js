@@ -24,28 +24,28 @@ function HomeView() {
             navigation.push("ChaptersHandler", { level: 1 });
           }}
         >
-          <Text style={style.baseText}>1</Text>
+          <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={style.roundButton2}
           onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
         >
-          <Text style={style.baseText}>2</Text>
+          <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={style.roundButton1}
           onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
         >
-          <Text style={style.baseText}>3</Text>
+          <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
           style={style.roundButton2}
           onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
         >
-          <Text style={style.baseText}>4</Text>
+          <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
       </ScrollView>
     </ImageBg>

@@ -26,22 +26,28 @@ const colorVariant = {
   tertiary: "#C6DC3B",
 };
 
-const getVariant = (weight, size, color) => {
+const alignVariant = {
+  left: "flex-start",
+  center: "center",
+  right: "flex-end",
+};
+
+const getVariant = (weight, size, color, align) => {
   const weightValue = weightVariant[weight];
   const sizeValue = sizeVariant[size];
   const colorValue = colorVariant[color];
+  const alignValue = alignVariant[align];
 
-  return `fontWeight: ${weightValue} fontSize: ${sizeValue}px color:${colorValue}`;
+  return `fontWeight: ${weightValue} fontSize: ${sizeValue}px color:${colorValue} alignSelf:${alignValue}`;
 };
 
 const BText = styled.Text`
   ${({ variant }) => variant}
   font-family: ${(props) => props.theme.fonts.body};
-  text-align: center;
 `;
 
-export const BodyText = ({ weight, size, color, children }) => {
-  const variant = getVariant(weight, size, color);
+export const BodyText = ({ weight, size, color, align, children }) => {
+  const variant = getVariant(weight, size, color, align);
   return <BText variant={variant}>{children}</BText>;
 };
 
@@ -49,4 +55,5 @@ BodyText.defaultProps = {
   weight: "regular",
   size: "body",
   color: "primary",
+  align: "center",
 };

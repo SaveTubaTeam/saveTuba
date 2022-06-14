@@ -1,5 +1,46 @@
 import React from "react";
+import { Text, View, TouchableOpacity } from "react-native";
 import styled from "styled-components";
+import Ionicons from "@expo/vector-icons/Ionicons";
+
+export const Header = ({ title, back, navigation }) => {
+  return (
+    <>
+      <View
+        style={{
+          width: "100%",
+          justifyContents: "center",
+          alignItems: "center",
+
+          backgroundColor: "#C6DC3B",
+        }}
+      >
+        <TouchableOpacity
+          style={{
+            position: "absolute",
+            left: 10,
+            flexDirection: "row",
+            paddingTop: 8,
+          }}
+          onPress={() => navigation.navigate(back)}
+        >
+          <Ionicons name="md-chevron-back-outline" size={26} color="#748816" />
+        </TouchableOpacity>
+        <Text
+          style={{
+            fontFamily: "Gabriela_400Regular",
+            color: "#748816",
+            fontSize: 20,
+            paddingTop: 8,
+            paddingBottom: 8,
+          }}
+        >
+          {title}
+        </Text>
+      </View>
+    </>
+  );
+};
 
 export const Container = styled.View`
   flex: 1;
@@ -15,6 +56,7 @@ export const Summary = styled.TouchableOpacity`
   align-items: center;
   margin-top: ${(props) => props.theme.space[3]};
 `;
+
 export const Mastery = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   padding: ${(props) => props.theme.space[3]};

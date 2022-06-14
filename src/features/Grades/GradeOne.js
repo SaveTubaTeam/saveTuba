@@ -5,13 +5,18 @@ import {
   QuizImages,
   TestImages,
 } from "../../components/Grades/IMAGES";
+import { AdventureOne } from "./gradeOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 
 export const Grade1 = {
   numChapter: 3,
   chapters: [
     {
       navigation: "Chapter1", // name of the Stack Screen
-      title: "Chapter One",
+      title: "Раздел 1",
+      name: "Я-исследователь", // I am an explorer
+      icon: require("../../../assets/location.png"),
+      colorOne: "indianred",
+      colorTwo: "firebrick",
       key: "C1",
       lessons: [
         /* 
@@ -29,7 +34,7 @@ export const Grade1 = {
               title: "Объем памяти",
               key: "testkey0",
               image: AdventureImages.matching,
-              component: Test,
+              component: <AdventureOne />,
             },
             sorting: {
               navigation: "Sorting",
@@ -185,7 +190,11 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter2",
-      title: "Chapter Two", // later change the text in <Chapter> so it doesn't just say Chapter2
+      title: "Раздел 2",
+      name: "Живая природа", // Ziva priroda
+      icon: require("../../../assets/ecology.png"),
+      colorOne: "indigo",
+      colorTwo: "mediumpurple",
       key: "C2",
       lessons: [
         {
@@ -198,13 +207,51 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter3",
-      title: "Chapter Three",
+      title: "Раздел 3",
+      name: "Вещества и их свойства",
+      icon: require("../../../assets/air-pollution.png"),
+      colorOne: "orange",
+      colorTwo: "orangered",
       key: "C3",
       lessons: [
         {
           navigation: "Lesson1",
           title: "Lesson One",
           key: "C3_L1",
+          component: Test,
+        },
+      ],
+    },
+    {
+      navigation: "Chapter4",
+      title: "Раздел 4",
+      name: "Земля и космос",
+      icon: require("../../../assets/rocket.png"),
+      colorOne: "midnightblue",
+      colorTwo: "mediumturquoise",
+      key: "C4",
+      lessons: [
+        {
+          navigation: "Lesson1",
+          title: "Lesson One",
+          key: "C4_L1",
+          component: Test,
+        },
+      ],
+    },
+    {
+      navigation: "Chapter5",
+      title: "Раздел 5",
+      name: "Физика природы",
+      icon: require("../../../assets/physics.png"),
+      colorOne: "lightpink",
+      colorTwo: "mediumvioletred",
+      key: "C5",
+      lessons: [
+        {
+          navigation: "Lesson1",
+          title: "Lesson One",
+          key: "C4_L1",
           component: Test,
         },
       ],

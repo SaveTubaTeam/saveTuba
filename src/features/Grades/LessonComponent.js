@@ -4,6 +4,7 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 
+import { SafeArea } from "../../components/safe-area.component";
 import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
 import { Spacer } from "../../components/spacer.component";
@@ -11,6 +12,7 @@ import {
   Mastery,
   Adventure,
   ImageBg,
+  Header,
 } from "../../components/Grades/grades.styles";
 
 const Container = styled.View`
@@ -18,7 +20,6 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
   background-color: #c5d9da;
-  padding: 20px;
 `;
 
 const Chunk = styled.View`
@@ -39,7 +40,7 @@ const Head = styled.View`
 
 const Tower = styled.Image`
   position: absolute;
-  top: 10px;
+  top: 50px;
   z-index: 100;
   height: 80px;
   width: 80px;
@@ -58,15 +59,20 @@ const ProgContainer = styled.View`
   elevation: 5;
 `;
 
-function LessonComponent({ selectedGrade, selectedChapter, selectedLesson }) {
-  const navigation = useNavigation();
+function LessonComponent({
+  selectedGrade,
+  selectedChapter,
+  selectedLesson,
+  navigation,
+}) {
+  const nav = useNavigation();
 
   const renderItem = ({ item }) => {
     return (
       <>
         <Adventure
           onPress={() => {
-            navigation.navigate(item.navigation);
+            nav.navigate(item.navigation);
           }}
         >
           <ImageBg
@@ -101,43 +107,52 @@ function LessonComponent({ selectedGrade, selectedChapter, selectedLesson }) {
   };
 
   return (
-    <Container>
-      <Tower source={require("../../../assets/solar-system.png")} />
-      <Head>
-        <TitleText size="h4" color="primary">
-          {
+    <SafeArea>
+      <Container>
+        <Header
+          title="Lesson"
+          back={selectedGrade.chapters[selectedChapter].navigation}
+          navigation={navigation}
+        />
+        <Tower source={require("../../../assets/solar-system.png")} />
+        <Head>
+          <TitleText size="h4" color="primary">
+            {
+              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                .title
+            }
+          </TitleText>
+          <Spacer size="small" />
+
+          <Progress />
+        </Head>
+
+        <FlatList // The flatlist used to load minigames and their data.
+          data={
             selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .title
+              .minigames &&
+            Object.values(
+              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                .minigames
+            )
           }
-        </TitleText>
-        <Spacer size="small" />
+          renderItem={renderItem}
+        />
 
-        <Progress />
-      </Head>
-
-      <FlatList // The flatlist used to load minigames and their data.
-        data={
-          selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-            .minigames &&
-          Object.values(
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .minigames
-          )
-        }
-        renderItem={renderItem}
-      />
-
-      <Mastery
-        onPress={() => {
-          navigation.navigate(selectedGrade.chapters[selectedChapter].lessons);
-        }}
-      >
-        <BodyText weight="bold" size="subtitle" color="secondary">
-          Мастерство
-          {/* Mastery */}
-        </BodyText>
-      </Mastery>
-    </Container>
+        <Mastery
+          onPress={() => {
+            navigation.navigate(
+              selectedGrade.chapters[selectedChapter].lessons
+            );
+          }}
+        >
+          <BodyText weight="bold" size="subtitle" color="secondary">
+            Мастерство
+            {/* Mastery */}
+          </BodyText>
+        </Mastery>
+      </Container>
+    </SafeArea>
   );
 }
 
