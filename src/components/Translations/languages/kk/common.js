@@ -1,14 +1,17 @@
 export default {
   hello: "Сәлем",
+
   reminders: "Еске салулар",
   soundeffects: "Дыбыс әсерлері",
-  languageSelector: "It worked",
+  languageSelector: "Тіл таңдау",
+
   help: "Көмектесіңдер",
-  about: "туралы",
+  about: "Туралы",
   signout: "Шығу",
+
   general: "Жалпы",
   email: "Электрондық пошта",
-  changeusername: "Пайдаланушы атын өзгерту",
+  start: "Бастау",
 
   levels: "Сыныптары",
   chapters: "Бөлімдер",

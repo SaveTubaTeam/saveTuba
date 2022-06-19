@@ -1,13 +1,17 @@
 export default {
   hello: "Hello",
+
   reminders: "Reminders",
   soundeffects: "Sound Effects",
-  languageSelector: "language Selector",
+  languageSelector: "Language Selector",
+
   help: "Help",
   about: "About",
   signout: "Sign Out",
+
   general: "General",
   email: "Email",
+  start: "Start",
 
   levels: "Grades",
   chapters: "Chapters",

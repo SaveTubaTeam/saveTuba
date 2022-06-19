@@ -93,7 +93,7 @@ export const GeneralCard = () => {
     <Card>
       <AvatarContainer>
         <Spacer position="bottom" size="large">
-          <TitleText size="subtitle">{t("general:general")}</TitleText>
+          <TitleText size="subtitle">{t("common:general")}</TitleText>
         </Spacer>
 
         <Selector />
@@ -101,7 +101,7 @@ export const GeneralCard = () => {
         <Spacer position="bottom" size="large" />
 
         <Row>
-          <BodyText color="quaternary">{t("general:soundeffects")}</BodyText>
+          <BodyText color="quaternary">{t("common:soundeffects")}</BodyText>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
             thumbColor={isSoundEffectsEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -120,7 +120,7 @@ export const GeneralCard = () => {
         </Row>
 
         <Row>
-          <BodyText color="quaternary">{t("general:reminders")}</BodyText>
+          <BodyText color="quaternary">{t("common:reminders")}</BodyText>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
             thumbColor={isRemindersEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -141,7 +141,7 @@ export const GeneralCard = () => {
         <Spacer size="medium" />
 
         <Row>
-          <BodyText>{t("general:help")}</BodyText>
+          <BodyText>{t("common:help")}</BodyText>
           <Spacer position="right" size="medium" />
           <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
             {/* This will need to also be a feature in the firebase - language */}
@@ -176,7 +176,7 @@ export const GeneralCard = () => {
         <Spacer size="medium" />
 
         <Row>
-          <BodyText>{t("general:about")}</BodyText>
+          <BodyText>{t("common:about")}</BodyText>
           <Spacer position="right" size="medium" />
           <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
             {/* This will need to also be a feature in the firebase - language */}

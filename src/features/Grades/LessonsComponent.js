@@ -10,7 +10,6 @@ import { Header } from "../../components/Grades/grades.styles";
 import { TitleText } from "../../components/title-text.component";
 import { BodyText } from "../../components/body-text.component";
 import { Spacer } from "../../components/spacer.component";
-import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 
 const Container = styled.View`
@@ -103,7 +102,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
                 style={{ paddingRight: 5, paddingTop: 1 }}
               />
               <BodyText align="left" color="primary">
-                Start
+                {t("common:start")}
               </BodyText>
             </TouchableOpacity>
           </View>
@@ -145,7 +144,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
               padding: 10,
             }}
           >
-            <TitleText align="left" size="subtitle" color="primary">
+            <TitleText align="left" size="mid" color="primary">
               {item.title}
             </TitleText>
             <Spacer size="small" />

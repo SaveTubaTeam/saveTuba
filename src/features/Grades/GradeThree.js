@@ -1,11 +1,13 @@
+import { Translation } from "react-i18next";
+
 import Test from "./Test";
 
 export const Grade3 = {
   chapters: [
     {
       navigation: "Chapter1",
-      title: "Раздел 1",
-      name: "Растения",
+      title: <Translation>{(t) => t("gradethree:chapterone")}</Translation>, // Chapter 1
+      name: <Translation>{(t) => t("gradethree:plants")}</Translation>, // Plants
       icon: require("../../../assets/watering-plants.png"),
       colorOne: "palevioletred",
       colorTwo: "pink",
@@ -14,8 +16,8 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter2",
-      title: "Раздел 2",
-      name: "Животные",
+      title: <Translation>{(t) => t("gradethree:chaptertwo")}</Translation>, // Chapter 2
+      name: <Translation>{(t) => t("gradethree:animals")}</Translation>, // Animals
       icon: require("../../../assets/antelope.png"),
       colorOne: "mediumturquoise",
       colorTwo: "powderblue",
@@ -24,8 +26,8 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter3",
-      title: "Раздел 3",
-      name: "Человек",
+      title: <Translation>{(t) => t("gradethree:chapterthree")}</Translation>, // Chapter 3
+      name: <Translation>{(t) => t("gradethree:human")}</Translation>, // Human
       icon: require("../../../assets/brain.png"),
       colorOne: "plum",
       colorTwo: "thistle",
@@ -34,8 +36,8 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter4",
-      title: "Раздел 4",
-      name: "Вещества и их \nсвойства. Воздух и вода",
+      title: <Translation>{(t) => t("gradethree:chapterfour")}</Translation>, // Chapter 4
+      name: <Translation>{(t) => t("gradethree:airwater")}</Translation>, // Substances and their properties. Air and water
       icon: require("../../../assets/wind.png"),
       colorOne: "coral",
       colorTwo: "darksalmon",
@@ -44,8 +46,8 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter5",
-      title: "Раздел 5",
-      name: "Физика природы",
+      title: <Translation>{(t) => t("gradethree:chapterfive")}</Translation>, // Chapter 5
+      name: <Translation>{(t) => t("gradethree:physics")}</Translation>, // Physics of nature
       icon: require("../../../assets/sound-wave.png"),
       colorOne: "indigo",
       colorTwo: "darkmagenta",
@@ -54,8 +56,10 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter6",
-      title: "Раздел 6",
-      name: "Вещества и их \nсвойства. Природные ресурсы",
+      title: <Translation>{(t) => t("gradethree:chaptersix")}</Translation>, // Chapter 6
+      name: (
+        <Translation>{(t) => t("gradethree:naturalresources")}</Translation>
+      ), // Substances and their properties. Natural resources
       icon: require("../../../assets/log.png"),
       colorOne: "darkgreen",
       colorTwo: "darkolivegreen",
@@ -64,8 +68,8 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter7",
-      title: "Раздел 7",
-      name: "Земля и космос",
+      title: <Translation>{(t) => t("gradethree:chaptersevent")}</Translation>, // Chapter 7
+      name: <Translation>{(t) => t("gradethree:cosmos")}</Translation>, // Earth and space
       icon: require("../../../assets/constellation.png"),
       colorOne: "midnightblue",
       colorTwo: "mediumblue",
@@ -74,8 +78,8 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter8",
-      title: "Раздел 8",
-      name: "Силы и движение",
+      title: <Translation>{(t) => t("gradethree:chaptereight")}</Translation>, // Chapter 8
+      name: <Translation>{(t) => t("gradethree:forces")}</Translation>, // Forces and movement
       icon: require("../../../assets/swim-ring.png"),
       colorOne: "mediumvioletred",
       colorTwo: "hotpink",

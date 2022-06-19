@@ -28,7 +28,7 @@ const Selector = () => {
     <View style={styles.container}>
       <View style={styles.row}>
         <BodyText size="body" color="quaternary">
-          {t("general:languageSelector")}
+          {t("common:languageSelector")}
         </BodyText>
       </View>
       {LANGUAGES.map((language) => {

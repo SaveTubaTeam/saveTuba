@@ -1,14 +1,17 @@
 export default {
   hello: "привет",
-  reminders: "напоминания",
+
+  reminders: "Напоминания",
   soundeffects: "Звуковые эффекты",
-  languageSelector: "It worked",
+  languageSelector: "Выбор языка",
+
   help: "Помощь",
   about: "О нас",
   signout: "Выйти",
+
   general: "Настройки",
   email: "Адрес электронной почты",
-  changeusername: "Изменение имени пользователя",
+  start: "Начинать",
 
   levels: "Классы",
   chapters: "Разделы",

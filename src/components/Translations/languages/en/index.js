@@ -1,15 +1,17 @@
-import common from "./common";
-import navigate from "./navigate";
-import personal from "./personal";
-import general from "./general";
 import about from "./about";
+import gradeone from "./gradeone";
+import gradetwo from "./gradetwo";
+import gradethree from "./gradethree";
+import gradefour from "./gradefour";
+import common from "./common";
 import profile from "./profile";
 
 export default {
-  common,
-  navigate,
-  personal,
-  general,
   about,
+  gradeone,
+  gradetwo,
+  gradethree,
+  gradefour,
+  common,
   profile,
 };

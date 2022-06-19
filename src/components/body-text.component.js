@@ -11,6 +11,7 @@ const sizeVariant = {
   caption: 12,
   button: 14,
   body: 16,
+  mid: 18,
   subtitle: 20,
   title: 24,
   h5: 24,

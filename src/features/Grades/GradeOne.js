@@ -1,3 +1,5 @@
+import { Translation } from "react-i18next";
+
 import Test from "./Test";
 import {
   AdventureImages,
@@ -12,8 +14,8 @@ export const Grade1 = {
   chapters: [
     {
       navigation: "Chapter1", // name of the Stack Screen
-      title: "Раздел 1",
-      name: "Я-исследователь", // I am an explorer
+      title: <Translation>{(t) => t("gradeone:chapterone")}</Translation>, // Chapter 1
+      name: <Translation>{(t) => t("gradeone:iamanexplorer")}</Translation>, // I am an explorer
       icon: require("../../../assets/location.png"),
       colorOne: "indianred",
       colorTwo: "firebrick",
@@ -26,7 +28,7 @@ export const Grade1 = {
         */
         {
           navigation: "Lesson1",
-          title: "1. Где узнать про всё на свете?",
+          title: <Translation>{(t) => t("gradeone:c1l1")}</Translation>, // Where to find out about everything in the world?
           thumbnail: require("../../../assets/globe.png"),
           backgroundColor: "#2C3653",
           key: "C1_L1",
@@ -78,7 +80,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson2",
-          title: "2. Зачем одуванчику парашют?",
+          title: <Translation>{(t) => t("gradeone:c1l2")}</Translation>, // Why does the dandelion look like a parachute?
           thumbnail: require("../../../assets/dandelion.png"),
           backgroundColor: "#87CEFA",
           key: "C1_L2",
@@ -211,7 +213,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson3",
-          title: "3. Что такое эксперимент?",
+          title: <Translation>{(t) => t("gradeone:c1l3")}</Translation>, // What is an experiment?
           thumbnail: require("../../../assets/experiment.png"),
           backgroundColor: "#8C77AA",
           key: "C1_L3",
@@ -331,8 +333,8 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter2",
-      title: "Раздел 2",
-      name: "Живая природа", // Ziva priroda
+      title: <Translation>{(t) => t("gradeone:chaptertwo")}</Translation>, // Chapter 2
+      name: <Translation>{(t) => t("gradeone:wildlife")}</Translation>, // Wildlife
       icon: require("../../../assets/ecology.png"),
       colorOne: "indigo",
       colorTwo: "mediumpurple",
@@ -346,7 +348,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson1",
-          title: "Какие у растений секреты?",
+          title: <Translation>{(t) => t("gradeone:c2l1")}</Translation>, // What are the secrets of plants?
           thumbnail: require("../../../assets/plant-hand.png"),
           backgroundColor: "#B25C3E",
           key: "C2_L1",
@@ -360,7 +362,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson2",
-          title: "Как живут растения?",
+          title: <Translation>{(t) => t("gradeone:c2l2")}</Translation>, // How do plants live?
           thumbnail: require("../../../assets/plant-water.png"),
           backgroundColor: "#F9F0D7",
           key: "C2_L2",
@@ -374,7 +376,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson3",
-          title: "Кто вылупился из яйца?",
+          title: <Translation>{(t) => t("gradeone:c2l3")}</Translation>, // Who hatched from the egg?
           thumbnail: require("../../../assets/dino.png"),
           backgroundColor: "#76220C",
           key: "C2_L3",
@@ -388,7 +390,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson4",
-          title: "Кто играет в прятки?",
+          title: <Translation>{(t) => t("gradeone:c2l4")}</Translation>, // Who plays hide and seek?
           thumbnail: require("../../../assets/chameleon.png"),
           backgroundColor: "#FF9044",
           key: "C2_L4",
@@ -402,7 +404,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson5",
-          title: "Как охраняют животных?",
+          title: <Translation>{(t) => t("gradeone:c2l5")}</Translation>, // How are animals protected?
           thumbnail: require("../../../assets/birdfeeder.png"),
           backgroundColor: "#9DCD5A",
           key: "C2_L5",
@@ -416,7 +418,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson6",
-          title: "Почему мы стоим?",
+          title: <Translation>{(t) => t("gradeone:c2l6")}</Translation>, // Why are we standing?
           thumbnail: require("../../../assets/skeleton.png"),
           backgroundColor: "#004B75",
           key: "C2_L6",
@@ -430,7 +432,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson7",
-          title: "Как мы улыбаемся?",
+          title: <Translation>{(t) => t("gradeone:c2l7")}</Translation>, // How do we smile?
           thumbnail: require("../../../assets/sunshine.png"),
           backgroundColor: "#76B9F0",
           key: "C2_L7",
@@ -444,7 +446,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson8",
-          title: "Сколько весит твой рюкзак?",
+          title: <Translation>{(t) => t("gradeone:c2l8")}</Translation>, // How much does your backpack weigh?
           thumbnail: require("../../../assets/backpack.png"),
           backgroundColor: "#FC6467",
           key: "C2_L8",
@@ -458,7 +460,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson9",
-          title: "Чего боятся микробы?",
+          title: <Translation>{(t) => t("gradeone:c2l9")}</Translation>, // What are microbes afraid of?
           thumbnail: require("../../../assets/microbes.png"),
           backgroundColor: "#6040AC",
           key: "C2_L9",
@@ -472,7 +474,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson10",
-          title: "Почему болят зубы?",
+          title: <Translation>{(t) => t("gradeone:c2l10")}</Translation>, // Why do my teeth hurt?
           thumbnail: require("../../../assets/toothache.png"),
           backgroundColor: "#AA1A44",
           key: "C2_L10",
@@ -481,8 +483,8 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter3",
-      title: "Раздел 3",
-      name: "Вещества и их свойства",
+      title: <Translation>{(t) => t("gradeone:chapterthree")}</Translation>, // Chapter 3
+      name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
       icon: require("../../../assets/air-pollution.png"),
       colorOne: "orange",
       colorTwo: "orangered",
@@ -496,7 +498,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson1",
-          title: "Какие у воздуха свойства?",
+          title: <Translation>{(t) => t("gradeone:c3l1")}</Translation>, // What are the properties of air?
           key: "C3_L1",
         },
 
@@ -508,7 +510,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson2",
-          title: "Где построить завод?",
+          title: <Translation>{(t) => t("gradeone:c3l2")}</Translation>, // Where to build a factory?
           key: "C3_L2",
         },
 
@@ -520,7 +522,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson3",
-          title: "Что мы знаем о воде?",
+          title: <Translation>{(t) => t("gradeone:c3l3")}</Translation>, // What do we know about water?
           key: "C3_L3",
         },
 
@@ -532,15 +534,15 @@ export const Grade1 = {
 
         {
           navigation: "Lesson4",
-          title: "Без чего человеку не обойтись?",
+          title: <Translation>{(t) => t("gradeone:c3l4")}</Translation>, // Without what is a person not enough?
           key: "C3_L4",
         },
       ],
     },
     {
       navigation: "Chapter4",
-      title: "Раздел 4",
-      name: "Земля и космос",
+      title: <Translation>{(t) => t("gradeone:chapterfour")}</Translation>, // Chapter 4
+      name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../assets/rocket.png"),
       colorOne: "midnightblue",
       colorTwo: "mediumturquoise",
@@ -554,7 +556,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson1",
-          title: "Солнце и его влияние на Землю",
+          title: <Translation>{(t) => t("gradeone:c4l1")}</Translation>, // The sun and its influence to Earth
           key: "C4_L1",
         },
 
@@ -566,7 +568,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson2",
-          title: "Кто дружит с Солнышком?",
+          title: <Translation>{(t) => t("gradeone:c4l2")}</Translation>, // Who is friends with the Sun?
           key: "C4_L2",
         },
 
@@ -578,7 +580,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson3",
-          title: "Как живут планеты?",
+          title: <Translation>{(t) => t("gradeone:c4l3")}</Translation>, // How do planets live?
           key: "C4_L3",
         },
 
@@ -590,7 +592,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson4",
-          title: "Почему за зимой весна приходит?",
+          title: <Translation>{(t) => t("gradeone:c4l4")}</Translation>, // Why does spring follow after winter?
           key: "C4_L4",
         },
 
@@ -602,15 +604,15 @@ export const Grade1 = {
 
         {
           navigation: "Lesson5",
-          title: "Как не опоздать на урок?",
+          title: <Translation>{(t) => t("gradeone:c4l5")}</Translation>, // How to not be late for the lesson?
           key: "C4_L5",
         },
       ],
     },
     {
       navigation: "Chapter5",
-      title: "Раздел 5",
-      name: "Физика природы",
+      title: <Translation>{(t) => t("gradeone:chapterfive")}</Translation>, // Chapter 5
+      name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
       icon: require("../../../assets/physics.png"),
       colorOne: "lightpink",
       colorTwo: "mediumvioletred",
@@ -624,7 +626,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson1",
-          title: "Почему предметы движутся? ",
+          title: <Translation>{(t) => t("gradeone:c5l1")}</Translation>, // Why are items moving?
           key: "C5_L1",
         },
 
@@ -636,7 +638,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson2",
-          title: "Кто быстрее?",
+          title: <Translation>{(t) => t("gradeone:c5l2")}</Translation>, // Who is faster?
           key: "C5_L2",
         },
 
@@ -648,7 +650,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson3",
-          title: "Тише едешь – дальше будешь?",
+          title: <Translation>{(t) => t("gradeone:c5l3")}</Translation>, // The quieter you go…the further you will go
           key: "C5_L3",
         },
 
@@ -660,7 +662,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson4",
-          title: "Сколько весит слон?",
+          title: <Translation>{(t) => t("gradeone:c5l4")}</Translation>, // How much does an elephant weigh?
           key: "C5_L4",
         },
 
@@ -672,7 +674,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson5",
-          title: "Как попасть в Изумрудный город?",
+          title: <Translation>{(t) => t("gradeone:c5l5")}</Translation>, // How to get to Emerald City?
           key: "C5_L5",
         },
 
@@ -684,7 +686,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson6",
-          title: "Куда делся лучик света?",
+          title: <Translation>{(t) => t("gradeone:c5l6")}</Translation>, // Where did the ray of light go?
           key: "C5_L6",
         },
 
@@ -696,7 +698,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson7",
-          title: "Что такое звук?",
+          title: <Translation>{(t) => t("gradeone:c5l7")}</Translation>, // What is the sound?
           key: "C5_L7",
         },
 
@@ -708,7 +710,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson8",
-          title: "Как мы слышим звуки?",
+          title: <Translation>{(t) => t("gradeone:c5l8")}</Translation>, // How do we hear sounds?
           key: "C5_L8",
         },
 
@@ -720,7 +722,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson9",
-          title: "Откуда градусник знает – тепло или холодно?",
+          title: <Translation>{(t) => t("gradeone:c5l9")}</Translation>, // How does the thermometer know if it is warm or cold?
           key: "C5_L9",
         },
 
@@ -732,7 +734,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson10",
-          title: "Где мороз прячется летом?",
+          title: <Translation>{(t) => t("gradeone:c5l10")}</Translation>, // Where does frost hide during the summer?
           key: "C5_L10",
         },
 
@@ -744,7 +746,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson11",
-          title: "Для чего используют магниты?",
+          title: <Translation>{(t) => t("gradeone:c5l11")}</Translation>, // What is used for magnets?
           key: "C5_L11",
         },
 
@@ -756,7 +758,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson12",
-          title: "Как интересно провести лето?",
+          title: <Translation>{(t) => t("gradeone:c5l12")}</Translation>, // How to have fun during the summer?
           key: "C5_L12",
         },
       ],

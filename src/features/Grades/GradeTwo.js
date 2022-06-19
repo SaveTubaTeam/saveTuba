@@ -1,11 +1,13 @@
+import { Translation } from "react-i18next";
+
 import Test from "./Test";
 
 export const Grade2 = {
   chapters: [
     {
       navigation: "Chapter1", // you need to specify name or key when calling navigate
-      title: "Раздел 1",
-      name: "Я-исследователь",
+      title: <Translation>{(t) => t("gradetwo:chapterone")}</Translation>, // Chapter 1
+      name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am an explorer
       icon: require("../../../assets/explore.png"),
       colorOne: "darkorange",
       colorTwo: "goldenrod",
@@ -14,8 +16,8 @@ export const Grade2 = {
     },
     {
       navigation: "Chapter2",
-      title: "Раздел 2",
-      name: "Живая природа",
+      title: <Translation>{(t) => t("gradetwo:chaptertwo")}</Translation>, // Chapter 2
+      name: <Translation>{(t) => t("gradetwo:wildlife")}</Translation>, // Wildlife
       icon: require("../../../assets/butterfly.png"),
       colorOne: "darkolivegreen",
       colorTwo: "darkgreen",
@@ -24,8 +26,8 @@ export const Grade2 = {
     },
     {
       navigation: "Chapter3",
-      title: "Раздел 3",
-      name: "Вещества и их свойства",
+      title: <Translation>{(t) => t("gradetwo:chapterthree")}</Translation>, // Chapter 3
+      name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
       icon: require("../../../assets/water-cycle.png"),
       colorOne: "tomato",
       colorTwo: "firebrick",
@@ -34,8 +36,8 @@ export const Grade2 = {
     },
     {
       navigation: "Chapter4",
-      title: "Раздел 4",
-      name: "Природные ресурсы",
+      title: <Translation>{(t) => t("gradetwo:chapterfour")}</Translation>, // Chapter 4
+      name: <Translation>{(t) => t("gradetwo:naturalresources")}</Translation>, // Natural resources
       icon: require("../../../assets/soil.png"),
       colorOne: "sandybrown",
       colorTwo: "peachpuff",
@@ -44,8 +46,8 @@ export const Grade2 = {
     },
     {
       navigation: "Chapter5",
-      title: "Раздел 5",
-      name: "Земля и космос",
+      title: <Translation>{(t) => t("gradetwo:chapterfive")}</Translation>, // Chapter 5
+      name: <Translation>{(t) => t("gradetwo:cosmos")}</Translation>, // Earth and space
       icon: require("../../../assets/astronaut.png"),
       colorOne: "navy",
       colorTwo: "dodgerblue",
@@ -54,8 +56,8 @@ export const Grade2 = {
     },
     {
       navigation: "Chapter6",
-      title: "Раздел 6",
-      name: "Физика природы",
+      title: <Translation>{(t) => t("gradetwo:chaptersix")}</Translation>, // Chapter 6
+      name: <Translation>{(t) => t("gradetwo:physics")}</Translation>, // Physics of nature
       icon: require("../../../assets/book.png"),
       colorOne: "mediumturquoise",
       colorTwo: "royalblue",
