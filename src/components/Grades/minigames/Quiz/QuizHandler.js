@@ -50,14 +50,6 @@ const ModalContainer = styled.View`
   width: 60%;
   padding: 30px;
   border-radius: 20px;
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2px;
-  }
-  shadow-opacity: 0.25;
-  shadow-radius: 4px;
-  elevation: 5;
 `;
 
 const Question = styled.View`
@@ -166,8 +158,8 @@ const Start = ({ data }) => {
 
   return (
     <>
-      <ImageBg source={data.content[0].imageBg}>
-        <SafeArea>
+      <SafeArea>
+        <ImageBg source={data.content[0].imageBg}>
           <Container>
             <Question style={{ display: visibleOne }}>
               <TitleText size="title">{data.content[1].prompt}</TitleText>
@@ -313,8 +305,8 @@ const Start = ({ data }) => {
               answer={answer}
             />
           </Container>
-        </SafeArea>
-      </ImageBg>
+        </ImageBg>
+      </SafeArea>
     </>
   );
 };

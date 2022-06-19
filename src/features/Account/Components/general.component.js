@@ -51,14 +51,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
   },
   button: {
     borderRadius: 20,
@@ -109,7 +101,7 @@ export const GeneralCard = () => {
         <Spacer position="bottom" size="large" />
 
         <Row>
-          <BodyText>{t("general:soundeffects")}</BodyText>
+          <BodyText color="quaternary">{t("general:soundeffects")}</BodyText>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
             thumbColor={isSoundEffectsEnabled ? "#f5dd4b" : "#f4f3f4"}
@@ -126,10 +118,9 @@ export const GeneralCard = () => {
             }}
           />
         </Row>
-        <Spacer size="medium" />
 
         <Row>
-          <BodyText>{t("general:reminders")}</BodyText>
+          <BodyText color="quaternary">{t("general:reminders")}</BodyText>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
             thumbColor={isRemindersEnabled ? "#f5dd4b" : "#f4f3f4"}

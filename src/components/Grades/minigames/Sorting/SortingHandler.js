@@ -31,14 +31,6 @@ const ModalContainer = styled.View`
   width: 60%;
   padding: 30px;
   border-radius: 20px;
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2px;
-  }
-  shadow-opacity: 0.25;
-  shadow-radius: 4px;
-  elevation: 5;
 `;
 
 const Category = styled.TouchableOpacity`
@@ -48,14 +40,6 @@ const Category = styled.TouchableOpacity`
   margin: 5px;
   padding: 5px 10px;
   border-radius: 10px;
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2px;
-  }
-  shadow-opacity: 0.25;
-  shadow-radius: 4px;
-  elevation: 5;
 `;
 
 const Option = styled.View`
@@ -64,14 +48,6 @@ const Option = styled.View`
   width: 60%;
   border-radius: 20px;
   border: 8px solid #c6dc3b;
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2px;
-  }
-  shadow-opacity: 0.25;
-  shadow-radius: 4px;
-  elevation: 5;
   align-items: center;
   justify-content: center;
   align-self: center;

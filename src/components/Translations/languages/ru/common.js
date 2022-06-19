@@ -9,10 +9,14 @@ export default {
   general: "Настройки",
   email: "Адрес электронной почты",
   changeusername: "Изменение имени пользователя",
+
   levels: "Классы",
+  chapters: "Разделы",
+  lessons: "Уроки",
+  lesson: "Урок",
+
   friends: "Друзья",
   badges: "Значки",
-  leaderboard: "Таблица лидеров",
   home: "Дом",
   profile: "Профиль",
   settings: "Настройки",

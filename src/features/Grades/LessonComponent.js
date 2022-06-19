@@ -1,5 +1,5 @@
 import React from "react";
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, ScrollView, Image } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -11,15 +11,17 @@ import { Spacer } from "../../components/spacer.component";
 import {
   Mastery,
   Adventure,
-  ImageBg,
   Header,
 } from "../../components/Grades/grades.styles";
+import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.View`
+  height: 100%;
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #c5d9da;
+  background-color: #cce882;
 `;
 
 const Chunk = styled.View`
@@ -31,11 +33,13 @@ const Chunk = styled.View`
 `;
 
 const Head = styled.View`
-  margin: 30px 0 30px 0;
+  width: 80%;
+  margin: 50px 0 20px 0;
   border-radius: 10px;
-  padding: 50px 30px 20px 30px;
+  padding: 40px 30px 40px 30px;
   border: 1px solid #748816;
   background-color: #fff8e7;
+  align-items: center;
 `;
 
 const Tower = styled.Image`
@@ -44,19 +48,12 @@ const Tower = styled.Image`
   z-index: 100;
   height: 80px;
   width: 80px;
+  border-radius: 40px;
 `;
 
 const ProgContainer = styled.View`
   flex-direction: row;
   justify-content: center;
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2px;
-  }
-  shadow-opacity: 0.25;
-  shadow-radius: 4px;
-  elevation: 5;
 `;
 
 function LessonComponent({
@@ -66,6 +63,7 @@ function LessonComponent({
   navigation,
 }) {
   const nav = useNavigation();
+  const { t } = useTranslation();
 
   const renderItem = ({ item }) => {
     return (
@@ -75,15 +73,20 @@ function LessonComponent({
             nav.navigate(item.navigation);
           }}
         >
-          <ImageBg
-            source={item.image}
-            imageStyle={{ borderRadius: 100 }}
-            resizeMode="cover"
+          <View
+            style={{
+              backgroundColor: item.backgroundColor,
+              height: 150,
+              borderRadius: 20,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
-            <TitleText size="subtitle" color="secondary">
-              {item.title}
-            </TitleText>
-          </ImageBg>
+            <Image
+              style={{ height: "70%", aspectRatio: 1, width: undefined }}
+              source={item.icon}
+            ></Image>
+          </View>
         </Adventure>
       </>
     );
@@ -110,19 +113,24 @@ function LessonComponent({
     <SafeArea>
       <Container>
         <Header
-          title="Lesson"
+          title={t("common:lesson")}
           back={selectedGrade.chapters[selectedChapter].navigation}
           navigation={navigation}
         />
-        <Tower source={require("../../../assets/solar-system.png")} />
+        <Tower
+          source={
+            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+              .thumbnail
+          }
+        />
         <Head>
-          <TitleText size="h4" color="primary">
+          <TitleText size="title">
             {
               selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                 .title
             }
           </TitleText>
-          <Spacer size="small" />
+          <Spacer size="large" />
 
           <Progress />
         </Head>
@@ -136,7 +144,12 @@ function LessonComponent({
                 .minigames
             )
           }
+          numColumns={2}
+          key={(item) => item.key}
           renderItem={renderItem}
+          contentContainerStyle={{
+            width: "85%",
+          }}
         />
 
         <Mastery
@@ -145,6 +158,7 @@ function LessonComponent({
               selectedGrade.chapters[selectedChapter].lessons
             );
           }}
+          style={{ marginBottom: 10 }}
         >
           <BodyText weight="bold" size="subtitle" color="secondary">
             Мастерство

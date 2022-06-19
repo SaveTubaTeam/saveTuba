@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
 
+import { useTranslation } from "react-i18next";
 import { Header } from "../../components/Grades/grades.styles";
 import { BodyText } from "../../components/body-text.component";
 import { TitleText } from "../../components/title-text.component";
@@ -22,15 +23,6 @@ const Chapter = styled.TouchableOpacity`
   margin-top: 20px;
   margin-bottom: 20px;
   align-self: center;
-
-  shadow-color: #000;
-  shadow-offset: {
-    width: 0;
-    height: 2px;
-  }
-  shadow-opacity: 0.25;
-  shadow-radius: 4px;
-  elevation: 5;
 `;
 
 const Icon = styled.Image`
@@ -45,6 +37,8 @@ const Icon = styled.Image`
 
 function ChaptersComponent({ selectedGrade, navigation }) {
   const nav = useNavigation();
+  const { t } = useTranslation();
+
   const renderItem = ({ item }) => {
     // keep the item there
     return (
@@ -86,7 +80,11 @@ function ChaptersComponent({ selectedGrade, navigation }) {
   return (
     <SafeArea>
       <Container>
-        <Header title="Chapters" back="Grades" navigation={navigation} />
+        <Header
+          title={t("common:chapters")}
+          back="Grades"
+          navigation={navigation}
+        />
         <FlatList
           style={{ width: "100%" }}
           data={selectedGrade.chapters}

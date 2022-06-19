@@ -1,6 +1,6 @@
 export default {
   badges: "Badges",
   friends: "Friends",
-  level: "Grade",
+  grade: "Grade",
   leaderboard: "Leaderboard",
 };

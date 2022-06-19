@@ -99,7 +99,7 @@ const LoginScreen = () => {
       <ImageBg source={require("../../../assets/loginBackground.png")}>
         <InputContainer>
           <Input
-            placeholder="Эл." //Email
+            placeholder="Эл. адрес" //Email
             value={email}
             onChangeText={(text) => setEmail(text)}
             autoCapitalize="none"

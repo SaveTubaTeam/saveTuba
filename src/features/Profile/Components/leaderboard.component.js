@@ -7,6 +7,7 @@ import { TitleText } from "../../../components/title-text.component";
 import StatsView from "./stats-view.component";
 import { Card } from "../../../components/card.component";
 import { Spacer } from "../../../components/spacer.component";
+import { t } from "i18next";
 
 export default class LeaderborardCard extends Component {
   state = {
@@ -67,10 +68,7 @@ export default class LeaderborardCard extends Component {
 
     return (
       <Card style={{ marginBottom: 20 }}>
-        <TitleText>
-          Таблица лидеров
-          {/* Leaderboard */}
-        </TitleText>
+        <TitleText>{t("profile:leaderboard")}</TitleText>
 
         <Spacer size="large"></Spacer>
 

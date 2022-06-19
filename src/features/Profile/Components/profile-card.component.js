@@ -40,9 +40,8 @@ const Row = styled.View`
   flex-direction: row;
 `;
 
-export function ProfileCard(props) {
+export function ProfileCard({ currentUser }) {
   const navigation = useNavigation();
-  const { currentUser } = props;
   const { t } = useTranslation();
 
   return (
@@ -57,17 +56,8 @@ export function ProfileCard(props) {
             />
           </TouchableOpacity>
         </Spacer>
-        <TitleText>{currentUser?.username}</TitleText>
-        {/* should be username */}
-        {/* We can soon have a part on login with username as well*/}
-        <Row>
-          <BodyText color="primary">{currentUser?.currentScore}</BodyText>
-          <FontAwesomeIcon
-            icon={faLeaf}
-            size={16}
-            color={theme.colors.ui.primary}
-          />
-        </Row>
+        <TitleText size="subtitle">{currentUser?.email}</TitleText>
+
         <Spacer size="medium" />
         <Row>
           <Friends>

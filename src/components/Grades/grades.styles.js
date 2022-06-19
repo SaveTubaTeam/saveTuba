@@ -76,11 +76,8 @@ export const Row = styled.View`
 `;
 
 export const Adventure = styled.TouchableOpacity`
-  margin: 5px;
-  width: ${(props) => props.theme.sizes[4]}
-  height: 150px;
-  width: undefined;
-  aspect-ratio: 1;
+  width: 44%;
+  margin: 10px;
 `;
 
 export const ImageBg = styled.ImageBackground`

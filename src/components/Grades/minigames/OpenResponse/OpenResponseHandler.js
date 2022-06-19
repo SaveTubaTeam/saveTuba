@@ -27,10 +27,6 @@ const ImagePrompt = ({ questions }) => {
             marginBottom: 10,
             height: 300,
             borderRadius: 30,
-            shadowColor: "black",
-            shadowOffset: { width: 200, height: 200 },
-            shadowRadius: 20,
-            elevation: 5,
           }}
         >
           <View
@@ -41,10 +37,6 @@ const ImagePrompt = ({ questions }) => {
               borderRadius: 30,
               alignItems: "center",
               justifyContent: "center",
-              shadowColor: "black",
-              shadowOffset: { width: 200, height: 200 },
-              shadowRadius: 20,
-              elevation: 6,
             }}
           >
             <View
@@ -85,10 +77,6 @@ const ImagePrompt = ({ questions }) => {
             marginBottom: 10,
             height: 250,
             borderRadius: 30,
-            shadowColor: "black",
-            shadowOffset: { width: 200, height: 200 },
-            shadowRadius: 20,
-            elevation: 5,
           }}
         >
           <View
@@ -97,10 +85,6 @@ const ImagePrompt = ({ questions }) => {
               height: 240,
               backgroundColor: "white",
               borderRadius: 30,
-              shadowColor: "black",
-              shadowOffset: { width: 200, height: 200 },
-              shadowRadius: 20,
-              elevation: 5,
             }}
           >
             <View

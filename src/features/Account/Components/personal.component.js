@@ -25,19 +25,6 @@ const Row = styled.View`
   align-items: center;
 `;
 
-const InputContainer = styled.View`
-  width: 40%;
-`;
-
-const Input = styled.TextInput`
-  font-family: ${(props) => props.theme.fonts.body};
-  color: ${(props) => props.theme.colors.text.tertiary};
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: ${(props) => props.theme.space[2]};
-`;
-
 export function PersonalCard(props) {
   const { t } = useTranslation();
 
@@ -64,12 +51,6 @@ export function PersonalCard(props) {
       <AvatarContainer>
         <Spacer position="bottom" size="large">
           <Row>
-            {/* <Avatar.Icon
-                            size={180}
-                            icon="head"
-                            backgroundColor={theme.colors.ui.tertiary}
-                        /> */}
-
             {!photo && (
               <Avatar.Icon
                 size={180}
@@ -102,14 +83,6 @@ export function PersonalCard(props) {
         </Spacer>
 
         <TitleText size="subtitle">{currentUser?.email}</TitleText>
-        <Row>
-          <TitleText size="subtitle">
-            {t("personal:changeusername")}:{" "}
-          </TitleText>
-          <InputContainer>
-            <Input placeholder={currentUser?.username} />
-          </InputContainer>
-        </Row>
       </AvatarContainer>
     </Card>
   );

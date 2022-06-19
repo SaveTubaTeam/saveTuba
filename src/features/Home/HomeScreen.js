@@ -4,6 +4,7 @@ import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import ChaptersHandler from "../Grades/ChaptersHandler";
 
@@ -15,6 +16,8 @@ const ImageBg = styled.ImageBackground`
 
 function HomeView() {
   const navigation = useNavigation();
+  const { t } = useTranslation();
+
   return (
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
       <ScrollView style={{ paddingTop: 50 }}>
@@ -53,13 +56,15 @@ function HomeView() {
 }
 
 const HomeScreen = () => {
+  const { t } = useTranslation();
+
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="Grades"
         component={HomeView}
         options={{
-          title: "Классы", // Grades
+          title: t("common:levels"), // Grades
           headerStyle: {
             backgroundColor: "#C6DC3B",
           },

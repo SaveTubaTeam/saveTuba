@@ -8,10 +8,14 @@ export default {
   signout: "Sign Out",
   general: "General",
   email: "Email",
+
   levels: "Grades",
+  chapters: "Chapters",
+  lessons: "Lessons",
+  lesson: "Lesson",
+
   friends: "Friends",
   badges: "Badges",
-  leaderboard: "Leaderboard",
   home: "Home",
   profile: "Profile",
   settings: "Settings",

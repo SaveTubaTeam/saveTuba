@@ -11,9 +11,9 @@ const Row = styled.View`
 `;
 
 const LANGUAGES = [
-  { code: "en", label: "English" },
+  { code: "kk", label: "Қазақ" },
   { code: "ru", label: "Русский" },
-  { code: "kk", label: "қазақ" },
+  { code: "en", label: "English" },
 ];
 
 const Selector = () => {
@@ -27,7 +27,9 @@ const Selector = () => {
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <BodyText size="subtitle">{t("general:languageSelector")}</BodyText>
+        <BodyText size="body" color="quaternary">
+          {t("general:languageSelector")}
+        </BodyText>
       </View>
       {LANGUAGES.map((language) => {
         const selectedLanguage = language.code === selectedLanguageCode;
@@ -136,14 +138,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   text: {
-    fontSize: 18,
+    fontSize: 16,
     color: "grey",
     paddingVertical: 4,
   },
   selectedText: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "600",
-    color: "#60BBDD",
+    color: "#748816",
     paddingVertical: 4,
   },
 });

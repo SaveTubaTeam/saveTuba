@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import AccountScreen from "../Screens/AccountScreen";
 import CameraScreen from "../Screens/CameraScreen";
+import { auth } from "../../../../firebase";
 
 const Stack = createNativeStackNavigator();
 
