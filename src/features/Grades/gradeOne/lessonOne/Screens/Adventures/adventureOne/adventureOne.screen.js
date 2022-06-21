@@ -1,10 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Button } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Button,
+  Text,
+  TouchableHighlight,
+} from "react-native";
 import { Ionicons, FontAwesome, Entypo } from "@expo/vector-icons"; // 6.2.2
-
-//import Header from './components/Header';
-import Score from "./components/Score";
-import Card from "./components/Card";
 
 export class AdventureOne extends React.Component {
   constructor(props) {
@@ -216,6 +218,46 @@ export class AdventureOne extends React.Component {
   }
 }
 
+class Card extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let CardSource = FontAwesome;
+    let icon_name = "question-circle";
+    let icon_color = "#393939";
+
+    if (this.props.is_open) {
+      CardSource = this.props.src;
+      icon_name = this.props.name;
+      icon_color = this.props.color;
+    }
+
+    return (
+      <View style={styles.card}>
+        <TouchableHighlight
+          onPress={this.props.clickCard}
+          activeOpacity={0.75}
+          underlayColor={"#f1f1f1"}
+        >
+          <CardSource name={icon_name} size={50} color={icon_color} />
+        </TouchableHighlight>
+      </View>
+    );
+  }
+}
+
+class Score extends React.Component {
+  render() {
+    return (
+      <View style={styles.score_container}>
+        <Text style={styles.score}>{this.props.score}</Text>
+      </View>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -231,5 +273,22 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     padding: 10,
     marginTop: 20,
+  },
+  card: {
+    flex: 1,
+    alignItems: "center",
+  },
+  card_text: {
+    fontSize: 50,
+    fontWeight: "bold",
+  },
+  score_container: {
+    flex: 2,
+    alignItems: "center",
+    padding: 20,
+  },
+  score: {
+    fontSize: 40,
+    fontWeight: "bold",
   },
 });

@@ -2,8 +2,10 @@ import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import styled from "styled-components";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useTheme } from "@react-navigation/native";
 
 export const Header = ({ title, back, navigation }) => {
+  const theme = useTheme();
   return (
     <>
       <View
@@ -28,7 +30,7 @@ export const Header = ({ title, back, navigation }) => {
         </TouchableOpacity>
         <Text
           style={{
-            fontFamily: "Gabriela_400Regular",
+            fontFamily: "BalsamiqSans_400Regular",
             color: "#748816",
             fontSize: 20,
             paddingTop: 8,

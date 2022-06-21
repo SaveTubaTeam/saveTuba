@@ -1,6 +1,6 @@
 export const fonts = {
-  body: "Raleway_400Regular",
-  heading: "Gabriela_400Regular",
+  body: "Scada_400Regular",
+  heading: "BalsamiqSans_400Regular",
 };
 
 export const fontWeights = {
@@ -14,7 +14,7 @@ export const fontSizes = {
   button: "14px",
   body: "16px",
   title: "24px",
-  h5: "24px",
+  h5: "28px",
   h4: "34px",
   h3: "45px",
   h2: "56px",

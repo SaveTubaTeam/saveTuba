@@ -36,8 +36,7 @@ export const Grade1 = {
             memory: {
               num: 1,
               navigation: "Memory",
-              title: "Объем памяти",
-              key: "testkey0",
+              title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
               icon: require("../../../assets/willpower.png"),
               backgroundColor: "seagreen",
               component: <AdventureOne />,
@@ -45,8 +44,6 @@ export const Grade1 = {
             sorting: {
               num: 2,
               navigation: "Sorting",
-              title: "Сортировка", // Sorting
-              description: "Выберите соответствующую категорию", // Choose the corresponding category.
               icon: require("../../../assets/recycle-bin.png"),
               backgroundColor: "powderblue",
               key: "testkey1",
@@ -88,8 +85,6 @@ export const Grade1 = {
             sorting: {
               num: 1,
               navigation: "Sorting",
-              title: "Сортировка", // Sorting
-              description: "Выберите соответствующую категорию", // Choose the corresponding category.
               icon: require("../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               key: "testkey1",
@@ -113,7 +108,7 @@ export const Grade1 = {
             memory: {
               num: 2,
               navigation: "Memory",
-              title: "Объем памяти",
+              title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
               key: "testkey0",
               icon: require("../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
@@ -122,8 +117,6 @@ export const Grade1 = {
             quiz: {
               num: 3,
               navigation: "QuizScreen",
-              title: "Викторина", // Quiz
-              description: "Выберите правильный ответ", // Choose the correct answer.
               icon: require("../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               key: "testkey2",
@@ -167,10 +160,11 @@ export const Grade1 = {
             openresponse: {
               num: 4,
               navigation: "Image Boom",
-              title: "Изображение Бум",
-              description: "Отвечать открыто", // Answer openly
+              title: (
+                <Translation>{(t) => t("gradeone:openresponse")}</Translation>
+              ), // Image Boom
               icon: require("../../../assets/image.png"),
-              backgroundColor: "hotpink",
+              backgroundColor: "palevioletred",
               key: "testkey3",
               data: {
                 numberOfPrompts: 4,
@@ -220,8 +214,6 @@ export const Grade1 = {
           minigames: {
             sorting: {
               navigation: "Sorting",
-              title: "Сортировка", // Sorting
-              description: "Выберите соответствующую категорию", // Choose the corresponding category.
               key: "testkey1",
               image: AdventureImages.multiplechoice,
               content: [
@@ -243,15 +235,13 @@ export const Grade1 = {
             },
             memory: {
               navigation: "Memory",
-              title: "Объем памяти",
+              title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
               key: "testkey0",
               image: AdventureImages.matching,
               component: Test,
             },
             quiz: {
               navigation: "QuizScreen",
-              title: "Викторина", // Quiz
-              description: "Выберите правильный ответ", // Choose the correct answer.
               key: "testkey2",
               image: AdventureImages.multiplechoice,
               content: [
@@ -293,8 +283,9 @@ export const Grade1 = {
             },
             openresponse: {
               navigation: "Image Boom",
-              title: "Изображение Бум",
-              description: "Отвечать открыто", // Answer openly
+              title: (
+                <Translation>{(t) => t("gradeone:openresponse")}</Translation>
+              ), // Image Boom
               image: AdventureImages.puzzle,
               key: "testkey3",
               data: {

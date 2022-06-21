@@ -10,6 +10,7 @@ import { Header } from "../../components/Grades/grades.styles";
 import { BodyText } from "../../components/body-text.component";
 import { TitleText } from "../../components/title-text.component";
 import { SafeArea } from "../../components/safe-area.component";
+import { Spacer } from "../../components/spacer.component";
 
 const Container = styled.View`
   flex: 1;
@@ -64,10 +65,10 @@ function ChaptersComponent({ selectedGrade, navigation }) {
           }}
         >
           <View style={{ position: "absolute", left: 30, bottom: 30 }}>
-            <BodyText align="left" size="body" color="secondary">
+            <BodyText align="left" size="mid" color="secondary">
               {item.title}
             </BodyText>
-            <TitleText align="left" size="subtitle" color="secondary">
+            <TitleText align="left" size="title" color="secondary">
               {item.name}
             </TitleText>
           </View>

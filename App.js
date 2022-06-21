@@ -4,15 +4,16 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 
-// Fonts
 import {
-  useFonts as useGabriela,
-  Gabriela_400Regular,
-} from "@expo-google-fonts/gabriela";
+  useFonts as useScada,
+  Scada_400Regular,
+  Scada_700Bold,
+} from "@expo-google-fonts/scada";
 import {
-  useFonts as useRaleway,
-  Raleway_400Regular,
-} from "@expo-google-fonts/raleway";
+  useFonts as useBalsamiqSans,
+  BalsamiqSans_400Regular,
+  BalsamiqSans_700Bold,
+} from "@expo-google-fonts/balsamiq-sans";
 
 import { useTranslation } from "react-i18next";
 import "./src/components/Translations/IMLocalize";
@@ -54,15 +55,17 @@ function Home() {
 }
 
 export default function App() {
-  const [gabrielaLoaded] = useGabriela({
-    Gabriela_400Regular,
+  const [balsamiqSansLoaded] = useBalsamiqSans({
+    BalsamiqSans_400Regular,
+    BalsamiqSans_700Bold,
   });
 
-  const [ralewayLoaded] = useRaleway({
-    Raleway_400Regular,
+  const [scadaLoaded] = useScada({
+    Scada_400Regular,
+    Scada_700Bold,
   });
 
-  if (!gabrielaLoaded || !ralewayLoaded) {
+  if (!balsamiqSansLoaded || !scadaLoaded) {
     return null;
   }
 

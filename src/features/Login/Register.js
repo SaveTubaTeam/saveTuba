@@ -4,7 +4,10 @@ import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { setDoc, doc } from "firebase/firestore";
 
+import { renderToString } from "react-dom/server";
 import { auth, db } from "../../../firebase";
+import { Translation } from "react-i18next";
+import { t } from "i18next";
 
 // import { withNavigation } from '@react-navigation';
 
@@ -68,8 +71,33 @@ export class Register extends Component {
       });
   }
 
+  email() {
+    return <Translation>{(t) => t("common:email")}</Translation>;
+  }
+  password() {
+    return <Translation>{(t) => t("common:password")}</Translation>;
+  }
+  username() {
+    return <Translation>{(t) => t("common:username")}</Translation>;
+  }
+  firstname() {
+    return <Translation>{(t) => t("common:firstname")}</Translation>;
+  }
+  lastname() {
+    return <Translation>{(t) => t("common:lastname")}</Translation>;
+  }
+  classcode() {
+    return <Translation>{(t) => t("common:classcode")}</Translation>;
+  }
+
   render() {
     // const navigation = useNavigation();
+    const email = renderToString(this.email());
+    const password = renderToString(this.password());
+    const username = renderToString(this.username());
+    const firstname = renderToString(this.firstname());
+    const lastname = renderToString(this.lastname());
+    const classcode = renderToString(this.classcode());
 
     return (
       <Container>
@@ -79,35 +107,32 @@ export class Register extends Component {
             {/* Register For Save Tuba */}
           </TitleText>
           <Input
-            placeholder="Эл." //Email
+            placeholder={email}
             onChangeText={(email) => this.setState({ email })}
           />
           <Input
-            placeholder="Пароль" //Password
+            placeholder={password}
             secureTextEntry={true}
             onChangeText={(password) => this.setState({ password })}
           />
           <Input
-            placeholder="Имя пользователя" //Username
+            placeholder={username}
             onChangeText={(username) => this.setState({ username })}
           />
           <Input
-            placeholder="Первый Имя" //first name
+            placeholder={firstname}
             onChangeText={(firstName) => this.setState({ firstName })}
           />
           <Input
-            placeholder="Прошлой Имя" //last name
+            placeholder={lastname}
             onChangeText={(lastName) => this.setState({ lastName })}
           />
           <Input
-            placeholder="Код класса" //Class Code
+            placeholder={classcode}
             onChangeText={(classCode) => this.setState({ classCode })}
           />
           <Button onPress={() => this.onSignUp()}>
-            <TitleText color="secondary">
-              регистр
-              {/* Register */}
-            </TitleText>
+            <TitleText color="secondary">{t("common:signup")}</TitleText>
           </Button>
           <Button
             onPress={() => {
@@ -117,20 +142,14 @@ export class Register extends Component {
               this.onSignUp();
             }}
           >
-            <TitleText color="secondary">
-              Учитель Зарегистрироваться
-              {/* Teacher Sign Up */}
-            </TitleText>
+            <TitleText color="secondary">{t("common:teachersignup")}</TitleText>
           </Button>
           <BackButton
             onPress={() => {
               this.props.navigation.navigate("Login");
             }}
           >
-            <TitleText color="secondary">
-              Назад
-              {/* Back */}
-            </TitleText>
+            <TitleText color="secondary">{t("common:back")}</TitleText>
           </BackButton>
         </ImageBg>
       </Container>

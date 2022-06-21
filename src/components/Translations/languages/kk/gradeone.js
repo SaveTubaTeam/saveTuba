@@ -1,13 +1,10 @@
 export default {
   /* Chapters numbered */
-  chapterone: "Бөлім 1",
-  chaptertwo: "Бөлім 2",
-  chapterthree: "Бөлім 3",
-  chapterfour: "Бөлім 4",
-  chapterfive: "Бөлім 5",
-  chaptersix: "Бөлім 6",
-  chapterseven: "Бөлім 7",
-  chaptereight: "Бөлім 8",
+  chapterone: "1-бөлім",
+  chaptertwo: "2-бөлім",
+  chapterthree: "3-бөлім",
+  chapterfour: "4-бөлім",
+  chapterfive: "5-бөлім",
 
   /* Chapter names */
   iamanexplorer: "Мен зерттеушімін",
@@ -59,4 +56,13 @@ export default {
   c5l10: "10. Жазда аяз қайда жасырады?",
   c5l11: "11. Магниттер үшін не қолданылады?",
   c5l12: "12. Жазда қалай көңіл көтеруге болады?",
+
+  /* Minigame names */
+  memory: "Translation missing",
+  sorting: "Translation missing",
+  quiz: "Викторина",
+  openresponse: "Translation missing",
+
+  /* General */
+  mastery: "Шеберлік",
 };

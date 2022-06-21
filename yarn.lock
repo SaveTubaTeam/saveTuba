@@ -1149,6 +1149,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@expo-google-fonts/balsamiq-sans@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/balsamiq-sans/-/balsamiq-sans-0.2.2.tgz#1fb8e4bc0e4236fd92c61f6febb82ea2d3a0a9d6"
+  integrity sha512-JZep2L6FFhu2bUtZdKNkNP4OHMbPClE0nG6ag+3q8rivJizHKbkgSUkzJBsDCbgsGnLA8nwbeBAoHbXQXL603A==
+
 "@expo-google-fonts/gabriela@^0.2.2":
   version "0.2.2"
   resolved "https://registry.npmjs.org/@expo-google-fonts/gabriela/-/gabriela-0.2.2.tgz"
@@ -1158,6 +1163,11 @@
   version "0.2.2"
   resolved "https://registry.npmjs.org/@expo-google-fonts/raleway/-/raleway-0.2.2.tgz"
   integrity sha512-/MUWS14hN9K25PgS7viQwZwasijwL1plIs1gSFu03uyaMCoSMXXrp+Jc1Am51Gj7IomPfVqSOhrbkSfYTeq6cQ==
+
+"@expo-google-fonts/scada@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/scada/-/scada-0.2.2.tgz#8e3929ded0239b9748118b7bf988b8e4a0a33f03"
+  integrity sha512-b8KxzqHvGExE9FL7f0IDAogWzenxL0XgBbo5yE3fHGidnmO79JAeuObDUbpuhOJ1Fv5qPFCqJVO8WVPMxwhpDQ==
 
 "@expo/apple-utils@0.0.0-alpha.26":
   version "0.0.0-alpha.26"

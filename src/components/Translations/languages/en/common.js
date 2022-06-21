@@ -5,13 +5,24 @@ export default {
   soundeffects: "Sound Effects",
   languageSelector: "Language Selector",
 
+  general: "General",
   help: "Help",
   about: "About",
+
+  start: "Start",
+  back: "Back",
+
+  login: "Log In",
+  signup: "Sign Up",
+  teachersignup: "Teacher Sign Up",
   signout: "Sign Out",
 
-  general: "General",
-  email: "Email",
-  start: "Start",
+  email: "Email Address",
+  password: "Password",
+  username: "Username",
+  firstname: "First Name",
+  lastname: "Last Name",
+  classcode: "Class Code",
 
   levels: "Grades",
   chapters: "Chapters",

@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 
 const weightVariant = {
   regular: 400,
-  medium: 500,
   bold: 700,
 };
 
@@ -14,7 +13,7 @@ const sizeVariant = {
   mid: 18,
   subtitle: 20,
   title: 24,
-  h5: 24,
+  h5: 28,
   h4: 34,
   h3: 45,
   h2: 56,
@@ -25,6 +24,7 @@ const colorVariant = {
   primary: "#748816",
   secondary: "#ffffff",
   tertiary: "#C6DC3B",
+  quaternary: "#fff8e7",
 };
 
 const alignVariant = {

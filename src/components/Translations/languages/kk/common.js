@@ -5,13 +5,24 @@ export default {
   soundeffects: "Дыбыс әсерлері",
   languageSelector: "Тіл таңдау",
 
+  general: "Жалпы",
   help: "Көмектесіңдер",
   about: "Туралы",
+
+  start: "Бастау",
+  back: "Артқа",
+
+  login: "Kipy",
+  signup: "Тіркелу",
+  teachersignup: "Мұғалім тіркелу",
   signout: "Шығу",
 
-  general: "Жалпы",
   email: "Электрондық пошта",
-  start: "Бастау",
+  password: "Пароль",
+  username: "Пайдаланушы аты",
+  firstname: "Аты",
+  lastname: "Тек",
+  classcode: "Сынып коды",
 
   levels: "Сыныптары",
   chapters: "Бөлімдер",

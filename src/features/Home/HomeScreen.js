@@ -70,7 +70,7 @@ const HomeScreen = () => {
           },
           headerTitleStyle: {
             fontSize: 20,
-            fontFamily: "Gabriela_400Regular",
+            fontFamily: "BalsamiqSans_400Regular",
             color: "#748816",
           },
         }}

@@ -3,6 +3,7 @@ import styled from "styled-components/native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import LessonComponent from "./LessonComponent";
 import OpenResponseHandler from "../../components/Grades/minigames/OpenResponse/OpenResponseHandler";
@@ -17,6 +18,7 @@ function IndividualLessonHandler({
   selectedLesson,
 }) {
   const navigation = useNavigation();
+  const { t } = useTranslation();
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
@@ -40,7 +42,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="Memory"
           options={{
-            title: "Игра на запоминание",
+            title: t("gradeone:memory"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -63,7 +65,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="Sorting"
           options={{
-            title: "Сортировка",
+            title: t("gradeone:sorting"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -84,7 +86,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="QuizScreen"
           options={{
-            title: "Викторина",
+            title: t("gradeone:quiz"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -105,7 +107,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="Image Boom"
           options={{
-            title: "Изображение Бум",
+            title: t("gradeone:openresponse"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {

@@ -13,8 +13,8 @@ export default {
   worldofscience: "World of science",
   universe: "Universe. Earth. Human",
   substances: "Substances and materials",
-  processes: "Processes in animate and inanimate nature",
+  processes: "Processes in \nanimate and \ninanimate nature",
   energy: "Energy and movement",
-  ecology: "Ecology and sustainable development",
-  discoveries: "Discoveries that changed the world",
+  ecology: "Ecology and \nsustainable development",
+  discoveries: "Discoveries that \nchanged the world",
 };

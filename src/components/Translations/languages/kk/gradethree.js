@@ -1,19 +1,19 @@
 export default {
   /* Chapters numbered */
-  chapterone: "Бөлім 1",
-  chaptertwo: "Бөлім 2",
-  chapterthree: "Бөлім 3",
-  chapterfour: "Бөлім 4",
-  chapterfive: "Бөлім 5",
-  chaptersix: "Бөлім 6",
-  chapterseven: "Бөлім 7",
-  chaptereight: "Бөлім 8",
+  chapterone: "1-бөлім",
+  chaptertwo: "2-бөлім",
+  chapterthree: "3-бөлім",
+  chapterfour: "4-бөлім",
+  chapterfive: "5-бөлім",
+  chaptersix: "6-бөлім",
+  chapterseven: "7-бөлім",
+  chaptereight: "8-бөлім",
 
   /* Chapter names */
   plants: "Өсімдіктер",
   animals: "Жануарлар",
   human: "Адам",
-  airwater: "Заттар және олардың \nқасиеттері. Ауа және су",
+  airwater: "Заттар және \nолардың \nқасиеттері. Ауа және су",
   physics: "Табиғат физикасы",
   naturalresources: "Заттар және \nолардың қасиеттері. \nТабиғат ресурстары",
   cosmos: "Жер және ғарыш",

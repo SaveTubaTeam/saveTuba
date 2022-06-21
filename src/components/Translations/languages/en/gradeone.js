@@ -12,7 +12,7 @@ export default {
   /* Chapter names */
   iamanexplorer: "I am an explorer",
   wildlife: "Wildlife",
-  substances: "Substances and their properties",
+  substances: "Substances \nand their properties",
   cosmos: "Earth and space",
   physics: "Physics of nature",
 
@@ -22,7 +22,7 @@ export default {
   c1l3: "3. What is an experiment?",
 
   /* Chapter 2 lesson names */
-  c2l1: "1. What are the secrets of plants?",
+  c2l1: "1. What are the \nsecrets of plants?",
   c2l2: "2. How do plants live?",
   c2l3: "3. Who hatched from the egg?",
   c2l4: "4. Who plays hide and seek?",
@@ -59,4 +59,13 @@ export default {
   c5l10: "10. Where does frost hide during the summer?",
   c5l11: "11. What is used for magnets?",
   c5l12: "12. How to have fun during the summer?",
+
+  /* Minigame names */
+  memory: "Memory",
+  sorting: "Sorting",
+  quiz: "Викторина",
+  openresponse: "Image Boom",
+
+  /* General */
+  mastery: "Mastery",
 };

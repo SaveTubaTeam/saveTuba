@@ -68,7 +68,7 @@ export const Grade3 = {
     },
     {
       navigation: "Chapter7",
-      title: <Translation>{(t) => t("gradethree:chaptersevent")}</Translation>, // Chapter 7
+      title: <Translation>{(t) => t("gradethree:chapterseven")}</Translation>, // Chapter 7
       name: <Translation>{(t) => t("gradethree:cosmos")}</Translation>, // Earth and space
       icon: require("../../../assets/constellation.png"),
       colorOne: "midnightblue",

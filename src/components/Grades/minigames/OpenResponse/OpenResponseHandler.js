@@ -101,7 +101,7 @@ const ImagePrompt = ({ questions }) => {
               <TextInput
                 style={{
                   flex: 1,
-                  fontFamily: "Gabriela_400Regular",
+                  fontFamily: "BalsamiqSans_400Regular",
                   color: "#748816",
                   fontSize: 18,
                   flexShrink: 1,

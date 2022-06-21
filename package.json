@@ -9,8 +9,10 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/balsamiq-sans": "^0.2.2",
     "@expo-google-fonts/gabriela": "^0.2.2",
     "@expo-google-fonts/raleway": "^0.2.2",
+    "@expo-google-fonts/scada": "^0.2.2",
     "@expo/vector-icons": "13.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",

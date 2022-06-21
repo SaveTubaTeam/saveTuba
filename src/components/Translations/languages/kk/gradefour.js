@@ -1,20 +1,19 @@
 export default {
   /* Chapters numbered */
-  chapterone: "Бөлім 1",
-  chaptertwo: "Бөлім 2",
-  chapterthree: "Бөлім 3",
-  chapterfour: "Бөлім 4",
-  chapterfive: "Бөлім 5",
-  chaptersix: "Бөлім 6",
-  chapterseven: "Бөлім 7",
-  chaptereight: "Бөлім 8",
+  chapterone: "1-бөлім",
+  chaptertwo: "2-бөлім",
+  chapterthree: "3-бөлім",
+  chapterfour: "4-бөлім",
+  chapterfive: "5-бөлім",
+  chaptersix: "6-бөлім",
+  chapterseven: "7-бөлім",
 
   /* Chapter names */
   worldofscience: "Ғылым әлемі",
   universe: "Ғалам. Жер. Адам",
   substances: "Заттар мен материалдар",
-  processes: "Жанды және жансыз табиғаттағы процестер",
+  processes: "Жанды және \nжансыз \nтабиғаттағы процестер",
   energy: "Энергия және қозғалыс",
-  ecology: "Экология және тұрақты даму",
+  ecology: "Экология және \nтұрақты даму",
   discoveries: "Әлемді өзгертетін жаңалықтар",
 };
