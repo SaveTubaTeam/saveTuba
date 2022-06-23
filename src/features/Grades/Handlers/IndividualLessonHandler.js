@@ -42,7 +42,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="Memory"
           options={{
-            title: t("gradeone:memory"),
+            title: t("common:memory"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -66,7 +66,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="Sorting"
           options={{
-            title: t("gradeone:sorting"),
+            title: t("common:sorting"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -90,7 +90,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="QuizScreen"
           options={{
-            title: t("gradeone:quiz"),
+            title: t("common:quiz"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {
@@ -114,7 +114,7 @@ function IndividualLessonHandler({
         <Stack.Screen
           name="Image Boom"
           options={{
-            title: t("gradeone:openresponse"),
+            title: t("common:openresponse"),
             headerTintColor: "white",
             headerBackTitleVisible: false,
             headerStyle: {

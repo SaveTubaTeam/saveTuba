@@ -1,11 +1,4 @@
 export default {
-  /* Chapters numbered */
-  chapterone: "Раздел 1",
-  chaptertwo: "Раздел 2",
-  chapterthree: "Раздел 3",
-  chapterfour: "Раздел 4",
-  chapterfive: "Раздел 5",
-
   /* Chapter names */
   iamanexplorer: "Я-исследователь",
   wildlife: "Живая природа",
@@ -56,13 +49,4 @@ export default {
   c5l10: "10. Где мороз прячется летом?",
   c5l11: "11. Для чего используют магниты?",
   c5l12: "12. Как интересно провести лето?",
-
-  /* Minigame names */
-  memory: "Объем памяти",
-  sorting: "Сортировка",
-  quiz: "Викторина",
-  openresponse: "Изображение Бум",
-
-  /* General */
-  mastery: "Мастерство",
 };

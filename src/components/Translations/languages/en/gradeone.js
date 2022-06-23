@@ -1,14 +1,4 @@
 export default {
-  /* Chapters numbered */
-  chapterone: "Chapter 1",
-  chaptertwo: "Chapter 2",
-  chapterthree: "Chapter 3",
-  chapterfour: "Chapter 4",
-  chapterfive: "Chapter 5",
-  chaptersix: "Chapter 6",
-  chapterseven: "Chapter 7",
-  chaptereight: "Chapter 8",
-
   /* Chapter names */
   iamanexplorer: "I am an explorer",
   wildlife: "Wildlife",
@@ -59,13 +49,4 @@ export default {
   c5l10: "10. Where does frost hide during the summer?",
   c5l11: "11. What is used for magnets?",
   c5l12: "12. How to have fun during the summer?",
-
-  /* Minigame names */
-  memory: "Memory",
-  sorting: "Sorting",
-  quiz: "Викторина",
-  openresponse: "Image Boom",
-
-  /* General */
-  mastery: "Mastery",
 };

@@ -11,7 +11,7 @@ export const Grade1 = {
   chapters: [
     {
       navigation: "Chapter1", // name of the Stack Screen
-      title: <Translation>{(t) => t("gradeone:chapterone")}</Translation>, // Chapter 1
+      title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
       name: <Translation>{(t) => t("gradeone:iamanexplorer")}</Translation>, // I am an explorer
       icon: require("../../../../assets/location.png"),
       colorOne: "indianred",
@@ -32,7 +32,7 @@ export const Grade1 = {
           minigames: {
             memory: {
               navigation: "Memory",
-              title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -167,7 +167,7 @@ export const Grade1 = {
             },
             memory: {
               navigation: "Memory",
-              title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
               key: "1",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
@@ -284,7 +284,7 @@ export const Grade1 = {
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("gradeone:openresponse")}</Translation>
+                <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
@@ -347,7 +347,7 @@ export const Grade1 = {
             },
             memory: {
               navigation: "Memory",
-              title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
               key: "1",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
@@ -464,7 +464,7 @@ export const Grade1 = {
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("gradeone:openresponse")}</Translation>
+                <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
@@ -493,7 +493,7 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter2",
-      title: <Translation>{(t) => t("gradeone:chaptertwo")}</Translation>, // Chapter 2
+      title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradeone:wildlife")}</Translation>, // Wildlife
       icon: require("../../../../assets/ecology.png"),
       colorOne: "indigo",
@@ -643,7 +643,7 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter3",
-      title: <Translation>{(t) => t("gradeone:chapterthree")}</Translation>, // Chapter 3
+      title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
       icon: require("../../../../assets/air-pollution.png"),
       colorOne: "orange",
@@ -701,7 +701,7 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter4",
-      title: <Translation>{(t) => t("gradeone:chapterfour")}</Translation>, // Chapter 4
+      title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../../assets/rocket.png"),
       colorOne: "midnightblue",
@@ -771,7 +771,7 @@ export const Grade1 = {
     },
     {
       navigation: "Chapter5",
-      title: <Translation>{(t) => t("gradeone:chapterfive")}</Translation>, // Chapter 5
+      title: <Translation>{(t) => t("common:chapterfive")}</Translation>, // Chapter 5
       name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
       icon: require("../../../../assets/physics.png"),
       colorOne: "lightpink",

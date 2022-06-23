@@ -1,14 +1,4 @@
 export default {
-  /* Chapters numbered */
-  chapterone: "Chapter 1",
-  chaptertwo: "Chapter 2",
-  chapterthree: "Chapter 3",
-  chapterfour: "Chapter 4",
-  chapterfive: "Chapter 5",
-  chaptersix: "Chapter 6",
-  chapterseven: "Chapter 7",
-  chaptereight: "Chapter 8",
-
   /* Chapter names */
   iamanexplorer: "I am an explorer",
   wildlife: "Wildlife",
@@ -16,4 +6,7 @@ export default {
   naturalresources: "Natural Resources",
   cosmos: "Earth and space",
   physics: "Physics of nature",
+
+  /* Chapter 1 lesson names */
+  c1l1: "",
 };

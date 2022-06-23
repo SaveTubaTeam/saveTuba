@@ -1,4 +1,20 @@
 export default {
+  /* Chapters numbered */
+  chapterone: "1-бөлім",
+  chaptertwo: "2-бөлім",
+  chapterthree: "3-бөлім",
+  chapterfour: "4-бөлім",
+  chapterfive: "5-бөлім",
+  chaptersix: "6-бөлім",
+  chapterseven: "7-бөлім",
+  chaptereight: "8-бөлім",
+
+  /* Minigame names */
+  memory: "Translation missing",
+  sorting: "Translation missing",
+  quiz: "Викторина",
+  openresponse: "Translation missing",
+
   hello: "Сәлем",
 
   reminders: "Еске салулар",
@@ -35,4 +51,5 @@ export default {
   home: "Үй",
   profile: "Профиль",
   settings: "Параметрлер",
+  mastery: "Шеберлік",
 };

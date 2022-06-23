@@ -1,4 +1,20 @@
 export default {
+  /* Chapters numbered */
+  chapterone: "Раздел 1",
+  chaptertwo: "Раздел 2",
+  chapterthree: "Раздел 3",
+  chapterfour: "Раздел 4",
+  chapterfive: "Раздел 5",
+  chaptersix: "Раздел 6",
+  chapterseven: "Раздел 7",
+  chaptereight: "Раздел 8",
+
+  /* Minigame names */
+  memory: "Объем памяти",
+  sorting: "Сортировка",
+  quiz: "Викторина",
+  openresponse: "Изображение Бум",
+
   hello: "привет",
 
   reminders: "Напоминания",
@@ -35,4 +51,5 @@ export default {
   home: "Дом",
   profile: "Профиль",
   settings: "Настройки",
+  mastery: "Мастерство",
 };
