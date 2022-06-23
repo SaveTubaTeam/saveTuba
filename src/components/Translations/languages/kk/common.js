@@ -11,6 +11,7 @@ export default {
 
   start: "Бастау",
   back: "Артқа",
+  restart: "Қайтадан бастаңыз",
 
   login: "Kipy",
   signup: "Тіркелу",

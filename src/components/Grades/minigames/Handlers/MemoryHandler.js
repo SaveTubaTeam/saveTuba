@@ -4,11 +4,18 @@ import {
   View,
   Button,
   Text,
-  TouchableHighlight,
+  Image,
+  ImageBackground as ImageBg,
+  TouchableOpacity,
 } from "react-native";
-import { Ionicons, FontAwesome, Entypo } from "@expo/vector-icons"; // 6.2.2
+import { Ionicons } from "@expo/vector-icons"; // 6.2.2
+import { renderToString } from "react-dom/server";
 
-export class AdventureOne extends React.Component {
+import { TitleText } from "../../../title-text.component";
+import { Translation } from "react-i18next";
+import { BodyText } from "../../../body-text.component";
+
+export class MemoryHandler extends React.Component {
   constructor(props) {
     super(props);
     this.renderCards = this.renderCards.bind(this);
@@ -28,62 +35,14 @@ export class AdventureOne extends React.Component {
       return this;
     };
 
-    let sources = {
-      fontawesome: FontAwesome,
-      entypo: Entypo,
-      ionicons: Ionicons,
-    };
+    let cards = this.props.data.content;
 
-    let cards = [
-      {
-        src: "entypo",
-        name: "flower",
-        color: "#37b24d",
-      },
-      {
-        src: "entypo",
-        name: "moon",
-        color: "#ffd43b",
-      },
-      {
-        src: "entypo",
-        name: "drop",
-        color: "blue",
-      },
-      {
-        src: "ionicons",
-        name: "boat",
-        color: "deepskyblue",
-      },
-      {
-        src: "ionicons",
-        name: "cart",
-        color: "grey",
-      },
-      {
-        src: "ionicons",
-        name: "trash",
-        color: "grey",
-      },
-      {
-        src: "ionicons",
-        name: "planet",
-        color: "brown",
-      },
-      {
-        src: "ionicons",
-        name: "car",
-        color: "rebeccapurple",
-      },
-    ];
+    this.cards = cards;
 
-    let clone = JSON.parse(JSON.stringify(cards));
-
-    this.cards = cards.concat(clone);
     this.cards.map((obj) => {
       let id = Math.random().toString(36).substring(7);
       obj.id = id;
-      obj.src = sources[obj.src];
+
       obj.is_open = false;
     });
 
@@ -96,16 +55,28 @@ export class AdventureOne extends React.Component {
     };
   }
 
+  restart() {
+    return <Translation>{(t) => t("common:restart")}</Translation>;
+  }
+
   render() {
+    const restart = renderToString(this.restart());
     return (
       <View style={styles.container}>
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
-        <Button
+        <TouchableOpacity
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            paddingBottom: 20,
+          }}
           onPress={this.resetCards}
-          title="Начать заново"
-          color="#748816"
-        />
+        >
+          <BodyText size="subtitle">
+            <Translation>{(t) => t("common:restart")}</Translation>
+          </BodyText>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -142,9 +113,9 @@ export class AdventureOne extends React.Component {
       return (
         <Card
           key={index}
-          src={card.src}
           name={card.name}
-          color={card.color}
+          type={card.type}
+          image={card.image}
           is_open={card.is_open}
           clickCard={this.clickCard.bind(this, card.id)}
         />
@@ -224,26 +195,68 @@ class Card extends React.Component {
   }
 
   render() {
-    let CardSource = FontAwesome;
-    let icon_name = "question-circle";
-    let icon_color = "#393939";
+    let CardSource = Ionicons;
+    let icon_name = "help-outline";
+    let icon_color = "#fff8e7";
 
-    if (this.props.is_open) {
-      CardSource = this.props.src;
-      icon_name = this.props.name;
-      icon_color = this.props.color;
+    if (this.props.is_open && this.props.type) {
+      return (
+        <ImageBg
+          source={require("../../../../../assets/block.png")}
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            marginRight: 5,
+            marginLeft: 5,
+            width: "100%",
+            height: undefined,
+            aspectRatio: 1,
+          }}
+        >
+          <Image source={this.props.image} style={{ width: 55, height: 55 }} />
+        </ImageBg>
+      );
+    } else if (this.props.is_open) {
+      return (
+        <ImageBg
+          source={require("../../../../../assets/block.png")}
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            marginRight: 5,
+            marginLeft: 5,
+            width: "100%",
+            height: undefined,
+            aspectRatio: 1,
+          }}
+        >
+          <TitleText size="subtitle" color="secondary">
+            {this.props.name}
+          </TitleText>
+        </ImageBg>
+      );
     }
 
     return (
-      <View style={styles.card}>
-        <TouchableHighlight
-          onPress={this.props.clickCard}
-          activeOpacity={0.75}
-          underlayColor={"#f1f1f1"}
-        >
+      <ImageBg
+        source={require("../../../../../assets/block.png")}
+        style={{
+          flex: 1,
+          alignItems: "center",
+          marginRight: 5,
+          marginLeft: 5,
+          justifyContent: "center",
+          width: "100%",
+          height: undefined,
+          aspectRatio: 1,
+        }}
+      >
+        <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
           <CardSource name={icon_name} size={50} color={icon_color} />
-        </TouchableHighlight>
-      </View>
+        </TouchableOpacity>
+      </ImageBg>
     );
   }
 }
@@ -261,22 +274,23 @@ class Score extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: 100,
     alignSelf: "stretch",
-    backgroundColor: "#fff",
+    backgroundColor: "#fff8e7",
   },
   row: {
     flex: 1,
     flexDirection: "row",
   },
   body: {
-    flex: 18,
-    justifyContent: "space-between",
+    flex: 8,
     padding: 10,
     marginTop: 20,
   },
   card: {
     flex: 1,
     alignItems: "center",
+    justifyContent: "center",
   },
   card_text: {
     fontSize: 50,

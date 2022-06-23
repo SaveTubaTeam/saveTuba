@@ -11,6 +11,7 @@ export default {
 
   start: "Start",
   back: "Back",
+  restart: "Start over",
 
   login: "Log In",
   signup: "Sign Up",

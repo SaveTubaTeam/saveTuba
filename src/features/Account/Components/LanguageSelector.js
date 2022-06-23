@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, Pressable, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  Pressable,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import { useTranslation } from "react-i18next";
 import CountryFlag from "react-native-country-flag";
 import styled from "styled-components/native";
@@ -10,10 +17,27 @@ const Row = styled.View`
   flex-direction: row;
 `;
 
+const Flag = ({ source }) => {
+  return (
+    <Image
+      source={source}
+      style={{
+        borderRadius: 3,
+        height: undefined,
+        width: 50,
+        aspectRatio: 1.5,
+      }}
+    />
+  );
+};
+
 const LANGUAGES = [
-  { code: "kk", label: "Қазақ" },
-  { code: "ru", label: "Русский" },
-  { code: "en", label: "English" },
+  {
+    code: "kk",
+    label: <Flag source={require("../../../../assets/kz.jpeg")} />,
+  },
+  { code: "ru", label: <Flag source={require("../../../../assets/ru.png")} /> },
+  { code: "en", label: <Flag source={require("../../../../assets/en.png")} /> },
 ];
 
 const Selector = () => {
@@ -35,18 +59,25 @@ const Selector = () => {
         const selectedLanguage = language.code === selectedLanguageCode;
 
         return (
-          <Pressable
+          <TouchableOpacity
             key={language.code}
-            style={styles.buttonContainer}
             disabled={selectedLanguage}
             onPress={() => setLanguage(language.code)}
+            style={{
+              alignSelf: "center",
+              marginTop: 10,
+              borderColor: "#C6DC3B",
+              borderWidth: 3,
+              borderRadius: 5,
+              shadowOpacity: 0.5,
+              shadowRadius: 1,
+              shadowColor: "#000",
+              shadowOffset: { width: 0, height: 2 },
+              elevation: 5,
+            }}
           >
-            <Text
-              style={[selectedLanguage ? styles.selectedText : styles.text]}
-            >
-              {language.label}
-            </Text>
-          </Pressable>
+            {language.label}
+          </TouchableOpacity>
         );
       })}
     </View>
@@ -132,10 +163,6 @@ const styles = StyleSheet.create({
     color: "#444",
     fontSize: 24,
     fontWeight: "600",
-  },
-  buttonContainer: {
-    marginTop: 5,
-    alignItems: "center",
   },
   text: {
     fontSize: 16,

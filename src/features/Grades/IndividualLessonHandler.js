@@ -1,14 +1,14 @@
 import React from "react";
-import styled from "styled-components/native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import LessonComponent from "./LessonComponent";
-import OpenResponseHandler from "../../components/Grades/minigames/OpenResponse/OpenResponseHandler";
-import QuizHandler from "../../components/Grades/minigames/Quiz/QuizHandler";
-import SortingHandler from "../../components/Grades/minigames/Sorting/SortingHandler";
+import OpenResponseHandler from "../../components/Grades/minigames/Handlers/OpenResponseHandler";
+import QuizHandler from "../../components/Grades/minigames/Handlers/QuizHandler";
+import SortingHandler from "../../components/Grades/minigames/Handlers/SortingHandler";
+import { MemoryHandler } from "../../components/Grades/minigames/Handlers/MemoryHandler";
 
 const Stack = createNativeStackNavigator();
 
@@ -48,18 +48,19 @@ function IndividualLessonHandler({
             headerStyle: {
               backgroundColor: "#C6DC3B",
             },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
           }}
         >
-          {() =>
-            "memory" in
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .minigames ? (
-              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .minigames.memory.component
-            ) : (
-              <></>
-            )
-          }
+          {() => (
+            <MemoryHandler
+              data={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.memory
+              }
+            />
+          )}
         </Stack.Screen>
 
         <Stack.Screen
@@ -70,6 +71,9 @@ function IndividualLessonHandler({
             headerBackTitleVisible: false,
             headerStyle: {
               backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
             },
           }}
         >
@@ -92,6 +96,9 @@ function IndividualLessonHandler({
             headerStyle: {
               backgroundColor: "#C6DC3B",
             },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
           }}
         >
           {() => (
@@ -112,6 +119,9 @@ function IndividualLessonHandler({
             headerBackTitleVisible: false,
             headerStyle: {
               backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
             },
           }}
         >

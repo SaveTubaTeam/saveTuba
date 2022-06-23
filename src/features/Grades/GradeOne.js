@@ -6,7 +6,7 @@ import {
   SortingImages,
   QuizImages,
   TestImages,
-} from "../../components/Grades/IMAGES";
+} from "../../components/Grades/minigames/IMAGES";
 import { AdventureOne } from "./gradeOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
 
 export const Grade1 = {
@@ -34,18 +34,82 @@ export const Grade1 = {
           key: "C1_L1",
           minigames: {
             memory: {
-              num: 1,
               navigation: "Memory",
               title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
               icon: require("../../../assets/willpower.png"),
-              backgroundColor: "seagreen",
-              component: <AdventureOne />,
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "plant",
+                  image: require("../../../assets/watering-plants.png"),
+                },
+                {
+                  name: "plant",
+                },
+                {
+                  type: "image",
+                  name: "wind",
+                  image: require("../../../assets/wind.png"),
+                },
+                {
+                  name: "wind",
+                },
+                {
+                  type: "image",
+                  name: "duck",
+                  image: require("../../../assets/swim-ring.png"),
+                },
+                {
+                  name: "duck",
+                },
+                {
+                  type: "image",
+                  name: "soil",
+                  image: require("../../../assets/soil.png"),
+                },
+                {
+                  name: "soil",
+                },
+                {
+                  type: "image",
+                  name: "planet",
+                  image: require("../../../assets/planet.png"),
+                },
+                {
+                  name: "planet",
+                },
+                {
+                  type: "image",
+                  name: "log",
+                  image: require("../../../assets/log.png"),
+                },
+                {
+                  name: "log",
+                },
+                {
+                  type: "image",
+                  name: "fruit",
+                  image: require("../../../assets/fruit.png"),
+                },
+                {
+                  name: "fruit",
+                },
+
+                {
+                  type: "image",
+                  name: "banana",
+                  image: require("../../../assets/banana.png"),
+                },
+                {
+                  name: "banana",
+                },
+              ],
             },
             sorting: {
-              num: 2,
               navigation: "Sorting",
               icon: require("../../../assets/recycle-bin.png"),
-              backgroundColor: "powderblue",
+              backgroundColor: "coral",
               key: "testkey1",
               content: [
                 {
@@ -83,11 +147,10 @@ export const Grade1 = {
           key: "C1_L2",
           minigames: {
             sorting: {
-              num: 1,
               navigation: "Sorting",
               icon: require("../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
-              key: "testkey1",
+              key: "0",
               content: [
                 {
                   imageBg: SortingImages.bg[0].lvl_1_les_2,
@@ -106,20 +169,84 @@ export const Grade1 = {
               ],
             },
             memory: {
-              num: 2,
               navigation: "Memory",
               title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
-              key: "testkey0",
+              key: "1",
               icon: require("../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
-              component: <AdventureOne />,
+              content: [
+                {
+                  type: "image",
+                  name: "plant",
+                  image: require("../../../assets/watering-plants.png"),
+                },
+                {
+                  name: "plant",
+                },
+                {
+                  type: "image",
+                  name: "wind",
+                  image: require("../../../assets/wind.png"),
+                },
+                {
+                  name: "wind",
+                },
+                {
+                  type: "image",
+                  name: "duck",
+                  image: require("../../../assets/swim-ring.png"),
+                },
+                {
+                  name: "duck",
+                },
+                {
+                  type: "image",
+                  name: "soil",
+                  image: require("../../../assets/soil.png"),
+                },
+                {
+                  name: "soil",
+                },
+                {
+                  type: "image",
+                  name: "planet",
+                  image: require("../../../assets/planet.png"),
+                },
+                {
+                  name: "planet",
+                },
+                {
+                  type: "image",
+                  name: "log",
+                  image: require("../../../assets/log.png"),
+                },
+                {
+                  name: "log",
+                },
+                {
+                  type: "image",
+                  name: "fruit",
+                  image: require("../../../assets/fruit.png"),
+                },
+                {
+                  name: "fruit",
+                },
+
+                {
+                  type: "image",
+                  name: "banana",
+                  image: require("../../../assets/banana.png"),
+                },
+                {
+                  name: "banana",
+                },
+              ],
             },
             quiz: {
-              num: 3,
               navigation: "QuizScreen",
               icon: require("../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              key: "testkey2",
+              key: "2",
               content: [
                 {
                   imageBg: require("../../../assets/nat.jpg"),
@@ -158,39 +285,26 @@ export const Grade1 = {
               ],
             },
             openresponse: {
-              num: 4,
               navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("gradeone:openresponse")}</Translation>
               ), // Image Boom
               icon: require("../../../assets/image.png"),
               backgroundColor: "palevioletred",
-              key: "testkey3",
+              key: "3",
               data: {
                 numberOfPrompts: 4,
                 prompts: [
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.bikingPic,
                   },
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.faucetPic,
                   },
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.recyclingPic,
                   },
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.lightsPic,
                   },
                 ],
@@ -214,8 +328,9 @@ export const Grade1 = {
           minigames: {
             sorting: {
               navigation: "Sorting",
-              key: "testkey1",
-              image: AdventureImages.multiplechoice,
+              key: "0",
+              icon: require("../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
               content: [
                 {
                   imageBg: SortingImages.bg[0].lvl_1_les_2,
@@ -236,14 +351,82 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
-              key: "testkey0",
-              image: AdventureImages.matching,
-              component: Test,
+              key: "1",
+              icon: require("../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "plant",
+                  image: require("../../../assets/watering-plants.png"),
+                },
+                {
+                  name: "plant",
+                },
+                {
+                  type: "image",
+                  name: "wind",
+                  image: require("../../../assets/wind.png"),
+                },
+                {
+                  name: "wind",
+                },
+                {
+                  type: "image",
+                  name: "duck",
+                  image: require("../../../assets/swim-ring.png"),
+                },
+                {
+                  name: "duck",
+                },
+                {
+                  type: "image",
+                  name: "soil",
+                  image: require("../../../assets/soil.png"),
+                },
+                {
+                  name: "soil",
+                },
+                {
+                  type: "image",
+                  name: "planet",
+                  image: require("../../../assets/planet.png"),
+                },
+                {
+                  name: "planet",
+                },
+                {
+                  type: "image",
+                  name: "log",
+                  image: require("../../../assets/log.png"),
+                },
+                {
+                  name: "log",
+                },
+                {
+                  type: "image",
+                  name: "fruit",
+                  image: require("../../../assets/fruit.png"),
+                },
+                {
+                  name: "fruit",
+                },
+
+                {
+                  type: "image",
+                  name: "banana",
+                  image: require("../../../assets/banana.png"),
+                },
+                {
+                  name: "banana",
+                },
+              ],
             },
             quiz: {
               navigation: "QuizScreen",
-              key: "testkey2",
-              image: AdventureImages.multiplechoice,
+              key: "2",
+              icon: require("../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
               content: [
                 {
                   imageBg: QuizImages.bg[0].lvl_1_les_1,
@@ -286,33 +469,22 @@ export const Grade1 = {
               title: (
                 <Translation>{(t) => t("gradeone:openresponse")}</Translation>
               ), // Image Boom
-              image: AdventureImages.puzzle,
-              key: "testkey3",
+              icon: require("../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              key: "3",
               data: {
                 numberOfPrompts: 4,
                 prompts: [
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.bikingPic,
                   },
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.faucetPic,
                   },
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.recyclingPic,
                   },
                   {
-                    prompt: "Bro can u just work please",
-                    maxChar: 500,
-                    imageType: "svg",
                     image: TestImages.lightsPic,
                   },
                 ],
