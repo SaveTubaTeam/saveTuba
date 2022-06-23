@@ -11,16 +11,16 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 
-import { SafeArea } from "../../components/safe-area.component";
-import { TitleText } from "../../components/title-text.component";
-import { BodyText } from "../../components/body-text.component";
-import { Spacer } from "../../components/spacer.component";
+import { SafeArea } from "../../../components/safe-area.component";
+import { TitleText } from "../../../components/title-text.component";
+import { BodyText } from "../../../components/body-text.component";
+import { Spacer } from "../../../components/spacer.component";
 import {
   Mastery,
   Adventure,
   Header,
   ImageBg,
-} from "../../components/Grades/grades.styles";
+} from "../../../components/Grades/grades.styles";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 
@@ -176,7 +176,7 @@ function LessonComponent({
                 style={{
                   borderRadius: 20,
                 }}
-                source={require("../../../assets/mastery.png")}
+                source={require("../../../../assets/mastery.png")}
               >
                 <TitleText weight="bold" size="h5" color="quaternary">
                   Mastery

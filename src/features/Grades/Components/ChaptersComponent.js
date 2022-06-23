@@ -6,11 +6,11 @@ import { connect } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { useTranslation } from "react-i18next";
-import { Header } from "../../components/Grades/grades.styles";
-import { BodyText } from "../../components/body-text.component";
-import { TitleText } from "../../components/title-text.component";
-import { SafeArea } from "../../components/safe-area.component";
-import { Spacer } from "../../components/spacer.component";
+import { Header } from "../../../components/Grades/grades.styles";
+import { BodyText } from "../../../components/body-text.component";
+import { TitleText } from "../../../components/title-text.component";
+import { SafeArea } from "../../../components/safe-area.component";
+import { Spacer } from "../../../components/spacer.component";
 
 const Container = styled.View`
   flex: 1;

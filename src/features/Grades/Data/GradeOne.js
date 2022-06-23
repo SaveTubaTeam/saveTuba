@@ -1,13 +1,10 @@
 import { Translation } from "react-i18next";
 
-import Test from "./Test";
 import {
-  AdventureImages,
   SortingImages,
   QuizImages,
   TestImages,
-} from "../../components/Grades/minigames/IMAGES";
-import { AdventureOne } from "./gradeOne/lessonOne/Screens/Adventures/adventureOne/adventureOne.screen";
+} from "../../../components/Grades/minigames/IMAGES";
 
 export const Grade1 = {
   numChapter: 3,
@@ -16,7 +13,7 @@ export const Grade1 = {
       navigation: "Chapter1", // name of the Stack Screen
       title: <Translation>{(t) => t("gradeone:chapterone")}</Translation>, // Chapter 1
       name: <Translation>{(t) => t("gradeone:iamanexplorer")}</Translation>, // I am an explorer
-      icon: require("../../../assets/location.png"),
+      icon: require("../../../../assets/location.png"),
       colorOne: "indianred",
       colorTwo: "firebrick",
       key: "C1",
@@ -29,20 +26,20 @@ export const Grade1 = {
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradeone:c1l1")}</Translation>, // Where to find out about everything in the world?
-          thumbnail: require("../../../assets/globe.png"),
+          thumbnail: require("../../../../assets/globe.png"),
           backgroundColor: "#2C3653",
           key: "C1_L1",
           minigames: {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
-              icon: require("../../../assets/willpower.png"),
+              icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
                   name: "plant",
-                  image: require("../../../assets/watering-plants.png"),
+                  image: require("../../../../assets/watering-plants.png"),
                 },
                 {
                   name: "plant",
@@ -50,7 +47,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "wind",
-                  image: require("../../../assets/wind.png"),
+                  image: require("../../../../assets/wind.png"),
                 },
                 {
                   name: "wind",
@@ -58,7 +55,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "duck",
-                  image: require("../../../assets/swim-ring.png"),
+                  image: require("../../../../assets/swim-ring.png"),
                 },
                 {
                   name: "duck",
@@ -66,7 +63,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "soil",
-                  image: require("../../../assets/soil.png"),
+                  image: require("../../../../assets/soil.png"),
                 },
                 {
                   name: "soil",
@@ -74,7 +71,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "planet",
-                  image: require("../../../assets/planet.png"),
+                  image: require("../../../../assets/planet.png"),
                 },
                 {
                   name: "planet",
@@ -82,7 +79,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "log",
-                  image: require("../../../assets/log.png"),
+                  image: require("../../../../assets/log.png"),
                 },
                 {
                   name: "log",
@@ -90,7 +87,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "fruit",
-                  image: require("../../../assets/fruit.png"),
+                  image: require("../../../../assets/fruit.png"),
                 },
                 {
                   name: "fruit",
@@ -99,7 +96,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "banana",
-                  image: require("../../../assets/banana.png"),
+                  image: require("../../../../assets/banana.png"),
                 },
                 {
                   name: "banana",
@@ -108,7 +105,7 @@ export const Grade1 = {
             },
             sorting: {
               navigation: "Sorting",
-              icon: require("../../../assets/recycle-bin.png"),
+              icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               key: "testkey1",
               content: [
@@ -142,13 +139,13 @@ export const Grade1 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradeone:c1l2")}</Translation>, // Why does the dandelion look like a parachute?
-          thumbnail: require("../../../assets/dandelion.png"),
+          thumbnail: require("../../../../assets/dandelion.png"),
           backgroundColor: "#87CEFA",
           key: "C1_L2",
           minigames: {
             sorting: {
               navigation: "Sorting",
-              icon: require("../../../assets/recycle-bin.png"),
+              icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               key: "0",
               content: [
@@ -172,13 +169,13 @@ export const Grade1 = {
               navigation: "Memory",
               title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
               key: "1",
-              icon: require("../../../assets/willpower.png"),
+              icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
                   name: "plant",
-                  image: require("../../../assets/watering-plants.png"),
+                  image: require("../../../../assets/watering-plants.png"),
                 },
                 {
                   name: "plant",
@@ -186,7 +183,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "wind",
-                  image: require("../../../assets/wind.png"),
+                  image: require("../../../../assets/wind.png"),
                 },
                 {
                   name: "wind",
@@ -194,7 +191,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "duck",
-                  image: require("../../../assets/swim-ring.png"),
+                  image: require("../../../../assets/swim-ring.png"),
                 },
                 {
                   name: "duck",
@@ -202,7 +199,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "soil",
-                  image: require("../../../assets/soil.png"),
+                  image: require("../../../../assets/soil.png"),
                 },
                 {
                   name: "soil",
@@ -210,7 +207,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "planet",
-                  image: require("../../../assets/planet.png"),
+                  image: require("../../../../assets/planet.png"),
                 },
                 {
                   name: "planet",
@@ -218,7 +215,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "log",
-                  image: require("../../../assets/log.png"),
+                  image: require("../../../../assets/log.png"),
                 },
                 {
                   name: "log",
@@ -226,7 +223,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "fruit",
-                  image: require("../../../assets/fruit.png"),
+                  image: require("../../../../assets/fruit.png"),
                 },
                 {
                   name: "fruit",
@@ -235,7 +232,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "banana",
-                  image: require("../../../assets/banana.png"),
+                  image: require("../../../../assets/banana.png"),
                 },
                 {
                   name: "banana",
@@ -244,12 +241,12 @@ export const Grade1 = {
             },
             quiz: {
               navigation: "QuizScreen",
-              icon: require("../../../assets/creativity.png"),
+              icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               key: "2",
               content: [
                 {
-                  imageBg: require("../../../assets/nat.jpg"),
+                  imageBg: require("../../../../assets/nat.jpg"),
                 },
                 {
                   prompt: "Устойчивый город — это:",
@@ -289,7 +286,7 @@ export const Grade1 = {
               title: (
                 <Translation>{(t) => t("gradeone:openresponse")}</Translation>
               ), // Image Boom
-              icon: require("../../../assets/image.png"),
+              icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               key: "3",
               data: {
@@ -322,14 +319,14 @@ export const Grade1 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradeone:c1l3")}</Translation>, // What is an experiment?
-          thumbnail: require("../../../assets/experiment.png"),
+          thumbnail: require("../../../../assets/experiment.png"),
           backgroundColor: "#8C77AA",
           key: "C1_L3",
           minigames: {
             sorting: {
               navigation: "Sorting",
               key: "0",
-              icon: require("../../../assets/recycle-bin.png"),
+              icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: [
                 {
@@ -352,13 +349,13 @@ export const Grade1 = {
               navigation: "Memory",
               title: <Translation>{(t) => t("gradeone:memory")}</Translation>, // Memory
               key: "1",
-              icon: require("../../../assets/willpower.png"),
+              icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
                   name: "plant",
-                  image: require("../../../assets/watering-plants.png"),
+                  image: require("../../../../assets/watering-plants.png"),
                 },
                 {
                   name: "plant",
@@ -366,7 +363,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "wind",
-                  image: require("../../../assets/wind.png"),
+                  image: require("../../../../assets/wind.png"),
                 },
                 {
                   name: "wind",
@@ -374,7 +371,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "duck",
-                  image: require("../../../assets/swim-ring.png"),
+                  image: require("../../../../assets/swim-ring.png"),
                 },
                 {
                   name: "duck",
@@ -382,7 +379,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "soil",
-                  image: require("../../../assets/soil.png"),
+                  image: require("../../../../assets/soil.png"),
                 },
                 {
                   name: "soil",
@@ -390,7 +387,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "planet",
-                  image: require("../../../assets/planet.png"),
+                  image: require("../../../../assets/planet.png"),
                 },
                 {
                   name: "planet",
@@ -398,7 +395,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "log",
-                  image: require("../../../assets/log.png"),
+                  image: require("../../../../assets/log.png"),
                 },
                 {
                   name: "log",
@@ -406,7 +403,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "fruit",
-                  image: require("../../../assets/fruit.png"),
+                  image: require("../../../../assets/fruit.png"),
                 },
                 {
                   name: "fruit",
@@ -415,7 +412,7 @@ export const Grade1 = {
                 {
                   type: "image",
                   name: "banana",
-                  image: require("../../../assets/banana.png"),
+                  image: require("../../../../assets/banana.png"),
                 },
                 {
                   name: "banana",
@@ -425,7 +422,7 @@ export const Grade1 = {
             quiz: {
               navigation: "QuizScreen",
               key: "2",
-              icon: require("../../../assets/creativity.png"),
+              icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               content: [
                 {
@@ -469,7 +466,7 @@ export const Grade1 = {
               title: (
                 <Translation>{(t) => t("gradeone:openresponse")}</Translation>
               ), // Image Boom
-              icon: require("../../../assets/image.png"),
+              icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               key: "3",
               data: {
@@ -498,7 +495,7 @@ export const Grade1 = {
       navigation: "Chapter2",
       title: <Translation>{(t) => t("gradeone:chaptertwo")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradeone:wildlife")}</Translation>, // Wildlife
-      icon: require("../../../assets/ecology.png"),
+      icon: require("../../../../assets/ecology.png"),
       colorOne: "indigo",
       colorTwo: "mediumpurple",
       key: "C2",
@@ -512,7 +509,7 @@ export const Grade1 = {
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradeone:c2l1")}</Translation>, // What are the secrets of plants?
-          thumbnail: require("../../../assets/plant-hand.png"),
+          thumbnail: require("../../../../assets/plant-hand.png"),
           backgroundColor: "#B25C3E",
           key: "C2_L1",
         },
@@ -526,7 +523,7 @@ export const Grade1 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradeone:c2l2")}</Translation>, // How do plants live?
-          thumbnail: require("../../../assets/plant-water.png"),
+          thumbnail: require("../../../../assets/plant-water.png"),
           backgroundColor: "#F9F0D7",
           key: "C2_L2",
         },
@@ -540,7 +537,7 @@ export const Grade1 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradeone:c2l3")}</Translation>, // Who hatched from the egg?
-          thumbnail: require("../../../assets/dino.png"),
+          thumbnail: require("../../../../assets/dino.png"),
           backgroundColor: "#76220C",
           key: "C2_L3",
         },
@@ -554,7 +551,7 @@ export const Grade1 = {
         {
           navigation: "Lesson4",
           title: <Translation>{(t) => t("gradeone:c2l4")}</Translation>, // Who plays hide and seek?
-          thumbnail: require("../../../assets/chameleon.png"),
+          thumbnail: require("../../../../assets/chameleon.png"),
           backgroundColor: "#FF9044",
           key: "C2_L4",
         },
@@ -568,7 +565,7 @@ export const Grade1 = {
         {
           navigation: "Lesson5",
           title: <Translation>{(t) => t("gradeone:c2l5")}</Translation>, // How are animals protected?
-          thumbnail: require("../../../assets/birdfeeder.png"),
+          thumbnail: require("../../../../assets/birdfeeder.png"),
           backgroundColor: "#9DCD5A",
           key: "C2_L5",
         },
@@ -582,7 +579,7 @@ export const Grade1 = {
         {
           navigation: "Lesson6",
           title: <Translation>{(t) => t("gradeone:c2l6")}</Translation>, // Why are we standing?
-          thumbnail: require("../../../assets/skeleton.png"),
+          thumbnail: require("../../../../assets/skeleton.png"),
           backgroundColor: "#004B75",
           key: "C2_L6",
         },
@@ -596,7 +593,7 @@ export const Grade1 = {
         {
           navigation: "Lesson7",
           title: <Translation>{(t) => t("gradeone:c2l7")}</Translation>, // How do we smile?
-          thumbnail: require("../../../assets/sunshine.png"),
+          thumbnail: require("../../../../assets/sunshine.png"),
           backgroundColor: "#76B9F0",
           key: "C2_L7",
         },
@@ -610,7 +607,7 @@ export const Grade1 = {
         {
           navigation: "Lesson8",
           title: <Translation>{(t) => t("gradeone:c2l8")}</Translation>, // How much does your backpack weigh?
-          thumbnail: require("../../../assets/backpack.png"),
+          thumbnail: require("../../../../assets/backpack.png"),
           backgroundColor: "#FC6467",
           key: "C2_L8",
         },
@@ -624,7 +621,7 @@ export const Grade1 = {
         {
           navigation: "Lesson9",
           title: <Translation>{(t) => t("gradeone:c2l9")}</Translation>, // What are microbes afraid of?
-          thumbnail: require("../../../assets/microbes.png"),
+          thumbnail: require("../../../../assets/microbes.png"),
           backgroundColor: "#6040AC",
           key: "C2_L9",
         },
@@ -638,7 +635,7 @@ export const Grade1 = {
         {
           navigation: "Lesson10",
           title: <Translation>{(t) => t("gradeone:c2l10")}</Translation>, // Why do my teeth hurt?
-          thumbnail: require("../../../assets/toothache.png"),
+          thumbnail: require("../../../../assets/toothache.png"),
           backgroundColor: "#AA1A44",
           key: "C2_L10",
         },
@@ -648,7 +645,7 @@ export const Grade1 = {
       navigation: "Chapter3",
       title: <Translation>{(t) => t("gradeone:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
-      icon: require("../../../assets/air-pollution.png"),
+      icon: require("../../../../assets/air-pollution.png"),
       colorOne: "orange",
       colorTwo: "orangered",
       key: "C3",
@@ -706,7 +703,7 @@ export const Grade1 = {
       navigation: "Chapter4",
       title: <Translation>{(t) => t("gradeone:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
-      icon: require("../../../assets/rocket.png"),
+      icon: require("../../../../assets/rocket.png"),
       colorOne: "midnightblue",
       colorTwo: "mediumturquoise",
       key: "C4",
@@ -776,7 +773,7 @@ export const Grade1 = {
       navigation: "Chapter5",
       title: <Translation>{(t) => t("gradeone:chapterfive")}</Translation>, // Chapter 5
       name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
-      icon: require("../../../assets/physics.png"),
+      icon: require("../../../../assets/physics.png"),
       colorOne: "lightpink",
       colorTwo: "mediumvioletred",
       key: "C5",

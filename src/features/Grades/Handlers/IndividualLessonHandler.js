@@ -4,11 +4,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import LessonComponent from "./LessonComponent";
-import OpenResponseHandler from "../../components/Grades/minigames/Handlers/OpenResponseHandler";
-import QuizHandler from "../../components/Grades/minigames/Handlers/QuizHandler";
-import SortingHandler from "../../components/Grades/minigames/Handlers/SortingHandler";
-import { MemoryHandler } from "../../components/Grades/minigames/Handlers/MemoryHandler";
+import LessonComponent from "../Components/LessonComponent";
+import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler";
+import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler";
+import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
+import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 
 const Stack = createNativeStackNavigator();
 

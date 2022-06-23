@@ -311,14 +311,6 @@ const Start = ({ data }) => {
   );
 };
 
-const Test = ({ data }) => {
-  return (
-    <TouchableOpacity onPress={() => console.log(data)}>
-      <Text>hi</Text>
-    </TouchableOpacity>
-  );
-};
-
 const QuizHandler = ({ data }) => {
   return (
     <Stack.Navigator>

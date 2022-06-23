@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-import ChaptersHandler from "../Grades/ChaptersHandler";
+import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 
 const Stack = createNativeStackNavigator();
 

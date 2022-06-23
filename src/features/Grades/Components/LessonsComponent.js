@@ -5,11 +5,11 @@ import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import { SafeArea } from "../../components/safe-area.component";
-import { Header } from "../../components/Grades/grades.styles";
-import { TitleText } from "../../components/title-text.component";
-import { BodyText } from "../../components/body-text.component";
-import { Spacer } from "../../components/spacer.component";
+import { SafeArea } from "../../../components/safe-area.component";
+import { Header } from "../../../components/Grades/grades.styles";
+import { TitleText } from "../../../components/title-text.component";
+import { BodyText } from "../../../components/body-text.component";
+import { Spacer } from "../../../components/spacer.component";
 import { useTranslation } from "react-i18next";
 
 const Container = styled.View`

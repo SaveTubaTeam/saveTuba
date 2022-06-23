@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 
 import IndividualLessonHandler from "./IndividualLessonHandler";
-import LessonsComponent from "./LessonsComponent";
+import LessonsComponent from "../Components/LessonsComponent";
 
 const Stack = createNativeStackNavigator();
 

@@ -4,13 +4,13 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 
-import ChaptersComponent from "./ChaptersComponent";
+import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
 
-import { Grade1 } from "./GradeOne";
-import { Grade2 } from "./GradeTwo";
-import { Grade3 } from "./GradeThree";
-import { Grade4 } from "./GradeFour";
+import { Grade1 } from "../Data/GradeOne";
+import { Grade2 } from "../Data/GradeTwo";
+import { Grade3 } from "../Data/GradeThree";
+import { Grade4 } from "../Data/GradeFour";
 
 const Stack = createNativeStackNavigator();
 
