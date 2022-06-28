@@ -14,13 +14,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "../../redux/reducers";
 import thunk from "redux-thunk";
-const store = createStore(rootReducer, applyMiddleware(thunk));
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchUser } from "../../redux/actions/index";
 
 const Tab = createBottomTabNavigator();
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export class Main extends Component {
   componentDidMount() {
@@ -48,7 +48,7 @@ export class Main extends Component {
           name="Profile"
           component={ProfileScreen}
           options={{
-            title: "Профиль",
+            title: "",
             tabBarIcon: ({ color }) => (
               <Ionicons name="person" color={color} size={32} />
             ),
@@ -58,7 +58,7 @@ export class Main extends Component {
           name="Home"
           component={HomeScreen}
           options={{
-            title: "Дом",
+            title: "",
             tabBarIcon: ({ color }) => (
               <Ionicons name="home" color={color} size={32} />
             ),
@@ -68,7 +68,7 @@ export class Main extends Component {
           name="Settings"
           component={AccountNav}
           options={{
-            title: "Настройки",
+            title: "",
             tabBarIcon: ({ color }) => (
               <Ionicons name="settings" color={color} size={32} />
             ),

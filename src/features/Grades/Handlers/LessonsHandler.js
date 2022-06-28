@@ -68,6 +68,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
             />
           )}
         </Stack.Screen>
+
         <Stack.Screen
           name="Lesson4"
           options={{
@@ -82,6 +83,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
             />
           )}
         </Stack.Screen>
+
         <Stack.Screen
           name="Lesson5"
           options={{
@@ -96,6 +98,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
             />
           )}
         </Stack.Screen>
+
         <Stack.Screen
           name="Lesson6"
           options={{
@@ -110,6 +113,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
             />
           )}
         </Stack.Screen>
+
         <Stack.Screen
           name="Lesson7"
           options={{
@@ -121,6 +125,231 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
               selectedGrade={selectedGrade}
               selectedChapter={selectedChapter}
               selectedLesson={6}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson8"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={7}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson9"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={8}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson10"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={9}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson11"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={10}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson12"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={11}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson13"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={12}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson14"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={13}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson15"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={14}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson16"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={15}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson17"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={16}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson18"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={17}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson19"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={18}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson20"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={19}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson21"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={20}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Lesson22"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <IndividualLessonHandler
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={21}
             />
           )}
         </Stack.Screen>
