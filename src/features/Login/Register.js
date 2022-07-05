@@ -9,7 +9,58 @@ import { auth, db } from "../../../firebase";
 import { Translation } from "react-i18next";
 import { t } from "i18next";
 
-// import { withNavigation } from '@react-navigation';
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: 10px;
+  width: 100%;
+  align-items: center;
+`;
+const BackButton = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  border: ${(props) => props.theme.space[1]} solid
+    ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: ${(props) => props.theme.space[4]};
+  bottom: 0;
+`;
+
+const Input = styled.TextInput`
+  font-family: ${(props) => props.theme.fonts.body};
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: ${(props) => props.theme.space[2]};
+`;
+
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding-top: ${(props) => props.theme.space[5]};
+  padding-horizontal: 20px;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+`;
+
+const ButtonContainer = styled.View`
+  width: 60%;
+  align-self: center;
+`;
+const InputContainer = styled.View`
+  width: 80%;
+  align-self: center;
+`;
 
 export class Register extends Component {
   constructor(props) {
@@ -106,97 +157,73 @@ export class Register extends Component {
             Зарегистрируйтесь, чтобы сохранить Tuba
             {/* Register For Save Tuba */}
           </TitleText>
-          <Input
-            placeholder={email}
-            onChangeText={(email) => this.setState({ email })}
-          />
-          <Input
-            placeholder={password}
-            secureTextEntry={true}
-            onChangeText={(password) => this.setState({ password })}
-          />
-          <Input
-            placeholder={username}
-            onChangeText={(username) => this.setState({ username })}
-          />
-          <Input
-            placeholder={firstname}
-            onChangeText={(firstName) => this.setState({ firstName })}
-          />
-          <Input
-            placeholder={lastname}
-            onChangeText={(lastName) => this.setState({ lastName })}
-          />
-          <Input
-            placeholder={classcode}
-            onChangeText={(classCode) => this.setState({ classCode })}
-          />
-          <Button onPress={() => this.onSignUp()}>
-            <TitleText color="secondary">{t("common:signup")}</TitleText>
-          </Button>
-          <Button
-            onPress={() => {
-              this.setState((prevState) => ({
-                isTeacher: !prevState.isTeacher,
-              }));
-              this.onSignUp();
-            }}
-          >
-            <TitleText color="secondary">{t("common:teachersignup")}</TitleText>
-          </Button>
-          <BackButton
-            onPress={() => {
-              this.props.navigation.navigate("Login");
-            }}
-          >
-            <TitleText color="secondary">{t("common:back")}</TitleText>
-          </BackButton>
+
+          <InputContainer>
+            <Input
+              placeholder={email}
+              onChangeText={(email) => this.setState({ email })}
+            />
+            <Input
+              placeholder={password}
+              secureTextEntry={true}
+              onChangeText={(password) => this.setState({ password })}
+            />
+            <Input
+              placeholder={username}
+              onChangeText={(username) => this.setState({ username })}
+            />
+            <Input
+              placeholder={firstname}
+              onChangeText={(firstName) => this.setState({ firstName })}
+            />
+            <Input
+              placeholder={lastname}
+              onChangeText={(lastName) => this.setState({ lastName })}
+            />
+            <Input
+              placeholder={classcode}
+              onChangeText={(classCode) => this.setState({ classCode })}
+            />
+          </InputContainer>
+
+          <ButtonContainer>
+            <Button onPress={() => this.onSignUp()}>
+              <TitleText color="secondary" size="body">
+                {t("common:signup")}
+              </TitleText>
+            </Button>
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <Button
+              onPress={() => {
+                this.setState((prevState) => ({
+                  isTeacher: !prevState.isTeacher,
+                }));
+                this.onSignUp();
+              }}
+            >
+              <TitleText color="secondary" size="body">
+                {t("common:teachersignup")}
+              </TitleText>
+            </Button>
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <BackButton
+              onPress={() => {
+                this.props.navigation.navigate("Login");
+              }}
+            >
+              <TitleText color="primary" size="body">
+                {t("common:back")}
+              </TitleText>
+            </BackButton>
+          </ButtonContainer>
         </ImageBg>
       </Container>
     );
   }
 }
-
-const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: 10px;
-  width: 100%;
-  align-items: center;
-`;
-const BackButton = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: ${(props) => props.theme.space[5]};
-  bottom: 0;
-`;
-
-const Input = styled.TextInput`
-  font-family: ${(props) => props.theme.fonts.body};
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: ${(props) => props.theme.space[2]};
-`;
-
-const ImageBg = styled.ImageBackground`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  padding-top: ${(props) => props.theme.space[5]};
-  padding-horizontal: 20px;
-`;
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-`;
 
 export default Register;
