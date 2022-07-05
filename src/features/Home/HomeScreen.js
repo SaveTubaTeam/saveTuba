@@ -1,173 +1,90 @@
 import React from "react";
 import styled from "styled-components/native";
-import {
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
-import { SafeArea } from "../../components/safe-area.component";
-// import { auth } from "../../../firebase";
+import { Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-//import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LessonHandler from "../Levels/LessonHandler";
-import LevelOne from "../Levels/LevelOne";
-import LevelTwo from "../Levels/LevelTwo";
-import LevelThree from "../Levels/LevelThree";
-import LevelFour from "../Levels/LevelFour";
-import LevelFive from "../Levels/LevelFive";
-import LevelSix from "../Levels/LevelSix";
-
 import { connect } from "react-redux";
-import { contains } from "@firebase/util";
+import { useTranslation } from "react-i18next";
+
+import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 
 const Stack = createNativeStackNavigator();
 
-const Lock = styled.Image`
-  z-index: 100;
-  position: absolute;
-  width: 15%;
-  height: undefined;
-  aspect-ratio: 1;
-`;
-
 const ImageBg = styled.ImageBackground`
-  flex: 1;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  height: 100%;
 `;
 
 function HomeView() {
   const navigation = useNavigation();
+  const { t } = useTranslation();
+
   return (
-    <ScrollView style={{ alignContent: "center" }}>
-      {/* Attribution: <a href="https://www.freepik.com/vectors/springtime">Springtime vector created by freepik - www.freepik.com</a> */}
-      <ImageBg source={require("../../../assets/homebg.png")}>
+    <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
+      <ScrollView style={{ paddingTop: 50 }}>
         <TouchableOpacity
           style={style.roundButton1}
-          onPress={() => navigation.push("LevelOne")}
+          onPress={() => {
+            navigation.push("ChaptersHandler", { level: 1 });
+          }}
         >
-          <Text style={style.baseText}>1</Text>
+          <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-          {/* <Lock
-            style={{ top: 120, left: 330 }}
-            source={require("../../../assets/lock.png")}
-          /> */}
-          <TouchableOpacity
-            style={style.roundButton2}
-            onPress={() => navigation.push("LevelTwo")}
-          >
-            <Text style={style.baseText}>2</Text>
-          </TouchableOpacity>
-
-        <Lock
-          style={{ top: 250, left: 90 }}
-          source={require("../../../assets/lock.png")}
-        />
         <TouchableOpacity
-          style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelThree")}*/
+          style={style.roundButton2}
+          onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
-        <Lock
-          style={{ top: 370, left: 330 }}
-          source={require("../../../assets/lock.png")}
-        />
         <TouchableOpacity
-          style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelFour")}*/
+          style={style.roundButton1}
+          onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
 
-        <Lock
-          style={{ top: 500, left: 90 }}
-          source={require("../../../assets/lock.png")}
-        />
         <TouchableOpacity
-          style={style.roundButton1}
-          /*onPress={() => navigation.push("LevelFive")}*/
+          style={style.roundButton2}
+          onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
-
-        <Lock
-          style={{ top: 620, left: 330 }}
-          source={require("../../../assets/lock.png")}
-        />
-        <TouchableOpacity
-          style={style.roundButton2}
-          /*onPress={() => navigation.push("LevelSix")}*/
-        >
-          <Text style={style.baseText}>6</Text>
-        </TouchableOpacity>
-      </ImageBg>
-    </ScrollView>
+      </ScrollView>
+    </ImageBg>
   );
 }
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  const { t } = useTranslation();
 
   return (
-    //<NavigationContainer independent ={true}>
     <Stack.Navigator>
       <Stack.Screen
-        name="Levels"
+        name="Grades"
         component={HomeView}
         options={{
-          title: "Levels",
-          headerShown: true,
+          title: t("common:levels"), // Grades
           headerStyle: {
             backgroundColor: "#C6DC3B",
           },
           headerTitleStyle: {
             fontSize: 20,
-            fontFamily: "Gabriela_400Regular",
+            fontFamily: "BalsamiqSans_400Regular",
             color: "#748816",
           },
         }}
       />
-      <Stack.Screen
-        name="LevelOne"
-        component={LevelOne}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="LevelTwo"
-        component={LevelTwo}
-        options={{ headerShown: false }}
-      />
 
       <Stack.Screen
-        name="LevelThree"
-        component={LevelThree}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="LevelFour"
-        component={LevelFour}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="LevelFive"
-        component={LevelFive}
-        options={{ headerShown: true }}
-      />
-      <Stack.Screen
-        name="LevelSix"
-        component={LevelSix}
-        options={{ headerShown: true }}
+        name="ChaptersHandler"
+        component={ChaptersHandler}
+        options={{
+          headerShown: false,
+        }}
+        initialParams={{ level: 1 }}
       />
     </Stack.Navigator>
-    //</NavigationContainer>
   );
 };
 
@@ -184,7 +101,7 @@ const style = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-    left: 10,
+    left: 25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
   },
@@ -194,9 +111,10 @@ const style = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
-    left: 255,
+    left: -25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
+    alignSelf: "flex-end",
   },
   baseText: {
     fontSize: 50,

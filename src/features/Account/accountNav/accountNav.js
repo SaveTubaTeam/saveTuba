@@ -5,28 +5,29 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import AccountScreen from "../Screens/AccountScreen";
 import CameraScreen from "../Screens/CameraScreen";
+import { auth } from "../../../../firebase";
 
 const Stack = createNativeStackNavigator();
 
 const AccountNav = () => {
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
-    return (
-        <Stack.Navigator>
-            <Stack.Screen
-                name="AccountScreen"
-                component={AccountScreen}
-                options={{
-                    headerShown: false,
-                }}
-            />
-            <Stack.Screen
-                name="CameraScreen"
-                component={CameraScreen}
-                options={{ headerShown: false }}
-            />
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="AccountScreen"
+        component={AccountScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="CameraScreen"
+        component={CameraScreen}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
 };
 
 export default AccountNav;

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { ScrollView } from "react-native";
 import axios from "axios";
-import { useTranslation } from 'react-i18next';
 
+import { withTranslation } from "react-i18next";
 import { TitleText } from "../../../components/title-text.component";
 import StatsView from "./stats-view.component";
 import { Card } from "../../../components/card.component";
 import { Spacer } from "../../../components/spacer.component";
+import { t } from "i18next";
 
-export default class LeaderborardCard extends Component {
-
+class LeaderboardCard extends Component {
   state = {
     leaderboardData: [],
   };
@@ -65,10 +65,10 @@ export default class LeaderborardCard extends Component {
 
   render() {
     let { leaderboardData } = this.state;
-
+    const { t, i18n } = this.props;
     return (
       <Card style={{ marginBottom: 20 }}>
-        <TitleText>Leaderboard</TitleText>
+        <TitleText>{t("leaderboard")}</TitleText>
 
         <Spacer size="large"></Spacer>
 
@@ -83,3 +83,5 @@ export default class LeaderborardCard extends Component {
     );
   }
 }
+
+export default withTranslation("profile")(LeaderboardCard);

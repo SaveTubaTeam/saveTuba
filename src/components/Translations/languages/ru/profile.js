@@ -1,6 +1,6 @@
 export default {
-    badges: "Значки",
-    friends: "Друзья",
-    level: "Уровень",
-    leaderboard: "Таблица лидеров",
+  badges: "Значки",
+  friends: "Друзья",
+  grade: "Класс",
+  leaderboard: "Таблица лидеров",
 };

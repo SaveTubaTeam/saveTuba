@@ -1,34 +1,31 @@
-import { View, Text, Switch } from 'react-native';
-import React, { Component, useState } from "react";
-
-import { useNavigation } from "@react-navigation/core";
+import React, { Component } from "react";
 
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-import firebase from "firebase/app";
-import { setDoc, doc } from 'firebase/firestore';
+import { setDoc, doc } from "firebase/firestore";
 
+import { renderToString } from "react-dom/server";
 import { auth, db } from "../../../firebase";
-import { Title } from 'react-native-paper';
+import { Translation } from "react-i18next";
+import { t } from "i18next";
 
 // import { withNavigation } from '@react-navigation';
 
 export class Register extends Component {
-
   constructor(props) {
     super(props);
     // const navigation = useNavigation();
     // badges.set("1", "Time to Save the Tuba!");
     this.state = {
-      email: '',
-      password: '',
-      firstName: '',
-      lastName: '',
-      classCode: '',
-      username: '',
-      badges: '',
-      friends: '',
-      friendCount: '',
+      email: "",
+      password: "",
+      firstName: "",
+      lastName: "",
+      classCode: "",
+      username: "",
+      badges: "",
+      friends: "",
+      friendCount: "",
       isTeacher: false,
     };
 
@@ -37,8 +34,17 @@ export class Register extends Component {
   }
 
   onSignUp() {
-    const { email, password, firstName, lastName, classCode, username, isTeacher } = this.state;
-    auth.createUserWithEmailAndPassword(email, password)
+    const {
+      email,
+      password,
+      firstName,
+      lastName,
+      classCode,
+      username,
+      isTeacher,
+    } = this.state;
+    auth
+      .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         setDoc(doc(db, "users", auth.currentUser.uid), {
           email,
@@ -65,61 +71,85 @@ export class Register extends Component {
       });
   }
 
+  email() {
+    return <Translation>{(t) => t("common:email")}</Translation>;
+  }
+  password() {
+    return <Translation>{(t) => t("common:password")}</Translation>;
+  }
+  username() {
+    return <Translation>{(t) => t("common:username")}</Translation>;
+  }
+  firstname() {
+    return <Translation>{(t) => t("common:firstname")}</Translation>;
+  }
+  lastname() {
+    return <Translation>{(t) => t("common:lastname")}</Translation>;
+  }
+  classcode() {
+    return <Translation>{(t) => t("common:classcode")}</Translation>;
+  }
+
   render() {
     // const navigation = useNavigation();
+    const email = renderToString(this.email());
+    const password = renderToString(this.password());
+    const username = renderToString(this.username());
+    const firstname = renderToString(this.firstname());
+    const lastname = renderToString(this.lastname());
+    const classcode = renderToString(this.classcode());
 
     return (
       <Container>
         <ImageBg source={require("../../../assets/homepagebackground.png")}>
-
-          <TitleText color="secondary" size="title">Register For Save Tuba</TitleText>
+          <TitleText color="secondary" size="title">
+            Зарегистрируйтесь, чтобы сохранить Tuba
+            {/* Register For Save Tuba */}
+          </TitleText>
           <Input
-            placeholder="Email"
+            placeholder={email}
             onChangeText={(email) => this.setState({ email })}
           />
           <Input
-            placeholder="Password"
+            placeholder={password}
             secureTextEntry={true}
             onChangeText={(password) => this.setState({ password })}
           />
           <Input
-            placeholder="Username"
+            placeholder={username}
             onChangeText={(username) => this.setState({ username })}
           />
           <Input
-            placeholder="First Name"
+            placeholder={firstname}
             onChangeText={(firstName) => this.setState({ firstName })}
           />
           <Input
-            placeholder="Last Name"
+            placeholder={lastname}
             onChangeText={(lastName) => this.setState({ lastName })}
-
           />
           <Input
-            placeholder="Class Code"
+            placeholder={classcode}
             onChangeText={(classCode) => this.setState({ classCode })}
           />
-          <Button
-            onPress={() => this.onSignUp()}
-          >
-            <TitleText color="secondary">Register</TitleText>
+          <Button onPress={() => this.onSignUp()}>
+            <TitleText color="secondary">{t("common:signup")}</TitleText>
           </Button>
           <Button
             onPress={() => {
-              this.setState(prevState => ({
-                isTeacher: !prevState.isTeacher
+              this.setState((prevState) => ({
+                isTeacher: !prevState.isTeacher,
               }));
               this.onSignUp();
             }}
           >
-            <TitleText color="secondary">Teacher Sign Up</TitleText>
+            <TitleText color="secondary">{t("common:teachersignup")}</TitleText>
           </Button>
-          <BackButton 
+          <BackButton
             onPress={() => {
               this.props.navigation.navigate("Login");
             }}
           >
-            <TitleText color="secondary">Back</TitleText>
+            <TitleText color="secondary">{t("common:back")}</TitleText>
           </BackButton>
         </ImageBg>
       </Container>
@@ -141,10 +171,10 @@ const BackButton = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   width: 100%;
   align-items: center;
-  justifyContent: flex-end;
-  marginTop: ${(props) => props.theme.space[5]};
-  bottom:0
-  `;
+  justify-content: flex-end;
+  margin-top: ${(props) => props.theme.space[5]};
+  bottom: 0;
+`;
 
 const Input = styled.TextInput`
   font-family: ${(props) => props.theme.fonts.body};
@@ -160,7 +190,6 @@ const ImageBg = styled.ImageBackground`
   height: 100%;
   padding-top: ${(props) => props.theme.space[5]};
   padding-horizontal: 20px;
-
 `;
 
 const Container = styled.View`
@@ -171,4 +200,3 @@ const Container = styled.View`
 `;
 
 export default Register;
-

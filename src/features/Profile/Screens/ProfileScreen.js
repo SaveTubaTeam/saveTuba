@@ -3,6 +3,8 @@ import styled from "styled-components/native";
 import { ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+import { auth } from "../../../../firebase";
+
 import { ProfileCard } from "../Components/profile-card.component";
 import { Badges } from "../Components/badges.component";
 import LeaderboardCard from "../Components/leaderboard.component";
@@ -26,16 +28,16 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-function ProfileScreen(props) {
+function ProfileScreen() {
   const navigation = useNavigation();
-  const { currentUser } = props;
+  const currentUser = auth.currentUser;
 
   return (
     <ImageBg source={require("../../../../assets/basic-bg.png")}>
       <SafeArea>
         <ScrollView>
           <Container>
-            <ProfileCard currentUser={currentUser}/>
+            <ProfileCard currentUser={currentUser} />
 
             <Spacer size="large" />
 
@@ -49,10 +51,10 @@ function ProfileScreen(props) {
       </SafeArea>
     </ImageBg>
   );
-};
+}
 
 const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser
+  currentUser: store.userState.currentUser,
 });
 
 export default connect(mapStateToProps, null)(ProfileScreen);

@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
 import { useNavigation } from "@react-navigation/native";
-
+import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
-import { BodyText } from "../../components/body-text.component";
-import { SafeArea } from "../../components/safe-area.component";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -60,6 +58,7 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { t } = useTranslation();
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -101,13 +100,13 @@ const LoginScreen = () => {
       <ImageBg source={require("../../../assets/loginBackground.png")}>
         <InputContainer>
           <Input
-            placeholder="Email"
+            placeholder={t("common:email")} //Email
             value={email}
             onChangeText={(text) => setEmail(text)}
             autoCapitalize="none"
           />
           <Input
-            placeholder="Password"
+            placeholder={t("common:password")} //Password
             value={password}
             onChangeText={(text) => setPassword(text)}
             autoCapitalize="none"
@@ -118,13 +117,13 @@ const LoginScreen = () => {
         <ButtonContainer>
           <Button onPress={handleLogin}>
             <TitleText color="secondary" size="body">
-              Login
+              {t("common:login")}
             </TitleText>
           </Button>
 
           <ButtonOutLine onPress={() => navigation.push("Register")}>
             <TitleText color="primary" size="body">
-              Register
+              {t("common:signup")}
             </TitleText>
           </ButtonOutLine>
         </ButtonContainer>
