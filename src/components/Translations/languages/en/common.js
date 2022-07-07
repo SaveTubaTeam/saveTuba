@@ -27,6 +27,8 @@ export default {
 
   start: "Start",
   back: "Back",
+  submit: "Submit",
+  enteryouranswer: "Enter your answer...",
   restart: "Start over",
 
   login: "Log In",

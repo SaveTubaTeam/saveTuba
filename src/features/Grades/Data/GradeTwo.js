@@ -6,7 +6,7 @@ export const Grade2 = {
       navigation: "Chapter1", // you need to specify name or key when calling navigate
       title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
       name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am an explorer
-      icon: require("../../../../assets/explore.png"),
+      icon: require("../../../../assets/chapter-icons/explore.png"),
       colorOne: "darkorange",
       colorTwo: "goldenrod",
       key: "C1",
@@ -61,7 +61,7 @@ export const Grade2 = {
       navigation: "Chapter2",
       title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradetwo:wildlife")}</Translation>, // Wildlife
-      icon: require("../../../../assets/butterfly.png"),
+      icon: require("../../../../assets/chapter-icons/butterfly.png"),
       colorOne: "darkolivegreen",
       colorTwo: "darkgreen",
       key: "C2",
@@ -303,7 +303,7 @@ export const Grade2 = {
       navigation: "Chapter3",
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
-      icon: require("../../../../assets/water-cycle.png"),
+      icon: require("../../../../assets/chapter-icons/water-cycle.png"),
       colorOne: "tomato",
       colorTwo: "firebrick",
       key: "C3",
@@ -545,7 +545,7 @@ export const Grade2 = {
       navigation: "Chapter4",
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 6
       name: <Translation>{(t) => t("gradetwo:physics")}</Translation>, // Physics of nature
-      icon: require("../../../../assets/book.png"),
+      icon: require("../../../../assets/chapter-icons/book.png"),
       colorOne: "mediumturquoise",
       colorTwo: "royalblue",
       key: "C4",

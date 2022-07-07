@@ -8,6 +8,7 @@ import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler";
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler";
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
+import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 
 const Stack = createNativeStackNavigator();
@@ -135,6 +136,35 @@ function IndividualLessonHandler({
             />
           )}
         </Stack.Screen>
+
+        <Stack.Screen
+          name="Mastery"
+          options={{
+            title: t("common:mastery"),
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
+          }}
+        >
+          {() => (
+            <MasteryHandler
+              data={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .mastery
+              }
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={selectedLesson}
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
+
         {/*
         {selectedLevel.drawing.component != null && (
           <Stack.Screen
@@ -159,23 +189,6 @@ function IndividualLessonHandler({
             headerBackTitleVisible: false,
             headerStyle: {
               backgroundColor: "#C6DC3B",
-            },
-          }}
-        ></Stack.Screen>
-
-        <Stack.Screen
-          name={selectedLevel.masteryComponent.route}
-          component={selectedLevel.masteryComponent.component}
-          options={{
-            headerShown: true,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerBackTitleVisible: false,
-            headerTintColor: "#748816",
-            headerTitleStyle: {
-              fontSize: 20,
-              fontFamily: "Gabriela_400Regular",
             },
           }}
         ></Stack.Screen>*/}

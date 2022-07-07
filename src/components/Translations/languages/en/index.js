@@ -4,6 +4,7 @@ import gradetwo from "./gradetwo";
 import gradethree from "./gradethree";
 import gradefour from "./gradefour";
 import common from "./common";
+import mastery from "./mastery";
 import profile from "./profile";
 
 export default {
@@ -13,5 +14,6 @@ export default {
   gradethree,
   gradefour,
   common,
+  mastery,
   profile,
 };
