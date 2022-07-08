@@ -27,6 +27,8 @@ export default {
 
   start: "Начинать",
   back: "Назад",
+  submit: "Отправить",
+  enteryouranswer: "Введите ответ...",
   restart: "Начать заново",
 
   login: "Авторизоваться",

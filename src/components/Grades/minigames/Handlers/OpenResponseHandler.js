@@ -77,60 +77,50 @@ const ImagePrompt = ({ questions }) => {
             marginBottom: 10,
             height: 250,
             borderRadius: 30,
+            width: "100%",
+            height: 240,
+            backgroundColor: "white",
+            borderRadius: 30,
+            flex: 1,
+            padding: 10,
+            paddingLeft: 20,
+            paddingRight: 20,
+            marginTop: 20,
+            alignContent: "flex-start",
+            alignItems: "flex-start",
           }}
         >
-          <View
+          <TextInput
             style={{
-              width: "100%",
-              height: 240,
-              backgroundColor: "white",
-              borderRadius: 30,
+              flex: 1,
+              fontFamily: "BalsamiqSans_400Regular",
+              color: "#748816",
+              fontSize: 18,
+              flexShrink: 1,
+            }}
+            placeholder="Введите ответ..."
+            placeholderTextColor={"#748816"}
+            multiline={true}
+          />
+          <Button
+            style={{
+              width: "80%",
+              height: 40,
+              backgroundColor: "#748816",
+              alignSelf: "center",
+              borderRadius: 20,
+            }}
+            onPress={() => {
+              if (currentPrompt < questions.numberOfPrompts - 1) {
+                setPrompt(currentPrompt + 1);
+              } else {
+                setModalVisible((modalVisible) => !modalVisible);
+                console.log("Yo: " + modalVisible);
+              }
             }}
           >
-            <View
-              style={{
-                flex: 1,
-                padding: 10,
-                paddingLeft: 20,
-                paddingRight: 20,
-                marginTop: 20,
-                alignContent: "flex-start",
-                alignItems: "flex-start",
-              }}
-            >
-              <TextInput
-                style={{
-                  flex: 1,
-                  fontFamily: "BalsamiqSans_400Regular",
-                  color: "#748816",
-                  fontSize: 18,
-                  flexShrink: 1,
-                }}
-                placeholder="Введите ответ..."
-                placeholderTextColor={"#748816"}
-                multiline={true}
-              />
-              <Button
-                style={{
-                  width: "80%",
-                  height: 40,
-                  backgroundColor: "#748816",
-                  alignSelf: "center",
-                  borderRadius: 20,
-                }}
-                onPress={() => {
-                  if (currentPrompt < questions.numberOfPrompts - 1) {
-                    setPrompt(currentPrompt + 1);
-                  } else {
-                    setModalVisible((modalVisible) => !modalVisible);
-                    console.log("Yo: " + modalVisible);
-                  }
-                }}
-              >
-                <BodyText color="secondary">Отправить</BodyText>
-              </Button>
-            </View>
-          </View>
+            <BodyText color="secondary">Отправить</BodyText>
+          </Button>
         </View>
       </View>
     </ScrollView>

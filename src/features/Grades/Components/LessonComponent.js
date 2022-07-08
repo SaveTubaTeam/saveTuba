@@ -170,7 +170,7 @@ function LessonComponent({
                 justifyContent: "center",
                 overflow: "hidden",
               }}
-              onPress={() => navigation.navigate("Somewhere")}
+              onPress={() => nav.navigate("Mastery")}
             >
               <ImageBg
                 style={{

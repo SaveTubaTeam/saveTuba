@@ -27,6 +27,8 @@ export default {
 
   start: "Бастау",
   back: "Артқа",
+  submit: "Жіберу",
+  enteryouranswer: "Жауабыңызды енгізіңіз...",
   restart: "Қайтадан бастаңыз",
 
   login: "Kipy",
