@@ -43,7 +43,8 @@ const Row = styled.View`
 export function ProfileCard({ currentUser }) {
   const navigation = useNavigation();
   const { t } = useTranslation();
-
+  console.log(currentUser);
+  console.log(currentUser.username);
   return (
     <Card>
       <AvatarContainer>
@@ -56,7 +57,7 @@ export function ProfileCard({ currentUser }) {
             />
           </TouchableOpacity>
         </Spacer>
-        <TitleText size="subtitle">{currentUser?.email}</TitleText>
+        <TitleText size="subtitle">{currentUser?.username}</TitleText>
 
         <Spacer size="medium" />
         <Row>

@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,8 +14,6 @@ const firebaseConfig = {
   storageBucket: "savetuba-5e519.appspot.com",
   messagingSenderId: "218900793188",
   appId: "1:218900793188:web:a1cc3aa38d180fc6815c71",
-  measurementId: "G-TJDQQ26Z19",
-  databaseUrl: "https://console.firebase.google.com/u/0/project/savetuba-5e519",
 };
 
 // Initialize Firebase
