@@ -28,7 +28,6 @@ const InputContainer = styled.View`
   width: 100%;
   background-color: white;
   margin: 10px;
-  height: 250px;
   border-radius: 30px;
   padding: 20px;
 `;
@@ -87,7 +86,7 @@ const MasteryHandler = ({
     <Container>
       <ImageBg
         style={{ paddingTop: 20, paddingBottom: 20 }}
-        source={data.backgroundImage}
+        source={selectedGrade.chapters[selectedChapter].backgroundImage}
         resizeMode="cover"
       >
         <FlatList // The flatlist used to load minigames and their data.

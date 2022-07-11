@@ -167,6 +167,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
           style={{ width: "100%" }}
           data={selectedGrade.chapters[selectedChapter].lessons}
           renderItem={renderItem}
+          keyExtractor={(item, index) => index}
           key={(item, index) => index}
         />
       </Container>

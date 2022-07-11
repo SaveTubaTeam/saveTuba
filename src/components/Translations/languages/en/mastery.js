@@ -34,7 +34,7 @@ export default {
   g1c2l1_prompt: "Take a photo of the plant and the factors.",
   // images here
   g1c2l2_card1: "Find two plants who have different habitats.",
-  g1c2l2_prompt: "Describe how exactly do the plants' habitats differ.",
+  g1c2l2_prompt: "Describe how exactly the plants' habitats differ.",
 
   g1c2l3_card1: "Many animals hatch from eggs.",
   g1c2l3_card2:
