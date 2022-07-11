@@ -157,9 +157,15 @@ function LessonComponent({
           renderItem={renderItem}
           contentContainerStyle={{
             width: "85%",
+            alignSelf: "center",
           }}
-          style={{ marginBottom: 20 }}
-          ListFooterComponentStyle={{ alignItems: "center" }}
+          style={{
+            marginBottom: 20,
+            width: "100%",
+          }}
+          ListFooterComponentStyle={{
+            alignItems: "center",
+          }}
           ListFooterComponent={
             <TouchableOpacity
               style={{
