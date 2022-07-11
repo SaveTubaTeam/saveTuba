@@ -231,4 +231,28 @@ export default {
   g1c5l12_prompt: "Record all of your observations here. Good job, scientists!",
 
   /* Grade Two */
+
+  g2c1l1_card1: "Find an object in your house that you use everyday.",
+  g2c1l1_card2: "Take a picture of it and write down its function. Is this something that you have to buy often?",
+  g2c1l1_prompt: "Is this object you use everyday prompoting sustainable practices?",
+
+  g2c1l2_card1: "Do a simple internet search to look up simple sustainable practices you can do in your home, be sure to record the website you visited",
+  g2c1l2_card2: "Determine if your list of resrouces you found is reliable, why or why not? Rate each source as reliable or unreliable",
+  g2c1l2_prompt: "Explain how you came to your conclusions.",
+
+  g2c1l3_card1: "Become a scientist who tests about air pollution!",
+  g2c1l3_card2: "It is hard to see air pollution around us because the particles are so small, but just because we can't see it, doesnt mean it's not there!",
+  g2c1l3_card3: "Let's conduct an expirement. You will need the following: ",
+  g2c1l3_card4: "- A piece of clear plastic (such as a plate or a cup), \n- Petroleum jelly, \n- A small rock, \n- A sheet of white paper",
+  g2c1l3_card5: "Once you have your materials gathered, did you have to buy anything or were they all in your house? \nWould you say the materials is sustainable?",
+  g2c1l3_card6: "Create a prediction: How do you think you are going to see air pollution? \nAre there any areas you think would have less air pollution than others? \nWhy?",
+  g2c2l3_prompt: "Submit your best hypothesis you came up with!",
+
+  g2c1l4_card1: "Now you have all the supplies gathered from Part 1, it is now time to start the expirement!",
+  g2c2l4_card2: "Spread petroleum jelly on the plate or cup.",
+  g2c2l4_card3: "Take your experimental set up and place it outside.",
+  g2c2l4_card5: "Place your rock on your plate or cup to weigh it down so it doesnt blow away. Leave it outside for 24 hours.",
+  g2c2l4_card4: "After 24 hours, take your cup or plate inside and put it on a white sheet of paper. Record your observations",
+  g2c2l4_prompt: "What can you conclude about air pollution from this expirmment? Was your predicition correct?",
+
 };

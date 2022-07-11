@@ -8,8 +8,8 @@ export default {
   /* Chapter 1 lesson names */
   c1l1: "History of scientific discoveries",
   c1l2: "Sources of information",
-  c1l3: "Planning and conducting an experiment",
-  c1l4: "Planning and conducting an experiment",
+  c1l3: "Planning and conducting an experiment (Part 1)",
+  c1l4: "Planning and conducting an experiment (Part 2)",
 
   /* Chapter 2 lesson names */
   c2l1: "How do plant leaves work?",

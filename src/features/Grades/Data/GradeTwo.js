@@ -1,4 +1,9 @@
 import { Translation } from "react-i18next";
+import {
+  SortingImages,
+  QuizImages,
+  TestImages,
+} from "../../../components/Grades/minigames/IMAGES";
 
 export const Grade2 = {
   chapters: [
@@ -13,47 +18,169 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 1 Lesson 1 
+        Grade 2 Chapter 1 Lesson 1 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson1",
+          navigation: "Lesson1", //History of scientific discovery
           title: <Translation>{(t) => t("gradetwo:c1l1")}</Translation>,
           key: "C1_L1",
           minigames: {},
+
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/sunrise.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c1l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l1_card1")}</Translation>
+                ),
+               image: require("../../../../assets/mastery/search-object.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l1_card2")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 1 Lesson 2 
+        Grade 2 Chapter 1 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson2",
+          navigation: "Lesson2", //sources of information
           title: <Translation>{(t) => t("gradetwo:c1l2")}</Translation>,
           key: "C1_L2",
+          
           minigames: {},
+
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/sunrise.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c1l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l2_card1")}</Translation>
+                ),
+               image: require("../../../../assets/mastery/eco-light.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l2_card2")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 1 Lesson 3 
+        Grade 2 Chapter 1 Lesson 3 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson3",
+          navigation: "Lesson3", // part 1, getting supplies and creating hypothesis
           title: <Translation>{(t) => t("gradetwo:c1l3")}</Translation>,
           key: "C1_L3",
           minigames: {},
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/sunrise.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/scientist.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/air-pollution.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l3_card3")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l3_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l3_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/reuse.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l3_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/ask-question.png")
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 1 Lesson 4 
+        Grade 2 Chapter 1 Lesson 4 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson4",
+          navigation: "Lesson4", //part 2, conducting expirement
           title: <Translation>{(t) => t("gradetwo:c1l4")}</Translation>,
           key: "C1_L4",
           minigames: {},
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/sunrise.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c1l4_card1")}</Translation>
+                ),
+               image: require("../../../../assets/mastery/girl-scientist.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/petroleum-jelly.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/window.png")
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/alarm-clock.png")
+              }, 
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/paper.png")
+              }, 
+            ],
+          },
+
         },
       ],
     },
