@@ -68,7 +68,7 @@ export function ProfileCard({ currentUser }) {
           </Friends>
           <Achievements>
             <BodyText color="secondary">
-              {t("profile:grade")} {currentUser?.level}
+              {t("profile:grade")} {currentUser?.currentScore}
             </BodyText>
           </Achievements>
         </Row>

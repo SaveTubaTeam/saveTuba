@@ -30,6 +30,7 @@ const ImageBg = styled.ImageBackground`
 
 function ProfileScreen({currentUser}) {
   const navigation = useNavigation();
+  console.warn(currentUser.currentScore);
 
 
   return (

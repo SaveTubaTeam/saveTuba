@@ -3,8 +3,18 @@ const initialState = {
 };
 
 export const user = (state = initialState, action) => {
-    return {
-        ...state,
-        currentUser: action.currentUser
-    };
+    switch (action.type) {
+        case 'USER_STATE_CHANGE':
+            return {
+                ...state,
+                currentUser: action.currentUser
+            };
+        case 'USER_ADD_EXPERIENCE_45':
+            return {
+                ...state,
+                currentUser: action.currentUser
+            };
+        default: 
+            return state;
+    }
 };

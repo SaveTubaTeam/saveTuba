@@ -48,9 +48,7 @@ LogBox.ignoreLogs(["Setting a timer"]);
 
 function Home() {
   return (
-    <Provider store={store}>
       <MainScreen />
-    </Provider>
   );
 }
 
@@ -72,25 +70,27 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Login"
-              component={LoginScreen}
-            />
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Register"
-              component={Register}
-            />
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="HomePage"
-              component={Home}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Login"
+                component={LoginScreen}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Register"
+                component={Register}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="HomePage"
+                component={Home}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+      </Provider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

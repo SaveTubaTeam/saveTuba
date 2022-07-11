@@ -10,6 +10,8 @@ import { BodyText } from "../../../body-text.component";
 import { SafeArea } from "../../../safe-area.component";
 import { Spacer } from "../../../spacer.component";
 
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+
 const Stack = createNativeStackNavigator();
 
 const Container = styled.View`
@@ -57,15 +59,23 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
-const SecondScreen = ({ data }) => {
-  const navigation = useNavigation();
+function SecondScreen ({ data, route, navigation, currentUser, test }) {
+  const { score } = route.params;
+  console.log("SCORE: " + score);
+  console.warn(currentUser);
+  console.log(test);
+
+  // Temporary XP Thing
+  const XP_PER_POINT = 45;
+
+
+
   return (
-    <ImageBg source={data.content[0].imageBg}>
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
             Поздравляем! Вы завершили свою первую сортировочную контрольный
-            опрос!
+            опрос! {"\n"} You gained {score * XP_PER_POINT} xp!
           </TitleText>
           <Spacer size="large" />
           <Pressable onPress={() => navigation.navigate("Lesson")}>
@@ -73,7 +83,6 @@ const SecondScreen = ({ data }) => {
           </Pressable>
         </Container2>
       </SafeArea>
-    </ImageBg>
   );
 };
 
@@ -89,13 +98,16 @@ const Start = ({ data }) => {
   const [visibleThree, setVisibleThree] = useState("none");
 
   const [count, setCount] = useState(0);
+  const [score, setScore] = useState(0);
 
   const checkAnswer = (odg) => {
     if (odg == correctAnswer) {
       console.log("Correct");
+      setScore(() => score + 1);
     } else {
-      console.log("you suck");
+      console.log("you suck!");
     }
+    // console.log("Score: " + score + "/4");
   };
 
   const Modko = () => {
@@ -114,8 +126,8 @@ const Start = ({ data }) => {
             <View>
               <BodyText size="subtitle">
                 {correctAnswer == answer
-                  ? "Правильный ответ! Хорошая работа ✨"
-                  : "Неправильный ответ! Повезет в следующий раз 🍀"}
+                  ? "Правильный ответ! Хорошая работа ✨ **Correct**"
+                  : "Неправильный ответ! Повезет в следующий раз 🍀 **Incorrect**"}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -142,7 +154,9 @@ const Start = ({ data }) => {
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
-                  navigation.navigate("SecondScreen");
+                  navigation.navigate("SecondScreen", {
+                    score: score,
+                  });
                 }
               }}
             >
@@ -311,16 +325,15 @@ const Start = ({ data }) => {
   );
 };
 
-const QuizHandler = ({ data }) => {
+const QuizHandler = ({ data, navigation, route, currentUser }) => {
+  // console.warn(currentUser);
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
-        {() => <SecondScreen data={data} />}
-      </Stack.Screen>
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}/>
     </Stack.Navigator>
   );
 };
