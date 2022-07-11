@@ -28,9 +28,9 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-function ProfileScreen() {
+function ProfileScreen({currentUser}) {
   const navigation = useNavigation();
-  const currentUser = auth.currentUser;
+
 
   return (
     <ImageBg source={require("../../../../assets/basic-bg.png")}>
