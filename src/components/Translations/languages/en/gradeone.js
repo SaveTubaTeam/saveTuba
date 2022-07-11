@@ -43,7 +43,7 @@ export default {
   c5l4: "4. How much does an elephant weigh?",
   c5l5: "5. How to get to Emerald City?",
   c5l6: "6. Where did the ray of light go?",
-  c5l7: "7. What is the sound?",
+  c5l7: "7. What is sound?",
   c5l8: "8. How do we hear sounds?",
   c5l9: "9. How does the thermometer know if it is warm or cold?",
   c5l10: "10. Where does frost hide during the summer?",

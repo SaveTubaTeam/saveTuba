@@ -34,9 +34,9 @@ export const QuizImages = {
   bg: [
     {
       lvl_1_les_1: require("../../../../assets/nat.jpg"),
-      lvl_1_les_2: require("../../../../assets/mastery/bg/field.jpeg"),
+      lvl_1_les_2: require("../../../../assets/habitat.jpg"),
       lvl_2_les_1: require("../../../../assets/path.jpg"),
-      lvl_2_les_2: require("../../../../assets/mastery/bg/sunrise.jpg"),
+      lvl_2_les_2: require("../../../../assets/mountains.jpeg"),
     },
   ],
 };
