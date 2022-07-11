@@ -167,7 +167,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
           style={{ width: "100%" }}
           data={selectedGrade.chapters[selectedChapter].lessons}
           renderItem={renderItem}
-          key={(item) => item.key}
+          key={(item, index) => index}
         />
       </Container>
     </SafeArea>

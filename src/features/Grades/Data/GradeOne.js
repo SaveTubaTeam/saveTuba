@@ -16,7 +16,6 @@ export const Grade1 = {
       icon: require("../../../../assets/chapter-icons/location.png"),
       colorOne: "indianred",
       colorTwo: "firebrick",
-      key: "C1",
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,22 +27,19 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c1l1")}</Translation>, // Where to find out about everything in the world?
           thumbnail: require("../../../../assets/lesson-icons/globe.png"),
           backgroundColor: "#2C3653",
-          key: "C1_L1",
           mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/sunrise.jpg"),
             prompt: (
               <Translation>{(t) => t("mastery:g1c1l1_prompt")}</Translation>
             ),
-            backgroundImage: require("../../../../assets/sunrise.jpg"),
             cards: [
               {
-                key: "1",
                 text: (
                   <Translation>{(t) => t("mastery:g1c1l1_card1")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/earth-globe.png"),
               },
               {
-                key: "2",
                 text: (
                   <Translation>{(t) => t("mastery:g1c1l1_card2")}</Translation>
                 ),
@@ -56,7 +52,6 @@ export const Grade1 = {
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
-              key: "1",
               content: [
                 {
                   type: "image",
@@ -129,7 +124,6 @@ export const Grade1 = {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
-              key: "2",
               content: [
                 {
                   imageBg: SortingImages.bg[0].lvl_1_les_1,
@@ -163,18 +157,25 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c1l2")}</Translation>, // Why does the dandelion look like a parachute?
           thumbnail: require("../../../../assets/lesson-icons/dandelion.png"),
           backgroundColor: "#87CEFA",
-          key: "C1_L2",
           mastery: {
-            data: {
-              prompt: "hi",
-            },
+            backgroundImage: require("../../../../assets//mastery/bg/field.jpeg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c1l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/golden-ratio.png"),
+              },
+            ],
           },
           minigames: {
             sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
-              key: "0",
               content: [
                 {
                   imageBg: SortingImages.bg[0].lvl_1_les_2,
@@ -195,7 +196,6 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              key: "1",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -270,7 +270,6 @@ export const Grade1 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              key: "2",
               content: [
                 {
                   imageBg: require("../../../../assets/nat.jpg"),
@@ -315,7 +314,6 @@ export const Grade1 = {
               ), // Image Boom
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
-              key: "3",
               data: {
                 numberOfPrompts: 4,
                 prompts: [
@@ -348,16 +346,53 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c1l3")}</Translation>, // What is an experiment?
           thumbnail: require("../../../../assets/lesson-icons/experiment.png"),
           backgroundColor: "#8C77AA",
-          key: "C1_L3",
           mastery: {
-            data: {
-              prompt: "hi",
-            },
+            backgroundImage: require("../../../../assets/mastery/bg/colors.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c1l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/chemistry.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bowl.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l3_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/milk.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l3_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/colorant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l3_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/dish-soap.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c1l3_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/splash.png"),
+              },
+            ],
           },
           minigames: {
             sorting: {
               navigation: "Sorting",
-              key: "0",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: [
@@ -380,7 +415,6 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              key: "1",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -453,7 +487,6 @@ export const Grade1 = {
             },
             quiz: {
               navigation: "QuizScreen",
-              key: "2",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               content: [
@@ -500,7 +533,6 @@ export const Grade1 = {
               ), // Image Boom
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
-              key: "3",
               data: {
                 numberOfPrompts: 4,
                 prompts: [
@@ -530,7 +562,6 @@ export const Grade1 = {
       icon: require("../../../../assets/chapter-icons/ecology.png"),
       colorOne: "indigo",
       colorTwo: "mediumpurple",
-      key: "C2",
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -543,7 +574,26 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l1")}</Translation>, // What are the secrets of plants?
           thumbnail: require("../../../../assets/lesson-icons/plant-hand.png"),
           backgroundColor: "#B25C3E",
-          key: "C2_L1",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l1_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/sprout.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -557,7 +607,20 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l2")}</Translation>, // How do plants live?
           thumbnail: require("../../../../assets/lesson-icons/plant-water.png"),
           backgroundColor: "#F9F0D7",
-          key: "C2_L2",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -571,7 +634,26 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l3")}</Translation>, // Who hatched from the egg?
           thumbnail: require("../../../../assets/lesson-icons/dino.png"),
           backgroundColor: "#76220C",
-          key: "C2_L3",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -585,7 +667,26 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l4")}</Translation>, // Who plays hide and seek?
           thumbnail: require("../../../../assets/lesson-icons/chameleon.png"),
           backgroundColor: "#FF9044",
-          key: "C2_L4",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l4_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -599,7 +700,26 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l5")}</Translation>, // How are animals protected?
           thumbnail: require("../../../../assets/lesson-icons/birdfeeder.png"),
           backgroundColor: "#9DCD5A",
-          key: "C2_L5",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l5_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l5_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l5_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -613,7 +733,26 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l6")}</Translation>, // Why are we standing?
           thumbnail: require("../../../../assets/lesson-icons/skeleton.png"),
           backgroundColor: "#004B75",
-          key: "C2_L6",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l6_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l6_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l6_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -627,7 +766,32 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l7")}</Translation>, // How do we smile?
           thumbnail: require("../../../../assets/lesson-icons/sunshine.png"),
           backgroundColor: "#76B9F0",
-          key: "C2_L7",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l7_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l7_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l7_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l7_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -641,7 +805,32 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l8")}</Translation>, // How much does your backpack weigh?
           thumbnail: require("../../../../assets/lesson-icons/backpack.png"),
           backgroundColor: "#FC6467",
-          key: "C2_L8",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l8_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l8_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l8_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l8_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -655,7 +844,26 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l9")}</Translation>, // What are microbes afraid of?
           thumbnail: require("../../../../assets/lesson-icons/microbes.png"),
           backgroundColor: "#6040AC",
-          key: "C2_L9",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l9_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l9_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c2l9_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -669,7 +877,12 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c2l10")}</Translation>, // Why do my teeth hurt?
           thumbnail: require("../../../../assets/lesson-icons/toothache.png"),
           backgroundColor: "#AA1A44",
-          key: "C2_L10",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c2l10_prompt")}</Translation>
+            ),
+          },
         },
       ],
     },
@@ -680,7 +893,6 @@ export const Grade1 = {
       icon: require("../../../../assets/chapter-icons/air-pollution.png"),
       colorOne: "orange",
       colorTwo: "orangered",
-      key: "C3",
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -691,7 +903,26 @@ export const Grade1 = {
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradeone:c3l1")}</Translation>, // What are the properties of air?
-          key: "C3_L1",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c3l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l1_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -703,7 +934,26 @@ export const Grade1 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradeone:c3l2")}</Translation>, // Where to build a factory?
-          key: "C3_L2",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c3l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l2_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -715,7 +965,26 @@ export const Grade1 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradeone:c3l3")}</Translation>, // What do we know about water?
-          key: "C3_L3",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c3l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -727,7 +996,26 @@ export const Grade1 = {
         {
           navigation: "Lesson4",
           title: <Translation>{(t) => t("gradeone:c3l4")}</Translation>, // Without what is a person not enough?
-          key: "C3_L4",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c3l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l4_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
       ],
     },
@@ -738,7 +1026,6 @@ export const Grade1 = {
       icon: require("../../../../assets/chapter-icons/rocket.png"),
       colorOne: "midnightblue",
       colorTwo: "mediumturquoise",
-      key: "C4",
       lessons: [
         /* 
           ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -749,7 +1036,26 @@ export const Grade1 = {
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradeone:c4l1")}</Translation>, // The sun and its influence to Earth
-          key: "C4_L1",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c4l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l1_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -761,7 +1067,26 @@ export const Grade1 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradeone:c4l2")}</Translation>, // Who is friends with the Sun?
-          key: "C4_L2",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c4l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l2_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -773,7 +1098,26 @@ export const Grade1 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradeone:c4l3")}</Translation>, // How do planets live?
-          key: "C4_L3",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c4l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -785,7 +1129,26 @@ export const Grade1 = {
         {
           navigation: "Lesson4",
           title: <Translation>{(t) => t("gradeone:c4l4")}</Translation>, // Why does spring follow after winter?
-          key: "C4_L4",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c4l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l4_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -797,7 +1160,44 @@ export const Grade1 = {
         {
           navigation: "Lesson5",
           title: <Translation>{(t) => t("gradeone:c4l5")}</Translation>, // How to not be late for the lesson?
-          key: "C4_L5",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c4l5_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l5_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l5_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l5_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l5_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c4l5_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
       ],
     },
@@ -808,7 +1208,6 @@ export const Grade1 = {
       icon: require("../../../../assets/chapter-icons/physics.png"),
       colorOne: "lightpink",
       colorTwo: "mediumvioletred",
-      key: "C5",
       lessons: [
         /* 
           ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -820,6 +1219,26 @@ export const Grade1 = {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradeone:c5l1")}</Translation>, // Why are items moving?
           key: "C5_L1",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l1_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -831,7 +1250,26 @@ export const Grade1 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradeone:c5l2")}</Translation>, // Who is faster?
-          key: "C5_L2",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l2_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -843,7 +1281,32 @@ export const Grade1 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradeone:c5l3")}</Translation>, // The quieter you go…the further you will go
-          key: "C5_L3",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l3_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -855,7 +1318,32 @@ export const Grade1 = {
         {
           navigation: "Lesson4",
           title: <Translation>{(t) => t("gradeone:c5l4")}</Translation>, // How much does an elephant weigh?
-          key: "C5_L4",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l4_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l4_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -867,7 +1355,38 @@ export const Grade1 = {
         {
           navigation: "Lesson5",
           title: <Translation>{(t) => t("gradeone:c5l5")}</Translation>, // How to get to Emerald City?
-          key: "C5_L5",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l5_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l5_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l5_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l5_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l5_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -879,7 +1398,26 @@ export const Grade1 = {
         {
           navigation: "Lesson6",
           title: <Translation>{(t) => t("gradeone:c5l6")}</Translation>, // Where did the ray of light go?
-          key: "C5_L6",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l6_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l6_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l6_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -891,7 +1429,32 @@ export const Grade1 = {
         {
           navigation: "Lesson7",
           title: <Translation>{(t) => t("gradeone:c5l7")}</Translation>, // What is the sound?
-          key: "C5_L7",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l7_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l7_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l7_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l7_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -903,7 +1466,26 @@ export const Grade1 = {
         {
           navigation: "Lesson8",
           title: <Translation>{(t) => t("gradeone:c5l8")}</Translation>, // How do we hear sounds?
-          key: "C5_L8",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l8_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l8_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l8_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -915,7 +1497,32 @@ export const Grade1 = {
         {
           navigation: "Lesson9",
           title: <Translation>{(t) => t("gradeone:c5l9")}</Translation>, // How does the thermometer know if it is warm or cold?
-          key: "C5_L9",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l9_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l9_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l9_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l9_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -927,7 +1534,26 @@ export const Grade1 = {
         {
           navigation: "Lesson10",
           title: <Translation>{(t) => t("gradeone:c5l10")}</Translation>, // Where does frost hide during the summer?
-          key: "C5_L10",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l10_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l10_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l10_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -939,7 +1565,32 @@ export const Grade1 = {
         {
           navigation: "Lesson11",
           title: <Translation>{(t) => t("gradeone:c5l11")}</Translation>, // What is used for magnets?
-          key: "C5_L11",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l11_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l11_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l11_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l11_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
 
         /* 
@@ -951,7 +1602,38 @@ export const Grade1 = {
         {
           navigation: "Lesson12",
           title: <Translation>{(t) => t("gradeone:c5l12")}</Translation>, // How to have fun during the summer?
-          key: "C5_L12",
+          mastery: {
+            backgroundImage: require("../../../../assets/mastery/bg/plants.jpg"),
+            prompt: (
+              <Translation>{(t) => t("mastery:g1c5l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l12_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l12_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l12_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c5l12_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
+          },
         },
       ],
     },

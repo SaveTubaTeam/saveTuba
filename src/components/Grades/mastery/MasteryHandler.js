@@ -16,8 +16,8 @@ const Container = styled.View`
 `;
 
 const Prompt = styled.View`
+  width: 100%;
   background-color: #fff;
-  width: 90%;
   border-radius: 30px;
   padding: 20px;
   margin-bottom: 10px;
@@ -25,7 +25,7 @@ const Prompt = styled.View`
 `;
 
 const InputContainer = styled.View`
-  width: 90%;
+  width: 100%;
   background-color: white;
   margin: 10px;
   height: 250px;
@@ -99,10 +99,14 @@ const MasteryHandler = ({
                 .mastery.cards
             )
           }
-          keyExtractor={(item) => item.key}
-          key={(item) => item.key}
+          style={{ width: "80%" }}
+          keyExtractor={(item, index) => index}
+          key={(item, index) => index}
           renderItem={renderItem}
-          contentContainerStyle={{ alignItems: "center" }}
+          contentContainerStyle={{
+            alignItems: "center",
+          }}
+          ListFooterComponentStyle={{ width: "100%", alignItems: "center" }}
           ListFooterComponent={
             <InputContainer>
               <TitleText size="subtitle">{data.prompt}</TitleText>

@@ -152,8 +152,8 @@ function LessonComponent({
             )
           }
           numColumns={2}
-          keyExtractor={(item) => item.key}
-          key={(item) => item.key}
+          keyExtractor={(item, index) => index}
+          key={(item, index) => index}
           renderItem={renderItem}
           contentContainerStyle={{
             width: "85%",
