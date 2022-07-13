@@ -525,6 +525,85 @@ export const Grade1 = {
               prompt:
                 "Take a picture of what you analyzed in the previous mini-game.",
             },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 4,
+              content: [
+                {
+                  prompt: "What is the first step in the experiment?",
+                  answers: [
+                    {
+                      text: "Observation",
+                    },
+                    {
+                      text: "Test",
+                    },
+                    {
+                      text: "Hypothesis",
+                    },
+                    { text: "Prediction" },
+                  ],
+                  answer: "Observation",
+                },
+                {
+                  prompt:
+                    "Lying in bed you notice that you get cold every time your brother opens the door. This is most closely associated with which step in conducting an experiment?",
+                  answers: [
+                    {
+                      text: "Forming a hypothesis",
+                    },
+                    {
+                      text: "Developing a test",
+                    },
+                    {
+                      text: "Making an observation",
+                    },
+                    { text: "Conclusion" },
+                  ],
+                  answer: "Making an observation",
+                },
+                {
+                  prompt: "What is the last step in the experiment?",
+                  answers: [
+                    {
+                      text: "Conclusion",
+                    },
+                    {
+                      text: "Communication of results",
+                    },
+                    {
+                      text: "Observation",
+                    },
+                    {
+                      text: "Hypothesis formation",
+                    },
+                  ],
+                  answer: "Conclusion",
+                },
+                {
+                  prompt: "What is a hypothesis?",
+                  answers: [
+                    {
+                      text: "An untestable statement",
+                    },
+                    {
+                      text: "An experiment",
+                    },
+                    {
+                      text: "Your best “educated guess” of what the answer to your question will be",
+                    },
+                    {
+                      text: "Whatever the teacher tells you is the truth",
+                    },
+                  ],
+                  answer:
+                    "Your best “educated guess” of what the answer to your question will be",
+                },
+              ],
+            },
           },
         },
       ],
@@ -589,6 +668,36 @@ export const Grade1 = {
                     text: "What's going on in this photo? How do you think this affects the environment?",
                     placeholder: "I think that..",
                     image: require("../../../../assets/openresponse/cutting.png"),
+                  },
+                ],
+              },
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Choose the image which represents the object below.",
+                num: 3,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  {
+                    name: "Roots",
+                  },
+                  {
+                    name: "Leaves",
+                  },
+                ],
+                options: [
+                  { title: "Water", name: "Roots" },
+                  {
+                    title: "Air",
+                    name: "Leaves",
+                  },
+                  { title: "Mineral plant substances", name: "Roots" },
+                  {
+                    title: "Solar energy",
+                    name: "Leaves",
                   },
                 ],
               },
@@ -712,6 +821,13 @@ export const Grade1 = {
                 },
               ],
             },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Take a picture of a habitat in which your favorite plant grows.",
+            },
           },
         },
 
@@ -798,6 +914,83 @@ export const Grade1 = {
               prompt:
                 "Which group of animals lays eggs? Can you take a picture of one animal that lays eggs?",
             },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 4,
+              content: [
+                {
+                  prompt: "What makes a fish unique from other vertebrates?",
+                  answers: [
+                    {
+                      text: "Pass oxygenated water through their gills",
+                    },
+                    {
+                      text: "Fish breathe oxygen",
+                    },
+                    {
+                      text: "The bones of the fish make up their skeleton",
+                    },
+                    { text: "Fish can survive outside of their habitat" },
+                  ],
+                  answer: "Pass oxygenated water through their gills",
+                },
+                {
+                  prompt: "Which one of these is not an insect?",
+                  answers: [
+                    {
+                      text: "Ants",
+                    },
+                    {
+                      text: "Fleas",
+                    },
+                    {
+                      text: "Termites",
+                    },
+                    { text: "Spiders" },
+                  ],
+                  answer: "Spiders",
+                },
+                {
+                  prompt: "Which one of the following is a bird?",
+                  answers: [
+                    {
+                      text: "Penguin",
+                    },
+                    {
+                      text: "Bat",
+                    },
+                    {
+                      text: "Flying squirrel",
+                    },
+                    {
+                      text: "Butterflies",
+                    },
+                  ],
+                  answer: "Penguin",
+                },
+                {
+                  prompt: "What is the smallest group of vertebrates?",
+                  answers: [
+                    {
+                      text: "Amphibians",
+                    },
+                    {
+                      text: "Insects",
+                    },
+                    {
+                      text: "Fish",
+                    },
+                    {
+                      text: "Mammals",
+                    },
+                  ],
+                  answer: "Mammals",
+                },
+              ],
+            },
           },
         },
 
@@ -831,6 +1024,98 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 4,
+              content: [
+                {
+                  prompt: "Where does a dolphin live?",
+                  answers: [
+                    {
+                      text: "Ocean",
+                    },
+                    {
+                      text: "Rainforest",
+                    },
+                    {
+                      text: "Polar",
+                    },
+                    { text: "Tundra" },
+                  ],
+                  answer: "Ocean",
+                },
+                {
+                  prompt:
+                    "Which of these are not methods of animals protecting themselves from predators?",
+                  answers: [
+                    {
+                      text: "Running towards the predator to talk it out",
+                    },
+                    {
+                      text: "Camouflage",
+                    },
+                    {
+                      text: "Having thick shells, sharp needles, and bright colors",
+                    },
+                    { text: "Running away from enemies" },
+                  ],
+                  answer: "Running towards the predator to talk it out",
+                },
+                {
+                  prompt: "How has a turtle adapted to its environment?",
+                  answers: [
+                    {
+                      text: "Quick, sharp movements",
+                    },
+                    {
+                      text: "Ability to fly",
+                    },
+                    {
+                      text: "Amazing eyesight",
+                    },
+                    {
+                      text: "Different shaped feet, mouth, and shells",
+                    },
+                  ],
+                  answer: "Different shaped feet, mouth, and shells",
+                },
+                {
+                  prompt: "Can animals live both underground and above ground?",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Can you name three underground animals? Explain how these animals have adapted to their surroundings and why their current environment is best.",
+                    placeholder: "The animals I want to talk about are..",
+                    image: require("../../../../assets/openresponse/rabbit.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
 
         /* 
@@ -863,6 +1148,137 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do crocodiles prepare for the summer? Specifically, when there is drought?",
+                    placeholder: "Crocodiles..",
+                    image: require("../../../../assets/openresponse/croc.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 4,
+              content: [
+                {
+                  prompt: "Why do birds migrate?",
+                  answers: [
+                    {
+                      text: "To look for resources, mainly food and nesting locations",
+                    },
+                    {
+                      text: "To escape the predators",
+                    },
+                    {
+                      text: "Birds are generally nomadic creatures and don’t stay in one place",
+                    },
+                    { text: "To practice their flight" },
+                  ],
+                  answer:
+                    "To look for resources, mainly food and nesting locations",
+                },
+                {
+                  prompt: "Do all birds follow the same migration patterns?",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "Why do bears prepare for the winter?",
+                  answers: [
+                    {
+                      text: "The winter is cold",
+                    },
+                    {
+                      text: "Bears cannot find food in this climate",
+                    },
+                    {
+                      text: "Spend quality time with their loved ones",
+                    },
+                    {
+                      text: "All of the above",
+                    },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt:
+                    "What should you not do when taking a trip out in nature?",
+                  answers: [
+                    {
+                      text: "Leave a trace on the nature trail to mark your accomplishment",
+                    },
+                    {
+                      text: "Walk briskly",
+                    },
+                    {
+                      text: "Collect rubbish",
+                    },
+                    {
+                      text: "Use refillable water bottles",
+                    },
+                  ],
+                  answer:
+                    "Leave a trace on the nature trail to mark your accomplishment",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Take a picture of an animal that needs to be protected more.",
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt: "What order are the seasons in? Start from January.",
+              data: [
+                {
+                  text: "Winter",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Fall",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Summer",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Spring",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+              ],
+            },
+          },
         },
 
         /* 
@@ -893,6 +1309,131 @@ export const Grade1 = {
                 ),
               },
             ],
+          },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Take a picture of a bone on your body and identify it in the most specific manner.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "List many of the functions of the human skeleton.",
+                    placeholder: "The human skeleton..",
+                    image: require("../../../../assets/openresponse/anatomy.png"),
+                  },
+                ],
+              },
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Order from least to greatest the amount of bones a human has at each stage.",
+              data: [
+                {
+                  text: "Puberty",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Childhood",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "Teenage years",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+
+                {
+                  text: "Senior years",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Infancy",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+                {
+                  text: "Adulthood",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+              ],
+            },
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description:
+                "Match the images with different sources of information.",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "Ribs",
+                  image: require("../../../../assets/memory/skeleton.png"),
+                },
+                {
+                  name: "Ribs",
+                },
+                {
+                  type: "image",
+                  name: "Pelvic bone",
+                  image: require("../../../../assets/memory/pelvis.png"),
+                },
+                {
+                  name: "Pelvic bone",
+                },
+                {
+                  type: "image",
+                  name: "Skull",
+                  image: require("../../../../assets/memory/skull.png"),
+                },
+                {
+                  name: "Skull",
+                },
+                {
+                  type: "image",
+                  name: "Upper limbs",
+                  image: require("../../../../assets/memory/human-back.png"),
+                },
+                {
+                  name: "Upper limbs",
+                },
+                {
+                  type: "image",
+                  name: "Spine",
+                  image: require("../../../../assets/memory/spinal-column.png"),
+                },
+                {
+                  name: "Spine",
+                },
+                {
+                  type: "image",
+                  name: "Lower limbs",
+                  image: require("../../../../assets/memory/running.png"),
+                },
+                {
+                  name: "Lower limbs",
+                },
+              ],
+            },
           },
         },
 
@@ -929,6 +1470,32 @@ export const Grade1 = {
                 ),
               },
             ],
+          },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "List many of the functions of our muscles.",
+                    placeholder: "Our muscles..",
+                    image: require("../../../../assets/openresponse/strong.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt: "Take a picture of you smiling.",
+            },
           },
         },
 

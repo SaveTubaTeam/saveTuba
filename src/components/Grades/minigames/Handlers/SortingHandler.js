@@ -84,7 +84,7 @@ const Start = ({ data }) => {
   const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
-  const [currentOption, setCurrentOption] = useState(data.options[count].name);
+  const [currentOption, setCurrentOption] = useState(data.options[count].title);
   const [currentAnswer, setCurrentAnswer] = useState(data.options[count].name);
 
   const navigation = useNavigation();
@@ -115,7 +115,7 @@ const Start = ({ data }) => {
                 if (count != data.num) {
                   setVisible(!visible);
                   setCount(count + 1);
-                  setCurrentOption(data.options[count + 1].name);
+                  setCurrentOption(data.options[count + 1].title);
                   setCurrentAnswer(data.options[count + 1].name);
                 } else {
                   setVisible(!visible);
