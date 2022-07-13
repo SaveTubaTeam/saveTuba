@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Modal, Pressable, TouchableOpacity } from "react-native";
+import {
+  View,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+  FlatList,
+  Image,
+} from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -17,13 +24,7 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-`;
-
-const Container2 = styled.View`
-  width: 90%;
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
+  padding-top: 100px;
 `;
 
 const ModalContainer = styled.View`
@@ -36,72 +37,57 @@ const ModalContainer = styled.View`
 const Category = styled.TouchableOpacity`
   justify-content: center;
   background-color: white;
-  height: 100px;
   margin: 5px;
-  padding: 5px 10px;
+  padding: 10px;
   border-radius: 10px;
 `;
 
-const Option = styled.View`
-  position: absolute;
-  top: 20px;
-  width: 60%;
-  border-radius: 20px;
-  border: 8px solid #c6dc3b;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  height: 150px;
-  background-color: white;
-  padding: 10px;
+const Prompt = styled.View`
+  width: 80%;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
 `;
 
-const Img = styled.ImageBackground`
-  margin-top: 10px;
-  height: 70%;
-  width: 70%;
+const SubmitButton = styled.TouchableOpacity`
+  width: 100px;
+  justify-content: center;
+  height: 40px;
+  background-color: #748816;
+  align-self: center;
+  border-radius: 20px;
 `;
 
 const SecondScreen = ({ data }) => {
   const navigation = useNavigation();
   return (
-    <ImageBg source={data.content[0].imageBg}>
-      <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
-        <Container2 style={{ backgroundColor: "white" }}>
+    <ImageBg source={data.imageBg}>
+      <Container>
+        <Prompt>
           <TitleText>
-            Отличная работа! Вернитесь к уроку, чтобы продолжить обучение!
+            Good job! Go back to the lesson to continue learning!
           </TitleText>
           <Spacer size="large" />
-          <Pressable onPress={() => navigation.navigate("Lesson")}>
-            <BodyText color="primary">Назад</BodyText>
-          </Pressable>
-        </Container2>
-      </SafeArea>
+          <SubmitButton onPress={() => navigation.navigate("Lesson")}>
+            <BodyText color="secondary">Back</BodyText>
+          </SubmitButton>
+        </Prompt>
+      </Container>
     </ImageBg>
   );
 };
 
 const Start = ({ data }) => {
-  const [correctAnswer, setCorrectAnswer] = useState(
-    data.content[1].firstAnswer
-  );
-  const [answer, setAnswer] = useState("");
   const [visible, setVisible] = useState(false);
 
-  const [visibleOne, setVisibleOne] = useState(1);
-  const [visibleTwo, setVisibleTwo] = useState(0);
-  const [visibleThree, setVisibleThree] = useState(0);
+  const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
-  const navigation = useNavigation();
+  const [currentOption, setCurrentOption] = useState(data.options[count].name);
+  const [currentAnswer, setCurrentAnswer] = useState(data.options[count].name);
 
-  const checkAnswer = (odg) => {
-    if (odg == correctAnswer) {
-      console.log("Correct");
-    } else {
-      console.log("you suck");
-    }
-  };
+  const navigation = useNavigation();
 
   const Modko = () => {
     return (
@@ -110,17 +96,11 @@ const Start = ({ data }) => {
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
           <ModalContainer>
-            <TouchableOpacity
-              style={{ position: "absolute", right: 10, top: 5 }}
-              onPress={() => setVisible(!visible)}
-            >
-              <BodyText>✖️</BodyText>
-            </TouchableOpacity>
             <View>
               <BodyText size="subtitle">
-                {correctAnswer == answer
-                  ? "Правильный ответ! Хорошая работа ✨"
-                  : "Неправильный ответ! Повезет в следующий раз 🍀"}
+                {correct == true
+                  ? "That's right! Good job ✨"
+                  : "Incorrect! Better luck next time 🍀"}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -132,26 +112,19 @@ const Start = ({ data }) => {
                 paddingBottom: 5,
               }}
               onPress={() => {
-                if (count == 0) {
-                  setVisibleOne(0);
-                  setVisibleTwo(1);
-                  setVisible(false);
-                  setCorrectAnswer(data.content[1].secondAnswer);
-                  setCount(1);
-                } else if (count == 1) {
-                  setVisibleTwo(0);
-                  setVisibleThree(1);
-                  setVisible(false);
-                  setCorrectAnswer(data.content[1].thirdAnswer);
-                  setCount(2);
-                } else if (count == 2) {
-                  setVisible(false);
+                if (count != data.num) {
+                  setVisible(!visible);
+                  setCount(count + 1);
+                  setCurrentOption(data.options[count + 1].name);
+                  setCurrentAnswer(data.options[count + 1].name);
+                } else {
+                  setVisible(!visible);
                   navigation.navigate("SecondScreen");
                 }
               }}
             >
               <BodyText size="subtitle" color="secondary">
-                Следующий
+                Next
               </BodyText>
             </TouchableOpacity>
           </ModalContainer>
@@ -160,60 +133,56 @@ const Start = ({ data }) => {
     );
   };
 
+  const renderCategories = ({ item }) => {
+    return (
+      <>
+        <Category
+          activeOpacity="0.8"
+          onPress={() => {
+            if (item.name == currentAnswer) {
+              setCorrect(true);
+            } else {
+              setCorrect(false);
+            }
+            setVisible(true);
+          }}
+        >
+          {item.image ? (
+            <Image source={item.image} style={{ width: 100, height: 100 }} />
+          ) : (
+            <BodyText size="body">{item.name}</BodyText>
+          )}
+        </Category>
+      </>
+    );
+  };
+
   return (
     <>
-      <ImageBg source={data.content[0].imageBg}>
+      <ImageBg source={data.imageBg}>
         <Container>
-          <View
-            style={{
-              maxWidth: "100%",
-              paddingTop: 130,
+          <Prompt>
+            <BodyText size="subtitle">{data.prompt}</BodyText>
+          </Prompt>
+
+          <Prompt>
+            <TitleText>{currentOption}</TitleText>
+          </Prompt>
+
+          <FlatList // The flatlist used to load minigames and their data.
+            scrollEnabled={false}
+            data={data.categories}
+            keyExtractor={(item, index) => index}
+            key={(item, index) => index}
+            renderItem={renderCategories}
+            contentContainerStyle={{
+              alignItems: "center",
             }}
-          >
-            <Category
-              activeOpacity="0.8"
-              onPress={() => {
-                setAnswer(data.content[0].categoryOne);
-                checkAnswer(data.content[0].categoryOne);
-                setVisible(true);
-              }}
-            >
-              <BodyText size="title">{data.content[0].categoryOne}</BodyText>
-            </Category>
-            <Category
-              activeOpacity="0.8"
-              onPress={() => {
-                setAnswer(data.content[0].categoryTwo);
-                checkAnswer(data.content[0].categoryTwo);
-                setVisible(true);
-              }}
-            >
-              <BodyText size="title">{data.content[0].categoryTwo}</BodyText>
-            </Category>
-
-            {/* OPTIONAL THIRD CATEGORY */}
-            {data.content[0].categoryThree != null && (
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(data.content[0].categoryThree);
-                  checkAnswer(data.content[0].categoryThree);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="title">
-                  {data.content[0].categoryThree}
-                </BodyText>
-              </Category>
-            )}
-          </View>
-
-          <Modko
-            visible={false}
-            correctAnswer={correctAnswer}
-            answer={answer}
+            numColumns={2}
           />
+          <Modko visible={false} />
         </Container>
+        {/*}
         <Option style={{ opacity: visibleOne }}>
           <TitleText>{data.content[1].first}</TitleText>
           {data.content[1].firstImage && (
@@ -231,7 +200,7 @@ const Start = ({ data }) => {
           {data.content[1].thirdImage && (
             <Img resizeMode="contain" source={data.content[1].thirdImage} />
           )}
-        </Option>
+          </Option>*/}
       </ImageBg>
     </>
   );

@@ -50,73 +50,58 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description:
+                "Match the images with different sources of information.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "plant",
-                  image: require("../../../../assets/chapter-icons/watering-plants.png"),
+                  name: "Observation",
+                  image: require("../../../../assets/memory/laboratory.png"),
                 },
                 {
-                  name: "plant",
-                },
-                {
-                  type: "image",
-                  name: "wind",
-                  image: require("../../../../assets/chapter-icons/wind.png"),
-                },
-                {
-                  name: "wind",
+                  name: "Observation",
                 },
                 {
                   type: "image",
-                  name: "duck",
-                  image: require("../../../../assets/chapter-icons/swim-ring.png"),
+                  name: "Other people",
+                  image: require("../../../../assets/memory/people.png"),
                 },
                 {
-                  name: "duck",
-                },
-                {
-                  type: "image",
-                  name: "soil",
-                  image: require("../../../../assets/soil.png"),
-                },
-                {
-                  name: "soil",
+                  name: "Other people",
                 },
                 {
                   type: "image",
-                  name: "planet",
-                  image: require("../../../../assets/chapter-icons/planet.png"),
+                  name: "Internet",
+                  image: require("../../../../assets/memory/world-grid.png"),
                 },
                 {
-                  name: "planet",
-                },
-                {
-                  type: "image",
-                  name: "log",
-                  image: require("../../../../assets/chapter-icons/log.png"),
-                },
-                {
-                  name: "log",
+                  name: "Internet",
                 },
                 {
                   type: "image",
-                  name: "fruit",
-                  image: require("../../../../assets/fruit.png"),
+                  name: "Books",
+                  image: require("../../../../assets/memory/book.png"),
                 },
                 {
-                  name: "fruit",
+                  name: "Books",
                 },
-
                 {
                   type: "image",
-                  name: "banana",
-                  image: require("../../../../assets/banana.png"),
+                  name: "Experiments",
+                  image: require("../../../../assets/memory/experiment.png"),
                 },
                 {
-                  name: "banana",
+                  name: "Experiments",
+                },
+                {
+                  type: "image",
+                  name: "Yourself",
+                  image: require("../../../../assets/memory/girl.png"),
+                },
+                {
+                  name: "Yourself",
                 },
               ],
             },
@@ -124,25 +109,122 @@ export const Grade1 = {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
-              content: [
+              content: {
+                prompt: "Choose the image which represents the object below.",
+                num: 3,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  {
+                    name: "Electron microscope",
+                    image: require("../../../../assets/sorting/microscope.png"),
+                  },
+                  {
+                    name: "Optical microscope",
+                    image: require("../../../../assets/sorting/optical.png"),
+                  },
+                  {
+                    name: "Beaker",
+                    image: require("../../../../assets/sorting/beaker.png"),
+                  },
+                  {
+                    name: "Ruler",
+                    image: require("../../../../assets/sorting/ruler.png"),
+                  },
+                ],
+                options: [
+                  {
+                    name: "Ruler",
+                  },
+                  {
+                    name: "Beaker",
+                  },
+                  {
+                    name: "Optical microscope",
+                  },
+                  {
+                    name: "Electron microscope",
+                  },
+                ],
+              },
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Using one of the sources of information, find out about a sustainable invention. Which scientist contributed the most in its development?",
+                    placeholder: "This invention is important because..",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
+            },
+            /*
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt: (
+                <Translation>{(t) => t("mastery:g1c1l2_prompt")}</Translation>
+              ),
+              data: [
                 {
-                  imageBg: SortingImages.bg[0].lvl_1_les_1,
-                  categoryOne: "Живой",
-                  categoryTwo: "Не живой",
+                  text: "first item",
+                  dormant: "coral",
+                  active: "#DB756B",
                 },
                 {
-                  first: "Вода",
-                  firstAnswer: "Не живой",
-                  firstImage: SortingImages.lvl_1_les_1[0].firstImage,
-                  second: "Животные",
-                  secondAnswer: "Живой",
-                  secondImage: SortingImages.lvl_1_les_1[0].secondImage,
-                  third: "Растения",
-                  thirdAnswer: "Живой",
-                  thirdImage: SortingImages.lvl_1_les_1[0].thirdImage,
+                  text: "second item",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "third item",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
                 },
               ],
+            } /*
+            drawing: {
+              navigation: "Drawing",
+              icon: require("../../../../assets/drawing.png"),
+              backgroundColor: "skyblue",
+              prompt: (
+                <Translation>{(t) => t("mastery:g1c1l2_prompt")}</Translation>
+              ),
             },
+            flashcards: {
+              navigation: "Flashcards",
+              icon: require("../../../../assets/flash-card.png"),
+              backgroundColor: "seagreen",
+              data: [
+                {
+                  word: "word 1",
+                  definition: "definition 1",
+                },
+                {
+                  word: "word 2",
+                  definition: "definition 2",
+                },
+                {
+                  word: "word 3",
+                  definition: "definition 3",
+                },
+              ],
+            },*/
           },
         },
 
@@ -171,138 +253,127 @@ export const Grade1 = {
             ],
           },
           minigames: {
-            sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: [
-                {
-                  imageBg: SortingImages.bg[0].lvl_1_les_2,
-                  categoryOne: "Повторное использование",
-                  categoryTwo: "Переработка",
-                  categoryThree: "Сокращение",
-                },
-                {
-                  first: "Покупайте только то, что вам нужно",
-                  firstAnswer: "Сокращение",
-                  second: "Купить оптом",
-                  secondAnswer: "Сокращение",
-                  third: "Разделение стекла",
-                  thirdAnswer: "Переработка",
-                },
-              ],
-            },
-            memory: {
-              navigation: "Memory",
-              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              icon: require("../../../../assets/willpower.png"),
-              backgroundColor: "dodgerblue",
-              content: [
-                {
-                  type: "image",
-                  name: "plant",
-                  image: require("../../../../assets/chapter-icons/watering-plants.png"),
-                },
-                {
-                  name: "plant",
-                },
-                {
-                  type: "image",
-                  name: "wind",
-                  image: require("../../../../assets/chapter-icons/wind.png"),
-                },
-                {
-                  name: "wind",
-                },
-                {
-                  type: "image",
-                  name: "duck",
-                  image: require("../../../../assets/chapter-icons/swim-ring.png"),
-                },
-                {
-                  name: "duck",
-                },
-                {
-                  type: "image",
-                  name: "soil",
-                  image: require("../../../../assets/soil.png"),
-                },
-                {
-                  name: "soil",
-                },
-                {
-                  type: "image",
-                  name: "planet",
-                  image: require("../../../../assets/chapter-icons/planet.png"),
-                },
-                {
-                  name: "planet",
-                },
-                {
-                  type: "image",
-                  name: "log",
-                  image: require("../../../../assets/chapter-icons/log.png"),
-                },
-                {
-                  name: "log",
-                },
-                {
-                  type: "image",
-                  name: "fruit",
-                  image: require("../../../../assets/fruit.png"),
-                },
-                {
-                  name: "fruit",
-                },
-
-                {
-                  type: "image",
-                  name: "banana",
-                  image: require("../../../../assets/banana.png"),
-                },
-                {
-                  name: "banana",
-                },
-              ],
-            },
             quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 4,
               content: [
                 {
-                  imageBg: require("../../../../assets/nat.jpg"),
+                  prompt:
+                    "Astronomers use what kind of building to observe objects through powerful telescopes?",
+                  answers: [
+                    {
+                      text: "Planetarium",
+                    },
+                    {
+                      text: "Observatory",
+                    },
+                    {
+                      text: "Museum",
+                    },
+                    { text: "Tower" },
+                  ],
+                  answer: "Observatory",
                 },
                 {
-                  prompt: "Устойчивый город — это:",
-                  first: "Город, использующий чистую энергию",
-                  second:
-                    "Город, который перерабатывает, повторно использует и сокращает",
-                  third:
-                    "Город, который уменьшает загрязнение, которое производят они",
-                  fourth: "Все вышеперечисленное",
-                  answer: 4,
+                  prompt: "What is not a human sense?",
+                  answers: [
+                    {
+                      text: "Sight",
+                    },
+                    {
+                      text: "Hearing",
+                    },
+                    {
+                      text: "Smell",
+                    },
+                    { text: "Intuition" },
+
+                    { text: "Taste" },
+
+                    { text: "Touch" },
+                  ],
+                  answer: "Intuition",
                 },
                 {
                   prompt:
-                    "Что из следующего является стратегией построения устойчивого будущего?",
-                  first: "Импорт дополнительных ресурсов",
-                  second: "Использование местных материалов",
-                  third:
-                    "Строительство большего количества атомных электростанций",
-                  fourth: "Создание большего количества отходов",
-                  answer: 2,
+                    "Observation is the main method of learning about nature.",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
                 },
                 {
-                  prompt: "Каково официальное определение устойчивости?",
-                  first:
-                    "Понимание того, как удовлетворить потребности нынешнего поколения",
-                  second:
-                    "Понимание того, как удовлетворить потребности настоящего, не ставя под угрозу потребности будущих поколений, чтобы удовлетворить их собственные потребности",
-                  third:
-                    "Понимание того, как удовлетворить потребности будущих поколений",
-                  fourth: "Ничего из вышеперечисленного",
-                  answer: 2,
+                  prompt: "What is not a type of natural scientist?",
+                  answers: [
+                    {
+                      text: "Biologist",
+                    },
+                    {
+                      text: "Chemist",
+                    },
+                    {
+                      text: "Physicist",
+                    },
+                    {
+                      text: "Astronomer",
+                    },
+                    {
+                      text: "Economist",
+                    },
+                  ],
+                  answer: "Economist",
+                },
+              ],
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Reorder the below items to show which steps you need to take when designing an experiment.",
+              data: [
+                {
+                  text: "	Think about the necessary equipment",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Think about the stages of observation",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Choose the timeframe of observation",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Choose an object for observation",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Write down or draw the observation",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "Create a goal of observation",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+                {
+                  text: "Make a conclusion",
+                  dormant: "#6e57d2",
+                  active: "#634ebd",
                 },
               ],
             },
@@ -314,22 +385,22 @@ export const Grade1 = {
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
-                numberOfPrompts: 4,
+                numberOfPrompts: 1,
                 prompts: [
                   {
-                    image: TestImages.bikingPic,
-                  },
-                  {
-                    image: TestImages.faucetPic,
-                  },
-                  {
-                    image: TestImages.recyclingPic,
-                  },
-                  {
-                    image: TestImages.lightsPic,
+                    text: "Pick a random object \naround you. Complete the sentence.",
+                    placeholder: "Observing this object, I noticed..",
+                    image: require("../../../../assets/openresponse/observing.png"),
                   },
                 ],
               },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Take a walk and take a picture of a dandelion. Upload your photo below.",
             },
           },
         },
@@ -389,138 +460,42 @@ export const Grade1 = {
             ],
           },
           minigames: {
-            sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: [
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Reorder the below items to show which steps you need to take when conducting an experiment.",
+              data: [
                 {
-                  imageBg: SortingImages.bg[0].lvl_1_les_2,
-                  categoryOne: "Повторное использование",
-                  categoryTwo: "Переработка",
-                  categoryThree: "Сокращение",
+                  text: "Hypothesis",
+                  dormant: "coral",
+                  active: "#DB756B",
                 },
                 {
-                  first: "Покупайте только то, что вам нужно",
-                  firstAnswer: "Сокращение",
-                  second: "Купить оптом",
-                  secondAnswer: "Сокращение",
-                  third: "Разделение стекла",
-                  thirdAnswer: "Переработка",
-                },
-              ],
-            },
-            memory: {
-              navigation: "Memory",
-              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              icon: require("../../../../assets/willpower.png"),
-              backgroundColor: "dodgerblue",
-              content: [
-                {
-                  type: "image",
-                  name: "plant",
-                  image: require("../../../../assets/chapter-icons/watering-plants.png"),
+                  text: "Resources",
+                  dormant: "pink",
+                  active: "#ffacbb",
                 },
                 {
-                  name: "plant",
+                  text: "Notes",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
                 },
                 {
-                  type: "image",
-                  name: "wind",
-                  image: require("../../../../assets/chapter-icons/wind.png"),
+                  text: "Goal",
+                  dormant: "#ffa500",
+                  active: "#e59400",
                 },
                 {
-                  name: "wind",
+                  text: "Plan",
+                  dormant: "#19a127",
+                  active: "#169023",
                 },
                 {
-                  type: "image",
-                  name: "duck",
-                  image: require("../../../../assets/chapter-icons/swim-ring.png"),
-                },
-                {
-                  name: "duck",
-                },
-                {
-                  type: "image",
-                  name: "soil",
-                  image: require("../../../../assets/soil.png"),
-                },
-                {
-                  name: "soil",
-                },
-                {
-                  type: "image",
-                  name: "planet",
-                  image: require("../../../../assets/chapter-icons/planet.png"),
-                },
-                {
-                  name: "planet",
-                },
-                {
-                  type: "image",
-                  name: "log",
-                  image: require("../../../../assets/chapter-icons/log.png"),
-                },
-                {
-                  name: "log",
-                },
-                {
-                  type: "image",
-                  name: "fruit",
-                  image: require("../../../../assets/fruit.png"),
-                },
-                {
-                  name: "fruit",
-                },
-
-                {
-                  type: "image",
-                  name: "banana",
-                  image: require("../../../../assets/banana.png"),
-                },
-                {
-                  name: "banana",
-                },
-              ],
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              content: [
-                {
-                  imageBg: QuizImages.bg[0].lvl_1_les_1,
-                },
-                {
-                  prompt: "Устойчивый город — это:",
-                  first: "Город, использующий чистую энергию",
-                  second:
-                    "Город, который перерабатывает, повторно использует и сокращает",
-                  third:
-                    "Город, который уменьшает загрязнение, которое производят они",
-                  fourth: "Все вышеперечисленное",
-                  answer: 4,
-                },
-                {
-                  prompt:
-                    "Что из следующего является стратегией построения устойчивого будущего?",
-                  first: "Импорт дополнительных ресурсов",
-                  second: "Использование местных материалов",
-                  third:
-                    "Строительство большего количества атомных электростанций",
-                  fourth: "Создание большего количества отходов",
-                  answer: 2,
-                },
-                {
-                  prompt: "Каково официальное определение устойчивости?",
-                  first:
-                    "Понимание того, как удовлетворить потребности нынешнего поколения",
-                  second:
-                    "Понимание того, как удовлетворить потребности настоящего, не ставя под угрозу потребности будущих поколений, чтобы удовлетворить их собственные потребности",
-                  third:
-                    "Понимание того, как удовлетворить потребности будущих поколений",
-                  fourth: "Ничего из вышеперечисленного",
-                  answer: 2,
+                  text: "Conclusion",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
                 },
               ],
             },
@@ -532,19 +507,12 @@ export const Grade1 = {
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
-                numberOfPrompts: 4,
+                numberOfPrompts: 1,
                 prompts: [
                   {
-                    image: TestImages.bikingPic,
-                  },
-                  {
-                    image: TestImages.faucetPic,
-                  },
-                  {
-                    image: TestImages.recyclingPic,
-                  },
-                  {
-                    image: TestImages.lightsPic,
+                    text: "Design an experiment connected to analyzing something in nature.",
+                    placeholder: "My plan is to..",
+                    image: require("../../../../assets/openresponse/scientist.png"),
                   },
                 ],
               },
@@ -592,6 +560,32 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt: "What's your favorite plant? Take a picture.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What's going on in this photo? How do you think this affects the environment?",
+                    placeholder: "I think that..",
+                    image: require("../../../../assets/openresponse/cutting.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
 
         /* 
@@ -617,6 +611,99 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/habitat.png"),
               },
             ],
+          },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How does this plant (a cactus) survive in a place without water?",
+                    placeholder: "A cactus..",
+                    image: require("../../../../assets/openresponse/desert.png"),
+                  },
+                ],
+              },
+            },
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the images with different natural habitats.",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "Polar",
+                  image: require("../../../../assets/memory/polar.png"),
+                },
+                {
+                  name: "Polar",
+                },
+                {
+                  type: "image",
+                  name: "Tundra",
+                  image: require("../../../../assets/memory/tundra.png"),
+                },
+                {
+                  name: "Tundra",
+                },
+                {
+                  type: "image",
+                  name: "Evergreen forests",
+                  image: require("../../../../assets/memory/evergreen.png"),
+                },
+                {
+                  name: "Evergreen forests",
+                },
+                {
+                  type: "image",
+                  name: "Seasonal forests",
+                  image: require("../../../../assets/memory/seasonal.png"),
+                },
+                {
+                  name: "Seasonal forests",
+                },
+                {
+                  type: "image",
+                  name: "Grasslands",
+                  image: require("../../../../assets/memory/grasslands.png"),
+                },
+                {
+                  name: "Grasslands",
+                },
+                {
+                  type: "image",
+                  name: "Deserts",
+                  image: require("../../../../assets/memory/deserts.png"),
+                },
+                {
+                  name: "Deserts",
+                },
+                {
+                  type: "image",
+                  name: "Rainforests",
+                  image: require("../../../../assets/memory/rainforests.png"),
+                },
+                {
+                  name: "Rainforests",
+                },
+                {
+                  type: "image",
+                  name: "Oceans",
+                  image: require("../../../../assets/memory/oceans.png"),
+                },
+                {
+                  name: "Oceans",
+                },
+              ],
+            },
           },
         },
 
@@ -649,6 +736,60 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/egg-shell.png"),
               },
             ],
+          },
+          minigames: {
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Are the animals below mammals or amphibians?",
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  {
+                    name: "Mammals",
+                  },
+                  {
+                    name: "Amphibians",
+                  },
+                ],
+
+                options: [
+                  {
+                    name: "Mammals",
+                    title: "Horses",
+                  },
+                  {
+                    name: "Amphibians",
+                    title: "Frogs",
+                  },
+                  {
+                    name: "Amphibians",
+                    title: "Salamanders",
+                  },
+                  {
+                    name: "Mammals",
+                    title: "Humans",
+                  },
+                  {
+                    name: "Mammals",
+                    title: "Kangaroos",
+                  },
+                  {
+                    name: "Mammals",
+                    title: "Blue whales",
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Which group of animals lays eggs? Can you take a picture of one animal that lays eggs?",
+            },
           },
         },
 

@@ -63,6 +63,9 @@ export class MemoryHandler extends React.Component {
     const restart = renderToString(this.restart());
     return (
       <View style={styles.container}>
+        <View style={{ alignSelf: "center", width: "80%" }}>
+          <BodyText size="subtitle">{this.props.data.description}</BodyText>
+        </View>
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
         <TouchableOpacity
@@ -232,7 +235,7 @@ class Card extends React.Component {
             aspectRatio: 1,
           }}
         >
-          <TitleText size="subtitle" color="secondary">
+          <TitleText size="button" color="secondary">
             {this.props.name}
           </TitleText>
         </ImageBg>

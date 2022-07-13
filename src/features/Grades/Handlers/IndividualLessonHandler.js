@@ -10,6 +10,8 @@ import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandl
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
+import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
+import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
 const Stack = createNativeStackNavigator();
 
@@ -82,7 +84,7 @@ function IndividualLessonHandler({
             <SortingHandler
               data={
                 selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.sorting
+                  .minigames.sorting.content
               }
             />
           )}
@@ -132,6 +134,62 @@ function IndividualLessonHandler({
                 selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                   .minigames.openresponse.data
               }
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Snapshot"
+          options={{
+            title: t("common:snapshot"),
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
+          }}
+        >
+          {() => (
+            <SnapshotHandler
+              data={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.snapshot
+              }
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={selectedLesson}
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Reorder"
+          options={{
+            title: t("common:reorder"),
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
+          }}
+        >
+          {() => (
+            <ReorderHandler
+              info={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.reorder
+              }
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={selectedLesson}
               navigation={navigation}
             />
           )}

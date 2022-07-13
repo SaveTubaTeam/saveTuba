@@ -29,9 +29,9 @@ const colorVariant = {
 };
 
 const alignVariant = {
-  left: "flex-start",
+  left: "left",
   center: "center",
-  right: "flex-end",
+  right: "right",
 };
 
 const getVariant = (weight, size, color, align) => {
@@ -40,7 +40,7 @@ const getVariant = (weight, size, color, align) => {
   const colorValue = colorVariant[color];
   const alignValue = alignVariant[align];
 
-  return `fontWeight: ${weightValue} fontSize: ${sizeValue}px color:${colorValue} alignSelf:${alignValue}`;
+  return `fontWeight: ${weightValue} fontSize: ${sizeValue}px color:${colorValue} textAlign:${alignValue}`;
 };
 
 const BText = styled.Text`
