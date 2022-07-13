@@ -305,6 +305,15 @@ export default {
   g2c2l9_prompt: "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
 
   g2c2l10_card1: "Animals, like humans, have relationships with each other (but not in a romantic way!)",
-  g2c2l10_card2: "Animals have many different types of relationships with each other, one ",
+  g2c2l10_card2: "Animals have many different types of relationships with each other, one example is symbiosis.",
+  g2c2l10_card3: "Recall from your lessons what a symbotic relationship looks like.",
+  g2c2l10_card4: "Identify beneficial relationships between plants and plants, humans and humans, or animals and animals.",
+  g2c2l10_prompt: "It doesn’t have to be a directly beneficial relationship, but as long it is a clear helping relationship. Record your observations.",
+
+  g2c2l11_card1: "Animals can't only survive with animals only relationships, just like you can't survive with human only relationships. (Think of your pets!)",
+  g2c2l11_card2: "Look around you and identify beneficial relationships between plants, animals, and humans. Think outside the box and come up with realtionships that your friends might not think of!",
+  g2c2l11_prompt: "Record your observations and explain how these relationships are important for the environment.",
+
+  g2c2l12_card1: "Habitat conditions are critical to an animals survival.",
 
 };
