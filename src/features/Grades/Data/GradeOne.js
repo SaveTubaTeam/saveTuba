@@ -169,7 +169,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/mastery/bg/ch1.jpg"),
+              backgroundImage: require("../../../../assets/snapshots/crop-lab-bg.jpg"),
               prompt:
                 "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
             },
@@ -400,6 +400,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/feild-bg.jpg"),
               prompt:
                 "Take a walk and take a picture of a dandelion. Upload your photo below.",
             },
@@ -522,8 +523,9 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of what you analyzed in the previous mini-game.",
+                "Take a picture of the item you designed an expirement for in the Open Resoponse mini-game ",
             },
           },
         },
@@ -573,6 +575,8 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              
+              backgroundImage: require("../../../../assets/snapshots/plant-bg.jpg"),
               prompt: "What's your favorite plant? Take a picture.",
             },
             openresponse: {
