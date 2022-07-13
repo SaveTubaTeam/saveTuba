@@ -50,8 +50,7 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description:
-                "Match the images with different sources of information.",
+              description: "Match the different sources of information.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -170,7 +169,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/crop-lab-bg.jpg"),
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
             },
@@ -655,7 +654,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              
+
               backgroundImage: require("../../../../assets/snapshots/plant-bg.jpg"),
               prompt: "What's your favorite plant? Take a picture.",
             },
@@ -756,7 +755,7 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the images with different natural habitats.",
+              description: "Match the different natural habitats.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -1384,8 +1383,7 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description:
-                "Match the images with different sources of information.",
+              description: "Match the different bones in the human body.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [

@@ -10,6 +10,7 @@ import { ImageBg } from "../../grades.styles";
 const ImagePrompt = ({ questions }) => {
   const [currentPrompt, setPrompt] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [val, setVal] = React.useState("");
 
   return (
     <ScrollView>
@@ -77,9 +78,11 @@ const ImagePrompt = ({ questions }) => {
               fontSize: 18,
               flexShrink: 1,
             }}
+            onChangeText={setVal}
             placeholder={questions.prompts[currentPrompt].placeholder}
             placeholderTextColor={"#D5DBB9"}
             multiline={true}
+            value={val}
           />
           <Button
             style={{
@@ -90,6 +93,7 @@ const ImagePrompt = ({ questions }) => {
               borderRadius: 20,
             }}
             onPress={() => {
+              setVal("");
               if (currentPrompt < questions.numberOfPrompts - 1) {
                 setPrompt(currentPrompt + 1);
               } else {

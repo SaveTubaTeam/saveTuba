@@ -14,7 +14,7 @@ import { renderToString } from "react-dom/server";
 import { TitleText } from "../../../title-text.component";
 import { Translation } from "react-i18next";
 import { BodyText } from "../../../body-text.component";
-
+import { Spacer } from "../../../spacer.component";
 export class MemoryHandler extends React.Component {
   constructor(props) {
     super(props);
@@ -65,6 +65,8 @@ export class MemoryHandler extends React.Component {
       <View style={styles.container}>
         <View style={{ alignSelf: "center", width: "80%" }}>
           <BodyText size="subtitle">{this.props.data.description}</BodyText>
+          <Spacer size="medium" />
+          <TitleText size="caption">Hint: Match images with words.</TitleText>
         </View>
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
