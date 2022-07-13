@@ -150,7 +150,7 @@ const Start = ({ data }) => {
           {item.image ? (
             <Image source={item.image} style={{ width: 100, height: 100 }} />
           ) : (
-            <BodyText size="body">{item.name}</BodyText>
+            <BodyText size="subtitle">{item.name}</BodyText>
           )}
         </Category>
       </>

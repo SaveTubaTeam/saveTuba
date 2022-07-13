@@ -133,17 +133,18 @@ export const Grade1 = {
                 ],
                 options: [
                   {
+                    title: "Ruler",
                     name: "Ruler",
                   },
                   {
+                    title: "Beaker",
                     name: "Beaker",
                   },
                   {
+                    title: "Optical microscope",
                     name: "Optical microscope",
                   },
-                  {
-                    name: "Electron microscope",
-                  },
+                  { title: "Electron microscope", name: "Electron microscope" },
                 ],
               },
             },
@@ -677,7 +678,7 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Choose the image which represents the object below.",
+                prompt: "In which part of the plant is this obtained?",
                 num: 3,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
@@ -1503,7 +1504,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 8 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+        
 
         {
           navigation: "Lesson8",
@@ -1539,7 +1540,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 9 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+        
 
         {
           navigation: "Lesson9",
@@ -1570,7 +1571,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 10 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+        
 
         {
           navigation: "Lesson10",
@@ -1582,11 +1583,12 @@ export const Grade1 = {
               <Translation>{(t) => t("mastery:g1c2l10_prompt")}</Translation>
             ),
           },
-        },
+        },*/
       ],
     },
+
     {
-      navigation: "Chapter3",
+      navigation: "" /*"Chapter3",*/,
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
       icon: require("../../../../assets/chapter-icons/air-pollution.png"),
@@ -1720,7 +1722,7 @@ export const Grade1 = {
       ],
     },
     {
-      navigation: "Chapter4",
+      navigation: "" /*"Chapter4"*/,
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../../assets/chapter-icons/rocket.png"),
@@ -1908,7 +1910,7 @@ export const Grade1 = {
       ],
     },
     {
-      navigation: "Chapter5",
+      navigation: "" /*"Chapter5"*/,
       title: <Translation>{(t) => t("common:chapterfive")}</Translation>, // Chapter 5
       name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
       icon: require("../../../../assets/chapter-icons/physics.png"),
