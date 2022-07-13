@@ -13,12 +13,12 @@ export default {
 
   /* Chapter 2 lesson names */
   c2l1: "How do plant leaves work?",
-  c2l2: "How do plants adapt to living conditions?",
-  c2l3: "How do plants adapt to living conditions?",
+  c2l2: "How do plants adapt to living conditions? (Part 1)",
+  c2l3: "How do plants adapt to living conditions? (Part 2)",
   c2l4: "Natural plant communities",
   c2l5: "How a person influences the life of plants?",
-  c2l6: "Red book of plants",
-  c2l7: "Red book of plants",
+  c2l6: "Red book of plants (Part 1)",
+  c2l7: "Red book of plants (Part 2)",
   c2l8: "Vertebrates and invertebrates",
   c2l9: "Animal habitat",
   c2l10: "What are the relationships between animals that exist in nature?",

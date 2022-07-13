@@ -249,10 +249,62 @@ export default {
   g2c2l3_prompt: "Submit your best hypothesis you came up with!",
 
   g2c1l4_card1: "Now you have all the supplies gathered from Part 1, it is now time to start the expirement!",
-  g2c2l4_card2: "Spread petroleum jelly on the plate or cup.",
-  g2c2l4_card3: "Take your experimental set up and place it outside.",
-  g2c2l4_card5: "Place your rock on your plate or cup to weigh it down so it doesnt blow away. Leave it outside for 24 hours.",
-  g2c2l4_card4: "After 24 hours, take your cup or plate inside and put it on a white sheet of paper. Record your observations",
-  g2c2l4_prompt: "What can you conclude about air pollution from this expirmment? Was your predicition correct?",
+  g2c1l4_card2: "Spread petroleum jelly on the plate or cup.",
+  g2c1l4_card3: "Take your experimental set up and place it outside.",
+  g2c1l4_card5: "Place your rock on your plate or cup to weigh it down so it doesnt blow away. Leave it outside for 24 hours.",
+  g2c1l4_card4: "After 24 hours, take your cup or plate inside and put it on a white sheet of paper. Record your observations",
+  g2c1l4_prompt: "What can you conclude about air pollution from this expirmment? Was your predicition correct?",
+
+  g2c2l1_card1: "Take a picture of three plants in the real world.",
+  g2c2l1_card2: "Take notes about the plants environment. Does it have enough resources to thrive?",
+  g2c2l1_prompt: "Identify a place in your home where a plant could grow. Explain why your plant would thrive there.",
+
+  g2c2l2_card1: "Plants exist all over the world in many different conditions. Think of two countries you would like to visit one day",
+  g2c2l2_card2: "Find plants native to the respective regions. Compare them to each other.",
+  g2c2l2_prompt: "Explain how they’ve adapted to their living conditions and benefited from them.",
+
+/*   
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ still needs to be done, how to plants adapt to living conditions pt2
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+  g2c2l3_card1: " ", 
+
+  g2c2l4_card1: "A plant community consists of different plants that grow in the same area with the same conditions for existence. There are both natural and artificial communities present in our habitat. ",
+  g2c2l4_card2: "Go outside and identify both the many natural communities present, and artificial communities present.",
+  g2c2l4_card3: "Examples of a natural community would be: \n- deserts \n- lakes \n- swamps ",
+  g2c2l4_card4: "Examples of an artifical community would be: \n- fields \n- gardens \n- flower beds",
+  g2c2l4_prompt: "List all the communities you found. Explain how they are helpful (or not) to the environment",
+
+  g2c2l5_card1: "Humans are always interacting with their environment. They will directly and indirectly affect plant community.",
+  g2c2l5_card2: "Plants are very important to help clean the air from dust, dirty and harmful gasses. Humans have to make sure they keep plants in the best situation and most environmentally-sensible conditions.",
+  g2c2l5_card3: "Research plant communities in your neighborhood that were directly affected by humans. Was it a positive or negtitive impact?",
+  g2c2l5_card4: "Then, research communities in your neighborhood that were indirectly affected by humans. Visit one of these communities and record your observations.",
+  g2c2l5_prompt: "Upload all your reserach and observations",
+
+  g2c2l6_card1: "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. ",
+  g2c2l6_card2: "Research another countries Red Book and find a plant on their list that is not endangered here in Kazakhstan.",
+  g2c2l6_card3: "Why is it that the plant is not endangered Kazakhstan but endangered in your researched country? ",
+  g2c2l6_prompt: "Come up with some ideas to help your researched country save these plants",
+
+  /*   
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ still needs to be done, red book of plants pt 2
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+*/
+  g2c2l7_card1:" ",
+
+  g2c2l8_card1: "Animals can be classified as either being an vertebrate or invertebrate.",
+  g2c2l8_card2: "Vertebrate means to have a backbone,",
+  g2c2l8_card3: "Therefore, invertebrate means to not have a backbone",
+  g2c2l8_card4: "It’s time to go on a trip! Go outside and try to find and identify animals who are vertebrates or invertebrates.",
+  g2c2l8_prompt: "Make a list of the animals that you find. Did you find more verterbates or invertibrates? \nExplain advantages and disadvanges of each. Don't forget to take pictures!",
+
+  g2c2l9_card1: "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
+  g2c2l9_card2: "Make sure that this definitely doesn’t happen to an ecosystem near you! Research an ecosystem in your area.",
+  g2c2l9_prompt: "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
+
+  g2c2l10_card1: "Animals, like humans, have relationships with each other (but not in a romantic way!)",
+  g2c2l10_card2: "Animals have many different types of relationships with each other, one ",
 
 };
