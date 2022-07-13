@@ -169,6 +169,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/mastery/bg/ch1.jpg"),
               prompt:
                 "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
             },

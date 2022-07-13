@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
 import { connect } from "react-redux";
+import { ImageBg } from "../../grades.styles";
 
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
@@ -44,17 +45,19 @@ const SnapshotHandler = ({
   return (
     <>
       <Container>
-        <Prompt>
-          <TitleText size="subtitle">{data.prompt}</TitleText>
-        </Prompt>
-        <Prompt>
-          <ImageUpload />
-          <SubmitButton>
-            <BodyText color="secondary" size="subtitle">
-              {t("common:submit")}
-            </BodyText>
-          </SubmitButton>
-        </Prompt>
+        <ImageBg source={data.backgroundImage}>
+          <Prompt>
+            <TitleText size="subtitle">{data.prompt}</TitleText>
+          </Prompt>
+          <Prompt>
+            <ImageUpload />
+            <SubmitButton>
+              <BodyText color="secondary" size="subtitle">
+                {t("common:submit")}
+              </BodyText>
+            </SubmitButton>
+          </Prompt>
+        </ImageBg>
       </Container>
     </>
   );
