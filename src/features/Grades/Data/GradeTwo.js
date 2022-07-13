@@ -487,11 +487,46 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson10",
+          navigation: "Lesson10", //what are the relationships between animals that exist in nature
           title: <Translation>{(t) => t("gradetwo:c2l10")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
           backgroundColor: "#37B5FF",
           minigames: {},
+
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l10_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l10_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/fishes.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l10_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/symbiosis.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l10_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/positive-thinking.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l10_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/writing.png"),
+              },
+              
+            ],
+          }
+
+
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -499,11 +534,32 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson11",
+          navigation: "Lesson11", //what is the realtionship beetween plants and animals
           title: <Translation>{(t) => t("gradetwo:c2l11")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
           backgroundColor: "#37B5FF",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l11_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          }
+
+          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -511,11 +567,12 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson12",
+          navigation: "Lesson12", //how do habitat conditions affect the number of animals pt 1
           title: <Translation>{(t) => t("gradetwo:c2l12")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/desert.png"),
           backgroundColor: "#FFF9E3",
           minigames: {},
+          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -523,7 +580,7 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson13",
+          navigation: "Lesson13", //how do habitat conditions affect the number of animals pt 2
           title: <Translation>{(t) => t("gradetwo:c2l13")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/desert.png"),
           backgroundColor: "#FFF9E3",

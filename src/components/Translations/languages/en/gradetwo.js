@@ -23,8 +23,8 @@ export default {
   c2l9: "Animal habitat",
   c2l10: "What are the relationships between animals that exist in nature?",
   c2l11: "What is the relationship between plants and animals?",
-  c2l12: "How do habitat conditions affect the number of animals?",
-  c2l13: "How do habitat conditions affect the number of animals?",
+  c2l12: "How do habitat conditions affect the number of animals? (Part 1)",
+  c2l13: "How do habitat conditions affect the number of animals? (Part 2)",
   c2l14:
     "What types of human activities lead to a decrease in the number of animals",
   c2l15: "Look inside yourself",
