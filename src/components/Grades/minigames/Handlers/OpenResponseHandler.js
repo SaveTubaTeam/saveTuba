@@ -1,16 +1,69 @@
 import React, { useState } from "react";
-import { View, TextInput, ScrollView } from "react-native";
+import {
+  View,
+  TextInput,
+  ScrollView,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+  FlatList,
+  Image,
+} from "react-native";
 import { connect } from "react-redux";
+import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
+
 import { Button } from "react-native-paper";
 
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
 
+const ModalContainer = styled.View`
+  background-color: white;
+  width: 60%;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #cce882;
+`;
+
 const ImagePrompt = ({ questions }) => {
   const [currentPrompt, setPrompt] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [val, setVal] = React.useState("");
+  const [visible, setVisible] = useState(false);
+  const navigation = useNavigation();
+  const Modko = () => {
+    return (
+      <Modal transparent animationType="slide" visible={visible}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <ModalContainer>
+            <View>
+              <BodyText size="subtitle">
+                Your image was submitted! Good job ✨
+              </BodyText>
+            </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#748816",
+                borderRadius: 10,
+                marginTop: 10,
+                paddingTop: 5,
+                paddingBottom: 5,
+              }}
+              onPress={() => navigation.navigate("Lesson")}
+            >
+              <BodyText size="subtitle" color="secondary">
+                Back to the lesson
+              </BodyText>
+            </TouchableOpacity>
+          </ModalContainer>
+        </View>
+      </Modal>
+    );
+  };
 
   return (
     <ScrollView>
@@ -94,6 +147,7 @@ const ImagePrompt = ({ questions }) => {
             }}
             onPress={() => {
               setVal("");
+              setVisible(!visible);
               if (currentPrompt < questions.numberOfPrompts - 1) {
                 setPrompt(currentPrompt + 1);
               } else {
@@ -105,6 +159,7 @@ const ImagePrompt = ({ questions }) => {
           </Button>
         </View>
       </View>
+      <Modko visible={false} />
     </ScrollView>
   );
 };

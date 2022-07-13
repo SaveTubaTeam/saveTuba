@@ -47,6 +47,49 @@ export const Grade1 = {
             ],
           },
           minigames: {
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Choose the image which represents the object below.",
+                num: 3,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  {
+                    name: "Electron microscope",
+                    image: require("../../../../assets/sorting/microscope.png"),
+                  },
+                  {
+                    name: "Optical microscope",
+                    image: require("../../../../assets/sorting/optical.png"),
+                  },
+                  {
+                    name: "Beaker",
+                    image: require("../../../../assets/sorting/beaker.png"),
+                  },
+                  {
+                    name: "Ruler",
+                    image: require("../../../../assets/sorting/ruler.png"),
+                  },
+                ],
+                options: [
+                  {
+                    title: "Ruler",
+                    name: "Ruler",
+                  },
+                  {
+                    title: "Beaker",
+                    name: "Beaker",
+                  },
+                  {
+                    title: "Optical microscope",
+                    name: "Optical microscope",
+                  },
+                  { title: "Electron microscope", name: "Electron microscope" },
+                ],
+              },
+            },
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
@@ -103,49 +146,6 @@ export const Grade1 = {
                   name: "Yourself",
                 },
               ],
-            },
-            sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt: "Choose the image which represents the object below.",
-                num: 3,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  {
-                    name: "Electron microscope",
-                    image: require("../../../../assets/sorting/microscope.png"),
-                  },
-                  {
-                    name: "Optical microscope",
-                    image: require("../../../../assets/sorting/optical.png"),
-                  },
-                  {
-                    name: "Beaker",
-                    image: require("../../../../assets/sorting/beaker.png"),
-                  },
-                  {
-                    name: "Ruler",
-                    image: require("../../../../assets/sorting/ruler.png"),
-                  },
-                ],
-                options: [
-                  {
-                    title: "Ruler",
-                    name: "Ruler",
-                  },
-                  {
-                    title: "Beaker",
-                    name: "Beaker",
-                  },
-                  {
-                    title: "Optical microscope",
-                    name: "Optical microscope",
-                  },
-                  { title: "Electron microscope", name: "Electron microscope" },
-                ],
-              },
             },
             openresponse: {
               navigation: "Image Boom",

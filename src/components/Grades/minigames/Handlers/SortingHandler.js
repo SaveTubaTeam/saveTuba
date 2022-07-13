@@ -32,6 +32,7 @@ const ModalContainer = styled.View`
   width: 60%;
   padding: 30px;
   border-radius: 20px;
+  border: 2px solid #cce882;
 `;
 
 const Category = styled.TouchableOpacity`
