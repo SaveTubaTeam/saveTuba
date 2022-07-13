@@ -22,51 +22,30 @@ const ImagePrompt = ({ questions }) => {
         <View
           style={{
             width: "80%",
+            padding: 20,
+            alignItems: "center",
             backgroundColor: "white",
             marginTop: 20,
-            marginBottom: 10,
-            height: 300,
             borderRadius: 30,
           }}
         >
           <View
             style={{
-              width: "100%",
-              height: 200,
-              backgroundColor: "white",
-              borderRadius: 30,
-              alignItems: "center",
-              justifyContent: "center",
+              width: 150,
+              height: 150,
+              borderRadius: 20,
+              marginBottom: 10,
+              overflow: "hidden",
             }}
           >
-            <View
-              style={{
-                width: 150,
-                height: 150,
-                borderRadius: 20,
-                overflow: "hidden",
-              }}
-            >
-              <ImageBg
-                source={questions.prompts[currentPrompt].image}
-                resizeMode="cover"
-              ></ImageBg>
-            </View>
+            <ImageBg
+              source={questions.prompts[currentPrompt].image}
+              resizeMode="cover"
+            ></ImageBg>
           </View>
-          <View
-            style={{
-              marginTop: 20,
-              alignSelf: "center",
-              justifyContent: "center",
-              alignItems: "center",
-              alignContent: "center",
-              textAlignVertical: "center",
-            }}
-          >
-            <TitleText size="subtitle">
-              Что такое имидж? {"\n"}Почему это важно?
-            </TitleText>
-          </View>
+          <TitleText size="subtitle">
+            {questions.prompts[currentPrompt].text}
+          </TitleText>
         </View>
 
         <View
@@ -98,8 +77,8 @@ const ImagePrompt = ({ questions }) => {
               fontSize: 18,
               flexShrink: 1,
             }}
-            placeholder="Введите ответ..."
-            placeholderTextColor={"#748816"}
+            placeholder={questions.prompts[currentPrompt].placeholder}
+            placeholderTextColor={"#D5DBB9"}
             multiline={true}
           />
           <Button
@@ -115,11 +94,10 @@ const ImagePrompt = ({ questions }) => {
                 setPrompt(currentPrompt + 1);
               } else {
                 setModalVisible((modalVisible) => !modalVisible);
-                console.log("Yo: " + modalVisible);
               }
             }}
           >
-            <BodyText color="secondary">Отправить</BodyText>
+            <BodyText color="secondary">Submit</BodyText>
           </Button>
         </View>
       </View>

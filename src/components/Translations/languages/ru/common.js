@@ -14,6 +14,10 @@ export default {
   sorting: "Сортировка",
   quiz: "Викторина",
   openresponse: "Изображение Бум",
+  snapshot: "Фото",
+  reorder: "Изменение порядка",
+  drawing: "Рисование",
+  flashcards: "Карточкалар",
 
   hello: "привет",
 
@@ -29,6 +33,7 @@ export default {
   back: "Назад",
   submit: "Отправить",
   enteryouranswer: "Введите ответ...",
+  pickanimage: "Выберите картинку",
   restart: "Начать заново",
 
   login: "Авторизоваться",

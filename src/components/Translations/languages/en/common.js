@@ -12,8 +12,12 @@ export default {
   /* Minigame names */
   memory: "Memory",
   sorting: "Sorting",
-  quiz: "Викторина",
-  openresponse: "Image Boom",
+  quiz: "Quiz",
+  openresponse: "Open response",
+  snapshot: "Snapshot",
+  reorder: "Reorder",
+  drawing: "Drawing",
+  flashcards: "Flashcards",
 
   hello: "Hello",
 
@@ -29,6 +33,7 @@ export default {
   back: "Back",
   submit: "Submit",
   enteryouranswer: "Enter your answer...",
+  pickanimage: "Choose an image",
   restart: "Start over",
 
   login: "Log In",
