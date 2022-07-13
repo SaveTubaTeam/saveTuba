@@ -518,6 +518,13 @@ export const Grade1 = {
                 ],
               },
             },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              prompt:
+                "Take a picture of what you analyzed in the previous mini-game.",
+            },
           },
         },
       ],
