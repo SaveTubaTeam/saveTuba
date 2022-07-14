@@ -829,6 +829,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/earth-bg.jpg"),
               prompt:
                 "Take a picture of a habitat in which your favorite plant grows.",
             },
@@ -915,6 +916,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/animal-bg.jpg"),
               prompt:
                 "Which group of animals lays eggs? Can you take a picture of one animal that lays eggs?",
             },
@@ -1251,6 +1253,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/save-animals-bg.jpg"),
               prompt:
                 "Take a picture of an animal that needs to be protected more.",
             },
@@ -1319,8 +1322,9 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/bones-bg.jpg"),
               prompt:
-                "Take a picture of a bone on your body and identify it in the most specific manner.",
+                "Take a picture of an animal with legs. Take note of how their bones might be different from yours.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -1498,7 +1502,8 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              prompt: "Take a picture of you smiling.",
+              backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
+              prompt: "Take a picture of you smiling. Don't forget to smile big!",
             },
           },
         },
