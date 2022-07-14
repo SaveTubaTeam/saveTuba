@@ -32,6 +32,7 @@ const ModalContainer = styled.View`
   width: 60%;
   padding: 30px;
   border-radius: 20px;
+  border: 2px solid #cce882;
 `;
 
 const Category = styled.TouchableOpacity`
@@ -150,7 +151,7 @@ const Start = ({ data }) => {
           {item.image ? (
             <Image source={item.image} style={{ width: 100, height: 100 }} />
           ) : (
-            <BodyText size="body">{item.name}</BodyText>
+            <BodyText size="subtitle">{item.name}</BodyText>
           )}
         </Category>
       </>

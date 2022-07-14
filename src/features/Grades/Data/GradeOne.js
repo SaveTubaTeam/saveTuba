@@ -47,11 +47,53 @@ export const Grade1 = {
             ],
           },
           minigames: {
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Choose the image which represents the object below.",
+                num: 3,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  {
+                    name: "Electron microscope",
+                    image: require("../../../../assets/sorting/microscope.png"),
+                  },
+                  {
+                    name: "Optical microscope",
+                    image: require("../../../../assets/sorting/optical.png"),
+                  },
+                  {
+                    name: "Beaker",
+                    image: require("../../../../assets/sorting/beaker.png"),
+                  },
+                  {
+                    name: "Ruler",
+                    image: require("../../../../assets/sorting/ruler.png"),
+                  },
+                ],
+                options: [
+                  {
+                    title: "Ruler",
+                    name: "Ruler",
+                  },
+                  {
+                    title: "Beaker",
+                    name: "Beaker",
+                  },
+                  {
+                    title: "Optical microscope",
+                    name: "Optical microscope",
+                  },
+                  { title: "Electron microscope", name: "Electron microscope" },
+                ],
+              },
+            },
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description:
-                "Match the images with different sources of information.",
+              description: "Match the different sources of information.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -105,48 +147,6 @@ export const Grade1 = {
                 },
               ],
             },
-            sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt: "Choose the image which represents the object below.",
-                num: 3,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  {
-                    name: "Electron microscope",
-                    image: require("../../../../assets/sorting/microscope.png"),
-                  },
-                  {
-                    name: "Optical microscope",
-                    image: require("../../../../assets/sorting/optical.png"),
-                  },
-                  {
-                    name: "Beaker",
-                    image: require("../../../../assets/sorting/beaker.png"),
-                  },
-                  {
-                    name: "Ruler",
-                    image: require("../../../../assets/sorting/ruler.png"),
-                  },
-                ],
-                options: [
-                  {
-                    name: "Ruler",
-                  },
-                  {
-                    name: "Beaker",
-                  },
-                  {
-                    name: "Optical microscope",
-                  },
-                  {
-                    name: "Electron microscope",
-                  },
-                ],
-              },
-            },
             openresponse: {
               navigation: "Image Boom",
               title: (
@@ -169,7 +169,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/crop-lab-bg.jpg"),
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
             },
@@ -654,7 +654,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              
+
               backgroundImage: require("../../../../assets/snapshots/plant-bg.jpg"),
               prompt: "What's your favorite plant? Take a picture.",
             },
@@ -681,7 +681,7 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Choose the image which represents the object below.",
+                prompt: "In which part of the plant is this obtained?",
                 num: 3,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
@@ -755,7 +755,7 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the images with different natural habitats.",
+              description: "Match the different natural habitats.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -1387,8 +1387,7 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description:
-                "Match the images with different sources of information.",
+              description: "Match the different bones in the human body.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -1512,7 +1511,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 8 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+        
 
         {
           navigation: "Lesson8",
@@ -1548,7 +1547,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 9 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+        
 
         {
           navigation: "Lesson9",
@@ -1579,7 +1578,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 10 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+        
 
         {
           navigation: "Lesson10",
@@ -1591,11 +1590,12 @@ export const Grade1 = {
               <Translation>{(t) => t("mastery:g1c2l10_prompt")}</Translation>
             ),
           },
-        },
+        },*/
       ],
     },
+
     {
-      navigation: "Chapter3",
+      navigation: "" /*"Chapter3",*/,
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
       icon: require("../../../../assets/chapter-icons/air-pollution.png"),
@@ -1729,7 +1729,7 @@ export const Grade1 = {
       ],
     },
     {
-      navigation: "Chapter4",
+      navigation: "" /*"Chapter4"*/,
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../../assets/chapter-icons/rocket.png"),
@@ -1917,7 +1917,7 @@ export const Grade1 = {
       ],
     },
     {
-      navigation: "Chapter5",
+      navigation: "" /*"Chapter5"*/,
       title: <Translation>{(t) => t("common:chapterfive")}</Translation>, // Chapter 5
       name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
       icon: require("../../../../assets/chapter-icons/physics.png"),
