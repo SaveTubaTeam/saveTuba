@@ -1502,7 +1502,8 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
-              prompt: "Take a picture of you smiling. Don't forget to smile big!",
+              prompt:
+                "Take a picture of you smiling. Don't forget to smile big!",
             },
           },
         },
@@ -1511,7 +1512,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 8 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
+        */
 
         {
           navigation: "Lesson8",
@@ -1547,7 +1548,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 9 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
+        */
 
         {
           navigation: "Lesson9",
@@ -1578,7 +1579,7 @@ export const Grade1 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 2 Lesson 10 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        
+        */
 
         {
           navigation: "Lesson10",
@@ -1590,11 +1591,11 @@ export const Grade1 = {
               <Translation>{(t) => t("mastery:g1c2l10_prompt")}</Translation>
             ),
           },
-        },*/
+        },
       ],
     },
     {
-      navigation: "" /*"Chapter3",*/,
+      navigation: "Chapter3",
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
       icon: require("../../../../assets/chapter-icons/air-pollution.png"),
@@ -1607,7 +1608,6 @@ export const Grade1 = {
         Grade 1 Chapter 3 Lesson 1 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
-
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradeone:c3l1")}</Translation>, // What are the properties of air?
@@ -1728,7 +1728,7 @@ export const Grade1 = {
       ],
     },
     {
-      navigation: "" /*"Chapter4"*/,
+      navigation: "Chapter4",
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../../assets/chapter-icons/rocket.png"),
@@ -1916,7 +1916,7 @@ export const Grade1 = {
       ],
     },
     {
-      navigation: "" /*"Chapter5"*/,
+      navigation: "Chapter5",
       title: <Translation>{(t) => t("common:chapterfive")}</Translation>, // Chapter 5
       name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
       icon: require("../../../../assets/chapter-icons/physics.png"),

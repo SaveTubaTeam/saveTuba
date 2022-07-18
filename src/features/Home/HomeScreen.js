@@ -36,56 +36,23 @@ function HomeView() {
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-        <Image
-          source={require("../../../assets/lock.png")}
-          style={{
-            width: 50,
-            height: 50,
-            position: "absolute",
-            top: 120,
-            right: 20,
-            zIndex: 100,
-          }}
-        />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("ChaptersHandler", { level: 2 })}*/
+          onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
-        <Image
-          source={require("../../../assets/lock.png")}
-          style={{
-            width: 50,
-            height: 50,
-            position: "absolute",
-            top: 250,
-            left: 110,
-            zIndex: 100,
-          }}
-        />
         <TouchableOpacity
           style={style.roundButton1}
-          /*onPress={() => navigation.push("ChaptersHandler", { level: 3 })}*/
+          onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
 
-        <Image
-          source={require("../../../assets/lock.png")}
-          style={{
-            width: 50,
-            height: 50,
-            position: "absolute",
-            top: 370,
-            right: 20,
-            zIndex: 100,
-          }}
-        />
         <TouchableOpacity
           style={style.roundButton2}
-          /*onPress={() => navigation.push("ChaptersHandler", { level: 4 })}*/
+          onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
