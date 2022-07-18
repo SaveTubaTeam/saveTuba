@@ -1588,7 +1588,6 @@ export const Grade1 = {
         },*/
       ],
     },
-
     {
       navigation: "" /*"Chapter3",*/,
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
