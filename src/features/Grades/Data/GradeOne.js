@@ -2161,7 +2161,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson4",
-          title: <Translation>{(t) => t("gradeone:c3l4")}</Translation>, // Without what is a person not enough?
+          title: <Translation>{(t) => t("gradeone:c3l4")}</Translation>, // Without what can't a person survive?
           thumbnail: require("../../../../assets/lesson-icons/sun.png"),
           backgroundColor: "#56AEFF",
           mastery: {
@@ -2181,6 +2181,39 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/ecology.png"),
               },
             ],
+          },
+          minigames: {
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Determine which resrouce category the picture corresponds to ",
+                num: 9,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Natural" },
+                  {name: "Anthropogenic" },
+                 
+                ],
+                options: [
+                  { image: require("../../../../assets/sorting/sun.png") ,name: "Natural" },
+                  { title: "Separating glass", name: "Recycle" },
+                  { title: "Update your computer rather than throwing it out and getting a replacement", name: "Reuse" },
+                  { title: "Only buy what you need", name: "Reduce"},
+                  { title: "Separating aluminum", name: "Recycle"},
+                  { title: "Look for items that you can reuse instead of buying ", name: "Reduce"},
+                  { title: "Buy in bulk", name: "Reduce"},
+                  { title: "Separating cardboard to put in recycling facility", name: "Recycle"},
+                  { title: "Separating lead batteries", name: "Recycle"},
+                  { title: "Ditch plastic bags and choose reusable, environmentally-friendly bags instead", name: "Reuse"},
+                  { title: "Choose products with less packaging", name: "Reduce"},
+                ],
+              },
+            },
+
+
+            
           },
         },
       ],
