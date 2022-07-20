@@ -88,6 +88,7 @@ const Start = ({ data }) => {
   const [currentOption, setCurrentOption] = useState(data.options[count].title);
   const [currentAnswer, setCurrentAnswer] = useState(data.options[count].name);
 
+
   const navigation = useNavigation();
 
   const Modko = () => {
@@ -157,6 +158,7 @@ const Start = ({ data }) => {
       </>
     );
   };
+  
 
   return (
     <>
@@ -168,7 +170,12 @@ const Start = ({ data }) => {
 
           <Prompt>
             <TitleText>{currentOption}</TitleText>
-          </Prompt>
+          </Prompt> 
+
+     
+
+
+       
 
           <FlatList // The flatlist used to load minigames and their data.
             scrollEnabled={false}
@@ -205,6 +212,8 @@ const Start = ({ data }) => {
       </ImageBg>
     </>
   );
+
+  
 };
 
 const SortingHandler = ({ data, navigation }) => {

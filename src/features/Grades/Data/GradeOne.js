@@ -2189,6 +2189,7 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt: "Determine which resrouce category the picture corresponds to ",
+                
                 num: 9,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
@@ -2196,7 +2197,7 @@ export const Grade1 = {
                   {name: "Anthropogenic" },
                  
                 ],
-                options: [
+                options: [ //not done, want to change title to image
                   { image: require("../../../../assets/sorting/sun.png") ,name: "Natural" },
                   { title: "Separating glass", name: "Recycle" },
                   { title: "Update your computer rather than throwing it out and getting a replacement", name: "Reuse" },
@@ -2211,7 +2212,81 @@ export const Grade1 = {
                 ],
               },
             },
-
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do people use natural resources to create energy? Name one good (sustainable) way the energy is created and one bad way (unsustainable) way.",
+                    placeholder: "A way people use energy is by...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                {
+                  prompt:"What is NOT a sustainable practice?",
+                  answers: [
+                    {text: "Reducing" },
+                    {text: "Reusing" },
+                    {text: "Recycling" },
+                    {text: "Buying"}
+                  ],
+                  answer: "Buying",
+                },
+                {
+                  prompt: "What is the term used to describe objects that are being washed and used again?",
+                  answers: [
+                    { text: "Reducing" },
+                    { text: "Reusing" },
+                    { text: "Recycling"},
+                    { text: "Buying" },
+                  ],
+                  answer: "Reusing",
+                },
+                {
+                  prompt: "What is the term used to describe objects that are being made into new materials?",
+                  answers: [
+                    { text: "Reducing" },
+                    { text: "Reusing" },
+                    { text: "Recycling"},
+                    { text: "Buying" },
+                  ],
+                  answer: "Recycling",
+                },
+                {
+                  prompt: "What is landfill?",
+                  answers: [
+                    { text: "A place where trash is piled up." },
+                    { text: "A place where trash is reduced." },
+                    { text: "A place where trash is recycled." },
+                    { text: "A place where trash is reused" },
+                  ],
+                  answer: "A place where trash is piled up.",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take three pictures of the ways you take care of the environment",
+              
+            },
 
             
           },
