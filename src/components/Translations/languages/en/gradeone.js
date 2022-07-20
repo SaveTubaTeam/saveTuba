@@ -27,7 +27,7 @@ export default {
   c3l1: "1. What are the properties of air?",
   c3l2: "2. Where to build a factory?",
   c3l3: "3. What do we know about water?",
-  c3l4: "4. Without what is a person not enough?",
+  c3l4: "4. Without what can't a person survive?",
 
   /* Chapter 4 lesson names */
   c4l1: "1. The sun and its influence to Earth",

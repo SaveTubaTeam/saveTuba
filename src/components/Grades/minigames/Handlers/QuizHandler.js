@@ -194,7 +194,7 @@ const Start = ({ data }) => {
           </Question>
 
           <FlatList // The flatlist used to load minigames and their data.
-            scrollEnabled={false}
+            scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
             key={(item, index) => index}
@@ -206,7 +206,7 @@ const Start = ({ data }) => {
           />
 
           <FlatList // The flatlist used to load minigames and their data.
-            scrollEnabled={false}
+            scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
             key={(item, index) => index}
@@ -218,7 +218,7 @@ const Start = ({ data }) => {
           />
 
           <FlatList // The flatlist used to load minigames and their data.
-            scrollEnabled={false}
+            scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
             key={(item, index) => index}
@@ -230,7 +230,7 @@ const Start = ({ data }) => {
           />
 
           <FlatList // The flatlist used to load minigames and their data.
-            scrollEnabled={false}
+            scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
             key={(item, index) => index}

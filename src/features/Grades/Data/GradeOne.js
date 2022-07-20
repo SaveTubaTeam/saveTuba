@@ -1613,6 +1613,7 @@ export const Grade1 = {
           title: <Translation>{(t) => t("gradeone:c3l1")}</Translation>, // What are the properties of air?
           thumbnail: require("../../../../assets/lesson-icons/air.png"),
           backgroundColor: "#C85004",
+
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g1c3l1_prompt")}</Translation>
@@ -1631,6 +1632,160 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 7,
+              content: [
+                {
+                  prompt:
+                    "Everyone has a carbon footprint",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Which is not going to help reduce our carbon footprint?",
+                  answers: [
+                    {
+                      text: "Eating local food",
+                    },
+                    {
+                      text: "Recycling",
+                    },
+                    {
+                      text: "Driving to school",
+                    },
+                    { text: "Planting trees" },
+
+                  ],
+                  answer: "Driving to school",
+                },
+                {
+                  prompt:
+                    "What gas is increasing in large amounts due to human activities?",
+                  answers: [
+                    {
+                      text: "Carbon Dioxide",
+                    },
+                    {
+                      text: "Oxygen",
+                    },
+                    { text: "Diesel"},
+                  ],
+                  answer: "Carbon Dioxide",
+                },
+                {
+                  prompt: "What is the name of the gas that plants take in?",
+                  answers: [
+                    {
+                      text: "Gas",
+                    },
+                    {
+                      text: "Methane",
+                    },
+                    {
+                      text: "Oxygen",
+                    },
+                    {
+                      text: "Carbon Dioxide",
+                    },
+                   
+                  ],
+                  answer: "Carbon Dioxide",
+                },
+                {
+                  prompt: "Which one of these does not add CO2 into the atmosphere?",
+                  answers: [
+                    { text: "Cooking with gas" },
+                    { text: "Planting trees" },
+                    { text: "Burning wood" },
+                    { text: "Riding in a bus" },
+                  ],
+                  answer: "Planting trees"
+                },
+                {
+                  prompt: "What is CO2?",
+                  answers: [
+                    { text: "Carbon" },
+                    { text: "Oxygen" },
+                    { text: "Carbon Dioxide" },
+                    { text: "A type of fizzy drink" },
+                  ],
+                  answer: "Carbon Dioxide"
+                },
+                {
+                  prompt: "While being cooled down, the air _____.",
+                  answers: [
+                    { text: "Expands" },
+                    { text: "Contracts" },
+                  ],
+                  answer: "Contracts"
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Why don't animals get cold in the winter?",
+                    placeholder: "Animals don't get cold because..",
+                    image: require("../../../../assets/openresponse/winter.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take and upload three pictures of different things that pollute the air in the city. ",
+            },
+
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Sort the causes of air pollution",
+                num: 6,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Anthropogenic" },
+                  {name: "Natural" },
+                ],
+                options: [
+                  { title: "Factories", name: "Anthropogenic" },
+                  { title: "Wildfires", name: "Natural" },
+                  { title: "Cars", name: "Anthropogenic" },
+                  { title: "Planes", name: "Anthropogenic"},
+                  { title: "Cigarette Smoke", name: "Anthropogenic"},
+                  { title: "Volcanoes", name: "Natural"},
+                  { title: "Aerosol Cans", name: "Anthropogenic"},
+                ],
+              },
+            },
+          }
+
         },
 
         /* 
@@ -1662,6 +1817,123 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            quiz: { //not able to scroll down to see options?
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                {
+                  prompt:
+                    "What happens to the temperature if more greenhouse gases are released into the atmosphere?",
+                  answers: [
+                    {text: "Temperature increases" },
+                    {text: "Temperature decreases"},
+                  ],
+                  answer: "Temperature increases",
+                },
+                {
+                  prompt: "Which of the following activities contributes the most to carbon emissions globally?",
+                  answers: [
+                    { text: "Deforestation" },
+                    { text: "Agriculture" },
+                    { text: "Burning fossil fuels"},
+                    { text: "Respiration" },
+                  ],
+                  answer: "Burning fossil fuels",
+                },
+                {
+                  prompt: //cant scroll down on this question
+                    "Increased carbon dioxide may cause global warming by ________.",
+                  answers: [
+                    { text: "allowing more sunlight into the atmosphere."},
+                    { text: "reflecting more sunlight from clouds." },
+                    { text: "reducing the amount of oxygen in the air."},
+                    { text: "trapping more heat in the atmosphere.",}
+                  ],
+                  answer: "trapping more heat in the atmosphere.",
+                },
+                {
+                  prompt: "What is a natural source of greenhouse gases?",
+                  answers: [
+                    { text: "Aerosols" },
+                    { text: "Deforestation" },
+                    { text: "Volcanic eurptions" },
+                    { text: "Burning fossil fuels" },
+                  ],
+                  answer: "Volcanic eurptions",
+                },
+                {
+                  prompt: "What is the greenhouse effect?",
+                  answers: [
+                    { text: "The warming of a planet due to trapped radiation." },
+                    { text: "The cooling of Earth due to air pollution." },
+                    { text: "The heating of a solid, such as a rock." },
+                  ],
+                  answer: "The warming of a planet due to trapped radiation."
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Make a plan of how you will avoid polluting the air. ",
+                    placeholder: "My plan is...",
+                    image: require("../../../../assets/openresponse/smog.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Upload a picture of the factory that causes the most air pollution in the area",
+            },
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Determine how each action reduces, resues, or recycles",
+                num: 6,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Reduce" },
+                  {name: "Reuse" },
+                  { name: "Recycle"}
+                ],
+                options: [
+                  { title: "Refill a water bottle with water from home instead of buying a new one.", name: "Reuse" },
+                  { title: "Separating glass", name: "Recycle" },
+                  { title: "Update your computer rather than throwing it out and getting a replacement", name: "Reuse" },
+                  { title: "Only buy what you need", name: "Reduce"},
+                  { title: "Separating aluminum", name: "Recycle"},
+                  { title: "Look for items that you can reuse instead of buying ", name: "Reduce"},
+                  { title: "Buy in bulk", name: "Reduce"},
+                  { title: "Separating cardboard to put in recycling facility", name: "Recycle"},
+                  { title: "Separating lead batteries", name: "Recycle"},
+                  { title: "Ditch plastic bags and choose reusable, environmentally-friendly bags instead", name: "Reuse"},
+                  { title: "Choose products with less packaging", name: "Reduce"},
+                ],
+              },
+            },
+
+
+          },
+
         },
 
         /* 
@@ -1693,6 +1965,192 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            quiz: {  //ONLY DOES THE FIRST 5 QUESTIONS
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 12,
+              content: [
+                {
+                  prompt: "What does the world \"pollute\" mean?" ,
+                  answers: [
+                    {text: "To make something clean." },
+                    {text: "To make something cheaper."},
+                    { text: "To make something dirty."},
+                  ],
+                  answer: "To make something dirty.",
+                },
+                {
+                  prompt: "How much water is drinkable on Earth?",
+                  answers: [
+                    { text: "1%" },
+                    { text: "5%" },
+                    { text: "10%"},
+                    { text: "20%" },
+                  ],
+                  answer: "1%",
+                },
+                {
+                  prompt: "Which is NOT a major source of water pollution in the modern world?",
+                  answers: [
+                    { text: "Animal feces and algae"},
+                    { text: "Agriculture industry chemicals" },
+                    { text: "Industrial chemical toxins"},
+                    { text: "Municipal waste (human & other)",}
+                  ],
+                  answer: "Animal feces and algae",
+                },
+                {
+                  prompt: "Water pollution occurs when:", //last question, doest go into the rest of them 
+                  answers: [
+                    { text: "Harmful substances enter a water supply." },
+                    { text: "Industries dispose of waste safely and correctly." },
+                    { text: "None of the above" },
+                  ],
+                  answer: "Harmful substances enter a water supply.",
+                },
+                {
+                  prompt: "There is nothing we can do to stop water pollution",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False"
+                },
+                {
+                  prompt: "We can prevent water pollution by:",
+                  answers: [
+                    { text: "Reducing the use of plastic" },
+                    { text: "Properly disposing of chemicals" },
+                    { text: "Cleaning up after your animals" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above"
+                },
+                {
+                  prompt: "How any forms does water come in?",
+                  answers: [
+                    { text: "Three" },
+                    { text: "Two" },
+                    { text: "One" },
+                  ],
+                  answer: "Three",
+                },
+                {
+                  prompt: "What is precipitation?",
+                  answers: [
+                    { text: "Sweat from our bodies on hot days. " },
+                    { text: "Warm rain, but not cold snow or sleet." },
+                    { text: "Gas that we use in furnaces or ovens." },
+                    { text: "Any form of water that falls from the sky." },
+                  ],
+                  answer: "Any form of water that falls from the sky."
+                },
+                {
+                  prompt: "Which example is a form of precipitation?",
+                  answers: [
+                    { text: "Dew" },
+                    { text: "Fog" },
+                    { text: "Frost" },
+                    { text: "Hail" },
+                  ],
+                  answer: "Hail",
+                },
+                {
+                  prompt: "What is the water cycle?",
+                  answers: [
+                    { text: "The 3 forms of water (solid, liquid, gas)"},
+                    { text: "The movement of water on, above, or below the surface of the Earth"},
+                    { text: "When water melts" },
+                    { text: "When clouds form" },
+                  ],
+                  answer: "The movement of wate on, above, or below the surface of the Earth",
+                },
+                {
+                  prompt: "Evaporation happens when the sun _____ water and turns it into vapor.",
+                  answers: [
+                    { text: "cools" },
+                    { text: "heats up" },
+                    { text: "freezes" },
+                    { text: "lights up" },
+                  ],
+                  answer: "heats up",
+                },
+                {
+                  prompt: "Water in its gas form is called ______.",
+                  answers: [
+                    { text: "water vapor" },
+                    { text: "precipitation" },
+                    { text: "ice" },
+                    { text: "air" },
+                  ],
+                  answer: 'water vapor',
+                }, 
+              ],
+            },
+            openresponse: { // put in dirty water pic
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Describe the picture. What do you think should be changed?",
+                    placeholder: "In this picture I see...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            reorder: { //background image ? or nah
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Put the oceans from the smallest to the largest",
+              data: [
+                {
+                  text: "Pacific",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Indian",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Southern",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Artic",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Atlantic",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Draw a picture of the water cycle and take a picture of it. Be sure to label the stages of the cycle!",
+            },
+          },
         },
 
         /* 
@@ -1703,7 +2161,7 @@ export const Grade1 = {
 
         {
           navigation: "Lesson4",
-          title: <Translation>{(t) => t("gradeone:c3l4")}</Translation>, // Without what is a person not enough?
+          title: <Translation>{(t) => t("gradeone:c3l4")}</Translation>, // Without what can't a person survive?
           thumbnail: require("../../../../assets/lesson-icons/sun.png"),
           backgroundColor: "#56AEFF",
           mastery: {
@@ -1723,6 +2181,114 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/ecology.png"),
               },
             ],
+          },
+          minigames: {
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Determine which resrouce category the picture corresponds to ",
+                
+                num: 9,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Natural" },
+                  {name: "Anthropogenic" },
+                 
+                ],
+                options: [ //not done, want to change title to image
+                  { image: require("../../../../assets/sorting/sun.png") ,name: "Natural" },
+                  { title: "Separating glass", name: "Recycle" },
+                  { title: "Update your computer rather than throwing it out and getting a replacement", name: "Reuse" },
+                  { title: "Only buy what you need", name: "Reduce"},
+                  { title: "Separating aluminum", name: "Recycle"},
+                  { title: "Look for items that you can reuse instead of buying ", name: "Reduce"},
+                  { title: "Buy in bulk", name: "Reduce"},
+                  { title: "Separating cardboard to put in recycling facility", name: "Recycle"},
+                  { title: "Separating lead batteries", name: "Recycle"},
+                  { title: "Ditch plastic bags and choose reusable, environmentally-friendly bags instead", name: "Reuse"},
+                  { title: "Choose products with less packaging", name: "Reduce"},
+                ],
+              },
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do people use natural resources to create energy? Name one good (sustainable) way the energy is created and one bad way (unsustainable) way.",
+                    placeholder: "A way people use energy is by...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                {
+                  prompt:"What is NOT a sustainable practice?",
+                  answers: [
+                    {text: "Reducing" },
+                    {text: "Reusing" },
+                    {text: "Recycling" },
+                    {text: "Buying"}
+                  ],
+                  answer: "Buying",
+                },
+                {
+                  prompt: "What is the term used to describe objects that are being washed and used again?",
+                  answers: [
+                    { text: "Reducing" },
+                    { text: "Reusing" },
+                    { text: "Recycling"},
+                    { text: "Buying" },
+                  ],
+                  answer: "Reusing",
+                },
+                {
+                  prompt: "What is the term used to describe objects that are being made into new materials?",
+                  answers: [
+                    { text: "Reducing" },
+                    { text: "Reusing" },
+                    { text: "Recycling"},
+                    { text: "Buying" },
+                  ],
+                  answer: "Recycling",
+                },
+                {
+                  prompt: "What is landfill?",
+                  answers: [
+                    { text: "A place where trash is piled up." },
+                    { text: "A place where trash is reduced." },
+                    { text: "A place where trash is recycled." },
+                    { text: "A place where trash is reused" },
+                  ],
+                  answer: "A place where trash is piled up.",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take three pictures of the ways you take care of the environment",
+              
+            },
+
+            
           },
         },
       ],
