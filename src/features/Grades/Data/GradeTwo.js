@@ -129,59 +129,10 @@ export const Grade2 = {
             ],
           },
         },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 1 Lesson 4 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson4", //part 2, conducting expirement
-          title: <Translation>{(t) => t("gradetwo:c1l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/air-pollution.png"),
-          backgroundColor: "#545454",
-          minigames: {},
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c1l4_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l4_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/girl-scientist.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l4_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/petroleum-jelly.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l4_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/window.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l4_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/alarm-clock.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l4_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/paper.png"),
-              },
-            ],
-          },
-        },
       ],
     },
     {
-      navigation: "Chapter2", 
+      navigation: "Chapter2",
       title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradetwo:wildlife")}</Translation>, // Wildlife
       backgroundImage: require("../../../../assets/mastery/bg/ch2.jpg"),
@@ -219,8 +170,6 @@ export const Grade2 = {
               },
             ],
           },
-
-
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -255,15 +204,46 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 3 --- needs to be done
+        Grade 2 Chapter 2 Lesson 3 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson3", //how do plants adapt to living conditions pt 2
+          navigation: "Lesson3", //natural plant communities
           title: <Translation>{(t) => t("gradetwo:c2l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wilted.png"),
-          backgroundColor: "#7ED957",
+          thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
+          backgroundColor: "#C0F0F7",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/coca-leaves.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/swamp.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l3_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/garden.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l3_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/search-location.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -271,12 +251,11 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson4", //natural plant communities
+          navigation: "Lesson4", //how a person influences the life of plants
           title: <Translation>{(t) => t("gradetwo:c2l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
-          backgroundColor: "#C0F0F7",
+          thumbnail: require("../../../../assets/lesson-icons/gardening.png"),
+          backgroundColor: "#04A7A8",
           minigames: {},
-
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l4_prompt")}</Translation>
@@ -286,31 +265,28 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l4_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/coca-leaves.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l4_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/swamp.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/garden.png"),
+                image: require("../../../../assets/mastery/human-plant.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l4_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/search-location.png"),
+                image: require("../../../../assets/mastery/care-nature.png"),
               },
-            
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant-hand.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant-hand.png"),
+              },
             ],
           },
-
-
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -318,10 +294,10 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson5", //how a person influences the life of plants
+          navigation: "Lesson5", //red book of plants part 1
           title: <Translation>{(t) => t("gradetwo:c2l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/gardening.png"),
-          backgroundColor: "#04A7A8",
+          thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
+          backgroundColor: "#44312B",
           minigames: {},
           mastery: {
             prompt: (
@@ -332,30 +308,16 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l5_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/human-plant.png"),
+                image: require("../../../../assets/mastery/agriculture-book.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l5_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/care-nature.png"),
+                image: require("../../../../assets/mastery/search-globe.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l5_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/plant-hand.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l5_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/kibera.png"),
-              },
-            
             ],
           },
-
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -363,10 +325,10 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson6", //red book of plants part 1
+          navigation: "Lesson6", // vertebrates and invertebrates
           title: <Translation>{(t) => t("gradetwo:c2l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
-          backgroundColor: "#44312B",
+          thumbnail: require("../../../../assets/lesson-icons/spine.png"),
+          backgroundColor: "#EE3A5D",
           minigames: {},
           mastery: {
             prompt: (
@@ -377,34 +339,59 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l6_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/agriculture-book.png"),
+                image: require("../../../../assets/mastery/data-classification.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l6_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/search-globe.png"),
+                image: require("../../../../assets/mastery/spine.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l6_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/endangered-plant.png"),
+                image: require("../../../../assets/mastery/earthworm.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l6_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/searching.png"),
               },
             ],
           },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 7  --- needs to be done
+        Grade 2 Chapter 2 Lesson 7 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson7", //red book of plants pt 2
+          navigation: "Lesson7", //animal habitat
           title: <Translation>{(t) => t("gradetwo:c2l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
-          backgroundColor: "#44312B",
+          thumbnail: require("../../../../assets/lesson-icons/habitat.png"),
+          backgroundColor: "#7B3B16",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l7_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l7_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/ecosystem-circle.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l7_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/ecosystem-search.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -412,10 +399,10 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson8", // vertebrates and invertebrates
+          navigation: "Lesson8", //what are the relationships between animals that exist in nature
           title: <Translation>{(t) => t("gradetwo:c2l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/spine.png"),
-          backgroundColor: "#EE3A5D",
+          thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
+          backgroundColor: "#37B5FF",
           minigames: {},
           mastery: {
             prompt: (
@@ -426,29 +413,28 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l8_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/data-classification.png"),
+                image: require("../../../../assets/mastery/fishes.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l8_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/spine.png"),
+                image: require("../../../../assets/mastery/symbiosis.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l8_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/earthworm.png"),
+                image: require("../../../../assets/mastery/fishes.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l8_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/searching.png"),
+                image: require("../../../../assets/mastery/symbiosis.png"),
               },
             ],
           },
-
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -456,10 +442,10 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson9", //animal habitat
+          navigation: "Lesson9", //what is the realtionship beetween plants and animals
           title: <Translation>{(t) => t("gradetwo:c2l9")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/habitat.png"),
-          backgroundColor: "#7B3B16",
+          thumbnail: require("../../../../assets/lesson-icons/spring.png"),
+          backgroundColor: "#065D40",
           minigames: {},
           mastery: {
             prompt: (
@@ -470,16 +456,16 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l9_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/ecosystem-circle.png"),
+                image: require("../../../../assets/mastery/pets.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l9_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/ecosystem-search.png"),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
             ],
-          }
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -487,12 +473,10 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson10", //what are the relationships between animals that exist in nature
+          navigation: "Lesson10", //how do habitat conditions affect the number of animals pt 1
           title: <Translation>{(t) => t("gradetwo:c2l10")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
-          backgroundColor: "#37B5FF",
-          minigames: {},
-
+          thumbnail: require("../../../../assets/lesson-icons/desert.png"),
+          backgroundColor: "#FFF9E3",
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l10_prompt")}</Translation>
@@ -502,43 +486,28 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l10_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/fishes.png"),
+                image: require("../../../../assets/mastery/pets.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l10_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/symbiosis.png"),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l10_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/positive-thinking.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l10_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/writing.png"),
-              },
-              
             ],
-          }
-
-
+          },
+          minigames: {},
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 11 
+        Grade 2 Chapter 2 Lesson 11
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson11", //what is the realtionship beetween plants and animals
+          navigation: "Lesson11",
           title: <Translation>{(t) => t("gradetwo:c2l11")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
-          backgroundColor: "#37B5FF",
-          minigames: {},
+          thumbnail: require("../../../../assets/lesson-icons/fishing.png"),
+          backgroundColor: "#004AAD",
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l11_prompt")}</Translation>
@@ -556,130 +525,211 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
             ],
-          }
-
-          
+          },
+          minigames: {},
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 12 
+        Grade 2 Chapter 2 Lesson 12
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson12", //how do habitat conditions affect the number of animals pt 1
+          navigation: "Lesson12",
           title: <Translation>{(t) => t("gradetwo:c2l12")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/desert.png"),
-          backgroundColor: "#FFF9E3",
+          thumbnail: require("../../../../assets/lesson-icons/magnifying-glass.png"),
+          backgroundColor: "#FFBD58",
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l12_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          },
           minigames: {},
-          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 13 
+        Grade 2 Chapter 2 Lesson 13
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson13", //how do habitat conditions affect the number of animals pt 2
+          navigation: "Lesson13",
           title: <Translation>{(t) => t("gradetwo:c2l13")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/desert.png"),
-          backgroundColor: "#FFF9E3",
+          thumbnail: require("../../../../assets/lesson-icons/apple.png"),
+          backgroundColor: "#56C34D",
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l13_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l13_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l13_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l13_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          },
           minigames: {},
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 14 
+        Grade 2 Chapter 2 Lesson 14
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
           navigation: "Lesson14",
           title: <Translation>{(t) => t("gradetwo:c2l14")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/fishing.png"),
-          backgroundColor: "#004AAD",
+          thumbnail: require("../../../../assets/lesson-icons/breathing.png"),
+          backgroundColor: "#FF904D",
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l14_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l14_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l14_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          },
           minigames: {},
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 15 
+        Grade 2 Chapter 2 Lesson 15
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
           navigation: "Lesson15",
           title: <Translation>{(t) => t("gradetwo:c2l15")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/magnifying-glass.png"),
-          backgroundColor: "#FFBD58",
+          thumbnail: require("../../../../assets/lesson-icons/circulation.png"),
+          backgroundColor: "#C0F0F7",
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l15_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l15_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l15_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l15_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l15_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l15_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          },
           minigames: {},
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 16 
+        Grade 2 Chapter 2 Lesson 16
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
           navigation: "Lesson16",
           title: <Translation>{(t) => t("gradetwo:c2l16")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/apple.png"),
-          backgroundColor: "#56C34D",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 17 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson17",
-          title: <Translation>{(t) => t("gradetwo:c2l17")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/apple.png"),
-          backgroundColor: "#56C34D",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 18 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson18",
-          title: <Translation>{(t) => t("gradetwo:c2l18")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/breathing.png"),
-          backgroundColor: "#FF904D",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 19 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson19",
-          title: <Translation>{(t) => t("gradetwo:c2l19")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/circulation.png"),
-          backgroundColor: "#C0F0F7",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 20 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson20",
-          title: <Translation>{(t) => t("gradetwo:c2l20")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/mask.png"),
           backgroundColor: "#80B673",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 2 Lesson 21 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson21",
-          title: <Translation>{(t) => t("gradetwo:c2l21")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/mask.png"),
-          backgroundColor: "#80B673",
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l16_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          },
           minigames: {},
         },
       ],
@@ -701,8 +751,39 @@ export const Grade2 = {
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
+          backgroundColor: "#49326B",
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pets.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bee-and-tree.png"),
+              },
+            ],
+          },
           minigames: {},
         },
         /* 
@@ -713,8 +794,8 @@ export const Grade2 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradetwo:c3l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/air.png"),
+          backgroundColor: "#C85004",
           minigames: {},
         },
         /* 
@@ -725,8 +806,8 @@ export const Grade2 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradetwo:c3l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/candle.png"),
+          backgroundColor: "#9DCD5A",
           minigames: {},
         },
         /* 
@@ -737,8 +818,8 @@ export const Grade2 = {
         {
           navigation: "Lesson4",
           title: <Translation>{(t) => t("gradetwo:c3l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/duck.png"),
+          backgroundColor: "#98DFEC",
           minigames: {},
         },
         /* 
@@ -749,8 +830,8 @@ export const Grade2 = {
         {
           navigation: "Lesson5",
           title: <Translation>{(t) => t("gradetwo:c3l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/water-source.png"),
+          backgroundColor: "#37B5FF",
           minigames: {},
         },
         /* 
@@ -761,8 +842,8 @@ export const Grade2 = {
         {
           navigation: "Lesson6",
           title: <Translation>{(t) => t("gradetwo:c3l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/water-bottle.png"),
+          backgroundColor: "#F27B21",
           minigames: {},
         },
         /* 
@@ -773,8 +854,8 @@ export const Grade2 = {
         {
           navigation: "Lesson7",
           title: <Translation>{(t) => t("gradetwo:c3l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/water-filter.png"),
+          backgroundColor: "#6C3F14",
           minigames: {},
         },
         /* 
@@ -785,8 +866,8 @@ export const Grade2 = {
         {
           navigation: "Lesson8",
           title: <Translation>{(t) => t("gradetwo:c3l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/soil.png"),
+          backgroundColor: "#E39650",
           minigames: {},
         },
         /* 
@@ -797,8 +878,8 @@ export const Grade2 = {
         {
           navigation: "Lesson9",
           title: <Translation>{(t) => t("gradetwo:c3l9")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
+          backgroundColor: "#9DCD5A",
           minigames: {},
         },
         /* 
@@ -809,8 +890,8 @@ export const Grade2 = {
         {
           navigation: "Lesson10",
           title: <Translation>{(t) => t("gradetwo:c3l10")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
+          backgroundColor: "#F9A949",
           minigames: {},
         },
         /* 
@@ -821,8 +902,8 @@ export const Grade2 = {
         {
           navigation: "Lesson11",
           title: <Translation>{(t) => t("gradetwo:c3l11")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
+          backgroundColor: "#76B9F0",
           minigames: {},
         },
         /* 
@@ -833,8 +914,8 @@ export const Grade2 = {
         {
           navigation: "Lesson12",
           title: <Translation>{(t) => t("gradetwo:c3l12")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/earth.png"),
+          backgroundColor: "#49326B",
           minigames: {},
         },
         /* 
@@ -845,8 +926,8 @@ export const Grade2 = {
         {
           navigation: "Lesson13",
           title: <Translation>{(t) => t("gradetwo:c3l13")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
+          backgroundColor: "#02084B",
           minigames: {},
         },
         /* 
@@ -857,92 +938,8 @@ export const Grade2 = {
         {
           navigation: "Lesson14",
           title: <Translation>{(t) => t("gradetwo:c3l14")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 15 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson15",
-          title: <Translation>{(t) => t("gradetwo:c3l15")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 16 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson16",
-          title: <Translation>{(t) => t("gradetwo:c3l16")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 17 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson17",
-          title: <Translation>{(t) => t("gradetwo:c3l17")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 18 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson18",
-          title: <Translation>{(t) => t("gradetwo:c3l18")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 19 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson19",
-          title: <Translation>{(t) => t("gradetwo:c3l19")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 20 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson20",
-          title: <Translation>{(t) => t("gradetwo:c3l20")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 21 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson21",
-          title: <Translation>{(t) => t("gradetwo:c3l21")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
+          backgroundColor: "#F6E134",
           minigames: {},
         },
       ],
@@ -964,8 +961,8 @@ export const Grade2 = {
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradetwo:c4l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/elastic-spring.png"),
+          backgroundColor: "#2A731D",
           minigames: {},
         },
         /* 
@@ -976,8 +973,8 @@ export const Grade2 = {
         {
           navigation: "Lesson2",
           title: <Translation>{(t) => t("gradetwo:c4l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/gravity.png"),
+          backgroundColor: "#060644",
           minigames: {},
         },
         /* 
@@ -988,8 +985,8 @@ export const Grade2 = {
         {
           navigation: "Lesson3",
           title: <Translation>{(t) => t("gradetwo:c4l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/friction.png"),
+          backgroundColor: "#53020C",
           minigames: {},
         },
         /* 
@@ -1000,8 +997,8 @@ export const Grade2 = {
         {
           navigation: "Lesson4",
           title: <Translation>{(t) => t("gradetwo:c4l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/direction.png"),
+          backgroundColor: "#F9943B",
           minigames: {},
         },
         /* 
@@ -1012,8 +1009,8 @@ export const Grade2 = {
         {
           navigation: "Lesson5",
           title: <Translation>{(t) => t("gradetwo:c4l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/shadow.png"),
+          backgroundColor: "#159D52",
           minigames: {},
         },
         /* 
@@ -1024,8 +1021,8 @@ export const Grade2 = {
         {
           navigation: "Lesson6",
           title: <Translation>{(t) => t("gradetwo:c4l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/reflection.png"),
+          backgroundColor: "#5AA3F7",
           minigames: {},
         },
         /* 
@@ -1036,8 +1033,8 @@ export const Grade2 = {
         {
           navigation: "Lesson7",
           title: <Translation>{(t) => t("gradetwo:c4l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/refraction.png"),
+          backgroundColor: "#80B673",
           minigames: {},
         },
         /* 
@@ -1048,8 +1045,8 @@ export const Grade2 = {
         {
           navigation: "Lesson8",
           title: <Translation>{(t) => t("gradetwo:c4l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/sound.png"),
+          backgroundColor: "#800080",
           minigames: {},
         },
         /* 
@@ -1060,8 +1057,8 @@ export const Grade2 = {
         {
           navigation: "Lesson9",
           title: <Translation>{(t) => t("gradetwo:c4l9")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/practical-sound.png"),
+          backgroundColor: "#D2C6FF",
           minigames: {},
         },
         /* 
@@ -1072,8 +1069,8 @@ export const Grade2 = {
         {
           navigation: "Lesson10",
           title: <Translation>{(t) => t("gradetwo:c4l10")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/energy.png"),
+          backgroundColor: "#ED5F1E",
           minigames: {},
         },
         /* 
@@ -1084,8 +1081,8 @@ export const Grade2 = {
         {
           navigation: "Lesson11",
           title: <Translation>{(t) => t("gradetwo:c4l11")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/circuit.png"),
+          backgroundColor: "#76B9F0",
           minigames: {},
         },
         /* 
@@ -1096,128 +1093,8 @@ export const Grade2 = {
         {
           navigation: "Lesson12",
           title: <Translation>{(t) => t("gradetwo:c4l12")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 13 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson13",
-          title: <Translation>{(t) => t("gradetwo:c4l13")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 14 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson14",
-          title: <Translation>{(t) => t("gradetwo:c4l14")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 15 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson15",
-          title: <Translation>{(t) => t("gradetwo:c4l15")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 16 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson16",
-          title: <Translation>{(t) => t("gradetwo:c4l16")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 17 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson17",
-          title: <Translation>{(t) => t("gradetwo:c4l17")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 18 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson18",
-          title: <Translation>{(t) => t("gradetwo:c4l18")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 19 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson19",
-          title: <Translation>{(t) => t("gradetwo:c4l19")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 20 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson20",
-          title: <Translation>{(t) => t("gradetwo:c4l20")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 21 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson21",
-          title: <Translation>{(t) => t("gradetwo:c4l21")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
-          minigames: {},
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 22 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson22",
-          title: <Translation>{(t) => t("gradetwo:c4l22")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/magnet.png"),
+          backgroundColor: "#4EB6AF",
           minigames: {},
         },
       ],
