@@ -426,6 +426,115 @@ export const Grade3 = {
       colorOne: "indigo",
       colorTwo: "darkmagenta",
       key: "C5",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 1 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1", // Properties of substances
+          title: <Translation>{(t) => t("gradethree:c5l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/mirror.png"),
+          backgroundColor: "#930D31",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 2 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson2", // What are the substances
+          title: <Translation>{(t) => t("gradethree:c5l2")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/prism.png"),
+          backgroundColor: "#800080",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 3 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson3", // Do the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c5l3")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/shadow.png"),
+          backgroundColor: "#159D52",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 4 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson4", // How the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c5l4")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/bass.png"),
+          backgroundColor: "#5BE1E6",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 5 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson5", // How air moves
+          title: <Translation>{(t) => t("gradethree:c5l5")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/alarm-crazy.png"),
+          backgroundColor: "#32620F",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 6 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson6", // What benefit and harm does the wind bring
+          title: <Translation>{(t) => t("gradethree:c5l6")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/coffee.png"),
+          backgroundColor: "#AC795B",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 7 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson7", // Why does air matter
+          title: <Translation>{(t) => t("gradethree:c5l7")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/polar-bear.png"),
+          backgroundColor: "#0E6880",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 8 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson8", // How the air gets polluted
+          title: <Translation>{(t) => t("gradethree:c5l8")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/balloons.png"),
+          backgroundColor: "#7ED957",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 5 Lesson 9 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson9", // The water cycle in nature
+          title: <Translation>{(t) => t("gradethree:c5l9")}</Translation>,
+          backgroundColor: "#8C52FF",
+          minigames: {},
+        },
+      ],
     },
     {
       navigation: "Chapter6",
@@ -437,6 +546,140 @@ export const Grade3 = {
       colorOne: "darkgreen",
       colorTwo: "darkolivegreen",
       key: "C6",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 1 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1", // Properties of substances
+          title: <Translation>{(t) => t("gradethree:c6l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/ore.png"),
+          backgroundColor: "#5171FE",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 2 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson2", // What are the substances
+          title: <Translation>{(t) => t("gradethree:c6l2")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/diamond.png"),
+          backgroundColor: "#004AAD",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 3 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson3", // Do the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c6l3")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/stove.png"),
+          backgroundColor: "#FF5757",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 4 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson4", // How the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c6l4")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/mining.png"),
+          backgroundColor: "#F8D23C",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 5 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson5", // How air moves
+          title: <Translation>{(t) => t("gradethree:c6l5")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/steel.png"),
+          backgroundColor: "#737373",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 6 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson6", // What benefit and harm does the wind bring
+          title: <Translation>{(t) => t("gradethree:c6l6")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/metal.png"),
+          backgroundColor: "#1F628D",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 7 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson7", // Why does air matter
+          title: <Translation>{(t) => t("gradethree:c6l7")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/pottery.png"),
+          backgroundColor: "#00C2CB",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 8 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson8", // How the air gets polluted
+          title: <Translation>{(t) => t("gradethree:c6l8")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/cargo.png"),
+          backgroundColor: "#004AAD",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 9 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson9", // The water cycle in nature
+          title: <Translation>{(t) => t("gradethree:c6l9")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/electric-car.png"),
+          backgroundColor: "#C9E265",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 10 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson10", // What is precipitation and how does it happen
+          title: <Translation>{(t) => t("gradethree:c6l10")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/crack.png"),
+          backgroundColor: "#5DE1E6",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 6 Lesson 11 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson11", // What does water dissolve
+          title: <Translation>{(t) => t("gradethree:c6l11")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/oil.png"),
+          backgroundColor: "#5271FE",
+          minigames: {},
+        },
+      ],
     },
     {
       navigation: "Chapter7",
@@ -446,6 +689,116 @@ export const Grade3 = {
       colorOne: "midnightblue",
       colorTwo: "mediumblue",
       key: "C7",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 1 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1", // Properties of substances
+          title: <Translation>{(t) => t("gradethree:c7l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/planet-earth.png"),
+          backgroundColor: "#38B6FF",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 2 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson2", // What are the substances
+          title: <Translation>{(t) => t("gradethree:c7l2")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/plains.png"),
+          backgroundColor: "#5BE1E6",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 3 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson3", // Do the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c7l3")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/relief.png"),
+          backgroundColor: "#7ED957",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 4 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson4", // How the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c7l4")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/space.png"),
+          backgroundColor: "#004889",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 5 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson5", // How air moves
+          title: <Translation>{(t) => t("gradethree:c7l5")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/shooting-star.png"),
+          backgroundColor: "#003060",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 6 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson6", // What benefit and harm does the wind bring
+          title: <Translation>{(t) => t("gradethree:c7l6")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/moon.png"),
+          backgroundColor: "#65C6F3",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 7 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson7", // Why does air matter
+          title: <Translation>{(t) => t("gradethree:c7l7")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/earth-sun.png"),
+          backgroundColor: "#135DA0",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 8 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson8", // How the air gets polluted
+          title: <Translation>{(t) => t("gradethree:c7l8")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/sunshine.png"),
+          backgroundColor: "#76B9F0",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 7 Lesson 9 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson9", // The water cycle in nature
+          title: <Translation>{(t) => t("gradethree:c7l9")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/seasons.png"),
+          backgroundColor: "#9DCD5A",
+          minigames: {},
+        },
+      ],
     },
     {
       navigation: "Chapter8",
@@ -455,6 +808,68 @@ export const Grade3 = {
       colorOne: "mediumvioletred",
       colorTwo: "hotpink",
       key: "C8",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 8 Lesson 1 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1", // Properties of substances
+          title: <Translation>{(t) => t("gradethree:c8l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/bath.png"),
+          backgroundColor: "#67BBE3",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 8 Lesson 2 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson2", // What are the substances
+          title: <Translation>{(t) => t("gradethree:c8l2")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/float.png"),
+          backgroundColor: "#56AEFE",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 8 Lesson 3 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson3", // Do the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c8l3")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/feather.png"),
+          backgroundColor: "#74D481",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 8 Lesson 4 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson4", // How the properties of substances change
+          title: <Translation>{(t) => t("gradethree:c8l4")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/hot-air-balloon.png"),
+          backgroundColor: "#A4E8D3",
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 Chapter 8 Lesson 5 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson5", // How air moves
+          title: <Translation>{(t) => t("gradethree:c8l5")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/rubber-duck.png"),
+          backgroundColor: "#56AEFE",
+          minigames: {},
+        },
+      ],
     },
   ],
 };
