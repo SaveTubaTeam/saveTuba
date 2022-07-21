@@ -19,8 +19,8 @@ export const Grade3 = {
         {
           navigation: "Lesson1", // What are lower and higher plants
           title: <Translation>{(t) => t("gradethree:c1l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
+          backgroundColor: "#C0F0F7",
           minigames: {},
         },
         /* 
@@ -31,8 +31,8 @@ export const Grade3 = {
         {
           navigation: "Lesson2", // Lower plants
           title: <Translation>{(t) => t("gradethree:c1l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/spider-plant.png"),
+          backgroundColor: "#76B9F0",
           minigames: {},
         },
         /* 
@@ -43,8 +43,8 @@ export const Grade3 = {
         {
           navigation: "Lesson3", // What stages of development do plants have
           title: <Translation>{(t) => t("gradethree:c1l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/plant-development.png"),
+          backgroundColor: "#CA6CE5",
           minigames: {},
         },
         /* 
@@ -55,8 +55,8 @@ export const Grade3 = {
         {
           navigation: "Lesson4", // Why does a plant need flowers
           title: <Translation>{(t) => t("gradethree:c1l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/flowers.png"),
+          backgroundColor: "#43B14B",
           minigames: {},
         },
         /* 
@@ -67,8 +67,8 @@ export const Grade3 = {
         {
           navigation: "Lesson5", // How seeds are formed
           title: <Translation>{(t) => t("gradethree:c1l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/seed.png"),
+          backgroundColor: "#AB653E",
           minigames: {},
         },
         /* 
@@ -79,8 +79,8 @@ export const Grade3 = {
         {
           navigation: "Lesson6", // How plants develop
           title: <Translation>{(t) => t("gradethree:c1l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/plant-water.png"),
+          backgroundColor: "#F9F0D7",
           minigames: {},
         },
         /* 
@@ -91,8 +91,8 @@ export const Grade3 = {
         {
           navigation: "Lesson7", // How plant seeds spread
           title: <Translation>{(t) => t("gradethree:c1l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/spring.png"),
+          backgroundColor: "#065D40",
           minigames: {},
         },
         /* 
@@ -103,8 +103,8 @@ export const Grade3 = {
         {
           navigation: "Lesson8", // How to protect plants from extinction
           title: <Translation>{(t) => t("gradethree:c1l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/plant-hand.png"),
+          backgroundColor: "#B25C3E",
           minigames: {},
         },
       ],
@@ -126,8 +126,8 @@ export const Grade3 = {
         {
           navigation: "Lesson1", // What is symbiosis
           title: <Translation>{(t) => t("gradethree:c2l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/symbiosis.png"),
+          backgroundColor: "#04A7A8",
           minigames: {},
         },
         /* 
@@ -138,8 +138,8 @@ export const Grade3 = {
         {
           navigation: "Lesson2", // How insects develop
           title: <Translation>{(t) => t("gradethree:c2l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/insect.png"),
+          backgroundColor: "#5AA3F7",
           minigames: {},
         },
         /* 
@@ -150,8 +150,8 @@ export const Grade3 = {
         {
           navigation: "Lesson3", // Why animals eat different foods
           title: <Translation>{(t) => t("gradethree:c2l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/bear.png"),
+          backgroundColor: "#80B673",
           minigames: {},
         },
         /* 
@@ -162,8 +162,8 @@ export const Grade3 = {
         {
           navigation: "Lesson4", // How do animals get energy
           title: <Translation>{(t) => t("gradethree:c2l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/sleepy.png"),
+          backgroundColor: "#AB653E",
           minigames: {},
         },
         /* 
@@ -174,8 +174,8 @@ export const Grade3 = {
         {
           navigation: "Lesson5", // How food chains form
           title: <Translation>{(t) => t("gradethree:c2l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/dinosaur.png"),
+          backgroundColor: "#135DA0",
           minigames: {},
         },
         /* 
@@ -186,8 +186,8 @@ export const Grade3 = {
         {
           navigation: "Lesson6", // What animals live in your area
           title: <Translation>{(t) => t("gradethree:c2l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/fox.png"),
+          backgroundColor: "#80B673",
           minigames: {},
         },
         /* 
@@ -198,8 +198,8 @@ export const Grade3 = {
         {
           navigation: "Lesson7", // Rare and endangered animals
           title: <Translation>{(t) => t("gradethree:c2l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/flamingo.png"),
+          backgroundColor: "#75B1A6",
           minigames: {},
         },
         /* 
@@ -210,8 +210,8 @@ export const Grade3 = {
         {
           navigation: "Lesson8", // How to protect animals
           title: <Translation>{(t) => t("gradethree:c2l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/pet.png"),
+          backgroundColor: "#0D524B",
           minigames: {},
         },
       ],
@@ -233,8 +233,8 @@ export const Grade3 = {
         {
           navigation: "Lesson1", // How the excretory system works
           title: <Translation>{(t) => t("gradethree:c3l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/bladder.png"),
+          backgroundColor: "#5D5391",
           minigames: {},
         },
         /* 
@@ -245,8 +245,8 @@ export const Grade3 = {
         {
           navigation: "Lesson2", // What are the functions of the nervous system
           title: <Translation>{(t) => t("gradethree:c3l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/brain.png"),
+          backgroundColor: "#38B6FF",
           minigames: {},
         },
         /* 
@@ -257,8 +257,8 @@ export const Grade3 = {
         {
           navigation: "Lesson3", // Meaning of the nervous system
           title: <Translation>{(t) => t("gradethree:c3l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/nerve.png"),
+          backgroundColor: "#00C2CB",
           minigames: {},
         },
       ],
@@ -280,8 +280,8 @@ export const Grade3 = {
         {
           navigation: "Lesson1", // Properties of substances
           title: <Translation>{(t) => t("gradethree:c4l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/mystery-box.png"),
+          backgroundColor: "#FF66C3",
           minigames: {},
         },
         /* 
@@ -292,8 +292,8 @@ export const Grade3 = {
         {
           navigation: "Lesson2", // What are the substances
           title: <Translation>{(t) => t("gradethree:c4l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/molecules.png"),
+          backgroundColor: "#2EA6FF",
           minigames: {},
         },
         /* 
@@ -304,8 +304,8 @@ export const Grade3 = {
         {
           navigation: "Lesson3", // Do the properties of substances change
           title: <Translation>{(t) => t("gradethree:c4l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/boil.png"),
+          backgroundColor: "#EF5140",
           minigames: {},
         },
         /* 
@@ -316,8 +316,8 @@ export const Grade3 = {
         {
           navigation: "Lesson4", // How the properties of substances change
           title: <Translation>{(t) => t("gradethree:c4l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/match.png"),
+          backgroundColor: "#7BB6E0",
           minigames: {},
         },
         /* 
@@ -328,8 +328,8 @@ export const Grade3 = {
         {
           navigation: "Lesson5", // How air moves
           title: <Translation>{(t) => t("gradethree:c4l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/wind.png"),
+          backgroundColor: "#ADD8E6",
           minigames: {},
         },
         /* 
@@ -340,8 +340,8 @@ export const Grade3 = {
         {
           navigation: "Lesson6", // What benefit and harm does the wind bring
           title: <Translation>{(t) => t("gradethree:c4l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/mill.png"),
+          backgroundColor: "#16A537",
           minigames: {},
         },
         /* 
@@ -352,8 +352,8 @@ export const Grade3 = {
         {
           navigation: "Lesson7", // Why does air matter
           title: <Translation>{(t) => t("gradethree:c4l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/diving.png"),
+          backgroundColor: "#000935",
           minigames: {},
         },
         /* 
@@ -364,8 +364,8 @@ export const Grade3 = {
         {
           navigation: "Lesson8", // How the air gets polluted
           title: <Translation>{(t) => t("gradethree:c4l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/traffic.png"),
+          backgroundColor: "#302E2D",
           minigames: {},
         },
         /* 
@@ -376,8 +376,8 @@ export const Grade3 = {
         {
           navigation: "Lesson9", // The water cycle in nature
           title: <Translation>{(t) => t("gradethree:c4l9")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/water-cycle.png"),
+          backgroundColor: "#43B14B",
           minigames: {},
         },
         /* 
@@ -388,8 +388,8 @@ export const Grade3 = {
         {
           navigation: "Lesson10", // What is precipitation and how does it happen
           title: <Translation>{(t) => t("gradethree:c4l10")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/rain.png"),
+          backgroundColor: "#5171FE",
           minigames: {},
         },
         /* 
@@ -400,8 +400,8 @@ export const Grade3 = {
         {
           navigation: "Lesson11", // What does water dissolve
           title: <Translation>{(t) => t("gradethree:c4l11")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/watercolors.png"),
+          backgroundColor: "#693E8A",
           minigames: {},
         },
         /* 
@@ -412,8 +412,8 @@ export const Grade3 = {
         {
           navigation: "Lesson12", // How water gets polluted
           title: <Translation>{(t) => t("gradethree:c4l12")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
-          backgroundColor: "#87CB28",
+          thumbnail: require("../../../../assets/lesson-icons/ocean-pollution.png"),
+          backgroundColor: "#486BDB",
           minigames: {},
         },
       ],
