@@ -132,9 +132,8 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             style={{
               borderTopLeftRadius: 20,
               borderBottomLeftRadius: 20,
-              height: "100%",
-              width: undefined,
-              aspectRatio: 1,
+              height: 100,
+              width: 100,
             }}
             source={item.thumbnail}
           />

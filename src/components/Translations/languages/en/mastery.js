@@ -1,5 +1,9 @@
 export default {
-  /* Grade One */
+  /*
+  ~~~~~~~~~
+  Grade One
+  ~~~~~~~~~
+  */
 
   /* CHAPTER 1 */
 
@@ -230,90 +234,176 @@ export default {
     "Look through all the previous lessons and gather some ideas. Use only one lesson as your main inspiration but you can take ideas from all of them.",
   g1c5l12_prompt: "Record all of your observations here. Good job, scientists!",
 
-  /* Grade Two */
+  /*
+  ~~~~~~~~~
+  Grade Two
+  ~~~~~~~~~
+  */
 
   g2c1l1_card1: "Find an object in your house that you use everyday.",
-  g2c1l1_card2: "Take a picture of it and write down its function. Is this something that you have to buy often?",
-  g2c1l1_prompt: "Is this object you use everyday prompoting sustainable practices?",
+  g2c1l1_card2:
+    "Take a picture of it and write down its function. Is this something that you have to buy often?",
+  g2c1l1_prompt:
+    "Is this object you use everyday prompoting sustainable practices?",
 
-  g2c1l2_card1: "Do a simple internet search to look up simple sustainable practices you can do in your home, be sure to record the website you visited",
-  g2c1l2_card2: "Determine if your list of resrouces you found is reliable, why or why not? Rate each source as reliable or unreliable",
+  g2c1l2_card1:
+    "Do a simple internet search to look up simple sustainable practices you can do in your home, be sure to record the website you visited",
+  g2c1l2_card2:
+    "Determine if your list of resrouces you found is reliable, why or why not? Rate each source as reliable or unreliable",
   g2c1l2_prompt: "Explain how you came to your conclusions.",
 
   g2c1l3_card1: "Become a scientist who tests about air pollution!",
-  g2c1l3_card2: "It is hard to see air pollution around us because the particles are so small, but just because we can't see it, doesnt mean it's not there!",
+  g2c1l3_card2:
+    "It is hard to see air pollution around us because the particles are so small, but just because we can't see it, doesnt mean it's not there!",
   g2c1l3_card3: "Let's conduct an expirement. You will need the following: ",
-  g2c1l3_card4: "- A piece of clear plastic (such as a plate or a cup), \n- Petroleum jelly, \n- A small rock, \n- A sheet of white paper",
-  g2c1l3_card5: "Once you have your materials gathered, did you have to buy anything or were they all in your house? \nWould you say the materials is sustainable?",
-  g2c1l3_card6: "Create a prediction: How do you think you are going to see air pollution? \nAre there any areas you think would have less air pollution than others? \nWhy?",
+  g2c1l3_card4:
+    "- A piece of clear plastic (such as a plate or a cup), \n- Petroleum jelly, \n- A small rock, \n- A sheet of white paper",
+  g2c1l3_card5:
+    "Once you have your materials gathered, did you have to buy anything or were they all in your house? \nWould you say the materials is sustainable?",
+  g2c1l3_card6:
+    "Create a prediction: How do you think you are going to see air pollution? \nAre there any areas you think would have less air pollution than others? \nWhy?",
   g2c2l3_prompt: "Submit your best hypothesis you came up with!",
 
-  g2c1l4_card1: "Now you have all the supplies gathered from Part 1, it is now time to start the expirement!",
-  g2c1l4_card2: "Spread petroleum jelly on the plate or cup.",
-  g2c1l4_card3: "Take your experimental set up and place it outside.",
-  g2c1l4_card5: "Place your rock on your plate or cup to weigh it down so it doesnt blow away. Leave it outside for 24 hours.",
-  g2c1l4_card4: "After 24 hours, take your cup or plate inside and put it on a white sheet of paper. Record your observations",
-  g2c1l4_prompt: "What can you conclude about air pollution from this expirmment? Was your predicition correct?",
+  // Chapter 2
 
   g2c2l1_card1: "Take a picture of three plants in the real world.",
-  g2c2l1_card2: "Take notes about the plants environment. Does it have enough resources to thrive?",
-  g2c2l1_prompt: "Identify a place in your home where a plant could grow. Explain why your plant would thrive there.",
+  g2c2l1_card2:
+    "Take notes about the plants environment. Does it have enough resources to thrive?",
+  g2c2l1_prompt:
+    "Identify a place in your home where a plant could grow. Explain why your plant would thrive there.",
 
-  g2c2l2_card1: "Plants exist all over the world in many different conditions. Think of two countries you would like to visit one day",
-  g2c2l2_card2: "Find plants native to the respective regions. Compare them to each other.",
-  g2c2l2_prompt: "Explain how they’ve adapted to their living conditions and benefited from them.",
+  g2c2l2_card1:
+    "Plants exist all over the world in many different conditions. Think of two countries you would like to visit one day.",
+  g2c2l2_card2:
+    "Find plants native to the respective regions. Compare them to each other.",
+  g2c2l2_prompt:
+    "Explain how they’ve adapted to their living conditions and benefited from them.",
 
-/*   
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
- still needs to be done, how to plants adapt to living conditions pt2
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-  g2c2l3_card1: " ", 
+  g2c2l3_card1:
+    "A plant community consists of different plants that grow in the same area with the same conditions for existence. There are both natural and artificial communities present in our habitat. ",
+  g2c2l3_card2:
+    "Go outside and identify both the many natural communities present, and artificial communities present.",
+  g2c2l3_card3:
+    "Examples of a natural community would be: \n- deserts \n- lakes \n- swamps ",
+  g2c2l3_card4:
+    "Examples of an artifical community would be: \n- fields \n- gardens \n- flower beds",
+  g2c2l3_prompt:
+    "List all the communities you found. Explain how they are helpful (or not) to the environment",
 
-  g2c2l4_card1: "A plant community consists of different plants that grow in the same area with the same conditions for existence. There are both natural and artificial communities present in our habitat. ",
-  g2c2l4_card2: "Go outside and identify both the many natural communities present, and artificial communities present.",
-  g2c2l4_card3: "Examples of a natural community would be: \n- deserts \n- lakes \n- swamps ",
-  g2c2l4_card4: "Examples of an artifical community would be: \n- fields \n- gardens \n- flower beds",
-  g2c2l4_prompt: "List all the communities you found. Explain how they are helpful (or not) to the environment",
+  g2c2l4_card1:
+    "Humans are always interacting with their environment. They will directly and indirectly affect plant community.",
+  g2c2l4_card2:
+    "Plants are very important to help clean the air from dust, dirty and harmful gasses. Humans have to make sure they keep plants in the best situation and most environmentally-sensible conditions.",
+  g2c2l4_card3:
+    "Research plant communities in your neighborhood that were directly affected by humans. Was it a positive or negtitive impact?",
+  g2c2l4_card4:
+    "Then, research communities in your neighborhood that were indirectly affected by humans. Visit one of these communities and record your observations.",
+  g2c2l4_prompt: "Upload all your reserach and observations",
 
-  g2c2l5_card1: "Humans are always interacting with their environment. They will directly and indirectly affect plant community.",
-  g2c2l5_card2: "Plants are very important to help clean the air from dust, dirty and harmful gasses. Humans have to make sure they keep plants in the best situation and most environmentally-sensible conditions.",
-  g2c2l5_card3: "Research plant communities in your neighborhood that were directly affected by humans. Was it a positive or negtitive impact?",
-  g2c2l5_card4: "Then, research communities in your neighborhood that were indirectly affected by humans. Visit one of these communities and record your observations.",
-  g2c2l5_prompt: "Upload all your reserach and observations",
+  g2c2l5_card1:
+    "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. ",
+  g2c2l5_card2:
+    "Research another countries Red Book and find a plant on their list that is not endangered here in Kazakhstan.",
+  g2c2l5_card3:
+    "Why is it that the plant is not endangered Kazakhstan but endangered in your researched country? ",
+  g2c2l5_prompt:
+    "Come up with some ideas to help your researched country save these plants",
 
-  g2c2l6_card1: "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. ",
-  g2c2l6_card2: "Research another countries Red Book and find a plant on their list that is not endangered here in Kazakhstan.",
-  g2c2l6_card3: "Why is it that the plant is not endangered Kazakhstan but endangered in your researched country? ",
-  g2c2l6_prompt: "Come up with some ideas to help your researched country save these plants",
+  g2c2l6_card1:
+    "Animals can be classified as either being an vertebrate or invertebrate.",
+  g2c2l6_card2: "Vertebrate means to have a backbone,",
+  g2c2l6_card3: "Therefore, invertebrate means to not have a backbone",
+  g2c2l6_card4:
+    "It’s time to go on a trip! Go outside and try to find and identify animals who are vertebrates or invertebrates.",
+  g2c2l6_prompt:
+    "Make a list of the animals that you find. Did you find more verterbates or invertibrates? \nExplain advantages and disadvanges of each. Don't forget to take pictures!",
 
-  /*   
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
- still needs to be done, red book of plants pt 2
- ~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
-  g2c2l7_card1:" ",
+  g2c2l7_card1:
+    "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
+  g2c2l7_card2:
+    "Make sure that this definitely doesn’t happen to an ecosystem near you! Research an ecosystem in your area.",
+  g2c2l7_prompt:
+    "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
 
-  g2c2l8_card1: "Animals can be classified as either being an vertebrate or invertebrate.",
-  g2c2l8_card2: "Vertebrate means to have a backbone,",
-  g2c2l8_card3: "Therefore, invertebrate means to not have a backbone",
-  g2c2l8_card4: "It’s time to go on a trip! Go outside and try to find and identify animals who are vertebrates or invertebrates.",
-  g2c2l8_prompt: "Make a list of the animals that you find. Did you find more verterbates or invertibrates? \nExplain advantages and disadvanges of each. Don't forget to take pictures!",
+  g2c2l8_card1:
+    "Animals, like humans, have relationships with each other (but not in a romantic way!)",
+  g2c2l8_card2:
+    "Animals have many different types of relationships with each other, one example is symbiosis.",
+  g2c2l8_card3:
+    "Recall from your lessons what a symbotic relationship looks like.",
+  g2c2l8_card4:
+    "Identify beneficial relationships between plants and plants, humans and humans, or animals and animals.",
+  g2c2l8_prompt:
+    "It doesn’t have to be a directly beneficial relationship, but as long it is a clear helping relationship. Record your observations.",
 
-  g2c2l9_card1: "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
-  g2c2l9_card2: "Make sure that this definitely doesn’t happen to an ecosystem near you! Research an ecosystem in your area.",
-  g2c2l9_prompt: "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
+  g2c2l9_card1:
+    "Animals can't only survive with animal only relationships, just like you can't survive with human only relationships. (Think of your pets!)",
+  g2c2l9_card2:
+    "Look around you and identify beneficial relationships between plants, animals, and humans. Think outside the box and come up with realtionships that your friends might not think of!",
+  g2c2l9_prompt:
+    "Record your observations and explain how these relationships are important for the environment.",
 
-  g2c2l10_card1: "Animals, like humans, have relationships with each other (but not in a romantic way!)",
-  g2c2l10_card2: "Animals have many different types of relationships with each other, one example is symbiosis.",
-  g2c2l10_card3: "Recall from your lessons what a symbotic relationship looks like.",
-  g2c2l10_card4: "Identify beneficial relationships between plants and plants, humans and humans, or animals and animals.",
-  g2c2l10_prompt: "It doesn’t have to be a directly beneficial relationship, but as long it is a clear helping relationship. Record your observations.",
+  g2c2l10_card1: "Habitat conditions are critical to an animal's survival.",
+  g2c2l10_card2: "Find the habitat of a popular animal near you.",
+  g2c2l10_prompt:
+    "Identify the habitat conditions that make it either suitable or unsuitable for this animal.",
 
-  g2c2l11_card1: "Animals can't only survive with animals only relationships, just like you can't survive with human only relationships. (Think of your pets!)",
-  g2c2l11_card2: "Look around you and identify beneficial relationships between plants, animals, and humans. Think outside the box and come up with realtionships that your friends might not think of!",
-  g2c2l11_prompt: "Record your observations and explain how these relationships are important for the environment.",
+  g2c2l11_card1: "Humans have made a significant impact on the environment.",
+  g2c2l11_card2:
+    "Unfortunately, we have all directly and indirectly caused a decrease in the number of animals.",
+  g2c2l11_card3: "Animals directly die from our pesticides and poisoning.",
+  g2c2l11_card4:
+    "Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
+  g2c2l11_prompt:
+    "Think of a way you can take care of one animal in your neighborhood.",
 
-  g2c2l12_card1: "Habitat conditions are critical to an animals survival.",
+  g2c2l12_card1:
+    "All the organs in our body work together to help us live our life as we know it.",
+  g2c2l12_card2: "Think of your favorite animal.",
+  g2c2l12_prompt:
+    "What part of that animal's body is the most useful for its survival?",
 
+  g2c2l13_card1:
+    "In order to be healthy, you must eat all different kinds of food.",
+  g2c2l13_card2: "This means fruits, vegetables, protein, dairy and much more!",
+  g2c2l13_card3:
+    "Choose a notebook to record your eating habits in for a week.",
+  g2c2l13_prompt: "How much food waste did you produce in a week?",
+
+  g2c2l14_card1: "Humans take in air through our nose and mouth.",
+  g2c2l14_card2:
+    "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible.",
+  g2c2l14_prompt:
+    "Can you think of an animal whose breathing is completely different from yours?",
+
+  g2c2l15_card1:
+    "Oxygen is transported through our body through blood vessels.",
+  g2c2l15_card2:
+    "There are many blood vessels such as arteries, capillaries, and veins.",
+  g2c2l15_card3:
+    "Blood is responsible for many things and one of them is warming the body.",
+  g2c2l15_card4:
+    "Animals which can regulate their temperature according to the surroundings are called wamr-blooded animals.",
+  g2c2l15_card5: "Choose a chold-blooded animal.",
+  g2c2l15_prompt:
+    "Do you think being cold-blooded is better in some situations?",
+
+  g2c2l16_card1: "The most valuable thing we have is our health.",
+  g2c2l16_card2:
+    "When we feel unhealthy or sick, we visit the doctor’s office.",
+  g2c2l16_card3:
+    "But did you know that there are many natural remedies or medicines to everyday health problems?",
+  g2c2l16_card4:
+    "Research herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
+  g2c2l16_prompt: "Go to the park, try to find some and upload a photo here!",
+
+  /* Chapter 3 */
+  g2c3l1_card1: "The most valuable thing we have is our health.",
+  g2c3l1_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",
+  g2c3l1_card3:
+    "But did you know that there are many natural remedies or medicines to everyday health problems?",
+  g2c3l1_card4:
+    "Research herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
+  g2c3l1_prompt:
+    "Go to the park, try to find some herbs and upload a photo here!",
 };
