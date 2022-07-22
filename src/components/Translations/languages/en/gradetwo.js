@@ -1,9 +1,10 @@
 export default {
   /* Chapter names */
-  iamanexplorer: "I am an explorer",
-  wildlife: "Wildlife",
+  iamanexplorer: "I am an researcher",
+  wildlife: "Live Nature",
   substances: "Substances and \ntheir properties",
-  physics: "Physics of nature",
+  physics: "Natural Resources",
+ 
 
   /* Chapter 1 lesson names */
   c1l1: "History of scientific discoveries",
