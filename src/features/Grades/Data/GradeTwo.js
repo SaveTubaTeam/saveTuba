@@ -18,7 +18,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 1 Lesson 1 
+        Grade 2 Chapter 1 Lesson 1 |||| NEEDS 2 MORE MINIGAMES
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -26,7 +26,7 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c1l1")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
           backgroundColor: "#87CB28",
-          minigames: {},
+          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c1l1_prompt")}</Translation>
@@ -44,6 +44,74 @@ export const Grade2 = {
                 ),
               },
             ],
+          },
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { //funny wording
+                  prompt:"Which one is an example of a discovery with its purpose?",
+                  answers: [
+                    {text: "A telescope to see the stars" },
+                    {text: "A lightbulb to warm the room" },
+                    {text: "An airplane to drive on the road" },
+                    {text: "A printing press to make fabric"}
+                  ],
+                  answer: "A telescope to see the stars",
+                },
+                {
+                  prompt: "After the telescope was invented, what were people able to see better?",
+                  answers: [
+                    { text: "Air" },
+                    { text: "Water" },
+                    { text: "Soil"},
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt: "Are all bacteria harmful?",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "In the 19th centry, what resource did people use to illuminate their houses?",
+                  answers: [
+                    { text: "Gas" },
+                    { text: "Water" },
+                    { text: "Coal" },
+                    { text: "Plants" },
+                  ],
+                  answer: "Gas",
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is the difference between an experiment and observations?",
+                    placeholder: "The difference between...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+
           },
         },
         /* 
@@ -86,7 +154,75 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c1l3")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/air-pollution.png"),
           backgroundColor: "#545454",
-          minigames: {},
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is a hypothesis and why is it important? Is it important to ask questions when conducting observations?",
+                    placeholder: "A hypothesis is imporant because...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { //funny wording
+                  prompt:"What is the best way to test your hypothesis?",
+                  answers: [
+                    {text: "Ask your friends if they think your hypothesis is correct" },
+                    {text: "By looking it up on the internet" },
+                    {text: "Creating an experiment and recording results" },
+                    {text: "Do nothing"}
+                  ],
+                  answer: "Creating an experiment and recording results.",
+                },
+                {
+                  prompt: "What is one of the first things you should do when you want to create an experiment?",
+                  answers: [
+                    { text: "Look at the conclusions" },
+                    { text: "Make observations" },
+                    { text: "Record results"},
+                    { text: "Collect all experimental materials" },
+                  ],
+                  answer: "Make observations",
+                },
+                {
+                  prompt: "What is a hypothesis?",
+                  answers: [
+                    { text: "A scientific proposition to explain a process in nature or society" },
+                    { text: "A scientific explanation to explain why you are correct" },
+                    { text: "A scientific explanation to explain how you are incorrect"},
+                    { text: "A scientific explanation to explain why you should practice sustainable actions"},
+                  ],
+                  answer: "A scientific proposition to explain a process in nature or society",
+                },
+                {
+                  prompt: "In the 19th centry, what resource did people use to illuminate their houses?",
+                  answers: [
+                    { text: "Gas" },
+                    { text: "Water" },
+                    { text: "Coal" },
+                    { text: "Plants" },
+                  ],
+                  answer: "Gas",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l3_prompt")}</Translation>
