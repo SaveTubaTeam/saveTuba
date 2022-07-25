@@ -150,7 +150,7 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson3", // part 1, getting supplies and creating hypothesis
+          navigation: "Lesson3", // planning and conducting an expirement
           title: <Translation>{(t) => t("gradetwo:c1l3")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/research.png"),
           backgroundColor: "#00C2CB",
@@ -236,6 +236,56 @@ export const Grade2 = {
                 },
               ],
             },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt: "Put the steps in order of how you would run an experiment.",
+              data: [
+                {
+                  text: "Determine the purpose of the study",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Find observations",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Draw conclusions",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Formulate a hypothesis",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+              ],
+            },
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Match the action to the correct step of the expirement",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Observation" },
+                  {name: "Hypothesis" },
+                  { name: "Conclusion" },
+                  { name: "Purpose of study"},
+                ],
+                options: [
+                  { title: "Elena sees that not all her plants.", name: "Observation" },
+                  { title: "Sergey is coming up with a way to explain a natural phenomenon he saw.", name: "Hypothesis" },
+                  { title: "Vladimir sees from his experiment that flowers cannot grow well in the smog.", name: "Conclusion" },
+                  { title: "Aleksandr wants to figure out the effects of trash on plant growth.", name: "Purpose of study"},
+                ],
+              },
+            },
           },
           mastery: {
             prompt: (
@@ -300,7 +350,133 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l1")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/leaf.png"),
           backgroundColor: "#008036",
-          minigames: {},
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "List 3 plants that you see everyday. Why do you think that you see them so often? \nThink about the environmental conditions they need to survive.",
+                    placeholder: "The plants I see everyday are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { //funny wording
+                  prompt:"Finish the hypothesis: 'If the plant will not recieve water, then...'",
+                  answers: [
+                    {text: "the plant will live." },
+                    {text: "the plant will not survive." },
+                    {text: "the plant will produce its own water." },
+                    {text: "the plant will grow very tall."}
+                  ],
+                  answer: "the plant will not survive.",
+                },
+                {
+                  prompt: "What do leaves do?",
+                  answers: [
+                    { text: "Release oxygen back into the air" },
+                    { text: "Absorb carbon dioxide and sunlight through small holes (stomata)" },
+                    { text: "Create sugars for the plant"},
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt: "Chlorophyll is the substance that helps the leaves capture sunlight and transform it into sugars for the plant, as well as giving the plants their green color.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Which of the following is a true statement:",
+                  answers: [
+                    { text: "A tree can release enough oxygen for a family of four to breathe within a year." },
+                    { text: "Driving a car for two hours uses the same abount of oxygen a tree produces in two years." },
+                    { text: "Chlorophyll is also found in algae and some bacteria." },
+                    { text: "All the above statements are true." },
+                  ],
+                  answer: "All the above statements are true.",
+                },
+                { 
+                  prompt: "Indoor plants can produce as much oxygen in the shade as some plants do in direct sunshine.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                    answer: "True",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Match the plant to its common name",
+                num: 3,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  {
+                    name: "Spider plant",
+                    image: require("../../../../assets/sorting/spider-plant.png"),
+                  },
+                  {
+                    name: "Gloxinia",
+                    image: require("../../../../assets/sorting/gloxinia.png"),
+                  },
+                  {
+                    name: "Snake plant",
+                    image: require("../../../../assets/sorting/snake-plant.png"),
+                  },
+                  {
+                    name: "Jade plant",
+                    image: require("../../../../assets/sorting/jade.png"),
+                  },
+                ],
+                options: [
+                  {
+                    title: "Spider plant",
+                    name: "Spider plant",
+                  },
+                  {
+                    title: "Gloxinia",
+                    name: "Gloxinia",
+                  },
+                  {
+                    title: "Snake plant",
+                    name: "Snake plant",
+                  },
+                  { title: "Jade plant", name: "Jade plant" },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
+            },
+            
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
@@ -327,11 +503,137 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson2", //how do plants adapt to living conditions pt 1
+          navigation: "Lesson2", //how do plants adapt to living conditions 
           title: <Translation>{(t) => t("gradetwo:c2l2")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/wilted.png"),
           backgroundColor: "#7ED957",
-          minigames: {},
+          minigames: {
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the plant adaptations to the element they like",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "Hydrophytes",
+                  image: require("../../../../assets/memory/rain.png"),
+                },
+                {
+                  name: "Hydrophytes",
+                },
+                {
+                  type: "image",
+                  name: "Cryophytes",
+                  image: require("../../../../assets/memory/snowflake.png"),
+                },
+                {
+                  name: "Cryophytes",
+                },
+                {
+                  type: "image",
+                  name: "Thermo-\nphiles",
+                  image: require("../../../../assets/memory/temperature.png"),
+                },
+                {
+                  name: "Thermo-\nphiles",
+                },
+                {
+                  type: "image",
+                  name: "Heliophytes",
+                  image: require("../../../../assets/memory/sunshine.png"),
+                },
+                {
+                  name: "Heliophytes",
+                },
+                
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt."
+                    + " What are some human-made adaptations that help us, but hurt plants? ",
+                    placeholder: "Some human-made adaptions...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { 
+                  prompt:"What happens when a plant recieves too much heat?",
+                  answers: [
+                    {text: "The plants grow and bloom more quickly than usual" },
+                    {text: "The leaves are not their normal color" },
+                    {text: "The plant looses a lot of moisture" },
+                    {text: "All the above"}
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt: "Chlorophyll die if the plant recieves too much direct sunlight.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures\n"
+                  + "before they begin to sprout?",
+                  answers: [
+                    { text: "Bulbs and sprouts" },
+                    { text: "Flowers and herbs" },
+                    { text: "Trees and shrubs"}
+                  ],
+                  answer: "Bulbs and sprouts",
+                },
+                {
+                  prompt: "What does it look like when plants have too much light?",
+                  answers: [
+                    { text: "They bloom more and have more leaflets" },
+                    { text: "The leaves turn away from the sun" },
+                    { text: "They spread their roots our more under the soil" },
+                    { text: "More chlorophyll is produced in the leaves to protect it" },
+                  ],
+                  answer: "The leaves turn away from the sun",
+                },
+                { 
+                  prompt: "Plants can grow in 0\u00B0C and below type temperatures",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight"
+                + "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?",
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l2_prompt")}</Translation>
