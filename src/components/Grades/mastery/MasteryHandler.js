@@ -50,6 +50,7 @@ const SubmitButton = styled(Button)`
   background-color: #748816;
   align-self: center;
   border-radius: 20px;
+  margin-bottom: 10px;
 `;
 
 const MasteryHandler = ({

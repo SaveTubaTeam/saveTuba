@@ -115,7 +115,7 @@ export default {
   /* CHAPTER 4 */
 
   g1c4l1_card1: "The sun provides light and heats the Earth.",
-  g1c4l2_card2:
+  g1c4l1_card2:
     "However, like anything, nature should be kept in balance. There are balancing factors to neutralize the Sun’s tremendous amount of heat.",
   g1c4l1_prompt:
     "Understand why we need sunscreen and explain how Earth’s ecosystems have their own built-in sunscreen.",
