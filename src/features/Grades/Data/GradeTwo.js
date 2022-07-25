@@ -26,7 +26,7 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c1l1")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
           backgroundColor: "#87CB28",
-          
+
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c1l1_prompt")}</Translation>
@@ -53,36 +53,37 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { //funny wording
-                  prompt:"Which one is an example of a discovery with its purpose?",
+                {
+                  //funny wording
+                  prompt:
+                    "Which one is an example of a discovery with its purpose?",
                   answers: [
-                    {text: "A telescope to see the stars" },
-                    {text: "A lightbulb to warm the room" },
-                    {text: "An airplane to drive on the road" },
-                    {text: "A printing press to make fabric"}
+                    { text: "A telescope to see the stars" },
+                    { text: "A lightbulb to warm the room" },
+                    { text: "An airplane to drive on the road" },
+                    { text: "A printing press to make fabric" },
                   ],
                   answer: "A telescope to see the stars",
                 },
                 {
-                  prompt: "After the telescope was invented, what were people able to see better?",
+                  prompt:
+                    "After the telescope was invented, what were people able to see better?",
                   answers: [
                     { text: "Air" },
                     { text: "Water" },
-                    { text: "Soil"},
+                    { text: "Soil" },
                     { text: "All the above" },
                   ],
                   answer: "All the above",
                 },
                 {
                   prompt: "Are all bacteria harmful?",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "False",
                 },
                 {
-                  prompt: "In the 19th centry, what resource did people use to illuminate their houses?",
+                  prompt:
+                    "In the 19th centry, what resource did people use to illuminate their houses?",
                   answers: [
                     { text: "Gas" },
                     { text: "Water" },
@@ -111,7 +112,6 @@ export const Grade2 = {
                 ],
               },
             },
-
           },
         },
         /* 
@@ -152,8 +152,8 @@ export const Grade2 = {
         {
           navigation: "Lesson3", // part 1, getting supplies and creating hypothesis
           title: <Translation>{(t) => t("gradetwo:c1l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/air-pollution.png"),
-          backgroundColor: "#545454",
+          thumbnail: require("../../../../assets/lesson-icons/research.png"),
+          backgroundColor: "#00C2CB",
           minigames: {
             openresponse: {
               navigation: "Image Boom",
@@ -180,22 +180,26 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { //funny wording
-                  prompt:"What is the best way to test your hypothesis?",
+                {
+                  //funny wording
+                  prompt: "What is the best way to test your hypothesis?",
                   answers: [
-                    {text: "Ask your friends if they think your hypothesis is correct" },
-                    {text: "By looking it up on the internet" },
-                    {text: "Creating an experiment and recording results" },
-                    {text: "Do nothing"}
+                    {
+                      text: "Ask your friends if they think your hypothesis is correct",
+                    },
+                    { text: "By looking it up on the internet" },
+                    { text: "Creating an experiment and recording results" },
+                    { text: "Do nothing" },
                   ],
                   answer: "Creating an experiment and recording results.",
                 },
                 {
-                  prompt: "What is one of the first things you should do when you want to create an experiment?",
+                  prompt:
+                    "What is one of the first things you should do when you want to create an experiment?",
                   answers: [
                     { text: "Look at the conclusions" },
                     { text: "Make observations" },
-                    { text: "Record results"},
+                    { text: "Record results" },
                     { text: "Collect all experimental materials" },
                   ],
                   answer: "Make observations",
@@ -203,15 +207,25 @@ export const Grade2 = {
                 {
                   prompt: "What is a hypothesis?",
                   answers: [
-                    { text: "A scientific proposition to explain a process in nature or society" },
-                    { text: "A scientific explanation to explain why you are correct" },
-                    { text: "A scientific explanation to explain how you are incorrect"},
-                    { text: "A scientific explanation to explain why you should practice sustainable actions"},
+                    {
+                      text: "A scientific proposition to explain a process in nature or society",
+                    },
+                    {
+                      text: "A scientific explanation to explain why you are correct",
+                    },
+                    {
+                      text: "A scientific explanation to explain how you are incorrect",
+                    },
+                    {
+                      text: "A scientific explanation to explain why you should practice sustainable actions",
+                    },
                   ],
-                  answer: "A scientific proposition to explain a process in nature or society",
+                  answer:
+                    "A scientific proposition to explain a process in nature or society",
                 },
                 {
-                  prompt: "In the 19th centry, what resource did people use to illuminate their houses?",
+                  prompt:
+                    "In the 19th centry, what resource did people use to illuminate their houses?",
                   answers: [
                     { text: "Gas" },
                     { text: "Water" },
@@ -419,7 +433,6 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant-hand.png"),
               },
             ],
           },
@@ -653,25 +666,23 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/water-pollution.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/whale.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
             ],
           },
@@ -696,13 +707,13 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/heart.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/frog.png"),
               },
             ],
           },
@@ -727,19 +738,18 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l13_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/fruits.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l13_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/broccoli.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l13_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
             ],
           },
@@ -764,13 +774,13 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l14_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/breathing.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l14_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/nose.png"),
               },
             ],
           },
@@ -795,31 +805,28 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/blood-vessel.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/blood.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card5")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
             ],
           },
@@ -844,25 +851,24 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/heart-rate.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/doctor.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/rosemary.png"),
               },
             ],
           },
@@ -898,25 +904,30 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c3l1_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/pets.png"),
+                image: require("../../../../assets/mastery/state-of-matter.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c3l1_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c3l1_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/assessment.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
+                image: require("../../../../assets/mastery/glass-of-water.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/raisins.png"),
               },
             ],
           },
@@ -933,6 +944,30 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/air.png"),
           backgroundColor: "#C85004",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/rhino.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l2_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l2_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/contamination.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -945,6 +980,53 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/candle.png"),
           backgroundColor: "#9DCD5A",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card1")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/candle.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/spy-kid.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/colorant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/candle-lit.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l3_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/look.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -957,6 +1039,31 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/duck.png"),
           backgroundColor: "#98DFEC",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l4_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/water.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/watering-plants.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l4_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/desert.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -969,6 +1076,31 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/water-source.png"),
           backgroundColor: "#37B5FF",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l5_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l5_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/planet-earth.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l5_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/summer.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l5_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/river.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -981,6 +1113,36 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/water-bottle.png"),
           backgroundColor: "#F27B21",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l6_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l6_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/drink-water.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l6_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/brainstorming.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l6_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/studying.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l6_card4")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -993,6 +1155,30 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/water-filter.png"),
           backgroundColor: "#6C3F14",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l7_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l7_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/drink-water.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l7_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/test.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l7_card3")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1005,6 +1191,47 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil.png"),
           backgroundColor: "#E39650",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l8_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l8_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/planting.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l8_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l8_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/sweet-potato.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l8_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/glass-of-water.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l8_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l8_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/seed.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1017,6 +1244,47 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
           backgroundColor: "#9DCD5A",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l9_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l9_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/soil-plant.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l9_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/jar.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l9_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/dirt.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l9_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l9_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l9_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/soil.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1029,6 +1297,48 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
           backgroundColor: "#F9A949",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l10_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l10_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/crops.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l10_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l10_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pots.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l10_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/kidney.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l10_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/watering-plants.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l10_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/seed.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1041,6 +1351,47 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
           backgroundColor: "#76B9F0",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l11_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l11_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/soil-scoop.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l11_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l11_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/three-jars.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l11_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/grass.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l11_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l11_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/soil-layers.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1053,6 +1404,66 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth.png"),
           backgroundColor: "#49326B",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l12_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/astronaut.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/universe.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/drawing.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/thesun.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/pencil-and-ruler.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/mercury.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card8")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/venus.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l12_card9")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/earth.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1065,6 +1476,53 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
           backgroundColor: "#02084B",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l13_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card1")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/superhero.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/angry.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/glove.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/healing-strip.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card6")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l13_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/water.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1077,6 +1535,42 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l14_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/solar-system.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l14_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/moon.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l14_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/orbit.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l14_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l14_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/orbits.png"),
+              },
+            ],
+          },
         },
       ],
     },

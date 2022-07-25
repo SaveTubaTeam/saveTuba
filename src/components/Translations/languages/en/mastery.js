@@ -383,8 +383,8 @@ export default {
   g2c2l15_card3:
     "Blood is responsible for many things and one of them is warming the body.",
   g2c2l15_card4:
-    "Animals which can regulate their temperature according to the surroundings are called wamr-blooded animals.",
-  g2c2l15_card5: "Choose a chold-blooded animal.",
+    "Animals which can regulate their temperature according to the surroundings are called warm-blooded animals.",
+  g2c2l15_card5: "Choose a cold-blooded animal.",
   g2c2l15_prompt:
     "Do you think being cold-blooded is better in some situations?",
 
@@ -398,12 +398,174 @@ export default {
   g2c2l16_prompt: "Go to the park, try to find some and upload a photo here!",
 
   /* Chapter 3 */
-  g2c3l1_card1: "The most valuable thing we have is our health.",
-  g2c3l1_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",
+
+  g2c3l1_card1:
+    "There are three different states of substances. They can be in solid, liquid, or gas form.",
+  g2c3l1_card2:
+    "Under the right circumstances, substances can change from one state to another.",
   g2c3l1_card3:
-    "But did you know that there are many natural remedies or medicines to everyday health problems?",
-  g2c3l1_card4:
-    "Research herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
-  g2c3l1_prompt:
-    "Go to the park, try to find some herbs and upload a photo here!",
+    "Let's conduct a fun experiment! You will need a glass, some raisins and a can of soda.",
+  g2c3l1_card4: "Pour the soda into the glass so it is about half full.",
+  g2c3l1_card5:
+    "Pour the raisins in and watch what happens. Why are the raisins dancing?",
+  g2c3l1_prompt: "Take a photo of your dancing raisins and upload it below!",
+
+  g2c3l2_card1:
+    "The air is very important for the life of every living thing on Earth.",
+  g2c3l2_card2: "The air we breathe is a mixture of several different gasses.",
+  g2c3l2_card3:
+    "Imagine, though, that we are not able to inhabit Earth anymore.",
+  g2c3l2_prompt:
+    "What other planet has the best air composition to serve humans?",
+
+  g2c3l3_card1:
+    "The air consists of many gasses such as oxygen, nitrogen, carbon dioxide, etc.",
+  g2c3l3_card2:
+    "Have you done the candle experiment from this lesson in your book? Let's take it a step further!",
+  g2c3l3_card3:
+    "You will need a bowl, some play dough, a candle, food coloring, a jar, and some water.",
+  g2c3l3_card4:
+    "Use the play dough to hold the candle in place in the middle of the bowl.",
+  g2c3l3_card5:
+    "Add some food coloring to the water and pour it into the bowl, just enough so that the bottom is covered.",
+  g2c3l3_card6:
+    "Ask an adult to light the candle for you and put a jar over it.",
+  g2c3l3_card7:
+    "Watch what happens after a couple of seconds. Does the candle remain lit? What happened to the colored water?",
+  g2c3l3_prompt: "Upload a photo of your experiment!",
+
+  g2c3l4_card1:
+    "Humans, plants, and animals all have a great amount of water within their bodies.",
+  g2c3l4_card2:
+    "No single living organism on Earth can survive without water either.",
+  g2c3l4_card3:
+    "Research different animals and how much or how little water they need in order to survive.",
+  g2c3l4_prompt: "Who needs the least water and who needs the most?",
+
+  g2c3l5_card1:
+    "Although we spend most of our lives on land, the Earth is mostly occupied by water.",
+  g2c3l5_card2: "Bodies of water range from oceans, rivers, lakes, and seas.",
+  g2c3l5_card3:
+    "Do you know how we source water from rivers and seas to our homes?",
+  g2c3l5_prompt: "Research this process and explain it below.",
+
+  g2c3l6_card1:
+    "Drinking water is not infinite. Therefore, it is in our best interests to conserve as much water as possible.",
+  g2c3l6_card2: "Brainstorm different ways you can reduce your water usage.",
+  g2c3l6_card3: "Record approximately how much water you use up in a day.",
+  g2c3l6_card4:
+    "The next day try to conserve as much water as you can using the techniques you thought of above, and record the difference.",
+  g2c3l6_prompt:
+    "How much water did you save and how can you conserve even more?",
+
+  g2c3l7_card1:
+    "Although water is found almost everywhere, we can’t just drink it from the source.",
+  g2c3l7_card2:
+    "Water has to be rid of all contaminants and purified before we use it.",
+  g2c3l7_card3:
+    "There are many ways to purify water, even easy ones which can be done in your house! ",
+  g2c3l7_prompt: "Research one easy way to purify water and outline it below.",
+
+  g2c3l8_card1:
+    "Soil is very important and without it, most life on Earth could not survive. However, are there any plants that can grow without soil?",
+  g2c3l8_card2:
+    "Let's investigate! You will need three toothpicks, a sweet potato, a jar and some water.",
+  g2c3l8_card3:
+    "Stick the three toothpicks into the larger end of the sweet potato so that all the toothpicks point in different directions.",
+  g2c3l8_card4: "Fill a glass about half-way through with water.",
+  g2c3l8_card5:
+    "Insert the sweet potato so that the toothpicks rest on the edge of the jar and hold it up in the water.",
+  g2c3l8_card6:
+    "Put the jar in a sunny spot for a few days and observe any changes. Is there a vine growing?",
+  g2c3l8_prompt: "Upload a photo of your sweet potato after a week!",
+
+  g2c3l9_card1:
+    "You may know that soil consists of different components and layers, but do you want to see for yourself?",
+  g2c3l9_card2:
+    "You will need a jar with a lid, some water and some dirt from outside.",
+  g2c3l9_card3: "Fill the jar half-way through with dirt.",
+  g2c3l9_card4: "Add enough water to fill up the rest of the jar.",
+  g2c3l9_card5:
+    "Put the lid on and tighten it very hard. Now shake the jar as fast as you can!",
+  g2c3l9_card6:
+    "Put the jar down and watch as the water and the soil settle. Do you notice the soil has layers?",
+  g2c3l9_prompt:
+    "How many layers are there? Which layer is made of the biggest particles? Which is made of the smallest?",
+
+  g2c3l10_card1:
+    "Soil properties and quality are vital aspects of a plant's health. Let's see if this is really true.",
+  g2c3l10_card2:
+    "Gather some bean seeds, two flower pots, soil from two different places in your neighborhood and two sticks.",
+  g2c3l10_card3:
+    "Fill the flowerpots with the different soil and label them so you know which one is which.",
+  g2c3l10_card4:
+    "Insert two or three bean seeds in each pot. Put a stick or stake in both pots so that the beans can climb.",
+  g2c3l10_card5:
+    "Water the pots every so often. You want the soil to be moist, but not soggy.",
+  g2c3l10_card6:
+    "Notice which beans sprout first. Measure the height of the plants every day for a week. Record your observations.",
+  g2c3l10_prompt:
+    "Based on your notes, is one sail better or worse for the plant than the other?",
+
+  g2c3l11_card1:
+    "Different soils have different compositions, fertility, nutrient retention and other properties.",
+  g2c3l11_card2:
+    "Do you remember the experiment from two lessons ago when you observed soil layers in a jar with water?",
+  g2c3l11_card3:
+    "Let's expand upon that experiment by using three jars with three different soils.",
+  g2c3l11_card4:
+    "Take a walk around your neighborhood and try to find soil which differ from one another in color, density or texture.",
+  g2c3l11_card5:
+    "Just like last time, fill up the jars halfway with dirt, halfway with water. Put the lid on and shake vigorously!",
+  g2c3l11_card6:
+    "After the dirt has settled in all three jars, what do you see? Do all three jars have the same number of layers? Is their color the same?",
+  g2c3l11_prompt: "Upload a photo of the three jars with soil!",
+
+  g2c3l12_card1:
+    "Earth is the planet we inhabit and it measures more than 4000 miles in diameter!",
+  g2c3l12_card2:
+    "However, relative to the solar system or the Milky Way, Earth is tiny.",
+  g2c3l12_card3:
+    "To put things into perspective, grab a sheet of paper, a pencil and get ready to draw the solar system!",
+  g2c3l12_card4:
+    "Draw the Sun in the middle of one edge of paper. Let this be our starting point and mark 0cm.",
+  g2c3l12_card5:
+    "The distance between the Sun and its nearest planet, Mercury, is 33 million miles or 0.4 astronomical units.",
+  g2c3l12_card6:
+    "To scale things down so they fit on your piece of paper, multiply the distance from the sun in astronomical units by 10 and draw that distance in centimeters.",
+  g2c3l12_card7:
+    "For example, draw Mercury 4cm away from the Sun because the actual distance is 0.4 AU.",
+  g2c3l12_card8:
+    "The next planet is Venus and it is 0.7 AU away from the Sun. Draw it at the 7cm mark.",
+  g2c3l12_card9:
+    "Earth is 1 AU from the Sun so you will draw our planet at the 10cm mark.",
+  g2c3l12_card9:
+    "Can you keep going for the other planets in the solar system? When will you run out of paper?",
+  g2c3l12_prompt: "Upload a photo of your solar system on paper!",
+
+  g2c3l13_card1:
+    "Space exploration has allowed us to learn about other planets and their properties.",
+  g2c3l13_card2:
+    "Whenever an astronaut visits space, we learn something new about our universe.",
+  g2c3l13_card3:
+    "Thus, it is important to keep astronauts safe. What happens if they run into an issue while they are on a mission?",
+  g2c3l13_card4:
+    "Grab a rubber glove and some water. Puncture a small hole in the glove.",
+  g2c3l13_card5:
+    "Brainstorm different ways to repair the hole and make sure the astronaut's glove doesn't allow air in.",
+  g2c3l13_card6:
+    "One way you can test your solution is to fill the glove up with water.",
+  g2c3l13_card7:
+    "If the glove leaks that means air can get in and you haven't fixed the problem.",
+  g2c3l13_prompt:
+    "Explain what methods you have tried. What worked and what didn't?",
+
+  g2c3l14_card1:
+    "All of the planets in the solar system revolve around the Sun.",
+  g2c3l14_card2: "Earth's satellite, the Moon, revolves around the Earth.",
+  g2c3l14_card3:
+    "The revolution around a celestial body or the Earth is called an orbit.",
+  g2c3l14_card4: "Research other planets and their satellites.",
+  g2c3l14_card5: "Which one has the shortest orbit? How about the longest?",
+  g2c3l14_prompt: "Report your findings below.",
 };
