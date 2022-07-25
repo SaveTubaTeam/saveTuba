@@ -1641,8 +1641,7 @@ export const Grade1 = {
               numAnswers: 7,
               content: [
                 {
-                  prompt:
-                    "Everyone has a carbon footprint",
+                  prompt: "Everyone has a carbon footprint",
                   answers: [
                     {
                       text: "True",
@@ -1650,12 +1649,12 @@ export const Grade1 = {
                     {
                       text: "False",
                     },
-                
                   ],
                   answer: "True",
                 },
                 {
-                  prompt: "Which is not going to help reduce our carbon footprint?",
+                  prompt:
+                    "Which is not going to help reduce our carbon footprint?",
                   answers: [
                     {
                       text: "Eating local food",
@@ -1667,7 +1666,6 @@ export const Grade1 = {
                       text: "Driving to school",
                     },
                     { text: "Planting trees" },
-
                   ],
                   answer: "Driving to school",
                 },
@@ -1681,7 +1679,7 @@ export const Grade1 = {
                     {
                       text: "Oxygen",
                     },
-                    { text: "Diesel"},
+                    { text: "Diesel" },
                   ],
                   answer: "Carbon Dioxide",
                 },
@@ -1700,19 +1698,19 @@ export const Grade1 = {
                     {
                       text: "Carbon Dioxide",
                     },
-                   
                   ],
                   answer: "Carbon Dioxide",
                 },
                 {
-                  prompt: "Which one of these does not add CO2 into the atmosphere?",
+                  prompt:
+                    "Which one of these does not add CO2 into the atmosphere?",
                   answers: [
                     { text: "Cooking with gas" },
                     { text: "Planting trees" },
                     { text: "Burning wood" },
                     { text: "Riding in a bus" },
                   ],
-                  answer: "Planting trees"
+                  answer: "Planting trees",
                 },
                 {
                   prompt: "What is CO2?",
@@ -1722,15 +1720,12 @@ export const Grade1 = {
                     { text: "Carbon Dioxide" },
                     { text: "A type of fizzy drink" },
                   ],
-                  answer: "Carbon Dioxide"
+                  answer: "Carbon Dioxide",
                 },
                 {
                   prompt: "While being cooled down, the air _____.",
-                  answers: [
-                    { text: "Expands" },
-                    { text: "Contracts" },
-                  ],
-                  answer: "Contracts"
+                  answers: [{ text: "Expands" }, { text: "Contracts" }],
+                  answer: "Contracts",
                 },
               ],
             },
@@ -1761,7 +1756,7 @@ export const Grade1 = {
                 "Take and upload three pictures of different things that pollute the air in the city. ",
             },
 
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
@@ -1769,23 +1764,19 @@ export const Grade1 = {
                 prompt: "Sort the causes of air pollution",
                 num: 6,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Anthropogenic" },
-                  {name: "Natural" },
-                ],
+                categories: [{ name: "Anthropogenic" }, { name: "Natural" }],
                 options: [
                   { title: "Factories", name: "Anthropogenic" },
                   { title: "Wildfires", name: "Natural" },
                   { title: "Cars", name: "Anthropogenic" },
-                  { title: "Planes", name: "Anthropogenic"},
-                  { title: "Cigarette Smoke", name: "Anthropogenic"},
-                  { title: "Volcanoes", name: "Natural"},
-                  { title: "Aerosol Cans", name: "Anthropogenic"},
+                  { title: "Planes", name: "Anthropogenic" },
+                  { title: "Cigarette Smoke", name: "Anthropogenic" },
+                  { title: "Volcanoes", name: "Natural" },
+                  { title: "Aerosol Cans", name: "Anthropogenic" },
                 ],
               },
             },
-          }
-
+          },
         },
 
         /* 
@@ -1818,7 +1809,8 @@ export const Grade1 = {
             ],
           },
           minigames: {
-            quiz: { //not able to scroll down to see options?
+            quiz: {
+              //not able to scroll down to see options?
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
@@ -1829,29 +1821,31 @@ export const Grade1 = {
                   prompt:
                     "What happens to the temperature if more greenhouse gases are released into the atmosphere?",
                   answers: [
-                    {text: "Temperature increases" },
-                    {text: "Temperature decreases"},
+                    { text: "Temperature increases" },
+                    { text: "Temperature decreases" },
                   ],
                   answer: "Temperature increases",
                 },
                 {
-                  prompt: "Which of the following activities contributes the most to carbon emissions globally?",
+                  prompt:
+                    "Which of the following activities contributes the most to carbon emissions globally?",
                   answers: [
                     { text: "Deforestation" },
                     { text: "Agriculture" },
-                    { text: "Burning fossil fuels"},
+                    { text: "Burning fossil fuels" },
                     { text: "Respiration" },
                   ],
                   answer: "Burning fossil fuels",
                 },
                 {
-                  prompt: //cant scroll down on this question
+                  //cant scroll down on this question
+                  prompt:
                     "Increased carbon dioxide may cause global warming by ________.",
                   answers: [
-                    { text: "allowing more sunlight into the atmosphere."},
+                    { text: "allowing more sunlight into the atmosphere." },
                     { text: "reflecting more sunlight from clouds." },
-                    { text: "reducing the amount of oxygen in the air."},
-                    { text: "trapping more heat in the atmosphere.",}
+                    { text: "reducing the amount of oxygen in the air." },
+                    { text: "trapping more heat in the atmosphere." },
                   ],
                   answer: "trapping more heat in the atmosphere.",
                 },
@@ -1868,11 +1862,13 @@ export const Grade1 = {
                 {
                   prompt: "What is the greenhouse effect?",
                   answers: [
-                    { text: "The warming of a planet due to trapped radiation." },
+                    {
+                      text: "The warming of a planet due to trapped radiation.",
+                    },
                     { text: "The cooling of Earth due to air pollution." },
                     { text: "The heating of a solid, such as a rock." },
                   ],
-                  answer: "The warming of a planet due to trapped radiation."
+                  answer: "The warming of a planet due to trapped radiation.",
                 },
               ],
             },
@@ -1902,38 +1898,58 @@ export const Grade1 = {
               prompt:
                 "Upload a picture of the factory that causes the most air pollution in the area",
             },
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Determine how each action reduces, resues, or recycles",
+                prompt:
+                  "Determine how each action reduces, resues, or recycles",
                 num: 6,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
                   { name: "Reduce" },
-                  {name: "Reuse" },
-                  { name: "Recycle"}
+                  { name: "Reuse" },
+                  { name: "Recycle" },
                 ],
                 options: [
-                  { title: "Refill a water bottle with water from home instead of buying a new one.", name: "Reuse" },
+                  {
+                    title:
+                      "Refill a water bottle with water from home instead of buying a new one.",
+                    name: "Reuse",
+                  },
                   { title: "Separating glass", name: "Recycle" },
-                  { title: "Update your computer rather than throwing it out and getting a replacement", name: "Reuse" },
-                  { title: "Only buy what you need", name: "Reduce"},
-                  { title: "Separating aluminum", name: "Recycle"},
-                  { title: "Look for items that you can reuse instead of buying ", name: "Reduce"},
-                  { title: "Buy in bulk", name: "Reduce"},
-                  { title: "Separating cardboard to put in recycling facility", name: "Recycle"},
-                  { title: "Separating lead batteries", name: "Recycle"},
-                  { title: "Ditch plastic bags and choose reusable, environmentally-friendly bags instead", name: "Reuse"},
-                  { title: "Choose products with less packaging", name: "Reduce"},
+                  {
+                    title:
+                      "Update your computer rather than throwing it out and getting a replacement",
+                    name: "Reuse",
+                  },
+                  { title: "Only buy what you need", name: "Reduce" },
+                  { title: "Separating aluminum", name: "Recycle" },
+                  {
+                    title:
+                      "Look for items that you can reuse instead of buying ",
+                    name: "Reduce",
+                  },
+                  { title: "Buy in bulk", name: "Reduce" },
+                  {
+                    title: "Separating cardboard to put in recycling facility",
+                    name: "Recycle",
+                  },
+                  { title: "Separating lead batteries", name: "Recycle" },
+                  {
+                    title:
+                      "Ditch plastic bags and choose reusable, environmentally-friendly bags instead",
+                    name: "Reuse",
+                  },
+                  {
+                    title: "Choose products with less packaging",
+                    name: "Reduce",
+                  },
                 ],
               },
             },
-
-
           },
-
         },
 
         /* 
@@ -1966,7 +1982,8 @@ export const Grade1 = {
             ],
           },
           minigames: {
-            quiz: {  //ONLY DOES THE FIRST 5 QUESTIONS
+            quiz: {
+              //ONLY DOES THE FIRST 5 QUESTIONS
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
@@ -1974,11 +1991,11 @@ export const Grade1 = {
               numAnswers: 12,
               content: [
                 {
-                  prompt: "What does the world \"pollute\" mean?" ,
+                  prompt: 'What does the world "pollute" mean?',
                   answers: [
-                    {text: "To make something clean." },
-                    {text: "To make something cheaper."},
-                    { text: "To make something dirty."},
+                    { text: "To make something clean." },
+                    { text: "To make something cheaper." },
+                    { text: "To make something dirty." },
                   ],
                   answer: "To make something dirty.",
                 },
@@ -1987,37 +2004,37 @@ export const Grade1 = {
                   answers: [
                     { text: "1%" },
                     { text: "5%" },
-                    { text: "10%"},
+                    { text: "10%" },
                     { text: "20%" },
                   ],
                   answer: "1%",
                 },
                 {
-                  prompt: "Which is NOT a major source of water pollution in the modern world?",
+                  prompt:
+                    "Which is NOT a major source of water pollution in the modern world?",
                   answers: [
-                    { text: "Animal feces and algae"},
+                    { text: "Animal feces and algae" },
                     { text: "Agriculture industry chemicals" },
-                    { text: "Industrial chemical toxins"},
-                    { text: "Municipal waste (human & other)",}
+                    { text: "Industrial chemical toxins" },
+                    { text: "Municipal waste (human & other)" },
                   ],
                   answer: "Animal feces and algae",
                 },
                 {
-                  prompt: "Water pollution occurs when:", //last question, doest go into the rest of them 
+                  prompt: "Water pollution occurs when:", //last question, doest go into the rest of them
                   answers: [
                     { text: "Harmful substances enter a water supply." },
-                    { text: "Industries dispose of waste safely and correctly." },
+                    {
+                      text: "Industries dispose of waste safely and correctly.",
+                    },
                     { text: "None of the above" },
                   ],
                   answer: "Harmful substances enter a water supply.",
                 },
                 {
                   prompt: "There is nothing we can do to stop water pollution",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False"
+                  answers: [{ text: "True" }, { text: "False" }],
+                  answer: "False",
                 },
                 {
                   prompt: "We can prevent water pollution by:",
@@ -2027,7 +2044,7 @@ export const Grade1 = {
                     { text: "Cleaning up after your animals" },
                     { text: "All of the above" },
                   ],
-                  answer: "All of the above"
+                  answer: "All of the above",
                 },
                 {
                   prompt: "How any forms does water come in?",
@@ -2046,7 +2063,7 @@ export const Grade1 = {
                     { text: "Gas that we use in furnaces or ovens." },
                     { text: "Any form of water that falls from the sky." },
                   ],
-                  answer: "Any form of water that falls from the sky."
+                  answer: "Any form of water that falls from the sky.",
                 },
                 {
                   prompt: "Which example is a form of precipitation?",
@@ -2061,15 +2078,19 @@ export const Grade1 = {
                 {
                   prompt: "What is the water cycle?",
                   answers: [
-                    { text: "The 3 forms of water (solid, liquid, gas)"},
-                    { text: "The movement of water on, above, or below the surface of the Earth"},
+                    { text: "The 3 forms of water (solid, liquid, gas)" },
+                    {
+                      text: "The movement of water on, above, or below the surface of the Earth",
+                    },
                     { text: "When water melts" },
                     { text: "When clouds form" },
                   ],
-                  answer: "The movement of wate on, above, or below the surface of the Earth",
+                  answer:
+                    "The movement of wate on, above, or below the surface of the Earth",
                 },
                 {
-                  prompt: "Evaporation happens when the sun _____ water and turns it into vapor.",
+                  prompt:
+                    "Evaporation happens when the sun _____ water and turns it into vapor.",
                   answers: [
                     { text: "cools" },
                     { text: "heats up" },
@@ -2086,11 +2107,12 @@ export const Grade1 = {
                     { text: "ice" },
                     { text: "air" },
                   ],
-                  answer: 'water vapor',
-                }, 
+                  answer: "water vapor",
+                },
               ],
             },
-            openresponse: { // put in dirty water pic
+            openresponse: {
+              // put in dirty water pic
               navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
@@ -2108,12 +2130,12 @@ export const Grade1 = {
                 ],
               },
             },
-            reorder: { //background image ? or nah
+            reorder: {
+              //background image ? or nah
               navigation: "Reorder",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
-              prompt:
-                "Put the oceans from the smallest to the largest",
+              prompt: "Put the oceans from the smallest to the largest",
               data: [
                 {
                   text: "Pacific",
@@ -2183,32 +2205,51 @@ export const Grade1 = {
             ],
           },
           minigames: {
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Determine which resrouce category the picture corresponds to ",
-                
+                prompt:
+                  "Determine which resrouce category the picture corresponds to ",
+
                 num: 9,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Natural" },
-                  {name: "Anthropogenic" },
-                 
-                ],
-                options: [ //not done, want to change title to image
-                  { image: require("../../../../assets/sorting/sun.png") ,name: "Natural" },
+                categories: [{ name: "Natural" }, { name: "Anthropogenic" }],
+                options: [
+                  //not done, want to change title to image
+                  {
+                    image: require("../../../../assets/sorting/sun.png"),
+                    name: "Natural",
+                  },
                   { title: "Separating glass", name: "Recycle" },
-                  { title: "Update your computer rather than throwing it out and getting a replacement", name: "Reuse" },
-                  { title: "Only buy what you need", name: "Reduce"},
-                  { title: "Separating aluminum", name: "Recycle"},
-                  { title: "Look for items that you can reuse instead of buying ", name: "Reduce"},
-                  { title: "Buy in bulk", name: "Reduce"},
-                  { title: "Separating cardboard to put in recycling facility", name: "Recycle"},
-                  { title: "Separating lead batteries", name: "Recycle"},
-                  { title: "Ditch plastic bags and choose reusable, environmentally-friendly bags instead", name: "Reuse"},
-                  { title: "Choose products with less packaging", name: "Reduce"},
+                  {
+                    title:
+                      "Update your computer rather than throwing it out and getting a replacement",
+                    name: "Reuse",
+                  },
+                  { title: "Only buy what you need", name: "Reduce" },
+                  { title: "Separating aluminum", name: "Recycle" },
+                  {
+                    title:
+                      "Look for items that you can reuse instead of buying ",
+                    name: "Reduce",
+                  },
+                  { title: "Buy in bulk", name: "Reduce" },
+                  {
+                    title: "Separating cardboard to put in recycling facility",
+                    name: "Recycle",
+                  },
+                  { title: "Separating lead batteries", name: "Recycle" },
+                  {
+                    title:
+                      "Ditch plastic bags and choose reusable, environmentally-friendly bags instead",
+                    name: "Reuse",
+                  },
+                  {
+                    title: "Choose products with less packaging",
+                    name: "Reduce",
+                  },
                 ],
               },
             },
@@ -2238,31 +2279,33 @@ export const Grade1 = {
               numAnswers: 5,
               content: [
                 {
-                  prompt:"What is NOT a sustainable practice?",
+                  prompt: "What is NOT a sustainable practice?",
                   answers: [
-                    {text: "Reducing" },
-                    {text: "Reusing" },
-                    {text: "Recycling" },
-                    {text: "Buying"}
+                    { text: "Reducing" },
+                    { text: "Reusing" },
+                    { text: "Recycling" },
+                    { text: "Buying" },
                   ],
                   answer: "Buying",
                 },
                 {
-                  prompt: "What is the term used to describe objects that are being washed and used again?",
+                  prompt:
+                    "What is the term used to describe objects that are being washed and used again?",
                   answers: [
                     { text: "Reducing" },
                     { text: "Reusing" },
-                    { text: "Recycling"},
+                    { text: "Recycling" },
                     { text: "Buying" },
                   ],
                   answer: "Reusing",
                 },
                 {
-                  prompt: "What is the term used to describe objects that are being made into new materials?",
+                  prompt:
+                    "What is the term used to describe objects that are being made into new materials?",
                   answers: [
                     { text: "Reducing" },
                     { text: "Reusing" },
-                    { text: "Recycling"},
+                    { text: "Recycling" },
                     { text: "Buying" },
                   ],
                   answer: "Recycling",
@@ -2284,11 +2327,9 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take three pictures of the ways you take care of the environment",
-              
+              prompt:
+                "Take three pictures of the ways you take care of the environment",
             },
-
-            
           },
         },
       ],
@@ -2322,13 +2363,12 @@ export const Grade1 = {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l1_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/sun.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l1_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
               },
             ],
           },
@@ -2403,13 +2443,12 @@ export const Grade1 = {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l2_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/solar-system.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l2_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
               },
             ],
           },
@@ -2435,13 +2474,12 @@ export const Grade1 = {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l3_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/astronaut.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l3_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
               },
             ],
           },
@@ -2467,13 +2505,13 @@ export const Grade1 = {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l4_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/calendar.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l4_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/growth.png"),
               },
             ],
           },
@@ -2499,31 +2537,23 @@ export const Grade1 = {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l5_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/watch.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l5_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l5_card3")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
+                image: require("../../../../assets/mastery/creativity.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c4l5_card4")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plant.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g1c4l5_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/plant.png"),
               },
             ],
           },
@@ -2801,11 +2831,13 @@ export const Grade1 = {
                 text: (
                   <Translation>{(t) => t("mastery:g1c5l8_card1")}</Translation>
                 ),
+                image: require("../../../../assets/mastery/speaker.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g1c5l8_card2")}</Translation>
                 ),
+                image: require("../../../../assets/mastery/bunny.png"),
               },
             ],
           },
