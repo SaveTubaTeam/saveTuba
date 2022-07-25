@@ -2332,6 +2332,55 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                {
+                  prompt:"The majority of the Earth's energy comes from ...",
+                  answers: [
+                    {text: "the Earth's core." },
+                    {text: "the Sun." },
+                    {text: "hydroelectric power." },
+                    {text: "burning fossil fuels."}
+                  ],
+                  answer: "the Sun.",
+                },
+                {
+                  prompt: "The Earth acts like a greenhouse that catches and traps heat from the sun.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
+                  answers: [
+                    { text: "Climate" },
+                    { text: "Global warming" },
+                    { text: "Climate change"},
+                    { text: "Greenhouse effect" },
+                  ],
+                  answer: "Global warming",
+                },
+                {
+                  prompt: "________ is a change in global and reginal climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
+                  answers: [
+                    { text: "Radiation" },
+                    { text: "Climate change" },
+                    { text: "Greenhouse gas" },
+                  ],
+                  answer: "Climate change",
+                },
+              ],
+            },
+
+          },
         },
 
         /* 
