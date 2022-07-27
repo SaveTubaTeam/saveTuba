@@ -2125,7 +2125,7 @@ export const Grade1 = {
                   {
                     text: "Describe the picture. What do you think should be changed?",
                     placeholder: "In this picture I see...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
+                    image: require("../../../../assets/openresponse/water-pollution.jpg"),
                   },
                 ],
               },
