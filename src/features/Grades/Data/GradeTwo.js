@@ -961,7 +961,7 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson5", //red book of plants part 1
+          navigation: "Lesson5", //red book of plants
           title: <Translation>{(t) => t("gradetwo:c2l5")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
           backgroundColor: "#44312B",
@@ -1040,6 +1040,28 @@ export const Grade2 = {
                 ],
               },
             },
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "What plants are in the Red Book and which are not?",
+                num: 5, //count start 0
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "In Red Book" },
+                  {name: "Not in Red Book" },
+                ],
+                options: [
+                  { title: "Startfruit", name: "Not in Red Book" },
+                  { title: "Steppe Peony", name: "In Red Book" },
+                  { title: "Tiger Iris", name: "In Red Book" },
+                  { title: "Ludwig Iris", name: "Not in Red Book" },
+                  { title: "Tarda Tulip", name: "Not in Red Book" },
+                  { title: "Regel's Tulip", name: "In Red Book" },
+                ],
+              },
+            },
           },
           mastery: {
             prompt: (
@@ -1071,7 +1093,154 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l6")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/spine.png"),
           backgroundColor: "#EE3A5D",
-          minigames: {},
+          minigames: {
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the different sources of information.",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "Insect",
+                  image: require("../../../../assets/memory/beetle.png"),
+                },
+                {
+                  name: "Insect",
+                },
+                {
+                  type: "image",
+                  name: "Arachnids",
+                  image: require("../../../../assets/memory/spider.png"),
+                },
+                {
+                  name: "Arachnids",
+                },
+                {
+                  type: "image",
+                  name: "Crust-\naceans",
+                  image: require("../../../../assets/memory/crab.png"),
+                },
+                {
+                  name: "Crust-\naceans",
+                },
+                {
+                  type: "image",
+                  name: "Mollusk",
+                  image: require("../../../../assets/memory/snail.png"),
+                },
+                {
+                  name: "Mollusk",
+                },
+                {
+                  type: "image",
+                  name: "Echino-\nderms",
+                  image: require("../../../../assets/memory/starfish.png"),
+                },
+                {
+                  name: "Echino-\nderms",
+                },
+                {
+                  type: "image",
+                  name: "Skeleton",
+                  image: require("../../../../assets/memory/fishbone.png"),
+                },
+                {
+                  name: "Skeleton",
+                },
+              ],
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                {
+                  prompt:
+                    "What is the function of a skeleton?",
+                  answers: [
+                    { text: "Gives necessary stability" },
+                    { text: "Helps movement" },
+                    { text: "Protects internal organs" },
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt:
+                    "Which animal is an invertebrate?",
+                  answers: [
+                    { text: "Cat" },
+                    { text: "Worm" },
+                    { text: "Turtule" },
+                    { text: "Bird" },
+                  ],
+                  answer: "Worm",
+                },
+                {
+                  prompt: "Which animal is a veterbrate",
+                  answers: [
+                    { text: "Worm" },
+                    { text: "Slugs" },
+                    { text: "Butterfly" },
+                    { text: "Fish" },
+                  ],
+                  answer: "Fish",
+                },
+                {
+                  prompt:
+                    "Which group of animals have 3 body parts and 6 legs?",
+                  answers: [
+                    { text: "Crustaceans" },
+                    { text: "Insects" },
+                    { text: "Echinoderms" },
+                    { text: "Arachnids" },
+                  ],
+                  answer: "Insects",
+                },
+                { 
+                  prompt: "Which group of animals consist of snails, squids, octupuses, and oysters? ",
+                  answers: [
+                    { text: "Crustaceans" },
+                    { text: "Insects" },
+                    { text: "Echinoderms" },
+                    { text: "Mollusk" },  
+                  ],
+                  answer: "Mollusk",
+                }
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Name a couple animals that are veterbrates. Now, name a couple of "
+                    + "animals that are invertebrates. How are they similar? How are they different?",
+                    placeholder: "An animal that is ...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Draw a picture of a skeletal system wit a vertebrate!",
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l6_prompt")}</Translation>
