@@ -240,7 +240,8 @@ export const Grade2 = {
               navigation: "Reorder",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
-              prompt: "Put the steps in order of how you would run an experiment.",
+              prompt:
+                "Put the steps in order of how you would run an experiment.",
               data: [
                 {
                   text: "Determine the purpose of the study",
@@ -264,25 +265,41 @@ export const Grade2 = {
                 },
               ],
             },
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the action to the correct step of the expirement",
+                prompt:
+                  "Match the action to the correct step of the expirement",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
                   { name: "Observation" },
-                  {name: "Hypothesis" },
+                  { name: "Hypothesis" },
                   { name: "Conclusion" },
-                  { name: "Purpose of study"},
+                  { name: "Purpose of study" },
                 ],
                 options: [
-                  { title: "Elena sees that not all her plants.", name: "Observation" },
-                  { title: "Sergey is coming up with a way to explain a natural phenomenon he saw.", name: "Hypothesis" },
-                  { title: "Vladimir sees from his experiment that flowers cannot grow well in the smog.", name: "Conclusion" },
-                  { title: "Aleksandr wants to figure out the effects of trash on plant growth.", name: "Purpose of study"},
+                  {
+                    title: "Elena sees that not all her plants.",
+                    name: "Observation",
+                  },
+                  {
+                    title:
+                      "Sergey is coming up with a way to explain a natural phenomenon he saw.",
+                    name: "Hypothesis",
+                  },
+                  {
+                    title:
+                      "Vladimir sees from his experiment that flowers cannot grow well in the smog.",
+                    name: "Conclusion",
+                  },
+                  {
+                    title:
+                      "Aleksandr wants to figure out the effects of trash on plant growth.",
+                    name: "Purpose of study",
+                  },
                 ],
               },
             },
@@ -376,13 +393,15 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { //funny wording
-                  prompt:"Finish the hypothesis: 'If the plant will not recieve water, then...'",
+                {
+                  //funny wording
+                  prompt:
+                    "Finish the hypothesis: 'If the plant will not recieve water, then...'",
                   answers: [
-                    {text: "the plant will live." },
-                    {text: "the plant will not survive." },
-                    {text: "the plant will produce its own water." },
-                    {text: "the plant will grow very tall."}
+                    { text: "the plant will live." },
+                    { text: "the plant will not survive." },
+                    { text: "the plant will produce its own water." },
+                    { text: "the plant will grow very tall." },
                   ],
                   answer: "the plant will not survive.",
                 },
@@ -390,37 +409,41 @@ export const Grade2 = {
                   prompt: "What do leaves do?",
                   answers: [
                     { text: "Release oxygen back into the air" },
-                    { text: "Absorb carbon dioxide and sunlight through small holes (stomata)" },
-                    { text: "Create sugars for the plant"},
+                    {
+                      text: "Absorb carbon dioxide and sunlight through small holes (stomata)",
+                    },
+                    { text: "Create sugars for the plant" },
                     { text: "All the above" },
                   ],
                   answer: "All the above",
                 },
                 {
-                  prompt: "Chlorophyll is the substance that helps the leaves capture sunlight and transform it into sugars for the plant, as well as giving the plants their green color.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  prompt:
+                    "Chlorophyll is the substance that helps the leaves capture sunlight and transform it into sugars for the plant, as well as giving the plants their green color.",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
                 {
                   prompt: "Which of the following is a true statement:",
                   answers: [
-                    { text: "A tree can release enough oxygen for a family of four to breathe within a year." },
-                    { text: "Driving a car for two hours uses the same abount of oxygen a tree produces in two years." },
-                    { text: "Chlorophyll is also found in algae and some bacteria." },
+                    {
+                      text: "A tree can release enough oxygen for a family of four to breathe within a year.",
+                    },
+                    {
+                      text: "Driving a car for two hours uses the same abount of oxygen a tree produces in two years.",
+                    },
+                    {
+                      text: "Chlorophyll is also found in algae and some bacteria.",
+                    },
                     { text: "All the above statements are true." },
                   ],
                   answer: "All the above statements are true.",
                 },
-                { 
-                  prompt: "Indoor plants can produce as much oxygen in the shade as some plants do in direct sunshine.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                    answer: "True",
+                {
+                  prompt:
+                    "Indoor plants can produce as much oxygen in the shade as some plants do in direct sunshine.",
+                  answers: [{ text: "True" }, { text: "False" }],
+                  answer: "True",
                 },
               ],
             },
@@ -475,7 +498,6 @@ export const Grade2 = {
               prompt:
                 "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
             },
-            
           },
           mastery: {
             prompt: (
@@ -503,7 +525,7 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson2", //how do plants adapt to living conditions 
+          navigation: "Lesson2", //how do plants adapt to living conditions
           title: <Translation>{(t) => t("gradetwo:c2l2")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/wilted.png"),
           backgroundColor: "#7ED957",
@@ -511,7 +533,8 @@ export const Grade2 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the plant adaptations to the element they like",
+              description:
+                "Match the plant adaptations to the element they like",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -547,7 +570,6 @@ export const Grade2 = {
                 {
                   name: "Heliophytes",
                 },
-                
               ],
             },
             openresponse: {
@@ -561,8 +583,9 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt."
-                    + " What are some human-made adaptations that help us, but hurt plants? ",
+                    text:
+                      "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt." +
+                      " What are some human-made adaptations that help us, but hurt plants? ",
                     placeholder: "Some human-made adaptions...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
@@ -576,50 +599,52 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { 
-                  prompt:"What happens when a plant recieves too much heat?",
+                {
+                  prompt: "What happens when a plant recieves too much heat?",
                   answers: [
-                    {text: "The plants grow and bloom more quickly than usual" },
-                    {text: "The leaves are not their normal color" },
-                    {text: "The plant looses a lot of moisture" },
-                    {text: "All the above"}
+                    {
+                      text: "The plants grow and bloom more quickly than usual",
+                    },
+                    { text: "The leaves are not their normal color" },
+                    { text: "The plant looses a lot of moisture" },
+                    { text: "All the above" },
                   ],
                   answer: "All the above",
                 },
                 {
-                  prompt: "Chlorophyll die if the plant recieves too much direct sunlight.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  prompt:
+                    "Chlorophyll die if the plant recieves too much direct sunlight.",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
                 {
-                  prompt: "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures\n"
-                  + "before they begin to sprout?",
+                  prompt:
+                    "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures\n" +
+                    "before they begin to sprout?",
                   answers: [
                     { text: "Bulbs and sprouts" },
                     { text: "Flowers and herbs" },
-                    { text: "Trees and shrubs"}
+                    { text: "Trees and shrubs" },
                   ],
                   answer: "Bulbs and sprouts",
                 },
                 {
-                  prompt: "What does it look like when plants have too much light?",
+                  prompt:
+                    "What does it look like when plants have too much light?",
                   answers: [
                     { text: "They bloom more and have more leaflets" },
                     { text: "The leaves turn away from the sun" },
                     { text: "They spread their roots our more under the soil" },
-                    { text: "More chlorophyll is produced in the leaves to protect it" },
+                    {
+                      text: "More chlorophyll is produced in the leaves to protect it",
+                    },
                   ],
                   answer: "The leaves turn away from the sun",
                 },
-                { 
-                  prompt: "Plants can grow in 0\u00B0C and below type temperatures",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                {
+                  prompt:
+                    "Plants can grow in 0\u00B0C and below type temperatures",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
               ],
@@ -630,8 +655,8 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight"
-                + "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?",
+                "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight" +
+                "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?",
             },
           },
           mastery: {
@@ -2356,6 +2381,41 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/elastic-spring.png"),
           backgroundColor: "#2A731D",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l1_card1")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/elastic-band.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l1_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/catapult.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l1_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/slingshot.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l1_card5")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2368,6 +2428,61 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/gravity.png"),
           backgroundColor: "#060644",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/space.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card3")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/paper-cup.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/water.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card7")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card8")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l2_card9")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2380,6 +2495,65 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/friction.png"),
           backgroundColor: "#53020C",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l3_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/friction.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/book.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card6")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card7")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card8")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card9")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l3_card10")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2392,6 +2566,53 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/direction.png"),
           backgroundColor: "#F9943B",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l4_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/arrows.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/water-bottle.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/cone.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/water-splash.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card6")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l4_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/forces.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2404,6 +2625,57 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/shadow.png"),
           backgroundColor: "#159D52",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l5_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/shadow.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bear.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/chalk.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card6")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/time.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l5_card8")}</Translation>
+                ),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2416,6 +2688,80 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/reflection.png"),
           backgroundColor: "#5AA3F7",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l6_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card1")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/solar-oven.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card3")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/flap.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/foil.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/wrap.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/solar-oven.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card8")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/sun.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card9")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card10")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card11")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l6_card12")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/smore.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2428,6 +2774,54 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/refraction.png"),
           backgroundColor: "#80B673",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l7_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/finish-line.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/bird.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/duck.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/cloth.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/mediums.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card6")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l7_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/flashlight.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2452,6 +2846,52 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/practical-sound.png"),
           backgroundColor: "#D2C6FF",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l9_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/love-message.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/telephone.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/study.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card5")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card6")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l9_card7")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/phones.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2476,6 +2916,48 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/circuit.png"),
           backgroundColor: "#76B9F0",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l11_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l11_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/lightning.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l11_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/electrical-circuit.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l11_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/toaster.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l11_card4")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l11_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/energy.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l11_card6")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/wind-energy.png"),
+              },
+            ],
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2488,6 +2970,46 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/magnet.png"),
           backgroundColor: "#4EB6AF",
           minigames: {},
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c4l12_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l12_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/magnetic.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l12_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l12_card3")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l12_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/key-chain.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l12_card5")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/magnet.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c4l12_card6")}</Translation>
+                ),
+              },
+            ],
+          },
         },
       ],
     },
