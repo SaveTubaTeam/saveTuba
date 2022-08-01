@@ -664,7 +664,117 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l3")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
           backgroundColor: "#C0F0F7",
-          minigames: {},
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Which communitiy (natural or artifical) is more environmentally friendly?"
+                    + "Are there benefits to one or the other? List a couple of either communities you see in your area.",
+                    placeholder: "The community that is...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Match the items to thier community", //ideally change to match picutre to word
+                num: 8, //count start 0
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Natural" },
+                  {name: "Artifical" },
+                ],
+                options: [
+                  { title: "Forest", name: "Natural" },
+                  { title: "Field", name: "Artifical" },
+                  { title: "Flowerbed", name: "Artifical" },
+                  { title: "Steppe", name: "Natural" },
+                  { title: "Pond", name: "Artifical" },
+                  { title: "Desert", name: "Natural" },
+                  { title: "Vegetable garden", name: "Artifical"},
+                  { title: "Lake" , name: "Natural" },
+                  { title: "Swap", name: "Natural" }, 
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { //funny wording
+                  prompt:"What is a natural community?",
+                  answers: [
+                    {text: "A group of plants and animals and their native habitat" },
+                    {text: "A group of plants and animals that are not living in their habitat" },
+                    {text: "A group of only plants living in their habitat" },
+                    {text: "A group of only animals living in their habitat" },
+                  ],
+                  answer: "A group of plants and animals and their habitat",
+                },
+                {
+                  prompt: "What does homogenous mean?",
+                  answers: [
+                    { text: "Of having only different features" },
+                    { text: "Of having mostly different features" },
+                    { text: "Of having some similar features"},
+                    { text: "Of having the same or similar features" },
+                  ],
+                  answer: "Of having the same or similar features",
+                },
+                {
+                  prompt: "What is an artifical community?",
+                  answers: [
+                    { text: "A group of plants and animals and their native habitat" },
+                    { text: "A group of plants and animals that are not living in their habitat" },
+                    { text: "A group of only plants living in their habitat" },
+                    { text: "A group of only animals living in their habitat"}
+                  ],
+                  answer: "A group of plants and animals that are not living in their habitat",
+                },
+                {
+                  prompt: "Plants and animals don't need each other to exist.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                { 
+                  prompt: "Homogenous conditions of existence means...",
+                  answers: [
+                    { text: "different plants can't live in the same area" },
+                    { text: "different plants can live in the same area" },
+                    { text: "only specific plants can live in tbe same area" },
+                    { text: "No plants can live in the same area" },
+                  ],
+                    answer: "different plants can live in the same area",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take a picture of a community (artifical or natural) near you.",
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l3_prompt")}</Translation>
@@ -707,7 +817,113 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l4")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/gardening.png"),
           backgroundColor: "#04A7A8",
-          minigames: {},
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { //funny wording
+                  prompt:"What is the definition of 'pathogenic' ",
+                  answers: [
+                    {text: "Something that causes disease" },
+                    {text: "A microorganism" },
+                    {text: "A type of plant" },
+                    {text: "Something that grows very tall" },
+                  ],
+                  answer: "Something that causes disease",
+                },
+                {
+                  prompt: "It can take up to 100 years to completely restore a forest that was cut down",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "How do plants protect the air?",
+                  answers: [
+                    { text: "Help clear the air of dust" },
+                    { text: "Help clear the diar of soot" },
+                    { text: "Help clear the air of hamful gasses" },
+                    { text: "All the above"}
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt: "The more we use plants and don't participate in restorative practices, " +
+                  " the more likely the air quality will decrease.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                { 
+                  prompt: "What does 'anthropogenic' mean?",
+                  answers: [
+                    { text: "Casued by human activity" },
+                    { text: "Caused by natural activity" },
+                    { text: "The realtionship between prey and preditor" },
+                    { text: "The idea of being sustainable" },
+                  ],
+                    answer: "Caused by human activity",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Cleaning up after ourselves in public is a great way to help improve the air quality" +
+                "Draw some things that you often see outside on the ground that you can pick up.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "List a few ways in which you indirectly impact the environment" +
+                    ", are these practices sustainable?",
+                    placeholder: "The difference between...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            sorting: { 
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Sort these practices into helping or hurting the environment",
+                num: 4, //count start 0
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [
+                  { name: "Helping" },
+                  {name: "Hurting" },
+                ],
+                options: [
+                  { title: "Littering", name: "Hurting" },
+                  { title: "Picking up trash", name: "Helping" },
+                  { title: "Planting native plants", name: "Helping" },
+                  { title: "Using chemical pesticides", name: "Hurting"  },
+                  { title: "Supporting local farming", name: "Helping" },
+                ],
+              },
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l4_prompt")}</Translation>
@@ -749,7 +965,82 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l5")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
           backgroundColor: "#44312B",
-          minigames: {},
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 5,
+              content: [
+                { //funny wording
+                  prompt:"The first Red Book of Kazakhstan was published in 1978 ",
+                  answers: [
+                    {text: "True" },
+                    {text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Which plant grows 1000-2000m above sea level and contains natural rubber?",
+                  answers: [
+                    { text: "Dandelion" },
+                    { text: "Sundew Rounded-Leaf" },
+                    { text: "Steppe Peony" },
+                    { text: "Wormwood" },
+                  ],
+                  answer: "Dandelion",
+                },
+                {
+                  prompt: "Which plant grows to about 15-50cm and is used to make porridge?",
+                  answers: [
+                    { text: "Dandelion" },
+                    { text: "Sundew Rounded-Leaf" },
+                    { text: "Steppe Peony" },
+                    { text: "Wormwood" },
+                  ],
+                  answer: "Steppe Peony",
+                },
+                {
+                  prompt: "Which plant has small white flowres and is commonly found in swamps?",
+                  answers: [
+                    { text: "Dandelion" },
+                    { text: "Sundew Rounded-Leaf" },
+                    { text: "Steppe Peony" },
+                    { text: "Wormwood" },
+                  ],
+                  answer: "Sundew Rounded-Leaf",
+                },
+                { 
+                  prompt: "The Red Book only contains information about plants and not animals ",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                    answer: "False",
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What would be some ways that we could reduce the number of plants listed in the Red Book?" +
+                    " How is practicing good sustainable habits going to help reduce the endangered species?",
+                    placeholder: "We can reduce the number of endangered plants by ...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l5_prompt")}</Translation>
