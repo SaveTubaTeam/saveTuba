@@ -568,4 +568,180 @@ export default {
   g2c3l14_card4: "Research other planets and their satellites.",
   g2c3l14_card5: "Which one has the shortest orbit? How about the longest?",
   g2c3l14_prompt: "Report your findings below.",
+
+  /* Chapter 4 */
+  g2c4l1_card1:
+    "Elasticity is the ability of an object to resume its normal shape after being stretched or compressed.",
+  g2c4l1_card2:
+    "Many objects have elastic properties - examples include rubber bands, hair ties, balloons etc.",
+  g2c4l1_card3:
+    "Today, your challenge is to use any elastic object to make a catapult!",
+  g2c4l1_card4:
+    "Think of ways you can take advantage of an object's stretchiness to launch something into the air!",
+  g2c4l1_card5: "If you're stuck, ask a friend to help you brainstorm!",
+  g2c4l1_prompt: "Upload a photo of your creation here.",
+
+  g2c4l2_card1:
+    "You already know that gravity is the force that attracts a body toward the center of the Earth.",
+  g2c4l2_card2:
+    "Let's see gravity in action! You might want to do this experiment outside...",
+  g2c4l2_card3:
+    "Gather your tools! You will need a paper cup, some water and a pencil.",
+  g2c4l2_card4:
+    "Using the pencil, poke a hole in the side of the cup, near its bottom.",
+  g2c4l2_card5:
+    "Place your finger on the hole to plug it, and fill the cup with water.",
+  g2c4l2_card6:
+    "Remove your finger from the hole and watch as the water leaks from the cup in a stream.",
+  g2c4l2_card7:
+    "Let's try something new. Plug the hole with your finger again and fill the cup with water.",
+  g2c4l2_card8:
+    "Now, drop the cup with the water and, at the same time, remove your finger from the hole.",
+  g2c4l2_card9:
+    "As the cup is falling down, you will notice that the water isn't leaking from the hole.",
+  g2c4l2_prompt: "Why do you think this is? Give your best guess below!",
+
+  g2c4l3_card1:
+    "You have learned that friction is the resistance experienced by one object or surface while moving over another.",
+  g2c4l3_card2:
+    "Friction can be very strong and, today, you're going to test exactly that!",
+  g2c4l3_card3:
+    "All you will need are two books roughly the same size, with soft covers and over 100 pages long.",
+  g2c4l3_card4:
+    "Put the books next to one another so that their spines are facing opposite ways.",
+  g2c4l3_card5:
+    "Now, open the books and start interlacing their pages. Put the first page of book A over the first page of book B.",
+  g2c4l3_card6:
+    "Now, take the next page from book B and put it down. Continue by putting the second page of book A down.",
+  g2c4l3_card7:
+    "Continue interlacing the pages until you reach the end of both books.",
+  g2c4l3_card8:
+    "Here comes the moment of truth. Grab the spine of one book and ask a friend to grab the other book.",
+  g2c4l3_card9:
+    "Try to separate the books as hard as you can by pulling on them in opposite directions.",
+  g2c4l3_card10:
+    "By now, you realize the books can't come apart. This is because the friction force between each pair of pages adds up!",
+  g2c4l3_prompt: "Upload a photo of your interlaced books below!",
+
+  g2c4l4_card1:
+    "Forces can act in any direction so let's play around with them!",
+  g2c4l4_card2: "Grab a plastic bottle and fill it up with water.",
+  g2c4l4_card3: "Now, grab some paper and tape and make a paper cone!",
+  g2c4l4_card4:
+    "Take the lid off the plastic bottle and put the paper cone on top of the bottle.",
+  g2c4l4_card5:
+    "Now, squeeze the sides of the plastic bottle as quickly as you can!",
+  g2c4l4_card6:
+    "Hopefully, your paper cone flew up due to the force coming from the water rushing out of the bottle.",
+  g2c4l4_card7:
+    "What forces were involved in this experiment? What direction did they act in?",
+  g2c4l4_prompt:
+    "Draw a diagram of the forces acting on the bottle and the paper cone, and upload a photo below!",
+
+  g2c4l5_card1:
+    "Shadows are formed whenever an object is placed in the path of light.",
+  g2c4l5_card2:
+    "But have you noticed how shadows change over time? Let's see that in practice.",
+  g2c4l5_card3:
+    "Grab an object whose shadow you want to see - could be your favorite toy, for example!",
+  g2c4l5_card4:
+    "Now, grab some sidewalk chalk - a couple of different colors if possible!",
+  g2c4l5_card5:
+    "Go outside and find a sunny spot and a clear sidewalk. Set the object down on the ground and mark it's outline with chalk.",
+  g2c4l5_card6: "Now mark the outline of the object's shadow as well.",
+  g2c4l5_card7:
+    "Come back to the sidewalk throughout the day and set your object back in its starting place, but every time mark its shadow with a different color chalk.",
+  g2c4l5_card8: "How has the shadow changed over the course of the day?",
+  g2c4l5_prompt: "Upload a photo of the chalk markings on the sidewalk here!",
+
+  g2c4l6_card1:
+    "Did you know that polished metal surfaces reflect light? Did you know we can use this to make our own snack?",
+  g2c4l6_card2:
+    "A solar oven is a box that traps the Sun’s energy to make the air inside the box hotter than the air outside. ",
+  g2c4l6_card3:
+    "In order to make a solar oven you will need an empty pizza box, aluminum foil, plastic wrap, tape, scissors, ruler, paper plate, crackers, chocolate and marshmallows!",
+  g2c4l6_card4:
+    "Begin by closing the pizza box and cutting a flap on its top leaving a 5cm border on the sides and front.",
+  g2c4l6_card5:
+    "Wrap the inside of the flap and the box interior with aluminum foil, and tape it in place.",
+  g2c4l6_card6:
+    "Cover the opening created by the flap with plastic wrap, and tape it in place.",
+  g2c4l6_card7: "Prop the flap open by using a ruler to push against it.",
+  g2c4l6_card8:
+    "Now, you are ready to begin cooking! Put your solar oven in a sunny spot outside for 30 minutes to preheat the oven.",
+  g2c4l6_card9:
+    "After the oven has preheated, set the graham crackers down on a plate inside the box.",
+  g2c4l6_card10:
+    "Put a marshmallow on top of each cracker, followed by a piece of chocolate.",
+  g2c4l6_card11:
+    "Finally, put another graham cracker on top to finalize your s'mores!",
+  g2c4l6_card12:
+    "The s'mores might take up to an hour to be done. Take them out when they feel squishy to touch. Enjoy!",
+  g2c4l6_prompt: "Upload a photo of your solar oven and s'mores here!",
+
+  g2c4l7_card1:
+    "Light travels differently in various mediums. Are you ready to learn some terms to describe this?",
+  g2c4l7_card2:
+    "When light passes through a surface, the surface is said to be transparent. This is what happens with glass and windows!",
+  g2c4l7_card3:
+    "When a surface throws back the light shone on it, it is said the light is reflected. One example is water!",
+  g2c4l7_card4:
+    "Finally, a surface can also absorb light so that it neither passses through nor gets reflected. This is what happens when you shine light onto your t-shirt!",
+  g2c4l7_card5:
+    "Let's use these terms to describe how light travels through three different mediums: a magnifying glass, a napkin, and a mirror.",
+  g2c4l7_card6:
+    "Before beginning this experiment, write down your predictions for each medium. Do you think the light will pass through, be absorbed or be reflected?",
+  g2c4l7_card7:
+    "Now, grab a flashlight and shine it at each of the three objects. Write your observations down.",
+  g2c4l7_prompt: "Were your predictions correct? Upload a photo of your notes.",
+
+  g2c4l8_card1:"Electricity is used to power almost everything and we get our electricity from sources like coal, natural gas, fossil fuels, etc.",
+  g2c4l8_card2:"However, it's important that we move on from our current use of non-renewable energies.",
+  g2c4l10_card3:"Solar energy is a type of renewable energy that can solve many of our energy problems.",
+
+  g2c4l9_card1:
+    "Sound travels as vibrations through different mediums. Today, you're going to use this to make your own phone! ",
+  g2c4l9_card2:
+    "All you need are two paper cups, a sharp pencil, and a long string like a fishing line or a kite string.",
+  g2c4l9_card3:
+    "Use the pencil to poke a small hole in the bottom of both cups.",
+  g2c4l9_card4:
+    "Thread each end of the string through the hole on the bottom of the cups and tie a large knot so the string can't fall down the hole.",
+  g2c4l9_card5:
+    "Ask a friend to give you a hand and grab one end of the phone. Go to the other end of the room or as far away as your string allows.",
+  g2c4l9_card6:
+    "Make sure the string is taut and that it is not touching any other object.",
+  g2c4l9_card7:
+    "Now, take turns speaking into the cup and listening on the other end. Can you hear what your friend is saying?",
+  g2c4l9_prompt: "Snap a photo of your telephone!",
+
+  // lesson 10 complicated af
+
+  g2c4l11_card1:
+    "Electric current is when electric charges flow from one place to another place in the circuit.",
+  g2c4l11_card2:
+    "An electric circuit is closed and allows for the electric current to travel from its beginning power source.",
+  g2c4l11_card3:
+    "This allows you to plug in your everyday household items and many more.",
+  g2c4l11_card4: "But where does the electricity start?",
+  g2c4l11_card5:
+    "Ask your parents what electricity company you use to power your household. What energy source do they use?",
+  g2c4l11_card6:
+    "Can you think of any renewable energy sources which may be better for the environment?",
+  g2c4l11_prompt: "Record your thoughts here!",
+
+  g2c4l12_card1:
+    "Magnets are objects with a power to attract other objects and even other magnets!",
+  g2c4l12_card2:
+    "Let's make a magnet sorting mat to determine what objects in your household are magnetic and which are non-magnetic.",
+  g2c4l12_card3:
+    "Grab a piece of paper, and write magnetic on one half, and non-magnetic on the other.",
+  g2c4l12_card4:
+    "Now grab ten small items from your home such as paperclips, keys, hair ties, coins etc.",
+  g2c4l12_card5:
+    "Put the objects on the non-magnetic side of the paper and use a magnet to try to move them to the magnetic side.",
+  g2c4l12_card6:
+    "How many objects remained on the non-magnetic side? Are all of the magnetic objects attracted to the magnet equally?",
+  g2c4l12_prompt:
+    "When you're done, upload a photo of your magnet sorting mat!",
 };

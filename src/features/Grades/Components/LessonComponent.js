@@ -132,6 +132,10 @@ function LessonComponent({
         />
         <Head>
           <TitleText size="title">
+            {selectedGrade.chapters[selectedChapter].lessons[
+              selectedLesson
+            ].navigation.substring(6, 8)}
+            .{" "}
             {
               selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                 .title
