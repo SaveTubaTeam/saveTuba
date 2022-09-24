@@ -27,7 +27,7 @@ export default {
   c3l1: "1. What are the properties of air?",
   c3l2: "2. Where to build a factory?",
   c3l3: "3. What do we know about water?",
-  c3l4: "4. Without what is a person not enough?",
+  c3l4: "4. Without what can't a person survive?",
 
   /* Chapter 4 lesson names */
   c4l1: "1. The sun and its influence to Earth",
@@ -43,7 +43,7 @@ export default {
   c5l4: "4. How much does an elephant weigh?",
   c5l5: "5. How to get to Emerald City?",
   c5l6: "6. Where did the ray of light go?",
-  c5l7: "7. What is the sound?",
+  c5l7: "7. What is sound?",
   c5l8: "8. How do we hear sounds?",
   c5l9: "9. How does the thermometer know if it is warm or cold?",
   c5l10: "10. Where does frost hide during the summer?",

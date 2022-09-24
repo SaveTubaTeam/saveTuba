@@ -14,6 +14,10 @@ export default {
   sorting: "Translation missing",
   quiz: "Викторина",
   openresponse: "Translation missing",
+  snapshot: "Сурет",
+  reorder: "Қайта реттеу",
+  drawing: "Сурет салу",
+  flashcards: "Карточки",
 
   hello: "Сәлем",
 
@@ -29,6 +33,7 @@ export default {
   back: "Артқа",
   submit: "Жіберу",
   enteryouranswer: "Жауабыңызды енгізіңіз...",
+  pickanimage: "Кескінді таңдаңыз",
   restart: "Қайтадан бастаңыз",
 
   login: "Kipy",

@@ -1,15 +1,69 @@
 import React, { useState } from "react";
-import { View, TextInput, ScrollView } from "react-native";
+import {
+  View,
+  TextInput,
+  ScrollView,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+  FlatList,
+  Image,
+} from "react-native";
 import { connect } from "react-redux";
+import styled from "styled-components/native";
+import { useNavigation } from "@react-navigation/native";
+
 import { Button } from "react-native-paper";
 
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
 
+const ModalContainer = styled.View`
+  background-color: white;
+  width: 60%;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #cce882;
+`;
+
 const ImagePrompt = ({ questions }) => {
   const [currentPrompt, setPrompt] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [val, setVal] = React.useState("");
+  const [visible, setVisible] = useState(false);
+  const navigation = useNavigation();
+  const Modko = () => {
+    return (
+      <Modal transparent animationType="slide" visible={visible}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <ModalContainer>
+            <View>
+              <BodyText size="subtitle">
+                Your image was submitted! Good job ✨
+              </BodyText>
+            </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#748816",
+                borderRadius: 10,
+                marginTop: 10,
+                paddingTop: 5,
+                paddingBottom: 5,
+              }}
+              onPress={() => navigation.navigate("Lesson")}
+            >
+              <BodyText size="subtitle" color="secondary">
+                Back to the lesson
+              </BodyText>
+            </TouchableOpacity>
+          </ModalContainer>
+        </View>
+      </Modal>
+    );
+  };
 
   return (
     <ScrollView>
@@ -22,51 +76,30 @@ const ImagePrompt = ({ questions }) => {
         <View
           style={{
             width: "80%",
+            padding: 20,
+            alignItems: "center",
             backgroundColor: "white",
             marginTop: 20,
-            marginBottom: 10,
-            height: 300,
             borderRadius: 30,
           }}
         >
           <View
             style={{
-              width: "100%",
-              height: 200,
-              backgroundColor: "white",
-              borderRadius: 30,
-              alignItems: "center",
-              justifyContent: "center",
+              width: 150,
+              height: 150,
+              borderRadius: 20,
+              marginBottom: 10,
+              overflow: "hidden",
             }}
           >
-            <View
-              style={{
-                width: 150,
-                height: 150,
-                borderRadius: 20,
-                overflow: "hidden",
-              }}
-            >
-              <ImageBg
-                source={questions.prompts[currentPrompt].image}
-                resizeMode="cover"
-              ></ImageBg>
-            </View>
+            <ImageBg
+              source={questions.prompts[currentPrompt].image}
+              resizeMode="cover"
+            ></ImageBg>
           </View>
-          <View
-            style={{
-              marginTop: 20,
-              alignSelf: "center",
-              justifyContent: "center",
-              alignItems: "center",
-              alignContent: "center",
-              textAlignVertical: "center",
-            }}
-          >
-            <TitleText size="subtitle">
-              Что такое имидж? {"\n"}Почему это важно?
-            </TitleText>
-          </View>
+          <TitleText size="subtitle">
+            {questions.prompts[currentPrompt].text}
+          </TitleText>
         </View>
 
         <View
@@ -98,9 +131,11 @@ const ImagePrompt = ({ questions }) => {
               fontSize: 18,
               flexShrink: 1,
             }}
-            placeholder="Введите ответ..."
-            placeholderTextColor={"#748816"}
+            onChangeText={setVal}
+            placeholder={questions.prompts[currentPrompt].placeholder}
+            placeholderTextColor={"#D5DBB9"}
             multiline={true}
+            value={val}
           />
           <Button
             style={{
@@ -111,18 +146,20 @@ const ImagePrompt = ({ questions }) => {
               borderRadius: 20,
             }}
             onPress={() => {
+              setVal("");
+              setVisible(!visible);
               if (currentPrompt < questions.numberOfPrompts - 1) {
                 setPrompt(currentPrompt + 1);
               } else {
                 setModalVisible((modalVisible) => !modalVisible);
-                console.log("Yo: " + modalVisible);
               }
             }}
           >
-            <BodyText color="secondary">Отправить</BodyText>
+            <BodyText color="secondary">Submit</BodyText>
           </Button>
         </View>
       </View>
+      <Modko visible={false} />
     </ScrollView>
   );
 };

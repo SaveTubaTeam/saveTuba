@@ -90,7 +90,8 @@ function ChaptersComponent({ selectedGrade, navigation }) {
           style={{ width: "100%" }}
           data={selectedGrade.chapters}
           renderItem={renderItem}
-          key={(item) => item.key}
+          keyExtractor={(item, index) => index}
+          key={(item, index) => index}
         />
       </Container>
     </SafeArea>

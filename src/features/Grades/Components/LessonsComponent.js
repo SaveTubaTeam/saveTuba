@@ -43,7 +43,6 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
   const nav = useNavigation();
   const { t } = useTranslation();
   const [currentLesson, setCurrentLesson] = useState(0);
-  const [count, setCount] = useState(-1);
 
   const renderItem = ({ item }) => {
     // keep the item there
@@ -70,7 +69,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="subtitle" color="secondary">
-              {item.title}
+              {item.navigation.substring(6, 8)}. {item.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="secondary">
@@ -132,9 +131,8 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             style={{
               borderTopLeftRadius: 20,
               borderBottomLeftRadius: 20,
-              height: "100%",
-              width: undefined,
-              aspectRatio: 1,
+              height: 100,
+              width: 100,
             }}
             source={item.thumbnail}
           />
@@ -145,7 +143,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="mid" color="primary">
-              {item.title}
+              {item.navigation.substring(6, 8)}. {item.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left">5/5</BodyText>
@@ -167,7 +165,8 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
           style={{ width: "100%" }}
           data={selectedGrade.chapters[selectedChapter].lessons}
           renderItem={renderItem}
-          key={(item) => item.key}
+          keyExtractor={(item, index) => index}
+          key={(item, index) => index}
         />
       </Container>
     </SafeArea>

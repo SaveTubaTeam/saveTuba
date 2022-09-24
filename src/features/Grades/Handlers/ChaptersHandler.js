@@ -131,6 +131,17 @@ function ChaptersHandler({ route }) {
             <LessonsHandler selectedGrade={selectedGrade} selectedChapter={6} />
           )}
         </Stack.Screen>
+
+        <Stack.Screen
+          name="Chapter8"
+          options={{
+            headerShown: false,
+          }}
+        >
+          {() => (
+            <LessonsHandler selectedGrade={selectedGrade} selectedChapter={7} />
+          )}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

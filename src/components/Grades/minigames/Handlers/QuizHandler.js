@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
+import {
+  View,
+  Modal,
+  Pressable,
+  TouchableOpacity,
+  Text,
+  FlatList,
+} from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -9,6 +16,7 @@ import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { SafeArea } from "../../../safe-area.component";
 import { Spacer } from "../../../spacer.component";
+import { ComplexAnimationBuilder } from "react-native-reanimated";
 
 import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
 
@@ -18,14 +26,7 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-`;
-
-const Container2 = styled.View`
-  width: 90%;
-  padding: 20px;
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
+  padding-top: 100px;
 `;
 
 const ImageBg = styled.ImageBackground`
@@ -39,18 +40,30 @@ const Category = styled.TouchableOpacity`
   margin: 5px;
   padding: 10px;
   border-radius: 10px;
-`;
-
-const Answers = styled.View`
-  width: 90%;
-  justify-content: center;
-  align-items: center;
+  width: 200px;
 `;
 
 const ModalContainer = styled.View`
   background-color: white;
   width: 60%;
   padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #cce882;
+`;
+
+const Prompt = styled.View`
+  width: 80%;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+`;
+const SubmitButton = styled.TouchableOpacity`
+  width: 100px;
+  justify-content: center;
+  height: 40px;
+  background-color: #748816;
+  align-self: center;
   border-radius: 20px;
 `;
 
@@ -59,16 +72,30 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
+const SecondScreen = ({ data }) => {
+  const navigation = useNavigation();
+  return (
+    <ImageBg source={data.content[0].imageBg}>
+      <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
+        <Prompt>
+          <TitleText>
+            Congratulations, you've just finished your first quiz! Go back to
+            the lesson to continue learning!
+          </TitleText>
+          <Spacer size="large" />
+          <SubmitButton onPress={() => navigation.navigate("Lesson")}>
+            <BodyText color="secondary">Back</BodyText>
+          </SubmitButton>
+        </Prompt>
+      </SafeArea>
+    </ImageBg>
+  );
+};
+
 const Start = ({ data }) => {
   const navigation = useNavigation();
 
-  const [correctAnswer, setCorrectAnswer] = useState(data.content[1].answer);
-  const [answer, setAnswer] = useState(0);
-  const [visible, setVisible] = useState(false);
-
-  const [visibleOne, setVisibleOne] = useState("flex");
-  const [visibleTwo, setVisibleTwo] = useState("none");
-  const [visibleThree, setVisibleThree] = useState("none");
+  const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
@@ -79,6 +106,14 @@ const Start = ({ data }) => {
     }
     // console.log("Score: " + score + "/4");
   };
+  const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
+
+  const [visible, setVisible] = useState(false);
+
+  const [firstVisible, setFirstVisible] = useState("flex");
+  const [secondVisible, setSecondVisible] = useState("none");
+  const [thirdVisible, setThirdVisible] = useState("none");
+  const [fourthVisible, setFourthVisible] = useState("none");
 
   const Modko = () => {
     return (
@@ -95,9 +130,9 @@ const Start = ({ data }) => {
             </TouchableOpacity>
             <View>
               <BodyText size="subtitle">
-                {correctAnswer == answer
-                  ? "Правильный ответ! Хорошая работа ✨ **Correct**"
-                  : "Неправильный ответ! Повезет в следующий раз 🍀 **Incorrect**"}
+                {correct == true
+                  ? "That's right! Good job ✨"
+                  : "Incorrect! Better luck next time 🍀"}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -109,29 +144,32 @@ const Start = ({ data }) => {
                 paddingBottom: 5,
               }}
               onPress={() => {
+                setVisible(!visible);
                 if (count == 0) {
-                  setVisibleOne("none");
-                  setVisibleTwo("flex");
-                  setVisible(false);
-                  setCorrectAnswer(data.content[2].answer);
-                  setCount(1);
+                  setCount(count + 1);
+                  setCurrentPrompt(data.content[count + 1].prompt);
+                  setFirstVisible("none");
+                  setSecondVisible("flex");
                 } else if (count == 1) {
-                  setVisibleTwo("none");
-                  setVisibleThree("flex");
-                  setVisible(false);
-                  setCorrectAnswer(data.content[3].answer);
-                  setCount(2);
+                  setCount(count + 1);
+                  setCurrentPrompt(data.content[count + 1].prompt);
+                  setSecondVisible("none");
+                  setThirdVisible("flex");
                 } else if (count == 2) {
-                  setVisible(false);
+                  setCount(count + 1);
+                  setCurrentPrompt(data.content[count + 1].prompt);
+                  setThirdVisible("none");
+                  setFourthVisible("flex");
+                } else {
                   navigation.navigate("SecondScreen", {
                     score: score,
-                    prompt: "Поздравляем! \n Вы завершили свою первую сортировочную контрольный опрос!"
+                    prompt: "Congratulations, you've just finished your first quiz! Go back to the lesson to continue learning!"
                   });
                 }
               }}
             >
               <BodyText size="subtitle" color="secondary">
-                Следующий
+                Next
               </BodyText>
             </TouchableOpacity>
           </ModalContainer>
@@ -140,163 +178,92 @@ const Start = ({ data }) => {
     );
   };
 
+  const renderAnswers = ({ item }) => {
+    return (
+      <>
+        <Category
+          activeOpacity="0.8"
+          onPress={() => {
+            if (item.text == data.content[count].answer) {
+              setCorrect(true);
+              setScore(() => score + 1);
+            } else {
+              setCorrect(false);
+            }
+            setVisible(true);
+          }}
+        >
+          <BodyText size="subtitle">{item.text}</BodyText>
+        </Category>
+      </>
+    );
+  };
+
   return (
     <>
-      <SafeArea>
-        <ImageBg source={data.content[0].imageBg}>
-          <Container>
-            <Question style={{ display: visibleOne }}>
-              <TitleText size="title">{data.content[1].prompt}</TitleText>
-            </Question>
-            <Answers style={{ display: visibleOne }}>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(1);
-                  checkAnswer(1);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[1].first}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(2);
-                  checkAnswer(2);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[1].second}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(3);
-                  checkAnswer(3);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[1].third}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(4);
-                  checkAnswer(4);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[1].fourth}</BodyText>
-              </Category>
-            </Answers>
+      <ImageBg source={data.imageBg}>
+        <Container>
+          <Question>
+            <TitleText size="title">{currentPrompt}</TitleText>
+          </Question>
 
-            <Question style={{ display: visibleTwo }}>
-              <TitleText size="title">{data.content[2].prompt}</TitleText>
-            </Question>
-            <Answers style={{ display: visibleTwo }}>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(1);
-                  checkAnswer(1);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[2].first}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(2);
-                  checkAnswer(2);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[2].second}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(3);
-                  checkAnswer(3);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[2].third}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(4);
-                  checkAnswer(4);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[2].fourth}</BodyText>
-              </Category>
-            </Answers>
+          <FlatList // The flatlist used to load minigames and their data.
+            scrollEnabled={true}
+            data={data.content[count].answers}
+            keyExtractor={(item) => item.text}
+            key={(item, index) => index}
+            renderItem={renderAnswers}
+            style={{ display: firstVisible }}
+            contentContainerStyle={{
+              alignItems: "center",
+            }}
+          />
 
-            <Question style={{ display: visibleThree }}>
-              <TitleText size="title">{data.content[3].prompt}</TitleText>
-            </Question>
-            <Answers style={{ display: visibleThree }}>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(1);
-                  checkAnswer(1);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[3].first}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(2);
-                  checkAnswer(2);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[3].second}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(3);
-                  checkAnswer(3);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[3].third}</BodyText>
-              </Category>
-              <Category
-                activeOpacity="0.8"
-                onPress={() => {
-                  setAnswer(4);
-                  checkAnswer(4);
-                  setVisible(true);
-                }}
-              >
-                <BodyText size="subtitle">{data.content[3].fourth}</BodyText>
-              </Category>
-            </Answers>
+          <FlatList // The flatlist used to load minigames and their data.
+            scrollEnabled={true}
+            data={data.content[count].answers}
+            keyExtractor={(item) => item.text}
+            key={(item, index) => index}
+            renderItem={renderAnswers}
+            style={{ display: secondVisible }}
+            contentContainerStyle={{
+              alignItems: "center",
+            }}
+          />
 
-            <Modko
-              visible={false}
-              correctAnswer={correctAnswer}
-              answer={answer}
-            />
-          </Container>
-        </ImageBg>
-      </SafeArea>
+          <FlatList // The flatlist used to load minigames and their data.
+            scrollEnabled={true}
+            data={data.content[count].answers}
+            keyExtractor={(item) => item.text}
+            key={(item, index) => index}
+            renderItem={renderAnswers}
+            style={{ display: thirdVisible }}
+            contentContainerStyle={{
+              alignItems: "center",
+            }}
+          />
+
+          <FlatList // The flatlist used to load minigames and their data.
+            scrollEnabled={true}
+            data={data.content[count].answers}
+            keyExtractor={(item) => item.text}
+            key={(item, index) => index}
+            renderItem={renderAnswers}
+            style={{ display: fourthVisible }}
+            contentContainerStyle={{
+              alignItems: "center",
+            }}
+          />
+
+          <Modko visible={false} />
+        </Container>
+      </ImageBg>
     </>
   );
 };
 
 const QuizHandler = ({ data, navigation, route, currentUser }) => {
-  // console.warn(currentUser);
+  console.warn(currentUser);
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>

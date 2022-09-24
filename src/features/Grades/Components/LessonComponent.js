@@ -132,6 +132,10 @@ function LessonComponent({
         />
         <Head>
           <TitleText size="title">
+            {selectedGrade.chapters[selectedChapter].lessons[
+              selectedLesson
+            ].navigation.substring(6, 8)}
+            .{" "}
             {
               selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                 .title
@@ -152,14 +156,20 @@ function LessonComponent({
             )
           }
           numColumns={2}
-          keyExtractor={(item) => item.key}
-          key={(item) => item.key}
+          keyExtractor={(item, index) => index}
+          key={(item, index) => index}
           renderItem={renderItem}
           contentContainerStyle={{
             width: "85%",
+            alignSelf: "center",
           }}
-          style={{ marginBottom: 20 }}
-          ListFooterComponentStyle={{ alignItems: "center" }}
+          style={{
+            marginBottom: 20,
+            width: "100%",
+          }}
+          ListFooterComponentStyle={{
+            alignItems: "center",
+          }}
           ListFooterComponent={
             <TouchableOpacity
               style={{
