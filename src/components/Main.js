@@ -47,6 +47,7 @@ export class Main extends Component {
         <Tab.Screen
           name="Profile"
           component={ProfileScreen}
+          store={store}
           options={{
             title: "",
             tabBarIcon: ({ color }) => (

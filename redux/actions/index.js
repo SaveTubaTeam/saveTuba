@@ -10,17 +10,12 @@ import { getDoc, doc } from "firebase/firestore";
 
 export function fetchUser() {
   return (dispatch) => {
-    console.log("Funciton called");
-    console.log(auth.currentUser.uid);
     db.collection("users")
       .doc(auth.currentUser.uid)
       .get()
       .then((snapshot) => {
         if (snapshot.exists) {
-          console.log(snapshot.data());
           dispatch({ type: USER_STATE_CHANGE, currentUser: snapshot.data() });
-        } else {
-          console.log("User does not exist");
         }
       })
       .catch((error) => {
@@ -31,23 +26,31 @@ export function fetchUser() {
 
 export function addExperienceToUser(exp, currentUser) {
   return (dispatch) => {
-    switch (exp) {
-      case 45:
-        db.collection("users")
+    db.collection("users")
       .doc(auth.currentUser.uid)
       .update({
-        currentScore: currentUser.currentScore + 45,
+        currentScore: currentUser.currentScore + exp,
       }).then(() => {
-        console.log("User updated");
-        currentUser.currentScore = currentUser.currentScore + 45;
-        dispatch({type: USER_ADD_EXPERIENCE_45, currentUser: currentUser});
+        currentUser.currentScore = currentUser.currentScore + exp;
+
+        var nextLevelXP = Math.ceil(     Math.pow((currentUser.level + 1.0) / (0.2), 2.1) );
+
+        if (currentUser.currentScore >= nextLevelXP) {
+          db.collection("users")
+          .doc(auth.currentUser.uid)
+          .update({
+            level: currentUser.level + 1,
+          });
+          currentUser.level = currentUser.level + 1;
+        }
+
+        dispatch({type: USER_STATE_CHANGE, currentUser: currentUser});
       });
-      break;
-      // case 90:
-      // case 120:
-      // case 135:
-      default:
-        dispatch({type: USER_ADD_EXPERIENCE_90, currentUser: currentUser});
-    }
+  };
+}
+
+export function signOutUser() {
+  return (dispatch) => {
+    dispatch({type: USER_STATE_CHANGE, currentUser: null});
   };
 }

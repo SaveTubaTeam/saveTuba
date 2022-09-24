@@ -105,7 +105,7 @@ export class Register extends Component {
           username: username,
           currentScore: 0,
           friendCount: 0,
-          level: 1,
+          level: 0,
           teacher: isTeacher,
           // Maps in the Firebase database, need initial values
           badges: {
@@ -115,7 +115,6 @@ export class Register extends Component {
             initialized: true,
           },
         });
-        console.log(result);
       })
       .catch((err) => {
         alert(err);
@@ -197,10 +196,7 @@ export class Register extends Component {
           <ButtonContainer>
             <Button
               onPress={() => {
-                this.setState((prevState) => ({
-                  isTeacher: !prevState.isTeacher,
-                }));
-                this.onSignUp();
+                this.props.navigation.navigate("RegisterTeacher");
               }}
             >
               <TitleText color="secondary" size="body">

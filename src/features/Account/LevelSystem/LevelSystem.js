@@ -25,20 +25,18 @@ class LevelSystem extends Component {
   componentDidMount() {
     const {route, navigation, currentUser, dispatch } = this.props;
     const { score } = route.params;
-    const XP_PER_POINT = 45;
+    const XP_PER_POINT = 15;
 
-    this.props.addExperienceToUser(45, currentUser);
+    this.props.addExperienceToUser(score*XP_PER_POINT, currentUser);
     
   }
 
   render() {
 
     const {route, navigation, currentUser, dispatch } = this.props;
-    const { score } = route.params;
-    const XP_PER_POINT = 45;
+    const { score, prompt } = route.params;
+    const XP_PER_POINT = 15;
 
-
-    console.log("Score: " + score);
     // addExperienceToUser(45, currentUser);
   
 
@@ -46,8 +44,7 @@ class LevelSystem extends Component {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
-              Поздравляем! Вы завершили свою первую сортировочную контрольный
-              опрос! {"\n"} You gained {score * XP_PER_POINT} xp!
+              {prompt}{"\n"} You gained {score * XP_PER_POINT} xp!
           </TitleText>
           <Spacer size="large" />
           <Pressable onPress={() => navigation.navigate("Lesson")}>
@@ -62,16 +59,13 @@ class LevelSystem extends Component {
 function LevelSystem_ ({route, navigation, currentUser}) {
     const { score } = route.params;
     const XP_PER_POINT = 45;
-    console.log("Score: " + score);
  
     db.collection("users")
       .doc(auth.currentUser.uid)
       .update({
         currentScore: 40,
       }).then(() => {
-        console.log("User updated");
       });
-      console.log("CurrentScore: " + currentUser.currentScore);
     return (
         <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
           <Container2 style={{ backgroundColor: "white" }}>
@@ -86,11 +80,6 @@ function LevelSystem_ ({route, navigation, currentUser}) {
           </Container2>
       </SafeArea>
     );
-    
-        
-        
-        
-
 }
 
 const mapStateToProps = (store) => ({

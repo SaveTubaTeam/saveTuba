@@ -9,11 +9,6 @@ export const user = (state = initialState, action) => {
                 ...state,
                 currentUser: action.currentUser
             };
-        case 'USER_ADD_EXPERIENCE_45':
-            return {
-                ...state,
-                currentUser: action.currentUser
-            };
         default: 
             return state;
     }

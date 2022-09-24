@@ -11,6 +11,8 @@ import { SafeArea } from "../../../safe-area.component";
 import { ImageBg } from "../../grades.styles";
 import { Spacer } from "../../../spacer.component";
 
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+
 const Stack = createNativeStackNavigator();
 
 const Container = styled.View`
@@ -93,13 +95,13 @@ const Start = ({ data }) => {
   const [visibleThree, setVisibleThree] = useState(0);
 
   const [count, setCount] = useState(0);
+  const [score, setScore] = useState(0);
+
   const navigation = useNavigation();
 
   const checkAnswer = (odg) => {
     if (odg == correctAnswer) {
-      console.log("Correct");
-    } else {
-      console.log("you suck");
+      setScore(() => score + 1);
     }
   };
 
@@ -146,7 +148,10 @@ const Start = ({ data }) => {
                   setCount(2);
                 } else if (count == 2) {
                   setVisible(false);
-                  navigation.navigate("SecondScreen");
+                  navigation.navigate("SecondScreen", {
+                    score: score,
+                    prompt: "Отличная работа!\nВернитесь к уроку, чтобы продолжить обучение!",
+                  });
                 }
               }}
             >
@@ -243,8 +248,7 @@ const SortingHandler = ({ data, navigation }) => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} />}
       </Stack.Screen>
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
-        {() => <SecondScreen data={data} />}
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}>
       </Stack.Screen>
     </Stack.Navigator>
   );

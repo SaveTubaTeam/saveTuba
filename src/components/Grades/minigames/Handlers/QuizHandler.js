@@ -59,33 +59,6 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
-function SecondScreen ({ data, route, navigation, currentUser, test }) {
-  const { score } = route.params;
-  console.log("SCORE: " + score);
-  console.warn(currentUser);
-  console.log(test);
-
-  // Temporary XP Thing
-  const XP_PER_POINT = 45;
-
-
-
-  return (
-      <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
-        <Container2 style={{ backgroundColor: "white" }}>
-          <TitleText>
-            Поздравляем! Вы завершили свою первую сортировочную контрольный
-            опрос! {"\n"} You gained {score * XP_PER_POINT} xp!
-          </TitleText>
-          <Spacer size="large" />
-          <Pressable onPress={() => navigation.navigate("Lesson")}>
-            <BodyText color="primary">Назад</BodyText>
-          </Pressable>
-        </Container2>
-      </SafeArea>
-  );
-};
-
 const Start = ({ data }) => {
   const navigation = useNavigation();
 
@@ -102,10 +75,7 @@ const Start = ({ data }) => {
 
   const checkAnswer = (odg) => {
     if (odg == correctAnswer) {
-      console.log("Correct");
       setScore(() => score + 1);
-    } else {
-      console.log("you suck!");
     }
     // console.log("Score: " + score + "/4");
   };
@@ -145,7 +115,6 @@ const Start = ({ data }) => {
                   setVisible(false);
                   setCorrectAnswer(data.content[2].answer);
                   setCount(1);
-                  console.log("hi");
                 } else if (count == 1) {
                   setVisibleTwo("none");
                   setVisibleThree("flex");
@@ -156,6 +125,7 @@ const Start = ({ data }) => {
                   setVisible(false);
                   navigation.navigate("SecondScreen", {
                     score: score,
+                    prompt: "Поздравляем! \n Вы завершили свою первую сортировочную контрольный опрос!"
                   });
                 }
               }}
