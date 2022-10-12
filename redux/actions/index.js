@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 import { Firestore } from "firebase/firestore";
-import { USER_STATE_CHANGE, USER_ADD_EXPERIENCE_45, USER_ADD_EXPERIENCE_90 } from "../constants/index";
+import { USER_STATE_CHANGE, ACHIEVEMENTS_STATE_CHANGE } from "../constants/index";
 
 import { getFirestore, ref, onValue } from "firebase/firestore";
 import { auth, db } from "../../firebase";
@@ -19,10 +19,36 @@ export function fetchUser() {
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.log("Error with user in index.js " + error);
       });
   };
 }
+
+export function fetchAchievements() {
+  return (dispatch) => {
+    db.collection("user-achievements")
+    .doc(auth.currentUser.uid)
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists) {
+        dispatch({type: ACHIEVEMENTS_STATE_CHANGE, achievements: snapshot.data() });
+        let test = snapshot.data();
+        console.warn(test);
+        console.log(test["achievements"][0]);
+
+      }
+    })
+    .catch((error) => {
+      console.log("Error with achievements: \n " + error);
+    });
+  };
+}
+
+// Copy addExperienceToUser by doing reverse of what fetch achievements will do;
+// 1: Set doc to update user db
+// 2: call dispatch of achievements state change
+// 3: idk drinhk a beer
+
 
 export function addExperienceToUser(exp, currentUser) {
   return (dispatch) => {
@@ -52,5 +78,6 @@ export function addExperienceToUser(exp, currentUser) {
 export function signOutUser() {
   return (dispatch) => {
     dispatch({type: USER_STATE_CHANGE, currentUser: null});
+    dispatch({type: ACHIEVEMENTS_STATE_CHANGE, achievements: null});
   };
 }

@@ -70,7 +70,7 @@ class ProfileScreen_ extends Component {
 
 }
 
-function ProfileScreen({currentUser, store}) {
+function ProfileScreen({currentUser, store, achievements}) {
   const navigation = useNavigation();
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
@@ -78,7 +78,7 @@ function ProfileScreen({currentUser, store}) {
   //   });
   //   return unsubscribe;
   // }, [navigation]);
-
+  // console.warn(achievements);
   return (
     <ImageBg source={require("../../../../assets/basic-bg.png")}>
       <SafeArea>
@@ -88,7 +88,9 @@ function ProfileScreen({currentUser, store}) {
 
             <Spacer size="large" />
 
-            <Badges />
+
+
+            <Badges badges={achievements}/>
 
             <Spacer size="large" />
 
@@ -102,6 +104,7 @@ function ProfileScreen({currentUser, store}) {
 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
+  achievements: store.userAchievements.achievements,
   store: store,
 });
 

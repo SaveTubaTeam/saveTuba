@@ -17,7 +17,7 @@ import thunk from "redux-thunk";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { fetchUser } from "../../redux/actions/index";
+import { fetchUser, fetchAchievements } from "../../redux/actions/index";
 
 const Tab = createBottomTabNavigator();
 const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -25,6 +25,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 export class Main extends Component {
   componentDidMount() {
     this.props.fetchUser();
+    this.props.fetchAchievements();
   }
   render() {
     return (
@@ -82,8 +83,9 @@ export class Main extends Component {
 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
+  achievements: store.userAchievements.achievements,
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({ fetchUser }, dispatch);
+const mapDispatchToProps = (dispatch) => bindActionCreators({ fetchUser, fetchAchievements }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);
