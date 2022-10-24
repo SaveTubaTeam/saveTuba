@@ -48,9 +48,7 @@ const Stack = createNativeStackNavigator();
 LogBox.ignoreLogs(["Setting a timer"]);
 
 function Home() {
-  return (
-      <MainScreen />
-  );
+  return <MainScreen />;
 }
 
 export default function App() {
@@ -72,6 +70,7 @@ export default function App() {
     <>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
+          {/* Put provider here */}
           <NavigationContainer>
             <Stack.Navigator>
               <Stack.Screen
@@ -96,7 +95,7 @@ export default function App() {
               />
             </Stack.Navigator>
           </NavigationContainer>
-      </Provider>
+        </Provider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

@@ -1,6 +1,11 @@
 import firebase from "firebase/app";
-import { Firestore } from "firebase/firestore";
-import { USER_STATE_CHANGE, ACHIEVEMENTS_STATE_CHANGE } from "../constants/index";
+import { Firestore, setDoc } from "firebase/firestore";
+import {
+  USER_STATE_CHANGE,
+  ACHIEVEMENTS_STATE_CHANGE,
+  MODAL_OPENED,
+  MODAL_CLOSED,
+} from "../constants/index";
 
 import { getFirestore, ref, onValue } from "firebase/firestore";
 import { auth, db } from "../../firebase";
@@ -27,28 +32,24 @@ export function fetchUser() {
 export function fetchAchievements() {
   return (dispatch) => {
     db.collection("user-achievements")
-    .doc(auth.currentUser.uid)
-    .get()
-    .then((snapshot) => {
-      if (snapshot.exists) {
-        dispatch({type: ACHIEVEMENTS_STATE_CHANGE, achievements: snapshot.data() });
-        let test = snapshot.data();
-        console.warn(test);
-        console.log(test["achievements"][0]);
-
-      }
-    })
-    .catch((error) => {
-      console.log("Error with achievements: \n " + error);
-    });
+      .doc(auth.currentUser.uid)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          dispatch({
+            type: ACHIEVEMENTS_STATE_CHANGE,
+            achievements: snapshot.data(),
+          });
+          let test = snapshot.data();
+          // console.warn(test);
+          // console.log(test["achievements"][0]);
+        }
+      })
+      .catch((error) => {
+        console.warn("Error with achievements: \n " + error);
+      });
   };
 }
-
-// Copy addExperienceToUser by doing reverse of what fetch achievements will do;
-// 1: Set doc to update user db
-// 2: call dispatch of achievements state change
-// 3: idk drinhk a beer
-
 
 export function addExperienceToUser(exp, currentUser) {
   return (dispatch) => {
@@ -56,28 +57,83 @@ export function addExperienceToUser(exp, currentUser) {
       .doc(auth.currentUser.uid)
       .update({
         currentScore: currentUser.currentScore + exp,
-      }).then(() => {
+      })
+      .then(() => {
         currentUser.currentScore = currentUser.currentScore + exp;
 
-        var nextLevelXP = Math.ceil(     Math.pow((currentUser.level + 1.0) / (0.2), 2.1) );
+        var nextLevelXP = Math.ceil(
+          Math.pow((currentUser.level + 1.0) / 0.2, 2.1)
+        );
 
         if (currentUser.currentScore >= nextLevelXP) {
           db.collection("users")
-          .doc(auth.currentUser.uid)
-          .update({
-            level: currentUser.level + 1,
-          });
+            .doc(auth.currentUser.uid)
+            .update({
+              level: currentUser.level + 1,
+            });
           currentUser.level = currentUser.level + 1;
         }
 
-        dispatch({type: USER_STATE_CHANGE, currentUser: currentUser});
+        dispatch({ type: USER_STATE_CHANGE, currentUser: currentUser });
       });
   };
 }
 
 export function signOutUser() {
   return (dispatch) => {
-    dispatch({type: USER_STATE_CHANGE, currentUser: null});
-    dispatch({type: ACHIEVEMENTS_STATE_CHANGE, achievements: null});
+    dispatch({ type: USER_STATE_CHANGE, currentUser: null });
+    dispatch({ type: ACHIEVEMENTS_STATE_CHANGE, achievements: null });
+  };
+}
+
+export function addAchievement(achievement) {
+  return (dispatch) => {
+    let test;
+    db.collection("user-achievements")
+      .doc(auth.currentUser.uid)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          let test = snapshot.data();
+          console.log("------------------Below------------------------");
+          console.warn(test);
+          // console.warn(test["achievements"][0]);
+          var i = 0;
+          let achievInsert = "/achievements/" + achievement;
+          while (test["achievements"][i] != undefined ) {
+            if (test["achievements"][i] === achievInsert) {
+              i = -1;
+              break;
+            }
+            i++;
+          }
+          if (i != -1 || i == 0) {
+            test["achievements"][i] = achievInsert;
+            console.log("22-------------------Below-------------------22");
+            console.warn(test);
+            setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
+              achievements: test["achievements"],
+            });
+            dispatch({ type: ACHIEVEMENTS_STATE_CHANGE, achievements: test["achievements"] });
+            
+            db.collection("achievements")
+              .doc(achievement)
+              .get()
+              .then((snapshot) => {
+                let achievementInfo = snapshot.data();
+              dispatch({ type: MODAL_OPENED, achievement: achievement });
+              });
+          }
+        }
+      })
+      .catch((error) => {
+        console.warn("Error with achievements: \n " + error);
+      });
+  };
+}
+
+export function closeAchievementModal(achievement) {
+  return (dispatch) => {
+    dispatch({ type: MODAL_CLOSED, achievement: achievement });
   };
 }

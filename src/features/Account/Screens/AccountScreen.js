@@ -12,6 +12,7 @@ import { connect } from "react-redux";
 
 import SignOut from "../Components/signouut.component";
 
+import { AchievementContext } from "../../../contexts/AchievementContext"
 const Button = styled(TouchableOpacity)`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   width: 60%;
@@ -37,7 +38,6 @@ const Container = styled.View`
 function AccountScreen() {
   const navigation = useNavigation();
   const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
-
 
   const handleSignOut = () => {
     auth

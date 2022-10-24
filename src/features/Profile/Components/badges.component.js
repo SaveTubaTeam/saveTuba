@@ -14,8 +14,13 @@ const Badge = styled.Image`
   aspect-ratio: 1;
 `;
 
-export const Badges = ({badges}) => {
+export const Badges = ({ badges }) => {
   const navigation = useNavigation();
+
+  console.warn(badges);
+  // let test = JSON.stringify(badges["achievements"][0]);
+  // let removedTest = test.substring(15, test.length - 1);
+  // console.warn(removedTest);
 
   const { t } = useTranslation();
   // console.warn(badges);
@@ -28,7 +33,9 @@ export const Badges = ({badges}) => {
         <Badge source={require("../../../../assets/badges/badge2.png")} />
         <Badge source={require("../../../../assets/badges/badge3.png")} />
         <Badge source={require("../../../../assets/badges/badge4.png")} />
-        <Badge source={require("../../../../assets/badges/RaeVRJ54eObHkdzEXTWb.png")} />
+        <Badge
+          source={require("../../../../assets/badges/RaeVRJ54eObHkdzEXTWb.png")}
+        />
       </ScrollView>
     </Card>
   );

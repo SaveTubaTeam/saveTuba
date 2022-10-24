@@ -55,6 +55,8 @@ const ButtonOutLine = styled.TouchableOpacity`
 `;
 
 const LoginScreen = () => {
+  
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 

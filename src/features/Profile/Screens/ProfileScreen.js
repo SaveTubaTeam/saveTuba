@@ -12,9 +12,18 @@ import LeaderboardCard from "../Components/leaderboard.component";
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
 
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import { useEffect } from "react";
+
+import { Button } from "react-native-paper";
+
+import {
+  fetchAchievements,
+  addAchievement,
+  closeAchievementModal,
+} from "../../../../redux/actions";
 
 const Container = styled.View`
   flex: 1;
@@ -30,48 +39,18 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-
-class ProfileScreen_ extends Component {
-  constructor(props) {
-    super(props);
-    const store = props.store;
-    this.state = store.getState();
-
-    // suscribe to store
-    store.subscribe(() => {
-      this.setState(store.getState());
-    });
-  }
-  render() {
-    const navigation = useNavigation();
-
-
-    return (
-      <ImageBg source={require("../../../../assets/basic-bg.png")}>
-      <SafeArea>
-        <ScrollView>
-          <Container>
-            <ProfileCard currentUser={currentUser} />
-
-            <Spacer size="large" />
-
-            <Badges />
-
-            <Spacer size="large" />
-
-            <LeaderboardCard />
-          </Container>
-        </ScrollView>
-      </SafeArea>
-    </ImageBg>
-    );
-  }
-
-
-}
-
-function ProfileScreen({currentUser, store, achievements}) {
+function ProfileScreen({
+  currentUser,
+  store,
+  achievements,
+  fetchAchievements,
+  addAchievement,
+  closeAchievementModal,
+}) {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
   //     console.log("Refreshing");
@@ -84,13 +63,20 @@ function ProfileScreen({currentUser, store, achievements}) {
       <SafeArea>
         <ScrollView>
           <Container>
-            <ProfileCard currentUser={currentUser} store={store}/>
+            <ProfileCard currentUser={currentUser} store={store} />
+            <Button
+              style={{
+                flex: 1,
+                backgroundColor: "red",
+              }}
+              onPress={() => {
+                (addAchievement("Hello"));
+              }}
+            ></Button>
 
             <Spacer size="large" />
 
-
-
-            <Badges badges={achievements}/>
+            <Badges badges={achievements} />
 
             <Spacer size="large" />
 
@@ -105,7 +91,14 @@ function ProfileScreen({currentUser, store, achievements}) {
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
   achievements: store.userAchievements.achievements,
+  achievementModal: store.modals,
   store: store,
 });
 
-export default connect(mapStateToProps, null)(ProfileScreen);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    { fetchAchievements, addAchievement, closeAchievementModal },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
