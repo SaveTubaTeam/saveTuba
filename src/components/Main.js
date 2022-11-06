@@ -94,7 +94,7 @@ export class Main extends Component {
     if (this.props.currentUser != undefined) {
       try {
         if (this.props.achievements["achievements"][0] == undefined) {
-          // this.props.addAchievement("first-time-signing-up");
+          this.props.addAchievement("first-time-signing-up");
           // this.props.fetchAchievements();
         }
       } catch (err) {

@@ -74,7 +74,7 @@ export function addExperienceToUser(exp, currentUser) {
           currentUser.level = currentUser.level + 1;
           if (currentUser.level == 1) {
             console.log("CurrentLevel: " + currentUser.level);
-            // addAchievement("level1");
+            addAchievement("level1");
 
           }
         }

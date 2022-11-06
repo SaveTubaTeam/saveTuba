@@ -87,7 +87,14 @@ const Amodal = ({ achievementModal, children }) => {
   console.log("Bruh show the fuck up " + achievementModal);
 
   useEffect(() => {
-    setVisible(() => achievementModal);
+    // setVisible(() => achievementModal);
+    if (achievementModal != undefined && achievementModal["isOpen"] != undefined) {
+      console.log("HEEREREREREREREE " + achievementModal);
+      console.log("What the fuck is going on " + achievementModal["isOpen"]);
+      setVisible(() => achievementModal["isOpen"]);
+    } else {
+      setVisible(false);
+    }
   });
 
   console.log("VISIBILITY ========= " + visible);

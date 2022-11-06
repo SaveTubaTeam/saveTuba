@@ -50,7 +50,7 @@ function ChaptersHandler({ route, achievements, addAchievement }) {
 
 
 
-  // addAchievement("first-time-opening-grade");
+  addAchievement("first-time-opening-grade");
     
 
   return (
