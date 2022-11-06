@@ -9,6 +9,8 @@ export const achievementsModals = (state = initialState, action) => {
       return {
         ...state,
         isOpen: true,
+        achievement: action.achievement,
+        info: action.info,
       };
     case "MODAL_CLOSED":
       return {

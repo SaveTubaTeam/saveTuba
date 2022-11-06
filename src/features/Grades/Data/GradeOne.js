@@ -46,6 +46,7 @@ export const Grade1 = {
               },
             ],
           },
+
           minigames: {
             sorting: {
               navigation: "Sorting",

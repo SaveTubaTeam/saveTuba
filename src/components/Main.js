@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 // Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -28,6 +28,61 @@ import Amodal from "./achievement-components/Amodal";
 const Tab = createBottomTabNavigator();
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
+const TestNavigators = () => {
+  return (
+    <>
+      <Tab.Navigator
+        initialRouteName="Home"
+        screenOptions={{
+          tabBarActiveTintColor: theme.colors.ui.tertiary,
+          tabBarInactiveTintColor: "#fff",
+          headerShown: false,
+          tabBarHideOnKeyboard: true,
+
+          tabBarIconStyle: {
+            marginTop: 5,
+          },
+          tabBarStyle: {
+            backgroundColor: "#C6DC3B",
+          },
+        }}
+      >
+        <Tab.Screen
+          name="Profile"
+          component={ProfileScreen}
+          store={store}
+          options={{
+            title: "",
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="person" color={color} size={32} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: "",
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="home" color={color} size={32} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Settings"
+          component={AccountNav}
+          options={{
+            title: "",
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="settings" color={color} size={32} />
+            ),
+          }}
+        />
+      </Tab.Navigator>
+    </>
+  );
+};
+
 export class Main extends Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -35,24 +90,25 @@ export class Main extends Component {
   }
 
   render() {
-    console.warn();
+    // console.warn();
     if (this.props.currentUser != undefined) {
       try {
         if (this.props.achievements["achievements"][0] == undefined) {
-          this.props.addAchievement("first-time-signing-up");
+          // this.props.addAchievement("first-time-signing-up");
           // this.props.fetchAchievements();
         }
       } catch (err) {
         console.log();
-      } 
+      }
     }
 
-    if (this.props["achievementModal"]["isOpen"]) {
-      return <Amodal />;
-    } else {
-      return (
-        <>
-          <Tab.Navigator
+    // if (this.props["achievementModal"]["isOpen"]) {
+    //   return <Amodal />;
+    // } else {
+    return (
+      <>
+        <Amodal children={<TestNavigators />}>
+          {/* <Tab.Navigator
             initialRouteName="Home"
             screenOptions={{
               tabBarActiveTintColor: theme.colors.ui.tertiary,
@@ -99,12 +155,13 @@ export class Main extends Component {
                 ),
               }}
             />
-          </Tab.Navigator>
-        </>
-      );
-    }
+          </Tab.Navigator> */}
+        </Amodal>
+      </>
+    );
   }
 }
+// }
 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
@@ -116,6 +173,6 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     { fetchUser, fetchAchievements, addAchievement },
     dispatch
-  );
+);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

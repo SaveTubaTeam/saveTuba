@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import styled from "styled-components/native";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { auth } from "../../../../firebase";
@@ -17,13 +17,14 @@ import { bindActionCreators } from "redux";
 
 import { useEffect } from "react";
 
-import { Button } from "react-native-paper";
+import { Button, Modal } from "react-native-paper";
 
 import {
   fetchAchievements,
   addAchievement,
   closeAchievementModal,
 } from "../../../../redux/actions";
+import Amodal from "../../../components/achievement-components/Amodal";
 
 const Container = styled.View`
   flex: 1;
@@ -46,10 +47,12 @@ function ProfileScreen({
   fetchAchievements,
   addAchievement,
   closeAchievementModal,
+  achievementModal
 }) {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
+  const [visible, isVisible] = useState(achievementModal["isOpen"]);
 
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
@@ -70,7 +73,7 @@ function ProfileScreen({
                 backgroundColor: "red",
               }}
               onPress={() => {
-                (addAchievement("Hello"));
+                // (addAchievement("Hello"));
               }}
             ></Button>
 
@@ -83,10 +86,26 @@ function ProfileScreen({
             <LeaderboardCard />
           </Container>
         </ScrollView>
+        {/* <Modal transparent animationType="slide" visible={visible}>
+          <View
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          >
+            <View style={{backgroundColor: 'red', flex: 1}}>
+
+            </View>
+          </View>
+        </Modal> */}
       </SafeArea>
     </ImageBg>
   );
 }
+
+// const ProfileScreenView({
+//   currentUser,
+//   store,
+//   achievements,
+
+// })
 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,

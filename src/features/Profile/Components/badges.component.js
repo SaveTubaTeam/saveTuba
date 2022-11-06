@@ -17,7 +17,8 @@ const Badge = styled.Image`
 export const Badges = ({ badges }) => {
   const navigation = useNavigation();
 
-  console.warn(badges);
+  // console.warn(badges);
+
   // let test = JSON.stringify(badges["achievements"][0]);
   // let removedTest = test.substring(15, test.length - 1);
   // console.warn(removedTest);
@@ -25,6 +26,7 @@ export const Badges = ({ badges }) => {
   const { t } = useTranslation();
   // console.warn(badges);
 
+  
   return (
     <Card>
       <TitleText>{t("profile:badges")}</TitleText>
@@ -34,7 +36,7 @@ export const Badges = ({ badges }) => {
         <Badge source={require("../../../../assets/badges/badge3.png")} />
         <Badge source={require("../../../../assets/badges/badge4.png")} />
         <Badge
-          source={require("../../../../assets/badges/RaeVRJ54eObHkdzEXTWb.png")}
+          source={require("../../../../assets/badges/first-time-signing-up.png")}
         />
       </ScrollView>
     </Card>

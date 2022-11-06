@@ -12,8 +12,6 @@ import { achievements } from "../../../redux/reducers/user-achievements";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { addAchievement } from "../../../redux/actions";
-
 import { useDispatch } from "react-redux";
 
 const Button = styled.TouchableOpacity`
@@ -249,8 +247,6 @@ const mapStateToProps = (store) => ({
   achievementModal: store.modals,
 });
 
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ addAchievement }, dispatch);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, null)(Register);
 

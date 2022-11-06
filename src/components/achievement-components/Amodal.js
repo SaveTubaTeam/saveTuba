@@ -1,8 +1,9 @@
-import { Text, View, Button } from "react-native";
-import React, { Component } from "react";
-import { Modal } from "react-native-paper";
+import { Text, View, Button, Modal, Image } from "react-native";
+import React, { Component, useState, useEffect } from "react";
+import styled from "styled-components/native";
 
 // import { Button } from "react-native-paper";
+import { BadgeImages } from "../Grades/minigames/Handlers/BadgeHandler";
 
 import { bindActionCreators } from "redux";
 import { connect, useSelector, useDispatch } from "react-redux";
@@ -12,41 +13,128 @@ import {
   closeAchievementModal,
 } from "../../../redux/actions/index";
 
-const Amodal = ({ achievementModal }) => {
+const Modko = ({ visible, achievementModal }) => {
   const dispatch = useDispatch();
+  // console.log("Achievement Earned =");
+  // console.warn(achievementModal["info"]);
 
-  if (!achievementModal["isOpen"]) {
-    return <></>;
-  } else {
-    return (
+  let info = achievementModal["info"];
+  let title = achievementModal["achievement"];
+
+  let badge = BadgeImages[title];
+
+  console.warn(achievementModal);
+  
+  
+  return (
+    <Modal transparent animationType="slide" visible={visible}>
       <View
         style={{
-          backgroundColor: "red",
-          width: 200,
-          height: 500,
+          marginVertical: 150,
+          marginHorizontal: 50,
           flex: 1,
-          margin: 10,
           justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "green",
+          borderRadius: 20,
+          padding: 10,
         }}
       >
-        <Button
+        <View
           style={{
             flex: 1,
-            backgroundColor: "blue",
-            width: "50%",
-            height: "50%",
-            padding: 0,
-          }}
-          title="Pres sme"
-          onPress={() => {
-            dispatch(closeAchievementModal("Hello"));
+            width: "100%",
+            alignItems: "center",
+            backgroundColor: "white",
+            borderRadius: 20,
+            padding: 20,
           }}
         >
-          <Text>Hello</Text>
-        </Button>
+
+          <Text style={{fontSize: 20}}>Achievement Unlocked!</Text>
+
+          <Image source={badge} style={{
+            flex: 1,
+            width: 200,
+            resizeMode: "contain"
+          }}/>
+          <Text style={{fontSize: 18}}>{info}</Text>
+          <Button
+            style={{
+              flex: 1,
+              backgroundColor: "blue",
+              width: "50%",
+              height: "50%",
+              padding: 0,
+            }}
+            title="Close"
+            onPress={() => {
+              dispatch(closeAchievementModal(title));
+            }}
+          >
+            <Text>Hello</Text>
+          </Button>
+        </View>
       </View>
-    );
-  }
+    </Modal>
+  );
+};
+
+const Amodal = ({ achievementModal, children }) => {
+  const dispatch = useDispatch();
+  const [visible, setVisible] = useState(false);
+  console.log("--------------------BELOW for VISIBILITY -------------------------")
+  console.log("Bruh show the fuck up " + achievementModal);
+
+  useEffect(() => {
+    setVisible(() => achievementModal);
+  });
+
+  console.log("VISIBILITY ========= " + visible);
+  return (
+    <>
+      <>{children}</>
+      <Modko visible={visible} achievementModal={achievementModal}/>
+    </>
+  );
+
+  // if (!achievementModal["isOpen"]) {
+  //   return (
+  //     <>
+  //       <>{children}</>
+  //       <Modko visible={false} />
+  //     </>
+  //   );
+  // } else {
+  //   return (
+  //     <View
+  //       style={{
+  //         backgroundColor: "red",
+  //         width: 200,
+  //         height: 500,
+  //         flex: 1,
+  //         margin: 10,
+  //         justifyContent: "center",
+  //       }}
+  //     >
+  //       <Button
+  //         style={{
+  //           flex: 1,
+  //           backgroundColor: "blue",
+  //           width: "50%",
+  //           height: "50%",
+  //           padding: 0,
+  //         }}
+  //         title="Pres sme"
+  //         onPress={() => {
+  //           dispatch(closeAchievementModal("Hello"));
+  //         }}
+  //       >
+  //         <Text>Hello</Text>
+  //       </Button>
+  //     </View>
+  //   );
+  // }
 };
 
 const mapStateToProps = (store) => ({
@@ -62,3 +150,21 @@ const mapDispatchToProps = (dispatch) =>
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(Amodal);
+
+const ModalContainer = styled.View`
+  background-color: white;
+  width: 60%;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #cce882;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+`;
+
+
+

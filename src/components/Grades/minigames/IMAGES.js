@@ -41,6 +41,8 @@ export const QuizImages = {
   ],
 };
 
+
+
 export const TestImages = {
   solar_panel_1: require("../../../../assets/solar-panel.jpg"),
   bikingPic: require("../../../../assets/desc_ridingbike.jpg"),

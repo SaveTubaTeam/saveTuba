@@ -46,7 +46,7 @@ export function fetchAchievements() {
         }
       })
       .catch((error) => {
-        console.warn("Error with achievements: \n " + error);
+        // console.warn("Error with achievements: \n " + error);
       });
   };
 }
@@ -64,7 +64,7 @@ export function addExperienceToUser(exp, currentUser) {
         var nextLevelXP = Math.ceil(
           Math.pow((currentUser.level + 1.0) / 0.2, 2.1)
         );
-
+        console.log("CurrentUSerScore: " + currentUser.currentScore + "\nNextLevelXP: " + nextLevelXP );
         if (currentUser.currentScore >= nextLevelXP) {
           db.collection("users")
             .doc(auth.currentUser.uid)
@@ -72,6 +72,11 @@ export function addExperienceToUser(exp, currentUser) {
               level: currentUser.level + 1,
             });
           currentUser.level = currentUser.level + 1;
+          if (currentUser.level == 1) {
+            console.log("CurrentLevel: " + currentUser.level);
+            // addAchievement("level1");
+
+          }
         }
 
         dispatch({ type: USER_STATE_CHANGE, currentUser: currentUser });
@@ -87,6 +92,7 @@ export function signOutUser() {
 }
 
 export function addAchievement(achievement) {
+  console.warn(achievement);
   return (dispatch) => {
     let test;
     db.collection("user-achievements")
@@ -95,8 +101,10 @@ export function addAchievement(achievement) {
       .then((snapshot) => {
         if (snapshot.exists) {
           let test = snapshot.data();
-          console.log("------------------Below------------------------");
+          console.log("----------------BELOW----------------------");
           console.warn(test);
+          // console.log("------------------Below------------------------");
+          // console.warn(test);
           // console.warn(test["achievements"][0]);
           var i = 0;
           let achievInsert = "/achievements/" + achievement;
@@ -107,10 +115,11 @@ export function addAchievement(achievement) {
             }
             i++;
           }
+          console.log("SHOULD NOT BE GETTING HERE IF NO ACHIEVEMENT");
           if (i != -1 || i == 0) {
             test["achievements"][i] = achievInsert;
-            console.log("22-------------------Below-------------------22");
-            console.warn(test);
+            // console.log("22-------------------Below-------------------22");
+            // console.warn(test);
             setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
               achievements: test["achievements"],
             });
@@ -120,9 +129,14 @@ export function addAchievement(achievement) {
               .doc(achievement)
               .get()
               .then((snapshot) => {
-                let achievementInfo = snapshot.data();
-              dispatch({ type: MODAL_OPENED, achievement: achievement });
+                let totalInfo = snapshot.data();
+                let achievementInfo = totalInfo["prompt"];
+                // console.log("In index.js");
+                // console.warn(achievementInfo["prompt"]);
+              dispatch({ type: MODAL_OPENED, achievement: achievement, info: achievementInfo });
               });
+          } else {
+            closeAchievementModal(achievement);
           }
         }
       })
