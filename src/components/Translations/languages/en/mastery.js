@@ -82,10 +82,15 @@ export default {
   g1c2l9_card1:
     "Your body is very complex and valuable, and to stay healthy we must take care of it.",
   g1c2l9_card2:
-    "We want to sustain our health for as long as possible and make sure we don’t infect others.",
+    "We want to sustain our health for as long as possible and make sure we don't infect others.",
   g1c2l9_prompt: "Watch the below video and follow the instructions!",
 
-  g1c2l10_prompt: 'And I quote: "Xxx"',
+  g1c2l10_card1:
+    "Good oral hygiene is very important and you should properly care for your teeth every day and night.",
+  g1c2l10_card2:
+    "One form of taking care of your teeth is eating good food that doesn't rot your teeth.",
+  g1c2l10_prompt:
+    "Keep track of all the food and drinks you consume in a day and divide them into those good for your teeth or those bad for your teeth.",
   //
   /* CHAPTER 3 */
 
@@ -695,9 +700,12 @@ export default {
     "Now, grab a flashlight and shine it at each of the three objects. Write your observations down.",
   g2c4l7_prompt: "Were your predictions correct? Upload a photo of your notes.",
 
-  g2c4l8_card1:"Electricity is used to power almost everything and we get our electricity from sources like coal, natural gas, fossil fuels, etc.",
-  g2c4l8_card2:"However, it's important that we move on from our current use of non-renewable energies.",
-  g2c4l10_card3:"Solar energy is a type of renewable energy that can solve many of our energy problems.",
+  g2c4l8_card1:
+    "Electricity is used to power almost everything and we get our electricity from sources like coal, natural gas, fossil fuels, etc.",
+  g2c4l8_card2:
+    "However, it's important that we move on from our current use of non-renewable energies.",
+  g2c4l10_card3:
+    "Solar energy is a type of renewable energy that can solve many of our energy problems.",
 
   g2c4l9_card1:
     "Sound travels as vibrations through different mediums. Today, you're going to use this to make your own phone! ",

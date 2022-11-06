@@ -14,7 +14,7 @@ export const Grade1 = {
       title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
       name: <Translation>{(t) => t("gradeone:iamanexplorer")}</Translation>, // I am an explorer
       icon: require("../../../../assets/chapter-icons/location.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch1.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch1.png"),
       colorOne: "indianred",
       colorTwo: "firebrick",
       lessons: [
@@ -615,7 +615,7 @@ export const Grade1 = {
       title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradeone:wildlife")}</Translation>, // Wildlife
       icon: require("../../../../assets/chapter-icons/ecology.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch2.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch2.png"),
       colorOne: "indigo",
       colorTwo: "mediumpurple",
       lessons: [
@@ -1542,6 +1542,131 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Do you have perfect posture? If yes, why do you think so? If not, can you think of ways to improve your posture?",
+                    placeholder: "My posture is..",
+                    image: require("../../../../assets/openresponse/strong.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
+              prompt:
+                "Take a picture of two people highlighting their postures.",
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 7,
+              content: [
+                {
+                  prompt:
+                    "A heavier backpack on a child has no effect on posture because the weight is in the backpack.",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "Why is the right posture important?",
+                  answers: [
+                    {
+                      text: "Maintain correct form while exercising",
+                    },
+                    {
+                      text: "Strengthen your balance",
+                    },
+                    {
+                      text: "Prevent injuries",
+                    },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "What does bad posture do to your spine?",
+                  answers: [
+                    {
+                      text: "Puts unnecessary pressure on your spine",
+                    },
+                    {
+                      text: "Evenly distributes the weight on your spine",
+                    },
+                    { text: "Keeps you comfortable and reduces injury risk" },
+                    { text: "Allows you to maintain a full range of motion" },
+                  ],
+                  answer: "Puts unnecessary pressure on your spine",
+                },
+                {
+                  prompt: "How does your posture change over time?",
+                  answers: [
+                    {
+                      text: "Your posture will change depending on how you maintain it",
+                    },
+                    {
+                      text: "As you grow old, your spine will form a permanent curve",
+                    },
+                    {
+                      text: "Over time, your spine will become straighter due to stronger muscles",
+                    },
+                    {
+                      text: "All of the above",
+                    },
+                  ],
+                  answer:
+                    "Your posture will change depending on how you maintain it",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Is this an example of good or bad posture?",
+
+                num: 9,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [{ name: "Good posture" }, { name: "Bad posture" }],
+                options: [
+                  { title: "Rounded shoulders", name: "Bad posture" },
+                  {
+                    title: "Standing up straight and tall",
+                    name: "Good posture",
+                  },
+                  { title: "Hunched back", name: "Bad posture" },
+                  { title: "Head leaning forward", name: "Bad posture" },
+                  {
+                    title: "Weight evenly distributed on feet",
+                    name: "Good posture",
+                  },
+                  { title: "Back pain", name: "Bad posture" },
+                ],
+              },
+            },
+          },
         },
 
         /* 
@@ -1573,6 +1698,131 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What are some ways we can stay clean?",
+                    placeholder: "One way I maintain good hygiene is..",
+                    image: require("../../../../assets/openresponse/strong.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
+              prompt:
+                "Take a picture of two people highlighting their postures.",
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              numAnswers: 7,
+              content: [
+                {
+                  prompt:
+                    "A heavier backpack on a child has no effect on posture because the weight is in the backpack.",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "Why is the right posture important?",
+                  answers: [
+                    {
+                      text: "Maintain correct form while exercising",
+                    },
+                    {
+                      text: "Strengthen your balance",
+                    },
+                    {
+                      text: "Prevent injuries",
+                    },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "What does bad posture do to your spine?",
+                  answers: [
+                    {
+                      text: "Puts unnecessary pressure on your spine",
+                    },
+                    {
+                      text: "Evenly distributes the weight on your spine",
+                    },
+                    { text: "Keeps you comfortable and reduces injury risk" },
+                    { text: "Allows you to maintain a full range of motion" },
+                  ],
+                  answer: "Puts unnecessary pressure on your spine",
+                },
+                {
+                  prompt: "How does your posture change over time?",
+                  answers: [
+                    {
+                      text: "Your posture will change depending on how you maintain it",
+                    },
+                    {
+                      text: "As you grow old, your spine will form a permanent curve",
+                    },
+                    {
+                      text: "Over time, your spine will become straighter due to stronger muscles",
+                    },
+                    {
+                      text: "All of the above",
+                    },
+                  ],
+                  answer:
+                    "Your posture will change depending on how you maintain it",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Is this an example of good or bad posture?",
+
+                num: 9,
+                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                categories: [{ name: "Good posture" }, { name: "Bad posture" }],
+                options: [
+                  { title: "Rounded shoulders", name: "Bad posture" },
+                  {
+                    title: "Standing up straight and tall",
+                    name: "Good posture",
+                  },
+                  { title: "Hunched back", name: "Bad posture" },
+                  { title: "Head leaning forward", name: "Bad posture" },
+                  {
+                    title: "Weight evenly distributed on feet",
+                    name: "Good posture",
+                  },
+                  { title: "Back pain", name: "Bad posture" },
+                ],
+              },
+            },
+          },
         },
 
         /* 
@@ -1590,6 +1840,19 @@ export const Grade1 = {
             prompt: (
               <Translation>{(t) => t("mastery:g1c2l10_prompt")}</Translation>
             ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l1_card1")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g1c3l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/plant.png"),
+              },
+            ],
           },
         },
       ],
@@ -1599,7 +1862,7 @@ export const Grade1 = {
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradeone:substances")}</Translation>, // Substances and their properties
       icon: require("../../../../assets/chapter-icons/air-pollution.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch3.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch3.png"),
       colorOne: "orange",
       colorTwo: "orangered",
       lessons: [
@@ -2211,7 +2474,7 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Determine which resrouce category the picture corresponds to ",
+                  "Determine which resource category the picture belongs to",
 
                 num: 9,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
@@ -2339,7 +2602,7 @@ export const Grade1 = {
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../../assets/chapter-icons/rocket.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch4.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch4.png"),
       colorOne: "midnightblue",
       colorTwo: "mediumturquoise",
       lessons: [
@@ -2381,35 +2644,35 @@ export const Grade1 = {
               numAnswers: 5,
               content: [
                 {
-                  prompt:"The majority of the Earth's energy comes from ...",
+                  prompt: "The majority of the Earth's energy comes from ...",
                   answers: [
-                    {text: "the Earth's core." },
-                    {text: "the Sun." },
-                    {text: "hydroelectric power." },
-                    {text: "burning fossil fuels."}
+                    { text: "the Earth's core." },
+                    { text: "the Sun." },
+                    { text: "hydroelectric power." },
+                    { text: "burning fossil fuels." },
                   ],
                   answer: "the Sun.",
                 },
                 {
-                  prompt: "The Earth acts like a greenhouse that catches and traps heat from the sun.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  prompt:
+                    "The Earth acts like a greenhouse that catches and traps heat from the sun.",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
                 {
-                  prompt: "________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
+                  prompt:
+                    "________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
                   answers: [
                     { text: "Climate" },
                     { text: "Global warming" },
-                    { text: "Climate change"},
+                    { text: "Climate change" },
                     { text: "Greenhouse effect" },
                   ],
                   answer: "Global warming",
                 },
                 {
-                  prompt: "________ is a change in global and reginal climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
+                  prompt:
+                    "________ is a change in global and reginal climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
                   answers: [
                     { text: "Radiation" },
                     { text: "Climate change" },
@@ -2419,7 +2682,6 @@ export const Grade1 = {
                 },
               ],
             },
-
           },
         },
 
@@ -2565,7 +2827,7 @@ export const Grade1 = {
       title: <Translation>{(t) => t("common:chapterfive")}</Translation>, // Chapter 5
       name: <Translation>{(t) => t("gradeone:physics")}</Translation>, // Physics of nature
       icon: require("../../../../assets/chapter-icons/physics.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch5.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch5.png"),
       colorOne: "lightpink",
       colorTwo: "mediumvioletred",
       lessons: [

@@ -132,10 +132,6 @@ function LessonComponent({
         />
         <Head>
           <TitleText size="title">
-            {selectedGrade.chapters[selectedChapter].lessons[
-              selectedLesson
-            ].navigation.substring(6, 8)}
-            .{" "}
             {
               selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                 .title
@@ -189,7 +185,7 @@ function LessonComponent({
                 source={require("../../../../assets/mastery.png")}
               >
                 <TitleText weight="bold" size="h5" color="quaternary">
-                  Mastery
+                  {t("common:mastery")}
                 </TitleText>
               </ImageBg>
             </TouchableOpacity>
