@@ -18,6 +18,8 @@ import { SafeArea } from "../../../safe-area.component";
 import { ImageBg } from "../../grades.styles";
 import { Spacer } from "../../../spacer.component";
 
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+
 const Stack = createNativeStackNavigator();
 
 const Container = styled.View`
@@ -85,6 +87,8 @@ const Start = ({ data }) => {
   const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
+  const [score, setScore] = useState(0);
+
   const [currentOption, setCurrentOption] = useState(data.options[count].title);
   const [currentAnswer, setCurrentAnswer] = useState(data.options[count].name);
 
@@ -121,7 +125,10 @@ const Start = ({ data }) => {
                   setCurrentAnswer(data.options[count + 1].name);
                 } else {
                   setVisible(!visible);
-                  navigation.navigate("SecondScreen");
+                  navigation.navigate("SecondScreen", {
+                    score: score,
+                    prompt: "idk",
+                  });
                 }
               }}
             >
@@ -222,8 +229,7 @@ const SortingHandler = ({ data, navigation }) => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} />}
       </Stack.Screen>
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
-        {() => <SecondScreen data={data} />}
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}>
       </Stack.Screen>
     </Stack.Navigator>
   );

@@ -29,7 +29,7 @@ import LoginScreen from "./src/features/Login/LoginScreen";
 
 // Registration Screen
 import Register from "./src/features/Login/Register";
-
+import RegisterTeacher from "./src/features/Login/RegisterTeacher";
 // Redux Imports
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -49,9 +49,7 @@ LogBox.ignoreLogs(["Setting a timer"]);
 
 function Home() {
   return (
-    <Provider store={store}>
       <MainScreen />
-    </Provider>
   );
 }
 
@@ -73,25 +71,32 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Login"
-              component={LoginScreen}
-            />
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="Register"
-              component={Register}
-            />
-            <Stack.Screen
-              options={{ headerShown: false }}
-              name="HomePage"
-              component={Home}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+          <NavigationContainer>
+            <Stack.Navigator>
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Login"
+                component={LoginScreen}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="Register"
+                component={Register}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="RegisterTeacher"
+                component={RegisterTeacher}
+              />
+              <Stack.Screen
+                options={{ headerShown: false }}
+                name="HomePage"
+                component={Home}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+      </Provider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components/native";
 import { ScrollView, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -9,6 +9,8 @@ import { GeneralCard } from "../Components/general.component";
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
 import { connect } from "react-redux";
+
+import SignOut from "../Components/signouut.component";
 
 const Button = styled(TouchableOpacity)`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
@@ -34,7 +36,8 @@ const Container = styled.View`
 
 function AccountScreen() {
   const navigation = useNavigation();
-  const currentUser = auth.currentUser;
+  const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
+
 
   const handleSignOut = () => {
     auth
@@ -53,11 +56,9 @@ function AccountScreen() {
           <Spacer size="large" />
 
           <GeneralCard />
-          {/*
-            <Button onPress={handleSignOut}>
-              <ButtonText>Sign Out</ButtonText>
-            </Button>
-  */}
+          <SignOut navigation={navigation}/>
+            
+       
         </Container>
       </ScrollView>
     </SafeArea>

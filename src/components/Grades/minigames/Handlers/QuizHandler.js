@@ -18,6 +18,8 @@ import { SafeArea } from "../../../safe-area.component";
 import { Spacer } from "../../../spacer.component";
 import { ComplexAnimationBuilder } from "react-native-reanimated";
 
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+
 const Stack = createNativeStackNavigator();
 
 const Container = styled.View`
@@ -96,6 +98,14 @@ const Start = ({ data }) => {
   const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const checkAnswer = (odg) => {
+    if (odg == correctAnswer) {
+      setScore(() => score + 1);
+    }
+    // console.log("Score: " + score + "/4");
+  };
   const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
 
   const [visible, setVisible] = useState(false);
@@ -151,7 +161,10 @@ const Start = ({ data }) => {
                   setThirdVisible("none");
                   setFourthVisible("flex");
                 } else {
-                  navigation.navigate("SecondScreen");
+                  navigation.navigate("SecondScreen", {
+                    score: score,
+                    prompt: "Congratulations, you've just finished your first quiz! Go back to the lesson to continue learning!"
+                  });
                 }
               }}
             >
@@ -173,6 +186,7 @@ const Start = ({ data }) => {
           onPress={() => {
             if (item.text == data.content[count].answer) {
               setCorrect(true);
+              setScore(() => score + 1);
             } else {
               setCorrect(false);
             }
@@ -248,16 +262,15 @@ const Start = ({ data }) => {
   );
 };
 
-const QuizHandler = ({ data }) => {
+const QuizHandler = ({ data, navigation, route, currentUser }) => {
+  console.warn(currentUser);
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
-        {() => <SecondScreen data={data} />}
-      </Stack.Screen>
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}/>
     </Stack.Navigator>
   );
 };
