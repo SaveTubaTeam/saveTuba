@@ -28,7 +28,7 @@ import Amodal from "./achievement-components/Amodal";
 const Tab = createBottomTabNavigator();
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-const TestNavigators = () => {
+const SaveTuba = () => {
   return (
     <>
       <Tab.Navigator
@@ -98,16 +98,19 @@ export class Main extends Component {
           // this.props.fetchAchievements();
         }
       } catch (err) {
-        console.log();
+        console.log(err);
       }
     }
 
     // if (this.props["achievementModal"]["isOpen"]) {
     //   return <Amodal />;
     // } else {
+    
+    
+    // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
     return (
-      <>
-        <Amodal children={<TestNavigators />}>
+      <> 
+        <Amodal children={<SaveTuba />}>
           {/* <Tab.Navigator
             initialRouteName="Home"
             screenOptions={{

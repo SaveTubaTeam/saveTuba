@@ -67,15 +67,6 @@ function ProfileScreen({
         <ScrollView>
           <Container>
             <ProfileCard currentUser={currentUser} store={store} />
-            <Button
-              style={{
-                flex: 1,
-                backgroundColor: "red",
-              }}
-              onPress={() => {
-                // (addAchievement("Hello"));
-              }}
-            ></Button>
 
             <Spacer size="large" />
 

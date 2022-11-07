@@ -20,12 +20,9 @@ const Modko = ({ visible, achievementModal }) => {
 
   let info = achievementModal["info"];
   let title = achievementModal["achievement"];
-
   let badge = BadgeImages[title];
 
-  console.warn(achievementModal);
-  
-  
+  // console.warn(achievementModal);
   return (
     <Modal transparent animationType="slide" visible={visible}>
       <View
@@ -83,21 +80,15 @@ const Modko = ({ visible, achievementModal }) => {
 const Amodal = ({ achievementModal, children }) => {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);
-  console.log("--------------------BELOW for VISIBILITY -------------------------")
-  console.log("Bruh show the fuck up " + achievementModal);
 
   useEffect(() => {
     // setVisible(() => achievementModal);
     if (achievementModal != undefined && achievementModal["isOpen"] != undefined) {
-      console.log("HEEREREREREREREE " + achievementModal);
-      console.log("What the fuck is going on " + achievementModal["isOpen"]);
       setVisible(() => achievementModal["isOpen"]);
     } else {
       setVisible(false);
     }
   });
-
-  console.log("VISIBILITY ========= " + visible);
   return (
     <>
       <>{children}</>

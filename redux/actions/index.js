@@ -24,7 +24,7 @@ export function fetchUser() {
         }
       })
       .catch((error) => {
-        console.log("Error with user in index.js " + error);
+        console.log("Error with user in redux/actions/index.js " + error);
       });
   };
 }
@@ -40,13 +40,10 @@ export function fetchAchievements() {
             type: ACHIEVEMENTS_STATE_CHANGE,
             achievements: snapshot.data(),
           });
-          let test = snapshot.data();
-          // console.warn(test);
-          // console.log(test["achievements"][0]);
         }
       })
       .catch((error) => {
-        // console.warn("Error with achievements: \n " + error);
+        console.warn("Error with achievements: \n " + error);
       });
   };
 }
@@ -64,7 +61,7 @@ export function addExperienceToUser(exp, currentUser) {
         var nextLevelXP = Math.ceil(
           Math.pow((currentUser.level + 1.0) / 0.2, 2.1)
         );
-        console.log("CurrentUSerScore: " + currentUser.currentScore + "\nNextLevelXP: " + nextLevelXP );
+        // console.log("CurrentUSerScore: " + currentUser.currentScore + "\nNextLevelXP: " + nextLevelXP );
         if (currentUser.currentScore >= nextLevelXP) {
           db.collection("users")
             .doc(auth.currentUser.uid)
@@ -73,8 +70,8 @@ export function addExperienceToUser(exp, currentUser) {
             });
           currentUser.level = currentUser.level + 1;
           if (currentUser.level == 1) {
-            console.log("CurrentLevel: " + currentUser.level);
-            addAchievement("level1");
+            // console.log("CurrentLevel: " + currentUser.level);
+            dispatch(addAchievement("level1"));
 
           }
         }
@@ -92,7 +89,7 @@ export function signOutUser() {
 }
 
 export function addAchievement(achievement) {
-  console.warn(achievement);
+  // console.warn(achievement);
   return (dispatch) => {
     let test;
     db.collection("user-achievements")
@@ -100,30 +97,23 @@ export function addAchievement(achievement) {
       .get()
       .then((snapshot) => {
         if (snapshot.exists) {
-          let test = snapshot.data();
-          console.log("----------------BELOW----------------------");
-          console.warn(test);
-          // console.log("------------------Below------------------------");
-          // console.warn(test);
-          // console.warn(test["achievements"][0]);
+          let achievements = snapshot.data();
           var i = 0;
           let achievInsert = "/achievements/" + achievement;
-          while (test["achievements"][i] != undefined ) {
-            if (test["achievements"][i] === achievInsert) {
+          while (achievements["achievements"][i] != undefined ) {
+            if (achievements["achievements"][i] === achievInsert) {
               i = -1;
               break;
             }
             i++;
           }
-          console.log("SHOULD NOT BE GETTING HERE IF NO ACHIEVEMENT");
+
           if (i != -1 || i == 0) {
-            test["achievements"][i] = achievInsert;
-            // console.log("22-------------------Below-------------------22");
-            // console.warn(test);
+            achievements["achievements"][i] = achievInsert;
             setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
-              achievements: test["achievements"],
+              achievements: achievements["achievements"],
             });
-            dispatch({ type: ACHIEVEMENTS_STATE_CHANGE, achievements: test["achievements"] });
+            dispatch({ type: ACHIEVEMENTS_STATE_CHANGE, achievements: achievements["achievements"] });
             
             db.collection("achievements")
               .doc(achievement)
@@ -131,8 +121,6 @@ export function addAchievement(achievement) {
               .then((snapshot) => {
                 let totalInfo = snapshot.data();
                 let achievementInfo = totalInfo["prompt"];
-                // console.log("In index.js");
-                // console.warn(achievementInfo["prompt"]);
               dispatch({ type: MODAL_OPENED, achievement: achievement, info: achievementInfo });
               });
           } else {
