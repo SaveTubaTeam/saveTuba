@@ -8,6 +8,11 @@ import { renderToString } from "react-dom/server";
 import { auth, db } from "../../../firebase";
 import { Translation } from "react-i18next";
 import { t } from "i18next";
+import { achievements } from "../../../redux/reducers/user-achievements";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+
+import { useDispatch } from "react-redux";
 
 const Button = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
@@ -78,6 +83,7 @@ export class Register extends Component {
       friends: "",
       friendCount: "",
       isTeacher: false,
+      achievements: [],
     };
 
     // Need to do this to add functions that can use the this.state stuff
@@ -93,7 +99,13 @@ export class Register extends Component {
       classCode,
       username,
       isTeacher,
+      achievements,
     } = this.state;
+    // achievements[0] = "/achievements/first-time-signing-up";
+    // achievements[1] = "/achievements/achevnemntn1";
+    // achievements[2] = "/achievements/achevnemntn2";
+    // achievements[3] = "/achievements/achevnemntn13";
+    // achievements[4] = "/achievements/achevnemntn114";
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
@@ -115,6 +127,12 @@ export class Register extends Component {
             initialized: true,
           },
         });
+
+        // setting sign up badge to true
+        setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
+          achievements: achievements,
+        });
+
       })
       .catch((err) => {
         alert(err);
@@ -186,7 +204,10 @@ export class Register extends Component {
           </InputContainer>
 
           <ButtonContainer>
-            <Button onPress={() => this.onSignUp()}>
+            <Button onPress={() => {
+              this.onSignUp();
+              // this.props.addAchievement("first-time-signing-up");
+            }}>
               <TitleText color="secondary" size="body">
                 {t("common:signup")}
               </TitleText>
@@ -222,4 +243,10 @@ export class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = (store) => ({
+  achievementModal: store.modals,
+});
+
+
+export default connect(mapStateToProps, null)(Register);
+

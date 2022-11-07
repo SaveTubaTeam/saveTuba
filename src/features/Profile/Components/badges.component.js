@@ -14,17 +14,30 @@ const Badge = styled.Image`
   aspect-ratio: 1;
 `;
 
-export const Badges = () => {
+export const Badges = ({ badges }) => {
   const navigation = useNavigation();
+
+  // console.warn(badges);
+
+  // let test = JSON.stringify(badges["achievements"][0]);
+  // let removedTest = test.substring(15, test.length - 1);
+  // console.warn(removedTest);
+
   const { t } = useTranslation();
+  // console.warn(badges);
+
+  
   return (
     <Card>
       <TitleText>{t("profile:badges")}</TitleText>
       <ScrollView style={{ width: "100%" }} horizontal independent>
-        <Badge source={require("../../../../assets/badge1.png")} />
-        <Badge source={require("../../../../assets/badge2.png")} />
-        <Badge source={require("../../../../assets/badge3.png")} />
-        <Badge source={require("../../../../assets/badge4.png")} />
+        <Badge source={require("../../../../assets/badges/badge1.png")} />
+        <Badge source={require("../../../../assets/badges/badge2.png")} />
+        <Badge source={require("../../../../assets/badges/badge3.png")} />
+        <Badge source={require("../../../../assets/badges/badge4.png")} />
+        <Badge
+          source={require("../../../../assets/badges/first-time-signing-up.png")}
+        />
       </ScrollView>
     </Card>
   );

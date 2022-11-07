@@ -17,8 +17,15 @@ import { BodyText } from "../../../body-text.component";
 import { SafeArea } from "../../../safe-area.component";
 import { Spacer } from "../../../spacer.component";
 import { ComplexAnimationBuilder } from "react-native-reanimated";
-
+import {
+  fetchAchievements,
+  addAchievement,
+  closeAchievementModal,
+} from "../../../../../redux/actions";
 import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+
+import { bindActionCreators } from "redux";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -262,8 +269,9 @@ const Start = ({ data }) => {
   );
 };
 
-const QuizHandler = ({ data, navigation, route, currentUser }) => {
-  console.warn(currentUser);
+const QuizHandler = ({ data, navigation, route, currentUser, addAchievement }) => {
+  // console.warn(currentUser);
+  addAchievement("first-quiz-minigame");
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
@@ -279,4 +287,10 @@ const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
 });
 
-export default connect(mapStateToProps, null)(QuizHandler);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    { addAchievement },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuizHandler);

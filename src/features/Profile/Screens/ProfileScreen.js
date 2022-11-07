@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import styled from "styled-components/native";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { auth } from "../../../../firebase";
@@ -12,9 +12,19 @@ import LeaderboardCard from "../Components/leaderboard.component";
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
 
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import { useEffect } from "react";
+
+import { Button, Modal } from "react-native-paper";
+
+import {
+  fetchAchievements,
+  addAchievement,
+  closeAchievementModal,
+} from "../../../../redux/actions";
+import Amodal from "../../../components/achievement-components/Amodal";
 
 const Container = styled.View`
   flex: 1;
@@ -30,79 +40,75 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-
-class ProfileScreen_ extends Component {
-  constructor(props) {
-    super(props);
-    const store = props.store;
-    this.state = store.getState();
-
-    // suscribe to store
-    store.subscribe(() => {
-      this.setState(store.getState());
-    });
-  }
-  render() {
-    const navigation = useNavigation();
-
-
-    return (
-      <ImageBg source={require("../../../../assets/basic-bg.png")}>
-      <SafeArea>
-        <ScrollView>
-          <Container>
-            <ProfileCard currentUser={currentUser} />
-
-            <Spacer size="large" />
-
-            <Badges />
-
-            <Spacer size="large" />
-
-            <LeaderboardCard />
-          </Container>
-        </ScrollView>
-      </SafeArea>
-    </ImageBg>
-    );
-  }
-
-
-}
-
-function ProfileScreen({currentUser, store}) {
+function ProfileScreen({
+  currentUser,
+  store,
+  achievements,
+  fetchAchievements,
+  addAchievement,
+  closeAchievementModal,
+  achievementModal
+}) {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
+
+  const [visible, isVisible] = useState(achievementModal["isOpen"]);
+
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
   //     console.log("Refreshing");
   //   });
   //   return unsubscribe;
   // }, [navigation]);
-
+  // console.warn(achievements);
   return (
     <ImageBg source={require("../../../../assets/basic-bg.png")}>
       <SafeArea>
         <ScrollView>
           <Container>
-            <ProfileCard currentUser={currentUser} store={store}/>
+            <ProfileCard currentUser={currentUser} store={store} />
 
             <Spacer size="large" />
 
-            <Badges />
+            <Badges badges={achievements} />
 
             <Spacer size="large" />
 
             <LeaderboardCard />
           </Container>
         </ScrollView>
+        {/* <Modal transparent animationType="slide" visible={visible}>
+          <View
+            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          >
+            <View style={{backgroundColor: 'red', flex: 1}}>
+
+            </View>
+          </View>
+        </Modal> */}
       </SafeArea>
     </ImageBg>
   );
 }
 
+// const ProfileScreenView({
+//   currentUser,
+//   store,
+//   achievements,
+
+// })
+
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
+  achievements: store.userAchievements.achievements,
+  achievementModal: store.modals,
   store: store,
 });
 
-export default connect(mapStateToProps, null)(ProfileScreen);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    { fetchAchievements, addAchievement, closeAchievementModal },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);

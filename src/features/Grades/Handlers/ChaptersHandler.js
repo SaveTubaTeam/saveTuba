@@ -3,6 +3,8 @@ import { View } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
 
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
@@ -12,9 +14,11 @@ import { Grade2 } from "../Data/GradeTwo";
 import { Grade3 } from "../Data/GradeThree";
 import { Grade4 } from "../Data/GradeFour";
 
+import { addAchievement } from "../../../../redux/actions";
+
 const Stack = createNativeStackNavigator();
 
-function ChaptersHandler({ route }) {
+function ChaptersHandler({ route, achievements, addAchievement }) {
   const navigation = useNavigation();
   const { level } = route.params; // Level selected from Lesson navigation screen
   const [selectedGrade, setSelectedGrade] = useState(null);
@@ -42,6 +46,12 @@ function ChaptersHandler({ route }) {
   if (selectedGrade == null) {
     return <View></View>;
   }
+
+
+
+
+  addAchievement("first-time-opening-grade");
+    
 
   return (
     <NavigationContainer independent>
@@ -150,7 +160,15 @@ function ChaptersHandler({ route }) {
 // Boiler Plate code to include redux and firebase functions and data
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
+  achievements: store.userAchievements.achievements,
+  achievementModal: store.modals,
 });
 
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    { addAchievement },
+    dispatch
+);
+
 // Last function to connect the component to props of redux/firebase
-export default connect(mapStateToProps, null)(ChaptersHandler);
+export default connect(mapStateToProps, mapDispatchToProps)(ChaptersHandler);
