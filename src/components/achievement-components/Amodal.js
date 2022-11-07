@@ -27,14 +27,19 @@ const Modko = ({ visible, achievementModal }) => {
     <Modal transparent animationType="slide" visible={visible}>
       <View
         style={{
-          marginVertical: 150,
+          marginVertical: 170,
           marginHorizontal: 50,
           flex: 1,
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "green",
           borderRadius: 20,
-          padding: 10,
+          padding: 5,
+          shadowOpacity: 0.5,
+          shadowRadius: 10,
+          shadowColor: "black",
+          shadowOffset: { width: 0, height: 2 },
+          elevation: 5,
         }}
       >
         <View
@@ -47,15 +52,17 @@ const Modko = ({ visible, achievementModal }) => {
             padding: 20,
           }}
         >
+          <Text style={{ fontSize: 20 }}>Achievement Unlocked!</Text>
 
-          <Text style={{fontSize: 20}}>Achievement Unlocked!</Text>
-
-          <Image source={badge} style={{
-            flex: 1,
-            width: 200,
-            resizeMode: "contain"
-          }}/>
-          <Text style={{fontSize: 18}}>{info}</Text>
+          <Image
+            source={badge}
+            style={{
+              flex: 1,
+              width: 250,
+              resizeMode: "contain",
+            }}
+          />
+          <Text style={{ fontSize: 20 }}>{info}</Text>
           <Button
             style={{
               flex: 1,
@@ -83,7 +90,10 @@ const Amodal = ({ achievementModal, children }) => {
 
   useEffect(() => {
     // setVisible(() => achievementModal);
-    if (achievementModal != undefined && achievementModal["isOpen"] != undefined) {
+    if (
+      achievementModal != undefined &&
+      achievementModal["isOpen"] != undefined
+    ) {
       setVisible(() => achievementModal["isOpen"]);
     } else {
       setVisible(false);
@@ -92,7 +102,7 @@ const Amodal = ({ achievementModal, children }) => {
   return (
     <>
       <>{children}</>
-      <Modko visible={visible} achievementModal={achievementModal}/>
+      <Modko visible={visible} achievementModal={achievementModal} />
     </>
   );
 
@@ -163,6 +173,3 @@ const Container = styled.View`
   align-items: center;
   padding-top: 100px;
 `;
-
-
-

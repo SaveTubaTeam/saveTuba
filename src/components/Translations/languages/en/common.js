@@ -38,6 +38,7 @@ export default {
 
   login: "Log In",
   signup: "Sign Up",
+  makeanewaccount: "Make a new account",
   teachersignup: "Teacher Sign Up",
   signout: "Sign Out",
 

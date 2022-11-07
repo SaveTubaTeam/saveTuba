@@ -59,11 +59,12 @@ const Container = styled.View`
 `;
 
 const ButtonContainer = styled.View`
-  width: 60%;
+  width: 50%;
   align-self: center;
 `;
 const InputContainer = styled.View`
-  width: 80%;
+  width: 70%;
+  margin-top: 30px;
   align-self: center;
 `;
 
@@ -132,7 +133,6 @@ export class Register extends Component {
         setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
           achievements: achievements,
         });
-
       })
       .catch((err) => {
         alert(err);
@@ -171,7 +171,7 @@ export class Register extends Component {
       <Container>
         <ImageBg source={require("../../../assets/homepagebackground.png")}>
           <TitleText color="secondary" size="title">
-            Зарегистрируйтесь, чтобы сохранить Tuba
+            {t("common:makeanewaccount")}
             {/* Register For Save Tuba */}
           </TitleText>
 
@@ -204,10 +204,12 @@ export class Register extends Component {
           </InputContainer>
 
           <ButtonContainer>
-            <Button onPress={() => {
-              this.onSignUp();
-              // this.props.addAchievement("first-time-signing-up");
-            }}>
+            <Button
+              onPress={() => {
+                this.onSignUp();
+                // this.props.addAchievement("first-time-signing-up");
+              }}
+            >
               <TitleText color="secondary" size="body">
                 {t("common:signup")}
               </TitleText>
@@ -247,6 +249,4 @@ const mapStateToProps = (store) => ({
   achievementModal: store.modals,
 });
 
-
 export default connect(mapStateToProps, null)(Register);
-

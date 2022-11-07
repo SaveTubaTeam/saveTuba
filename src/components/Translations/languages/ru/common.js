@@ -38,6 +38,7 @@ export default {
 
   login: "Авторизоваться",
   signup: "Зарегистрироваться",
+  makeanewaccount: "Создайте новый аккаунт",
   teachersignup: "Учитель Зарегистрироваться",
   signout: "Выйти",
 
