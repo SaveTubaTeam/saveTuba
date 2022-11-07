@@ -69,7 +69,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="subtitle" color="secondary">
-              {item.navigation.substring(6, 8)}. {item.title}
+              {item.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="secondary">
@@ -143,7 +143,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="mid" color="primary">
-              {item.navigation.substring(6, 8)}. {item.title}
+              {item.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left">5/5</BodyText>

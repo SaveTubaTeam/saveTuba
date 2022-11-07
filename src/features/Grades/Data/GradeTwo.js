@@ -12,7 +12,7 @@ export const Grade2 = {
       title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
       name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am an explorer
       icon: require("../../../../assets/chapter-icons/explore.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch1.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch1.png"),
       colorOne: "darkorange",
       colorTwo: "goldenrod",
       lessons: [
@@ -352,7 +352,7 @@ export const Grade2 = {
       navigation: "Chapter2",
       title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradetwo:wildlife")}</Translation>, // Wildlife
-      backgroundImage: require("../../../../assets/mastery/bg/ch2.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch2.png"),
       icon: require("../../../../assets/chapter-icons/butterfly.png"),
       colorOne: "darkolivegreen",
       colorTwo: "darkgreen",
@@ -701,15 +701,16 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Which communitiy (natural or artifical) is more environmentally friendly?"
-                    + "Are there benefits to one or the other? List a couple of either communities you see in your area.",
+                    text:
+                      "Which communitiy (natural or artifical) is more environmentally friendly?" +
+                      "Are there benefits to one or the other? List a couple of either communities you see in your area.",
                     placeholder: "The community that is...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
@@ -717,10 +718,7 @@ export const Grade2 = {
                 prompt: "Match the items to thier community", //ideally change to match picutre to word
                 num: 8, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Natural" },
-                  {name: "Artifical" },
-                ],
+                categories: [{ name: "Natural" }, { name: "Artifical" }],
                 options: [
                   { title: "Forest", name: "Natural" },
                   { title: "Field", name: "Artifical" },
@@ -728,9 +726,9 @@ export const Grade2 = {
                   { title: "Steppe", name: "Natural" },
                   { title: "Pond", name: "Artifical" },
                   { title: "Desert", name: "Natural" },
-                  { title: "Vegetable garden", name: "Artifical"},
-                  { title: "Lake" , name: "Natural" },
-                  { title: "Swap", name: "Natural" }, 
+                  { title: "Vegetable garden", name: "Artifical" },
+                  { title: "Lake", name: "Natural" },
+                  { title: "Swap", name: "Natural" },
                 ],
               },
             },
@@ -741,13 +739,18 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { //funny wording
-                  prompt:"What is a natural community?",
+                {
+                  //funny wording
+                  prompt: "What is a natural community?",
                   answers: [
-                    {text: "A group of plants and animals and their native habitat" },
-                    {text: "A group of plants and animals that are not living in their habitat" },
-                    {text: "A group of only plants living in their habitat" },
-                    {text: "A group of only animals living in their habitat" },
+                    {
+                      text: "A group of plants and animals and their native habitat",
+                    },
+                    {
+                      text: "A group of plants and animals that are not living in their habitat",
+                    },
+                    { text: "A group of only plants living in their habitat" },
+                    { text: "A group of only animals living in their habitat" },
                   ],
                   answer: "A group of plants and animals and their habitat",
                 },
@@ -756,7 +759,7 @@ export const Grade2 = {
                   answers: [
                     { text: "Of having only different features" },
                     { text: "Of having mostly different features" },
-                    { text: "Of having some similar features"},
+                    { text: "Of having some similar features" },
                     { text: "Of having the same or similar features" },
                   ],
                   answer: "Of having the same or similar features",
@@ -764,22 +767,24 @@ export const Grade2 = {
                 {
                   prompt: "What is an artifical community?",
                   answers: [
-                    { text: "A group of plants and animals and their native habitat" },
-                    { text: "A group of plants and animals that are not living in their habitat" },
+                    {
+                      text: "A group of plants and animals and their native habitat",
+                    },
+                    {
+                      text: "A group of plants and animals that are not living in their habitat",
+                    },
                     { text: "A group of only plants living in their habitat" },
-                    { text: "A group of only animals living in their habitat"}
+                    { text: "A group of only animals living in their habitat" },
                   ],
-                  answer: "A group of plants and animals that are not living in their habitat",
+                  answer:
+                    "A group of plants and animals that are not living in their habitat",
                 },
                 {
                   prompt: "Plants and animals don't need each other to exist.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "False",
                 },
-                { 
+                {
                   prompt: "Homogenous conditions of existence means...",
                   answers: [
                     { text: "different plants can't live in the same area" },
@@ -787,7 +792,7 @@ export const Grade2 = {
                     { text: "only specific plants can live in tbe same area" },
                     { text: "No plants can live in the same area" },
                   ],
-                    answer: "different plants can live in the same area",
+                  answer: "different plants can live in the same area",
                 },
               ],
             },
@@ -850,22 +855,21 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { //funny wording
-                  prompt:"What is the definition of 'pathogenic' ",
+                {
+                  //funny wording
+                  prompt: "What is the definition of 'pathogenic' ",
                   answers: [
-                    {text: "Something that causes disease" },
-                    {text: "A microorganism" },
-                    {text: "A type of plant" },
-                    {text: "Something that grows very tall" },
+                    { text: "Something that causes disease" },
+                    { text: "A microorganism" },
+                    { text: "A type of plant" },
+                    { text: "Something that grows very tall" },
                   ],
                   answer: "Something that causes disease",
                 },
                 {
-                  prompt: "It can take up to 100 years to completely restore a forest that was cut down",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  prompt:
+                    "It can take up to 100 years to completely restore a forest that was cut down",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
                 {
@@ -874,20 +878,18 @@ export const Grade2 = {
                     { text: "Help clear the air of dust" },
                     { text: "Help clear the diar of soot" },
                     { text: "Help clear the air of hamful gasses" },
-                    { text: "All the above"}
+                    { text: "All the above" },
                   ],
                   answer: "All the above",
                 },
                 {
-                  prompt: "The more we use plants and don't participate in restorative practices, " +
-                  " the more likely the air quality will decrease.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
+                  prompt:
+                    "The more we use plants and don't participate in restorative practices, " +
+                    " the more likely the air quality will decrease.",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
-                { 
+                {
                   prompt: "What does 'anthropogenic' mean?",
                   answers: [
                     { text: "Casued by human activity" },
@@ -895,7 +897,7 @@ export const Grade2 = {
                     { text: "The realtionship between prey and preditor" },
                     { text: "The idea of being sustainable" },
                   ],
-                    answer: "Caused by human activity",
+                  answer: "Caused by human activity",
                 },
               ],
             },
@@ -919,31 +921,30 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "List a few ways in which you indirectly impact the environment" +
-                    ", are these practices sustainable?",
+                    text:
+                      "List a few ways in which you indirectly impact the environment" +
+                      ", are these practices sustainable?",
                     placeholder: "The difference between...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Sort these practices into helping or hurting the environment",
+                prompt:
+                  "Sort these practices into helping or hurting the environment",
                 num: 4, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Helping" },
-                  {name: "Hurting" },
-                ],
+                categories: [{ name: "Helping" }, { name: "Hurting" }],
                 options: [
                   { title: "Littering", name: "Hurting" },
                   { title: "Picking up trash", name: "Helping" },
                   { title: "Planting native plants", name: "Helping" },
-                  { title: "Using chemical pesticides", name: "Hurting"  },
+                  { title: "Using chemical pesticides", name: "Hurting" },
                   { title: "Supporting local farming", name: "Helping" },
                 ],
               },
@@ -998,16 +999,16 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               numAnswers: 5,
               content: [
-                { //funny wording
-                  prompt:"The first Red Book of Kazakhstan was published in 1978 ",
-                  answers: [
-                    {text: "True" },
-                    {text: "False" },
-                  ],
+                {
+                  //funny wording
+                  prompt:
+                    "The first Red Book of Kazakhstan was published in 1978 ",
+                  answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
                 {
-                  prompt: "Which plant grows 1000-2000m above sea level and contains natural rubber?",
+                  prompt:
+                    "Which plant grows 1000-2000m above sea level and contains natural rubber?",
                   answers: [
                     { text: "Dandelion" },
                     { text: "Sundew Rounded-Leaf" },
@@ -1017,7 +1018,8 @@ export const Grade2 = {
                   answer: "Dandelion",
                 },
                 {
-                  prompt: "Which plant grows to about 15-50cm and is used to make porridge?",
+                  prompt:
+                    "Which plant grows to about 15-50cm and is used to make porridge?",
                   answers: [
                     { text: "Dandelion" },
                     { text: "Sundew Rounded-Leaf" },
@@ -1027,7 +1029,8 @@ export const Grade2 = {
                   answer: "Steppe Peony",
                 },
                 {
-                  prompt: "Which plant has small white flowres and is commonly found in swamps?",
+                  prompt:
+                    "Which plant has small white flowres and is commonly found in swamps?",
                   answers: [
                     { text: "Dandelion" },
                     { text: "Sundew Rounded-Leaf" },
@@ -1036,13 +1039,11 @@ export const Grade2 = {
                   ],
                   answer: "Sundew Rounded-Leaf",
                 },
-                { 
-                  prompt: "The Red Book only contains information about plants and not animals ",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                    answer: "False",
+                {
+                  prompt:
+                    "The Red Book only contains information about plants and not animals ",
+                  answers: [{ text: "True" }, { text: "False" }],
+                  answer: "False",
                 },
               ],
             },
@@ -1057,15 +1058,17 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What would be some ways that we could reduce the number of plants listed in the Red Book?" +
-                    " How is practicing good sustainable habits going to help reduce the endangered species?",
-                    placeholder: "We can reduce the number of endangered plants by ...",
+                    text:
+                      "What would be some ways that we could reduce the number of plants listed in the Red Book?" +
+                      " How is practicing good sustainable habits going to help reduce the endangered species?",
+                    placeholder:
+                      "We can reduce the number of endangered plants by ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
@@ -1075,7 +1078,7 @@ export const Grade2 = {
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
                   { name: "In Red Book" },
-                  {name: "Not in Red Book" },
+                  { name: "Not in Red Book" },
                 ],
                 options: [
                   { title: "Startfruit", name: "Not in Red Book" },
@@ -1184,8 +1187,7 @@ export const Grade2 = {
               numAnswers: 5,
               content: [
                 {
-                  prompt:
-                    "What is the function of a skeleton?",
+                  prompt: "What is the function of a skeleton?",
                   answers: [
                     { text: "Gives necessary stability" },
                     { text: "Helps movement" },
@@ -1195,8 +1197,7 @@ export const Grade2 = {
                   answer: "All the above",
                 },
                 {
-                  prompt:
-                    "Which animal is an invertebrate?",
+                  prompt: "Which animal is an invertebrate?",
                   answers: [
                     { text: "Cat" },
                     { text: "Worm" },
@@ -1226,16 +1227,17 @@ export const Grade2 = {
                   ],
                   answer: "Insects",
                 },
-                { 
-                  prompt: "Which group of animals consist of snails, squids, octupuses, and oysters? ",
+                {
+                  prompt:
+                    "Which group of animals consist of snails, squids, octupuses, and oysters? ",
                   answers: [
                     { text: "Crustaceans" },
                     { text: "Insects" },
                     { text: "Echinoderms" },
-                    { text: "Mollusk" },  
+                    { text: "Mollusk" },
                   ],
                   answer: "Mollusk",
-                }
+                },
               ],
             },
             openresponse: {
@@ -1249,8 +1251,9 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Name a couple animals that are veterbrates. Now, name a couple of "
-                    + "animals that are invertebrates. How are they similar? How are they different?",
+                    text:
+                      "Name a couple animals that are veterbrates. Now, name a couple of " +
+                      "animals that are invertebrates. How are they similar? How are they different?",
                     placeholder: "An animal that is ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
@@ -1262,8 +1265,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Draw a picture of a skeletal system wit a vertebrate!",
+              prompt: "Draw a picture of a skeletal system wit a vertebrate!",
             },
           },
           mastery: {
@@ -1668,7 +1670,7 @@ export const Grade2 = {
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
       name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
       icon: require("../../../../assets/chapter-icons/water-cycle.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch3.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch3.png"),
       colorOne: "tomato",
       colorTwo: "firebrick",
       lessons: [
@@ -2365,7 +2367,7 @@ export const Grade2 = {
       navigation: "Chapter4",
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 6
       name: <Translation>{(t) => t("gradetwo:physics")}</Translation>, // Physics of nature
-      backgroundImage: require("../../../../assets/mastery/bg/ch4.jpg"),
+      backgroundImage: require("../../../../assets/mastery/bg/ch4.png"),
       icon: require("../../../../assets/chapter-icons/book.png"),
       colorOne: "mediumturquoise",
       colorTwo: "royalblue",
