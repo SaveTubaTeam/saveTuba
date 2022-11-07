@@ -12,6 +12,7 @@ import {
   addAchievement,
   closeAchievementModal,
 } from "../../../redux/actions/index";
+import { BodyText } from "../body-text.component";
 
 const Modko = ({ visible, achievementModal }) => {
   const dispatch = useDispatch();
@@ -62,10 +63,13 @@ const Modko = ({ visible, achievementModal }) => {
               resizeMode: "contain",
             }}
           />
-          <Text style={{ fontSize: 20 }}>{info}</Text>
+          <BodyText size="mid" color="quaternary">
+            {info}
+          </BodyText>
           <Button
             style={{
               flex: 1,
+              marginTop: 20,
               backgroundColor: "blue",
               width: "50%",
               height: "50%",

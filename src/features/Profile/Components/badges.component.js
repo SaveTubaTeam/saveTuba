@@ -33,6 +33,7 @@ export const Badges = ({ badges }) => {
         <Badge source={require("../../../../assets/badges/badge1.png")} />
         <Badge source={require("../../../../assets/badges/badge2.png")} />
         <Badge source={require("../../../../assets/badges/badge3.png")} />
+        <Badge source={require("../../../../assets/badges/badge4.png")} />
       </ScrollView>
     </Card>
   );
