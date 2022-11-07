@@ -51,7 +51,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   //funny wording
@@ -178,7 +177,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   //funny wording
@@ -391,7 +389,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   //funny wording
@@ -597,7 +594,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   prompt: "What happens when a plant recieves too much heat?",
@@ -737,7 +733,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   //funny wording
@@ -853,7 +848,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   //funny wording
@@ -997,7 +991,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   //funny wording
@@ -1184,7 +1177,6 @@ export const Grade2 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   prompt: "What is the function of a skeleton?",
@@ -2367,7 +2359,7 @@ export const Grade2 = {
       navigation: "Chapter4",
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 6
       name: <Translation>{(t) => t("gradetwo:physics")}</Translation>, // Physics of nature
-      backgroundImage: require("../../../../assets/mastery/bg/ch4.png"),
+      backgroundImage: require("../../../../assets/lessonbg2.png"),
       icon: require("../../../../assets/chapter-icons/book.png"),
       colorOne: "mediumturquoise",
       colorTwo: "royalblue",

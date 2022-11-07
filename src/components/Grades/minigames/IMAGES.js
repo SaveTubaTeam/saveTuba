@@ -10,6 +10,7 @@ export const SortingImages = {
     {
       lvl_1_les_1: require("../../../../assets/beach.jpg"),
       lvl_1_les_2: require("../../../../assets/rrr.jpg"),
+      lvl_1_les_4: require("../../../../assets/lessonbg.png"),
       lvl_2_les_1: require("../../../../assets/waste.jpg"),
       lvl_2_les_2: require("../../../../assets/farm.jpeg"),
     },

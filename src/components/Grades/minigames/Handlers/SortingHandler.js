@@ -92,7 +92,6 @@ const Start = ({ data }) => {
   const [currentOption, setCurrentOption] = useState(data.options[count].title);
   const [currentAnswer, setCurrentAnswer] = useState(data.options[count].name);
 
-
   const navigation = useNavigation();
 
   const Modko = () => {
@@ -118,16 +117,17 @@ const Start = ({ data }) => {
                 paddingBottom: 5,
               }}
               onPress={() => {
-                if (count != data.num) {
+                if (count < data.num - 1) {
                   setVisible(!visible);
-                  setCount(count + 1);
                   setCurrentOption(data.options[count + 1].title);
                   setCurrentAnswer(data.options[count + 1].name);
+                  setCount(count + 1);
                 } else {
                   setVisible(!visible);
                   navigation.navigate("SecondScreen", {
                     score: score,
-                    prompt: "idk",
+                    prompt: "Good job on completing this sorting exercise.",
+                    num: data.num,
                   });
                 }
               }}
@@ -150,6 +150,7 @@ const Start = ({ data }) => {
           onPress={() => {
             if (item.name == currentAnswer) {
               setCorrect(true);
+              setScore(score + 1);
             } else {
               setCorrect(false);
             }
@@ -165,7 +166,6 @@ const Start = ({ data }) => {
       </>
     );
   };
-  
 
   return (
     <>
@@ -177,12 +177,7 @@ const Start = ({ data }) => {
 
           <Prompt>
             <TitleText>{currentOption}</TitleText>
-          </Prompt> 
-
-     
-
-
-       
+          </Prompt>
 
           <FlatList // The flatlist used to load minigames and their data.
             scrollEnabled={false}
@@ -219,8 +214,6 @@ const Start = ({ data }) => {
       </ImageBg>
     </>
   );
-
-  
 };
 
 const SortingHandler = ({ data, navigation }) => {
@@ -229,8 +222,11 @@ const SortingHandler = ({ data, navigation }) => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} />}
       </Stack.Screen>
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}>
-      </Stack.Screen>
+      <Stack.Screen
+        name="SecondScreen"
+        options={{ headerShown: false }}
+        component={LevelSystem}
+      ></Stack.Screen>
     </Stack.Navigator>
   );
 };

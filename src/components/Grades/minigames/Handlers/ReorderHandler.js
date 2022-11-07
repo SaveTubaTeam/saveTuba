@@ -126,7 +126,7 @@ const ReorderHandler = ({
     <>
       <Container>
         <DraggableFlatList
-          scrollEnabled={false}
+          scrollEnabled={true}
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}

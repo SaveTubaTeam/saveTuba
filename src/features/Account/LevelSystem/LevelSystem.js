@@ -13,42 +13,52 @@ import { bindActionCreators } from "redux";
 import { fetchUser } from "../../../../redux/actions";
 import { addExperienceToUser } from "../../../../redux/actions";
 
-import styled from "styled-components/native"; 
+import styled from "styled-components/native";
 
 import { auth, db } from "../../../../firebase";
 import { getDoc, doc } from "firebase/firestore";
-
-
+import { t } from "i18next";
 
 class LevelSystem extends Component {
-
   componentDidMount() {
-    const {route, navigation, currentUser, dispatch } = this.props;
+    const { route, navigation, currentUser, dispatch } = this.props;
     const { score } = route.params;
     const XP_PER_POINT = 15;
 
-    this.props.addExperienceToUser(score*XP_PER_POINT, currentUser);
-    
+    this.props.addExperienceToUser(score * XP_PER_POINT, currentUser);
   }
 
   render() {
-
-    const {route, navigation, currentUser, dispatch } = this.props;
-    const { score, prompt } = route.params;
-    const XP_PER_POINT = 15;
+    const { route, navigation, currentUser, dispatch } = this.props;
+    const { score, prompt, num } = route.params;
+    const XP_PER_POINT = Math.ceil(100 / num);
 
     // addExperienceToUser(45, currentUser);
-  
 
     return (
-      <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
+      <SafeArea
+        style={{
+          backgroundColor: "#CCE882",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
-              {prompt}{"\n"} You gained {score * XP_PER_POINT} xp!
+            {prompt}
+            {"\n"} You gained {score * XP_PER_POINT}xp!
           </TitleText>
           <Spacer size="large" />
-          <Pressable onPress={() => navigation.navigate("Lesson")}>
-            <BodyText color="primary">Назад</BodyText>
+          <Pressable
+            style={{
+              backgroundColor: "#748816",
+              padding: 10,
+              borderRadius: 20,
+              width: 100,
+            }}
+            onPress={() => navigation.navigate("Lesson")}
+          >
+            <BodyText color="secondary">{t("common:back")}</BodyText>
           </Pressable>
         </Container2>
       </SafeArea>
@@ -56,37 +66,38 @@ class LevelSystem extends Component {
   }
 }
 
-function LevelSystem_ ({route, navigation, currentUser}) {
-    const { score } = route.params;
-    const XP_PER_POINT = 45;
- 
-    db.collection("users")
-      .doc(auth.currentUser.uid)
-      .update({
-        currentScore: 40,
-      }).then(() => {
-      });
-    return (
-        <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
-          <Container2 style={{ backgroundColor: "white" }}>
-            <TitleText>
-                Поздравляем! Вы завершили свою первую сортировочную контрольный
-                опрос! {"\n"} You gained {score * XP_PER_POINT} xp!
-            </TitleText>
-            <Spacer size="large" />
-            <Pressable onPress={() => navigation.navigate("Lesson")}>
-              <BodyText color="primary">Назад</BodyText>
-            </Pressable>
-          </Container2>
-      </SafeArea>
-    );
+function LevelSystem_({ route, navigation, currentUser }) {
+  const { score } = route.params;
+  const XP_PER_POINT = 45;
+
+  db.collection("users")
+    .doc(auth.currentUser.uid)
+    .update({
+      currentScore: 40,
+    })
+    .then(() => {});
+  return (
+    <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
+      <Container2 style={{ backgroundColor: "white" }}>
+        <TitleText>
+          Поздравляем! Вы завершили свою первую сортировочную контрольный опрос!{" "}
+          {"\n"} You gained {score * XP_PER_POINT}xp!
+        </TitleText>
+        <Spacer size="large" />
+        <Pressable onPress={() => navigation.navigate("Lesson")}>
+          <BodyText color="primary">Назад</BodyText>
+        </Pressable>
+      </Container2>
+    </SafeArea>
+  );
 }
 
 const mapStateToProps = (store) => ({
-    currentUser: store.userState.currentUser,
+  currentUser: store.userState.currentUser,
 });
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({addExperienceToUser }, dispatch);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators({ addExperienceToUser }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(LevelSystem);
 

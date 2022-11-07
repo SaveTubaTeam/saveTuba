@@ -53,8 +53,8 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt: "Choose the image which represents the object below.",
-                num: 3,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 4,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
                     name: "Electron microscope",
@@ -147,6 +147,14 @@ export const Grade1 = {
                 },
               ],
             },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
+            },
             openresponse: {
               navigation: "Image Boom",
               title: (
@@ -164,14 +172,6 @@ export const Grade1 = {
                   },
                 ],
               },
-            },
-            snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
             },
             /*
             reorder: {
@@ -259,7 +259,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 4,
               content: [
                 {
                   prompt:
@@ -523,7 +522,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
                 "Take a picture of the item you designed an expirement for in the Open Resoponse mini-game ",
             },
@@ -532,7 +531,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 4,
               content: [
                 {
                   prompt: "What is the first step in the experiment?",
@@ -671,7 +669,7 @@ export const Grade1 = {
                   {
                     text: "What's going on in this photo? How do you think this affects the environment?",
                     placeholder: "I think that..",
-                    image: require("../../../../assets/openresponse/cutting.png"),
+                    image: require("../../../../assets/openresponse/deforestation.png"),
                   },
                 ],
               },
@@ -682,8 +680,8 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt: "In which part of the plant is this obtained?",
-                num: 3,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 4,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
                     name: "Roots",
@@ -873,8 +871,8 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt: "Are the animals below mammals or amphibians?",
-                num: 5,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 6,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
                     name: "Mammals",
@@ -925,7 +923,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 4,
               content: [
                 {
                   prompt: "What makes a fish unique from other vertebrates?",
@@ -1036,7 +1033,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 4,
               content: [
                 {
                   prompt: "Where does a dolphin live?",
@@ -1178,7 +1174,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 4,
               content: [
                 {
                   prompt: "Why do birds migrate?",
@@ -1556,7 +1551,7 @@ export const Grade1 = {
                   {
                     text: "Do you have perfect posture? If yes, why do you think so? If not, can you think of ways to improve your posture?",
                     placeholder: "My posture is..",
-                    image: require("../../../../assets/openresponse/strong.png"),
+                    image: require("../../../../assets/openresponse/posture.png"),
                   },
                 ],
               },
@@ -1565,7 +1560,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
                 "Take a picture of two people highlighting their postures.",
             },
@@ -1574,7 +1569,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 7,
               content: [
                 {
                   prompt:
@@ -1647,8 +1641,8 @@ export const Grade1 = {
               content: {
                 prompt: "Is this an example of good or bad posture?",
 
-                num: 9,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 6,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [{ name: "Good posture" }, { name: "Bad posture" }],
                 options: [
                   { title: "Rounded shoulders", name: "Bad posture" },
@@ -1712,7 +1706,7 @@ export const Grade1 = {
                   {
                     text: "What are some ways we can stay clean?",
                     placeholder: "One way I maintain good hygiene is..",
-                    image: require("../../../../assets/openresponse/strong.png"),
+                    image: require("../../../../assets/openresponse/clean.png"),
                   },
                 ],
               },
@@ -1721,20 +1715,18 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
-              prompt:
-                "Take a picture of two people highlighting their postures.",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Upload a video of you washing your hands.",
             },
             quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 7,
               content: [
                 {
                   prompt:
-                    "A heavier backpack on a child has no effect on posture because the weight is in the backpack.",
+                    "Washing your hands with soap and water can get rid of millions of microbes.",
                   answers: [
                     {
                       text: "True",
@@ -1743,56 +1735,57 @@ export const Grade1 = {
                       text: "False",
                     },
                   ],
-                  answer: "False",
+                  answer: "True",
                 },
                 {
-                  prompt: "Why is the right posture important?",
+                  prompt: "How do we take care of our body throughout the day?",
                   answers: [
                     {
-                      text: "Maintain correct form while exercising",
+                      text: "Wash our skin and face often",
                     },
                     {
-                      text: "Strengthen your balance",
+                      text: "Wash our hands with soap and water",
                     },
                     {
-                      text: "Prevent injuries",
+                      text: "Wipe off sweat from our body",
                     },
                     { text: "All of the above" },
                   ],
                   answer: "All of the above",
                 },
                 {
-                  prompt: "What does bad posture do to your spine?",
+                  prompt: "What is one way scientists can study microbes?",
                   answers: [
                     {
-                      text: "Puts unnecessary pressure on your spine",
+                      text: "Take a picture of the object containing microbes with their phone camera",
                     },
                     {
-                      text: "Evenly distributes the weight on your spine",
+                      text: "Use scientific instruments such as microscopes",
                     },
-                    { text: "Keeps you comfortable and reduces injury risk" },
-                    { text: "Allows you to maintain a full range of motion" },
+                    { text: "Analyze a bar of soap" },
+                    {
+                      text: "Scientists are not able to study microbes to their extremely miniscule size",
+                    },
                   ],
-                  answer: "Puts unnecessary pressure on your spine",
+                  answer: "Use scientific instruments such as microscopes",
                 },
                 {
-                  prompt: "How does your posture change over time?",
+                  prompt: "How much bacteria do humans have approximately?",
                   answers: [
                     {
-                      text: "Your posture will change depending on how you maintain it",
+                      text: "Thousands",
                     },
                     {
-                      text: "As you grow old, your spine will form a permanent curve",
+                      text: "Millions",
                     },
                     {
-                      text: "Over time, your spine will become straighter due to stronger muscles",
+                      text: "Billions",
                     },
                     {
-                      text: "All of the above",
+                      text: "Trillions",
                     },
                   ],
-                  answer:
-                    "Your posture will change depending on how you maintain it",
+                  answer: "Trillions",
                 },
               ],
             },
@@ -1801,24 +1794,40 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Is this an example of good or bad posture?",
-
-                num: 9,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [{ name: "Good posture" }, { name: "Bad posture" }],
+                prompt:
+                  "Does this activity help with cleanliness or uncleanliness?",
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [
+                  { name: "Cleanliness" },
+                  { name: "Uncleanliness" },
+                ],
                 options: [
-                  { title: "Rounded shoulders", name: "Bad posture" },
                   {
-                    title: "Standing up straight and tall",
-                    name: "Good posture",
+                    title:
+                      "Kim ate garlic bread for lunch, so he brushed his teeth after",
+                    name: "Cleanliness",
                   },
-                  { title: "Hunched back", name: "Bad posture" },
-                  { title: "Head leaning forward", name: "Bad posture" },
                   {
-                    title: "Weight evenly distributed on feet",
-                    name: "Good posture",
+                    title:
+                      "Emily bought an exfoliator and scrub at the store, and now she exfoliates weekly",
+                    name: "Cleanliness",
                   },
-                  { title: "Back pain", name: "Bad posture" },
+                  {
+                    title:
+                      "Marcos' friends give him deodorant and tell him to use it",
+                    name: "Cleanliness",
+                  },
+                  {
+                    title:
+                      "Melissa has been using the same sponge for weeks and it's starting to smell",
+                    name: "Uncleanliness",
+                  },
+                  {
+                    title:
+                      "Johnny plays basketball and gets sweaty, but he has to go to class right after playing",
+                    name: "Uncleanliness",
+                  },
                 ],
               },
             },
@@ -1853,6 +1862,72 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/plant.png"),
               },
             ],
+          },
+          minigames: {
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Is this action helpful or harmful for your teeth?",
+                num: 4,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Helpful" }, { name: "Harmful" }],
+                options: [
+                  {
+                    title: "Brushing after every meal",
+                    name: "Helpful",
+                  },
+                  {
+                    title: "Using a fluoride toothpaste",
+                    name: "Helpful",
+                  },
+                  {
+                    title: "Eating sugary snacks",
+                    name: "Harmful",
+                  },
+                  {
+                    title: "Eating chips",
+                    name: "Harmful",
+                  },
+                ],
+              },
+            },
+            reorder: {
+              //background image ? or nah
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Order these animals based on how many teeth they have in descending order",
+              data: [
+                {
+                  text: "Ostrich",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Elephant",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Humans",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Giant armadillo",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Snail",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+              ],
+            },
           },
         },
       ],
@@ -1901,7 +1976,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 7,
               content: [
                 {
                   prompt: "Everyone has a carbon footprint",
@@ -2014,7 +2088,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
                 "Take and upload three pictures of different things that pollute the air in the city. ",
             },
@@ -2025,8 +2099,8 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt: "Sort the causes of air pollution",
-                num: 6,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 7,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [{ name: "Anthropogenic" }, { name: "Natural" }],
                 options: [
                   { title: "Factories", name: "Anthropogenic" },
@@ -2078,7 +2152,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   prompt:
@@ -2157,7 +2230,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
                 "Upload a picture of the factory that causes the most air pollution in the area",
             },
@@ -2168,8 +2241,8 @@ export const Grade1 = {
               content: {
                 prompt:
                   "Determine how each action reduces, resues, or recycles",
-                num: 6,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 11,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   { name: "Reduce" },
                   { name: "Reuse" },
@@ -2251,7 +2324,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 12,
               content: [
                 {
                   prompt: 'What does the world "pollute" mean?',
@@ -2431,7 +2503,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
                 "Draw a picture of the water cycle and take a picture of it. Be sure to label the stages of the cycle!",
             },
@@ -2476,13 +2548,13 @@ export const Grade1 = {
                 prompt:
                   "Determine which resource category the picture belongs to",
 
-                num: 9,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                num: 11,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [{ name: "Natural" }, { name: "Anthropogenic" }],
                 options: [
                   //not done, want to change title to image
                   {
-                    image: require("../../../../assets/sorting/sun.png"),
+                    title: "Sun",
                     name: "Natural",
                   },
                   { title: "Separating glass", name: "Recycle" },
@@ -2539,7 +2611,6 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
                   prompt: "What is NOT a sustainable practice?",
@@ -2589,7 +2660,7 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
                 "Take three pictures of the ways you take care of the environment",
             },
@@ -2602,7 +2673,7 @@ export const Grade1 = {
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 4
       name: <Translation>{(t) => t("gradeone:cosmos")}</Translation>, // Earth and space
       icon: require("../../../../assets/chapter-icons/rocket.png"),
-      backgroundImage: require("../../../../assets/mastery/bg/ch4.png"),
+      backgroundImage: require("../../../../assets/lessonbg2.png"),
       colorOne: "midnightblue",
       colorTwo: "mediumturquoise",
       lessons: [
@@ -2641,46 +2712,97 @@ export const Grade1 = {
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
-              numAnswers: 5,
               content: [
                 {
-                  prompt: "The majority of the Earth's energy comes from ...",
-                  answers: [
-                    { text: "the Earth's core." },
-                    { text: "the Sun." },
-                    { text: "hydroelectric power." },
-                    { text: "burning fossil fuels." },
-                  ],
-                  answer: "the Sun.",
+                  prompt: "Solar energy is not a renewable energy source",
+                  answers: [{ text: "True" }, { text: "False" }],
+                  answer: "False",
                 },
                 {
-                  prompt:
-                    "The Earth acts like a greenhouse that catches and traps heat from the sun.",
+                  prompt: "A disadvantage of using solar energy is",
+                  answers: [
+                    { text: "It's renewable" },
+                    { text: "Expensive to implement" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "Solar cells convert solar energy into electricity.",
                   answers: [{ text: "True" }, { text: "False" }],
                   answer: "True",
                 },
                 {
                   prompt:
-                    "________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
+                    "Why are fossil fuels more widely used than solar energy?",
                   answers: [
-                    { text: "Climate" },
-                    { text: "Global warming" },
-                    { text: "Climate change" },
-                    { text: "Greenhouse effect" },
+                    { text: "Solar energy is hard to find" },
+                    { text: "Fossil fuels are much cheaper" },
+                    { text: "Fossil fuels are more abundant" },
                   ],
-                  answer: "Global warming",
-                },
-                {
-                  prompt:
-                    "________ is a change in global and reginal climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
-                  answers: [
-                    { text: "Radiation" },
-                    { text: "Climate change" },
-                    { text: "Greenhouse gas" },
-                  ],
-                  answer: "Climate change",
+                  answer: "Fossil fuels are much cheaper",
                 },
               ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Do some research on how the Moon affects oceans. What did you learn?",
+                    placeholder: "The moon...",
+                    image: require("../../../../assets/openresponse/tide.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Find a building or place in your city where you can see solar panels. Upload a photo!",
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Which cosmic body best fits the following description?",
+                num: 4,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [
+                  { name: "Moon" },
+                  { name: "Sun" },
+                  { name: "Earth" },
+                ],
+                options: [
+                  {
+                    title: "A medium size star",
+                    name: "Sun",
+                  },
+                  {
+                    title: "No atmosphere",
+                    name: "Moon",
+                  },
+                  {
+                    title: "A burning ball of gas",
+                    name: "Sun",
+                  },
+                  {
+                    title: "Only planet that supports life",
+                    name: "Earth",
+                  },
+                ],
+              },
             },
           },
         },
@@ -2714,6 +2836,198 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Research the origin of the names of 3 planets of your choice.",
+                    placeholder: "The name of the planet..",
+                    image: require("../../../../assets/openresponse/planets.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "The majority of Earth's energy comes from",
+                  answers: [
+                    { text: "The Earth's core" },
+                    { text: "The Sun" },
+                    { text: "Hydroelectric power" },
+                    { text: "Burning fossil fuels" },
+                  ],
+                  answer: "The Sun",
+                },
+                {
+                  prompt:
+                    "The Earth acts like a greenhouse that catches and traps heat from the sun.",
+                  answers: [{ text: "True" }, { text: "False" }],
+                  answer: "True",
+                },
+                {
+                  prompt: "Solar cells convert solar energy into electricity.",
+                  answers: [{ text: "True" }, { text: "False" }],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "_____________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
+                  answers: [
+                    { text: "Climate" },
+                    { text: "Global Warming" },
+                    { text: "Climate Change" },
+                    { text: "Greenhouse Effect" },
+                  ],
+                  answer: "Global Warming",
+                },
+                {
+                  prompt:
+                    "__________ is a change in global and regional climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
+                  answers: [
+                    { text: "Radiation" },
+                    { text: "Climate Change" },
+                    { text: "Greenhouse Gas" },
+                  ],
+                  answer: "Climate Change",
+                },
+              ],
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Put the planets in order from the closest to the Sun to the furthest.",
+              data: [
+                {
+                  text: "Mercury",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Venus",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Earth",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Mars",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Jupiter",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "Saturn",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+                {
+                  text: "Uranus",
+                  dormant: "#6e57d2",
+                  active: "#634ebd",
+                },
+                {
+                  text: "Neptune",
+                  dormant: "#A52A2A",
+                  active: "#800020",
+                },
+              ],
+            },
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the different planets.",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "Mercury",
+                  image: require("../../../../assets/memory/mercury.png"),
+                },
+                {
+                  name: "Mercury",
+                },
+                {
+                  type: "image",
+                  name: "Venus",
+                  image: require("../../../../assets/memory/venus.png"),
+                },
+                {
+                  name: "Venus",
+                },
+                {
+                  type: "image",
+                  name: "Earth",
+                  image: require("../../../../assets/memory/earth.png"),
+                },
+                {
+                  name: "Earth",
+                },
+                {
+                  type: "image",
+                  name: "Mars",
+                  image: require("../../../../assets/memory/mars.png"),
+                },
+                {
+                  name: "Mars",
+                },
+                {
+                  type: "image",
+                  name: "Jupiter",
+                  image: require("../../../../assets/memory/jupiter.png"),
+                },
+                {
+                  name: "Jupiter",
+                },
+                {
+                  type: "image",
+                  name: "Saturn",
+                  image: require("../../../../assets/memory/saturn.png"),
+                },
+                {
+                  name: "Saturn",
+                },
+                {
+                  type: "image",
+                  name: "Uranus",
+                  image: require("../../../../assets/memory/uranus.png"),
+                },
+                {
+                  name: "Uranus",
+                },
+                {
+                  type: "image",
+                  name: "Neptune",
+                  image: require("../../../../assets/memory/neptune.png"),
+                },
+                {
+                  name: "Neptune",
+                },
+              ],
+            },
+          },
         },
 
         /* 
@@ -2744,6 +3058,117 @@ export const Grade1 = {
                 ),
               },
             ],
+          },
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "Which is the closest planet to the Sun?",
+                  answers: [
+                    { text: "Mercury" },
+                    { text: "Earth" },
+                    { text: "Venus" },
+                    { text: "Neptune" },
+                  ],
+                  answer: "Mercury",
+                },
+                {
+                  prompt:
+                    "Which planet do the moons Oberton and Titania belong to?",
+                  answers: [
+                    { text: "Uranus" },
+                    { text: "Earth" },
+                    { text: "Venus" },
+                    { text: "Jupiter" },
+                  ],
+                  answer: "Uranus",
+                },
+                {
+                  prompt:
+                    "The largest volcano in the solar system is called Olympus Mons. Where is it?",
+                  answers: [
+                    { text: "Earth" },
+                    { text: "Mars" },
+                    { text: "Venus" },
+                    { text: "Jupiter" },
+                  ],
+                  answer: "Mars",
+                },
+                {
+                  prompt: "What is the Great Red Spot on Jupiter?",
+                  answers: [
+                    { text: "A storm" },
+                    { text: "A lake" },
+                    { text: "A crater" },
+                    { text: "A volcano" },
+                  ],
+                  answer: "A storm",
+                },
+                {
+                  prompt: "What is the Sun mainly made from?",
+                  answers: [
+                    { text: "Liquid lava" },
+                    { text: "Gas" },
+                    { text: "Rock" },
+                    { text: "Molten Iron" },
+                  ],
+                  answer: "Gas",
+                },
+              ],
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Put the planets in order from the smallest to the largest.",
+              data: [
+                {
+                  text: "Mercury",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Venus",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Earth",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Mars",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Jupiter",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "Saturn",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+                {
+                  text: "Uranus",
+                  dormant: "#6e57d2",
+                  active: "#634ebd",
+                },
+                {
+                  text: "Neptune",
+                  dormant: "#A52A2A",
+                  active: "#800020",
+                },
+              ],
+            },
           },
         },
 
@@ -2776,6 +3201,106 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/growth.png"),
               },
             ],
+          },
+          minigames: {
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt: "Order the months.",
+              data: [
+                {
+                  text: "February",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "September",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "July",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "April",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "January",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "May",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+                {
+                  text: "March",
+                  dormant: "#6e57d2",
+                  active: "#634ebd",
+                },
+                {
+                  text: "June",
+                  dormant: "#6F8FAF",
+                  active: "#6082B6	",
+                },
+                {
+                  text: "August",
+                  dormant: "#DAA520",
+                  active: "#E49B0F",
+                },
+                {
+                  text: "November",
+                  dormant: "#E0B0FF",
+                  active: "#CF9FFF",
+                },
+                {
+                  text: "December",
+                  dormant: "#C9CC3F",
+                  active: "#B4C424",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Which season does this sustainable activity best fit into?",
+                num: 4,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [
+                  { name: "Spring" },
+                  { name: "Summer" },
+                  { name: "Autumn" },
+                  { name: "Winter" },
+                ],
+                options: [
+                  {
+                    title: "Making art out of fallen leaves",
+                    name: "Autumn",
+                  },
+                  {
+                    title: "Going ice-skating",
+                    name: "Winter",
+                  },
+                  {
+                    title: "Making homemade ice cream",
+                    name: "Summer",
+                  },
+                  {
+                    title: "Planting a tree ",
+                    name: "Spring",
+                  },
+                ],
+              },
+            },
           },
         },
 
@@ -2819,6 +3344,107 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the time to that shown on the clocks.",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "6pm",
+                  image: require("../../../../assets/memory/6pm.png"),
+                },
+                {
+                  name: "6pm",
+                },
+                {
+                  type: "image",
+                  name: "12pm",
+                  image: require("../../../../assets/memory/12pm.png"),
+                },
+                {
+                  name: "12pm",
+                },
+                {
+                  type: "image",
+                  name: "4pm",
+                  image: require("../../../../assets/memory/4pm.png"),
+                },
+                {
+                  name: "4pm",
+                },
+                {
+                  type: "image",
+                  name: "10:30pm",
+                  image: require("../../../../assets/memory/10.30.png"),
+                },
+                {
+                  name: "10:30pm",
+                },
+                {
+                  type: "image",
+                  name: "3pm",
+                  image: require("../../../../assets/memory/3pm.png"),
+                },
+                {
+                  name: "3pm",
+                },
+                {
+                  type: "image",
+                  name: "9pm",
+                  image: require("../../../../assets/memory/9.png"),
+                },
+                {
+                  name: "9pm",
+                },
+                {
+                  type: "image",
+                  name: "1:30pm",
+                  image: require("../../../../assets/memory/1.30pm.png"),
+                },
+                {
+                  name: "1:30pm",
+                },
+                {
+                  type: "image",
+                  name: "7pm",
+                  image: require("../../../../assets/memory/7pm.png"),
+                },
+                {
+                  name: "7pm",
+                },
+              ],
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Do some research and find out what clock is the most accurate. What did you learn?",
+                    placeholder:
+                      "The most accurate way of measuring time is...",
+                    image: require("../../../../assets/memory/3pm.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Take a picture of the sunset.",
+            },
+          },
         },
       ],
     },
@@ -2860,6 +3486,106 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Find three objects, people or animals in your home that you can describe forces that are acting upon them.",
+                    placeholder: "The force...",
+                    image: require("../../../../assets/openresponse/gravity.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "If two children are pulling each other with the same force, what will happen?",
+                  answers: [
+                    {
+                      text: "They both move backwards",
+                    },
+                    {
+                      text: "The children do not move at all",
+                    },
+                    {
+                      text: "Only one of them moves while the other one stays still",
+                    },
+                    { text: "The bigger child moves the smaller child" },
+                  ],
+                  answer: "The bigger child moves the smaller child",
+                },
+                {
+                  prompt:
+                    "If you drop a pear from a building, what will be the main force acting on the pear?",
+                  answers: [
+                    {
+                      text: "Gravity",
+                    },
+                    {
+                      text: "Electric",
+                    },
+                    {
+                      text: "Magnetic",
+                    },
+                    { text: "Elastic" },
+                  ],
+                  answer: "Gravity",
+                },
+                {
+                  prompt:
+                    "What are the different directions forces can move in?",
+                  answers: [
+                    {
+                      text: "Forwards",
+                    },
+                    {
+                      text: "Backwards",
+                    },
+                    {
+                      text: "Leftward",
+                    },
+                    {
+                      text: "All of the above",
+                    },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "How can we relate physics to sustainability?",
+                  answers: [
+                    {
+                      text: "Different gasses and clouds affect the earth's temperature",
+                    },
+                    {
+                      text: "Newton’s laws of motion are used for recycling",
+                    },
+                    {
+                      text: "There is less force acting on reusable objects",
+                    },
+                    {
+                      text: "None of the above",
+                    },
+                  ],
+                  answer:
+                    "Different gasses and clouds affect the earth's temperature",
+                },
+              ],
+            },
+          },
         },
 
         /* 
@@ -2889,6 +3615,104 @@ export const Grade1 = {
                 ),
               },
             ],
+          },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Why are objects that are fast often bad for the environment? Is it because of the energy required to power them? Do you have any ideas on making them more efficient?",
+                    placeholder: "The force...",
+                    image: require("../../../../assets/openresponse/racing.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Take a picture of one item you can use to measure speed.",
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Sort the following into fast or slow.",
+
+                num: 6,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Fast" }, { name: "Slow" }],
+                options: [
+                  { title: "Car", name: "Fast" },
+                  {
+                    title: "Human",
+                    name: "Slow",
+                  },
+                  { title: "Cheetah", name: "Fast" },
+                  { title: "Turtle", name: "Slow" },
+                  {
+                    title: "Penguin",
+                    name: "Slow",
+                  },
+                  { title: "Rowboat", name: "Slow" },
+                ],
+              },
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Put these vehicles in order of how energy-efficient they from most energy-efficient to least.",
+              data: [
+                {
+                  text: "Humans",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Electric bicycles",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Subway",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Bus",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Car",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "Airplane",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+                {
+                  text: "Bicycle",
+                  dormant: "#6e57d2",
+                  active: "#634ebd",
+                },
+              ],
+            },
           },
         },
 
@@ -2927,6 +3751,152 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is a new/different form/mode of transportation that’s been added to your neighborhood?",
+                    placeholder: "In my neighborhood...",
+                    image: require("../../../../assets/openresponse/bus.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Take a picture of a mode of transportation that is environmentally-friendlier than other modes available.",
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Order these vehicles from earliest to latest in terms of when they were invented.",
+              data: [
+                {
+                  text: "Humans",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Horseback riding",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Car",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Train",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Airplane",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+                {
+                  text: "Bullet train",
+                  dormant: "#d38f9f",
+                  active: "#cd8193",
+                },
+              ],
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "Which one of these animals is the saiga slower than?",
+                  answers: [
+                    {
+                      text: "Donkey",
+                    },
+                    {
+                      text: "Turtle",
+                    },
+                    {
+                      text: "Bear",
+                    },
+                    { text: "None of the above" },
+                  ],
+                  answer: "None of the above",
+                },
+                {
+                  prompt:
+                    "How can we be more environmentally-friendly with fast vehicles?",
+                  answers: [
+                    {
+                      text: "Carpool",
+                    },
+                    {
+                      text: "Turn the engine off when not in use",
+                    },
+                    {
+                      text: "Open the windows instead of AC",
+                    },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "Can we use speed to make sustainable energy?",
+                  answers: [
+                    {
+                      text: "Use the speed of animals to generate energy like a hamster spinning on a wheel",
+                    },
+                    {
+                      text: "The speed of animals cannot be used to generate energy",
+                    },
+                    {
+                      text: "Use the speed of animals to generate energy like sitting on a cheetah running back and forth",
+                    },
+                    {
+                      text: "Although using animals for energy can be done, it is unethical and shouldn’t be done",
+                    },
+                  ],
+                  answer:
+                    "Although using animals for energy can be done, it is unethical and shouldn’t be done",
+                },
+                {
+                  prompt: "How many legs are needed to run fast?",
+                  answers: [
+                    {
+                      text: "2, the less legs the faster you can run",
+                    },
+                    {
+                      text: "4, the more legs the faster you can run",
+                    },
+                    {
+                      text: "0, wings can help you fly faster than run",
+                    },
+                    {
+                      text: "It does not depend on the amount of legs",
+                    },
+                  ],
+                  answer: "It does not depend on the amount of legs",
+                },
+              ],
+            },
+          },
         },
 
         /* 
@@ -2961,6 +3931,144 @@ export const Grade1 = {
                 ),
               },
             ],
+          },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Take a picture of the heaviest object you can think of. How could we make this object lighter and more sustainable (so using less materials)?",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Think of a heavy object. What is it made out of? Label each material as either environmentally friendly or not.",
+                    placeholder: "I thought of...",
+                    image: require("../../../../assets/openresponse/heavy.png"),
+                  },
+                ],
+              },
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Put these environmentally-friendly objects in order from lightest to heaviest.",
+              data: [
+                {
+                  text: "Bicycle",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Tree",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Nuclear power generator",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Empty rain bucket",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Tiny home plant",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+              ],
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "Mass is hard to estimate when it comes to objects that we’ve never seen before. How heavy do you think a whale’s tongue is?",
+                  answers: [
+                    {
+                      text: "Heavier than an elephant, bike, and a human combined",
+                    },
+                    {
+                      text: "Heavier than a bike and a human",
+                    },
+                    {
+                      text: "Heavier than a human",
+                    },
+                    { text: "Not heavier than any of these listed above" },
+                  ],
+                  answer:
+                    "Heavier than an elephant, bike, and a human combined",
+                },
+                {
+                  prompt:
+                    "If two objects are hit with the same force, which object will roll faster?",
+                  answers: [
+                    {
+                      text: "The object that is heavier",
+                    },
+                    {
+                      text: "The object that is lighter",
+                    },
+                    {
+                      text: "The object that has a more circular shape",
+                    },
+                    {
+                      text: "None of the objects because they are hit with the same force",
+                    },
+                  ],
+                  answer: "The object that is lighter",
+                },
+                {
+                  prompt:
+                    "Do different countries have different measurement standards?",
+                  answers: [
+                    {
+                      text: "Yes",
+                    },
+                    {
+                      text: "No",
+                    },
+                  ],
+                  answer: "Yes",
+                },
+                {
+                  prompt: "Which of these do not belong?",
+                  answers: [
+                    {
+                      text: "Kilograms",
+                    },
+                    {
+                      text: "Grams",
+                    },
+                    {
+                      text: "Inches",
+                    },
+                    {
+                      text: "Milligrams",
+                    },
+                  ],
+                  answer: "Inches",
+                },
+              ],
+            },
           },
         },
 
@@ -3004,6 +4112,95 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Take a picture of the most environmentally-friendly light source in your home. Think properly, this is a trick question!",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Think of how you could save energy in your home.",
+                    placeholder: "I think that..",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "From least sustainable to most sustainable, order these light sources.",
+              data: [
+                {
+                  text: "Candle",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Electric buld",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Firefly",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "The Sun",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Neon lamp",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Sort the source of light into the appropriate category.",
+
+                num: 6,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Natural" }, { name: "Artificial" }],
+                options: [
+                  { title: "Sun", name: "Natural" },
+                  {
+                    title: "Candle",
+                    name: "Artificial",
+                  },
+                  { title: "Stars", name: "Natural" },
+                  { title: "Reflected light from the Moon", name: "Natural" },
+                  {
+                    title: "Electric bulb",
+                    name: "Artificial",
+                  },
+                  { title: "Neon lamp", name: "Artificial" },
+                ],
+              },
+            },
+          },
         },
 
         /* 
@@ -3034,6 +4231,33 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/crayons.png"),
               },
             ],
+          },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Take a picture of an opaque and transparent object!",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What happens to a ray of light when it goes through a transparent object? Does it follow a straight line or not?",
+                    placeholder: "I think that..",
+                    image: require("../../../../assets/openresponse/prism.png"),
+                  },
+                ],
+              },
+            },
           },
         },
 
@@ -3071,6 +4295,127 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Take a picture of a natural source of sound.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is the difference between natural sources of sound and artificial sources of sound? How can we use natural sources of sound for sustainable behaviors?",
+                    placeholder: "I think that..",
+                    image: require("../../../../assets/openresponse/megaphone.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "What is a sustainable source of sound?",
+                  answers: [
+                    {
+                      text: "A rooster making noise to wake you up in the morning",
+                    },
+                    {
+                      text: "A speaker making louder, disruptive noise for everyone to hear",
+                    },
+                    {
+                      text: "A car revving its engine releasing gasses into the air",
+                    },
+                    { text: "All of the above" },
+                  ],
+                  answer:
+                    "A rooster making noise to wake you up in the morning",
+                },
+                {
+                  prompt: "Sound is a form of energy.",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "How is sound produced?",
+                  answers: [
+                    {
+                      text: "Forward and backwards movement called oscillation and the vibrations that propagate through the air are these sound waves.",
+                    },
+                    {
+                      text: "From a speaker located deep inside Earth’s core",
+                    },
+                    {
+                      text: "The Earth’s gravitational pulls waves to the center and pushes them out loudly",
+                    },
+                    {
+                      text: "None of the above",
+                    },
+                  ],
+                  answer:
+                    "Forward and backwards movement called oscillation and the vibrations that propagate through the air are these sound waves.",
+                },
+                {
+                  prompt: "Sound can be amplified.",
+                  answers: [
+                    {
+                      text: "Yes",
+                    },
+                    {
+                      text: "No",
+                    },
+                  ],
+                  answer: "Yes",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Sort the source of sound into the appropriate category.",
+
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Natural" }, { name: "Unnatural" }],
+                options: [
+                  { title: "A lion roaring", name: "Natural" },
+                  {
+                    title: "A plane flying",
+                    name: "Unnatural",
+                  },
+                  { title: "A bell ringing", name: "Natural" },
+                  { title: "Waves at the beach", name: "Natural" },
+                  {
+                    title: "A car honking",
+                    name: "Unnatural",
+                  },
+                ],
+              },
+            },
+          },
         },
 
         /* 
@@ -3102,6 +4447,33 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/bunny.png"),
               },
             ],
+          },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Take a picture of any device used to hear sounds.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Why are theaters, performance centers, and stadiums arranged in that way? Does it help with sound production? What are your thoughts?",
+                    placeholder: "I think that..",
+                    image: require("../../../../assets/openresponse/stadium.png"),
+                  },
+                ],
+              },
+            },
           },
         },
 
@@ -3140,6 +4512,107 @@ export const Grade1 = {
               },
             ],
           },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is the hottest part of Kazakhstan? Explain why",
+                    placeholder: "The hottest part of my country is..",
+                    image: require("../../../../assets/openresponse/hot.png"),
+                  },
+                ],
+              },
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Sort the following into the appropriate category.",
+
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Hot" }, { name: "Cold" }],
+                options: [
+                  { title: "Desert", name: "Hot" },
+                  {
+                    title: "Jungle",
+                    name: "Hot",
+                  },
+                  { title: "Ice", name: "Cold" },
+                  { title: "Antarctica", name: "Cold" },
+                  {
+                    title: "Sun",
+                    name: "Hot",
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Take a picture of the thermometer in your house.",
+            },
+            memory: {
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the types of thermometers to their images.",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              content: [
+                {
+                  type: "image",
+                  name: "Digital",
+                  image: require("../../../../assets/openresponse/thermometer.png"),
+                },
+                {
+                  name: "Digital",
+                },
+                {
+                  type: "image",
+                  name: "Ear",
+                  image: require("../../../../assets/openresponse/ear.png"),
+                },
+                {
+                  name: "Ear",
+                },
+                {
+                  type: "image",
+                  name: "Infrared",
+                  image: require("../../../../assets/openresponse/infrared.png"),
+                },
+                {
+                  name: "Infrared",
+                },
+                {
+                  type: "image",
+                  name: "Strip-type",
+                  image: require("../../../../assets/openresponse/strip.png"),
+                },
+                {
+                  name: "Strip-type",
+                },
+                {
+                  type: "image",
+                  name: "Mercury",
+                  image: require("../../../../assets/openresponse/mercury.png"),
+                },
+                {
+                  name: "Mercury",
+                },
+              ],
+            },
+          },
         },
 
         /* 
@@ -3170,6 +4643,135 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/heater.png"),
               },
             ],
+          },
+          minigames: {
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Ask your parents about summer and winter temperatures when they were kids. Compare it to the temperatures right now. Do you notice any differences?",
+                    placeholder: "My parents told me..",
+                    image: require("../../../../assets/openresponse/cold.png"),
+                  },
+                ],
+              },
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Take a picture of things that help us keep cooler in summer.",
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Sort these animals according to their preferred climate.",
+
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Hot weather" }, { name: "Cold weather" }],
+                options: [
+                  { title: "Snow leopard", name: "Cold weather" },
+                  {
+                    title: "Sea lion",
+                    name: "Hot weather",
+                  },
+                  { title: "African penguin", name: "Hot weather" },
+                  { title: "Walrus", name: "Cold weather" },
+                  {
+                    title: "Alligator",
+                    name: "Hot weather",
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "Which is most likely to result from global warming?",
+                  answers: [
+                    {
+                      text: "Increase in surface temperatures",
+                    },
+                    {
+                      text: "Reduction in greenhouse gases",
+                    },
+                    {
+                      text: "Decrease in air pollution",
+                    },
+                    { text: "Decrease in ocean levels" },
+                  ],
+                  answer: "Increase in surface temperatures",
+                },
+                {
+                  prompt:
+                    "When weather patterns change over a long period of time, we call it",
+                  answers: [
+                    {
+                      text: "Climate adaptation",
+                    },
+                    {
+                      text: "Weather change",
+                    },
+                    {
+                      text: "Climate change",
+                    },
+                    {
+                      text: "Weather adaptation",
+                    },
+                  ],
+                  answer: "Climate change",
+                },
+                {
+                  prompt:
+                    "What is the main gas that is trapping more heat close to the Earth, acting like a blanket?",
+                  answers: [
+                    {
+                      text: "Carbon dioxide",
+                    },
+                    {
+                      text: "Oxygen",
+                    },
+                    {
+                      text: "Nitrogen",
+                    },
+                    {
+                      text: "Argon",
+                    },
+                  ],
+                  answer: "Carbon dioxide",
+                },
+                {
+                  prompt:
+                    "Increasing quantities of CO2 (Carbon Dioxide) in the atmosphere will cause air temperatures to be",
+                  answers: [
+                    {
+                      text: "Warmer",
+                    },
+                    {
+                      text: "Cooler",
+                    },
+                  ],
+                  answer: "Warmer",
+                },
+              ],
+            },
           },
         },
 
@@ -3207,6 +4809,117 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/refrigerator.png"),
               },
             ],
+          },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt: "Take pictures of the devices where magnets are used.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Are magnets environmentally friendly? Explain your answer.",
+                    placeholder: "My parents told me..",
+                    image: require("../../../../assets/openresponse/magnetism.png"),
+                  },
+                ],
+              },
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "What is a magnet?",
+                  answers: [
+                    {
+                      text: "A magnet is a material that attracts wood, rubber, and glass.",
+                    },
+                    {
+                      text: "A magnet is a material that attracts certain metals, such as iron, nickel, and cobalt.",
+                    },
+                  ],
+                  answer:
+                    "A magnet is a material that attracts certain metals, such as iron, nickel, and cobalt.",
+                },
+                {
+                  prompt: "Identify the correct statement.",
+                  answers: [
+                    {
+                      text: "A magnet has two poles, the north pole and the south pole.",
+                    },
+                    {
+                      text: "A magnet has two poles, the west pole and the east pole",
+                    },
+                  ],
+                  answer:
+                    "A magnet has two poles, the north pole and the south pole.",
+                },
+                {
+                  prompt: "Magnets attract all types of metals.",
+                  answers: [
+                    {
+                      text: "True",
+                    },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt:
+                    "Magnet poles that are different will ________ one another.",
+                  answers: [
+                    {
+                      text: "Attract",
+                    },
+                    {
+                      text: "Repel",
+                    },
+                  ],
+                  answer: "Attract",
+                },
+              ],
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Sort these materials according to their magnetism.",
+
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [{ name: "Magnetic" }, { name: "Non-magnetic" }],
+                options: [
+                  { title: "Iron", name: "Magnetic" },
+                  {
+                    title: "Plastic",
+                    name: "Non-magnetic",
+                  },
+                  { title: "Nickel", name: "Magnetic" },
+                  { title: "Rubber", name: "Non-magnetic" },
+                  {
+                    title: "Stainless stell",
+                    name: "Non-magnetic",
+                  },
+                ],
+              },
+            },
           },
         },
 
@@ -3250,6 +4963,102 @@ export const Grade1 = {
                 image: require("../../../../assets/mastery/light-bulb.png"),
               },
             ],
+          },
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundImage: require("../../../../assets/lessonbg2.png"),
+              prompt:
+                "Go to a library and pick a book you would like to read this summer. Take a picture of it.",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What sustainable activities are you going to do this summer?",
+                    placeholder: "This summer..",
+                    image: require("../../../../assets/openresponse/palm-tree.png"),
+                  },
+                ],
+              },
+            },
+            sorting: {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt: "Sort these materials according to their magnetism.",
+
+                num: 5,
+                imageBg: SortingImages.bg[0].lvl_1_les_4,
+                categories: [
+                  { name: "Sustainable" },
+                  { name: "Unsustainable" },
+                ],
+                options: [
+                  {
+                    title: "Staying hydrated with a reusable bottle",
+                    name: "Sustainable",
+                  },
+                  {
+                    title: "Playing video games all day",
+                    name: "Unsustainable",
+                  },
+                  {
+                    title: "Closing the shades to keep the room cooler",
+                    name: "Sustainable",
+                  },
+                  { title: "Using AC all day", name: "Unsustainable" },
+                  {
+                    title: "Driving a car",
+                    name: "Unsustainable",
+                  },
+                ],
+              },
+            },
+            reorder: {
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Rank transport from the most sustainable to the least sustainable.",
+              data: [
+                {
+                  text: "Tram",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Electric rail",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Cycling",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Car",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Plane",
+                  dormant: "#19a127",
+                  active: "#169023",
+                },
+              ],
+            },
           },
         },
       ],
