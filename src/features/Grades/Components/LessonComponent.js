@@ -90,9 +90,17 @@ function LessonComponent({
             }}
           >
             <Image
-              style={{ height: "70%", aspectRatio: 1, width: undefined }}
+              style={{
+                height: "70%",
+                aspectRatio: 1,
+                width: undefined,
+                marginBottom: 5,
+              }}
               source={item.icon}
             ></Image>
+            <TitleText size="subtitle" color="secondary">
+              {item.navigation}
+            </TitleText>
           </View>
         </Adventure>
       </>
