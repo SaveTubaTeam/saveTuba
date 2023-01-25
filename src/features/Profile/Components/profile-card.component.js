@@ -14,10 +14,8 @@ import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
 
-
 // my stuff
 import { View } from "react-native";
-
 
 const Friends = styled.View`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
@@ -91,67 +89,71 @@ export function ProfileCard({ currentUser, store }) {
   );
 }
 
-function ProgressBar({currentUser}) {
+function ProgressBar({ currentUser }) {
   if (currentUser?.level == null) {
     return <View></View>;
   }
-  var nextLevelXP = Math.ceil(     Math.pow((currentUser?.level + 1.0) / (0.2), 2.1) );
-  
+  var nextLevelXP = Math.ceil(Math.pow((currentUser?.level + 1.0) / 0.2, 2.1));
+
   const width = 200;
-  const progress =  currentUser.currentScore / nextLevelXP;
+  const progress = currentUser.currentScore / nextLevelXP;
   return (
     <View
       style={{
         flex: 1,
-        alignContent: 'center',
-        alignItems: 'center',
+        alignContent: "center",
+        alignItems: "center",
         marginTop: 10,
       }}
     >
-      <Text style={{
-        // color: 'rgba(255,255,255,1)','rgba(65,128,152,1)'
-        color: 'rgba(65,128,152,1)',
-        // color: 'red',
-        // color: (props) => props.theme.colors.ui.seconadry,
-        fontSize: 14,
-        fontStyle: "italic",
-        }}>{currentUser.currentScore} / {Math.ceil(nextLevelXP)} XP
+      <Text
+        style={{
+          // color: 'rgba(255,255,255,1)','rgba(65,128,152,1)'
+          color: "rgba(65,128,152,1)",
+          // color: 'red',
+          // color: (props) => props.theme.colors.ui.seconadry,
+          fontSize: 14,
+          fontStyle: "italic",
+        }}
+      >
+        {currentUser.currentScore} / {Math.ceil(nextLevelXP)} XP
       </Text>
-      <Row style={{
-        justifyContent: 'center',
-      }}>
+      <Row
+        style={{
+          justifyContent: "center",
+        }}
+      >
         <Text>{currentUser.level}</Text>
-        <View style={{
-          flex: 1,
-          backgroundColor : 'rgba(65,128,152,1)',
-          height: 10,
-          width: width,
-          marginTop: 5,
-          marginHorizontal: 10,
-          borderRadius: 9,
-          shadowColor: "black",
-          shadowOffset: {width: width/2, height: 20},
-          shadowOpacity: 1,
-          shadowRadius: 10,
-          elevation: 10,
-        }}>
-          <View style={{
+        <View
+          style={{
             flex: 1,
-            backgroundColor: 'rgba(96,187,221,1)',
-            width: progress * width,
+            backgroundColor: "rgba(65,128,152,1)",
+            height: 10,
+            width: width,
+            marginTop: 5,
+            marginHorizontal: 10,
             borderRadius: 9,
-            justifyContent: 'center',
-            alignContent: 'center',
-            alignItems: 'center',
-          }}>
+            shadowColor: "black",
+            shadowOffset: { width: 0, height: 0 },
+            shadowOpacity: 0.8,
+            shadowRadius: 5,
+            elevation: 10,
+          }}
+        >
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "rgba(96,187,221,1)",
+              width: progress * width,
+              borderRadius: 9,
+              justifyContent: "center",
+              alignContent: "center",
+              alignItems: "center",
+            }}
+          ></View>
         </View>
-      </View>
-      <Text>{currentUser.level + 1}</Text>
-
+        <Text>{currentUser.level + 1}</Text>
       </Row>
-      
-    
     </View>
-    
   );
 }

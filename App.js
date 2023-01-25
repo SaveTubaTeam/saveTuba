@@ -44,7 +44,7 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
 
-// LogBox.ignoreAllLogs();
+LogBox.ignoreAllLogs();
 LogBox.ignoreLogs(["Setting a timer"]);
 
 function Home() {
