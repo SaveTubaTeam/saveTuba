@@ -47,11 +47,7 @@ function ChaptersHandler({ route, achievements, addAchievement }) {
     return <View></View>;
   }
 
-
-
-
   addAchievement("first-time-opening-grade");
-    
 
   return (
     <NavigationContainer independent>
@@ -64,7 +60,7 @@ function ChaptersHandler({ route, achievements, addAchievement }) {
             />
           )}
         </Stack.Screen>
-
+        
         <Stack.Screen
           name="Chapter1"
           options={{

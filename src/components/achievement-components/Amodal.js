@@ -15,14 +15,13 @@ import {
 
 const Modko = ({ visible, achievementModal }) => {
   const dispatch = useDispatch();
-  // console.log("Achievement Earned =");
-  // console.warn(achievementModal["info"]);
+  // const [classModal, setClassModal] = useState(false);
+  const info = achievementModal["info"];
+  const title = achievementModal["achievement"];
+  const badge = BadgeImages[title];
 
-  let info = achievementModal["info"];
-  let title = achievementModal["achievement"];
-  let badge = BadgeImages[title];
+  // console.log(classScreenShown);
 
-  // console.warn(achievementModal);
   return (
     <Modal transparent animationType="slide" visible={visible}>
       <View
@@ -87,6 +86,7 @@ const Amodal = ({ achievementModal, children }) => {
       setVisible(() => achievementModal["isOpen"]);
     } else {
       setVisible(false);
+      // console.warn("Setting AchievementModal to closed");
     }
   });
   return (

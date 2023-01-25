@@ -1,11 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-import { setDoc, doc } from "firebase/firestore";
+
+import firebase from "firebase/app";
+// import RNfirebase from '@react-native-firebase';
+import { Firestore, setDoc, updateDoc, doc } from "firebase/firestore";
+import { auth, db } from "../../../firebase";
 
 import { renderToString } from "react-dom/server";
-import { auth, db } from "../../../firebase";
+
+
 import { Translation } from "react-i18next";
 import { t } from "i18next";
 import { achievements } from "../../../redux/reducers/user-achievements";
@@ -41,23 +46,24 @@ const Input = styled.TextInput`
   padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
+  color: green;
+  textDecorationColor: green;
 `;
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
   width: 100%;
   height: 100%;
-  padding-top: ${(props) => props.theme.space[5]};
-  padding-horizontal: 20px;
+  justify-content: center;
+  align-items: center;  
 `;
 
 const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  align-content: center;
 `;
-
+  // align-content: center;
 const ButtonContainer = styled.View`
   width: 60%;
   align-self: center;
@@ -106,37 +112,64 @@ export class Register extends Component {
     // achievements[2] = "/achievements/achevnemntn2";
     // achievements[3] = "/achievements/achevnemntn13";
     // achievements[4] = "/achievements/achevnemntn114";
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        setDoc(doc(db, "users", auth.currentUser.uid), {
-          email,
-          first_name: firstName,
-          last_name: lastName,
-          class_code: classCode,
-          username: username,
-          currentScore: 0,
-          friendCount: 0,
-          level: 0,
-          teacher: isTeacher,
-          // Maps in the Firebase database, need initial values
-          badges: {
-            RegistrationBadge: true,
-          },
-          friends: {
-            initialized: true,
-          },
-        });
+
+    // db.collection("classroom").doc(classCode).get().then((snapshot) => {
+    //   if (snapshot.exists) {
+    //     let test = snapshot.data();
+        // console.warn(test);
+
+    // const [checkClass, setCheckClass] = useState(false);
+    let classroom = [""];
+    db.collection("classroom").doc(classCode).get().then((snapshot) => {
+      if (snapshot.exists) {
+        // classroom = snapshot.data();
+        console.warn(snapshot.data()["students"]);
+        console.warn(snapshot.data()["students"].length);
+        classroom = snapshot.data()["students"];
+        auth
+          .createUserWithEmailAndPassword(email, password)
+          .then((result) => {
+            setDoc(doc(db, "users", auth.currentUser.uid), {
+              email,
+              first_name: firstName,
+              last_name: lastName,
+              class_code: classCode,
+              username: username,
+              currentScore: 0,
+              friendCount: 0,
+              level: 0,
+              teacher: isTeacher,
+              // Maps in the Firebase database, need initial values
+              badges: {
+                RegistrationBadge: true,
+              },
+              friends: {
+                initialized: true,
+              },
+          });
 
         // setting sign up badge to true
         setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
-          achievements: achievements,
+        achievements: achievements,
+        });
+  
+        classroom[snapshot.data()["students"].length] = auth.currentUser.uid;
+        db.collection("classroom").doc(classCode).update({
+          students: classroom,
         });
 
-      })
-      .catch((err) => {
+        })
+        .catch((err) => {
         alert(err);
-      });
+        });
+        console.log("Shit is true");
+      } else {
+        
+        alert("Invalid Classroom, either code is incorrect or class doesn't exist");
+
+        console.log("Shit is false");
+      }
+    });
   }
 
   email() {
@@ -168,7 +201,7 @@ export class Register extends Component {
     const classcode = renderToString(this.classcode());
 
     return (
-      <Container>
+      <Container behavior="padding">
         <ImageBg source={require("../../../assets/homepagebackground.png")}>
           <TitleText color="secondary" size="title">
             Зарегистрируйтесь, чтобы сохранить Tuba
@@ -247,6 +280,4 @@ const mapStateToProps = (store) => ({
   achievementModal: store.modals,
 });
 
-
 export default connect(mapStateToProps, null)(Register);
-

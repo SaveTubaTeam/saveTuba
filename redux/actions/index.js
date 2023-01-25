@@ -1,5 +1,5 @@
 import firebase from "firebase/app";
-import { Firestore, setDoc } from "firebase/firestore";
+import { Firestore, setDoc, updateDoc } from "firebase/firestore";
 import {
   USER_STATE_CHANGE,
   ACHIEVEMENTS_STATE_CHANGE,
@@ -138,4 +138,14 @@ export function closeAchievementModal(achievement) {
   return (dispatch) => {
     dispatch({ type: MODAL_CLOSED, achievement: achievement });
   };
+}
+
+export function addUserToClass(classCode) {
+  return (dispatch) => {
+    db.collection("classrooms").doc(classCode).get().then((snapshot) => {
+      if (snapshot.exists()) {
+        console.warn(snapshot.data());
+      }
+    })
+  }
 }
