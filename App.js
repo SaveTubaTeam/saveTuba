@@ -52,6 +52,8 @@ function Home() {
 }
 
 export default function App() {
+
+  // Loading fonts
   const [balsamiqSansLoaded] = useBalsamiqSans({
     BalsamiqSans_400Regular,
     BalsamiqSans_700Bold,

@@ -10,7 +10,6 @@ import { auth, db } from "../../../firebase";
 
 import { renderToString } from "react-dom/server";
 
-
 import { Translation } from "react-i18next";
 import { t } from "i18next";
 import { achievements } from "../../../redux/reducers/user-achievements";
@@ -47,7 +46,7 @@ const Input = styled.TextInput`
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
   color: green;
-  textDecorationColor: green;
+  textdecorationcolor: green;
 `;
 
 const ImageBg = styled.ImageBackground`
@@ -55,7 +54,7 @@ const ImageBg = styled.ImageBackground`
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 `;
 
 const Container = styled.View`
@@ -63,7 +62,7 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
 `;
-  // align-content: center;
+// align-content: center;
 const ButtonContainer = styled.View`
   width: 50%;
   align-self: center;
@@ -77,8 +76,7 @@ const InputContainer = styled.View`
 export class Register extends Component {
   constructor(props) {
     super(props);
-    // const navigation = useNavigation();
-    // badges.set("1", "Time to Save the Tuba!");
+    // Setting up the basic structurue for the user in the local storage (Redux) and server (Firebase)
     this.state = {
       email: "",
       password: "",
@@ -108,69 +106,60 @@ export class Register extends Component {
       isTeacher,
       achievements,
     } = this.state;
-    // achievements[0] = "/achievements/first-time-signing-up";
-    // achievements[1] = "/achievements/achevnemntn1";
-    // achievements[2] = "/achievements/achevnemntn2";
-    // achievements[3] = "/achievements/achevnemntn13";
-    // achievements[4] = "/achievements/achevnemntn114";
 
-    // db.collection("classroom").doc(classCode).get().then((snapshot) => {
-    //   if (snapshot.exists) {
-    //     let test = snapshot.data();
-        // console.warn(test);
-
-    // const [checkClass, setCheckClass] = useState(false);
+    // initializing classroom as an array of string so that it can than read the data from the server and load it it as classroom.
     let classroom = [""];
-    db.collection("classroom").doc(classCode).get().then((snapshot) => {
-      if (snapshot.exists) {
-        // classroom = snapshot.data();
-        console.warn(snapshot.data()["students"]);
-        console.warn(snapshot.data()["students"].length);
-        classroom = snapshot.data()["students"];
-        auth
-          .createUserWithEmailAndPassword(email, password)
-          .then((result) => {
-            setDoc(doc(db, "users", auth.currentUser.uid), {
-              email,
-              first_name: firstName,
-              last_name: lastName,
-              class_code: classCode,
-              username: username,
-              currentScore: 0,
-              friendCount: 0,
-              level: 0,
-              teacher: isTeacher,
-              // Maps in the Firebase database, need initial values
-              badges: {
-                RegistrationBadge: true,
-              },
-              friends: {
-                initialized: true,
-              },
-          });
+    db.collection("classroom")
+      .doc(classCode)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists) {
+          // classroom = snapshot.data();
+          console.warn(snapshot.data()["students"]);
+          console.warn(snapshot.data()["students"].length);
+          classroom = snapshot.data()["students"];
+          auth
+            .createUserWithEmailAndPassword(email, password)
+            .then((result) => {
+              setDoc(doc(db, "users", auth.currentUser.uid), {
+                email,
+                first_name: firstName,
+                last_name: lastName,
+                class_code: classCode,
+                username: username,
+                currentScore: 0,
+                friendCount: 0,
+                level: 0,
+                teacher: isTeacher,
+                // Maps in the Firebase database, need initial values
+                badges: {
+                  RegistrationBadge: true,
+                },
+                friends: {
+                  initialized: true,
+                },
+              });
 
-        // setting sign up badge to true
-        setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
-        achievements: achievements,
-        });
-  
-        classroom[snapshot.data()["students"].length] = auth.currentUser.uid;
-        db.collection("classroom").doc(classCode).update({
-          students: classroom,
-        });
-
-        })
-        .catch((err) => {
-        alert(err);
-        });
-        console.log("Shit is true");
-      } else {
-        
-        alert("Invalid Classroom, either code is incorrect or class doesn't exist");
-
-        console.log("Shit is false");
-      }
-    });
+              // setting sign up badge to true
+              setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
+                achievements: achievements,
+              });
+              // To be honest I don't knowwhat is going on down here...
+              classroom[snapshot.data()["students"].length] =
+                auth.currentUser.uid;
+              db.collection("classroom").doc(classCode).update({
+                students: classroom,
+              });
+            })
+            .catch((err) => {
+              alert(err);
+            });
+        } else {
+          alert(
+            "Invalid Classroom, either code is incorrect or class doesn't exist"
+          );
+        }
+      });
   }
 
   email() {
@@ -283,6 +272,4 @@ const mapStateToProps = (store) => ({
   achievementModal: store.modals,
 });
 
-
 export default connect(mapStateToProps, null)(Register);
-
