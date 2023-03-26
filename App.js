@@ -3,6 +3,7 @@ import React from "react";
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
+import * as encoding from "text-encoding";
 
 import {
   useFonts as useScada,
