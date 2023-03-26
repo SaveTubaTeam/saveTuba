@@ -4,6 +4,8 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 
+import * as encoding from "text-encoding";
+
 import {
   useFonts as useScada,
   Scada_400Regular,
