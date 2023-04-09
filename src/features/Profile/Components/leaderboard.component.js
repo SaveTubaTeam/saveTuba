@@ -8,7 +8,6 @@ import StatsView from "./stats-view.component";
 import { Card } from "../../../components/card.component";
 import { Spacer } from "../../../components/spacer.component";
 import { t } from "i18next";
-import { auth, db } from "../../../firebase";
 
 class LeaderboardCard extends Component {
   state = {
@@ -16,16 +15,16 @@ class LeaderboardCard extends Component {
   };
   // sample API data
   componentDidMount() {
-    // axios
-    //   .get("http://dusoccer.dribbleup.com/sampleAPI/")
-    //   .then((res) => res.data)
-    //   .then((data) => {
-    //     this.setState({
-    //       leaderboardData: data.leaderboard,
-    //     });
-    //   });
+    axios
+      .get("http://dusoccer.dribbleup.com/sampleAPI/")
+      .then((res) => res.data)
+      .then((data) => {
+        this.setState({
+          leaderboardData: data.leaderboard,
+        });
+      });
 
-    const docRef = doc(db, "classroom", auth.currentUser.classCode);
+    // const docRef = doc(db, "classroom", auth.currentUser.classCode);
   }
 
   styleRank = (rank) => {
