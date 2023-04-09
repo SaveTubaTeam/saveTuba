@@ -31,7 +31,7 @@ class LevelSystem extends Component {
   render() {
     const { route, navigation, currentUser, dispatch } = this.props;
     const { score, prompt, num } = route.params;
-    const XP_PER_POINT = Math.ceil(100 / num);
+    const XP_PER_POINT = 15;
 
     // addExperienceToUser(45, currentUser);
 
@@ -48,6 +48,7 @@ class LevelSystem extends Component {
             {prompt}
             {"\n"} You gained {score * XP_PER_POINT}xp!
           </TitleText>
+          
           <Spacer size="large" />
           <Pressable
             style={{
