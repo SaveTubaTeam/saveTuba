@@ -5,7 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
 
-//IMPORT flags
+//Doesn't work. Look for a way to just use the object here
+/** 
 const Flag = styled.Image`
   width: 30px;
   height: 20px;
@@ -21,6 +22,7 @@ const Selector = () => {
     return i18n.changeLanguage(code);
   }
 }
+*/
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
