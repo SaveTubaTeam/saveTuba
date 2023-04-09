@@ -66,6 +66,7 @@ export const Grade2 = {
                   ],
                   answer: "A telescope to see the stars",
                 },
+                /*
                 {
                   prompt:
                     "After the telescope was invented, what were people able to see better?",
@@ -77,6 +78,8 @@ export const Grade2 = {
                   ],
                   answer: "All the above",
                 },
+                */
+
                 {
                   prompt: "Are all bacteria harmful?",
                   answers: [{ text: "True" }, { text: "False" }],

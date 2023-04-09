@@ -10,7 +10,7 @@ export const Grade3 = {
       icon:  "../../../../assets/chapter-icons/watering-plants. png",
       colorOne: "palevioletred",
       colorTwo: "pink",
-      key: "C1",
+     // key: "C1", //wtf is this
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
