@@ -23,6 +23,8 @@ class LeaderboardCard extends Component {
           leaderboardData: data.leaderboard,
         });
       });
+
+    // const docRef = doc(db, "classroom", auth.currentUser.classCode);
   }
 
   styleRank = (rank) => {

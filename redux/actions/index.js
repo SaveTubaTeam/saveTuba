@@ -140,12 +140,4 @@ export function closeAchievementModal(achievement) {
   };
 }
 
-export function addUserToClass(classCode) {
-  return (dispatch) => {
-    db.collection("classrooms").doc(classCode).get().then((snapshot) => {
-      if (snapshot.exists()) {
-        console.warn(snapshot.data());
-      }
-    })
-  }
-}
+
