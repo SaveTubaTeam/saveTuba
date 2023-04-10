@@ -10,7 +10,6 @@ import { auth, db } from "../../../firebase";
 
 import { renderToString } from "react-dom/server";
 
-
 import { Translation } from "react-i18next";
 import { t } from "i18next";
 import { achievements } from "../../../redux/reducers/user-achievements";
@@ -47,7 +46,7 @@ const Input = styled.TextInput`
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
   color: green;
-  textDecorationColor: green;
+  textdecorationcolor: green;
 `;
 
 const ImageBg = styled.ImageBackground`
@@ -55,7 +54,7 @@ const ImageBg = styled.ImageBackground`
   width: 100%;
   height: 100%;
   justify-content: center;
-  align-items: center;  
+  align-items: center;
 `;
 
 const Container = styled.View`
@@ -63,7 +62,7 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
 `;
-  // align-content: center;
+// align-content: center;
 const ButtonContainer = styled.View`
   width: 50%;
   align-self: center;
@@ -77,8 +76,7 @@ const InputContainer = styled.View`
 export class Register extends Component {
   constructor(props) {
     super(props);
-    // const navigation = useNavigation();
-    // badges.set("1", "Time to Save the Tuba!");
+    // Setting up the basic structurue for the user in the local storage (Redux) and server (Firebase)
     this.state = {
       email: "",
       password: "",
@@ -108,11 +106,6 @@ export class Register extends Component {
       isTeacher,
       achievements,
     } = this.state;
-    // achievements[0] = "/achievements/first-time-signing-up";
-    // achievements[1] = "/achievements/achevnemntn1";
-    // achievements[2] = "/achievements/achevnemntn2";
-    // achievements[3] = "/achievements/achevnemntn13";
-    // achievements[4] = "/achievements/achevnemntn114";
 
 
     db.collection("classroom")
@@ -274,6 +267,4 @@ const mapStateToProps = (store) => ({
   achievementModal: store.modals,
 });
 
-
 export default connect(mapStateToProps, null)(Register);
-
