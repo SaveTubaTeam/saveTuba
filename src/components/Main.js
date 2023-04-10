@@ -28,7 +28,6 @@ import Amodal from "./achievement-components/Amodal";
 const Tab = createBottomTabNavigator();
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
-// The SaveTuba app contains the navigation containers for the main screens of the application. 
 const SaveTuba = () => {
   return (
     <>
@@ -91,14 +90,10 @@ export class Main extends Component {
   }
 
   render() {
-    // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
-    // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
+    // console.warn(this.props);
     if (this.props.currentUser != undefined) {
       try {
-        if (
-          this.props.achievements != null ||
-          this.props.achievements["achievements"][0] == undefined
-        ) {
+        if (this.props.achievements != null || this.props.achievements["achievements"][0] == undefined) {
           this.props.addAchievement("first-time-signing-up");
           // this.props.fetchAchievements();
         }
@@ -107,11 +102,14 @@ export class Main extends Component {
       }
     }
 
+    // if (this.props["achievementModal"]["isOpen"]) {
+    //   return <Amodal />;
+    // } else {
+    
+    
     // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
-    // So, to have pop up modals that works with redux, i.e. using dispatch will allow the modal to appear was difficult when I started
-    // My solution was to create a "modal" that would contain the entire application within it and show the modal screen. I forget the videos I followed but based off other peoples solutions
     return (
-      <>
+      <> 
         <Amodal children={<SaveTuba />}>
           {/* <Tab.Navigator
             initialRouteName="Home"
@@ -168,23 +166,16 @@ export class Main extends Component {
 }
 // }
 
-// Boilerplate code going to be used everywhere
-// This is for loading in data from the local storage into the function, class, or components
-// Look at Redux folder at the index.js to understand more
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
   achievements: store.userAchievements.achievements,
   achievementModal: store.modals,
 });
 
-// Boilerplate code also going to be used everywhere
-// Similar to props, but instead allows you to use functions for Redux folder
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     { fetchUser, fetchAchievements, addAchievement },
     dispatch
-  );
+);
 
-// Boilerplate code, if you want to use the local storage (Redux), than this needs to be the export statement of the component.
-// If you don't need the data or functions than just write null in their places below.
 export default connect(mapStateToProps, mapDispatchToProps)(Main);

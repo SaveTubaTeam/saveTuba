@@ -109,6 +109,44 @@ const Amodal = ({ achievementModal, children }) => {
       <Modko visible={visible} achievementModal={achievementModal} />
     </>
   );
+
+  // if (!achievementModal["isOpen"]) {
+  //   return (
+  //     <>
+  //       <>{children}</>
+  //       <Modko visible={false} />
+  //     </>
+  //   );
+  // } else {
+  //   return (
+  //     <View
+  //       style={{
+  //         backgroundColor: "red",
+  //         width: 200,
+  //         height: 500,
+  //         flex: 1,
+  //         margin: 10,
+  //         justifyContent: "center",
+  //       }}
+  //     >
+  //       <Button
+  //         style={{
+  //           flex: 1,
+  //           backgroundColor: "blue",
+  //           width: "50%",
+  //           height: "50%",
+  //           padding: 0,
+  //         }}
+  //         title="Pres sme"
+  //         onPress={() => {
+  //           dispatch(closeAchievementModal("Hello"));
+  //         }}
+  //       >
+  //         <Text>Hello</Text>
+  //       </Button>
+  //     </View>
+  //   );
+  // }
 };
 
 const mapStateToProps = (store) => ({
