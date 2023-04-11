@@ -57,7 +57,7 @@ export const Grade2 = {
                 {
                   //funny wording
                   prompt:
-                    "Which one is an example of a discovery with its purpose?",
+                    "Which of the following is an example of a discovery and its purpose?",
                   answers: [
                     { text: "A telescope to see the stars" },
                     { text: "A lightbulb to warm the room" },
@@ -66,19 +66,19 @@ export const Grade2 = {
                   ],
                   answer: "A telescope to see the stars",
                 },
-                /*
-                {
-                  prompt:
-                    "After the telescope was invented, what were people able to see better?",
-                  answers: [
-                    { text: "Air" },
-                    { text: "Water" },
-                    { text: "Soil" },
-                    { text: "All the above" },
-                  ],
-                  answer: "All the above",
-                },
-                */
+                 
+                // {
+                //   prompt:
+                //     "After the telescope was invented, what were people able to see better?",
+                //   answers: [
+                //     { text: "Air" },
+                //     { text: "Water" },
+                //     { text: "Soil" },
+                //     { text: "All the above" },
+                //   ],
+                //   answer: "All the above",
+                // },
+              
 
                 {
                   prompt: "Are all bacteria harmful?",
