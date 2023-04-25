@@ -1376,7 +1376,34 @@ export const Grade2 = {
               },
             ],
           },
+        }, 
+
+        /* 
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~~
+        LESSONS 15 should go somwwhere here
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+        Also temporarily skipping lessons 16 and 17
+
+        */ 
+
+        /* 
+
+        ~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 3 chapter 1 Lesson 18 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */ 
+
+        {
+          navigation: "lesson18" // A decrease in the number of animals
+          
+
         },
+
+
+
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 2 Chapter 2 Lesson 8 
