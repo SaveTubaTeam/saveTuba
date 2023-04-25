@@ -52,7 +52,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
 
                 {
@@ -167,7 +167,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt: "What is the best way to test your hypothesis?",
@@ -389,7 +389,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt:
@@ -491,7 +491,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "List three plants that you see everyday. Why do you think that you see them so" +
                 " often? Think about the environmental conditions that they need to survive.",
@@ -501,7 +501,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
             },
@@ -638,7 +638,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt: "What happens when a plant recieves too much heat?",
@@ -694,7 +694,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight" +
                 "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?",
@@ -777,7 +777,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   //funny wording
@@ -840,7 +840,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Take a picture of a community (artifical or natural) near you.",
             },
@@ -892,7 +892,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   //funny wording
@@ -944,7 +944,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Cleaning up after ourselves in public is a great way to help improve the air quality" +
                 "Draw some things that you often see outside on the ground that you can pick up.",
@@ -1035,7 +1035,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   //funny wording
@@ -1089,7 +1089,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Take a picture of an endangered animal from the Red Book of Plants. " +
                 "If you cannot find one, take a picture of it online so you can identify it the next time you see it.",
@@ -1230,7 +1230,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt: "What is the function of a skeleton?",
@@ -1310,7 +1310,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt: "Draw a picture of a skeletal system wit a vertebrate!",
             },
           },
