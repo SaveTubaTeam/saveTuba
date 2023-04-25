@@ -1,4 +1,5 @@
 import { Translation } from "react-i18next";
+import { ScrollView } from "react-native-gesture-handler";
 import {
   SortingImages,
   QuizImages,
@@ -45,6 +46,9 @@ export const Grade2 = {
               },
             ],
           },
+
+          // Separator just making it easier to read. 
+
           minigames: {
             quiz: {
               navigation: "QuizScreen",
@@ -118,31 +122,7 @@ export const Grade2 = {
         Grade 2 Chapter 1 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
-        {
-          navigation: "Lesson2", //sources of information
-          title: <Translation>{(t) => t("gradetwo:c1l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/read.png"),
-          backgroundColor: "#004AAD",
-          minigames: {},
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c1l2_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l2_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/eco-light.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c1l2_card2")}</Translation>
-                ),
-              },
-            ],
-          },
-        },
+        
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 2 Chapter 1 Lesson 3 
