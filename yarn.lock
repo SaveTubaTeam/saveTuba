@@ -6641,7 +6641,7 @@ expo-splash-screen@~0.17.0:
   integrity sha512-ejSO78hwHXz8T9u8kh8t4r6CR4h70iBvA65gX8GK+dYxZl6/IANPbIb2VnUpND9vqfW+JnkDw+ZFst+gDnkpcQ==
   dependencies:
     "@expo/configure-splash-screen" "^0.6.0"
-    "@expo/prebuild-config" "~6.0.0"
+    "@expo/prebuild-config" "~6.0.0git "
 
 expo-splash-screen@~0.18.1:
   version "0.18.1"
