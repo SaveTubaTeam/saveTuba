@@ -29,7 +29,7 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
           backgroundColor: "#87CB28",
 
-          mastery: { 
+          mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c1l1_prompt")}</Translation>
             ),
@@ -303,7 +303,7 @@ export const Grade2 = {
               },
             },
           },
-          mastery: { 
+          mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l3_prompt")}</Translation>
             ),
@@ -1379,7 +1379,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 8 
+        Grade 2 Chapter 2 Lesson 8 (lesson 14 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1387,7 +1387,113 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l8")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
           backgroundColor: "#37B5FF",
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take or find a picture of a relationship between two animals in nature, whether it be a beneficial or harmful relationship.",
+            },
+
+            quiz: { //correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: a fox and a rabbit?",
+                  answers: [
+                    { text: "Parasitism" },
+                    { text: "Neutralism" },
+                    { text: "Competition" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Predation",
+                },
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: a frog and an antelope?",
+                  answers: [
+                    { text: "Competition" },
+                    { text: "Symbiosis" },
+                    { text: "Neutralism" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Neutralism",
+                },
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: a shark and a fish that attaches to the shark?",
+                  answers: [
+                    { text: "Competition" },
+                    { text: "Parasitism" },
+                    { text: "Neutralism" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Parasitism",
+                },
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: rhinos and birds?",
+                  answers: [
+                    { text: "Competition" },
+                    { text: "Symbiosis" },
+                    { text: "Neutralism" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Symbiosis",
+                },
+              ],
+            },
+            sorting: { // incorrect images
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Match the word to the definition using pictures",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_2_les_8,
+                categories: [
+                  { name: "Symbiosis" },
+                  { name: "Parasitism" },
+                  { name: "Predation" },
+                  { name: "Neutralism" },
+                  { name: "Competition" },
+                ],
+                options: [
+                  {
+                    name: "Symbiosis: two animals that positivity benefit from living together",
+                    image: require(),
+                  },
+                  {
+                    name:
+                      "Parasitism: one animal benefits and one animal is harmed",
+                    image: require(),
+                  },
+                  {
+                    name:
+                      "Predation: animals feeding on other animals ",
+                    image: require(),
+                  },
+                  {
+                    name:
+                      "Neutralism: animals that do not depend on each other",
+                    image: require(),
+                  },
+                  {
+                    name:
+                      "Competition: animals that both need the same limited resource",
+                    image: require(),
+                  },
+                ],
+              },
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l8_prompt")}</Translation>
@@ -1422,7 +1528,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 9 
+        Grade 2 Chapter 2 Lesson 9 (lesson 15 in currciulum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1430,7 +1536,105 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l9")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/spring.png"),
           backgroundColor: "#065D40",
-          minigames: {},
+          minigames: {
+            snapshot: { // correct 
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of a plant environment in which several plants mutually benefit each other.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: There are no relationships between plants that are similar to those between animals?",
+                  answers: [
+                    { text: "true" },
+                    { text: "false" },
+                  ],
+                  answer: "false",
+                },
+                {
+                  prompt:
+                    "Which of the following is an example of a mutualistic/symbiotic relationship between plants and animals?",
+                  answers: [
+                    { text: "Animals eat the plants" },
+                    { text: "Pollination" },
+                    { text: "Animals use plants to build nests" },
+                    { text: "Humans eat the plants" },
+                  ],
+                  answer: "Pollination",
+                },
+                {
+                  prompt:
+                    "True or False: There are relationships between plants and animals, similar to those between only animals?",
+                  answers: [
+                    { text: "true" },
+                    { text: "false" },
+                  ],
+                  answer: "true",
+                },
+              ],
+            },
+            sorting: { // incorrect images
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Match the word to the definition using pictures",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_2_les_8,
+                categories: [
+                  { name: "Commensalism" },
+                  { name: "Symbiosis/mutualism" },
+                  { name: "Predation" },
+                ],
+                options: [
+                  {
+                    title: "A Venus flytrap catches a fly",
+                    name: "Predation",
+                  },
+                  {
+                    title:
+                      "Bees pollinate a plant",
+                    name: "Symbiosis/mutualism",
+                  },
+                  {
+                    title:
+                      "A bird makes a nest in a tree",
+                    name: "Commensalism",
+                  },
+                ],
+              },
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do the relationships between plants and animals," +
+                      "such as mutualism, commensalism, and competition, impact the " +
+                      "sustainability of plant communities and ecosystems?",
+                    placeholder: "The relationships between plants and animals...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l9_prompt")}</Translation>
@@ -1453,7 +1657,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 10 
+        Grade 2 Chapter 2 Lesson 10 (lesson sixteen and seventeen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1480,11 +1684,105 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an animal habitat with poor conditions. Analyze the picture " +
+                "and identify the ways the poor conditions could affect animal life.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "Which of the following is the main way droughts affect aquatic environments?",
+                  answers: [
+                    { text: "Droughts make non-aquatic animals thirstier and therefore drink more of their water." },
+                    { text: "Droughts make the water saltier." },
+                    { text: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals." },
+                    { text: "Droughts cause an increase in the fish population." },
+                  ],
+                  answer: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals.",
+                },
+                {
+                  prompt:
+                    "Which of the following events would affect the number of animals in a habitat?",
+                  answers: [
+                    { text: "Fire" },
+                    { text: "Drought" },
+                    { text: "Flood" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt:
+                    "True or False: Infectious diseases do not impact animal populations?",
+                  answers: [
+                    { text: "true" },
+                    { text: "false" },
+                  ],
+                  answer: "false",
+                },
+              ],
+            },
+            sorting: { // incorrect images
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Match the word to the definition using pictures",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_2_les_9,
+                categories: [
+                  { name: "Ebola" },
+                  { name: "Anthrax" },
+                ],
+                options: [
+                  {
+                    title: "A disease that infected and killed large numbers of the chimpanzee population in the 1990s.",
+                    name: "Ebola",
+                  },
+                  {
+                    title:
+                      "A disease discovered 600 years ago that kills any warm-blooded animal. ",
+                    name: "Anthrax",
+                  },
+                ],
+              },
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do habitat conditions, such as availability of food, " +
+                      "water and protection from predators, impact the number and diversity of animal populations in an ecosystem?",
+                    placeholder: "Habitat conditions impact animal populations by...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 11
+        Grade 2 Chapter 2 Lesson 11 (lesson eighteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1521,7 +1819,89 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          mastery_2: { // incorrect mastery
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l11_prompt_2")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_card1_2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/PUT_RIGHT_PHOTO_HERE"),
+              },
+            ],
+          },
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an animal in your area that you believe will not be here in ten years.",
+            },
+            quiz: { //correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: Deforestation does not cause a serious decrease in the number of animals in the area?",
+                  answers: [
+                    { text: "False" },
+                    { text: "True" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt:
+                    "Which of the following is the most likely outcome if someone cuts down many trees in a forest?",
+                  answers: [
+                    { text: "Many animals will lose their habitats." },
+                    { text: "Many animals will lose their food sources" },
+                    { text: "There will be an increased risk of flooding in the area" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt:
+                    "Which of the following pairs of actions are both ways humans indirectly impact animal populations?",
+                  answers: [
+                    { text: "Use of pesticides, deforestation" },
+                    { text: "Poisoning from industrial emissions, construction of dams" },
+                    { text: "Construction of dams, deforestation" },
+                    { text: "Use of pesticides, poisoning from industrial emissions" },
+                  ],
+                  answer: "Construction of dams, deforestation",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What are some potential causes for a decrease in the number of animals in a particular ecosystem, " +
+                      "and how can we address these issues to promote sustainability and protect biodiversity? Think about laws " +
+                      "we can implement. What would you suggest to the government as well?",
+                    placeholder: "Potential causes are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1552,11 +1932,78 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an animal with similar bodily functions to humans. " +
+                "Essentially, this animal has a body part that has the same function as we use it for.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: Humans are vertebrates?",
+                  answers: [
+                    { text: "False" },
+                    { text: "True" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "Which of the following definitions is the best description of an organ?",
+                  answers: [
+                    { text: "A part of the human body." },
+                    { text: "A part of an organism with an unspecified purpose." },
+                    { text: "A part of an organism that has its own location and purpose." },
+                    { text: "It is the heart of a vertebrate." },
+                  ],
+                  answer: "A part of an organism that has its own location and purpose",
+                },
+                {
+                  prompt:
+                    "What technological advancement in the 1970s made it easier to see humans’ internal organs?",
+                  answers: [
+                    { text: "MRIs" },
+                    { text: "X-rays" },
+                    { text: "CTs" },
+                    { text: "None of the above" },
+                  ],
+                  answer: "MRIs",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What are the three main cavities of the human body? What are the main organs in each of these cavities?",
+                    placeholder: "The three main cavities are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 13
+        Grade 2 Chapter 2 Lesson 13 (lesson 20 & 21 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1588,11 +2035,94 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an item that humans cannot digest but certain animals can.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "Where does digestion begin?",
+                  answers: [
+                    { text: "Stomach" },
+                    { text: "Mouth" },
+                    { text: "Intenstine" },
+                    { text: "Heart" },
+                  ],
+                  answer: "Mouth",
+                },
+                {
+                  prompt:
+                    "Digestion allows humans to (1)____ nutrients from food, and transform it into (2)____",
+                  answers: [
+                    { text: "(1) absorb | (2) energy" },
+                    { text: "(1) reject | (2) food" },
+                    { text: "(1) process | (2) oxygen" },
+                    { text: "(1) sort | (2) carbon dioxide" },
+                  ],
+                  answer: "(1) absorb | (2) energy",
+                },
+                {
+                  prompt:
+                    "Which of the following is the correct order of parts of the body that food travels through?",
+                  answers: [
+                    { text: "Stomach, esophagus, mouth, intestines" },
+                    { text: "Mouth, esophagus, stomach, intestines" },
+                    { text: "Mouth, stomach, esophagus, intestines" },
+                    { text: "Mouth, intestines, stomach, esophagus" },
+                  ],
+                  answer: "Mouth, esophagus, stomach, intestines",
+                },
+                {
+                  prompt:
+                    "Which of the following is the name of the drawing that helps you to make more healthy decisions when choosing what food to eat??",
+                  answers: [
+                    { text: "Triangle of Choices" },
+                    { text: "Pyramid of Food Decisions" },
+                    { text: "Pyramid of Nutrition" },
+                    { text: "Tiers of Nutrition" },
+                  ],
+                  answer: "Pyramid of Nutrition",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "There are many factors to consider when it comes to sustainability in the food system, " +
+                      "such as how food is grown or raised, how it is transported and distributed, and how much of it " +
+                      "is wasted. The apple you eat might be healthy for you but is it healthy for the environment? " +
+                      "Identify strategies that can be used when we produce and consume food, so that it is sustainable " +
+                      "for the environment, animals, and human communities?",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 14
+        Grade 2 Chapter 2 Lesson 14 (lesson 22 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1619,11 +2149,91 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an environment that might be hard to breathe in. " +
+                "Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "If the air we breathe in is unclean, containing materials such as dust, " +
+                    "what part of the body collects it, preventing it from further entering the body?",
+                  answers: [
+                    { text: "Nose" },
+                    { text: "Lungs" },
+                    { text: "Bronchi" },
+                    { text: "Trachea" },
+                  ],
+                  answer: "Nose",
+                },
+                {
+                  prompt:
+                    "What is the purpose of the trachea?",
+                  answers: [
+                    { text: "To only bring air into the lungs" },
+                    { text: "To filter out the good air from the bad" },
+                    { text: "To produce carbon dioxide" },
+                    { text: "To transport air in and out of the lungs" },
+                  ],
+                  answer: "To transport air in and out of the lungs",
+                },
+                {
+                  prompt:
+                    "Which of the following gives the best description of the order in which the parts of the respiratory system help us to breathe?",
+                  answers: [
+                    { text: "Nose or mouth, Larynx and trachea, bronchi, lungs" },
+                    { text: "Mouth, lungs, bronchi" },
+                    { text: "Nose, larynx, lungs" },
+                    { text: "None of the above" },
+                  ],
+                  answer: "Nose or mouth, Larynx and trachea, bronchi, lungs",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How can we ensure that the air we breathe is safe and healthy for all living beings, " +
+                      "and how can we protect and improve the quality of the air in our communities? ",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 15
+        Grade 2 Chapter 2 Lesson 15 (lesson 23 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1665,11 +2275,78 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            minigames: {
+              snapshot: { // correct
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Take a picture of a common unhealthy food in your household.",
+              },
+              quiz: { // correct
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+
+                  {
+                    prompt:
+                      "True or False: The heart is responsible for the movement of blood in the body?",
+                    answers: [
+                      { text: "True" },
+                      { text: "False" },
+                    ],
+                    answer: "True",
+                  },
+                  {
+                    prompt:
+                      "Which of the following is the responsibility of blood in the body?",
+                    answers: [
+                      { text: "Warm the body." },
+                      { text: "Spread oxygen and nutrients to organs and tissues." },
+                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
+                      { text: "All of the above." },
+                    ],
+                    answer: "All of the above.",
+                  },
+                  {
+                    prompt:
+                      "What do arteries do?",
+                    answers: [
+                      { text: "Carry food that has been digested" },
+                      { text: "Carry carbon dioxide" },
+                      { text: "Carry blood" },
+                      { text: "None of the above" },
+                    ],
+                    answer: "Carry blood",
+                  },
+                ],
+              },
+              openresponse: { // correct
+                navigation: "Image Boom",
+                title: (
+                  <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                  numberOfPrompts: 1,
+                  prompts: [
+                    {
+                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
+                      image: require("../../../../assets/openresponse/innovation.png"),
+                    },
+                  ],
+                },
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 16
+        Grade 2 Chapter 2 Lesson 16 (lesson 24 & 25 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1707,7 +2384,76 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an item that should be cleaned more often. " +
+                "For example, many humans don’t realize how dirty and unclean our phones " +
+                "are. What are some other items that we forget to clean?",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
+                  answers: [
+                    { text: "Vaccines, exposure to diseases" },
+                    { text: "Vaccines, personal hygiene care" },
+                    { text: "Washing your hands, bathing" },
+                    { text: "Personal hygiene care, nature" },
+                  ],
+                  answer: "Vaccines, personal hygiene care",
+                },
+                {
+                  prompt:
+                    "True or False: Spending time in nature is not helpful for staying healthy?",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt:
+                    "Which of the following is the best definition for immunity?",
+                  answers: [
+                    { text: "The state of being at risk for certain diseases." },
+                    { text: "The quality of being resistant to a disease or illness." },
+                    { text: "The name for people who are never sick." },
+                    { text: "The quality of being resistant to medicine. " },
+                  ],
+                  answer: "The quality of being resistant to a disease or illness.",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How can we protect the human body from infections in a sustainable way? " +
+                      "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
       ],
     },
@@ -1722,7 +2468,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 1 
+        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
