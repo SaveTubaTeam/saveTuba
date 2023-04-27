@@ -1449,50 +1449,50 @@ export const Grade2 = {
                 },
               ],
             },
-            sorting: { // incorrect images
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt:
-                  "Match the word to the definition using pictures",
-                num: 3, //count start 0
-                imageBg: SortingImages.bg[0].lvl_2_les_8,
-                categories: [
-                  { name: "Symbiosis" },
-                  { name: "Parasitism" },
-                  { name: "Predation" },
-                  { name: "Neutralism" },
-                  { name: "Competition" },
-                ],
-                options: [
-                  {
-                    name: "Symbiosis: two animals that positivity benefit from living together",
-                    image: require(),
-                  },
-                  {
-                    name:
-                      "Parasitism: one animal benefits and one animal is harmed",
-                    image: require(),
-                  },
-                  {
-                    name:
-                      "Predation: animals feeding on other animals ",
-                    image: require(),
-                  },
-                  {
-                    name:
-                      "Neutralism: animals that do not depend on each other",
-                    image: require(),
-                  },
-                  {
-                    name:
-                      "Competition: animals that both need the same limited resource",
-                    image: require(),
-                  },
-                ],
-              },
-            },
+            // sorting: { // incorrect images
+            //   navigation: "Sorting",
+            //   icon: require("../../../../assets/recycle-bin.png"),
+            //   backgroundColor: "coral",
+            //   content: {
+            //     prompt:
+            //       "Match the word to the definition using pictures",
+            //     num: 3, //count start 0
+            //     imageBg: SortingImages.bg[0].lvl_2_les_8,
+            //     categories: [
+            //       { name: "Symbiosis" },
+            //       { name: "Parasitism" },
+            //       { name: "Predation" },
+            //       { name: "Neutralism" },
+            //       { name: "Competition" },
+            //     ],
+            //     options: [
+            //       {
+            //         name: "Symbiosis: two animals that positivity benefit from living together",
+            //         image: require(),
+            //       },
+            //       {
+            //         name:
+            //           "Parasitism: one animal benefits and one animal is harmed",
+            //         image: require(),
+            //       },
+            //       {
+            //         name:
+            //           "Predation: animals feeding on other animals ",
+            //         image: require(),
+            //       },
+            //       {
+            //         name:
+            //           "Neutralism: animals that do not depend on each other",
+            //         image: require(),
+            //       },
+            //       {
+            //         name:
+            //           "Competition: animals that both need the same limited resource",
+            //         image: require(),
+            //       },
+            //     ],
+            //   },
+            // },
           },
           mastery: {
             prompt: (
@@ -1819,19 +1819,19 @@ export const Grade2 = {
               },
             ],
           },
-          mastery_2: { // incorrect mastery
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c2l11_prompt_2")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card1_2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/PUT_RIGHT_PHOTO_HERE"),
-              },
-            ],
-          },
+          // mastery_2: { // incorrect mastery
+          //   prompt: (
+          //     <Translation>{(t) => t("mastery:g2c2l11_prompt_2")}</Translation>
+          //   ),
+          //   cards: [
+          //     {
+          //       text: (
+          //         <Translation>{(t) => t("mastery:g2c2l11_card1_2")}</Translation>
+          //       ),
+          //       image: require("../../../../assets/mastery/PUT_RIGHT_PHOTO_HERE"),
+          //     },
+          //   ],
+          // },
           minigames: {
             snapshot: { // correct
               navigation: "Snapshot",
