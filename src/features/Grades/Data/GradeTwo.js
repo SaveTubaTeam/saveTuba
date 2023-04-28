@@ -1749,7 +1749,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 1 
+        Grade 2 Chapter 3 Lesson 1  // Lesson 26 in curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1757,6 +1757,154 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
           backgroundColor: "#49326B",
+          minigames: {
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "#mediumpurple",
+              image:  "../../../../assets/nat.jpg",
+              content: [
+                {
+                  prompt: "Which of the following is a state of matter?",
+                  answers: [
+                    { text: "Solid" },
+                    { text: "Liquid" },
+                    { text: "Gas" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "When something freezes, what state of matter does it start and then end in?",
+                  answers: [
+                    { text: "Solid to liquid state" },
+                    { text: "Liquid to gaseous state" },
+                    { text: "Solid state to gaseous state" },
+                    { text: "Liquid to solid state" },
+                  ],
+                  answer: "Liquid to solid state",
+                },
+                {
+                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
+                  answers: [
+                    { text: "Gas" },
+                    { text: "Solid" },
+                    { text: "Liquid" },
+                    { text: "None of the above" },
+                  ],
+                  answer: "Gas",
+                }
+              ]
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
+                    placeholder: "When we change an object from one state to another ...",
+                    image: require("../../../../assets/mastery/state-of-matter.png"),
+                  },
+                ],
+              },
+            },
+            mastery: {
+              prompt: (
+                <Translation>{(t) => t("mastery:g2c2l16_prompt")}</Translation>
+              ),
+              cards: [
+                {
+                  text: (
+                    <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
+                  ),
+                  image: require("../../../../assets/mastery/heart-rate.png"),
+                },
+                {
+                  text: (
+                    <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
+                  ),
+                  image: require("../../../../assets/mastery/doctor.png"),
+                },
+                {
+                  text: (
+                    <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
+                  ),
+                },
+                {
+                  text: (
+                    <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
+                  ),
+                  image: require("../../../../assets/mastery/rosemary.png"),
+                },
+              ],
+            },
+          },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          /*      
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l1_prompt")}</Translation>
@@ -1793,11 +1941,11 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {} */
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 2 
+        Grade 2 Chapter 3 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
