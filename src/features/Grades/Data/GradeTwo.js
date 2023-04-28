@@ -12,7 +12,7 @@ export const Grade2 = {
     {
       navigation: "Chapter1", // you need to specify name or key when calling navigate
       title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
-      name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am an explorer
+      name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am a researcher
       icon:  "../../../../assets/chapter-icons/explore.png",
       backgroundImage:  "../../../../assets/mastery/bg/ch1.png",
       colorOne: "darkorange",
