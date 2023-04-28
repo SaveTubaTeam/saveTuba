@@ -12,9 +12,9 @@ export const Grade2 = {
     {
       navigation: "Chapter1", // you need to specify name or key when calling navigate
       title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
-      name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am a researcher
-      icon:  "../../../../assets/chapter-icons/explore.png",
-      backgroundImage:  "../../../../assets/mastery/bg/ch1.png",
+      name: <Translation>{(t) => t("gradetwo:iamanexplorer")}</Translation>, // I am an explorer
+      icon: require("../../../../assets/chapter-icons/explore.png"),
+      backgroundimage: require("../../../../assets/mastery/bg/ch1.png"),
       colorOne: "darkorange",
       colorTwo: "goldenrod",
       lessons: [
@@ -54,32 +54,18 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: "../../../../assets/nat.jpg",
               content: [
-                {
-                  //funny wording
-                  prompt:
-                    "Which of the following is an example of a discovery and its purpose?",
-                  answers: [
-                    { text: "A telescope to see the stars" },
-                    { text: "A lightbulb to warm the room" },
-                    { text: "An airplane to drive on the road" },
-                    { text: "A printing press to make fabric" },
-                  ],
-                  answer: "A telescope to see the stars",
-                },
-                 
-                // {
-                //   prompt:
-                //     "After the telescope was invented, what were people able to see better?",
-                //   answers: [
-                //     { text: "Air" },
-                //     { text: "Water" },
-                //     { text: "Soil" },
-                //     { text: "All the above" },
-                //   ],
-                //   answer: "All the above",
-                // },
-              
 
+                {
+                  prompt:
+                    "After the telescope was invented, what were people able to see better?",
+                  answers: [
+                    { text: "Air" },
+                    { text: "Water" },
+                    { text: "Soil" },
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
                 {
                   prompt: "Are all bacteria harmful?",
                   answers: [{ text: "True" }, { text: "False" }],
@@ -505,7 +491,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt:
                 "List three plants that you see everyday. Why do you think that you see them so" +
                 " often? Think about the environmental conditions that they need to survive.",
@@ -515,7 +501,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt:
                 "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
             },
@@ -708,7 +694,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt:
                 "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight" +
                 "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?",
@@ -854,7 +840,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt:
                 "Take a picture of a community (artifical or natural) near you.",
             },
@@ -958,7 +944,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt:
                 "Cleaning up after ourselves in public is a great way to help improve the air quality" +
                 "Draw some things that you often see outside on the ground that you can pick up.",
@@ -1103,7 +1089,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt:
                 "Take a picture of an endangered animal from the Red Book of Plants. " +
                 "If you cannot find one, take a picture of it online so you can identify it the next time you see it.",
@@ -1324,7 +1310,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg",
               prompt: "Draw a picture of a skeletal system wit a vertebrate!",
             },
           },
