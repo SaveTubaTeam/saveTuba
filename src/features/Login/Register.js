@@ -5,7 +5,7 @@ import { TitleText } from "../../components/title-text.component";
 
 import firebase from "firebase/app";
 // import RNfirebase from '@react-native-firebase';
-import { Firestore, setDoc, updateDoc, doc } from "firebase/firestore";
+import { Firestore, setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
 
 import { renderToString } from "react-dom/server";
@@ -107,19 +107,15 @@ export class Register extends Component {
       achievements,
     } = this.state;
 
-    // initializing classroom as an array of string so that it can than read the data from the server and load it it as classroom.
-    let classroom = [""];
+
     db.collection("classroom")
       .doc(classCode)
       .get()
       .then((snapshot) => {
         if (snapshot.exists) {
-          // classroom = snapshot.data();
-          console.warn(snapshot.data()["students"]);
-          console.warn(snapshot.data()["students"].length);
           classroom = snapshot.data()["students"];
           auth
-            .createUserWithEmailAndPassword(email, password)
+            .createUserWithEmailAndPassword(email, password) // Creates the user
             .then((result) => {
               setDoc(doc(db, "users", auth.currentUser.uid), {
                 email,
@@ -144,11 +140,10 @@ export class Register extends Component {
               setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
                 achievements: achievements,
               });
-              // To be honest I don't knowwhat is going on down here...
-              classroom[snapshot.data()["students"].length] =
-                auth.currentUser.uid;
-              db.collection("classroom").doc(classCode).update({
-                students: classroom,
+
+              // Adding the students id to the "Classroom" collection in the database
+              updateDoc(doc(db, "classroom", classCode), {
+                students: arrayUnion(auth.currentUser.uid),
               });
             })
             .catch((err) => {

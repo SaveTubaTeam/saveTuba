@@ -73,7 +73,7 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="secondary">
-              5/5
+              0/5
             </BodyText>
             <TouchableOpacity
               style={{

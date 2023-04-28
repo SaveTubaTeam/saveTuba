@@ -5,6 +5,25 @@ import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
 
+//Doesn't work. Look for a way to just use the object here
+/** 
+const Flag = styled.Image`
+  width: 30px;
+  height: 20px;
+`;
+
+const LANGUAGES = [  {    code: "kk",    label: <Flag source={require("../../../../assets/kz.jpeg")} />,  },  { code: "ru", label: <Flag source={require("../../../../assets/ru.png")} /> },  { code: "en", label: <Flag source={require("../../../../assets/en.png")} /> },];
+
+const Selector = () => {
+  const { t, i18n } = useTranslation();
+  const selectedLanguageCode = i18n.language;
+
+  const setLanguage = (code) => {
+    return i18n.changeLanguage(code);
+  }
+}
+*/
+
 const ImageBg = styled.ImageBackground`
   flex: 1;
   width: 100%;
