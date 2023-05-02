@@ -2549,7 +2549,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
                   prompt:
@@ -2596,6 +2596,8 @@ export const Grade2 = {
                 },
               ],
             },
+            //no sorting
+            /*
             sorting: { //correct
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
@@ -2639,6 +2641,9 @@ export const Grade2 = {
                 ],
               },
             },
+            */
+            
+            // this portion of lesson 27 in curriculum is not complete 
             snapshot_2: {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
@@ -2677,7 +2682,10 @@ export const Grade2 = {
               },
             ],
           },
+          
         },
+
+        // not complete up until this point 
 
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2981,7 +2989,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 9 
+        Grade 1 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2989,7 +2997,63 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l9")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
           backgroundColor: "#9DCD5A",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What of the following is the best definition of humus",
+                  answers: [
+                    { text: "Matter in soil made out of the remains of plants and animals" },
+                    { text: "Minerals in soil." },
+                    { text: "Grass that grows on top of the soil." },
+                    { text: "Rocks embedded in the soil" },
+                  ],
+                  answer: "Matter in soil made out of the remains of plants and animals.",
+                },
+                {
+                  prompt: "Humus is more abundant in the upper layers of the soil than the lower layers.",
+                  answers: [
+                    { text: "True" },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
+                  answers: [
+                    { text: "True" },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
+                  answers: [
+                    {
+                      text: "Wind and water",
+                    },
+                    {
+                      text: "Solar heat",
+                    },
+                    {
+                      text: "Living organisms",
+                    },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l9_prompt")}</Translation>
@@ -3034,7 +3098,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 10 
+        Grade 1 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3042,7 +3106,58 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l10")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
           backgroundColor: "#F9A949",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What is the best explanation for why air permeability is important for soil?",
+                  answers: [
+                    { text: "Without it the worms will die " },
+                    { text: "This allows air through the soil, which is needed or else plant roots will die. " },
+                    { text: "It lets rain through." },
+                    { text: "None of the above." },
+                  ],
+                  answer: "This allows air through the soil, which is needed or else plant roots will die.",
+                },
+                {
+                  prompt: "Which of the following is the best definition of water permeability? ",
+                  answers: [
+                    { text: "It describes the type of water needed for the soil." },
+                    { text: "It is the ability of the soil to support worms and insects." },
+                    { text: "It explains the pH of the soil." },
+                    { text: "It is the ability of the soil to absorb and transmit water." },
+                  ],
+                  answer: "It is the ability of the soil to absorb and transmit water.",
+                },
+                {
+                  prompt: "Which of the following processes directly threatens the abundance of soil?",
+                  answers: [
+                    { text: "Earthquakes" },
+                    { text: "Pollution" },
+                    { text: "Erosion" },
+                    { text: "Evaporation" },
+                  ],
+                  answer: "Erosion",
+                },
+                {
+                  prompt: "The life of humans, animals, and plants are all dependent on the existence of soil. ",
+                  answers: [
+                    { text: "True" },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+              ],
+            },
+
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l10_prompt")}</Translation>
@@ -3088,7 +3203,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 11 
+        Grade 1 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3096,7 +3211,55 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l11")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
           backgroundColor: "#76B9F0",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "Which of the following statements is true about soil?",
+                  answers: [
+                    { text: "All of the following" },
+                    { text: "Dark soil is rich in humus." },
+                    { text: "Red soil is rich in iron." },
+                    { text: "Light soil is poor in minerals and humus." },
+                  ],
+                  answer: "All of the following.",
+                },
+                {
+                  prompt: "Clay soil absorbs water well and does not stick together. ",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "Which of the following is the main property of sandy soil?",
+                  answers: [
+                    { text: "It is very loose." },
+                    { text: "Is is easy for water to pass through it" },
+                    { text: "It heats up and cools down quickly" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
+                  answers: [
+                    { text: "Chernozem" },
+                    { text: "Clay" },
+                    { text: "Humus soil" },
+                    { text: "Sand" },
+                  ],
+                  answer: "Chernozem",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l11_prompt")}</Translation>
@@ -3141,7 +3304,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 12 
+        Grade 1 Chapter 3 Lesson 12 Lessons 41 and 42
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3149,7 +3312,73 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l12")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/earth.png"),
           backgroundColor: "#49326B",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What are the spheres of the earth?",
+                  answers: [
+                    { text: "Biosphere and lithosphere" },
+                    { text: "Hydrosphere and atmosphere" },
+                    { text: "Both answers are correct" },
+                    { text: "Neither answers are correct" },
+                  ],
+                  answer: "Both answers are correct.",
+                },
+                {
+                  prompt: "Which of the following is the best definition of the atmosphere of the earth? ",
+                  answers: [
+                    { text: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers." },
+                    { text: "A solid shell that surrounds Earth, holding in the gasses needed for plants." },
+                    { text: "A shell made up of gas, consisting of only one layer that protects the earth from asteroids." },
+                    { text: "A solid shell that is only responsible for creating weather. " },
+                  ],
+                  answer: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
+                },
+                {
+                  prompt: "Which of the following is the main property of sandy soil?",
+                  answers: [
+                    { text: "It is very loose." },
+                    { text: "Is is easy for water to pass through it" },
+                    { text: "It heats up and cools down quickly" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "The lithosphere is the upper solid shell of the Earth.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "Ture",
+                },
+                {
+                  prompt: "What inhabits the biosphere on Earth? ",
+                  answers: [
+                    { text: "3 million species of plants, animals, fungi and bacteria." },
+                    { text: "Earth’s core." },
+                    { text: "The troposphere." },
+                    { text: "Glaciers." },
+                  ],
+                  answer: "Glaciers",
+                },
+                {
+                  prompt: "The lithosphere has never moved, and never will.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l12_prompt")}</Translation>
@@ -3213,7 +3442,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 13 
+        Grade 1 Chapter 3 Lesson 13 lessons 43 and 44
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3221,7 +3450,48 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l13")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
           backgroundColor: "#02084B",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What is the main way that space is explored?",
+                  answers: [
+                    { text: "Automatic spacecrafts" },
+                    { text: "Manned space flights" },
+                    { text: "Both answers are correct" },
+                    { text: "Neither answer is correct" },
+                  ],
+                  answer: "Both answers are correct",
+                },
+                {
+                  prompt: "In what year was the first human flight to space?",
+                  answers: [
+                    { text: "1961" },
+                    { text: "1990" },
+                    { text: "1947" },
+                    { text: "1968" },
+                  ],
+                  answer: "1961",
+                },
+                {
+                  prompt: "Which of the following advancements were created in connection with the development of the space industry?",
+                  answers: [
+                    { text: "Solar batteries" },
+                    { text: "Water filters" },
+                    { text: "Digital cameras" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l13_prompt")}</Translation>
@@ -3272,7 +3542,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 14 
+        Grade 1 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3280,7 +3550,44 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l14")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt: "What is the best explanation for why there are different time zones in different places? ",
+                  answers: [
+                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
+                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
+                    { text: "The earth revolves around the moon, making it night time on one half of the earth." },
+                    { text: "None of the above." },
+                  ],
+                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
+                },
+                {
+                  prompt: "The earth rotates around the ____.",
+                  answers: [
+                    { text: "Moon" },
+                    { text: "Sun" },
+                    { text: "Other planets" },
+                    { text: "Milky way" },
+                  ],
+                  answer: "Sun",
+                },
+                {
+                  prompt: "The earth rotates around an axis AND revolves around the sun.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "Ture",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
