@@ -594,26 +594,6 @@ export const Grade2 = {
                 },
               ],
             },
-            openresponse_2: { // correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text:
-                      "List a couple of things that plants need in order to survive. Are these the same " +
-                      "things we need to survive? What happens if there is too much of one resource?",
-                    placeholder: "Plants need...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
-                ],
-              },
-            },
             openresponse: { // correct
               navigation: "Image Boom",
               title: (
@@ -629,6 +609,26 @@ export const Grade2 = {
                       "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt." +
                       " What are some human-made adaptations that help us, but hurt plants? ",
                     placeholder: "Some human-made adaptions...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            openresponse_2: { // correct
+              navigation: "Image Boom 2",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text:
+                      "List a couple of things that plants need in order to survive. Are these the same " +
+                      "things we need to survive? What happens if there is too much of one resource?",
+                    placeholder: "Plants need...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],

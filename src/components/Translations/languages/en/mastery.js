@@ -245,18 +245,21 @@ export default {
   ~~~~~~~~~
   */
 
-  g2c1l1_card1: "Find an object in your house that you use everyday.",
+  // correct
+  g2c1l1_card1: "Walk around your house and find a notable scientific discovery.",
   g2c1l1_card2:
-    "Take a picture of it and write down its function. Is this something that you have to buy often?",
+    "Take a picture of the object and list its functionality. Record any observations you find that stick out to you. ",
   g2c1l1_prompt:
-    "Is this object you use everyday prompoting sustainable practices?",
+    "Rate how sustainable it is. Come up with ideas to make it more sustainable.",
 
+  // correct
   g2c1l2_card1:
-    "Do a simple internet search to look up simple sustainable practices you can do in your home, be sure to record the website you visited",
+    "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited.",
   g2c1l2_card2:
-    "Determine if your list of resrouces you found is reliable, why or why not? Rate each source as reliable or unreliable",
-  g2c1l2_prompt: "Explain how you came to your conclusions.",
+    "Record the link and research how reliable this source of information is. Then, identify and list the advantages and disadvantages of this source of information.",
+  g2c1l2_prompt: "Rank this source and its information on a scale of 1(unreliable) to 10(completely reliable).",
 
+  // will need more work to make it look good. I agree with David, there will need to be visual aids
   g2c1l3_card1: "Become a scientist who tests about air pollution!",
   g2c1l3_card2:
     "It is hard to see air pollution around us because the particles are so small, but just because we can't see it, doesnt mean it's not there!",
@@ -271,6 +274,7 @@ export default {
 
   // Chapter 2
 
+  
   g2c2l1_card1: "Take a picture of three plants in the real world.",
   g2c2l1_card2:
     "Take notes about the plants environment. Does it have enough resources to thrive?",
