@@ -76,15 +76,9 @@
     "text-encoding": "^0.7.0"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "@babel/core": "^7.12.9",
-    "@types/react": "~18.0.24",
-    "@types/react-native": "~0.70.6",
-=======
     "@babel/core": "^7.20.0",
     "@types/react": "~18.0.27",
     "@types/react-native": "~0.64.12",
->>>>>>> d7b38070d0312354a9686c2b3069b261bda427a5
     "eslint": "^8.9.0",
     "eslint-plugin-react": "^7.28.0",
     "typescript": "^4.6.3"

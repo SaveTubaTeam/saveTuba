@@ -162,7 +162,7 @@ const Start = ({ data }) => {
                   setCurrentPrompt(data.content[count + 1].prompt);
                   setSecondVisible("none");
                   setThirdVisible("flex");
-                } else if (count == 2) {
+                } else if (count == 2 && data.content[count + 1] != null) {
                   setCount(count + 1);
                   setCurrentPrompt(data.content[count + 1].prompt);
                   setThirdVisible("none");

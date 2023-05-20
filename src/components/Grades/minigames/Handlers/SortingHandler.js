@@ -117,7 +117,7 @@ const Start = ({ data }) => {
                 paddingBottom: 5,
               }}
               onPress={() => {
-                if (count < data.num - 1) {
+                if (count < data.num) {
                   setVisible(!visible);
                   setCurrentOption(data.options[count + 1].title);
                   setCurrentAnswer(data.options[count + 1].name);
