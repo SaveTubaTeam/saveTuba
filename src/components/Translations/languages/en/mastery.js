@@ -274,7 +274,7 @@ export default {
 
   // Chapter 2
 
-  
+
   g2c2l1_card1: "Take a picture of three plants in the real world.",
   g2c2l1_card2:
     "Take notes about the plants environment. Does it have enough resources to thrive?",
@@ -334,6 +334,15 @@ export default {
   g2c2l7_prompt:
     "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
 
+
+  /**
+ * Start of Hayden's Mastery Section
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
   g2c2l8_card1:
     "Animals, like humans, have relationships with each other (but not in a romantic way!)",
   g2c2l8_card2:
@@ -405,6 +414,20 @@ export default {
   g2c2l16_card4:
     "Research herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
   g2c2l16_prompt: "Go to the park, try to find some and upload a photo here!",
+
+  /**
+   * End of Hayden's Mastery Section
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   */
+
+
+
+
 
   /* Chapter 3 */
 
