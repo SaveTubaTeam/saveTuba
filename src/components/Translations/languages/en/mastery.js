@@ -271,11 +271,11 @@ export default {
 
   // Chapter 2
 
-  g2c2l1_card1: "Take a picture of three plants in the real world.",
+  g2c2l1_card1: "We take in air through our nose and/or mouth.",
   g2c2l1_card2:
-    "Take notes about the plants environment. Does it have enough resources to thrive?",
+    "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible. Obviously, we wouldn’t survive without breathing",
   g2c2l1_prompt:
-    "Identify a place in your home where a plant could grow. Explain why your plant would thrive there.",
+    " Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
 
   g2c2l2_card1:
     "Plants exist all over the world in many different conditions. Think of two countries you would like to visit one day.",
@@ -305,23 +305,29 @@ export default {
     "Then, research communities in your neighborhood that were indirectly affected by humans. Visit one of these communities and record your observations.",
   g2c2l4_prompt: "Upload all your reserach and observations",
 
+  //lesson 23
+
   g2c2l5_card1:
-    "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. ",
+    "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins.",
   g2c2l5_card2:
-    "Research another countries Red Book and find a plant on their list that is not endangered here in Kazakhstan.",
+    "Blood has many responsibilities as well such as warming the body, carrying oxygen and nutrients, and more. A key fact to remember is that humans are warm-blooded.",
   g2c2l5_card3:
-    "Why is it that the plant is not endangered Kazakhstan but endangered in your researched country? ",
+    "Research a cold-blooded animal. Think about how this helps them in nature and why their adaptations/evolution led to this. ",
   g2c2l5_prompt:
-    "Come up with some ideas to help your researched country save these plants",
+    "How do they survive in their habitat with this in mind? Expand.",
+
+  // lesson 24 and 25
 
   g2c2l6_card1:
-    "Animals can be classified as either being an vertebrate or invertebrate.",
-  g2c2l6_card2: "Vertebrate means to have a backbone,",
-  g2c2l6_card3: "Therefore, invertebrate means to not have a backbone",
+    "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications.",
+  g2c2l6_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",
+  g2c2l6_card3: "But did you know that there are many natural remedies or medicines to everyday health problems?",
   g2c2l6_card4:
-    "It’s time to go on a trip! Go outside and try to find and identify animals who are vertebrates or invertebrates.",
+    "Visit the nearest forest, park, or nature enclosure. Look around for herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
   g2c2l6_prompt:
-    "Make a list of the animals that you find. Did you find more verterbates or invertibrates? \nExplain advantages and disadvanges of each. Don't forget to take pictures!",
+    "Record your findings and bring them home.",
+
+  
 
   g2c2l7_card1:
     "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
@@ -404,16 +410,20 @@ export default {
 
   /* Chapter 3 */
 
+  // Lesson 26
+
   g2c3l1_card1:
     "There are three different states of substances. They can be in solid, liquid, or gas form.",
   g2c3l1_card2:
-    "Under the right circumstances, substances can change from one state to another.",
+    "Under the right circumstances, substances can change from one state to another or they can change their states completely from top to bottom.",
   g2c3l1_card3:
-    "Let's conduct a fun experiment! You will need a glass, some raisins and a can of soda.",
-  g2c3l1_card4: "Pour the soda into the glass so it is about half full.",
+    "Understand how the different states of matter interact with each other. This activity requires three materials: Glass, Raisins, Clear soda, such as Sprite. This simple states of matter experiment will allow you to see how solid, liquid, and gas substances react",
+  g2c3l1_card4: "To perform the activity, fill the glass 3/4 full of the clear soda. Then, add the raisins. Watch what happens.",
   g2c3l1_card5:
-    "Pour the raisins in and watch what happens. Why are the raisins dancing?",
-  g2c3l1_prompt: "Take a photo of your dancing raisins and upload it below!",
+    "The science behind this experiment: Students will see the raisins “dancing” in the soda. The raisins will fall to the bottom of the glass and then float back up to the top. They will then fall again.",
+  g2c3l1_prompt: "What is happening in the carbonation gas from the soda adheres to the raisin. This causes the raisins to float to the top. Once the bubble pops at the surface, the raisin then falls to the bottom again.",
+
+  // lesson 27 jjj
 
   g2c3l2_card1:
     "The air is very important for the life of every living thing on Earth.",
@@ -422,6 +432,8 @@ export default {
     "Imagine, though, that we are not able to inhabit Earth anymore.",
   g2c3l2_prompt:
     "What other planet has the best air composition to serve humans?",
+
+  // lesson 28
 
   g2c3l3_card1:
     "The air consists of many gasses such as oxygen, nitrogen, carbon dioxide, etc.",
@@ -484,69 +496,61 @@ export default {
     "Put the jar in a sunny spot for a few days and observe any changes. Is there a vine growing?",
   g2c3l8_prompt: "Upload a photo of your sweet potato after a week!",
 
+  //lesson 36
+
   g2c3l9_card1:
-    "You may know that soil consists of different components and layers, but do you want to see for yourself?",
+    "As said previously, soil has two main components: minerals and organic matter. The mineral part of soil forms from rocks. Forces such as wind, water, and temperature changes break rocks into tiny bits. The organic part of soil forms when plants and animals die. The organic material is called humus and it helps to form the pores in the soil.",
   g2c3l9_card2:
-    "You will need a jar with a lid, some water and some dirt from outside.",
-  g2c3l9_card3: "Fill the jar half-way through with dirt.",
-  g2c3l9_card4: "Add enough water to fill up the rest of the jar.",
+    "Dirt Discovery is a science project that will teach you about this soil composition. There's more to dirt than you think! Find out what it's made of. What You'll Need: Waterproof table covering, Jar with lid, Spoon, Dirt, Pitcher of water, Paper towels, Magnifying glass",
+  g2c3l9_card3: "Step 1: Cover your work surface. Fill a jar halfway with dirt. Add water nearly to the top of the jar. Put the lid on, and tighten it securely. Step 2: Shake the jar vigorously for a half a minute, and then set it down. Let the jar stand until the dirt and water settle. The soil will settle into layers.",
+  g2c3l9_card4: "Step 3: Observe the layers in the jar, and see what you can tell about them. How many layers are there? Which layer is made of the biggest particles? Which is the smallest? Can you guess why? Step 4: To further examine the different layers and what they are made of, you can sort out the soil materials and examine them. Use a spoon to skim off the objects floating in the water. Place them on a paper towel.",
   g2c3l9_card5:
-    "Put the lid on and tighten it very hard. Now shake the jar as fast as you can!",
+    "Step 5: Then carefully pour off the water on the top and scoop out the grains of the next level onto another paper towel. Do the same if there is another level.",
   g2c3l9_card6:
-    "Put the jar down and watch as the water and the soil settle. Do you notice the soil has layers?",
+    "Step 6: After each layer has been placed onto towels, they can be examined with the magnifying glass. What else can you tell about the different layers after further examination?",
   g2c3l9_prompt:
-    "How many layers are there? Which layer is made of the biggest particles? Which is made of the smallest?",
+    "Step 7: You can also do this experiment with dirt you have collected from different areas and compare your findings. Draw pictures of each jar full of soil after you have shaken it and the dirt has settled to make picture comparisons.",
+
+  // lesson 37 and 38 
 
   g2c3l10_card1:
-    "Soil properties and quality are vital aspects of a plant's health. Let's see if this is really true.",
+    "Soil helps plants grow and provides the plants with nutrients. Some soils have different colors than others. Some soils are considered poor rather than rich. And some soils help plants grow more than others.",
   g2c3l10_card2:
-    "Gather some bean seeds, two flower pots, soil from two different places in your neighborhood and two sticks.",
+    "Soil has many properties such as air permeability, water permeability, thermal conductivity, and fertility. From this, I want you to test which soils are better than others and observe what properties play a role in this.",
   g2c3l10_card3:
-    "Fill the flowerpots with the different soil and label them so you know which one is which.",
+    "What You'll Need: Garden soil, Trowel, Small flowerpots with saucers, Water, Bean seeds, Tall stakes, Pencil or pen, Ruler, Paper (graph paper optional), Tape",
   g2c3l10_card4:
-    "Insert two or three bean seeds in each pot. Put a stick or stake in both pots so that the beans can climb.",
+    "Step 1: Look in your yard for areas where plants grow poorly. Is the soil trampled and hard? Is the soil soft and loose where plants grow well? Look for sandy or heavy, clay-like soil.",
   g2c3l10_card5:
-    "Water the pots every so often. You want the soil to be moist, but not soggy.",
+    "Step 2: Gather samples of different soils and fill a flowerpot with each kind. Label your flowerpots: Hard, baked soil near the sidewalk, Loose, fluffy soil from the flower bed, etc.",
   g2c3l10_card6:
-    "Notice which beans sprout first. Measure the height of the plants every day for a week. Record your observations.",
+    "Step 3: Water the pots, then plant two or three bean seeds in each. Put a stake in each pot for the beans to climb. Keep the pots moist (but not soggy) while the beans sprout.",
   g2c3l10_prompt:
-    "Based on your notes, is one sail better or worse for the plant than the other?",
+    "Step 4: Notice which beans sprout first. Measure the height of the plants every few days until the beans flower. Keep a chart. Which soil was the best?",
+  
+  // lesson 39 and 40?? 
 
   g2c3l11_card1:
-    "Different soils have different compositions, fertility, nutrient retention and other properties.",
-  g2c3l11_card2:
-    "Do you remember the experiment from two lessons ago when you observed soil layers in a jar with water?",
+    "Let’s take a deeper dive into soil fertility. Plants need nutrients just like people.",
+  g2c3l11_card2: 
+    " A fertile soil will contain all the major nutrients for basic plant nutrition, as well as other nutrients in smaller amounts.",
   g2c3l11_card3:
-    "Let's expand upon that experiment by using three jars with three different soils.",
+    "Sadly, many soils don’t have good levels of all the necessary plant nutrients.",
   g2c3l11_card4:
-    "Take a walk around your neighborhood and try to find soil which differ from one another in color, density or texture.",
-  g2c3l11_card5:
-    "Just like last time, fill up the jars halfway with dirt, halfway with water. Put the lid on and shake vigorously!",
-  g2c3l11_card6:
-    "After the dirt has settled in all three jars, what do you see? Do all three jars have the same number of layers? Is their color the same?",
-  g2c3l11_prompt: "Upload a photo of the three jars with soil!",
+    "Many solids also lack favorable conditions for plant uptake of certain nutrients.",
+  g2c3l11_prompt: "Research what organic material improves soil structure. Why should people use this information? ",
+
+  // lesson 41 and 42
 
   g2c3l12_card1:
-    "Earth is the planet we inhabit and it measures more than 4000 miles in diameter!",
+    "The Earth is the planet we inhabit. More than 4 billion years old, our planet is the third from the Sun.",
   g2c3l12_card2:
-    "However, relative to the solar system or the Milky Way, Earth is tiny.",
+    "The Earth is mostly covered with water and that water is mostly salty.",
   g2c3l12_card3:
-    "To put things into perspective, grab a sheet of paper, a pencil and get ready to draw the solar system!",
-  g2c3l12_card4:
-    "Draw the Sun in the middle of one edge of paper. Let this be our starting point and mark 0cm.",
-  g2c3l12_card5:
-    "The distance between the Sun and its nearest planet, Mercury, is 33 million miles or 0.4 astronomical units.",
-  g2c3l12_card6:
-    "To scale things down so they fit on your piece of paper, multiply the distance from the sun in astronomical units by 10 and draw that distance in centimeters.",
-  g2c3l12_card7:
-    "For example, draw Mercury 4cm away from the Sun because the actual distance is 0.4 AU.",
-  g2c3l12_card8:
-    "The next planet is Venus and it is 0.7 AU away from the Sun. Draw it at the 7cm mark.",
-  g2c3l12_card9:
-    "Earth is 1 AU from the Sun so you will draw our planet at the 10cm mark.",
-  g2c3l12_card9:
-    "Can you keep going for the other planets in the solar system? When will you run out of paper?",
-  g2c3l12_prompt: "Upload a photo of your solar system on paper!",
+    "The Earth’s atmosphere is divided into 6 layers including the troposphere, stratosphere, mesosphere, thermosphere, exosphere, and ionosphere.",
+  g2c3l12_prompt: "The Earth is so cool and vast to us. But, the Earth really is nothing. Understanding how big the solar system the Earth is in is astounding.",
+
+  // lesson 43 and 44
 
   g2c3l13_card1:
     "Space exploration has allowed us to learn about other planets and their properties.",
@@ -564,6 +568,8 @@ export default {
     "If the glove leaks that means air can get in and you haven't fixed the problem.",
   g2c3l13_prompt:
     "Explain what methods you have tried. What worked and what didn't?",
+
+  // lesson 45 and 46
 
   g2c3l14_card1:
     "All of the planets in the solar system revolve around the Sun.",
