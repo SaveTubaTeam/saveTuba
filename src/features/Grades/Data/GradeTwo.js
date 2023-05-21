@@ -1449,50 +1449,6 @@ export const Grade2 = {
                 },
               ],
             },
-            // sorting: { // incorrect images
-            //   navigation: "Sorting",
-            //   icon: require("../../../../assets/recycle-bin.png"),
-            //   backgroundColor: "coral",
-            //   content: {
-            //     prompt:
-            //       "Match the word to the definition using pictures",
-            //     num: 3, //count start 0
-            //     imageBg: SortingImages.bg[0].lvl_2_les_8,
-            //     categories: [
-            //       { name: "Symbiosis" },
-            //       { name: "Parasitism" },
-            //       { name: "Predation" },
-            //       { name: "Neutralism" },
-            //       { name: "Competition" },
-            //     ],
-            //     options: [
-            //       {
-            //         name: "Symbiosis: two animals that positivity benefit from living together",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Parasitism: one animal benefits and one animal is harmed",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Predation: animals feeding on other animals ",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Neutralism: animals that do not depend on each other",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Competition: animals that both need the same limited resource",
-            //         image: require(),
-            //       },
-            //     ],
-            //   },
-            // },
           },
           mastery: {
             prompt: (
@@ -1508,18 +1464,6 @@ export const Grade2 = {
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l8_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/symbiosis.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l8_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/fishes.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l8_card4")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/symbiosis.png"),
               },
@@ -1645,12 +1589,6 @@ export const Grade2 = {
                   <Translation>{(t) => t("mastery:g2c2l9_card1")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/pets.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l9_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
             ],
           },
@@ -1803,35 +1741,24 @@ export const Grade2 = {
               },
               {
                 text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/whale.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card4")}</Translation>
                 ),
               },
             ],
           },
-          // mastery_2: { // incorrect mastery
-          //   prompt: (
-          //     <Translation>{(t) => t("mastery:g2c2l11_prompt_2")}</Translation>
-          //   ),
-          //   cards: [
-          //     {
-          //       text: (
-          //         <Translation>{(t) => t("mastery:g2c2l11_card1_2")}</Translation>
-          //       ),
-          //       image: require("../../../../assets/mastery/PUT_RIGHT_PHOTO_HERE"),
-          //     },
-          //   ],
-          // },
+          mastery_2: { // incorrect mastery
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l11_2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/habitat.png"),
+              },
+            ],
+          },
           minigames: {
             snapshot: { // correct
               navigation: "Snapshot",
@@ -1905,7 +1832,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 12
+        Grade 2 Chapter 2 Lesson 12 (lesson nineteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1917,20 +1844,20 @@ export const Grade2 = {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l12_prompt")}</Translation>
             ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/heart.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/frog.png"),
-              },
-            ],
+            // cards: [
+            //   {
+            //     text: (
+            //       <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
+            //     ),
+            //     image: require("../../../../assets/mastery/heart.png"),
+            //   },
+            //   {
+            //     text: (
+            //       <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
+            //     ),
+            //     image: require("../../../../assets/mastery/frog.png"),
+            //   },
+            // ],
           },
           minigames: {
             snapshot: { // correct
@@ -2027,11 +1954,6 @@ export const Grade2 = {
                   <Translation>{(t) => t("mastery:g2c2l13_card2")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/broccoli.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l13_card3")}</Translation>
-                ),
               },
             ],
           },
@@ -2256,22 +2178,7 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card2")}</Translation>
                 ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/blood.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card4")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card5")}</Translation>
-                ),
+                image: (require("../../../../assets/mastery/blood.png")),
               },
             ],
           },
@@ -2374,11 +2281,6 @@ export const Grade2 = {
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/rosemary.png"),
               },
@@ -3166,7 +3068,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 1 
+        Grade 1 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
