@@ -36,7 +36,7 @@ function HomeView() {
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-        <Image
+        {/* <Image
           style={{
             position: "absolute",
             right: 20,
@@ -46,7 +46,7 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        /> 
+        />  */}
         <TouchableOpacity
           style={style.roundButton2}
           onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
