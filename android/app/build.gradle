@@ -111,7 +111,7 @@ def reactNativeArchitectures() {
 android {
     ndkVersion rootProject.ext.ndkVersion
 
-    compileSdkVersion rootProject.ext.compileSdkVersion
+    compileSdkVersion 30
 
     namespace 'com.nadjastojanov.SaveTuba'
     defaultConfig {

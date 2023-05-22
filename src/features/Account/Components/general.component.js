@@ -74,6 +74,8 @@ const styles = StyleSheet.create({
   },
 });
 
+//Settings screen
+
 export const GeneralCard = () => {
   const { t } = useTranslation();
 

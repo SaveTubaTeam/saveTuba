@@ -36,7 +36,7 @@ function HomeView() {
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-        {/* <Image
+        <Image
           style={{
             position: "absolute",
             right: 20,
@@ -46,7 +46,7 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        /> */}
+        /> 
         <TouchableOpacity
           style={style.roundButton2}
           onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
@@ -67,7 +67,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          //onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -85,7 +85,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          //onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
