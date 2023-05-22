@@ -400,7 +400,7 @@ export default {
   // done
   g2c2l14_card1: "Humans take in air through our nose and mouth.",
   g2c2l14_card2:
-    "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible.",
+    "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible",
   g2c2l14_prompt:
     "Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
 

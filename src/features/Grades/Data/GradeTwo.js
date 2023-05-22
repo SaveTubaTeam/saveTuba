@@ -4200,42 +4200,69 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
           minigames: {
-            quiz: { // correct
+            quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is the best explanation for why there are different time zones in different places? ",
+                  prompt: 
+                    "What is the best explanation for why there are different time zones in different places?",
                   answers: [
-                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
+                    { text: "The sun revolves around the earth, making it light in some places and dark in others." },
+                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others." },
                     { text: "The earth revolves around the moon, making it night time on one half of the earth." },
-                    { text: "None of the above." },
+                    { text: "None of the above." }
                   ],
-                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
+                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others."
                 },
                 {
-                  prompt: "The earth rotates around the ____.",
+                  prompt: "The earth rotates around the ____. ",
                   answers: [
                     { text: "Moon" },
                     { text: "Sun" },
                     { text: "Other planets" },
                     { text: "Milky way" },
                   ],
-                  answer: "Sun",
+                  answer: "Sun"
                 },
                 {
-                  prompt: "The earth rotates around an axis AND revolves around the sun.",
+                  prompt: "True or False: The earth rotates around an axis AND revolves around the sun.",
                   answers: [
                     { text: "True" },
                     { text: "False" },
                   ],
-                  answer: "Ture",
-                },
-              ],
+                  answer: "True"
+                }
+              ]
             },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                "Take multiple pictures of the Sun as it rises, stays, and sets."
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What measures can be taken to reduce the amount of space debris and pollution in Earth's orbit?",
+                    placeholder: "The plants I see everyday are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
           },
           mastery: {
             prompt: (
@@ -4295,7 +4322,74 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c4l1")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/elastic-spring.png"),
           backgroundColor: "#2A731D",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "True or False: Elasticity is the property of bodies to restore their original position and shape",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "What is a common object that utilizes elasticity?",
+                  answers: [
+                    { text: "Car tires" },
+                    {
+                      text: "Balloons",
+                    },
+                    { text: "Long bridges" },
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt:
+                    "Which of the following statements about elastic forces is true?",
+                  answers: [
+                    { text: "If the elastic forces cannot handle the amount of external force, the body changes shape." }, 
+                    { text: "The aim of the elastic force is to compress, shift, stretch, and bend." },
+                    { text: "Both of the above answers are correct." },
+                    { text: "Neither answers are correct." }
+                  ],
+                  answer: "Both of the above answers are correct.",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                "Take a picture of an object/item that uses elastic force."
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is elastic force, and how does it differ from other types of force?",
+                    placeholder: "The elastic force is...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l1_prompt")}</Translation>
@@ -4342,7 +4436,74 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c4l2")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/gravity.png"),
           backgroundColor: "#060644",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "Which of the following things that occur on earth need gravity?",
+                  answers: [
+                    { text: "Holds the moon in orbit." },
+                    {
+                      text: "Keeps objects on the surface of the earth.",
+                    },
+                    { text: "Keeps the shape of the earth’s atmosphere." },
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt:
+                    "True or False: Elasticity is the property of bodies to restore their original position and shape",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "Which of the following is the best definition of inertia?",
+                  answers: [
+                    { text: "The property of the body to maintain a state of rest or movement until some external force acts on it." }, 
+                    { text: "The property of a body to bounce back from an external force." },
+                    { text: "The property that drags things down to the center of the earth" },
+                    { text: "The speed at which an object falls." }
+                  ],
+                  answer: "The property of the body to maintain a state of rest or movement until some external force acts on it.",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                "Take a picture of an object experiencing gravity. (Hint: objects in freefall.)"
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is gravity, and how does it differ from other types of force?",
+                    placeholder: "The gravity is...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l2_prompt")}</Translation>
@@ -4409,7 +4570,72 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c4l3")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/friction.png"),
           backgroundColor: "#53020C",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "True or False: Friction is stronger on smooth surfaces than rough surfaces.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "In which of the following scenarios is friction present?",
+                  answers: [
+                    { text: "Pressing the palms of your hands together and rubbing them quickly, creating heat." },
+                    { text: "A pencil leaves traces on a piece of paper when they come into contact with each other.", },
+                    { text: "The rubber boots of climbers’ boots keep the climber from slipping off the rocks." },
+                    { text: "All the above" },
+                  ],
+                  answer: "All the above",
+                },
+                {
+                  prompt:
+                    "Which of the following can be created by friction?",
+                  answers: [
+                    { text: "Heat" }, 
+                    { text: "Decline in speed" },
+                    { text: "Both answers are correct." },
+                    { text: "Neither answers are correct." }
+                  ],
+                  answer: "Both answers are correct.",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                "Take a picture of an object experiencing friction or an object that causes friction."
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is friction, and how does it differ from other types of force?",
+                    placeholder: "The friction is...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l3_prompt")}</Translation>
@@ -4480,7 +4706,72 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c4l4")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/direction.png"),
           backgroundColor: "#F9943B",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "True or False: The direction of gravity coincides with the direction of its free fall.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "The friction force is ____ to the direction of movement. ",
+                  answers: [
+                    { text: "Opposite" },
+                    { text: "Equal", },
+                    { text: "Perpendicular" },
+                    { text: "All the above" },
+                  ],
+                  answer: "Opposite",
+                },
+                {
+                  prompt:
+                    "Which of the following most accurately describes what creates friction?",
+                  answers: [
+                    { text: "When one body is in free fall due to gravity." }, 
+                    { text: "When bodies move across one another, causing two surfaces to come into contact." },
+                    { text: "When a body bounces back after an external force acts on it." },
+                    { text: "When a body breaks after an external force acts on it." }
+                  ],
+                  answer: "When bodies move across one another, causing two surfaces to come into contact.",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                "Take a picture of an object that is experiencing a force. Highlight the direction of the force that is acting on it."
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do forces interact with matter, and how do they cause changes in the motion and behavior of objects? And, What are some common examples of forces in everyday life, and how do they affect the motion of objects?",
+                    placeholder: "Forces interact by...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l4_prompt")}</Translation>
@@ -4539,7 +4830,72 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c4l5")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/shadow.png"),
           backgroundColor: "#159D52",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "True or False: A shadow is an area of space where light does not enter.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "A ____ light source gives a longer shadow.",
+                  answers: [
+                    { text: "Lower" },
+                    { text: "Higher", },
+                    { text: "Colored" },
+                    { text: "UV" },
+                  ],
+                  answer: "Lower",
+                },
+                {
+                  prompt:
+                    "The ____ the light source is to the object being illuminated, the shorter the shadow is.",
+                  answers: [
+                    { text: "Farther" }, 
+                    { text: "More yellow" },
+                    { text: "Closer" },
+                    { text: "Redder" }
+                  ],
+                  answer: "Closer",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                "Take a picture of a shadow."
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What is a shadow, and how is it formed? What are the many factors that can affect a shadow. For example, the time of day is one factor. Can you think of any more?",
+                    placeholder: "Shadow is...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l5_prompt")}</Translation>
@@ -4602,7 +4958,72 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c4l6")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/reflection.png"),
           backgroundColor: "#5AA3F7",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt:
+                    "",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "",
+                  answers: [
+                    { text: "" },
+                    { text: "", },
+                    { text: "" },
+                    { text: "" },
+                  ],
+                  answer: "",
+                },
+                {
+                  prompt:
+                    "",
+                  answers: [
+                    { text: "" }, 
+                    { text: "" },
+                    { text: "" },
+                    { text: "" }
+                  ],
+                  answer: "",
+                },
+              ],
+            },
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: 
+                ""
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ),
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "",
+                    placeholder: "",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            }
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l6_prompt")}</Translation>
