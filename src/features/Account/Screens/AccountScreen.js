@@ -12,7 +12,7 @@ import { connect } from "react-redux";
 
 import SignOut from "../Components/signouut.component";
 
-import { AchievementContext } from "../../../contexts/AchievementContext"
+import { AchievementContext } from "../../../contexts/AchievementContext";
 const Button = styled(TouchableOpacity)`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   width: 60%;
