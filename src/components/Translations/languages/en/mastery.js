@@ -451,20 +451,26 @@ export default {
     "Watch what happens after a couple of seconds. Does the candle remain lit? What happened to the colored water?",
   g2c3l3_prompt: "Upload a photo of your experiment!",
 
+  // lesson 29
+
   g2c3l4_card1:
-    "Humans, plants, and animals all have a great amount of water within their bodies.",
+    "Humans, plants, and animals all have a great amount of water within their bodies. No single living organism on Earth can survive without water, either.",
   g2c3l4_card2:
-    "No single living organism on Earth can survive without water either.",
+    "If water is so important, where do we get our water from?",
   g2c3l4_card3:
-    "Research different animals and how much or how little water they need in order to survive.",
-  g2c3l4_prompt: "Who needs the least water and who needs the most?",
+    "Find the nearest water source to your home.",
+  g2c3l4_prompt: "Observe and identify the practices used in sourcing this water and purifying it for human consumption. Record and take pictures of your observations.",
+
+  // lesson 30 and 31
 
   g2c3l5_card1:
-    "Although we spend most of our lives on land, the Earth is mostly occupied by water.",
-  g2c3l5_card2: "Bodies of water range from oceans, rivers, lakes, and seas.",
+    "Although we spend most of our lives on land, the Earth is mostly occupied by water. Bodies of water range from oceans, rivers, lakes, and seas. ",
+  g2c3l5_card2: "The largest body of water, an ocean, is very unexplored.",
   g2c3l5_card3:
-    "Do you know how we source water from rivers and seas to our homes?",
-  g2c3l5_prompt: "Research this process and explain it below.",
+    "There is so much of it but so little we know. How much do you know about what’s in water?",
+  g2c3l5_prompt: "Visit the nearest body of water and research its composition. What does this tell you about the water? Record your thoughts.",
+
+  // lesson 32
 
   g2c3l6_card1:
     "Drinking water is not infinite. Therefore, it is in our best interests to conserve as much water as possible.",
@@ -474,6 +480,8 @@ export default {
     "The next day try to conserve as much water as you can using the techniques you thought of above, and record the difference.",
   g2c3l6_prompt:
     "How much water did you save and how can you conserve even more?",
+
+  // lesson 
 
   g2c3l7_card1:
     "Although water is found almost everywhere, we can’t just drink it from the source.",
