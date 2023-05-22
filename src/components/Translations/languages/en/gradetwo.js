@@ -28,8 +28,7 @@ export default {
   c2l13: "Journey of an apple through the body",
   c2l14: "How do we breathe?",
   c2l15: "Human circulatory system",
-  c2l16:
-    "Protecting the human body from disease and infections. How to be healthy",
+  c2l16: "Protecting the human body from disease and infections. How to be healthy",
 
   /* Chapter 3 lesson names */
   c3l1: "What are the substances?",
@@ -42,7 +41,7 @@ export default {
   c3l8: "What is soil?",
   c3l9: "The main composition of soil",
   c3l10: "Soil properties",
-  c3l11: "What types of soil are there?",
+  c3l11: "what are soils?",
   c3l12: "How is our planet?",
   c3l13: "History of space exploration",
   c3l14: "How does the earth rotate?",
