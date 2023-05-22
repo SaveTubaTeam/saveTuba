@@ -2432,157 +2432,160 @@ export const Grade2 = {
         },
       ],
     },
-    {
-      navigation: "Chapter3",
-      title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
-      name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
-      icon: require("../../../../assets/chapter-icons/water-cycle.png"),
-      backgroundimage: require("../../../../assets/mastery/bg/ch3.png"),
-      colorOne: "tomato",
-      colorTwo: "firebrick",
-      lessons: [
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson1",
-          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
-          backgroundColor: "#49326B",
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l1_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l1_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/state-of-matter.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l1_card2")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l1_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/assessment.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/glass-of-water.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l1_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/raisins.png"),
-              },
-            ],
-          },
-          minigames: {},
-        },
+    // {
+    //   navigation: "Chapter3",
+    //   title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
+    //   name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
+    //   icon: require("../../../../assets/chapter-icons/water-cycle.png"),
+    //   backgroundimage: require("../../../../assets/mastery/bg/ch3.png"),
+    //   colorOne: "tomato",
+    //   colorTwo: "firebrick",
+    //   lessons: [
+    //     /* 
+    //     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //     Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+    //     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //     */
+    //     {
+    //       navigation: "Lesson1",
+    //       title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
+    //       thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
+    //       backgroundColor: "#49326B",
+    //       mastery: {
+    //         prompt: (
+    //           <Translation>{(t) => t("mastery:g2c3l1_prompt")}</Translation>
+    //         ),
+    //         cards: [
+    //           {
+    //             text: (
+    //               <Translation>{(t) => t("mastery:g2c3l1_card1")}</Translation>
+    //             ),
+    //             image: require("../../../../assets/mastery/state-of-matter.png"),
+    //           },
+    //           {
+    //             text: (
+    //               <Translation>{(t) => t("mastery:g2c3l1_card2")}</Translation>
+    //             ),
+    //           },
+    //           {
+    //             text: (
+    //               <Translation>{(t) => t("mastery:g2c3l1_card3")}</Translation>
+    //             ),
+    //             image: require("../../../../assets/mastery/assessment.png"),
+    //           },
+    //           {
+    //             text: (
+    //               <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
+    //             ),
+    //             image: require("../../../../assets/mastery/glass-of-water.png"),
+    //           },
+    //           {
+    //             text: (
+    //               <Translation>{(t) => t("mastery:g2c3l1_card5")}</Translation>
+    //             ),
+    //             image: require("../../../../assets/mastery/raisins.png"),
+    //           },
+    //         ],
+    //       },
+    //       minigames: {},
+    //     },
 
-        /*
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Lesson 27 in curriculum
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
+    //     /*
+    //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //     Lesson 27 in curriculum
+    //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //     */
 
-        {
-          navigation: "Lesson??", // Composition of Air
-          title: <Translation>{(t) => t("gradetwo:c3l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/?"),
-          backgroundColor: "?",
-          minigames: {
-            openresponse: { //correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "List 3 plants that you see everyday. Why do you think that you see them so often? \nThink about the environmental conditions they need to survive.",
-                    placeholder: "The plants I see everyday are...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
-                ],
-              },
-            },
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
-              content: [
+    //     {
+    //       navigation: "Lesson??", // Composition of Air
+    //       title: <Translation>{(t) => t("gradetwo:c3l2")}</Translation>,
+    //       // thumbnail: require("../../../../assets/lesson-icons/?"),
+    //       backgroundColor: "?",
+    //       minigames: {
+    //         openresponse: { //correct
+    //           navigation: "Image Boom",
+    //           title: (
+    //             <Translation>{(t) => t("common:openresponse")}</Translation>
+    //           ), // Image Boom
+    //           icon: require("../../../../assets/image.png"),
+    //           backgroundColor: "palevioletred",
+    //           data: {
+    //             numberOfPrompts: 1,
+    //             prompts: [
+    //               {
+    //                 text: "List 3 plants that you see everyday. Why do you think that you see them so often? \nThink about the environmental conditions they need to survive.",
+    //                 placeholder: "The plants I see everyday are...",
+    //                 image: require("../../../../assets/openresponse/innovation.png"),
+    //               },
+    //             ],
+    //           },
+    //         },
+    //         quiz: { // correct
+    //           navigation: "QuizScreen",
+    //           icon: require("../../../../assets/creativity.png"),
+    //           backgroundColor: "mediumpurple",
+    //           imageBg: require("../../../../assets/nat.jpg"),
+    //           content: [
 
-                {
-                  prompt:
-                    "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
-                  answers: [
-                    { text: "Vaccines, exposure to diseases" },
-                    { text: "Vaccines, personal hygiene care" },
-                    { text: "Washing your hands, bathing" },
-                    { text: "Personal hygiene care, nature" },
-                  ],
-                  answer: "Vaccines, personal hygiene care",
-                },
-                {
-                  prompt:
-                    "True or False: Spending time in nature is not helpful for staying healthy?",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt:
-                    "Which of the following is the best definition for immunity?",
-                  answers: [
-                    { text: "The state of being at risk for certain diseases." },
-                    { text: "The quality of being resistant to a disease or illness." },
-                    { text: "The name for people who are never sick." },
-                    { text: "The quality of being resistant to medicine. " },
-                  ],
-                  answer: "The quality of being resistant to a disease or illness.",
-                },
-              ],
-            },
-            openresponse: { // correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "How can we protect the human body from infections in a sustainable way? " +
-                      "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
-                    placeholder: "Sustainable ways to produce and consume food are...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
-                ],
-              },
-            },
-          },
-        },
-      ],
-    },
+    //             {
+    //               prompt:
+    //                 "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
+    //               answers: [
+    //                 { text: "Vaccines, exposure to diseases" },
+    //                 { text: "Vaccines, personal hygiene care" },
+    //                 { text: "Washing your hands, bathing" },
+    //                 { text: "Personal hygiene care, nature" },
+    //               ],
+    //               answer: "Vaccines, personal hygiene care",
+    //             },
+    //             {
+    //               prompt:
+    //                 "True or False: Spending time in nature is not helpful for staying healthy?",
+    //               answers: [
+    //                 { text: "True" },
+    //                 { text: "False" },
+    //               ],
+    //               answer: "False",
+    //             },
+    //             {
+    //               prompt:
+    //                 "Which of the following is the best definition for immunity?",
+    //               answers: [
+    //                 { text: "The state of being at risk for certain diseases." },
+    //                 { text: "The quality of being resistant to a disease or illness." },
+    //                 { text: "The name for people who are never sick." },
+    //                 { text: "The quality of being resistant to medicine. " },
+    //               ],
+    //               answer: "The quality of being resistant to a disease or illness.",
+    //             },
+    //           ],
+    //         },
+            
+    //         // this will cause issues
+
+    //         // openresponse: { // correct 
+    //         //   navigation: "Image Boom",
+    //         //   title: (
+    //         //     <Translation>{(t) => t("common:openresponse")}</Translation>
+    //         //   ), // Image Boom
+    //         //   icon: require("../../../../assets/image.png"),
+    //         //   backgroundColor: "palevioletred",
+    //         //   data: {
+    //         //     numberOfPrompts: 1,
+    //         //     prompts: [
+    //         //       {
+    //         //         text: "How can we protect the human body from infections in a sustainable way? " +
+    //         //           "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
+    //         //         placeholder: "Sustainable ways to produce and consume food are...",
+    //         //         image: require("../../../../assets/openresponse/innovation.png"),
+    //         //       },
+    //         //     ],
+    //         //   },
+    //         // },
+    //       },
+    //     },
+    //   ],
+    // },
     {
       navigation: "Chapter3",
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
@@ -2641,7 +2644,6 @@ export const Grade2 = {
           
         },
 
-        // not complete up until this point 
 
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
