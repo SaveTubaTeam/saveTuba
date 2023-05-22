@@ -1,4 +1,8 @@
 import { Translation } from "react-i18next";
+<<<<<<< HEAD
+=======
+
+>>>>>>> integration
 import {
   SortingImages,
   QuizImages,

@@ -36,7 +36,11 @@ function HomeView() {
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
+<<<<<<< HEAD
         {/*<Image
+=======
+        {/* <Image
+>>>>>>> integration
           style={{
             position: "absolute",
             right: 20,
@@ -46,8 +50,12 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
+<<<<<<< HEAD
         />*/}
         
+=======
+        /> */}
+>>>>>>> integration
         <TouchableOpacity
           style={style.roundButton2}
           onPress={() => navigation.push("ChaptersHandler", { level: 2 })}

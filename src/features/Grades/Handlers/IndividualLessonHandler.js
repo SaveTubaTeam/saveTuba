@@ -140,6 +140,32 @@ function IndividualLessonHandler({
         </Stack.Screen>
 
         <Stack.Screen
+          name="Image Boom 2"
+          options={{
+            title: t("common:openresponse"),
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
+          }}
+        >
+          {() => (
+            <OpenResponseHandler
+              questionSet={
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.openresponse_2.data
+              }
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
+
+
+        <Stack.Screen
           name="Snapshot"
           options={{
             title: t("common:snapshot"),

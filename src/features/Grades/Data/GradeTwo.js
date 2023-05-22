@@ -84,8 +84,8 @@ export const Grade2 = {
                 },
               ],
             },
-            nse: { //correct
-              navigaopenrespotion: "Image Boom",
+            openresponse: { //correct
+              navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -594,26 +594,6 @@ export const Grade2 = {
                 },
               ],
             },
-            openresponse_2: { // correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text:
-                      "List a couple of things that plants need in order to survive. Are these the same " +
-                      "things we need to survive? What happens if there is too much of one resource?",
-                    placeholder: "Plants need...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
-                ],
-              },
-            },
             openresponse: { // correct
               navigation: "Image Boom",
               title: (
@@ -629,6 +609,26 @@ export const Grade2 = {
                       "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt." +
                       " What are some human-made adaptations that help us, but hurt plants? ",
                     placeholder: "Some human-made adaptions...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            openresponse_2: { // correct
+              navigation: "Image Boom 2",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text:
+                      "List a couple of things that plants need in order to survive. Are these the same " +
+                      "things we need to survive? What happens if there is too much of one resource?",
+                    placeholder: "Plants need...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1022,7 +1022,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 5 (lesson ten & elevel in curriculum)
+        Grade 2 Chapter 2 Lesson 5 (lesson ten & eleven in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1379,7 +1379,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 8 (lesson 14 in curriculum)
+        Grade 2 Chapter 2 Lesson 8 (lesson fourteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1449,50 +1449,6 @@ export const Grade2 = {
                 },
               ],
             },
-            // sorting: { // incorrect images
-            //   navigation: "Sorting",
-            //   icon: require("../../../../assets/recycle-bin.png"),
-            //   backgroundColor: "coral",
-            //   content: {
-            //     prompt:
-            //       "Match the word to the definition using pictures",
-            //     num: 3, //count start 0
-            //     imageBg: SortingImages.bg[0].lvl_2_les_8,
-            //     categories: [
-            //       { name: "Symbiosis" },
-            //       { name: "Parasitism" },
-            //       { name: "Predation" },
-            //       { name: "Neutralism" },
-            //       { name: "Competition" },
-            //     ],
-            //     options: [
-            //       {
-            //         name: "Symbiosis: two animals that positivity benefit from living together",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Parasitism: one animal benefits and one animal is harmed",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Predation: animals feeding on other animals ",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Neutralism: animals that do not depend on each other",
-            //         image: require(),
-            //       },
-            //       {
-            //         name:
-            //           "Competition: animals that both need the same limited resource",
-            //         image: require(),
-            //       },
-            //     ],
-            //   },
-            // },
           },
           mastery: {
             prompt: (
@@ -1511,24 +1467,12 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/symbiosis.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l8_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/fishes.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l8_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/symbiosis.png"),
-              },
             ],
           },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 9 (lesson 15 in currciulum)
+        Grade 2 Chapter 2 Lesson 9 (lesson fifteen in currciulum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1645,12 +1589,6 @@ export const Grade2 = {
                   <Translation>{(t) => t("mastery:g2c2l9_card1")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/pets.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l9_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
               },
             ],
           },
@@ -1803,35 +1741,24 @@ export const Grade2 = {
               },
               {
                 text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/whale.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card4")}</Translation>
                 ),
               },
             ],
           },
-          // mastery_2: { // incorrect mastery
-          //   prompt: (
-          //     <Translation>{(t) => t("mastery:g2c2l11_prompt_2")}</Translation>
-          //   ),
-          //   cards: [
-          //     {
-          //       text: (
-          //         <Translation>{(t) => t("mastery:g2c2l11_card1_2")}</Translation>
-          //       ),
-          //       image: require("../../../../assets/mastery/PUT_RIGHT_PHOTO_HERE"),
-          //     },
-          //   ],
-          // },
+          mastery_2: { // incorrect mastery
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l11_2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/habitat.png"),
+              },
+            ],
+          },
           minigames: {
             snapshot: { // correct
               navigation: "Snapshot",
@@ -1905,7 +1832,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 12
+        Grade 2 Chapter 2 Lesson 12 (lesson nineteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1917,20 +1844,20 @@ export const Grade2 = {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l12_prompt")}</Translation>
             ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/heart.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/frog.png"),
-              },
-            ],
+            // cards: [
+            //   {
+            //     text: (
+            //       <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
+            //     ),
+            //     image: require("../../../../assets/mastery/heart.png"),
+            //   },
+            //   {
+            //     text: (
+            //       <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
+            //     ),
+            //     image: require("../../../../assets/mastery/frog.png"),
+            //   },
+            // ],
           },
           minigames: {
             snapshot: { // correct
@@ -2028,11 +1955,6 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/broccoli.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l13_card3")}</Translation>
-                ),
-              },
             ],
           },
           minigames: {
@@ -2118,31 +2040,11 @@ export const Grade2 = {
                 ],
               },
             },
-            mastery: {
-              prompt: (
-                <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
-              ),
-              cards: [
-                {
-                  text: (
-                    <Translation>{(t) => t("mastery:g2c2l1_card1")}</Translation>
-                  ),
-                  image: require("../../../../assets/mastery/plants-pot.png"),
-                },
-                {
-                  text: (
-                    <Translation>{(t) => t("mastery:g2c2l1_card2")}</Translation>
-                  ),
-                  image: require("../../../../assets/mastery/ecosystem.png"),
-                },
-              ],
-            },
-            
           },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 14 (lesson 22 in curriculum) // mastery complete
+        Grade 2 Chapter 2 Lesson 14 (lesson 22 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2249,26 +2151,6 @@ export const Grade2 = {
                 ],
               },
             },
-            mastery: {
-              prompt: (
-                <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
-              ),
-              cards: [
-                {
-                  text: (
-                    <Translation>{(t) => t("mastery:g2c2l1_card1")}</Translation>
-                  ),
-                  image: require("../../../../assets/mastery/plants-pot.png"),
-                },
-                {
-                  text: (
-                    <Translation>{(t) => t("mastery:g2c2l1_card2")}</Translation>
-                  ),
-                  image: require("../../../../assets/mastery/ecosystem.png"),
-                },
-              ],
-            },
-            
           },
         },
         /* 
@@ -2296,24 +2178,77 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card2")}</Translation>
                 ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/blood.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card4")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card5")}</Translation>
-                ),
+                image: (require("../../../../assets/mastery/blood.png")),
               },
             ],
+          },
+          minigames: {
+            minigames: {
+              snapshot: { // correct
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Take a picture of a common unhealthy food in your household.",
+              },
+              quiz: { // correct
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+
+                  {
+                    prompt:
+                      "True or False: The heart is responsible for the movement of blood in the body?",
+                    answers: [
+                      { text: "True" },
+                      { text: "False" },
+                    ],
+                    answer: "True",
+                  },
+                  {
+                    prompt:
+                      "Which of the following is the responsibility of blood in the body?",
+                    answers: [
+                      { text: "Warm the body." },
+                      { text: "Spread oxygen and nutrients to organs and tissues." },
+                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
+                      { text: "All of the above." },
+                    ],
+                    answer: "All of the above.",
+                  },
+                  {
+                    prompt:
+                      "What do arteries do?",
+                    answers: [
+                      { text: "Carry food that has been digested" },
+                      { text: "Carry carbon dioxide" },
+                      { text: "Carry blood" },
+                      { text: "None of the above" },
+                    ],
+                    answer: "Carry blood",
+                  },
+                ],
+              },
+              openresponse: { // correct
+                navigation: "Image Boom",
+                title: (
+                  <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                  numberOfPrompts: 1,
+                  prompts: [
+                    {
+                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
+                      image: require("../../../../assets/openresponse/innovation.png"),
+                    },
+                  ],
+                },
+              },
+            },
           },
           minigames: {
             minigames: {
@@ -2589,120 +2524,84 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
+
                 {
                   prompt:
-                    "What gas makes up most of the air (78%)?",
+                    "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
                   answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Carbon dioxide" },
-                    { text: "Argon" },
+                    { text: "Vaccines, exposure to diseases" },
+                    { text: "Vaccines, personal hygiene care" },
+                    { text: "Washing your hands, bathing" },
+                    { text: "Personal hygiene care, nature" },
                   ],
-                  answer: "Nitrogen",
+                  answer: "Vaccines, personal hygiene care",
                 },
                 {
-                  prompt: "We cannot breathe pure nitrogen on its own",
+                  prompt:
+                    "True or False: Spending time in nature is not helpful for staying healthy?",
                   answers: [
                     { text: "True" },
-                    {
-                      text: "False",
-                    },
+                    { text: "False" },
                   ],
-                  answer: "True",
+                  answer: "False",
                 },
                 {
                   prompt:
-                    "Which of the following gasses in air have no color and no smell? ",
-                  answers: [{ text: "Nitrogen" }, { text: "Argon" }, { text: "Oxygen"}, { text: "All of the above"},],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What does the Amazon forest produce the most of all forests in the world?",
+                    "Which of the following is the best definition for immunity?",
                   answers: [
-                    {
-                      text: "Paper",
-                    },
-                    {
-                      text: "Pollution",
-                    },
-                    {
-                      text: "Oxygen",
-                    },
-                    { text: "Birds" },
+                    { text: "The state of being at risk for certain diseases." },
+                    { text: "The quality of being resistant to a disease or illness." },
+                    { text: "The name for people who are never sick." },
+                    { text: "The quality of being resistant to medicine. " },
                   ],
-                  answer: "Oxygen",
+                  answer: "The quality of being resistant to a disease or illness.",
                 },
               ],
             },
-            //no sorting
-            /*
-            sorting: { //correct
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt: "Match the plant to its common name",
-                num: 3,
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
                   {
-                    name: "Spider plant",
-                    image: require("../../../../assets/sorting/spider-plant.png"),
+                    text: "How can we protect the human body from infections in a sustainable way? " +
+                      "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
                   },
-                  {
-                    name: "Gloxinia",
-                    image: require("../../../../assets/sorting/gloxinia.png"),
-                  },
-                  {
-                    name: "Snake plant",
-                    image: require("../../../../assets/sorting/snake-plant.png"),
-                  },
-                  {
-                    name: "Jade plant",
-                    image: require("../../../../assets/sorting/jade.png"),
-                  },
-                ],
-                options: [
-                  {
-                    title: "Spider plant",
-                    name: "Spider plant",
-                  },
-                  {
-                    title: "Gloxinia",
-                    name: "Gloxinia",
-                  },
-                  {
-                    title: "Snake plant",
-                    name: "Snake plant",
-                  },
-                  { title: "Jade plant", name: "Jade plant" },
                 ],
               },
             },
-            */
-            
-            // this portion of lesson 27 in curriculum is not complete 
-            snapshot_2: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "List three plants that you see everyday. Why do you think that you see them so" +
-                " often? Think about the environmental conditions that they need to survive.",
-
-            },
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
-            },
           },
+        },
+      ],
+    },
+    {
+      navigation: "Chapter3",
+      title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
+      name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
+      icon: require("../../../../assets/chapter-icons/water-cycle.png"),
+      backgroundimage: require("../../../../assets/mastery/bg/ch3.png"),
+      colorOne: "tomato",
+      colorTwo: "firebrick",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1",
+          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
+          backgroundColor: "#49326B",
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
@@ -2710,15 +2609,32 @@ export const Grade2 = {
             cards: [
               {
                 text: (
-                  <Translation>{(t) => t("mastery:g2c2l1_card1")}</Translation>
+                  <Translation>{(t) => t("mastery:g2c3l1_card1")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/plants-pot.png"),
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card2")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card3")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/assessment.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/glass-of-water.png"),
               },
               {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l1_card2")}</Translation>
                 ),
-                image: require("../../../../assets/mastery/ecosystem.png"),
+                image: require("../../../../assets/mastery/raisins.png"),
               },
             ],
           },
@@ -3640,7 +3556,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 1 
+        Grade 1 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {

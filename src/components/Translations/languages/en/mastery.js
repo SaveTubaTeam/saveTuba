@@ -245,18 +245,21 @@ export default {
   ~~~~~~~~~
   */
 
-  g2c1l1_card1: "Find an object in your house that you use everyday.",
+  // correct
+  g2c1l1_card1: "Walk around your house and find a notable scientific discovery.",
   g2c1l1_card2:
-    "Take a picture of it and write down its function. Is this something that you have to buy often?",
+    "Take a picture of the object and list its functionality. Record any observations you find that stick out to you. ",
   g2c1l1_prompt:
-    "Is this object you use everyday prompoting sustainable practices?",
+    "Rate how sustainable it is. Come up with ideas to make it more sustainable.",
 
+  // correct
   g2c1l2_card1:
-    "Do a simple internet search to look up simple sustainable practices you can do in your home, be sure to record the website you visited",
+    "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited.",
   g2c1l2_card2:
-    "Determine if your list of resrouces you found is reliable, why or why not? Rate each source as reliable or unreliable",
-  g2c1l2_prompt: "Explain how you came to your conclusions.",
+    "Record the link and research how reliable this source of information is. Then, identify and list the advantages and disadvantages of this source of information.",
+  g2c1l2_prompt: "Rank this source and its information on a scale of 1(unreliable) to 10(completely reliable).",
 
+  // will need more work to make it look good. I agree with David, there will need to be visual aids
   g2c1l3_card1: "Become a scientist who tests about air pollution!",
   g2c1l3_card2:
     "It is hard to see air pollution around us because the particles are so small, but just because we can't see it, doesnt mean it's not there!",
@@ -336,77 +339,101 @@ export default {
   g2c2l7_prompt:
     "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
 
+
+  /**
+ * Start of Hayden's Mastery Section
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+
+  // lesson 14 in curriculum
+  // done
   g2c2l8_card1:
-    "Animals, like humans, have relationships with each other (but not in a romantic way!)",
+    "Animals, like humans, have relationships with each other. Animals can have both beneficial and harmful relationships.",
   g2c2l8_card2:
-    "Animals have many different types of relationships with each other, one example is symbiosis.",
+    "Symbiotic relationships, such as when the birds feed on insects that live on a rhino and the rhino provides the birds with food, are important for the survival of both animals. Although symbiosis is for animals, there are many naturally beneficial relationships in nature.",
   g2c2l8_card3:
-    "Recall from your lessons what a symbotic relationship looks like.",
-  g2c2l8_card4:
-    "Identify beneficial relationships between plants and plants, humans and humans, or animals and animals.",
+    "Venture out into nature and identify beneficial relationships between plants and plants, humans and humans, or animals and animals. It doesn’t have to be a directly beneficial relationship but as long as they’re both receiving help from the other.",
   g2c2l8_prompt:
-    "It doesn’t have to be a directly beneficial relationship, but as long it is a clear helping relationship. Record your observations.",
+    " Record your observations.",
 
+  // lesson 15 in curriculum
+  // done
   g2c2l9_card1:
-    "Animals can't only survive with animal only relationships, just like you can't survive with human only relationships. (Think of your pets!)",
-  g2c2l9_card2:
-    "Look around you and identify beneficial relationships between plants, animals, and humans. Think outside the box and come up with realtionships that your friends might not think of!",
+    "Plants also have relationships with each other, similar to humans and animals. Plants can have a mutualistic relationship with each other, such as pollination and protection. ",
   g2c2l9_prompt:
-    "Record your observations and explain how these relationships are important for the environment.",
+    "Go outside and identify plants that have a mutualistic relationship with each other. How are these relationships similar and different to those between animals?",
 
-  g2c2l10_card1: "Habitat conditions are critical to an animal's survival.",
-  g2c2l10_card2: "Find the habitat of a popular animal near you.",
+  // lesson 16 & 17 in curriculum
+  // done
+  g2c2l10_card1: "Habitat conditions can destroy animals. Disease outbreaks such as Ebola can wipe out a large proportion of the species.",
+  g2c2l10_card2: "Flooding can ruin animal’s habitats and if they don’t make it out of the danger zone, they die. Some habitat conditions are a cause of the natural cycle but many are due to man-made causes.",
   g2c2l10_prompt:
-    "Identify the habitat conditions that make it either suitable or unsuitable for this animal.",
+    "Find the habitat of a popular animal near you. Identify the habitat conditions that make it either suitable or unsuitable for this animal. Now, think of sustainable ways to improve the habitat for this animal.",
 
-  g2c2l11_card1: "Humans have made a significant impact on the environment.",
-  g2c2l11_card2:
-    "Unfortunately, we have all directly and indirectly caused a decrease in the number of animals.",
-  g2c2l11_card3: "Animals directly die from our pesticides and poisoning.",
-  g2c2l11_card4:
-    "Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
-  g2c2l11_prompt:
-    "Think of a way you can take care of one animal in your neighborhood.",
+  // lesson 18 in curriculum
+  // done
+  // Mastery 1
+  g2c2l11_card1: "We all know that humans have caused an impact on the environment. Unfortunately, we have both directly and indirectly caused a decrease in the number of animals.",
+  g2c2l11_card2: "Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
+  g2c2l11_prompt: "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species. Write a letter to your local official addressing these issues.",
+  // Mastery 2
+  g2c2l11_2_card1: "Deforestation can occur in many different ways, and cause countless consequences in return.",
+  g2c2l11_2_prompt: "Research a forest that has recently experienced a disaster. Identify the causes and outcomes. Finally, look into projects and organizations trying to help the situation, how are they helping? How could you help support them?",
 
-  g2c2l12_card1:
-    "All the organs in our body work together to help us live our life as we know it.",
-  g2c2l12_card2: "Think of your favorite animal.",
+  // lesson 19 in curriculum
+  // done
   g2c2l12_prompt:
-    "What part of that animal's body is the most useful for its survival?",
+    "Pick an animal that resides near you and record it. Identify an organ in their body that you believe helps the most in their survival. Explain and expand. What human adaptations do you think were the most innovative? Why?",
 
+  // lesson 20 & 21 in curriculum
+  // done
   g2c2l13_card1:
-    "In order to be healthy, you must eat all different kinds of food.",
-  g2c2l13_card2: "This means fruits, vegetables, protein, dairy and much more!",
-  g2c2l13_card3:
-    "Choose a notebook to record your eating habits in for a week.",
-  g2c2l13_prompt: "How much food waste did you produce in a week?",
+    "Food and water are vital things to our survival, but humans waste a lot of that important resource.",
+  g2c2l13_card2: "In your home, work with your family to record the amount of food wasted and amount of water wasted (not counting bath, showers, cleaning) every day for a week.",
+  g2c2l13_prompt: "What are your results? Do your results surprise you?",
 
+  // lesson 22 in curriculum
+  // done
   g2c2l14_card1: "Humans take in air through our nose and mouth.",
   g2c2l14_card2:
     "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible.",
   g2c2l14_prompt:
-    "Can you think of an animal whose breathing is completely different from yours?",
+    "Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
 
+  // lesson 23 in curriculum
+  // done
   g2c2l15_card1:
-    "Oxygen is transported through our body through blood vessels.",
+    "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins.",
   g2c2l15_card2:
-    "There are many blood vessels such as arteries, capillaries, and veins.",
-  g2c2l15_card3:
-    "Blood is responsible for many things and one of them is warming the body.",
-  g2c2l15_card4:
-    "Animals which can regulate their temperature according to the surroundings are called warm-blooded animals.",
-  g2c2l15_card5: "Choose a cold-blooded animal.",
+    "Blood has many responsibilities as well such as warming the body, carrying oxygen and nutrients, and more. A key fact to remember is that humans are warm-blooded.",
   g2c2l15_prompt:
-    "Do you think being cold-blooded is better in some situations?",
+    "Research a cold-blooded animal. Think about how this helps them in nature and why their adaptations/evolution led to this. How do they survive in their habitat with this in mind? Expand.",
 
+  // lesson 24 & 25 in curriculum
   g2c2l16_card1: "The most valuable thing we have is our health.",
   g2c2l16_card2:
-    "When we feel unhealthy or sick, we visit the doctor’s office.",
+    "To strengthen our health we can take care of our personal hygiene and take vaccinations and medications.",
   g2c2l16_card3:
-    "But did you know that there are many natural remedies or medicines to everyday health problems?",
-  g2c2l16_card4:
-    "Research herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
-  g2c2l16_prompt: "Go to the park, try to find some and upload a photo here!",
+    "When we feel unhealthy or sick, we visit the doctor’s office. But did you know that there are many natural remedies or medicines to everyday health problems?",
+  g2c2l16_prompt: "Visit the nearest forest, park, or nature enclosure. Look around for herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses. Record your findings and bring them home. ",
+
+  /**
+   * End of Hayden's Mastery Section
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
+   */
+
+
+
+
 
   /* Chapter 3 */
 
@@ -589,6 +616,9 @@ export default {
   g2c3l14_prompt: "Report your findings below.",
 
   /* Chapter 4 */
+
+  // lesson 47 & 48
+  // talk to allison
   g2c4l1_card1:
     "Elasticity is the ability of an object to resume its normal shape after being stretched or compressed.",
   g2c4l1_card2:
@@ -600,6 +630,8 @@ export default {
   g2c4l1_card5: "If you're stuck, ask a friend to help you brainstorm!",
   g2c4l1_prompt: "Upload a photo of your creation here.",
 
+  // lesson 49 & 50
+  // talk to allison
   g2c4l2_card1:
     "You already know that gravity is the force that attracts a body toward the center of the Earth.",
   g2c4l2_card2:
@@ -620,6 +652,8 @@ export default {
     "As the cup is falling down, you will notice that the water isn't leaking from the hole.",
   g2c4l2_prompt: "Why do you think this is? Give your best guess below!",
 
+  // lesson 51 & 52
+  // talk to allison
   g2c4l3_card1:
     "You have learned that friction is the resistance experienced by one object or surface while moving over another.",
   g2c4l3_card2:
@@ -642,6 +676,8 @@ export default {
     "By now, you realize the books can't come apart. This is because the friction force between each pair of pages adds up!",
   g2c4l3_prompt: "Upload a photo of your interlaced books below!",
 
+  // lesson 53 & 54
+  // talk to allison
   g2c4l4_card1:
     "Forces can act in any direction so let's play around with them!",
   g2c4l4_card2: "Grab a plastic bottle and fill it up with water.",
@@ -657,6 +693,7 @@ export default {
   g2c4l4_prompt:
     "Draw a diagram of the forces acting on the bottle and the paper cone, and upload a photo below!",
 
+  // lesson 53 & 54
   g2c4l5_card1:
     "Shadows are formed whenever an object is placed in the path of light.",
   g2c4l5_card2:
@@ -673,6 +710,8 @@ export default {
   g2c4l5_card8: "How has the shadow changed over the course of the day?",
   g2c4l5_prompt: "Upload a photo of the chalk markings on the sidewalk here!",
 
+  // lesson 55
+  // talk to allison
   g2c4l6_card1:
     "Did you know that polished metal surfaces reflect light? Did you know we can use this to make our own snack?",
   g2c4l6_card2:
