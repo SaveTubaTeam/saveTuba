@@ -73,7 +73,7 @@ export const Grade2 = {
                     { text: "A printing press to make fabric" },
                   ],
                   answer: "A telescope to see the stars",
-                },  
+                },
                 {
                   prompt: "Are all bacteria harmful?",
                   answers: [{ text: "True" }, { text: "False" }],
@@ -122,7 +122,7 @@ export const Grade2 = {
         Grade 2 Chapter 1 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
-        { 
+        {
           navigation: "Lesson2", //sources of information
           title: <Translation>{(t) => t("gradetwo:c1l2")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/read.png"),
@@ -170,7 +170,7 @@ export const Grade2 = {
                     { text: "Knowledge requires less learning and understanding than information" },
                   ],
                   answer: "Knowledge is the understanding and relevant information gained",
-                },  
+                },
                 {
                   prompt:
                     "Which of the following are resources?",
@@ -373,7 +373,7 @@ export const Grade2 = {
               prompt:
                 "Based on your hypothesis in the open response section, take a picture of yourself doing your task that helps reduce your environmental impact in your area!",
             },
-            sorting: { 
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
@@ -1524,7 +1524,7 @@ export const Grade2 = {
               },
             ],
           },
-        }, 
+        },
 
         /* 
 
@@ -1535,18 +1535,18 @@ export const Grade2 = {
 
         Also temporarily skipping lessons 16 and 17
 
-        */ 
+        */
 
         /* 
 
         ~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 3 chapter 1 Lesson 18 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */ 
+        */
 
         {
           navigation: "lesson18" // A decrease in the number of animals
-          
+
 
         },
 
@@ -2702,7 +2702,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
+              image: "../../../../assets/nat.jpg",
               content: [
                 {
                   prompt: "Which of the following is a state of matter?",
@@ -2796,1535 +2796,1535 @@ export const Grade2 = {
         },
       ],
     },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson1",
-          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
-          backgroundColor: "#49326B",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an item undergoing change from one state of matter to another.",
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson1",
+      title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
+      backgroundColor: "#49326B",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of an item undergoing change from one state of matter to another.",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "Which of the following is a state of matter?",
+              answers: [
+                { text: "Solid" },
+                { text: "Liquid" },
+                { text: "Gas" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
             },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following is a state of matter?",
-                  answers: [
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "Gas" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "When something freezes, what state of matter does it start and then end in?",
-                  answers: [
-                    { text: "Solid to liquid state" },
-                    { text: "Liquid to gaseous state" },
-                    { text: "Solid state to gaseous state" },
-                    { text: "Liquid to solid state" },
-                  ],
-                  answer: "Liquid to solid state",
-                },
-                {
-                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
-                  answers: [
-                    { text: "Gas" },
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "None of the above" },
-                  ],
-                  answer: "Gas",
-                }
-              ]
+            {
+              prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "False",
             },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
-                    placeholder: "When we change an object from one state to another ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+            {
+              prompt: "When something freezes, what state of matter does it start and then end in?",
+              answers: [
+                { text: "Solid to liquid state" },
+                { text: "Liquid to gaseous state" },
+                { text: "Solid state to gaseous state" },
+                { text: "Liquid to solid state" },
+              ],
+              answer: "Liquid to solid state",
             },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
-            ),
-            cards: [
+            {
+              prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
+              answers: [
+                { text: "Gas" },
+                { text: "Solid" },
+                { text: "Liquid" },
+                { text: "None of the above" },
+              ],
+              answer: "Gas",
+            }
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
               {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/heart-rate.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/doctor.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/rosemary.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l1_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/raisins.png"),
+                text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
+                placeholder: "When we change an object from one state to another ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
               },
             ],
           },
-          
         },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/heart-rate.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/doctor.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/rosemary.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c2l1_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/raisins.png"),
+          },
+        ],
+      },
 
-        // not complete up until this point 
-
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 2 (lesson 27 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson2",
-          title: <Translation>{(t) => t("gradetwo:c3l2")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/air.png"),
-          backgroundColor: "#C85004",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Research a place with poor air quality. Take a picture of that place (you can take a picture of the image online). Can you identify any characteristics in the picture that show the poor air quality?",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "What gas makes up most of the air (78%)?",
-                  answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Carbon dioxide" },
-                    { text: "Argon" },
-                  ],
-                  answer: "Nitrogen",
-                },
-                {
-                  prompt: "True or False: We cannot breathe pure nitrogen on its own.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Which of the following gasses in air have no color and no smell?",                  
-                  answers: [
-                    { text: "Nitrogen" },
-                    { text: "Argon" },
-                    { text: "Oxygen" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What does the Amazon forest produce the most of all forests in the world?",
-                  answers: [
-                    { text: "Paper" },
-                    { text: "Pollution" },
-                    { text: "Oxygen" },
-                    { text: "Birds" },
-                  ],
-                  answer: "Oxygen",
-                }
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "I think we can all agree that humans release chemicals, pollutants, pesticides, etc. into the air that negatively impact the air quality. However, not everything we release into the air is necessarily harmful. What can humans release into the air that will positively impact the air quality?",
-                    placeholder: "Humans can release ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l2_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l2_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/rhino.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l2_card2")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l2_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/contamination.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 3 (lesson 28 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson3",
-          title: <Translation>{(t) => t("gradetwo:c3l3")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/candle.png"),
-          backgroundColor: "#9DCD5A",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of a representation of one of the many properties of air. (For example: a carbonated beverage with bubbles).",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "True or False: Combustion refers to the process of burning something.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "What substance supports combustion, while carbon dioxide does not?",
-                  answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Argon" },
-                    { text: "It actually is carbon dioxide" },
-                  ],
-                  answer: "Oxygen",
-                },
-                {
-                  prompt: "It is very difficult to breathe in a room with a lot of ____, and very little _____.",                  
-                  answers: [
-                    { text: "Carbon dioxide; oxygen" },
-                    { text: "Oxygen; carbon dioxide" },
-                    { text: "Both answers are correct" },
-                    { text: "Both answers are incorrect" },
-                  ],
-                  answer: "Carbon dioxide; oxygen",
-                },
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What are the many properties of air, and how do they positively impact the environment? Why are these properties so important for maintaining homeostasis?",
-                    placeholder: "The main properties of air are ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l3_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card1")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/candle.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/spy-kid.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card4")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/colorant.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card6")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/candle-lit.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l3_card7")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/look.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 4  // lesson 29
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson4",
-          title: <Translation>{(t) => t("gradetwo:c3l4")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/duck.png"),
-          backgroundColor: "#98DFEC",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of the cleanest source of water in your home.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following have the highest water content?",
-                  answers: [
-                    { text: "Acorn" },
-                    { text: "Bean" },
-                    { text: "Lemon" },
-                    { text: "Potato" },
-                  ],
-                  answer: "Lemon",
-                },
-                {
-                  prompt: "True or False: There is more water in potatoes than apples.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "True or False: Even though fruits and vegetables are solids, they are also made up of a lot of water.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Do you believe that everyone in the world has access to a water source? If so, it stands to reason that not everyone has the same type of water source. Can you think of the many different types of water sources that exist?",
-                    placeholder: "The water sources ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l4_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l4_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/water.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l4_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/watering-plants.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l4_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/desert.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 5 // lesson 30 & 31
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson5",
-          title: <Translation>{(t) => t("gradetwo:c3l5")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/water-source.png"),
-          backgroundColor: "#37B5FF",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of the most natural water source near your home. If you cannot visit it, take a picture of it online. Look at the picture and see if you can understand what differentiates a natural water source from an unnatural one.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "True or False: Most of the water on Earth is freshwater.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "In what ocean is the Mariana Trench located?",
-                  answers: [
-                    { text: "Pacific" },
-                    { text: "Atlantic" },
-                    { text: "Indian" },
-                    { text: "Artic" },
-                  ],
-                  answer: "Pacific",
-                },
-                {
-                  prompt: "What is the largest river in Kazakhstan?",
-                  answers: [
-                    { text: "Yertis" },
-                    { text: "Yesil" },
-                    { text: "Zhem" },
-                    { text: "Oral" },
-                  ],
-                  answer: "Yertis",
-                },
-                {
-                  prompt: "What is the largest lake in Kazakhstan?",
-                  answers: [
-                    { text: "Zaysan" },
-                    { text: "Aral" },
-                    { text: "Balkhash" },
-                    { text: "Alakol" },
-                  ],
-                  answer: "Balkhash",
-                },
-                {
-                  prompt: "What source of fresh and clean water is caused by excess water seeping through soil and clay?",
-                  answers: [
-                    { text: "Lakes" },
-                    { text: "Groundwater/underground" },
-                    { text: "Rain" },
-                    { text: "Oceans" },
-                  ],
-                  answer: "Groundwater/underground",
-                },
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Not all communities possess access to a natural water source. However, the communities that do must address the issues of water pollution, overuse, and scarcity. Can you think of ways they address these issues and how you can address these same issues if present, in your community?",
-                    placeholder: "They can address these issues by ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-            reorder: { //correct
-              navigation: "Reorder",
-              icon: require("../../../../assets/reorder.png"),
-              backgroundColor: "pink",
-              prompt:
-                "Put the following oceans in order from largest to smallest.",
-              data: [
-                {
-                  text: "Pacific",
-                  dormant: "coral",
-                  active: "#DB756B",
-                },
-                {
-                  text: "Atlantic",
-                  dormant: "pink",
-                  active: "#ffacbb",
-                },
-                {
-                  text: "Indian",
-                  dormant: "dodgerblue",
-                  active: "#3873E0",
-                },
-                {
-                  text: "Artic",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-              ],
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l5_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l5_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/planet-earth.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l5_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/summer.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l5_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/river.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 6 //lesson 32
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson6",
-          title: <Translation>{(t) => t("gradetwo:c3l6")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/water-bottle.png"),
-          backgroundColor: "#F27B21",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of your water meter to see how much water you’ve used this period. Take another picture at the same time next month to see if your habits have improved your water usage.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following household uses of water requires the largest amount of water?",
-                  answers: [
-                    { text: "Laundry" },
-                    { text: "Washing dishes" },
-                    { text: "Taking a bath" },
-                    { text: "Flushing the toilet" },
-                  ],
-                  answer: "Taking a bath",
-                },
-                {
-                  prompt: "True or False: On average, taking a bath requires four times the amount of water it takes for a shower.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Which of the following is a way to reduce water consumption in households?",
-                  answers: [
-                    { text: "Take showers instead of baths" },
-                    { text: "Make sure the dishwasher is full before it gets run" },
-                    { text: "Turn of the sink when brushing your teeth" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "Which of the following is NOT a way to reduce water consumption in households?",
-                  answers: [
-                    { text: "Take shorter showers" },
-                    { text: "Wait to repair leaks in sinks and toilets" },
-                    { text: "Water plants only during cooler parts of the day" },
-                    { text: "Only run full loads of laundry" },
-                  ],
-                  answer: "Wait to repair leaks in sinks and toilets",
-                },
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What are some ways that your local government can make sure that human drinking water isn’t used for wrongful purposes, such as wastefulness?",
-                    placeholder: "The local government can ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l6_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l6_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/drink-water.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l6_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/brainstorming.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l6_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/studying.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l6_card4")}</Translation>
-                ),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 7 //lessons 33 & 34
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson7",
-          title: <Translation>{(t) => t("gradetwo:c3l7")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/water-filter.png"),
-          backgroundColor: "#6C3F14",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of a homemade water filtration method. You can do this after you complete the mastery challenge. To show the success of the water filtration method, take a before and after picture of the water.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "What is the main way to purify water?",
-                  answers: [
-                    { text: "Mechanical" },
-                    { text: "Chemical" },
-                    { text: "Biological" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What occurs at water treatment plants?",
-                  answers: [
-                    { text: "It is where wastewater is treated." },
-                    { text: "It is where freshwater is treated." },
-                    { text: "It is where ocean water is treated." },
-                    { text: "None of the above" },
-                  ],
-                  answer: "It is where wastewater is treated.",
-                },
-                {
-                  prompt: "Which method of purifying water removes things like branches, sand, leaves?",
-                  answers: [
-                    { text: "Mechanical" },
-                    { text: "Chemical" },
-                    { text: "Biological" },
-                    { text: "Methodological" },
-                  ],
-                  answer: "Mechanical",
-                },
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "How can we protect and restore aquatic ecosystems and the many benefits they provide, such as water purification, flood control, and habitat for a variety of species? Extend your answer to list several water purification methods, from natural to man made.",
-                    placeholder: "To protect aquatic ecosystems, we can ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l7_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l7_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/drink-water.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l7_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/test.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l7_card3")}</Translation>
-                ),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 8 //lesson 35
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson8",
-          title: <Translation>{(t) => t("gradetwo:c3l8")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/soil.png"),
-          backgroundColor: "#E39650",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of nutrient-rich soil. Analyze and identify why the soil in particular is nutrient-dense.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image:  "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "What is the purpose of soil?",
-                  answers: [
-                    { text: "To provide nutrition and support for plant roots and stems" },
-                    { text: "To provide a home for many animals" },
-                    { text: "The first two answers are correct" },
-                    { text: "Neither answers are correct" },
-                  ],
-                  answer: "The first two answers are correct",
-                },
-                {
-                  prompt: "True or False: Most of the Earth’s surface is covered with a layer of soil of different thicknesses.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "What must occur to begin the process of creating soil?",
-                  answers: [
-                    { text: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles." },
-                    { text: "Soil must be transported to the area." },
-                    { text: "Organic matter must decompose in the area." },
-                    { text: "All of the above." },
-                  ],
-                  answer: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles.",
-                },
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What role can soil play in slowing down climate change?",
-                    placeholder: "Soil ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l8_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l8_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/planting.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l8_card2")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l8_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/sweet-potato.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l8_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/glass-of-water.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l8_card5")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l8_card6")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/seed.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson9",
-          title: <Translation>{(t) => t("gradetwo:c3l9")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
-          backgroundColor: "#9DCD5A",
-          minigames: {
-            snapshot: { // correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of a scientific discovery that you use on a daily basis.",
-            },
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What of the following is the best definition of humus",
-                  answers: [
-                    { text: "Matter in soil made out of the remains of plants and animals" },
-                    { text: "Minerals in soil." },
-                    { text: "Grass that grows on top of the soil." },
-                    { text: "Rocks embedded in the soil" },
-                  ],
-                  answer: "Matter in soil made out of the remains of plants and animals.",
-                },
-                {
-                  prompt: "Humus is more abundant in the upper layers of the soil than the lower layers.",
-                  answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
-                  answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
-                  answers: [
-                    {
-                      text: "Wind and water",
-                    },
-                    {
-                      text: "Solar heat",
-                    },
-                    {
-                      text: "Living organisms",
-                    },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-              ],
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l9_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l9_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/soil-plant.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l9_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/jar.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l9_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/dirt.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l9_card4")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l9_card5")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l9_card6")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/soil.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson10",
-          title: <Translation>{(t) => t("gradetwo:c3l10")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
-          backgroundColor: "#F9A949",
-          minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What is the best explanation for why air permeability is important for soil?",
-                  answers: [
-                    { text: "Without it the worms will die " },
-                    { text: "This allows air through the soil, which is needed or else plant roots will die. " },
-                    { text: "It lets rain through." },
-                    { text: "None of the above." },
-                  ],
-                  answer: "This allows air through the soil, which is needed or else plant roots will die.",
-                },
-                {
-                  prompt: "Which of the following is the best definition of water permeability? ",
-                  answers: [
-                    { text: "It describes the type of water needed for the soil." },
-                    { text: "It is the ability of the soil to support worms and insects." },
-                    { text: "It explains the pH of the soil." },
-                    { text: "It is the ability of the soil to absorb and transmit water." },
-                  ],
-                  answer: "It is the ability of the soil to absorb and transmit water.",
-                },
-                {
-                  prompt: "Which of the following processes directly threatens the abundance of soil?",
-                  answers: [
-                    { text: "Earthquakes" },
-                    { text: "Pollution" },
-                    { text: "Erosion" },
-                    { text: "Evaporation" },
-                  ],
-                  answer: "Erosion",
-                },
-                {
-                  prompt: "The life of humans, animals, and plants are all dependent on the existence of soil. ",
-                  answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
-                  ],
-                  answer: "True",
-                },
-              ],
-            },
-
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l10_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l10_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/crops.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l10_card2")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l10_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/pots.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l10_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/kidney.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l10_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/watering-plants.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l10_card6")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/seed.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson11",
-          title: <Translation>{(t) => t("gradetwo:c3l11")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
-          backgroundColor: "#76B9F0",
-          minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "Which of the following statements is true about soil?",
-                  answers: [
-                    { text: "All of the following" },
-                    { text: "Dark soil is rich in humus." },
-                    { text: "Red soil is rich in iron." },
-                    { text: "Light soil is poor in minerals and humus." },
-                  ],
-                  answer: "All of the following.",
-                },
-                {
-                  prompt: "Clay soil absorbs water well and does not stick together. ",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "Which of the following is the main property of sandy soil?",
-                  answers: [
-                    { text: "It is very loose." },
-                    { text: "Is is easy for water to pass through it" },
-                    { text: "It heats up and cools down quickly" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
-                  answers: [
-                    { text: "Chernozem" },
-                    { text: "Clay" },
-                    { text: "Humus soil" },
-                    { text: "Sand" },
-                  ],
-                  answer: "Chernozem",
-                },
-              ],
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l11_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l11_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/soil-scoop.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l11_card2")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l11_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/three-jars.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l11_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/grass.png"),
-              },       
-            ],
-          },
-        },
-        
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 12 Lessons 41 and 42
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson12",
-          title: <Translation>{(t) => t("gradetwo:c3l12")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/earth.png"),
-          backgroundColor: "#49326B",
-          minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What are the spheres of the earth?",
-                  answers: [
-                    { text: "Biosphere and lithosphere" },
-                    { text: "Hydrosphere and atmosphere" },
-                    { text: "Both answers are correct" },
-                    { text: "Neither answers are correct" },
-                  ],
-                  answer: "Both answers are correct.",
-                },
-                {
-                  prompt: "Which of the following is the best definition of the atmosphere of the earth? ",
-                  answers: [
-                    { text: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers." },
-                    { text: "A solid shell that surrounds Earth, holding in the gasses needed for plants." },
-                    { text: "A shell made up of gas, consisting of only one layer that protects the earth from asteroids." },
-                    { text: "A solid shell that is only responsible for creating weather. " },
-                  ],
-                  answer: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
-                },
-                {
-                  prompt: "Which of the following is the main property of sandy soil?",
-                  answers: [
-                    { text: "It is very loose." },
-                    { text: "Is is easy for water to pass through it" },
-                    { text: "It heats up and cools down quickly" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "The lithosphere is the upper solid shell of the Earth.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "Ture",
-                },
-                {
-                  prompt: "What inhabits the biosphere on Earth? ",
-                  answers: [
-                    { text: "3 million species of plants, animals, fungi and bacteria." },
-                    { text: "Earth’s core." },
-                    { text: "The troposphere." },
-                    { text: "Glaciers." },
-                  ],
-                  answer: "Glaciers",
-                },
-                {
-                  prompt: "The lithosphere has never moved, and never will.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-              ],
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l12_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/astronaut.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/universe.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/drawing.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 13 (lessons 43 and 44 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson13",
-          title: <Translation>{(t) => t("gradetwo:c3l13")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
-          backgroundColor: "#02084B",
-          minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What is the main way that space is explored?",
-                  answers: [
-                    { text: "Automatic spacecrafts" },
-                    { text: "Manned space flights" },
-                    { text: "Both answers are correct" },
-                    { text: "Neither answer is correct" },
-                  ],
-                  answer: "Both answers are correct",
-                },
-                {
-                  prompt: "In what year was the first human flight to space?",
-                  answers: [
-                    { text: "1961" },
-                    { text: "1990" },
-                    { text: "1947" },
-                    { text: "1968" },
-                  ],
-                  answer: "1961",
-                },
-                {
-                  prompt: "Which of the following advancements were created in connection with the development of the space industry?",
-                  answers: [
-                    { text: "Solar batteries" },
-                    { text: "Water filters" },
-                    { text: "Digital cameras" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-
-              ],
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l13_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card1")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/superhero.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/angry.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/glove.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/healing-strip.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card6")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l13_card7")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/water.png"),
-              },
-            ],
-          },
-        },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-        {
-          navigation: "Lesson14",
-          title: <Translation>{(t) => t("gradetwo:c3l14")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
-          backgroundColor: "#F6E134",
-          minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt: "What is the best explanation for why there are different time zones in different places? ",
-                  answers: [
-                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around the moon, making it night time on one half of the earth." },
-                    { text: "None of the above." },
-                  ],
-                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
-                },
-                {
-                  prompt: "The earth rotates around the ____.",
-                  answers: [
-                    { text: "Moon" },
-                    { text: "Sun" },
-                    { text: "Other planets" },
-                    { text: "Milky way" },
-                  ],
-                  answer: "Sun",
-                },
-                {
-                  prompt: "The earth rotates around an axis AND revolves around the sun.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "Ture",
-                },
-              ],
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l14_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/solar-system.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l14_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/moon.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l14_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/orbit.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l14_card4")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l14_card5")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/orbits.png"),
-              },
-            ],
-          },
-        },
-      ],
     },
+
+    // not complete up until this point 
+
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 2 (lesson 27 in curriculum)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson2",
+      title: <Translation>{(t) => t("gradetwo:c3l2")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/air.png"),
+      backgroundColor: "#C85004",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Research a place with poor air quality. Take a picture of that place (you can take a picture of the image online). Can you identify any characteristics in the picture that show the poor air quality?",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "What gas makes up most of the air (78%)?",
+              answers: [
+                { text: "Nitrogen" },
+                { text: "Oxygen" },
+                { text: "Carbon dioxide" },
+                { text: "Argon" },
+              ],
+              answer: "Nitrogen",
+            },
+            {
+              prompt: "True or False: We cannot breathe pure nitrogen on its own.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "True",
+            },
+            {
+              prompt: "Which of the following gasses in air have no color and no smell?",
+              answers: [
+                { text: "Nitrogen" },
+                { text: "Argon" },
+                { text: "Oxygen" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+            {
+              prompt: "What does the Amazon forest produce the most of all forests in the world?",
+              answers: [
+                { text: "Paper" },
+                { text: "Pollution" },
+                { text: "Oxygen" },
+                { text: "Birds" },
+              ],
+              answer: "Oxygen",
+            }
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "I think we can all agree that humans release chemicals, pollutants, pesticides, etc. into the air that negatively impact the air quality. However, not everything we release into the air is necessarily harmful. What can humans release into the air that will positively impact the air quality?",
+                placeholder: "Humans can release ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l2_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l2_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/rhino.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l2_card2")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l2_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/contamination.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 3 (lesson 28 in curriculum)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson3",
+      title: <Translation>{(t) => t("gradetwo:c3l3")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/candle.png"),
+      backgroundColor: "#9DCD5A",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of a representation of one of the many properties of air. (For example: a carbonated beverage with bubbles).",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "True or False: Combustion refers to the process of burning something.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "True",
+            },
+            {
+              prompt: "What substance supports combustion, while carbon dioxide does not?",
+              answers: [
+                { text: "Nitrogen" },
+                { text: "Oxygen" },
+                { text: "Argon" },
+                { text: "It actually is carbon dioxide" },
+              ],
+              answer: "Oxygen",
+            },
+            {
+              prompt: "It is very difficult to breathe in a room with a lot of ____, and very little _____.",
+              answers: [
+                { text: "Carbon dioxide; oxygen" },
+                { text: "Oxygen; carbon dioxide" },
+                { text: "Both answers are correct" },
+                { text: "Both answers are incorrect" },
+              ],
+              answer: "Carbon dioxide; oxygen",
+            },
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "What are the many properties of air, and how do they positively impact the environment? Why are these properties so important for maintaining homeostasis?",
+                placeholder: "The main properties of air are ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l3_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card1")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/candle.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/spy-kid.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card4")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card5")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/colorant.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card6")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/candle-lit.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l3_card7")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/look.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 4  // lesson 29
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson4",
+      title: <Translation>{(t) => t("gradetwo:c3l4")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/duck.png"),
+      backgroundColor: "#98DFEC",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of the cleanest source of water in your home.",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "Which of the following have the highest water content?",
+              answers: [
+                { text: "Acorn" },
+                { text: "Bean" },
+                { text: "Lemon" },
+                { text: "Potato" },
+              ],
+              answer: "Lemon",
+            },
+            {
+              prompt: "True or False: There is more water in potatoes than apples.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "False",
+            },
+            {
+              prompt: "True or False: Even though fruits and vegetables are solids, they are also made up of a lot of water.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "True",
+            },
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "Do you believe that everyone in the world has access to a water source? If so, it stands to reason that not everyone has the same type of water source. Can you think of the many different types of water sources that exist?",
+                placeholder: "The water sources ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l4_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l4_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/water.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l4_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/watering-plants.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l4_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/desert.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 5 // lesson 30 & 31
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson5",
+      title: <Translation>{(t) => t("gradetwo:c3l5")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/water-source.png"),
+      backgroundColor: "#37B5FF",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of the most natural water source near your home. If you cannot visit it, take a picture of it online. Look at the picture and see if you can understand what differentiates a natural water source from an unnatural one.",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "True or False: Most of the water on Earth is freshwater.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "False",
+            },
+            {
+              prompt: "In what ocean is the Mariana Trench located?",
+              answers: [
+                { text: "Pacific" },
+                { text: "Atlantic" },
+                { text: "Indian" },
+                { text: "Artic" },
+              ],
+              answer: "Pacific",
+            },
+            {
+              prompt: "What is the largest river in Kazakhstan?",
+              answers: [
+                { text: "Yertis" },
+                { text: "Yesil" },
+                { text: "Zhem" },
+                { text: "Oral" },
+              ],
+              answer: "Yertis",
+            },
+            {
+              prompt: "What is the largest lake in Kazakhstan?",
+              answers: [
+                { text: "Zaysan" },
+                { text: "Aral" },
+                { text: "Balkhash" },
+                { text: "Alakol" },
+              ],
+              answer: "Balkhash",
+            },
+            {
+              prompt: "What source of fresh and clean water is caused by excess water seeping through soil and clay?",
+              answers: [
+                { text: "Lakes" },
+                { text: "Groundwater/underground" },
+                { text: "Rain" },
+                { text: "Oceans" },
+              ],
+              answer: "Groundwater/underground",
+            },
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "Not all communities possess access to a natural water source. However, the communities that do must address the issues of water pollution, overuse, and scarcity. Can you think of ways they address these issues and how you can address these same issues if present, in your community?",
+                placeholder: "They can address these issues by ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+        reorder: { //correct
+          navigation: "Reorder",
+          icon: require("../../../../assets/reorder.png"),
+          backgroundColor: "pink",
+          prompt:
+            "Put the following oceans in order from largest to smallest.",
+          data: [
+            {
+              text: "Pacific",
+              dormant: "coral",
+              active: "#DB756B",
+            },
+            {
+              text: "Atlantic",
+              dormant: "pink",
+              active: "#ffacbb",
+            },
+            {
+              text: "Indian",
+              dormant: "dodgerblue",
+              active: "#3873E0",
+            },
+            {
+              text: "Artic",
+              dormant: "#ffa500",
+              active: "#e59400",
+            },
+          ],
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l5_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l5_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/planet-earth.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l5_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/summer.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l5_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/river.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 6 //lesson 32
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson6",
+      title: <Translation>{(t) => t("gradetwo:c3l6")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/water-bottle.png"),
+      backgroundColor: "#F27B21",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of your water meter to see how much water you’ve used this period. Take another picture at the same time next month to see if your habits have improved your water usage.",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "Which of the following household uses of water requires the largest amount of water?",
+              answers: [
+                { text: "Laundry" },
+                { text: "Washing dishes" },
+                { text: "Taking a bath" },
+                { text: "Flushing the toilet" },
+              ],
+              answer: "Taking a bath",
+            },
+            {
+              prompt: "True or False: On average, taking a bath requires four times the amount of water it takes for a shower.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "True",
+            },
+            {
+              prompt: "Which of the following is a way to reduce water consumption in households?",
+              answers: [
+                { text: "Take showers instead of baths" },
+                { text: "Make sure the dishwasher is full before it gets run" },
+                { text: "Turn of the sink when brushing your teeth" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+            {
+              prompt: "Which of the following is NOT a way to reduce water consumption in households?",
+              answers: [
+                { text: "Take shorter showers" },
+                { text: "Wait to repair leaks in sinks and toilets" },
+                { text: "Water plants only during cooler parts of the day" },
+                { text: "Only run full loads of laundry" },
+              ],
+              answer: "Wait to repair leaks in sinks and toilets",
+            },
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "What are some ways that your local government can make sure that human drinking water isn’t used for wrongful purposes, such as wastefulness?",
+                placeholder: "The local government can ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l6_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l6_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/drink-water.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l6_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/brainstorming.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l6_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/studying.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l6_card4")}</Translation>
+            ),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 7 //lessons 33 & 34
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson7",
+      title: <Translation>{(t) => t("gradetwo:c3l7")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/water-filter.png"),
+      backgroundColor: "#6C3F14",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of a homemade water filtration method. You can do this after you complete the mastery challenge. To show the success of the water filtration method, take a before and after picture of the water.",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "What is the main way to purify water?",
+              answers: [
+                { text: "Mechanical" },
+                { text: "Chemical" },
+                { text: "Biological" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+            {
+              prompt: "What occurs at water treatment plants?",
+              answers: [
+                { text: "It is where wastewater is treated." },
+                { text: "It is where freshwater is treated." },
+                { text: "It is where ocean water is treated." },
+                { text: "None of the above" },
+              ],
+              answer: "It is where wastewater is treated.",
+            },
+            {
+              prompt: "Which method of purifying water removes things like branches, sand, leaves?",
+              answers: [
+                { text: "Mechanical" },
+                { text: "Chemical" },
+                { text: "Biological" },
+                { text: "Methodological" },
+              ],
+              answer: "Mechanical",
+            },
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "How can we protect and restore aquatic ecosystems and the many benefits they provide, such as water purification, flood control, and habitat for a variety of species? Extend your answer to list several water purification methods, from natural to man made.",
+                placeholder: "To protect aquatic ecosystems, we can ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l7_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l7_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/drink-water.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l7_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/test.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l7_card3")}</Translation>
+            ),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 8 //lesson 35
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson8",
+      title: <Translation>{(t) => t("gradetwo:c3l8")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/soil.png"),
+      backgroundColor: "#E39650",
+      minigames: {
+        snapshot: { //correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt:
+            "Take a picture of nutrient-rich soil. Analyze and identify why the soil in particular is nutrient-dense.",
+        },
+        quiz: {
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          image: "../../../../assets/nat.jpg",
+          content: [
+            {
+              prompt: "What is the purpose of soil?",
+              answers: [
+                { text: "To provide nutrition and support for plant roots and stems" },
+                { text: "To provide a home for many animals" },
+                { text: "The first two answers are correct" },
+                { text: "Neither answers are correct" },
+              ],
+              answer: "The first two answers are correct",
+            },
+            {
+              prompt: "True or False: Most of the Earth’s surface is covered with a layer of soil of different thicknesses.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "True",
+            },
+            {
+              prompt: "What must occur to begin the process of creating soil?",
+              answers: [
+                { text: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles." },
+                { text: "Soil must be transported to the area." },
+                { text: "Organic matter must decompose in the area." },
+                { text: "All of the above." },
+              ],
+              answer: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles.",
+            },
+          ]
+        },
+        openresponse: {
+          navigation: "Image Boom",
+          title: (
+            <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+          icon: require("../../../../assets/image.png"),
+          backgroundColor: "palevioletred",
+          data: {
+            numberOfPrompts: 1,
+            prompts: [
+              {
+                text: "What role can soil play in slowing down climate change?",
+                placeholder: "Soil ...",
+                image: require("../../../../assets/mastery/state-of-matter.png"),
+              },
+            ],
+          },
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l8_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l8_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/planting.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l8_card2")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l8_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/sweet-potato.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l8_card4")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/glass-of-water.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l8_card5")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l8_card6")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/seed.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson9",
+      title: <Translation>{(t) => t("gradetwo:c3l9")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
+      backgroundColor: "#9DCD5A",
+      minigames: {
+        snapshot: { // correct
+          navigation: "Snapshot",
+          icon: require("../../../../assets/camera.png"),
+          backgroundColor: "#FFD972",
+          backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+          prompt: "Take a picture of a scientific discovery that you use on a daily basis.",
+        },
+        quiz: { // correct
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+          content: [
+            {
+              prompt:
+                "What of the following is the best definition of humus",
+              answers: [
+                { text: "Matter in soil made out of the remains of plants and animals" },
+                { text: "Minerals in soil." },
+                { text: "Grass that grows on top of the soil." },
+                { text: "Rocks embedded in the soil" },
+              ],
+              answer: "Matter in soil made out of the remains of plants and animals.",
+            },
+            {
+              prompt: "Humus is more abundant in the upper layers of the soil than the lower layers.",
+              answers: [
+                { text: "True" },
+                {
+                  text: "False",
+                },
+              ],
+              answer: "True",
+            },
+            {
+              prompt: "Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
+              answers: [
+                { text: "True" },
+                {
+                  text: "False",
+                },
+              ],
+              answer: "True",
+            },
+            {
+              prompt: "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
+              answers: [
+                {
+                  text: "Wind and water",
+                },
+                {
+                  text: "Solar heat",
+                },
+                {
+                  text: "Living organisms",
+                },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+          ],
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l9_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l9_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/soil-plant.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l9_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/jar.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l9_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/dirt.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l9_card4")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l9_card5")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l9_card6")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/soil.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson10",
+      title: <Translation>{(t) => t("gradetwo:c3l10")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
+      backgroundColor: "#F9A949",
+      minigames: {
+        quiz: { // correct
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+          content: [
+            {
+              prompt:
+                "What is the best explanation for why air permeability is important for soil?",
+              answers: [
+                { text: "Without it the worms will die " },
+                { text: "This allows air through the soil, which is needed or else plant roots will die. " },
+                { text: "It lets rain through." },
+                { text: "None of the above." },
+              ],
+              answer: "This allows air through the soil, which is needed or else plant roots will die.",
+            },
+            {
+              prompt: "Which of the following is the best definition of water permeability? ",
+              answers: [
+                { text: "It describes the type of water needed for the soil." },
+                { text: "It is the ability of the soil to support worms and insects." },
+                { text: "It explains the pH of the soil." },
+                { text: "It is the ability of the soil to absorb and transmit water." },
+              ],
+              answer: "It is the ability of the soil to absorb and transmit water.",
+            },
+            {
+              prompt: "Which of the following processes directly threatens the abundance of soil?",
+              answers: [
+                { text: "Earthquakes" },
+                { text: "Pollution" },
+                { text: "Erosion" },
+                { text: "Evaporation" },
+              ],
+              answer: "Erosion",
+            },
+            {
+              prompt: "The life of humans, animals, and plants are all dependent on the existence of soil. ",
+              answers: [
+                { text: "True" },
+                {
+                  text: "False",
+                },
+              ],
+              answer: "True",
+            },
+          ],
+        },
+
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l10_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l10_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/crops.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l10_card2")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l10_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/pots.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l10_card4")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/kidney.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l10_card5")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/watering-plants.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l10_card6")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/seed.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson11",
+      title: <Translation>{(t) => t("gradetwo:c3l11")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
+      backgroundColor: "#76B9F0",
+      minigames: {
+        quiz: { // correct
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+          content: [
+            {
+              prompt:
+                "Which of the following statements is true about soil?",
+              answers: [
+                { text: "All of the following" },
+                { text: "Dark soil is rich in humus." },
+                { text: "Red soil is rich in iron." },
+                { text: "Light soil is poor in minerals and humus." },
+              ],
+              answer: "All of the following.",
+            },
+            {
+              prompt: "Clay soil absorbs water well and does not stick together. ",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "False",
+            },
+            {
+              prompt: "Which of the following is the main property of sandy soil?",
+              answers: [
+                { text: "It is very loose." },
+                { text: "Is is easy for water to pass through it" },
+                { text: "It heats up and cools down quickly" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+            {
+              prompt: "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
+              answers: [
+                { text: "Chernozem" },
+                { text: "Clay" },
+                { text: "Humus soil" },
+                { text: "Sand" },
+              ],
+              answer: "Chernozem",
+            },
+          ],
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l11_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l11_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/soil-scoop.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l11_card2")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l11_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/three-jars.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l11_card4")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/grass.png"),
+          },
+        ],
+      },
+    },
+
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 12 Lessons 41 and 42
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson12",
+      title: <Translation>{(t) => t("gradetwo:c3l12")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/earth.png"),
+      backgroundColor: "#49326B",
+      minigames: {
+        quiz: { // correct
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+          content: [
+            {
+              prompt:
+                "What are the spheres of the earth?",
+              answers: [
+                { text: "Biosphere and lithosphere" },
+                { text: "Hydrosphere and atmosphere" },
+                { text: "Both answers are correct" },
+                { text: "Neither answers are correct" },
+              ],
+              answer: "Both answers are correct.",
+            },
+            {
+              prompt: "Which of the following is the best definition of the atmosphere of the earth? ",
+              answers: [
+                { text: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers." },
+                { text: "A solid shell that surrounds Earth, holding in the gasses needed for plants." },
+                { text: "A shell made up of gas, consisting of only one layer that protects the earth from asteroids." },
+                { text: "A solid shell that is only responsible for creating weather. " },
+              ],
+              answer: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
+            },
+            {
+              prompt: "Which of the following is the main property of sandy soil?",
+              answers: [
+                { text: "It is very loose." },
+                { text: "Is is easy for water to pass through it" },
+                { text: "It heats up and cools down quickly" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+            {
+              prompt: "The lithosphere is the upper solid shell of the Earth.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "Ture",
+            },
+            {
+              prompt: "What inhabits the biosphere on Earth? ",
+              answers: [
+                { text: "3 million species of plants, animals, fungi and bacteria." },
+                { text: "Earth’s core." },
+                { text: "The troposphere." },
+                { text: "Glaciers." },
+              ],
+              answer: "Glaciers",
+            },
+            {
+              prompt: "The lithosphere has never moved, and never will.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "False",
+            },
+          ],
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l12_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l12_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/astronaut.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l12_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/universe.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l12_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/drawing.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 13 (lessons 43 and 44 in curriculum)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson13",
+      title: <Translation>{(t) => t("gradetwo:c3l13")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
+      backgroundColor: "#02084B",
+      minigames: {
+        quiz: { // correct
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+          content: [
+            {
+              prompt:
+                "What is the main way that space is explored?",
+              answers: [
+                { text: "Automatic spacecrafts" },
+                { text: "Manned space flights" },
+                { text: "Both answers are correct" },
+                { text: "Neither answer is correct" },
+              ],
+              answer: "Both answers are correct",
+            },
+            {
+              prompt: "In what year was the first human flight to space?",
+              answers: [
+                { text: "1961" },
+                { text: "1990" },
+                { text: "1947" },
+                { text: "1968" },
+              ],
+              answer: "1961",
+            },
+            {
+              prompt: "Which of the following advancements were created in connection with the development of the space industry?",
+              answers: [
+                { text: "Solar batteries" },
+                { text: "Water filters" },
+                { text: "Digital cameras" },
+                { text: "All of the above" },
+              ],
+              answer: "All of the above",
+            },
+
+          ],
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l13_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card1")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/superhero.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/angry.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card4")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/glove.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card5")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/healing-strip.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card6")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l13_card7")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/water.png"),
+          },
+        ],
+      },
+    },
+    /* 
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Grade 2 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+    {
+      navigation: "Lesson14",
+      title: <Translation>{(t) => t("gradetwo:c3l14")}</Translation>,
+      thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
+      backgroundColor: "#F6E134",
+      minigames: {
+        quiz: { // correct
+          navigation: "QuizScreen",
+          icon: require("../../../../assets/creativity.png"),
+          backgroundColor: "mediumpurple",
+          imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+          content: [
+            {
+              prompt: "What is the best explanation for why there are different time zones in different places? ",
+              answers: [
+                { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
+                { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
+                { text: "The earth revolves around the moon, making it night time on one half of the earth." },
+                { text: "None of the above." },
+              ],
+              answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
+            },
+            {
+              prompt: "The earth rotates around the ____.",
+              answers: [
+                { text: "Moon" },
+                { text: "Sun" },
+                { text: "Other planets" },
+                { text: "Milky way" },
+              ],
+              answer: "Sun",
+            },
+            {
+              prompt: "The earth rotates around an axis AND revolves around the sun.",
+              answers: [
+                { text: "True" },
+                { text: "False" },
+              ],
+              answer: "Ture",
+            },
+          ],
+        },
+      },
+      mastery: {
+        prompt: (
+          <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
+        ),
+        cards: [
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l14_card1")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/solar-system.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l14_card2")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/moon.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l14_card3")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/orbit.png"),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l14_card4")}</Translation>
+            ),
+          },
+          {
+            text: (
+              <Translation>{(t) => t("mastery:g2c3l14_card5")}</Translation>
+            ),
+            image: require("../../../../assets/mastery/orbits.png"),
+          },
+        ],
+      },
+    },
+    //   ],
+    // },
     {
       navigation: "Chapter4",
       title: <Translation>{(t) => t("common:chapterfour")}</Translation>, // Chapter 6
@@ -4376,7 +4376,7 @@ export const Grade2 = {
                   prompt:
                     "Which of the following statements about elastic forces is true?",
                   answers: [
-                    { text: "If the elastic forces cannot handle the amount of external force, the body changes shape." }, 
+                    { text: "If the elastic forces cannot handle the amount of external force, the body changes shape." },
                     { text: "The aim of the elastic force is to compress, shift, stretch, and bend." },
                     { text: "Both of the above answers are correct." },
                     { text: "Neither answers are correct." }
@@ -4390,7 +4390,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
+              prompt:
                 "Take a picture of an object/item that uses elastic force."
             },
             openresponse: {
@@ -4490,7 +4490,7 @@ export const Grade2 = {
                   prompt:
                     "Which of the following is the best definition of inertia?",
                   answers: [
-                    { text: "The property of the body to maintain a state of rest or movement until some external force acts on it." }, 
+                    { text: "The property of the body to maintain a state of rest or movement until some external force acts on it." },
                     { text: "The property of a body to bounce back from an external force." },
                     { text: "The property that drags things down to the center of the earth" },
                     { text: "The speed at which an object falls." }
@@ -4504,7 +4504,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
+              prompt:
                 "Take a picture of an object experiencing gravity. (Hint: objects in freefall.)"
             },
             openresponse: {
@@ -4622,7 +4622,7 @@ export const Grade2 = {
                   prompt:
                     "Which of the following can be created by friction?",
                   answers: [
-                    { text: "Heat" }, 
+                    { text: "Heat" },
                     { text: "Decline in speed" },
                     { text: "Both answers are correct." },
                     { text: "Neither answers are correct." }
@@ -4636,7 +4636,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
+              prompt:
                 "Take a picture of an object experiencing friction or an object that causes friction."
             },
             openresponse: {
@@ -4758,7 +4758,7 @@ export const Grade2 = {
                   prompt:
                     "Which of the following most accurately describes what creates friction?",
                   answers: [
-                    { text: "When one body is in free fall due to gravity." }, 
+                    { text: "When one body is in free fall due to gravity." },
                     { text: "When bodies move across one another, causing two surfaces to come into contact." },
                     { text: "When a body bounces back after an external force acts on it." },
                     { text: "When a body breaks after an external force acts on it." }
@@ -4772,7 +4772,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
+              prompt:
                 "Take a picture of an object that is experiencing a force. Highlight the direction of the force that is acting on it."
             },
             openresponse: {
@@ -4882,7 +4882,7 @@ export const Grade2 = {
                   prompt:
                     "The ____ the light source is to the object being illuminated, the shorter the shadow is.",
                   answers: [
-                    { text: "Farther" }, 
+                    { text: "Farther" },
                     { text: "More yellow" },
                     { text: "Closer" },
                     { text: "Redder" }
@@ -4896,7 +4896,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
+              prompt:
                 "Take a picture of a shadow."
             },
             openresponse: {
@@ -5010,7 +5010,7 @@ export const Grade2 = {
                   prompt:
                     "",
                   answers: [
-                    { text: "" }, 
+                    { text: "" },
                     { text: "" },
                     { text: "" },
                     { text: "" }
@@ -5024,7 +5024,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
+              prompt:
                 ""
             },
             openresponse: {
