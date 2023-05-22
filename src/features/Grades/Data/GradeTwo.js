@@ -29,7 +29,7 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/wheel.png"),
           backgroundColor: "#87CB28",
 
-          mastery: { 
+          mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c1l1_prompt")}</Translation>
             ),
@@ -60,7 +60,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
 
                 {
@@ -237,7 +237,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt: "What is the best way to test your hypothesis?",
@@ -412,7 +412,7 @@ export const Grade2 = {
               },
             },
           },
-          mastery: { 
+          mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l3_prompt")}</Translation>
             ),
@@ -536,7 +536,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt:
@@ -741,26 +741,6 @@ export const Grade2 = {
                 },
               ],
             },
-            openresponse_2: { // correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text:
-                      "List a couple of things that plants need in order to survive. Are these the same " +
-                      "things we need to survive? What happens if there is too much of one resource?",
-                    placeholder: "Plants need...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
-                ],
-              },
-            },
             openresponse: { // correct
               navigation: "Image Boom",
               title: (
@@ -781,11 +761,31 @@ export const Grade2 = {
                 ],
               },
             },
+            openresponse_2: { // correct
+              navigation: "Image Boom 2",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text:
+                      "List a couple of things that plants need in order to survive. Are these the same " +
+                      "things we need to survive? What happens if there is too much of one resource?",
+                    placeholder: "Plants need...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
             quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt: "What happens when a plant recieves too much heat?",
@@ -873,7 +873,7 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
-          navigation: "Lesson3", //natural plant communities
+          navigation: "", //composition of air
           title: <Translation>{(t) => t("gradetwo:c2l3")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
           backgroundColor: "#C0F0F7",
@@ -924,7 +924,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   //funny wording
@@ -1039,7 +1039,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   //funny wording
@@ -1169,7 +1169,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 5 (lesson ten & elevel in curriculum)
+        Grade 2 Chapter 2 Lesson 5 (lesson ten & eleven in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1182,7 +1182,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   //funny wording
@@ -1377,7 +1377,7 @@ export const Grade2 = {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: "../../../../assets/nat.jpg",
+              imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
                   prompt: "What is the function of a skeleton?",
@@ -1457,6 +1457,7 @@ export const Grade2 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt: "Draw a picture of a skeletal system wit a vertebrate!",
             },
@@ -1553,7 +1554,7 @@ export const Grade2 = {
 
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 8 
+        Grade 2 Chapter 2 Lesson 8 (lesson fourteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1561,7 +1562,69 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l8")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/dog-cat.png"),
           backgroundColor: "#37B5FF",
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take or find a picture of a relationship between two animals in nature, whether it be a beneficial or harmful relationship.",
+            },
+
+            quiz: { //correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: a fox and a rabbit?",
+                  answers: [
+                    { text: "Parasitism" },
+                    { text: "Neutralism" },
+                    { text: "Competition" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Predation",
+                },
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: a frog and an antelope?",
+                  answers: [
+                    { text: "Competition" },
+                    { text: "Symbiosis" },
+                    { text: "Neutralism" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Neutralism",
+                },
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: a shark and a fish that attaches to the shark?",
+                  answers: [
+                    { text: "Competition" },
+                    { text: "Parasitism" },
+                    { text: "Neutralism" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Parasitism",
+                },
+                {
+                  prompt:
+                    "What type of relationship exists between these animals: rhinos and birds?",
+                  answers: [
+                    { text: "Competition" },
+                    { text: "Symbiosis" },
+                    { text: "Neutralism" },
+                    { text: "Predation" },
+                  ],
+                  answer: "Symbiosis",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l8_prompt")}</Translation>
@@ -1579,24 +1642,12 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/symbiosis.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l8_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/fishes.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l8_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/symbiosis.png"),
-              },
             ],
           },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 9 
+        Grade 2 Chapter 2 Lesson 9 (lesson fifteen in currciulum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1604,7 +1655,105 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l9")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/spring.png"),
           backgroundColor: "#065D40",
-          minigames: {},
+          minigames: {
+            snapshot: { // correct 
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of a plant environment in which several plants mutually benefit each other.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: There are no relationships between plants that are similar to those between animals?",
+                  answers: [
+                    { text: "true" },
+                    { text: "false" },
+                  ],
+                  answer: "false",
+                },
+                {
+                  prompt:
+                    "Which of the following is an example of a mutualistic/symbiotic relationship between plants and animals?",
+                  answers: [
+                    { text: "Animals eat the plants" },
+                    { text: "Pollination" },
+                    { text: "Animals use plants to build nests" },
+                    { text: "Humans eat the plants" },
+                  ],
+                  answer: "Pollination",
+                },
+                {
+                  prompt:
+                    "True or False: There are relationships between plants and animals, similar to those between only animals?",
+                  answers: [
+                    { text: "true" },
+                    { text: "false" },
+                  ],
+                  answer: "true",
+                },
+              ],
+            },
+            sorting: { // incorrect images
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Match the word to the definition using pictures",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_2_les_8,
+                categories: [
+                  { name: "Commensalism" },
+                  { name: "Symbiosis/mutualism" },
+                  { name: "Predation" },
+                ],
+                options: [
+                  {
+                    title: "A Venus flytrap catches a fly",
+                    name: "Predation",
+                  },
+                  {
+                    title:
+                      "Bees pollinate a plant",
+                    name: "Symbiosis/mutualism",
+                  },
+                  {
+                    title:
+                      "A bird makes a nest in a tree",
+                    name: "Commensalism",
+                  },
+                ],
+              },
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do the relationships between plants and animals," +
+                      "such as mutualism, commensalism, and competition, impact the " +
+                      "sustainability of plant communities and ecosystems?",
+                    placeholder: "The relationships between plants and animals...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l9_prompt")}</Translation>
@@ -1616,18 +1765,12 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/pets.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l9_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/bee-and-tree.png"),
-              },
             ],
           },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 10 
+        Grade 2 Chapter 2 Lesson 10 (lesson sixteen and seventeen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1654,11 +1797,105 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an animal habitat with poor conditions. Analyze the picture " +
+                "and identify the ways the poor conditions could affect animal life.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "Which of the following is the main way droughts affect aquatic environments?",
+                  answers: [
+                    { text: "Droughts make non-aquatic animals thirstier and therefore drink more of their water." },
+                    { text: "Droughts make the water saltier." },
+                    { text: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals." },
+                    { text: "Droughts cause an increase in the fish population." },
+                  ],
+                  answer: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals.",
+                },
+                {
+                  prompt:
+                    "Which of the following events would affect the number of animals in a habitat?",
+                  answers: [
+                    { text: "Fire" },
+                    { text: "Drought" },
+                    { text: "Flood" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt:
+                    "True or False: Infectious diseases do not impact animal populations?",
+                  answers: [
+                    { text: "true" },
+                    { text: "false" },
+                  ],
+                  answer: "false",
+                },
+              ],
+            },
+            sorting: { // incorrect images
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Match the word to the definition using pictures",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_2_les_9,
+                categories: [
+                  { name: "Ebola" },
+                  { name: "Anthrax" },
+                ],
+                options: [
+                  {
+                    title: "A disease that infected and killed large numbers of the chimpanzee population in the 1990s.",
+                    name: "Ebola",
+                  },
+                  {
+                    title:
+                      "A disease discovered 600 years ago that kills any warm-blooded animal. ",
+                    name: "Anthrax",
+                  },
+                ],
+              },
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How do habitat conditions, such as availability of food, " +
+                      "water and protection from predators, impact the number and diversity of animal populations in an ecosystem?",
+                    placeholder: "Habitat conditions impact animal populations by...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 11
+        Grade 2 Chapter 2 Lesson 11 (lesson eighteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1679,27 +1916,98 @@ export const Grade2 = {
               },
               {
                 text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/whale.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
                   <Translation>{(t) => t("mastery:g2c2l11_card4")}</Translation>
                 ),
               },
             ],
           },
-          minigames: {},
+          mastery_2: { // incorrect mastery
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l11_2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l11_2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/habitat.png"),
+              },
+            ],
+          },
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an animal in your area that you believe will not be here in ten years.",
+            },
+            quiz: { //correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: Deforestation does not cause a serious decrease in the number of animals in the area?",
+                  answers: [
+                    { text: "False" },
+                    { text: "True" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt:
+                    "Which of the following is the most likely outcome if someone cuts down many trees in a forest?",
+                  answers: [
+                    { text: "Many animals will lose their habitats." },
+                    { text: "Many animals will lose their food sources" },
+                    { text: "There will be an increased risk of flooding in the area" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt:
+                    "Which of the following pairs of actions are both ways humans indirectly impact animal populations?",
+                  answers: [
+                    { text: "Use of pesticides, deforestation" },
+                    { text: "Poisoning from industrial emissions, construction of dams" },
+                    { text: "Construction of dams, deforestation" },
+                    { text: "Use of pesticides, poisoning from industrial emissions" },
+                  ],
+                  answer: "Construction of dams, deforestation",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What are some potential causes for a decrease in the number of animals in a particular ecosystem, " +
+                      "and how can we address these issues to promote sustainability and protect biodiversity? Think about laws " +
+                      "we can implement. What would you suggest to the government as well?",
+                    placeholder: "Potential causes are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 12
+        Grade 2 Chapter 2 Lesson 12 (lesson nineteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1711,26 +2019,93 @@ export const Grade2 = {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l12_prompt")}</Translation>
             ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/heart.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/frog.png"),
-              },
-            ],
+            // cards: [
+            //   {
+            //     text: (
+            //       <Translation>{(t) => t("mastery:g2c2l12_card1")}</Translation>
+            //     ),
+            //     image: require("../../../../assets/mastery/heart.png"),
+            //   },
+            //   {
+            //     text: (
+            //       <Translation>{(t) => t("mastery:g2c2l12_card2")}</Translation>
+            //     ),
+            //     image: require("../../../../assets/mastery/frog.png"),
+            //   },
+            // ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an animal with similar bodily functions to humans. " +
+                "Essentially, this animal has a body part that has the same function as we use it for.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: Humans are vertebrates?",
+                  answers: [
+                    { text: "False" },
+                    { text: "True" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "Which of the following definitions is the best description of an organ?",
+                  answers: [
+                    { text: "A part of the human body." },
+                    { text: "A part of an organism with an unspecified purpose." },
+                    { text: "A part of an organism that has its own location and purpose." },
+                    { text: "It is the heart of a vertebrate." },
+                  ],
+                  answer: "A part of an organism that has its own location and purpose",
+                },
+                {
+                  prompt:
+                    "What technological advancement in the 1970s made it easier to see humans’ internal organs?",
+                  answers: [
+                    { text: "MRIs" },
+                    { text: "X-rays" },
+                    { text: "CTs" },
+                    { text: "None of the above" },
+                  ],
+                  answer: "MRIs",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "What are the three main cavities of the human body? What are the main organs in each of these cavities?",
+                    placeholder: "The three main cavities are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 13
+        Grade 2 Chapter 2 Lesson 13 (lesson 20 & 21 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1755,18 +2130,96 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/broccoli.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l13_card3")}</Translation>
-                ),
-              },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an item that humans cannot digest but certain animals can.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "Where does digestion begin?",
+                  answers: [
+                    { text: "Stomach" },
+                    { text: "Mouth" },
+                    { text: "Intenstine" },
+                    { text: "Heart" },
+                  ],
+                  answer: "Mouth",
+                },
+                {
+                  prompt:
+                    "Digestion allows humans to (1)____ nutrients from food, and transform it into (2)____",
+                  answers: [
+                    { text: "(1) absorb | (2) energy" },
+                    { text: "(1) reject | (2) food" },
+                    { text: "(1) process | (2) oxygen" },
+                    { text: "(1) sort | (2) carbon dioxide" },
+                  ],
+                  answer: "(1) absorb | (2) energy",
+                },
+                {
+                  prompt:
+                    "Which of the following is the correct order of parts of the body that food travels through?",
+                  answers: [
+                    { text: "Stomach, esophagus, mouth, intestines" },
+                    { text: "Mouth, esophagus, stomach, intestines" },
+                    { text: "Mouth, stomach, esophagus, intestines" },
+                    { text: "Mouth, intestines, stomach, esophagus" },
+                  ],
+                  answer: "Mouth, esophagus, stomach, intestines",
+                },
+                {
+                  prompt:
+                    "Which of the following is the name of the drawing that helps you to make more healthy decisions when choosing what food to eat??",
+                  answers: [
+                    { text: "Triangle of Choices" },
+                    { text: "Pyramid of Food Decisions" },
+                    { text: "Pyramid of Nutrition" },
+                    { text: "Tiers of Nutrition" },
+                  ],
+                  answer: "Pyramid of Nutrition",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "There are many factors to consider when it comes to sustainability in the food system, " +
+                      "such as how food is grown or raised, how it is transported and distributed, and how much of it " +
+                      "is wasted. The apple you eat might be healthy for you but is it healthy for the environment? " +
+                      "Identify strategies that can be used when we produce and consume food, so that it is sustainable " +
+                      "for the environment, animals, and human communities?",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 14
+        Grade 2 Chapter 2 Lesson 14 (lesson 22 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1793,11 +2246,91 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an environment that might be hard to breathe in. " +
+                "Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "True or False: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "If the air we breathe in is unclean, containing materials such as dust, " +
+                    "what part of the body collects it, preventing it from further entering the body?",
+                  answers: [
+                    { text: "Nose" },
+                    { text: "Lungs" },
+                    { text: "Bronchi" },
+                    { text: "Trachea" },
+                  ],
+                  answer: "Nose",
+                },
+                {
+                  prompt:
+                    "What is the purpose of the trachea?",
+                  answers: [
+                    { text: "To only bring air into the lungs" },
+                    { text: "To filter out the good air from the bad" },
+                    { text: "To produce carbon dioxide" },
+                    { text: "To transport air in and out of the lungs" },
+                  ],
+                  answer: "To transport air in and out of the lungs",
+                },
+                {
+                  prompt:
+                    "Which of the following gives the best description of the order in which the parts of the respiratory system help us to breathe?",
+                  answers: [
+                    { text: "Nose or mouth, Larynx and trachea, bronchi, lungs" },
+                    { text: "Mouth, lungs, bronchi" },
+                    { text: "Nose, larynx, lungs" },
+                    { text: "None of the above" },
+                  ],
+                  answer: "Nose or mouth, Larynx and trachea, bronchi, lungs",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How can we ensure that the air we breathe is safe and healthy for all living beings, " +
+                      "and how can we protect and improve the quality of the air in our communities? ",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 15
+        Grade 2 Chapter 2 Lesson 15 (lesson 23 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1820,30 +2353,150 @@ export const Grade2 = {
                 text: (
                   <Translation>{(t) => t("mastery:g2c2l15_card2")}</Translation>
                 ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/blood.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card4")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l15_card5")}</Translation>
-                ),
+                image: (require("../../../../assets/mastery/blood.png")),
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            minigames: {
+              snapshot: { // correct
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Take a picture of a common unhealthy food in your household.",
+              },
+              quiz: { // correct
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+
+                  {
+                    prompt:
+                      "True or False: The heart is responsible for the movement of blood in the body?",
+                    answers: [
+                      { text: "True" },
+                      { text: "False" },
+                    ],
+                    answer: "True",
+                  },
+                  {
+                    prompt:
+                      "Which of the following is the responsibility of blood in the body?",
+                    answers: [
+                      { text: "Warm the body." },
+                      { text: "Spread oxygen and nutrients to organs and tissues." },
+                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
+                      { text: "All of the above." },
+                    ],
+                    answer: "All of the above.",
+                  },
+                  {
+                    prompt:
+                      "What do arteries do?",
+                    answers: [
+                      { text: "Carry food that has been digested" },
+                      { text: "Carry carbon dioxide" },
+                      { text: "Carry blood" },
+                      { text: "None of the above" },
+                    ],
+                    answer: "Carry blood",
+                  },
+                ],
+              },
+              openresponse: { // correct
+                navigation: "Image Boom",
+                title: (
+                  <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                  numberOfPrompts: 1,
+                  prompts: [
+                    {
+                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
+                      image: require("../../../../assets/openresponse/innovation.png"),
+                    },
+                  ],
+                },
+              },
+            },
+          },
+          minigames: {
+            minigames: {
+              snapshot: { // correct
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Take a picture of a common unhealthy food in your household.",
+              },
+              quiz: { // correct
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+
+                  {
+                    prompt:
+                      "True or False: The heart is responsible for the movement of blood in the body?",
+                    answers: [
+                      { text: "True" },
+                      { text: "False" },
+                    ],
+                    answer: "True",
+                  },
+                  {
+                    prompt:
+                      "Which of the following is the responsibility of blood in the body?",
+                    answers: [
+                      { text: "Warm the body." },
+                      { text: "Spread oxygen and nutrients to organs and tissues." },
+                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
+                      { text: "All of the above." },
+                    ],
+                    answer: "All of the above.",
+                  },
+                  {
+                    prompt:
+                      "What do arteries do?",
+                    answers: [
+                      { text: "Carry food that has been digested" },
+                      { text: "Carry carbon dioxide" },
+                      { text: "Carry blood" },
+                      { text: "None of the above" },
+                    ],
+                    answer: "Carry blood",
+                  },
+                ],
+              },
+              openresponse: { // correct
+                navigation: "Image Boom",
+                title: (
+                  <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                  numberOfPrompts: 1,
+                  prompts: [
+                    {
+                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
+                      image: require("../../../../assets/openresponse/innovation.png"),
+                    },
+                  ],
+                },
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 16
+        Grade 2 Chapter 2 Lesson 16 (lesson 24 & 25 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1881,7 +2534,76 @@ export const Grade2 = {
               },
             ],
           },
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of an item that should be cleaned more often. " +
+                "For example, many humans don’t realize how dirty and unclean our phones " +
+                "are. What are some other items that we forget to clean?",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
+                  answers: [
+                    { text: "Vaccines, exposure to diseases" },
+                    { text: "Vaccines, personal hygiene care" },
+                    { text: "Washing your hands, bathing" },
+                    { text: "Personal hygiene care, nature" },
+                  ],
+                  answer: "Vaccines, personal hygiene care",
+                },
+                {
+                  prompt:
+                    "True or False: Spending time in nature is not helpful for staying healthy?",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt:
+                    "Which of the following is the best definition for immunity?",
+                  answers: [
+                    { text: "The state of being at risk for certain diseases." },
+                    { text: "The quality of being resistant to a disease or illness." },
+                    { text: "The name for people who are never sick." },
+                    { text: "The quality of being resistant to medicine. " },
+                  ],
+                  answer: "The quality of being resistant to a disease or illness.",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "How can we protect the human body from infections in a sustainable way? " +
+                      "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
+                    placeholder: "Sustainable ways to produce and consume food are...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+          },
         },
       ],
     },
@@ -2007,7 +2729,148 @@ export const Grade2 = {
               },
             ],
           },
+          minigames: {},
         },
+      ],
+    },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 2 Chapter 3 Lesson 1  // Lesson 26 in curriculum
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+    {
+      navigation: "Chapter3",
+      title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
+      name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
+      icon: require("../../../../assets/chapter-icons/water-cycle.png"),
+      backgroundimage: require("../../../../assets/mastery/bg/ch3.png"),
+      colorOne: "tomato",
+      colorTwo: "firebrick",
+      lessons: [
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
+        {
+          navigation: "Lesson1",
+          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
+          backgroundColor: "#49326B",
+          minigames: {
+            snapshot: { //correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take a picture of an item undergoing change from one state of matter to another.",
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              image:  "../../../../assets/nat.jpg",
+              content: [
+                {
+                  prompt: "Which of the following is a state of matter?",
+                  answers: [
+                    { text: "Solid" },
+                    { text: "Liquid" },
+                    { text: "Gas" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "When something freezes, what state of matter does it start and then end in?",
+                  answers: [
+                    { text: "Solid to liquid state" },
+                    { text: "Liquid to gaseous state" },
+                    { text: "Solid state to gaseous state" },
+                    { text: "Liquid to solid state" },
+                  ],
+                  answer: "Liquid to solid state",
+                },
+                {
+                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
+                  answers: [
+                    { text: "Gas" },
+                    { text: "Solid" },
+                    { text: "Liquid" },
+                    { text: "None of the above" },
+                  ],
+                  answer: "Gas",
+                }
+              ]
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
+                    placeholder: "When we change an object from one state to another ...",
+                    image: require("../../../../assets/mastery/state-of-matter.png"),
+                  },
+                ],
+              },
+            },
+          },
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/heart-rate.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/doctor.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c3l1_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/rosemary.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l1_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/raisins.png"),
+              },
+            ],
+          },
+          
+        },
+
+        // not complete up until this point 
+
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 2 Chapter 3 Lesson 2 
@@ -2813,7 +3676,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 9 
+        Grade 1 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2821,7 +3684,70 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l9")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
           backgroundColor: "#9DCD5A",
-          minigames: {},
+          minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Take a picture of a scientific discovery that you use on a daily basis.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What of the following is the best definition of humus",
+                  answers: [
+                    { text: "Matter in soil made out of the remains of plants and animals" },
+                    { text: "Minerals in soil." },
+                    { text: "Grass that grows on top of the soil." },
+                    { text: "Rocks embedded in the soil" },
+                  ],
+                  answer: "Matter in soil made out of the remains of plants and animals.",
+                },
+                {
+                  prompt: "Humus is more abundant in the upper layers of the soil than the lower layers.",
+                  answers: [
+                    { text: "True" },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
+                  answers: [
+                    { text: "True" },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt: "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
+                  answers: [
+                    {
+                      text: "Wind and water",
+                    },
+                    {
+                      text: "Solar heat",
+                    },
+                    {
+                      text: "Living organisms",
+                    },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l9_prompt")}</Translation>
@@ -2866,7 +3792,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 10 
+        Grade 1 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2874,7 +3800,58 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l10")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
           backgroundColor: "#F9A949",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What is the best explanation for why air permeability is important for soil?",
+                  answers: [
+                    { text: "Without it the worms will die " },
+                    { text: "This allows air through the soil, which is needed or else plant roots will die. " },
+                    { text: "It lets rain through." },
+                    { text: "None of the above." },
+                  ],
+                  answer: "This allows air through the soil, which is needed or else plant roots will die.",
+                },
+                {
+                  prompt: "Which of the following is the best definition of water permeability? ",
+                  answers: [
+                    { text: "It describes the type of water needed for the soil." },
+                    { text: "It is the ability of the soil to support worms and insects." },
+                    { text: "It explains the pH of the soil." },
+                    { text: "It is the ability of the soil to absorb and transmit water." },
+                  ],
+                  answer: "It is the ability of the soil to absorb and transmit water.",
+                },
+                {
+                  prompt: "Which of the following processes directly threatens the abundance of soil?",
+                  answers: [
+                    { text: "Earthquakes" },
+                    { text: "Pollution" },
+                    { text: "Erosion" },
+                    { text: "Evaporation" },
+                  ],
+                  answer: "Erosion",
+                },
+                {
+                  prompt: "The life of humans, animals, and plants are all dependent on the existence of soil. ",
+                  answers: [
+                    { text: "True" },
+                    {
+                      text: "False",
+                    },
+                  ],
+                  answer: "True",
+                },
+              ],
+            },
+
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l10_prompt")}</Translation>
@@ -2920,7 +3897,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 11 
+        Grade 1 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2928,7 +3905,55 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l11")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
           backgroundColor: "#76B9F0",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "Which of the following statements is true about soil?",
+                  answers: [
+                    { text: "All of the following" },
+                    { text: "Dark soil is rich in humus." },
+                    { text: "Red soil is rich in iron." },
+                    { text: "Light soil is poor in minerals and humus." },
+                  ],
+                  answer: "All of the following.",
+                },
+                {
+                  prompt: "Clay soil absorbs water well and does not stick together. ",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+                {
+                  prompt: "Which of the following is the main property of sandy soil?",
+                  answers: [
+                    { text: "It is very loose." },
+                    { text: "Is is easy for water to pass through it" },
+                    { text: "It heats up and cools down quickly" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
+                  answers: [
+                    { text: "Chernozem" },
+                    { text: "Clay" },
+                    { text: "Humus soil" },
+                    { text: "Sand" },
+                  ],
+                  answer: "Chernozem",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l11_prompt")}</Translation>
@@ -2956,24 +3981,14 @@ export const Grade2 = {
                   <Translation>{(t) => t("mastery:g2c3l11_card4")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/grass.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l11_card5")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l11_card6")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/soil-layers.png"),
-              },
+              },       
             ],
           },
         },
+        
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 12 
+        Grade 1 Chapter 3 Lesson 12 Lessons 41 and 42
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2981,7 +3996,73 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l12")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/earth.png"),
           backgroundColor: "#49326B",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What are the spheres of the earth?",
+                  answers: [
+                    { text: "Biosphere and lithosphere" },
+                    { text: "Hydrosphere and atmosphere" },
+                    { text: "Both answers are correct" },
+                    { text: "Neither answers are correct" },
+                  ],
+                  answer: "Both answers are correct.",
+                },
+                {
+                  prompt: "Which of the following is the best definition of the atmosphere of the earth? ",
+                  answers: [
+                    { text: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers." },
+                    { text: "A solid shell that surrounds Earth, holding in the gasses needed for plants." },
+                    { text: "A shell made up of gas, consisting of only one layer that protects the earth from asteroids." },
+                    { text: "A solid shell that is only responsible for creating weather. " },
+                  ],
+                  answer: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
+                },
+                {
+                  prompt: "Which of the following is the main property of sandy soil?",
+                  answers: [
+                    { text: "It is very loose." },
+                    { text: "Is is easy for water to pass through it" },
+                    { text: "It heats up and cools down quickly" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+                {
+                  prompt: "The lithosphere is the upper solid shell of the Earth.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "Ture",
+                },
+                {
+                  prompt: "What inhabits the biosphere on Earth? ",
+                  answers: [
+                    { text: "3 million species of plants, animals, fungi and bacteria." },
+                    { text: "Earth’s core." },
+                    { text: "The troposphere." },
+                    { text: "Glaciers." },
+                  ],
+                  answer: "Glaciers",
+                },
+                {
+                  prompt: "The lithosphere has never moved, and never will.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "False",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l12_prompt")}</Translation>
@@ -3005,47 +4086,12 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/drawing.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/thesun.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card5")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card6")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/pencil-and-ruler.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card7")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/mercury.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card8")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/venus.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c3l12_card9")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/earth.png"),
-              },
             ],
           },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 13 
+        Grade 1 Chapter 3 Lesson 13 lessons 43 and 44
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3053,7 +4099,48 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l13")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
           backgroundColor: "#02084B",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt:
+                    "What is the main way that space is explored?",
+                  answers: [
+                    { text: "Automatic spacecrafts" },
+                    { text: "Manned space flights" },
+                    { text: "Both answers are correct" },
+                    { text: "Neither answer is correct" },
+                  ],
+                  answer: "Both answers are correct",
+                },
+                {
+                  prompt: "In what year was the first human flight to space?",
+                  answers: [
+                    { text: "1961" },
+                    { text: "1990" },
+                    { text: "1947" },
+                    { text: "1968" },
+                  ],
+                  answer: "1961",
+                },
+                {
+                  prompt: "Which of the following advancements were created in connection with the development of the space industry?",
+                  answers: [
+                    { text: "Solar batteries" },
+                    { text: "Water filters" },
+                    { text: "Digital cameras" },
+                    { text: "All of the above" },
+                  ],
+                  answer: "All of the above",
+                },
+
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l13_prompt")}</Translation>
@@ -3104,7 +4191,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 14 
+        Grade 1 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3112,7 +4199,44 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c3l14")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
-          minigames: {},
+          minigames: {
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              content: [
+                {
+                  prompt: "What is the best explanation for why there are different time zones in different places? ",
+                  answers: [
+                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
+                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
+                    { text: "The earth revolves around the moon, making it night time on one half of the earth." },
+                    { text: "None of the above." },
+                  ],
+                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
+                },
+                {
+                  prompt: "The earth rotates around the ____.",
+                  answers: [
+                    { text: "Moon" },
+                    { text: "Sun" },
+                    { text: "Other planets" },
+                    { text: "Milky way" },
+                  ],
+                  answer: "Sun",
+                },
+                {
+                  prompt: "The earth rotates around an axis AND revolves around the sun.",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "Ture",
+                },
+              ],
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
@@ -3163,7 +4287,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 1 
+        Grade 1 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3806,3 +4930,4 @@ export const Grade2 = {
     },
   ],
 };
+
