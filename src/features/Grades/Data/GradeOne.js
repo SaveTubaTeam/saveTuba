@@ -1,5 +1,4 @@
 import { Translation } from "react-i18next";
-
 import {
   SortingImages,
   QuizImages,
@@ -247,6 +246,7 @@ export const Grade1 = {
             ),
             cards: [
               {
+                icon: require("../../../../assets/camera.png"),
                 text: (
                   <Translation>{(t) => t("mastery:g1c1l2_card1")}</Translation>
                 ),

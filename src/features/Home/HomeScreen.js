@@ -67,7 +67,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          //onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -85,7 +85,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          //onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>

@@ -25,6 +25,7 @@ const Row = styled.View`
   align-items: center;
 `;
 
+//This is important!
 export function PersonalCard(props) {
   const { t } = useTranslation();
 

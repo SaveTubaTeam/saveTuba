@@ -2493,6 +2493,74 @@ export const Grade2 = {
               },
             },
           },
+          minigames: {
+            minigames: {
+              snapshot: { // correct
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Take a picture of a common unhealthy food in your household.",
+              },
+              quiz: { // correct
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+
+                  {
+                    prompt:
+                      "True or False: The heart is responsible for the movement of blood in the body?",
+                    answers: [
+                      { text: "True" },
+                      { text: "False" },
+                    ],
+                    answer: "True",
+                  },
+                  {
+                    prompt:
+                      "Which of the following is the responsibility of blood in the body?",
+                    answers: [
+                      { text: "Warm the body." },
+                      { text: "Spread oxygen and nutrients to organs and tissues." },
+                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
+                      { text: "All of the above." },
+                    ],
+                    answer: "All of the above.",
+                  },
+                  {
+                    prompt:
+                      "What do arteries do?",
+                    answers: [
+                      { text: "Carry food that has been digested" },
+                      { text: "Carry carbon dioxide" },
+                      { text: "Carry blood" },
+                      { text: "None of the above" },
+                    ],
+                    answer: "Carry blood",
+                  },
+                ],
+              },
+              openresponse: { // correct
+                navigation: "Image Boom",
+                title: (
+                  <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                  numberOfPrompts: 1,
+                  prompts: [
+                    {
+                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
+                      image: require("../../../../assets/openresponse/innovation.png"),
+                    },
+                  ],
+                },
+              },
+            },
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2607,11 +2675,6 @@ export const Grade2 = {
         },
       ],
     },
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 1  // Lesson 26 in curriculum
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
     {
       navigation: "Chapter3",
       title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
@@ -2735,21 +2798,7 @@ export const Grade2 = {
     },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 1  // Lesson 26 in curriculum
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-    {
-      navigation: "Chapter3",
-      title: <Translation>{(t) => t("common:chapterthree")}</Translation>, // Chapter 3
-      name: <Translation>{(t) => t("gradetwo:substances")}</Translation>, // Substances and their properties
-      icon: require("../../../../assets/chapter-icons/water-cycle.png"),
-      backgroundimage: require("../../../../assets/mastery/bg/ch3.png"),
-      colorOne: "tomato",
-      colorTwo: "firebrick",
-      lessons: [
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4200,69 +4249,42 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
           minigames: {
-            quiz: {
+            quiz: { // correct
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
+              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
-                  prompt: 
-                    "What is the best explanation for why there are different time zones in different places?",
+                  prompt: "What is the best explanation for why there are different time zones in different places? ",
                   answers: [
-                    { text: "The sun revolves around the earth, making it light in some places and dark in others." },
-                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others." },
+                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
+                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
                     { text: "The earth revolves around the moon, making it night time on one half of the earth." },
-                    { text: "None of the above." }
+                    { text: "None of the above." },
                   ],
-                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others."
+                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
                 },
                 {
-                  prompt: "The earth rotates around the ____. ",
+                  prompt: "The earth rotates around the ____.",
                   answers: [
                     { text: "Moon" },
                     { text: "Sun" },
                     { text: "Other planets" },
                     { text: "Milky way" },
                   ],
-                  answer: "Sun"
+                  answer: "Sun",
                 },
                 {
-                  prompt: "True or False: The earth rotates around an axis AND revolves around the sun.",
+                  prompt: "The earth rotates around an axis AND revolves around the sun.",
                   answers: [
                     { text: "True" },
                     { text: "False" },
                   ],
-                  answer: "True"
-                }
-              ]
+                  answer: "Ture",
+                },
+              ],
             },
-            snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: 
-                "Take multiple pictures of the Sun as it rises, stays, and sets."
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ),
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What measures can be taken to reduce the amount of space debris and pollution in Earth's orbit?",
-                    placeholder: "The plants I see everyday are...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
-                ],
-              },
-            }
           },
           mastery: {
             prompt: (
