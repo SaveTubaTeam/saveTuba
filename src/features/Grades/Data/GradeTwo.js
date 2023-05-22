@@ -2749,7 +2749,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+        Grade 2 Chapter 3 Lesson 1 (lesson 26 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2873,7 +2873,7 @@ export const Grade2 = {
 
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 2 
+        Grade 2 Chapter 3 Lesson 2 (lesson 27 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2981,7 +2981,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 3 
+        Grade 2 Chapter 3 Lesson 3 (lesson 28 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3102,7 +3102,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 4  // lesson 29
+        Grade 2 Chapter 3 Lesson 4  // lesson 29
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3199,7 +3199,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 5 // lesson 30 & 31
+        Grade 2 Chapter 3 Lesson 5 // lesson 30 & 31
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3347,7 +3347,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 6 //lesson 32
+        Grade 2 Chapter 3 Lesson 6 //lesson 32
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3461,7 +3461,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 7 //lessons 33 & 34
+        Grade 2 Chapter 3 Lesson 7 //lessons 33 & 34
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3561,7 +3561,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 8 //lesson 35
+        Grade 2 Chapter 3 Lesson 8 //lesson 35
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3676,7 +3676,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
+        Grade 2 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3792,7 +3792,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
+        Grade 2 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3897,7 +3897,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
+        Grade 2 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3988,7 +3988,7 @@ export const Grade2 = {
         
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 12 Lessons 41 and 42
+        Grade 2 Chapter 3 Lesson 12 Lessons 41 and 42
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4091,7 +4091,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 13 lessons 43 and 44
+        Grade 2 Chapter 3 Lesson 13 (lessons 43 and 44 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4191,7 +4191,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
+        Grade 2 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4287,7 +4287,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
+        Grade 2 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4334,7 +4334,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 2 
+        Grade 2 Chapter 4 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4401,7 +4401,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 3 
+        Grade 2 Chapter 4 Lesson 3 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4472,7 +4472,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 4 
+        Grade 2 Chapter 4 Lesson 4 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4531,7 +4531,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 5 
+        Grade 2 Chapter 4 Lesson 5 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4594,7 +4594,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 6 
+        Grade 2 Chapter 4 Lesson 6 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4680,7 +4680,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 7 
+        Grade 2 Chapter 4 Lesson 7 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4740,7 +4740,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 8 
+        Grade 2 Chapter 4 Lesson 8 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4752,7 +4752,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 9 
+        Grade 2 Chapter 4 Lesson 9 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4810,7 +4810,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 10 
+        Grade 2 Chapter 4 Lesson 10 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4822,7 +4822,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 11 
+        Grade 2 Chapter 4 Lesson 11 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4876,7 +4876,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 4 Lesson 12 
+        Grade 2 Chapter 4 Lesson 12 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {

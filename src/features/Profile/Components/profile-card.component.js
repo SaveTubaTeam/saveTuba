@@ -17,15 +17,15 @@ import { theme } from "../../../infrastructure/theme";
 // my stuff
 import { View } from "react-native";
 
-const Friends = styled.View`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 50%;
-  align-items: center;
-  margin-right: ${(props) => props.theme.space[2]};
-  justify-content: center;
-  padding: ${(props) => props.theme.sizes[0]};
-`;
+// const Friends = styled.View`
+//   background-color: ${(props) => props.theme.colors.ui.tertiary};
+//   border-radius: ${(props) => props.theme.sizes[2]};
+//   width: 50%;
+//   align-items: center;
+//   margin-right: ${(props) => props.theme.space[2]};
+//   justify-content: center;
+//   padding: ${(props) => props.theme.sizes[0]};
+// `;
 
 const Achievements = styled.View`
   background-color: ${(props) => props.theme.colors.ui.primary};
@@ -71,7 +71,7 @@ export function ProfileCard({ currentUser, store }) {
         <TitleText size="subtitle">{currentUser?.username}</TitleText>
 
         <Spacer size="medium" />
-        <Row>
+        {/* <Row>
           <Friends>
             <BodyText color="secondary">
               {t("profile:friends")} {currentUser?.friendCount}
@@ -82,7 +82,7 @@ export function ProfileCard({ currentUser, store }) {
               {t("profile:grade")} {currentUser?.level}
             </BodyText>
           </Achievements>
-        </Row>
+        </Row> */}
         <ProgressBar currentUser={currentUser} />
       </AvatarContainer>
     </Card>
