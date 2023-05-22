@@ -122,12 +122,14 @@ const LoginScreen = () => {
         <InputContainer>
           <Input
             placeholder={t("common:email")} //Email
+            placeholderTextColor="#696969"
             value={email}
             onChangeText={(text) => setEmail(text)}
             autoCapitalize="none"
           />
           <Input
             placeholder={t("common:password")} //Password
+            placeholderTextColor="#696969"
             value={password}
             onChangeText={(text) => setPassword(text)}
             autoCapitalize="none"
