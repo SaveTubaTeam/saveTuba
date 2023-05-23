@@ -3,8 +3,8 @@ import { React } from 'react';
 
 import {
   SortingImages,
-  // QuizImages,
-  // TestImages,
+  QuizImages,
+  TestImages,
 } from "../../../components/Grades/minigames/IMAGES";
 
 export const Grade2 = {
