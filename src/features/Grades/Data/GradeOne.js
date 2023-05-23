@@ -52,98 +52,98 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Choose the image which represents the object below.",
+                prompt: "Выберите изображение, которое представляет объект ниже.",
                 num: 4,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
-                    name: "Electron microscope",
+                    name: "Электрический Микроскоп",
                     image: require("../../../../assets/sorting/microscope.png"),
                   },
                   {
-                    name: "Optical microscope",
+                    name: "Оптический Микроскоп",
                     image: require("../../../../assets/sorting/optical.png"),
                   },
                   {
-                    name: "Beaker",
+                    name: "Стакан",
                     image: require("../../../../assets/sorting/beaker.png"),
                   },
                   {
-                    name: "Ruler",
+                    name: "Линейка",
                     image: require("../../../../assets/sorting/ruler.png"),
                   },
                 ],
                 options: [
                   {
-                    title: "Ruler",
-                    name: "Ruler",
+                    title: "Линейка",
+                    name: "Линейка",
                   },
                   {
-                    title: "Beaker",
-                    name: "Beaker",
+                    title: "Стакан",
+                    name: "Стакан",
                   },
                   {
-                    title: "Optical microscope",
-                    name: "Optical microscope",
+                    title: "Оптический Микроскоп",
+                    name: "Оптический Микроскоп",
                   },
-                  { title: "Electron microscope", name: "Electron microscope" },
+                  { title: "Электрический Микроскоп", name: "Электрический Микроскоп" },
                 ],
               },
             },
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different sources of information.",
+              description: "Сопоставьте различные источники информации.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Observation",
+                  name: "Открытие",
                   image: require("../../../../assets/memory/laboratory.png"),
                 },
                 {
-                  name: "Observation",
+                  name: "Открытие",
                 },
                 {
                   type: "image",
-                  name: "Other people",
+                  name: "Другие люди",
                   image: require("../../../../assets/memory/people.png"),
                 },
                 {
-                  name: "Other people",
+                  name: "Другие люди",
                 },
                 {
                   type: "image",
-                  name: "Internet",
+                  name: "Интернет",
                   image: require("../../../../assets/memory/world-grid.png"),
                 },
                 {
-                  name: "Internet",
+                  name: "Интернет",
                 },
                 {
                   type: "image",
-                  name: "Books",
+                  name: "Книги",
                   image: require("../../../../assets/memory/book.png"),
                 },
                 {
-                  name: "Books",
+                  name: "Книги",
                 },
                 {
                   type: "image",
-                  name: "Experiments",
+                  name: "Эксперименты",
                   image: require("../../../../assets/memory/experiment.png"),
                 },
                 {
-                  name: "Experiments",
+                  name: "Эксперименты",
                 },
                 {
                   type: "image",
-                  name: "Yourself",
+                  name: "Человек",
                   image: require("../../../../assets/memory/girl.png"),
                 },
                 {
-                  name: "Yourself",
+                  name: "Человек",
                 },
               ],
             },
@@ -153,7 +153,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Upload a picture of the sustainable invention that you described in the Open Response mini-game.",
+                "Загрузите фотографию устойчивого изобретения, описанного в мини-игре Open Response.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -166,8 +166,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Using one of the sources of information, find out about a sustainable invention. Which scientist contributed the most in its development?",
-                    placeholder: "This invention is important because..",
+                    text: "Используя один из источников информации, узнайте о устойчивом изобретении. Какой ученый внес наибольший вклад в его развитие?",
+                    placeholder: "Это изобретение важно, потому что...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -263,74 +263,74 @@ export const Grade1 = {
               content: [
                 {
                   prompt:
-                    "Astronomers use what kind of building to observe objects through powerful telescopes?",
+                    "Астрономы используют какое здание для наблюдения за объектами через мощные телескопы?",
                   answers: [
                     {
-                      text: "Planetarium",
+                      text: "Планетарий",
                     },
                     {
-                      text: "Observatory",
+                      text: "Обсерватория",
                     },
                     {
-                      text: "Museum",
+                      text: "Музей",
                     },
-                    { text: "Tower" },
+                    { text: "Башня" },
                   ],
-                  answer: "Observatory",
+                  answer: "Обсерватория",
                 },
                 {
-                  prompt: "What is not a human sense?",
+                  prompt: "Что не является человеческим чувством?",
                   answers: [
                     {
-                      text: "Sight",
+                      text: "Зрение",
                     },
                     {
-                      text: "Hearing",
+                      text: "Слух",
                     },
                     {
-                      text: "Smell",
+                      text: "Обоняние",
                     },
-                    { text: "Intuition" },
+                    { text: "Интуиция" },
 
-                    { text: "Taste" },
+                    { text: "Вкус" },
 
-                    { text: "Touch" },
+                    { text: "Касание" },
                   ],
-                  answer: "Intuition",
+                  answer: "Интуиция",
                 },
                 {
                   prompt:
-                    "Observation is the main method of learning about nature.",
+                    "Наблюдение - это основной метод изучения природы.",
                   answers: [
                     {
-                      text: "True",
+                      text: "Правда",
                     },
                     {
-                      text: "False",
+                      text: "Ложь",
                     },
                   ],
-                  answer: "True",
+                  answer: "Правда",
                 },
                 {
-                  prompt: "What is not a type of natural scientist?",
+                  prompt: "Что не относится к типу естествоиспытателей?",
                   answers: [
                     {
-                      text: "Biologist",
+                      text: "Биолог",
                     },
                     {
-                      text: "Chemist",
+                      text: "Химик",
                     },
                     {
-                      text: "Physicist",
+                      text: "Физик",
                     },
                     {
-                      text: "Astronomer",
+                      text: "Астронафт",
                     },
                     {
-                      text: "Economist",
+                      text: "Экономик",
                     },
                   ],
-                  answer: "Economist",
+                  answer: "Экономик",
                 },
               ],
             },
@@ -339,40 +339,40 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Reorder the below items to show which steps you need to take when designing an experiment.",
+                "Упорядочите приведенные ниже пункты, чтобы показать, какие шаги необходимо предпринять при разработке эксперимента.",
               data: [
                 {
-                  text: "	Think about the necessary equipment",
+                  text: "Подумать о необходимом оборудовании",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Think about the stages of observation",
+                  text: "Подумать об этапах наблюдения",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Choose the timeframe of observation",
+                  text: "Выбрать временные рамки наблюдения",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Choose an object for observation",
+                  text: "Выбрать объект для наблюдения",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Write down or draw the observation",
+                  text: "Записать или нарисовать наблюдение",
                   dormant: "#19a127",
                   active: "#169023",
                 },
                 {
-                  text: "Create a goal of observation",
+                  text: "Выбрать цель наблюдения",
                   dormant: "#d38f9f",
                   active: "#cd8193",
                 },
                 {
-                  text: "Make a conclusion",
+                  text: "Сделать вывод",
                   dormant: "#6e57d2",
                   active: "#634ebd",
                 },
@@ -389,8 +389,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Pick a random object \naround you. Complete the sentence.",
-                    placeholder: "Observing this object, I noticed..",
+                    text: "Выберите случайный предмет \nвокруг вас. Завершите предложение.",
+                    placeholder: "Наблюдая за этим предметом, я понял...",
                     image: require("../../../../assets/openresponse/observing.png"),
                   },
                 ],
@@ -402,7 +402,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/feild-bg.jpg"),
               prompt:
-                "Take a walk and take a picture of a dandelion. Upload your photo below.",
+                "Прогуляйтесь и сфотографируйте одуванчик. Загрузите свою фотографию ниже.",
             },
           },
         },
