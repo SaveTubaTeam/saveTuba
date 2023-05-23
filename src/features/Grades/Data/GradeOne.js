@@ -655,7 +655,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
 
               backgroundImage: require("../../../../assets/snapshots/plant-bg.jpg"),
-              prompt: "What's your favorite plant? Take a picture.",
+              prompt: "Какое ваше любимое растение? Сфотографируйте.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -668,8 +668,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What's going on in this photo? How do you think this affects the environment?",
-                    placeholder: "I think that..",
+                    text: "Что происходит на этой фотографии? Как вы думаете, как это влияет на окружающую среду?",
+                    placeholder: "Я думаю, что...",
                     image: require("../../../../assets/openresponse/deforestation.png"),
                   },
                 ],
@@ -680,27 +680,27 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "In which part of the plant is this obtained?",
+                prompt: "В какой части растения это находится?",
                 num: 4,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
-                    name: "Roots",
+                    name: "Листья",
                   },
                   {
-                    name: "Leaves",
+                    name: "Корень",
                   },
                 ],
                 options: [
-                  { title: "Water", name: "Roots" },
+                  { title: "Вода", name: "Корни" },
                   {
-                    title: "Air",
-                    name: "Leaves",
+                    title: "Воздух",
+                    name: "Листья",
                   },
-                  { title: "Mineral plant substances", name: "Roots" },
+                  { title: "Минеральные вещества растений", name: "Корни" },
                   {
-                    title: "Solar energy",
-                    name: "Leaves",
+                    title: "Солнечная энергия",
+                    name: "Листья",
                   },
                 ],
               },
@@ -744,8 +744,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How does this plant (a cactus) survive in a place without water?",
-                    placeholder: "A cactus..",
+                    text: "Как это растение (кактус) выживает в месте, где нет воды?",
+                    placeholder: "Кактус..",
                     image: require("../../../../assets/openresponse/desert.png"),
                   },
                 ],
@@ -754,73 +754,73 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different natural habitats.",
+              description: "Сопоставьте различные природные среды обитания.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Polar",
+                  name: "Полярный круг",
                   image: require("../../../../assets/memory/polar.png"),
                 },
                 {
-                  name: "Polar",
+                  name: "Полярный круг",
                 },
                 {
                   type: "image",
-                  name: "Tundra",
+                  name: "Тундра",
                   image: require("../../../../assets/memory/tundra.png"),
                 },
                 {
-                  name: "Tundra",
+                  name: "Тундра",
                 },
                 {
                   type: "image",
-                  name: "Evergreen forests",
+                  name: "Вечнозеленые леса",
                   image: require("../../../../assets/memory/evergreen.png"),
                 },
                 {
-                  name: "Evergreen forests",
+                  name: "Вечнозеленые леса",
                 },
                 {
                   type: "image",
-                  name: "Seasonal forests",
+                  name: "Сезонные леса",
                   image: require("../../../../assets/memory/seasonal.png"),
                 },
                 {
-                  name: "Seasonal forests",
+                  name: "Сезонные леса",
                 },
                 {
                   type: "image",
-                  name: "Grasslands",
+                  name: "Пастбище",
                   image: require("../../../../assets/memory/grasslands.png"),
                 },
                 {
-                  name: "Grasslands",
+                  name: "Пастбище",
                 },
                 {
                   type: "image",
-                  name: "Deserts",
+                  name: "Пустыня",
                   image: require("../../../../assets/memory/deserts.png"),
                 },
                 {
-                  name: "Deserts",
+                  name: "Пустыня",
                 },
                 {
                   type: "image",
-                  name: "Rainforests",
+                  name: "Дождевые леса",
                   image: require("../../../../assets/memory/rainforests.png"),
                 },
                 {
-                  name: "Rainforests",
+                  name: "Дождевые леса",
                 },
                 {
                   type: "image",
-                  name: "Oceans",
+                  name: "Океан",
                   image: require("../../../../assets/memory/oceans.png"),
                 },
                 {
-                  name: "Oceans",
+                  name: "Океан",
                 },
               ],
             },
@@ -830,7 +830,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/earth-bg.jpg"),
               prompt:
-                "Take a picture of a habitat in which your favorite plant grows.",
+                "Сфотографируйте среду обитания, в которой растет ваше любимое растение.",
             },
           },
         },
@@ -1979,91 +1979,91 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "Everyone has a carbon footprint",
+                  prompt: "У каждого человека есть углеродный след",
                   answers: [
                     {
-                      text: "True",
+                      text: "Правда",
                     },
                     {
-                      text: "False",
+                      text: "Ложь",
                     },
                   ],
-                  answer: "True",
+                  answer: "Правда",
                 },
                 {
                   prompt:
-                    "Which is not going to help reduce our carbon footprint?",
+                    "Что не поможет уменьшить наш углеродный след?",
                   answers: [
                     {
-                      text: "Eating local food",
+                      text: "Употребление местной пищи",
                     },
                     {
-                      text: "Recycling",
+                      text: "Переработка",
                     },
                     {
-                      text: "Driving to school",
+                      text: "Ездить в школу",
                     },
-                    { text: "Planting trees" },
+                    { text: "Посадка деревьев" },
                   ],
-                  answer: "Driving to school",
+                  answer: "Ездить в школу",
                 },
                 {
                   prompt:
-                    "What gas is increasing in large amounts due to human activities?",
+                    "Какой газ увеличивается в больших количествах из-за деятельности человека?",
                   answers: [
                     {
-                      text: "Carbon Dioxide",
+                      text: "Углекислый газ",
                     },
                     {
-                      text: "Oxygen",
+                      text: "Кислород",
                     },
-                    { text: "Diesel" },
+                    { text: "Дизель" },
                   ],
-                  answer: "Carbon Dioxide",
+                  answer: "Углекислый газ",
                 },
                 {
-                  prompt: "What is the name of the gas that plants take in?",
+                  prompt: "Как называется газ, который поглощают растения?",
                   answers: [
                     {
-                      text: "Gas",
+                      text: "Газ",
                     },
                     {
-                      text: "Methane",
+                      text: "Метан",
                     },
                     {
-                      text: "Oxygen",
+                      text: "Кислород",
                     },
                     {
-                      text: "Carbon Dioxide",
+                      text: "Углекислый газ",
                     },
                   ],
-                  answer: "Carbon Dioxide",
+                  answer: "Углекислый газ",
                 },
                 {
                   prompt:
-                    "Which one of these does not add CO2 into the atmosphere?",
+                    "Что из перечисленного не добавляет CO2 в атмосферу?",
                   answers: [
-                    { text: "Cooking with gas" },
-                    { text: "Planting trees" },
-                    { text: "Burning wood" },
-                    { text: "Riding in a bus" },
+                    { text: "Готовим на газе" },
+                    { text: "Посадка деревьев" },
+                    { text: "Сжигание древесины" },
+                    { text: "Ехать в автобусе" },
                   ],
-                  answer: "Planting trees",
+                  answer: "Посадка деревьев",
                 },
                 {
-                  prompt: "What is CO2?",
+                  prompt: "Что такое CO2?",
                   answers: [
-                    { text: "Carbon" },
-                    { text: "Oxygen" },
-                    { text: "Carbon Dioxide" },
-                    { text: "A type of fizzy drink" },
+                    { text: "Углерод" },
+                    { text: "Кислород" },
+                    { text: "Углекислый газ" },
+                    { text: "Тип шипучего напитка" },
                   ],
-                  answer: "Carbon Dioxide",
+                  answer: "Углекислый газ",
                 },
                 {
-                  prompt: "While being cooled down, the air _____.",
-                  answers: [{ text: "Expands" }, { text: "Contracts" }],
-                  answer: "Contracts",
+                  prompt: "В процессе охлаждения воздух _____.",
+                  answers: [{ text: "Увеличивается" }, { text: "Сокращается" }],
+                  answer: "Сокращается",
                 },
               ],
             },
@@ -2078,8 +2078,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Why don't animals get cold in the winter?",
-                    placeholder: "Animals don't get cold because..",
+                    text: "Почему животные не мерзнут зимой?",
+                    placeholder: "Животные не мерзнут потому что...",
                     image: require("../../../../assets/openresponse/winter.png"),
                   },
                 ],
@@ -2091,7 +2091,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Take and upload three pictures of different things that pollute the air in the city. ",
+                "Сделайте и загрузите три фотографии различных вещей, загрязняющих воздух в городе.",
             },
 
             sorting: {
@@ -2099,18 +2099,18 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Sort the causes of air pollution",
+                prompt: "Отсоритруйте причины загрязнения воздуха",
                 num: 7,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Anthropogenic" }, { name: "Natural" }],
+                categories: [{ name: "Антропогенные" }, { name: "Натуральные" }],
                 options: [
-                  { title: "Factories", name: "Anthropogenic" },
-                  { title: "Wildfires", name: "Natural" },
-                  { title: "Cars", name: "Anthropogenic" },
-                  { title: "Planes", name: "Anthropogenic" },
-                  { title: "Cigarette Smoke", name: "Anthropogenic" },
-                  { title: "Volcanoes", name: "Natural" },
-                  { title: "Aerosol Cans", name: "Anthropogenic" },
+                  { title: "Фабрики", name: "Антропогенные" },
+                  { title: "Лесные пожары", name: "Натуральные" },
+                  { title: "Машины", name: "Антропогенные" },
+                  { title: "Самолеты", name: "Антропогенные" },
+                  { title: "Дым от сигарет", name: "Антропогенные" },
+                  { title: "Вулканы", name: "Натуральные" },
+                  { title: "Аэрозольные баллоны", name: "Антропогенные" },
                 ],
               },
             },
@@ -2156,56 +2156,56 @@ export const Grade1 = {
               content: [
                 {
                   prompt:
-                    "What happens to the temperature if more greenhouse gases are released into the atmosphere?",
+                    "Что произойдет с температурой, если в атмосферу попадет больше парниковых газов?",
                   answers: [
-                    { text: "Temperature increases" },
-                    { text: "Temperature decreases" },
+                    { text: "Повышение температуры" },
+                    { text: "Снижение температуры" },
                   ],
-                  answer: "Temperature increases",
+                  answer: "Повышение температуры",
                 },
                 {
                   prompt:
-                    "Which of the following activities contributes the most to carbon emissions globally?",
+                    "Какой из перечисленных ниже видов деятельности вносит наибольший вклад в выбросы углерода в глобальном масштабе?",
                   answers: [
-                    { text: "Deforestation" },
-                    { text: "Agriculture" },
-                    { text: "Burning fossil fuels" },
-                    { text: "Respiration" },
+                    { text: "Вырубка лесов" },
+                    { text: "Агрокультура" },
+                    { text: "Сжигание ископаемого топлива" },
+                    { text: "Дыхание" },
                   ],
-                  answer: "Burning fossil fuels",
+                  answer: "Сжигание ископаемого топлива",
                 },
                 {
                   //cant scroll down on this question
                   prompt:
-                    "Increased carbon dioxide may cause global warming by ________.",
+                    "Увеличение содержания углекислого газа может вызвать глобальное потепление за счет ________.",
                   answers: [
-                    { text: "allowing more sunlight into the atmosphere." },
-                    { text: "reflecting more sunlight from clouds." },
-                    { text: "reducing the amount of oxygen in the air." },
-                    { text: "trapping more heat in the atmosphere." },
+                    { text: "пропуская больше солнечного света в атмосферу." },
+                    { text: "отражая больше солнечного света от облаков." },
+                    { text: "уменьшение количества кислорода в воздухе." },
+                    { text: "задерживая больше тепла в атмосфере." },
                   ],
-                  answer: "trapping more heat in the atmosphere.",
+                  answer: "задерживая больше тепла в атмосфере.",
                 },
                 {
-                  prompt: "What is a natural source of greenhouse gases?",
+                  prompt: "Что является естественным источником парниковых газов?",
                   answers: [
-                    { text: "Aerosols" },
-                    { text: "Deforestation" },
-                    { text: "Volcanic eurptions" },
-                    { text: "Burning fossil fuels" },
+                    { text: "Аерозоли" },
+                    { text: "Вырубка лесов" },
+                    { text: "Извержения вулканов" },
+                    { text: "Сжигание ископаемых" },
                   ],
-                  answer: "Volcanic eurptions",
+                  answer: "Извержения вулканов",
                 },
                 {
-                  prompt: "What is the greenhouse effect?",
+                  prompt: "Что такое парниковый эффект?",
                   answers: [
                     {
-                      text: "The warming of a planet due to trapped radiation.",
+                      text: "Потепление планеты из-за задерживаемого излучения.",
                     },
-                    { text: "The cooling of Earth due to air pollution." },
-                    { text: "The heating of a solid, such as a rock." },
+                    { text: "Охлаждение Земли из-за загрязнения воздуха." },
+                    { text: "Нагревание твердого тела, например, камня." },
                   ],
-                  answer: "The warming of a planet due to trapped radiation.",
+                  answer: "Потепление планеты из-за задерживаемого излучения.",
                 },
               ],
             },
@@ -2220,7 +2220,7 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Make a plan of how you will avoid polluting the air. ",
+                    text: "Составьте план, как вы будете избегать загрязнения воздуха. ",
                     placeholder: "My plan is...",
                     image: require("../../../../assets/openresponse/smog.png"),
                   },
@@ -2233,7 +2233,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Upload a picture of the factory that causes the most air pollution in the area",
+                "Загрузите фотографию завода, который вызывает наибольшее загрязнение воздуха в районе",
             },
             sorting: {
               navigation: "Sorting",
@@ -2241,47 +2241,47 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Determine how each action reduces, resues, or recycles",
+                  "Определите, как каждое действие сокращает, возобновляет или перерабатывает ресурсы",
                 num: 11,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
-                  { name: "Reduce" },
-                  { name: "Reuse" },
-                  { name: "Recycle" },
+                  { name: "сокращает" },
+                  { name: "возобновляет" },
+                  { name: "перерабатывает" },
                 ],
                 options: [
                   {
                     title:
-                      "Refill a water bottle with water from home instead of buying a new one.",
-                    name: "Reuse",
+                      "Наполните бутылку с водой водой из дома вместо того, чтобы покупать новую.",
+                    name: "возобновляет",
                   },
-                  { title: "Separating glass", name: "Recycle" },
+                  { title: "Разделение стекла", name: "перерабатывает" },
                   {
                     title:
-                      "Update your computer rather than throwing it out and getting a replacement",
-                    name: "Reuse",
+                      "Обновляйте свой компьютер вместо того, чтобы выбрасывать его и покупать новый",
+                    name: "возобновляет",
                   },
-                  { title: "Only buy what you need", name: "Reduce" },
-                  { title: "Separating aluminum", name: "Recycle" },
+                  { title: "Покупайте только то, что вам нужно", name: "сокращает" },
+                  { title: "Разделение алюминия", name: "перерабатывает" },
                   {
                     title:
-                      "Look for items that you can reuse instead of buying ",
-                    name: "Reduce",
+                      "Ищите предметы, которые можно использовать повторно вместо покупки",
+                    name: "сокращает",
                   },
-                  { title: "Buy in bulk", name: "Reduce" },
+                  { title: "Покупайте оптом", name: "сокращает" },
                   {
-                    title: "Separating cardboard to put in recycling facility",
-                    name: "Recycle",
+                    title: "Разделение картона для сдачи на переработку",
+                    name: "перерабатывает",
                   },
-                  { title: "Separating lead batteries", name: "Recycle" },
+                  { title: "Разделение свинцовых аккумуляторов", name: "перерабатывает" },
                   {
                     title:
-                      "Ditch plastic bags and choose reusable, environmentally-friendly bags instead",
-                    name: "Reuse",
+                      "Откажитесь от пластиковых пакетов и выбирайте вместо них многоразовые, экологически чистые сумки",
+                    name: "возобновляет",
                   },
                   {
-                    title: "Choose products with less packaging",
-                    name: "Reduce",
+                    title: "Выбирайте продукты с меньшим количеством упаковки",
+                    name: "сокращает",
                   },
                 ],
               },
