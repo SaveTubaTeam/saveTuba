@@ -137,8 +137,8 @@ const Start = ({ data }) => {
             <View>
               <BodyText size="subtitle">
                 {correct == true
-                  ? "Правильно! Хорошая работа ✨"
-                  : "Неправильно! Удачи в следующий раз 🍀"}
+                  ? "That's right! Good job ✨"
+                  : "Incorrect! Better luck next time 🍀"}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -169,7 +169,7 @@ const Start = ({ data }) => {
                 } else {
                   navigation.navigate("SecondScreen", {
                     score: score,
-                    prompt: "Поздравляем! Вы завершили свою первую сортировочную контрольный опрос!"
+                    prompt: "Congratulations, you've just finished your first quiz! Go back to the lesson to continue learning!"
                   });
                 }
               }}
