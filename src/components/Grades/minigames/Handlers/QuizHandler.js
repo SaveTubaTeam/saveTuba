@@ -86,7 +86,7 @@ const SecondScreen = ({ data }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Prompt>
           <TitleText>
-          Поздравляем! Вы завершили свою первую сортировочную контрольный опрос!{" "}
+            Поздравляем! Вы завершили свою первую сортировочную контрольный опрос!{" "}
           </TitleText>
           <Spacer size="large" />
           <SubmitButton onPress={() => navigation.navigate("Lesson")}>
@@ -277,7 +277,7 @@ const QuizHandler = ({ data, navigation, route, currentUser, addAchievement }) =
         {() => <Start data={data} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}/>
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem} />
     </Stack.Navigator>
   );
 };
