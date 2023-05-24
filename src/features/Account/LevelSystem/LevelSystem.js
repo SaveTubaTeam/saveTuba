@@ -46,7 +46,7 @@ class LevelSystem extends Component {
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
             {prompt}
-            {"\n"} You gained {score * XP_PER_POINT}xp!
+            {"\n"} Ты заработал {score * XP_PER_POINT} опыта!
           </TitleText>
           
           <Spacer size="large" />
@@ -82,7 +82,7 @@ function LevelSystem_({ route, navigation, currentUser }) {
       <Container2 style={{ backgroundColor: "white" }}>
         <TitleText>
           Поздравляем! Вы завершили свою первую сортировочную контрольный опрос!{" "}
-          {"\n"} You gained {score * XP_PER_POINT}xp!
+          {"\n"} Ты заработал {score * XP_PER_POINT} опыта!
         </TitleText>
         <Spacer size="large" />
         <Pressable onPress={() => navigation.navigate("Lesson")}>
