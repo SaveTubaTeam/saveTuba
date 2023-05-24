@@ -336,35 +336,35 @@ export const Grade2 = {
                 },
               ],
             },
-            reorder: { //correct
-              navigation: "Reorder",
-              icon: require("../../../../assets/reorder.png"),
-              backgroundColor: "pink",
-              prompt:
-                "Put the steps in order of how you would run an experiment.",
-              data: [
-                {
-                  text: "Determine the purpose of the study",
-                  dormant: "coral",
-                  active: "#DB756B",
-                },
-                {
-                  text: "Find observations",
-                  dormant: "pink",
-                  active: "#ffacbb",
-                },
-                {
-                  text: "Draw conclusions",
-                  dormant: "dodgerblue",
-                  active: "#3873E0",
-                },
-                {
-                  text: "Formulate a hypothesis",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-              ],
-            },
+            // reorder: { //correct
+            //   navigation: "Reorder",
+            //   icon: require("../../../../assets/reorder.png"),
+            //   backgroundColor: "pink",
+            //   prompt:
+            //     "Put the steps in order of how you would run an experiment.",
+            //   data: [
+            //     {
+            //       text: "Determine the purpose of the study",
+            //       dormant: "coral",
+            //       active: "#DB756B",
+            //     },
+            //     {
+            //       text: "Find observations",
+            //       dormant: "pink",
+            //       active: "#ffacbb",
+            //     },
+            //     {
+            //       text: "Draw conclusions",
+            //       dormant: "dodgerblue",
+            //       active: "#3873E0",
+            //     },
+            //     {
+            //       text: "Formulate a hypothesis",
+            //       dormant: "#ffa500",
+            //       active: "#e59400",
+            //     },
+            //   ],
+            // },
             snapshot: { //correct
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
@@ -3336,35 +3336,35 @@ export const Grade2 = {
                 ],
               },
             },
-            reorder: { //correct
-              navigation: "Reorder",
-              icon: require("../../../../assets/reorder.png"),
-              backgroundColor: "pink",
-              prompt:
-                "Put the following oceans in order from largest to smallest.",
-              data: [
-                {
-                  text: "Pacific",
-                  dormant: "coral",
-                  active: "#DB756B",
-                },
-                {
-                  text: "Atlantic",
-                  dormant: "pink",
-                  active: "#ffacbb",
-                },
-                {
-                  text: "Indian",
-                  dormant: "dodgerblue",
-                  active: "#3873E0",
-                },
-                {
-                  text: "Artic",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-              ],
-            },
+            // reorder: { //correct
+            //   navigation: "Reorder",
+            //   icon: require("../../../../assets/reorder.png"),
+            //   backgroundColor: "pink",
+            //   prompt:
+            //     "Put the following oceans in order from largest to smallest.",
+            //   data: [
+            //     {
+            //       text: "Pacific",
+            //       dormant: "coral",
+            //       active: "#DB756B",
+            //     },
+            //     {
+            //       text: "Atlantic",
+            //       dormant: "pink",
+            //       active: "#ffacbb",
+            //     },
+            //     {
+            //       text: "Indian",
+            //       dormant: "dodgerblue",
+            //       active: "#3873E0",
+            //     },
+            //     {
+            //       text: "Artic",
+            //       dormant: "#ffa500",
+            //       active: "#e59400",
+            //     },
+            //   ],
+            // },
           },
           mastery: {
             prompt: (
