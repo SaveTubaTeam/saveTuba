@@ -7,18 +7,19 @@ export default {
 
   /* CHAPTER 1 */
 
-  g1c1l1_card1: "Spin the globe and stop it with your finger.",
-  g1c1l1_card2:
-    "Did your finger land on a country? If not, spin again. If it did, research the country.",
-  g1c1l1_prompt:
-    "Find a sustainable practice in this country that you can implement on your own. Tell us about it below.",
+  g1c1l1_card1:"Прокрути глобус и останови его пальцем.",
+  g1c1l1_card2: "Попал ли ваш палец на страну? если нет, покрути еще раз. Если да, изучи страну.",
+  g1c1l1_prompt: "Найди устойчивую практику в этой стране, которую ты можешь внедрить самостоятельно. Расскажи нам об этом ниже.",
+ 
 
   /* CHAPTER 2 */
 
-  g1c1l2_card1:
-    "Identify a man-made object that resembles something from nature.",
-  g1c1l2_prompt: "Upload a photo.",
+  g1c1l2_card1: "Определи рукотворный объект, который похож на что-либо из природы.",
+  g1c1l2_prompt: "Загрузи фотографию.",
 
+  // 
+
+  // are there translations for this?
   g1c1l3_card1: "You are now going to perform your first science experiment!",
   g1c1l3_card2: "1. Grab a dinner plate.",
   g1c1l3_card3:
@@ -31,20 +32,24 @@ export default {
     "5. Observe what's happening with the colors. What happens if you add more dish soap?",
   g1c1l3_prompt:
     "Snap a photo of the plate after the experiment and upload it below!",
+  //
 
-  g1c2l1_card1: "Find a pretty plant in your neighborhood.",
-  g1c2l1_card2:
-    "Think about how the plant acquires food and the factors involved in the plant cycle.",
-  g1c2l1_prompt: "Take a photo of the plant and the factors.",
+  g1c2l1_card1: "Найди красивое растение в своем районе.",
+  g1c2l1_card2: "Подумай о том, как растение получает пищу, и о факторах, участвующих в растительном цикле.",
+  g1c2l1_prompt: "Сфотографируй растение и факторы",
   // images here
-  g1c2l2_card1: "Find two plants who have different habitats.",
-  g1c2l2_prompt: "Describe how exactly the plants' habitats differ.",
+  g1c2l2_card1: "Найди два растения, у которых разные места обитания",
+  g1c2l2_prompt: "Опиши как именно различаются места обитания растений.",
+
+  // no translations for this
 
   g1c2l3_card1: "Many animals hatch from eggs.",
   g1c2l3_card2:
     "The egg shells are of no use after the animals are hatched. Or are they?",
   g1c2l3_prompt:
     "Research two different animals and how we could use their egg shells for different purposes.",
+
+  //
 
   g1c2l4_card1: "Many animals hatch from eggs.",
   g1c2l4_card2:
@@ -245,19 +250,22 @@ export default {
   ~~~~~~~~~
   */
 
+  // THIS IS IT!!!
   // correct
-  g2c1l1_card1: "Walk around your house and find a notable scientific discovery.",
+  g2c1l1_card1: "Обойди свой дом и найди выдающееся научное открытие.",
   g2c1l1_card2:
-    "Take a picture of the object and list its functionality. Record any observations you find that stick out to you. ",
+    "Сфотографируй объект и перечисли его функциональные возможности. Запиши все наблюдения, которые тебе бросились в глаза ",
   g2c1l1_prompt:
-    "Rate how sustainable it is. Come up with ideas to make it more sustainable.",
+    "Оцени, насколько он устойчив. Предложи идеи, как сделать его более устойчивым",
 
   // correct
   g2c1l2_card1:
-    "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited.",
+    "Используй свое электронное устройство для изучения простых способов более рационального использования ресурсов в доме. Запиши различные веб-сайты, которые ты посетил",
   g2c1l2_card2:
-    "Record the link and research how reliable this source of information is. Then, identify and list the advantages and disadvantages of this source of information.",
-  g2c1l2_prompt: "Rank this source and its information on a scale of 1(unreliable) to 10(completely reliable).",
+    "Напиши ссылку и исследуй, насколько надежен этот источник информации. Затем определи и перечисли преимущества и недостатки этого источника информации.",
+  g2c1l2_prompt: "Оцени этот источник и содержащую информацию по шкале от 1 (ненадежный) до 10 (абсолютно надежный)",
+
+  // no translation for this
 
   // will need more work to make it look good. I agree with David, there will need to be visual aids
   g2c1l3_card1: "Become a scientist who tests about air pollution!",
@@ -274,18 +282,20 @@ export default {
 
   // Chapter 2
 
-  g2c2l1_card1: "We take in air through our nose and/or mouth.",
+  g2c2l1_card1: "Мы вдыхаем воздух через нос и/или рот",
   g2c2l1_card2:
-    "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible. Obviously, we wouldn’t survive without breathing",
+    "Наш нос фильтрует пыль и опасные частицы, чтобы наши легкие дышали самым лучшим воздухом. Очевидно, что без дыхания мы бы не выжили",
   g2c2l1_prompt:
-    " Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
+    "Найди поблизости нечеловеческий живой организм и изучи его процесс дыхания. Чем их дыхание отличается от твоего дыхания?",
 
   g2c2l2_card1:
-    "Plants exist all over the world in many different conditions. Think of two countries you would like to visit one day.",
+    "Растения растут по всему миру в самых разных условиях. Подумай о двух странах, которые ты хотел бы посетить.",
   g2c2l2_card2:
-    "Find plants native to the respective regions. Compare them to each other.",
+    "Найди растения, характерные для соответствующих регионов. Сравни их друг с другом",
   g2c2l2_prompt:
-    "Explain how they’ve adapted to their living conditions and benefited from them.",
+    "Объясни, как они приспособились к своим условиям жизни и извлекли из них пользу.",
+
+  // No translations
 
   g2c2l3_card1:
     "A plant community consists of different plants that grow in the same area with the same conditions for existence. There are both natural and artificial communities present in our habitat. ",
@@ -440,25 +450,25 @@ export default {
   // Lesson 26
 
   g2c3l1_card1:
-    "There are three different states of substances. They can be in solid, liquid, or gas form.",
+    "Существует три разных состояния веществ. Они могут находиться в твердом, жидком или газообразном состоянии.",
   g2c3l1_card2:
-    "Under the right circumstances, substances can change from one state to another or they can change their states completely from top to bottom.",
+    "При правильных условиях вещества могут переходить из одного состояния в другое или полностью изменить его от начала до конца.",
   g2c3l1_card3:
-    "Understand how the different states of matter interact with each other. This activity requires three materials: Glass, Raisins, Clear soda, such as Sprite. This simple states of matter experiment will allow you to see how solid, liquid, and gas substances react",
-  g2c3l1_card4: "To perform the activity, fill the glass 3/4 full of the clear soda. Then, add the raisins. Watch what happens.",
+    "Необходимо понять, как различные состояния материи взаимодействуют друг с другом. Для этой работы необходимы три материала: Стакан, Изюм, Прозрачная газировка, например, Sprite. Этот простой эксперимент позволит тебе увидеть, как реагируют твердые, жидкие и газообразные вещества.",
+  g2c3l1_card4: "Для выполнения задания заполни стакан на 3/4 газировкой. Затем добавь изюм. Наблюдай за тем, что произойдёт.",
   g2c3l1_card5:
-    "The science behind this experiment: Students will see the raisins “dancing” in the soda. The raisins will fall to the bottom of the glass and then float back up to the top. They will then fall again.",
-  g2c3l1_prompt: "What is happening in the carbonation gas from the soda adheres to the raisin. This causes the raisins to float to the top. Once the bubble pops at the surface, the raisin then falls to the bottom again.",
+    "Научная основа этого эксперимента: Ученики увидят, как изюм 'танцует' в газировке. Изюм будет падать на дно стакана, а затем всплывать наверх. Затем он снова упадет.",
+  g2c3l1_prompt: "В процессе газирования газ из газировки прилипает к изюму. В результате изюм всплывает на поверхность. Как только пузырек всплывает на поверхность, изюм снова опускается на дно.",
 
   // lesson 27 jjj
 
   g2c3l2_card1:
-    "The air is very important for the life of every living thing on Earth.",
-  g2c3l2_card2: "The air we breathe is a mixture of several different gasses.",
+    "Воздух очень важен для жизни каждого живого существа на Земле.",
+  g2c3l2_card2: "Воздух, которым мы дышим, представляет собой смесь нескольких различных газов.",
   g2c3l2_card3:
-    "Imagine, though, that we are not able to inhabit Earth anymore.",
+    "Представь, что однажды мы больше не сможем жить на Земле.",
   g2c3l2_prompt:
-    "What other planet has the best air composition to serve humans?",
+    "На какой планете состав воздуха лучше всего подходит для служения людям?",
 
   // lesson 28
 
