@@ -107,7 +107,7 @@ const ReorderHandler = ({
   };
   const renderItem = ({ item, drag, isActive }) => {
     return (
-      <>
+      // <>
         <Item
           style={{ backgroundColor: isActive ? item.active : item.dormant }}
           activeOpacity={1}
@@ -118,7 +118,7 @@ const ReorderHandler = ({
             {item.text}
           </BodyText>
         </Item>
-      </>
+      // </>
     );
   };
 
