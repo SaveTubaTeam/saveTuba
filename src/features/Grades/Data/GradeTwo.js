@@ -2056,6 +2056,18 @@ export const Grade2 = {
               },
             ],
           },
+          // test: {
+          //   cards: [
+          //     {
+          //       text: "Hello",
+          //       name: "salem ale kum",
+          //     },
+          //     {
+          //       text: "World",
+          //       name: "ale kum salem",
+          //     }
+          //   ],
+          // },
           minigames: {
             snapshot: { // correct
               navigation: "Snapshot",
@@ -2928,9 +2940,6 @@ export const Grade2 = {
           },
 
         },
-
-        // not complete up until this point 
-
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 3 Chapter 3 Lesson 2 (lesson 27 in curriculum)

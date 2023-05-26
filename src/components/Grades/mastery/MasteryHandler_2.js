@@ -65,7 +65,7 @@ const MasteryHandler2 = ({
 
   const renderItem = ({ item }) => {
     return (
-      <>
+      // <>
         <Prompt>
           <TitleText size="subtitle">{item.text}</TitleText>
           {item.image && (
@@ -80,7 +80,7 @@ const MasteryHandler2 = ({
             />
           )}
         </Prompt>
-      </>
+      // </> 
     );
   };
 

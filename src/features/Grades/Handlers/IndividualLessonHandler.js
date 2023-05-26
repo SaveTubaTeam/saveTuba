@@ -9,8 +9,9 @@ import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/O
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler";
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
+import TestHandler from "../../../components/Grades/mastery/MasteryHandler";
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2";
-import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
+import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
@@ -272,6 +273,7 @@ function IndividualLessonHandler({
                 data={
                   selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                     .mastery_2
+                  
                 }
                 selectedGrade={selectedGrade}
                 selectedChapter={selectedChapter}
@@ -280,6 +282,37 @@ function IndividualLessonHandler({
               />
             )}
         </Stack.Screen>
+
+        {/* <Stack.Screen
+          name="Test"
+          options={{
+            title: ("Test title"),
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
+          }}
+        >
+          {
+
+            () => (
+
+              <TestHandler
+                              data={
+                  selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                    .mastery_2
+                }
+                selectedGrade={selectedGrade}
+                selectedChapter={selectedChapter}
+                selectedLesson={selectedLesson}
+                navigation={navigation}
+              />
+            )}
+        </Stack.Screen> */}
 
         {/*
         {selectedLevel.drawing.component != null && (
