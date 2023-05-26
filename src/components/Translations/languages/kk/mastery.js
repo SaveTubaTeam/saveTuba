@@ -481,12 +481,12 @@ export default {
   // lesson 29
 
   g2c3l4_card1:
-    "Humans, plants, and animals all have a great amount of water within their bodies. No single living organism on Earth can survive without water, either.",
+    "Адамдар, өсімдіктер және құстардың беденінде су көптеген мөлшерде болады. Жер шарындағы әрбір тірі организм сусыз өмір сүруге қадір емес",
   g2c3l4_card2:
-    "If water is so important, where do we get our water from?",
+    "Егер су ыңғайлы болса, ол кідір біз су аламыз?",
   g2c3l4_card3:
-    "Find the nearest water source to your home.",
-  g2c3l4_prompt: "Observe and identify the practices used in sourcing this water and purifying it for human consumption. Record and take pictures of your observations.",
+    "Үйіңізге жақындағы су көзін табыңыз",
+  g2c3l4_prompt: "Осы суды көзден алу және адамдардың қолдануы үшін тазалау әдістерін бақылаңыз және анықтаңыз. Бақылауларыңызды жазып алыңыз және суретке түсіріңіз",
 
   // lesson 30 and 31
 

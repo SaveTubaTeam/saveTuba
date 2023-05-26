@@ -54,7 +54,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of a scientific discovery that you use on a daily basis.",
+                "Күнделікті пайдаланатын ғылыми ашулыңыздың суретін жасаңыз.",
             },
             quiz: { //correct
               navigation: "QuizScreen",
@@ -65,30 +65,30 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "Which one is an example of a discovery with its purpose?",
+                    "Мақсаты бар ашудың місалы қайсысы?",
                   answers: [
-                    { text: "A telescope to see the stars" },
-                    { text: "A lightbulb to warm the room" },
-                    { text: "An airplane to drive on the road" },
-                    { text: "A printing press to make fabric" },
+                    { text: "Жұлдыздарды көру үшін телескоп" },
+                    { text: "Бөлмені ысыту үшін шам" },
+                    { text: "Жолда жүру үшін ұшақ" },
+                    { text: "Мата асыру үшін типография" },
                   ],
-                  answer: "A telescope to see the stars",
+                  answer: "Жұлдыздарды көру үшін телескоп",
                 },
                 {
-                  prompt: "Are all bacteria harmful?",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                  prompt: "Барлық бактериялар зиянды ма?",
+                  answers: [{ text: "Шын" }, { text: "Қате" }],
+                  answer: "Қате",
                 },
                 {
                   prompt:
-                    "In the 19th centry, what resource did people use to illuminate their houses?",
+                    "19-ші ғасырда адамдар үйлерін жарықтандыру үшін қандай ресурсты пайдаланды?",
                   answers: [
-                    { text: "Gas" },
-                    { text: "Water" },
-                    { text: "Coal" },
-                    { text: "All of the above" },
+                    { text: "Газ" },
+                    { text: "Су" },
+                    { text: "Көмір" },
+                    { text: "Барлығы жоғарыда" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы жоғарыда",
                 },
               ],
             },
@@ -103,13 +103,13 @@ export const Grade2 = {
                 numberOfPrompts: 2,
                 prompts: [
                   {
-                    text: "What is the difference between an experiment and observation?",
-                    placeholder: "The difference between...",
+                    text: "Тәжірибе мен бақылау арасындағы айырмашылық не?",
+                    placeholder: "Айырмашылық...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                   {
-                    text: "Read the diagram. Tell me where and how a person uses the wheel?",
-                    placeholder: "Wheels are used...",
+                    text: "Сұлбаны оқыңыз. Адамдың дөңгелекті қайда және қалай пайдаланатынын айтып беріңіз.",
+                    placeholder: "Дөңгелектер пайдаланылады...",
                     image: require("../../../../assets/openresponse/wheelObjects.png"),
                   },
                 ],
@@ -134,7 +134,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of one of your most used source of information. It could be a book, electronic device, anything!",
+                "Ең көп пайдаланатын ақпарат көзіңіздің бірінің суретін жасаңыз. Бұл кітап, электрондық құрылғы, не болмаса болады!",
             },
             openresponse: { //correct
               navigation: "Image Boom",
@@ -147,8 +147,8 @@ export const Grade2 = {
                 numberOfPrompts: 2,
                 prompts: [
                   {
-                    text: "Where do you get your information and knowledge about the environment? Is it an electronic source, a book, or even a person? What makes this information reliable?",
-                    placeholder: "I get information from...",
+                    text: "Сіз қоршаған орта туралы ақпаратты және білімді қайдан аласыз? Бұл электрондық көз, кітап, немесе адам болуы мүмкін ме? Бұл ақпараттың сенімділігін не қамтамасыз етеді?",
+                    placeholder: "Мен ақпаратты аламын...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -162,25 +162,25 @@ export const Grade2 = {
               content: [
                 {
                   prompt:
-                    "How is information different from knowledge?",
+                    "Ақпарат білімнен айырмашылығы қандай?",
                   answers: [
-                    { text: "Information and knowledge are the same" },
-                    { text: "Knowledge is the understanding and relevant information gained" },
-                    { text: "Information is in a different language than knowledge" },
-                    { text: "Knowledge requires less learning and understanding than information" },
+                    { text: "Ақпарат және білім бірдей" },
+                    { text: "Білім - бұл өсіндіру және сәйкес ақпаратты алу" },
+                    { text: "Ақпарат білімнен өзге тілде" },
+                    { text: "Білім ақпаратқа қарағанда аз өрену және түсіну талап етеді" },
                   ],
-                  answer: "Knowledge is the understanding and relevant information gained",
+                  answer: "Білім - бұл өсіндіру және сәйкес ақпаратты алу",
                 },
                 {
                   prompt:
-                    "Which of the following are resources?",
+                    "Келесідегілерден қайсылары ресурстар?",
                   answers: [
-                    { text: "The Internet" },
-                    { text: "Your teacher" },
-                    { text: "A book" },
-                    { text: "All of the above" },
+                    { text: "Интернет" },
+                    { text: "Мұғалім" },
+                    { text: "Кітап" },
+                    { text: "Барлығы жоғарыда" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы жоғарыда",
                 },
               ],
             },
@@ -226,8 +226,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Think of one way you help reduce your environmental impact in your area. How would you test that you are making a difference? Come up with a hypothesis for an experiment to test your environmental impact.",
-                    placeholder: "My hypothesis is...",
+                    text: "Өзіңіздің аймағыңызда қоршаған ортаға әсер етуді азайтуға қалай көмек етесіздер деп ойлайсыз. Қалай тексересіздер ортаға әсер ететіндігіңізді? Ортаға әсер етуді тексеру үшін экспериментке гипотеза қойыңыз.",
+                    placeholder: "Менің гипотезам...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -240,100 +240,115 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is the best way to test your hypothesis?",
-                  answers: [
+                  "prompt": "Гипотезаны тексеру үшін ең жақсы әдіс - не?",
+                  "answers": [
                     {
-                      text: "Ask your friends if they think it’s correct",
-                    },
-                    { text: "By looking it up on the Internet" },
-                    { text: "By carrying out an experiment and recording results" },
-                    { text: "By assuming the results of an experiment" },
-                  ],
-                  answer: "By carrying out an experiment and recording results",
-                },
-                {
-                  prompt:
-                    "What is one of the first things you should do when you want to create an experiment?",
-                  answers: [
-                    { text: "Look at the conclusions" },
-                    { text: "Make observations" },
-                    { text: "Record results" },
-                    { text: "Collect all experimental materials" },
-                  ],
-                  answer: "Make observations",
-                },
-                {
-                  prompt: "What is a hypothesis?",
-                  answers: [
-                    {
-                      text: "A scientific proposition to explain a process in nature or society",
+                      "text": "Достарыңыздан ол дұрыс екенін сұрау"
                     },
                     {
-                      text: "A scientific explanation to explain why you are correct",
+                      "text": "Интернеттен іздеу"
                     },
                     {
-                      text: "A scientific explanation to explain how you are incorrect",
+                      "text": "Экспериментті жүргізу және нәтижелерді жазу"
                     },
                     {
-                      text: "A scientific explanation to explain why you should practice sustainable actions",
+                      "text": "Эксперименттің нәтижелерін болжамдасу"
+                    }
+                  ],
+                  "answer": "Экспериментті жүргізу және нәтижелерді жазу"
+                },
+                {
+                  "prompt": "Экспериментті жасау үшін бірінші не істеу керек?",
+                  "answers": [
+                    {
+                      "text": "Қорытындыларға қараймыз"
                     },
+                    {
+                      "text": "Бақылау жасау"
+                    },
+                    {
+                      "text": "Нәтижелерді жазу"
+                    },
+                    {
+                      "text": "Барлық эксперименттік материалдарды жинау"
+                    }
                   ],
-                  answer:
-                    "A scientific proposition to explain a process in nature or society",
+                  "answer": "Бақылау жасау"
                 },
                 {
-                  prompt:
-                    "Why do we do experiments?",
-                  answers: [
-                    { text: "To go play outside" },
-                    { text: "To better understand the world around us" },
-                    { text: "To support your hypothesis" },
-                    { text: "To find the answer we are looking for" },
+                  "prompt": "Гипотеза - бұл не?",
+                  "answers": [
+                    {
+                      "text": "Табиғат немесе қоғамды түсіндіру үшін ғылыми ұсыныс"
+                    },
+                    {
+                      "text": "Сіздің дұрыс екеніңізді түсіндіру үшін ғылыми түсіндірме"
+                    },
+                    {
+                      "text": "Сіздің дұрыс емес екеніңізді түсіндіру үшін ғылыми түсіндірме"
+                    },
+                    {
+                      "text": "Өркениеттік әрекеттер жасау керек екенін түсіндіру үшін ғылыми түсіндірме"
+                    }
                   ],
-                  answer: "To better understand the world around us",
+                  "answer": "Табиғат немесе қоғамды түсіндіру үшін ғылыми ұсыныс"
                 },
                 {
-                  prompt:
-                    "What is the last step of an experimental study?",
-                  answers: [
-                    { text: "Creating a hypothesis" },
-                    { text: "Asking questions " },
-                    { text: "Drawing conclusions" },
-                    { text: "Recording results" },
+                  "prompt": "Эксперимент не үшін жасайды?",
+                  "answers": [
+                    {
+                      "text": "Сыртқа ойнау үшін"
+                    },
+                    {
+                      "text": "Қоршаған ортағамызды жақсы түсіну үшін"
+                    },
+                    {
+                      "text": "Гипотезаны қолдау үшін"
+                    },
+                    {
+                      "text": "Іздеп жатқан жауабымызды табу үшін"
+                    }
                   ],
-                  answer: "Drawing conclusions",
+                  "answer": "Қоршаған ортағамызды жақсы түсіну үшін"
                 },
                 {
-                  prompt:
-                    "What is the definition of a discovery?",
-                  answers: [
-                    { text: "A new achievement that is being made in the course of scientific knowledge of nature and society" },
-                    { text: "Information about an object, natural phenomenon, scientific discovery." },
-                    { text: "Possession of verified information" },
-                    { text: "None of the above" },
+                  "prompt": "Эксперименттік зерттеулердің соңғы қадамы не?",
+                  "answers": [
+                    { "text": "Гипотезаны жасау" },
+                    { "text": "Сұраулар қою" },
+                    { "text": "Қорытындыларды шығару" },
+                    { "text": "Нәтижелерді жазу" }
                   ],
-                  answer: "A new achievement that is being made in the course of scientific knowledge of nature and society",
+                  "answer": "Қорытындыларды шығару"
                 },
                 {
-                  prompt:
-                    "True or False: There are still discoveries being made about sustainable practices in your area and around the world.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
+                  "prompt": "Зерттеудің анықтамасы не?",
+                  "answers": [
+                    { "text": "Ғылыми білімнің жолында жасалған жаңа жетістік" },
+                    { "text": "Объект, табиғи жағдай, ғылыми зерттеудің ақпараты." },
+                    { "text": "Расталған ақпаратқа ие болу" },
+                    { "text": "Жоғарыда аталғандардың ешқайсысы емес" }
                   ],
-                  answer: "True",
+                  "answer": "Ғылыми білімнің жолында жасалған жаңа жетістік"
                 },
                 {
-                  prompt:
-                    "What is the definition of knowledge?",
-                  answers: [
-                    { text: "A new achievement that is being made in the course of scientific knowledge of nature and society" },
-                    { text: "Information about an object, natural phenomenon, scientific discovery" },
-                    { text: "Possession of verified information" },
-                    { text: "None of the above" },
+                  "prompt": "Шын мен жалған: өз аймағыңызда және әлемде болмасты практикадағы зерттеулер жасалып жатыр.",
+                  "answers": [
+                    { "text": "Шын" },
+                    { "text": "Жалған" }
                   ],
-                  answer: "Possession of verified information",
+                  "answer": "Шын"
                 },
+                {
+                  "prompt": "Білімнің анықтамасы не?",
+                  "answers": [
+                    { "text": "Ғылыми білімнің жолында жасалған жаңа жетістік" },
+                    { "text": "Объект, табиғи жағдай, ғылыми зерттеудің ақпараты" },
+                    { "text": "Расталған ақпаратқа ие болу" },
+                    { "text": "Жоғарыда аталғандардың ешқайсысы емес" }
+                  ],
+                  "answer": "Расталған ақпаратқа ие болу"
+                }
               ],
             },
             reorder: { //correct
@@ -341,25 +356,25 @@ export const Grade2 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Put the steps in order of how you would run an experiment.",
+                "Экспериментті өткізу әріптемесі бойынша қадамдарды тәртіптеңіз.",
               data: [
                 {
-                  text: "Determine the purpose of the study",
+                  text: "Зерттеу мақсатын анықтаңыз",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Find observations",
+                  text: "Бақылауларды табыңыз",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Draw conclusions",
+                  text: "Қорытындыларды сызыңыз",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Formulate a hypothesis",
+                  text: "Гипотеза дайындаңыз",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
@@ -371,7 +386,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Based on your hypothesis in the open response section, take a picture of yourself doing your task that helps reduce your environmental impact in your area!",
+                "Ашық жауап бөліміндегі гипотезаңызды негізінде, өзіңіздің аймақтағы қоршаған ортаны қысқартуға көмек ететін тапсырманы жасауда өздеріңіздің суретін жасаңыз!",
             },
             sorting: {
               navigation: "Sorting",
@@ -379,34 +394,34 @@ export const Grade2 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Match the action to the correct step of the expirement",
+                  "Әрекетті дәл тәжірибенің қадамына сәйкестендіріңіз",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
-                  { name: "Observation" },
-                  { name: "Hypothesis" },
-                  { name: "Conclusion" },
-                  { name: "Purpose of study" },
+                  { name: "Бақылау" },
+                  { name: "Гипотеза" },
+                  { name: "Нәтиже" },
+                  { name: "Зерттеудің мақсаты" },
                 ],
                 options: [
                   {
-                    title: "Elena sees that not all her plants in her garden are growing equally",
-                    name: "Observation",
+                    title: "Елена бақылады, еңбек бағының өсімдіктері бірдей өсіп төрмейді",
+                    name: "Бақылау",
                   },
                   {
                     title:
-                      "Sergey is coming up with  a way to explain a natural phenomenon he saw",
-                    name: "Hypothesis",
+                      "Сергей көріп тұрған табиғи жай-жайылысқа қалай түсінік беру үшін әдіс шығарып келеді",
+                    name: "Гипотеза",
                   },
                   {
                     title:
-                      "Vladimir understands from his experiment that flowers cannot grow well in smog",
-                    name: "Conclusion",
+                      "Владимир тәжірибесінен үлгеріс келтірді, гүлдер түтіншік әсерінде жақсы өсіп төрмейді",
+                    name: "Нәтиже",
                   },
                   {
                     title:
-                      "Aleksandr wants to figure out the effects of trash on plant growth",
-                    name: "Purpose of study",
+                      "Александр қоқыстың өсімдік өсуіне әсерін түсінгіз келеді",
+                    name: "Зерттеудің мақсаты",
                   },
                 ],
               },
@@ -1544,12 +1559,7 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
 
-        {
-          navigation: "lesson18" // A decrease in the number of animals
-
-
-        },
-
+        
 
 
         /* 
@@ -2248,15 +2258,15 @@ export const Grade2 = {
           },
           minigames: {
             snapshot: { // correct
-              navigation: "Snapshot",
+              navigation: "Суретке түсір", 
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an environment that might be hard to breathe in. " +
-                "Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)",
+              prompt: "Тыныс алуы қиын болатын ортаға сурет салыңыз. " +
+                "Бұның себебін табып, талдаңыз (әрекет еткізу: ауа кірізуі, агрохимикалдық заттар және киімдік заттар, т.б.)",
             },
             quiz: { // correct
-              navigation: "QuizScreen",
+              navigation: "Tест",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
@@ -2264,51 +2274,50 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "True or False: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
+                    "Газ алмасу - бұл біздің тіс ауа болмасаған бүйір жатады, ол ортаға тамыз алады және көмірқышқыл шығарады.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Шын" },
+                    { text: "Кате" },
                   ],
-                  answer: "True",
+                  answer: "Шын",
                 },
                 {
                   prompt:
-                    "If the air we breathe in is unclean, containing materials such as dust, " +
-                    "what part of the body collects it, preventing it from further entering the body?",
+                    "Егер біз тыныс алған ауамыз таза болмаса, тоңазытқыштарды қоса отырып," +
+                    "олардың денемізге кіріп қалуына тоқтатса, онда қай орган оны жинаған болады?",
                   answers: [
-                    { text: "Nose" },
-                    { text: "Lungs" },
-                    { text: "Bronchi" },
-                    { text: "Trachea" },
+                    { "text": "Мұрын" },
+                    { "text": "Бүйір" },
+                    { "text": "Бронхтар" },
+                    { "text": "Трахея" },
                   ],
-                  answer: "Nose",
+                  answer: "Мұрын",
                 },
                 {
                   prompt:
-                    "What is the purpose of the trachea?",
+                    "Трахеяның мақсаты не?",
                   answers: [
-                    { text: "To only bring air into the lungs" },
-                    { text: "To filter out the good air from the bad" },
-                    { text: "To produce carbon dioxide" },
-                    { text: "To transport air in and out of the lungs" },
+                    { "text": "Тек ауаны бүйірге тарту" },
+                    { "text": "Жақсы ауаны жаманнан сүзу" },
+                    { "text": "Көмірқышқыл шығару" },
+                    { "text": "Ауаны бүйірге және бүйірден шығару" }
                   ],
-                  answer: "To transport air in and out of the lungs",
+                  answer: "Ауаны бүйірге және бүйірден шығару",
                 },
                 {
-                  prompt:
-                    "Which of the following gives the best description of the order in which the parts of the respiratory system help us to breathe?",
-                  answers: [
-                    { text: "Nose or mouth, Larynx and trachea, bronchi, lungs" },
-                    { text: "Mouth, lungs, bronchi" },
-                    { text: "Nose, larynx, lungs" },
-                    { text: "None of the above" },
+                  "prompt": "Келесідегілерден қайсысы тыныс алуға көмек ету үшін тыныспазылық жүйесінің бөліктерінің ретін ең жақсы сипаттайды?",
+                  "answers": [
+                    { "text": "Мұрын немесе ауыз, гортан, трахея, бронхтар, бүйір" },
+                    { "text": "Ауыз, бүйір, бронхтар" },
+                    { "text": "Мұрын, гортан, бүйір" },
+                    { "text": "Жоғарыдағылардың ешқайсысы да емес" }
                   ],
-                  answer: "Nose or mouth, Larynx and trachea, bronchi, lungs",
-                },
+                  "answer": "Мұрын немесе ауыз, гортан, трахея, бронхтар, бүйір"
+                }
               ],
             },
             openresponse: { // correct
-              navigation: "Image Boom",
+              navigation: "Сурет Бум",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -2684,121 +2693,12 @@ export const Grade2 = {
       colorOne: "tomato",
       colorTwo: "firebrick",
       lessons: [
-        {
-          navigation: "Lesson1",
-          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
-          backgroundColor: "#49326B",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an item undergoing change from one state of matter to another.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following is a state of matter?",
-                  answers: [
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "Gas" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "When something freezes, what state of matter does it start and then end in?",
-                  answers: [
-                    { text: "Solid to liquid state" },
-                    { text: "Liquid to gaseous state" },
-                    { text: "Solid state to gaseous state" },
-                    { text: "Liquid to solid state" },
-                  ],
-                  answer: "Liquid to solid state",
-                },
-                {
-                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
-                  answers: [
-                    { text: "Gas" },
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "None of the above" },
-                  ],
-                  answer: "Gas",
-                }
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
-                    placeholder: "When we change an object from one state to another ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c2l16_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/heart-rate.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/doctor.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/rosemary.png"),
-              },
-            ],
-          },
-          minigames: {},
-        },
+        
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    */
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        */
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
