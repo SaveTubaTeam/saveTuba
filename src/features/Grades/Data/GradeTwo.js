@@ -1544,11 +1544,11 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
 
-        {
-          navigation: "lesson18" // A decrease in the number of animals
+        // {
+        //   navigation: "lesson18" // A decrease in the number of animals
 
 
-        },
+        // },
 
 
 
