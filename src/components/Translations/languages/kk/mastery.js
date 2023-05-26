@@ -391,10 +391,16 @@ export default {
 
   // lesson 20 & 21 in curriculum
   // done
-  g2c2l13_card1:
+  g2c2l13_card1: //translate
     "Food and water are vital things to our survival, but humans waste a lot of that important resource.",
   g2c2l13_card2: "In your home, work with your family to record the amount of food wasted and amount of water wasted (not counting bath, showers, cleaning) every day for a week.",
   g2c2l13_prompt: "What are your results? Do your results surprise you?",
+
+  g2c2l13_card1: //translate
+  "Азық-түлік пен су - біздің өмір сүру үшін қажетті заттар. Бірақ адамдар осы маңызды ресурстарды ысырап етеді.",
+  g2c2l13_card2: "Үйіңізде, отбасымен бірге бір апта бойы ысырап еткен азық-түлік мен су мөлшерін жазып алыңыз (ванна, душ, тазалауышыларды есепке алмастан).",
+  g2c2l13_prompt: "Сіздің нәтижелеріңіз қандай? Сіздің нәтижелеріңіз сізді қанағаттандырады ма?",
+
 
   // lesson 22 in curriculum
   // done
