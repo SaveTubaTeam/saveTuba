@@ -53,7 +53,7 @@ const SubmitButton = styled(Button)`
   margin-bottom: 10px;
 `;
 
-const MasteryHandler = ({
+const MasteryHandler2 = ({
   data,
   selectedGrade,
   selectedChapter,
@@ -62,7 +62,7 @@ const MasteryHandler = ({
   const [text, setText] = useState("");
   const { t } = useTranslation();
 
-  
+
   const renderItem = ({ item }) => {
     return (
       <>
@@ -94,10 +94,10 @@ const MasteryHandler = ({
         <FlatList // The flatlist used to load minigames and their data.
           data={
             selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .mastery.cards &&
+              .mastery_2.cards &&
             Object.values(
               selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .mastery.cards
+                .mastery_2.cards
             )
           }
           style={{ width: "80%" }}
@@ -137,4 +137,4 @@ const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
 });
 
-export default connect(mapStateToProps, null)(MasteryHandler);
+export default connect(mapStateToProps, null)(MasteryHandler2);

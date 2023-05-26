@@ -330,8 +330,9 @@ export default {
   g2c2l6_prompt:
     "Record your findings and bring them home.",
 
-  
 
+  // done
+  // mastery 1
   g2c2l7_card1:
     "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
   g2c2l7_card2:
@@ -339,6 +340,11 @@ export default {
   g2c2l7_prompt:
     "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
 
+  // not working correctly
+  // mastery 2
+  g2c2l7_2_card1: "Waste and trash can contaminate animal habitats and also harm animals directly. There are many ways humans can help with this problem and help keep them safe.",
+  g2c2l7_2_card2: "One way is picking up trash and waste whenever we see it. Here’s the challenge: spend one hour a week outside in an area near you that needs trash picked up. Ask your family and your friends to come with you and help!",
+  g2c2l7_2_prompt: "Keep a log for a month, tracking the time spent each week picking up trash. The more the better!",
 
   /**
  * Start of Hayden's Mastery Section
@@ -379,10 +385,12 @@ export default {
   // Mastery 1
   g2c2l11_card1: "We all know that humans have caused an impact on the environment. Unfortunately, we have both directly and indirectly caused a decrease in the number of animals.",
   g2c2l11_card2: "Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
-  g2c2l11_prompt: "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species. Write a letter to your local official addressing these issues.",
+  g2c2l11_card3: "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species.",
+  g2c2l11_prompt: "Write a letter to your local official addressing these issues and have your parents read it.",
   // Mastery 2
   g2c2l11_2_card1: "Deforestation can occur in many different ways, and cause countless consequences in return.",
-  g2c2l11_2_prompt: "Research a forest that has recently experienced a disaster. Identify the causes and outcomes. Finally, look into projects and organizations trying to help the situation, how are they helping? How could you help support them?",
+  g2c2l11_2_card2: "Research a forest that has recently experienced a disaster. Identify the causes and outcomes. Finally, look into projects and organizations trying to help the situation.",
+  g2c2l11_2_prompt: "How are they helping? How could you help support them?",
 
   // lesson 19 in curriculum
   // done
@@ -562,12 +570,12 @@ export default {
     "Step 3: Water the pots, then plant two or three bean seeds in each. Put a stake in each pot for the beans to climb. Keep the pots moist (but not soggy) while the beans sprout.",
   g2c3l10_prompt:
     "Step 4: Notice which beans sprout first. Measure the height of the plants every few days until the beans flower. Keep a chart. Which soil was the best?",
-  
+
   // lesson 39 and 40?? 
 
   g2c3l11_card1:
     "Let’s take a deeper dive into soil fertility. Plants need nutrients just like people.",
-  g2c3l11_card2: 
+  g2c3l11_card2:
     " A fertile soil will contain all the major nutrients for basic plant nutrition, as well as other nutrients in smaller amounts.",
   g2c3l11_card3:
     "Sadly, many soils don’t have good levels of all the necessary plant nutrients.",

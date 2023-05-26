@@ -105,9 +105,9 @@ const ReorderHandler = ({
       </Modal>
     );
   };
-  const renderItem = ({ item, drag, isActive }) => {
+  const renderItem = ({ item, drag, isActive }) => { // I think this is where the error for Pan is coming from
     return (
-      // <>
+      <>
         <Item
           style={{ backgroundColor: isActive ? item.active : item.dormant }}
           activeOpacity={1}
@@ -115,10 +115,11 @@ const ReorderHandler = ({
           disabled={isActive}
         >
           <BodyText color="secondary" size="subtitle">
+            aksjlgalkjsg
             {item.text}
           </BodyText>
         </Item>
-      // </>
+       </>
     );
   };
 
@@ -163,11 +164,11 @@ const mapStateToProps = (store) => ({
 
 export default connect(mapStateToProps, null)(ReorderHandler);
 
-const styles = StyleSheet.create({
-  text: {
-    color: "white",
-    fontSize: 24,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-});
+// const styles = StyleSheet.create({
+//   text: {
+//     color: "white",
+//     fontSize: 24,
+//     fontWeight: "bold",
+//     textAlign: "center",
+//   },
+// });
