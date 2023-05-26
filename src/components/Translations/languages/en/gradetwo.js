@@ -1,6 +1,6 @@
 export default {
   /* Chapter names */
-  iamanexplorer: "I am an researcher",
+  iamanexplorer: "I am a researcher",
   wildlife: "Live Nature",
   substances: "Substances and \ntheir properties",
   physics: "Natural Resources",
