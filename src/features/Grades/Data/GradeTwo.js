@@ -1,3 +1,30 @@
+
+Conversation opened. 1 unread message.
+
+Skip to content
+Using Lehigh University Mail with screen readers
+
+1 of 4,771
+Fwd:
+Inbox
+
+Malika Buribayeva
+Attachments
+3:17 PM (5 minutes ago)
+to me
+
+
+
+---------- Forwarded message ---------
+From: Malika Buribayeva <mabc26@lehigh.edu>
+Date: Thu, May 25, 2023 at 12:21
+Subject:
+To: Andrew Leaventon <awl224@lehigh.edu>
+
+
+
+ One attachment
+  •  Scanned by Gmail
 import { Translation } from "react-i18next";
 import { React } from 'react';
 
@@ -54,7 +81,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Күнделікті пайдаланатын ғылыми ашулыңыздың суретін жасаңыз.",
+                "Сфотографируйте пример научного открытия, которым вы пользуетесь каждый день.",
             },
             quiz: { //correct
               navigation: "QuizScreen",
@@ -65,30 +92,30 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "Мақсаты бар ашудың місалы қайсысы?",
+                    "Что из этого является примером открытия с его целью?",
                   answers: [
-                    { text: "Жұлдыздарды көру үшін телескоп" },
-                    { text: "Бөлмені ысыту үшін шам" },
-                    { text: "Жолда жүру үшін ұшақ" },
-                    { text: "Мата асыру үшін типография" },
+                    { text: "Телескоп, чтобы увидеть звезды" },
+                    { text: "Лампочка для обогрева комнаты" },
+                    { text: "Самолет для езды по дороге" },
+                    { text: "Печатный станок для изготовления ткани" },
                   ],
-                  answer: "Жұлдыздарды көру үшін телескоп",
+                  answer: "Телескоп, чтобы увидеть звезды",
                 },
                 {
-                  prompt: "Барлық бактериялар зиянды ма?",
-                  answers: [{ text: "Шын" }, { text: "Қате" }],
-                  answer: "Қате",
+                  prompt: "Все ли бактерии вредны?",
+                  answers: [{ text: "Правда" }, { text: "Ложь" }],
+                  answer: "Ложь",
                 },
                 {
                   prompt:
-                    "19-ші ғасырда адамдар үйлерін жарықтандыру үшін қандай ресурсты пайдаланды?",
+                    "Какой ресурс люди использовали для освещения своих домов в 19 веке?",
                   answers: [
                     { text: "Газ" },
-                    { text: "Су" },
-                    { text: "Көмір" },
-                    { text: "Барлығы жоғарыда" },
+                    { text: "Вода" },
+                    { text: "Уголь" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "Барлығы жоғарыда",
+                  answer: "Все вышеперечисленное",
                 },
               ],
             },
@@ -103,13 +130,13 @@ export const Grade2 = {
                 numberOfPrompts: 2,
                 prompts: [
                   {
-                    text: "Тәжірибе мен бақылау арасындағы айырмашылық не?",
-                    placeholder: "Айырмашылық...",
+                    text: "В чем разница между экспериментом и наблюдением?",
+                    placeholder: "Разница в...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                   {
-                    text: "Сұлбаны оқыңыз. Адамдың дөңгелекті қайда және қалай пайдаланатынын айтып беріңіз.",
-                    placeholder: "Дөңгелектер пайдаланылады...",
+                    text: "Посмотрите на схему. Где и как человек использует колесо?",
+                    placeholder: "Колесо используется для...",
                     image: require("../../../../assets/openresponse/wheelObjects.png"),
                   },
                 ],
@@ -134,7 +161,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Ең көп пайдаланатын ақпарат көзіңіздің бірінің суретін жасаңыз. Бұл кітап, электрондық құрылғы, не болмаса болады!",
+                "Сфотографируйте один из наиболее часто используемых вами источников информации. Это может быть книга, электронное устройство, что угодно!",
             },
             openresponse: { //correct
               navigation: "Image Boom",
@@ -147,8 +174,8 @@ export const Grade2 = {
                 numberOfPrompts: 2,
                 prompts: [
                   {
-                    text: "Сіз қоршаған орта туралы ақпаратты және білімді қайдан аласыз? Бұл электрондық көз, кітап, немесе адам болуы мүмкін ме? Бұл ақпараттың сенімділігін не қамтамасыз етеді?",
-                    placeholder: "Мен ақпаратты аламын...",
+                    text: "Откуда вы черпаете информацию и знания об окружающей среде? Это электронный источник, книга или даже другой человек? Что делает эту информацию достоверной?",
+                    placeholder: "Я получаю информацию из/от...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -162,25 +189,25 @@ export const Grade2 = {
               content: [
                 {
                   prompt:
-                    "Ақпарат білімнен айырмашылығы қандай?",
+                    "Чем информация отличается от знаний?",
                   answers: [
-                    { text: "Ақпарат және білім бірдей" },
-                    { text: "Білім - бұл өсіндіру және сәйкес ақпаратты алу" },
-                    { text: "Ақпарат білімнен өзге тілде" },
-                    { text: "Білім ақпаратқа қарағанда аз өрену және түсіну талап етеді" },
+                    { text: "Информация и знания – это одно и то же" },
+                    { text: "Знание – это понимание полученной актуальной информации" },
+                    { text: "Информация написана на другом языке, чем знания" },
+                    { text: "Знания требуют меньше изучения и понимания, чем информация" },
                   ],
-                  answer: "Білім - бұл өсіндіру және сәйкес ақпаратты алу",
+                  answer: "Знание – это понимание полученной актуальной информации",
                 },
                 {
                   prompt:
-                    "Келесідегілерден қайсылары ресурстар?",
+                    "Что из перечисленного является ресурсом информации?",
                   answers: [
                     { text: "Интернет" },
-                    { text: "Мұғалім" },
-                    { text: "Кітап" },
-                    { text: "Барлығы жоғарыда" },
+                    { text: "Твой учитель" },
+                    { text: "Книга" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "Барлығы жоғарыда",
+                  answer: "Все вышеперечисленное",
                 },
               ],
             },
@@ -226,8 +253,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Өзіңіздің аймағыңызда қоршаған ортаға әсер етуді азайтуға қалай көмек етесіздер деп ойлайсыз. Қалай тексересіздер ортаға әсер ететіндігіңізді? Ортаға әсер етуді тексеру үшін экспериментке гипотеза қойыңыз.",
-                    placeholder: "Менің гипотезам...",
+                    text: "Подумайте, как вы можете уменьшить воздействие на окружающую среду в вашем регионе. Как бы вы проверили, что вы вносите какой-то вклад? Придумайте гипотезу для эксперимента, чтобы проверить ваше влияние на окружающую среду.",
+                    placeholder: "Моя гипотеза в том, что...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -240,115 +267,100 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  "prompt": "Гипотезаны тексеру үшін ең жақсы әдіс - не?",
-                  "answers": [
+                  prompt: "Как лучше всего проверить свою гипотезу?",
+                  answers: [
                     {
-                      "text": "Достарыңыздан ол дұрыс екенін сұрау"
+                      text: "Спросить своих друзей, считают ли они ее верной",
                     },
-                    {
-                      "text": "Интернеттен іздеу"
-                    },
-                    {
-                      "text": "Экспериментті жүргізу және нәтижелерді жазу"
-                    },
-                    {
-                      "text": "Эксперименттің нәтижелерін болжамдасу"
-                    }
+                    { text: "Проверить в Интернете" },
+                    { text: "Провести эксперимент и записать результаты" },
+                    { text: "Презюмировать результаты эксперимента" },
                   ],
-                  "answer": "Экспериментті жүргізу және нәтижелерді жазу"
+                  answer: "Провести эксперимент и записать результаты",
                 },
                 {
-                  "prompt": "Экспериментті жасау үшін бірінші не істеу керек?",
-                  "answers": [
-                    {
-                      "text": "Қорытындыларға қараймыз"
-                    },
-                    {
-                      "text": "Бақылау жасау"
-                    },
-                    {
-                      "text": "Нәтижелерді жазу"
-                    },
-                    {
-                      "text": "Барлық эксперименттік материалдарды жинау"
-                    }
+                  prompt:
+                    "Что нужно сделать в первую очередь, если вы хотите провести эксперимент?",
+                  answers: [
+                    { text: "Сделать выводы" },
+                    { text: "Сделать наблюдения" },
+                    { text: "Записать результаты" },
+                    { text: "Собрать оборудование для эксперимента" },
                   ],
-                  "answer": "Бақылау жасау"
+                  answer: "Сделать наблюдения",
                 },
                 {
-                  "prompt": "Гипотеза - бұл не?",
-                  "answers": [
+                  prompt: "Что такое гипотеза?",
+                  answers: [
                     {
-                      "text": "Табиғат немесе қоғамды түсіндіру үшін ғылыми ұсыныс"
+                      text: "Научное предложение, объясняющее процесс в природе или обществе",
                     },
                     {
-                      "text": "Сіздің дұрыс екеніңізді түсіндіру үшін ғылыми түсіндірме"
+                      text: "Научное объяснение, почему вы правы",
                     },
                     {
-                      "text": "Сіздің дұрыс емес екеніңізді түсіндіру үшін ғылыми түсіндірме"
+                      text: "Научное объяснение того, почему вы не правы",
                     },
                     {
-                      "text": "Өркениеттік әрекеттер жасау керек екенін түсіндіру үшін ғылыми түсіндірме"
-                    }
+                      text: "Научное объяснение о том, почему необходимо заниматься устойчивыми практиками",
+                    },
                   ],
-                  "answer": "Табиғат немесе қоғамды түсіндіру үшін ғылыми ұсыныс"
+                  answer:
+                    "Научное предложение, объясняющее процесс в природе или обществе",
                 },
                 {
-                  "prompt": "Эксперимент не үшін жасайды?",
-                  "answers": [
-                    {
-                      "text": "Сыртқа ойнау үшін"
-                    },
-                    {
-                      "text": "Қоршаған ортағамызды жақсы түсіну үшін"
-                    },
-                    {
-                      "text": "Гипотезаны қолдау үшін"
-                    },
-                    {
-                      "text": "Іздеп жатқан жауабымызды табу үшін"
-                    }
+                  prompt:
+                    "Почему мы проводим эксперименты?",
+                  answers: [
+                    { text: "Чтобы пойти поиграть на улице" },
+                    { text: "Чтобы лучше понимать окружающий мир" },
+                    { text: "Для подтверждения вашей гипотезы" },
+                    { text: "Чтобы найти ответ, который мы ищем" },
                   ],
-                  "answer": "Қоршаған ортағамызды жақсы түсіну үшін"
+                  answer: "Чтобы лучше понимать окружающий мир",
                 },
                 {
-                  "prompt": "Эксперименттік зерттеулердің соңғы қадамы не?",
-                  "answers": [
-                    { "text": "Гипотезаны жасау" },
-                    { "text": "Сұраулар қою" },
-                    { "text": "Қорытындыларды шығару" },
-                    { "text": "Нәтижелерді жазу" }
+                  prompt:
+                    "Что является последним этапом экспериментального исследования?",
+                  answers: [
+                    { text: "Создание гипотезы" },
+                    { text: "Задавание вопросов" },
+                    { text: "Формирование выводов" },
+                    { text: "Запись результатов" },
                   ],
-                  "answer": "Қорытындыларды шығару"
+                  answer: "Формирование выводов",
                 },
                 {
-                  "prompt": "Зерттеудің анықтамасы не?",
-                  "answers": [
-                    { "text": "Ғылыми білімнің жолында жасалған жаңа жетістік" },
-                    { "text": "Объект, табиғи жағдай, ғылыми зерттеудің ақпараты." },
-                    { "text": "Расталған ақпаратқа ие болу" },
-                    { "text": "Жоғарыда аталғандардың ешқайсысы емес" }
+                  prompt:
+                    "Что такое открытие?",
+                  answers: [
+                    { text: "Новое достижение, которое делается в ходе научного изучения природы и общества" },
+                    { text: "Информация об объекте, природном явлении, научном открытии" },
+                    { text: "Владение проверенной информацией" },
+                    { text: "Ничего из вышеперечисленного" },
                   ],
-                  "answer": "Ғылыми білімнің жолында жасалған жаңа жетістік"
+                  answer: "Новое достижение, которое делается в ходе научного изучения природы и общества",
                 },
                 {
-                  "prompt": "Шын мен жалған: өз аймағыңызда және әлемде болмасты практикадағы зерттеулер жасалып жатыр.",
-                  "answers": [
-                    { "text": "Шын" },
-                    { "text": "Жалған" }
+                  prompt:
+                    "Верно или неверно: в вашем регионе и во всем мире все еще делаются открытия в области устойчивого развития.",
+                  answers: [
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  "answer": "Шын"
+                  answer: "Верно",
                 },
                 {
-                  "prompt": "Білімнің анықтамасы не?",
-                  "answers": [
-                    { "text": "Ғылыми білімнің жолында жасалған жаңа жетістік" },
-                    { "text": "Объект, табиғи жағдай, ғылыми зерттеудің ақпараты" },
-                    { "text": "Расталған ақпаратқа ие болу" },
-                    { "text": "Жоғарыда аталғандардың ешқайсысы емес" }
+                  prompt:
+                    "Что такое знания?",
+                  answers: [
+                    { text: "Новое достижение, которое делается в ходе научного познания природы и общества" },
+                    { text: "Информация об объекте, природном явлении, научном открытии" },
+                    { text: "Владение проверенной информацией" },
+                    { text: "Ничего из вышеперечисленного" },
                   ],
-                  "answer": "Расталған ақпаратқа ие болу"
-                }
+                  answer: "Владение проверенной информацией",
+                },
               ],
             },
             reorder: { //correct
@@ -356,25 +368,25 @@ export const Grade2 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Экспериментті өткізу әріптемесі бойынша қадамдарды тәртіптеңіз.",
+                "Расположите шаги в том порядке, в котором вы будете проводить эксперимент",
               data: [
                 {
-                  text: "Зерттеу мақсатын анықтаңыз",
+                  text: "Определить цель исследования",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Бақылауларды табыңыз",
+                  text: "Сделать наблюдения",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Қорытындыларды сызыңыз",
+                  text: "Сделать выводы",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Гипотеза дайындаңыз",
+                  text: "Сформулировать гипотезу",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
@@ -386,45 +398,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Ашық жауап бөліміндегі гипотезаңызды негізінде, өзіңіздің аймақтағы қоршаған ортаны қысқартуға көмек ететін тапсырманы жасауда өздеріңіздің суретін жасаңыз!",
-            },
-            sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt:
-                  "Әрекетті дәл тәжірибенің қадамына сәйкестендіріңіз",
-                num: 3, //count start 0
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Бақылау" },
-                  { name: "Гипотеза" },
-                  { name: "Нәтиже" },
-                  { name: "Зерттеудің мақсаты" },
-                ],
-                options: [
-                  {
-                    title: "Елена бақылады, еңбек бағының өсімдіктері бірдей өсіп төрмейді",
-                    name: "Бақылау",
-                  },
-                  {
-                    title:
-                      "Сергей көріп тұрған табиғи жай-жайылысқа қалай түсінік беру үшін әдіс шығарып келеді",
-                    name: "Гипотеза",
-                  },
-                  {
-                    title:
-                      "Владимир тәжірибесінен үлгеріс келтірді, гүлдер түтіншік әсерінде жақсы өсіп төрмейді",
-                    name: "Нәтиже",
-                  },
-                  {
-                    title:
-                      "Александр қоқыстың өсімдік өсуіне әсерін түсінгіз келеді",
-                    name: "Зерттеудің мақсаты",
-                  },
-                ],
-              },
+                "Основываясь на своей гипотезе в разделе открытого ответа, сфотографируйте себя, выполняющего задание, которое поможет уменьшить воздействие на окружающую среду в вашем районе!",
             },
           },
           mastery: {
@@ -491,40 +465,40 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/leaf.png"),
           backgroundColor: "#008036",
           minigames: {
-            sorting: { // Needs to be taken out and put in the next lesson
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Match the action to the correct step of the expirement",
+                  "Сопоставьте действие с правильным шагом эксперимента",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
-                  { name: "Observation" },
-                  { name: "Hypothesis" },
-                  { name: "Conclusion" },
-                  { name: "Purpose of study" },
+                  { name: "Наблюдение" },
+                  { name: "Гипотеза" },
+                  { name: "Вывод" },
+                  { name: "Цель исследования" },
                 ],
                 options: [
                   {
-                    title: "Elena sees that not all her plants.",
-                    name: "Observation",
+                    title: "Анар видит, что не все ее растения в саду растут одинаково",
+                    name: "Наблюдение",
                   },
                   {
                     title:
-                      "Sergey is coming up with a way to explain a natural phenomenon he saw.",
-                    name: "Hypothesis",
+                      "Сергей придумывает способ объяснить увиденное им природное явление",
+                    name: "Гипотеза",
                   },
                   {
                     title:
-                      "Vladimir sees from his experiment that flowers cannot grow well in the smog.",
-                    name: "Conclusion",
+                      "Темирлан из своего эксперимента понял, что цветы не могут хорошо расти в среде с загрязненным воздухом",
+                    name: "Заключение",
                   },
                   {
                     title:
-                      "Aleksandr wants to figure out the effects of trash on plant growth.",
-                    name: "Purpose of study",
+                      "Айгерим хочет выяснить влияние загрязненной почвы на рост растений",
+                    name: "Цель исследования",
                   },
                 ],
               },
@@ -540,8 +514,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "List 3 plants that you see everyday. Why do you think that you see them so often? \nThink about the environmental conditions they need to survive.",
-                    placeholder: "The plants I see everyday are...",
+                    text: "Назовите 3 растения, которые вы видите каждый день. Как вы думаете, почему вы так часто их видите? \n Подумайте об условиях окружающей среды, в которых они нуждаются, чтобы выжить.",
+                    placeholder: "Растения, которые я вижу каждый день...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -555,54 +529,54 @@ export const Grade2 = {
               content: [
                 {
                   prompt:
-                    "Finish the hypothesis: 'If the plant will not recieve water, then...'",
+                    "Закончите гипотезу: «Если растение не будет получать воду, то...'",
                   answers: [
-                    { text: "the plant will live." },
-                    { text: "the plant will not survive." },
-                    { text: "the plant will produce its own water." },
-                    { text: "the plant will grow very tall." },
+                    { text: "растение выживет." },
+                    { text: "растение не выживет." },
+                    { text: "растение само будет вырабатывать воду." },
+                    { text: "растение вырастет очень высоким." },
                   ],
-                  answer: "the plant will not survive.",
+                  answer: "растение не выживет.",
                 },
                 {
-                  prompt: "What do leaves do?",
+                  prompt: "Что делают листья?",
                   answers: [
-                    { text: "Release oxygen back into the air" },
+                    { text: "Вырабатывают кислород в воздух" },
                     {
-                      text: "Absorb carbon dioxide and sunlight through small holes (stomata)",
+                      text: "Поглощают углекислый газ и солнечный свет через маленькие отверстия (устьица)",
                     },
-                    { text: "Create sugars for the plant" },
-                    { text: "All the above" },
+                    { text: "Вырабатывают сахара для растения" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
                   prompt:
-                    "Chlorophyll is the substance that helps the leaves capture sunlight and transform it into sugars for the plant, as well as giving the plants their green color.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Хлорофилл — это вещество, которое помогает листьям улавливать солнечный свет и превращать его в сахара для растения, а также придает растениям зеленый цвет.",
+                  answers: [{ text: "Правда" }, { text: "Ложь" }],
+                  answer: "Правда",
                 },
                 {
-                  prompt: "Which of the following is a true statement:",
+                  prompt: "Какое из следующих утверждений является верным:",
                   answers: [
                     {
-                      text: "A tree can release enough oxygen for a family of four to breathe within a year.",
+                      text: "Дерево может выделять достаточно кислорода, чтобы семья из четырех человек могла дышать в течение года.",
                     },
                     {
-                      text: "Driving a car for two hours uses the same abount of oxygen a tree produces in two years.",
+                      text: "Вождение автомобиля в течение двух часов требует столько же кислорода, сколько дерево производит за два года.",
                     },
                     {
-                      text: "Chlorophyll is also found in algae and some bacteria.",
+                      text: "Хлорофилл также содержится в водорослях и некоторых бактериях.",
                     },
-                    { text: "All the above statements are true." },
+                    { text: "Все приведенные выше утверждения верны." },
                   ],
-                  answer: "All the above statements are true.",
+                  answer: "Все приведенные выше утверждения верны.",
                 },
                 {
                   prompt:
-                    "Indoor plants can produce as much oxygen in the shade as some plants do in direct sunshine.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Комнатные растения могут производить столько же кислорода в тени, сколько и некоторые растения под прямыми солнечными лучами.",
+                  answers: [{ text: "Правда" }, { text: "Ложь" }],
+                  answer: "Правда",
                 },
               ],
             },
@@ -611,41 +585,41 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the plant to its common name",
+                prompt: "Сопоставьте растение с его общепринятым названием",
                 num: 3,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
                   {
-                    name: "Spider plant",
+                    name: "Хлорофитум",
                     image: require("../../../../assets/sorting/spider-plant.png"),
                   },
                   {
-                    name: "Gloxinia",
+                    name: "Глоксиния",
                     image: require("../../../../assets/sorting/gloxinia.png"),
                   },
                   {
-                    name: "Snake plant",
+                    name: "Тещин язык",
                     image: require("../../../../assets/sorting/snake-plant.png"),
                   },
                   {
-                    name: "Jade plant",
+                    name: "Толстянка яйцевидная",
                     image: require("../../../../assets/sorting/jade.png"),
                   },
                 ],
                 options: [
                   {
-                    title: "Spider plant",
-                    name: "Spider plant",
+                    title: "Хлорофитум",
+                    name: "Хлорофитум",
                   },
                   {
-                    title: "Gloxinia",
-                    name: "Gloxinia",
+                    title: "Глоксиния",
+                    name: "Глоксиния",
                   },
                   {
-                    title: "Snake plant",
-                    name: "Snake plant",
+                    title: "Тещин язык",
+                    name: "Тещин язык",
                   },
-                  { title: "Jade plant", name: "Jade plant" },
+                  { title: "Толстянка яйцевидная", name: "Толстянка яйцевидная" },
                 ],
               },
             },
@@ -655,8 +629,8 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "List three plants that you see everyday. Why do you think that you see them so" +
-                " often? Think about the environmental conditions that they need to survive.",
+                "Назовите три растения, которые вы видите каждый день. Почему вы думаете, что видите их так часто?" +
+                "Подумайте об условиях окружающей среды, которые им необходимы для выживания.",
 
             },
             snapshot: { //correct
@@ -665,7 +639,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
+                "Нарисуйте и загрузите картинку цикла фотосинтеза. Не забудьте добавить подписи в свой рисунок!",
             },
           },
           mastery: {
@@ -704,13 +678,13 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the items to thier community", //ideally change to match picutre to word
+                prompt: "Сопоставьте картинки с подходящими словами", //ideally change to match picutre to word
                 num: 8, //count start 0
                 imageBg: SortingImages.bg[0].lvl_2_les_2, //what lesson
-                categories: [{ name: "Natural" }, { name: "Artifical" }],
+                categories: [{ name: "Естественное" }, { name: "Искусственное" }],
                 options: [
-                  { title: "Forest", name: "Natural" },
-                  { title: "Field", name: "Artifical" },
+                  { title: "Лес", name: "Естественное" },
+                  { title: "Поле", name: "Искусственное" },
                 ],
               },
             },
@@ -724,35 +698,35 @@ export const Grade2 = {
               content: [
                 {
                   type: "image",
-                  name: "Hydrophytes",
+                  name: "Гидрофиты",
                   image: require("../../../../assets/memory/rain.png"),
                 },
                 {
-                  name: "Hydrophytes",
+                  name: "Гидрофиты",
                 },
                 {
                   type: "image",
-                  name: "Cryophytes",
+                  name: "Криофиты",
                   image: require("../../../../assets/memory/snowflake.png"),
                 },
                 {
-                  name: "Cryophytes",
+                  name: "Криофиты",
                 },
                 {
                   type: "image",
-                  name: "Thermo-\nphiles",
+                  name: "Термофилы",
                   image: require("../../../../assets/memory/temperature.png"),
                 },
                 {
-                  name: "Thermo-\nphiles",
+                  name: "Термофилы",
                 },
                 {
                   type: "image",
-                  name: "Heliophytes",
+                  name: "Гелиофиты",
                   image: require("../../../../assets/memory/sunshine.png"),
                 },
                 {
-                  name: "Heliophytes",
+                  name: "Гелиофиты",
                 },
               ],
             },
@@ -768,12 +742,12 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt." +
-                      " What are some human-made adaptations that help us, but hurt plants? ",
-                    placeholder: "Some human-made adaptions...",
+                      "Многим растениям приходится приспосабливаться, чтобы выжить в окружающей среде. Иногда окружающая среда меняется так быстро, что растения не успевают адаптироваться." +
+                      " Какие антропогенные приспособления помогают нам, но вредят растениям? ",
+                    placeholder: "Некоторые приспособления, созданные человеком...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
-                ],
+                ]
               },
             },
             openresponse_2: { // correct
@@ -788,8 +762,8 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "List a couple of things that plants need in order to survive. Are these the same " +
-                      "things we need to survive? What happens if there is too much of one resource?",
+                      "Перечислите несколько вещей, которые нужны растениям для выживания. Это одни и те же" +
+                      "или разные вещи? Что произойдет, если одного ресурса будет слишком много?",
                     placeholder: "Plants need...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
@@ -803,52 +777,52 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What happens when a plant recieves too much heat?",
+                  prompt: "Что происходит, когда растение получает слишком много тепла?",
                   answers: [
                     {
-                      text: "The plants grow and bloom more quickly than usual",
+                      text: "Растения растут и цветут быстрее, чем обычно",
                     },
-                    { text: "The leaves are not their normal color" },
-                    { text: "The plant looses a lot of moisture" },
-                    { text: "All the above" },
+                    { text: "Листья меняют цвет на необычный" },
+                    { text: "Растение теряет много влаги" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
                   prompt:
-                    "Chlorophyll dies if the plant recieves too much direct sunlight.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Хлорофилл распадается, если растение получает слишком много прямых солнечных лучей.",
+                  answers: [{ text: "Правда" }, { text: "Ложь" }],
+                  answer: "Правда",
                 },
                 {
                   prompt:
-                    "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures\n" +
-                    "before they begin to sprout?",
+                    "Какие виды растений имеют приспособления, позволяющие пережидать экстремально жаркие или холодные температуры\n" +
+                    "до того, как они начнут прорастать?",
                   answers: [
-                    { text: "Bulbs and sprouts" },
-                    { text: "Flowers and herbs" },
-                    { text: "Trees and shrubs" },
+                    { text: "Луковицы и ростки" },
+                    { text: "Цветы и травы" },
+                    { text: "Деревья и кустарники" },
                   ],
-                  answer: "Bulbs and sprouts",
+                  answer: "Луковицы и ростки",
                 },
                 {
                   prompt:
-                    "What does it look like when plants have too much light?",
+                    "Что случается, когда растение получает слишком много света?",
                   answers: [
-                    { text: "They bloom more and have more leaflets" },
-                    { text: "The leaves turn away from the sun" },
-                    { text: "They spread their roots our more under the soil" },
+                    { text: "Они больше цветут и имеют больше листочков" },
+                    { text: "Листья отворачиваются от солнца" },
+                    { text: "Они распространяют свои корни больше под землей" },
                     {
-                      text: "More chlorophyll is produced in the leaves to protect it",
+                      text: "В листьях вырабатывается больше хлорофилла для его защиты",
                     },
                   ],
-                  answer: "The leaves turn away from the sun",
+                  answer: "Листья отворачиваются от солнца",
                 },
                 {
                   prompt:
-                    "Plants can grow in 0\u00B0C and below type temperatures",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Верно или неверно: растения могут расти в климате с температурой 0°C и ниже.",
+                  answers: [{ text: "Правда" }, { text: "Ложь" }],
+                  answer: "Правда",
                 },
               ],
             },
@@ -858,8 +832,8 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight" +
-                "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?",
+                "Разделите лист бумаги пополам, на одной стороне нарисуйте растение, которое получает слишком много солнечного света" +
+                "и на другой то, которое получает слишком мало света. Как их можно срвнить друг с другом? \nПодумайте: одинаковы ли они?",
             },
           },
           mastery: {
@@ -1559,7 +1533,12 @@ export const Grade2 = {
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
 
-        
+        {
+          navigation: "lesson18" // A decrease in the number of animals
+
+
+        },
+
 
 
         /* 
@@ -2258,15 +2237,15 @@ export const Grade2 = {
           },
           minigames: {
             snapshot: { // correct
-              navigation: "Суретке түсір", 
+              navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Тыныс алуы қиын болатын ортаға сурет салыңыз. " +
-                "Бұның себебін табып, талдаңыз (әрекет еткізу: ауа кірізуі, агрохимикалдық заттар және киімдік заттар, т.б.)",
+              prompt: "Take a picture of an environment that might be hard to breathe in. " +
+                "Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)",
             },
             quiz: { // correct
-              navigation: "Tест",
+              navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
@@ -2274,50 +2253,51 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "Газ алмасу - бұл біздің тіс ауа болмасаған бүйір жатады, ол ортаға тамыз алады және көмірқышқыл шығарады.",
+                    "True or False: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
                   answers: [
-                    { text: "Шын" },
-                    { text: "Кате" },
+                    { text: "True" },
+                    { text: "False" },
                   ],
-                  answer: "Шын",
+                  answer: "True",
                 },
                 {
                   prompt:
-                    "Егер біз тыныс алған ауамыз таза болмаса, тоңазытқыштарды қоса отырып," +
-                    "олардың денемізге кіріп қалуына тоқтатса, онда қай орган оны жинаған болады?",
+                    "If the air we breathe in is unclean, containing materials such as dust, " +
+                    "what part of the body collects it, preventing it from further entering the body?",
                   answers: [
-                    { "text": "Мұрын" },
-                    { "text": "Бүйір" },
-                    { "text": "Бронхтар" },
-                    { "text": "Трахея" },
+                    { text: "Nose" },
+                    { text: "Lungs" },
+                    { text: "Bronchi" },
+                    { text: "Trachea" },
                   ],
-                  answer: "Мұрын",
+                  answer: "Nose",
                 },
                 {
                   prompt:
-                    "Трахеяның мақсаты не?",
+                    "What is the purpose of the trachea?",
                   answers: [
-                    { "text": "Тек ауаны бүйірге тарту" },
-                    { "text": "Жақсы ауаны жаманнан сүзу" },
-                    { "text": "Көмірқышқыл шығару" },
-                    { "text": "Ауаны бүйірге және бүйірден шығару" }
+                    { text: "To only bring air into the lungs" },
+                    { text: "To filter out the good air from the bad" },
+                    { text: "To produce carbon dioxide" },
+                    { text: "To transport air in and out of the lungs" },
                   ],
-                  answer: "Ауаны бүйірге және бүйірден шығару",
+                  answer: "To transport air in and out of the lungs",
                 },
                 {
-                  "prompt": "Келесідегілерден қайсысы тыныс алуға көмек ету үшін тыныспазылық жүйесінің бөліктерінің ретін ең жақсы сипаттайды?",
-                  "answers": [
-                    { "text": "Мұрын немесе ауыз, гортан, трахея, бронхтар, бүйір" },
-                    { "text": "Ауыз, бүйір, бронхтар" },
-                    { "text": "Мұрын, гортан, бүйір" },
-                    { "text": "Жоғарыдағылардың ешқайсысы да емес" }
+                  prompt:
+                    "Which of the following gives the best description of the order in which the parts of the respiratory system help us to breathe?",
+                  answers: [
+                    { text: "Nose or mouth, Larynx and trachea, bronchi, lungs" },
+                    { text: "Mouth, lungs, bronchi" },
+                    { text: "Nose, larynx, lungs" },
+                    { text: "None of the above" },
                   ],
-                  "answer": "Мұрын немесе ауыз, гортан, трахея, бронхтар, бүйір"
-                }
+                  answer: "Nose or mouth, Larynx and trachea, bronchi, lungs",
+                },
               ],
             },
             openresponse: { // correct
-              navigation: "Сурет Бум",
+              navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -2693,12 +2673,6 @@ export const Grade2 = {
       colorOne: "tomato",
       colorTwo: "firebrick",
       lessons: [
-        
-        /* 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
         {
           navigation: "Lesson1",
           title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
@@ -2771,6 +2745,121 @@ export const Grade2 = {
                   {
                     text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
                     placeholder: "When we change an object from one state to another ...",
+                    image: require("../../../../assets/mastery/state-of-matter.png"),
+                  },
+                ],
+              },
+            },
+          },
+          mastery: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l16_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/heart-rate.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/doctor.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
+                ),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/rosemary.png"),
+              },
+            ],
+          },
+          minigames: {},
+        },
+        /* 
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    */
+        {
+          navigation: "Lesson1",
+          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
+          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
+          backgroundColor: "#49326B",
+          minigames: {
+            snapshot: { //correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Сфотографируйте объект, который переходит из одного состояния материи в другое.",
+            },
+            quiz: {
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              image: "../../../../assets/nat.jpg",
+              content: [
+                {
+                  prompt: "Что из перечисленного является состоянием вещества?",
+                  answers: [
+                    { text: "Твердое" },
+                    { text: "Жидкое" },
+                    { text: "Газообразное" },
+                    { text: "Все вышеперечисленное" },
+                  ],
+                  answer: "Все вышеперечисленное",
+                },
+                {
+                  prompt: "Верно или неверно: когда вещества находятся в определенном состоянии, они не могут перейти в другое состояние.",
+                  answers: [
+                    { text: "Правда" },
+                    { text: "Ложь" },
+                  ],
+                  answer: "Ложь",
+                },
+                {
+                  prompt: "Когда что-то замерзает, в каком состоянии материи оно находится до и после?",
+                  answers: [
+                    { text: "Из твердого в жидкое состояние" },
+                    { text: "Из жидкого в газообразное состояние" },
+                    { text: "Из твердого в газообразное состояние" },
+                    { text: "Из жидкого в твердое состояние" },
+                  ],
+                  answer: "Из жидкого в твердое состояние",
+                },
+                {
+                  prompt: "В жаркий день собачью миску с водой оставляют на солнце. К концу дня вся вода пропала. В каком состоянии сейчас находится вещество?",
+                  answers: [
+                    { text: "Газообразное" },
+                    { text: "Твердое" },
+                    { text: "Жидкое" },
+                    { text: "Ничего из вышеперечисленного" },
+                  ],
+                  answer: "Газообразное",
+                }
+              ]
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "Когда мы переводим вещество из одного состояния в другое состояние материи, насколько это устойчиво? Разве изменения состояний материи не требуют энергии? Если да, подумайте о возможных изменениях материи, которые вредят окружающей среде.",
+                    placeholder: "Когда мы переводим вещество из одного состояния в другое...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
@@ -5272,3 +5361,5 @@ export const Grade2 = {
   ],
 };
 
+import { Translation } from react-i.txt
+Displaying import { Translation } from react-i.txt.
