@@ -378,7 +378,7 @@ export default {
   // done
   // Mastery 1
   g2c2l11_card1: "We all know that humans have caused an impact on the environment. Unfortunately, we have both directly and indirectly caused a decrease in the number of animals.",
-  g2c2l11_card2: "Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
+  g2c2l11_card4: "Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
   g2c2l11_prompt: "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species. Write a letter to your local official addressing these issues.",
   // Mastery 2
   g2c2l11_2_card1: "Deforestation can occur in many different ways, and cause countless consequences in return.",
