@@ -456,6 +456,11 @@ export const Grade2 = {
         },
       ],
     },
+    /**
+     * 
+     * End of Chapter 1
+     * 
+     */
     {
       navigation: "Chapter2",
       title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
@@ -476,44 +481,6 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/leaf.png"),
           backgroundColor: "#008036",
           minigames: {
-            sorting: { // Needs to be taken out and put in the next lesson
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt:
-                  "Match the action to the correct step of the expirement",
-                num: 3, //count start 0
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Observation" },
-                  { name: "Hypothesis" },
-                  { name: "Conclusion" },
-                  { name: "Purpose of study" },
-                ],
-                options: [
-                  {
-                    title: "Elena sees that not all her plants.",
-                    name: "Observation",
-                  },
-                  {
-                    title:
-                      "Sergey is coming up with a way to explain a natural phenomenon he saw.",
-                    name: "Hypothesis",
-                  },
-                  {
-                    title:
-                      "Vladimir sees from his experiment that flowers cannot grow well in the smog.",
-                    name: "Conclusion",
-                  },
-                  {
-                    title:
-                      "Aleksandr wants to figure out the effects of trash on plant growth.",
-                    name: "Purpose of study",
-                  },
-                ],
-              },
-            },
             openresponse: { //correct
               navigation: "Image Boom",
               title: (
@@ -634,16 +601,6 @@ export const Grade2 = {
                 ],
               },
             },
-            snapshot_2: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "List three plants that you see everyday. Why do you think that you see them so" +
-                " often? Think about the environmental conditions that they need to survive.",
-
-            },
             snapshot: { //correct
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
@@ -651,6 +608,14 @@ export const Grade2 = {
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
+            },
+            snapshot_2: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take a zoomed in picture of the leaf of a plant. What can you identify from this picture?"
             },
           },
           mastery: {
@@ -890,7 +855,7 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Which communitiy (natural or artifical) is more environmentally friendly?" +
+                      "Which community (natural or artifical) is more environmentally friendly?" +
                       "Are there benefits to one or the other? List a couple of either communities you see in your area.",
                     placeholder: "The community that is...",
                     image: require("../../../../assets/openresponse/innovation.png"),
@@ -1009,18 +974,6 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/swamp.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l3_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/garden.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l3_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/search-location.png"),
-              },
             ],
           },
         },
@@ -1108,9 +1061,8 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "List a few ways in which you indirectly impact the environment" +
-                      ", are these practices sustainable?",
-                    placeholder: "The difference between...",
+                      "How does the use of chemicals, such as pesticides and fertilizers, affect the growth of plants in the long term?",
+                    placeholder: "The use of chemicals...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1159,13 +1111,21 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/plant-hand.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
-                ),
-              },
             ],
           },
+          mastery_2: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l4_2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/human-plant.png"),
+              },
+            ],
+          }
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1178,6 +1138,14 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
           backgroundColor: "#44312B",
           minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take a picture of an endangered animal from the Red Book of Plants. If you can’t find one, take a picture of it online so you can identify it the next time you see it.",
+            },
             quiz: { // correct
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
@@ -1232,15 +1200,6 @@ export const Grade2 = {
                 },
               ],
             },
-            snapshot: { // correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an endangered animal from the Red Book of Plants. " +
-                "If you cannot find one, take a picture of it online so you can identify it the next time you see it.",
-            },
             openresponse: { // correct
               navigation: "Image Boom",
               title: (
@@ -1267,7 +1226,7 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "What plants are in the Red Book and which are not?",
+                prompt: "Sort the following plants into groups whether they are in the red book and which are not?",
                 num: 5, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
@@ -1275,12 +1234,17 @@ export const Grade2 = {
                   { name: "Not in Red Book" },
                 ],
                 options: [
-                  { title: "Startfruit", name: "Not in Red Book" },
+                  { title: "Picking up trash", name: "In Red Book" },
                   { title: "Steppe Peony", name: "In Red Book" },
-                  { title: "Tiger Iris", name: "In Red Book" },
-                  { title: "Ludwig Iris", name: "Not in Red Book" },
-                  { title: "Tarda Tulip", name: "Not in Red Book" },
-                  { title: "Regel's Tulip", name: "In Red Book" },
+                  { title: "Planting native plants", name: "In Red Book" },
+                  { title: "Local Farming", name: "In Red Book" },
+                  { title: "Littering", name: "Not in Red Book" },
+                  { title: "Using Chemicals", name: "Not in Red Book" },
+                  { title: "Regel's tulip", name: "In Red Book" },
+                  { title: "Red clover", name: "Not in Red Book" },
+                  { title: "White birch", name: "Not in Red Book" },
+                  { title: "Roundleaf sundew", name: "In Red Book" },
+                  { title: "Common apricot", name: "Not in Red Book" },
                 ],
               },
             },
@@ -1319,7 +1283,7 @@ export const Grade2 = {
             memory: { // correct
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different sources of information.",
+              description: "Match the picture to the name",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -1445,7 +1409,7 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Name a couple animals that are veterbrates. Now, name a couple of " +
+                      "Name a couple animals that are veterbrates. Name a couple of " +
                       "animals that are invertebrates. How are they similar? How are they different?",
                     placeholder: "An animal that is ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
@@ -1459,7 +1423,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Draw a picture of a skeletal system wit a vertebrate!",
+              prompt: "Draw a picture of a skeletal system with a vertebrate!",
             },
           },
           mastery: {
@@ -1745,6 +1709,64 @@ export const Grade2 = {
                 },
               ],
             },
+            memory: { // correct
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the word to the definition using pictures",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              //change all images
+              content: [
+                {
+                  type: "image",
+                  name: "Insect",
+                  image: require("../../../../assets/memory/beetle.png"),
+                },
+                {
+                  name: "Insect",
+                },
+                {
+                  type: "image",
+                  name: "Arachnids",
+                  image: require("../../../../assets/memory/spider.png"),
+                },
+                {
+                  name: "Arachnids",
+                },
+                {
+                  type: "image",
+                  name: "Crust-\naceans",
+                  image: require("../../../../assets/memory/crab.png"),
+                },
+                {
+                  name: "Crust-\naceans",
+                },
+                {
+                  type: "image",
+                  name: "Mollusk",
+                  image: require("../../../../assets/memory/snail.png"),
+                },
+                {
+                  name: "Mollusk",
+                },
+                {
+                  type: "image",
+                  name: "Echino-\nderms",
+                  image: require("../../../../assets/memory/starfish.png"),
+                },
+                {
+                  name: "Echino-\nderms",
+                },
+                {
+                  type: "image",
+                  name: "Skeleton",
+                  image: require("../../../../assets/memory/fishbone.png"),
+                },
+                {
+                  name: "Skeleton",
+                },
+              ],
+            },
           },
           mastery: {
             prompt: (
@@ -1822,7 +1844,8 @@ export const Grade2 = {
                 },
               ],
             },
-            sorting: { // incorrect images
+            // here all the content is correct but it is a different minigame? 
+            sorting: { // incorrect images 
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
