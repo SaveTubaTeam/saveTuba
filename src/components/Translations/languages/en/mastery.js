@@ -270,7 +270,7 @@ export default {
     "Once you have your materials gathered, did you have to buy anything or were they all in your house? \nWould you say the materials is sustainable?",
   g2c1l3_card6:
     "Create a prediction: How do you think you are going to see air pollution? \nAre there any areas you think would have less air pollution than others? \nWhy?",
-  g2c2l3_prompt: "Submit your best hypothesis you came up with!",
+  g2c1l3_prompt: "Submit your best hypothesis you came up with!",
 
   // Chapter 2
 
@@ -308,7 +308,11 @@ export default {
     "Then, research communities in your neighborhood that were indirectly affected by humans. Visit one of these communities and record your observations.",
   g2c2l4_prompt: "Upload all your reserach and observations",
 
-  //lesson 23
+  g2c2l4_2_card1: "Research house plants that would do well in your environment and find one that would be easy to get.",
+  g2c2l4_2_prompt: "Identify and explain where you would put this in your house, and why it would do well there. " +
+    "Identify and explain how much sunlight it would get, and how often it would be watered. For an extra challenge, " +
+    "get this plant and actually take care of it, tracking its progress with pictures weekly.",
+  
 
   g2c2l5_card1:
     "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins.",
@@ -319,8 +323,6 @@ export default {
   g2c2l5_prompt:
     "How do they survive in their habitat with this in mind? Expand.",
 
-  // lesson 24 and 25
-
   g2c2l6_card1:
     "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications.",
   g2c2l6_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",
@@ -330,7 +332,7 @@ export default {
   g2c2l6_prompt:
     "Record your findings and bring them home.",
 
-  
+
 
   g2c2l7_card1:
     "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
@@ -562,12 +564,12 @@ export default {
     "Step 3: Water the pots, then plant two or three bean seeds in each. Put a stake in each pot for the beans to climb. Keep the pots moist (but not soggy) while the beans sprout.",
   g2c3l10_prompt:
     "Step 4: Notice which beans sprout first. Measure the height of the plants every few days until the beans flower. Keep a chart. Which soil was the best?",
-  
+
   // lesson 39 and 40?? 
 
   g2c3l11_card1:
     "Let’s take a deeper dive into soil fertility. Plants need nutrients just like people.",
-  g2c3l11_card2: 
+  g2c3l11_card2:
     " A fertile soil will contain all the major nutrients for basic plant nutrition, as well as other nutrients in smaller amounts.",
   g2c3l11_card3:
     "Sadly, many soils don’t have good levels of all the necessary plant nutrients.",
