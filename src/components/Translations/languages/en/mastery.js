@@ -344,7 +344,7 @@ export default {
   g2c2l7_card2:
     "Make sure that this definitely doesn’t happen to an ecosystem near you! Research an ecosystem in your area.",
   g2c2l7_prompt:
-    "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",\
+    "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
 
   //mastery2 for lesson 13
 
@@ -352,7 +352,7 @@ export default {
   g2c2l7_2_card2: "One way is picking up trash and waste whenever we see it.",
   g2c2l7_2_prompt: "Here’s the challenge: spend one hour a week outside in an area near you that needs trash picked up. Ask your family and your friends to come with you and help! Keep a log for a month, tracking the time spent each week picking up trash. The more the better!",
 
-  
+
   
   // should work rn 
 
