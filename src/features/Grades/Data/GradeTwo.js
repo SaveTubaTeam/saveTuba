@@ -20,7 +20,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 1 Lesson 1 
+        Grade 3 Chapter 1 Lesson 1 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -119,7 +119,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 1 Lesson 2 
+        Grade 3 Chapter 1 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -206,7 +206,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 1 Lesson 3 and 4
+        Grade 3 Chapter 1 Lesson 3 and 4
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -456,6 +456,11 @@ export const Grade2 = {
         },
       ],
     },
+    /**
+     * 
+     * End of Chapter 1
+     * 
+     */
     {
       navigation: "Chapter2",
       title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
@@ -467,7 +472,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 1 (Lesson five on curriculum sheet)
+        Grade 3 Chapter 2 Lesson 1 (Lesson five on curriculum sheet)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~ 
         */
         {
@@ -675,7 +680,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 2 (Lesson six and seven on curriculum sheet)
+        Grade 3 Chapter 2 Lesson 2 (Lesson six and seven on curriculum sheet)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -762,7 +767,7 @@ export const Grade2 = {
               },
             },
             openresponse_2: { // correct
-              navigation: "Image Boom 2",
+              navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -869,7 +874,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 3 (lesson eight in curriculum)
+        Grade 3 Chapter 2 Lesson 3 (lesson eight in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1026,7 +1031,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 4 (lesson nine in curriculum) 
+        Grade 3 Chapter 2 Lesson 4 (lesson nine in curriculum) 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1169,7 +1174,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 5 (lesson ten & eleven in curriculum)
+        Grade 3 Chapter 2 Lesson 5 (lesson ten & eleven in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1307,7 +1312,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 6 (lesson twelve in curriculum)
+        Grade 3 Chapter 2 Lesson 6 (lesson twelve in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1496,7 +1501,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 7 (lesson thirteen in curriculum)
+        Grade 3 Chapter 2 Lesson 7 (lesson thirteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1504,7 +1509,136 @@ export const Grade2 = {
           title: <Translation>{(t) => t("gradetwo:c2l7")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/habitat.png"),
           backgroundColor: "#7B3B16",
-          minigames: {},
+          minigames: {
+            snapshot: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Draw a picture of a local ecosystem near you. Analyze the picture, is it being contaminated by waste or pollution?",
+            },
+            openresponse: {
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
+                  {
+                    text: "A habitat is where an animal lives. What is your habitat?" +
+                      " List some things that you have in your home that you use everyday," +
+                      " how many of these things do you throw away daily?",
+                    placeholder: "On a daily basis, I throw away...",
+                    image: require("../../../../assets/openresponse/innovation.png"),
+                  },
+                ],
+              },
+            },
+            quiz: { //correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+
+                {
+                  prompt:
+                    "The way that animals live in their habitat through changing themselves is called?",
+                  answers: [
+                    { text: "Adaption" },
+                    { text: "Adoption" },
+                    { text: "Adhering" },
+                    { text: "Abomination" },
+                  ],
+                  answer: "Adaptation",
+                },
+                {
+                  prompt:
+                    "What is the meaning of an ecosystem?",
+                  answers: [
+                    { text: "Only the plants living in their habitat" },
+                    { text: "Only animals living in their habitat" },
+                    { text: "All the living organisms and their habitat" },
+                    { text: "Only referring to the habitat" },
+                  ],
+                  answer: "All the living organisms and their habitat",
+                },
+                {
+                  prompt:
+                    "True or False: All habitats are important and help the environment regulate itself?",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+                {
+                  prompt:
+                    "What happens if there is a loss of habitats?",
+                  answers: [
+                    { text: "Nothing, everything will stay the same" },
+                    { text: "There will be a loss of animals" },
+                    { text: "A new habitat will form" },
+                  ],
+                  answer: "There will be a loss of animals",
+                }, {
+                  prompt:
+                    "True or False: One of the main causes for habitat loss is due to human activities?",
+                  answers: [
+                    { text: "True" },
+                    { text: "False" },
+                  ],
+                  answer: "True",
+                },
+              ],
+            },
+            sorting:
+            {
+              navigation: "Sorting",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              content: {
+                prompt:
+                  "Match the word to the definition using pictures",
+                num: 3, //count start 0
+                imageBg: SortingImages.bg[0].lvl_2_les_8,
+                categories: [
+                  { name: "Soil, ground, & air" },
+                  { name: "Aquatic" },
+                ],
+                options: [
+                  {
+                    title: "Fish",
+                    name: "Aquatic",
+                  },
+                  {
+                    title: "Birds",
+                    name: "Soil, ground, & air",
+                  },
+                  {
+                    title: "Reptiles",
+                    name: "Soil, ground, & air",
+                  },
+                  {
+                    title: "Whales",
+                    name: "Aquatic",
+                  },
+                  {
+                    title: "Earthworms",
+                    name: "Soil, ground, & air",
+                  },
+                  {
+                    title: "Mites",
+                    name: "Soil, ground, & air",
+                  },
+                ],
+              },
+            },
+          },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l7_prompt")}</Translation>
@@ -1524,37 +1658,29 @@ export const Grade2 = {
               },
             ],
           },
+          mastery_2: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l7_2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l7_2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/ecosystem-circle.png"),
+              },
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l7_2_card2")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/ecosystem-search.png"),
+              },
+            ],
+          },
         },
-
-        /* 
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~~
-        LESSONS 15 should go somwwhere here
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-        Also temporarily skipping lessons 16 and 17
-
-        */
-
-        /* 
-
-        ~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 3 chapter 1 Lesson 18 
-        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        */
-
-        {
-          navigation: "lesson18" // A decrease in the number of animals
-
-
-        },
-
-
-
-        /* 
+        /*
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 8 (lesson fourteen in curriculum)
+        Grade 3 Chapter 2 Lesson 8 (lesson fourteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1647,7 +1773,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 9 (lesson fifteen in currciulum)
+        Grade 3 Chapter 2 Lesson 9 (lesson fifteen in currciulum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1770,7 +1896,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 10 (lesson sixteen and seventeen in curriculum)
+        Grade 3 Chapter 2 Lesson 10 (lesson sixteen and seventeen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1895,7 +2021,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 11 (lesson eighteen in curriculum)
+        Grade 3 Chapter 2 Lesson 11 (lesson eighteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -1904,6 +2030,7 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/fishing.png"),
           backgroundColor: "#004AAD",
           mastery: {
+            navigation: "mastery",
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l11_prompt")}</Translation>
             ),
@@ -1916,7 +2043,7 @@ export const Grade2 = {
               },
               {
                 text: (
-                  <Translation>{(t) => t("mastery:g2c2l11_card4")}</Translation>
+                  <Translation>{(t) => t("mastery:g2c2l11_card3")}</Translation>
                 ),
               },
             ],
@@ -1934,6 +2061,18 @@ export const Grade2 = {
               },
             ],
           },
+          // test: {
+          //   cards: [
+          //     {
+          //       text: "Hello",
+          //       name: "salem ale kum",
+          //     },
+          //     {
+          //       text: "World",
+          //       name: "ale kum salem",
+          //     }
+          //   ],
+          // },
           minigames: {
             snapshot: { // correct
               navigation: "Snapshot",
@@ -2007,7 +2146,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 12 (lesson nineteen in curriculum)
+        Grade 3 Chapter 2 Lesson 12 (lesson nineteen in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2105,7 +2244,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 13 (lesson 20 & 21 in curriculum)
+        Grade 3 Chapter 2 Lesson 13 (lesson 20 & 21 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2219,7 +2358,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 14 (lesson 22 in curriculum)
+        Grade 3 Chapter 2 Lesson 14 (lesson 22 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2330,7 +2469,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 15 (lesson 23 in curriculum)
+        Grade 3 Chapter 2 Lesson 15 (lesson 23 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2564,7 +2703,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 2 Lesson 16 (lesson 24 & 25 in curriculum)
+        Grade 3 Chapter 2 Lesson 16 (lesson 24 & 25 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -2684,120 +2823,11 @@ export const Grade2 = {
       colorOne: "tomato",
       colorTwo: "firebrick",
       lessons: [
-        {
-          navigation: "Lesson1",
-          title: <Translation>{(t) => t("gradetwo:c3l1")}</Translation>,
-          thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
-          backgroundColor: "#49326B",
-          minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an item undergoing change from one state of matter to another.",
-            },
-            quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following is a state of matter?",
-                  answers: [
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "Gas" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "When something freezes, what state of matter does it start and then end in?",
-                  answers: [
-                    { text: "Solid to liquid state" },
-                    { text: "Liquid to gaseous state" },
-                    { text: "Solid state to gaseous state" },
-                    { text: "Liquid to solid state" },
-                  ],
-                  answer: "Liquid to solid state",
-                },
-                {
-                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
-                  answers: [
-                    { text: "Gas" },
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "None of the above" },
-                  ],
-                  answer: "Gas",
-                }
-              ]
-            },
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
-                    placeholder: "When we change an object from one state to another ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
-            },
-          },
-          mastery: {
-            prompt: (
-              <Translation>{(t) => t("mastery:g2c2l16_prompt")}</Translation>
-            ),
-            cards: [
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card1")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/heart-rate.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card2")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/doctor.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card3")}</Translation>
-                ),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l16_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/rosemary.png"),
-              },
-            ],
-          },
-          minigames: {},
-        },
+
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         Grade 1 Chapter 3 Lesson 1 (lesson 26 in curriculum)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~
     */
         {
           navigation: "Lesson1",
@@ -2915,12 +2945,9 @@ export const Grade2 = {
           },
 
         },
-
-        // not complete up until this point 
-
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 2 (lesson 27 in curriculum)
+        Grade 3 Chapter 3 Lesson 2 (lesson 27 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3028,7 +3055,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 3 (lesson 28 in curriculum)
+        Grade 3 Chapter 3 Lesson 3 (lesson 28 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3149,7 +3176,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 4  // lesson 29
+        Grade 3 Chapter 3 Lesson 4  // lesson 29
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3246,7 +3273,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 5 // lesson 30 & 31
+        Grade 3 Chapter 3 Lesson 5 // lesson 30 & 31
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3394,7 +3421,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 6 //lesson 32
+        Grade 3 Chapter 3 Lesson 6 //lesson 32
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3508,7 +3535,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 7 //lessons 33 & 34
+        Grade 3 Chapter 3 Lesson 7 //lessons 33 & 34
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3608,7 +3635,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 8 //lesson 35
+        Grade 3 Chapter 3 Lesson 8 //lesson 35
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3723,7 +3750,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
+        Grade 3 Chapter 3 Lesson 9 (Lesson 36 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3839,7 +3866,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
+        Grade 3 Chapter 3 Lesson 10 Lessons 37 and 38 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -3944,7 +3971,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
+        Grade 3 Chapter 3 Lesson 11 Lessons 39 and 40 on curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4035,7 +4062,7 @@ export const Grade2 = {
 
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 12 Lessons 41 and 42
+        Grade 3 Chapter 3 Lesson 12 Lessons 41 and 42
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4138,7 +4165,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 13 (lessons 43 and 44 in curriculum)
+        Grade 3 Chapter 3 Lesson 13 (lessons 43 and 44 in curriculum)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4238,7 +4265,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
+        Grade 3 Chapter 3 Lesson 14 lessons 45 and 46 in curriculum
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4334,7 +4361,7 @@ export const Grade2 = {
       lessons: [
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
+        Grade 3 Chapter 4 Lesson 1 (lesson fourty-seven and fourty-eight)
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4448,7 +4475,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 2 
+        Grade 3 Chapter 4 Lesson 2 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4582,7 +4609,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 3 
+        Grade 3 Chapter 4 Lesson 3 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4718,7 +4745,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 4 
+        Grade 3 Chapter 4 Lesson 4 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4842,7 +4869,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 5 
+        Grade 3 Chapter 4 Lesson 5 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -4970,7 +4997,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 6 
+        Grade 3 Chapter 4 Lesson 6 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -5121,7 +5148,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 7 
+        Grade 3 Chapter 4 Lesson 7 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -5181,7 +5208,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 8 
+        Grade 3 Chapter 4 Lesson 8 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -5193,7 +5220,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 9 
+        Grade 3 Chapter 4 Lesson 9 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -5251,7 +5278,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 10 
+        Grade 3 Chapter 4 Lesson 10 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -5263,7 +5290,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 11 
+        Grade 3 Chapter 4 Lesson 11 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
@@ -5317,7 +5344,7 @@ export const Grade2 = {
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
-        Grade 2 Chapter 4 Lesson 12 
+        Grade 3 Chapter 4 Lesson 12 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
         */
         {
