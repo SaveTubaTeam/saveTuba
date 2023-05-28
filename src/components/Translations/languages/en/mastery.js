@@ -313,34 +313,48 @@ export default {
     "Identify and explain how much sunlight it would get, and how often it would be watered. For an extra challenge, " +
     "get this plant and actually take care of it, tracking its progress with pictures weekly.",
 
+  
+  //Lesson 10 and 11 on curriculum:
+
 
   g2c2l5_card1:
-    "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins.",
+    "All the endangered plants are listed in the Red Book.",
   g2c2l5_card2:
-    "Blood has many responsibilities as well such as warming the body, carrying oxygen and nutrients, and more. A key fact to remember is that humans are warm-blooded.",
+    "If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. Many countries keep their own list of endangered plants.",
   g2c2l5_card3:
-    "Research a cold-blooded animal. Think about how this helps them in nature and why their adaptations/evolution led to this. ",
+    "Research a country that has an endangered plant that is not endangered in Kazakhstan. Why is it that Kazakhstan is able to have a healthy amount of this plant? Why is it endangered in the other country?",
   g2c2l5_prompt:
-    "How do they survive in their habitat with this in mind? Expand.",
+    "Formulate some ideas on helping the other country get back to a healthy level for this plant.",
+  
+  //llesson 12
 
   g2c2l6_card1:
-    "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications.",
-  g2c2l6_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",
-  g2c2l6_card3: "But did you know that there are many natural remedies or medicines to everyday health problems?",
+    "Vertebrates and invertebrates are both types of animals.",
+  g2c2l6_card2: "The difference is that vertebrates have a skeleton or a backbone, while invertebrates don’t.",
+  g2c2l6_card3: "In the wild, these animals use their physical capabilities to survive.",
   g2c2l6_card4:
-    "Visit the nearest forest, park, or nature enclosure. Look around for herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
+    "It’s time to go on a trip! Find and identify both vertebrates and invertebrates.",
   g2c2l6_prompt:
-    "Record your findings and bring them home.",
-
-
+    "Take pictures of their structures. Annotate the pictures and show us how they’ve sustained themselves using their anatomy.",
+  
+  //lesson 13
 
   g2c2l7_card1:
     "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out.",
   g2c2l7_card2:
     "Make sure that this definitely doesn’t happen to an ecosystem near you! Research an ecosystem in your area.",
   g2c2l7_prompt:
-    "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
+    "Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",\
 
+  //mastery2 for lesson 13
+
+  g2c2l7_2_card1: "Waste and trash can contaminate animal habitats and also harm animals directly. There are many ways humans can help with this problem and help keep them safe.",
+  g2c2l7_2_card2: "One way is picking up trash and waste whenever we see it.",
+  g2c2l7_2_prompt: "Here’s the challenge: spend one hour a week outside in an area near you that needs trash picked up. Ask your family and your friends to come with you and help! Keep a log for a month, tracking the time spent each week picking up trash. The more the better!",
+
+  
+  
+  // should work rn 
 
   /**
  * Start of Hayden's Mastery Section
