@@ -1715,7 +1715,7 @@ export const Grade2 = {
               description: "Match the word to the definition using pictures",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
-              //change all images
+              //why u always lying OOOOH oh my god
               content: [
                 {
                   type: "image",
