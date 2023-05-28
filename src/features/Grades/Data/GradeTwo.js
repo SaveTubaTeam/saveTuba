@@ -1138,6 +1138,14 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/red-book.png"),
           backgroundColor: "#44312B",
           minigames: {
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take a picture of an endangered animal from the Red Book of Plants. If you can’t find one, take a picture of it online so you can identify it the next time you see it.",
+            },
             quiz: { // correct
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
@@ -1192,15 +1200,6 @@ export const Grade2 = {
                 },
               ],
             },
-            snapshot: { // correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an endangered animal from the Red Book of Plants. " +
-                "If you cannot find one, take a picture of it online so you can identify it the next time you see it.",
-            },
             openresponse: { // correct
               navigation: "Image Boom",
               title: (
@@ -1227,7 +1226,7 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "What plants are in the Red Book and which are not?",
+                prompt: "Sort the following plants into groups whether they are in the red book and which are not?",
                 num: 5, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
@@ -1235,12 +1234,17 @@ export const Grade2 = {
                   { name: "Not in Red Book" },
                 ],
                 options: [
-                  { title: "Startfruit", name: "Not in Red Book" },
+                  { title: "Picking up trash", name: "In Red Book" },
                   { title: "Steppe Peony", name: "In Red Book" },
-                  { title: "Tiger Iris", name: "In Red Book" },
-                  { title: "Ludwig Iris", name: "Not in Red Book" },
-                  { title: "Tarda Tulip", name: "Not in Red Book" },
-                  { title: "Regel's Tulip", name: "In Red Book" },
+                  { title: "Planting native plants", name: "In Red Book" },
+                  { title: "Local Farming", name: "In Red Book" },
+                  { title: "Littering", name: "Not in Red Book" },
+                  { title: "Using Chemicals", name: "Not in Red Book" },
+                  { title: "Regel's tulip", name: "In Red Book" },
+                  { title: "Red clover", name: "Not in Red Book" },
+                  { title: "White birch", name: "Not in Red Book" },
+                  { title: "Roundleaf sundew", name: "In Red Book" },
+                  { title: "Common apricot", name: "Not in Red Book" },
                 ],
               },
             },
@@ -1279,7 +1283,7 @@ export const Grade2 = {
             memory: { // correct
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different sources of information.",
+              description: "Match the picture to the name",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -1405,7 +1409,7 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Name a couple animals that are veterbrates. Now, name a couple of " +
+                      "Name a couple animals that are veterbrates. Name a couple of " +
                       "animals that are invertebrates. How are they similar? How are they different?",
                     placeholder: "An animal that is ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
@@ -1419,7 +1423,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Draw a picture of a skeletal system wit a vertebrate!",
+              prompt: "Draw a picture of a skeletal system with a vertebrate!",
             },
           },
           mastery: {
@@ -1705,6 +1709,64 @@ export const Grade2 = {
                 },
               ],
             },
+            memory: { // correct
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the word to the definition using pictures",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              //change all images
+              content: [
+                {
+                  type: "image",
+                  name: "Insect",
+                  image: require("../../../../assets/memory/beetle.png"),
+                },
+                {
+                  name: "Insect",
+                },
+                {
+                  type: "image",
+                  name: "Arachnids",
+                  image: require("../../../../assets/memory/spider.png"),
+                },
+                {
+                  name: "Arachnids",
+                },
+                {
+                  type: "image",
+                  name: "Crust-\naceans",
+                  image: require("../../../../assets/memory/crab.png"),
+                },
+                {
+                  name: "Crust-\naceans",
+                },
+                {
+                  type: "image",
+                  name: "Mollusk",
+                  image: require("../../../../assets/memory/snail.png"),
+                },
+                {
+                  name: "Mollusk",
+                },
+                {
+                  type: "image",
+                  name: "Echino-\nderms",
+                  image: require("../../../../assets/memory/starfish.png"),
+                },
+                {
+                  name: "Echino-\nderms",
+                },
+                {
+                  type: "image",
+                  name: "Skeleton",
+                  image: require("../../../../assets/memory/fishbone.png"),
+                },
+                {
+                  name: "Skeleton",
+                },
+              ],
+            },
           },
           mastery: {
             prompt: (
@@ -1782,7 +1844,8 @@ export const Grade2 = {
                 },
               ],
             },
-            sorting: { // incorrect images
+            // here all the content is correct but it is a different minigame? 
+            sorting: { // incorrect images 
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
