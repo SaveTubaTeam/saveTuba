@@ -1719,7 +1719,7 @@ export const Grade2 = {
               content: [
                 {
                   type: "image",
-                  name: "Mutualism: two animals that positivity benefit from living together",
+                  name: "Mutualism",
                   image: require("../../../../assets/memory/pexels-leticia-leonor-4477814.jpg"),
                 },
                 {
@@ -1727,7 +1727,7 @@ export const Grade2 = {
                 },
                 {
                   type: "image",
-                  name: "Parasitism: one animal benefits and one animal is harmed",
+                  name: "Parasitism",
                   image: require("../../../../assets/memory/pexels-jimmy-chan-2382223.jpg"),
                 },
                 {
@@ -1735,7 +1735,7 @@ export const Grade2 = {
                 },
                 {
                   type: "image",
-                  name: "Predation: animals feeding on other animals",
+                  name: "Predation",
                   image: require("../../../../assets/memory/pexels-george-desipris-726478.jpg"),
                 },
                 {
@@ -1743,19 +1743,19 @@ export const Grade2 = {
                 },
                 {
                   type: "image",
-                  name: "Neutralism: animals that do not depend on each other",
+                  name: "Neutralism",
                   image: require("../../../../assets/memory/pexels-israel-delgadillo-figueroa-2577275.jpg"),
                 },
                 {
-                  name: "Neutralism: animals that do not depend on each other",
+                  name: "Neutralism",
                 },
                 {
                   type: "image",
-                  name: "Competition: animals that both need the same limited resource",
+                  name: "Competition",
                   image: require("../../../../assets/memory/pexels-pixabay-247502.jpg"),
                 },
                 {
-                  name: "Competition: animals that both need the same limited resource",
+                  name: "Competition",
                 },
               ],
             },
