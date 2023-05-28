@@ -974,18 +974,6 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/swamp.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l3_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/garden.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l3_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/search-location.png"),
-              },
             ],
           },
         },
@@ -1122,11 +1110,6 @@ export const Grade2 = {
                   <Translation>{(t) => t("mastery:g2c2l4_card3")}</Translation>
                 ),
                 image: require("../../../../assets/mastery/plant-hand.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
-                ),
               },
             ],
           },

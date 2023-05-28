@@ -246,6 +246,7 @@ export default {
   */
 
   // correct
+  // lesson 1
   g2c1l1_card1: "Walk around your house and find a notable scientific discovery.",
   g2c1l1_card2:
     "Take a picture of the object and list its functionality. Record any observations you find that stick out to you. ",
@@ -253,6 +254,7 @@ export default {
     "Rate how sustainable it is. Come up with ideas to make it more sustainable.",
 
   // correct
+  // lesson 2
   g2c1l2_card1:
     "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited.",
   g2c1l2_card2:
@@ -260,26 +262,28 @@ export default {
   g2c1l2_prompt: "Rank this source and its information on a scale of 1(unreliable) to 10(completely reliable).",
 
   // will need more work to make it look good. I agree with David, there will need to be visual aids
-  g2c1l3_card1: "Become a scientist who tests about air pollution!",
+  // lesson 3 & 4
+  g2c1l3_card1: "Scientists conduct research through experiments. This simple experiment can help you see pollution.",
   g2c1l3_card2:
-    "It is hard to see air pollution around us because the particles are so small, but just because we can't see it, doesnt mean it's not there!",
+    "It can be hard to understand the concept of air pollution as it is not always easy to see. This simple experiment can help you understand that there is more in the atmosphere than just air and why it is important to keep the atmosphere clean!",
   g2c1l3_card3: "Let's conduct an expirement. You will need the following: ",
   g2c1l3_card4:
     "- A piece of clear plastic (such as a plate or a cup), \n- Petroleum jelly, \n- A small rock, \n- A sheet of white paper",
   g2c1l3_card5:
-    "Once you have your materials gathered, did you have to buy anything or were they all in your house? \nWould you say the materials is sustainable?",
+    "Once you have your materials gathered\n- Spread petroleum jelly on your piece of clear plastic\n- Place it outside\n- Use a rock or other heavy object to weigh it down\n- Take a picture of your plastic and leave it outside for 24 hours\n- After the time has passed, place the white paper behind the plastic to make it easier to see all the particles that have collected in the petroleum jelly",
   g2c1l3_card6:
-    "Create a prediction: How do you think you are going to see air pollution? \nAre there any areas you think would have less air pollution than others? \nWhy?",
-  g2c1l3_prompt: "Submit your best hypothesis you came up with!",
+    "All of these particles are pollutants that exist in the air.",
+  g2c1l3_prompt: "Please explain what you found in the jelly and why its important!",
 
   // Chapter 2
-
-  g2c2l1_card1: "We take in air through our nose and/or mouth.",
+  // lesson 5
+  g2c2l1_card1: "Start by finding three plants outside and take some pictures of them.",
   g2c2l1_card2:
-    "Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible. Obviously, we wouldn’t survive without breathing",
+    " How does the plant acquires its food? What are the factors in the plant cycle present?",
   g2c2l1_prompt:
-    " Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
+    "Take a picture of the factors as well. Compare them to each other. After you understand the cycle, start growing your own plant at home and track its growth daily and weekly.",
 
+  // lesson 6 & 7
   g2c2l2_card1:
     "Plants exist all over the world in many different conditions. Think of two countries you would like to visit one day.",
   g2c2l2_card2:
@@ -287,32 +291,28 @@ export default {
   g2c2l2_prompt:
     "Explain how they’ve adapted to their living conditions and benefited from them.",
 
+  // lesson 8
   g2c2l3_card1:
-    "A plant community consists of different plants that grow in the same area with the same conditions for existence. There are both natural and artificial communities present in our habitat. ",
+    "There are both natural and artificial communities present in our habitat. ",
   g2c2l3_card2:
-    "Go outside and identify both the many natural communities present, and artificial communities present.",
-  g2c2l3_card3:
-    "Examples of a natural community would be: \n- deserts \n- lakes \n- swamps ",
-  g2c2l3_card4:
-    "Examples of an artifical community would be: \n- fields \n- gardens \n- flower beds",
+    "Go outside and identify the natural and artificial communities present in your local area.",
   g2c2l3_prompt:
-    "List all the communities you found. Explain how they are helpful (or not) to the environment",
+    "What is similar between these two communities, what is different?",
 
+  // lesson 9
   g2c2l4_card1:
     "Humans are always interacting with their environment. They will directly and indirectly affect plant community.",
   g2c2l4_card2:
-    "Plants are very important to help clean the air from dust, dirty and harmful gasses. Humans have to make sure they keep plants in the best situation and most environmentally-sensible conditions.",
+    "There are many reasons to make sure our impact is as positive as possible. For example, plants are very important to protect the air from dust, as well as dirty and harmful gasses. Humans have to make sure they keep plants in the best and most environmentally-sensible conditions.",
   g2c2l4_card3:
-    "Research plant communities in your neighborhood that were directly affected by humans. Was it a positive or negtitive impact?",
-  g2c2l4_card4:
-    "Then, research communities in your neighborhood that were indirectly affected by humans. Visit one of these communities and record your observations.",
-  g2c2l4_prompt: "Upload all your reserach and observations",
+    "Research plant communities in your neighborhood that have been directly affected by humans. Then, research plant communities near you that have been indirectly affected by humans.",
+  g2c2l4_prompt: "These impacts can be positive or negative. Visit one of these communities and record your observations.",
 
   g2c2l4_2_card1: "Research house plants that would do well in your environment and find one that would be easy to get.",
   g2c2l4_2_prompt: "Identify and explain where you would put this in your house, and why it would do well there. " +
     "Identify and explain how much sunlight it would get, and how often it would be watered. For an extra challenge, " +
     "get this plant and actually take care of it, tracking its progress with pictures weekly.",
-  
+
 
   g2c2l5_card1:
     "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins.",
