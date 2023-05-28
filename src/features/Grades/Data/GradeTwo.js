@@ -1,30 +1,3 @@
-
-Conversation opened. 1 unread message.
-
-Skip to content
-Using Lehigh University Mail with screen readers
-
-1 of 4,771
-Fwd:
-Inbox
-
-Malika Buribayeva
-Attachments
-3:17 PM (5 minutes ago)
-to me
-
-
-
----------- Forwarded message ---------
-From: Malika Buribayeva <mabc26@lehigh.edu>
-Date: Thu, May 25, 2023 at 12:21
-Subject:
-To: Andrew Leaventon <awl224@lehigh.edu>
-
-
-
- One attachment
-  •  Scanned by Gmail
 import { Translation } from "react-i18next";
 import { React } from 'react';
 
@@ -5360,6 +5333,3 @@ export const Grade2 = {
     },
   ],
 };
-
-import { Translation } from react-i.txt
-Displaying import { Translation } from react-i.txt.
