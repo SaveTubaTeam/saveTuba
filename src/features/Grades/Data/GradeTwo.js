@@ -1719,6 +1719,57 @@ export const Grade2 = {
               content: [
                 {
                   type: "image",
+                  name: "Mutualism: two animals that positivity benefit from living together",
+                  image: require("../../../../assets/memory/pexels-leticia-leonor-4477814.jpg"),
+                },
+                {
+                  name: "Mutualism: two animals that positivity benefit from living together",
+                },
+                {
+                  type: "image",
+                  name: "Parasitism: one animal benefits and one animal is harmed",
+                  image: require("../../../../assets/memory/pexels-jimmy-chan-2382223.jpg"),
+                },
+                {
+                  name: "Parasitism: one animal benefits and one animal is harmed",
+                },
+                {
+                  type: "image",
+                  name: "Predation: animals feeding on other animals",
+                  image: require("../../../../assets/memory/pexels-george-desipris-726478.jpg"),
+                },
+                {
+                  name: "Predation: animals feeding on other animals",
+                },
+                {
+                  type: "image",
+                  name: "Neutralism: animals that do not depend on each other",
+                  image: require("../../../../assets/memory/pexels-israel-delgadillo-figueroa-2577275.jpg"),
+                },
+                {
+                  name: "Neutralism: animals that do not depend on each other",
+                },
+                {
+                  type: "image",
+                  name: "Competition: animals that both need the same limited resource",
+                  image: require("../../../../assets/memory/pexels-pixabay-247502.jpg"),
+                },
+                {
+                  name: "Competition: animals that both need the same limited resource",
+                },
+              ],
+            },
+            /*
+            memory: { // correct
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the word to the definition using pictures",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
+              //change all images
+              content: [
+                {
+                  type: "image",
                   name: "Insect",
                   image: require("../../../../assets/memory/beetle.png"),
                 },
@@ -1767,6 +1818,7 @@ export const Grade2 = {
                 },
               ],
             },
+            */
           },
           mastery: {
             prompt: (
