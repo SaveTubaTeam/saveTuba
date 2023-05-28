@@ -481,44 +481,6 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/leaf.png"),
           backgroundColor: "#008036",
           minigames: {
-            sorting: { // Needs to be taken out and put in the next lesson
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt:
-                  "Match the action to the correct step of the expirement",
-                num: 3, //count start 0
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [
-                  { name: "Observation" },
-                  { name: "Hypothesis" },
-                  { name: "Conclusion" },
-                  { name: "Purpose of study" },
-                ],
-                options: [
-                  {
-                    title: "Elena sees that not all her plants.",
-                    name: "Observation",
-                  },
-                  {
-                    title:
-                      "Sergey is coming up with a way to explain a natural phenomenon he saw.",
-                    name: "Hypothesis",
-                  },
-                  {
-                    title:
-                      "Vladimir sees from his experiment that flowers cannot grow well in the smog.",
-                    name: "Conclusion",
-                  },
-                  {
-                    title:
-                      "Aleksandr wants to figure out the effects of trash on plant growth.",
-                    name: "Purpose of study",
-                  },
-                ],
-              },
-            },
             openresponse: { //correct
               navigation: "Image Boom",
               title: (
@@ -639,16 +601,6 @@ export const Grade2 = {
                 ],
               },
             },
-            snapshot_2: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "List three plants that you see everyday. Why do you think that you see them so" +
-                " often? Think about the environmental conditions that they need to survive.",
-
-            },
             snapshot: { //correct
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
@@ -656,6 +608,14 @@ export const Grade2 = {
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
                 "Draw and upload a picture of the photosynthesis cycle. Be sure to include lables in your drawing!",
+            },
+            snapshot_2: {
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt:
+                "Take a zoomed in picture of the leaf of a plant. What can you identify from this picture?"
             },
           },
           mastery: {
@@ -895,7 +855,7 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Which communitiy (natural or artifical) is more environmentally friendly?" +
+                      "Which community (natural or artifical) is more environmentally friendly?" +
                       "Are there benefits to one or the other? List a couple of either communities you see in your area.",
                     placeholder: "The community that is...",
                     image: require("../../../../assets/openresponse/innovation.png"),
@@ -1014,18 +974,6 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/swamp.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l3_card3")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/garden.png"),
-              },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l3_card4")}</Translation>
-                ),
-                image: require("../../../../assets/mastery/search-location.png"),
-              },
             ],
           },
         },
@@ -1113,9 +1061,8 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "List a few ways in which you indirectly impact the environment" +
-                      ", are these practices sustainable?",
-                    placeholder: "The difference between...",
+                      "How does the use of chemicals, such as pesticides and fertilizers, affect the growth of plants in the long term?",
+                    placeholder: "The use of chemicals...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1164,13 +1111,21 @@ export const Grade2 = {
                 ),
                 image: require("../../../../assets/mastery/plant-hand.png"),
               },
-              {
-                text: (
-                  <Translation>{(t) => t("mastery:g2c2l4_card4")}</Translation>
-                ),
-              },
             ],
           },
+          mastery_2: {
+            prompt: (
+              <Translation>{(t) => t("mastery:g2c2l4_2_prompt")}</Translation>
+            ),
+            cards: [
+              {
+                text: (
+                  <Translation>{(t) => t("mastery:g2c2l4_2_card1")}</Translation>
+                ),
+                image: require("../../../../assets/mastery/human-plant.png"),
+              },
+            ],
+          }
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
