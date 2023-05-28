@@ -331,14 +331,12 @@ export default {
 
   // lesson 24 and 25
 
-  g2c2l6_card1:
-    "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications.",
-  g2c2l6_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",
-  g2c2l6_card3: "But did you know that there are many natural remedies or medicines to everyday health problems?",
-  g2c2l6_card4:
-    "Visit the nearest forest, park, or nature enclosure. Look around for herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses.",
-  g2c2l6_prompt:
-    "Record your findings and bring them home.",
+  g2c2l6_card1: "Ең қымбатымыз - бұл денсаулық. Денсаулығымызды нығайту үшін біз жеке гигиенамызға қызмет ету және вакциналық емдеу және дәрілерді алуға болады.",
+  g2c2l6_card2: "Кезде біз денсаулық сыйымдай жатсақ не науқас болсақ, дәрігерге барамыз.",
+  g2c2l6_card3: "Бірақ күнделікті денсаулық мәселелеріне табиғи ем және дәрілер барын білдіңіз бе?",
+  g2c2l6_card4: "Ең жақын орманға, паркқа не табиғи жерге барыңыз. Құндыздар, өсімдіктер, тұқымдар және т.б.ді іздеп, күнделікті науқасшылықтарға табиғи шешім іздеп шығыңыз.",
+  g2c2l6_prompt: "Табыстарыңызды жазып алыңыз және үйіңізге апарыңыз.",
+
 
   
 
@@ -361,14 +359,11 @@ export default {
 
   // lesson 14 in curriculum
   // done
-  g2c2l8_card1:
-    "Animals, like humans, have relationships with each other. Animals can have both beneficial and harmful relationships.",
-  g2c2l8_card2:
-    "Symbiotic relationships, such as when the birds feed on insects that live on a rhino and the rhino provides the birds with food, are important for the survival of both animals. Although symbiosis is for animals, there are many naturally beneficial relationships in nature.",
-  g2c2l8_card3:
-    "Venture out into nature and identify beneficial relationships between plants and plants, humans and humans, or animals and animals. It doesn’t have to be a directly beneficial relationship but as long as they’re both receiving help from the other.",
-  g2c2l8_prompt:
-    " Record your observations.",
+  g2c2l8_card1: "Жануарлар, адамдар сияқты, бір-бірімен қатынаста болады. Жануарларда пайдалы және зиянды қатынастар болуы мүмкін.",
+  g2c2l8_card2: "Симбиоздық қатынастар, міндетті түрде қырындағы құмырсқаға жеңіл болатын құстар мен қырын құстарға тамақ берген кезде, екеуіне өмір сүру үшін маңызды. Симбиоз жануарлар үшін болса да, табиғатта көптеген табиғи пайдалы қатынастар бар.",
+  g2c2l8_card3: "Табиғатқа шығып, өсімдіктер арасында, адамдар арасында, не жануарлар арасында пайдалы қатынастарды анықтаңыз. Бұл тікеуен пайдалы қатынастар болмаса да, олар екеуі де басқасынан көмек алады.",
+  g2c2l8_prompt: "Бақылауларыңызды жазып алыңыз.",
+
 
   // lesson 15 in curriculum
   // done
@@ -387,12 +382,13 @@ export default {
   // lesson 18 in curriculum
   // done
   // Mastery 1
-  g2c2l11_card1: "We all know that humans have caused an impact on the environment. Unfortunately, we have both directly and indirectly caused a decrease in the number of animals.",
-  g2c2l11_card2: "Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
-  g2c2l11_prompt: "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species. Write a letter to your local official addressing these issues.",
+  g2c2l11_card1: "Біздің барлығымыз біледік, адамдар ортаға әсер еткен. Қажетті емес, біз тікелей және айқындалмаған жолмен жануарлардың санын азайтуға себеп болдық.",
+  g2c2l11_card4: "Жануарлар тіке жолмен біздің пестицидтерімізден және зыраландырудан өледі. Жануарлар біздің ормандықтарды жою, су тоқтату, батпақтарды құрғау және т.б. арқылы айқындалмаған жолмен өледі.",
+  g2c2l11_prompt: "Қонақайлықтың адамдарының жануарларға зиян келтіруді кеміту үшін тоқтатуға тиіс жаттығуларын бақылаңыз. Осы мәселелерді талқылауға арналған хатыңызды жергілікті әкімшілікке жазыңыз.",
   // Mastery 2
-  g2c2l11_2_card1: "Deforestation can occur in many different ways, and cause countless consequences in return.",
-  g2c2l11_2_prompt: "Research a forest that has recently experienced a disaster. Identify the causes and outcomes. Finally, look into projects and organizations trying to help the situation, how are they helping? How could you help support them?",
+  g2c2l11_2_card1: "Орман жою көптеген түрлерде бола алады, және қайтарушы қапшықтардың санын тыптық болып табады.",
+  g2c2l11_2_prompt: "Жақында қорқынысқа ұшыраған орманны зерттеңіз. Себептері мен нәтижелерін анықтаңыз. Соңында, осы жағдайға көмек етуге тырысатын жобалар мен ұйымдарды зерттеңіз, олар қалай көмек етеді? Сіз оларға қалай көмек көрсету мүмкін?",
+
 
   // lesson 19 in curriculum
   // done
@@ -401,10 +397,16 @@ export default {
 
   // lesson 20 & 21 in curriculum
   // done
-  g2c2l13_card1:
+  g2c2l13_card1: //translate
     "Food and water are vital things to our survival, but humans waste a lot of that important resource.",
   g2c2l13_card2: "In your home, work with your family to record the amount of food wasted and amount of water wasted (not counting bath, showers, cleaning) every day for a week.",
   g2c2l13_prompt: "What are your results? Do your results surprise you?",
+
+  g2c2l13_card1: //translate
+  "Азық-түлік пен су - біздің өмір сүру үшін қажетті заттар. Бірақ адамдар осы маңызды ресурстарды ысырап етеді.",
+  g2c2l13_card2: "Үйіңізде, отбасымен бірге бір апта бойы ысырап еткен азық-түлік мен су мөлшерін жазып алыңыз (ванна, душ, тазалауышыларды есепке алмастан).",
+  g2c2l13_prompt: "Сіздің нәтижелеріңіз қандай? Сіздің нәтижелеріңіз сізді қанағаттандырады ма?",
+
 
   // lesson 22 in curriculum
   // done
@@ -491,12 +493,12 @@ export default {
   // lesson 29
 
   g2c3l4_card1:
-    "Humans, plants, and animals all have a great amount of water within their bodies. No single living organism on Earth can survive without water, either.",
+    "Адамдар, өсімдіктер және құстардың беденінде су көптеген мөлшерде болады. Жер шарындағы әрбір тірі организм сусыз өмір сүруге қадір емес",
   g2c3l4_card2:
-    "If water is so important, where do we get our water from?",
+    "Егер су ыңғайлы болса, ол кідір біз су аламыз?",
   g2c3l4_card3:
-    "Find the nearest water source to your home.",
-  g2c3l4_prompt: "Observe and identify the practices used in sourcing this water and purifying it for human consumption. Record and take pictures of your observations.",
+    "Үйіңізге жақындағы су көзін табыңыз",
+  g2c3l4_prompt: "Осы суды көзден алу және адамдардың қолдануы үшін тазалау әдістерін бақылаңыз және анықтаңыз. Бақылауларыңызды жазып алыңыз және суретке түсіріңіз",
 
   // lesson 30 and 31
 

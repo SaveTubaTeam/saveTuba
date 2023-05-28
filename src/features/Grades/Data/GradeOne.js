@@ -65,7 +65,7 @@ export const Grade1 = {
                     image: require("../../../../assets/sorting/optical.png"),
                   },
                   {
-                    name: "Стакан",
+                    name: "Колба",
                     image: require("../../../../assets/sorting/beaker.png"),
                   },
                   {
@@ -79,8 +79,8 @@ export const Grade1 = {
                     name: "Линейка",
                   },
                   {
-                    title: "Стакан",
-                    name: "Стакан",
+                    title: "Колба",
+                    name: "Колба",
                   },
                   {
                     title: "Оптический Микроскоп",
