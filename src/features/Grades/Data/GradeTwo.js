@@ -1728,7 +1728,7 @@ export const Grade2 = {
                 {
                   type: "image",
                   name: "Parasitism",
-                  image: require("../../../../assets/memory/pexels-jimmy-chan-2382223.jpg"),
+                //rimage: require("../../../../assets/memory/pexels-jimmy-chan-2382223.jpg"),
                 },
                 {
                   name: "Parasitism: one animal benefits and one animal is harmed",
