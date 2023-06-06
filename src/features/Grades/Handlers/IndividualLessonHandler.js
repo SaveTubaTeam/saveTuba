@@ -9,7 +9,6 @@ import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/O
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler";
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
-import TestHandler from "../../../components/Grades/mastery/MasteryHandler";
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2";
 import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";

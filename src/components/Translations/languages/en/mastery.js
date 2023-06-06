@@ -313,7 +313,7 @@ export default {
     "Identify and explain how much sunlight it would get, and how often it would be watered. For an extra challenge, " +
     "get this plant and actually take care of it, tracking its progress with pictures weekly.",
 
-
+  // lesson 10
   g2c2l5_card1:
     "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins.",
   g2c2l5_card2:
@@ -322,7 +322,8 @@ export default {
     "Research a cold-blooded animal. Think about how this helps them in nature and why their adaptations/evolution led to this. ",
   g2c2l5_prompt:
     "How do they survive in their habitat with this in mind? Expand.",
-
+  
+    // lesson 11
   g2c2l6_card1:
     "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications.",
   g2c2l6_card2: "When we feel unhealthy or sick, we visit the doctor’s office.",

@@ -15,6 +15,7 @@ import { SafeArea } from "../../../components/safe-area.component";
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
+import { MasteryFlex } from "../../../components/mastery_flex.component";
 import {
   Mastery,
   Adventure,
@@ -26,6 +27,15 @@ import { useTranslation } from "react-i18next";
 
 const Container = styled.View`
   height: 100%;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #cce882;
+`;
+
+const MasteryStyle = styled.View`
+  height: 100%;
+  width: 100%;
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -175,6 +185,61 @@ function LessonComponent({
             alignItems: "center",
           }}
           ListFooterComponent={
+
+            <MasteryFlex style={MasteryStyle}>
+              
+              <TouchableOpacity
+                style={{
+                  width: "93%",
+                  height: 150,
+                  marginTop: 10,
+                  borderRadius: 20,
+                  justifyContent: "left",
+                  overflow: "hidden",
+                }}
+                onPress={() => nav.navigate("Mastery")}
+              >
+                <ImageBg
+                  style={{
+                    borderRadius: 20,
+                  }}
+                  source={require("../../../../assets/mastery.png")}
+                >
+                  <TitleText weight="bold" size="h5" color="quaternary">
+                    {t("common:mastery")}
+                  </TitleText>
+                </ImageBg>
+              </TouchableOpacity>
+
+
+            </MasteryFlex>
+          }
+        />
+        {/* <FlatList
+          data={
+            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+              .mastery &&
+            Object.values(
+              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                .mastery
+            )
+          }
+          numColumns={1}
+          keyExtractor={(item, index) => index}
+          key={(item, index) => index}
+          renderItem={renderItem}
+          contentContainerStyle={{
+            width: "85%",
+            alignSelf: "center",
+          }}
+          style={{
+            marginBottom: 20,
+            width: "100%",
+          }}
+          ListFooterComponentStyle={{
+            alignItems: "center",
+          }}
+          ListFooterComponent={
             <TouchableOpacity
               style={{
                 width: "93%",
@@ -198,7 +263,7 @@ function LessonComponent({
               </ImageBg>
             </TouchableOpacity>
           }
-        />
+        /> */}
       </Container>
     </SafeArea>
   );
