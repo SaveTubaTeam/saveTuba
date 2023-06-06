@@ -60,4 +60,5 @@ export default {
   profile: "Profile",
   settings: "Settings",
   mastery: "Mastery",
+  mastery2: "Mastery 2",
 };

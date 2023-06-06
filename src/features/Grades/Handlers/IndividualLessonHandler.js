@@ -23,6 +23,8 @@ function IndividualLessonHandler({
 }) {
   const navigation = useNavigation();
   const { t } = useTranslation();
+  console.log("Inside of the individual lesson handler: ");
+  console.log(navigation.getState());
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
