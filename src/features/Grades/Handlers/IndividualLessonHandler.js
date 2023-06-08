@@ -193,7 +193,7 @@ function IndividualLessonHandler({
           )}
         </Stack.Screen>
 
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Reorder"
           options={{
             title: t("common:reorder"),
@@ -219,7 +219,7 @@ function IndividualLessonHandler({
               navigation={navigation}
             />
           )}
-        </Stack.Screen> */}
+        </Stack.Screen>
 
         <Stack.Screen
           name="Mastery"
