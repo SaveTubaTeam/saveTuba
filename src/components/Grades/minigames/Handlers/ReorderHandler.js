@@ -134,7 +134,7 @@ const ReorderHandler = ({
 
         {/* <Text>Hello World</Text> */}
         <DraggableFlatList
-          scrollEnabled={true}
+          scrollEnabled={false} //if true - first item is not draggable
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}
@@ -175,12 +175,3 @@ const mapStateToProps = (store) => ({
 });
 
 export default connect(mapStateToProps, null)(ReorderHandler);
-
-// const styles = StyleSheet.create({
-//   text: {
-//     color: "white",
-//     fontSize: 24,
-//     fontWeight: "bold",
-//     textAlign: "center",
-//   },
-// });

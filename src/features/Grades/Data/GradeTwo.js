@@ -727,7 +727,7 @@ export const Grade2 = {
               },
             },
             openresponse_2: { // correct
-              navigation: "Image Boom",
+              navigation: "Image Boom 2",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -1715,6 +1715,57 @@ export const Grade2 = {
               description: "Match the word to the definition using pictures",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
+              //why u always lying OOOOH oh my god
+              content: [
+                {
+                  type: "image",
+                  name: "Mutualism",
+                  image: require("../../../../assets/memory/pexels-leticia-leonor-4477814.jpg"),
+                },
+                {
+                  name: "Mutualism: two animals that positivity benefit from living together",
+                },
+                {
+                  type: "image",
+                  name: "Parasitism",
+                //rimage: require("../../../../assets/memory/pexels-jimmy-chan-2382223.jpg"),
+                },
+                {
+                  name: "Parasitism: one animal benefits and one animal is harmed",
+                },
+                {
+                  type: "image",
+                  name: "Predation",
+                  image: require("../../../../assets/memory/pexels-george-desipris-726478.jpg"),
+                },
+                {
+                  name: "Predation: animals feeding on other animals",
+                },
+                {
+                  type: "image",
+                  name: "Neutralism",
+                  image: require("../../../../assets/memory/pexels-israel-delgadillo-figueroa-2577275.jpg"),
+                },
+                {
+                  name: "Neutralism",
+                },
+                {
+                  type: "image",
+                  name: "Competition",
+                  image: require("../../../../assets/memory/pexels-pixabay-247502.jpg"),
+                },
+                {
+                  name: "Competition",
+                },
+              ],
+            },
+            /*
+            memory: { // correct
+              navigation: "Memory",
+              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+              description: "Match the word to the definition using pictures",
+              icon: require("../../../../assets/willpower.png"),
+              backgroundColor: "dodgerblue",
               //change all images
               content: [
                 {
@@ -1767,6 +1818,7 @@ export const Grade2 = {
                 },
               ],
             },
+            */
           },
           mastery: {
             prompt: (
