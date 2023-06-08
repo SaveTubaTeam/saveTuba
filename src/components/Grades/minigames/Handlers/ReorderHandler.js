@@ -70,10 +70,15 @@ const ReorderHandler = ({
   selectedChapter,
   selectedLesson,
 }) => {
+  // console.log(info.data);
+
   const [data, setData] = useState(info.data);
-  const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
+  
+  const { t } = useTranslation();
   const navigation = useNavigation();
+
+  console.log("here_1");
   const Modko = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
@@ -105,7 +110,8 @@ const ReorderHandler = ({
       </Modal>
     );
   };
-  const renderItem = ({ item, drag, isActive }) => { // I think this is where the error for Pan is coming from
+  console.log("here_2");
+  const renderItem = ({ item, drag, isActive }) => {
     return (
       <>
         <Item
@@ -115,43 +121,49 @@ const ReorderHandler = ({
           disabled={isActive}
         >
           <BodyText color="secondary" size="subtitle">
-            aksjlgalkjsg
             {item.text}
           </BodyText>
         </Item>
-       </>
+      </>
     );
   };
-
+  console.log("here_3");
   return (
     <>
       <Container>
+
+        {/* <Text>Hello World</Text> */}
         <DraggableFlatList
           scrollEnabled={true}
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(index) => index}
           renderItem={renderItem}
-          ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
+          ListHeaderComponentStyle={{ alignItems: "center", marginTop: 10 }}
           ListHeaderComponent={
-            <Prompt>
-              <TitleText size="subtitle">{info.prompt}</TitleText>
-              <Spacer size="medium" />
-              <TitleText size="caption">
-                Hint: Long press to drag the items.
-              </TitleText>
-            </Prompt>
+            <Text>Hello World</Text>
+            // <Prompt>
+            //   <TitleText size="subtitle">{info.prompt}</TitleText>
+            //   <Spacer size="medium" />
+            //   <TitleText size="caption">
+            //     Hint: Long press to drag the items.
+            //   </TitleText>
+            // </Prompt>
           }
           ListFooterComponentStyle={{ marginTop: 10 }}
           ListFooterComponent={
-            <SubmitButton onPress={() => setVisible(!visible)}>
-              <BodyText color="secondary" size="subtitle">
-                {t("common:submit")}
-              </BodyText>
-            </SubmitButton>
+            <Text>Hello World</Text>
+            // <SubmitButton onPress={() => setVisible(!visible)}>
+            //   <BodyText color="secondary" size="subtitle">
+            //     {t("common:submit")}
+            //   </BodyText>
+            // </SubmitButton>
           }
         />
+
+
+
         <Modko visible={false} />
       </Container>
     </>

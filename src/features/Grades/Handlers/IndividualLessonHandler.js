@@ -23,8 +23,10 @@ function IndividualLessonHandler({
 }) {
   const navigation = useNavigation();
   const { t } = useTranslation();
-  console.log("Inside of the individual lesson handler: ");
-  console.log(navigation.getState());
+
+  // console.log("Inside of the individual lesson handler: ");
+  // console.log(navigation.getState());
+
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
@@ -274,7 +276,7 @@ function IndividualLessonHandler({
                 data={
                   selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                     .mastery_2
-                  
+
                 }
                 selectedGrade={selectedGrade}
                 selectedChapter={selectedChapter}

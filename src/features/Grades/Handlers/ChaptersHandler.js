@@ -10,7 +10,7 @@ import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
 
 import { Grade1 } from "../Data/GradeOne";
-import { Grade2 } from "../Data/GradeTwo";
+import { snapshot_data } from "../Data/GradeTwo_DB";
 import { Grade3 } from "../Data/GradeThree";
 import { Grade4 } from "../Data/GradeFour";
 
@@ -18,7 +18,7 @@ import { addAchievement } from "../../../../redux/actions";
 
 const Stack = createNativeStackNavigator();
 
-function ChaptersHandler({ route, achievements, addAchievement }) {
+function ChaptersHandler({ route, addAchievement }) { //add achievements
   const navigation = useNavigation();
   const { level } = route.params; // Level selected from Lesson navigation screen
   const [selectedGrade, setSelectedGrade] = useState(null);
@@ -29,7 +29,9 @@ function ChaptersHandler({ route, achievements, addAchievement }) {
         setSelectedGrade(Grade1);
         break;
       case 2:
-        setSelectedGrade(Grade2);
+        console.log("AHHHHH");
+        console.log("Grade 1: " + snapshot_data());
+        // setSelectedGrade(Grade2);
         break;
       case 3:
         setSelectedGrade(Grade3);
@@ -60,7 +62,7 @@ function ChaptersHandler({ route, achievements, addAchievement }) {
             />
           )}
         </Stack.Screen>
-        
+
         <Stack.Screen
           name="Chapter1"
           options={{
@@ -164,7 +166,7 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     { addAchievement },
     dispatch
-);
+  );
 
 // Last function to connect the component to props of redux/firebase
 export default connect(mapStateToProps, mapDispatchToProps)(ChaptersHandler);
