@@ -13,7 +13,7 @@ const firebaseConfig = {
   projectId: "savetuba-5e519",
   storageBucket: "savetuba-5e519.appspot.com",
   messagingSenderId: "218900793188",
-  appId: "1:218900793188:web:a1cc3aa38d180fc6815c71",
+  appId: "1:218900793188:web:a1cc3aa38d180fc6815c71"
 };
 
 // Initialize Firebase
@@ -28,4 +28,4 @@ if (firebase.apps.length === 0) {
 const db = firebase.firestore();
 const auth = firebase.auth();
 
-export { db, auth };
+export {  db, auth, app};

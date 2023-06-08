@@ -29,8 +29,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
         setSelectedGrade(Grade1);
         break;
       case 2:
-        console.log("AHHHHH");
-        console.log("Grade 1: " + snapshot_data());
+        snapshot_data();
         // setSelectedGrade(Grade2);
         break;
       case 3:
