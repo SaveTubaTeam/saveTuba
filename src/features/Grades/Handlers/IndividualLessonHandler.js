@@ -12,6 +12,7 @@ import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
+import ForestHandler from "../../../components/Grades/minigames/Handlers/ForestHandler";
 
 const Stack = createNativeStackNavigator();
 
@@ -240,6 +241,34 @@ function IndividualLessonHandler({
               data={
                 selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
                   .mastery
+              }
+              selectedGrade={selectedGrade}
+              selectedChapter={selectedChapter}
+              selectedLesson={selectedLesson}
+              navigation={navigation}
+            />
+          )}
+        </Stack.Screen>
+
+        <Stack.Screen
+          name="Forest"
+          options={{
+            title: "Forest",
+            headerTintColor: "white",
+            headerBackTitleVisible: false,
+            headerStyle: {
+              backgroundColor: "#C6DC3B",
+            },
+            headerTitleStyle: {
+              fontFamily: "BalsamiqSans_400Regular",
+            },
+          }}
+        >
+          {() => (
+            <ForestHandler
+              data = {
+                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
+                  .minigames.forest
               }
               selectedGrade={selectedGrade}
               selectedChapter={selectedChapter}

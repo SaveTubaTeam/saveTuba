@@ -21,7 +21,17 @@ export const Grade3 = {
           title: <Translation>{(t) => t("gradethree:c1l1")}</Translation>,
           thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
           backgroundColor: "#C0F0F7",
-          minigames: {},
+          minigames: {
+            forest: {
+              navigation: "Forest",
+              icon: require("../../../../assets/recycle-bin.png"),
+              backgroundColor: "coral",
+              prompt: "Click on the flower to learn more about it!",
+              content: {
+                prompt: "Click on the flower to learn more about it!",
+              }
+            }
+          },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~

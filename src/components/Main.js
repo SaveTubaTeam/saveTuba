@@ -93,11 +93,11 @@ export class Main extends Component {
   render() {
     // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
     // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
-    if (this.props.currentUser != undefined) {
+    if (this.props.currentUser !== undefined) {
       try {
         if (
-          this.props.achievements != null ||
-          this.props.achievements["achievements"][0] == undefined
+          this.props.achievements !== null ||
+          this.props.achievements["achievements"].length === 0
         ) {
           this.props.addAchievement("first-time-signing-up");
           // this.props.fetchAchievements();
