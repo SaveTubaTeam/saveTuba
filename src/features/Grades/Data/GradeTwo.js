@@ -727,7 +727,7 @@ export const Grade2 = {
               },
             },
             openresponse_2: { // correct
-              navigation: "Image Boom 2",
+              navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
