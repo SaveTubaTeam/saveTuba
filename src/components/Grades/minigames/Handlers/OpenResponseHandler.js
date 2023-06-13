@@ -19,6 +19,8 @@ import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
 
+import { getChapterData, getLessonData, getGradeData } from "../../../../features/Grades/Handlers/Database.js";
+
 const ModalContainer = styled.View`
   background-color: white;
   width: 60%;
@@ -34,36 +36,36 @@ const ImagePrompt = ({ questions }) => {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
   const Modko = () => {
-  return (
-    <Modal transparent animationType="slide" visible={visible}>
-      <View
-        style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-      >
-        <ModalContainer>
-          <View>
-            <BodyText size="subtitle">
-              Your image was submitted! Good job ✨
-            </BodyText>
-          </View>
-          <TouchableOpacity
-            style={{
-              backgroundColor: "#748816",
-              borderRadius: 10,
-              marginTop: 10,
-              paddingTop: 5,
-              paddingBottom: 5,
-            }}
-            onPress={() => navigation.navigate("Lesson")}
-          >
-            <BodyText size="subtitle" color="secondary">
-              Back to the lesson
-            </BodyText>
-          </TouchableOpacity>
-        </ModalContainer>
-      </View>
-    </Modal>
-  );
-};
+    return (
+      <Modal transparent animationType="slide" visible={visible}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <ModalContainer>
+            <View>
+              <BodyText size="subtitle">
+                Your image was submitted! Good job ✨
+              </BodyText>
+            </View>
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#748816",
+                borderRadius: 10,
+                marginTop: 10,
+                paddingTop: 5,
+                paddingBottom: 5,
+              }}
+              onPress={() => navigation.navigate("Lesson")}
+            >
+              <BodyText size="subtitle" color="secondary">
+                Back to the lesson
+              </BodyText>
+            </TouchableOpacity>
+          </ModalContainer>
+        </View>
+      </Modal>
+    );
+  };
 
   return (
     <ScrollView>
@@ -165,6 +167,10 @@ const ImagePrompt = ({ questions }) => {
 };
 
 const OpenResponseHandler = ({ questionSet }) => {
+  // getLessonData();
+  // const navigation = useNavigation();
+  // console.log(navigation);
+  
   return (
     <View style={{ flex: 1 }}>
       <ImageBg

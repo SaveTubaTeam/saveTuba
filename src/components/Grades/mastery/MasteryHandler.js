@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../title-text.component";
 import { BodyText } from "../../body-text.component";
 import { ImageBg } from "../grades.styles";
+// import {getC} from "";
 
 const Container = styled.View`
   flex: 1;

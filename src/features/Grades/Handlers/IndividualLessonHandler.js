@@ -14,6 +14,8 @@ import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryH
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
+import { db, app } from "../../../../firebase.js";
+
 const Stack = createNativeStackNavigator();
 
 function IndividualLessonHandler({
@@ -24,8 +26,7 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  // console.log("Inside of the individual lesson handler: ");
-  // console.log(navigation.getState());
+  console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nGr. ", selectedGrade, "\nL. ", selectedLesson);
 
   return (
     <NavigationContainer independent>
@@ -159,6 +160,8 @@ function IndividualLessonHandler({
           }}
         >
           {() => (
+
+
             <OpenResponseHandler
               questionSet={
                 selectedGrade.chapters[selectedChapter].lessons[selectedLesson]

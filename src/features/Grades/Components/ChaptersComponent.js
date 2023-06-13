@@ -40,8 +40,10 @@ function ChaptersComponent({ selectedGrade, navigation }) {
   const nav = useNavigation();
   const { t } = useTranslation();
 
+  console.log("Ch. Component: ", selectedGrade);
   const renderItem = ({ item }) => {
-    // keep the item there
+    
+    console.log("item nav: ", item);
     return (
       <Chapter
         onPress={() => {
@@ -88,7 +90,7 @@ function ChaptersComponent({ selectedGrade, navigation }) {
         />
         <FlatList
           style={{ width: "100%" }}
-          data={selectedGrade.chapters}
+          data={selectedGrade}
           renderItem={renderItem}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}

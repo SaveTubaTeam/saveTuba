@@ -10,7 +10,9 @@ import LessonsComponent from "../Components/LessonsComponent";
 const Stack = createNativeStackNavigator();
 
 function ChaptersHandler({ selectedGrade, selectedChapter }) {
+  console.log("Grade: ", selectedGrade, " Selected Ch: ", selectedChapter);
   const navigation = useNavigation();
+
   return (
     <NavigationContainer independent>
       <Stack.Navigator>
@@ -34,7 +36,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
             <IndividualLessonHandler
               selectedGrade={selectedGrade}
               selectedChapter={selectedChapter}
-              selectedLesson={0}
+              selectedLesson={1}
             />
           )}
         </Stack.Screen>
@@ -49,12 +51,12 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
             <IndividualLessonHandler
               selectedGrade={selectedGrade}
               selectedChapter={selectedChapter}
-              selectedLesson={1}
+              selectedLesson={2}
             />
           )}
         </Stack.Screen>
 
-        <Stack.Screen
+        {/* <Stack.Screen
           name="Lesson3"
           options={{
             headerShown: false,
@@ -67,7 +69,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
               selectedLesson={2}
             />
           )}
-        </Stack.Screen>
+        </Stack.Screen> */}
 
         <Stack.Screen
           name="Lesson4"
