@@ -40,10 +40,10 @@ function ChaptersComponent({ selectedGrade, navigation }) {
   const nav = useNavigation();
   const { t } = useTranslation();
 
-  console.log("Ch. Component: ", selectedGrade);
+  // console.log("Ch. Component: ", selectedGrade);
   const renderItem = ({ item }) => {
     
-    console.log("item nav: ", item);
+    // console.log("item nav: ", item);
     return (
       <Chapter
         onPress={() => {

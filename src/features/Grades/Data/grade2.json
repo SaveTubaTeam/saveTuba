@@ -697,11 +697,11 @@
                                     "options": [
                                         {
                                             "title": "Forest",
-                                            "title": "Natural"
+                                            "name": "Natural"
                                         },
                                         {
                                             "title": "Field",
-                                            "title": "Artifical"
+                                            "name": "Artifical"
                                         }
                                     ]
                                 }

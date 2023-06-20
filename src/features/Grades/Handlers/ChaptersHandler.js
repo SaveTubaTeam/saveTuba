@@ -33,14 +33,24 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
     switch (level) {
       case 1:
         {
-          getGradeData("Grade2").then(
+          // getGradeData("Grade2").then(
+          //   (result) => {
+          //     console.log("result: ", result, "\n\nchapters: ", result.get("chapters"));
+          //     setSelectedGrade(result.get("chapters"));
+          //   }
+          // ).catch((err) => {
+          //   console.log("Error: ", err);
+          // });
+
+          getChapterData("Grade2").then(
             (result) => {
-              console.log("result: ", result.get("chapters"));
+              console.log("result: ", result, "\n\nchapters: ", result.get("chapters"));
               setSelectedGrade(result.get("chapters"));
             }
           ).catch((err) => {
             console.log("Error: ", err);
           });
+
           break;
         }
       case 2: {

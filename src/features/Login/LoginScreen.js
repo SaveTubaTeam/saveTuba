@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
-import { auth } from "../../../firebase";
+import { db, auth } from "../../../firebase";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
@@ -74,7 +74,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 `;
 
 const LoginScreen = () => {
-  
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -115,6 +115,20 @@ const LoginScreen = () => {
       .catch((error) => alert(error.message));
   };
 
+  async function post(data) {
+    await db.collection(data).doc("testSet").set({
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    })
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  }
+
   return (
     // <SafeArea>
     <Container behavior="padding">
@@ -149,6 +163,12 @@ const LoginScreen = () => {
               {t("common:signup")}
             </TitleText>
           </ButtonOutLine>
+
+          <Button onPress={handleLogin}>
+            <TitleText color="secondary" size="body">
+              {t("common:login")}
+            </TitleText>
+          </Button>
         </ButtonContainer>
       </ImageBg>
     </Container>
