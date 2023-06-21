@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import { db, auth } from "../../../firebase";
+import test from "../Grades/Data/test.json";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
@@ -115,18 +116,44 @@ const LoginScreen = () => {
       .catch((error) => alert(error.message));
   };
 
-  async function post(data) {
-    await db.collection(data).doc("testSet").set({
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA"
-    })
-      .then(() => {
-        console.log("Document successfully written!");
-      })
-      .catch((error) => {
-        console.error("Error writing document: ", error);
-      });
+  async function post() {
+    // console.log(test.Grade2.chapters[].lessons[0]);
+    const chapters = test.Grade2.chapters;
+    for (var chaptersIter = 0; chaptersIter < chapters.length; chaptersIter++) {
+      var chapter = (chaptersIter + 1).toString();
+      var chapterDoc = "Chapter".concat(chapter);
+
+      var lessons = test.Grade2.chapters[chaptersIter].lessons;
+      for (var lessonsIter = 0; lessonsIter < lessons.length; lessonsIter++) {
+
+        var lesson = (lessonsIter + 1).toString();
+        var lessonCollection = "Lesson".concat(lesson);
+
+        var minigames = test.Grade2.chapters[chaptersIter].lessons[lessonsIter].minigames;
+        // console.log(minigames.length);
+        for (var minigamesIter = 0; minigamesIter < minigames.length; minigamesIter++) {
+          var minigameName = minigames[minigamesIter].navigation;
+          // console.log(minigameName);
+          await db.collection("testCollection").doc(chapterDoc).collection(lessonCollection).doc(minigameName).set(minigames[minigamesIter])
+            .then(() => {
+              console.log("Document ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
+            })
+            .catch((error) => {
+              console.error("Error writing document: ", error);
+            });
+
+        }
+
+
+      }
+    }
+    // await db.collection("testCollection").doc("testSet").set(test)
+    //   .then(() => {
+    //     console.log("Document successfully written!");
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error writing document: ", error);
+    //   });
   }
 
   return (
@@ -164,9 +191,9 @@ const LoginScreen = () => {
             </TitleText>
           </ButtonOutLine>
 
-          <Button onPress={handleLogin}>
+          <Button onPress={post}>
             <TitleText color="secondary" size="body">
-              {t("common:login")}
+              Post
             </TitleText>
           </Button>
         </ButtonContainer>

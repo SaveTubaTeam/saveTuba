@@ -201,7 +201,6 @@
                             ]
                         }
                     },
-                    
                     {
                         "navigation": "Lesson3",
                         "title": "gradetwo:c1l3",
@@ -412,7 +411,6 @@
                                 "content": {
                                     "prompt": "Match the action to the correct step of the expirement",
                                     "num": 3,
-                                    
                                     "imageBg": "SortingImages.bg[0].lvl_1_les_1",
                                     "categories": [
                                         {
@@ -482,7 +480,6 @@
             "Chapter2": {
                 "navigation": "Chapter2",
                 "title": "common:chaptertwo",
-            
                 "name": "gradetwo:wildlife",
                 "backgroundimage": "../../../../assets/mastery/bg/ch2.png",
                 "icon": "../../../../assets/chapter-icons/butterfly.png",
@@ -756,8 +753,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt." +
-                            " What are some human-made adaptations that help us, but hurt plants? ",
+                                            "text": "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt. What are some human-made adaptations that help us, but hurt plants? ",
                                             "placeholder": "Some human-made adaptions...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -773,8 +769,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "List a couple of things that plants need in order to survive. Are these the same " +
-                            "things we need to survive? What happens if there is too much of one resource?",
+                                            "text": "List a couple of things that plants need in order to survive. Are these the same things we need to survive? What happens if there is too much of one resource?",
                                             "placeholder": "Plants need...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -818,8 +813,7 @@
                                         "answer": "True"
                                     },
                                     {
-                                        "prompt": "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures\n" +
-                          "before they begin to sprout?",
+                                        "prompt": "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures before they begin to sprout?",
                                         "answers": [
                                             {
                                                 "text": "Bulbs and sprouts"
@@ -870,8 +864,7 @@
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
-                                "prompt": "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight" +
-                      "and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?"
+                                "prompt": "Split a sheet of paper in half, on one side draw a plant that recieved too much sunglight and one that recieved too little light. How do they compare to each other? \nThink: Are they the same?"
                             }
                         },
                         "mastery": {
@@ -903,8 +896,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "Which community (natural or artifical) is more environmentally friendly?" +
-                            "Are there benefits to one or the other? List a couple of either communities you see in your area.",
+                                            "text": "Which community (natural or artifical) is more environmentally friendly? Are there benefits to one or the other? List a couple of either communities you see in your area.",
                                             "placeholder": "The community that is...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -918,10 +910,7 @@
                                 "content": {
                                     "prompt": "Match the items to thier community",
                                     "num": 8,
-                                    0
-                                    "imageBg": SortingImages.bg[
-                                        0
-                                    ].lvl_1_les_1,
+                                    "imageBg": "SortingImages.bg[0].lvl_1_les_1",
                                     "categories": [
                                         {
                                             "name": "Natural"
@@ -933,39 +922,39 @@
                                     "options": [
                                         {
                                             "title": "Forest",
-                                            "title": "Natural"
+                                            "name": "Natural"
                                         },
                                         {
                                             "title": "Field",
-                                            "title": "Artifical"
+                                            "name": "Artifical"
                                         },
                                         {
                                             "title": "Flowerbed",
-                                            "title": "Artifical"
+                                            "name": "Artifical"
                                         },
                                         {
                                             "title": "Steppe",
-                                            "title": "Natural"
+                                            "name": "Natural"
                                         },
                                         {
                                             "title": "Pond",
-                                            "title": "Artifical"
+                                            "name": "Artifical"
                                         },
                                         {
                                             "title": "Desert",
-                                            "title": "Natural"
+                                            "name": "Natural"
                                         },
                                         {
                                             "title": "Vegetable garden",
-                                            "title": "Artifical"
+                                            "name": "Artifical"
                                         },
                                         {
                                             "title": "Lake",
-                                            "title": "Natural"
+                                            "name": "Natural"
                                         },
                                         {
                                             "title": "Swamp",
-                                            "title": "Natural"
+                                            "name": "Natural"
                                         }
                                     ]
                                 }
@@ -1145,8 +1134,7 @@
                                         "answer": "All the above"
                                     },
                                     {
-                                        "prompt": "The more we use plants and don't participate in restorative practices, " +
-                          " the more likely the air quality will decrease.",
+                                        "prompt": "The more we use plants and don't participate in restorative practices, the more likely the air quality will decrease.",
                                         "answers": [
                                             {
                                                 "text": "True"
@@ -1182,8 +1170,7 @@
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
-                                "prompt": "Cleaning up after ourselves in public is a great way to help improve the air quality" +
-                      "Draw some things that you often see outside on the ground that you can pick up."
+                                "prompt": "Cleaning up after ourselves in public is a great way to help improve the air quality. Draw some things that you often see outside on the ground that you can pick up."
                             },
                             "openresponse": {
                                 "navigation": "Image Boom",
@@ -1208,10 +1195,7 @@
                                 "content": {
                                     "prompt": "Sort these practices into helping or hurting the environment",
                                     "num": 4,
-                                    0
-                                    "imageBg": SortingImages.bg[
-                                        0
-                                    ].lvl_1_les_1,
+                                    "imageBg": "SortingImages.bg[0].lvl_1_les_1",
                                     "categories": [
                                         {
                                             "name": "Helping"
@@ -1223,23 +1207,23 @@
                                     "options": [
                                         {
                                             "title": "Littering",
-                                            "title": "Hurting"
+                                            "name": "Hurting"
                                         },
                                         {
                                             "title": "Picking up trash",
-                                            "title": "Helping"
+                                            "name": "Helping"
                                         },
                                         {
                                             "title": "Planting native plants",
-                                            "title": "Helping"
+                                            "name": "Helping"
                                         },
                                         {
                                             "title": "Using chemical pesticides",
-                                            "title": "Hurting"
+                                            "name": "Hurting"
                                         },
                                         {
                                             "title": "Supporting local farming",
-                                            "title": "Helping"
+                                            "name": "Helping"
                                         }
                                     ]
                                 }
@@ -1380,8 +1364,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "What would be some ways that we could reduce the number of plants listed in the Red Book?" +
-                            " How is practicing good sustainable habits going to help reduce the endangered species?",
+                                            "text": "What would be some ways that we could reduce the number of plants listed in the Red Book? How is practicing good sustainable habits going to help reduce the endangered species?",
                                             "placeholder": "We can reduce the number of endangered plants by ...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -1395,10 +1378,7 @@
                                 "content": {
                                     "prompt": "Sort the following plants into groups whether they are in the red book and which are not?",
                                     "num": 5,
-                                    0
-                                    "imageBg": SortingImages.bg[
-                                        0
-                                    ].lvl_1_les_1,
+                                    "imageBg": "SortingImages.bg[0].lvl_1_les_1",
                                     "categories": [
                                         {
                                             "name": "In Red Book"
@@ -1410,47 +1390,47 @@
                                     "options": [
                                         {
                                             "title": "Picking up trash",
-                                            "title": "In Red Book"
+                                            "name": "In Red Book"
                                         },
                                         {
                                             "title": "Steppe Peony",
-                                            "title": "In Red Book"
+                                            "name": "In Red Book"
                                         },
                                         {
                                             "title": "Planting native plants",
-                                            "title": "In Red Book"
+                                            "name": "In Red Book"
                                         },
                                         {
                                             "title": "Local Farming",
-                                            "title": "In Red Book"
+                                            "name": "In Red Book"
                                         },
                                         {
                                             "title": "Littering",
-                                            "title": "Not in Red Book"
+                                            "name": "Not in Red Book"
                                         },
                                         {
                                             "title": "Using Chemicals",
-                                            "title": "Not in Red Book"
+                                            "name": "Not in Red Book"
                                         },
                                         {
                                             "title": "Regel's tulip",
-                                            "title": "In Red Book"
+                                            "name": "In Red Book"
                                         },
                                         {
                                             "title": "Red clover",
-                                            "title": "Not in Red Book"
+                                            "name": "Not in Red Book"
                                         },
                                         {
                                             "title": "White birch",
-                                            "title": "Not in Red Book"
+                                            "name": "Not in Red Book"
                                         },
                                         {
                                             "title": "Roundleaf sundew",
-                                            "title": "In Red Book"
+                                            "name": "In Red Book"
                                         },
                                         {
                                             "title": "Common apricot",
-                                            "title": "Not in Red Book"
+                                            "name": "Not in Red Book"
                                         }
                                     ]
                                 }
@@ -1640,8 +1620,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "Name a couple animals that are veterbrates. Name a couple of " +
-                            "animals that are invertebrates. How are they similar? How are they different?",
+                                            "text": "Name a couple animals that are veterbrates. Name a couple of animals that are invertebrates. How are they similar? How are they different?",
                                             "placeholder": "An animal that is ...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -1652,7 +1631,6 @@
                                 "navigation": "Snapshot",
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
-                                "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
                                 "prompt": "Draw a picture of a skeletal system with a vertebrate!"
                             }
@@ -1690,7 +1668,6 @@
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
-                                "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
                                 "prompt": "Draw a picture of a local ecosystem near you. Analyze the picture, is it being contaminated by waste or pollution?"
                             },
                             "openresponse": {
@@ -1702,9 +1679,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "A habitat is where an animal lives. What is your habitat?" +
-                            " List some things that you have in your home that you use everyday," +
-                            " how many of these things do you throw away daily?",
+                                            "text": "A habitat is where an animal lives. What is your habitat? List some things that you have in your home that you use everyday, how many of these things do you throw away daily?",
                                             "placeholder": "On a daily basis, I throw away...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -1754,7 +1729,7 @@
                                         "answer": "All the living organisms and their habitat"
                                     },
                                     {
-                                        "prompt": "True or"prompt": All habitats are important and help the environment regulate itself?",
+                                        "prompt": "True or false: All habitats are important and help the environment regulate itself?",
                                         "answers": [
                                             {
                                                 "text": "True"
@@ -1781,7 +1756,7 @@
                                         "answer": "There will be a loss of animals"
                                     },
                                     {
-                                        "prompt": "True or"prompt": One of the main causes for habitat loss is due to human activities?",
+                                        "prompt": "True or false: One of the main causes for habitat loss is due to human activities?",
                                         "answers": [
                                             {
                                                 "text": "True"
@@ -1801,10 +1776,7 @@
                                 "content": {
                                     "prompt": "Match the word to the definition using pictures",
                                     "num": 3,
-                                    0
-                                    "imageBg": SortingImages.bg[
-                                        0
-                                    ].lvl_2_les_8,
+                                    "imageBg": "SortingImages.bg[0].lvl_2_les_8",
                                     "categories": [
                                         {
                                             "name": "Soil, ground, & air"
@@ -1889,7 +1861,7 @@
                                 "imageBg": "../../../../assets/nat.jpg",
                                 "content": [
                                     {
-                                        "prompt": "What type of relationship exists between these"prompt": a fox and a rabbit?",
+                                        "prompt": "What type of relationship exists between these: a fox and a rabbit?",
                                         "answers": [
                                             {
                                                 "text": "Parasitism"
@@ -1907,7 +1879,7 @@
                                         "answer": "Predation"
                                     },
                                     {
-                                        "prompt": "What type of relationship exists between these"prompt": a frog and an antelope?",
+                                        "prompt": "What type of relationship exists between these: a frog and an antelope?",
                                         "answers": [
                                             {
                                                 "text": "Competition"
@@ -1925,7 +1897,7 @@
                                         "answer": "Neutralism"
                                     },
                                     {
-                                        "prompt": "What type of relationship exists between these"prompt": a shark and a fish that attaches to the shark?",
+                                        "prompt": "What type of relationship exists between these: a shark and a fish that attaches to the shark?",
                                         "answers": [
                                             {
                                                 "text": "Competition"
@@ -1943,7 +1915,7 @@
                                         "answer": "Parasitism"
                                     },
                                     {
-                                        "prompt": "What type of relationship exists between these"prompt": rhinos and birds?",
+                                        "prompt": "What type of relationship exists between these: rhinos and birds?",
                                         "answers": [
                                             {
                                                 "text": "Competition"
@@ -2054,7 +2026,7 @@
                                 "imageBg": "../../../../assets/nat.jpg",
                                 "content": [
                                     {
-                                        "prompt": "True or"prompt": There are no relationships between plants that are similar to those between animals?",
+                                        "prompt": "True or false: There are no relationships between plants that are similar to those between animals?",
                                         "answers": [
                                             {
                                                 "text": "true"
@@ -2084,7 +2056,7 @@
                                         "answer": "Pollination"
                                     },
                                     {
-                                        "prompt": "True or"prompt": There are relationships between plants and animals, similar to those between only animals?",
+                                        "prompt": "True or false: There are relationships between plants and animals, similar to those between only animals?",
                                         "answers": [
                                             {
                                                 "text": "true"
@@ -2104,10 +2076,7 @@
                                 "content": {
                                     "prompt": "Match the word to the definition using pictures",
                                     "num": 3,
-                                    0
-                                    "imageBg": SortingImages.bg[
-                                        0
-                                    ].lvl_2_les_8,
+                                    "imageBg": "SortingImages.bg[0].lvl_2_les_8",
                                     "categories": [
                                         {
                                             "name": "Commensalism"
@@ -2144,9 +2113,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "How do the relationships between plants and animals," +
-                            "such as mutualism, commensalism, and competition, impact the " +
-                            "sustainability of plant communities and ecosystems?",
+                                            "text": "How do the relationships between plants and animals, such as mutualism, commensalism, and competition, impact the sustainability of plant communities and ecosystems?",
                                             "placeholder": "The relationships between plants and animals...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -2164,14 +2131,8 @@
                             ]
                         }
                     },
-                    /* 
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              Grade 3 Chapter 2 Lesson 10 (lesson sixteen and seventeen in curriculum)
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              */
                     {
                         "navigation": "Lesson10",
-                        1
                         "title": "gradetwo:c2l10",
                         "thumbnail": "../../../../assets/lesson-icons/desert.png",
                         "backgroundColor": "#FFF9E3",
@@ -2194,8 +2155,7 @@
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
-                                "prompt": "Take a picture of an animal habitat with poor conditions. Analyze the picture " +
-                      "and identify the ways the poor conditions could affect animal life."
+                                "prompt": "Take a picture of an animal habitat with poor conditions. Analyze the picture and identify the ways the poor conditions could affect animal life."
                             },
                             "quiz": {
                                 "navigation": "QuizScreen",
@@ -2240,7 +2200,7 @@
                                         "answer": "All of the above"
                                     },
                                     {
-                                        "prompt": "True or"prompt": Infectious diseases do not impact animal populations?",
+                                        "prompt": "True or false: Infectious diseases do not impact animal populations?",
                                         "answers": [
                                             {
                                                 "text": "true"
@@ -2260,10 +2220,7 @@
                                 "content": {
                                     "prompt": "Match the word to the definition using pictures",
                                     "num": 3,
-                                    0
-                                    "imageBg": SortingImages.bg[
-                                        0
-                                    ].lvl_2_les_9,
+                                    "imageBg": "SortingImages.bg[0].lvl_2_les_9",
                                     "categories": [
                                         {
                                             "name": "Ebola"
@@ -2293,8 +2250,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "How do habitat conditions, such as availability of food, " +
-                            "water and protection from predators, impact the number and diversity of animal populations in an ecosystem?",
+                                            "text": "How do habitat conditions, such as availability of food, water and protection from predators, impact the number and diversity of animal populations in an ecosystem?",
                                             "placeholder": "Habitat conditions impact animal populations by...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -2303,11 +2259,6 @@
                             }
                         }
                     },
-                    /* 
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              Grade 3 Chapter 2 Lesson 11 (lesson eighteen in curriculum)
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              */
                     {
                         "navigation": "Lesson11",
                         "title": "gradetwo:c2l11",
@@ -2350,7 +2301,7 @@
                                 "imageBg": "../../../../assets/nat.jpg",
                                 "content": [
                                     {
-                                        "prompt": "True or"prompt": Deforestation does not cause a serious decrease in the number of animals in the area?",
+                                        "prompt": "True or false: Deforestation does not cause a serious decrease in the number of animals in the area?",
                                         "answers": [
                                             {
                                                 "text": "False"
@@ -2408,9 +2359,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "What are some potential causes for a decrease in the number of animals in a particular ecosystem, " +
-                            "and how can we address these issues to promote sustainability and protect biodiversity? Think about laws " +
-                            "we can implement. What would you suggest to the government as well?",
+                                            "text": "What are some potential causes for a decrease in the number of animals in a particular ecosystem, and how can we address these issues to promote sustainability and protect biodiversity? Think about laws we can implement. What would you suggest to the government as well?",
                                             "placeholder": "Potential causes are...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -2419,19 +2368,13 @@
                             }
                         }
                     },
-                    /* 
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              Grade 3 Chapter 2 Lesson 12 (lesson nineteen in curriculum)
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              */
                     {
                         "navigation": "Lesson12",
                         "title": "gradetwo:c2l12",
                         "thumbnail": "../../../../assets/lesson-icons/magnifying-glass.png",
                         "backgroundColor": "#FFBD58",
                         "mastery": {
-                            "prompt": "mastery:g2c2l12_prompt",
-                            2c2l12_card1")}</Translation>2c2l12_card2")}</Translation>
+                            "prompt": "mastery:g2c2l12_prompt"
                         },
                         "minigames": {
                             "snapshot": {
@@ -2439,8 +2382,7 @@
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
-                                "prompt": "Take a picture of an animal with similar bodily functions to humans. " +
-                      "Essentially, this animal has a body part that has the same function as we use it for."
+                                "prompt": "Take a picture of an animal with similar bodily functions to humans. Essentially, this animal has a body part that has the same function as we use it for."
                             },
                             "quiz": {
                                 "navigation": "QuizScreen",
@@ -2449,7 +2391,7 @@
                                 "imageBg": "../../../../assets/nat.jpg",
                                 "content": [
                                     {
-                                        "prompt": "True or"prompt": Humans are vertebrates?",
+                                        "prompt": "True or false: Humans are vertebrates?",
                                         "answers": [
                                             {
                                                 "text": "False"
@@ -2516,11 +2458,6 @@
                             }
                         }
                     },
-                    /* 
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              Grade 3 Chapter 2 Lesson 13 (lesson 20 & 21 in curriculum)
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              */
                     {
                         "navigation": "Lesson13",
                         "title": "gradetwo:c2l13",
@@ -2636,11 +2573,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "There are many factors to consider when it comes to sustainability in the food system, " +
-                            "such as how food is grown or raised, how it is transported and distributed, and how much of it " +
-                            "is wasted. The apple you eat might be healthy for you but is it healthy for the environment? " +
-                            "Identify strategies that can be used when we produce and consume food, so that it is sustainable " +
-                            "for the environment, animals, and human communities?",
+                                            "text": "There are many factors to consider when it comes to sustainability in the food system, such as how food is grown or raised, how it is transported and distributed, and how much of it is wasted. The apple you eat might be healthy for you but is it healthy for the environment? Identify strategies that can be used when we produce and consume food, so that it is sustainable for the environment, animals, and human communities?",
                                             "placeholder": "Sustainable ways to produce and consume food are...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }
@@ -2649,11 +2582,6 @@
                             }
                         }
                     },
-                    /* 
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              Grade 3 Chapter 2 Lesson 14 (lesson 22 in curriculum)
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~
-              */
                     {
                         "navigation": "Lesson14",
                         "title": "gradetwo:c2l14",
@@ -2678,8 +2606,7 @@
                                 "icon": "../../../../assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "../../../../assets/snapshots/nature-bg.jpg",
-                                "prompt": "Take a picture of an environment that might be hard to breathe in. " +
-                      "Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)"
+                                "prompt": "Take a picture of an environment that might be hard to breathe in. Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)"
                             },
                             "quiz": {
                                 "navigation": "QuizScreen",
@@ -2688,7 +2615,7 @@
                                 "imageBg": "../../../../assets/nat.jpg",
                                 "content": [
                                     {
-                                        "prompt": "True or"prompt": Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
+                                        "prompt": "True or false: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
                                         "answers": [
                                             {
                                                 "text": "True"
@@ -2700,8 +2627,7 @@
                                         "answer": "True"
                                     },
                                     {
-                                        "prompt": "If the air we breathe in is unclean, containing materials such as dust, " +
-                          "what part of the body collects it, preventing it from further entering the body?",
+                                        "prompt": "If the air we breathe in is unclean, containing materials such as dust, what part of the body collects it, preventing it from further entering the body?",
                                         "answers": [
                                             {
                                                 "text": "Nose"
@@ -2765,8 +2691,7 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "How can we ensure that the air we breathe is safe and healthy for all living beings, " +
-                            "and how can we protect and improve the quality of the air in our communities? ",
+                                            "text": "How can we ensure that the air we breathe is safe and healthy for all living beings, and how can we protect and improve the quality of the air in our communities? ",
                                             "placeholder": "Sustainable ways to produce and consume food are...",
                                             "image": "../../../../assets/openresponse/innovation.png"
                                         }

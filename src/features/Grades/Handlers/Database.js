@@ -29,7 +29,7 @@ async function getGradeData(grade) {
     // return chapterList; // This returns the array
 }
 
-// async function getChapterData(grade) {
+async function getChapterData(grade) {
     // console.log("ChapterData: \n");
 
     // const gradeData = getGradeData(grade);
@@ -51,9 +51,9 @@ async function getGradeData(grade) {
     //         console.log("Error: ", error);
     //     });
 
-// }
+}
 
-// async function getLessonData(grade, chapter, lesson) {
+async function getLessonData(grade, chapter, lesson) {
 //     // console.log("LessonData: \n");
 
 //     var minigames = [];
@@ -67,7 +67,7 @@ async function getGradeData(grade) {
 //         }).catch((error) => {
 //             console.log("Error: ", error);
 //         });
-// }
+}
 
 async function post(data) {
     await db.collection(grade).doc("LA").set({
