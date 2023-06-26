@@ -104,8 +104,8 @@ const Start = ({ data }) => {
             <View>
               <BodyText size="subtitle">
                 {correct == true
-                  ? "Правильно! Хорошая работа ✨"
-                  : "Неправильно! Удачи в следующий раз🍀"}
+                  ? "That's right! Good job ✨"
+                  : "Incorrect! Better luck next time 🍀"}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -126,7 +126,7 @@ const Start = ({ data }) => {
                   setVisible(!visible);
                   navigation.navigate("SecondScreen", {
                     score: score,
-                    prompt: "Хорошая работа!",
+                    prompt: "Good job on completing this sorting exercise.",
                     num: data.num,
                   });
                 }
