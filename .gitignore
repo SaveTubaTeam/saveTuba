@@ -10,6 +10,9 @@ npm-debug.*
 *.orig.*
 web-build/
 
+# Ignore all of the conversionary datasets
+*.json
+
 # macOS
 .DS_Store
 
