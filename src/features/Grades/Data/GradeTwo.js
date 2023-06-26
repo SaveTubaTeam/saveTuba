@@ -54,7 +54,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of a scientific discovery that you use on a daily basis.",
+                "Сделайте фотографию научного открытия которое вы используете каждый день.",
             },
             quiz: { //correct
               navigation: "QuizScreen",
@@ -65,30 +65,30 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "Which one is an example of a discovery with its purpose?",
+                    "Какая из этих комбинаий является примером открытия и ее смыслом?",
                   answers: [
-                    { text: "A telescope to see the stars" },
-                    { text: "A lightbulb to warm the room" },
-                    { text: "An airplane to drive on the road" },
+                    { text: "Телескоп чтобы смотреть на звезды" },
+                    { text: "Лампочка для обогрева комнаты" },
+                    { text: "Самолет для передвижения по дороге" },
                     { text: "A printing press to make fabric" },
                   ],
-                  answer: "A telescope to see the stars",
+                  answer: "Телескоп чтобы смотреть на звезды",
                 },
                 {
-                  prompt: "Are all bacteria harmful?",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                  prompt: "Все бактерии вредны",
+                  answers: [{ text: "Правда" }, { text: "Ложь" }],
+                  answer: "Ложь",
                 },
                 {
                   prompt:
-                    "In the 19th centry, what resource did people use to illuminate their houses?",
+                    "Чем люди освещали свои дома в 19 веке?",
                   answers: [
-                    { text: "Gas" },
-                    { text: "Water" },
-                    { text: "Coal" },
-                    { text: "All of the above" },
+                    { text: "Газ" },
+                    { text: "Вода" },
+                    { text: "Уголь" },
+                    { text: "Все из перечисленного" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все из перечисленного",
                 },
               ],
             },
@@ -103,13 +103,13 @@ export const Grade2 = {
                 numberOfPrompts: 2,
                 prompts: [
                   {
-                    text: "What is the difference between an experiment and observation?",
-                    placeholder: "The difference between...",
+                    text: "Какая разница между экспериментом и открытием?",
+                    placeholder: "Разница в том, что...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                   {
-                    text: "Read the diagram. Tell me where and how a person uses the wheel?",
-                    placeholder: "Wheels are used...",
+                    text: "Где и как человек использует колесо?",
+                    placeholder: "Колеса используются для...",
                     image: require("../../../../assets/openresponse/wheelObjects.png"),
                   },
                 ],
@@ -162,25 +162,25 @@ export const Grade2 = {
               content: [
                 {
                   prompt:
-                    "How is information different from knowledge?",
+                    "Чем информация отличается от знаний?",
                   answers: [
-                    { text: "Information and knowledge are the same" },
-                    { text: "Knowledge is the understanding and relevant information gained" },
-                    { text: "Information is in a different language than knowledge" },
-                    { text: "Knowledge requires less learning and understanding than information" },
+                    { text: "Информация и знания это тоже самое" },
+                    { text: "Знание это понимание и важная полученная информация" },
+                    { text: "Information is in a different language than knowledge" }, //what do you mean? how to translate this?
+                    { text: "Знания требуют меньше изучений и понимания чем информация" },
                   ],
-                  answer: "Knowledge is the understanding and relevant information gained",
+                  answer: "Знание это понимание и важная полученная информация",
                 },
                 {
                   prompt:
-                    "Which of the following are resources?",
+                    "Что из соудеющего это ресурс?",
                   answers: [
-                    { text: "The Internet" },
-                    { text: "Your teacher" },
-                    { text: "A book" },
-                    { text: "All of the above" },
+                    { text: "Интернет" },
+                    { text: "Учитель" },
+                    { text: "Книга" },
+                    { text: "Все из перечисленного" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все из перечисленного",
                 },
               ],
             },
