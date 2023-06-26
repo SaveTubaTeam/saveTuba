@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components/native";
 import { db, auth } from "../../../firebase";
-import test from "../Grades/Data/test.json";
+import grade2 from "../Grades/Data/grade2.json";
+import grade3 from "../Grades/Data/grade3.json";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
@@ -117,43 +118,60 @@ const LoginScreen = () => {
   };
 
   async function post() {
-    // console.log(test.Grade2.chapters[].lessons[0]);
-    const chapters = test.Grade2.chapters;
-    for (var chaptersIter = 0; chaptersIter < chapters.length; chaptersIter++) {
-      var chapter = (chaptersIter + 1).toString();
-      var chapterDoc = "Chapter".concat(chapter);
 
-      var lessons = test.Grade2.chapters[chaptersIter].lessons;
-      for (var lessonsIter = 0; lessonsIter < lessons.length; lessonsIter++) {
+    // Grade 2
+    const chapters2 = grade2.Grade2.chapters;
+    const gradeName2 = Object.keys(grade2)[0];
+    for (var chapters2Iter = 0; chapters2Iter < chapters2.length; chapters2Iter++) {
+      var chapter2 = (chapters2Iter + 1).toString();
+      var chapterDoc2 = "Chapter".concat(chapter2);
+      var lessons2 = grade2.Grade2.chapters[chapters2Iter].lessons;
 
-        var lesson = (lessonsIter + 1).toString();
-        var lessonCollection = "Lesson".concat(lesson);
+      for (var lessons2Iter = 0; lessons2Iter < lessons2.length; lessons2Iter++) {
+        var lesson2 = (lessons2Iter + 1).toString();
+        var lessonCollection2 = "Lesson".concat(lesson2);
+        var minigames2 = grade2.Grade2.chapters[chapters2Iter].lessons[lessons2Iter].minigames;
 
-        var minigames = test.Grade2.chapters[chaptersIter].lessons[lessonsIter].minigames;
-        // console.log(minigames.length);
-        for (var minigamesIter = 0; minigamesIter < minigames.length; minigamesIter++) {
-          var minigameName = minigames[minigamesIter].navigation;
-          // console.log(minigameName);
-          await db.collection("testCollection").doc(chapterDoc).collection(lessonCollection).doc(minigameName).set(minigames[minigamesIter])
+        for (var minigames2Iter = 0; minigames2Iter < minigames2.length; minigames2Iter++) {
+          var minigameName2 = minigames2[minigames2Iter].navigation;
+          await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc(minigameName2).set(minigames2[minigames2Iter])
             .then(() => {
-              console.log("Document ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
+              console.log("Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully written!");
             })
             .catch((error) => {
               console.error("Error writing document: ", error);
             });
-
         }
-
-
       }
     }
-    // await db.collection("testCollection").doc("testSet").set(test)
-    //   .then(() => {
-    //     console.log("Document successfully written!");
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error writing document: ", error);
-    //   });
+
+    // Grade 3
+    const chapters3 = grade3.Grade3.chapters;
+    const gradeName3 = Object.keys(grade3)[0];
+    for (var chapters3Iter = 0; chapters3Iter < chapters3.length; chapters3Iter++) {
+      var chapter3 = (chapters3Iter + 1).toString();
+      var chapterDoc3 = "Chapter".concat(chapter3);
+      var lessons3 = grade3.Grade3.chapters[chapters3Iter].lessons;
+
+      for (var lessons3Iter = 0; lessons3Iter < lessons3.length; lessons3Iter++) {
+        var lesson3 = (lessons3Iter + 1).toString();
+        var lessonCollection3 = "Lesson".concat(lesson3);
+        var minigames3 = grade3.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].minigames;
+
+        for (var minigames3Iter = 0; minigames3Iter < minigames3.length; minigames3Iter++) {
+          var minigameName3 = minigames3[minigames3Iter].navigation;
+          await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(minigameName3).set(minigames3[minigames3Iter])
+            .then(() => {
+              console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+            })
+            .catch((error) => {
+              console.error("Error writing document: ", error);
+            });
+        }
+      }
+    }
+
+
   }
 
   return (
@@ -191,11 +209,11 @@ const LoginScreen = () => {
             </TitleText>
           </ButtonOutLine>
 
-          <Button onPress={post}>
+          {/* <Button onPress={post}>
             <TitleText color="secondary" size="body">
               Post
             </TitleText>
-          </Button>
+          </Button> */}
         </ButtonContainer>
       </ImageBg>
     </Container>

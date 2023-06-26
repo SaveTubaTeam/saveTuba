@@ -40,6 +40,7 @@ const CurrentLesson = styled.TouchableOpacity`
 `;
 
 function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
+  console.log("sGrade", selectedGrade);
   const nav = useNavigation();
   const { t } = useTranslation();
   const [currentLesson, setCurrentLesson] = useState(0);

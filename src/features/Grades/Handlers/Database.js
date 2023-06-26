@@ -13,6 +13,9 @@ import React, { useState, useEffect } from "react";
 async function getGradeData(grade) {
     const chapters = new Map();
     const chapterList = [];
+    var count = 1;
+    var countBoolean = true;
+
     await db.collection(grade).get()
         .then((snapshot) => {
             snapshot.forEach((doc) => { // moving through the snapshot objects individually
@@ -22,6 +25,10 @@ async function getGradeData(grade) {
         }).catch((error) => {
             console.log("Error: ", error);
         });
+    // while (countBoolean === true) {
+
+
+    // }
 
     // console.log("Chapters: ", chapters);
     chapters.set("chapters", chapterList); // sets the map with the key "chapters" and the data being the array of objects
@@ -54,33 +61,19 @@ async function getChapterData(grade) {
 }
 
 async function getLessonData(grade, chapter, lesson) {
-//     // console.log("LessonData: \n");
+    //     // console.log("LessonData: \n");
 
-//     var minigames = [];
-//     const docRef = db.collection(grade).doc(chapter).collection(lesson).get()
-//         .then((snapshot) => {
-//             snapshot.forEach((doc) => {
-//                 // doc.data() is never undefined for query doc snapshots
-//                 console.log(doc.id, " => ", doc.data());
-//                 // minigames.push(doc.data);
-//             });
-//         }).catch((error) => {
-//             console.log("Error: ", error);
-//         });
-}
-
-async function post(data) {
-    await db.collection(grade).doc("LA").set({
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA"
-    })
-        .then(() => {
-            console.log("Document successfully written!");
-        })
-        .catch((error) => {
-            console.error("Error writing document: ", error);
-        });
+    //     var minigames = [];
+    //     const docRef = db.collection(grade).doc(chapter).collection(lesson).get()
+    //         .then((snapshot) => {
+    //             snapshot.forEach((doc) => {
+    //                 // doc.data() is never undefined for query doc snapshots
+    //                 console.log(doc.id, " => ", doc.data());
+    //                 // minigames.push(doc.data);
+    //             });
+    //         }).catch((error) => {
+    //             console.log("Error: ", error);
+    //         });
 }
 
 export { getChapterData, getGradeData, getLessonData };

@@ -24,28 +24,18 @@ const Stack = createNativeStackNavigator();
 function ChaptersHandler({ route, addAchievement }) { //add achievements
   const navigation = useNavigation();
   const [selectedGrade, setSelectedGrade] = useState(null);
-
   const { level } = route.params; // Level selected from Lesson navigation screen
-  console.log("route params: \n", route.params);
+  // console.log("route params: \n", route.params);
 
   useEffect(() => {
-
     switch (level) {
       case 1:
         {
-          // getGradeData("Grade2").then(
-          //   (result) => {
-          //     console.log("result: ", result, "\n\nchapters: ", result.get("chapters"));
-          //     setSelectedGrade(result.get("chapters"));
-          //   }
-          // ).catch((err) => {
-          //   console.log("Error: ", err);
-          // });
-
-          getChapterData("Grade2").then(
+          getGradeData("Grade2").then(
             (result) => {
-              console.log("result: ", result, "\n\nchapters: ", result.get("chapters"));
-              setSelectedGrade(result.get("chapters"));
+              const chapters = result.get("chapters");
+              // console.log("chapters: ", chapters);
+              setSelectedGrade(chapters);
             }
           ).catch((err) => {
             console.log("Error: ", err);

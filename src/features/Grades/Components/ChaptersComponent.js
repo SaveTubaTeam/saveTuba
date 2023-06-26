@@ -39,11 +39,11 @@ const Icon = styled.Image`
 function ChaptersComponent({ selectedGrade, navigation }) {
   const nav = useNavigation();
   const { t } = useTranslation();
-
   // console.log("Ch. Component: ", selectedGrade);
+  
   const renderItem = ({ item }) => {
-    
-    // console.log("item nav: ", item);
+    // console.log("Item: ", item.navigation);
+    // console.log("Nav: ", nav.getState());
     return (
       <Chapter
         onPress={() => {
