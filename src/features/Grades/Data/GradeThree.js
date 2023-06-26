@@ -24,11 +24,12 @@ export const Grade3 = {
           minigames: {
             forest: {
               navigation: "Forest",
-              icon: require("../../../../assets/recycle-bin.png"),
+              icon: require("../../../../assets/lesson-icons/jungle.png"),
               backgroundColor: "coral",
               prompt: "Click on the flower to learn more about it!",
               content: {
                 prompt: "Click on the flower to learn more about it!",
+                // give 4 prompts, 4 circles coordinates, 1 background photo 
               }
             }
           },
