@@ -497,35 +497,35 @@ export const Grade2 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Match the action to the correct step of the expirement",
+                  "Тәжірибенің дәл сәйкес қадамына әрекетті сәйкестіріңіз",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
-                  { name: "Observation" },
-                  { name: "Hypothesis" },
-                  { name: "Conclusion" },
-                  { name: "Purpose of study" },
+                  { name: "Бақылау" },
+                  { name: "Гипотеза" },
+                  { name: "Қорытынды" },
+                  { name: "Зерттеу мақсаты" },
                 ],
                 options: [
                   {
-                    title: "Elena sees that not all her plants.",
-                    name: "Observation",
+                    title: "Елена барлық өсімдіктерінің де емес екенін көреді.",
+                    name: "Бақылау",
                   },
                   {
                     title:
-                      "Sergey is coming up with a way to explain a natural phenomenon he saw.",
-                    name: "Hypothesis",
+                      "Сергей табиғи көрініске түсінік беру әдісін ойлап таба жатыр.",
+                    name: "Гипотеза",
                   },
                   {
                     title:
-                      "Vladimir sees from his experiment that flowers cannot grow well in the smog.",
-                    name: "Conclusion",
+                      "Владимир тәжірибесінен ғұлдыздар тұтқында жақсы өсе алмайтынын көреді.",
+                    name: "Қорытынды",
                   },
                   {
                     title:
-                      "Aleksandr wants to figure out the effects of trash on plant growth.",
-                    name: "Purpose of study",
-                  },
+                      "Александр өсімдіктердің өсуіне қашықтың әсерін анықтауға қалайды.",
+                    name: "Зерттеу мақсаты",
+                  }
                 ],
               },
             },
@@ -540,8 +540,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "List 3 plants that you see everyday. Why do you think that you see them so often? \nThink about the environmental conditions they need to survive.",
-                    placeholder: "The plants I see everyday are...",
+                    text: "Әр күн көрген 3 өсімдікті тізімдегіңіз. Сіз оларды өте жиі көретін себебі нені деп ойлайсыз? Олардың бақылау ортасына қажетті шарттар туралы ойлаңыз.",
+                    placeholder: "Мен әр күн көрген өсімдіктер...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -555,54 +555,54 @@ export const Grade2 = {
               content: [
                 {
                   prompt:
-                    "Finish the hypothesis: 'If the plant will not recieve water, then...'",
+                    "Гипотезаны аяқтаңыз: 'Егер өсімдік суды алмаса, онда...'",
                   answers: [
-                    { text: "the plant will live." },
-                    { text: "the plant will not survive." },
-                    { text: "the plant will produce its own water." },
-                    { text: "the plant will grow very tall." },
+                    { text: "өсімдік өмір сүреді." },
+                    { text: "өсімдік өмір сүрмейді." },
+                    { text: "өсімдік өзінің суын өндіреді." },
+                    { text: "өсімдік өте биік өседі." },
                   ],
-                  answer: "the plant will not survive.",
+                  answer: "өсімдік өмір сүрмейді.",
                 },
                 {
-                  prompt: "What do leaves do?",
+                  prompt: "Жапырақтар не істейді?",
                   answers: [
-                    { text: "Release oxygen back into the air" },
+                    { text: "Кесенеге кислород шығарады" },
                     {
-                      text: "Absorb carbon dioxide and sunlight through small holes (stomata)",
+                      text: "Кіші тесіктер (стома) арқылы көмірқыштық ангидрит пен күн жарықты сорып алады",
                     },
-                    { text: "Create sugars for the plant" },
-                    { text: "All the above" },
+                    { text: "Өсімдік үшін қантты құрады" },
+                    { text: "Барлығы дұрыс" },
                   ],
-                  answer: "All the above",
+                  answer: "Барлығы дұрыс",
                 },
                 {
                   prompt:
-                    "Chlorophyll is the substance that helps the leaves capture sunlight and transform it into sugars for the plant, as well as giving the plants their green color.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Хлорофилл - бұл өсімдіктердің жасыл түсін беретін зат, сол жағдайда өсімдіктерге күн жарығын сорып, қант құруға көмекші болады.",
+                  answers: [{ text: "Шынымен" }, { text: "Қате" }],
+                  answer: "Шынымен",
                 },
                 {
-                  prompt: "Which of the following is a true statement:",
+                  prompt: "Келесі дайындама дұрыс:",
                   answers: [
                     {
-                      text: "A tree can release enough oxygen for a family of four to breathe within a year.",
+                      text: "Ағаш жылына өмір сүруге жеткізетін кішкентаған семье үшін кислород шығарады.",
                     },
                     {
-                      text: "Driving a car for two hours uses the same abount of oxygen a tree produces in two years.",
+                      text: "Машинаны екі сағат жүргізу бір ағаштың екі жыл ишінде шығаратын кислородға тең.",
                     },
                     {
-                      text: "Chlorophyll is also found in algae and some bacteria.",
+                      text: "Хлорофилл мұходжаларда және кейбір бактерияларда да табылады.",
                     },
-                    { text: "All the above statements are true." },
+                    { text: "Барлық дайындамалар дұрыс." },
                   ],
-                  answer: "All the above statements are true.",
+                  answer: "Барлық дайындамалар дұрыс.",
                 },
                 {
                   prompt:
-                    "Indoor plants can produce as much oxygen in the shade as some plants do in direct sunshine.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Ішкі өсімдіктер толық күн жарығында өсімдіктердей шама көп кислород өндіре алады.",
+                  answers: [{ text: "Шынымен" }, { text: "Қате" }],
+                  answer: "Шынымен",
                 },
               ],
             },
@@ -611,41 +611,41 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the plant to its common name",
+                prompt: "Өсімдікті оның атына сәйкестіріңіз",
                 num: 3,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
                   {
-                    name: "Spider plant",
+                    name: "Өрмекшіл өсімдік",
                     image: require("../../../../assets/sorting/spider-plant.png"),
                   },
                   {
-                    name: "Gloxinia",
+                    name: "Глоксиния",
                     image: require("../../../../assets/sorting/gloxinia.png"),
                   },
                   {
-                    name: "Snake plant",
+                    name: "Жылан өсімдік",
                     image: require("../../../../assets/sorting/snake-plant.png"),
                   },
                   {
-                    name: "Jade plant",
+                    name: "Жад өсімдік",
                     image: require("../../../../assets/sorting/jade.png"),
                   },
                 ],
                 options: [
                   {
-                    title: "Spider plant",
-                    name: "Spider plant",
+                    title: "Өрмекшіл өсімдік",
+                    name: "Өрмекшіл өсімдік",
                   },
                   {
-                    title: "Gloxinia",
-                    name: "Gloxinia",
+                    title: "Глоксиния",
+                    name: "Глоксиния",
                   },
                   {
-                    title: "Snake plant",
-                    name: "Snake plant",
+                    title: "Жылан өсімдік",
+                    name: "Жылан өсімдік",
                   },
-                  { title: "Jade plant", name: "Jade plant" },
+                  { title: "Жад өсімдік", name: "Жад өсімдік" },
                 ],
               },
             },
@@ -655,8 +655,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "List three plants that you see everyday. Why do you think that you see them so" +
-                " often? Think about the environmental conditions that they need to survive.",
+                "Әр күн көрген үш өсімдікті тізімдегіңіз. Неге сіз оларды өте жиі көретін себебі нені ойлайсыз? Олардың бақылау ортасына қажетті шарттар туралы ойлаңыз.",
 
             },
             snapshot: { //correct
@@ -704,13 +703,13 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the items to thier community", //ideally change to match picutre to word
+                prompt: "Заттарды олардың қоғамдарымен қағаздарға қою", //ideally change to match picutre to word
                 num: 8, //count start 0
                 imageBg: SortingImages.bg[0].lvl_2_les_2, //what lesson
-                categories: [{ name: "Natural" }, { name: "Artifical" }],
+                categories: [{ name: "Табиғи" }, { name: "Жасанды" }],
                 options: [
-                  { title: "Forest", name: "Natural" },
-                  { title: "Field", name: "Artifical" },
+                  { title: "Орман", name: "Табиғи" },
+                  { title: "Өріс", name: "Жасанды" },
                 ],
               },
             },
@@ -718,41 +717,41 @@ export const Grade2 = {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
               description:
-                "Match the plant adaptations to the element they like",
+                "Өсімдіктердің қызмет етуіне өздеріне ұнайтын элементтерге сәйкестендіру",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Hydrophytes",
+                  name: "Гидрофиттер",
                   image: require("../../../../assets/memory/rain.png"),
                 },
                 {
-                  name: "Hydrophytes",
+                  name: "Гидрофиттер",
                 },
                 {
                   type: "image",
-                  name: "Cryophytes",
+                  name: "Криофиттер",
                   image: require("../../../../assets/memory/snowflake.png"),
                 },
                 {
-                  name: "Cryophytes",
+                  name: "Криофиттер",
                 },
                 {
                   type: "image",
-                  name: "Thermo-\nphiles",
+                  name: "Термофилдер",
                   image: require("../../../../assets/memory/temperature.png"),
                 },
                 {
-                  name: "Thermo-\nphiles",
+                  name: "Термофилдер",
                 },
                 {
                   type: "image",
-                  name: "Heliophytes",
+                  name: "Гелиофиттер",
                   image: require("../../../../assets/memory/sunshine.png"),
                 },
                 {
-                  name: "Heliophytes",
+                  name: "Гелиофиттер",
                 },
               ],
             },
@@ -768,9 +767,9 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Many plants have to adapt to survive in their environment. Sometimes the environment changes so quickly that plants don't have the ability to adapt." +
-                      " What are some human-made adaptations that help us, but hurt plants? ",
-                    placeholder: "Some human-made adaptions...",
+                      "Көптеген өсімдіктер өздерінің орташа жағдайына қызмет ету үшін қажет. Базен орташа жағдай жылдам өзгеріп, өсімдіктер қызмет етуге мүмкіндік бермейді." +
+                      " Бізге көмек ететін, бірақ өсімдіктерге зиян келтіретін адамдар тарабынан жасалған қызмет етудің кейбір мәселелері - қандайлары болады? ",
+                    placeholder: "Адамдар тарабынан жасалған қызмет ету...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -788,9 +787,8 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "List a couple of things that plants need in order to survive. Are these the same " +
-                      "things we need to survive? What happens if there is too much of one resource?",
-                    placeholder: "Plants need...",
+                      "Өсімдіктер өмір сүру үшін нені қажет ететіндігінің бірнеше нұсқаларын тізімделіңіз. Бұл сөйлемдер бізге қажет ететін заттармен бірдей ме? Бір ресурс көп болса не болады?",
+                    placeholder: "Өсімдіктерге қажет...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -803,52 +801,52 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What happens when a plant recieves too much heat?",
+                  prompt: "Өсімдік пен жылдам жылуға қандай әсер етеді?",
                   answers: [
                     {
-                      text: "The plants grow and bloom more quickly than usual",
+                      text: "Өсімдіктер жылдам өсіп, көп жасулары жылдам болады",
                     },
-                    { text: "The leaves are not their normal color" },
-                    { text: "The plant looses a lot of moisture" },
-                    { text: "All the above" },
+                    { text: "Жапырақтары олардың кәдімгі түсінде емес" },
+                    { text: "Өсімдік көп су жоғалтады" },
+                    { text: "Барлығы дұрыс" },
                   ],
-                  answer: "All the above",
+                  answer: "Барлығы дұрыс",
                 },
                 {
                   prompt:
-                    "Chlorophyll dies if the plant recieves too much direct sunlight.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Өсімдік жылдам күн жарығына ұшырағанда, хлорофилл өледі.",
+                  answers: [{ text: "Дұрыс" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс",
                 },
                 {
                   prompt:
-                    "Which types of plants have the adaptations to include waiting out exteme hot or cold temepratures\n" +
-                    "before they begin to sprout?",
+                    "Қай көрнектіктер өтірік жылдам жылу немесе соғу үшін қызмет етуін қамтамасыз етеді, олар өсіп, шығып бастаудан бұрын?" +
+                    "қарапайым орта жағдайдағы ұзақтыққа бейімделеді?",
                   answers: [
-                    { text: "Bulbs and sprouts" },
-                    { text: "Flowers and herbs" },
-                    { text: "Trees and shrubs" },
+                    { text: "Соған мен сабыз" },
+                    { text: "Гүлдер мен дәрумендер" },
+                    { text: "Ағаштар мен шырағайлар" },
                   ],
-                  answer: "Bulbs and sprouts",
+                  answer: "Соған мен сабыз",
                 },
                 {
                   prompt:
-                    "What does it look like when plants have too much light?",
+                    "Өсімдіктерге көп жарық болса, ол не ойлады?",
                   answers: [
-                    { text: "They bloom more and have more leaflets" },
-                    { text: "The leaves turn away from the sun" },
-                    { text: "They spread their roots our more under the soil" },
+                    { text: "Олар көп жасайды және көп жапырақ өседі" },
+                    { text: "Жапырақтар күннен бет бұрады" },
+                    { text: "Олар топырақтың астында қандай да бір жерге өршейді" },
                     {
-                      text: "More chlorophyll is produced in the leaves to protect it",
+                      text: "Жапырақтарында оларды қорғау үшін көп хлорофилл өндіреді",
                     },
                   ],
-                  answer: "The leaves turn away from the sun",
+                  answer: "Жапырақтар күннен бет бұрады",
                 },
                 {
                   prompt:
-                    "Plants can grow in 0\u00B0C and below type temperatures",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Өсімдіктер 0°C және одан төменгі температураларда өсу мүмкін",
+                  answers: [{ text: "Дұрыс" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс",
                 },
               ],
             },
