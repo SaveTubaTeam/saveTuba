@@ -852,7 +852,7 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Which communitiy (natural or artifical) is more environmentally friendly?" +
+                      "Which community (natural or artifical) is more environmentally friendly?" +
                       "Are there benefits to one or the other? List a couple of either communities you see in your area.",
                     placeholder: "The community that is...",
                     image: require("../../../../assets/openresponse/innovation.png"),
@@ -865,20 +865,20 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the items to thier community", //ideally change to match picutre to word
+                prompt: "Сопоставьте предметы к их окружению", //ideally change to match picutre to word
                 num: 8, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [{ name: "Natural" }, { name: "Artifical" }],
+                categories: [{ name: "Натуральное" }, { name: "Искуственное" }],
                 options: [
-                  { title: "Forest", name: "Natural" },
-                  { title: "Field", name: "Artifical" },
-                  { title: "Flowerbed", name: "Artifical" },
-                  { title: "Steppe", name: "Natural" },
-                  { title: "Pond", name: "Artifical" },
-                  { title: "Desert", name: "Natural" },
-                  { title: "Vegetable garden", name: "Artifical" },
-                  { title: "Lake", name: "Natural" },
-                  { title: "Swamp", name: "Natural" },
+                  { title: "Лес", name: "Натуральное" },
+                  { title: "Поле", name: "Искуственное" },
+                  { title: "Flowerbed", name: "Искуственное" },
+                  { title: "Степь", name: "Натуральное" },
+                  { title: "Пруд", name: "Искуственное" },
+                  { title: "Пустыня", name: "Натуральное" },
+                  { title: "Огород", name: "Искуственное" },
+                  { title: "Река", name: "Натуральное" },
+                  { title: "Болото", name: "Натуральное" },
                 ],
               },
             },
@@ -890,7 +890,7 @@ export const Grade2 = {
               content: [
                 {
                   //funny wording
-                  prompt: "What is a natural community?",
+                  prompt: "Что такое среда обитания?",
                   answers: [
                     {
                       text: "A group of plants and animals and their native habitat",
