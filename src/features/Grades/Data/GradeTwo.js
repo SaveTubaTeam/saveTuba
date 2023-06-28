@@ -902,10 +902,9 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text:
-                      "Which communitiy (natural or artifical) is more environmentally friendly?" +
-                      "Are there benefits to one or the other? List a couple of either communities you see in your area.",
-                    placeholder: "The community that is...",
+                    text: "Қай қоғамдастық (табиғи немесе жасанды) қоршағанға көре жақсы? " +
+                            "Бір немесе екіншісінің артықшылықтары бар ма? Өз аймағыңыздағы бірнеше қоғамдастықтарды тізімдегіңіз.",
+                        placeholder: "Қоғамдастық...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -916,20 +915,20 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Match the items to thier community", //ideally change to match picutre to word
-                num: 8, //count start 0
+                prompt: "Заттарды өз қоғамдастықтарына сәйкестендіріңіз", //әдеттегідей, суретті сөзге сәйкестендіріңіз
+                num: 8, //есептеу 0-дан басталады
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [{ name: "Natural" }, { name: "Artifical" }],
+                categories: [{ name: "Табиғи" }, { name: "Жасанды" }],
                 options: [
-                  { title: "Forest", name: "Natural" },
-                  { title: "Field", name: "Artifical" },
-                  { title: "Flowerbed", name: "Artifical" },
-                  { title: "Steppe", name: "Natural" },
-                  { title: "Pond", name: "Artifical" },
-                  { title: "Desert", name: "Natural" },
-                  { title: "Vegetable garden", name: "Artifical" },
-                  { title: "Lake", name: "Natural" },
-                  { title: "Swamp", name: "Natural" },
+                    { title: "Орман", name: "Табиғи" },
+                    { title: "Алаң", name: "Жасанды" },
+                    { title: "Гүлдер бақшасы", name: "Жасанды" },
+                    { title: "Қия", name: "Табиғи" },
+                    { title: "Батпақ", name: "Жасанды" },
+                    { title: "Шөл", name: "Табиғи" },
+                    { title: "Сабыз бақшасы", name: "Жасанды" },
+                    { title: "Көл", name: "Табиғи" },
+                    { title: "Батақ", name: "Табиғи" },
                 ],
               },
             },
@@ -940,59 +939,58 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  //funny wording
-                  prompt: "What is a natural community?",
-                  answers: [
-                    {
-                      text: "A group of plants and animals and their native habitat",
-                    },
-                    {
-                      text: "A group of plants and animals that are not living in their habitat",
-                    },
-                    { text: "A group of only plants living in their habitat" },
-                    { text: "A group of only animals living in their habitat" },
-                  ],
-                  answer: "A group of plants and animals and their habitat",
+                    // қулықты сөздер
+                    prompt: "Табиғи қоғамдастық не?",
+                    answers: [
+                        {
+                            text: "Өсімдіктер мен жануарлардың табиғи орташа жайлы топ",
+                        },
+                        {
+                            text: "Өздерінің табиғи орташа жайында тұрмайтын өсімдіктер мен жануарлар тобы",
+                        },
+                        { text: "Тек өсімдіктерден тұратын топ, олардың табиғи орташа жайында" },
+                        { text: "Тек жануарлардан тұратын топ, олардың табиғи орташа жайында" },
+                    ],
+                    answer: "Өсімдіктер мен жануарлардың табиғи орташа жайлы топ",
                 },
                 {
-                  prompt: "What does homogenous mean?",
-                  answers: [
-                    { text: "Of having only different features" },
-                    { text: "Of having mostly different features" },
-                    { text: "Of having some similar features" },
-                    { text: "Of having the same or similar features" },
-                  ],
-                  answer: "Of having the same or similar features",
+                    prompt: "Толықтық не дегені?",
+                    answers: [
+                        { text: "Тек өзге қасиеттері бар" },
+                        { text: "Негізінен-ақ өзге қасиеттері бар" },
+                        { text: "Бірдей немесе ұқсас қасиеттері бар" },
+                        { text: "Бірдей немесе ұқсас қасиеттері бар" },
+                    ],
+                    answer: "Бірдей немесе ұқсас қасиеттері бар",
                 },
                 {
-                  prompt: "What is an artifical community?",
-                  answers: [
-                    {
-                      text: "A group of plants and animals and their native habitat",
-                    },
-                    {
-                      text: "A group of plants and animals that are not living in their habitat",
-                    },
-                    { text: "A group of only plants living in their habitat" },
-                    { text: "A group of only animals living in their habitat" },
-                  ],
-                  answer:
-                    "A group of plants and animals that are not living in their habitat",
+                    prompt: "Жасанды қоғамдастық не?",
+                    answers: [
+                        {
+                            text: "Өсімдіктер мен жануарлардың табиғи орташа жайлы топ",
+                        },
+                        {
+                            text: "Өздерінің табиғи орташа жайында тұрмайтын өсімдіктер мен жануарлар тобы",
+                        },
+                        { text: "Тек өсімдіктерден тұратын топ, олардың табиғи орташа жайында" },
+                        { text: "Тек жануарлардан тұратын топ, олардың табиғи орташа жайында" },
+                    ],
+                    answer: "Өздерінің табиғи орташа жайында тұрмайтын өсімдіктер мен жануарлар тобы",
                 },
                 {
-                  prompt: "Plants and animals don't need each other to exist.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                    prompt: "Өсімдіктер мен жануарлар бір-бірісіз өмір сүре алады.",
+                    answers: [{ text: "Шын" }, { text: "Жалған" }],
+                    answer: "Жалған",
                 },
                 {
-                  prompt: "Homogenous conditions of existence means...",
-                  answers: [
-                    { text: "different plants can't live in the same area" },
-                    { text: "different plants can live in the same area" },
-                    { text: "only specific plants can live in tbe same area" },
-                    { text: "No plants can live in the same area" },
-                  ],
-                  answer: "different plants can live in the same area",
+                    prompt: "Толықтық шарттары өмір сүру - бұл...",
+                    answers: [
+                        { text: "әр түрлі өсімдіктер бір аймақта тұра алмайды" },
+                        { text: "әр түрлі өсімдіктер бір аймақта тұра алады" },
+                        { text: "тек арнайы өсімдіктер бір аймақта тұра алады" },
+                        { text: "Әшқандай өсімдік бір аймақта тұра алмайды" },
+                    ],
+                    answer: "әр түрлі өсімдіктер бір аймақта тұра алады",
                 },
               ],
             },
@@ -1002,7 +1000,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of a community (artifical or natural) near you.",
+                "Жасыңыз қоғамдастықтың (табиғи немесе жасанды) фотосын түсіріңіз",
             },
           },
           mastery: {
