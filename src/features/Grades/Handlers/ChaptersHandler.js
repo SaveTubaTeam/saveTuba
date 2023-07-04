@@ -33,7 +33,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
             (result) => {
               setSelectedGrade(result);
               setGradeNum(2);
-              // console.log("chapters: ", chapters);
+              console.log("chapters: ", chapters);
             }
           ).catch((err) => {
             console.log("Error: ", err);
@@ -83,7 +83,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
 
   if (selectedGrade == null) {
     console.log("No Selected Grade\n");
-    // return <View></View>;
+    return <View></View>;
   }
 
   addAchievement("first-time-opening-grade");

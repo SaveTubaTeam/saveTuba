@@ -17,6 +17,7 @@ async function getGradeData(grade) {
 
     chapters.set("chapters", chapterList); // sets the map with the key "chapters" and the data being the array of objects
     await setIcons(chapterList);
+    console.log("CH: ", chapters);
     return chapters; // This returns the map
     // return chapterList; // This returns the array
 }

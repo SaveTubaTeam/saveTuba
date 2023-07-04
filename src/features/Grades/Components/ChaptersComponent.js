@@ -1,17 +1,16 @@
+import React from "react";
+import { FlatList, View, Image } from "react-native";
+import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { LinearGradient } from "expo-linear-gradient";
-import { useTranslation } from "react-i18next";
-import { FlatList, View } from "react-native";
-import {styled} from "styled-components/native";
 import { connect } from "react-redux";
-import {React} from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
+import { useTranslation } from "react-i18next";
 import { Header } from "../../../components/Grades/grades.styles";
 import { BodyText } from "../../../components/body-text.component";
 import { TitleText } from "../../../components/title-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
 // import { Spacer } from "../../../components/spacer.component";
-// import { icon } from "@fortawesome/fontawesome-svg-core";
 
 const Container = styled.View`
   flex: 1;
@@ -37,13 +36,14 @@ const Icon = styled.Image`
   top: -20px;
 `;
 
-
-
 function ChaptersComponent({ selectedGrade, navigation }) {
   const nav = useNavigation();
   const { t } = useTranslation();
-
+  // console.log("Ch. Component: ", selectedGrade);
+  
   const renderItem = ({ item }) => {
+    // console.log("Item: ", item.navigation);
+    // console.log("Nav: ", nav.getState());
     return (
       <Chapter
         onPress={() => {
@@ -75,7 +75,7 @@ function ChaptersComponent({ selectedGrade, navigation }) {
             </TitleText>
           </View>
         </LinearGradient>
-        <Icon source={{ uri: item.icon }} />
+        <Icon source={{uri: item.icon}} />
       </Chapter>
     );
   };
