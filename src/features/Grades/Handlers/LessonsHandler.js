@@ -1,23 +1,83 @@
-import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { connect } from "react-redux";
+import { NavigationContainer } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
+import { React, useState, useEffect } from "react";
+import { connect } from "react-redux";
 
-import IndividualLessonHandler from "./IndividualLessonHandler";
-import LessonsComponent from "../Components/LessonsComponent";
+import { IndividualLessonHandler } from "./IndividualLessonHandler";
+import { LessonsComponent } from "../Components/LessonsComponent";
+import { getLessonData } from "./Database.js";
+// import { View } from "react-native";
+// import {
+//   Text
+// } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
-function ChaptersHandler({ selectedGrade, selectedChapter }) {
-  console.log("Grade: ", selectedGrade, " Selected Ch: ", selectedChapter);
+function ChaptersHandler({ gradeNum, selectedChapter }) {
+  console.log("Lesson Handler:\nSelected Ch: ", selectedChapter, "\nSelected Grade: ", gradeNum);
+  const [lessonData, setLessonData] = useState(null);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    switch (gradeNum) {
+      case 2:
+        {
+          console.log("In g2");
+          getLessonData(2, selectedChapter).then(
+            (result) => {
+              console.log("Results: ", result);
+              setLessonData(result);
+            }
+          ).catch((err) => {
+            console.log("Error: ", err);
+          });
+
+          break;
+        }
+      case 3: {
+        getLessonData(3, selectedChapter).then(
+          (result) => {
+            console.log(result);
+          }
+        ).catch((err) => {
+          console.log("Error: ", err);
+        });
+        break;
+      }
+      case 4: {
+        getLessonData(4, selectedChapter).then(
+          (result) => {
+            console.log(result);
+          }
+        ).catch((err) => {
+          console.log("Error: ", err);
+        });
+        break;
+      }
+      case 5: {
+        getLessonData(5, selectedChapter).then(
+          (result) => {
+            console.log(result);
+          }
+        ).catch((err) => {
+          console.log("Error: ", err);
+        });
+        break;
+      }
+      default: {
+        console.log("No Chapter Was Selected");
+        break;
+      }
+    }
+  }, []);
+  console.log("Lesson Data: ", lessonData);
 
   return (
     <NavigationContainer independent>
       <Stack.Navigator>
-        <Stack.Screen
-          name={selectedGrade.chapters[selectedChapter].navigation}
+         <Stack.Screen
+          name={"kjsdg"}
           options={{
             headerShown: false,
           }}
@@ -25,8 +85,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
           {() => (
             <LessonsComponent
               navigation={navigation}
-              selectedGrade={selectedGrade}
-              selectedChapter={selectedChapter}
+              lessonData = {lessonData}
             />
           )}
         </Stack.Screen>
@@ -34,7 +93,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         <Stack.Screen name="Lesson1" options={{ headerShown: false }}>
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={1}
             />
@@ -49,14 +108,14 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={2}
             />
           )}
         </Stack.Screen>
 
-        {/* <Stack.Screen
+        <Stack.Screen
           name="Lesson3"
           options={{
             headerShown: false,
@@ -64,12 +123,12 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={2}
             />
           )}
-        </Stack.Screen> */}
+        </Stack.Screen>
 
         <Stack.Screen
           name="Lesson4"
@@ -79,7 +138,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={3}
             />
@@ -94,7 +153,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={4}
             />
@@ -109,7 +168,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={5}
             />
@@ -124,7 +183,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={6}
             />
@@ -139,7 +198,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={7}
             />
@@ -154,7 +213,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={8}
             />
@@ -169,7 +228,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={9}
             />
@@ -184,7 +243,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={10}
             />
@@ -199,7 +258,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={11}
             />
@@ -214,7 +273,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={12}
             />
@@ -229,7 +288,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={13}
             />
@@ -244,7 +303,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={14}
             />
@@ -259,7 +318,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={15}
             />
@@ -274,7 +333,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={16}
             />
@@ -289,7 +348,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={17}
             />
@@ -304,7 +363,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={18}
             />
@@ -319,7 +378,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={19}
             />
@@ -334,7 +393,7 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={20}
             />
@@ -349,12 +408,12 @@ function ChaptersHandler({ selectedGrade, selectedChapter }) {
         >
           {() => (
             <IndividualLessonHandler
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={21}
             />
           )}
-        </Stack.Screen>
+        </Stack.Screen> 
       </Stack.Navigator>
     </NavigationContainer>
   );

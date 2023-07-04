@@ -1,30 +1,10 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components/native";
-import { db, auth } from "../../../firebase";
-import grade2 from "../Grades/Data/grade2.json";
-import grade3 from "../Grades/Data/grade3.json";
-import { useNavigation } from "@react-navigation/native";
-import { useTranslation } from "react-i18next";
 import { TitleText } from "../../components/title-text.component";
-
-//Doesn't work. Look for a way to just use the object here
-/** 
-const Flag = styled.Image`
-  width: 30px;
-  height: 20px;
-`;
-
-const LANGUAGES = [  {    code: "kk",    label: <Flag source={require("../../../../assets/kz.jpeg")} />,  },  { code: "ru", label: <Flag source={require("../../../../assets/ru.png")} /> },  { code: "en", label: <Flag source={require("../../../../assets/en.png")} /> },];
-
-const Selector = () => {
-  const { t, i18n } = useTranslation();
-  const selectedLanguageCode = i18n.language;
-
-  const setLanguage = (code) => {
-    return i18n.changeLanguage(code);
-  }
-}
-*/
+import { useNavigation } from "@react-navigation/native";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components/native";
+import { auth } from "../../../firebase";
+// import { changeData } from "../Grades/Handlers/Database";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -109,7 +89,7 @@ const LoginScreen = () => {
 
   const handleLogin = () => {
     auth
-      .signInWithEmailAndPassword(email, password)
+      .signInWithEmailAndPassword("tester@gmail.com", "test123") // changed from email, password
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log("Logged in with:", user.email);
@@ -117,62 +97,6 @@ const LoginScreen = () => {
       .catch((error) => alert(error.message));
   };
 
-  async function post() {
-
-    // Grade 2
-    const chapters2 = grade2.Grade2.chapters;
-    const gradeName2 = Object.keys(grade2)[0];
-    for (var chapters2Iter = 0; chapters2Iter < chapters2.length; chapters2Iter++) {
-      var chapter2 = (chapters2Iter + 1).toString();
-      var chapterDoc2 = "Chapter".concat(chapter2);
-      var lessons2 = grade2.Grade2.chapters[chapters2Iter].lessons;
-
-      for (var lessons2Iter = 0; lessons2Iter < lessons2.length; lessons2Iter++) {
-        var lesson2 = (lessons2Iter + 1).toString();
-        var lessonCollection2 = "Lesson".concat(lesson2);
-        var minigames2 = grade2.Grade2.chapters[chapters2Iter].lessons[lessons2Iter].minigames;
-
-        for (var minigames2Iter = 0; minigames2Iter < minigames2.length; minigames2Iter++) {
-          var minigameName2 = minigames2[minigames2Iter].navigation;
-          await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc(minigameName2).set(minigames2[minigames2Iter])
-            .then(() => {
-              console.log("Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully written!");
-            })
-            .catch((error) => {
-              console.error("Error writing document: ", error);
-            });
-        }
-      }
-    }
-
-    // Grade 3
-    const chapters3 = grade3.Grade3.chapters;
-    const gradeName3 = Object.keys(grade3)[0];
-    for (var chapters3Iter = 0; chapters3Iter < chapters3.length; chapters3Iter++) {
-      var chapter3 = (chapters3Iter + 1).toString();
-      var chapterDoc3 = "Chapter".concat(chapter3);
-      var lessons3 = grade3.Grade3.chapters[chapters3Iter].lessons;
-
-      for (var lessons3Iter = 0; lessons3Iter < lessons3.length; lessons3Iter++) {
-        var lesson3 = (lessons3Iter + 1).toString();
-        var lessonCollection3 = "Lesson".concat(lesson3);
-        var minigames3 = grade3.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].minigames;
-
-        for (var minigames3Iter = 0; minigames3Iter < minigames3.length; minigames3Iter++) {
-          var minigameName3 = minigames3[minigames3Iter].navigation;
-          await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(minigameName3).set(minigames3[minigames3Iter])
-            .then(() => {
-              console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
-            })
-            .catch((error) => {
-              console.error("Error writing document: ", error);
-            });
-        }
-      }
-    }
-
-
-  }
 
   return (
     // <SafeArea>
@@ -183,14 +107,14 @@ const LoginScreen = () => {
             placeholder={t("common:email")} //Email
             placeholderTextColor="#696969"
             value={email}
-            onChangeText={(text) => setEmail(text)}
+            onChangeText={(text) => setEmail(text)} // Need to change for production
             autoCapitalize="none"
           />
           <Input
             placeholder={t("common:password")} //Password
             placeholderTextColor="#696969"
             value={password}
-            onChangeText={(text) => setPassword(text)}
+            onChangeText={(text) => setPassword(text)} // Need to change for production
             autoCapitalize="none"
             secureTextEntry
           />
@@ -209,7 +133,15 @@ const LoginScreen = () => {
             </TitleText>
           </ButtonOutLine>
 
-          {/* <Button onPress={post}>
+          {/* This posted the data that was pulled from the post method above */}
+          {/* <Button onPress={postData}>
+            <TitleText color="secondary" size="body">
+              Post
+            </TitleText>
+          </Button>
+        </ButtonContainer> */}
+
+          {/* <Button onPress={changeData}>
             <TitleText color="secondary" size="body">
               Post
             </TitleText>

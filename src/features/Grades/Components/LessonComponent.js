@@ -1,29 +1,29 @@
-import React, { useState } from "react";
-import {
-  View,
-  FlatList,
-  ScrollView,
-  Image,
-  TouchableOpacityBase,
-  TouchableOpacity,
-} from "react-native";
-import styled from "styled-components/native";
-import { useNavigation } from "@react-navigation/native";
-import { connect } from "react-redux";
-import { SafeArea } from "../../../components/safe-area.component";
+import { MasteryFlex } from "../../../components/mastery-flex.component";
 import { TitleText } from "../../../components/title-text.component";
+import { SafeArea } from "../../../components/safe-area.component";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
-import { MasteryFlex } from "../../../components/mastery-flex.component";
+import { useNavigation } from "@react-navigation/native";
+import styled from "styled-components/native";
+import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import {
-  Mastery,
   Adventure,
   Header,
-  ImageBg,
+  // Mastery,
+  // ImageBg,
 } from "../../../components/Grades/grades.styles";
-import { t } from "i18next";
-import { useTranslation } from "react-i18next";
-import mastery from "../../../components/Translations/languages/en/mastery";
+import {
+  View,
+  Image,
+  FlatList,
+  // ScrollView,
+  // TouchableOpacityBase,
+  // TouchableOpacity,
+} from "react-native";
+// import { t } from "i18next";
+// import mastery from "../../../components/Translations/languages/en/mastery";
 
 const Container = styled.View`
   height: 100%;
@@ -33,14 +33,14 @@ const Container = styled.View`
   background-color: #cce882;
 `;
 
-const MasteryStyle = styled.View`
-  height: 100%;
-  width: 100%;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: #cce882;
-`;
+// const MasteryStyle = styled.View`
+//   height: 100%;
+//   width: 100%;
+//   flex: 1;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #cce882;
+// `;
 
 const Chunk = styled.View`
   margin-top: 5px;
@@ -79,12 +79,11 @@ function LessonComponent({
   selectedLesson,
   navigation,
 }) {
-
+  console.log("Grade: ", selectedGrade, "\nChapter: ", selectedChapter, "\nLesson: ", selectedLesson);
   const nav = useNavigation();
   const { t } = useTranslation();
 
-  const [metaData, setMetaData] = useState();
-
+  // const [metaData, setMetaData] = useState();
   // const masteryData = () => {
   //   setMetaData(selectedGrade, selectedChapter, selectedLesson, navigation);
   // };
@@ -152,15 +151,13 @@ function LessonComponent({
         />
         <Tower
           source={
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .thumbnail
+            selectedGrade.chapters[selectedChapter].lessons[selectedLesson].thumbnail
           }
         />
         <Head>
           <TitleText size="title">
             {
-              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .title
+              selectedGrade.chapters[selectedChapter].lessons[selectedLesson].title
             }
           </TitleText>
           <Spacer size="large" />
@@ -194,60 +191,8 @@ function LessonComponent({
           }}
           ListFooterComponent={
 
-            <MasteryFlex data={[selectedGrade, selectedChapter, selectedLesson, navigation]}/>
+            <MasteryFlex data={[selectedGrade, selectedChapter, selectedLesson, navigation]} />
 
-
-            // Previous implementation
-
-            // <FlatList
-            //   data={
-            //     selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-            //       .mastery &&
-            //     Object.values(
-            //       selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-            //         .mastery
-            //     )
-            //   }
-            //   numColumns={1}
-            //   keyExtractor={(item, index) => index}
-            //   key={(item, index) => index}
-            //   renderItem={renderItem}
-            //   contentContainerStyle={{
-            //     width: "85%",
-            //     alignSelf: "center",
-            //   }}
-            //   style={{
-            //     marginBottom: 20,
-            //     width: "100%",
-            //   }}
-            //   ListFooterComponentStyle={{
-            //     alignItems: "center",
-            //   }}
-            //   ListFooterComponent={
-            //     <TouchableOpacity
-            //       style={{
-            //         width: "93%",
-            //         height: 150,
-            //         marginTop: 10,
-            //         borderRadius: 20,
-            //         justifyContent: "center",
-            //         overflow: "hidden",
-            //       }}
-            //       onPress={() => nav.navigate("Mastery")}
-            //     >
-            //       <ImageBg
-            //         style={{
-            //           borderRadius: 20,
-            //         }}
-            //         source={require("../../../../assets/mastery.png")}
-            //       >
-            //         <TitleText weight="bold" size="h5" color="quaternary">
-            //           {t("common:mastery")}
-            //         </TitleText>
-            //       </ImageBg>
-            //     </TouchableOpacity>
-            //   }
-            // />
           }
         />
       </Container>

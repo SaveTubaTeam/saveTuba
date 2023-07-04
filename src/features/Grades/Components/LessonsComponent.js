@@ -1,14 +1,14 @@
-import React, { useState } from "react";
 import { FlatList, View, Image, TouchableOpacity } from "react-native";
-import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { connect } from "react-redux";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import styled from "styled-components/native";
+import { connect } from "react-redux";
+import React from "react";
 
-import { SafeArea } from "../../../components/safe-area.component";
-import { Header } from "../../../components/Grades/grades.styles";
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
+import { SafeArea } from "../../../components/safe-area.component";
+import { Header } from "../../../components/Grades/grades.styles";
 import { Spacer } from "../../../components/spacer.component";
 import { useTranslation } from "react-i18next";
 
@@ -39,16 +39,15 @@ const CurrentLesson = styled.TouchableOpacity`
   margin-bottom: 10px;
 `;
 
-function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
-  console.log("sGrade", selectedGrade);
+function LessonsComponent({ lessonData, navigation }) {
+  console.log("Lessons Comp. Grade", selectedGrade);
   const nav = useNavigation();
   const { t } = useTranslation();
-  const [currentLesson, setCurrentLesson] = useState(0);
+  console.log("LD: ", lessonData);
 
   const renderItem = ({ item }) => {
-    // keep the item there
     return item.title ==
-      selectedGrade.chapters[selectedChapter].lessons[currentLesson].title ? (
+      selectedGrade[selectedChapter].lessons[currentLesson].title ? (
       <CurrentLesson
         onPress={() => {
           nav.navigate(item.navigation);
@@ -173,7 +172,6 @@ function LessonsComponent({ selectedGrade, selectedChapter, navigation }) {
     </SafeArea>
   );
 }
-
 // Boiler plate to connect redux/firebase to Lesson Component
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
