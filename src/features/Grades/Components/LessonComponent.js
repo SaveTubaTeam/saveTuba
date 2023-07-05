@@ -146,20 +146,18 @@ function LessonComponent({
       <Container>
         <Header
           title={t("common:lesson")}
-          back={selectedGrade.chapters[selectedChapter].navigation}
+          back={lessonData.navigation}
           navigation={navigation}
         />
         <Tower
           source={
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .thumbnail
+            lessonData.thumbnail
           }
         />
         <Head>
           <TitleText size="title">
             {
-              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .title
+              lessonData.title
             }
           </TitleText>
           <Spacer size="large" />
@@ -169,11 +167,9 @@ function LessonComponent({
 
         <FlatList // The flatlist used to load minigames and their data.
           data={
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .minigames &&
+            lessonData.minigames &&
             Object.values(
-              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .minigames
+              lessonData.minigames
             )
           }
           numColumns={2}
@@ -193,7 +189,7 @@ function LessonComponent({
           }}
           ListFooterComponent={
 
-            <MasteryFlex data={[selectedGrade, selectedChapter, selectedLesson, navigation]} />
+            <MasteryFlex data={[lessonData, selectedChapter, selectedLesson, navigation]} />
 
 
             // Previous implementation

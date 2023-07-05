@@ -420,11 +420,6 @@ const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
 });
 
-// const mapStateToProps = (store) => ({
-//   currentUser: store.userState.currentUser,
-//   achievements: store.userAchievements.achievements,
-//   achievementModal: store.modals,
-// });
 
 // Last function to connect the component to props of redux/firebase
 export default connect(mapStateToProps, null)(LessonsHandler);
