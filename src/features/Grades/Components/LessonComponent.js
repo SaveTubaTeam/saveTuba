@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import {
   View,
   FlatList,
-  ScrollView,
   Image,
+  ScrollView,
   TouchableOpacityBase,
   TouchableOpacity,
 } from "react-native";
@@ -16,10 +16,10 @@ import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { MasteryFlex } from "../../../components/mastery-flex.component";
 import {
-  Mastery,
   Adventure,
   Header,
   ImageBg,
+  Mastery,
 } from "../../../components/Grades/grades.styles";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
@@ -74,7 +74,7 @@ const ProgContainer = styled.View`
 `;
 
 function LessonComponent({
-  selectedGrade,
+  lessonData,
   selectedChapter,
   selectedLesson,
   navigation,
@@ -83,8 +83,7 @@ function LessonComponent({
   const nav = useNavigation();
   const { t } = useTranslation();
 
-  const [metaData, setMetaData] = useState();
-
+  // const [metaData, setMetaData] = useState();
   // const masteryData = () => {
   //   setMetaData(selectedGrade, selectedChapter, selectedLesson, navigation);
   // };
@@ -194,7 +193,7 @@ function LessonComponent({
           }}
           ListFooterComponent={
 
-            <MasteryFlex data={[selectedGrade, selectedChapter, selectedLesson, navigation]}/>
+            <MasteryFlex data={[selectedGrade, selectedChapter, selectedLesson, navigation]} />
 
 
             // Previous implementation

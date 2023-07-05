@@ -1,22 +1,18 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { useNavigation } from "@react-navigation/native";
-import { React, useState, useEffect } from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
+import { useNavigation } from "@react-navigation/native";
 
-import { IndividualLessonHandler } from "./IndividualLessonHandler";
-import { LessonsComponent } from "../Components/LessonsComponent";
+// import IndividualLessonHandler from "./IndividualLessonHandler";
+import LessonsComponent from "../Components/LessonsComponent";
 import { getLessonData } from "./Database.js";
-// import { View } from "react-native";
-// import {
-//   Text
-// } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
-function ChaptersHandler({ gradeNum, selectedChapter }) {
+function LessonsHandler({ gradeNum, selectedChapter }) {
   console.log("Lesson Handler:\nSelected Ch: ", selectedChapter, "\nSelected Grade: ", gradeNum);
-  const [lessonData, setLessonData] = useState(null);
+  const [lessonData, setLessonData] = useState("");
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -76,7 +72,7 @@ function ChaptersHandler({ gradeNum, selectedChapter }) {
   return (
     <NavigationContainer independent>
       <Stack.Navigator>
-         <Stack.Screen
+        <Stack.Screen
           name={"kjsdg"}
           options={{
             headerShown: false,
@@ -85,12 +81,12 @@ function ChaptersHandler({ gradeNum, selectedChapter }) {
           {() => (
             <LessonsComponent
               navigation={navigation}
-              lessonData = {lessonData}
+              lessonData={lessonData}
             />
           )}
         </Stack.Screen>
 
-        <Stack.Screen name="Lesson1" options={{ headerShown: false }}>
+        {/* <Stack.Screen name="Lesson1" options={{ headerShown: false }}>
           {() => (
             <IndividualLessonHandler
               lessonData={lessonData}
@@ -413,7 +409,7 @@ function ChaptersHandler({ gradeNum, selectedChapter }) {
               selectedLesson={21}
             />
           )}
-        </Stack.Screen> 
+        </Stack.Screen> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -424,5 +420,11 @@ const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
 });
 
+// const mapStateToProps = (store) => ({
+//   currentUser: store.userState.currentUser,
+//   achievements: store.userAchievements.achievements,
+//   achievementModal: store.modals,
+// });
+
 // Last function to connect the component to props of redux/firebase
-export default connect(mapStateToProps, null)(ChaptersHandler);
+export default connect(mapStateToProps, null)(LessonsHandler);

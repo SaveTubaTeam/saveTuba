@@ -1,21 +1,14 @@
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ChaptersComponent from "../Components/ChaptersComponent";
 import { addAchievement } from "../../../../redux/actions";
 import React, { useState, useEffect } from "react";
-import LessonsHandler from "./LessonsHandler";
 import { bindActionCreators } from "redux";
-import { getGradeData } from "./Database";
 import { connect } from "react-redux";
 import { View } from "react-native";
 
-// I will need to change 
-// import { Grade1 } from "../Data/GradeOne";
-// import { Grade2 } from "../Data/GradeTwo";
-// import { Grade3 } from "../Data/GradeThree";
-// import { Grade4 } from "../Data/GradeFour";
-
-
+import ChaptersComponent from "../Components/ChaptersComponent";
+import LessonsHandler from "./LessonsHandler";
+import { getGradeData } from "./Database";
 
 const Stack = createNativeStackNavigator();
 
@@ -33,7 +26,6 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
             (result) => {
               setSelectedGrade(result);
               setGradeNum(2);
-              console.log("chapters: ", chapters);
             }
           ).catch((err) => {
             console.log("Error: ", err);

@@ -2,8 +2,8 @@ import { FlatList, View, Image, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components/native";
+import React, { useState } from "react";
 import { connect } from "react-redux";
-import React from "react";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -40,14 +40,14 @@ const CurrentLesson = styled.TouchableOpacity`
 `;
 
 function LessonsComponent({ lessonData, navigation }) {
-  console.log("Lessons Comp. Grade", selectedGrade);
+  // console.log("Lessons Comp. Grade", selectedGrade);
   const nav = useNavigation();
   const { t } = useTranslation();
   console.log("LD: ", lessonData);
 
   const renderItem = ({ item }) => {
     return item.title ==
-      selectedGrade[selectedChapter].lessons[currentLesson].title ? (
+      item.title ? (
       <CurrentLesson
         onPress={() => {
           nav.navigate(item.navigation);
@@ -163,7 +163,7 @@ function LessonsComponent({ lessonData, navigation }) {
         />
         <FlatList
           style={{ width: "100%" }}
-          data={selectedGrade.chapters[selectedChapter].lessons}
+          data={lessonData}
           renderItem={renderItem}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
