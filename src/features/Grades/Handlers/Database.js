@@ -2,7 +2,7 @@ import { db, storage } from "../../../../firebase.js";
 
 
 async function getGradeData(grade) {
-    const chapters = new Map();
+    // const chapters = new Map();
     const chapterList = [];
 
     await db.collection(grade).get()
@@ -15,26 +15,31 @@ async function getGradeData(grade) {
             console.log("Error: ", error);
         });
 
-    chapters.set("chapters", chapterList); // sets the map with the key "chapters" and the data being the array of objects
+    // chapters.set("chapters", chapterList); // sets the map with the key "chapters" and the data being the array of objects
     await setIcons(chapterList);
-    return chapters; // This returns the map
-    // return chapterList; // This returns the array
+    // return chapters; // This returns the map
+    return chapterList; // This returns the array
 }
 
 async function getLessonData(grade, chpt) {
-    console.log("IN getLessonData");
+    // Use a map to more easily access correct minigames
     const lessons = new Map();
     const minigameList = [];
 
+    grade = "Grade".concat(grade.toString());
+    chpt = "Chapter".concat(chpt.toString());
+    console.log("Grade: ", grade, " CH: ",chpt);
     await db.collection(grade).doc(chpt).get().then((snapshot) => {
+        console.log("in collection");
         snapshot.forEach((doc) => { // moving through the snapshot objects individually
             console.log("Snapshot => ", doc.id, " => ", doc.data());
             minigameList.push(doc.data()); // Pushing new object onto the array
         });
     }).catch((error) => {
-        console.log("Error: ", error);
+        console.log("Error in Database.js: ", error);
     });
-
+    
+    console.log("In getLessonData: ", minigameList);
     lessons.set("minigames", minigameList);
     return lessons;
 }

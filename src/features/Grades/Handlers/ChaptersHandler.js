@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 function ChaptersHandler({ route, addAchievement }) { //add achievements
   const navigation = useNavigation();
   const [selectedGrade, setSelectedGrade] = useState(null);
-  const [gradeNum, setGradeNum] = useState(0);
+  const [gradeNum, setGradeNum] = useState(null);
   const { level } = route.params; // Level selected from Lesson navigation screen
 
   useEffect(() => {
@@ -24,6 +24,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
         {
           getGradeData("Grade2").then(
             (result) => {
+              // console.log("Grade 2: ", result);
               setSelectedGrade(result);
               setGradeNum(2);
             }

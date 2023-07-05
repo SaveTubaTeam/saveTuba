@@ -26,7 +26,7 @@ function LessonsHandler({ gradeNum, selectedChapter }) {
               setLessonData(result);
             }
           ).catch((err) => {
-            console.log("Error: ", err);
+            console.log("Error in LessonHandler.js: ", err);
           });
 
           break;
