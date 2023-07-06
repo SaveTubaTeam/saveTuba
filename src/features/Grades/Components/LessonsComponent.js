@@ -39,25 +39,41 @@ const CurrentLesson = styled.TouchableOpacity`
   margin-bottom: 10px;
 `;
 
-function LessonsComponent({ lessonData, navigation }) {
+function LessonsComponent({ lessonData, selectedChapter, navigation }) {
   // console.log("Lessons Comp. Grade", selectedGrade);
   const nav = useNavigation();
   const { t } = useTranslation();
-  console.log("LD: ", lessonData);
+  // console.log("LD: ", lessonData[0][lessonData[0].length-1].title);
+  
+  const [metaData, setMetaData] = useState("");
 
   const renderItem = ({ item }) => {
+    if(typeof item === Array){
+      console.log("ITEM: ", item[0]);
+      
+    }else{
+      console.log("NOT ARR: ", typeof item,"\n", item.toString(), "\n_________________");
+    }
+    // setMetaData(
+    //   {
+    //     title: item[(item.length-1)].title,
+    //     thumbnail: item[(item.length-1)].thumbnail,
+    //     backgroundColor: item[(item.length-1)].backgroundColor
+    //   }
+    // );
+
     return item.title ==
-      item.title ? (
+      metaData.title ? (
       <CurrentLesson
         onPress={() => {
-          nav.navigate(item.navigation);
+          nav.navigate(metaData.navigation);
         }}
       >
         <View
           style={{
             flexDirection: "row",
             borderRadius: 20,
-            backgroundColor: item.backgroundColor,
+            backgroundColor: metaData.backgroundColor,
           }}
         >
           <View
@@ -69,7 +85,7 @@ function LessonsComponent({ lessonData, navigation }) {
             }}
           >
             <TitleText align="left" size="subtitle" color="secondary">
-              {item.title}
+              {metaData.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="secondary">
@@ -91,7 +107,7 @@ function LessonsComponent({ lessonData, navigation }) {
                 flexDirection: "row",
               }}
               onPress={() => {
-                nav.navigate(item.navigation);
+                nav.navigate(metaData.navigation);
               }}
             >
               <Ionicons
@@ -116,14 +132,14 @@ function LessonsComponent({ lessonData, navigation }) {
               width: undefined,
               aspectRatio: 1,
             }}
-            source={item.thumbnail}
+            source={metaData.thumbnail}
           />
         </View>
       </CurrentLesson>
     ) : (
       <Lesson
         onPress={() => {
-          nav.navigate(item.navigation);
+          nav.navigate(metaData.navigation);
         }}
       >
         <View style={{ flexDirection: "row" }}>
@@ -134,7 +150,7 @@ function LessonsComponent({ lessonData, navigation }) {
               height: 100,
               width: 100,
             }}
-            source={item.thumbnail}
+            source={metaData.thumbnail}
           />
           <View
             style={{
@@ -143,7 +159,7 @@ function LessonsComponent({ lessonData, navigation }) {
             }}
           >
             <TitleText align="left" size="mid" color="primary">
-              {item.title}
+              {metaData.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left">5/5</BodyText>

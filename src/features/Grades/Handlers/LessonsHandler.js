@@ -14,15 +14,16 @@ function LessonsHandler({ gradeNum, selectedChapter }) {
   console.log("Lesson Handler:\nSelected Ch: ", selectedChapter, "\nSelected Grade: ", gradeNum);
   const [lessonData, setLessonData] = useState("");
   const navigation = useNavigation();
+  
 
   useEffect(() => {
     switch (gradeNum) {
       case 2:
         {
-          console.log("In g2");
+          // console.log("In g2");
           getLessonData(2, selectedChapter).then(
             (result) => {
-              console.log("Results: ", result);
+              // console.log("Results: ", result);
               setLessonData(result);
             }
           ).catch((err) => {
@@ -67,13 +68,13 @@ function LessonsHandler({ gradeNum, selectedChapter }) {
       }
     }
   }, []);
-  console.log("Lesson Data: ", lessonData);
+  // console.log("Lesson Data: ", lessonData);
 
   return (
     <NavigationContainer independent>
       <Stack.Navigator>
         <Stack.Screen
-          name={"kjsdg"}
+          name={"Chapter".concat(gradeNum.toString())}
           options={{
             headerShown: false,
           }}
@@ -82,6 +83,7 @@ function LessonsHandler({ gradeNum, selectedChapter }) {
             <LessonsComponent
               navigation={navigation}
               lessonData={lessonData}
+              selectedChapter={selectedChapter}
             />
           )}
         </Stack.Screen>

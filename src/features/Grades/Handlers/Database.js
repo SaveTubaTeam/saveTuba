@@ -1,3 +1,4 @@
+import grade2 from "./grade2.json";
 import { db, storage } from "../../../../firebase.js";
 
 
@@ -23,50 +24,61 @@ async function getGradeData(grade) {
 
 async function getLessonData(grade, chpt) {
     // Use a map to more easily access correct minigames
-    const lessons = new Map();
-    const minigameList = [];
+    const lessons = [];
 
     grade = "Grade".concat(grade.toString());
     chpt = "Chapter".concat(chpt.toString());
-    console.log("Grade: ", grade, " CH: ",chpt);
-    await db.collection(grade).doc(chpt).get().then((snapshot) => {
-        console.log("in collection");
-        snapshot.forEach((doc) => { // moving through the snapshot objects individually
-            console.log("Snapshot => ", doc.id, " => ", doc.data());
-            minigameList.push(doc.data()); // Pushing new object onto the array
+    for (var i = 1; i < 25; i++) {
+        const minigameList = [];
+        const lesson = "Lesson".concat(i.toString());
+        await db.collection(grade).doc(chpt).collection(lesson).get().then((snapshot) => {
+            // console.log(i, ": snapshot", typeof snapshot.data());
+            if( snapshot === undefined){
+                console.log(i, ": undefined");
+            }else{
+                snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                    // console.log("Snapshot => ", doc.id, " => ", doc.data());
+                    // console.log("Snapshot => ", doc.id);
+                    minigameList.push(doc.data()); // Pushing new object onto the array
+                });
+                lessons.push(minigameList);
+                console.log(i, ": MINIGAMES: ", minigameList);
+
+            }
+        }).catch((error) => {
+            console.log("Error in Database.js: ", error);
         });
-    }).catch((error) => {
-        console.log("Error in Database.js: ", error);
-    });
-    
-    console.log("In getLessonData: ", minigameList);
-    lessons.set("minigames", minigameList);
+    }
+
+    // console.log("lessons: ", lessons[0]);
+    // lessons.set("minigames", minigameList);
     return lessons;
 }
 
 
 // This is meant to change large sets of similarly formatted data at a single time 
-// async function changeData() {
-//     const g2_chapters = grade2.Grade2.chapters;
-//     for (var i = 0; i < g2_chapters.length; i++) {
-//         const g2_lessons = grade2.Grade2.chapters[i].lessons;
-//         for (var u = 0; u < g2_lessons.length; u++) {
-//             const data = {
-//                 title: g2_lessons[u].title,
-//                 thumbnail: g2_lessons[u].thumbnail,
-//                 backgroundColor: g2_lessons[u].backgroundColor
-//             };
-//             await db.collection("Grade2").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("metadata").set(data)
-//                 .then(() => {
-//                     console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
-//                 })
-//                 .catch((error) => {
-//                     // The document probably doesn't exist.
-//                     console.error("Error updating document: ", error);
-//                 });
-//         }
-//     }
-// }
+async function changeData() {
+    const g2_chapters = grade2.Grade2.chapters;
+    for (var i = 0; i < g2_chapters.length; i++) {
+        const g2_lessons = grade2.Grade2.chapters[i].lessons;
+        for (var u = 0; u < g2_lessons.length; u++) {
+            const data = {
+                title: g2_lessons[u].title,
+                thumbnail: g2_lessons[u].thumbnail,
+                backgroundColor: g2_lessons[u].backgroundColor,
+                navigation: "Lesson".concat((u + 1).toString())
+            };
+            await db.collection("Grade2").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("metadata").set(data)
+                .then(() => {
+                    console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
+                })
+                .catch((error) => {
+                    // The document probably doesn't exist.
+                    console.error("Error updating document: ", error);
+                });
+        }
+    }
+}
 
 // This was meant to push all of the hardcoded data to the database as there was no admin console when it was written
 // Leaving it in for propriety 
@@ -156,4 +168,4 @@ async function setIcons(data) {
 }
 
 
-export { getGradeData, setIcons, getLessonData };
+export { getGradeData, setIcons, getLessonData, changeData };

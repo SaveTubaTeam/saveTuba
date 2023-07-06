@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
-// import { changeData } from "../Grades/Handlers/Database";
+import { changeData } from "../Grades/Handlers/Database";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
