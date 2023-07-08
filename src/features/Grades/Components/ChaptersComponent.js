@@ -36,14 +36,11 @@ const Icon = styled.Image`
   top: -20px;
 `;
 
-function ChaptersComponent({ selectedGrade, navigation }) {
+function ChaptersComponent({ selectedGrade, navigation, iconMap }) {
   const nav = useNavigation();
   const { t } = useTranslation();
-  // console.log("Ch. Component: ", selectedGrade);
-  
+  console.log("ICONS: ", iconMap);
   const renderItem = ({ item }) => {
-    // console.log("Item: ", item.navigation);
-    // console.log("Nav: ", nav.getState());
     return (
       <Chapter
         onPress={() => {
@@ -75,7 +72,7 @@ function ChaptersComponent({ selectedGrade, navigation }) {
             </TitleText>
           </View>
         </LinearGradient>
-        <Icon source={{uri: item.icon}} />
+        <Icon source={{uri: iconMap.get(item.icon)}} />
       </Chapter>
     );
   };

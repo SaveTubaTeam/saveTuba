@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useState, useEffect } from "react";
 // Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -11,12 +11,15 @@ import ProfileScreen from "../features/Profile/Screens/ProfileScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Redux Imports
-import { createStore, applyMiddleware } from "redux";
-import rootReducer from "../../redux/reducers";
-import thunk from "redux-thunk";
-
-import { connect } from "react-redux";
+// import { createStore, applyMiddleware } from "redux";
+// import rootReducer from "../../redux/reducers";
 import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import thunk from "redux-thunk";
+// import { useSelector, useDispatch } from "react-redux";
+import { store } from "../../redux/store/store";
+
+
 import {
   fetchUser,
   fetchAchievements,
@@ -26,7 +29,7 @@ import {
 import Amodal from "./achievement-components/Amodal";
 
 const Tab = createBottomTabNavigator();
-const store = createStore(rootReducer, applyMiddleware(thunk));
+// const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // The SaveTuba app contains the navigation containers for the main screens of the application. 
 const SaveTuba = () => {
@@ -90,6 +93,7 @@ export class Main extends Component {
     this.props.fetchAchievements();
   }
 
+
   render() {
     // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
     // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
@@ -105,6 +109,8 @@ export class Main extends Component {
       } catch (err) {
         console.log(err);
       }
+    } else {
+      console.log("currentUser undefined");
     }
 
     // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
@@ -112,7 +118,8 @@ export class Main extends Component {
     // My solution was to create a "modal" that would contain the entire application within it and show the modal screen. I forget the videos I followed but based off other peoples solutions
     return (
       <>
-        <Amodal children={<SaveTuba />}>
+        <Amodal >
+          <SaveTuba />
           {/* <Tab.Navigator
             initialRouteName="Home"
             screenOptions={{
@@ -171,14 +178,15 @@ export class Main extends Component {
 // Boilerplate code going to be used everywhere
 // This is for loading in data from the local storage into the function, class, or components
 // Look at Redux folder at the index.js to understand more
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-  achievements: store.userAchievements.achievements,
-  achievementModal: store.modals,
+const mapStateToProps = (state) => ({
+  currentUser: state.userState.currentUser,
+  achievements: state.userAchievements.achievements,
+  achievementModal: state.modals.achievementModal,
+  imageMapReducer: state.imageMap.imageMapReducer,
 });
 
-// Boilerplate code also going to be used everywhere
-// Similar to props, but instead allows you to use functions for Redux folder
+// // Boilerplate code also going to be used everywhere
+// // Similar to props, but instead allows you to use functions for Redux folder
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     { fetchUser, fetchAchievements, addAchievement },

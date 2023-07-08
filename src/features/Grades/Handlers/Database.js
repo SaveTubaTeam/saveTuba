@@ -1,4 +1,5 @@
-import grade2 from "./grade2.json";
+// import grade2 from "./grade2.json";
+// import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
 
 
@@ -17,66 +18,120 @@ async function getGradeData(grade) {
         });
 
     // chapters.set("chapters", chapterList); // sets the map with the key "chapters" and the data being the array of objects
-    await setIcons(chapterList);
+    // let map = await setIconMap();
     // return chapters; // This returns the map
     return chapterList; // This returns the array
 }
 
-async function getLessonData(grade, chpt) {
+async function getLessonData(grade, chpt, numLessons) {
     // Use a map to more easily access correct minigames
     const lessons = [];
 
     grade = "Grade".concat(grade.toString());
     chpt = "Chapter".concat(chpt.toString());
-    for (var i = 1; i < 25; i++) {
-        const minigameList = [];
-        const lesson = "Lesson".concat(i.toString());
-        await db.collection(grade).doc(chpt).collection(lesson).get().then((snapshot) => {
-            // console.log(i, ": snapshot", typeof snapshot.data());
-            if( snapshot === undefined){
-                console.log(i, ": undefined");
-            }else{
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    // console.log("Snapshot => ", doc.id, " => ", doc.data());
-                    // console.log("Snapshot => ", doc.id);
-                    minigameList.push(doc.data()); // Pushing new object onto the array
-                });
-                lessons.push(minigameList);
-                console.log(i, ": MINIGAMES: ", minigameList);
+    for (var i = 1; i <= numLessons; i++) {
+        var lessonObject = new Map(); // may need to move back up
+        const minigameList = new Map();
+        const lessonNum = "Lesson".concat(i.toString());
 
-            }
+        await db.collection(grade).doc(chpt).collection(lessonNum).get().then((snapshot) => {
+            snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                // console.log(lessonNum, " => ", doc.id, " => ", doc.data());
+                // console.log("Snapshot => ", doc.id);
+                if (doc.id !== "metadata") {
+                    minigameList.set(doc.id, doc.data());
+                } else {
+                    lessonObject.set("backgroundColor", doc.data().backgroundColor);
+                    lessonObject.set("navigation", doc.data().navigation);
+                    lessonObject.set("thumbnail", doc.data().thumbnail);
+                    lessonObject.set("title", doc.data().title);
+
+                }
+            });
+            lessonObject.set("minigames", minigameList);
+            lessons.push(lessonObject);
         }).catch((error) => {
             console.log("Error in Database.js: ", error);
         });
     }
-
-    // console.log("lessons: ", lessons[0]);
-    // lessons.set("minigames", minigameList);
     return lessons;
 }
 
+async function createImageMap() {
+    // let iconMap = new Map(); // cannot use a map as it is not serializable and the redux toolkit cannot pass it without error
+    let iconMap = Object.create(null);
+    let result = await storage.child("assets").list({ maxResults: 200 });
+
+    let urlPromises = result.items.map(url => url.getDownloadURL());
+    let pathPromises = result.items.map(path => path.getMetadata());
+
+    let urlResolved = await Promise.all(urlPromises);
+    let pathResolved = await Promise.all(pathPromises);
+
+    for (var x = 0; x < urlResolved.length; x++) {
+        // iconMap.set(pathResolved[x].fullPath, urlResolved[x]); // cannot use a map as it is not serializable and the redux toolkit cannot pass it without error
+        Object.defineProperty(iconMap, pathResolved[x].fullPath, {
+            value: urlResolved[x],
+            writable: true,
+            enumerable: true
+        });
+    }
+    console.log("Database images: ", Object.values(iconMap));
+
+    return iconMap;
+}
 
 // This is meant to change large sets of similarly formatted data at a single time 
 async function changeData() {
     const g2_chapters = grade2.Grade2.chapters;
     for (var i = 0; i < g2_chapters.length; i++) {
-        const g2_lessons = grade2.Grade2.chapters[i].lessons;
-        for (var u = 0; u < g2_lessons.length; u++) {
-            const data = {
-                title: g2_lessons[u].title,
-                thumbnail: g2_lessons[u].thumbnail,
-                backgroundColor: g2_lessons[u].backgroundColor,
-                navigation: "Lesson".concat((u + 1).toString())
-            };
-            await db.collection("Grade2").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("metadata").set(data)
-                .then(() => {
-                    console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
-                })
-                .catch((error) => {
-                    // The document probably doesn't exist.
-                    console.error("Error updating document: ", error);
-                });
-        }
+
+        // ---------------------------------------------------------
+        // to change the chapter metadata
+        // ---------------------------------------------------------
+
+        // const g2_lessons = grade2.Grade2.chapters[i].lessons;
+        // const data = {
+        //     backgroundImage: g2_chapters[i].backgroundImage,
+        //     colorOne: g2_chapters[i].colorOne,
+        //     colorTwo: g2_chapters[i].colorTwo,
+        //     icon: g2_chapters[i].icon,
+        //     name: g2_chapters[i].name,
+        //     navigation: "Chapter".concat((i + 1).toString()),
+        //     title: g2_chapters[i].title,
+        //     numLessons: g2_lessons.length
+        // };
+        // await db.collection("Grade2").doc(g2_chapters[i].navigation).set(data)
+        //     .then(() => {
+        //         console.log("Chapter " + (i + 1) + " Lesson " + (i + 1) + "  successfully updated!");
+        //     })
+        //     .catch((error) => {
+        //         // The document probably doesn't exist.
+        //         console.error("Error updating document: ", error);
+        //     });
+
+        // ---------------------------------------------------------
+        // to change the lesson metadata
+        // ---------------------------------------------------------
+
+        // const g2_lessons = grade3.Grade3.chapters[i].lessons;
+        // for (var u = 0; u < g2_lessons.length; u++) {
+        //     const data = {
+        //         title: g2_lessons[u].title,
+        //         thumbnail: g2_lessons[u].thumbnail,
+        //         backgroundColor: g2_lessons[u].backgroundColor,
+        //         navigation: "Lesson".concat((u + 1).toString())
+        //     };
+        //     console.log("CH: ", g2_chapters[i].navigation, " LS: ", g2_lessons[u].navigation);
+        //     await db.collection("Grade3").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("metadata").set(data)
+        //         .then(() => {
+        //             console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
+        //         })
+        //         .catch((error) => {
+        //             // The document probably doesn't exist.
+        //             console.error("Error updating document: ", error);
+        //         });
+        // }
     }
 }
 
@@ -136,36 +191,7 @@ async function changeData() {
 //     }
 // }
 
-async function setIcons(data) {
-    // console.log("Initial Data: ", data);
-    for (var i = 0; i < data.length; i++) {
-        const urlSplit = data[i].icon.split("/");
-        var imagePath = "";
-        for (var u = 0; u < urlSplit.length; u++) {
-            if (!(urlSplit[u] === "..")) {
-                imagePath = imagePath.concat("/" + urlSplit[u]);
-            }
-        }
-
-        // Get the download URL
-        var imgRef = storage.child(imagePath);
-        await imgRef.getDownloadURL()
-            .then((url) => {
-                // Insert url into an <img> tag to "download"
-                // console.log("Download URL: ", url);
-                data[i].icon = url;
-
-            })
-            .catch((error) => {
-                console.log("Error: ", error.code);
-                // A full list of error codes is available at
-                // https://firebase.google.com/docs/storage/web/handle-errors
-
-            });
-        // console.log("Data: ", data);
-        // return downloadURL;
-    }
-}
 
 
-export { getGradeData, setIcons, getLessonData, changeData };
+
+export { getGradeData, createImageMap, getLessonData, changeData };

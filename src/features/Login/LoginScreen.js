@@ -6,6 +6,8 @@ import styled from "styled-components/native";
 import { auth } from "../../../firebase";
 import { changeData } from "../Grades/Handlers/Database";
 
+
+
 const ImageBg = styled.ImageBackground`
   flex: 1;
   width: 100%;
@@ -60,6 +62,7 @@ const LoginScreen = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
 
   const { t } = useTranslation();
   const navigation = useNavigation();
@@ -67,10 +70,14 @@ const LoginScreen = () => {
   useEffect(() => {
     if (auth.currentUser) {
       navigation.replace("HomePage");
+
+      
     }
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         navigation.replace("HomePage");
+
+    
       }
     });
 

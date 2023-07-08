@@ -13,25 +13,28 @@ import { getGradeData } from "./Database";
 const Stack = createNativeStackNavigator();
 
 function ChaptersHandler({ route, addAchievement }) { //add achievements
-  const navigation = useNavigation();
   const [selectedGrade, setSelectedGrade] = useState(null);
   const [gradeNum, setGradeNum] = useState(null);
+  
+
   const { level } = route.params; // Level selected from Lesson navigation screen
+  const navigation = useNavigation();
 
   useEffect(() => {
     switch (level) {
       case 1:
         {
           getGradeData("Grade2").then(
-            (result) => {
+            (gradeData) => {
               // console.log("Grade 2: ", result);
-              setSelectedGrade(result);
+              setSelectedGrade(gradeData);
               setGradeNum(2);
             }
           ).catch((err) => {
             console.log("Error: ", err);
           });
 
+          
           break;
         }
       case 2: {
@@ -89,6 +92,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
             <ChaptersComponent
               navigation={navigation}
               selectedGrade={selectedGrade}
+              iconMap={iconMap}
             />
           )}
         </Stack.Screen>
@@ -100,7 +104,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={1} />
+            <LessonsHandler numLessons={selectedGrade[0].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={1} />
           )}
         </Stack.Screen>
 
@@ -111,7 +115,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={2} />
+            <LessonsHandler numLessons={selectedGrade[1].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={2} />
           )}
         </Stack.Screen>
 
@@ -122,7 +126,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={3} />
+            <LessonsHandler numLessons={selectedGrade[2].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={3} />
           )}
         </Stack.Screen>
 
@@ -133,7 +137,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={4} />
+            <LessonsHandler numLessons={selectedGrade[3].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={4} />
           )}
         </Stack.Screen>
 
@@ -144,7 +148,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={5} />
+            <LessonsHandler numLessons={selectedGrade[4].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={5} />
           )}
         </Stack.Screen>
 
@@ -156,7 +160,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={6} />
+            <LessonsHandler numLessons={selectedGrade[5].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={6} />
           )}
         </Stack.Screen>
 
@@ -167,7 +171,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={7} />
+            <LessonsHandler numLessons={selectedGrade[6].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={7} />
           )}
         </Stack.Screen>
         <Stack.Screen
@@ -177,7 +181,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           }}
         >
           {() => (
-            <LessonsHandler gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={8} />
+            <LessonsHandler numLessons={selectedGrade[7].numLessons} gradeNum={gradeNum} selectedGrade={selectedGrade} selectedChapter={8} />
           )}
         </Stack.Screen>
       </Stack.Navigator>

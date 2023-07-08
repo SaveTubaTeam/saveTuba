@@ -14,19 +14,18 @@ import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryH
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
-import { db, app } from "../../../../firebase.js";
 
 const Stack = createNativeStackNavigator();
 
 function IndividualLessonHandler({
-  selectedGrade,
+  lessonData,
   selectedChapter,
   selectedLesson,
 }) {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nGr. ", selectedGrade, "\nL. ", selectedLesson);
+  console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nGr. ", lessonData, "\nL. ", selectedLesson);
 
   return (
     <NavigationContainer independent>
@@ -40,7 +39,7 @@ function IndividualLessonHandler({
         >
           {() => (
             <LessonComponent
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
@@ -65,8 +64,7 @@ function IndividualLessonHandler({
           {() => (
             <MemoryHandler
               data={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.memory
+                lessonData[selectedLesson].minigames.memory
               }
             />
           )}
@@ -89,8 +87,7 @@ function IndividualLessonHandler({
           {() => (
             <SortingHandler
               data={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.sorting.content
+                lessonData[selectedLesson].minigames.sorting.content
               }
             />
           )}
@@ -113,8 +110,7 @@ function IndividualLessonHandler({
           {() => (
             <QuizHandler
               data={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.quiz
+                lessonData[selectedLesson].minigames.quiz
               }
             />
           )}
@@ -137,8 +133,7 @@ function IndividualLessonHandler({
           {() => (
             <OpenResponseHandler
               questionSet={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.openresponse.data
+                lessonData[selectedLesson].minigames.openresponse.data
               }
               navigation={navigation}
             />
@@ -164,8 +159,7 @@ function IndividualLessonHandler({
 
             <OpenResponseHandler
               questionSet={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.openresponse_2.data
+                lessonData[selectedLesson].minigames.openresponse_2.data
               }
               navigation={navigation}
             />
@@ -190,10 +184,9 @@ function IndividualLessonHandler({
           {() => (
             <SnapshotHandler
               data={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.snapshot
+                lessonData[selectedLesson].minigames.minigames.snapshot
               }
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
@@ -218,10 +211,9 @@ function IndividualLessonHandler({
           {() => (
             <ReorderHandler
               info={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .minigames.reorder
+                lessonData[selectedLesson].minigames.minigames.reorder
               }
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
@@ -246,10 +238,9 @@ function IndividualLessonHandler({
           {() => (
             <MasteryHandler
               data={
-                selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                  .mastery
+                lessonData[selectedLesson].minigames.mastery
               }
-              selectedGrade={selectedGrade}
+              lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
@@ -277,11 +268,10 @@ function IndividualLessonHandler({
 
               <MasteryHandler_2
                 data={
-                  selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                    .mastery_2
+                  lessonData[selectedLesson].minigames.mastery_2
 
                 }
-                selectedGrade={selectedGrade}
+                lessonData={lessonData}
                 selectedChapter={selectedChapter}
                 selectedLesson={selectedLesson}
                 navigation={navigation}
@@ -309,10 +299,9 @@ function IndividualLessonHandler({
 
               <TestHandler
                               data={
-                  selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                    .mastery_2
+                  lessonData[selectedLesson].minigames.mastery_2
                 }
-                selectedGrade={selectedGrade}
+                lessonData={lessonData}
                 selectedChapter={selectedChapter}
                 selectedLesson={selectedLesson}
                 navigation={navigation}

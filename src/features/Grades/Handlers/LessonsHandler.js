@@ -4,32 +4,33 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 
-// import IndividualLessonHandler from "./IndividualLessonHandler";
+import IndividualLessonHandler from "./IndividualLessonHandler";
 import LessonsComponent from "../Components/LessonsComponent";
-import { getLessonData } from "./Database.js";
+import { getLessonData, setIcons } from "./Database.js";
+import { cos } from "react-native-reanimated";
 
 const Stack = createNativeStackNavigator();
 
-function LessonsHandler({ gradeNum, selectedChapter }) {
-  console.log("Lesson Handler:\nSelected Ch: ", selectedChapter, "\nSelected Grade: ", gradeNum);
+function LessonsHandler({ numLessons, gradeNum, selectedChapter }) {
+  // console.log("Lesson Handler:\nSelected Ch: ", selectedChapter, "\nSelected Grade: ", gradeNum);
   const [lessonData, setLessonData] = useState("");
   const navigation = useNavigation();
-  
+
 
   useEffect(() => {
     switch (gradeNum) {
       case 2:
         {
-          // console.log("In g2");
-          getLessonData(2, selectedChapter).then(
+          getLessonData(2, selectedChapter, numLessons).then(
             (result) => {
-              // console.log("Results: ", result);
+              // console.log("LD 0: ", result);
+              // setIcons(result, "lesson", "lessons");
+              // console.log("LD 1: ", result);
               setLessonData(result);
             }
           ).catch((err) => {
             console.log("Error in LessonHandler.js: ", err);
-          });
-
+          }); 
           break;
         }
       case 3: {
@@ -88,7 +89,7 @@ function LessonsHandler({ gradeNum, selectedChapter }) {
           )}
         </Stack.Screen>
 
-        {/* <Stack.Screen name="Lesson1" options={{ headerShown: false }}>
+        <Stack.Screen name="Lesson1" options={{ headerShown: false }}>
           {() => (
             <IndividualLessonHandler
               lessonData={lessonData}
@@ -411,7 +412,7 @@ function LessonsHandler({ gradeNum, selectedChapter }) {
               selectedLesson={21}
             />
           )}
-        </Stack.Screen> */}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );

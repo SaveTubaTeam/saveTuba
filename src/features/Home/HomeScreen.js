@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components/native";
 import {
   Text,
@@ -13,6 +13,10 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
+import { createImageMap } from "../Grades/Handlers/Database";
+
+import { setImageMap } from "../../../redux/slices/imageSlice";
+import { useSelector, useDispatch } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +27,21 @@ const ImageBg = styled.ImageBackground`
 function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
+
+  const iconMap = useSelector(state => state.imageMap.imageData);
+  
+  const dispatch = useDispatch();
+  console.log("IM 1: ", iconMap);
+  
+  useEffect(() => {
+    createImageMap().then((map) => {
+      console.log("Home After", map);
+      dispatch(setImageMap(map));
+    });
+
+  }, []);
+
+  // console.log("IM 2: ", iconMap);
 
   return (
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
@@ -127,12 +146,6 @@ const HomeScreen = () => {
   );
 };
 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-});
-
-export default connect(mapStateToProps, null)(HomeScreen);
-
 const style = StyleSheet.create({
   roundButton1: {
     width: 125,
@@ -160,3 +173,10 @@ const style = StyleSheet.create({
     color: "white",
   },
 });
+
+
+const mapStateToProps = (store) => ({
+  currentUser: store.userState.currentUser,
+});
+
+export default connect(mapStateToProps, null)(HomeScreen);

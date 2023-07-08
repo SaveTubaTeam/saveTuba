@@ -43,37 +43,23 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
   // console.log("Lessons Comp. Grade", selectedGrade);
   const nav = useNavigation();
   const { t } = useTranslation();
-  // console.log("LD: ", lessonData[0][lessonData[0].length-1].title);
+  // console.log("LD: ", lessonData);
   
-  const [metaData, setMetaData] = useState("");
-
   const renderItem = ({ item }) => {
-    if(typeof item === Array){
-      console.log("ITEM: ", item[0]);
-      
-    }else{
-      console.log("NOT ARR: ", typeof item,"\n", item.toString(), "\n_________________");
-    }
-    // setMetaData(
-    //   {
-    //     title: item[(item.length-1)].title,
-    //     thumbnail: item[(item.length-1)].thumbnail,
-    //     backgroundColor: item[(item.length-1)].backgroundColor
-    //   }
-    // );
-
+    // console.log("ITEM: ", item, "\n\n\n");
+    console.log("title: ", item.get("title"), " navigation: ", item.get("thumbnail"));
     return item.title ==
-      metaData.title ? (
+    item.get("title") ? (
       <CurrentLesson
         onPress={() => {
-          nav.navigate(metaData.navigation);
+          nav.navigate(item.get("navigation"));
         }}
       >
         <View
           style={{
             flexDirection: "row",
             borderRadius: 20,
-            backgroundColor: metaData.backgroundColor,
+            backgroundColor: item.get("backgroundColor"),
           }}
         >
           <View
@@ -85,7 +71,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="subtitle" color="secondary">
-              {metaData.title}
+              {item.get("title")}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="secondary">
@@ -107,7 +93,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
                 flexDirection: "row",
               }}
               onPress={() => {
-                nav.navigate(metaData.navigation);
+                nav.navigate(item.get("navigation"));
               }}
             >
               <Ionicons
@@ -132,14 +118,14 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
               width: undefined,
               aspectRatio: 1,
             }}
-            source={metaData.thumbnail}
+            source={item.get("thumbnail")}
           />
         </View>
       </CurrentLesson>
     ) : (
       <Lesson
         onPress={() => {
-          nav.navigate(metaData.navigation);
+          nav.navigate(item.get("navigation"));
         }}
       >
         <View style={{ flexDirection: "row" }}>
@@ -150,7 +136,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
               height: 100,
               width: 100,
             }}
-            source={metaData.thumbnail}
+            source={item.get("thumbnail")}
           />
           <View
             style={{
@@ -159,7 +145,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="mid" color="primary">
-              {metaData.title}
+              {item.get("title")}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left">5/5</BodyText>
