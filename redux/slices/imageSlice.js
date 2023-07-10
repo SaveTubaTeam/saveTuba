@@ -1,18 +1,19 @@
-import { createSlice, AsyncThunk, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createImageMap } from '../../src/features/Grades/Handlers/Database';
 
 const initialState = {
-    loading: false,
+    loading: "idle",
     imageData: { title: "ttest", id: "test1" },
-    error: "",
+    error: null,
 };
 
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
     createImageMap().then((result) => {
-        // console.log("R: ", result);
+        console.log("R: ", result);
         return result;
     }).catch((error) => {
         console.log("Error in setting state: ", error);
+        return error.message;
     });
 });
 
@@ -21,17 +22,17 @@ const mapSlice = createSlice({
     initialState,
     extraReducers: builder => {
         builder.addCase(fetchImages.pending, (state) => {
-            state.loading = true;
+            state.loading = "loading";
         });
         builder.addCase(fetchImages.fulfilled, (state, action) => {
             console.log("Payload: " , action.payload);
-            state.loading = false;
-            state.imageData = action.payload;
-            state.error = "";
+            state.loading = "finished";
+            state.imageData = (action.payload);
+            state.error = null;
         });
         builder.addCase(fetchImages.rejected, (state, action) => {
-            state.loading = false;
-            state.imageData = Object.create(null);
+            state.loading = "rejected";
+            state.imageData = (Object.create(null));
             state.error = action.error.message;
         });
         // Async functions without async function
@@ -49,5 +50,4 @@ const mapSlice = createSlice({
 
 // Old method without async functions
 // export const { setImageMap } = mapSlice.actions; 
-
 export default mapSlice.reducer;

@@ -4,14 +4,14 @@ import { combineReducers } from "redux";
 import { user } from "../reducers/user";
 import { achievements } from "../reducers/user-achievements";
 import { achievementsModals } from "../reducers/achievementModal";
-import imageMapReducer from "../slices/imageSlice";
+import resetMap from "../slices/imageSlice";
 
 
 const rootReducer = combineReducers({
     userState: user,
     userAchievements: achievements,
     modals: achievementsModals,
-    imageMap: imageMapReducer,
+    imageMap: resetMap,
 });
 
 export const store = configureStore({

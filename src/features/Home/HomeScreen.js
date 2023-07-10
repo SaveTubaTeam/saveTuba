@@ -13,7 +13,7 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
-import { createImageMap } from "../Grades/Handlers/Database";
+// import { createImageMap } from "../Grades/Handlers/Database";
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { useSelector, useDispatch } from "react-redux";
@@ -28,17 +28,11 @@ function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
-  dispatch(fetchImages());
-  // useEffect(() => {
-  //   createImageMap().then((map) => {
-  //     // console.log("Home After", map);
-  //     dispatch(setImageMap(map));
-  //   });
-
-  // }, []);
-  const imageMap = useSelector(state => state.imageMap.imageData);
-  console.log("Image Map 1: ", imageMap);
+  // const dispatch = useDispatch();
+  // dispatch(fetchImages());
+ 
+  // const imageMap = useSelector(state => state.imageData); // This is not taking the data from the slice
+  // console.log("Image Map 1: ", imageMap);
 
   return ( //source={{uri: imageMap["/assets/homebg.png"]}}
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>

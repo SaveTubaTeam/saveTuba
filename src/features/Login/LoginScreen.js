@@ -6,6 +6,10 @@ import styled from "styled-components/native";
 import { auth } from "../../../firebase";
 import { changeData } from "../Grades/Handlers/Database";
 
+import { fetchImages } from "../../../redux/slices/imageSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { ImagePickerIOS } from "react-native";
+
 
 
 const ImageBg = styled.ImageBackground`
@@ -59,10 +63,30 @@ const ButtonOutLine = styled.TouchableOpacity`
 
 const LoginScreen = () => {
 
+  const dispatch = useDispatch();
+  dispatch(fetchImages());
+  // const { status, imageMap, error } = useSelector(state => state.imageMap.imageData); // This is not taking the data from the slice
+  const imageMap = useSelector(state => state.imageMap.imageData);
+  // console.log("Status: ", status, " ImageMap: ", imageMap, " Error: ", error);
+  // if (error !== null || status === "rejected") {
+  //   console.log("Error pulling data");
+  // }
 
+  // while (status === "idle" || status === "loading") {
+  //   const { status } = useSelector(state => state.imageMap); // This is not taking the data from the slice
+  //   console.log("Not finished pulling data: ", status);
+  //   if (status === "finished"){
+  //     console.log("Finished pulling data");
+  //     break;
+  //   }
+
+  // }
+
+  console.log("Image Map 1: ", imageMap);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
+
 
   const { t } = useTranslation();
   const navigation = useNavigation();
@@ -71,13 +95,13 @@ const LoginScreen = () => {
     if (auth.currentUser) {
       navigation.replace("HomePage");
 
-      
+
     }
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
         navigation.replace("HomePage");
 
-    
+
       }
     });
 
@@ -102,6 +126,9 @@ const LoginScreen = () => {
         console.log("Logged in with:", user.email);
       })
       .catch((error) => alert(error.message));
+
+
+
   };
 
 
@@ -128,7 +155,10 @@ const LoginScreen = () => {
         </InputContainer>
 
         <ButtonContainer>
-          <Button onPress={handleLogin}>
+          <Button onPress={() => {
+
+            handleLogin();
+          }}>
             <TitleText color="secondary" size="body">
               {t("common:login")}
             </TitleText>

@@ -1,4 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 // Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -11,21 +12,17 @@ import ProfileScreen from "../features/Profile/Screens/ProfileScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Redux Imports
-// import { createStore, applyMiddleware } from "redux";
-// import rootReducer from "../../redux/reducers";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import thunk from "redux-thunk";
-// import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { store } from "../../redux/store/store";
-
+import { fetchImages } from "../../redux/slices/imageSlice";
 
 import {
   fetchUser,
   fetchAchievements,
   addAchievement,
 } from "../../redux/actions/index";
-
 import Amodal from "./achievement-components/Amodal";
 
 const Tab = createBottomTabNavigator();
@@ -95,22 +92,44 @@ export class Main extends Component {
 
 
   render() {
+    
     // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
     // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
-    if (this.props.currentUser != undefined) {
-      try {
-        if (
-          this.props.achievements != null ||
-          this.props.achievements["achievements"][0] == undefined
-        ) {
-          this.props.addAchievement("first-time-signing-up");
-          // this.props.fetchAchievements();
-        }
-      } catch (err) {
-        console.log(err);
+    // if (this.props.currentUser != undefined) {
+    // try {
+    //   if (
+    //     this.props.achievements != null ||
+    //     this.props.achievements["achievements"][0] == undefined
+    //   ) {
+    //     this.props.addAchievement("first-time-signing-up");
+    //     // this.props.fetchAchievements();
+    //   }
+    // } catch (err) {
+    //   console.log(err);
+    // }
+    // } else {
+    //   console.log("Main.js >> currentUser undefined");
+    // }
+    // const {data} = useSelector(state => state.imageData);
+    while (this.props.currentUser == undefined) {
+      console.log("In while");
+      return (
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#00ff00" />
+        </View>
+      );
+    }
+
+    try {
+      console.log("Not In while");
+      if (
+        this.props.achievements != null ||
+        this.props.achievements["achievements"][0] == undefined
+      ) {
+        this.props.addAchievement("first-time-signing-up");
       }
-    } else {
-      console.log("currentUser undefined");
+    } catch (err) {
+      console.log(err);
     }
 
     // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
@@ -120,60 +139,22 @@ export class Main extends Component {
       <>
         <Amodal >
           <SaveTuba />
-          {/* <Tab.Navigator
-            initialRouteName="Home"
-            screenOptions={{
-              tabBarActiveTintColor: theme.colors.ui.tertiary,
-              tabBarInactiveTintColor: "#fff",
-              headerShown: false,
-              tabBarHideOnKeyboard: true,
-
-              tabBarIconStyle: {
-                marginTop: 5,
-              },
-              tabBarStyle: {
-                backgroundColor: "#C6DC3B",
-              },
-            }}
-          >
-            <Tab.Screen
-              name="Profile"
-              component={ProfileScreen}
-              store={store}
-              options={{
-                title: "",
-                tabBarIcon: ({ color }) => (
-                  <Ionicons name="person" color={color} size={32} />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name="Home"
-              component={HomeScreen}
-              options={{
-                title: "",
-                tabBarIcon: ({ color }) => (
-                  <Ionicons name="home" color={color} size={32} />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name="Settings"
-              component={AccountNav}
-              options={{
-                title: "",
-                tabBarIcon: ({ color }) => (
-                  <Ionicons name="settings" color={color} size={32} />
-                ),
-              }}
-            />
-          </Tab.Navigator> */}
         </Amodal>
       </>
     );
   }
 }
-// }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  horizontal: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+  },
+});
 
 // Boilerplate code going to be used everywhere
 // This is for loading in data from the local storage into the function, class, or components
@@ -182,14 +163,14 @@ const mapStateToProps = (state) => ({
   currentUser: state.userState.currentUser,
   achievements: state.userAchievements.achievements,
   achievementModal: state.modals.achievementModal,
-  imageMapReducer: state.imageMap.imageMapReducer,
+  // imageMap: state.imageMap.,
 });
 
 // // Boilerplate code also going to be used everywhere
 // // Similar to props, but instead allows you to use functions for Redux folder
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
-    { fetchUser, fetchAchievements, addAchievement },
+    { fetchUser, fetchAchievements, addAchievement, },
     dispatch
   );
 
