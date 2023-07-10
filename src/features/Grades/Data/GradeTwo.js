@@ -1053,59 +1053,58 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  //funny wording
-                  prompt: "What is the definition of 'pathogenic' ",
-                  answers: [
-                    { text: "Something that causes disease" },
-                    { text: "A microorganism" },
-                    { text: "A type of plant" },
-                    { text: "Something that grows very tall" },
-                  ],
-                  answer: "Something that causes disease",
+                    // қулықты сөздер
+                    prompt: "'Pathogenic' атауының мағынасы не?",
+                    answers: [
+                        { text: "Ауру тудыратын зат" },
+                        { text: "Микроорганизм" },
+                        { text: "Өсімдік түрі" },
+                        { text: "Өте биік өсетін зат" },
+                    ],
+                    answer: "Ауру тудыратын зат",
                 },
                 {
-                  prompt:
-                    "It can take up to 100 years to completely restore a forest that was cut down",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    prompt: "Кесілген орманды толық қалпына келтіру үшін 100 жыл кетуі мүмкін",
+                    answers: [{ text: "Шын" }, { text: "Жалған" }],
+                    answer: "Шын",
                 },
                 {
-                  prompt: "How do plants protect the air?",
-                  answers: [
-                    { text: "Help clear the air of dust" },
-                    { text: "Help clear the diar of soot" },
-                    { text: "Help clear the air of hamful gasses" },
-                    { text: "All the above" },
-                  ],
-                  answer: "All the above",
+                    prompt: "Өсімдіктер ауаны қалай сақтайды?",
+                    answers: [
+                        { text: "Ауаны тозап алады" },
+                        { text: "Ауаны түтіктен тазартады" },
+                        { text: "Ауаны зиянды газдардан тазартады" },
+                        { text: "Барлығы" },
+                    ],
+                    answer: "Барлығы",
                 },
                 {
-                  prompt:
-                    "The more we use plants and don't participate in restorative practices, " +
-                    " the more likely the air quality will decrease.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    prompt:
+                        "Біз өсімдіктерді көбірек пайдаланып, қалпына келтіру әдістеріне қатысмасақ," +
+                        " ауа сапасы төмендейді.",
+                    answers: [{ text: "Шын" }, { text: "Жалған" }],
+                    answer: "Шын",
                 },
                 {
-                  prompt: "What does 'anthropogenic' mean?",
-                  answers: [
-                    { text: "Casued by human activity" },
-                    { text: "Caused by natural activity" },
-                    { text: "The realtionship between prey and preditor" },
-                    { text: "The idea of being sustainable" },
-                  ],
-                  answer: "Caused by human activity",
+                    prompt: "'Anthropogenic' атауының мағынасы не?",
+                    answers: [
+                        { text: "Адам әрекетінен туындатылған" },
+                        { text: "Табиғат әрекетінен туындатылған" },
+                        { text: "Ав және жолаушының қатынасы" },
+                        { text: "Тұрақты болу идеясы" },
+                    ],
+                    answer: "Адам әрекетінен туындатылған",
                 },
               ],
             },
-            snapshot: { // correct
+            snapshot: { // дұрыс
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Cleaning up after ourselves in public is a great way to help improve the air quality" +
-                "Draw some things that you often see outside on the ground that you can pick up.",
+                  "Жалпы орындарда өзімізден кейіндергі тазалық өткізу - бұл ауа сапасын жақсартуға үлгерім жасайтын адамдар." +
+                  "Сыртқы жағдайда жиі көрген заттарды сызыңыз.",
             },
             openresponse: { // correct
               navigation: "Image Boom",
@@ -1118,34 +1117,34 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text:
-                      "List a few ways in which you indirectly impact the environment" +
-                      ", are these practices sustainable?",
-                    placeholder: "The difference between...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
+                      text:
+                          "Көрсетіңіз өзіңіздің қоршағаның ортасына қандай әсер ететініңізді." +
+                          " Бұл әдістер тұрақты ма?",
+                      placeholder: "Айырмашылығы ...",
+                      image: require("../../../../assets/openresponse/innovation.png"),
                   },
-                ],
+              ],
               },
             },
-            sorting: { // correct
+            sorting: { // дұрыс
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt:
-                  "Sort these practices into helping or hurting the environment",
-                num: 4, //count start 0
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [{ name: "Helping" }, { name: "Hurting" }],
-                options: [
-                  { title: "Littering", name: "Hurting" },
-                  { title: "Picking up trash", name: "Helping" },
-                  { title: "Planting native plants", name: "Helping" },
-                  { title: "Using chemical pesticides", name: "Hurting" },
-                  { title: "Supporting local farming", name: "Helping" },
-                ],
+                  prompt:
+                      "Бұл әдістерді қоршағанға көмек ететін немесе зиян ететін деп саныңыз",
+                  num: 4, //санау басталады 0
+                  imageBg: SortingImages.bg[0].lvl_1_les_1,
+                  categories: [{ name: "Көмек ететін" }, { name: "Зиян ететін" }],
+                  options: [
+                      { title: "Зибылды тастау", name: "Зиян ететін" },
+                      { title: "Зибылды жинау", name: "Көмек ететін" },
+                      { title: "Туған өсімдіктерді көтеру", name: "Көмек ететін" },
+                      { title: "Химиялық пестицидтерді пайдалану", name: "Зиян ететін" },
+                      { title: "Жергілікті ауыл шаруашылығын қолдау", name: "Көмек ететін" },
+                  ],
               },
-            },
+          }
           },
           mastery: {
             prompt: (
@@ -1198,48 +1197,48 @@ export const Grade2 = {
                 {
                   //funny wording
                   prompt:
-                    "The first Red Book of Kazakhstan was published in 1978 ",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Қазақстандағы бірінші Қызыл кітап 1978 жылы баспаға шықты",
+                  answers: [{ text: "Дұрыс" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс",
                 },
                 {
                   prompt:
-                    "Which plant grows 1000-2000m above sea level and contains natural rubber?",
+                    "Қай өсімдік деңгейлі теңіз деңгейінен 1000-2000 метр өсіп, табиғи резина қамтамасыз етеді?",
                   answers: [
-                    { text: "Dandelion" },
-                    { text: "Sundew Rounded-Leaf" },
-                    { text: "Steppe Peony" },
-                    { text: "Wormwood" },
+                    { text: "Шарған" },
+                    { text: "Дөңгелек құнарлай" },
+                    { text: "Степінде қызғылт сабыр" },
+                    { text: "Үрмес" },
                   ],
-                  answer: "Dandelion",
+                  answer: "Шарған",
                 },
                 {
                   prompt:
-                    "Which plant grows to about 15-50cm and is used to make porridge?",
+                    "Қай өсімдік жоғары 15-50 см өсіп, жануар таңдай қылу үшін пайдаланылады?",
                   answers: [
-                    { text: "Dandelion" },
-                    { text: "Sundew Rounded-Leaf" },
-                    { text: "Steppe Peony" },
-                    { text: "Wormwood" },
+                    { text: "Шарған" },
+                    { text: "Дөңгелек құнарлай" },
+                    { text: "Степінде қызғылт сабыр" },
+                    { text: "Үрмес" },
                   ],
-                  answer: "Steppe Peony",
+                  answer: "Степінде қызғылт сабыр",
                 },
                 {
                   prompt:
-                    "Which plant has small white flowers and is commonly found in swamps?",
+                    "Қай өсімдікте кішкене ақ гүлдер бар және ол жиі саздардан табылады?",
                   answers: [
-                    { text: "Dandelion" },
-                    { text: "Sundew Rounded-Leaf" },
-                    { text: "Steppe Peony" },
-                    { text: "Wormwood" },
+                    { text: "Шарған" },
+                    { text: "Дөңгелек құнарлай" },
+                    { text: "Степінде қызғылт сабыр" },
+                    { text: "Үрмес" },
                   ],
-                  answer: "Sundew Rounded-Leaf",
+                  answer: "Дөңгелек құнарлай",
                 },
                 {
                   prompt:
-                    "The Red Book only contains information about plants and not animals ",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                    "Қызыл кітап тек өсімдіктер туралы ақпаратты қамтамасыз етеді, аңдар туралы емес",
+                  answers: [{ text: "Дұрыс" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс емес",
                 },
               ],
             },
@@ -1249,8 +1248,8 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of an endangered animal from the Red Book of Plants. " +
-                "If you cannot find one, take a picture of it online so you can identify it the next time you see it.",
+                "Өсімдіктердің Қызыл кітабынан қырылған жануардың суретін түсіріңіз. " +
+                "Егер оны таба алмасаңыз, онда оны онлайн режимінде суретке түсіріп, келесі рет оны көрсеңіз анықтауыңызға болады.",
             },
             openresponse: { // correct
               navigation: "Image Boom",
@@ -1264,10 +1263,10 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "What would be some ways that we could reduce the number of plants listed in the Red Book?" +
-                      " How is practicing good sustainable habits going to help reduce the endangered species?",
+                      "Қызыл кітаптағы өсімдіктер санын азайтуға қай жолдар болады?" +
+                      " Жақсы дамуға ықпал ету әдеттері қандай түрде қырылған түрлер санын азайтуға көмек етеді?",
                     placeholder:
-                      "We can reduce the number of endangered plants by ...",
+                      "Қырылған өсімдіктер санын азайту үшін біз ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1278,24 +1277,25 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "What plants are in the Red Book and which are not?",
+                prompt: "Қызыл кітапта қай өсімдіктер бар, қайсысы жоқ?",
                 num: 5, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [
-                  { name: "In Red Book" },
-                  { name: "Not in Red Book" },
+                  { name: "Қызыл кітапта" },
+                  { name: "Қызыл кітапта жоқ" },
                 ],
                 options: [
-                  { title: "Startfruit", name: "Not in Red Book" },
-                  { title: "Steppe Peony", name: "In Red Book" },
-                  { title: "Tiger Iris", name: "In Red Book" },
-                  { title: "Ludwig Iris", name: "Not in Red Book" },
-                  { title: "Tarda Tulip", name: "Not in Red Book" },
-                  { title: "Regel's Tulip", name: "In Red Book" },
+                  { title: "Жұлдызша", name: "Қызыл кітапта жоқ" },
+                  { title: "Степінде қызғылт сабыр", name: "Қызыл кітапта" },
+                  { title: "Барыс қозырек", name: "Қызыл кітапта" },
+                  { title: "Людвиг қозырек", name: "Қызыл кітапта жоқ" },
+                  { title: "Тарда түлпигі", name: "Қызыл кітапта жоқ" },
+                  { title: "Регель түлпигі", name: "Қызыл кітапта" },
                 ],
               },
             },
           },
+
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l5_prompt")}</Translation>
@@ -1330,57 +1330,57 @@ export const Grade2 = {
             memory: { // correct
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different sources of information.",
+              description: "Ақпарат көздерін сәйкестендіріңіз.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Insect",
+                  name: "Жәндік",
                   image: require("../../../../assets/memory/beetle.png"),
                 },
                 {
-                  name: "Insect",
+                  name: "Жәндік",
                 },
                 {
                   type: "image",
-                  name: "Arachnids",
+                  name: "Арахнидтер",
                   image: require("../../../../assets/memory/spider.png"),
                 },
                 {
-                  name: "Arachnids",
+                  name: "Арахнидтер",
                 },
                 {
                   type: "image",
-                  name: "Crust-\naceans",
+                  name: "Күсті\nөрмекшілер",
                   image: require("../../../../assets/memory/crab.png"),
                 },
                 {
-                  name: "Crust-\naceans",
+                  name: "Күсті\nөрмекшілер",
                 },
                 {
                   type: "image",
-                  name: "Mollusk",
+                  name: "Моллюск",
                   image: require("../../../../assets/memory/snail.png"),
                 },
                 {
-                  name: "Mollusk",
+                  name: "Моллюск",
                 },
                 {
                   type: "image",
-                  name: "Echino-\nderms",
+                  name: "Ехинодерматалар",
                   image: require("../../../../assets/memory/starfish.png"),
                 },
                 {
-                  name: "Echino-\nderms",
+                  name: "Ехинодерматалар",
                 },
                 {
                   type: "image",
-                  name: "Skeleton",
+                  name: "Сұйықтар",
                   image: require("../../../../assets/memory/fishbone.png"),
                 },
                 {
-                  name: "Skeleton",
+                  name: "Сұйықтар",
                 },
               ],
             },
@@ -1391,56 +1391,56 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is the function of a skeleton?",
+                  prompt: "Сұйықтар деңгейінің функциясы не?",
                   answers: [
-                    { text: "Gives necessary stability" },
-                    { text: "Helps movement" },
-                    { text: "Protects internal organs" },
-                    { text: "All the above" },
+                    { text: "Қажетті тұрақтылықты береді" },
+                    { text: "Қозғалуға көмек етеді" },
+                    { text: "Ішкі органдарды қорғайды" },
+                    { text: "Барлығы бірге" },
                   ],
-                  answer: "All the above",
+                  answer: "Барлығы бірге",
                 },
                 {
-                  prompt: "Which animal is an invertebrate?",
+                  prompt: "Қай жануар сұйықсыз?",
                   answers: [
-                    { text: "Cat" },
-                    { text: "Worm" },
-                    { text: "Turtule" },
-                    { text: "Bird" },
+                    { text: "Мысық" },
+                    { text: "Құрт" },
+                    { text: "Тауышқа" },
+                    { text: "Құс" },
                   ],
-                  answer: "Worm",
+                  answer: "Құрт",
                 },
                 {
-                  prompt: "Which animal is a veterbrate",
+                  prompt: "Қай жануар сұйықты",
                   answers: [
-                    { text: "Worm" },
-                    { text: "Slugs" },
-                    { text: "Butterfly" },
-                    { text: "Fish" },
+                    { text: "Құрт" },
+                    { text: "Жапалақ" },
+                    { text: "Көбелек" },
+                    { text: "Балық" },
                   ],
-                  answer: "Fish",
-                },
-                {
-                  prompt:
-                    "Which group of animals have 3 body parts and 6 legs?",
-                  answers: [
-                    { text: "Crustaceans" },
-                    { text: "Insects" },
-                    { text: "Echinoderms" },
-                    { text: "Arachnids" },
-                  ],
-                  answer: "Insects",
+                  answer: "Балық",
                 },
                 {
                   prompt:
-                    "Which group of animals consist of snails, squids, octupuses, and oysters? ",
+                    "Қай топ жануарлары 3 тініс пен 6 аяқты?",
                   answers: [
-                    { text: "Crustaceans" },
-                    { text: "Insects" },
-                    { text: "Echinoderms" },
-                    { text: "Mollusk" },
+                    { text: "Күсті өрмекшілер" },
+                    { text: "Жәндіктер" },
+                    { text: "Ехинодерматалар" },
+                    { text: "Арахнидтер" },
                   ],
-                  answer: "Mollusk",
+                  answer: "Жәндіктер",
+                },
+                {
+                  prompt:
+                    "Қай топ жануарлары сиңді, қалмақай, бауырсақ, және шабыз түрлерінен тұрады?",
+                  answers: [
+                    { text: "Күсті өрмекшілер" },
+                    { text: "Жәндіктер" },
+                    { text: "Ехинодерматалар" },
+                    { text: "Моллюск" },
+                  ],
+                  answer: "Моллюск",
                 },
               ],
             },
@@ -1456,9 +1456,8 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Name a couple animals that are veterbrates. Now, name a couple of " +
-                      "animals that are invertebrates. How are they similar? How are they different?",
-                    placeholder: "An animal that is ...",
+                      "Сұйықты жануарлардың бірнеше атауын жазыңыз. Енді сұйықсыз жануарлардың бірнеше атауын жазыңыз. Олар қандай жаттығысы бар? Олар қалай өзгеше?",
+                    placeholder: "Жануар болып ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1470,7 +1469,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Draw a picture of a skeletal system wit a vertebrate!",
+              prompt: "Сұйықтылы жануардың сұйықтар жүйесін суретке салыңыз!",
             },
           },
           mastery: {
@@ -1574,7 +1573,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take or find a picture of a relationship between two animals in nature, whether it be a beneficial or harmful relationship.",
+              prompt: "Табиғаттағы екі жануар арасындағы қатынастың суретін табыңыз немесе алыңыз, пайдалы немесе зиянды қатынас болуы мүмкін.",
             },
 
             quiz: { //correct
@@ -1586,47 +1585,47 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "What type of relationship exists between these animals: a fox and a rabbit?",
+                    "Осы жануарлар арасындағы қандай түрдегі қатынастық бар: түлкі мен тойқан?",
                   answers: [
-                    { text: "Parasitism" },
-                    { text: "Neutralism" },
-                    { text: "Competition" },
-                    { text: "Predation" },
+                    { text: "Паразиттік" },
+                    { text: "Нейтралды" },
+                    { text: "Рекетеспе" },
+                    { text: "Жиртқыш" },
                   ],
-                  answer: "Predation",
+                  answer: "Жиртқыш",
                 },
                 {
                   prompt:
-                    "What type of relationship exists between these animals: a frog and an antelope?",
+                    "Осы жануарлар арасындағы қандай түрдегі қатынастық бар: құрбаға мен антилопа?",
                   answers: [
-                    { text: "Competition" },
-                    { text: "Symbiosis" },
-                    { text: "Neutralism" },
-                    { text: "Predation" },
+                    { text: "Рекетеспе" },
+                    { text: "Симбиоздық" },
+                    { text: "Нейтралды" },
+                    { text: "Жиртқыш" },
                   ],
-                  answer: "Neutralism",
+                  answer: "Нейтралды",
                 },
                 {
                   prompt:
-                    "What type of relationship exists between these animals: a shark and a fish that attaches to the shark?",
+                    "Осы жануарлар арасындағы қандай түрдегі қатынастық бар: акула мен акулага тіріктеген балық?",
                   answers: [
-                    { text: "Competition" },
-                    { text: "Parasitism" },
-                    { text: "Neutralism" },
-                    { text: "Predation" },
+                    { text: "Рекетеспе" },
+                    { text: "Паразиттік" },
+                    { text: "Нейтралды" },
+                    { text: "Жиртқыш" },
                   ],
-                  answer: "Parasitism",
+                  answer: "Паразиттік",
                 },
                 {
                   prompt:
-                    "What type of relationship exists between these animals: rhinos and birds?",
+                    "Осы жануарлар арасындағы қандай түрдегі қатынастық бар: кербауыл мен құстар?",
                   answers: [
-                    { text: "Competition" },
-                    { text: "Symbiosis" },
-                    { text: "Neutralism" },
-                    { text: "Predation" },
+                    { text: "Рекетеспе" },
+                    { text: "Симбиоздық" },
+                    { text: "Нейтралды" },
+                    { text: "Жиртқыш" },
                   ],
-                  answer: "Symbiosis",
+                  answer: "Симбиоздық",
                 },
               ],
             },
@@ -1667,7 +1666,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of a plant environment in which several plants mutually benefit each other.",
+              prompt: "Оңай-оңай қолданыста болатын өсімдік орта ортасындағы бірнеше өсімдіктің суретін алыңыз.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -1678,32 +1677,32 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "True or False: There are no relationships between plants that are similar to those between animals?",
+                    "Шын немесе жалған: Жануарлар арасындағы қатынастарға ұқсас өсімдіктер арасындағы қатынастар жоқ?",
                   answers: [
-                    { text: "true" },
-                    { text: "false" },
+                    { text: "шын" },
+                    { text: "жалған" },
                   ],
-                  answer: "false",
+                  answer: "жалған",
                 },
                 {
                   prompt:
-                    "Which of the following is an example of a mutualistic/symbiotic relationship between plants and animals?",
+                    "Келесідегілерден қайсысы өсімдіктер мен жануарлар арасындағы қосымша / симбиоттық қатынастың місалы?",
                   answers: [
-                    { text: "Animals eat the plants" },
-                    { text: "Pollination" },
-                    { text: "Animals use plants to build nests" },
-                    { text: "Humans eat the plants" },
+                    { text: "Жануарлар өсімдіктерді жейді" },
+                    { text: "Тоқу" },
+                    { text: "Жануарлар өсімдіктерді үй құру үшін пайдаланады" },
+                    { text: "Адамдар өсімдіктерді жейді" },
                   ],
-                  answer: "Pollination",
+                  answer: "Тоқу",
                 },
                 {
                   prompt:
-                    "True or False: There are relationships between plants and animals, similar to those between only animals?",
+                    "Шын немесе жалған: Жануарларға ғана міндетті болатын жануарлар мен өсімдіктер арасында қатынастар бар?",
                   answers: [
-                    { text: "true" },
-                    { text: "false" },
+                    { text: "шын" },
+                    { text: "жалған" },
                   ],
-                  answer: "true",
+                  answer: "шын",
                 },
               ],
             },
@@ -1713,27 +1712,27 @@ export const Grade2 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Match the word to the definition using pictures",
+                  "Суреттерді пайдалана отырып, сөзді анықтамаға сәйкес келтіріңіз",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_2_les_8,
                 categories: [
                   { name: "Commensalism" },
-                  { name: "Symbiosis/mutualism" },
-                  { name: "Predation" },
+                  { name: "Симбиоз/взаимовыгодность" },
+                  { name: "Жиртқыштық" },
                 ],
                 options: [
                   {
-                    title: "A Venus flytrap catches a fly",
-                    name: "Predation",
+                    title: "Венера құшыққорлап тұрған құсыны айналдыратын өсімдік",
+                    name: "Жиртқыштық",
                   },
                   {
                     title:
-                      "Bees pollinate a plant",
-                    name: "Symbiosis/mutualism",
+                      "Ары өсімдікті тоқайды",
+                    name: "Симбиоз/взаимовыгодность",
                   },
                   {
                     title:
-                      "A bird makes a nest in a tree",
+                      "Құстың ағашта үй құрғаны",
                     name: "Commensalism",
                   },
                 ],
@@ -1750,16 +1749,16 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do the relationships between plants and animals," +
-                      "such as mutualism, commensalism, and competition, impact the " +
-                      "sustainability of plant communities and ecosystems?",
-                    placeholder: "The relationships between plants and animals...",
+                    text: "Өсімдіктер мен жануарлар арасындағы қатынастар, себебі," +
+                      "симбиоттық, комменсализм және рекетеспе өсімдіктердің қоғамдылығын және экосистемаларды қалай әсерлейді?",
+                    placeholder: "Өсімдіктер мен жануарлар арасындағы қатынастар...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
           },
+
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l9_prompt")}</Translation>
@@ -1809,8 +1808,8 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an animal habitat with poor conditions. Analyze the picture " +
-                "and identify the ways the poor conditions could affect animal life.",
+              prompt: "Жақсы жағдайлары болмаған жануар орташа сурет салыңыз. Суретті талдаңыз " +
+                "және нашар жағдайлардың жануар өміріне қандай әсер ететінін анықтаңыз.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -1821,34 +1820,34 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "Which of the following is the main way droughts affect aquatic environments?",
+                    "Келесідегілерден қайсысы қу болмау су орташа қалай әсер етеді?",
                   answers: [
-                    { text: "Droughts make non-aquatic animals thirstier and therefore drink more of their water." },
-                    { text: "Droughts make the water saltier." },
-                    { text: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals." },
-                    { text: "Droughts cause an increase in the fish population." },
+                    { text: "Қу болмау су болмаған жануарларды өте тамақ істейді және сондықтан олардың суын көбірек ішеді." },
+                    { text: "Қу болмау суды тұздырады." },
+                    { text: "Қу болмау су айналымы арқылы су тігісін шыңғысатын, бұл жақсы су үшін жануарларды өлтіреді." },
+                    { text: "Қу болмау балық популяциясын арттырады." },
                   ],
-                  answer: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals.",
+                  answer: "Қу болмау су айналымы арқылы су тігісін шыңғысатын, бұл жақсы су үшін жануарларды өлтіреді.",
                 },
                 {
                   prompt:
-                    "Which of the following events would affect the number of animals in a habitat?",
+                    "Келесідегі оқиғалардың қайсысы орташа жануарлардың санын әсерлейді?",
                   answers: [
-                    { text: "Fire" },
-                    { text: "Drought" },
-                    { text: "Flood" },
-                    { text: "All of the above" },
+                    { text: "От" },
+                    { text: "Қу болмау" },
+                    { text: "Тоқырау" },
+                    { text: "Барлығы" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы",
                 },
                 {
                   prompt:
-                    "True or False: Infectious diseases do not impact animal populations?",
+                    "Шын немесе жалған: Инфекциондық аурулар жануар популяциясына әсер етпейді?",
                   answers: [
-                    { text: "true" },
-                    { text: "false" },
+                    { text: "шын" },
+                    { text: "жалған" },
                   ],
-                  answer: "false",
+                  answer: "жалған",
                 },
               ],
             },
@@ -1858,22 +1857,22 @@ export const Grade2 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Match the word to the definition using pictures",
+                  "Суреттерді пайдалана отырып сөзді анықтамаға сәйкестіңіз",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_2_les_9,
                 categories: [
-                  { name: "Ebola" },
-                  { name: "Anthrax" },
+                  { name: "Эбола" },
+                  { name: "Антракс" },
                 ],
                 options: [
                   {
-                    title: "A disease that infected and killed large numbers of the chimpanzee population in the 1990s.",
-                    name: "Ebola",
+                    title: "1990 жылдары шимпанзе популяциясын зор инфекциялық және өлтірген ауру.",
+                    name: "Эбола",
                   },
                   {
                     title:
-                      "A disease discovered 600 years ago that kills any warm-blooded animal. ",
-                    name: "Anthrax",
+                      "600 жыл бұрын анықталған, әр түрлі жылғы жануарларды өлтіретін ауру.",
+                    name: "Антракс",
                   },
                 ],
               },
@@ -1889,9 +1888,9 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do habitat conditions, such as availability of food, " +
-                      "water and protection from predators, impact the number and diversity of animal populations in an ecosystem?",
-                    placeholder: "Habitat conditions impact animal populations by...",
+                    text: "Орташа жағдайлар, себебі, тамақ, " +
+                      "су және жиртқыштардан қорғаныс мүмкіндігі, экосистемадағы жануар популяциясының санын және түрлілігін қалай әсерлейді?",
+                    placeholder: "Орташа жағдайлар жануар популяциясына әсер етеді...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1946,7 +1945,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an animal in your area that you believe will not be here in ten years.",
+              prompt: "Өзіңіздің аймағыңыздағы осы 10 жыл ішінде болмаса деп ойлайтын жануардың суретін салыңыз.",
             },
             quiz: { //correct
               navigation: "QuizScreen",
@@ -1957,34 +1956,34 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "True or False: Deforestation does not cause a serious decrease in the number of animals in the area?",
+                    "Шын немесе жалған: Орманшылық аймақтағы жануарлар санының көбейтін құралмайды?",
                   answers: [
-                    { text: "False" },
-                    { text: "True" },
+                    { text: "Жалған" },
+                    { text: "Шын" },
                   ],
-                  answer: "False",
+                  answer: "Жалған",
                 },
                 {
                   prompt:
-                    "Which of the following is the most likely outcome if someone cuts down many trees in a forest?",
+                    "Егер біреу орманда көп ағашты кескен болса, келесідегілерден қайсысы ең болмаса болады?",
                   answers: [
-                    { text: "Many animals will lose their habitats." },
-                    { text: "Many animals will lose their food sources" },
-                    { text: "There will be an increased risk of flooding in the area" },
-                    { text: "All of the above" },
+                    { text: "Көптеген жануарлардың орташа жерлері жоғалады." },
+                    { text: "Көптеген жануарлардың тамақ деректері жоғалады" },
+                    { text: "Аймақта тоқырау қаупінің артуына себеп болады" },
+                    { text: "Барлығы" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы",
                 },
                 {
                   prompt:
-                    "Which of the following pairs of actions are both ways humans indirectly impact animal populations?",
+                    "Келесідегі әрекеттер жұптары адамдардың тікелей жануар популяциясына қалай әсер етеді?",
                   answers: [
-                    { text: "Use of pesticides, deforestation" },
-                    { text: "Poisoning from industrial emissions, construction of dams" },
-                    { text: "Construction of dams, deforestation" },
-                    { text: "Use of pesticides, poisoning from industrial emissions" },
+                    { text: "Зираттық отыртқыларды қолдану, орманшылық" },
+                    { text: "Өнеркәсіптік шығарулардан зыряну, тобықтарды құру" },
+                    { text: "Тобықтарды құру, орманшылық" },
+                    { text: "Зираттық отыртқыларды қолдану, өнеркәсіптік шығарулардан зыряну" },
                   ],
-                  answer: "Construction of dams, deforestation",
+                  answer: "Тобықтарды құру, орманшылық",
                 },
               ],
             },
@@ -1999,10 +1998,9 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are some potential causes for a decrease in the number of animals in a particular ecosystem, " +
-                      "and how can we address these issues to promote sustainability and protect biodiversity? Think about laws " +
-                      "we can implement. What would you suggest to the government as well?",
-                    placeholder: "Potential causes are...",
+                    text: "Екосистемадағы жануарлар санының азайуына қандай себептер болуы мүмкін, " +
+                      "және біз қандай мәселелерді шешу үшін даму мен биологиялық түрлілікті қорғау үшін зақонды қандай заңдарды орнатуымыз керек? Сіз қандай өтінішті үкіметке жасасыз?",
+                    placeholder: "Мүмкіндік себептер...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -2010,6 +2008,7 @@ export const Grade2 = {
             },
 
           },
+
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2046,8 +2045,8 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an animal with similar bodily functions to humans. " +
-                "Essentially, this animal has a body part that has the same function as we use it for.",
+              prompt: "Адамдардың денесімен ұқсас функциялары бар жануардың суретін салыңыз. " +
+                "Осы жануардың бір бөлігі біздің пайдалануымыздай функциясы бар.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -2058,34 +2057,34 @@ export const Grade2 = {
 
                 {
                   prompt:
-                    "True or False: Humans are vertebrates?",
+                    "Шын немесе жалған: Адамдар теректеулідер?",
                   answers: [
-                    { text: "False" },
-                    { text: "True" },
+                    { text: "Жалған" },
+                    { text: "Шын" },
                   ],
-                  answer: "True",
+                  answer: "Шын",
                 },
                 {
                   prompt:
-                    "Which of the following definitions is the best description of an organ?",
+                    "Келесідегі анықтамалардың қайсысы орган туралы ең жақсы сипаттама?",
                   answers: [
-                    { text: "A part of the human body." },
-                    { text: "A part of an organism with an unspecified purpose." },
-                    { text: "A part of an organism that has its own location and purpose." },
-                    { text: "It is the heart of a vertebrate." },
+                    { text: "Адам денесінің бөлігі." },
+                    { text: "Мақсаты көрсетілмеген организмдің бөлігі." },
+                    { text: "Өзінің орнақ және мақсаты бар организмдің бөлігі." },
+                    { text: "Бу теректеулінің жүрегі." },
                   ],
-                  answer: "A part of an organism that has its own location and purpose",
+                  answer: "Өзінің орнақ және мақсаты бар организмдің бөлігі",
                 },
                 {
                   prompt:
-                    "What technological advancement in the 1970s made it easier to see humans’ internal organs?",
+                    "1970 жылдарда қай технологиялық жетістік адамдардың ішкі органын көруге жеңілдетті?",
                   answers: [
-                    { text: "MRIs" },
-                    { text: "X-rays" },
-                    { text: "CTs" },
-                    { text: "None of the above" },
+                    { text: "МРТ" },
+                    { text: "Рентген" },
+                    { text: "КТ" },
+                    { text: "Барлығы жоқ" },
                   ],
-                  answer: "MRIs",
+                  answer: "МРТ",
                 },
               ],
             },
@@ -2100,8 +2099,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are the three main cavities of the human body? What are the main organs in each of these cavities?",
-                    placeholder: "The three main cavities are...",
+                    text: "Адам денесінің үш негізгі бос қабаты қайлары? Бұл қабаттардың негізгі органдары қайлары?",
+                    placeholder: "Үш негізгі бос қабат...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -2139,89 +2138,79 @@ export const Grade2 = {
             ],
           },
           minigames: {
-            snapshot: { // correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an item that humans cannot digest but certain animals can.",
+            snapshot: { 
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Адамдар тамағын есепке алмайтын, бірақ кейбір жануарлар тамағын есепке алуы мүмкін болатын заттың фотосын қойыңыз.",
             },
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
-              content: [
+            quiz: { 
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
 
-                {
-                  prompt:
-                    "Where does digestion begin?",
-                  answers: [
-                    { text: "Stomach" },
-                    { text: "Mouth" },
-                    { text: "Intenstine" },
-                    { text: "Heart" },
-                  ],
-                  answer: "Mouth",
-                },
-                {
-                  prompt:
-                    "Digestion allows humans to (1)____ nutrients from food, and transform it into (2)____",
-                  answers: [
-                    { text: "(1) absorb | (2) energy" },
-                    { text: "(1) reject | (2) food" },
-                    { text: "(1) process | (2) oxygen" },
-                    { text: "(1) sort | (2) carbon dioxide" },
-                  ],
-                  answer: "(1) absorb | (2) energy",
-                },
-                {
-                  prompt:
-                    "Which of the following is the correct order of parts of the body that food travels through?",
-                  answers: [
-                    { text: "Stomach, esophagus, mouth, intestines" },
-                    { text: "Mouth, esophagus, stomach, intestines" },
-                    { text: "Mouth, stomach, esophagus, intestines" },
-                    { text: "Mouth, intestines, stomach, esophagus" },
-                  ],
-                  answer: "Mouth, esophagus, stomach, intestines",
-                },
-                {
-                  prompt:
-                    "Which of the following is the name of the drawing that helps you to make more healthy decisions when choosing what food to eat??",
-                  answers: [
-                    { text: "Triangle of Choices" },
-                    { text: "Pyramid of Food Decisions" },
-                    { text: "Pyramid of Nutrition" },
-                    { text: "Tiers of Nutrition" },
-                  ],
-                  answer: "Pyramid of Nutrition",
-                },
-              ],
-            },
-            openresponse: { // correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "There are many factors to consider when it comes to sustainability in the food system, " +
-                      "such as how food is grown or raised, how it is transported and distributed, and how much of it " +
-                      "is wasted. The apple you eat might be healthy for you but is it healthy for the environment? " +
-                      "Identify strategies that can be used when we produce and consume food, so that it is sustainable " +
-                      "for the environment, animals, and human communities?",
-                    placeholder: "Sustainable ways to produce and consume food are...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
+                    {
+                        prompt: "Шыу қай жерде басталады?",
+                        answers: [
+                            { text: "Қарын" },
+                            { text: "Ауыз" },
+                            { text: "Ішек" },
+                            { text: "Жүрек" },
+                        ],
+                        answer: "Ауыз",
+                    },
+                    {
+                        prompt: "Шыу адамдарға тамақтан (1)____ нутриенттерді алу және оны (2)____ қайта өңдеуге мүмкіндік береді",
+                        answers: [
+                            { text: "(1) сіңіру | (2) энергия" },
+                            { text: "(1) қайтару | (2) тамақ" },
+                            { text: "(1) өңдеу | (2) оқсиген" },
+                            { text: "(1) сұрыптау | (2) көмірлік газ" },
+                        ],
+                        answer: "(1) сіңіру | (2) энергия",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы тамағын өткізу жолындағы дене бөліктерінің дұрыс реті?",
+                        answers: [
+                            { text: "Қарын, өсік, ауыз, ішек" },
+                            { text: "Ауыз, өсік, қарын, ішек" },
+                            { text: "Ауыз, қарын, өсік, ішек" },
+                            { text: "Ауыз, ішек, қарын, өсік" },
+                        ],
+                        answer: "Ауыз, өсік, қарын, ішек",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы тамақ таңдау кезінде денсаулықты шешу үшін көмекші болатын суреттің атауы?",
+                        answers: [
+                            { text: "Таңдаулар үшбұрышы" },
+                            { text: "Тамақ шешімдері пирамидасы" },
+                            { text: "Тамақтандыру пирамидасы" },
+                            { text: "Тамақтандыру деңгейлері" },
+                        ],
+                        answer: "Тамақтандыру пирамидасы",
+                    },
                 ],
-              },
             },
-          },
+            openresponse: {
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Тамақ жүйесіндегі болжамдылықты қарастыруда көптеген факторлар бар, мүлги өсіру, тасымалдау және тарату, және қаншалық уақыт ішінде түсініп алынатынына байланысты. Сіздерге қандай орында, қандай қоректің, және қандай тамақтандыру процесстерінің тамақ жүйесіне қандай әсері тигізетіні ойлайтыныңызды байандап жазыңыз.",
+                        }
+                      ],
+                    },
+                },
+            },
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2363,209 +2352,69 @@ export const Grade2 = {
             ],
           },
           minigames: {
-            minigames: {
-              snapshot: { // correct
-                navigation: "Snapshot",
+            snapshot: {
+                navigation: "Сұрау",
                 icon: require("../../../../assets/camera.png"),
                 backgroundColor: "#FFD972",
                 backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-                prompt: "Take a picture of a common unhealthy food in your household.",
-              },
-              quiz: { // correct
+                prompt: "Өйіңіздегі жиі кездесетін денсаулықсыз тамақтың фотосын қойыңыз.",
+            },
+            quiz: {
                 navigation: "QuizScreen",
                 icon: require("../../../../assets/creativity.png"),
                 backgroundColor: "mediumpurple",
                 imageBg: require("../../../../assets/nat.jpg"),
                 content: [
-
-                  {
-                    prompt:
-                      "True or False: The heart is responsible for the movement of blood in the body?",
-                    answers: [
-                      { text: "True" },
-                      { text: "False" },
-                    ],
-                    answer: "True",
-                  },
-                  {
-                    prompt:
-                      "Which of the following is the responsibility of blood in the body?",
-                    answers: [
-                      { text: "Warm the body." },
-                      { text: "Spread oxygen and nutrients to organs and tissues." },
-                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
-                      { text: "All of the above." },
-                    ],
-                    answer: "All of the above.",
-                  },
-                  {
-                    prompt:
-                      "What do arteries do?",
-                    answers: [
-                      { text: "Carry food that has been digested" },
-                      { text: "Carry carbon dioxide" },
-                      { text: "Carry blood" },
-                      { text: "None of the above" },
-                    ],
-                    answer: "Carry blood",
-                  },
+        
+                    {
+                        prompt: "Шынымен не қалыпты: Жүрек денедегі қан ағуына жауапты ма?",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Шын",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы денедегі қанның жауабы?",
+                        answers: [
+                            { text: "Денені жылыту." },
+                            { text: "Органдар мен ткендерге оқсиген мен нутриенттерді тарату." },
+                            { text: "Керексіз және зиянды заттарды босату органдарына тастау." },
+                            { text: "Үстелгісі." },
+                        ],
+                        answer: "Үстелгісі.",
+                    },
+                    {
+                        prompt: "Артериялар не істейді?",
+                        answers: [
+                            { text: "Шыуды өткізеді" },
+                            { text: "Көмірқыш азотын тастайды" },
+                            { text: "Қанны өткізеді" },
+                            { text: "Үстелгісі жоқ" },
+                        ],
+                        answer: "Қанны өткізеді",
+                    },
                 ],
-              },
-              openresponse: { // correct
+            },
+            openresponse: {
                 navigation: "Image Boom",
                 title: (
-                  <Translation>{(t) => t("common:openresponse")}</Translation>
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
                 ), // Image Boom
                 icon: require("../../../../assets/image.png"),
                 backgroundColor: "palevioletred",
                 data: {
-                  numberOfPrompts: 1,
-                  prompts: [
-                    {
-                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
-                      image: require("../../../../assets/openresponse/innovation.png"),
-                    },
-                  ],
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Адам денсаулықты сақтау үшін не істеуі керек? Ол орта жағдайынан не істеуі керек денсаулықты сақтау үшін?",
+                            image: require("../../../../assets/openresponse/innovation.png"),
+                        },
+                    ],
                 },
-              },
             },
-          },
-          minigames: {
-            minigames: {
-              snapshot: { // correct
-                navigation: "Snapshot",
-                icon: require("../../../../assets/camera.png"),
-                backgroundColor: "#FFD972",
-                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-                prompt: "Take a picture of a common unhealthy food in your household.",
-              },
-              quiz: { // correct
-                navigation: "QuizScreen",
-                icon: require("../../../../assets/creativity.png"),
-                backgroundColor: "mediumpurple",
-                imageBg: require("../../../../assets/nat.jpg"),
-                content: [
-
-                  {
-                    prompt:
-                      "True or False: The heart is responsible for the movement of blood in the body?",
-                    answers: [
-                      { text: "True" },
-                      { text: "False" },
-                    ],
-                    answer: "True",
-                  },
-                  {
-                    prompt:
-                      "Which of the following is the responsibility of blood in the body?",
-                    answers: [
-                      { text: "Warm the body." },
-                      { text: "Spread oxygen and nutrients to organs and tissues." },
-                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
-                      { text: "All of the above." },
-                    ],
-                    answer: "All of the above.",
-                  },
-                  {
-                    prompt:
-                      "What do arteries do?",
-                    answers: [
-                      { text: "Carry food that has been digested" },
-                      { text: "Carry carbon dioxide" },
-                      { text: "Carry blood" },
-                      { text: "None of the above" },
-                    ],
-                    answer: "Carry blood",
-                  },
-                ],
-              },
-              openresponse: { // correct
-                navigation: "Image Boom",
-                title: (
-                  <Translation>{(t) => t("common:openresponse")}</Translation>
-                ), // Image Boom
-                icon: require("../../../../assets/image.png"),
-                backgroundColor: "palevioletred",
-                data: {
-                  numberOfPrompts: 1,
-                  prompts: [
-                    {
-                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
-                      image: require("../../../../assets/openresponse/innovation.png"),
-                    },
-                  ],
-                },
-              },
-            },
-          },
-          minigames: {
-            minigames: {
-              snapshot: { // correct
-                navigation: "Snapshot",
-                icon: require("../../../../assets/camera.png"),
-                backgroundColor: "#FFD972",
-                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-                prompt: "Take a picture of a common unhealthy food in your household.",
-              },
-              quiz: { // correct
-                navigation: "QuizScreen",
-                icon: require("../../../../assets/creativity.png"),
-                backgroundColor: "mediumpurple",
-                imageBg: require("../../../../assets/nat.jpg"),
-                content: [
-
-                  {
-                    prompt:
-                      "True or False: The heart is responsible for the movement of blood in the body?",
-                    answers: [
-                      { text: "True" },
-                      { text: "False" },
-                    ],
-                    answer: "True",
-                  },
-                  {
-                    prompt:
-                      "Which of the following is the responsibility of blood in the body?",
-                    answers: [
-                      { text: "Warm the body." },
-                      { text: "Spread oxygen and nutrients to organs and tissues." },
-                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
-                      { text: "All of the above." },
-                    ],
-                    answer: "All of the above.",
-                  },
-                  {
-                    prompt:
-                      "What do arteries do?",
-                    answers: [
-                      { text: "Carry food that has been digested" },
-                      { text: "Carry carbon dioxide" },
-                      { text: "Carry blood" },
-                      { text: "None of the above" },
-                    ],
-                    answer: "Carry blood",
-                  },
-                ],
-              },
-              openresponse: { // correct
-                navigation: "Image Boom",
-                title: (
-                  <Translation>{(t) => t("common:openresponse")}</Translation>
-                ), // Image Boom
-                icon: require("../../../../assets/image.png"),
-                backgroundColor: "palevioletred",
-                data: {
-                  numberOfPrompts: 1,
-                  prompts: [
-                    {
-                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
-                      image: require("../../../../assets/openresponse/innovation.png"),
-                    },
-                  ],
-                },
-              },
-            },
-          },
+        }
+        
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
