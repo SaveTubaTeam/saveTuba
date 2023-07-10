@@ -2457,75 +2457,71 @@ export const Grade2 = {
             ],
           },
           minigames: {
-            snapshot: { // correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an item that should be cleaned more often. " +
-                "For example, many humans don’t realize how dirty and unclean our phones " +
-                "are. What are some other items that we forget to clean?",
+            snapshot: {
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Жиі тазалануы керек заттың фотосын қойыңыз. Мысалы, біздің ұялы телефондарымыз қаншама кірі мен тазасыз екенін көп адам білмейді. Біздің тазаламағанымыз басқа дайын заттар қандайлар?",
             },
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
-              content: [
-
-                {
-                  prompt:
-                    "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
-                  answers: [
-                    { text: "Vaccines, exposure to diseases" },
-                    { text: "Vaccines, personal hygiene care" },
-                    { text: "Washing your hands, bathing" },
-                    { text: "Personal hygiene care, nature" },
-                  ],
-                  answer: "Vaccines, personal hygiene care",
-                },
-                {
-                  prompt:
-                    "True or False: Spending time in nature is not helpful for staying healthy?",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt:
-                    "Which of the following is the best definition for immunity?",
-                  answers: [
-                    { text: "The state of being at risk for certain diseases." },
-                    { text: "The quality of being resistant to a disease or illness." },
-                    { text: "The name for people who are never sick." },
-                    { text: "The quality of being resistant to medicine. " },
-                  ],
-                  answer: "The quality of being resistant to a disease or illness.",
-                },
-              ],
-            },
-            openresponse: { // correct
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "How can we protect the human body from infections in a sustainable way? " +
-                      "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
-                    placeholder: "Sustainable ways to produce and consume food are...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
-                  },
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+        
+                    {
+                        prompt: "Келесі жұптың қайсысы науқасқа иммундылықты қуаттауға ең жақсы жолдарын сипаттауда дәл?",
+                        answers: [
+                            { text: "Вакциналар, ауруларға ұшыру" },
+                            { text: "Вакциналар, жеке гигиенаға қарай ауруларға ұшыру" },
+                            { text: "Қолдарыңызды жуу, жуыну" },
+                            { text: "Жеке гигиенаға қарай ауруларға ұшыру, табиғат" },
+                        ],
+                        answer: "Вакциналар, жеке гигиенаға қарай ауруларға ұшыру",
+                    },
+                    {
+                        prompt: "Шынымен не қалыпты: Табиғатта уақыт өткізу денсаулықты сақтау үшін пайдалы емес пе?",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Қате",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы иммундылықтың ең жақсы анықтамасы?",
+                        answers: [
+                            { text: "Бірқатар ауруларға ұшырылу қауіптілігінің кезеңі." },
+                            { text: "Ауру немесе науқастыққа қарсы қорғаныш сипаты." },
+                            { text: "Еш уақыт науқас болмаған адамдардың аты." },
+                            { text: "Дәріге қарсы қорғаныш сипаты. " },
+                        ],
+                        answer: "Ауру немесе науқастыққа қарсы қорғаныш сипаты.",
+                    },
                 ],
-              },
             },
-          },
+            openresponse: {
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Қандай түрде біз адам денесін қабылдаулардан қорғау үшін қорғанысты әрекет етуге болады? " +
+                              "Қандай тазалық құралдарын ең көп пайдалану көріп тұрасыз? Бұл құралдар өкілдік тұрғысыз ба? Неден? ",
+                            placeholder: "Өкілдік түрде тамақ өндіру және тұтыну үшін қандай жолдар болады...",
+                            image: require("../../../../assets/openresponse/innovation.png"),
+                        },
+                    ],
+                },
+            },
+        }
+        
         },
       ],
     },
@@ -2550,78 +2546,78 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/snowflake.png"),
           backgroundColor: "#49326B",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an item undergoing change from one state of matter to another.",
+            snapshot: {
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Бір заттың материялының бір күйден басқа күйге өтудегі фотосын алыңыз.",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following is a state of matter?",
-                  answers: [
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "Gas" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "When something freezes, what state of matter does it start and then end in?",
-                  answers: [
-                    { text: "Solid to liquid state" },
-                    { text: "Liquid to gaseous state" },
-                    { text: "Solid state to gaseous state" },
-                    { text: "Liquid to solid state" },
-                  ],
-                  answer: "Liquid to solid state",
-                },
-                {
-                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
-                  answers: [
-                    { text: "Gas" },
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "None of the above" },
-                  ],
-                  answer: "Gas",
-                }
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Келесіден қайсысы материя күйі?",
+                        answers: [
+                            { text: "Бекіткіш" },
+                            { text: "Сұйық" },
+                            { text: "Газ" },
+                            { text: "Барлығы бірге" },
+                        ],
+                        answer: "Барлығы бірге",
+                    },
+                    {
+                        prompt: "Шынымен немесе қате: Бір жат берілген күйде болған кезде, оларды басқа күйге көшіру мүмкін емес.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Қате",
+                    },
+                    {
+                        prompt: "Егер бір зат жумсаса, ол қандай материялық күйден бастап, соңында қай күйге өтеді?",
+                        answers: [
+                            { text: "Бекіткіштен сұйық күйге" },
+                            { text: "Сұйықтан газдық күйге" },
+                            { text: "Бекіткіштен газдық күйге" },
+                            { text: "Сұйықтан бекіткіш күйге" },
+                        ],
+                        answer: "Сұйықтан бекіткіш күйге",
+                    },
+                    {
+                        prompt: "Ыстық күні, ит мамысына су қалдырылған. Күн аяғында барлық су жоқ болды. Енді зат қай күйде?",
+                        answers: [
+                            { text: "Газ" },
+                            { text: "Бекіткіш" },
+                            { text: "Сұйық" },
+                            { text: "Барлығы жоқ" },
+                        ],
+                        answer: "Газ",
+                    }
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
-                    placeholder: "When we change an object from one state to another ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Ашық жауап
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Егер біз бір заттың материялық күйін өзгертсек, біз өкілдікпе емес пе? Материялық күйдердің өзгеруі энергияға қажет емес пе? Егер іә, біздің ортағамызға зиян келтіретін материялық өзгерістер туралы ойлаңыз.",
+                            placeholder: "Егер біз бір заттың материялық күйін өзгертсек ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
             },
-          },
+        }
+        ,
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l1_prompt")}</Translation>
@@ -2674,78 +2670,78 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/air.png"),
           backgroundColor: "#C85004",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Research a place with poor air quality. Take a picture of that place (you can take a picture of the image online). Can you identify any characteristics in the picture that show the poor air quality?",
+            snapshot: {
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Ауа сапасы нашар ортады зерттеңіз. Осы орның фотосын алыңыз (Сіз интернеттегі суреттің фотосын алуыңызға болады). Фотода ауа сапасының нашар екенін көрсететін нысандарды анықтауыңызға бола ма?",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "What gas makes up most of the air (78%)?",
-                  answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Carbon dioxide" },
-                    { text: "Argon" },
-                  ],
-                  answer: "Nitrogen",
-                },
-                {
-                  prompt: "True or False: We cannot breathe pure nitrogen on its own.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Which of the following gasses in air have no color and no smell?",
-                  answers: [
-                    { text: "Nitrogen" },
-                    { text: "Argon" },
-                    { text: "Oxygen" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What does the Amazon forest produce the most of all forests in the world?",
-                  answers: [
-                    { text: "Paper" },
-                    { text: "Pollution" },
-                    { text: "Oxygen" },
-                    { text: "Birds" },
-                  ],
-                  answer: "Oxygen",
-                }
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Қай газ ауаның басты бөлігін (78%) құрады?",
+                        answers: [
+                            { text: "Азот" },
+                            { text: "Оксиген" },
+                            { text: "Углекислота" },
+                            { text: "Аргон" },
+                        ],
+                        answer: "Азот",
+                    },
+                    {
+                        prompt: "Шынымен немесе қате: Біз азотты текшісінде демалуға болмайды.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Шын",
+                    },
+                    {
+                        prompt: "Келесіден қай газдардың түсі және иісі жоқ?",
+                        answers: [
+                            { text: "Азот" },
+                            { text: "Аргон" },
+                            { text: "Оксиген" },
+                            { text: "Барлығы бірге" },
+                        ],
+                        answer: "Барлығы бірге",
+                    },
+                    {
+                        prompt: "Амазон орманы әлемдегі барлық ормандардың арасынан қандай затты ең көп жасайды?",
+                        answers: [
+                            { text: "Қағаз" },
+                            { text: "Кірлік" },
+                            { text: "Оксиген" },
+                            { text: "Құстар" },
+                        ],
+                        answer: "Оксиген",
+                    }
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "I think we can all agree that humans release chemicals, pollutants, pesticides, etc. into the air that negatively impact the air quality. However, not everything we release into the air is necessarily harmful. What can humans release into the air that will positively impact the air quality?",
-                    placeholder: "Humans can release ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Ашық жауап
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Мен ойлаймын, біз барлық адамдарымыз ауаға химиялық қоспалар, кірлетушілер, пестицидтер және т.б. саламыз, бұл ауа сапасына негізгі терістік әсер етеді. Алайда, біздің ауаға шығаратын барлық заттарымыз қате емес. Қай заттарды адамдар ауаға шығаруға болады, ол ауа сапасына оңтайлы әсер етеді?",
+                            placeholder: "Адамдар ... шығаруға болады",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
             },
-          },
+        },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l2_prompt")}</Translation>
@@ -2782,68 +2778,69 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/candle.png"),
           backgroundColor: "#9DCD5A",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of a representation of one of the many properties of air. (For example: a carbonated beverage with bubbles).",
+            snapshot: {
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Ауаның бірнеше қасиеттерінің бірін көрсететін фотосын алыңыз. (Мысалы: көпіршікті ішімдік пузырыштары бар).",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "True or False: Combustion refers to the process of burning something.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "What substance supports combustion, while carbon dioxide does not?",
-                  answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Argon" },
-                    { text: "It actually is carbon dioxide" },
-                  ],
-                  answer: "Oxygen",
-                },
-                {
-                  prompt: "It is very difficult to breathe in a room with a lot of ____, and very little _____.",
-                  answers: [
-                    { text: "Carbon dioxide; oxygen" },
-                    { text: "Oxygen; carbon dioxide" },
-                    { text: "Both answers are correct" },
-                    { text: "Both answers are incorrect" },
-                  ],
-                  answer: "Carbon dioxide; oxygen",
-                },
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Шынымен немесе қате: Жану - бұл затты өрттеу процессі.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Шын",
+                    },
+                    {
+                        prompt: "Қай зат жануды қолдайды, ал углекислота қолдамайды?",
+                        answers: [
+                            { text: "Азот" },
+                            { text: "Оксиген" },
+                            { text: "Аргон" },
+                            { text: "Ол өзі де углекислота" },
+                        ],
+                        answer: "Оксиген",
+                    },
+                    {
+                        prompt: "Өте қиын демалу керек ____ көп, ал ____ аз болатын бөлмеде.",
+                        answers: [
+                            { text: "Углекислота; оксиген" },
+                            { text: "Оксиген; углекислота" },
+                            { text: "Екеуі дұрыс" },
+                            { text: "Екеуі дұрыс емес" },
+                        ],
+                        answer: "Углекислота; оксиген",
+                    },
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What are the many properties of air, and how do they positively impact the environment? Why are these properties so important for maintaining homeostasis?",
-                    placeholder: "The main properties of air are ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Ашық жауап
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Ауаның бірнеше қасиеттері не, және олар қандай жолмен ортаға оңтайлы әсер етеді? Бұл қасиеттер неге үй ішіндегі теңдікті сақтау үшін өте маңызды?",
+                            placeholder: "Ауаның басым қасиеттері ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
             },
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l3_prompt")}</Translation>
@@ -2903,66 +2900,66 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/duck.png"),
           backgroundColor: "#98DFEC",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of the cleanest source of water in your home.",
+            snapshot: {
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Өйіңіздегі ең таза судың көзінің фотосын жасаңыз.",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following have the highest water content?",
-                  answers: [
-                    { text: "Acorn" },
-                    { text: "Bean" },
-                    { text: "Lemon" },
-                    { text: "Potato" },
-                  ],
-                  answer: "Lemon",
-                },
-                {
-                  prompt: "True or False: There is more water in potatoes than apples.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "True or False: Even though fruits and vegetables are solids, they are also made up of a lot of water.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Келесідегілердің қайсысының су мазмұны ең жоғары?",
+                        answers: [
+                            { text: "Балақай" },
+                            { text: "Қырыққабат" },
+                            { text: "Лимон" },
+                            { text: "Картошка" },
+                        ],
+                        answer: "Лимон",
+                    },
+                    {
+                        prompt: "Шынымен немесе қате: Картоптаның ішінде алмалардан артық су бар.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Қате",
+                    },
+                    {
+                        prompt: "Шынымен немесе қате: Жеміс-жидек қатаң болса да, оларда өте көп су бар.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Шын",
+                    },
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Do you believe that everyone in the world has access to a water source? If so, it stands to reason that not everyone has the same type of water source. Can you think of the many different types of water sources that exist?",
-                    placeholder: "The water sources ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Ашық жауап
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Сіздер дүниедегі барлық адамдар су көзіне ие болатынына сенесіз бе? Егер мүмкін болса, бұл барлық адамның бірдей су көзіне ие болатынына кепіл болады. Бірнеше түрлі су көздерін ойлауға болады ма?",
+                            placeholder: "Су көздері ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
             },
-          },
+        },
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l4_prompt")}</Translation>
@@ -3000,117 +2997,117 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/water-source.png"),
           backgroundColor: "#37B5FF",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of the most natural water source near your home. If you cannot visit it, take a picture of it online. Look at the picture and see if you can understand what differentiates a natural water source from an unnatural one.",
+            snapshot: { 
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Өйіңізге жақындағы ең табиғи су көзінің фотосын жасаңыз. Егер сіз оны байқа алмасаңыз, онлайнда оның фотосын алыңыз. Суретке қараңыз және табиғи су көзін табиғисізден қалай айырмашылыққа ие екенін түсініп көріңіз.",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "True or False: Most of the water on Earth is freshwater.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "In what ocean is the Mariana Trench located?",
-                  answers: [
-                    { text: "Pacific" },
-                    { text: "Atlantic" },
-                    { text: "Indian" },
-                    { text: "Artic" },
-                  ],
-                  answer: "Pacific",
-                },
-                {
-                  prompt: "What is the largest river in Kazakhstan?",
-                  answers: [
-                    { text: "Yertis" },
-                    { text: "Yesil" },
-                    { text: "Zhem" },
-                    { text: "Oral" },
-                  ],
-                  answer: "Yertis",
-                },
-                {
-                  prompt: "What is the largest lake in Kazakhstan?",
-                  answers: [
-                    { text: "Zaysan" },
-                    { text: "Aral" },
-                    { text: "Balkhash" },
-                    { text: "Alakol" },
-                  ],
-                  answer: "Balkhash",
-                },
-                {
-                  prompt: "What source of fresh and clean water is caused by excess water seeping through soil and clay?",
-                  answers: [
-                    { text: "Lakes" },
-                    { text: "Groundwater/underground" },
-                    { text: "Rain" },
-                    { text: "Oceans" },
-                  ],
-                  answer: "Groundwater/underground",
-                },
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Шынымен немесе қате: Жердегі судың басымы таты су.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Қате",
+                    },
+                    {
+                        prompt: "Mariana шығанағы қай теңізде орналасқан?",
+                        answers: [
+                            { text: "Тынық" },
+                            { text: "Атлантика" },
+                            { text: "Үнді" },
+                            { text: "Арктика" },
+                        ],
+                        answer: "Тынық",
+                    },
+                    {
+                        prompt: "Қазақстандағы ең үлкен өзен қайсысы?",
+                        answers: [
+                            { text: "Ертіс" },
+                            { text: "Жасыл" },
+                            { text: "Жем" },
+                            { text: "Орал" },
+                        ],
+                        answer: "Ертіс",
+                    },
+                    {
+                        prompt: "Қазақстандағы ең үлкен көл қайсысы?",
+                        answers: [
+                            { text: "Зайсан" },
+                            { text: "Арал" },
+                            { text: "Балқаш" },
+                            { text: "Алақөл" },
+                        ],
+                        answer: "Балқаш",
+                    },
+                    {
+                        prompt: "Қай таза және таза су көзі топырақтан және глинадан аса су шығуы себеп болады?",
+                        answers: [
+                            { text: "Көлдер" },
+                            { text: "Жер астындағы су/жер асты" },
+                            { text: "Жаңбыр" },
+                            { text: "Теңіздер" },
+                        ],
+                        answer: "Жер астындағы су/жер асты",
+                    },
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Not all communities possess access to a natural water source. However, the communities that do must address the issues of water pollution, overuse, and scarcity. Can you think of ways they address these issues and how you can address these same issues if present, in your community?",
-                    placeholder: "They can address these issues by ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Ашық жауап
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Барлық қауымдарда табиғи су көзі жоқ. Алайда, табиғи су көзіне ие болатын қауымдар суның кірділіктігі, аса пайдалану және табылмалылық мәселелерін шешу қажет. Сіз осы мәселелерді қалай шешетініңізді ойлауға болады ма және сіздің қауымдаңызда бұл мәселелер болса, оларды қалай шешуге болады?",
+                            placeholder: "Олар осы мәселелерді шешуге болады ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
+            },
+            reorder: {
+                navigation: "Reorder",
+                icon: require("../../../../assets/reorder.png"),
+                backgroundColor: "pink",
+                prompt:
+                    "Келесі теңіздерді ең үлкеннен ең кішіге дейін ретке қойыңыз.",
+                data: [
+                    {
+                        text: "Тынық",
+                        dormant: "coral",
+                        active: "#DB756B",
+                    },
+                    {
+                        text: "Атлантика",
+                        dormant: "pink",
+                        active: "#ffacbb",
+                    },
+                    {
+                        text: "Үнді",
+                        dormant: "dodgerblue",
+                        active: "#3873E0",
+                    },
+                    {
+                        text: "Арктика",
+                        dormant: "#ffa500",
+                        active: "#e59400",
+                    },
                 ],
-              },
             },
-            reorder: { //correct
-              navigation: "Reorder",
-              icon: require("../../../../assets/reorder.png"),
-              backgroundColor: "pink",
-              prompt:
-                "Put the following oceans in order from largest to smallest.",
-              data: [
-                {
-                  text: "Pacific",
-                  dormant: "coral",
-                  active: "#DB756B",
-                },
-                {
-                  text: "Atlantic",
-                  dormant: "pink",
-                  active: "#ffacbb",
-                },
-                {
-                  text: "Indian",
-                  dormant: "dodgerblue",
-                  active: "#3873E0",
-                },
-                {
-                  text: "Artic",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-              ],
-            },
-          },
+        },        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l5_prompt")}</Translation>
@@ -3148,78 +3145,79 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/water-bottle.png"),
           backgroundColor: "#F27B21",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of your water meter to see how much water you’ve used this period. Take another picture at the same time next month to see if your habits have improved your water usage.",
+            snapshot: { 
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Өзіңіздің су санағының суретін жасаңыз, осы периодта қанша су пайдаландығыңызды көріңіз. Келесі айыңыздың сол уақытта өзіңіздің даярлықтарыңыз су пайдалануыңызды жақсартты ма екенін көру үшін тағы бір сурет жасаңыз.",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "Which of the following household uses of water requires the largest amount of water?",
-                  answers: [
-                    { text: "Laundry" },
-                    { text: "Washing dishes" },
-                    { text: "Taking a bath" },
-                    { text: "Flushing the toilet" },
-                  ],
-                  answer: "Taking a bath",
-                },
-                {
-                  prompt: "True or False: On average, taking a bath requires four times the amount of water it takes for a shower.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Which of the following is a way to reduce water consumption in households?",
-                  answers: [
-                    { text: "Take showers instead of baths" },
-                    { text: "Make sure the dishwasher is full before it gets run" },
-                    { text: "Turn of the sink when brushing your teeth" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "Which of the following is NOT a way to reduce water consumption in households?",
-                  answers: [
-                    { text: "Take shorter showers" },
-                    { text: "Wait to repair leaks in sinks and toilets" },
-                    { text: "Water plants only during cooler parts of the day" },
-                    { text: "Only run full loads of laundry" },
-                  ],
-                  answer: "Wait to repair leaks in sinks and toilets",
-                },
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Келесі үй қолданысты судың қайсысы үлкен көлемде су қажет етеді?",
+                        answers: [
+                            { text: "Кір жуу" },
+                            { text: "Тамақ қабы" },
+                            { text: "Баня алу" },
+                            { text: "Туалет құю" },
+                        ],
+                        answer: "Баня алу",
+                    },
+                    {
+                        prompt: "Шынымен немесе қате: Орташа бойынша, баня алу душ алуға қарағанда төрт есе көп су талап етеді.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Қате" },
+                        ],
+                        answer: "Шын",
+                    },
+                    {
+                        prompt: "Келесі үйдегі су түрлерінің қайсысы су түрлерін азайтуға көмек етеді?",
+                        answers: [
+                            { text: "Душ алыңыз, баня алмаңыз" },
+                            { text: "Пісіру үшін толық жұмыс істегенше күтіңіз" },
+                            { text: "Тіс жуға қазір сусыны өшіріңіз" },
+                            { text: "Барлығы бірдей" },
+                        ],
+                        answer: "Барлығы бірдей",
+                    },
+                    {
+                        prompt: "Келесі үйдегі су түрлерінің қайсысы су түрлерін азайтуға көмек етпейді?",
+                        answers: [
+                            { text: "Қысқа душ алыңыз" },
+                            { text: "Төлегендердегі және туалеттердегі су сızықтарын жататынша күтіңіз" },
+                            { text: "Өсімдіктерді күннің салқын бөлігінде су қойыңыз" },
+                            { text: "Тек толық жұмыс істеген кезде жуыңыз" },
+                        ],
+                        answer: "Төлегендердегі және туалеттердегі су сızықтарын жататынша күтіңіз",
+                    },
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What are some ways that your local government can make sure that human drinking water isn’t used for wrongful purposes, such as wastefulness?",
-                    placeholder: "The local government can ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Өзіңіздің жергілікті үкімет өзіңіздің суыңызды қайта жаттығу, мысалы, аяққаба көп су пайдалануыңызға қандай көмек етеді?",
+                            placeholder: "Жергілікті үкімет ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
             },
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l6_prompt")}</Translation>
@@ -3262,70 +3260,71 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/water-filter.png"),
           backgroundColor: "#6C3F14",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of a homemade water filtration method. You can do this after you complete the mastery challenge. To show the success of the water filtration method, take a before and after picture of the water.",
+            snapshot: { 
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Өзіңіздің үйдегі су тазалау әдісінің суретін жасаңыз. Бұлды өзіңіз мастерлік шығарма орындағандан кейін жасай аласыз. Су тазалау әдісінің сәттілігін көрсету үшін судың бұрын және кейінгі суретін алыңыз.",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              image: "../../../../assets/nat.jpg",
-              content: [
-                {
-                  prompt: "What is the main way to purify water?",
-                  answers: [
-                    { text: "Mechanical" },
-                    { text: "Chemical" },
-                    { text: "Biological" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What occurs at water treatment plants?",
-                  answers: [
-                    { text: "It is where wastewater is treated." },
-                    { text: "It is where freshwater is treated." },
-                    { text: "It is where ocean water is treated." },
-                    { text: "None of the above" },
-                  ],
-                  answer: "It is where wastewater is treated.",
-                },
-                {
-                  prompt: "Which method of purifying water removes things like branches, sand, leaves?",
-                  answers: [
-                    { text: "Mechanical" },
-                    { text: "Chemical" },
-                    { text: "Biological" },
-                    { text: "Methodological" },
-                  ],
-                  answer: "Mechanical",
-                },
-              ]
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Суды тазалау негізгі әдісі не?",
+                        answers: [
+                            { text: "Механикалық" },
+                            { text: "Химиялық" },
+                            { text: "Биологиялық" },
+                            { text: "Барлығы бірдей" },
+                        ],
+                        answer: "Барлығы бірдей",
+                    },
+                    {
+                        prompt: "Су тазалау заводында не болады?",
+                        answers: [
+                            { text: "Бұл жерде сүтегі су өңделеді." },
+                            { text: "Бұл жерде таза су өңделеді." },
+                            { text: "Бұл жерде мұхит суы өңделеді." },
+                            { text: "Бұлардың ешқайсысы емес" },
+                        ],
+                        answer: "Бұл жерде сүтегі су өңделеді.",
+                    },
+                    {
+                        prompt: "Суды тазалау әдісі біртұтас, құм, жапырақтарды сияқты заттарды алып тастайды ма?",
+                        answers: [
+                            { text: "Механикалық" },
+                            { text: "Химиялық" },
+                            { text: "Биологиялық" },
+                            { text: "Методикалық" },
+                        ],
+                        answer: "Механикалық",
+                    },
+                ]
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "How can we protect and restore aquatic ecosystems and the many benefits they provide, such as water purification, flood control, and habitat for a variety of species? Extend your answer to list several water purification methods, from natural to man made.",
-                    placeholder: "To protect aquatic ecosystems, we can ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Біз қалай су тізімдерін қорғау және қалпына келтіруге және олардың көптеген пайдаларын, мысалы, су тазалау, су тасу, түрлі түрдегі түрлер үшін орташақ сияқты, қорғау үшін және табиғаттан жасалған тазалау әдістерін, тізімдеу үшін жаттығу үшін кеңейту үшін қалай көмек көрсету үшін кеңейту үшін көмек көрсету үшін?",
+                            placeholder: "Акватерриториялық экосистемаларды қорғау үшін, біз ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
             },
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l7_prompt")}</Translation>
@@ -3362,68 +3361,132 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil.png"),
           backgroundColor: "#E39650",
           minigames: {
-            snapshot: { //correct
-              navigation: "Snapshot",
+            snapshot: { 
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt:
+                    "Биіктікке бай қызықаран топырақтың суретін жасаңыз. Топырақты талдаңыз және оның өзге топырақтардан биіктікке бай болуының себебін анықтаңыз.",
+            },
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                image: "../../../../assets/nat.jpg",
+                content: [
+                    {
+                        prompt: "Топырақтың мақсаты не?",
+                        answers: [
+                            { text: "Өсімдік тамыры және сұйықты қолдау және тамақ беру үшін" },
+                            { text: "Көптеген жануарларға үй ұсыну үшін" },
+                            { text: "Бірінші екі жауап дұрыс" },
+                            { text: "Ешқайсы жауап дұрыс емес" },
+                        ],
+                        answer: "Бірінші екі жауап дұрыс",
+                    },
+                    {
+                        prompt: "Шыныменде немесе Жалған: Жердің үсті әр түрлі қалыңдықтағы топырақтың қабағымен өртелген.",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Шыныменде",
+                    },
+                    {
+                        prompt: "Топырақ жасау процессін бастау үшін не болуы керек?",
+                        answers: [
+                            { text: "Тас түрлері, мысалы, тастар мен минералдар жойылады, сондықтан кіші минералды зарнашылар пайда болады." },
+                            { text: "Топырақ аймаққа тасымалдау керек." },
+                            { text: "Аймақта ұлы материалдар өздіктөпірік болуы керек." },
+                            { text: "Барлығы бірдей." },
+                        ],
+                        answer: "Тас түрлері, мысалы, тастар мен минералдар жойылады, сондықтан кіші минералды зарнашылар пайда болады.",
+                    },
+                ]
+            },
+            openresponse: {
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Топырақ климатты өзгерту жылдамдығын байқауға қандай әсер етеді?",
+                            placeholder: "Топырақ ...",
+                            image: require("../../../../assets/mastery/state-of-matter.png"),
+                        },
+                    ],
+                },
+            },
+        },
+        minigames: {
+          snapshot: { 
+              navigation: "Сұрау",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of nutrient-rich soil. Analyze and identify why the soil in particular is nutrient-dense.",
-            },
-            quiz: {
+                  "Биіктікке бай қызықаран топырақтың суретін жасаңыз. Топырақты талдаңыз және оның өзге топырақтардан биіктікке бай болуының себебін анықтаңыз.",
+          },
+          quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               image: "../../../../assets/nat.jpg",
               content: [
-                {
-                  prompt: "What is the purpose of soil?",
-                  answers: [
-                    { text: "To provide nutrition and support for plant roots and stems" },
-                    { text: "To provide a home for many animals" },
-                    { text: "The first two answers are correct" },
-                    { text: "Neither answers are correct" },
-                  ],
-                  answer: "The first two answers are correct",
-                },
-                {
-                  prompt: "True or False: Most of the Earth’s surface is covered with a layer of soil of different thicknesses.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "What must occur to begin the process of creating soil?",
-                  answers: [
-                    { text: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles." },
-                    { text: "Soil must be transported to the area." },
-                    { text: "Organic matter must decompose in the area." },
-                    { text: "All of the above." },
-                  ],
-                  answer: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles.",
-                },
+                  {
+                      prompt: "Топырақтың мақсаты не?",
+                      answers: [
+                          { text: "Өсімдік тамыры және сұйықты қолдау және тамақ беру үшін" },
+                          { text: "Көптеген жануарларға үй ұсыну үшін" },
+                          { text: "Бірінші екі жауап дұрыс" },
+                          { text: "Ешқайсы жауап дұрыс емес" },
+                      ],
+                      answer: "Бірінші екі жауап дұрыс",
+                  },
+                  {
+                      prompt: "Шыныменде немесе Жалған: Жердің үсті әр түрлі қалыңдықтағы топырақтың қабағымен өртелген.",
+                      answers: [
+                          { text: "Шыныменде" },
+                          { text: "Жалған" },
+                      ],
+                      answer: "Шыныменде",
+                  },
+                  {
+                      prompt: "Топырақ жасау процессін бастау үшін не болуы керек?",
+                      answers: [
+                          { text: "Тас түрлері, мысалы, тастар мен минералдар жойылады, сондықтан кіші минералды зарнашылар пайда болады." },
+                          { text: "Топырақ аймаққа тасымалдау керек." },
+                          { text: "Аймақта ұлы материалдар өздіктөпірік болуы керек." },
+                          { text: "Барлығы бірдей." },
+                      ],
+                      answer: "Тас түрлері, мысалы, тастар мен минералдар жойылады, сондықтан кіші минералды зарнашылар пайда болады.",
+                  },
               ]
-            },
-            openresponse: {
+          },
+          openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                  <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "What role can soil play in slowing down climate change?",
-                    placeholder: "Soil ...",
-                    image: require("../../../../assets/mastery/state-of-matter.png"),
-                  },
-                ],
+                  numberOfPrompts: 1,
+                  prompts: [
+                      {
+                          text: "Топырақ климатты өзгерту жылдамдығын байқауға қандай әсер етеді?",
+                          placeholder: "Топырақ ...",
+                          image: require("../../../../assets/mastery/state-of-matter.png"),
+                      },
+                  ],
               },
-            },
           },
+      },
+
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l8_prompt")}</Translation>
@@ -3477,69 +3540,59 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil-composition.png"),
           backgroundColor: "#9DCD5A",
           minigames: {
-            snapshot: { // correct
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of a scientific discovery that you use on a daily basis.",
+            snapshot: { 
+                navigation: "Сұрау",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+                prompt: "Қазіргі таңда күн сайын пайдаланатын ғылыми ашықтаманың суретін жасаңыз.",
             },
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What of the following is the best definition of humus",
-                  answers: [
-                    { text: "Matter in soil made out of the remains of plants and animals" },
-                    { text: "Minerals in soil." },
-                    { text: "Grass that grows on top of the soil." },
-                    { text: "Rocks embedded in the soil" },
-                  ],
-                  answer: "Matter in soil made out of the remains of plants and animals.",
-                },
-                {
-                  prompt: "Humus is more abundant in the upper layers of the soil than the lower layers.",
-                  answers: [
-                    { text: "True" },
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
                     {
-                      text: "False",
-                    },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
-                  answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
-                  ],
-                  answer: "True",
-                },
-                {
-                  prompt: "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
-                  answers: [
-                    {
-                      text: "Wind and water",
+                        prompt: "Келесіден қандайсысы humus дегенді ең жақсы анықтау?",
+                        answers: [
+                            { text: "Өсімдіктер мен жануарлардың қалдықтарынан топырақтағы зат" },
+                            { text: "Топырақтағы минералдар." },
+                            { text: "Топырақ үстінде өсетін шөп." },
+                            { text: "Топырақта көрінетін тастар" },
+                        ],
+                        answer: "Өсімдіктер мен жануарлардың қалдықтарынан топырақтағы зат.",
                     },
                     {
-                      text: "Solar heat",
+                        prompt: "Humus топырақтың жоғары қабаттарында төменгі қабаттарынан көбірек болады.",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Шыныменде",
                     },
                     {
-                      text: "Living organisms",
+                        prompt: "Тас және минерал зарнашылары топырақтың төменгі қабаттарында жоғары қабаттарынан көбірек болады.",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Шыныменде",
                     },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-              ],
+                    {
+                        prompt: "Келесі шарттардың қайсысы тастардың сынуына, сондықтан да топырақтың пайда болуына себеп бола алады?",
+                        answers: [
+                            { text: "Жел және су" },
+                            { text: "Күн жылуы" },
+                            { text: "Тірі организмдер" },
+                            { text: "Барлығы бірдей" },
+                        ],
+                        answer: "Барлығы бірдей",
+                    },
+                ],
             },
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l9_prompt")}</Translation>
@@ -3593,57 +3646,54 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil-types.png"),
           backgroundColor: "#F9A949",
           minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What is the best explanation for why air permeability is important for soil?",
-                  answers: [
-                    { text: "Without it the worms will die " },
-                    { text: "This allows air through the soil, which is needed or else plant roots will die. " },
-                    { text: "It lets rain through." },
-                    { text: "None of the above." },
-                  ],
-                  answer: "This allows air through the soil, which is needed or else plant roots will die.",
-                },
-                {
-                  prompt: "Which of the following is the best definition of water permeability? ",
-                  answers: [
-                    { text: "It describes the type of water needed for the soil." },
-                    { text: "It is the ability of the soil to support worms and insects." },
-                    { text: "It explains the pH of the soil." },
-                    { text: "It is the ability of the soil to absorb and transmit water." },
-                  ],
-                  answer: "It is the ability of the soil to absorb and transmit water.",
-                },
-                {
-                  prompt: "Which of the following processes directly threatens the abundance of soil?",
-                  answers: [
-                    { text: "Earthquakes" },
-                    { text: "Pollution" },
-                    { text: "Erosion" },
-                    { text: "Evaporation" },
-                  ],
-                  answer: "Erosion",
-                },
-                {
-                  prompt: "The life of humans, animals, and plants are all dependent on the existence of soil. ",
-                  answers: [
-                    { text: "True" },
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
                     {
-                      text: "False",
+                        prompt: "Топыраққа ауа орналасуының маңызының ең жақсы түсіндірмесі не?",
+                        answers: [
+                            { text: "Олынбаса құрттар өледі" },
+                            { text: "Бұл топырақтан ауаны өткізеді, ол өсімдіктердің тамырлары өлбейді деп қажет." },
+                            { text: "Ол жаңбырды өткізеді." },
+                            { text: "Жоғарыдағылардың ешқайсысы да емес." },
+                        ],
+                        answer: "Бұл топырақтан ауаны өткізеді, ол өсімдіктердің тамырлары өлбейді деп қажет.",
                     },
-                  ],
-                  answer: "True",
-                },
-              ],
+                    {
+                        prompt: "Су орналасуының не дегенінің ең жақсы анықтамасы не?",
+                        answers: [
+                            { text: "Ол топырақ үшін қажетті судың түрін сипаттайды." },
+                            { text: "Ол топырақтың құрт және жесектерге қолдау көрсету қабілеті." },
+                            { text: "Ол топырақтың рН-ын түсіндіреді." },
+                            { text: "Ол топырақтың суды жинау және тарату қабілеті." },
+                        ],
+                        answer: "Ол топырақтың суды жинау және тарату қабілеті.",
+                    },
+                    {
+                        prompt: "Келесі процессілердің қайсысы топырақтың болушағын тікелей қауіптейді?",
+                        answers: [
+                            { text: "Жер тірейсі" },
+                            { text: "Кірлету" },
+                            { text: "Үлкейу" },
+                            { text: "Бұхарлау" },
+                        ],
+                        answer: "Үлкейу",
+                    },
+                    {
+                        prompt: "Адамдардың, жануарлардың және өсімдіктердің өмірі топырақтың болуына тәуелді. ",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Шыныменде",
+                    },
+                ],
             },
-
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l10_prompt")}</Translation>
@@ -3698,54 +3748,54 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/soil-properties.png"),
           backgroundColor: "#76B9F0",
           minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "Which of the following statements is true about soil?",
-                  answers: [
-                    { text: "All of the following" },
-                    { text: "Dark soil is rich in humus." },
-                    { text: "Red soil is rich in iron." },
-                    { text: "Light soil is poor in minerals and humus." },
-                  ],
-                  answer: "All of the following.",
-                },
-                {
-                  prompt: "Clay soil absorbs water well and does not stick together. ",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-                {
-                  prompt: "Which of the following is the main property of sandy soil?",
-                  answers: [
-                    { text: "It is very loose." },
-                    { text: "Is is easy for water to pass through it" },
-                    { text: "It heats up and cools down quickly" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
-                  answers: [
-                    { text: "Chernozem" },
-                    { text: "Clay" },
-                    { text: "Humus soil" },
-                    { text: "Sand" },
-                  ],
-                  answer: "Chernozem",
-                },
-              ],
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+                    {
+                        prompt: "Төмендегі қай тақырып топырақ жайлы шын?",
+                        answers: [
+                            { text: "Барлығы дұрыс" },
+                            { text: "Қара топырақ гумус бойынша бай." },
+                            { text: "Қызыл топырақ темір бойынша бай." },
+                            { text: "Жарық топырақ минералдар мен гумус бойынша нашар." },
+                        ],
+                        answer: "Барлығы дұрыс.",
+                    },
+                    {
+                        prompt: "Қыр топырағы жақсы суды жинайды және бірге құймастанбайды.",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Жалған",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы құм топырағының негізгі қасиеті?",
+                        answers: [
+                            { text: "Бұл өте ерекше." },
+                            { text: "Оған су өте жақсы өтеді" },
+                            { text: "Ол жылдам ысынады және жылдам соңықтайды" },
+                            { text: "Барлығы" },
+                        ],
+                        answer: "Барлығы",
+                    },
+                    {
+                        prompt: "Қай топырақ “ең жақсы” деп есептеледі, ол көп гумус ішінеді және қолыңызды қысықтаған кезде қара майлы белгі қалдырды?",
+                        answers: [
+                            { text: "Шертопырақ" },
+                            { text: "Қыр" },
+                            { text: "Гумус топырағы" },
+                            { text: "Құм" },
+                        ],
+                        answer: "Шертопырақ",
+                    },
+                ],
             },
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l11_prompt")}</Translation>
@@ -3789,72 +3839,72 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth.png"),
           backgroundColor: "#49326B",
           minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What are the spheres of the earth?",
-                  answers: [
-                    { text: "Biosphere and lithosphere" },
-                    { text: "Hydrosphere and atmosphere" },
-                    { text: "Both answers are correct" },
-                    { text: "Neither answers are correct" },
-                  ],
-                  answer: "Both answers are correct.",
-                },
-                {
-                  prompt: "Which of the following is the best definition of the atmosphere of the earth? ",
-                  answers: [
-                    { text: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers." },
-                    { text: "A solid shell that surrounds Earth, holding in the gasses needed for plants." },
-                    { text: "A shell made up of gas, consisting of only one layer that protects the earth from asteroids." },
-                    { text: "A solid shell that is only responsible for creating weather. " },
-                  ],
-                  answer: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
-                },
-                {
-                  prompt: "Which of the following is the main property of sandy soil?",
-                  answers: [
-                    { text: "It is very loose." },
-                    { text: "Is is easy for water to pass through it" },
-                    { text: "It heats up and cools down quickly" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-                {
-                  prompt: "The lithosphere is the upper solid shell of the Earth.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "Ture",
-                },
-                {
-                  prompt: "What inhabits the biosphere on Earth? ",
-                  answers: [
-                    { text: "3 million species of plants, animals, fungi and bacteria." },
-                    { text: "Earth’s core." },
-                    { text: "The troposphere." },
-                    { text: "Glaciers." },
-                  ],
-                  answer: "Glaciers",
-                },
-                {
-                  prompt: "The lithosphere has never moved, and never will.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "False",
-                },
-              ],
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+                    {
+                        prompt: "Жер шаршысындағы шарлар қандай?",
+                        answers: [
+                            { text: "Биошар және литошар" },
+                            { text: "Гидрошар және атмосфера" },
+                            { text: "Екеуі дұрыс" },
+                            { text: "Ешқайсысы дұрыс емес" },
+                        ],
+                        answer: "Екеуі дұрыс.",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы жердің атмосферасының ең жақсы анықтамасы?",
+                        answers: [
+                            { text: "Тірі организмдердің тінеу үшін қажетті кислородды қамтыған газ шар. Бұл бірнеше қабаттан тұрады." },
+                            { text: "Жерді қоршаған тұтас қабырға, өсімдіктер үшін қажетті газдарды сақтайды." },
+                            { text: "Газдан жасалған шар, тек бір қабаттан тұрады, ол жерді астероидтерден қорғайды." },
+                            { text: "Тек ауа жағдайын жасау үшін жауапты болатын тұтас шар." },
+                        ],
+                        answer: "Тірі организмдердің тінеу үшін қажетті кислородды қамтыған газ шар. Бұл бірнеше қабаттан тұрады.",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы құм топырағының негізгі қасиеті?",
+                        answers: [
+                            { text: "Бұл өте ерекше." },
+                            { text: "Оған су өте жақсы өтеді" },
+                            { text: "Ол жылдам ысынады және жылдам соңықтайды" },
+                            { text: "Барлығы" },
+                        ],
+                        answer: "Барлығы",
+                    },
+                    {
+                        prompt: "Литошар - бұл Жердің жоғарғы тұтас шары.",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Шыныменде",
+                    },
+                    {
+                        prompt: "Жердің биошарында не тұр?",
+                        answers: [
+                            { text: "3 миллион түрлі өсімдіктер, жануарлар, саңырау және бактериялар." },
+                            { text: "Жер ортасы." },
+                            { text: "Тропосфера." },
+                            { text: "Мұздың шапырауы." },
+                        ],
+                        answer: "Мұздың шапырауы",
+                    },
+                    {
+                        prompt: "Литошар ешқашан жылжымады, және ешқашан жылжымайды.",
+                        answers: [
+                            { text: "Шыныменде" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Жалған",
+                    },
+                ],
             },
-          },
+        },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l12_prompt")}</Translation>
@@ -3892,47 +3942,46 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/astronaut.png"),
           backgroundColor: "#02084B",
           minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt:
-                    "What is the main way that space is explored?",
-                  answers: [
-                    { text: "Automatic spacecrafts" },
-                    { text: "Manned space flights" },
-                    { text: "Both answers are correct" },
-                    { text: "Neither answer is correct" },
-                  ],
-                  answer: "Both answers are correct",
-                },
-                {
-                  prompt: "In what year was the first human flight to space?",
-                  answers: [
-                    { text: "1961" },
-                    { text: "1990" },
-                    { text: "1947" },
-                    { text: "1968" },
-                  ],
-                  answer: "1961",
-                },
-                {
-                  prompt: "Which of the following advancements were created in connection with the development of the space industry?",
-                  answers: [
-                    { text: "Solar batteries" },
-                    { text: "Water filters" },
-                    { text: "Digital cameras" },
-                    { text: "All of the above" },
-                  ],
-                  answer: "All of the above",
-                },
-
-              ],
+            quiz: {
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+                    {
+                        prompt: "Әлеуметтік кеңістік қалай зерттеледі?",
+                        answers: [
+                            { text: "Автоматтандырылған космический аппараттар" },
+                            { text: "Адамдарды тасымалдаушы космический ұшақтар" },
+                            { text: "Екеуі дұрыс" },
+                            { text: "Ешқайсысы дұрыс емес" },
+                        ],
+                        answer: "Екеуі дұрыс",
+                    },
+                    {
+                        prompt: "Адамдардың бірінші баруы қашан болды?",
+                        answers: [
+                            { text: "1961" },
+                            { text: "1990" },
+                            { text: "1947" },
+                            { text: "1968" },
+                        ],
+                        answer: "1961",
+                    },
+                    {
+                        prompt: "Келесіден қайсысы космос өнеркәсіпті дамытудағы прогресс пен байланысты құрылды?",
+                        answers: [
+                            { text: "Күн жарықты батареялар" },
+                            { text: "Су фильтрлері" },
+                            { text: "Цифрлық камералар" },
+                            { text: "Барлығы" },
+                        ],
+                        answer: "Барлығы",
+                    },
+                ],
             },
-          },
+        },
+
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l13_prompt")}</Translation>
