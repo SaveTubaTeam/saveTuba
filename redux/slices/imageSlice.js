@@ -8,13 +8,14 @@ const initialState = {
 };
 
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
-    createImageMap().then((result) => {
-        console.log("R: ", result);
+    const map = await createImageMap().then((result) => {
         return result;
     }).catch((error) => {
         console.log("Error in setting state: ", error);
         return error.message;
     });
+    // console.log("R: ", map);
+    return map;
 });
 
 const mapSlice = createSlice({
@@ -25,9 +26,9 @@ const mapSlice = createSlice({
             state.loading = "loading";
         });
         builder.addCase(fetchImages.fulfilled, (state, action) => {
-            console.log("Payload: " , action.payload);
-            state.loading = "finished";
+            // console.log("Payload: ", action.meta);
             state.imageData = (action.payload);
+            state.loading = "finished";
             state.error = null;
         });
         builder.addCase(fetchImages.rejected, (state, action) => {

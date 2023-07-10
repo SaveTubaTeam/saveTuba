@@ -14,8 +14,6 @@ import { useTranslation } from "react-i18next";
 
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 // import { createImageMap } from "../Grades/Handlers/Database";
-
-import { fetchImages } from "../../../redux/slices/imageSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Stack = createNativeStackNavigator();
@@ -28,11 +26,8 @@ function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  // const dispatch = useDispatch();
-  // dispatch(fetchImages());
- 
-  // const imageMap = useSelector(state => state.imageData); // This is not taking the data from the slice
-  // console.log("Image Map 1: ", imageMap);
+  const imageMap = useSelector(state => state.imageData); // This is not taking the data from the slice
+  console.log("Image Map 2: ", imageMap);
 
   return ( //source={{uri: imageMap["/assets/homebg.png"]}}
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>

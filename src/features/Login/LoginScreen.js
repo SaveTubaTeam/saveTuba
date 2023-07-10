@@ -8,7 +8,6 @@ import { changeData } from "../Grades/Handlers/Database";
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { ImagePickerIOS } from "react-native";
 
 
 
@@ -59,39 +58,20 @@ const ButtonOutLine = styled.TouchableOpacity`
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
   align-items: center;
-`;
+  `;
 
 const LoginScreen = () => {
-
-  const dispatch = useDispatch();
-  dispatch(fetchImages());
-  // const { status, imageMap, error } = useSelector(state => state.imageMap.imageData); // This is not taking the data from the slice
-  const imageMap = useSelector(state => state.imageMap.imageData);
-  // console.log("Status: ", status, " ImageMap: ", imageMap, " Error: ", error);
-  // if (error !== null || status === "rejected") {
-  //   console.log("Error pulling data");
-  // }
-
-  // while (status === "idle" || status === "loading") {
-  //   const { status } = useSelector(state => state.imageMap); // This is not taking the data from the slice
-  //   console.log("Not finished pulling data: ", status);
-  //   if (status === "finished"){
-  //     console.log("Finished pulling data");
-  //     break;
-  //   }
-
-  // }
-
-  console.log("Image Map 1: ", imageMap);
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-
-
+  
   const { t } = useTranslation();
   const navigation = useNavigation();
-
+  
+  const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(fetchImages());
+
     if (auth.currentUser) {
       navigation.replace("HomePage");
 
