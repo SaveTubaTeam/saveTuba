@@ -4041,43 +4041,44 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
           minigames: {
-            quiz: { // correct
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
-              content: [
-                {
-                  prompt: "What is the best explanation for why there are different time zones in different places? ",
-                  answers: [
-                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around the moon, making it night time on one half of the earth." },
-                    { text: "None of the above." },
-                  ],
-                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
-                },
-                {
-                  prompt: "The earth rotates around the ____.",
-                  answers: [
-                    { text: "Moon" },
-                    { text: "Sun" },
-                    { text: "Other planets" },
-                    { text: "Milky way" },
-                  ],
-                  answer: "Sun",
-                },
-                {
-                  prompt: "The earth rotates around an axis AND revolves around the sun.",
-                  answers: [
-                    { text: "True" },
-                    { text: "False" },
-                  ],
-                  answer: "Ture",
-                },
-              ],
+            quiz: { 
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
+                    {
+                        prompt: "Әр түрлі орындардағы уақыт белдеулері өзгеше болуына қандай ең жақсы түсіндірме жасай алады?",
+                        answers: [
+                            { text: "Күн екі арғы жерді айналдырады, бұл кейбір жерлерде жарықты, кейбір жерлерде қараңғы қылады." },
+                            { text: "Жер осындай жұмбақта күннің айналуын айналдырады, бұл кейбір жерлерде жарықты, кейбір жерлерде қараңғы қылады." },
+                            { text: "Жер айның айналуын айналдырады, бұл жердің екі жартысында түнге айналдырады." },
+                            { text: "Жоғарыдағы ешқайсысы да емес." },
+                        ],
+                        answer: "Жер осындай жұмбақта күннің айналуын айналдырады, бұл кейбір жерлерде жарықты, кейбір жерлерде қараңғы қылады.",
+                    },
+                    {
+                        prompt: "Жер ____________ айналдырады.",
+                        answers: [
+                            { text: "Ай" },
+                            { text: "Күн" },
+                            { text: "Басқа планеталар" },
+                            { text: "Құйымдалған жол" },
+                        ],
+                        answer: "Күн",
+                    },
+                    {
+                        prompt: "Жер осьтік ағында айналдырады, сондықтан күннің айналуын айналдырады.",
+                        answers: [
+                            { text: "Шын" },
+                            { text: "Жалған" },
+                        ],
+                        answer: "Шын",
+                    },
+                ],
             },
           },
+        
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
