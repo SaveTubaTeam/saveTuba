@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 import { createImageMap } from "../Grades/Handlers/Database";
 
-import { setImageMap } from "../../../redux/slices/imageSlice";
+import { fetchImages } from "../../../redux/slices/imageSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Stack = createNativeStackNavigator();
@@ -28,22 +28,19 @@ function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  const iconMap = useSelector(state => state.imageMap.imageData);
-  
   const dispatch = useDispatch();
-  console.log("IM 1: ", iconMap);
-  
-  useEffect(() => {
-    createImageMap().then((map) => {
-      console.log("Home After", map);
-      dispatch(setImageMap(map));
-    });
+  dispatch(fetchImages());
+  // useEffect(() => {
+  //   createImageMap().then((map) => {
+  //     // console.log("Home After", map);
+  //     dispatch(setImageMap(map));
+  //   });
 
-  }, []);
+  // }, []);
+  const imageMap = useSelector(state => state.imageMap.imageData);
+  console.log("Image Map 1: ", imageMap);
 
-  // console.log("IM 2: ", iconMap);
-
-  return (
+  return ( //source={{uri: imageMap["/assets/homebg.png"]}}
     <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
       <ScrollView style={{ paddingTop: 50 }}>
         <TouchableOpacity

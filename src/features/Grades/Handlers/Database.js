@@ -73,10 +73,11 @@ async function createImageMap() {
         Object.defineProperty(iconMap, pathResolved[x].fullPath, {
             value: urlResolved[x],
             writable: true,
-            enumerable: true
+            enumerable: true,
+            configurable: true
         });
     }
-    console.log("Database images: ", Object.values(iconMap));
+    // console.log("Database images: ", Object.values(iconMap));
 
     return iconMap;
 }
