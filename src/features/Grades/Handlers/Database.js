@@ -59,33 +59,44 @@ async function getLessonData(grade, chpt, numLessons) {
 
 
 async function createImageMap(folder, imageMap) {
-    // let iconMap = new Map(); // cannot use a map as it is not serializable and the redux toolkit cannot pass it without error
-    // let iconMap = Object.create(null);
+
+    // imageMap = Object.create(null);
     let result = await storage.child(folder).listAll();
 
-    
     let urlPromises = result.items.map(url => url.getDownloadURL());
     let pathPromises = result.items.map(path => path.getMetadata());
-    
+
     let urlResolved = await Promise.all(urlPromises);
     let pathResolved = await Promise.all(pathPromises);
-    
-    for (var x = 0; x < urlResolved.length; x++) {
-        // iconMap.set(pathResolved[x].fullPath, urlResolved[x]); // cannot use a map as it is not serializable and the redux toolkit cannot pass it without error
-        Object.defineProperty(imageMap, pathResolved[x].fullPath, {
-            value: urlResolved[x],
-            writable: true,
-            enumerable: true,
-            configurable: true
-        });
-    }
-    console.log("Database images: ", Object.values(imageMap));
-    
-    result.prefixes.forEach((folderRef) => {
-        folderRef = folder.concat("/" + folderRef);
-        createImageMap(folderRef);
-    });
 
+    for (var x = 0; x < urlResolved.length; x++) {
+        try {
+            // console.log("Path: ", pathResolved[x].fullPath, " URL: ", urlResolved[x]);
+            imageMap[pathResolved[x].fullPath] = urlResolved[x];
+            // Object.defineProperty(imageMap, pathResolved[x].fullPath, {
+            //     value: urlResolved[x],
+            //     writable: true,
+            //     enumerable: true,
+            //     configurable: true
+            // });
+        } catch (error) {
+            console.log("Error: ", error);
+            // console.log("Path: ", pathResolved[x].fullPath, " URL: ", urlResolved[x]);
+
+        }
+    }
+
+    // console.log("Database images: ", Object.values(imageMap));
+
+    result.prefixes.forEach(async (folderRef) => {
+        let tempMap = Object.create(null);
+        console.log(folderRef.fullPath);
+        // console.log("Folder Ref =======>", folderRef.fullPath);
+        tempMap = await createImageMap(folderRef.fullPath, tempMap).then((result) => { return result; });
+        imageMap = Object.assign({}, imageMap, tempMap); //when imageMap is first there is a "[Unhandled promise rejection: TypeError: cannot add a new property]"
+        // console.log("Temp Map =======> ", tempMap);
+    });
+    console.log("ImageMap Test =======> ", imageMap["assets/badges/badge1.png"]);
     return imageMap;
 }
 
