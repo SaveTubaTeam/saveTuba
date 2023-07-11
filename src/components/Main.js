@@ -14,9 +14,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 // Redux Imports
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { useSelector, useDispatch } from "react-redux";
 import { store } from "../../redux/store/store";
-import { fetchImages } from "../../redux/slices/imageSlice";
 
 import {
   fetchUser,
@@ -110,7 +108,7 @@ export class Main extends Component {
     // } else {
     //   console.log("Main.js >> currentUser undefined");
     // }
-    // const {data} = useSelector(state => state.imageData);
+
     while (this.props.currentUser == undefined) {
       console.log("In while");
       return (
@@ -121,7 +119,7 @@ export class Main extends Component {
     }
 
     try {
-      console.log("Not In while");
+      // console.log("Not In while");
       if (
         this.props.achievements != null ||
         this.props.achievements["achievements"][0] == undefined

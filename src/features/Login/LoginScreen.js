@@ -4,10 +4,11 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
-import { changeData } from "../Grades/Handlers/Database";
+
+import { changeData, postData } from "../Grades/Handlers/Database";
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 
 
@@ -88,6 +89,8 @@ const LoginScreen = () => {
     return unsubscribe;
   }, []);
 
+  // const imageMap = useSelector(state => state.imageMap.imageData);
+  // console.log("Image Map 1: ", imageMap);
   // const handleSignup = () => {
   //   auth
   //     .createUserWithEmailAndPassword(email, password)
@@ -155,8 +158,7 @@ const LoginScreen = () => {
             <TitleText color="secondary" size="body">
               Post
             </TitleText>
-          </Button>
-        </ButtonContainer> */}
+          </Button> */}
 
           {/* <Button onPress={changeData}>
             <TitleText color="secondary" size="body">

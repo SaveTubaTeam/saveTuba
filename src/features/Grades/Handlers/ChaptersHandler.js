@@ -9,18 +9,23 @@ import { View } from "react-native";
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
 import { getGradeData } from "./Database";
+import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
 function ChaptersHandler({ route, addAchievement }) { //add achievements
+  
   const [selectedGrade, setSelectedGrade] = useState(null);
   const [gradeNum, setGradeNum] = useState(null);
   
-
+  
   const { level } = route.params; // Level selected from Lesson navigation screen
   const navigation = useNavigation();
-
+  
+  const imageMap = useSelector(state => state.imageMap.imageData);
+  
   useEffect(() => {
+
     switch (level) {
       case 1:
         {
@@ -92,7 +97,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
             <ChaptersComponent
               navigation={navigation}
               selectedGrade={selectedGrade}
-              iconMap={iconMap}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>

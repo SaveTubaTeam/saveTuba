@@ -8,7 +8,8 @@ const initialState = {
 };
 
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
-    const map = await createImageMap().then((result) => {
+    const imageMap = Object.create(null);
+    const map = await createImageMap("assets", imageMap).then((result) => {
         return result;
     }).catch((error) => {
         console.log("Error in setting state: ", error);

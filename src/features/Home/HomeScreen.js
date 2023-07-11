@@ -26,11 +26,10 @@ function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  const imageMap = useSelector(state => state.imageData); // This is not taking the data from the slice
-  console.log("Image Map 2: ", imageMap);
+  const imageMap = useSelector(state => state.imageMap.imageData);
 
-  return ( //source={{uri: imageMap["/assets/homebg.png"]}}
-    <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
+  return ( // source={require("../../../assets/homebg.png")}
+    <ImageBg resizeMode="cover" source={{ uri: imageMap["assets/homebg.png"] }}>
       <ScrollView style={{ paddingTop: 50 }}>
         <TouchableOpacity
           style={style.roundButton1}
