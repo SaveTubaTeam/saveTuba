@@ -275,7 +275,7 @@ const QuizHandler = ({ data, navigation, route, currentUser, addAchievement }) =
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={data} onPress={playSound()} />}
+        {() => <Start data={data} />}
       </Stack.Screen>
 
       <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}/>
