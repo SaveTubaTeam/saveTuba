@@ -463,149 +463,146 @@ export const Grade1 = {
           },
           minigames: {
             reorder: {
-              navigation: "Reorder",
-              icon: require("../../../../assets/reorder.png"),
-              backgroundColor: "pink",
-              prompt:
-                "Reorder the below items to show which steps you need to take when conducting an experiment.",
-              data: [
-                {
-                  text: "Hypothesis",
-                  dormant: "coral",
-                  active: "#DB756B",
-                },
-                {
-                  text: "Resources",
-                  dormant: "pink",
-                  active: "#ffacbb",
-                },
-                {
-                  text: "Notes",
-                  dormant: "dodgerblue",
-                  active: "#3873E0",
-                },
-                {
-                  text: "Goal",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-                {
-                  text: "Plan",
-                  dormant: "#19a127",
-                  active: "#169023",
-                },
-                {
-                  text: "Conclusion",
-                  dormant: "#d38f9f",
-                  active: "#cd8193",
-                },
-              ],
+                navigation: "Reorder",
+                icon: require("../../../../assets/reorder.png"),
+                backgroundColor: "pink",
+                prompt: "Төмендегі элементтерді ретке көйіңіз, експеримент жүргізу кезінде қай қадамдарды өткізу керек екенін көрсету үшін.",
+                data: [
+                    {
+                        text: "Гипотеза",
+                        dormant: "coral",
+                        active: "#DB756B",
+                    },
+                    {
+                        text: "Ресурстар",
+                        dormant: "pink",
+                        active: "#ffacbb",
+                    },
+                    {
+                        text: "Жазбалар",
+                        dormant: "dodgerblue",
+                        active: "#3873E0",
+                    },
+                    {
+                        text: "Мақсат",
+                        dormant: "#ffa500",
+                        active: "#e59400",
+                    },
+                    {
+                        text: "Жоспар",
+                        dormant: "#19a127",
+                        active: "#169023",
+                    },
+                    {
+                        text: "Қорытынды",
+                        dormant: "#d38f9f",
+                        active: "#cd8193",
+                    },
+                ],
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Design an experiment connected to analyzing something in nature.",
-                    placeholder: "My plan is to..",
-                    image: require("../../../../assets/openresponse/scientist.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ),
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Табиғаттан не дейін жүз астына шығаруға байланысты эксперимент жасаңыз.",
+                            placeholder: "Менің жоспарым...",
+                            image: require("../../../../assets/openresponse/scientist.png"),
+                        },
+                    ],
+                },
             },
             snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt:
-                "Take a picture of the item you designed an expirement for in the Open Resoponse mini-game ",
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundImage: require("../../../../assets/lessonbg2.png"),
+                prompt: "Ашық жауап мини-ойында экспериментке арналған заттың суретін алыңыз.",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
-              content: [
-                {
-                  prompt: "What is the first step in the experiment?",
-                  answers: [
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
                     {
-                      text: "Observation",
+                        prompt: "Эксперименттің бірінші қадамы не?",
+                        answers: [
+                            {
+                                text: "Бақылау",
+                            },
+                            {
+                                text: "Тест",
+                            },
+                            {
+                                text: "Гипотеза",
+                            },
+                            { text: "Болжам" },
+                        ],
+                        answer: "Бақылау",
                     },
                     {
-                      text: "Test",
+                        prompt: "Болар ашылған жағдайда ағаның жатысы сезіндіріп, сіз өте соққан. Бұл эксперимент жүргізу кезіндегі қай қадаммен ең жақын байланысты?",
+                        answers: [
+                            {
+                                text: "Гипотеза құру",
+                            },
+                            {
+                                text: "Тест жасау",
+                            },
+                            {
+                                text: "Бақылау жасау",
+                            },
+                            { text: "Қорытынды" },
+                        ],
+                        answer: "Бақылау жасау",
                     },
                     {
-                      text: "Hypothesis",
-                    },
-                    { text: "Prediction" },
-                  ],
-                  answer: "Observation",
-                },
-                {
-                  prompt:
-                    "Lying in bed you notice that you get cold every time your brother opens the door. This is most closely associated with which step in conducting an experiment?",
-                  answers: [
-                    {
-                      text: "Forming a hypothesis",
-                    },
-                    {
-                      text: "Developing a test",
-                    },
-                    {
-                      text: "Making an observation",
-                    },
-                    { text: "Conclusion" },
-                  ],
-                  answer: "Making an observation",
-                },
-                {
-                  prompt: "What is the last step in the experiment?",
-                  answers: [
-                    {
-                      text: "Conclusion",
+                        prompt: "Эксперименттің соңғы қадамы не?",
+                        answers: [
+                            {
+                                text: "Қорытынды",
+                            },
+                            {
+                                text: "Нәтижелерді байланыстыру",
+                            },
+                            {
+                                text: "Бақылау",
+                            },
+                            {
+                                text: "Гипотеза құру",
+                            },
+                        ],
+                        answer: "Қорытынды",
                     },
                     {
-                      text: "Communication of results",
+                        prompt: "Гипотеза не?",
+                        answers: [
+                            {
+                                text: "Сынақтан өтуге болмайтын айту",
+                            },
+                            {
+                                text: "Эксперимент",
+                            },
+                            {
+                                text: "Сіздің сұрауыңызға жауап беру үшін ең жақсы \"білімді көзден жатқан болжам\"",
+                            },
+                            {
+                                text: "Мұғалімдің сізге айтқаны растық",
+                            },
+                        ],
+                        answer: "Сіздің сұрауыңызға жауап беру үшін ең жақсы \"білімді көзден жатқан болжам\"",
                     },
-                    {
-                      text: "Observation",
-                    },
-                    {
-                      text: "Hypothesis formation",
-                    },
-                  ],
-                  answer: "Conclusion",
-                },
-                {
-                  prompt: "What is a hypothesis?",
-                  answers: [
-                    {
-                      text: "An untestable statement",
-                    },
-                    {
-                      text: "An experiment",
-                    },
-                    {
-                      text: "Your best “educated guess” of what the answer to your question will be",
-                    },
-                    {
-                      text: "Whatever the teacher tells you is the truth",
-                    },
-                  ],
-                  answer:
-                    "Your best “educated guess” of what the answer to your question will be",
-                },
-              ],
+                ],
             },
-          },
+        },
+        
         },
       ],
     },
@@ -867,135 +864,135 @@ export const Grade1 = {
           },
           minigames: {
             sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt: "Are the animals below mammals or amphibians?",
-                num: 6,
-                imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [
-                  {
-                    name: "Mammals",
-                  },
-                  {
-                    name: "Amphibians",
-                  },
-                ],
-
-                options: [
-                  {
-                    name: "Mammals",
-                    title: "Horses",
-                  },
-                  {
-                    name: "Amphibians",
-                    title: "Frogs",
-                  },
-                  {
-                    name: "Amphibians",
-                    title: "Salamanders",
-                  },
-                  {
-                    name: "Mammals",
-                    title: "Humans",
-                  },
-                  {
-                    name: "Mammals",
-                    title: "Kangaroos",
-                  },
-                  {
-                    name: "Mammals",
-                    title: "Blue whales",
-                  },
-                ],
-              },
+                navigation: "Сұрыптау",
+                icon: require("../../../../assets/recycle-bin.png"),
+                backgroundColor: "coral",
+                content: {
+                    prompt: "Төмендегі жануарлар мемлекеттер не амфибиялар?",
+                    num: 6,
+                    imageBg: SortingImages.bg[0].lvl_1_les_4,
+                    categories: [
+                        {
+                            name: "Мемлекеттер",
+                        },
+                        {
+                            name: "Амфибиялар",
+                        },
+                    ],
+        
+                    options: [
+                        {
+                            name: "Мемлекеттер",
+                            title: "Аттар",
+                        },
+                        {
+                            name: "Амфибиялар",
+                            title: "Құрбағалар",
+                        },
+                        {
+                            name: "Амфибиялар",
+                            title: "Саламандра",
+                        },
+                        {
+                            name: "Мемлекеттер",
+                            title: "Адамдар",
+                        },
+                        {
+                            name: "Мемлекеттер",
+                            title: "Қаласырғалар",
+                        },
+                        {
+                            name: "Мемлекеттер",
+                            title: "Қоксерек киттер",
+                        },
+                    ],
+                },
             },
             snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/animal-bg.jpg"),
-              prompt:
-                "Which group of animals lays eggs? Can you take a picture of one animal that lays eggs?",
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundImage: require("../../../../assets/snapshots/animal-bg.jpg"),
+                prompt: "Қай жануар топы жұмыртқаларды жатады? Жұмыртқа жататын бір жануар суретін алар аласыз ба?",
             },
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
-              content: [
-                {
-                  prompt: "What makes a fish unique from other vertebrates?",
-                  answers: [
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
                     {
-                      text: "Pass oxygenated water through their gills",
+                        prompt: "Балықты басқа омыртқа мүшелерінен қандай әртүрлі қылып тұрады?",
+                        answers: [
+                            {
+                                text: "Балықлар оксигенді суды желілері арқылы өткізеді",
+                            },
+                            {
+                                text: "Балықлар оксигенді тінеді",
+                            },
+                            {
+                                text: "Балықтың тұяқтары қаңқасын құрады",
+                            },
+                            { text: "Балықтар өз орташылықтарынан тыс жағда өмір сүре алады" },
+                        ],
+                        answer: "Балықлар оксигенді суды желілері арқылы өткізеді",
                     },
                     {
-                      text: "Fish breathe oxygen",
+                        prompt: "Бұлардың қайсысы құрт емес?",
+                        answers: [
+                            {
+                                text: "Шынышқы",
+                            },
+                            {
+                                text: "Тақырым",
+                            },
+                            {
+                                text: "Термиттер",
+                            },
+                            { text: "Өрмекшілер" },
+                        ],
+                        answer: "Өрмекшілер",
                     },
                     {
-                      text: "The bones of the fish make up their skeleton",
-                    },
-                    { text: "Fish can survive outside of their habitat" },
-                  ],
-                  answer: "Pass oxygenated water through their gills",
-                },
-                {
-                  prompt: "Which one of these is not an insect?",
-                  answers: [
-                    {
-                      text: "Ants",
-                    },
-                    {
-                      text: "Fleas",
-                    },
-                    {
-                      text: "Termites",
-                    },
-                    { text: "Spiders" },
-                  ],
-                  answer: "Spiders",
-                },
-                {
-                  prompt: "Which one of the following is a bird?",
-                  answers: [
-                    {
-                      text: "Penguin",
+                        prompt: "Келесіден қайсысы құстың жаны?",
+                        answers: [
+                            {
+                                text: "Пингвин",
+                            },
+                            {
+                                text: "Қарақұс",
+                            },
+                            {
+                                text: "Ұшар бөлек",
+                            },
+                            {
+                                text: "Көбелек",
+                            },
+                        ],
+                        answer: "Пингвин",
                     },
                     {
-                      text: "Bat",
+                        prompt: "Омыртқа мүшелерінің ең кіші тобы қайсысы?",
+                        answers: [
+                            {
+                                text: "Амфибиялар",
+                            },
+                            {
+                                text: "Құрттар",
+                            },
+                            {
+                                text: "Балықтар",
+                            },
+                            {
+                                text: "Мемлекеттер",
+                            },
+                        ],
+                        answer: "Мемлекеттер",
                     },
-                    {
-                      text: "Flying squirrel",
-                    },
-                    {
-                      text: "Butterflies",
-                    },
-                  ],
-                  answer: "Penguin",
-                },
-                {
-                  prompt: "What is the smallest group of vertebrates?",
-                  answers: [
-                    {
-                      text: "Amphibians",
-                    },
-                    {
-                      text: "Insects",
-                    },
-                    {
-                      text: "Fish",
-                    },
-                    {
-                      text: "Mammals",
-                    },
-                  ],
-                  answer: "Mammals",
-                },
-              ],
+                ],
             },
-          },
+        },
+        
         },
 
         /* 
@@ -1030,95 +1027,96 @@ export const Grade1 = {
           },
           minigames: {
             quiz: {
-              navigation: "QuizScreen",
-              icon: require("../../../../assets/creativity.png"),
-              backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"),
-              content: [
-                {
-                  prompt: "Where does a dolphin live?",
-                  answers: [
+                navigation: "QuizScreen",
+                icon: require("../../../../assets/creativity.png"),
+                backgroundColor: "mediumpurple",
+                imageBg: require("../../../../assets/nat.jpg"),
+                content: [
                     {
-                      text: "Ocean",
+                        prompt: "Дельфин қайда тұрады?",
+                        answers: [
+                            {
+                                text: "Мұхит",
+                            },
+                            {
+                                text: "Тропикалық орман",
+                            },
+                            {
+                                text: "Қытай",
+                            },
+                            { text: "Тундра" },
+                        ],
+                        answer: "Мұхит",
                     },
                     {
-                      text: "Rainforest",
+                        prompt:
+                            "Бұлардың қайсысы жануарлардың өздерін жыртқыштардан қорғану әдістері емес?",
+                        answers: [
+                            {
+                                text: "Жыртқышқа қару жүгіру және сөйлесу",
+                            },
+                            {
+                                text: "Камуфляж",
+                            },
+                            {
+                                text: "Қалың қабықтар, нырқылы үйректер және ашық түстер",
+                            },
+                            { text: "Дұшманнан жүгіру" },
+                        ],
+                        answer: "Жыртқышқа қару жүгіру және сөйлесу",
                     },
                     {
-                      text: "Polar",
-                    },
-                    { text: "Tundra" },
-                  ],
-                  answer: "Ocean",
-                },
-                {
-                  prompt:
-                    "Which of these are not methods of animals protecting themselves from predators?",
-                  answers: [
-                    {
-                      text: "Running towards the predator to talk it out",
-                    },
-                    {
-                      text: "Camouflage",
-                    },
-                    {
-                      text: "Having thick shells, sharp needles, and bright colors",
-                    },
-                    { text: "Running away from enemies" },
-                  ],
-                  answer: "Running towards the predator to talk it out",
-                },
-                {
-                  prompt: "How has a turtle adapted to its environment?",
-                  answers: [
-                    {
-                      text: "Quick, sharp movements",
+                        prompt: "Қалапа өз орташағына қалай үйлеседі?",
+                        answers: [
+                            {
+                                text: "Тез, қатты қозғалыс",
+                            },
+                            {
+                                text: "Ұшу қабілеті",
+                            },
+                            {
+                                text: "Тамаша көру қабілеті",
+                            },
+                            {
+                                text: "Әр түрлі өкше аяқ, ауыз және қабықтар",
+                            },
+                        ],
+                        answer: "Әр түрлі өкше аяқ, ауыз және қабықтар",
                     },
                     {
-                      text: "Ability to fly",
+                        prompt: "Жануарлар жер астында және жер үстінде тұру мүмкін бе?",
+                        answers: [
+                            {
+                                text: "Шыны",
+                            },
+                            {
+                                text: "Жалған",
+                            },
+                        ],
+                        answer: "Шыны",
                     },
-                    {
-                      text: "Amazing eyesight",
-                    },
-                    {
-                      text: "Different shaped feet, mouth, and shells",
-                    },
-                  ],
-                  answer: "Different shaped feet, mouth, and shells",
-                },
-                {
-                  prompt: "Can animals live both underground and above ground?",
-                  answers: [
-                    {
-                      text: "True",
-                    },
-                    {
-                      text: "False",
-                    },
-                  ],
-                  answer: "True",
-                },
-              ],
+                ],
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Can you name three underground animals? Explain how these animals have adapted to their surroundings and why their current environment is best.",
-                    placeholder: "The animals I want to talk about are..",
-                    image: require("../../../../assets/openresponse/rabbit.png"),
-                  },
-                ],
-              },
+                navigation: "Сурет Бум",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Сурет Бум
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Сен жер астындагы үш жануарды атауыңыз мүмкін бе? Осы жануарлар өздерінің қоршағанына қалай үйлеседі және олардың ағымдық ортасы неліктен жақсы екенін түсіндіріңіз.",
+                            placeholder: "Мен талқылауға қалайды жануарларды таңдаймын..",
+                            image: require("../../../../assets/openresponse/rabbit.png"),
+                        },
+                    ],
+                },
             },
-          },
+        },
+        
         },
 
         /* 
@@ -1163,8 +1161,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do crocodiles prepare for the summer? Specifically, when there is drought?",
-                    placeholder: "Crocodiles..",
+                    text: "Құйрық қандай қолай құрағышты жайып береді? Жеккөзде, қолашайын жағдайда қандай жағдайда?",
+                    placeholder: "Құйрықтар..",
                     image: require("../../../../assets/openresponse/croc.png"),
                   },
                 ],
@@ -1177,112 +1175,75 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "Why do birds migrate?",
+                  prompt: "Құстар не үшін көшеді?",
                   answers: [
                     {
-                      text: "To look for resources, mainly food and nesting locations",
+                      text: "Ресурстарды іздеп, негізінен дамыту орындары мен ұшақ орны",
                     },
                     {
-                      text: "To escape the predators",
+                      text: "Жыртқыштардан қашу үшін",
                     },
                     {
-                      text: "Birds are generally nomadic creatures and don’t stay in one place",
+                      text: "Құстар өздері өзгеріске ұшыратын тұлғалар және бір жерде тұрмайды",
                     },
-                    { text: "To practice their flight" },
+                    { text: "Ұшу қабілетін жаттығу үшін" },
                   ],
-                  answer:
-                    "To look for resources, mainly food and nesting locations",
+                  answer: "Ресурстарды іздеп, негізінен дамыту орындары мен ұшақ орны",
                 },
                 {
-                  prompt: "Do all birds follow the same migration patterns?",
+                  prompt: "Барлық құстар бірдей көшу үлгілеріне ере ме?",
                   answers: [
                     {
-                      text: "True",
+                      text: "Шын",
                     },
                     {
-                      text: "False",
+                      text: "Жалған",
                     },
                   ],
-                  answer: "False",
+                  answer: "Жалған",
                 },
                 {
-                  prompt: "Why do bears prepare for the winter?",
+                  prompt: "Аюлар қыстағы қаншалық дайындалу?",
                   answers: [
                     {
-                      text: "The winter is cold",
+                      text: "Қыс суық",
                     },
                     {
-                      text: "Bears cannot find food in this climate",
+                      text: "Бұл климатта айулар тамақ таба алмайды",
                     },
                     {
-                      text: "Spend quality time with their loved ones",
+                      text: "Сүйгендерімен көп уақыт өткізу",
                     },
                     {
-                      text: "All of the above",
+                      text: "Барлығы жоғарыда",
                     },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы жоғарыда",
                 },
                 {
                   prompt:
-                    "What should you not do when taking a trip out in nature?",
+                    "Табиғатқа саяхатқа шығатын кезде сіз не істемеуіңіз керек?",
                   answers: [
                     {
-                      text: "Leave a trace on the nature trail to mark your accomplishment",
+                      text: "Табиғат жолында өз бағасыңызды белгілеу үшін из болдырыңыз",
                     },
                     {
-                      text: "Walk briskly",
+                      text: "Жылдам жүру",
                     },
                     {
-                      text: "Collect rubbish",
+                      text: "Шығын жинау",
                     },
                     {
-                      text: "Use refillable water bottles",
+                      text: "Толтыруға болатын су шышасын пайдалану",
                     },
                   ],
-                  answer:
-                    "Leave a trace on the nature trail to mark your accomplishment",
+                  answer: "Табиғат жолында өз бағасыңызды белгілеу үшін из болдырыңыз",
                 },
               ],
             },
-            snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/save-animals-bg.jpg"),
-              prompt:
-                "Take a picture of an animal that needs to be protected more.",
-            },
-            reorder: {
-              navigation: "Reorder",
-              icon: require("../../../../assets/reorder.png"),
-              backgroundColor: "pink",
-              prompt: "What order are the seasons in? Start from January.",
-              data: [
-                {
-                  text: "Winter",
-                  dormant: "coral",
-                  active: "#DB756B",
-                },
-                {
-                  text: "Fall",
-                  dormant: "pink",
-                  active: "#ffacbb",
-                },
-                {
-                  text: "Summer",
-                  dormant: "dodgerblue",
-                  active: "#3873E0",
-                },
-                {
-                  text: "Spring",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-              ],
-            },
-          },
+          }
         },
+      
 
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1320,7 +1281,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/bones-bg.jpg"),
               prompt:
-                "Take a picture of an animal with legs. Take note of how their bones might be different from yours.",
+                "Аяқтары бар жануардың суретін алыңыз. Олардың сүйектері сіздікімен қалай әр түрлі екеніне назар аударыңыз.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -1333,8 +1294,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "List many of the functions of the human skeleton.",
-                    placeholder: "The human skeleton..",
+                    text: "Адам сүйегінің көптеген функцияларын тізімдеп шығарыңыз.",
+                    placeholder: "Адам сүйегі..",
                     image: require("../../../../assets/openresponse/anatomy.png"),
                   },
                 ],
@@ -1345,36 +1306,36 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Order from least to greatest the amount of bones a human has at each stage.",
+                "Адамның әр қай өмір жолындағы сүйек санын аздықтан көбейту бойынша ретке келтіріңіз.",
               data: [
                 {
-                  text: "Puberty",
-                  dormant: "#ffa500",
-                  active: "#e59400",
-                },
-                {
-                  text: "Childhood",
+                  text: "Балалық жас",
                   dormant: "#19a127",
                   active: "#169023",
                 },
                 {
-                  text: "Teenage years",
+                  text: "Болашақ жас",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+                {
+                  text: "Жас жас",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
-
+        
                 {
-                  text: "Senior years",
+                  text: "Қарт жас",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Infancy",
+                  text: "Шағала жас",
                   dormant: "#d38f9f",
                   active: "#cd8193",
                 },
                 {
-                  text: "Adulthood",
+                  text: "Ержет жас",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
@@ -1383,61 +1344,62 @@ export const Grade1 = {
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different bones in the human body.",
+              description: "Адам өміріндегі әр түрлі сүйектерді сәйкестендіріңіз.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Ribs",
+                  name: "Ребра",
                   image: require("../../../../assets/memory/skeleton.png"),
                 },
                 {
-                  name: "Ribs",
+                  name: "Ребра",
                 },
                 {
                   type: "image",
-                  name: "Pelvic bone",
+                  name: "Бедренный кость",
                   image: require("../../../../assets/memory/pelvis.png"),
                 },
                 {
-                  name: "Pelvic bone",
+                  name: "Бедренный кость",
                 },
                 {
                   type: "image",
-                  name: "Skull",
+                  name: "Тау жасық",
                   image: require("../../../../assets/memory/skull.png"),
                 },
                 {
-                  name: "Skull",
+                  name: "Тау жасық",
                 },
                 {
                   type: "image",
-                  name: "Upper limbs",
+                  name: "Жоғары ішек",
                   image: require("../../../../assets/memory/human-back.png"),
                 },
                 {
-                  name: "Upper limbs",
+                  name: "Жоғары ішек",
                 },
                 {
                   type: "image",
-                  name: "Spine",
+                  name: "Омыршақ",
                   image: require("../../../../assets/memory/spinal-column.png"),
                 },
                 {
-                  name: "Spine",
+                  name: "Омыршақ",
                 },
                 {
                   type: "image",
-                  name: "Lower limbs",
+                  name: "Төменгі ішек",
                   image: require("../../../../assets/memory/running.png"),
                 },
                 {
-                  name: "Lower limbs",
+                  name: "Төменгі ішек",
                 },
               ],
             },
           },
+        
         },
 
         /* 
@@ -1476,32 +1438,33 @@ export const Grade1 = {
           },
           minigames: {
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "List many of the functions of our muscles.",
-                    placeholder: "Our muscles..",
-                    image: require("../../../../assets/openresponse/strong.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Біздің мүшелеріміздің көптеген функцияларын тізімдегіңіз.",
+                            placeholder: "Біздің мүшелер..",
+                            image: require("../../../../assets/openresponse/strong.png"),
+                        },
+                    ],
+                },
             },
             snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
-              prompt:
-                "Take a picture of you smiling. Don't forget to smile big!",
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundImage: require("../../../../assets/snapshots/smile-bg.jpg"),
+                prompt:
+                    "Өзіңізді күлкілі қызықты қылу үшін сурет жасаңыз. Үлкен күлкіл жасауды ұмытпаңыз!",
             },
-          },
+        },
+        
         },
 
         /* 
