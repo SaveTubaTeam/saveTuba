@@ -165,11 +165,11 @@ const LoginScreen = () => {
           </ButtonOutLine>
 
           {/* This posted the data that was pulled from the post method above */}
-          {/* <Button onPress={postData}>
+          <Button onPress={postData}>
             <TitleText color="secondary" size="body">
               Post
             </TitleText>
-          </Button> */}
+          </Button>
 
           {/* <Button onPress={changeData}>
             <TitleText color="secondary" size="body">

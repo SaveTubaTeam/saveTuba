@@ -43,7 +43,7 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
   const imageMap = useSelector(state => state.imageMap.imageData);
   const nav = useNavigation();
   const { t } = useTranslation();
-  console.log("LD: ", lessonsData);
+  // console.log("LD: ", lessonsData);
 
   const renderItem = ({ item }) => {
     return item.get("title") ==

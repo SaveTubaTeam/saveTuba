@@ -25,8 +25,8 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nGr. ", lessonData, "\nL. ", selectedLesson);
-
+  // console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nL. ", selectedLesson, "\nN", navigation);
+  console.log("\nGr. ", lessonData);
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
@@ -64,7 +64,7 @@ function IndividualLessonHandler({
           {() => (
             <MemoryHandler
               data={
-                lessonData[selectedLesson].minigames.memory
+                lessonData.get("minigames").get("memory")
               }
             />
           )}
@@ -87,7 +87,7 @@ function IndividualLessonHandler({
           {() => (
             <SortingHandler
               data={
-                lessonData[selectedLesson].minigames.sorting.content
+                lessonData.get("minigames").get("sorting").content
               }
             />
           )}
@@ -110,7 +110,7 @@ function IndividualLessonHandler({
           {() => (
             <QuizHandler
               data={
-                lessonData[selectedLesson].minigames.quiz
+                lessonData.get("minigames").get("quiz")
               }
             />
           )}
@@ -133,7 +133,7 @@ function IndividualLessonHandler({
           {() => (
             <OpenResponseHandler
               questionSet={
-                lessonData[selectedLesson].minigames.openresponse.data
+                lessonData.get("minigames").get("openresponse").data
               }
               navigation={navigation}
             />
@@ -159,7 +159,7 @@ function IndividualLessonHandler({
 
             <OpenResponseHandler
               questionSet={
-                lessonData[selectedLesson].minigames.openresponse_2.data
+                lessonData.get("minigames").get("openresponse_2").data
               }
               navigation={navigation}
             />
@@ -184,7 +184,7 @@ function IndividualLessonHandler({
           {() => (
             <SnapshotHandler
               data={
-                lessonData[selectedLesson].minigames.minigames.snapshot
+                lessonData.get("minigames").get("minigames").snapshot
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
@@ -211,7 +211,7 @@ function IndividualLessonHandler({
           {() => (
             <ReorderHandler
               info={
-                lessonData[selectedLesson].minigames.minigames.reorder
+                lessonData.get("minigames").get("reorder")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
@@ -238,7 +238,7 @@ function IndividualLessonHandler({
           {() => (
             <MasteryHandler
               data={
-                lessonData[selectedLesson].minigames.mastery
+                lessonData.get("minigames").mastery
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}

@@ -89,17 +89,19 @@ function LessonComponent({
   // };
   // masteryData();
 
+  console.log("LessonComp: ", lessonData);
+
   const renderItem = ({ item }) => {
     return (
       <>
         <Adventure
           onPress={() => {
-            nav.navigate(item.navigation);
+            nav.navigate(item.get("navigation"));
           }}
         >
           <View
             style={{
-              backgroundColor: item.backgroundColor,
+              backgroundColor: item.get("backgroundColor"),
               height: 150,
               borderRadius: 20,
               justifyContent: "center",
@@ -116,7 +118,7 @@ function LessonComponent({
               source={item.icon}
             ></Image>
             <TitleText size="subtitle" color="secondary">
-              {item.navigation}
+              {item.get("navigation")}
             </TitleText>
           </View>
         </Adventure>
@@ -146,18 +148,18 @@ function LessonComponent({
       <Container>
         <Header
           title={t("common:lesson")}
-          back={lessonData.navigation}
+          back={lessonData.get("navigation")}
           navigation={navigation}
         />
         <Tower
           source={
-            lessonData.thumbnail
+            lessonData.get("thumbnail")
           }
         />
         <Head>
           <TitleText size="title">
             {
-              lessonData.title
+              lessonData.get("title")
             }
           </TitleText>
           <Spacer size="large" />
@@ -166,10 +168,11 @@ function LessonComponent({
         </Head>
 
         <FlatList // The flatlist used to load minigames and their data.
+          // Why are both needed in this Flatlist
           data={
-            lessonData.minigames &&
+            lessonData.get("minigames") &&
             Object.values(
-              lessonData.minigames
+              lessonData.get("minigames")
             )
           }
           numColumns={2}
@@ -193,7 +196,7 @@ function LessonComponent({
 
 
             // Previous implementation
-
+            // Implemented by Hayden to show two different mastery cards. Do not delete
             // <FlatList
             //   data={
             //     selectedGrade.chapters[selectedChapter].lessons[selectedLesson]

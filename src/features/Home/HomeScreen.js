@@ -13,14 +13,9 @@ import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
-// import { createImageMap } from "../Grades/Handlers/Database";
 import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
-
-const ImageBg = styled.ImageBackground`
-  height: 100%;
-`;
 
 function HomeView() {
   const navigation = useNavigation();
@@ -158,6 +153,10 @@ const style = StyleSheet.create({
     color: "white",
   },
 });
+
+const ImageBg = styled.ImageBackground`
+  height: 100%;
+`;
 
 
 const mapStateToProps = (store) => ({
