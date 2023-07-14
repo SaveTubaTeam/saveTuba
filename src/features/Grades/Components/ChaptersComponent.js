@@ -36,12 +36,10 @@ const Icon = styled.Image`
   top: -20px;
 `;
 
-function ChaptersComponent({ selectedGrade, navigation, imageMap }) {
+function ChaptersComponent({ gradeData, navigation, imageMap }) {
   const nav = useNavigation();
   const { t } = useTranslation();
-  // console.log("ICONS: ", imageMap);
   const renderItem = ({ item }) => {
-    console.log("Location: ", item.icon, " ICONS: ", imageMap["assets/chapter-icons/location.png"]);
     return (
       <Chapter
         onPress={() => {
@@ -88,7 +86,7 @@ function ChaptersComponent({ selectedGrade, navigation, imageMap }) {
         />
         <FlatList
           style={{ width: "100%" }}
-          data={selectedGrade}
+          data={gradeData}
           renderItem={renderItem}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}

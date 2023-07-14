@@ -12,6 +12,8 @@ import CountryFlag from "react-native-country-flag";
 import styled from "styled-components/native";
 
 import { BodyText } from "../../../components/body-text.component";
+import { useDispatch } from "react-redux";
+import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
 
 const Row = styled.View`
   flex-direction: row;
@@ -32,10 +34,7 @@ const Flag = ({ source }) => {
 };
 
 const LANGUAGES = [
-  {
-    code: "kk",
-    label: <Flag source={require("../../../../assets/kz.jpeg")} />,
-  },
+  { code: "kk", label: <Flag source={require("../../../../assets/kz.jpeg")} /> },
   { code: "ru", label: <Flag source={require("../../../../assets/ru.png")} /> },
   { code: "en", label: <Flag source={require("../../../../assets/en.png")} /> },
 ];

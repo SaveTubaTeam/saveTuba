@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 // import { createImageMap } from "../Grades/Handlers/Database";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,7 +27,7 @@ function HomeView() {
   const { t } = useTranslation();
 
   const imageMap = useSelector(state => state.imageMap.imageData);
-
+  // console.log("==> ", imageMap);
   return ( // source={require("../../../assets/homebg.png")}
     <ImageBg resizeMode="cover" source={{ uri: imageMap["assets/homebg.png"] }}>
       <ScrollView style={{ paddingTop: 50 }}>

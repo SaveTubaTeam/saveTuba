@@ -1,16 +1,15 @@
-import React from 'react';
-// import { t } from "i18next";
 import { useNavigation } from "@react-navigation/native";
+import { TitleText } from "./title-text.component";
 import { StyleSheet, View } from 'react-native';
-import { useTranslation } from "react-i18next";
 import { TouchableOpacity } from 'react-native';
+import { useTranslation } from "react-i18next";
+import React from 'react';
 import {
     // Mastery,
     // Adventure,
     // Header,
     ImageBg,
 } from "./Grades/grades.styles";
-import { TitleText } from "./title-text.component";
 
 
 const styles = StyleSheet.create({
@@ -22,24 +21,15 @@ const styles = StyleSheet.create({
 
 
 export const MasteryFlex = ({
-    data
-  }) => {
+    lessonData,
+    selectedChapter,
+    selectedLesson,
+    navigation
+}) => {
     const nav = useNavigation();
     const { t } = useTranslation();
 
-    // console.log("In mastery-flex");
-    // selectedGrade, selectedChapter, selectedLesson, navigation
-    const selectedChapter = data[1];
-    const selectedLesson = data[2];
-    const lessonData = data[0].chapters[selectedChapter].lessons[selectedLesson];
-    // console.log(lessonData["mastery_2"]);
-    // if (typeof lessonData["mastery_2"] === "undefined") { 
-    //     console.log("UNDEFINED");
-    // } else{
-    //     console.log("DEFINED");
-    // }
-
-    if (typeof lessonData["mastery_2"] !== "undefined") {
+    if (typeof lessonData !== "undefined") {
         return (
             <View
                 style={[

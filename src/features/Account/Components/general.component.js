@@ -77,9 +77,9 @@ const styles = StyleSheet.create({
 //Settings screen
 
 export const GeneralCard = () => {
+  const navigation = useNavigation();
   const { t } = useTranslation();
 
-  const navigation = useNavigation();
   const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(false);
   const toggleSwitchSE = () =>
     setIsSoundEffectsEnabled((previousState) => !previousState);

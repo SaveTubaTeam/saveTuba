@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components/native";
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -39,17 +39,15 @@ const CurrentLesson = styled.TouchableOpacity`
   margin-bottom: 10px;
 `;
 
-function LessonsComponent({ lessonData, selectedChapter, navigation }) {
-  // console.log("Lessons Comp. Grade", selectedGrade);
+function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
+  const imageMap = useSelector(state => state.imageMap.imageData);
   const nav = useNavigation();
   const { t } = useTranslation();
-  // console.log("LD: ", lessonData);
-  
+  console.log("LD: ", lessonsData);
+
   const renderItem = ({ item }) => {
-    // console.log("ITEM: ", item, "\n\n\n");
-    console.log("title: ", item.get("title"), " navigation: ", item.get("thumbnail"));
-    return item.title ==
-    item.get("title") ? (
+    return item.get("title") ==
+      item.get("title") ? (
       <CurrentLesson
         onPress={() => {
           nav.navigate(item.get("navigation"));
@@ -118,7 +116,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
               width: undefined,
               aspectRatio: 1,
             }}
-            source={item.get("thumbnail")}
+            source={{uri: imageMap[item.get("thumbnail")]}}
           />
         </View>
       </CurrentLesson>
@@ -136,7 +134,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
               height: 100,
               width: 100,
             }}
-            source={item.get("thumbnail")}
+            source={{uri: imageMap[item.get("thumbnail")]}}
           />
           <View
             style={{
@@ -165,7 +163,7 @@ function LessonsComponent({ lessonData, selectedChapter, navigation }) {
         />
         <FlatList
           style={{ width: "100%" }}
-          data={lessonData}
+          data={lessonsData}
           renderItem={renderItem}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}

@@ -1,18 +1,20 @@
-import React, { Component } from "react";
-import styled from "styled-components/native";
-import { ScrollView, Text, TouchableOpacity } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
+import styled from "styled-components/native";
+import { useDispatch } from "react-redux";
+import React from "react";
 
-import { auth } from "../../../../firebase";
+import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
+import { SafeArea } from "../../../components/safe-area.component";
 import { PersonalCard } from "../Components/personal.component";
 import { GeneralCard } from "../Components/general.component";
-import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
-import { connect } from "react-redux";
-
 import SignOut from "../Components/signouut.component";
+import { auth } from "../../../../firebase";
+import { connect } from "react-redux";
+// import { AchievementContext } from "../../../contexts/AchievementContext";
 
-import { AchievementContext } from "../../../contexts/AchievementContext";
 const Button = styled(TouchableOpacity)`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   width: 60%;
@@ -36,8 +38,21 @@ const Container = styled.View`
 `;
 
 function AccountScreen() {
+
+  const { i18n } = useTranslation();
+  const selectedLanguageCode = i18n.language;
+  console.log("Code: ", selectedLanguageCode);
+
   const navigation = useNavigation();
   const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
+
+    if (selectedLanguageCode === "kk") {
+      useDispatch(setKazakh());
+    } else if (selectedLanguageCode === "ru") {
+      useDispatch(setRussian());
+    } else if (selectedLanguageCode === "en") {
+      useDispatch(setEnglish());
+    }
 
   const handleSignOut = () => {
     auth
@@ -56,9 +71,9 @@ function AccountScreen() {
           <Spacer size="large" />
 
           <GeneralCard />
-          <SignOut navigation={navigation}/>
-            
-       
+          <SignOut navigation={navigation} />
+
+
         </Container>
       </ScrollView>
     </SafeArea>

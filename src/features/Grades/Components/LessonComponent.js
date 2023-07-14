@@ -189,7 +189,7 @@ function LessonComponent({
           }}
           ListFooterComponent={
 
-            <MasteryFlex data={[lessonData, selectedChapter, selectedLesson, navigation]} />
+            <MasteryFlex lessonData={lessonData} selectedChapter={selectedChapter} selectedLesson={selectedLesson} navigation={navigation} />
 
 
             // Previous implementation

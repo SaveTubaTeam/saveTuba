@@ -8,6 +8,7 @@ import { auth } from "../../../firebase";
 import { changeData, postData } from "../Grades/Handlers/Database";
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
+import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";
 
 
@@ -62,16 +63,26 @@ const ButtonOutLine = styled.TouchableOpacity`
   `;
 
 const LoginScreen = () => {
-  
+  const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
+  const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-  const { t } = useTranslation();
-  const navigation = useNavigation();
-  
-  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchImages());
+
+    const language = i18n.language;
+    if (language === "en") { //English
+      dispatch(setEnglish());
+      console.log("set language to en");
+    } else if (language === "ru") { //Russian
+      dispatch(setRussian());
+      console.log("set language to ru");
+    } else if (language === "kk") { //Kazakh
+      dispatch(setKazakh());
+      console.log("set language to kk");
+    }
 
     if (auth.currentUser) {
       navigation.replace("HomePage");
@@ -162,7 +173,7 @@ const LoginScreen = () => {
 
           {/* <Button onPress={changeData}>
             <TitleText color="secondary" size="body">
-              Post
+              Change Data
             </TitleText>
           </Button> */}
         </ButtonContainer>

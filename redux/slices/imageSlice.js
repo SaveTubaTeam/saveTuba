@@ -8,16 +8,14 @@ const initialState = {
 };
 
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
-    const imageMap = Object.create(null);
+    const imageMap = {};
     const map = await createImageMap("assets", imageMap).then((result) => {
-        // console.log("R: ", result);
-        console.log("ImageMap Test =======> ", result["assets/badges/badge1.png"]);
         return result;
     }).catch((error) => {
         console.log("Error in setting state: ", error);
         return error.message;
     });
-    // console.log("R: ", map);
+    console.log("Images Fetched");
     return map;
 });
 
@@ -39,16 +37,6 @@ const mapSlice = createSlice({
             state.imageData = (Object.create(null));
             state.error = action.error.message;
         });
-        // Async functions without async function
-
-        // setImageMap: (state) => { 
-        //     createImageMap().then((result) => {
-        //         console.log("R: ", result);
-        //         state.imageData = result;
-        //     }).catch((error) => {
-        //         console.log("Error in setting state: ", error);
-        //     });
-        // }
     }
 });
 
