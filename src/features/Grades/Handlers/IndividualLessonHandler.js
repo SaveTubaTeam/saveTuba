@@ -238,7 +238,7 @@ function IndividualLessonHandler({
           {() => (
             <MasteryHandler
               data={
-                lessonData.get("minigames").mastery
+                lessonData.get("mastery").get("mastery")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
@@ -268,8 +268,7 @@ function IndividualLessonHandler({
 
               <MasteryHandler_2
                 data={
-                  lessonData[selectedLesson].minigames.mastery_2
-
+                  lessonData.get("mastery").get("mastery_2")
                 }
                 lessonData={lessonData}
                 selectedChapter={selectedChapter}

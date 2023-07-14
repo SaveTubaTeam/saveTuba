@@ -23,7 +23,7 @@ import {
 } from "../../../components/Grades/grades.styles";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
-import mastery from "../../../components/Translations/languages/en/mastery";
+import { useSelector } from "react-redux";
 
 const Container = styled.View`
   height: 100%;
@@ -83,13 +83,7 @@ function LessonComponent({
   const nav = useNavigation();
   const { t } = useTranslation();
 
-  // const [metaData, setMetaData] = useState();
-  // const masteryData = () => {
-  //   setMetaData(selectedGrade, selectedChapter, selectedLesson, navigation);
-  // };
-  // masteryData();
-
-  console.log("LessonComp: ", lessonData);
+  const imageMap = useSelector(state => state.imageMap.imageData);
 
   const renderItem = ({ item }) => {
     return (
@@ -115,7 +109,7 @@ function LessonComponent({
                 width: undefined,
                 marginBottom: 5,
               }}
-              source={item.icon}
+              source={{uri: imageMap[item.get("icon")]}}
             ></Image>
             <TitleText size="subtitle" color="secondary">
               {item.get("navigation")}
