@@ -31,7 +31,8 @@ async function getLessonsData(grade, chpt, numLessons, language) {
     chpt = "Chapter".concat(chpt.toString());
     for (var i = 1; i <= numLessons; i++) {
         var lessonObject = new Map(); // may need to move back up
-        const minigameList = new Map();
+        // const minigameList = new Map(); // Tried map and did not work due to the FlatList loading the minigame components
+        const minigameList = [];
         const lessonNum = "Lesson".concat(i.toString());
 
         // This will pull data from each language in the DB. Could have been done in less lines but ctrl c was easier
@@ -55,7 +56,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
             // pulling the minigames
             await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
                 snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.set(doc.id, doc.data());
+                    minigameList.push(doc.data());
 
                 });
                 lessonObject.set("minigames", minigameList);
@@ -93,7 +94,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
             // pulling the minigames
             await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
                 snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.set(doc.id, doc.data());
+                    minigameList.push(doc.data());
 
                 });
                 lessonObject.set("minigames", minigameList);
@@ -131,7 +132,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
             // pulling the minigames
             await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
                 snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.set(doc.id, doc.data());
+                    minigameList.push(doc.data());
 
                 });
                 lessonObject.set("minigames", minigameList);

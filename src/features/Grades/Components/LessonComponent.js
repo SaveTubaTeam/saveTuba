@@ -82,20 +82,39 @@ function LessonComponent({
 
   const nav = useNavigation();
   const { t } = useTranslation();
-
   const imageMap = useSelector(state => state.imageMap.imageData);
 
+  // console.log("LD ==> ", lessonData.get("minigames"));
+
+  // try {
+  //   var lessonDataCards = [];
+  //   if (lessonData.get("mastery_2") === undefined || lessonData.get("mastery_2") === null) {
+  //     lessonDataCards.push(lessonData.get("minigames"));
+  //     lessonDataCards.push(lessonData.get("mastery"));
+
+  //   } else {
+  //     lessonDataCards.push(lessonData.get("minigames"));
+  //     lessonDataCards.push(lessonData.get("mastery"));
+  //     lessonDataCards.push(lessonData.get("mastery_2"));
+  //   }
+
+  // } catch (error) {
+  //   console.log("Error => ", error);
+  // }
+
+
   const renderItem = ({ item }) => {
+    // console.log("IT: ", item);
     return (
       <>
         <Adventure
           onPress={() => {
-            nav.navigate(item.get("navigation"));
+            nav.navigate(item["navigation"]);
           }}
         >
           <View
             style={{
-              backgroundColor: item.get("backgroundColor"),
+              backgroundColor: item["backgroundColor"],
               height: 150,
               borderRadius: 20,
               justifyContent: "center",
@@ -109,10 +128,10 @@ function LessonComponent({
                 width: undefined,
                 marginBottom: 5,
               }}
-              source={{uri: imageMap[item.get("icon")]}}
+              source={{ uri: imageMap[item["icon"]] }}
             ></Image>
             <TitleText size="subtitle" color="secondary">
-              {item.get("navigation")}
+              {item["navigation"]}
             </TitleText>
           </View>
         </Adventure>
@@ -147,7 +166,7 @@ function LessonComponent({
         />
         <Tower
           source={
-            lessonData.get("thumbnail")
+            { uri: imageMap[lessonData.get("thumbnail")] }
           }
         />
         <Head>
@@ -164,10 +183,10 @@ function LessonComponent({
         <FlatList // The flatlist used to load minigames and their data.
           // Why are both needed in this Flatlist
           data={
-            lessonData.get("minigames") &&
-            Object.values(
-              lessonData.get("minigames")
-            )
+            // throwing weird undefined is not a function error
+            // lessonDataCards[0]
+            lessonData.get("minigames")
+            // && Object.values(lessonData.get("minigames"))
           }
           numColumns={2}
           keyExtractor={(item, index) => index}

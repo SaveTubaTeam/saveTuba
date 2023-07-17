@@ -25,8 +25,18 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
 
+  var lessonCompMap = new Map();
+  for (const minigame in lessonData.get("minigames")) {
+    // console.log("\nMinigame. ", lessonData.get("minigames")[minigame]);
+    lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
+  }
+
   // console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nL. ", selectedLesson, "\nN", navigation);
-  console.log("\nGr. ", lessonData);
+  console.log("\nGr. ", lessonCompMap);
+  console.log("\nMemory. ", lessonCompMap.get("Memory"));
+  console.log("\nSnapshot. ", lessonCompMap.get("Snapshot"));
+  console.log("\nSorting. ", lessonCompMap.get("Sorting"));
+  console.log("\nImage Boom. ", lessonCompMap.get("Image Boom"));
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
@@ -64,7 +74,7 @@ function IndividualLessonHandler({
           {() => (
             <MemoryHandler
               data={
-                lessonData.get("minigames").get("memory")
+                lessonCompMap.get("memory")
               }
             />
           )}
@@ -87,7 +97,7 @@ function IndividualLessonHandler({
           {() => (
             <SortingHandler
               data={
-                lessonData.get("minigames").get("sorting").content
+                lessonCompMap.get("sorting").content
               }
             />
           )}
@@ -110,7 +120,7 @@ function IndividualLessonHandler({
           {() => (
             <QuizHandler
               data={
-                lessonData.get("minigames").get("quiz")
+                lessonCompMap.get("quiz")
               }
             />
           )}
@@ -133,7 +143,7 @@ function IndividualLessonHandler({
           {() => (
             <OpenResponseHandler
               questionSet={
-                lessonData.get("minigames").get("openresponse").data
+                lessonCompMap.get("openresponse").data
               }
               navigation={navigation}
             />
@@ -159,7 +169,7 @@ function IndividualLessonHandler({
 
             <OpenResponseHandler
               questionSet={
-                lessonData.get("minigames").get("openresponse_2").data
+                lessonCompMap.get("openresponse_2").data
               }
               navigation={navigation}
             />
@@ -184,7 +194,7 @@ function IndividualLessonHandler({
           {() => (
             <SnapshotHandler
               data={
-                lessonData.get("minigames").get("minigames").snapshot
+                lessonCompMap.get("snapshot")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
@@ -211,7 +221,7 @@ function IndividualLessonHandler({
           {() => (
             <ReorderHandler
               info={
-                lessonData.get("minigames").get("reorder")
+                lessonCompMap.get("reorder")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
