@@ -29,12 +29,14 @@ const ModalContainer = styled.View`
   border: 2px solid #cce882;
 `;
 
-const ImagePrompt = ({ questions }) => {
+const ImagePrompt = ({ questions, imageMap }) => {
   const [currentPrompt, setPrompt] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [val, setVal] = React.useState("");
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
+
+  console.log("QW:", questions);
   const Modko = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
@@ -95,7 +97,7 @@ const ImagePrompt = ({ questions }) => {
             }}
           >
             <ImageBg
-              source={questions.prompts[currentPrompt].image}
+              source={{uri: imageMap[questions.prompts[currentPrompt].image]}}
               resizeMode="cover"
             ></ImageBg>
           </View>
@@ -166,7 +168,7 @@ const ImagePrompt = ({ questions }) => {
   );
 };
 
-const OpenResponseHandler = ({ questionSet }) => {
+const OpenResponseHandler = ({ questionSet, imageMap }) => {
   // getLessonData();
   // const navigation = useNavigation();
   // console.log(navigation);
@@ -174,7 +176,7 @@ const OpenResponseHandler = ({ questionSet }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBg
-        source={require("../../../../../assets/promptBackground.jpg")}
+        source={{uri: imageMap["assets/promptBackground.jpg"]}}
         resizeMode="cover"
         style={{
           flex: 1,
@@ -186,7 +188,7 @@ const OpenResponseHandler = ({ questionSet }) => {
             width: "90%",
           }}
         >
-          <ImagePrompt questions={questionSet} />
+          <ImagePrompt questions={questionSet} imageMap={imageMap} />
         </View>
       </ImageBg>
     </View>

@@ -82,7 +82,7 @@ const Question = styled.View`
 const SecondScreen = ({ data }) => {
   const navigation = useNavigation();
   return (
-    <ImageBg source={data.content[0].imageBg}>
+    <ImageBg source={imageMap[data.content[0].imageBg]}>
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Prompt>
           <TitleText>
@@ -99,13 +99,14 @@ const SecondScreen = ({ data }) => {
   );
 };
 
-const Start = ({ data }) => {
+const Start = ({ data, imageMap }) => {
   const navigation = useNavigation();
 
   const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
+  console.log("==> ", data);
 
   const checkAnswer = (odg) => {
     if (odg == correctAnswer) {
@@ -113,7 +114,7 @@ const Start = ({ data }) => {
     }
     // console.log("Score: " + score + "/4");
   };
-  const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
+  // const [currentPrompt, setCurrentPrompt] = useState(data.get("content")[0].prompt);
 
   const [visible, setVisible] = useState(false);
 
@@ -208,7 +209,7 @@ const Start = ({ data }) => {
 
   return (
     <>
-      <ImageBg source={data.imageBg}>
+      <ImageBg source={imageMap[imageBg]}>
         <Container>
           <Question>
             <TitleText size="title">{currentPrompt}</TitleText>

@@ -23,7 +23,6 @@ import {
 } from "../../../components/Grades/grades.styles";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 
 const Container = styled.View`
   height: 100%;
@@ -74,6 +73,7 @@ const ProgContainer = styled.View`
 `;
 
 function LessonComponent({
+  imageMap,
   lessonData,
   selectedChapter,
   selectedLesson,
@@ -82,29 +82,9 @@ function LessonComponent({
 
   const nav = useNavigation();
   const { t } = useTranslation();
-  const imageMap = useSelector(state => state.imageMap.imageData);
 
-  // console.log("LD ==> ", lessonData.get("minigames"));
-
-  // try {
-  //   var lessonDataCards = [];
-  //   if (lessonData.get("mastery_2") === undefined || lessonData.get("mastery_2") === null) {
-  //     lessonDataCards.push(lessonData.get("minigames"));
-  //     lessonDataCards.push(lessonData.get("mastery"));
-
-  //   } else {
-  //     lessonDataCards.push(lessonData.get("minigames"));
-  //     lessonDataCards.push(lessonData.get("mastery"));
-  //     lessonDataCards.push(lessonData.get("mastery_2"));
-  //   }
-
-  // } catch (error) {
-  //   console.log("Error => ", error);
-  // }
-
-
+  // console.log("IT: ", lessonData);
   const renderItem = ({ item }) => {
-    // console.log("IT: ", item);
     return (
       <>
         <Adventure
@@ -161,7 +141,7 @@ function LessonComponent({
       <Container>
         <Header
           title={t("common:lesson")}
-          back={lessonData.get("navigation")}
+          back={"Chapter"}
           navigation={navigation}
         />
         <Tower

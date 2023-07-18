@@ -3,9 +3,10 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 import LessonComponent from "../Components/LessonComponent";
-import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler";
+import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler";
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
@@ -24,19 +25,19 @@ function IndividualLessonHandler({
 }) {
   const navigation = useNavigation();
   const { t } = useTranslation();
+  const imageMap = useSelector(state => state.imageMap.imageData);
 
   var lessonCompMap = new Map();
   for (const minigame in lessonData.get("minigames")) {
-    // console.log("\nMinigame. ", lessonData.get("minigames")[minigame]);
     lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
   }
 
-  // console.log("Inside of the individual lesson handler: \nCh. ", selectedChapter, "\nL. ", selectedLesson, "\nN", navigation);
-  console.log("\nGr. ", lessonCompMap);
-  console.log("\nMemory. ", lessonCompMap.get("Memory"));
-  console.log("\nSnapshot. ", lessonCompMap.get("Snapshot"));
-  console.log("\nSorting. ", lessonCompMap.get("Sorting"));
-  console.log("\nImage Boom. ", lessonCompMap.get("Image Boom"));
+  // console.log("Lesson Data: ", lessonData);
+  // console.log("\nGr. ", lessonCompMap);
+  // console.log("\nMemory. ", lessonCompMap.get("Memory"));
+  // console.log("\nSnapshot. ", lessonCompMap.get("Snapshot"));
+  // console.log("\nSorting. ", lessonCompMap.get("Sorting"));
+  // console.log("\nImage Boom. ", lessonCompMap.get("Image Boom"));
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
@@ -49,6 +50,7 @@ function IndividualLessonHandler({
         >
           {() => (
             <LessonComponent
+              imageMap={imageMap}
               lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
@@ -73,9 +75,8 @@ function IndividualLessonHandler({
         >
           {() => (
             <MemoryHandler
-              data={
-                lessonCompMap.get("memory")
-              }
+              data={lessonCompMap.get("Memory")}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -97,8 +98,9 @@ function IndividualLessonHandler({
           {() => (
             <SortingHandler
               data={
-                lessonCompMap.get("sorting").content
+                lessonCompMap.get("Sorting").content
               }
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -120,8 +122,9 @@ function IndividualLessonHandler({
           {() => (
             <QuizHandler
               data={
-                lessonCompMap.get("quiz")
+                lessonCompMap.get("Quiz")
               }
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -143,9 +146,10 @@ function IndividualLessonHandler({
           {() => (
             <OpenResponseHandler
               questionSet={
-                lessonCompMap.get("openresponse").data
+                lessonCompMap.get("Image Boom").data
               }
               navigation={navigation}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -169,9 +173,10 @@ function IndividualLessonHandler({
 
             <OpenResponseHandler
               questionSet={
-                lessonCompMap.get("openresponse_2").data
+                lessonCompMap.get("Image Boom 2").data
               }
               navigation={navigation}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -194,12 +199,13 @@ function IndividualLessonHandler({
           {() => (
             <SnapshotHandler
               data={
-                lessonCompMap.get("snapshot")
+                lessonCompMap.get("Snapshot")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -221,12 +227,13 @@ function IndividualLessonHandler({
           {() => (
             <ReorderHandler
               info={
-                lessonCompMap.get("reorder")
+                lessonCompMap.get("Reorder")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -248,12 +255,13 @@ function IndividualLessonHandler({
           {() => (
             <MasteryHandler
               data={
-                lessonData.get("mastery").get("mastery")
+                lessonData.get("mastery")
               }
               lessonData={lessonData}
               selectedChapter={selectedChapter}
               selectedLesson={selectedLesson}
               navigation={navigation}
+              imageMap={imageMap}
             />
           )}
         </Stack.Screen>
@@ -278,12 +286,13 @@ function IndividualLessonHandler({
 
               <MasteryHandler_2
                 data={
-                  lessonData.get("mastery").get("mastery_2")
+                  lessonData.get("mastery_2")
                 }
                 lessonData={lessonData}
                 selectedChapter={selectedChapter}
                 selectedLesson={selectedLesson}
                 navigation={navigation}
+                imageMap={imageMap}
               />
             )}
         </Stack.Screen>

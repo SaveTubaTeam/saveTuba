@@ -104,7 +104,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
     <NavigationContainer independent>
       <Stack.Navigator>
         <Stack.Screen
-          name={"Chapter".concat(gradeNumber.toString())}
+          name={"Chapter"}
           options={{
             headerShown: false,
           }}
