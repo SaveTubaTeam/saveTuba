@@ -4,8 +4,8 @@ import {
   TextInput,
   ScrollView,
   Modal,
-  Pressable,
   TouchableOpacity,
+  Pressable,
   FlatList,
   Image,
 } from "react-native";

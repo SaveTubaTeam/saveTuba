@@ -2,24 +2,25 @@ import React from "react";
 import {
   StyleSheet,
   View,
-  Button,
   Text,
   Image,
-  ImageBackground as ImageBg,
+  ImageBackground,
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
-// import { renderToString } from "react-dom/server";
-
-
-import { TitleText } from "../../../title-text.component";
+import { renderToString } from "react-dom/server";
 import { Translation } from "react-i18next";
-import { BodyText } from "../../../body-text.component";
-import { Spacer } from "../../../spacer.component";
+
+
+import { TitleText } from "../../../title-text.component.js";
+import { BodyText } from "../../../body-text.component.js";
+import { Spacer } from "../../../spacer.component.js";
 
 
 export class MemoryHandler extends React.Component {
+
   constructor(props) {
+    console.log("Constructor");
     super(props);
     this.renderCards = this.renderCards.bind(this);
     this.resetCards = this.resetCards.bind(this);
@@ -65,29 +66,30 @@ export class MemoryHandler extends React.Component {
 
   render() {
     console.log("Here 3");
-    const restart = renderToString(this.restart());
+    // const restart = renderToString(this.restart());
     return (
-      <View style={styles.container}>
-        <View style={{ alignSelf: "center", width: "80%" }}>
-          <BodyText size="subtitle">{this.props.data.description}</BodyText>
-          <Spacer size="medium" />
-          <TitleText size="caption">Hint: Match images with words.</TitleText>
-        </View>
-        <View style={styles.body}>{this.renderRows.call(this)}</View>
-        <Score score={this.state.score} />
-        <TouchableOpacity
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            paddingBottom: 20,
-          }}
-          onPress={this.resetCards}
-        >
-          <BodyText size="subtitle">
-            <Translation>{(t) => t("common:restart")}</Translation>
-          </BodyText>
-        </TouchableOpacity>
-      </View>
+      <Text> Hello </Text>
+      // <View style={styles.container}>
+      //   <View style={{ alignSelf: "center", width: "80%" }}>
+      //     <BodyText size="subtitle">{this.props.data.description}</BodyText>
+      //     <Spacer size="medium" />
+      //     <TitleText size="caption">Hint: Match images with words.</TitleText>
+      //   </View>
+      //   <View style={styles.body}>{this.renderRows.call(this)}</View>
+      //   <Score score={this.state.score} />
+      //   <TouchableOpacity
+      //     style={{
+      //       justifyContent: "center",
+      //       alignItems: "center",
+      //       paddingBottom: 20,
+      //     }}
+      //     onPress={this.resetCards}
+      //   >
+      //     <BodyText size="subtitle">
+      //       <Translation>{(t) => t("common:restart")}</Translation>
+      //     </BodyText>
+      //   </TouchableOpacity>
+      // </View>
     );
   }
 
@@ -217,7 +219,7 @@ class Card extends React.Component {
 
     if (this.props.is_open && this.props.type) {
       return (
-        <ImageBg
+        <ImageBackground
           source={require("../../../../../assets/block.png")}
           style={{
             flex: 1,
@@ -231,11 +233,11 @@ class Card extends React.Component {
           }}
         >
           <Image source={this.props.image} style={{ width: 55, height: 55 }} />
-        </ImageBg>
+        </ImageBackground>
       );
     } else if (this.props.is_open) {
       return (
-        <ImageBg
+        <ImageBackground
           source={require("../../../../../assets/block.png")}
           style={{
             flex: 1,
@@ -251,28 +253,29 @@ class Card extends React.Component {
           <TitleText size="button" color="secondary">
             {this.props.name}
           </TitleText>
-        </ImageBg>
+        </ImageBackground>
       );
     }
 
     return (
-      <ImageBg
-        source={require("../../../../../assets/block.png")}
-        style={{
-          flex: 1,
-          alignItems: "center",
-          marginRight: 5,
-          marginLeft: 5,
-          justifyContent: "center",
-          width: "100%",
-          height: undefined,
-          aspectRatio: 1,
-        }}
-      >
-        <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
-          <CardSource name={icon_name} size={50} color={icon_color} />
-        </TouchableOpacity>
-      </ImageBg>
+      <Text> Hello </Text>
+      // <ImageBackground
+      //   source={require("../../../../../assets/block.png")}
+      //   style={{
+      //     flex: 1,
+      //     alignItems: "center",
+      //     marginRight: 5,
+      //     marginLeft: 5,
+      //     justifyContent: "center",
+      //     width: "100%",
+      //     height: undefined,
+      //     aspectRatio: 1,
+      //   }}
+      // >
+      //   <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
+      //     <CardSource name={icon_name} size={50} color={icon_color} />
+      //   </TouchableOpacity>
+      // </ImageBackground>
     );
   }
 }
@@ -281,9 +284,10 @@ class Score extends React.Component {
   render() {
     console.log("Here 10");
     return (
-      <View style={styles.score_container}>
-        <Text style={styles.score}>{this.props.score}</Text>
-      </View>
+      <Text> Hello </Text>
+      // <View style={styles.score_container}>
+      //   <Text style={styles.score}>{this.props.score}</Text>
+      // </View>
     );
   }
 }
