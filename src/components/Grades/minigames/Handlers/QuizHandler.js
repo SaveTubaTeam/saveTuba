@@ -79,10 +79,11 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
-const SecondScreen = ({ data }) => {
+const SecondScreen = ({ data, imageMap }) => {
   const navigation = useNavigation();
+  // console.log("Second Screen ==> ", data);
   return (
-    <ImageBg source={imageMap[data.content[0].imageBg]}>
+    <ImageBg source={imageMap[data.content[0]["imageBg"]]}>
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Prompt>
           <TitleText>
@@ -102,19 +103,19 @@ const SecondScreen = ({ data }) => {
 const Start = ({ data, imageMap }) => {
   const navigation = useNavigation();
 
-  const [correct, setCorrect] = useState(false);
+  const [correctAnswer, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
-  console.log("==> ", data);
 
-  const checkAnswer = (odg) => {
-    if (odg == correctAnswer) {
-      setScore(() => score + 1);
-    }
-    // console.log("Score: " + score + "/4");
-  };
-  // const [currentPrompt, setCurrentPrompt] = useState(data.get("content")[0].prompt);
+  // const checkAnswer = (odg) => {
+  //   if (odg == correctAnswer) {
+  //     setScore(() => score + 1);
+  //   }
+  //   // console.log("Score: " + score + "/4");
+  // };
+  console.log("Start ==> ", data.content[0].prompt);
+  const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
 
   const [visible, setVisible] = useState(false);
 
@@ -138,7 +139,7 @@ const Start = ({ data, imageMap }) => {
             </TouchableOpacity>
             <View>
               <BodyText size="subtitle">
-                {correct == true
+                {correctAnswer == true
                   ? "That's right! Good job ✨"
                   : "Incorrect! Better luck next time 🍀"}
               </BodyText>
@@ -192,7 +193,7 @@ const Start = ({ data, imageMap }) => {
         <Category
           activeOpacity="0.8"
           onPress={() => {
-            if (item.text == data.content[count].answer) {
+            if (item.text == data.content[count].answers) {
               setCorrect(true);
               setScore(() => score + 1);
             } else {
@@ -209,7 +210,7 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={imageMap[imageBg]}>
+      <ImageBg source={{ uri: imageMap[data["imageBg"]] }}>
         <Container>
           <Question>
             <TitleText size="title">{currentPrompt}</TitleText>
@@ -270,16 +271,16 @@ const Start = ({ data, imageMap }) => {
   );
 };
 
-const QuizHandler = ({ data, navigation, route, currentUser, addAchievement }) => {
-  // console.warn(currentUser);
+const QuizHandler = ({ data, addAchievement, imageMap }) => {
+  // console.log("Handler ==> ", data);
   addAchievement("first-quiz-minigame");
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={data} />}
+        {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem}/>
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem} />
     </Stack.Navigator>
   );
 };

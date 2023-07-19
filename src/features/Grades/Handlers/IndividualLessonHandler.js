@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
-import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler";
+import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler"; //works
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2";
@@ -38,6 +38,7 @@ function IndividualLessonHandler({
   // console.log("\nSnapshot. ", lessonCompMap.get("Snapshot"));
   // console.log("\nSorting. ", lessonCompMap.get("Sorting"));
   // console.log("\nImage Boom. ", lessonCompMap.get("Image Boom"));
+  // console.log("\nQuiz. ", lessonCompMap);
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
@@ -122,7 +123,7 @@ function IndividualLessonHandler({
           {() => (
             <QuizHandler
               data={
-                lessonCompMap.get("Quiz")
+                lessonCompMap.get("QuizScreen")
               }
               imageMap={imageMap}
             />
