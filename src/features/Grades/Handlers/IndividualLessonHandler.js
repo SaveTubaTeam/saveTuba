@@ -11,7 +11,7 @@ import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandl
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2";
-import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryHandler";
+import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
@@ -26,6 +26,7 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
   const imageMap = useSelector(state => state.imageMap.imageData);
+  // console.log("ImageMap: ", imageMap);
 
   var lessonCompMap = new Map();
   for (const minigame in lessonData.get("minigames")) {

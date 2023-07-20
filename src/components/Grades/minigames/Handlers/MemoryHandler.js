@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
-import { renderToString } from "react-dom/server";
 import { Translation } from "react-i18next";
+// import { renderToString } from "react-dom/server";
 
 
 import { TitleText } from "../../../title-text.component.js";
@@ -20,7 +20,7 @@ import { Spacer } from "../../../spacer.component.js";
 export class MemoryHandler extends React.Component {
 
   constructor(props) {
-    console.log("Constructor");
+    // console.log("Constructor => ", props);
     super(props);
     this.renderCards = this.renderCards.bind(this);
     this.resetCards = this.resetCards.bind(this);
@@ -38,7 +38,7 @@ export class MemoryHandler extends React.Component {
       }
       return this;
     };
-    console.log("Here 1");
+    // console.log("==> ", this.props.data.content);
     let cards = this.props.data.content;
 
     this.cards = cards;
@@ -60,41 +60,38 @@ export class MemoryHandler extends React.Component {
   }
 
   restart() {
-    console.log("Here 2");
     return <Translation>{(t) => t("common:restart")}</Translation>;
   }
 
   render() {
-    console.log("Here 3");
     // const restart = renderToString(this.restart());
     return (
-      <Text> Hello </Text>
-      // <View style={styles.container}>
-      //   <View style={{ alignSelf: "center", width: "80%" }}>
-      //     <BodyText size="subtitle">{this.props.data.description}</BodyText>
-      //     <Spacer size="medium" />
-      //     <TitleText size="caption">Hint: Match images with words.</TitleText>
-      //   </View>
-      //   <View style={styles.body}>{this.renderRows.call(this)}</View>
-      //   <Score score={this.state.score} />
-      //   <TouchableOpacity
-      //     style={{
-      //       justifyContent: "center",
-      //       alignItems: "center",
-      //       paddingBottom: 20,
-      //     }}
-      //     onPress={this.resetCards}
-      //   >
-      //     <BodyText size="subtitle">
-      //       <Translation>{(t) => t("common:restart")}</Translation>
-      //     </BodyText>
-      //   </TouchableOpacity>
-      // </View>
+      // <Text> Hello </Text>
+      <View style={styles.container}>
+        <View style={{ alignSelf: "center", width: "80%" }}>
+          <BodyText size="subtitle">{this.props.data.description}</BodyText>
+          <Spacer size="medium" />
+          <TitleText size="caption">Hint: Match images with words.</TitleText>
+        </View>
+        <View style={styles.body}>{this.renderRows.call(this)}</View>
+        <Score score={this.state.score} />
+        <TouchableOpacity
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            paddingBottom: 20,
+          }}
+          onPress={this.resetCards}
+        >
+          <BodyText size="subtitle">
+            <Translation>{(t) => t("common:restart")}</Translation>
+          </BodyText>
+        </TouchableOpacity>
+      </View>
     );
   }
 
   resetCards() {
-    console.log("Here 4");
     let cards = this.cards.map((obj) => {
       obj.is_open = false;
       return obj;
@@ -111,7 +108,6 @@ export class MemoryHandler extends React.Component {
   }
 
   renderRows() {
-    console.log("Here 5");
     let contents = this.getRowContents(this.state.cards);
     return contents.map((cards, index) => {
       return (
@@ -123,7 +119,6 @@ export class MemoryHandler extends React.Component {
   }
 
   renderCards(cards) {
-    console.log("Here 6");
     return cards.map((card, index) => {
       return (
         <Card
@@ -139,7 +134,6 @@ export class MemoryHandler extends React.Component {
   }
 
   clickCard(id) {
-    console.log("Here 7");
     let selected_pairs = this.state.selected_pairs;
     let current_selection = this.state.current_selection;
     let score = this.state.score;
@@ -188,7 +182,6 @@ export class MemoryHandler extends React.Component {
   }
 
   getRowContents(cards) {
-    console.log("Here 8");
     let contents_r = [];
     let contents = [];
     let count = 0;
@@ -212,7 +205,6 @@ class Card extends React.Component {
   }
 
   render() {
-    console.log("Here 9");
     let CardSource = Ionicons;
     let icon_name = "help-outline";
     let icon_color = "#fff8e7";
@@ -258,36 +250,35 @@ class Card extends React.Component {
     }
 
     return (
-      <Text> Hello </Text>
-      // <ImageBackground
-      //   source={require("../../../../../assets/block.png")}
-      //   style={{
-      //     flex: 1,
-      //     alignItems: "center",
-      //     marginRight: 5,
-      //     marginLeft: 5,
-      //     justifyContent: "center",
-      //     width: "100%",
-      //     height: undefined,
-      //     aspectRatio: 1,
-      //   }}
-      // >
-      //   <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
-      //     <CardSource name={icon_name} size={50} color={icon_color} />
-      //   </TouchableOpacity>
-      // </ImageBackground>
+      // <Text> Hello </Text>
+      <ImageBackground
+        source={require("../../../../../assets/block.png")}
+        style={{
+          flex: 1,
+          alignItems: "center",
+          marginRight: 5,
+          marginLeft: 5,
+          justifyContent: "center",
+          width: "100%",
+          height: undefined,
+          aspectRatio: 1,
+        }}
+      >
+        <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
+          <CardSource name={icon_name} size={50} color={icon_color} />
+        </TouchableOpacity>
+      </ImageBackground>
     );
   }
 }
 
 class Score extends React.Component {
   render() {
-    console.log("Here 10");
     return (
-      <Text> Hello </Text>
-      // <View style={styles.score_container}>
-      //   <Text style={styles.score}>{this.props.score}</Text>
-      // </View>
+      // <Text> Hello </Text>
+      <View style={styles.score_container}>
+        <Text style={styles.score}>{this.props.score}</Text>
+      </View>
     );
   }
 }
