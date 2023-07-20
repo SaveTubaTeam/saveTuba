@@ -109,6 +109,7 @@ export class MemoryHandler extends React.Component {
 
   renderRows() {
     let contents = this.getRowContents(this.state.cards);
+    // console.log("CT: ", contents);
     return contents.map((cards, index) => {
       return (
         <View key={index} style={styles.row}>
@@ -128,6 +129,7 @@ export class MemoryHandler extends React.Component {
           image={card.image}
           is_open={card.is_open}
           clickCard={this.clickCard.bind(this, card.id)}
+          imageMap={this.props.imageMap}
         />
       );
     });
@@ -202,6 +204,7 @@ export class MemoryHandler extends React.Component {
 class Card extends React.Component {
   constructor(props) {
     super(props);
+    // console.log("==? ", props);
   }
 
   render() {
@@ -212,7 +215,7 @@ class Card extends React.Component {
     if (this.props.is_open && this.props.type) {
       return (
         <ImageBackground
-          source={require("../../../../../assets/block.png")}
+          source={{ uri: this.props.image }}
           style={{
             flex: 1,
             alignItems: "center",
@@ -224,13 +227,13 @@ class Card extends React.Component {
             aspectRatio: 1,
           }}
         >
-          <Image source={this.props.image} style={{ width: 55, height: 55 }} />
+          <Image source={{ uri: this.props.imageMap[this.props.image] }} style={{ width: 55, height: 55 }} />
         </ImageBackground>
       );
     } else if (this.props.is_open) {
       return (
         <ImageBackground
-          source={require("../../../../../assets/block.png")}
+          source={{ uri: this.props.imageMap["assets/block.png"] }}
           style={{
             flex: 1,
             alignItems: "center",
@@ -252,7 +255,7 @@ class Card extends React.Component {
     return (
       // <Text> Hello </Text>
       <ImageBackground
-        source={require("../../../../../assets/block.png")}
+        source={{ uri: this.props.imageMap["assets/block.png"] }}
         style={{
           flex: 1,
           alignItems: "center",

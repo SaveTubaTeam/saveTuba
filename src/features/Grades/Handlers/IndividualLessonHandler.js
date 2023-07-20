@@ -8,10 +8,10 @@ import { useSelector } from "react-redux";
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler"; //works
+import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler"; //works
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2";
-import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler";
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 

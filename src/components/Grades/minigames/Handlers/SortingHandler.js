@@ -62,10 +62,11 @@ const SubmitButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
-const SecondScreen = ({ data }) => {
+const SecondScreen = ({ data, imageMap }) => {
   const navigation = useNavigation();
+  console.log("==> ", imageMap);
   return (
-    <ImageBg source={data.imageBg}>
+    <ImageBg source={{ uri: imageMap[data.imageBg] }}>
       <Container>
         <Prompt>
           <TitleText>
@@ -81,7 +82,8 @@ const SecondScreen = ({ data }) => {
   );
 };
 
-const Start = ({ data }) => {
+const Start = ({ data, imageMap }) => {
+  // console.log("Data: ", imageMap);
   const [visible, setVisible] = useState(false);
 
   const [correct, setCorrect] = useState(false);
@@ -158,7 +160,7 @@ const Start = ({ data }) => {
           }}
         >
           {item.image ? (
-            <Image source={item.image} style={{ width: 100, height: 100 }} />
+            <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100 }} />
           ) : (
             <BodyText size="subtitle">{item.name}</BodyText>
           )}
@@ -169,7 +171,7 @@ const Start = ({ data }) => {
 
   return (
     <>
-      <ImageBg source={data.imageBg}>
+      <ImageBg source={{uri: imageMap[data.imageBg]}}>
         <Container>
           <Prompt>
             <BodyText size="subtitle">{data.prompt}</BodyText>
@@ -216,11 +218,11 @@ const Start = ({ data }) => {
   );
 };
 
-const SortingHandler = ({ data, navigation }) => {
+const SortingHandler = ({ data, navigation, imageMap }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={data} />}
+        {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
       <Stack.Screen
         name="SecondScreen"
@@ -230,6 +232,77 @@ const SortingHandler = ({ data, navigation }) => {
     </Stack.Navigator>
   );
 };
+
+
+const AdventureImages = {
+  crossword: "assets/crosswordbg.jpg",
+  puzzle: "assets/puzzlebg.jpg",
+  matching: "assets/matchingbg.jpg",
+  multiplechoice: "assets/mcqbg.jpg",
+};
+
+const SortingImages = {
+  bg: [
+    {
+      lvl_1_les_1: "assets/beach.jpg",
+      lvl_1_les_2: "assets/rrr.jpg",
+      lvl_1_les_4: "assets/lessonbg.png",
+      lvl_2_les_1: "assets/waste.jpg",
+      lvl_2_les_2: "assets/farm.jpeg",
+    },
+  ],
+  lvl_1_les_1: [
+    {
+      firstImage: "assets/wave.jpg",
+      secondImage: "assets/animals.png",
+      thirdImage: "assets/pots.png",
+    },
+  ],
+  lvl_2_les_2: [
+    {
+      firstImage: "assets/dairy.png",
+      secondImage: "assets/fruit.png",
+      thirdImage: "assets/meat.png",
+    },
+  ],
+};
+
+const QuizImages = {
+  bg: [
+    {
+      lvl_1_les_1: "assets/nat.jpg",
+      lvl_1_les_2: "assets/habitat.jpg",
+      lvl_2_les_1: "assets/path.jpg",
+      lvl_2_les_2: "assets/mountains.jpeg",
+    },
+  ],
+};
+
+
+
+const TestImages = {
+  solar_panel_1: "assets/solar-panel.jpg",
+  bikingPic: "assets/desc_ridingbike.jpg",
+  faucetPic: "assets/desc_turnWaterOff.jpg",
+  recyclingPic: "assets/desc_recycling.png",
+  lightsPic: "assets/desc_turningLight.jpg",
+  
+  lvl_1_les_2_img_1: "assets/LampAndLights.jpg",
+  lvl_1_les_2_img_2: "assets/reusedTrash.jpg",
+  lvl_1_les_2_img_3: "assets/recyclingDescription.png",
+  lvl_1_les_2_img_4: "assets/imageResponseGame/Level_1_Lesson_2/TVthing.jpg",
+  
+  lvl_2_les_1_img_1: "assets/6vnr_756t_210818.jpg",
+  lvl_2_les_1_img_2: "assets/29067.jpg",
+  lvl_2_les_1_img_3: "assets/7249661.jpg",
+  lvl_2_les_1_img_4: "assets/Wavy_Eco-01_Single-01.jpg",
+  
+  lvl_2_les_2_img_1: "assets/farming1.jpg",
+  lvl_2_les_2_img_2: "assets/planting.jpg",
+  lvl_2_les_2_img_3: "assets/tractor.jpg",
+  lvl_2_les_2_img_4: "assets/wateringplant.jpg",
+};
+
 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
