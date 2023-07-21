@@ -29,7 +29,9 @@ export const MasteryFlex = ({
     const nav = useNavigation();
     const { t } = useTranslation();
 
-    if (typeof lessonData !== "undefined") {
+    console.log("MasteryFlex: ", lessonData);
+
+    if (typeof lessonData.mastery_2 !== "undefined") {
         return (
             <View
                 style={[
@@ -100,7 +102,7 @@ export const MasteryFlex = ({
                 ]}>
                 <TouchableOpacity
                     style={{
-                        width: "93%",
+                        width: "110%",
                         height: 150,
                         margin: 10,
                         borderRadius: 20,

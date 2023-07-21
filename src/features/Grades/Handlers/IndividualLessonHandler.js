@@ -9,7 +9,7 @@ import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler"; //works
 import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler"; //works
-import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler";
+import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler"; //working
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler";
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2";
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler";
@@ -33,7 +33,7 @@ function IndividualLessonHandler({
     lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
   }
 
-  // console.log("Lesson Data: ", lessonData);
+  console.log("Lesson Data: ", lessonData);
   // console.log("\nGr. ", lessonCompMap);
   // console.log("\nMemory. ", lessonCompMap.get("Memory"));
   // console.log("\nSnapshot. ", lessonCompMap.get("Snapshot"));
@@ -259,9 +259,6 @@ function IndividualLessonHandler({
               data={
                 lessonData.get("mastery")
               }
-              lessonData={lessonData}
-              selectedChapter={selectedChapter}
-              selectedLesson={selectedLesson}
               navigation={navigation}
               imageMap={imageMap}
             />
@@ -287,14 +284,11 @@ function IndividualLessonHandler({
             () => (
 
               <MasteryHandler_2
-                data={
-                  lessonData.get("mastery_2")
-                }
-                lessonData={lessonData}
-                selectedChapter={selectedChapter}
-                selectedLesson={selectedLesson}
-                navigation={navigation}
-                imageMap={imageMap}
+              data={
+                lessonData.get("mastery_2")
+              }
+              navigation={navigation}
+              imageMap={imageMap}
               />
             )}
         </Stack.Screen>

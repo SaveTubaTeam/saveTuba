@@ -56,15 +56,14 @@ const SubmitButton = styled(Button)`
 
 const MasteryHandler = ({
   data,
-  selectedGrade,
-  selectedChapter,
-  selectedLesson,
+  imageMap,
+  backgroundImage
 }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
-
   
   const renderItem = ({ item }) => {
+
     return (
       <>
         <Prompt>
@@ -77,7 +76,7 @@ const MasteryHandler = ({
                 height: undefined,
                 marginTop: 20,
               }}
-              source={item.image}
+              source={{uri: imageMap[item.image]}}
             />
           )}
         </Prompt>
@@ -89,16 +88,14 @@ const MasteryHandler = ({
     <Container>
       <ImageBg
         style={{ paddingTop: 20, paddingBottom: 20 }}
-        source={selectedGrade.chapters[selectedChapter].backgroundImage}
+        source={{uri: imageMap["assets/mountains.jpeg"]}}
         resizeMode="cover"
       >
         <FlatList // The flatlist used to load minigames and their data.
           data={
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .mastery.cards &&
+            data.cards &&
             Object.values(
-              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .mastery.cards
+              data.cards
             )
           }
           style={{ width: "80%" }}

@@ -58,6 +58,7 @@ const MasteryHandler2 = ({
   selectedGrade,
   selectedChapter,
   selectedLesson,
+  imageMap
 }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
@@ -66,20 +67,20 @@ const MasteryHandler2 = ({
   const renderItem = ({ item }) => {
     return (
       // <>
-        <Prompt>
-          <TitleText size="subtitle">{item.text}</TitleText>
-          {item.image && (
-            <Image
-              style={{
-                aspectRatio: 1,
-                width: "40%",
-                height: undefined,
-                marginTop: 20,
-              }}
-              source={item.image}
-            />
-          )}
-        </Prompt>
+      <Prompt>
+        <TitleText size="subtitle">{item.text}</TitleText>
+        {item.image && (
+          <Image
+            style={{
+              aspectRatio: 1,
+              width: "40%",
+              height: undefined,
+              marginTop: 20,
+            }}
+            source={item.image}
+          />
+        )}
+      </Prompt>
       // </> 
     );
   };
@@ -88,16 +89,14 @@ const MasteryHandler2 = ({
     <Container>
       <ImageBg
         style={{ paddingTop: 20, paddingBottom: 20 }}
-        source={selectedGrade.chapters[selectedChapter].backgroundImage}
+        source={{ uri: imageMap["assets/mountains.jpeg"] }}
         resizeMode="cover"
       >
         <FlatList // The flatlist used to load minigames and their data.
           data={
-            selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-              .mastery_2.cards &&
+            data.cards &&
             Object.values(
-              selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-                .mastery_2.cards
+              data.cards
             )
           }
           style={{ width: "80%" }}
