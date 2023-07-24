@@ -1503,22 +1503,22 @@ export const Grade1 = {
           },
           minigames: {
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Do you have perfect posture? If yes, why do you think so? If not, can you think of ways to improve your posture?",
-                    placeholder: "My posture is..",
-                    image: require("../../../../assets/openresponse/posture.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                  numberOfPrompts: 1,
+                  prompts: [
+                    {
+                      text: "Сіздің қамтылысыңыз дұрыс па? Егер іә болса, неге деп ойлайсыз? Егер жоқ болса, қамтылысыңызды жақсарту жолдарын ойлауға болады ма?",
+                      placeholder: "Менің қамтылысым..",
+                      image: require("../../../../assets/openresponse/posture.png"),
+                    },
+                  ],
+                },
             },
             snapshot: {
               navigation: "Snapshot",
@@ -1526,7 +1526,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Take a picture of two people highlighting their postures.",
+                "Олардың қамтылыстарын көрсететін екі адамның фотосын түсіріңіз.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -1536,95 +1536,96 @@ export const Grade1 = {
               content: [
                 {
                   prompt:
-                    "A heavier backpack on a child has no effect on posture because the weight is in the backpack.",
+                      "Балаға ауыр сумка қамтылыға әсер етпейді, себебі ауырлық сумкада.",
                   answers: [
-                    {
-                      text: "True",
-                    },
-                    {
-                      text: "False",
-                    },
+                      {
+                          text: "Шын",
+                      },
+                      {
+                          text: "Жалған",
+                      },
                   ],
-                  answer: "False",
+                  answer: "Жалған",
                 },
                 {
-                  prompt: "Why is the right posture important?",
+                  prompt: "Дұрыс қамтылыс неге маңызды?",
                   answers: [
-                    {
-                      text: "Maintain correct form while exercising",
-                    },
-                    {
-                      text: "Strengthen your balance",
-                    },
-                    {
-                      text: "Prevent injuries",
-                    },
-                    { text: "All of the above" },
+                      {
+                          text: "Жаттығу кезінде дұрыс форманы сақтау",
+                      },
+                      {
+                          text: "Теңдігіңізді нығайту",
+                      },
+                      {
+                          text: "Жараланулардан сақтану",
+                      },
+                      { text: "Барлығы жоғарыда" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы жоғарыда",
                 },
                 {
-                  prompt: "What does bad posture do to your spine?",
+                  prompt: "Нашар қамтылыс қамтылысыңызға не істейді?",
                   answers: [
                     {
-                      text: "Puts unnecessary pressure on your spine",
+                      text: "Қамтылысыңызға қажетті емес басым жасайды",
                     },
                     {
-                      text: "Evenly distributes the weight on your spine",
+                      text: "Өзіңіздің ауырлығыңызды тең таратады",
                     },
-                    { text: "Keeps you comfortable and reduces injury risk" },
-                    { text: "Allows you to maintain a full range of motion" },
+                    { text: "Сізді тыныштыру және жараланулардан сақтайды" },
+                    { text: "Толық көлем меншігін сақтауға мүмкіндік береді" },
                   ],
-                  answer: "Puts unnecessary pressure on your spine",
+                  answer: "Қамтылысыңызға қажетті емес басым жасайды",
                 },
                 {
-                  prompt: "How does your posture change over time?",
+                  prompt: "Қамтылысыңыз уақыттай қалай өзгереді?",
                   answers: [
                     {
-                      text: "Your posture will change depending on how you maintain it",
+                      text: "Қамтылысыңыз қандай сақтауыңызға байланысты өзгереді",
                     },
                     {
-                      text: "As you grow old, your spine will form a permanent curve",
+                      text: "Қараңыз келе жатқанда, қамтылысыңыз тұрақты қисық болады",
                     },
                     {
-                      text: "Over time, your spine will become straighter due to stronger muscles",
+                      text: "Уақыт өткенден кейін, қамтылысыңыз мүшелеріңіз тым қуатты болғандықтан тура болады",
                     },
                     {
-                      text: "All of the above",
+                      text: "Барлығы жоғарыда",
                     },
                   ],
                   answer:
-                    "Your posture will change depending on how you maintain it",
+                      "Қамтылысыңыз қандай сақтауыңызға байланысты өзгереді",
                 },
               ],
             },
             sorting: {
-              navigation: "Sorting",
-              icon: require("../../../../assets/recycle-bin.png"),
-              backgroundColor: "coral",
-              content: {
-                prompt: "Is this an example of good or bad posture?",
-
-                num: 6,
-                imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Good posture" }, { name: "Bad posture" }],
-                options: [
-                  { title: "Rounded shoulders", name: "Bad posture" },
-                  {
-                    title: "Standing up straight and tall",
-                    name: "Good posture",
-                  },
-                  { title: "Hunched back", name: "Bad posture" },
-                  { title: "Head leaning forward", name: "Bad posture" },
-                  {
-                    title: "Weight evenly distributed on feet",
-                    name: "Good posture",
-                  },
-                  { title: "Back pain", name: "Bad posture" },
-                ],
+                navigation: "Sorting",
+                icon: require("../../../../assets/recycle-bin.png"),
+                backgroundColor: "coral",
+                content: {
+                  prompt: "Бұл жақсы немесе жаман қамтылыс місалы ба?",
+      
+                  num: 6,
+                  imageBg: SortingImages.bg[0].lvl_1_les_4,
+                  categories: [{ name: "Жақсы қамтылыс" }, { name: "Жаман қамтылыс" }],
+                  options: [
+                    { title: "Дөңгелеген өмір сүру", name: "Жаман қамтылыс" },
+                    {
+                      title: "Тура және биік тұру",
+                      name: "Жақсы қамтылыс",
+                    },
+                    { title: "Қысық артқа бұрылу", name: "Жаман қамтылыс" },
+                    { title: "Бас алдына қылығу", name: "Жаман қамтылыс" },
+                    {
+                      title: "Ауырлық тең аяқтарыңызда таралады",
+                      name: "Жақсы қамтылыс",
+                    },
+                    { title: "Артқа ауру", name: "Жаман қамтылыс" },
+                  ],
               },
             },
-          },
+        },
+        
         },
 
         /* 
@@ -1668,8 +1669,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are some ways we can stay clean?",
-                    placeholder: "One way I maintain good hygiene is..",
+                    text: "Біз қандай тәрізді сақтаймыз?",
+                    placeholder: "Мен тазалықты қала арқылы бір жол...",
                     image: require("../../../../assets/openresponse/clean.png"),
                   },
                 ],
@@ -1680,7 +1681,7 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Upload a video of you washing your hands.",
+              prompt: "Қолдарыңызды жуу процессіндегі бейнеңізді жүктеп алыңыз.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -1690,66 +1691,66 @@ export const Grade1 = {
               content: [
                 {
                   prompt:
-                    "Washing your hands with soap and water can get rid of millions of microbes.",
+                    "Қолдарыңызды сабын мен сумен жуу микробтардың миллиондағанын жоя алады.",
                   answers: [
                     {
-                      text: "True",
+                      text: "Шын",
                     },
                     {
-                      text: "False",
+                      text: "Жалған",
                     },
                   ],
-                  answer: "True",
+                  answer: "Шын",
                 },
                 {
-                  prompt: "How do we take care of our body throughout the day?",
+                  prompt: "Күн бойы біздер денемізге қандай көмек етеміз?",
                   answers: [
                     {
-                      text: "Wash our skin and face often",
+                      text: "Терімізді және бетімізді жиі жуамыз",
                     },
                     {
-                      text: "Wash our hands with soap and water",
+                      text: "Қолдарыңызды сабын және сумен жуамыз",
                     },
                     {
-                      text: "Wipe off sweat from our body",
+                      text: "Терден терілімді сүріп аламыз",
                     },
-                    { text: "All of the above" },
+                    { text: "Барлығы жоғарыда" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы жоғарыда",
                 },
                 {
-                  prompt: "What is one way scientists can study microbes?",
+                  prompt: "Ғалымдар микробтарды қандай зерттейді?",
                   answers: [
                     {
-                      text: "Take a picture of the object containing microbes with their phone camera",
+                      text: "Микробтар болатын нысаны ұялы телефон камерасымен суретке түсіру",
                     },
                     {
-                      text: "Use scientific instruments such as microscopes",
+                      text: "Микроскоптар сияқты ғылыми құралдарды пайдалану",
                     },
-                    { text: "Analyze a bar of soap" },
+                    { text: "Сабынды талдау" },
                     {
-                      text: "Scientists are not able to study microbes to their extremely miniscule size",
+                      text: "Ғалымдар өте кіші өлшемдерінде микробтарды зерттей алмайды",
                     },
                   ],
-                  answer: "Use scientific instruments such as microscopes",
+                  answer: "Микроскоптар сияқты ғылыми құралдарды пайдалану",
                 },
                 {
-                  prompt: "How much bacteria do humans have approximately?",
+                  prompt: "Адам басына шама бактериялардың неше болуы мүмкін?",
                   answers: [
                     {
-                      text: "Thousands",
+                      text: "Мыңдаған",
                     },
                     {
-                      text: "Millions",
+                      text: "Миллиондаған",
                     },
                     {
-                      text: "Billions",
+                      text: "Миллиарддаған",
                     },
                     {
-                      text: "Trillions",
+                      text: "Триллиондаған",
                     },
                   ],
-                  answer: "Trillions",
+                  answer: "Триллиондаған",
                 },
               ],
             },
@@ -1759,43 +1760,43 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Does this activity help with cleanliness or uncleanliness?",
+                  "Бұл қызмет тазалыққа не жоқ, тазалықсыздыққа көмек етеді ме?",
                 num: 5,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
-                  { name: "Cleanliness" },
-                  { name: "Uncleanliness" },
+                  { name: "Тазалық" },
+                  { name: "Тазалықсыздық" },
                 ],
                 options: [
                   {
                     title:
-                      "Kim ate garlic bread for lunch, so he brushed his teeth after",
-                    name: "Cleanliness",
+                      "Ким түскіде сарымсақты нан иді, сондықтан ол кейін тісін суды.",
+                    name: "Тазалық",
                   },
                   {
                     title:
-                      "Emily bought an exfoliator and scrub at the store, and now she exfoliates weekly",
-                    name: "Cleanliness",
+                      "Емілі екзофолиант пен скраб сатып алды, қазір ол аптасына бір рет эксфолиация жасайды",
+                    name: "Тазалық",
                   },
                   {
                     title:
-                      "Marcos' friends give him deodorant and tell him to use it",
-                    name: "Cleanliness",
+                      "Маркосқа достары деодорант берді және оны пайдалануға көрсетті",
+                    name: "Тазалық",
                   },
                   {
                     title:
-                      "Melissa has been using the same sponge for weeks and it's starting to smell",
-                    name: "Uncleanliness",
+                      "Мелісса аптасына бір рет сүнгі тазартады, бұл қышқыл ілік болды",
+                    name: "Тазалықсыздық",
                   },
                   {
                     title:
-                      "Johnny plays basketball and gets sweaty, but he has to go to class right after playing",
-                    name: "Uncleanliness",
+                      "Джонни баскетбол ойнады және теріледі, бірақ ол ойнап болғандан кейін тікелей сабаққа бара тұрады",
+                    name: "Тазалықсыздық",
                   },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -1829,70 +1830,70 @@ export const Grade1 = {
           },
           minigames: {
             sorting: {
-              navigation: "Sorting",
+              navigation: "Сұрыптау",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Is this action helpful or harmful for your teeth?",
+                prompt: "Бұл әрекет сіздің тісіңізге пайдалы немесе зиянды ма?",
                 num: 4,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Helpful" }, { name: "Harmful" }],
+                categories: [{ name: "Пайдалы" }, { name: "Зиянды" }],
                 options: [
                   {
-                    title: "Brushing after every meal",
-                    name: "Helpful",
+                    title: "Әр тамақтан кейін тісті тазалау",
+                    name: "Пайдалы",
                   },
                   {
-                    title: "Using a fluoride toothpaste",
-                    name: "Helpful",
+                    title: "Фторид пастасын пайдалану",
+                    name: "Пайдалы",
                   },
                   {
-                    title: "Eating sugary snacks",
-                    name: "Harmful",
+                    title: "Шірін азық-түліктерді жеу",
+                    name: "Зиянды",
                   },
                   {
-                    title: "Eating chips",
-                    name: "Harmful",
+                    title: "Чипстерді жеу",
+                    name: "Зиянды",
                   },
                 ],
               },
             },
             reorder: {
-              //background image ? or nah
-              navigation: "Reorder",
+              // Фондық кескін? Немесе жоқ?
+              navigation: "Қайта ретке келту",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Order these animals based on how many teeth they have in descending order",
+                "Бұл жануарларды олардың тістерінің саны бойынша кему ретімен ретке келтіріңіз",
               data: [
                 {
-                  text: "Ostrich",
+                  text: "Шошқа",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Elephant",
+                  text: "Үйрек",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Humans",
+                  text: "Адам",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Giant armadillo",
+                  text: "Үлкен броненосец",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Snail",
+                  text: "Құлаққап",
                   dormant: "#19a127",
                   active: "#169023",
                 },
               ],
             },
-          },
+          },          
         },
       ],
     },
@@ -1942,50 +1943,49 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "У каждого человека есть углеродный след",
+                  prompt: "Әр адамның қышқыл ізі бар",
                   answers: [
                     {
-                      text: "Правда",
+                      text: "Шын",
                     },
                     {
-                      text: "Ложь",
+                      text: "Жалған",
                     },
                   ],
-                  answer: "Правда",
+                  answer: "Шын",
+                },
+                {
+                  prompt: "Біздің қышқыл ізімізді кемітуге не көмек етпейді?",
+                  answers: [
+                    {
+                      text: "Жергілікті тамақтарды қолдану",
+                    },
+                    {
+                      text: "Қайта өңдеу",
+                    },
+                    {
+                      text: "Мектепке бару",
+                    },
+                    { text: "Ағаш қою" },
+                  ],
+                  answer: "Мектепке бару",
                 },
                 {
                   prompt:
-                    "Что не поможет уменьшить наш углеродный след?",
+                    "Адамдардың әрекеті себепкен көбірек артқан газ қайсысы?",
                   answers: [
                     {
-                      text: "Употребление местной пищи",
+                      text: "Қышқыл газ",
                     },
                     {
-                      text: "Переработка",
-                    },
-                    {
-                      text: "Ездить в школу",
-                    },
-                    { text: "Посадка деревьев" },
-                  ],
-                  answer: "Ездить в школу",
-                },
-                {
-                  prompt:
-                    "Какой газ увеличивается в больших количествах из-за деятельности человека?",
-                  answers: [
-                    {
-                      text: "Углекислый газ",
-                    },
-                    {
-                      text: "Кислород",
+                      text: "Оксидент",
                     },
                     { text: "Дизель" },
                   ],
-                  answer: "Углекислый газ",
+                  answer: "Қышқыл газ",
                 },
                 {
-                  prompt: "Как называется газ, который поглощают растения?",
+                  prompt: "Өсімдіктер қай газды жинады?",
                   answers: [
                     {
                       text: "Газ",
@@ -1994,39 +1994,39 @@ export const Grade1 = {
                       text: "Метан",
                     },
                     {
-                      text: "Кислород",
+                      text: "Оксидент",
                     },
                     {
-                      text: "Углекислый газ",
+                      text: "Қышқыл газ",
                     },
                   ],
-                  answer: "Углекислый газ",
+                  answer: "Қышқыл газ",
                 },
                 {
                   prompt:
-                    "Что из перечисленного не добавляет CO2 в атмосферу?",
+                    "Тізімделген нәрселерден қайсысы CO2 қосатын ғазды атмосферага қоспайды?",
                   answers: [
-                    { text: "Готовим на газе" },
-                    { text: "Посадка деревьев" },
-                    { text: "Сжигание древесины" },
-                    { text: "Ехать в автобусе" },
+                    { text: "Газда тауыз ету" },
+                    { text: "Ағаш қою" },
+                    { text: "Ағашты жағу" },
+                    { text: "Автобуста жүзу" },
                   ],
-                  answer: "Посадка деревьев",
+                  answer: "Ағаш қою",
                 },
                 {
-                  prompt: "Что такое CO2?",
+                  prompt: "CO2 деген не?",
                   answers: [
-                    { text: "Углерод" },
-                    { text: "Кислород" },
-                    { text: "Углекислый газ" },
-                    { text: "Тип шипучего напитка" },
+                    { text: "Қышқыл" },
+                    { text: "Оксидент" },
+                    { text: "Қышқыл газ" },
+                    { text: "Шипучий напитка түрі" },
                   ],
-                  answer: "Углекислый газ",
+                  answer: "Қышқыл газ",
                 },
                 {
-                  prompt: "В процессе охлаждения воздух _____.",
-                  answers: [{ text: "Увеличивается" }, { text: "Сокращается" }],
-                  answer: "Сокращается",
+                  prompt: "Суықтыру процесінде ауа _____ .",
+                  answers: [{ text: "Артады" }, { text: "Азаяды" }],
+                  answer: "Азаяды",
                 },
               ],
             },
@@ -2041,8 +2041,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Почему животные не мерзнут зимой?",
-                    placeholder: "Животные не мерзнут потому что...",
+                    text: "Неге жануарлар қыста соңып қалмайды?",
+                    placeholder: "Жануарлар соңып қалмайды себебі...",
                     image: require("../../../../assets/openresponse/winter.png"),
                   },
                 ],
@@ -2054,30 +2054,29 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Сделайте и загрузите три фотографии различных вещей, загрязняющих воздух в городе.",
+                "Қалада ауаның кірлеуіне себеп болатын үлгі қызметтерінің үш фотосын жасап жүктеңіз.",
             },
-
             sorting: {
-              navigation: "Sorting",
+              navigation: "Сұрыптау",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Отсоритруйте причины загрязнения воздуха",
+                prompt: "Ауа кірлеуінің себептерін сұрыптаңыз",
                 num: 7,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Антропогенные" }, { name: "Натуральные" }],
+                categories: [{ name: "Адамдардың" }, { name: "Табиғи" }],
                 options: [
-                  { title: "Фабрики", name: "Антропогенные" },
-                  { title: "Лесные пожары", name: "Натуральные" },
-                  { title: "Машины", name: "Антропогенные" },
-                  { title: "Самолеты", name: "Антропогенные" },
-                  { title: "Дым от сигарет", name: "Антропогенные" },
-                  { title: "Вулканы", name: "Натуральные" },
-                  { title: "Аэрозольные баллоны", name: "Антропогенные" },
+                  { title: "Заводтар", name: "Адамдардың" },
+                  { title: "Орман өрттері", name: "Табиғи" },
+                  { title: "Машиндар", name: "Адамдардың" },
+                  { title: "Ұшақтар", name: "Адамдардың" },
+                  { title: "Тамыр көзі", name: "Адамдардың" },
+                  { title: "Вулкандар", name: "Табиғи" },
+                  { title: "Аэрозоль түтіндері", name: "Адамдардың" },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -2119,56 +2118,56 @@ export const Grade1 = {
               content: [
                 {
                   prompt:
-                    "Что произойдет с температурой, если в атмосферу попадет больше парниковых газов?",
+                    "Егер парниктік газдар өрт сөйлесіне көп пайда болса, температура қалай өзгереді?",
                   answers: [
-                    { text: "Повышение температуры" },
-                    { text: "Снижение температуры" },
+                    { text: "Температура артады" },
+                    { text: "Температура азайады" },
                   ],
-                  answer: "Повышение температуры",
+                  answer: "Температура артады",
                 },
                 {
                   prompt:
-                    "Какой из перечисленных ниже видов деятельности вносит наибольший вклад в выбросы углерода в глобальном масштабе?",
+                    "Төменде атаулы көрсетілген іс-шаралардың қайсысы көмірдің шығарылымын үлкен масштабта көбейтеді?",
                   answers: [
-                    { text: "Вырубка лесов" },
+                    { text: "Орман қырығы" },
                     { text: "Агрокультура" },
-                    { text: "Сжигание ископаемого топлива" },
-                    { text: "Дыхание" },
+                    { text: "Кенішті топырақты жақсылау" },
+                    { text: "Немесе демісу" },
                   ],
-                  answer: "Сжигание ископаемого топлива",
+                  answer: "Кенішті топырақты жақсылау",
                 },
                 {
                   //cant scroll down on this question
                   prompt:
-                    "Увеличение содержания углекислого газа может вызвать глобальное потепление за счет ________.",
+                    "Қышқыл ғаздың мазмұны артуы орташа жылдамдықпен қызуға әкеледі ________.",
                   answers: [
-                    { text: "пропуская больше солнечного света в атмосферу." },
-                    { text: "отражая больше солнечного света от облаков." },
-                    { text: "уменьшение количества кислорода в воздухе." },
-                    { text: "задерживая больше тепла в атмосфере." },
+                    { text: "көптеген күн жарығын өрт сөйлесіне біріктіріп." },
+                    { text: "көптеген күн жарығын бұлттардан шегініп." },
+                    { text: "ауа мөлшеріндегі кислороддың санын азайтып." },
+                    { text: "көптеген жылуға өрт сөйлесіне тосып." },
                   ],
-                  answer: "задерживая больше тепла в атмосфере.",
+                  answer: "көптеген жылуға өрт сөйлесіне тосып.",
                 },
                 {
-                  prompt: "Что является естественным источником парниковых газов?",
+                  prompt: "Парниктік газдардың табиғи көзі не?",
                   answers: [
-                    { text: "Аерозоли" },
-                    { text: "Вырубка лесов" },
-                    { text: "Извержения вулканов" },
-                    { text: "Сжигание ископаемых" },
+                    { text: "Аэрозольдер" },
+                    { text: "Орман қырығы" },
+                    { text: "Вулкан шығарылымдары" },
+                    { text: "Кенішті топырақты жақсылау" },
                   ],
-                  answer: "Извержения вулканов",
+                  answer: "Вулкан шығарылымдары",
                 },
                 {
-                  prompt: "Что такое парниковый эффект?",
+                  prompt: "Парниктік әсері не?",
                   answers: [
                     {
-                      text: "Потепление планеты из-за задерживаемого излучения.",
+                      text: "Шағын ишуның сақталуы себепті планетаның қызуы.",
                     },
-                    { text: "Охлаждение Земли из-за загрязнения воздуха." },
-                    { text: "Нагревание твердого тела, например, камня." },
+                    { text: "Зерттеу өрт сөйлесінің кірістігінен Земля салқындайды." },
+                    { text: "Бекітілген қатпарыш, мысалы, тасын қыздыратын." },
                   ],
-                  answer: "Потепление планеты из-за задерживаемого излучения.",
+                  answer: "Шағын ишуның сақталуы себепті планетаның қызуы.",
                 },
               ],
             },
@@ -2183,8 +2182,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Составьте план, как вы будете избегать загрязнения воздуха. ",
-                    placeholder: "My plan is...",
+                    text: "Жоспарды жасаңыз, сіз қалай ауа кірістігінен сақтанасыз.",
+                    placeholder: "Менің жоспарым...",
                     image: require("../../../../assets/openresponse/smog.png"),
                   },
                 ],
@@ -2196,59 +2195,54 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Загрузите фотографию завода, который вызывает наибольшее загрязнение воздуха в районе",
+                "Ауа кірістігіне ең көп әсер ететін заводтың фотосын жүктеңіз.",
             },
             sorting: {
-              navigation: "Sorting",
+              navigation: "Сұрыптау",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt:
-                  "Определите, как каждое действие сокращает, возобновляет или перерабатывает ресурсы",
+                prompt: "Әрбір әрекеттің ресурстарды қандай түрде азайтатынын, жаңартатынын, немесе қайта өңдеуін анықтаңыз",
                 num: 11,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
-                  { name: "сокращает" },
-                  { name: "возобновляет" },
-                  { name: "перерабатывает" },
+                  { name: "азайтады" },
+                  { name: "жаңартады" },
+                  { name: "қайта өңдейді" },
                 ],
                 options: [
                   {
-                    title:
-                      "Наполните бутылку с водой водой из дома вместо того, чтобы покупать новую.",
-                    name: "возобновляет",
+                    title: "Жаңа емес, бірақ үйден алынған сумен судың ұясын толтырыңыз",
+                    name: "жаңартады",
                   },
-                  { title: "Разделение стекла", name: "перерабатывает" },
+                  { title: "Шынын бөлу", name: "қайта өңдейді" },
                   {
-                    title:
-                      "Обновляйте свой компьютер вместо того, чтобы выбрасывать его и покупать новый",
-                    name: "возобновляет",
+                    title: "Жаңа компьютер алу орнына көп жылдық компьютеріңізді жаңартыңыз",
+                    name: "жаңартады",
                   },
-                  { title: "Покупайте только то, что вам нужно", name: "сокращает" },
-                  { title: "Разделение алюминия", name: "перерабатывает" },
+                  { title: "Тек сізге қажет ететін затты алыңыз", name: "азайтады" },
+                  { title: "Алюминийді бөлу", name: "қайта өңдейді" },
                   {
-                    title:
-                      "Ищите предметы, которые можно использовать повторно вместо покупки",
-                    name: "сокращает",
+                    title: "Жаңа алу орнына қайта пайдалануға болатын заттарды іздеп шығыңыз",
+                    name: "азайтады",
                   },
-                  { title: "Покупайте оптом", name: "сокращает" },
+                  { title: "Бөлек көлемде алыңыз", name: "азайтады" },
                   {
-                    title: "Разделение картона для сдачи на переработку",
-                    name: "перерабатывает",
+                    title: "Қайта өңдеу үшін картонды бөлу",
+                    name: "қайта өңдейді",
                   },
-                  { title: "Разделение свинцовых аккумуляторов", name: "перерабатывает" },
+                  { title: "Құршын аккумуляторларын бөлу", name: "қайта өңдейді" },
                   {
-                    title:
-                      "Откажитесь от пластиковых пакетов и выбирайте вместо них многоразовые, экологически чистые сумки",
-                    name: "возобновляет",
+                    title: "Пластик сомаларды болдырмаңыз, олардың орнына көп рет қолдануға болатын, экологияға зиянсыз сомаларды таңдаңыз",
+                    name: "жаңартады",
                   },
                   {
-                    title: "Выбирайте продукты с меньшим количеством упаковки",
-                    name: "сокращает",
+                    title: "Кем упаковкасы бар өнімдерді таңдаңыз",
+                    name: "азайтады",
                   },
                 ],
               },
-            },
+            },            
           },
         },
 
@@ -2283,23 +2277,23 @@ export const Grade1 = {
           },
           minigames: {
             quiz: {
-              //ONLY DOES THE FIRST 5 QUESTIONS
+              //ТЕК БІРІНШІ 5 СҰРАҚТАРҒА ЖАТАДЫ
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: 'What does the world "pollute" mean?',
+                  prompt: '"Кірлету" сөзі не дейді?',
                   answers: [
-                    { text: "To make something clean." },
-                    { text: "To make something cheaper." },
-                    { text: "To make something dirty." },
+                    { text: "Бірзатты таза жасау." },
+                    { text: "Бірзатты арзан жасау." },
+                    { text: "Бірзатты кірлету." },
                   ],
-                  answer: "To make something dirty.",
+                  answer: "Бірзатты кірлету.",
                 },
                 {
-                  prompt: "How much water is drinkable on Earth?",
+                  prompt: "Жер шарындағы судың қанша бөлігі ішімдік?",
                   answers: [
                     { text: "1%" },
                     { text: "5%" },
@@ -2310,103 +2304,103 @@ export const Grade1 = {
                 },
                 {
                   prompt:
-                    "Which is NOT a major source of water pollution in the modern world?",
+                    "Қазіргі заманда су кірлетудің негізгі көздерінен қайсысы ЕМЕС?",
                   answers: [
-                    { text: "Animal feces and algae" },
-                    { text: "Agriculture industry chemicals" },
-                    { text: "Industrial chemical toxins" },
-                    { text: "Municipal waste (human & other)" },
+                    { text: "Жануарлардың болашағы және сұяқты жасыл биттер" },
+                    { text: "Ауыл шаруашылығында қолданылатын химиялық заттар" },
+                    { text: "Промышленностьтің химиялық токсиндері" },
+                    { text: "Шағын көшелер (адам & басқа)" },
                   ],
-                  answer: "Animal feces and algae",
+                  answer: "Жануарлардың болашағы және сұяқты жасыл биттер",
                 },
                 {
-                  prompt: "Water pollution occurs when:", //last question, doest go into the rest of them
+                  prompt: "Су кірлету келесі жағдайда болады:", //last question, doest go into the rest of them
                   answers: [
-                    { text: "Harmful substances enter a water supply." },
+                    { text: "Зиянды заттар су жатықтарына түседі." },
                     {
-                      text: "Industries dispose of waste safely and correctly.",
+                      text: "Промышленность қалдықтарын толық және дұрыс жолмен жабу жасайды.",
                     },
-                    { text: "None of the above" },
+                    { text: "Жоғарыда аталмағандардың ешбірі" },
                   ],
-                  answer: "Harmful substances enter a water supply.",
+                  answer: "Зиянды заттар су жатықтарына түседі.",
                 },
                 {
-                  prompt: "There is nothing we can do to stop water pollution",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                  prompt: "Біз су кірлетуін токтатуға ешбір нәрсе жасай алмаймыз",
+                  answers: [{ text: "Расты" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс емес",
                 },
                 {
-                  prompt: "We can prevent water pollution by:",
+                  prompt: "Біз су кірлетуін келесі арқылы кедергі көруге болады:",
                   answers: [
-                    { text: "Reducing the use of plastic" },
-                    { text: "Properly disposing of chemicals" },
-                    { text: "Cleaning up after your animals" },
-                    { text: "All of the above" },
+                    { text: "Пластика пайдалануын азайту" },
+                    { text: "Химиялық заттарды дұрыс жабу" },
+                    { text: "Өз қоймаларыңыздан кейіндергі тазалықты сақтау" },
+                    { text: "Жоғарыда аталғандардың барлығы" },
                   ],
-                  answer: "All of the above",
+                  answer: "Жоғарыда аталғандардың барлығы",
                 },
                 {
-                  prompt: "How any forms does water come in?",
+                  prompt: "Су қанша түрде келеді?",
                   answers: [
-                    { text: "Three" },
-                    { text: "Two" },
-                    { text: "One" },
+                    { text: "Үш" },
+                    { text: "Екі" },
+                    { text: "Бір" },
                   ],
-                  answer: "Three",
+                  answer: "Үш",
                 },
                 {
-                  prompt: "What is precipitation?",
+                  prompt: "Қандай болу үшін жауып түседі?",
                   answers: [
-                    { text: "Sweat from our bodies on hot days. " },
-                    { text: "Warm rain, but not cold snow or sleet." },
-                    { text: "Gas that we use in furnaces or ovens." },
-                    { text: "Any form of water that falls from the sky." },
+                    { text: "Ыстық күндерде беденімізден шығатын тер." },
+                    { text: "Жылы жаңбыр, бірақ суық қар және айжарма емес." },
+                    { text: "Пештамалар немесе пештамаларда пайдаланатын газ." },
+                    { text: "Көктен түсетін суның кез келген формасы." },
                   ],
-                  answer: "Any form of water that falls from the sky.",
+                  answer: "Көктен түсетін суның кез келген формасы.",
                 },
                 {
-                  prompt: "Which example is a form of precipitation?",
+                  prompt: "Қандай болу үшін міндетті түрде болады?",
                   answers: [
-                    { text: "Dew" },
-                    { text: "Fog" },
-                    { text: "Frost" },
-                    { text: "Hail" },
+                    { text: "Шалақай" },
+                    { text: "Тұман" },
+                    { text: "Ширақай" },
+                    { text: "Бұракай" },
                   ],
-                  answer: "Hail",
+                  answer: "Бұракай",
                 },
                 {
-                  prompt: "What is the water cycle?",
+                  prompt: "Су циклі - бұл не?",
                   answers: [
-                    { text: "The 3 forms of water (solid, liquid, gas)" },
+                    { text: "Суның 3 формасы (бекірі, сұйық, газ)" },
                     {
-                      text: "The movement of water on, above, or below the surface of the Earth",
+                      text: "Суның Жер бетіндегі, жеріндегі немесе жеріндегі қозғалысы",
                     },
-                    { text: "When water melts" },
-                    { text: "When clouds form" },
+                    { text: "Су қайнаған кезде" },
+                    { text: "Бұлтырлар пайда болғанда" },
                   ],
                   answer:
-                    "The movement of wate on, above, or below the surface of the Earth",
+                    "Суның Жер бетіндегі, жеріндегі немесе жеріндегі қозғалысы",
                 },
                 {
                   prompt:
-                    "Evaporation happens when the sun _____ water and turns it into vapor.",
+                    "Ауримдағы күн _____ суды және оны буыт болатын.",
                   answers: [
-                    { text: "cools" },
-                    { text: "heats up" },
-                    { text: "freezes" },
-                    { text: "lights up" },
+                    { text: "салқындатады" },
+                    { text: "жылдайды" },
+                    { text: "мұздатады" },
+                    { text: "жарықтандырып" },
                   ],
-                  answer: "heats up",
+                  answer: "жылдайды",
                 },
                 {
-                  prompt: "Water in its gas form is called ______.",
+                  prompt: "Суның газ формасына _____ дейді.",
                   answers: [
-                    { text: "water vapor" },
-                    { text: "precipitation" },
-                    { text: "ice" },
-                    { text: "air" },
+                    { text: "су буыты" },
+                    { text: "жауып түсу" },
+                    { text: "мұз" },
+                    { text: "ава" },
                   ],
-                  answer: "water vapor",
+                  answer: "су буыты",
                 },
               ],
             },
@@ -2422,8 +2416,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Describe the picture. What do you think should be changed?",
-                    placeholder: "In this picture I see...",
+                    text: "Суретті сипаттаңыз. Сіздер осындай өзгерту керек пе?",
+                    placeholder: "Осы суретте мен көремін...",
                     image: require("../../../../assets/openresponse/water-pollution.jpg"),
                   },
                 ],
@@ -2434,30 +2428,30 @@ export const Grade1 = {
               navigation: "Reorder",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
-              prompt: "Put the oceans from the smallest to the largest",
+              prompt: "Теңіздерді ең кішіден ең үлкеніне дейін ретке көшіріңіз",
               data: [
                 {
-                  text: "Pacific",
+                  text: "Тынық",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Indian",
+                  text: "Үнді",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Southern",
+                  text: "Оңтүстік",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Artic",
+                  text: "Арктикалық",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Atlantic",
+                  text: "Атлантикалық",
                   dormant: "#19a127",
                   active: "#169023",
                 },
@@ -2469,9 +2463,9 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Draw a picture of the water cycle and take a picture of it. Be sure to label the stages of the cycle!",
+                "Су циклін суретке салып, оның фотосын алыңыз. Циклдың бастапқыларын тастайыңыз!",
             },
-          },
+          },          
         },
 
         /* 
@@ -2505,55 +2499,54 @@ export const Grade1 = {
           },
           minigames: {
             sorting: {
-              navigation: "Sorting",
+              navigation: "Сұрыптау",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Determine which resource category the picture belongs to",
-
+                  "Сурет қай ресурстық санатқа жататынын анықтаңыз",
                 num: 11,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Natural" }, { name: "Anthropogenic" }],
+                categories: [{ name: "Табиғи" }, { name: "Адамдар жасаған" }],
                 options: [
                   //not done, want to change title to image
                   {
-                    title: "Sun",
-                    name: "Natural",
+                    title: "Күн",
+                    name: "Табиғи",
                   },
-                  { title: "Separating glass", name: "Recycle" },
+                  { title: "Стеклони бөлу", name: "Қайта қолдану" },
                   {
                     title:
-                      "Update your computer rather than throwing it out and getting a replacement",
-                    name: "Reuse",
+                      "Компьютеріңізді толықтырату қорытынды жасаймын деп ойлаңыз",
+                    name: "Қайта қолдану",
                   },
-                  { title: "Only buy what you need", name: "Reduce" },
-                  { title: "Separating aluminum", name: "Recycle" },
+                  { title: "Тек сізге керекті затты сатып алыңыз", name: "Азайту" },
+                  { title: "Алюминийді бөлу", name: "Қайта қолдану" },
                   {
                     title:
-                      "Look for items that you can reuse instead of buying ",
-                    name: "Reduce",
+                      "Қол жеткізбейтін немесе сатып алуға болмайтын заттарды іздеп шығыңыз",
+                    name: "Азайту",
                   },
-                  { title: "Buy in bulk", name: "Reduce" },
+                  { title: "Жиі сатып алыңыз", name: "Азайту" },
                   {
-                    title: "Separating cardboard to put in recycling facility",
-                    name: "Recycle",
+                    title: "Картонды қайта қолдану орнына жіберу",
+                    name: "Қайта қолдану",
                   },
-                  { title: "Separating lead batteries", name: "Recycle" },
+                  { title: "Суретке қарай асқазан батареяларын бөлу", name: "Қайта қолдану" },
                   {
                     title:
-                      "Ditch plastic bags and choose reusable, environmentally-friendly bags instead",
-                    name: "Reuse",
+                      "Пластик сумкаларды тастап, қайта қолдануға болатын, өрт сақтауға арналған сумкаларды таңдаңыз",
+                    name: "Қайта қолдану",
                   },
                   {
-                    title: "Choose products with less packaging",
-                    name: "Reduce",
+                    title: "Аз орын алатын өнімдерді таңдаңыз",
+                    name: "Азайту",
                   },
                 ],
               },
             },
             openresponse: {
-              navigation: "Image Boom",
+              navigation: "Сурет жарыққа шығу",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -2563,72 +2556,72 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do people use natural resources to create energy? Name one good (sustainable) way the energy is created and one bad way (unsustainable) way.",
-                    placeholder: "A way people use energy is by...",
+                    text: "Адамдар табиғат ресурстарын энергия жасау үшін қалай пайдаланады? Энергияның бір жақсы (тұрақты) жолын және бір негізгі жолын атаңыз.",
+                    placeholder: "Адамдар энергияны қалай пайдаланады...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
             quiz: {
-              navigation: "QuizScreen",
+              navigation: "Тест экраны",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is NOT a sustainable practice?",
+                  prompt: "Негізгі тұрақты емес практика?",
                   answers: [
-                    { text: "Reducing" },
-                    { text: "Reusing" },
-                    { text: "Recycling" },
-                    { text: "Buying" },
+                    { text: "Азайту" },
+                    { text: "Қайта қолдану" },
+                    { text: "Қайта өндіру" },
+                    { text: "Сатып алу" },
                   ],
-                  answer: "Buying",
+                  answer: "Сатып алу",
                 },
                 {
                   prompt:
-                    "What is the term used to describe objects that are being washed and used again?",
+                    "Не деп атайды, заттары жуып, қайта пайдалануға?",
                   answers: [
-                    { text: "Reducing" },
-                    { text: "Reusing" },
-                    { text: "Recycling" },
-                    { text: "Buying" },
+                    { text: "Азайту" },
+                    { text: "Қайта қолдану" },
+                    { text: "Қайта өндіру" },
+                    { text: "Сатып алу" },
                   ],
-                  answer: "Reusing",
+                  answer: "Қайта қолдану",
                 },
                 {
                   prompt:
-                    "What is the term used to describe objects that are being made into new materials?",
+                    "Не деп атайды, заттары жаңа материалдарға өндіруғе?",
                   answers: [
-                    { text: "Reducing" },
-                    { text: "Reusing" },
-                    { text: "Recycling" },
-                    { text: "Buying" },
+                    { text: "Азайту" },
+                    { text: "Қайта қолдану" },
+                    { text: "Қайта өндіру" },
+                    { text: "Сатып алу" },
                   ],
-                  answer: "Recycling",
+                  answer: "Қайта өндіру",
                 },
                 {
-                  prompt: "What is landfill?",
+                  prompt: "Қорытты жер не?",
                   answers: [
-                    { text: "A place where trash is piled up." },
-                    { text: "A place where trash is reduced." },
-                    { text: "A place where trash is recycled." },
-                    { text: "A place where trash is reused" },
+                    { text: "Мұсорды жинаған орын." },
+                    { text: "Мұсорды азайтатын орын." },
+                    { text: "Мұсорды қайта өндіретін орын." },
+                    { text: "Мұсорды қайта пайдаланатын орын" },
                   ],
-                  answer: "A place where trash is piled up.",
+                  answer: "Мұсорды жинаған орын.",
                 },
               ],
             },
             snapshot: {
-              navigation: "Snapshot",
+              navigation: "Суретке түсіру",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Take three pictures of the ways you take care of the environment",
+                "Өрт сақтауға қандай әрекет ететініңіздің үш суретін түсіріңіз",
             },
-          },
+          },          
         },
       ],
     },
@@ -2672,44 +2665,44 @@ export const Grade1 = {
           },
           minigames: {
             quiz: {
-              navigation: "QuizScreen",
+              navigation: "Тест экраны",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "Solar energy is not a renewable energy source",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                  prompt: "Күн энергиясы қайта қолданушы энергия дереккөзі емес",
+                  answers: [{ text: "Дұрыс" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс емес",
                 },
                 {
-                  prompt: "A disadvantage of using solar energy is",
+                  prompt: "Күн энергиясын пайдалану зияны",
                   answers: [
-                    { text: "It's renewable" },
-                    { text: "Expensive to implement" },
-                    { text: "All of the above" },
+                    { text: "Ол қайта қолданушы" },
+                    { text: "Орнату қымбат" },
+                    { text: "Әрнайысы" },
                   ],
-                  answer: "All of the above",
+                  answer: "Әрнайысы",
                 },
                 {
-                  prompt: "Solar cells convert solar energy into electricity.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                  prompt: "Күн батареялары күн энергиясын электр энергиясына айналдырады.",
+                  answers: [{ text: "Дұрыс" }, { text: "Дұрыс емес" }],
+                  answer: "Дұрыс",
                 },
                 {
                   prompt:
-                    "Why are fossil fuels more widely used than solar energy?",
+                    "Неге қанықар энергиясы күн энергиясынан көбірек пайдаланылады?",
                   answers: [
-                    { text: "Solar energy is hard to find" },
-                    { text: "Fossil fuels are much cheaper" },
-                    { text: "Fossil fuels are more abundant" },
+                    { text: "Күн энергиясын табу қиын" },
+                    { text: "Қанықар энергиясы өте арзан" },
+                    { text: "Қанықар энергиясы аса көп" },
                   ],
-                  answer: "Fossil fuels are much cheaper",
+                  answer: "Қанықар энергиясы өте арзан",
                 },
               ],
             },
             openresponse: {
-              navigation: "Image Boom",
+              navigation: "Сурет жарыққа шығу",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
               ), // Image Boom
@@ -2719,51 +2712,51 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Do some research on how the Moon affects oceans. What did you learn?",
-                    placeholder: "The moon...",
+                    text: "Ай мұхиттарға қандай әсер ететінін зерттеңіз. Сіз не үйрендіңіз?",
+                    placeholder: "Ай...",
                     image: require("../../../../assets/openresponse/tide.png"),
                   },
                 ],
               },
             },
             snapshot: {
-              navigation: "Snapshot",
+              navigation: "Суретке түсіру",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Find a building or place in your city where you can see solar panels. Upload a photo!",
+                "Қалаңызда күн панелдерін көруге болатын ғимарат немесе орынды табыңыз. Сурет жүктеп қойыңыз!",
             },
             sorting: {
-              navigation: "Sorting",
+              navigation: "Сұрыптау",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Which cosmic body best fits the following description?",
+                  "Келесі сипаттамаға ең жақсы сәйкес келетін галактикалық бедергі күй?",
                 num: 4,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
-                  { name: "Moon" },
-                  { name: "Sun" },
-                  { name: "Earth" },
+                  { name: "Ай" },
+                  { text: "Күн" },
+                  { text: "Жер" },
                 ],
                 options: [
                   {
-                    title: "A medium size star",
-                    name: "Sun",
+                    title: "Орташа өлшемді жұлдыз",
+                    name: "Күн",
                   },
                   {
-                    title: "No atmosphere",
-                    name: "Moon",
+                    title: "Атмосфера жоқ",
+                    name: "Ай",
                   },
                   {
-                    title: "A burning ball of gas",
-                    name: "Sun",
+                    title: "Өрт ететін газ шары",
+                    name: "Күн",
                   },
                   {
-                    title: "Only planet that supports life",
-                    name: "Earth",
+                    title: "Тек өмір сүруге болатын планета",
+                    name: "Жер",
                   },
                 ],
               },
@@ -2801,24 +2794,6 @@ export const Grade1 = {
             ],
           },
           minigames: {
-            openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Research the origin of the names of 3 planets of your choice.",
-                    placeholder: "The name of the planet..",
-                    image: require("../../../../assets/openresponse/planets.png"),
-                  },
-                ],
-              },
-            },
             quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
@@ -2826,46 +2801,56 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "The majority of Earth's energy comes from",
+                  prompt: "Which is the closest planet to the Sun?",
                   answers: [
-                    { text: "The Earth's core" },
-                    { text: "The Sun" },
-                    { text: "Hydroelectric power" },
-                    { text: "Burning fossil fuels" },
+                    { text: "Mercury" },
+                    { text: "Earth" },
+                    { text: "Venus" },
+                    { text: "Neptune" },
                   ],
-                  answer: "The Sun",
+                  answer: "Mercury",
                 },
                 {
                   prompt:
-                    "The Earth acts like a greenhouse that catches and traps heat from the sun.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
-                },
-                {
-                  prompt: "Solar cells convert solar energy into electricity.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Which planet do the moons Oberton and Titania belong to?",
+                  answers: [
+                    { text: "Uranus" },
+                    { text: "Earth" },
+                    { text: "Venus" },
+                    { text: "Jupiter" },
+                  ],
+                  answer: "Uranus",
                 },
                 {
                   prompt:
-                    "_____________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
+                    "The largest volcano in the solar system is called Olympus Mons. Where is it?",
                   answers: [
-                    { text: "Climate" },
-                    { text: "Global Warming" },
-                    { text: "Climate Change" },
-                    { text: "Greenhouse Effect" },
+                    { text: "Earth" },
+                    { text: "Mars" },
+                    { text: "Venus" },
+                    { text: "Jupiter" },
                   ],
-                  answer: "Global Warming",
+                  answer: "Mars",
                 },
                 {
-                  prompt:
-                    "__________ is a change in global and regional climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
+                  prompt: "What is the Great Red Spot on Jupiter?",
                   answers: [
-                    { text: "Radiation" },
-                    { text: "Climate Change" },
-                    { text: "Greenhouse Gas" },
+                    { text: "A storm" },
+                    { text: "A lake" },
+                    { text: "A crater" },
+                    { text: "A volcano" },
                   ],
-                  answer: "Climate Change",
+                  answer: "A storm",
+                },
+                {
+                  prompt: "What is the Sun mainly made from?",
+                  answers: [
+                    { text: "Liquid lava" },
+                    { text: "Gas" },
+                    { text: "Rock" },
+                    { text: "Molten Iron" },
+                  ],
+                  answer: "Gas",
                 },
               ],
             },
@@ -2874,7 +2859,7 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Put the planets in order from the closest to the Sun to the furthest.",
+                "Put the planets in order from the smallest to the largest.",
               data: [
                 {
                   text: "Mercury",
@@ -2915,79 +2900,6 @@ export const Grade1 = {
                   text: "Neptune",
                   dormant: "#A52A2A",
                   active: "#800020",
-                },
-              ],
-            },
-            memory: {
-              navigation: "Memory",
-              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different planets.",
-              icon: require("../../../../assets/willpower.png"),
-              backgroundColor: "dodgerblue",
-              content: [
-                {
-                  type: "image",
-                  name: "Mercury",
-                  image: require("../../../../assets/memory/mercury.png"),
-                },
-                {
-                  name: "Mercury",
-                },
-                {
-                  type: "image",
-                  name: "Venus",
-                  image: require("../../../../assets/memory/venus.png"),
-                },
-                {
-                  name: "Venus",
-                },
-                {
-                  type: "image",
-                  name: "Earth",
-                  image: require("../../../../assets/memory/earth.png"),
-                },
-                {
-                  name: "Earth",
-                },
-                {
-                  type: "image",
-                  name: "Mars",
-                  image: require("../../../../assets/memory/mars.png"),
-                },
-                {
-                  name: "Mars",
-                },
-                {
-                  type: "image",
-                  name: "Jupiter",
-                  image: require("../../../../assets/memory/jupiter.png"),
-                },
-                {
-                  name: "Jupiter",
-                },
-                {
-                  type: "image",
-                  name: "Saturn",
-                  image: require("../../../../assets/memory/saturn.png"),
-                },
-                {
-                  name: "Saturn",
-                },
-                {
-                  type: "image",
-                  name: "Uranus",
-                  image: require("../../../../assets/memory/uranus.png"),
-                },
-                {
-                  name: "Uranus",
-                },
-                {
-                  type: "image",
-                  name: "Neptune",
-                  image: require("../../../../assets/memory/neptune.png"),
-                },
-                {
-                  name: "Neptune",
                 },
               ],
             },
@@ -3171,60 +3083,60 @@ export const Grade1 = {
               navigation: "Reorder",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
-              prompt: "Order the months.",
+              prompt: "Айларды сұрыптаңыз.",
               data: [
                 {
-                  text: "February",
+                  text: "Ақпан",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "September",
+                  text: "Қыркүйек",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "July",
+                  text: "Шілде",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "April",
+                  text: "Сәуір",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "January",
+                  text: "Қаңтар",
                   dormant: "#19a127",
                   active: "#169023",
                 },
                 {
-                  text: "May",
+                  text: "Мамыр",
                   dormant: "#d38f9f",
                   active: "#cd8193",
                 },
                 {
-                  text: "March",
+                  text: "Наурыз",
                   dormant: "#6e57d2",
                   active: "#634ebd",
                 },
                 {
-                  text: "June",
+                  text: "Маусым",
                   dormant: "#6F8FAF",
-                  active: "#6082B6	",
+                  active: "#6082B6",
                 },
                 {
-                  text: "August",
+                  text: "Тамыз",
                   dormant: "#DAA520",
                   active: "#E49B0F",
                 },
                 {
-                  text: "November",
+                  text: "Қараша",
                   dormant: "#E0B0FF",
                   active: "#CF9FFF",
                 },
                 {
-                  text: "December",
+                  text: "Желтоқсан",
                   dormant: "#C9CC3F",
                   active: "#B4C424",
                 },
@@ -3236,31 +3148,31 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Which season does this sustainable activity best fit into?",
+                  "Бұл өмір сүру әрекеті ең жақсы қай мезгілге сәйкес келеді?",
                 num: 4,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
-                  { name: "Spring" },
-                  { name: "Summer" },
-                  { name: "Autumn" },
-                  { name: "Winter" },
+                  { name: "Көктем" },
+                  { name: "Жаз" },
+                  { name: "Қызару" },
+                  { name: "Қыс" },
                 ],
                 options: [
                   {
-                    title: "Making art out of fallen leaves",
-                    name: "Autumn",
+                    title: "Түстен өсіп түскен парақтардан өнер тигу",
+                    name: "Қызару",
                   },
                   {
-                    title: "Going ice-skating",
-                    name: "Winter",
+                    title: "Мұздау жүзу",
+                    name: "Қыс",
                   },
                   {
-                    title: "Making homemade ice cream",
-                    name: "Summer",
+                    title: "Үйде өзіңіздікті майлап жасау",
+                    name: "Жаз",
                   },
                   {
-                    title: "Planting a tree ",
-                    name: "Spring",
+                    title: "Агаш қою",
+                    name: "Көктем",
                   },
                 ],
               },
@@ -3310,103 +3222,39 @@ export const Grade1 = {
           },
           minigames: {
             memory: {
-              navigation: "Memory",
-              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the time to that shown on the clocks.",
-              icon: require("../../../../assets/willpower.png"),
-              backgroundColor: "dodgerblue",
-              content: [
-                {
-                  type: "image",
-                  name: "6pm",
-                  image: require("../../../../assets/memory/6pm.png"),
-                },
-                {
-                  name: "6pm",
-                },
-                {
-                  type: "image",
-                  name: "12pm",
-                  image: require("../../../../assets/memory/12pm.png"),
-                },
-                {
-                  name: "12pm",
-                },
-                {
-                  type: "image",
-                  name: "4pm",
-                  image: require("../../../../assets/memory/4pm.png"),
-                },
-                {
-                  name: "4pm",
-                },
-                {
-                  type: "image",
-                  name: "10:30pm",
-                  image: require("../../../../assets/memory/10.30.png"),
-                },
-                {
-                  name: "10:30pm",
-                },
-                {
-                  type: "image",
-                  name: "3pm",
-                  image: require("../../../../assets/memory/3pm.png"),
-                },
-                {
-                  name: "3pm",
-                },
-                {
-                  type: "image",
-                  name: "9pm",
-                  image: require("../../../../assets/memory/9.png"),
-                },
-                {
-                  name: "9pm",
-                },
-                {
-                  type: "image",
-                  name: "1:30pm",
-                  image: require("../../../../assets/memory/1.30pm.png"),
-                },
-                {
-                  name: "1:30pm",
-                },
-                {
-                  type: "image",
-                  name: "7pm",
-                  image: require("../../../../assets/memory/7pm.png"),
-                },
-                {
-                  name: "7pm",
-                },
-              ],
+                navigation: "Memory",
+                title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
+                description: "Сағатта көрсетілген уақытқа сәйкес келтіріңіз.",
+                icon: require("../../../../assets/willpower.png"),
+                backgroundColor: "dodgerblue",
+                content: [
+                    // ... the rest of the code
+                ],
             },
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Do some research and find out what clock is the most accurate. What did you learn?",
-                    placeholder:
-                      "The most accurate way of measuring time is...",
-                    image: require("../../../../assets/memory/3pm.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Зерттеу жасап, ең дәл сағатты табыңыз. Не үйрендіңіз?",
+                            placeholder: "Уақытты ең дәл өлшеу тәсілі...",
+                            image: require("../../../../assets/memory/3pm.png"),
+                        },
+                    ],
+                },
             },
             snapshot: {
-              navigation: "Snapshot",
-              icon: require("../../../../assets/camera.png"),
-              backgroundColor: "#FFD972",
-              backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Take a picture of the sunset.",
+                navigation: "Snapshot",
+                icon: require("../../../../assets/camera.png"),
+                backgroundColor: "#FFD972",
+                backgroundImage: require("../../../../assets/lessonbg2.png"),
+                prompt: "Күн батуын суретке түсіріңіз.",
             },
           },
         },
@@ -3452,22 +3300,22 @@ export const Grade1 = {
           },
           minigames: {
             openresponse: {
-              navigation: "Image Boom",
-              title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
-              icon: require("../../../../assets/image.png"),
-              backgroundColor: "palevioletred",
-              data: {
-                numberOfPrompts: 1,
-                prompts: [
-                  {
-                    text: "Find three objects, people or animals in your home that you can describe forces that are acting upon them.",
-                    placeholder: "The force...",
-                    image: require("../../../../assets/openresponse/gravity.png"),
-                  },
-                ],
-              },
+                navigation: "Image Boom",
+                title: (
+                    <Translation>{(t) => t("common:openresponse")}</Translation>
+                ), // Image Boom
+                icon: require("../../../../assets/image.png"),
+                backgroundColor: "palevioletred",
+                data: {
+                    numberOfPrompts: 1,
+                    prompts: [
+                        {
+                            text: "Үйіңізде табылатын үш нысан, адам немесе жануарды табыңыз, өздеріне қолданылатын күштерді сипаттауға болады.",
+                            placeholder: "Күш...",
+                            image: require("../../../../assets/openresponse/gravity.png"),
+                        },
+                    ],
+                },
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3476,80 +3324,48 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt:
-                    "If two children are pulling each other with the same force, what will happen?",
-                  answers: [
-                    {
-                      text: "They both move backwards",
-                    },
-                    {
-                      text: "The children do not move at all",
-                    },
-                    {
-                      text: "Only one of them moves while the other one stays still",
-                    },
-                    { text: "The bigger child moves the smaller child" },
-                  ],
-                  answer: "The bigger child moves the smaller child",
+                    prompt: "Егер екі бала бірдей күшпен бір-бірінен апарса, не болады?",
+                    answers: [
+                        { text: "Екеуі де артқа жылжыды" },
+                        { text: "Балалар еш жылжымайтын" },
+                        { text: "Біреуі жылжыды, басқасы орында қалады" },
+                        { text: "Үлкен бала кіші баланы жылжытып отыр" },
+                    ],
+                    answer: "Үлкен бала кіші баланы жылжытып отыр",
                 },
                 {
-                  prompt:
-                    "If you drop a pear from a building, what will be the main force acting on the pear?",
+                  prompt: "Егер сіз дәмді үйден төмен тастасаңыз, алдымен қолданылатын негізгі күш қандай болады?",
                   answers: [
-                    {
-                      text: "Gravity",
-                    },
-                    {
-                      text: "Electric",
-                    },
-                    {
-                      text: "Magnetic",
-                    },
-                    { text: "Elastic" },
+                    { text: "Тығыздық" },
+                    { text: "Электр" },
+                    { text: "Магнитты" },
+                    { text: "Еластік" },
                   ],
-                  answer: "Gravity",
+                  answer: "Тығыздық",
                 },
                 {
-                  prompt:
-                    "What are the different directions forces can move in?",
+                  prompt: "Күштер қай қызмет бағыттарына жылжытуы мүмкін?",
                   answers: [
-                    {
-                      text: "Forwards",
-                    },
-                    {
-                      text: "Backwards",
-                    },
-                    {
-                      text: "Leftward",
-                    },
-                    {
-                      text: "All of the above",
-                    },
+                    { text: "Алға" },
+                    { text: "Артқа" },
+                    { text: "Сол жаққа" },
+                    { text: "Барлығы жоғарыда" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы жоғарыда",
                 },
                 {
-                  prompt: "How can we relate physics to sustainability?",
+                  prompt: "Физиканы қалыптастыруға қалай байланыстыруымызға болады?",
                   answers: [
-                    {
-                      text: "Different gasses and clouds affect the earth's temperature",
-                    },
-                    {
-                      text: "Newton’s laws of motion are used for recycling",
-                    },
-                    {
-                      text: "There is less force acting on reusable objects",
-                    },
-                    {
-                      text: "None of the above",
-                    },
+                      { text: "Түрлі газдар мен бұлттар Жердің температурасына әсер етеді" },
+                      { text: "Ньютонның қозғалыс заңы қайта пайдалану үшін пайдаланылады" },
+                      { text: "Қайта пайдаланушы нысандарда кемінде күш қолданылады" },
+                      { text: "Жоғарыдағылардың ешқайсысы да емес" },
                   ],
-                  answer:
-                    "Different gasses and clouds affect the earth's temperature",
+                  answer: "Түрлі газдар мен бұлттар Жердің температурасына әсер етеді",
                 },
               ],
             },
-          },
+          },        
         },
 
         /* 
@@ -3592,8 +3408,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Why are objects that are fast often bad for the environment? Is it because of the energy required to power them? Do you have any ideas on making them more efficient?",
-                    placeholder: "The force...",
+                    text: "Неліктен тез жаттығушы нысандар өте жиі қоршаған үшін нашар ма? Бұл оларды қолдану үшін керек енергия себебінен бе? Оларды тағы өзара жиі жасау туралы пікірлеріңіз бар ма?",
+                    placeholder: "Күш...",
                     image: require("../../../../assets/openresponse/racing.png"),
                   },
                 ],
@@ -3604,32 +3420,31 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt:
-                "Take a picture of one item you can use to measure speed.",
+              prompt: "Жылдамдықты өлшеу үшін пайдалануға болатын бір заттың суретін түсіріңіз.",
             },
             sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Sort the following into fast or slow.",
-
+                prompt: "Келесіді тез немесе баяу үшін сұрыптаңыз.",
+          
                 num: 6,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Fast" }, { name: "Slow" }],
+                categories: [{ name: "Тез" }, { name: "Баяу" }],
                 options: [
-                  { title: "Car", name: "Fast" },
+                  { title: "Автомобиль", name: "Тез" },
                   {
-                    title: "Human",
-                    name: "Slow",
+                    title: "Адам",
+                    name: "Баяу",
                   },
-                  { title: "Cheetah", name: "Fast" },
-                  { title: "Turtle", name: "Slow" },
+                  { title: "Барыс барысы", name: "Тез" },
+                  { title: "Таубақай", name: "Баяу" },
                   {
-                    title: "Penguin",
-                    name: "Slow",
+                    title: "Пингвин",
+                    name: "Баяу",
                   },
-                  { title: "Rowboat", name: "Slow" },
+                  { title: "Кеме", name: "Баяу" },
                 ],
               },
             },
@@ -3637,47 +3452,46 @@ export const Grade1 = {
               navigation: "Reorder",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
-              prompt:
-                "Put these vehicles in order of how energy-efficient they from most energy-efficient to least.",
+              prompt: "Бұл көлік құралдарын енергия тиімділігіне қарағанда ең тиімдісінен ең нашарына дейін ретке көшіріңіз.",
               data: [
                 {
-                  text: "Humans",
+                  text: "Адамдар",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Electric bicycles",
+                  text: "Электр велосипедтер",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Subway",
+                  text: "Метрополитен",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Bus",
+                  text: "Автобус",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Car",
+                  text: "Автомобиль",
                   dormant: "#19a127",
                   active: "#169023",
                 },
                 {
-                  text: "Airplane",
+                  text: "Ұшақ",
                   dormant: "#d38f9f",
                   active: "#cd8193",
                 },
                 {
-                  text: "Bicycle",
+                  text: "Велосипед",
                   dormant: "#6e57d2",
                   active: "#634ebd",
                 },
               ],
             },
-          },
+          },          
         },
 
         /* 
@@ -3727,8 +3541,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is a new/different form/mode of transportation that’s been added to your neighborhood?",
-                    placeholder: "In my neighborhood...",
+                    text: "Сіздің ауданыңызға жаңа/өзге түрдегі көлік құралы қосылды ма?",
+                    placeholder: "Менің ауданымда...",
                     image: require("../../../../assets/openresponse/bus.png"),
                   },
                 ],
@@ -3739,43 +3553,41 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt:
-                "Take a picture of a mode of transportation that is environmentally-friendlier than other modes available.",
+              prompt: "Басқа қол жетімді көлік құралдарына қарағанда қоршаған үшін досымдырақ түрдегі көлік құралының суретін түсіріңіз.",
             },
             reorder: {
               navigation: "Reorder",
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
-              prompt:
-                "Order these vehicles from earliest to latest in terms of when they were invented.",
+              prompt: "Бұл көлік құралдарын олардың шығарылған уақытына қарай қадімгіден жаңаға ретке көшіріңіз.",
               data: [
                 {
-                  text: "Humans",
+                  text: "Адамдар",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Horseback riding",
+                  text: "Аттан тауып көлік қылу",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Car",
+                  text: "Автомобиль",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Train",
+                  text: "Поезд",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Airplane",
+                  text: "Ұшақ",
                   dormant: "#19a127",
                   active: "#169023",
                 },
                 {
-                  text: "Bullet train",
+                  text: "Тез поезд",
                   dormant: "#d38f9f",
                   active: "#cd8193",
                 },
@@ -3788,79 +3600,76 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt:
-                    "Which one of these animals is the saiga slower than?",
+                  prompt: "Бұл жануарлардың қайсысына сайғақ жаңбырдан баяу?",
                   answers: [
                     {
-                      text: "Donkey",
+                      text: "Есек",
                     },
                     {
-                      text: "Turtle",
+                      text: "Таубақай",
                     },
                     {
-                      text: "Bear",
+                      text: "Аю",
                     },
-                    { text: "None of the above" },
+                    { text: "Ешқайсысы" },
                   ],
-                  answer: "None of the above",
+                  answer: "Ешқайсысы",
                 },
                 {
-                  prompt:
-                    "How can we be more environmentally-friendly with fast vehicles?",
+                  prompt: "Біз қалай тез көлік құралдарымен қоршағанға ыңғайлырақ болуымызға болады?",
                   answers: [
                     {
-                      text: "Carpool",
+                      text: "Карпул",
                     },
                     {
-                      text: "Turn the engine off when not in use",
+                      text: "Пайдаланбай кезде моторды өшіру",
                     },
                     {
-                      text: "Open the windows instead of AC",
+                      text: "AC орнына терезелерді ашу",
                     },
-                    { text: "All of the above" },
+                    { text: "Барлығы" },
                   ],
-                  answer: "All of the above",
+                  answer: "Барлығы",
                 },
                 {
-                  prompt: "Can we use speed to make sustainable energy?",
+                  prompt: "Біз жаттықтыру үшін тазарту қуатын пайдалана аламыз ба?",
                   answers: [
                     {
-                      text: "Use the speed of animals to generate energy like a hamster spinning on a wheel",
+                      text: "Жануарлардың жылдамдығын энергия өндіру үшін пайдалану, мысалы, айырықта айналып жүрген жыртқыш",
                     },
                     {
-                      text: "The speed of animals cannot be used to generate energy",
+                      text: "Жануарлардың жылдамдығын энергия өндіру үшін пайдалану мүмкін емес",
                     },
                     {
-                      text: "Use the speed of animals to generate energy like sitting on a cheetah running back and forth",
+                      text: "Жануарлардың жылдамдығын энергия өндіру үшін пайдалану, мысалы, барыс барысының артынан жатып, ол бойынша жүгіп отыру",
                     },
                     {
-                      text: "Although using animals for energy can be done, it is unethical and shouldn’t be done",
+                      text: "Жануарларды энергия үшін пайдалану мүмкін, бірақ ол етіксіз және орындалмауы керек",
                     },
                   ],
-                  answer:
-                    "Although using animals for energy can be done, it is unethical and shouldn’t be done",
+                  answer: "Жануарларды энергия үшін пайдалану мүмкін, бірақ ол етіксіз және орындалмауы керек",
                 },
                 {
-                  prompt: "How many legs are needed to run fast?",
+                  prompt: "Жаттығу үшін қанша тізеқ керек?",
                   answers: [
                     {
-                      text: "2, the less legs the faster you can run",
+                      text: "2, тізектердің саны аз болса, тезірек жатып аласыз",
                     },
                     {
-                      text: "4, the more legs the faster you can run",
+                      text: "4, тізектердің саны көп болса, тезірек жатып аласыз",
                     },
                     {
-                      text: "0, wings can help you fly faster than run",
+                      text: "0, қанаттар жатуға нисбетен ұшуға тездете алады",
                     },
                     {
-                      text: "It does not depend on the amount of legs",
+                      text: "Бұл тізектердің санына тәуел емес",
                     },
                   ],
-                  answer: "It does not depend on the amount of legs",
+                  answer: "Бұл тізектердің санына тәуел емес",
                 },
               ],
             },
-          },
+          },           
         },
 
         /* 
@@ -3903,7 +3712,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Take a picture of the heaviest object you can think of. How could we make this object lighter and more sustainable (so using less materials)?",
+                "Өйткені ойлай алатын ең ауыр заттың суретін алыңыз. Қалай болса осы затты азырақ материалдарды пайдалана отырып, жеңілірек және туралырақ қылуға болар еді?",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -3916,8 +3725,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Think of a heavy object. What is it made out of? Label each material as either environmentally friendly or not.",
-                    placeholder: "I thought of...",
+                    text: "Ауыр затты ойлаңыз. Ол не нәрседен жасалған? Әр түрлі материалды қоршағансыз жақса қоршағандык пен емес деп белгілеңіз.",
+                    placeholder: "Мен ойлаған...",
                     image: require("../../../../assets/openresponse/heavy.png"),
                   },
                 ],
@@ -3928,30 +3737,30 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Put these environmentally-friendly objects in order from lightest to heaviest.",
+                "Бұл қоршағансыз заттарды ең жеңілден ең ауырға дейін ретке келтіріңіз.",
               data: [
                 {
-                  text: "Bicycle",
+                  text: "Велосипед",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Tree",
+                  text: "Ағаш",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Nuclear power generator",
+                  text: "Ядролық энергия генераторы",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Empty rain bucket",
+                  text: "Бос жаңбыр ведро",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Tiny home plant",
+                  text: "Шағын үй өсімдігі",
                   dormant: "#19a127",
                   active: "#169023",
                 },
@@ -3965,75 +3774,73 @@ export const Grade1 = {
               content: [
                 {
                   prompt:
-                    "Mass is hard to estimate when it comes to objects that we’ve never seen before. How heavy do you think a whale’s tongue is?",
+                    "Көлемін өзге болмайтын заттарда ұқсату қиын. Сенімді, китың тілі қанша ауыр?",
                   answers: [
                     {
-                      text: "Heavier than an elephant, bike, and a human combined",
+                      text: "Фил, велосипед пен адамды бірге есептесек, китың тілі ауыртар",
                     },
                     {
-                      text: "Heavier than a bike and a human",
+                      text: "Велосипед және адамдан ауыр",
                     },
                     {
-                      text: "Heavier than a human",
+                      text: "Адамдан ауыр",
                     },
-                    { text: "Not heavier than any of these listed above" },
+                    { text: "Бұлардың барлығынан да аз ауыр" },
                   ],
-                  answer:
-                    "Heavier than an elephant, bike, and a human combined",
+                  answer: "Фил, велосипед пен адамды бірге есептесек, китың тілі ауыртар",
                 },
                 {
                   prompt:
-                    "If two objects are hit with the same force, which object will roll faster?",
+                    "Егер екі затты бірдей күшпен ұдарсақ, қай зат жылдам өтіп өтеді?",
                   answers: [
                     {
-                      text: "The object that is heavier",
+                      text: "Ең ауыр зат",
                     },
                     {
-                      text: "The object that is lighter",
+                      text: "Ең жеңіл зат",
                     },
                     {
-                      text: "The object that has a more circular shape",
+                      text: "Ең шаршы формалы зат",
                     },
                     {
-                      text: "None of the objects because they are hit with the same force",
+                      text: "Ешбір зат емес, себебі оларды бірдей күшпен ұдыратын",
                     },
                   ],
-                  answer: "The object that is lighter",
+                  answer: "Ең жеңіл зат",
                 },
                 {
-                  prompt:
-                    "Do different countries have different measurement standards?",
+                  prompt: "Әр түрлі елдерде өлшеу стандарттары әр түрлі бола ма?",
                   answers: [
                     {
-                      text: "Yes",
+                      text: "Иә",
                     },
                     {
-                      text: "No",
+                      text: "Жоқ",
                     },
                   ],
-                  answer: "Yes",
+                  answer: "Иә",
                 },
                 {
-                  prompt: "Which of these do not belong?",
+                  prompt: "Бұлардың қайсысы қатемен?",
                   answers: [
                     {
-                      text: "Kilograms",
+                      text: "Килограммдар",
                     },
                     {
-                      text: "Grams",
+                      text: "Граммдар",
                     },
                     {
-                      text: "Inches",
+                      text: "Дюймдар",
                     },
                     {
-                      text: "Milligrams",
+                      text: "Миллиграммдар",
                     },
                   ],
-                  answer: "Inches",
+                  answer: "Дюймдар",
                 },
               ],
             },
-          },
+          },          
         },
 
         /* 
@@ -4083,7 +3890,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Take a picture of the most environmentally-friendly light source in your home. Think properly, this is a trick question!",
+                "Үйіңіздегі ең қоршағансыз жарық көзінің суретін алыңыз. Нақты ойлаңыз, бұл сұрақ айқын емес!",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4096,8 +3903,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Think of how you could save energy in your home.",
-                    placeholder: "I think that..",
+                    text: "Үйдегі энергияны қалай қолдану керек екенін ойлаңыз.",
+                    placeholder: "Мен ойлаған...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -4108,30 +3915,30 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "From least sustainable to most sustainable, order these light sources.",
+                "Ең аз қоршағандықтан ең қоршағансызға дейін, бұл жарық көздерін ретке келтіріңіз.",
               data: [
                 {
-                  text: "Candle",
+                  text: "Шам",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Electric buld",
+                  text: "Электрлік шам",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Firefly",
+                  text: "Жарық шыбыншы",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "The Sun",
+                  text: "Күн",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Neon lamp",
+                  text: "Неон лампасы",
                   dormant: "#19a127",
                   active: "#169023",
                 },
@@ -4143,28 +3950,28 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Sort the source of light into the appropriate category.",
-
+                  "Жарық көзін тиісті санатқа сұрыптаңыз.",
+          
                 num: 6,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Natural" }, { name: "Artificial" }],
+                categories: [{ name: "Табиғи" }, { name: "Жасанды" }],
                 options: [
-                  { title: "Sun", name: "Natural" },
+                  { title: "Күн", name: "Табиғи" },
                   {
-                    title: "Candle",
-                    name: "Artificial",
+                    title: "Шам",
+                    name: "Жасанды",
                   },
-                  { title: "Stars", name: "Natural" },
-                  { title: "Reflected light from the Moon", name: "Natural" },
+                  { title: "Жұлдыздар", name: "Табиғи" },
+                  { title: "Айдан келген отарты жарық", name: "Табиғи" },
                   {
-                    title: "Electric bulb",
-                    name: "Artificial",
+                    title: "Электрлік шам",
+                    name: "Жасанды",
                   },
-                  { title: "Neon lamp", name: "Artificial" },
+                  { title: "Неон лампасы", name: "Жасанды" },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -4202,7 +4009,7 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Take a picture of an opaque and transparent object!",
+              prompt: "Тыныш және мөлдір қараудың суретін алыңыз!",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4215,14 +4022,14 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What happens to a ray of light when it goes through a transparent object? Does it follow a straight line or not?",
-                    placeholder: "I think that..",
+                    text: "Жарық сызығы мөлдір нысанды өткенде не болады? Ол тура жолдан өтеді немесе емес пе?",
+                    placeholder: "Мен ойлаған...",
                     image: require("../../../../assets/openresponse/prism.png"),
                   },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -4265,7 +4072,7 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Take a picture of a natural source of sound.",
+              prompt: "Табиғи дыбыс көзінің суретін алыңыз.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4278,8 +4085,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is the difference between natural sources of sound and artificial sources of sound? How can we use natural sources of sound for sustainable behaviors?",
-                    placeholder: "I think that..",
+                    text: "Табиғи дыбыс көздері мен жасандырылған дыбыс көздері арасындағы айырмашылық не? Қалай болса, табиғи дыбыс көздерін барымдылық сый behavior-дерге қолдануға болады?",
+                    placeholder: "Мен ойлаған...",
                     image: require("../../../../assets/openresponse/megaphone.png"),
                   },
                 ],
@@ -4292,64 +4099,64 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is a sustainable source of sound?",
+                  prompt: "Барымдылық дыбыс көзі не?",
                   answers: [
                     {
-                      text: "A rooster making noise to wake you up in the morning",
+                      text: "Таңертең сізді ойындыру үшін күкірейтін төйек",
                     },
                     {
-                      text: "A speaker making louder, disruptive noise for everyone to hear",
+                      text: "Бәріне естіген дыбыс шығаратын динамик",
                     },
                     {
-                      text: "A car revving its engine releasing gasses into the air",
+                      text: "Газды ауаға шығаратын машина двигателі",
                     },
-                    { text: "All of the above" },
+                    { text: "Барлығы жоқ" },
                   ],
                   answer:
-                    "A rooster making noise to wake you up in the morning",
+                    "Таңертең сізді ойындыру үшін күкірейтін төйек",
                 },
                 {
-                  prompt: "Sound is a form of energy.",
+                  prompt: "Дыбыс - бұл энергия түрі.",
                   answers: [
                     {
-                      text: "True",
+                      text: "Шын",
                     },
                     {
-                      text: "False",
+                      text: "Жалған",
                     },
                   ],
-                  answer: "True",
+                  answer: "Шын",
                 },
                 {
-                  prompt: "How is sound produced?",
+                  prompt: "Дыбыс қалай пайда болады?",
                   answers: [
                     {
-                      text: "Forward and backwards movement called oscillation and the vibrations that propagate through the air are these sound waves.",
+                      text: "Оссиляция деп аталатын алға және кейінгі қозғалыс және ауада таратылатын вибрациялар - бұл дыбыс толқындары.",
                     },
                     {
-                      text: "From a speaker located deep inside Earth’s core",
+                      text: "Жер үшекінен шығатын динамиктен",
                     },
                     {
-                      text: "The Earth’s gravitational pulls waves to the center and pushes them out loudly",
+                      text: "Жердің құбылыс сипаттамасы толқындарды орталыққа жинау және оларды дыбысты шығару үшін шығарып салады",
                     },
                     {
-                      text: "None of the above",
+                      text: "Ешқандай араларында жоқ",
                     },
                   ],
                   answer:
-                    "Forward and backwards movement called oscillation and the vibrations that propagate through the air are these sound waves.",
+                    "Оссиляция деп аталатын алға және кейінгі қозғалыс және ауада таратылатын вибрациялар - бұл дыбыс толқындары.",
                 },
                 {
-                  prompt: "Sound can be amplified.",
+                  prompt: "Дыбыс күшейтілуі мүмкін.",
                   answers: [
                     {
-                      text: "Yes",
+                      text: "Иә",
                     },
                     {
-                      text: "No",
+                      text: "Жоқ",
                     },
                   ],
-                  answer: "Yes",
+                  answer: "Иә",
                 },
               ],
             },
@@ -4359,27 +4166,27 @@ export const Grade1 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Sort the source of sound into the appropriate category.",
-
+                  "Дыбыс көзін тиісті санатқа салыңыз.",
+          
                 num: 5,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Natural" }, { name: "Unnatural" }],
+                categories: [{ name: "Табиғи" }, { name: "Жасандырылған" }],
                 options: [
-                  { title: "A lion roaring", name: "Natural" },
+                  { title: "Арыстан қарғыдайды", name: "Табиғи" },
                   {
-                    title: "A plane flying",
-                    name: "Unnatural",
+                    title: "Ұшақ ұшады",
+                    name: "Жасандырылған",
                   },
-                  { title: "A bell ringing", name: "Natural" },
-                  { title: "Waves at the beach", name: "Natural" },
+                  { title: "Қоңырау шалады", name: "Табиғи" },
+                  { title: "Жағалауда толқындар", name: "Табиғи" },
                   {
-                    title: "A car honking",
-                    name: "Unnatural",
+                    title: "Автомобиль сигналын береді",
+                    name: "Жасандырылған",
                   },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -4418,7 +4225,7 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Take a picture of any device used to hear sounds.",
+              prompt: "Дыбысты есту үшін пайдаланылатын құрылғының суретін түсіріңіз.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4431,8 +4238,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Why are theaters, performance centers, and stadiums arranged in that way? Does it help with sound production? What are your thoughts?",
-                    placeholder: "I think that..",
+                    text: "Театрлар, орындалу орталықтары және стадиондар қандай құрылған? Бұл дыбыс өндіруге көмекші бола ма? Сіздің пікірлеріңіз қандай?",
+                    placeholder: "Мен ойлаған...",
                     image: require("../../../../assets/openresponse/stadium.png"),
                   },
                 ],
@@ -4488,8 +4295,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is the hottest part of Kazakhstan? Explain why",
-                    placeholder: "The hottest part of my country is..",
+                    text: "Қазақстандың ең жылы жері қай жер? Себебін айтып беріңіз",
+                    placeholder: "Менің елімнің ең жылы жері..",
                     image: require("../../../../assets/openresponse/hot.png"),
                   },
                 ],
@@ -4500,22 +4307,22 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Sort the following into the appropriate category.",
-
+                prompt: "Төмендегілерді дұрыс санатқа сортып келіңіз.",
+          
                 num: 5,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Hot" }, { name: "Cold" }],
+                categories: [{ name: "Жылы" }, { name: "Суық" }],
                 options: [
-                  { title: "Desert", name: "Hot" },
+                  { title: "Шөл", name: "Жылы" },
                   {
-                    title: "Jungle",
-                    name: "Hot",
+                    title: "Тропик орман",
+                    name: "Жылы",
                   },
-                  { title: "Ice", name: "Cold" },
-                  { title: "Antarctica", name: "Cold" },
+                  { title: "Мұз", name: "Суық" },
+                  { title: "Антарктида", name: "Суық" },
                   {
-                    title: "Sun",
-                    name: "Hot",
+                    title: "Күн",
+                    name: "Жылы",
                   },
                 ],
               },
@@ -4525,58 +4332,58 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Take a picture of the thermometer in your house.",
+              prompt: "Үйіңіздегі термометрдың фотосын түсіріңіз.",
             },
             memory: {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the types of thermometers to their images.",
+              description: "Термометрлердің түрлерін олардың суреттерімен сәйкестендіріңіз.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Digital",
+                  name: "Сандық",
                   image: require("../../../../assets/openresponse/thermometer.png"),
                 },
                 {
-                  name: "Digital",
+                  name: "Сандық",
                 },
                 {
                   type: "image",
-                  name: "Ear",
+                  name: "Құлақ",
                   image: require("../../../../assets/openresponse/ear.png"),
                 },
                 {
-                  name: "Ear",
+                  name: "Құлақ",
                 },
                 {
                   type: "image",
-                  name: "Infrared",
+                  name: "Инфракрас",
                   image: require("../../../../assets/openresponse/infrared.png"),
                 },
                 {
-                  name: "Infrared",
+                  name: "Инфракрас",
                 },
                 {
                   type: "image",
-                  name: "Strip-type",
+                  name: "Жолақты",
                   image: require("../../../../assets/openresponse/strip.png"),
                 },
                 {
-                  name: "Strip-type",
+                  name: "Жолақты",
                 },
                 {
                   type: "image",
-                  name: "Mercury",
+                  name: "Меркурий",
                   image: require("../../../../assets/openresponse/mercury.png"),
                 },
                 {
-                  name: "Mercury",
+                  name: "Меркурий",
                 },
               ],
             },
-          },
+          },          
         },
 
         /* 
@@ -4620,8 +4427,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Ask your parents about summer and winter temperatures when they were kids. Compare it to the temperatures right now. Do you notice any differences?",
-                    placeholder: "My parents told me..",
+                    text: "Сіздің ата-аналарыңызды жаз тау және қыс тау температурасы туралы сұраңыз, олар бала болған кезде. Бұлды қазіргі температуралармен салыстырыңыз. Сізде өзгерістер бола ма?",
+                    placeholder: "Менің ата-анам маған..",
                     image: require("../../../../assets/openresponse/cold.png"),
                   },
                 ],
@@ -4632,17 +4439,14 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt:
-                "Take a picture of things that help us keep cooler in summer.",
+              prompt: "Жазда бізді жауып тұрғызатын заттардың суретін жасаңыз.",
             },
             sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt:
-                  "Sort these animals according to their preferred climate.",
-
+                prompt: "Бұл өкілдерді олардың үнемі климаты бойынша сұрыптаңыз.",
                 num: 5,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [{ name: "Hot weather" }, { name: "Cold weather" }],
@@ -4668,75 +4472,72 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "Which is most likely to result from global warming?",
+                  prompt: "Глобалды қындырудан ең ықтимал нәтиже болатынымыз не?",
                   answers: [
                     {
-                      text: "Increase in surface temperatures",
+                      text: "Беттік температуралардың өсуі",
                     },
                     {
-                      text: "Reduction in greenhouse gases",
+                      text: "Қазынағат газдардың азайуы",
                     },
                     {
-                      text: "Decrease in air pollution",
+                      text: "Ауа көктемінің кемуі",
                     },
-                    { text: "Decrease in ocean levels" },
+                    { text: "Мұхиттің сыртқы қабатының төмендеуі" },
                   ],
-                  answer: "Increase in surface temperatures",
+                  answer: "Беттік температуралардың өсуі",
                 },
                 {
-                  prompt:
-                    "When weather patterns change over a long period of time, we call it",
+                  prompt: "Қыркүйек шарттары ұзақ уақыт бойы өзгергенде, біз бұны қалай атаймыз?",
                   answers: [
                     {
-                      text: "Climate adaptation",
+                      text: "Қыркүйек адаптациясы",
                     },
                     {
-                      text: "Weather change",
+                      text: "Ауа райы ауысуы",
                     },
                     {
-                      text: "Climate change",
+                      text: "Қыркүйек өзгеруі",
                     },
                     {
-                      text: "Weather adaptation",
+                      text: "Ауа райы адаптациясы",
                     },
                   ],
-                  answer: "Climate change",
+                  answer: "Қыркүйек өзгеруі",
                 },
                 {
-                  prompt:
-                    "What is the main gas that is trapping more heat close to the Earth, acting like a blanket?",
+                  prompt: "Не болмаса, негізгі газ земнеге жақында қыздықты тұтқызады, жәбей жасап?",
                   answers: [
                     {
-                      text: "Carbon dioxide",
+                      text: "Көмірдің двуоксиді",
                     },
                     {
-                      text: "Oxygen",
+                      text: "Оксидент",
                     },
                     {
-                      text: "Nitrogen",
+                      text: "Азот",
                     },
                     {
-                      text: "Argon",
+                      text: "Арғон",
                     },
                   ],
-                  answer: "Carbon dioxide",
+                  answer: "Көмірдің двуоксиді",
                 },
                 {
-                  prompt:
-                    "Increasing quantities of CO2 (Carbon Dioxide) in the atmosphere will cause air temperatures to be",
+                  prompt: "Атмосферадағы CO2 (Көмірдің двуоксиді) көлемдері өседі деп, ауа температурасы болады",
                   answers: [
                     {
-                      text: "Warmer",
+                      text: "Жылы",
                     },
                     {
-                      text: "Cooler",
+                      text: "Салқын",
                     },
                   ],
-                  answer: "Warmer",
+                  answer: "Жылы",
                 },
               ],
             },
-          },
+          },          
         },
 
         /* 
@@ -4780,7 +4581,7 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
-              prompt: "Take pictures of the devices where magnets are used.",
+              prompt: "Магниттер пайдаланылған құрылғылардың суреттерін жасаңыз.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4793,8 +4594,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Are magnets environmentally friendly? Explain your answer.",
-                    placeholder: "My parents told me..",
+                    text: "Магниттер қоршаған жағдайға ықпалы ма? Сіздің жауабыңызды түсіндіріңіз.",
+                    placeholder: "Менің ата-анам маған...",
                     image: require("../../../../assets/openresponse/magnetism.png"),
                   },
                 ],
@@ -4807,55 +4608,52 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is a magnet?",
+                  prompt: "Магнит не?",
                   answers: [
                     {
-                      text: "A magnet is a material that attracts wood, rubber, and glass.",
+                      text: "Магнит - бұл ағаш, резина және үвек тартатын материал.",
                     },
                     {
-                      text: "A magnet is a material that attracts certain metals, such as iron, nickel, and cobalt.",
+                      text: "Магнит - бұл темір, никель, кобальттай сияқты кей бір металдарды тартатын материал.",
                     },
                   ],
-                  answer:
-                    "A magnet is a material that attracts certain metals, such as iron, nickel, and cobalt.",
+                  answer: "Магнит - бұл темір, никель, кобальттай сияқты кей бір металдарды тартатын материал.",
                 },
                 {
-                  prompt: "Identify the correct statement.",
+                  prompt: "Дұрыс мәліметті анықтаңыз.",
                   answers: [
                     {
-                      text: "A magnet has two poles, the north pole and the south pole.",
+                      text: "Магнитте екі ұшық бар, шығыс ұшығы және оңтүстік ұшық.",
                     },
                     {
-                      text: "A magnet has two poles, the west pole and the east pole",
+                      text: "Магнитте екі ұшық бар, батыс ұшығы және шығыс ұшығы.",
                     },
                   ],
-                  answer:
-                    "A magnet has two poles, the north pole and the south pole.",
+                  answer: "Магнитте екі ұшық бар, шығыс ұшығы және оңтүстік ұшық.",
                 },
                 {
-                  prompt: "Magnets attract all types of metals.",
+                  prompt: "Магниттер барлық металдарды тартады.",
                   answers: [
                     {
-                      text: "True",
+                      text: "Расты",
                     },
                     {
-                      text: "False",
+                      text: "Дұрыс емес",
                     },
                   ],
-                  answer: "False",
+                  answer: "Дұрыс емес",
                 },
                 {
-                  prompt:
-                    "Magnet poles that are different will ________ one another.",
+                  prompt: "Бірдей магнит ұшықтары өздеріне _________ .",
                   answers: [
                     {
-                      text: "Attract",
+                      text: "Тартатады",
                     },
                     {
-                      text: "Repel",
+                      text: "Қуыстыратады",
                     },
                   ],
-                  answer: "Attract",
+                  answer: "Тартатады",
                 },
               ],
             },
@@ -4864,27 +4662,26 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Sort these materials according to their magnetism.",
-
+                prompt: "Бұл материалдарды магнитизмілері бойынша сұрыптаңыз.",
                 num: 5,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
-                categories: [{ name: "Magnetic" }, { name: "Non-magnetic" }],
+                categories: [{ name: "Магниттік" }, { name: "Магниттік емес" }],
                 options: [
-                  { title: "Iron", name: "Magnetic" },
+                  { title: "Темір", name: "Магниттік" },
                   {
-                    title: "Plastic",
-                    name: "Non-magnetic",
+                    title: "Пластик",
+                    name: "Магниттік емес",
                   },
-                  { title: "Nickel", name: "Magnetic" },
-                  { title: "Rubber", name: "Non-magnetic" },
+                  { title: "Никель", name: "Магниттік" },
+                  { title: "Резина", name: "Магниттік емес" },
                   {
-                    title: "Stainless stell",
-                    name: "Non-magnetic",
+                    title: "Боз ұдеріс пендік",
+                    name: "Магниттік емес",
                   },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -4935,7 +4732,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Go to a library and pick a book you would like to read this summer. Take a picture of it.",
+                "Кітапханага барыңыз да, бұл жаз оқу үшін кітап таңдаңыз. Оның суретін алыңыз.",
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4948,8 +4745,8 @@ export const Grade1 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What sustainable activities are you going to do this summer?",
-                    placeholder: "This summer..",
+                    text: "Бұл жазда қандай тұрақты қызметтерді жасайсыз?",
+                    placeholder: "Бұл жаз..",
                     image: require("../../../../assets/openresponse/palm-tree.png"),
                   },
                 ],
@@ -4960,31 +4757,31 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Sort these materials according to their magnetism.",
+                prompt: "Осы материалдарды магнитизм бойынша сұрыптаңыз.",
 
                 num: 5,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
-                  { name: "Sustainable" },
-                  { name: "Unsustainable" },
+                  { name: "Тұрақты" },
+                  { name: "Тұрақты емес" },
                 ],
                 options: [
                   {
-                    title: "Staying hydrated with a reusable bottle",
-                    name: "Sustainable",
+                    title: "Қайта пайдаланушы бутылкамен су ішу",
+                    name: "Тұрақты",
                   },
                   {
-                    title: "Playing video games all day",
-                    name: "Unsustainable",
+                    title: "Күн бойы видео ойындар ойнау",
+                    name: "Тұрақты емес",
                   },
                   {
-                    title: "Closing the shades to keep the room cooler",
-                    name: "Sustainable",
+                    title: "Бөлме жағын күлу үшін жалғыздарды жабу",
+                    name: "Тұрақты",
                   },
-                  { title: "Using AC all day", name: "Unsustainable" },
+                  { title: "Күн бойы кондиционерді қолдану", name: "Тұрақты емес" },
                   {
-                    title: "Driving a car",
-                    name: "Unsustainable",
+                    title: "Машинада жуу",
+                    name: "Тұрақты емес",
                   },
                 ],
               },
@@ -4994,30 +4791,30 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Rank transport from the most sustainable to the least sustainable.",
+                "Транспортты ең тұрақтыдан ең тұрақты емеске дейін сұрыптаңыз.",
               data: [
                 {
-                  text: "Tram",
+                  text: "Трамвай",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Electric rail",
+                  text: "Электрдік темір жол",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Cycling",
+                  text: "Велосипедмен жүзу",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Car",
+                  text: "Машина",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Plane",
+                  text: "Ұшақ",
                   dormant: "#19a127",
                   active: "#169023",
                 },
