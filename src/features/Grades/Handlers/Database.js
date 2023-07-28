@@ -1,7 +1,7 @@
 import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
-import * as FileSystem from 'expo-file-system';
+// import * as FileSystem from 'expo-file-system';
 
 
 async function getGradeData(grade) {
@@ -183,45 +183,45 @@ async function createImageMap(folder, imageMap) {
         }
     }
 
-    for (const image in imageMap) {
-        try {
-            // console.log("Image: ", imageMap[image]);
-            const callback = downloadProgress => {
-                const progress = downloadProgress.totalBytesWritten / downloadProgress.totalBytesExpectedToWrite;
-                this.setState({
-                    downloadProgress: progress,
-                });
-            };
+    // for (const image in imageMap) {
+    //     try {
+    //         // console.log("Image: ", imageMap[image]);
+    //         const callback = downloadProgress => {
+    //             const progress = downloadProgress.totalBytesWritten / downloadProgress.totalBytesExpectedToWrite;
+    //             this.setState({
+    //                 downloadProgress: progress,
+    //             });
+    //         };
 
-            const url = imageMap[image];
-            const outputPath = `${FileSystem.documentDirectory}${image}`;
-            var outputDir = FileSystem.documentDirectory;
-            var outputDirSplit = image.split("/");
+    //         const url = imageMap[image];
+    //         const outputPath = `${FileSystem.documentDirectory}${image}`;
+    //         var outputDir = FileSystem.documentDirectory;
+    //         var outputDirSplit = image.split("/");
 
-            for(var dir in outputDirSplit) {
-                if (!(outputDirSplit[dir].includes(".jpg") || outputDirSplit[dir].includes(".png") || outputDirSplit[dir].includes(".jpeg"))) {
-                    outputDir = outputDir.concat("/" + outputDirSplit[dir]);
-                }
-            }            
-            const downloadResumable = FileSystem.createDownloadResumable(url, outputPath, {}, callback);
-            try {
-                const directoryInfo = await FileSystem.getInfoAsync(outputDir);
-                // const fileInfo = await FileSystem.getInfoAsync(outputDir);
-                if (!directoryInfo.exists) {
-                    await FileSystem.makeDirectoryAsync(outputDir, {
-                        intermediates: true
-                    });
-                    const { uri } = await downloadResumable.downloadAsync();
-                    console.log('Finished downloading to ', uri);
-                }
-            } catch (e) {
-                console.error("Error: ", e);
-            }
+    //         for(var dir in outputDirSplit) {
+    //             if (!(outputDirSplit[dir].includes(".jpg") || outputDirSplit[dir].includes(".png") || outputDirSplit[dir].includes(".jpeg"))) {
+    //                 outputDir = outputDir.concat("/" + outputDirSplit[dir]);
+    //             }
+    //         }            
+    //         const downloadResumable = FileSystem.createDownloadResumable(url, outputPath, {}, callback);
+    //         try {
+    //             const directoryInfo = await FileSystem.getInfoAsync(outputDir);
+    //             // const fileInfo = await FileSystem.getInfoAsync(outputDir);
+    //             if (!directoryInfo.exists) {
+    //                 await FileSystem.makeDirectoryAsync(outputDir, {
+    //                     intermediates: true
+    //                 });
+    //                 const { uri } = await downloadResumable.downloadAsync();
+    //                 console.log('Finished downloading to ', uri);
+    //             }
+    //         } catch (e) {
+    //             console.error("Error: ", e);
+    //         }
 
-        } catch (error) {
-            console.log("Error: ", error);
-        }
-    }
+    //     } catch (error) {
+    //         console.log("Error: ", error);
+    //     }
+    // }
 
 
     return imageMap;
