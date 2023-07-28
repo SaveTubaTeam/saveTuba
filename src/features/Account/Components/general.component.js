@@ -13,11 +13,11 @@ import {
 
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faCircleInfo,
-  faCircleQuestion,
-} from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+// import {
+//   faCircleInfo,
+//   faCircleQuestion,
+// } from "@fortawesome/free-solid-svg-icons";
 import { moderateScale } from "react-native-size-matters";
 import { useTranslation } from "react-i18next";
 
@@ -147,11 +147,11 @@ export const GeneralCard = () => {
           <Spacer position="right" size="medium" />
           <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
             {/* This will need to also be a feature in the firebase - language */}
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               icon={faCircleQuestion}
               size={16}
               color={theme.colors.ui.primary}
-            />
+            /> */}
           </TouchableOpacity>
           <Modal
             animationType="slide"
@@ -182,11 +182,11 @@ export const GeneralCard = () => {
           <Spacer position="right" size="medium" />
           <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
             {/* This will need to also be a feature in the firebase - language */}
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               icon={faCircleInfo}
               size={16}
               color={theme.colors.ui.primary}
-            />
+            /> */}
           </TouchableOpacity>
           <Modal
             animationType="slide"

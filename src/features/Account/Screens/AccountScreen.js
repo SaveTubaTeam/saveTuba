@@ -15,21 +15,21 @@ import { auth } from "../../../../firebase";
 import { connect } from "react-redux";
 // import { AchievementContext } from "../../../contexts/AchievementContext";
 
-const Button = styled(TouchableOpacity)`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  width: 60%;
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  align-items: center;
-  margin-top: ${(props) => props.theme.space[3]};
-`;
+// const Button = styled(TouchableOpacity)`
+//   background-color: ${(props) => props.theme.colors.ui.tertiary};
+//   width: 60%;
+//   padding: ${(props) => props.theme.space[3]};
+//   border-radius: ${(props) => props.theme.sizes[2]};
+//   align-items: center;
+//   margin-top: ${(props) => props.theme.space[3]};
+// `;
 
-const ButtonText = styled.Text`
-  font-family: ${(props) => props.theme.fonts.heading}
-  color: white;
-  font-weight: 700;
-  font-size: ${(props) => props.theme.fontSizes.body};
-`;
+// const ButtonText = styled.Text`
+//   font-family: ${(props) => props.theme.fonts.heading}
+//   color: white;
+//   font-weight: 700;
+//   font-size: ${(props) => props.theme.fontSizes.body};
+// `;
 
 const Container = styled.View`
   flex: 1;
@@ -54,14 +54,14 @@ function AccountScreen() {
       useDispatch(setEnglish());
     }
 
-  const handleSignOut = () => {
-    auth
-      .signOut()
-      .then(() => {
-        navigation.replace("Login");
-      })
-      .catch((error) => alert(error.message));
-  };
+  // const handleSignOut = () => {
+  //   auth
+  //     .signOut()
+  //     .then(() => {
+  //       navigation.replace("Login");
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
   return (
     <SafeArea>
       <ScrollView>
