@@ -52,9 +52,7 @@ const SubmitButton = styled.TouchableOpacity`
 
 const SnapshotHandler = ({
   data,
-  selectedGrade,
-  selectedChapter,
-  selectedLesson,
+  imageMap
 }) => {
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
@@ -94,7 +92,7 @@ const SnapshotHandler = ({
   return (
     <>
       <Container>
-        <ImageBg source={data.backgroundImage}>
+        <ImageBg source={{uri: imageMap[data.backgroundImage]}}>
           <Prompt>
             <TitleText size="subtitle">{data.prompt}</TitleText>
           </Prompt>

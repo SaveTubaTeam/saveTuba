@@ -70,15 +70,10 @@ const ReorderHandler = ({
   selectedChapter,
   selectedLesson,
 }) => {
-  // console.log(info.data);
-
   const [data, setData] = useState(info.data);
-  const [visible, setVisible] = useState(false);
-  
   const { t } = useTranslation();
+  const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
-
-  console.log("here_1");
   const Modko = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
@@ -110,7 +105,6 @@ const ReorderHandler = ({
       </Modal>
     );
   };
-  console.log("here_2");
   const renderItem = ({ item, drag, isActive }) => {
     return (
       <>
@@ -127,43 +121,36 @@ const ReorderHandler = ({
       </>
     );
   };
-  console.log("here_3");
+
   return (
     <>
       <Container>
-
-        {/* <Text>Hello World</Text> */}
         <DraggableFlatList
           scrollEnabled={false} //if true - first item is not draggable
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}
-          keyExtractor={(index) => index}
+          keyExtractor={(item, index) => index}
           renderItem={renderItem}
-          ListHeaderComponentStyle={{ alignItems: "center", marginTop: 10 }}
+          ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
           ListHeaderComponent={
-            <Text>Hello World</Text>
-            // <Prompt>
-            //   <TitleText size="subtitle">{info.prompt}</TitleText>
-            //   <Spacer size="medium" />
-            //   <TitleText size="caption">
-            //     Hint: Long press to drag the items.
-            //   </TitleText>
-            // </Prompt>
+            <Prompt>
+              <TitleText size="subtitle">{info.prompt}</TitleText>
+              <Spacer size="medium" />
+              <TitleText size="caption">
+                Hint: Long press to drag the items.
+              </TitleText>
+            </Prompt>
           }
           ListFooterComponentStyle={{ marginTop: 10 }}
           ListFooterComponent={
-            <Text>Hello World</Text>
-            // <SubmitButton onPress={() => setVisible(!visible)}>
-            //   <BodyText color="secondary" size="subtitle">
-            //     {t("common:submit")}
-            //   </BodyText>
-            // </SubmitButton>
+            <SubmitButton onPress={() => setVisible(!visible)}>
+              <BodyText color="secondary" size="subtitle">
+                {t("common:submit")}
+              </BodyText>
+            </SubmitButton>
           }
         />
-
-
-
         <Modko visible={false} />
       </Container>
     </>
