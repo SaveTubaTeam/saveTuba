@@ -64,7 +64,7 @@
     "react-native-screens": "~3.20.0",
     "react-native-shadow-2": "^6.0.5",
     "react-native-size-matters": "^0.4.0",
-    "react-native-svg": "^13.10.0",
+    "react-native-svg": "13.4.0",
     "react-native-switch-toggle": "^2.2.1",
     "react-native-typing-animation-effect": "^1.0.5",
     "react-native-vector-icons": "^9.1.0",

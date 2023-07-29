@@ -11,6 +11,7 @@ npm-debug.*
 web-build/
 
 # Ignore all of the conversionary datasets
+!package.json
 *.json
 
 # macOS
