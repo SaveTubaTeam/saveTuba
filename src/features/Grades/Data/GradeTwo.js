@@ -840,11 +840,11 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/jungle.png"),
           backgroundColor: "#C0F0F7",
           minigames: {
-            openresponse: { // correct
+            openresponse: {
               navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
+              ),
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
@@ -852,27 +852,27 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Which community (natural or artifical) is more environmentally friendly?" +
-                      "Are there benefits to one or the other? List a couple of either communities you see in your area.",
-                    placeholder: "The community that is...",
+                      "Какое сообщество (естественное или искусственное) более экологично?" +
+                      "Есть ли преимущества у одного или другого? Перечислите несколько таких сообществ, которые вы видите в своем районе.",
+                    placeholder: "Сообщество, которое...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-            sorting: { // correct
+            sorting: {
               navigation: "Sorting",
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Сопоставьте предметы к их окружению", //ideally change to match picutre to word
-                num: 8, //count start 0
+                prompt: "Сопоставьте предметы к их окружению",
+                num: 8,
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
                 categories: [{ name: "Натуральное" }, { name: "Искуственное" }],
                 options: [
                   { title: "Лес", name: "Натуральное" },
                   { title: "Поле", name: "Искуственное" },
-                  { title: "Flowerbed", name: "Искуственное" },
+                  { title: "Цветочная клумба", name: "Искуственное" },
                   { title: "Степь", name: "Натуральное" },
                   { title: "Пруд", name: "Искуственное" },
                   { title: "Пустыня", name: "Натуральное" },
@@ -882,76 +882,75 @@ export const Grade2 = {
                 ],
               },
             },
-            quiz: { // correct
+            quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  //funny wording
                   prompt: "Что такое среда обитания?",
                   answers: [
                     {
-                      text: "A group of plants and animals and their native habitat",
+                      text: "Группа растений и животных в их родной среде обитания",
                     },
                     {
-                      text: "A group of plants and animals that are not living in their habitat",
+                      text: "Группа растений и животных, которые не живут в своей среде обитания",
                     },
-                    { text: "A group of only plants living in their habitat" },
-                    { text: "A group of only animals living in their habitat" },
+                    { text: "Группа только растений, живущих в своей среде обитания" },
+                    { text: "Группа только животных, живущих в своей среде обитания" },
                   ],
-                  answer: "A group of plants and animals and their habitat",
+                  answer: "Группа растений и животных в их родной среде обитания",
                 },
                 {
-                  prompt: "What does homogenous mean?",
+                  prompt: "Что значит 'однородный'?",
                   answers: [
-                    { text: "Of having only different features" },
-                    { text: "Of having mostly different features" },
-                    { text: "Of having some similar features" },
-                    { text: "Of having the same or similar features" },
+                    { text: "Имеющий только разные черты" },
+                    { text: "В основном имеющий разные черты" },
+                    { text: "Имеющий некоторые схожие черты" },
+                    { text: "Имеющий одинаковые или похожие черты" },
                   ],
-                  answer: "Of having the same or similar features",
+                  answer: "Имеющий одинаковые или похожие черты",
                 },
                 {
-                  prompt: "What is an artifical community?",
+                  prompt: "Что такое искусственное сообщество?",
                   answers: [
                     {
-                      text: "A group of plants and animals and their native habitat",
+                      text: "Группа растений и животных в их родной среде обитания",
                     },
                     {
-                      text: "A group of plants and animals that are not living in their habitat",
+                      text: "Группа растений и животных, которые не живут в своей среде обитания",
                     },
-                    { text: "A group of only plants living in their habitat" },
-                    { text: "A group of only animals living in their habitat" },
+                    { text: "Группа только растений, живущих в своей среде обитания" },
+                    { text: "Группа только животных, живущих в своей среде обитания" },
                   ],
                   answer:
-                    "A group of plants and animals that are not living in their habitat",
+                    "Группа растений и животных, которые не живут в своей среде обитания",
                 },
                 {
-                  prompt: "Plants and animals don't need each other to exist.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                  prompt: "Растения и животные не нуждаются друг в друге, чтобы существовать.",
+                  answers: [{ text: "Верно" }, { text: "Неверно" }],
+                  answer: "Неверно",
                 },
                 {
-                  prompt: "Homogenous conditions of existence means...",
+                  prompt: "Однородные условия существования означают...",
                   answers: [
-                    { text: "different plants can't live in the same area" },
-                    { text: "different plants can live in the same area" },
-                    { text: "only specific plants can live in tbe same area" },
-                    { text: "No plants can live in the same area" },
+                    { text: "разные растения не могут жить на одной и той же территории" },
+                    { text: "разные растения могут жить на одной и той же территории" },
+                    { text: "только определенные растения могут жить на одной и той же территории" },
+                    { text: "Никакие растения не могут жить на одной и той же территории" },
                   ],
-                  answer: "different plants can live in the same area",
+                  answer: "разные растения могут жить на одной и той же территории",
                 },
               ],
             },
-            snapshot: { // correct
+            snapshot: {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of a community (artifical or natural) near you.",
+                "Сфотографируйте сообщество (естественное или искусственное) рядом с вами.",
             },
           },
           mastery: {
@@ -1004,48 +1003,47 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  //funny wording
-                  prompt: "What is the definition of 'pathogenic' ",
+                  prompt: "Каково определение 'патогенного'",
                   answers: [
-                    { text: "Something that causes disease" },
-                    { text: "A microorganism" },
-                    { text: "A type of plant" },
-                    { text: "Something that grows very tall" },
+                    { text: "Что-то, что вызывает болезнь" },
+                    { text: "Микроорганизм" },
+                    { text: "Тип растения" },
+                    { text: "Что-то, что растет очень высоко" },
                   ],
-                  answer: "Something that causes disease",
+                  answer: "Что-то, что вызывает болезнь",
                 },
                 {
                   prompt:
-                    "It can take up to 100 years to completely restore a forest that was cut down",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Восстановление вырубленного леса может занять до 100 лет",
+                  answers: [{ text: "Верно" }, { text: "Неверно" }],
+                  answer: "Верно",
                 },
                 {
-                  prompt: "How do plants protect the air?",
+                  prompt: "Как растения защищают воздух?",
                   answers: [
-                    { text: "Help clear the air of dust" },
-                    { text: "Help clear the diar of soot" },
-                    { text: "Help clear the air of hamful gasses" },
-                    { text: "All the above" },
+                    { text: "Помогают очистить воздух от пыли" },
+                    { text: "Помогают очистить воздух от сажи" },
+                    { text: "Помогают очистить воздух от вредных газов" },
+                    { text: "Все вышеуказанное" },
                   ],
-                  answer: "All the above",
+                  answer: "Все вышеуказанное",
                 },
                 {
                   prompt:
-                    "The more we use plants and don't participate in restorative practices, " +
-                    " the more likely the air quality will decrease.",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    "Чем больше мы используем растения и не занимаемся восстановительной практикой, " +
+                    " тем выше вероятность снижения качества воздуха.",
+                  answers: [{ text: "Верно" }, { text: "Неверно" }],
+                  answer: "Верно",
                 },
                 {
-                  prompt: "What does 'anthropogenic' mean?",
+                  prompt: "Что означает 'антропогенный'?",
                   answers: [
-                    { text: "Casued by human activity" },
-                    { text: "Caused by natural activity" },
-                    { text: "The realtionship between prey and preditor" },
-                    { text: "The idea of being sustainable" },
+                    { text: "Причинено человеческой деятельностью" },
+                    { text: "Причинено природной активностью" },
+                    { text: "Отношения между добычей и хищником" },
+                    { text: "Идея устойчивого развития" },
                   ],
-                  answer: "Caused by human activity",
+                  answer: "Причинено человеческой деятельностью",
                 },
               ],
             },
@@ -1055,8 +1053,8 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Cleaning up after ourselves in public is a great way to help improve the air quality" +
-                "Draw some things that you often see outside on the ground that you can pick up.",
+                "Уборка за собой на улице - отличный способ помочь улучшить качество воздуха" +
+                "Нарисуйте несколько вещей, которые вы часто видите на улице и которые вы можете поднять.",
             },
             openresponse: { // correct
               navigation: "Image Boom",
@@ -1070,9 +1068,9 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "List a few ways in which you indirectly impact the environment" +
-                      ", are these practices sustainable?",
-                    placeholder: "The difference between...",
+                      "Перечислите несколько способов, которыми вы косвенно влияете на окружающую среду" +
+                      ", являются ли эти практики устойчивыми?",
+                    placeholder: "Разница между...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1084,16 +1082,16 @@ export const Grade2 = {
               backgroundColor: "coral",
               content: {
                 prompt:
-                  "Sort these practices into helping or hurting the environment",
+                  "Сортируйте эти практики на помощь или вред окружающей среде",
                 num: 4, //count start 0
                 imageBg: SortingImages.bg[0].lvl_1_les_1,
-                categories: [{ name: "Helping" }, { name: "Hurting" }],
+                categories: [{ name: "Помогает" }, { name: "Вредит" }],
                 options: [
-                  { title: "Littering", name: "Hurting" },
-                  { title: "Picking up trash", name: "Helping" },
-                  { title: "Planting native plants", name: "Helping" },
-                  { title: "Using chemical pesticides", name: "Hurting" },
-                  { title: "Supporting local farming", name: "Helping" },
+                  { title: "Мусорить", name: "Вредит" },
+                  { title: "Собирать мусор", name: "Помогает" },
+                  { title: "Посадка родных растений", name: "Помогает" },
+                  { title: "Использование химических пестицидов", name: "Вредит" },
+                  { title: "Поддержка местного фермерства", name: "Помогает" },
                 ],
               },
             },
@@ -1147,50 +1145,44 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  //funny wording
-                  prompt:
-                    "The first Red Book of Kazakhstan was published in 1978 ",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "True",
+                    prompt: "Первая Красная книга Казахстана была опубликована в 1978 году",
+                    answers: [{ text: "Верно" }, { text: "Неверно" }],
+                    answer: "Верно",
                 },
                 {
-                  prompt:
-                    "Which plant grows 1000-2000m above sea level and contains natural rubber?",
-                  answers: [
-                    { text: "Dandelion" },
-                    { text: "Sundew Rounded-Leaf" },
-                    { text: "Steppe Peony" },
-                    { text: "Wormwood" },
-                  ],
-                  answer: "Dandelion",
+                    prompt: "Какое растение растет на высоте 1000-2000 метров над уровнем моря и содержит натуральный резину?",
+                    answers: [
+                        { text: "Одуванчик" },
+                        { text: "Круглолистная росянка" },
+                        { text: "Степная пион" },
+                        { text: "Полынь" },
+                    ],
+                    answer: "Одуванчик",
                 },
                 {
-                  prompt:
-                    "Which plant grows to about 15-50cm and is used to make porridge?",
-                  answers: [
-                    { text: "Dandelion" },
-                    { text: "Sundew Rounded-Leaf" },
-                    { text: "Steppe Peony" },
-                    { text: "Wormwood" },
-                  ],
-                  answer: "Steppe Peony",
+                    prompt: "Какое растение растет до 15-50 см и используется для приготовления каши?",
+                    answers: [
+                        { text: "Одуванчик" },
+                        { text: "Круглолистная росянка" },
+                        { text: "Степная пион" },
+                        { text: "Полынь" },
+                    ],
+                    answer: "Степная пион",
                 },
                 {
-                  prompt:
-                    "Which plant has small white flowers and is commonly found in swamps?",
-                  answers: [
-                    { text: "Dandelion" },
-                    { text: "Sundew Rounded-Leaf" },
-                    { text: "Steppe Peony" },
-                    { text: "Wormwood" },
-                  ],
-                  answer: "Sundew Rounded-Leaf",
+                    prompt: "Какое растение имеет маленькие белые цветы и часто встречается в болотах?",
+                    answers: [
+                        { text: "Одуванчик" },
+                        { text: "Круглолистная росянка" },
+                        { text: "Степная пион" },
+                        { text: "Полынь" },
+                    ],
+                    answer: "Круглолистная росянка",
                 },
                 {
-                  prompt:
-                    "The Red Book only contains information about plants and not animals ",
-                  answers: [{ text: "True" }, { text: "False" }],
-                  answer: "False",
+                    prompt: "В Красной книге содержится информация только о растениях, а не о животных",
+                    answers: [{ text: "Верно" }, { text: "Неверно" }],
+                    answer: "Неверно",
                 },
               ],
             },
@@ -1199,9 +1191,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an endangered animal from the Red Book of Plants. " +
-                "If you cannot find one, take a picture of it online so you can identify it the next time you see it.",
+              prompt: "Сделайте снимок исчезающего животного из Красной книги растений. Если вы не можете найти его, сделайте снимок онлайн, чтобы вы могли идентифицировать его в следующий раз, когда увидите.",
             },
             openresponse: { // correct
               navigation: "Image Boom",
@@ -1214,12 +1204,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text:
-                      "What would be some ways that we could reduce the number of plants listed in the Red Book?" +
-                      " How is practicing good sustainable habits going to help reduce the endangered species?",
-                    placeholder:
-                      "We can reduce the number of endangered plants by ...",
-                    image: require("../../../../assets/openresponse/innovation.png"),
+                    text: "Какими могут быть способы уменьшения числа растений, перечисленных в Красной книге? Как практика хороших устойчивых привычек поможет сократить число исчезающих видов?",
+                    placeholder: "Мы можем уменьшить количество исчезающих растений, если ...",
                   },
                 ],
               },
@@ -1229,20 +1215,18 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "What plants are in the Red Book and which are not?",
-                num: 5, //count start 0
-                imageBg: SortingImages.bg[0].lvl_1_les_1,
+                prompt: "Какие растения находятся в Красной книге и какие нет?",
                 categories: [
-                  { name: "In Red Book" },
-                  { name: "Not in Red Book" },
+                  { name: "В Красной Книге" },
+                  { name: "Не в Красной Книге" },
                 ],
                 options: [
-                  { title: "Startfruit", name: "Not in Red Book" },
-                  { title: "Steppe Peony", name: "In Red Book" },
-                  { title: "Tiger Iris", name: "In Red Book" },
-                  { title: "Ludwig Iris", name: "Not in Red Book" },
-                  { title: "Tarda Tulip", name: "Not in Red Book" },
-                  { title: "Regel's Tulip", name: "In Red Book" },
+                  { title: "Карамбола", name: "Не в Красной Книге" },
+                  { title: "Степная пион", name: "В Красной Книге" },
+                  { title: "Ирис тигровый", name: "В Красной Книге" },
+                  { title: "Ирис Людвига", name: "Не в Красной Книге" },
+                  { title: "Тюльпан Тарда", name: "Не в Красной Книге" },
+                  { title: "Тюльпан Регеля", name: "В Красной Книге" },
                 ],
               },
             },
@@ -1287,114 +1271,113 @@ export const Grade2 = {
               content: [
                 {
                   type: "image",
-                  name: "Insect",
+                  name: "Насекомое", // Translation: Insect
                   image: require("../../../../assets/memory/beetle.png"),
                 },
                 {
-                  name: "Insect",
+                  name: "Насекомое", // Translation: Insect
                 },
                 {
                   type: "image",
-                  name: "Arachnids",
+                  name: "Паукообразные", // Translation: Arachnids
                   image: require("../../../../assets/memory/spider.png"),
                 },
                 {
-                  name: "Arachnids",
+                  name: "Паукообразные", // Translation: Arachnids
                 },
                 {
                   type: "image",
-                  name: "Crust-\naceans",
+                  name: "Ракообразные", // Translation: Crustaceans
                   image: require("../../../../assets/memory/crab.png"),
                 },
                 {
-                  name: "Crust-\naceans",
+                  name: "Ракообразные", // Translation: Crustaceans
                 },
                 {
                   type: "image",
-                  name: "Mollusk",
+                  name: "Моллюск", // Translation: Mollusk
                   image: require("../../../../assets/memory/snail.png"),
                 },
                 {
-                  name: "Mollusk",
+                  name: "Моллюск", // Translation: Mollusk
                 },
                 {
                   type: "image",
-                  name: "Echino-\nderms",
+                  name: "Эхиноидеи", // Translation: Echinoderms
                   image: require("../../../../assets/memory/starfish.png"),
                 },
                 {
-                  name: "Echino-\nderms",
+                  name: "Эхиноидеи", // Translation: Echinoderms
                 },
                 {
                   type: "image",
-                  name: "Skeleton",
+                  name: "Скелет", // Translation: Skeleton
                   image: require("../../../../assets/memory/fishbone.png"),
                 },
                 {
-                  name: "Skeleton",
+                  name: "Скелет", // Translation: Skeleton
                 },
               ],
             },
-            quiz: { // correct  
+            quiz: {
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-                {
-                  prompt: "What is the function of a skeleton?",
-                  answers: [
-                    { text: "Gives necessary stability" },
-                    { text: "Helps movement" },
-                    { text: "Protects internal organs" },
-                    { text: "All the above" },
-                  ],
-                  answer: "All the above",
-                },
-                {
-                  prompt: "Which animal is an invertebrate?",
-                  answers: [
-                    { text: "Cat" },
-                    { text: "Worm" },
-                    { text: "Turtule" },
-                    { text: "Bird" },
-                  ],
-                  answer: "Worm",
-                },
-                {
-                  prompt: "Which animal is a veterbrate",
-                  answers: [
-                    { text: "Worm" },
-                    { text: "Slugs" },
-                    { text: "Butterfly" },
-                    { text: "Fish" },
-                  ],
-                  answer: "Fish",
-                },
-                {
-                  prompt:
-                    "Which group of animals have 3 body parts and 6 legs?",
-                  answers: [
-                    { text: "Crustaceans" },
-                    { text: "Insects" },
-                    { text: "Echinoderms" },
-                    { text: "Arachnids" },
-                  ],
-                  answer: "Insects",
-                },
-                {
-                  prompt:
-                    "Which group of animals consist of snails, squids, octupuses, and oysters? ",
-                  answers: [
-                    { text: "Crustaceans" },
-                    { text: "Insects" },
-                    { text: "Echinoderms" },
-                    { text: "Mollusk" },
-                  ],
-                  answer: "Mollusk",
-                },
+                  {
+                      prompt: "Какова функция скелета?",
+                      answers: [
+                          { text: "Обеспечивает необходимую устойчивость" },
+                          { text: "Содействует движению" },
+                          { text: "Защищает внутренние органы" },
+                          { text: "Все вышеперечисленное" },
+                      ],
+                      answer: "Все вышеперечисленное",
+                  },
+                  {
+                      prompt: "Какое животное является беспозвоночным?",
+                      answers: [
+                          { text: "Кошка" },
+                          { text: "Червь" },
+                          { text: "Черепаха" },
+                          { text: "Птица" },
+                      ],
+                      answer: "Червь",
+                  },
+                  {
+                      prompt: "Какое животное является позвоночным?",
+                      answers: [
+                          { text: "Червь" },
+                          { text: "Слизняк" },
+                          { text: "Бабочка" },
+                          { text: "Рыба" },
+                      ],
+                      answer: "Рыба",
+                  },
+                  {
+                      prompt: "У какой группы животных 3 части тела и 6 ног?",
+                      answers: [
+                          { text: "Ракообразные" },
+                          { text: "Насекомые" },
+                          { text: "Эхиноидеи" },
+                          { text: "Паукообразные" },
+                      ],
+                      answer: "Насекомые",
+                  },
+                  {
+                      prompt: "Какая группа животных включает улиток, кальмаров, осьминогов и устриц?",
+                      answers: [
+                          { text: "Ракообразные" },
+                          { text: "Насекомые" },
+                          { text: "Эхиноидеи" },
+                          { text: "Моллюски" },
+                      ],
+                      answer: "Моллюски",
+                  },
               ],
             },
+          
             openresponse: { // correct
               navigation: "Image Boom",
               title: (
@@ -1407,9 +1390,9 @@ export const Grade2 = {
                 prompts: [
                   {
                     text:
-                      "Name a couple animals that are veterbrates. Now, name a couple of " +
-                      "animals that are invertebrates. How are they similar? How are they different?",
-                    placeholder: "An animal that is ...",
+                      "Назовите несколько животных, которые являются позвоночными. Теперь назовите несколько " +
+                      "животных, которые являются беспозвоночными. Чем они похожи? Чем они отличаются?",
+                    placeholder: "Животное, которое ...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -1421,8 +1404,8 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Draw a picture of a skeletal system wit a vertebrate!",
-            },
+              prompt: "Нарисуйте картину скелетной системы с позвоночником!",
+            },            
           },
           mastery: {
             prompt: (
@@ -1530,59 +1513,59 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take or find a picture of a relationship between two animals in nature, whether it be a beneficial or harmful relationship.",
+              prompt: "Сделайте или найдите фотографию отношений между двумя животными в природе, будь то полезные или вредные отношения.",
             },
-
+          
             quiz: { //correct
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
                   prompt:
-                    "What type of relationship exists between these animals: a fox and a rabbit?",
+                    "Какой тип отношений существует между этими животными: лиса и кролик?",
                   answers: [
-                    { text: "Parasitism" },
-                    { text: "Neutralism" },
-                    { text: "Competition" },
-                    { text: "Predation" },
+                    { text: "Паразитизм" },
+                    { text: "Нейтрализм" },
+                    { text: "Конкуренция" },
+                    { text: "Хищничество" },
                   ],
-                  answer: "Predation",
+                  answer: "Хищничество",
                 },
                 {
                   prompt:
-                    "What type of relationship exists between these animals: a frog and an antelope?",
+                    "Какой тип отношений существует между этими животными: лягушка и антилопа?",
                   answers: [
-                    { text: "Competition" },
-                    { text: "Symbiosis" },
-                    { text: "Neutralism" },
-                    { text: "Predation" },
+                    { text: "Конкуренция" },
+                    { text: "Симбиоз" },
+                    { text: "Нейтрализм" },
+                    { text: "Хищничество" },
                   ],
-                  answer: "Neutralism",
+                  answer: "Нейтрализм",
                 },
                 {
                   prompt:
-                    "What type of relationship exists between these animals: a shark and a fish that attaches to the shark?",
+                    "Какой тип отношений существует между этими животными: акула и рыба, которая прикрепляется к акуле?",
                   answers: [
-                    { text: "Competition" },
-                    { text: "Parasitism" },
-                    { text: "Neutralism" },
-                    { text: "Predation" },
+                    { text: "Конкуренция" },
+                    { text: "Паразитизм" },
+                    { text: "Нейтрализм" },
+                    { text: "Хищничество" },
                   ],
-                  answer: "Parasitism",
+                  answer: "Паразитизм",
                 },
                 {
                   prompt:
-                    "What type of relationship exists between these animals: rhinos and birds?",
+                    "Какой тип отношений существует между этими животными: носороги и птицы?",
                   answers: [
-                    { text: "Competition" },
-                    { text: "Symbiosis" },
-                    { text: "Neutralism" },
-                    { text: "Predation" },
+                    { text: "Конкуренция" },
+                    { text: "Симбиоз" },
+                    { text: "Нейтрализм" },
+                    { text: "Хищничество" },
                   ],
-                  answer: "Symbiosis",
+                  answer: "Симбиоз",
                 },
               ],
             },
@@ -1623,7 +1606,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of a plant environment in which several plants mutually benefit each other.",
+              prompt: "Сделайте фотографию среды растений, в которой несколько растений взаимно благоприятствуют друг другу.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -1631,35 +1614,35 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
                   prompt:
-                    "True or False: There are no relationships between plants that are similar to those between animals?",
+                    "Верно или неверно: Между растениями нет отношений, похожих на отношения между животными?",
                   answers: [
-                    { text: "true" },
-                    { text: "false" },
+                    { text: "верно" },
+                    { text: "неверно" },
                   ],
-                  answer: "false",
+                  answer: "неверно",
                 },
                 {
                   prompt:
-                    "Which of the following is an example of a mutualistic/symbiotic relationship between plants and animals?",
+                    "Какой из следующих вариантов является примером взаимовыгодных/симбиотических отношений между растениями и животными?",
                   answers: [
-                    { text: "Animals eat the plants" },
-                    { text: "Pollination" },
-                    { text: "Animals use plants to build nests" },
-                    { text: "Humans eat the plants" },
+                    { text: "Животные едят растения" },
+                    { text: "Опыление" },
+                    { text: "Животные используют растения для строительства гнезд" },
+                    { text: "Люди едят растения" },
                   ],
-                  answer: "Pollination",
+                  answer: "Опыление",
                 },
                 {
                   prompt:
-                    "True or False: There are relationships between plants and animals, similar to those between only animals?",
+                    "Верно или неверно: Существуют отношения между растениями и животными, похожие на отношения только между животными?",
                   answers: [
-                    { text: "true" },
-                    { text: "false" },
+                    { text: "верно" },
+                    { text: "неверно" },
                   ],
-                  answer: "true",
+                  answer: "верно",
                 },
               ],
             },
@@ -1668,29 +1651,26 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt:
-                  "Match the word to the definition using pictures",
+                prompt: "Соотнесите слово с определением, используя изображения",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_2_les_8,
                 categories: [
-                  { name: "Commensalism" },
-                  { name: "Symbiosis/mutualism" },
-                  { name: "Predation" },
+                  { name: "Комменсализм" },
+                  { name: "Симбиоз/взаимовыгодность" },
+                  { name: "Хищничество" },
                 ],
                 options: [
                   {
-                    title: "A Venus flytrap catches a fly",
-                    name: "Predation",
+                    title: "Ловушка Венеры ловит муху",
+                    name: "Хищничество",
                   },
                   {
-                    title:
-                      "Bees pollinate a plant",
-                    name: "Symbiosis/mutualism",
+                    title: "Пчелы опыляют растение",
+                    name: "Симбиоз/взаимовыгодность",
                   },
                   {
-                    title:
-                      "A bird makes a nest in a tree",
-                    name: "Commensalism",
+                    title: "Птица строит гнездо на дереве",
+                    name: "Комменсализм",
                   },
                 ],
               },
@@ -1706,16 +1686,16 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do the relationships between plants and animals," +
-                      "such as mutualism, commensalism, and competition, impact the " +
-                      "sustainability of plant communities and ecosystems?",
-                    placeholder: "The relationships between plants and animals...",
+                    text: "Как отношения между растениями и животными," +
+                      "такие как взаимовыгодность, комменсализм и конкуренция, влияют на " +
+                      "устойчивость сообществ растений и экосистем?",
+                    placeholder: "Отношения между растениями и животными...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l9_prompt")}</Translation>
@@ -1765,8 +1745,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an animal habitat with poor conditions. Analyze the picture " +
-                "and identify the ways the poor conditions could affect animal life.",
+              prompt: "Сделайте фотографию среды обитания животных в плохих условиях. Проанализируйте фотографию и определите, как плохие условия могут повлиять на жизнь животных.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -1774,37 +1753,37 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
                   prompt:
-                    "Which of the following is the main way droughts affect aquatic environments?",
+                    "Какой из перечисленных факторов является основным способом, которым засухи влияют на водные среды?",
                   answers: [
-                    { text: "Droughts make non-aquatic animals thirstier and therefore drink more of their water." },
-                    { text: "Droughts make the water saltier." },
-                    { text: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals." },
-                    { text: "Droughts cause an increase in the fish population." },
+                    { text: "Засухи делают наземных животных более жаждущими, и поэтому они пьют больше их воды." },
+                    { text: "Засухи делают воду более соленой." },
+                    { text: "Засухи делают водоемы более мелкими, через испарение, убивая водных животных." },
+                    { text: "Засухи приводят к увеличению популяции рыб." },
                   ],
-                  answer: "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals.",
+                  answer: "Засухи делают водоемы более мелкими, через испарение, убивая водных животных.",
                 },
                 {
                   prompt:
-                    "Which of the following events would affect the number of animals in a habitat?",
+                    "Какое из следующих событий повлияет на количество животных в среде обитания?",
                   answers: [
-                    { text: "Fire" },
-                    { text: "Drought" },
-                    { text: "Flood" },
-                    { text: "All of the above" },
+                    { text: "Пожар" },
+                    { text: "Засуха" },
+                    { text: "Потоп" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
                   prompt:
-                    "True or False: Infectious diseases do not impact animal populations?",
+                    "Верно или неверно: Инфекционные болезни не влияют на популяции животных?",
                   answers: [
-                    { text: "true" },
-                    { text: "false" },
+                    { text: "верно" },
+                    { text: "неверно" },
                   ],
-                  answer: "false",
+                  answer: "неверно",
                 },
               ],
             },
@@ -1813,23 +1792,21 @@ export const Grade2 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt:
-                  "Match the word to the definition using pictures",
+                prompt: "Соотнесите слово с определением, используя изображения",
                 num: 3, //count start 0
                 imageBg: SortingImages.bg[0].lvl_2_les_9,
                 categories: [
-                  { name: "Ebola" },
-                  { name: "Anthrax" },
+                  { name: "Эбола" },
+                  { name: "Сибирская язва" },
                 ],
                 options: [
                   {
-                    title: "A disease that infected and killed large numbers of the chimpanzee population in the 1990s.",
-                    name: "Ebola",
+                    title: "Болезнь, которая заразила и убила большое количество шимпанзе в 1990-х годах.",
+                    name: "Эбола",
                   },
                   {
-                    title:
-                      "A disease discovered 600 years ago that kills any warm-blooded animal. ",
-                    name: "Anthrax",
+                    title: "Болезнь, обнаруженная 600 лет назад, которая убивает любое теплокровное животное.",
+                    name: "Сибирская язва",
                   },
                 ],
               },
@@ -1845,15 +1822,14 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do habitat conditions, such as availability of food, " +
-                      "water and protection from predators, impact the number and diversity of animal populations in an ecosystem?",
-                    placeholder: "Habitat conditions impact animal populations by...",
+                    text: "Как условия среды обитания, такие как наличие пищи, воды и защиты от хищников, влияют на количество и разнообразие популяций животных в экосистеме?",
+                    placeholder: "Условия среды обитания влияют на популяции животных, так как...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-          },
+          }          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1902,7 +1878,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an animal in your area that you believe will not be here in ten years.",
+              prompt: "Сфотографируйте животное в вашем районе, которого, по вашему мнению, здесь не будет через десять лет.",
             },
             quiz: { //correct
               navigation: "QuizScreen",
@@ -1910,37 +1886,34 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
-                  prompt:
-                    "True or False: Deforestation does not cause a serious decrease in the number of animals in the area?",
+                  prompt: "Верно или неверно: Вырубка лесов не вызывает серьезного снижения числа животных в этой области?",
                   answers: [
-                    { text: "False" },
-                    { text: "True" },
+                    { text: "Неверно" },
+                    { text: "Верно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt:
-                    "Which of the following is the most likely outcome if someone cuts down many trees in a forest?",
+                  prompt: "Какой из перечисленных вариантов наиболее вероятный исход, если кто-то срубит много деревьев в лесу?",
                   answers: [
-                    { text: "Many animals will lose their habitats." },
-                    { text: "Many animals will lose their food sources" },
-                    { text: "There will be an increased risk of flooding in the area" },
-                    { text: "All of the above" },
+                    { text: "Многие животные потеряют свои среды обитания." },
+                    { text: "Многие животные потеряют свои источники пищи" },
+                    { text: "В области увеличится риск затопления" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt:
-                    "Which of the following pairs of actions are both ways humans indirectly impact animal populations?",
+                  prompt: "Какая из следующих пар действий является способами, которыми люди косвенно влияют на популяции животных?",
                   answers: [
-                    { text: "Use of pesticides, deforestation" },
-                    { text: "Poisoning from industrial emissions, construction of dams" },
-                    { text: "Construction of dams, deforestation" },
-                    { text: "Use of pesticides, poisoning from industrial emissions" },
+                    { text: "Использование пестицидов, вырубка лесов" },
+                    { text: "Отравление от промышленных выбросов, строительство плотин" },
+                    { text: "Строительство плотин, вырубка лесов" },
+                    { text: "Использование пестицидов, отравление от промышленных выбросов" },
                   ],
-                  answer: "Construction of dams, deforestation",
+                  answer: "Строительство плотин, вырубка лесов",
                 },
               ],
             },
@@ -1955,17 +1928,14 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are some potential causes for a decrease in the number of animals in a particular ecosystem, " +
-                      "and how can we address these issues to promote sustainability and protect biodiversity? Think about laws " +
-                      "we can implement. What would you suggest to the government as well?",
-                    placeholder: "Potential causes are...",
+                    text: "Каковы некоторые возможные причины уменьшения числа животных в определенной экосистеме, и как мы можем решить эти проблемы для содействия устойчивости и защиты биоразнообразия? Подумайте о законах, которые мы можем внедрить. Что бы вы предложили правительству также?",
+                    placeholder: "Возможные причины - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-
-          },
+          },          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2002,8 +1972,8 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an animal with similar bodily functions to humans. " +
-                "Essentially, this animal has a body part that has the same function as we use it for.",
+              prompt: "Сфотографируйте животное с функциями тела, похожими на человеческие. " +
+                "В сущности, у этого животного есть орган, который выполняет ту же функцию, что и у нас.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -2011,37 +1981,34 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
-                  prompt:
-                    "True or False: Humans are vertebrates?",
+                  prompt: "Верно или неверно: Люди являются позвоночными?",
                   answers: [
-                    { text: "False" },
-                    { text: "True" },
+                    { text: "Неверно" },
+                    { text: "Верно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt:
-                    "Which of the following definitions is the best description of an organ?",
+                  prompt: "Какое из следующих определений лучше всего описывает орган?",
                   answers: [
-                    { text: "A part of the human body." },
-                    { text: "A part of an organism with an unspecified purpose." },
-                    { text: "A part of an organism that has its own location and purpose." },
-                    { text: "It is the heart of a vertebrate." },
+                    { text: "Часть человеческого тела." },
+                    { text: "Часть организма с неопределенной целью." },
+                    { text: "Часть организма, имеющая свое местоположение и назначение." },
+                    { text: "Это сердце позвоночного." },
                   ],
-                  answer: "A part of an organism that has its own location and purpose",
+                  answer: "Часть организма, имеющая свое местоположение и назначение",
                 },
                 {
-                  prompt:
-                    "What technological advancement in the 1970s made it easier to see humans’ internal organs?",
+                  prompt: "Какой технологический прорыв в 1970-х годах облегчил изучение внутренних органов человека?",
                   answers: [
-                    { text: "MRIs" },
-                    { text: "X-rays" },
-                    { text: "CTs" },
-                    { text: "None of the above" },
+                    { text: "МРТ" },
+                    { text: "Рентген" },
+                    { text: "Компьютерная томография" },
+                    { text: "Ни один из перечисленных" },
                   ],
-                  answer: "MRIs",
+                  answer: "МРТ",
                 },
               ],
             },
@@ -2056,14 +2023,14 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are the three main cavities of the human body? What are the main organs in each of these cavities?",
-                    placeholder: "The three main cavities are...",
+                    text: "Каковы три основные полости человеческого тела? Какие основные органы находятся в каждой из этих полостей?",
+                    placeholder: "Три основные полости это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-          },
+          },          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2100,7 +2067,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an item that humans cannot digest but certain animals can.",
+              prompt: "Сфотографируйте предмет, который люди не могут переварить, но определенные животные могут.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -2108,50 +2075,46 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
-                  prompt:
-                    "Where does digestion begin?",
+                  prompt: "Где начинается пищеварение?",
                   answers: [
-                    { text: "Stomach" },
-                    { text: "Mouth" },
-                    { text: "Intenstine" },
-                    { text: "Heart" },
+                    { text: "Желудок" },
+                    { text: "Рот" },
+                    { text: "Кишечник" },
+                    { text: "Сердце" },
                   ],
-                  answer: "Mouth",
+                  answer: "Рот",
                 },
                 {
-                  prompt:
-                    "Digestion allows humans to (1)____ nutrients from food, and transform it into (2)____",
+                  prompt: "Пищеварение позволяет людям (1)____ питательные вещества из пищи и превращать их в (2)____",
                   answers: [
-                    { text: "(1) absorb | (2) energy" },
-                    { text: "(1) reject | (2) food" },
-                    { text: "(1) process | (2) oxygen" },
-                    { text: "(1) sort | (2) carbon dioxide" },
+                    { text: "(1) абсорбировать | (2) энергию" },
+                    { text: "(1) отвергать | (2) пищу" },
+                    { text: "(1) перерабатывать | (2) кислород" },
+                    { text: "(1) сортировать | (2) углекислый газ" },
                   ],
-                  answer: "(1) absorb | (2) energy",
+                  answer: "(1) абсорбировать | (2) энергию",
                 },
                 {
-                  prompt:
-                    "Which of the following is the correct order of parts of the body that food travels through?",
+                  prompt: "Какой из следующих вариантов представляет собой правильный порядок частей тела, через которые проходит пища?",
                   answers: [
-                    { text: "Stomach, esophagus, mouth, intestines" },
-                    { text: "Mouth, esophagus, stomach, intestines" },
-                    { text: "Mouth, stomach, esophagus, intestines" },
-                    { text: "Mouth, intestines, stomach, esophagus" },
+                    { text: "Желудок, пищевод, рот, кишечник" },
+                    { text: "Рот, пищевод, желудок, кишечник" },
+                    { text: "Рот, желудок, пищевод, кишечник" },
+                    { text: "Рот, кишечник, желудок, пищевод" },
                   ],
-                  answer: "Mouth, esophagus, stomach, intestines",
+                  answer: "Рот, пищевод, желудок, кишечник",
                 },
                 {
-                  prompt:
-                    "Which of the following is the name of the drawing that helps you to make more healthy decisions when choosing what food to eat??",
+                  prompt: "Как называется рисунок, который помогает вам принимать более здоровые решения при выборе еды?",
                   answers: [
-                    { text: "Triangle of Choices" },
-                    { text: "Pyramid of Food Decisions" },
-                    { text: "Pyramid of Nutrition" },
-                    { text: "Tiers of Nutrition" },
+                    { text: "Треугольник выбора" },
+                    { text: "Пирамида пищевых решений" },
+                    { text: "Пирамида питания" },
+                    { text: "Уровни питания" },
                   ],
-                  answer: "Pyramid of Nutrition",
+                  answer: "Пирамида питания",
                 },
               ],
             },
@@ -2166,18 +2129,18 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "There are many factors to consider when it comes to sustainability in the food system, " +
-                      "such as how food is grown or raised, how it is transported and distributed, and how much of it " +
-                      "is wasted. The apple you eat might be healthy for you but is it healthy for the environment? " +
-                      "Identify strategies that can be used when we produce and consume food, so that it is sustainable " +
-                      "for the environment, animals, and human communities?",
-                    placeholder: "Sustainable ways to produce and consume food are...",
+                    text: "Существует много факторов, которые нужно учесть при рассмотрении устойчивости в системе питания, " +
+                      "таких как то, как выращивается или разводится пища, как она транспортируется и распределяется, и сколько ее " +
+                      "тратится. Яблоко, которое вы едите, может быть полезным для вас, но является ли оно полезным для окружающей среды? " +
+                      "Определите стратегии, которые можно использовать при производстве и потреблении пищи, чтобы она была устойчивой " +
+                      "для окружающей среды, животных и человеческих общин?",
+                    placeholder: "Устойчивые способы производства и потребления пищи - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-          },
+          },          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2214,8 +2177,8 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an environment that might be hard to breathe in. " +
-                "Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.)",
+              prompt: "Сфотографируйте окружающую среду, в которой может быть трудно дышать. " +
+                "Определите и проанализируйте, почему это может быть так (учитывайте: загрязнение воздуха, пестициды и загрязнители и т.д.)",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -2223,49 +2186,45 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
+          
                 {
-                  prompt:
-                    "True or False: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
+                  prompt: "Верно или неверно: Обмен газами - это процесс, который происходит в легких и вбирает кислород и выделяет углекислый газ.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt:
-                    "If the air we breathe in is unclean, containing materials such as dust, " +
-                    "what part of the body collects it, preventing it from further entering the body?",
+                  prompt: "Если вдыхаемый нами воздух нечистый, содержит материалы, такие как пыль, " +
+                    "какая часть тела собирает его, предотвращая его дальнейшее проникновение в организм?",
                   answers: [
-                    { text: "Nose" },
-                    { text: "Lungs" },
-                    { text: "Bronchi" },
-                    { text: "Trachea" },
+                    { text: "Нос" },
+                    { text: "Легкие" },
+                    { text: "Бронхи" },
+                    { text: "Трахея" },
                   ],
-                  answer: "Nose",
+                  answer: "Нос",
                 },
                 {
-                  prompt:
-                    "What is the purpose of the trachea?",
+                  prompt: "Какова цель трахеи?",
                   answers: [
-                    { text: "To only bring air into the lungs" },
-                    { text: "To filter out the good air from the bad" },
-                    { text: "To produce carbon dioxide" },
-                    { text: "To transport air in and out of the lungs" },
+                    { text: "Только приводить воздух в легкие" },
+                    { text: "Отфильтровывать хороший воздух от плохого" },
+                    { text: "Производить углекислый газ" },
+                    { text: "Транспортировать воздух внутрь и вне легких" },
                   ],
-                  answer: "To transport air in and out of the lungs",
+                  answer: "Транспортировать воздух внутрь и вне легких",
                 },
                 {
-                  prompt:
-                    "Which of the following gives the best description of the order in which the parts of the respiratory system help us to breathe?",
+                  prompt: "Какой из следующих вариантов лучше всего описывает порядок, в котором части дыхательной системы помогают нам дышать?",
                   answers: [
-                    { text: "Nose or mouth, Larynx and trachea, bronchi, lungs" },
-                    { text: "Mouth, lungs, bronchi" },
-                    { text: "Nose, larynx, lungs" },
-                    { text: "None of the above" },
+                    { text: "Нос или рот, гортань и трахея, бронхи, легкие" },
+                    { text: "Рот, легкие, бронхи" },
+                    { text: "Нос, гортань, легкие" },
+                    { text: "Ничего из вышеперечисленного" },
                   ],
-                  answer: "Nose or mouth, Larynx and trachea, bronchi, lungs",
+                  answer: "Нос или рот, гортань и трахея, бронхи, легкие",
                 },
               ],
             },
@@ -2280,15 +2239,15 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How can we ensure that the air we breathe is safe and healthy for all living beings, " +
-                      "and how can we protect and improve the quality of the air in our communities? ",
-                    placeholder: "Sustainable ways to produce and consume food are...",
+                    text: "Как мы можем гарантировать, что воздух, который мы дышим, безопасен и здоров для всех живых существ, " +
+                      "и как мы можем защитить и улучшить качество воздуха в наших сообществах?",
+                    placeholder: "Устойчивые способы производства и потребления пищи - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             },
-          },
+          },          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2388,141 +2347,67 @@ export const Grade2 = {
             },
           },
           minigames: {
-            minigames: {
-              snapshot: { // correct
-                navigation: "Snapshot",
-                icon: require("../../../../assets/camera.png"),
-                backgroundColor: "#FFD972",
-                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-                prompt: "Take a picture of a common unhealthy food in your household.",
-              },
-              quiz: { // correct
-                navigation: "QuizScreen",
-                icon: require("../../../../assets/creativity.png"),
-                backgroundColor: "mediumpurple",
-                imageBg: require("../../../../assets/nat.jpg"),
-                content: [
-
+            snapshot: { // correct
+              navigation: "Snapshot",
+              icon: require("../../../../assets/camera.png"),
+              backgroundColor: "#FFD972",
+              backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
+              prompt: "Сфотографируйте обычную нездоровую пищу в вашем доме.",
+            },
+            quiz: { // correct
+              navigation: "QuizScreen",
+              icon: require("../../../../assets/creativity.png"),
+              backgroundColor: "mediumpurple",
+              imageBg: require("../../../../assets/nat.jpg"),
+              content: [
+                {
+                  prompt: "Верно или неверно: Сердце отвечает за движение крови в организме?",
+                  answers: [
+                    { text: "Верно" },
+                    { text: "Неверно" },
+                  ],
+                  answer: "Верно",
+                },
+                {
+                  prompt: "Какая из следующих функций является обязанностью крови в организме?",
+                  answers: [
+                    { text: "Согревать организм." },
+                    { text: "Распространять кислород и питательные вещества по органам и тканям." },
+                    { text: "Уносить ненужные и вредные вещества к органам выделения." },
+                    { text: "Все вышеперечисленное." },
+                  ],
+                  answer: "Все вышеперечисленное.",
+                },
+                {
+                  prompt: "Что делают артерии?",
+                  answers: [
+                    { text: "Переносят пищу, которая была переварена" },
+                    { text: "Переносят углекислый газ" },
+                    { text: "Переносят кровь" },
+                    { text: "Ничего из вышеперечисленного" },
+                  ],
+                  answer: "Переносят кровь",
+                },
+              ],
+            },
+            openresponse: { // correct
+              navigation: "Image Boom",
+              title: (
+                <Translation>{(t) => t("common:openresponse")}</Translation>
+              ), // Image Boom
+              icon: require("../../../../assets/image.png"),
+              backgroundColor: "palevioletred",
+              data: {
+                numberOfPrompts: 1,
+                prompts: [
                   {
-                    prompt:
-                      "True or False: The heart is responsible for the movement of blood in the body?",
-                    answers: [
-                      { text: "True" },
-                      { text: "False" },
-                    ],
-                    answer: "True",
-                  },
-                  {
-                    prompt:
-                      "Which of the following is the responsibility of blood in the body?",
-                    answers: [
-                      { text: "Warm the body." },
-                      { text: "Spread oxygen and nutrients to organs and tissues." },
-                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
-                      { text: "All of the above." },
-                    ],
-                    answer: "All of the above.",
-                  },
-                  {
-                    prompt:
-                      "What do arteries do?",
-                    answers: [
-                      { text: "Carry food that has been digested" },
-                      { text: "Carry carbon dioxide" },
-                      { text: "Carry blood" },
-                      { text: "None of the above" },
-                    ],
-                    answer: "Carry blood",
+                    text: "Что должен делать человек, чтобы оставаться здоровым? Что ему нужно от своей среды обитания, чтобы оставаться здоровым?",
+                    image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
-              openresponse: { // correct
-                navigation: "Image Boom",
-                title: (
-                  <Translation>{(t) => t("common:openresponse")}</Translation>
-                ), // Image Boom
-                icon: require("../../../../assets/image.png"),
-                backgroundColor: "palevioletred",
-                data: {
-                  numberOfPrompts: 1,
-                  prompts: [
-                    {
-                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
-                      image: require("../../../../assets/openresponse/innovation.png"),
-                    },
-                  ],
-                },
-              },
             },
-          },
-          minigames: {
-            minigames: {
-              snapshot: { // correct
-                navigation: "Snapshot",
-                icon: require("../../../../assets/camera.png"),
-                backgroundColor: "#FFD972",
-                backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-                prompt: "Take a picture of a common unhealthy food in your household.",
-              },
-              quiz: { // correct
-                navigation: "QuizScreen",
-                icon: require("../../../../assets/creativity.png"),
-                backgroundColor: "mediumpurple",
-                imageBg: require("../../../../assets/nat.jpg"),
-                content: [
-
-                  {
-                    prompt:
-                      "True or False: The heart is responsible for the movement of blood in the body?",
-                    answers: [
-                      { text: "True" },
-                      { text: "False" },
-                    ],
-                    answer: "True",
-                  },
-                  {
-                    prompt:
-                      "Which of the following is the responsibility of blood in the body?",
-                    answers: [
-                      { text: "Warm the body." },
-                      { text: "Spread oxygen and nutrients to organs and tissues." },
-                      { text: "Carry unnecessary and harmful substances to the excretory organs." },
-                      { text: "All of the above." },
-                    ],
-                    answer: "All of the above.",
-                  },
-                  {
-                    prompt:
-                      "What do arteries do?",
-                    answers: [
-                      { text: "Carry food that has been digested" },
-                      { text: "Carry carbon dioxide" },
-                      { text: "Carry blood" },
-                      { text: "None of the above" },
-                    ],
-                    answer: "Carry blood",
-                  },
-                ],
-              },
-              openresponse: { // correct
-                navigation: "Image Boom",
-                title: (
-                  <Translation>{(t) => t("common:openresponse")}</Translation>
-                ), // Image Boom
-                icon: require("../../../../assets/image.png"),
-                backgroundColor: "palevioletred",
-                data: {
-                  numberOfPrompts: 1,
-                  prompts: [
-                    {
-                      text: "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy?",
-                      image: require("../../../../assets/openresponse/innovation.png"),
-                    },
-                  ],
-                },
-              },
-            },
-          },
+          },          
         },
         /* 
         ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2570,9 +2455,9 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of an item that should be cleaned more often. " +
-                "For example, many humans don’t realize how dirty and unclean our phones " +
-                "are. What are some other items that we forget to clean?",
+              prompt: "Сфотографируйте предмет, который следует чистить чаще. " +
+                "Например, многие люди не осознают, насколько грязными и нечистыми бывают наши телефоны. " +
+                "Какие еще предметы мы забываем чистить?",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -2580,37 +2465,33 @@ export const Grade2 = {
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
-
                 {
-                  prompt:
-                    "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
+                  prompt: "Какая из следующих пар точно описывает лучшие способы укрепления иммунитета к болезням?",
                   answers: [
-                    { text: "Vaccines, exposure to diseases" },
-                    { text: "Vaccines, personal hygiene care" },
-                    { text: "Washing your hands, bathing" },
-                    { text: "Personal hygiene care, nature" },
+                    { text: "Вакцины, контакт с болезнями" },
+                    { text: "Вакцины, личная гигиена" },
+                    { text: "Мытье рук, купание" },
+                    { text: "Личная гигиена, природа" },
                   ],
-                  answer: "Vaccines, personal hygiene care",
+                  answer: "Вакцины, личная гигиена",
                 },
                 {
-                  prompt:
-                    "True or False: Spending time in nature is not helpful for staying healthy?",
+                  prompt: "Верно или неверно: проведение времени на природе не помогает оставаться здоровым?",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt:
-                    "Which of the following is the best definition for immunity?",
+                  prompt: "Какое из следующих утверждений лучше всего определяет понятие иммунитета?",
                   answers: [
-                    { text: "The state of being at risk for certain diseases." },
-                    { text: "The quality of being resistant to a disease or illness." },
-                    { text: "The name for people who are never sick." },
-                    { text: "The quality of being resistant to medicine. " },
+                    { text: "Состояние подверженности определенным заболеваниям." },
+                    { text: "Свойство устойчивости к болезни или недугу." },
+                    { text: "Название для людей, которые никогда не болеют." },
+                    { text: "Качество устойчивости к лекарствам. " },
                   ],
-                  answer: "The quality of being resistant to a disease or illness.",
+                  answer: "Свойство устойчивости к болезни или недугу.",
                 },
               ],
             },
@@ -2625,9 +2506,9 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How can we protect the human body from infections in a sustainable way? " +
-                      "What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? ",
-                    placeholder: "Sustainable ways to produce and consume food are...",
+                    text: "Как мы можем защищать человеческое тело от инфекций устойчивым способом? " +
+                      "Какие средства для уборки вы видите чаще всего? Являются ли эти средства экологически безопасными? Почему? ",
+                    placeholder: "Устойчивые способы производства и потребления пищи...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -2658,7 +2539,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of an item undergoing change from one state of matter to another.",
+                "Сфотографируйте предмет, который переходит из одного состояния вещества в другое.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -2667,63 +2548,63 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "Which of the following is a state of matter?",
+                  prompt: "Какое из следующих является состоянием вещества?",
                   answers: [
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "Gas" },
-                    { text: "All of the above" },
+                    { text: "Твердое" },
+                    { text: "Жидкое" },
+                    { text: "Газообразное" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt: "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
+                  prompt: "Верно или неверно: после перехода вещества в определенное состояние, ему невозможно перейти в другое состояние.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt: "When something freezes, what state of matter does it start and then end in?",
+                  prompt: "Когда что-то замерзает, в каком состоянии вещества оно было в начале и в какое переходит?",
                   answers: [
-                    { text: "Solid to liquid state" },
-                    { text: "Liquid to gaseous state" },
-                    { text: "Solid state to gaseous state" },
-                    { text: "Liquid to solid state" },
+                    { text: "Из твердого в жидкое состояние" },
+                    { text: "Из жидкого в газообразное состояние" },
+                    { text: "Из твердого состояния в газообразное" },
+                    { text: "Из жидкого в твердое состояние" },
                   ],
-                  answer: "Liquid to solid state",
+                  answer: "Из жидкого в твердое состояние",
                 },
                 {
-                  prompt: "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
+                  prompt: "В жаркий день миска с водой для собаки оставлена на солнце. К концу дня вся вода исчезла. В каком состоянии находится вещество теперь?",
                   answers: [
-                    { text: "Gas" },
-                    { text: "Solid" },
-                    { text: "Liquid" },
-                    { text: "None of the above" },
+                    { text: "Газ" },
+                    { text: "Твердое" },
+                    { text: "Жидкое" },
+                    { text: "Ни один из вышеуказанных" },
                   ],
-                  answer: "Gas",
+                  answer: "Газ",
                 }
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Ответ открытого типа
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment.",
-                    placeholder: "When we change an object from one state to another ...",
+                    text: "Когда мы переводим объект из одного состояния в другое состояние вещества, действуем ли мы устойчиво? Разве изменения состояний вещества не требуют энергии? Если да, подумайте о некоторых изменениях вещества, которые вредят нашей окружающей среде.",
+                    placeholder: "Когда мы переводим объект из одного состояния в другое ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c2l16_prompt")}</Translation>
@@ -2897,7 +2778,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Research a place with poor air quality. Take a picture of that place (you can take a picture of the image online). Can you identify any characteristics in the picture that show the poor air quality?",
+                "Исследуйте место с плохим качеством воздуха. Сделайте снимок этого места (вы можете сфотографировать изображение в Интернете). Можете ли вы определить какие-либо особенности на фотографии, которые показывают плохое качество воздуха?",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -2906,63 +2787,63 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "What gas makes up most of the air (78%)?",
+                  prompt: "Какой газ составляет большую часть воздуха (78%)?",
                   answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Carbon dioxide" },
-                    { text: "Argon" },
+                    { text: "Азот" },
+                    { text: "Кислород" },
+                    { text: "Углекислый газ" },
+                    { text: "Аргон" },
                   ],
-                  answer: "Nitrogen",
+                  answer: "Азот",
                 },
                 {
-                  prompt: "True or False: We cannot breathe pure nitrogen on its own.",
+                  prompt: "Верно или неверно: мы не можем дышать чистым азотом в чистом виде.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "Which of the following gasses in air have no color and no smell?",
+                  prompt: "Какой из следующих газов в воздухе не имеет цвета и запаха?",
                   answers: [
-                    { text: "Nitrogen" },
-                    { text: "Argon" },
-                    { text: "Oxygen" },
-                    { text: "All of the above" },
+                    { text: "Азот" },
+                    { text: "Аргон" },
+                    { text: "Кислород" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt: "What does the Amazon forest produce the most of all forests in the world?",
+                  prompt: "Что Амазонский лес производит больше всего по сравнению с другими лесами в мире?",
                   answers: [
-                    { text: "Paper" },
-                    { text: "Pollution" },
-                    { text: "Oxygen" },
-                    { text: "Birds" },
+                    { text: "Бумагу" },
+                    { text: "Загрязнение" },
+                    { text: "Кислород" },
+                    { text: "Птиц" },
                   ],
-                  answer: "Oxygen",
+                  answer: "Кислород",
                 }
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "I think we can all agree that humans release chemicals, pollutants, pesticides, etc. into the air that negatively impact the air quality. However, not everything we release into the air is necessarily harmful. What can humans release into the air that will positively impact the air quality?",
-                    placeholder: "Humans can release ...",
+                    text: "Думаю, все согласятся, что люди выбрасывают в воздух химикаты, загрязнители, пестициды и т. д., которые негативно влияют на качество воздуха. Однако не все, что мы выбрасываем в воздух, обязательно вредит. Что люди могут выбросить в воздух, что будет положительно влиять на качество воздуха?",
+                    placeholder: "Человек может выбросить ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l2_prompt")}</Translation>
@@ -3005,7 +2886,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of a representation of one of the many properties of air. (For example: a carbonated beverage with bubbles).",
+                "Сделайте снимок представления одного из многих свойств воздуха. (Например: газированный напиток с пузырьками).",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3014,47 +2895,47 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "True or False: Combustion refers to the process of burning something.",
+                  prompt: "Верно или неверно: Горение - это процесс сжигания чего-либо.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "What substance supports combustion, while carbon dioxide does not?",
+                  prompt: "Какое вещество поддерживает горение, в то время как углекислый газ - нет?",
                   answers: [
-                    { text: "Nitrogen" },
-                    { text: "Oxygen" },
-                    { text: "Argon" },
-                    { text: "It actually is carbon dioxide" },
+                    { text: "Азот" },
+                    { text: "Кислород" },
+                    { text: "Аргон" },
+                    { text: "На самом деле это углекислый газ" },
                   ],
-                  answer: "Oxygen",
+                  answer: "Кислород",
                 },
                 {
-                  prompt: "It is very difficult to breathe in a room with a lot of ____, and very little _____.",
+                  prompt: "Очень сложно дышать в комнате с большим количеством ____, и очень мало _____.",
                   answers: [
-                    { text: "Carbon dioxide; oxygen" },
-                    { text: "Oxygen; carbon dioxide" },
-                    { text: "Both answers are correct" },
-                    { text: "Both answers are incorrect" },
+                    { text: "Углекислого газа; кислорода" },
+                    { text: "Кислорода; углекислого газа" },
+                    { text: "Оба ответа верны" },
+                    { text: "Оба ответа неверны" },
                   ],
-                  answer: "Carbon dioxide; oxygen",
+                  answer: "Углекислого газа; кислорода",
                 },
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are the many properties of air, and how do they positively impact the environment? Why are these properties so important for maintaining homeostasis?",
-                    placeholder: "The main properties of air are ...",
+                    text: "Каковы многие свойства воздуха и как они позитивно влияют на окружающую среду? Почему эти свойства так важны для поддержания гомеостаза?",
+                    placeholder: "Основные свойства воздуха ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
@@ -3126,7 +3007,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of the cleanest source of water in your home.",
+                "Сфотографируйте самый чистый источник воды в вашем доме.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3135,51 +3016,51 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "Which of the following have the highest water content?",
+                  prompt: "У какого из следующих продуктов самое высокое содержание воды?",
                   answers: [
-                    { text: "Acorn" },
-                    { text: "Bean" },
-                    { text: "Lemon" },
-                    { text: "Potato" },
+                    { text: "Желудь" },
+                    { text: "Боб" },
+                    { text: "Лимон" },
+                    { text: "Картофель" },
                   ],
-                  answer: "Lemon",
+                  answer: "Лимон",
                 },
                 {
-                  prompt: "True or False: There is more water in potatoes than apples.",
+                  prompt: "Верно или неверно: В картофеле больше воды, чем в яблоках.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt: "True or False: Even though fruits and vegetables are solids, they are also made up of a lot of water.",
+                  prompt: "Верно или неверно: Несмотря на то, что фрукты и овощи являются твердыми, они также состоят из большого количества воды.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Do you believe that everyone in the world has access to a water source? If so, it stands to reason that not everyone has the same type of water source. Can you think of the many different types of water sources that exist?",
-                    placeholder: "The water sources ...",
+                    text: "Считаете ли вы, что у каждого в мире есть доступ к источнику воды? Если это так, то следует признать, что у всех нет одинакового источника воды. Можете ли вы представить множество различных источников воды, которые существуют?",
+                    placeholder: "Источники воды ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l4_prompt")}</Translation>
@@ -3223,7 +3104,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of the most natural water source near your home. If you cannot visit it, take a picture of it online. Look at the picture and see if you can understand what differentiates a natural water source from an unnatural one.",
+                "Сфотографируйте самый естественный источник воды рядом с вашим домом. Если вы не можете посетить его, сделайте его фотографию в интернете. Посмотрите на фотографию и попытайтесь понять, что отличает естественный источник воды от неестественного.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3232,102 +3113,102 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "True or False: Most of the water on Earth is freshwater.",
+                  prompt: "Верно или неверно: Большая часть воды на Земле - пресная.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt: "In what ocean is the Mariana Trench located?",
+                  prompt: "В каком океане находится Марианская впадина?",
                   answers: [
-                    { text: "Pacific" },
-                    { text: "Atlantic" },
-                    { text: "Indian" },
-                    { text: "Artic" },
+                    { text: "Тихий" },
+                    { text: "Атлантический" },
+                    { text: "Индийский" },
+                    { text: "Северный Ледовитый" },
                   ],
-                  answer: "Pacific",
+                  answer: "Тихий",
                 },
                 {
-                  prompt: "What is the largest river in Kazakhstan?",
+                  prompt: "Какая самая большая река в Казахстане?",
                   answers: [
-                    { text: "Yertis" },
-                    { text: "Yesil" },
-                    { text: "Zhem" },
-                    { text: "Oral" },
+                    { text: "Ертис" },
+                    { text: "Есиль" },
+                    { text: "Жем" },
+                    { text: "Орал" },
                   ],
-                  answer: "Yertis",
+                  answer: "Ертис",
                 },
                 {
-                  prompt: "What is the largest lake in Kazakhstan?",
+                  prompt: "Какое самое большое озеро в Казахстане?",
                   answers: [
-                    { text: "Zaysan" },
-                    { text: "Aral" },
-                    { text: "Balkhash" },
-                    { text: "Alakol" },
+                    { text: "Зайсан" },
+                    { text: "Аральское" },
+                    { text: "Балхаш" },
+                    { text: "Алаколь" },
                   ],
-                  answer: "Balkhash",
+                  answer: "Балхаш",
                 },
                 {
-                  prompt: "What source of fresh and clean water is caused by excess water seeping through soil and clay?",
+                  prompt: "Какой источник свежей и чистой воды обусловлен избытком воды, просачивающейся через почву и глину?",
                   answers: [
-                    { text: "Lakes" },
-                    { text: "Groundwater/underground" },
-                    { text: "Rain" },
-                    { text: "Oceans" },
+                    { text: "Озера" },
+                    { text: "Грунтовая/подземная" },
+                    { text: "Дождь" },
+                    { text: "Океаны" },
                   ],
-                  answer: "Groundwater/underground",
+                  answer: "Грунтовая/подземная",
                 },
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Not all communities possess access to a natural water source. However, the communities that do must address the issues of water pollution, overuse, and scarcity. Can you think of ways they address these issues and how you can address these same issues if present, in your community?",
-                    placeholder: "They can address these issues by ...",
+                    text: "Не все сообщества имеют доступ к естественному источнику воды. Однако сообщества, которые это имеют, должны решить проблемы загрязнения воды, ее перераспределения и дефицита. Можете ли вы придумать способы решения этих проблем и как вы можете решить эти же проблемы, если они присутствуют, в вашем сообществе?",
+                    placeholder: "Они могут решить эти проблемы, ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-            // reorder: { //correct
-            //   navigation: "Reorder",
-            //   icon: require("../../../../assets/reorder.png"),
-            //   backgroundColor: "pink",
-            //   prompt:
-            //     "Put the following oceans in order from largest to smallest.",
-            //   data: [
-            //     {
-            //       text: "Pacific",
-            //       dormant: "coral",
-            //       active: "#DB756B",
-            //     },
-            //     {
-            //       text: "Atlantic",
-            //       dormant: "pink",
-            //       active: "#ffacbb",
-            //     },
-            //     {
-            //       text: "Indian",
-            //       dormant: "dodgerblue",
-            //       active: "#3873E0",
-            //     },
-            //     {
-            //       text: "Artic",
-            //       dormant: "#ffa500",
-            //       active: "#e59400",
-            //     },
-            //   ],
-            // },
-          },
+            reorder: { //correct
+              navigation: "Reorder",
+              icon: require("../../../../assets/reorder.png"),
+              backgroundColor: "pink",
+              prompt:
+                "Упорядочите следующие океаны от самого большого до самого маленького.",
+              data: [
+                {
+                  text: "Тихий",
+                  dormant: "coral",
+                  active: "#DB756B",
+                },
+                {
+                  text: "Атлантический",
+                  dormant: "pink",
+                  active: "#ffacbb",
+                },
+                {
+                  text: "Индийский",
+                  dormant: "dodgerblue",
+                  active: "#3873E0",
+                },
+                {
+                  text: "Северный Ледовитый",
+                  dormant: "#ffa500",
+                  active: "#e59400",
+                },
+              ],
+            },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l5_prompt")}</Translation>
@@ -3371,7 +3252,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of your water meter to see how much water you’ve used this period. Take another picture at the same time next month to see if your habits have improved your water usage.",
+                "Сфотографируйте свой счетчик воды, чтобы узнать, сколько воды вы использовали в этом периоде. Сделайте еще одну фотографию в то же время в следующем месяце, чтобы увидеть, улучшили ли ваши привычки использование воды.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3380,63 +3261,63 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "Which of the following household uses of water requires the largest amount of water?",
+                  prompt: "Для какого из следующих бытовых использований воды требуется наибольшее количество воды?",
                   answers: [
-                    { text: "Laundry" },
-                    { text: "Washing dishes" },
-                    { text: "Taking a bath" },
-                    { text: "Flushing the toilet" },
+                    { text: "Стирка" },
+                    { text: "Мытье посуды" },
+                    { text: "Принятие ванны" },
+                    { text: "Спуск воды в туалете" },
                   ],
-                  answer: "Taking a bath",
+                  answer: "Принятие ванны",
                 },
                 {
-                  prompt: "True or False: On average, taking a bath requires four times the amount of water it takes for a shower.",
+                  prompt: "Верно или неверно: В среднем, принятие ванны требует в четыре раза больше воды, чем душ.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "Which of the following is a way to reduce water consumption in households?",
+                  prompt: "Какой из следующих вариантов является способом уменьшения потребления воды в быту?",
                   answers: [
-                    { text: "Take showers instead of baths" },
-                    { text: "Make sure the dishwasher is full before it gets run" },
-                    { text: "Turn of the sink when brushing your teeth" },
-                    { text: "All of the above" },
+                    { text: "Принимать душ вместо ванны" },
+                    { text: "Запускать посудомоечную машину только при полной загрузке" },
+                    { text: "Выключать воду при чистке зубов" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt: "Which of the following is NOT a way to reduce water consumption in households?",
+                  prompt: "Какой из следующих вариантов НЕ является способом уменьшения потребления воды в быту?",
                   answers: [
-                    { text: "Take shorter showers" },
-                    { text: "Wait to repair leaks in sinks and toilets" },
-                    { text: "Water plants only during cooler parts of the day" },
-                    { text: "Only run full loads of laundry" },
+                    { text: "Принимать короткие души" },
+                    { text: "Откладывать ремонт утечек в раковинах и туалетах" },
+                    { text: "Поливать растения только в более прохладное время суток" },
+                    { text: "Запускать стиральную машину только при полной загрузке" },
                   ],
-                  answer: "Wait to repair leaks in sinks and toilets",
+                  answer: "Откладывать ремонт утечек в раковинах и туалетах",
                 },
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What are some ways that your local government can make sure that human drinking water isn’t used for wrongful purposes, such as wastefulness?",
-                    placeholder: "The local government can ...",
+                    text: "Какими способами местное правительство может гарантировать, что питьевая вода не используется для неправильных целей, таких как расточительство?",
+                    placeholder: "Местное правительство может ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l6_prompt")}</Translation>
@@ -3485,7 +3366,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of a homemade water filtration method. You can do this after you complete the mastery challenge. To show the success of the water filtration method, take a before and after picture of the water.",
+                "Сделайте фотографию домашнего метода фильтрации воды. Вы можете сделать это после того, как выполните задачу по овладению навыками. Чтобы показать успех метода фильтрации воды, сделайте фотографию воды до и после.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3494,55 +3375,55 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "What is the main way to purify water?",
+                  prompt: "Каким основным способом очищается вода?",
                   answers: [
-                    { text: "Mechanical" },
-                    { text: "Chemical" },
-                    { text: "Biological" },
-                    { text: "All of the above" },
+                    { text: "Механический" },
+                    { text: "Химический" },
+                    { text: "Биологический" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt: "What occurs at water treatment plants?",
+                  prompt: "Что происходит на станциях очистки воды?",
                   answers: [
-                    { text: "It is where wastewater is treated." },
-                    { text: "It is where freshwater is treated." },
-                    { text: "It is where ocean water is treated." },
-                    { text: "None of the above" },
+                    { text: "Здесь обрабатываются сточные воды." },
+                    { text: "Здесь обрабатывается пресная вода." },
+                    { text: "Здесь обрабатывается морская вода." },
+                    { text: "Ни один из вышеперечисленных" },
                   ],
-                  answer: "It is where wastewater is treated.",
+                  answer: "Здесь обрабатываются сточные воды.",
                 },
                 {
-                  prompt: "Which method of purifying water removes things like branches, sand, leaves?",
+                  prompt: "Какой метод очистки воды удаляет такие вещи, как ветки, песок, листья?",
                   answers: [
-                    { text: "Mechanical" },
-                    { text: "Chemical" },
-                    { text: "Biological" },
-                    { text: "Methodological" },
+                    { text: "Механический" },
+                    { text: "Химический" },
+                    { text: "Биологический" },
+                    { text: "Методологический" },
                   ],
-                  answer: "Mechanical",
+                  answer: "Механический",
                 },
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How can we protect and restore aquatic ecosystems and the many benefits they provide, such as water purification, flood control, and habitat for a variety of species? Extend your answer to list several water purification methods, from natural to man made.",
-                    placeholder: "To protect aquatic ecosystems, we can ...",
+                    text: "Как мы можем защитить и восстановить водные экосистемы и множество преимуществ, которые они обеспечивают, таких как очистка воды, контроль за наводнениями, обиталище для различных видов? Расширьте свой ответ, перечислив несколько методов очистки воды, от естественных до искусственных.",
+                    placeholder: "Для защиты водных экосистем мы можем ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l7_prompt")}</Translation>
@@ -3585,7 +3466,7 @@ export const Grade2 = {
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
               prompt:
-                "Take a picture of nutrient-rich soil. Analyze and identify why the soil in particular is nutrient-dense.",
+                "Сделайте фотографию плодородного почвенного грунта. Проанализируйте и определите, почему именно эта почва насыщена питательными веществами.",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -3594,53 +3475,53 @@ export const Grade2 = {
               image: "../../../../assets/nat.jpg",
               content: [
                 {
-                  prompt: "What is the purpose of soil?",
+                  prompt: "В чем заключается цель почвы?",
                   answers: [
-                    { text: "To provide nutrition and support for plant roots and stems" },
-                    { text: "To provide a home for many animals" },
-                    { text: "The first two answers are correct" },
-                    { text: "Neither answers are correct" },
+                    { text: "Предоставлять питание и поддержку для корней и стеблей растений" },
+                    { text: "Предоставлять дом для многих животных" },
+                    { text: "Первые два ответа верны" },
+                    { text: "Оба ответа неверны" },
                   ],
-                  answer: "The first two answers are correct",
+                  answer: "Первые два ответа верны",
                 },
                 {
-                  prompt: "True or False: Most of the Earth’s surface is covered with a layer of soil of different thicknesses.",
+                  prompt: "Верно или неверно: Большая часть поверхности Земли покрыта слоем почвы разной толщины.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "What must occur to begin the process of creating soil?",
+                  prompt: "Что должно произойти, чтобы начать процесс создания почвы?",
                   answers: [
-                    { text: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles." },
-                    { text: "Soil must be transported to the area." },
-                    { text: "Organic matter must decompose in the area." },
-                    { text: "All of the above." },
+                    { text: "Разрушаются камни, такие как камни и минералы, образуя меньшие минеральные частицы." },
+                    { text: "Почва должна быть перенесена в эту область." },
+                    { text: "Органическое вещество должно разложиться в этой области." },
+                    { text: "Все вышеперечисленное." },
                   ],
-                  answer: "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles.",
+                  answer: "Разрушаются камни, такие как камни и минералы, образуя меньшие минеральные частицы.",
                 },
               ]
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
-                <Translation>{(t) => t("common:openresponse")}</Translation>), // Open Response
+                <Translation>{(t) => t("common:openresponse")}</Translation>), // Открытый ответ
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What role can soil play in slowing down climate change?",
-                    placeholder: "Soil ...",
+                    text: "Какую роль может играть почва в замедлении климатических изменений?",
+                    placeholder: "Почва ...",
                     image: require("../../../../assets/mastery/state-of-matter.png"),
                   },
                 ],
               },
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l8_prompt")}</Translation>
@@ -3699,7 +3580,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt: "Take a picture of a scientific discovery that you use on a daily basis.",
+              prompt: "Сделайте фотографию научного открытия, которое вы используете каждый день.",
             },
             quiz: { // correct
               navigation: "QuizScreen",
@@ -3708,51 +3589,40 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
-                  prompt:
-                    "What of the following is the best definition of humus",
+                  prompt: "Какое из следующих определений наилучшим образом характеризует гумус",
                   answers: [
-                    { text: "Matter in soil made out of the remains of plants and animals" },
-                    { text: "Minerals in soil." },
-                    { text: "Grass that grows on top of the soil." },
-                    { text: "Rocks embedded in the soil" },
+                    { text: "Вещество в почве, состоящее из остатков растений и животных" },
+                    { text: "Минералы в почве." },
+                    { text: "Трава, растущая на верхнем слое почвы." },
+                    { text: "Камни, встроенные в почву" },
                   ],
-                  answer: "Matter in soil made out of the remains of plants and animals.",
+                  answer: "Вещество в почве, состоящее из остатков растений и животных.",
                 },
                 {
-                  prompt: "Humus is more abundant in the upper layers of the soil than the lower layers.",
+                  prompt: "Гумус более обильно представлен в верхних слоях почвы, чем в нижних слоях.",
                   answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
+                  prompt: "Частицы камня и минералов более обильно представлены в нижних слоях почвы, чем в верхних слоях.",
                   answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
+                  prompt: "Какие из следующих условий могут вызвать разрушение камней и, следовательно, образование почвы?",
                   answers: [
-                    {
-                      text: "Wind and water",
-                    },
-                    {
-                      text: "Solar heat",
-                    },
-                    {
-                      text: "Living organisms",
-                    },
-                    { text: "All of the above" },
+                    { text: "Ветер и вода" },
+                    { text: "Солнечный свет" },
+                    { text: "Живые организмы" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все вышеперечисленное",
                 },
               ],
             },
@@ -3817,49 +3687,45 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
-                  prompt:
-                    "What is the best explanation for why air permeability is important for soil?",
+                  prompt: "Каково лучшее объяснение важности воздухопроницаемости почвы?",
                   answers: [
-                    { text: "Without it the worms will die " },
-                    { text: "This allows air through the soil, which is needed or else plant roots will die. " },
-                    { text: "It lets rain through." },
-                    { text: "None of the above." },
+                    { text: "Без этого черви умрут" },
+                    { text: "Это позволяет воздуху проходить через почву, что необходимо, иначе корни растений умрут." },
+                    { text: "Это пропускает дождь." },
+                    { text: "Ни один из ответов не верен." },
                   ],
-                  answer: "This allows air through the soil, which is needed or else plant roots will die.",
+                  answer: "Это позволяет воздуху проходить через почву, что необходимо, иначе корни растений умрут.",
                 },
                 {
-                  prompt: "Which of the following is the best definition of water permeability? ",
+                  prompt: "Какое из следующих определений наилучшим образом характеризует водопроницаемость?",
                   answers: [
-                    { text: "It describes the type of water needed for the soil." },
-                    { text: "It is the ability of the soil to support worms and insects." },
-                    { text: "It explains the pH of the soil." },
-                    { text: "It is the ability of the soil to absorb and transmit water." },
+                    { text: "Она описывает тип воды, необходимой для почвы." },
+                    { text: "Это способность почвы поддерживать червей и насекомых." },
+                    { text: "Она объясняет pH-уровень почвы." },
+                    { text: "Это способность почвы поглощать и передавать воду." },
                   ],
-                  answer: "It is the ability of the soil to absorb and transmit water.",
+                  answer: "Это способность почвы поглощать и передавать воду.",
                 },
                 {
-                  prompt: "Which of the following processes directly threatens the abundance of soil?",
+                  prompt: "Какой из следующих процессов напрямую угрожает обилию почвы?",
                   answers: [
-                    { text: "Earthquakes" },
-                    { text: "Pollution" },
-                    { text: "Erosion" },
-                    { text: "Evaporation" },
+                    { text: "Землетрясения" },
+                    { text: "Загрязнение" },
+                    { text: "Эрозия" },
+                    { text: "Испарение" },
                   ],
-                  answer: "Erosion",
+                  answer: "Эрозия",
                 },
                 {
-                  prompt: "The life of humans, animals, and plants are all dependent on the existence of soil. ",
+                  prompt: "Жизнь людей, животных и растений зависит от существования почвы.",
                   answers: [
-                    { text: "True" },
-                    {
-                      text: "False",
-                    },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
               ],
             },
-
           },
           mastery: {
             prompt: (
@@ -3922,43 +3788,42 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
-                  prompt:
-                    "Which of the following statements is true about soil?",
+                  prompt: "Какое из следующих утверждений о почве является верным?",
                   answers: [
-                    { text: "All of the following" },
-                    { text: "Dark soil is rich in humus." },
-                    { text: "Red soil is rich in iron." },
-                    { text: "Light soil is poor in minerals and humus." },
+                    { text: "Все перечисленные ниже" },
+                    { text: "Темная почва богата гумусом." },
+                    { text: "Красная почва богата железом." },
+                    { text: "Светлая почва бедна минералами и гумусом." },
                   ],
-                  answer: "All of the following.",
+                  answer: "Все перечисленные ниже.",
                 },
                 {
-                  prompt: "Clay soil absorbs water well and does not stick together. ",
+                  prompt: "Глинистая почва хорошо поглощает воду и не склеивается.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt: "Which of the following is the main property of sandy soil?",
+                  prompt: "Какое из следующих является основным свойством песчаной почвы?",
                   answers: [
-                    { text: "It is very loose." },
-                    { text: "Is is easy for water to pass through it" },
-                    { text: "It heats up and cools down quickly" },
-                    { text: "All of the above" },
+                    { text: "Она очень рыхлая." },
+                    { text: "Через неё легко проходит вода" },
+                    { text: "Она быстро нагревается и остывает" },
+                    { text: "Все перечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все перечисленное",
                 },
                 {
-                  prompt: "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
+                  prompt: "Какой тип почвы считается «лучшим», содержит много гумуса и характеризуется тем, что оставляет черный жирный след на ладони при сжатии?",
                   answers: [
-                    { text: "Chernozem" },
-                    { text: "Clay" },
-                    { text: "Humus soil" },
-                    { text: "Sand" },
+                    { text: "Чернозем" },
+                    { text: "Глина" },
+                    { text: "Гумусная почва" },
+                    { text: "Песок" },
                   ],
-                  answer: "Chernozem",
+                  answer: "Чернозем",
                 },
               ],
             },
@@ -4013,61 +3878,60 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
-                  prompt:
-                    "What are the spheres of the earth?",
+                  prompt: "Что такое сферы Земли?",
                   answers: [
-                    { text: "Biosphere and lithosphere" },
-                    { text: "Hydrosphere and atmosphere" },
-                    { text: "Both answers are correct" },
-                    { text: "Neither answers are correct" },
+                    { text: "Биосфера и литосфера" },
+                    { text: "Гидросфера и атмосфера" },
+                    { text: "Оба ответа верны" },
+                    { text: "Ни один из ответов не верен" },
                   ],
-                  answer: "Both answers are correct.",
+                  answer: "Оба ответа верны.",
                 },
                 {
-                  prompt: "Which of the following is the best definition of the atmosphere of the earth? ",
+                  prompt: "Какое из следующих определений атмосферы Земли наиболее точное?",
                   answers: [
-                    { text: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers." },
-                    { text: "A solid shell that surrounds Earth, holding in the gasses needed for plants." },
-                    { text: "A shell made up of gas, consisting of only one layer that protects the earth from asteroids." },
-                    { text: "A solid shell that is only responsible for creating weather. " },
+                    { text: "Газовый оболочка, содержащая кислород, необходимый живым организмам для дыхания. Состоит из нескольких слоев." },
+                    { text: "Твердая оболочка, окружающая Землю, удерживающая газы, необходимые для растений." },
+                    { text: "Оболочка из газа, состоящая только из одного слоя, который защищает землю от астероидов." },
+                    { text: "Твердая оболочка, которая отвечает только за создание погоды." },
                   ],
-                  answer: "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
+                  answer: "Газовый оболочка, содержащая кислород, необходимый живым организмам для дыхания. Состоит из нескольких слоев.",
                 },
                 {
-                  prompt: "Which of the following is the main property of sandy soil?",
+                  prompt: "Какое из следующих является основным свойством песчаной почвы?",
                   answers: [
-                    { text: "It is very loose." },
-                    { text: "Is is easy for water to pass through it" },
-                    { text: "It heats up and cools down quickly" },
-                    { text: "All of the above" },
+                    { text: "Она очень рыхлая." },
+                    { text: "Через неё легко проходит вода" },
+                    { text: "Она быстро нагревается и остывает" },
+                    { text: "Все перечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все перечисленное",
                 },
                 {
-                  prompt: "The lithosphere is the upper solid shell of the Earth.",
+                  prompt: "Литосфера - это верхняя твердая оболочка Земли.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "Ture",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "What inhabits the biosphere on Earth? ",
+                  prompt: "Что населяет биосферу на Земле?",
                   answers: [
-                    { text: "3 million species of plants, animals, fungi and bacteria." },
-                    { text: "Earth’s core." },
-                    { text: "The troposphere." },
-                    { text: "Glaciers." },
+                    { text: "3 миллиона видов растений, животных, грибов и бактерий." },
+                    { text: "Ядро Земли." },
+                    { text: "Тропосфера." },
+                    { text: "Ледники." },
                   ],
-                  answer: "Glaciers",
+                  answer: "Ледники",
                 },
                 {
-                  prompt: "The lithosphere has never moved, and never will.",
+                  prompt: "Литосфера никогда не двигалась и никогда не будет.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
               ],
             },
@@ -4116,18 +3980,17 @@ export const Grade2 = {
               imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
               content: [
                 {
-                  prompt:
-                    "What is the main way that space is explored?",
+                  prompt: "Каким основным способом изучается космос?",
                   answers: [
-                    { text: "Automatic spacecrafts" },
-                    { text: "Manned space flights" },
-                    { text: "Both answers are correct" },
-                    { text: "Neither answer is correct" },
+                    { text: "Автоматическими космическими аппаратами" },
+                    { text: "Пилотируемыми космическими полётами" },
+                    { text: "Оба ответа верны" },
+                    { text: "Ни один из ответов не верен" },
                   ],
-                  answer: "Both answers are correct",
+                  answer: "Оба ответа верны",
                 },
                 {
-                  prompt: "In what year was the first human flight to space?",
+                  prompt: "В каком году состоялся первый человеческий полет в космос?",
                   answers: [
                     { text: "1961" },
                     { text: "1990" },
@@ -4137,16 +4000,15 @@ export const Grade2 = {
                   answer: "1961",
                 },
                 {
-                  prompt: "Which of the following advancements were created in connection with the development of the space industry?",
+                  prompt: "Какие из следующих прорывов были созданы в связи с развитием космической промышленности?",
                   answers: [
-                    { text: "Solar batteries" },
-                    { text: "Water filters" },
-                    { text: "Digital cameras" },
-                    { text: "All of the above" },
+                    { text: "Солнечные батареи" },
+                    { text: "Водные фильтры" },
+                    { text: "Цифровые камеры" },
+                    { text: "Все выше перечисленное" },
                   ],
-                  answer: "All of the above",
+                  answer: "Все выше перечисленное",
                 },
-
               ],
             },
           },
