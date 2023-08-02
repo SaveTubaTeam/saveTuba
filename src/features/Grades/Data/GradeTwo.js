@@ -4071,43 +4071,43 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/earth-rotating.png"),
           backgroundColor: "#F6E134",
           minigames: {
-            quiz: { // correct
+            quiz: { // верно
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
-              imageBg: require("../../../../assets/nat.jpg"), // none of this needs to change for quizzes, all images are constants
+              imageBg: require("../../../../assets/nat.jpg"), // ничего из этого не нужно менять для викторин, все изображения - константы
               content: [
                 {
-                  prompt: "What is the best explanation for why there are different time zones in different places? ",
+                  prompt: "Какое лучшее объяснение, почему в разных местах разные часовые пояса?",
                   answers: [
-                    { text: "The sun revolves around the earth, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others. " },
-                    { text: "The earth revolves around the moon, making it night time on one half of the earth." },
-                    { text: "None of the above." },
+                    { text: "Солнце вращается вокруг Земли, из-за чего в некоторых местах светло, а в других - темно." },
+                    { text: "Земля вращается вокруг своей оси и в то же время обращается вокруг Солнца, из-за чего в некоторых местах светло, а в других - темно." },
+                    { text: "Земля вращается вокруг Луны, из-за чего на одной половине Земли ночь." },
+                    { text: "Ни один из ответов не верен." },
                   ],
-                  answer: "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
+                  answer: "Земля вращается вокруг своей оси и в то же время обращается вокруг Солнца, из-за чего в некоторых местах светло, а в других - темно.",
                 },
                 {
-                  prompt: "The earth rotates around the ____.",
+                  prompt: "Земля вращается вокруг ____.",
                   answers: [
-                    { text: "Moon" },
-                    { text: "Sun" },
-                    { text: "Other planets" },
-                    { text: "Milky way" },
+                    { text: "Луны" },
+                    { text: "Солнца" },
+                    { text: "Других планет" },
+                    { text: "Млечного пути" },
                   ],
-                  answer: "Sun",
+                  answer: "Солнца",
                 },
                 {
-                  prompt: "The earth rotates around an axis AND revolves around the sun.",
+                  prompt: "Земля вращается вокруг своей оси И обращается вокруг Солнца.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "Ture",
+                  answer: "Верно",
                 },
               ],
             },
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c3l14_prompt")}</Translation>
@@ -4167,43 +4167,39 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/elastic-spring.png"),
           backgroundColor: "#2A731D",
           minigames: {
-            quiz: { // correct
+            quiz: { // верно
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt:
-                    "True or False: Elasticity is the property of bodies to restore their original position and shape",
+                  prompt: "Верно или неверно: Эластичность - это свойство тел восстанавливать свое исходное положение и форму",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "What is a common object that utilizes elasticity?",
+                  prompt: "Какой общий объект использует эластичность?",
                   answers: [
-                    { text: "Car tires" },
-                    {
-                      text: "Balloons",
-                    },
-                    { text: "Long bridges" },
-                    { text: "All the above" },
+                    { text: "Автомобильные шины" },
+                    { text: "Шарики" },
+                    { text: "Длинные мосты" },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt:
-                    "Which of the following statements about elastic forces is true?",
+                  prompt: "Какое из следующих утверждений об эластических силах верно?",
                   answers: [
-                    { text: "If the elastic forces cannot handle the amount of external force, the body changes shape." },
-                    { text: "The aim of the elastic force is to compress, shift, stretch, and bend." },
-                    { text: "Both of the above answers are correct." },
-                    { text: "Neither answers are correct." }
+                    { text: "Если эластические силы не могут справиться с объемом внешней силы, тело меняет форму." },
+                    { text: "Цель эластической силы - сжимать, сдвигать, растягивать и гнуть." },
+                    { text: "Оба ответа верны." },
+                    { text: "Оба ответа неверны." }
                   ],
-                  answer: "Both of the above answers are correct.",
+                  answer: "Оба ответа верны.",
                 },
               ],
             },
@@ -4212,8 +4208,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an object/item that uses elastic force."
+              prompt: "Сфотографируйте объект/предмет, который использует эластическую силу."
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4226,14 +4221,14 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is elastic force, and how does it differ from other types of force?",
-                    placeholder: "The elastic force is...",
+                    text: "Что такое эластическая сила и чем она отличается от других видов сил?",
+                    placeholder: "Эластическая сила - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             }
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l1_prompt")}</Translation>
@@ -4281,43 +4276,39 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/gravity.png"),
           backgroundColor: "#060644",
           minigames: {
-            quiz: { // correct
+            quiz: { // верно
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "Which of the following things that occur on earth need gravity?",
+                  prompt: "Какие из следующих явлений, происходящих на Земле, требуют гравитации?",
                   answers: [
-                    { text: "Holds the moon in orbit." },
-                    {
-                      text: "Keeps objects on the surface of the earth.",
-                    },
-                    { text: "Keeps the shape of the earth’s atmosphere." },
-                    { text: "All the above" },
+                    { text: "Держит Луну на орбите." },
+                    { text: "Держит объекты на поверхности Земли." },
+                    { text: "Сохраняет форму атмосферы Земли." },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt:
-                    "True or False: Elasticity is the property of bodies to restore their original position and shape",
+                  prompt: "Верно или неверно: Эластичность - это свойство тел восстанавливать свое исходное положение и форму",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt:
-                    "Which of the following is the best definition of inertia?",
+                  prompt: "Какое из следующих определений инерции является наилучшим?",
                   answers: [
-                    { text: "The property of the body to maintain a state of rest or movement until some external force acts on it." },
-                    { text: "The property of a body to bounce back from an external force." },
-                    { text: "The property that drags things down to the center of the earth" },
-                    { text: "The speed at which an object falls." }
+                    { text: "Свойство тела сохранять состояние покоя или движения до тех пор, пока на него не подействует какая-либо внешняя сила." },
+                    { text: "Свойство тела отскакивать от внешней силы." },
+                    { text: "Свойство, которое тянет вещи к центру Земли" },
+                    { text: "Скорость, с которой падает объект." }
                   ],
-                  answer: "The property of the body to maintain a state of rest or movement until some external force acts on it.",
+                  answer: "Свойство тела сохранять состояние покоя или движения до тех пор, пока на него не подействует какая-либо внешняя сила.",
                 },
               ],
             },
@@ -4326,8 +4317,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an object experiencing gravity. (Hint: objects in freefall.)"
+              prompt: "Сделайте фотографию объекта, испытывающего гравитацию. (Подсказка: объекты в свободном падении.)"
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4340,14 +4330,14 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is gravity, and how does it differ from other types of force?",
-                    placeholder: "The gravity is...",
+                    text: "Что такое гравитация и чем она отличается от других видов сил?",
+                    placeholder: "Гравитация - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             }
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l2_prompt")}</Translation>
@@ -4415,41 +4405,39 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/friction.png"),
           backgroundColor: "#53020C",
           minigames: {
-            quiz: { // correct
+            quiz: { // верно
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt:
-                    "True or False: Friction is stronger on smooth surfaces than rough surfaces.",
+                  prompt: "Верно или неверно: Трение сильнее на гладких поверхностях, чем на шероховатых.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "False",
+                  answer: "Неверно",
                 },
                 {
-                  prompt: "In which of the following scenarios is friction present?",
+                  prompt: "В каком из следующих сценариев присутствует трение?",
                   answers: [
-                    { text: "Pressing the palms of your hands together and rubbing them quickly, creating heat." },
-                    { text: "A pencil leaves traces on a piece of paper when they come into contact with each other.", },
-                    { text: "The rubber boots of climbers’ boots keep the climber from slipping off the rocks." },
-                    { text: "All the above" },
+                    { text: "Натирая ладони вместе, создается тепло." },
+                    { text: "Карандаш оставляет следы на бумаге при контакте друг с другом." },
+                    { text: "Резиновые сапоги альпиниста предотвращают скольжение с камней." },
+                    { text: "Все вышеперечисленное" },
                   ],
-                  answer: "All the above",
+                  answer: "Все вышеперечисленное",
                 },
                 {
-                  prompt:
-                    "Which of the following can be created by friction?",
+                  prompt: "Какое из следующих явлений может быть вызвано трением?",
                   answers: [
-                    { text: "Heat" },
-                    { text: "Decline in speed" },
-                    { text: "Both answers are correct." },
-                    { text: "Neither answers are correct." }
+                    { text: "Тепло" },
+                    { text: "Снижение скорости" },
+                    { text: "Оба ответа верны." },
+                    { text: "Оба ответа неверны." }
                   ],
-                  answer: "Both answers are correct.",
+                  answer: "Оба ответа верны.",
                 },
               ],
             },
@@ -4458,8 +4446,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an object experiencing friction or an object that causes friction."
+              prompt: "Сделайте фотографию объекта, испытывающего трение, или объекта, вызывающего трение."
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4472,8 +4459,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is friction, and how does it differ from other types of force?",
-                    placeholder: "The friction is...",
+                    text: "Что такое трение и чем оно отличается от других видов сил?",
+                    placeholder: "Трение - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -4551,41 +4538,39 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/direction.png"),
           backgroundColor: "#F9943B",
           minigames: {
-            quiz: { // correct
+            quiz: { // верно
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt:
-                    "True or False: The direction of gravity coincides with the direction of its free fall.",
+                  prompt: "Верно или неверно: Направление гравитации совпадает с направлением свободного падения.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "The friction force is ____ to the direction of movement. ",
+                  prompt: "Сила трения ____, по отношению к направлению движения.",
                   answers: [
-                    { text: "Opposite" },
-                    { text: "Equal", },
-                    { text: "Perpendicular" },
-                    { text: "All the above" },
+                    { text: "Противоположна" },
+                    { text: "Равна" },
+                    { text: "Перпендикулярна" },
+                    { text: "Все выше перечисленное" },
                   ],
-                  answer: "Opposite",
+                  answer: "Противоположна",
                 },
                 {
-                  prompt:
-                    "Which of the following most accurately describes what creates friction?",
+                  prompt: "Какое из следующих утверждений наиболее точно описывает, что создает трение?",
                   answers: [
-                    { text: "When one body is in free fall due to gravity." },
-                    { text: "When bodies move across one another, causing two surfaces to come into contact." },
-                    { text: "When a body bounces back after an external force acts on it." },
-                    { text: "When a body breaks after an external force acts on it." }
+                    { text: "Когда тело свободно падает под действием гравитации." },
+                    { text: "Когда тела движутся друг по другу, заставляя две поверхности вступить в контакт." },
+                    { text: "Когда тело отскакивает назад после действия внешней силы." },
+                    { text: "Когда тело ломается после действия внешней силы." }
                   ],
-                  answer: "When bodies move across one another, causing two surfaces to come into contact.",
+                  answer: "Когда тела движутся друг по другу, заставляя две поверхности вступить в контакт.",
                 },
               ],
             },
@@ -4594,8 +4579,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of an object that is experiencing a force. Highlight the direction of the force that is acting on it."
+              prompt: "Сделайте фотографию объекта, на который действует сила. Выделите направление силы, действующей на него."
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4608,8 +4592,8 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How do forces interact with matter, and how do they cause changes in the motion and behavior of objects? And, What are some common examples of forces in everyday life, and how do they affect the motion of objects?",
-                    placeholder: "Forces interact by...",
+                    text: "Как силы взаимодействуют с материей и как они вызывают изменения в движении и поведении объектов? И какие примеры сил в повседневной жизни и как они влияют на движение объектов?",
+                    placeholder: "Силы взаимодействуют так...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
@@ -4675,41 +4659,39 @@ export const Grade2 = {
           thumbnail: require("../../../../assets/lesson-icons/shadow.png"),
           backgroundColor: "#159D52",
           minigames: {
-            quiz: { // correct
+            quiz: { // верно
               navigation: "QuizScreen",
               icon: require("../../../../assets/creativity.png"),
               backgroundColor: "mediumpurple",
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt:
-                    "True or False: A shadow is an area of space where light does not enter.",
+                  prompt: "Верно или неверно: Тень - это область пространства, куда свет не попадает.",
                   answers: [
-                    { text: "True" },
-                    { text: "False" },
+                    { text: "Верно" },
+                    { text: "Неверно" },
                   ],
-                  answer: "True",
+                  answer: "Верно",
                 },
                 {
-                  prompt: "A ____ light source gives a longer shadow.",
+                  prompt: "____ источник света дает более длинную тень.",
                   answers: [
-                    { text: "Lower" },
-                    { text: "Higher", },
-                    { text: "Colored" },
-                    { text: "UV" },
+                    { text: "Ниже расположенный" },
+                    { text: "Выше расположенный" },
+                    { text: "Цветной" },
+                    { text: "Ультрафиолетовый" },
                   ],
-                  answer: "Lower",
+                  answer: "Ниже расположенный",
                 },
                 {
-                  prompt:
-                    "The ____ the light source is to the object being illuminated, the shorter the shadow is.",
+                  prompt: "Чем ____ источник света находится к освещаемому объекту, тем короче тень.",
                   answers: [
-                    { text: "Farther" },
-                    { text: "More yellow" },
-                    { text: "Closer" },
-                    { text: "Redder" }
+                    { text: "Дальше" },
+                    { text: "Более желтый" },
+                    { text: "Ближе" },
+                    { text: "Более красный" }
                   ],
-                  answer: "Closer",
+                  answer: "Ближе",
                 },
               ],
             },
@@ -4718,8 +4700,7 @@ export const Grade2 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundimage: require("../../../../assets/snapshots/nature-bg.jpg"),
-              prompt:
-                "Take a picture of a shadow."
+              prompt: "Сделайте фотографию тени."
             },
             openresponse: {
               navigation: "Image Boom",
@@ -4732,14 +4713,14 @@ export const Grade2 = {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What is a shadow, and how is it formed? What are the many factors that can affect a shadow. For example, the time of day is one factor. Can you think of any more?",
-                    placeholder: "Shadow is...",
+                    text: "Что такое тень, и как она образуется? Какие многие факторы могут повлиять на тень. Например, время суток - один из факторов. Можете ли вы назвать еще?",
+                    placeholder: "Тень - это...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
               },
             }
-          },
+          },          
           mastery: {
             prompt: (
               <Translation>{(t) => t("mastery:g2c4l5_prompt")}</Translation>
