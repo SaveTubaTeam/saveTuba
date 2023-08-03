@@ -467,35 +467,35 @@ export const Grade1 = {
               icon: require("../../../../assets/reorder.png"),
               backgroundColor: "pink",
               prompt:
-                "Reorder the below items to show which steps you need to take when conducting an experiment.",
+                "Переставьте указанные ниже элементы, чтобы показать, какие шаги вы должны предпринять при проведении эксперимента.",
               data: [
                 {
-                  text: "Hypothesis",
+                  text: "Гипотеза",
                   dormant: "coral",
                   active: "#DB756B",
                 },
                 {
-                  text: "Resources",
+                  text: "Ресурсы",
                   dormant: "pink",
                   active: "#ffacbb",
                 },
                 {
-                  text: "Notes",
+                  text: "Заметки",
                   dormant: "dodgerblue",
                   active: "#3873E0",
                 },
                 {
-                  text: "Goal",
+                  text: "Цель",
                   dormant: "#ffa500",
                   active: "#e59400",
                 },
                 {
-                  text: "Plan",
+                  text: "План",
                   dormant: "#19a127",
                   active: "#169023",
                 },
                 {
-                  text: "Conclusion",
+                  text: "Заключение",
                   dormant: "#d38f9f",
                   active: "#cd8193",
                 },
@@ -505,15 +505,15 @@ export const Grade1 = {
               navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
+              ),
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "Design an experiment connected to analyzing something in nature.",
-                    placeholder: "My plan is to..",
+                    text: "Разработайте эксперимент, связанный с анализом чего-то в природе.",
+                    placeholder: "Мой план - это..",
                     image: require("../../../../assets/openresponse/scientist.png"),
                   },
                 ],
@@ -525,7 +525,7 @@ export const Grade1 = {
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/lessonbg2.png"),
               prompt:
-                "Take a picture of the item you designed an expirement for in the Open Resoponse mini-game ",
+                "Сфотографируйте предмет, для которого вы разработали эксперимент в мини-игре Open Response",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -534,78 +534,78 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What is the first step in the experiment?",
+                  prompt: "Какой первый шаг в эксперименте?",
                   answers: [
                     {
-                      text: "Observation",
+                      text: "Наблюдение",
                     },
                     {
-                      text: "Test",
+                      text: "Тест",
                     },
                     {
-                      text: "Hypothesis",
+                      text: "Гипотеза",
                     },
-                    { text: "Prediction" },
+                    { text: "Прогноз" },
                   ],
-                  answer: "Observation",
+                  answer: "Наблюдение",
                 },
                 {
                   prompt:
-                    "Lying in bed you notice that you get cold every time your brother opens the door. This is most closely associated with which step in conducting an experiment?",
+                    "Лежа в постели, вы замечаете, что вам становится холодно каждый раз, когда ваш брат открывает дверь. Это наиболее тесно связано с каким шагом при проведении эксперимента?",
                   answers: [
                     {
-                      text: "Forming a hypothesis",
+                      text: "Формирование гипотезы",
                     },
                     {
-                      text: "Developing a test",
+                      text: "Разработка теста",
                     },
                     {
-                      text: "Making an observation",
+                      text: "Проведение наблюдения",
                     },
-                    { text: "Conclusion" },
+                    { text: "Заключение" },
                   ],
-                  answer: "Making an observation",
+                  answer: "Проведение наблюдения",
                 },
                 {
-                  prompt: "What is the last step in the experiment?",
+                  prompt: "Какой последний шаг в эксперименте?",
                   answers: [
                     {
-                      text: "Conclusion",
+                      text: "Заключение",
                     },
                     {
-                      text: "Communication of results",
+                      text: "Коммуникация результатов",
                     },
                     {
-                      text: "Observation",
+                      text: "Наблюдение",
                     },
                     {
-                      text: "Hypothesis formation",
+                      text: "Формирование гипотезы",
                     },
                   ],
-                  answer: "Conclusion",
+                  answer: "Заключение",
                 },
                 {
-                  prompt: "What is a hypothesis?",
+                  prompt: "Что такое гипотеза?",
                   answers: [
                     {
-                      text: "An untestable statement",
+                      text: "Непроверяемое утверждение",
                     },
                     {
-                      text: "An experiment",
+                      text: "Эксперимент",
                     },
                     {
-                      text: "Your best “educated guess” of what the answer to your question will be",
+                      text: "Ваше лучшее «образованное предположение» о том, каким будет ответ на ваш вопрос",
                     },
                     {
-                      text: "Whatever the teacher tells you is the truth",
+                      text: "То, что учитель говорит вам, что является правдой",
                     },
                   ],
                   answer:
-                    "Your best “educated guess” of what the answer to your question will be",
+                    "Ваше лучшее «образованное предположение» о том, каким будет ответ на ваш вопрос",
                 },
               ],
             },
-          },
+          },          
         },
       ],
     },
@@ -653,23 +653,22 @@ export const Grade1 = {
               navigation: "Snapshot",
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
-
               backgroundImage: require("../../../../assets/snapshots/plant-bg.jpg"),
-              prompt: "What's your favorite plant? Take a picture.",
+              prompt: "Какое ваше любимое растение? Сделайте фотографию.",
             },
             openresponse: {
               navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
+              ),
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "What's going on in this photo? How do you think this affects the environment?",
-                    placeholder: "I think that..",
+                    text: "Что происходит на этой фотографии? Как вы думаете, как это влияет на окружающую среду?",
+                    placeholder: "Я думаю, что..",
                     image: require("../../../../assets/openresponse/deforestation.png"),
                   },
                 ],
@@ -680,32 +679,32 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "In which part of the plant is this obtained?",
+                prompt: "В какой части растения это получено?",
                 num: 4,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
-                    name: "Roots",
+                    name: "Корни",
                   },
                   {
-                    name: "Leaves",
+                    name: "Листья",
                   },
                 ],
                 options: [
-                  { title: "Water", name: "Roots" },
+                  { title: "Вода", name: "Корни" },
                   {
-                    title: "Air",
-                    name: "Leaves",
+                    title: "Воздух",
+                    name: "Листья",
                   },
-                  { title: "Mineral plant substances", name: "Roots" },
+                  { title: "Минеральные вещества растения", name: "Корни" },
                   {
-                    title: "Solar energy",
-                    name: "Leaves",
+                    title: "Солнечная энергия",
+                    name: "Листья",
                   },
                 ],
               },
             },
-          },
+          },          
         },
 
         /* 
@@ -737,15 +736,15 @@ export const Grade1 = {
               navigation: "Image Boom",
               title: (
                 <Translation>{(t) => t("common:openresponse")}</Translation>
-              ), // Image Boom
+              ), 
               icon: require("../../../../assets/image.png"),
               backgroundColor: "palevioletred",
               data: {
                 numberOfPrompts: 1,
                 prompts: [
                   {
-                    text: "How does this plant (a cactus) survive in a place without water?",
-                    placeholder: "A cactus..",
+                    text: "Как это растение (кактус) выживает в месте без воды?",
+                    placeholder: "Кактус..",
                     image: require("../../../../assets/openresponse/desert.png"),
                   },
                 ],
@@ -753,74 +752,74 @@ export const Grade1 = {
             },
             memory: {
               navigation: "Memory",
-              title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
-              description: "Match the different natural habitats.",
+              title: <Translation>{(t) => t("common:memory")}</Translation>,
+              description: "Сопоставьте различные природные среды обитания.",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
                 {
                   type: "image",
-                  name: "Polar",
+                  name: "Полярные",
                   image: require("../../../../assets/memory/polar.png"),
                 },
                 {
-                  name: "Polar",
+                  name: "Полярные",
                 },
                 {
                   type: "image",
-                  name: "Tundra",
+                  name: "Тундра",
                   image: require("../../../../assets/memory/tundra.png"),
                 },
                 {
-                  name: "Tundra",
+                  name: "Тундра",
                 },
                 {
                   type: "image",
-                  name: "Evergreen forests",
+                  name: "Вечнозелёные леса",
                   image: require("../../../../assets/memory/evergreen.png"),
                 },
                 {
-                  name: "Evergreen forests",
+                  name: "Вечнозелёные леса",
                 },
                 {
                   type: "image",
-                  name: "Seasonal forests",
+                  name: "Сезонные леса",
                   image: require("../../../../assets/memory/seasonal.png"),
                 },
                 {
-                  name: "Seasonal forests",
+                  name: "Сезонные леса",
                 },
                 {
                   type: "image",
-                  name: "Grasslands",
+                  name: "Луга",
                   image: require("../../../../assets/memory/grasslands.png"),
                 },
                 {
-                  name: "Grasslands",
+                  name: "Луга",
                 },
                 {
                   type: "image",
-                  name: "Deserts",
+                  name: "Пустыни",
                   image: require("../../../../assets/memory/deserts.png"),
                 },
                 {
-                  name: "Deserts",
+                  name: "Пустыни",
                 },
                 {
                   type: "image",
-                  name: "Rainforests",
+                  name: "Тропические леса",
                   image: require("../../../../assets/memory/rainforests.png"),
                 },
                 {
-                  name: "Rainforests",
+                  name: "Тропические леса",
                 },
                 {
                   type: "image",
-                  name: "Oceans",
+                  name: "Океаны",
                   image: require("../../../../assets/memory/oceans.png"),
                 },
                 {
-                  name: "Oceans",
+                  name: "Океаны",
                 },
               ],
             },
@@ -829,10 +828,9 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/earth-bg.jpg"),
-              prompt:
-                "Take a picture of a habitat in which your favorite plant grows.",
+              prompt: "Сфотографируйте среду обитания, в которой растет ваше любимое растение.",
             },
-          },
+          },          
         },
 
         /* 
@@ -871,42 +869,42 @@ export const Grade1 = {
               icon: require("../../../../assets/recycle-bin.png"),
               backgroundColor: "coral",
               content: {
-                prompt: "Are the animals below mammals or amphibians?",
+                prompt: "Являются ли указанные ниже животные млекопитающими или амфибиями?",
                 num: 6,
                 imageBg: SortingImages.bg[0].lvl_1_les_4,
                 categories: [
                   {
-                    name: "Mammals",
+                    name: "Млекопитающие",
                   },
                   {
-                    name: "Amphibians",
+                    name: "Амфибии",
                   },
                 ],
-
+          
                 options: [
                   {
-                    name: "Mammals",
-                    title: "Horses",
+                    name: "Млекопитающие",
+                    title: "Лошади",
                   },
                   {
-                    name: "Amphibians",
-                    title: "Frogs",
+                    name: "Амфибии",
+                    title: "Лягушки",
                   },
                   {
-                    name: "Amphibians",
-                    title: "Salamanders",
+                    name: "Амфибии",
+                    title: "Саламандры",
                   },
                   {
-                    name: "Mammals",
-                    title: "Humans",
+                    name: "Млекопитающие",
+                    title: "Человек",
                   },
                   {
-                    name: "Mammals",
-                    title: "Kangaroos",
+                    name: "Млекопитающие",
+                    title: "Кенгуру",
                   },
                   {
-                    name: "Mammals",
-                    title: "Blue whales",
+                    name: "Млекопитающие",
+                    title: "Синие киты",
                   },
                 ],
               },
@@ -916,8 +914,7 @@ export const Grade1 = {
               icon: require("../../../../assets/camera.png"),
               backgroundColor: "#FFD972",
               backgroundImage: require("../../../../assets/snapshots/animal-bg.jpg"),
-              prompt:
-                "Which group of animals lays eggs? Can you take a picture of one animal that lays eggs?",
+              prompt: "Какая группа животных откладывает яйца? Сможете ли вы сфотографировать одно из таких животных?",
             },
             quiz: {
               navigation: "QuizScreen",
@@ -926,76 +923,76 @@ export const Grade1 = {
               imageBg: require("../../../../assets/nat.jpg"),
               content: [
                 {
-                  prompt: "What makes a fish unique from other vertebrates?",
+                  prompt: "Что делает рыбу уникальной среди других позвоночных?",
                   answers: [
                     {
-                      text: "Pass oxygenated water through their gills",
+                      text: "Пропускают кислородосодержащую воду через свои жабры",
                     },
                     {
-                      text: "Fish breathe oxygen",
+                      text: "Рыбы дышат кислородом",
                     },
                     {
-                      text: "The bones of the fish make up their skeleton",
+                      text: "Кости рыбы составляют их скелет",
                     },
-                    { text: "Fish can survive outside of their habitat" },
+                    { text: "Рыбы могут выживать за пределами своей среды обитания" },
                   ],
-                  answer: "Pass oxygenated water through their gills",
+                  answer: "Пропускают кислородосодержащую воду через свои жабры",
                 },
                 {
-                  prompt: "Which one of these is not an insect?",
+                  prompt: "Какое из этих не является насекомым?",
                   answers: [
                     {
-                      text: "Ants",
+                      text: "Муравьи",
                     },
                     {
-                      text: "Fleas",
+                      text: "Блохи",
                     },
                     {
-                      text: "Termites",
+                      text: "Термиты",
                     },
-                    { text: "Spiders" },
+                    { text: "Пауки" },
                   ],
-                  answer: "Spiders",
+                  answer: "Пауки",
                 },
                 {
-                  prompt: "Which one of the following is a bird?",
+                  prompt: "Какой из следующих является птицей?",
                   answers: [
                     {
-                      text: "Penguin",
+                      text: "Пингвин",
                     },
                     {
-                      text: "Bat",
+                      text: "Летучая мышь",
                     },
                     {
-                      text: "Flying squirrel",
+                      text: "Летяга",
                     },
                     {
-                      text: "Butterflies",
+                      text: "Бабочки",
                     },
                   ],
-                  answer: "Penguin",
+                  answer: "Пингвин",
                 },
                 {
-                  prompt: "What is the smallest group of vertebrates?",
+                  prompt: "Какая самая маленькая группа позвоночных?",
                   answers: [
                     {
-                      text: "Amphibians",
+                      text: "Амфибии",
                     },
                     {
-                      text: "Insects",
+                      text: "Насекомые",
                     },
                     {
-                      text: "Fish",
+                      text: "Рыбы",
                     },
                     {
-                      text: "Mammals",
+                      text: "Млекопитающие",
                     },
                   ],
-                  answer: "Mammals",
+                  answer: "Млекопитающие",
                 },
               ],
             },
-          },
+          },          
         },
 
         /* 
