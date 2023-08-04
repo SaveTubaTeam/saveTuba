@@ -11,8 +11,8 @@ npm-debug.*
 web-build/
 
 # Ignore all of the conversionary datasets
-!package.json
-*.json
+# *.json
+# !package.json
 
 # macOS
 .DS_Store
