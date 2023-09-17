@@ -4,7 +4,7 @@
   },
   "build": {
     "development": {
-      "distribution": "internal",
+      "distribution": "store",
       "android": {
         "gradleCommand": ":app:assembleDebug"
       },
@@ -15,7 +15,9 @@
     "preview": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "distribution": "store"
+    }
   },
   "submit": {
     "production": {}

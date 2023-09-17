@@ -26,20 +26,12 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
   const imageMap = useSelector(state => state.imageMap.imageData);
-  // console.log("ImageMap: ", imageMap);
 
   var lessonCompMap = new Map();
   for (const minigame in lessonData.get("minigames")) {
     lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
   }
 
-  // console.log("Lesson Data: ", lessonData);
-  // console.log("\nGr. ", lessonCompMap);
-  // console.log("\nMemory. ", lessonCompMap.get("Memory"));
-  // console.log("\nSnapshot. ", lessonCompMap.get("Snapshot"));
-  // console.log("\nSorting. ", lessonCompMap.get("Sorting"));
-  // console.log("\nImage Boom. ", lessonCompMap.get("Image Boom"));
-  // console.log("\nQuiz. ", lessonCompMap);
 
   return (
     <NavigationContainer independent>
@@ -288,64 +280,6 @@ function IndividualLessonHandler({
               />
             )}
         </Stack.Screen>
-
-        {/* <Stack.Screen
-          name="Test"
-          options={{
-            title: ("Test title"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {
-
-            () => (
-
-              <TestHandler
-                              data={
-                  lessonData[selectedLesson].minigames.mastery_2
-                }
-                lessonData={lessonData}
-                selectedChapter={selectedChapter}
-                selectedLesson={selectedLesson}
-                navigation={navigation}
-              />
-            )}
-        </Stack.Screen> */}
-
-        {/*
-        {selectedLevel.drawing.component != null && (
-          <Stack.Screen
-            name="DrawingGame"
-            component={selectedLevel.drawing.component}
-            options={{
-              title: "Рисование",
-              headerTintColor: "white",
-              headerBackTitleVisible: false,
-              headerStyle: {
-                backgroundColor: "#C6DC3B",
-              },
-            }}
-          />
-        )}
-        
-        <Stack.Screen
-          name="Puzzle"
-          component={selectedLevel.puzzle.component}
-          options={{
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-          }}
-        ></Stack.Screen>*/}
       </Stack.Navigator>
     </NavigationContainer>
   );

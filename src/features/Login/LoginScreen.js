@@ -5,8 +5,6 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
 
-import { changeData, postData } from "../Grades/Handlers/Database";
-
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";

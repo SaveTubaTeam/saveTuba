@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
+// @param route **This is the route that will be used to determine the lesson
+// @param addAchievement **Relic from the past team, I did nothing with this and have no idea what it does
 function ChaptersHandler({ route, addAchievement }) { //add achievements
   
   const [gradeData, setgradeData] = useState(null);

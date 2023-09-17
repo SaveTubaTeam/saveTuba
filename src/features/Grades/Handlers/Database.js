@@ -3,27 +3,42 @@ import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
 // import * as FileSystem from 'expo-file-system';
 
+// This will pull the grade data and save it in a list, each element being the data for a single Grade
+// Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
+// The reason this is important is because when you query the DB you will only get one level at a time. So when I pull the Grade data I am essentially just
+// getting a pointer that will take me to the next level. That is why there are so many functions in this file.
 
+// @param grade **This is just the grade that you are querying for
+
+// @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
-    // const chapters = new Map();
+    // Creating the list of chapters
     const chapterList = [];
 
+    // Pulling the grade data and storing it to the above list
     await db.collection(grade).get()
         .then((snapshot) => {
             snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                // console.log("Snapshot => ", doc.id, " => ", doc.data());
                 chapterList.push(doc.data()); // Pushing new object onto the array
             });
         }).catch((error) => {
             console.log("Error: ", error);
         });
-
-    // chapters.set("chapters", chapterList); // sets the map with the key "chapters" and the data being the array of objects
-    // let map = await setIconMap();
-    // return chapters; // This returns the map
     return chapterList; // This returns the array
 }
 
+// This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one function and copy/paste the code for formatting the objects in each language. This could be refactored to look neater pretty easily.
+
+// @param grade **Specifies the grade 
+
+// @param chpt **Specifies the chapter
+
+// @param numLessons **This made it easier to query from the DB as there were quite a few issues with pulling dynamically. 
+// Plus when you pull the Chapter data I have an attribute attached to the metadata of each Grade that has the number of lessons in the Grade, as that is static
+
+// @param language **This is a part of the state, I have not fully figured out how to make sure that the language will be the phone's default lang, but it provide the ability to pull the specific language from the DB in the future
+
+//@ return lessons **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, numLessons, language) {
     // Use a map to more easily access correct minigames
     var lessons = [];
@@ -156,17 +171,26 @@ async function getLessonsData(grade, chpt, numLessons, language) {
     return lessons;
 }
 
+// The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
+
+// @param folder **This is the folder directory that stores the image in the Firebase storage
+
+// @param imageMap **This is the empty map object that will be passed from the handlers
+
+// @return imageMap **The filled map object in the form <image path, image URL>
 async function createImageMap(folder, imageMap) {
-    // var list = [folder]; 
+    // Going through the DB and finding all of the potential directories holding images
     var list = await createImageMapHelper(folder, []).then((listResult) => {
         return listResult;
     });
+
+    // Pushing the current directory
     list.push(folder);
 
+    // Looping through list of paths and creating the map with the above format
     for (const path in list) {
-        // console.log("Path: ", list[path]);
         let result = await storage.child(list[path]).listAll();
-        // console.log("ahah: ", result.items.length);
+        
         let urlPromises = result.items.map(url => url.getDownloadURL());
         let pathPromises = result.items.map(path => path.getMetadata());
 
@@ -182,56 +206,18 @@ async function createImageMap(folder, imageMap) {
             }
         }
     }
-
-    // for (const image in imageMap) {
-    //     try {
-    //         // console.log("Image: ", imageMap[image]);
-    //         const callback = downloadProgress => {
-    //             const progress = downloadProgress.totalBytesWritten / downloadProgress.totalBytesExpectedToWrite;
-    //             this.setState({
-    //                 downloadProgress: progress,
-    //             });
-    //         };
-
-    //         const url = imageMap[image];
-    //         const outputPath = `${FileSystem.documentDirectory}${image}`;
-    //         var outputDir = FileSystem.documentDirectory;
-    //         var outputDirSplit = image.split("/");
-
-    //         for(var dir in outputDirSplit) {
-    //             if (!(outputDirSplit[dir].includes(".jpg") || outputDirSplit[dir].includes(".png") || outputDirSplit[dir].includes(".jpeg"))) {
-    //                 outputDir = outputDir.concat("/" + outputDirSplit[dir]);
-    //             }
-    //         }            
-    //         const downloadResumable = FileSystem.createDownloadResumable(url, outputPath, {}, callback);
-    //         try {
-    //             const directoryInfo = await FileSystem.getInfoAsync(outputDir);
-    //             // const fileInfo = await FileSystem.getInfoAsync(outputDir);
-    //             if (!directoryInfo.exists) {
-    //                 await FileSystem.makeDirectoryAsync(outputDir, {
-    //                     intermediates: true
-    //                 });
-    //                 const { uri } = await downloadResumable.downloadAsync();
-    //                 console.log('Finished downloading to ', uri);
-    //             }
-    //         } catch (e) {
-    //             console.error("Error: ", e);
-    //         }
-
-    //     } catch (error) {
-    //         console.log("Error: ", error);
-    //     }
-    // }
-
-
     return imageMap;
 }
 
+// This creates a list of all directory paths in the Firebase storage 
+
+// @param folder **Same as the above function, it is the directory storing the image
+
+// @param pathList **This is a list of paths, I needed to create this first as the paths were necessary for pulling images and there is no efficient way to do this that I found.
 async function createImageMapHelper(folder, pathList) {
     let result = await storage.child(folder).listAll();
     for (const folderRef of result.prefixes) {
         try {
-            // console.log(folderRef.fullPath);
             pathList.push(folderRef.fullPath);
             await createImageMapHelper(folderRef.fullPath, pathList);
 
@@ -245,7 +231,7 @@ async function createImageMapHelper(folder, pathList) {
     }
 }
 
-// This is meant to change large sets of similarly formatted data at a single time 
+// This is meant to alter the metadata or add pieces of metadata for large sets of similarly formatted data at a single time. It is split into two parts, one for chapters and one for lessons. 
 async function changeData() {
     const g2_chapters = grade2.Grade2.chapters;
     for (var i = 0; i < g2_chapters.length; i++) {
@@ -299,7 +285,7 @@ async function changeData() {
 }
 
 
-// This was meant to push all of the hardcoded data to the database as there was no admin console when it was written
+// This was meant to push all of the hardcoded data to the database as there was no admin console when it was written. Setup for both grade 2 and grade 3 right now. Grade 4 should go directly into the DBs
 // Leaving it in for propriety 
 async function postData() {
     // Grade 2
@@ -447,8 +433,5 @@ async function postData() {
     //     }
     // }
 }
-
-
-
 
 export { getGradeData, createImageMap, getLessonsData, postData, changeData };

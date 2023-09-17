@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
 const Stack = createNativeStackNavigator();
 
 function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter }) {
-  // console.log("Lesson Handler:\nSelected Ch: ", selectedChapter, "\nSelected Grade: ", gradeNumber, "\n", gradeData);
   const language = useSelector(state => state.languageSelector.language);
   const [lessonsData, setLessonsData] = useState(null);
   const navigation = useNavigation();
@@ -40,7 +39,6 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
           try {
             getLessonsData(2, selectedChapter, numLessons, language).then(
               (result) => {
-                // console.log("LD 1: ", result);
                 setLessonsData(result);
               }
             ).catch((err) => {
@@ -97,8 +95,6 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
       </View>
     );
   }
-
-  // console.log("Lesson Data: ", lessonsData);
 
   return (
     <NavigationContainer independent>
