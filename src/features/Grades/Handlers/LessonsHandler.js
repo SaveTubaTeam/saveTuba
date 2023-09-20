@@ -51,33 +51,26 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
           break;
         }
       case 3: {
-        getLessonsData(3, selectedChapter).then(
-          (result) => {
-            console.log(result);
-          }
-        ).catch((err) => {
-          console.log("Error: ", err);
-        });
+        try {
+          getLessonsData(3, selectedChapter, numLessons, language).then(
+            (result) => {
+              setLessonsData(result);
+            }
+          ).catch((err) => {
+            console.log("Error in LessonsHandler.js: ", err);
+          });
+
+        } catch (error) {
+          console.log("Error in LessonsHandler.js catch: ", error);
+        }
         break;
       }
       case 4: {
-        getLessonsData(4, selectedChapter).then(
-          (result) => {
-            console.log(result);
-          }
-        ).catch((err) => {
-          console.log("Error: ", err);
-        });
+        console.log("Need to fill in when data is available");
         break;
       }
       case 5: {
-        getLessonsData(5, selectedChapter).then(
-          (result) => {
-            console.log(result);
-          }
-        ).catch((err) => {
-          console.log("Error: ", err);
-        });
+        console.log("Need to fill in when data is available");
         break;
       }
       default: {

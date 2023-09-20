@@ -1,7 +1,9 @@
 import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
-// import * as FileSystem from 'expo-file-system';
+
+import { Cache } from "react-native-cache";
+import {AsyncStorage} from 'react-native';
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -190,7 +192,7 @@ async function createImageMap(folder, imageMap) {
     // Looping through list of paths and creating the map with the above format
     for (const path in list) {
         let result = await storage.child(list[path]).listAll();
-        
+
         let urlPromises = result.items.map(url => url.getDownloadURL());
         let pathPromises = result.items.map(path => path.getMetadata());
 
@@ -434,4 +436,37 @@ async function postData() {
     // }
 }
 
-export { getGradeData, createImageMap, getLessonsData, postData, changeData };
+const cache = new Cache({
+    namespace: "myapp",
+    policy: {
+        maxEntries: 50000, // if unspecified, it can have unlimited entries
+        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+    },
+    backend: AsyncStorage
+});
+
+async function checkCache(key) {
+    if (await cache.peek(key) == undefined) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+async function getCacheObject(key) {
+    if (checkCache(key)) {
+        return await cache.get(key);
+    } else {
+        return undefined;
+    }
+}
+
+async function updateCache(key) {
+
+}
+
+async function setCache(keys, values) {
+    
+}
+
+export { getGradeData, createImageMap, getLessonsData, postData, changeData, checkCache, getCacheObject, updateCache, setCache };

@@ -10,26 +10,31 @@ import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
 import { getGradeData } from "./Database";
 import { useSelector } from "react-redux";
+import { cache } from "react-native-cache";
 
 const Stack = createNativeStackNavigator();
+
 
 // @param route **This is the route that will be used to determine the lesson
 // @param addAchievement **Relic from the past team, I did nothing with this and have no idea what it does
 function ChaptersHandler({ route, addAchievement }) { //add achievements
-  
+
   const [gradeData, setgradeData] = useState(null);
   const [gradeNumber, setgradeNumber] = useState(null);
-  
-  
+
+
   const { level } = route.params; // Level selected from Lesson navigation screen
   const navigation = useNavigation();
-  
+
   const imageMap = useSelector(state => state.imageMap.imageData);
 
   useEffect(() => {
     switch (level) {
       case 1:
         {
+          if(){
+
+          }
           getGradeData("Grade2").then(
             (gradeData) => {
               // console.log("Grade 2: ", gradeData);
@@ -40,14 +45,15 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
             console.log("Error: ", err);
           });
 
-          
+
           break;
         }
       case 2: {
         getGradeData("Grade3").then(
-          (result) => {
-            console.log("result", result);
-            // setgradeData(result);
+          (gradeData) => {
+            // console.log("Grade 3: ", gradeData);
+            setgradeData(gradeData);
+            setgradeNumber(3);
           }
         ).catch((err) => {
           console.log("Error: ", err);
@@ -55,25 +61,11 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
         break;
       }
       case 3: {
-        getGradeData("Grade4").then(
-          (result) => {
-            console.log("result", result);
-            // setgradeData(result.get("children"));
-          }
-        ).catch((err) => {
-          console.log("Error: ", err);
-        });
+        console.log("Need to fill in when data is available");
         break;
       }
       case 4: {
-        getGradeData("Grade5").then(
-          (result) => {
-            console.log("result", result);
-            // setgradeData(result);
-          }
-        ).catch((err) => {
-          console.log("Error: ", err);
-        });
+        console.log("Need to fill in when data is available");
         break;
       }
       default: {
