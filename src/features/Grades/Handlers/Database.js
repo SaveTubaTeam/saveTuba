@@ -2,8 +2,8 @@ import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
 
-import { Cache } from "react-native-cache";
 import { AsyncStorage } from "@react-native-async-storage/async-storage";
+// import { AsyncStorage } from "react-native";
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -14,9 +14,6 @@ import { AsyncStorage } from "@react-native-async-storage/async-storage";
 
 // @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
-    if (await checkCache("content", "grades")) {
-        return 1;
-    } else {
         // Creating the list of chapters
         const chapterList = [];
 
@@ -29,9 +26,7 @@ async function getGradeData(grade) {
             }).catch((error) => {
                 console.log("Error: ", error);
             });
-        contentCache.set("grades", chapterList);
         return chapterList; // This returns the array
-    }
 }
 
 // This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one function and copy/paste the code for formatting the objects in each language. This could be refactored to look neater pretty easily.
@@ -47,9 +42,6 @@ async function getGradeData(grade) {
 
 //@ return lessons **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, numLessons, language) {
-    if (await checkCache("content", "lessons")) {
-        return 1;
-    } else {
         // Use a map to more easily access correct minigames
         var lessons = [];
         console.log("lang ", language);
@@ -178,10 +170,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
                 lessons.push(lessonObject);
             }
         }
-
-        contentCache.set("lessons", lessons);
         return lessons;
-    }
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
@@ -192,42 +181,35 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
 // @return imageMap **The filled map object in the form <image path, image URL>
 async function createImageMap(folder, imageMap) {
-    console.log("createIM");
-    if (await checkCache("image", "images")) {
-        console.log("Cached images");
-        return 1;
-    } else {
-        console.log("Pulling images");
-        // Going through the DB and finding all of the potential directories holding images
-        var list = await createImageMapHelper(folder, []).then((listResult) => {
-            return listResult;
-        });
+    console.log("Pulling images");
+    // Going through the DB and finding all of the potential directories holding images
+    var list = await createImageMapHelper(folder, []).then((listResult) => {
+        return listResult;
+    });
 
-        // Pushing the current directory
-        list.push(folder);
+    // Pushing the current directory
+    list.push(folder);
 
-        // Looping through list of paths and creating the map with the above format
-        for (const path in list) {
-            let result = await storage.child(list[path]).listAll();
+    // Looping through list of paths and creating the map with the above format
+    for (const path in list) {
+        let result = await storage.child(list[path]).listAll();
 
-            let urlPromises = result.items.map(url => url.getDownloadURL());
-            let pathPromises = result.items.map(path => path.getMetadata());
+        let urlPromises = result.items.map(url => url.getDownloadURL());
+        let pathPromises = result.items.map(path => path.getMetadata());
 
-            let urlResolved = await Promise.all(urlPromises);
-            let pathResolved = await Promise.all(pathPromises);
+        let urlResolved = await Promise.all(urlPromises);
+        let pathResolved = await Promise.all(pathPromises);
 
-            for (var x = 0; x < urlResolved.length; x++) {
-                try {
-                    // console.log("=>", pathResolved[x].fullPath);
-                    imageMap[pathResolved[x].fullPath] = urlResolved[x];
-                } catch (error) {
-                    console.log("Error: ", error);
-                }
+        for (var x = 0; x < urlResolved.length; x++) {
+            try {
+                // console.log("=>", pathResolved[x].fullPath);
+                imageMap[pathResolved[x].fullPath] = urlResolved[x];
+            } catch (error) {
+                console.log("Error: ", error);
             }
         }
-        imageCache.set("images", imageMap);
-        return imageMap;
     }
+    return imageMap;
 }
 
 // This creates a list of all directory paths in the Firebase storage 
@@ -455,139 +437,30 @@ async function postData() {
     // }
 }
 
-// const contentCache = new Cache({
-//     namespace: "content",
-//     policy: {
-//         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-//     },
-//     backend: AsyncStorage
-// });
-
-// const imageCache = new Cache({
-//     namespace: "image",
-//     policy: {
-//         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-//     },
-//     backend: AsyncStorage
-// });
-
-// const userCache = new Cache({
-//     namespace: "user",
-//     policy: {
-//         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-//     },
-//     backend: AsyncStorage
-// });
-
-// const storeData = async (value) => {
-//     try {
-//       const jsonValue = JSON.stringify(value);
-//       await AsyncStorage.setItem('my-key', jsonValue);
-//     } catch (e) {
-//       // saving error
-//     }
-//   };
-
-// const getData = async () => {
-//     try {
-//       const jsonValue = await AsyncStorage.getItem('my-key');
-//       return jsonValue != null ? JSON.parse(jsonValue) : null;
-//     } catch (e) {
-//       // error reading value
-//     }
-//   };
-
-async function checkCache(cache, key) {
-    console.log("In check cache | Cache: ", cache, " Key: ", key);
-    if (cache == "image") {
-        return await imageCache.peek(key).then((exists) => {
-
-            if (exists) {
-                return true;
-            } else {
-                return false;
-            }
-        }).catch((error) => { console.log("Error in checkCache images: ", error); });
-        // if (await imageCache.peek(key) == undefined) {
-        //     return false;
-        // } else {
-        //     return true;
-        // }
-    } else if (cache == "content") {
-        return await contentCache.peek(key).then((exists) => {
-            if (exists) {
-                return true;
-            } else {
-                return false;
-            }
-        }).catch((error) => { console.log("Error in checkCache content: ", error); });
-        // if (await contentCache.peek(key) == undefined) {
-        //     return false;
-        // } else {
-        //     return true;
-        // }
-    } else {
-        return await userCache.peek(key).then((exists) => {
-            if (exists) {
-                return true;
-            } else {
-                return false;
-            }
-        }).catch((error) => { console.log("Error in checkCache user: ", error); });
-        // if (await userCache.peek(key) == undefined) {
-        //     return false;
-        // } else {
-        //     return true;
-        // }
-    }
-
-}
-
-async function getCacheObject(cache, key) {
+async function getCacheObject(key) {
     console.log("Get Cache");
-    if (cache == "image") {
-        return await checkCache("image", key).then(async (exists) => {
-            if (exists) {
-                return await imageCache.get(key).then((result) => { return result; }).catch((error) => { console.log("Error in getCacheObject as the cache.get promise: ", error); });
-            }
-        }).catch((error) => { console.log("Error in getCacheObject at the checkCache promise: ", error); });
-        // if (checkCache("image", key)) {
-        //     console.log("==> ", typeof(key));
-        //     return await imageCache.get(key);
-        // } else {
-        //     return undefined;
-        // }
-    } else if (cache == "content") {
-        return await checkCache("content", key).then(async (exists) => {
-            if (exists) {
-                return await imageCache.get(key).then((result) => { return result; }).catch((error) => { console.log("Error in getCacheObject as the cache.get promise: ", error); });
-            }
-        }).catch((error) => { console.log("Error in getCacheObject at the checkCache promise: ", error); });
-        // if (checkCache("content", key)) {
-        //     return await contentCache.get(key);
-        // } else {
-        //     return undefined;
-        // }
-    } else {
-        return await checkCache("user", key).then(async (exists) => {
-            if (exists) {
-                return await imageCache.get(key).then((result) => { return result; }).catch((error) => { console.log("Error in getCacheObject as the cache.get promise: ", error); });
-            }
-        }).catch((error) => { console.log("Error in getCacheObject at the checkCache promise: ", error); });
-        // if (checkCache("user", key)) {
-        //     return await contentCache.get(key);
-        // } else {
-        //     return undefined;
-        // }
+    try {
+        const jsonValue = await AsyncStorage.getItem(key).catch((error) => {
+            console.log("Error with getData in getCacheObject: ", error);
+        });
+        console.log(key, " value retrieved");
+        return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+        console.log("Error in getCache: ", e);
+        return null;
     }
 }
 
-async function updateCache(cache, key) {
-
+async function setCache(key, value) {
+    try {
+        
+        const jsonValue = JSON.stringify(value);
+        console.log("V: ", jsonValue, " Key: ", key);
+        await AsyncStorage.setItem(key, jsonValue);
+    } catch (e) {
+        console.log("Error with storeData: ", e);
+        // saving error
+    }
 }
 
-async function setCache(cache, keys, values) {
-
-}
-
-export { getGradeData, createImageMap, getLessonsData, postData, changeData, checkCache, getCacheObject, updateCache, setCache };
+export { getGradeData, createImageMap, getLessonsData, postData, changeData, getCacheObject, setCache };

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { checkCache, createImageMap, getCacheObject } from '../../src/features/Grades/Handlers/Database';
+import { createImageMap, getCacheObject } from '../../src/features/Grades/Handlers/Database';
 
 const initialState = {
     loading: "idle",
@@ -10,42 +10,24 @@ const initialState = {
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
     console.log("fetchIM");
     const imageMap = {};
-    const result = await checkCache("image", "images").then(async (exists) => {
-        console.log("fetchIM 2");
-        if (exists) {
-            console.log("fetchIM 3");
-            return await getCacheObject("image", "images").then(async (result) => {
-                return result;
-            }).catch(() => {
-                console.log("Error in fetchImages getCacheObject");
-            });
-        } else {
-            console.warn("No images in cache");
-        }
+
+    const result = await getCacheObject("images").then(async (result) => {
+        console.log("Result: ", result);
+        return result;
     }).catch(() => {
-        console.log("Error checking the images in cache");
+        console.log("Error in fetchImages getCacheObject");
     });
-    return result;
-    // if (await checkCache("image", "images")) {
-    //     console.log("fetchIM 2");
-    //     return await getCacheObject("image", "images").then((result) => {
-    //         return result;
-    //     });
-    // } else if (await checkCache("content", "lessons")) {
-    //     console.log("fetchIM 3");
-    //     const map = await createImageMap("assets", imageMap).then((result) => {
-    //         return result;
-
-    //     }).catch((error) => {
-    //         console.log("Error in setting state: ", error);
-    //         return error.message;
-    //     });
-    //     console.log("Images Fetched");
-    //     return map;
-    // } else {
-    //     console.log("Issues with caching system");
-    // }
-
+    if (result == null) {
+        const map = await createImageMap("assets", imageMap).then((result) => {
+            // console.log("R: ", result);
+            // console.log("ImageMap Test =======> ", result["assets/badges/badge1.png"]);
+            return result;
+        }).catch((error) => {
+            console.log("Error in setting state: ", error);
+            return error.message;
+        });
+        return map;
+    }
 });
 
 const mapSlice = createSlice({
@@ -69,6 +51,4 @@ const mapSlice = createSlice({
     }
 });
 
-// Old method without async functions
-// export const { setImageMap } = mapSlice.actions; 
 export default mapSlice.reducer;
