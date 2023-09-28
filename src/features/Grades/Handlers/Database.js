@@ -455,29 +455,47 @@ async function postData() {
     // }
 }
 
-const contentCache = new Cache({
-    namespace: "content",
-    policy: {
-        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-    },
-    backend: AsyncStorage
-});
+// const contentCache = new Cache({
+//     namespace: "content",
+//     policy: {
+//         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+//     },
+//     backend: AsyncStorage
+// });
 
-const imageCache = new Cache({
-    namespace: "image",
-    policy: {
-        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-    },
-    backend: AsyncStorage
-});
+// const imageCache = new Cache({
+//     namespace: "image",
+//     policy: {
+//         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+//     },
+//     backend: AsyncStorage
+// });
 
-const userCache = new Cache({
-    namespace: "user",
-    policy: {
-        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-    },
-    backend: AsyncStorage
-});
+// const userCache = new Cache({
+//     namespace: "user",
+//     policy: {
+//         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+//     },
+//     backend: AsyncStorage
+// });
+
+// const storeData = async (value) => {
+//     try {
+//       const jsonValue = JSON.stringify(value);
+//       await AsyncStorage.setItem('my-key', jsonValue);
+//     } catch (e) {
+//       // saving error
+//     }
+//   };
+
+// const getData = async () => {
+//     try {
+//       const jsonValue = await AsyncStorage.getItem('my-key');
+//       return jsonValue != null ? JSON.parse(jsonValue) : null;
+//     } catch (e) {
+//       // error reading value
+//     }
+//   };
 
 async function checkCache(cache, key) {
     console.log("In check cache | Cache: ", cache, " Key: ", key);
