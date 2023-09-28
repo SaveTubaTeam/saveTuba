@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import IndividualLessonHandler from "./IndividualLessonHandler";
 import LessonsComponent from "../Components/LessonsComponent";
 import { getLessonsData } from "./Database.js";
+import { getCacheObject } from "./Database.js";
 
 const styles = StyleSheet.create({
   container: {
@@ -37,14 +38,17 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
       case 2:
         {
           try {
-            getLessonsData(2, selectedChapter, numLessons, language).then(
-              (result) => {
-                setLessonsData(result);
-              }
-            ).catch((err) => {
-              console.log("Error in LessonsHandler.js: ", err);
-            });
-
+            if (getLessonsData(2, selectedChapter, numLessons, language) == 1) {
+              setLessonsData(getCacheObject("content", "lessons"));
+            } else {
+              getLessonsData(2, selectedChapter, numLessons, language).then(
+                (result) => {
+                  setLessonsData(result);
+                }
+              ).catch((err) => {
+                console.log("Error in LessonsHandler.js: ", err);
+              });
+            }
           } catch (error) {
             console.log("Error in LessonsHandler.js catch: ", error);
           }

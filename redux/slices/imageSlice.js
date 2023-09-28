@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { createImageMap } from '../../src/features/Grades/Handlers/Database';
+import { checkCache, createImageMap, getCacheObject } from '../../src/features/Grades/Handlers/Database';
 
 const initialState = {
     loading: "idle",
@@ -8,15 +8,28 @@ const initialState = {
 };
 
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
+    console.log("fetchIM");
     const imageMap = {};
-    const map = await createImageMap("assets", imageMap).then((result) => {
-        return result;
-    }).catch((error) => {
-        console.log("Error in setting state: ", error);
-        return error.message;
-    });
-    console.log("Images Fetched");
-    return map;
+    if (await checkCache("image", "images")) {
+        console.log("fetchIM 2");
+        return await getCacheObject("image", "images").then((result) => {
+            return result;
+        });
+    } else if (await checkCache("content", "lessons")) {
+        console.log("fetchIM 3");
+        const map = await createImageMap("assets", imageMap).then((result) => {
+            return result;
+
+        }).catch((error) => {
+            console.log("Error in setting state: ", error);
+            return error.message;
+        });
+        console.log("Images Fetched");
+        return map;
+    } else {
+        console.log("Issues with caching system");
+    }
+
 });
 
 const mapSlice = createSlice({

@@ -15,6 +15,7 @@ import { TitleText } from "../../../components/title-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
+import { getCacheObject } from "../../Grades/Handlers/Database";
 
 const AvatarContainer = styled.View`
   align-items: center;
@@ -35,7 +36,8 @@ export function PersonalCard(props) {
   const [photo, setPhoto] = useState(null);
 
   const getProfilePicture = async (currentUser) => {
-    const photoUri = await AsyncStorage.getItem(
+    console.log("in profile pic");
+    const photoUri = await getCacheObject( "user",
       `${currentUser?.firstName}-photo`
     );
     setPhoto(photoUri);

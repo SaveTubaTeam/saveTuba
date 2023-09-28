@@ -8,6 +8,7 @@ import { auth } from "../../../firebase";
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";
+import { checkCache, getCacheObject } from "../Grades/Handlers/Database";
 
 
 
@@ -68,8 +69,14 @@ const LoginScreen = () => {
   const [password, setPassword] = useState("");
 
   useEffect(() => {
+    // if (checkCache("image", "images")) {
+    //   const imageMap = { "aididi": "ajklsdg" };
+    //   // const imageMap = getCacheObject("image", "images");
+    //   dispatch(imageMap);
+    // } else {
+    //   dispatch(fetchImages());
+    // }
     dispatch(fetchImages());
-
     const language = i18n.language;
     if (language === "en") { //English
       dispatch(setEnglish());

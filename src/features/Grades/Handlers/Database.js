@@ -3,7 +3,7 @@ import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
 
 import { Cache } from "react-native-cache";
-import {AsyncStorage} from 'react-native';
+import { AsyncStorage } from '@react-native-async-storage/async-storage';
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -14,19 +14,24 @@ import {AsyncStorage} from 'react-native';
 
 // @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
-    // Creating the list of chapters
-    const chapterList = [];
+    if (await checkCache("content", "grades")) {
+        return 1;
+    } else {
+        // Creating the list of chapters
+        const chapterList = [];
 
-    // Pulling the grade data and storing it to the above list
-    await db.collection(grade).get()
-        .then((snapshot) => {
-            snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                chapterList.push(doc.data()); // Pushing new object onto the array
+        // Pulling the grade data and storing it to the above list
+        await db.collection(grade).get()
+            .then((snapshot) => {
+                snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                    chapterList.push(doc.data()); // Pushing new object onto the array
+                });
+            }).catch((error) => {
+                console.log("Error: ", error);
             });
-        }).catch((error) => {
-            console.log("Error: ", error);
-        });
-    return chapterList; // This returns the array
+        contentCache.set("grades", chapterList);
+        return chapterList; // This returns the array
+    }
 }
 
 // This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one function and copy/paste the code for formatting the objects in each language. This could be refactored to look neater pretty easily.
@@ -42,135 +47,141 @@ async function getGradeData(grade) {
 
 //@ return lessons **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, numLessons, language) {
-    // Use a map to more easily access correct minigames
-    var lessons = [];
-    console.log("lang ", language);
-    grade = "Grade".concat(grade.toString());
-    chpt = "Chapter".concat(chpt.toString());
-    for (var i = 1; i <= numLessons; i++) {
-        var lessonObject = new Map(); // may need to move back up
-        // const minigameList = new Map(); // Tried map and did not work due to the FlatList loading the minigame components
-        const minigameList = [];
-        const lessonNum = "Lesson".concat(i.toString());
+    if (await checkCache("content", "lessons")) {
+        return 1;
+    } else {
+        // Use a map to more easily access correct minigames
+        var lessons = [];
+        console.log("lang ", language);
+        grade = "Grade".concat(grade.toString());
+        chpt = "Chapter".concat(chpt.toString());
+        for (var i = 1; i <= numLessons; i++) {
+            var lessonObject = new Map(); // may need to move back up
+            // const minigameList = new Map(); // Tried map and did not work due to the FlatList loading the minigame components
+            const minigameList = [];
+            const lessonNum = "Lesson".concat(i.toString());
 
-        // This will pull data from each language in the DB. Could have been done in less lines but ctrl c was easier
-        if (language === "en") { //English
-            const docName = "English";
+            // This will pull data from each language in the DB. Could have been done in less lines but ctrl c was easier
+            if (language === "en") { //English
+                const docName = "English";
 
-            // pulling the metadata
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
-                // moving through the snapshot objects individually
+                // pulling the metadata
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
+                    // moving through the snapshot objects individually
 
-                lessonObject.set("backgroundColor", doc.data().backgroundColor);
-                lessonObject.set("navigation", doc.data().navigation);
-                lessonObject.set("thumbnail", doc.data().thumbnail);
-                lessonObject.set("title", doc.data().title);
+                    lessonObject.set("backgroundColor", doc.data().backgroundColor);
+                    lessonObject.set("navigation", doc.data().navigation);
+                    lessonObject.set("thumbnail", doc.data().thumbnail);
+                    lessonObject.set("title", doc.data().title);
 
 
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
-
-            // pulling the minigames
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.push(doc.data());
-
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
                 });
-                lessonObject.set("minigames", minigameList);
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
 
-            //pulling the mastery 
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    lessonObject.set(doc.id, doc.data());
+                // pulling the minigames
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        minigameList.push(doc.data());
 
+                    });
+                    lessonObject.set("minigames", minigameList);
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
                 });
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
-            lessons.push(lessonObject);
-        } else if (language === "ru") { //Russian
-            const docName = "Russian";
 
-            // pulling the metadata
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
-                // moving through the snapshot objects individually
+                //pulling the mastery 
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        lessonObject.set(doc.id, doc.data());
 
-                lessonObject.set("backgroundColor", doc.data().backgroundColor);
-                lessonObject.set("navigation", doc.data().navigation);
-                lessonObject.set("thumbnail", doc.data().thumbnail);
-                lessonObject.set("title", doc.data().title);
-
-
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
-
-            // pulling the minigames
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.push(doc.data());
-
+                    });
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
                 });
-                lessonObject.set("minigames", minigameList);
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
+                lessons.push(lessonObject);
+            } else if (language === "ru") { //Russian
+                const docName = "Russian";
 
-            //pulling the mastery 
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    lessonObject.set(doc.id, doc.data());
+                // pulling the metadata
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
+                    // moving through the snapshot objects individually
 
+                    lessonObject.set("backgroundColor", doc.data().backgroundColor);
+                    lessonObject.set("navigation", doc.data().navigation);
+                    lessonObject.set("thumbnail", doc.data().thumbnail);
+                    lessonObject.set("title", doc.data().title);
+
+
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
                 });
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
-            lessons.push(lessonObject);
-        } else if (language === "kk") { //Kazakh
-            const docName = "Kazakh";
 
-            // pulling the metadata
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
-                // moving through the snapshot objects individually
+                // pulling the minigames
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        minigameList.push(doc.data());
 
-                lessonObject.set("backgroundColor", doc.data().backgroundColor);
-                lessonObject.set("navigation", doc.data().navigation);
-                lessonObject.set("thumbnail", doc.data().thumbnail);
-                lessonObject.set("title", doc.data().title);
-
-
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
-
-            // pulling the minigames
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.push(doc.data());
-
+                    });
+                    lessonObject.set("minigames", minigameList);
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
                 });
-                lessonObject.set("minigames", minigameList);
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
 
-            //pulling the mastery 
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    lessonObject.set(doc.id, doc.data());
+                //pulling the mastery 
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        lessonObject.set(doc.id, doc.data());
 
+                    });
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
                 });
-            }).catch((error) => {
-                console.log("Error in Database.js: ", error);
-            });
-            lessons.push(lessonObject);
+                lessons.push(lessonObject);
+            } else if (language === "kk") { //Kazakh
+                const docName = "Kazakh";
+
+                // pulling the metadata
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
+                    // moving through the snapshot objects individually
+
+                    lessonObject.set("backgroundColor", doc.data().backgroundColor);
+                    lessonObject.set("navigation", doc.data().navigation);
+                    lessonObject.set("thumbnail", doc.data().thumbnail);
+                    lessonObject.set("title", doc.data().title);
+
+
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
+                });
+
+                // pulling the minigames
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        minigameList.push(doc.data());
+
+                    });
+                    lessonObject.set("minigames", minigameList);
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
+                });
+
+                //pulling the mastery 
+                await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        lessonObject.set(doc.id, doc.data());
+
+                    });
+                }).catch((error) => {
+                    console.log("Error in Database.js: ", error);
+                });
+                lessons.push(lessonObject);
+            }
         }
+
+        contentCache.set("lessons", lessons);
+        return lessons;
     }
-    return lessons;
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
@@ -181,34 +192,42 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
 // @return imageMap **The filled map object in the form <image path, image URL>
 async function createImageMap(folder, imageMap) {
-    // Going through the DB and finding all of the potential directories holding images
-    var list = await createImageMapHelper(folder, []).then((listResult) => {
-        return listResult;
-    });
+    console.log("createIM");
+    if (await checkCache("image", "images")) {
+        console.log("Cached images");
+        return 1;
+    } else {
+        console.log("Pulling images");
+        // Going through the DB and finding all of the potential directories holding images
+        var list = await createImageMapHelper(folder, []).then((listResult) => {
+            return listResult;
+        });
 
-    // Pushing the current directory
-    list.push(folder);
+        // Pushing the current directory
+        list.push(folder);
 
-    // Looping through list of paths and creating the map with the above format
-    for (const path in list) {
-        let result = await storage.child(list[path]).listAll();
+        // Looping through list of paths and creating the map with the above format
+        for (const path in list) {
+            let result = await storage.child(list[path]).listAll();
 
-        let urlPromises = result.items.map(url => url.getDownloadURL());
-        let pathPromises = result.items.map(path => path.getMetadata());
+            let urlPromises = result.items.map(url => url.getDownloadURL());
+            let pathPromises = result.items.map(path => path.getMetadata());
 
-        let urlResolved = await Promise.all(urlPromises);
-        let pathResolved = await Promise.all(pathPromises);
+            let urlResolved = await Promise.all(urlPromises);
+            let pathResolved = await Promise.all(pathPromises);
 
-        for (var x = 0; x < urlResolved.length; x++) {
-            try {
-                // console.log("=>", pathResolved[x].fullPath);
-                imageMap[pathResolved[x].fullPath] = urlResolved[x];
-            } catch (error) {
-                console.log("Error: ", error);
+            for (var x = 0; x < urlResolved.length; x++) {
+                try {
+                    // console.log("=>", pathResolved[x].fullPath);
+                    imageMap[pathResolved[x].fullPath] = urlResolved[x];
+                } catch (error) {
+                    console.log("Error: ", error);
+                }
             }
         }
+        imageCache.set("images", imageMap);
+        return imageMap;
     }
-    return imageMap;
 }
 
 // This creates a list of all directory paths in the Firebase storage 
@@ -436,37 +455,83 @@ async function postData() {
     // }
 }
 
-const cache = new Cache({
-    namespace: "myapp",
+const contentCache = new Cache({
+    namespace: "content",
     policy: {
-        maxEntries: 50000, // if unspecified, it can have unlimited entries
         stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
     },
     backend: AsyncStorage
 });
 
-async function checkCache(key) {
-    if (await cache.peek(key) == undefined) {
-        return false;
+const imageCache = new Cache({
+    namespace: "image",
+    policy: {
+        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+    },
+    backend: AsyncStorage
+});
+
+const userCache = new Cache({
+    namespace: "user",
+    policy: {
+        stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
+    },
+    backend: AsyncStorage
+});
+
+async function checkCache(cache, key) {
+    if (cache == "image") {
+        if (await imageCache.peek(key) == undefined) {
+            return false;
+        } else {
+            return true;
+        }
+    } else if (cache == "content") {
+        if (await contentCache.peek(key) == undefined) {
+            return false;
+        } else {
+            return true;
+        }
     } else {
-        return true;
+        if (await userCache.peek(key) == undefined) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+}
+
+async function getCacheObject(cache, key) {
+    console.log("Get Cache");
+    if (cache == "image") {
+        if (checkCache("image", key)) {
+            console.log("==> ", typeof(key));
+            return await imageCache.get(key);
+        } else {
+            return undefined;
+        }
+    } else if (cache == "content") {
+        if (checkCache("content", key)) {
+            return await contentCache.get(key);
+        } else {
+            return undefined;
+        }
+    } else {
+        if (checkCache("user", key)) {
+            return await contentCache.get(key);
+        } else {
+            return undefined;
+        }
     }
 }
 
-async function getCacheObject(key) {
-    if (checkCache(key)) {
-        return await cache.get(key);
-    } else {
-        return undefined;
-    }
-}
-
-async function updateCache(key) {
+async function updateCache(cache, key) {
 
 }
 
-async function setCache(keys, values) {
-    
+async function setCache(cache, keys, values) {
+
 }
 
 export { getGradeData, createImageMap, getLessonsData, postData, changeData, checkCache, getCacheObject, updateCache, setCache };

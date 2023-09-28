@@ -8,9 +8,9 @@ import { View } from "react-native";
 
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
-import { getGradeData } from "./Database";
+import { getGradeData, getCacheObject } from "./Database";
 import { useSelector } from "react-redux";
-import { cache } from "react-native-cache";
+// import { cache } from "react-native-cache";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,41 +19,41 @@ const Stack = createNativeStackNavigator();
 // @param addAchievement **Relic from the past team, I did nothing with this and have no idea what it does
 function ChaptersHandler({ route, addAchievement }) { //add achievements
 
-  const [gradeData, setgradeData] = useState(null);
-  const [gradeNumber, setgradeNumber] = useState(null);
+  const [gradeData, setGradeData] = useState(null);
+  const [gradeNumber, setGradeNumber] = useState(null);
 
 
   const { level } = route.params; // Level selected from Lesson navigation screen
   const navigation = useNavigation();
 
   const imageMap = useSelector(state => state.imageMap.imageData);
-
+  console.log("IM: ", imageMap);
   useEffect(() => {
     switch (level) {
       case 1:
         {
-          if(){
+          if (getGradeData("Grade2") == 1) {
+            setGradeData(getCacheObject("content", "grades"));
+          } else {
 
+            getGradeData("Grade2").then(
+              (gradeData) => {
+                // console.log("Grade 2: ", gradeData);
+                setGradeData(gradeData);
+                setGradeNumber(2);
+              }
+            ).catch((err) => {
+              console.log("Error: ", err);
+            });
           }
-          getGradeData("Grade2").then(
-            (gradeData) => {
-              // console.log("Grade 2: ", gradeData);
-              setgradeData(gradeData);
-              setgradeNumber(2);
-            }
-          ).catch((err) => {
-            console.log("Error: ", err);
-          });
-
-
           break;
         }
       case 2: {
         getGradeData("Grade3").then(
           (gradeData) => {
             // console.log("Grade 3: ", gradeData);
-            setgradeData(gradeData);
-            setgradeNumber(3);
+            setGradeData(gradeData);
+            setGradeNumber(3);
           }
         ).catch((err) => {
           console.log("Error: ", err);
@@ -69,7 +69,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
         break;
       }
       default: {
-        setgradeData(null);
+        setGradeData(null);
         break;
       }
     }
