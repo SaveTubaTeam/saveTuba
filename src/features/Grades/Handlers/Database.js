@@ -3,7 +3,7 @@ import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
 
 import { Cache } from "react-native-cache";
-import { AsyncStorage } from '@react-native-async-storage/async-storage';
+import { AsyncStorage } from "@react-native-async-storage/async-storage";
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -480,24 +480,47 @@ const userCache = new Cache({
 });
 
 async function checkCache(cache, key) {
+    console.log("In check cache | Cache: ", cache, " Key: ", key);
     if (cache == "image") {
-        if (await imageCache.peek(key) == undefined) {
-            return false;
-        } else {
-            return true;
-        }
+        return await imageCache.peek(key).then((exists) => {
+
+            if (exists) {
+                return true;
+            } else {
+                return false;
+            }
+        }).catch((error) => { console.log("Error in checkCache images: ", error); });
+        // if (await imageCache.peek(key) == undefined) {
+        //     return false;
+        // } else {
+        //     return true;
+        // }
     } else if (cache == "content") {
-        if (await contentCache.peek(key) == undefined) {
-            return false;
-        } else {
-            return true;
-        }
+        return await contentCache.peek(key).then((exists) => {
+            if (exists) {
+                return true;
+            } else {
+                return false;
+            }
+        }).catch((error) => { console.log("Error in checkCache content: ", error); });
+        // if (await contentCache.peek(key) == undefined) {
+        //     return false;
+        // } else {
+        //     return true;
+        // }
     } else {
-        if (await userCache.peek(key) == undefined) {
-            return false;
-        } else {
-            return true;
-        }
+        return await userCache.peek(key).then((exists) => {
+            if (exists) {
+                return true;
+            } else {
+                return false;
+            }
+        }).catch((error) => { console.log("Error in checkCache user: ", error); });
+        // if (await userCache.peek(key) == undefined) {
+        //     return false;
+        // } else {
+        //     return true;
+        // }
     }
 
 }
@@ -505,24 +528,39 @@ async function checkCache(cache, key) {
 async function getCacheObject(cache, key) {
     console.log("Get Cache");
     if (cache == "image") {
-        if (checkCache("image", key)) {
-            console.log("==> ", typeof(key));
-            return await imageCache.get(key);
-        } else {
-            return undefined;
-        }
+        return await checkCache("image", key).then(async (exists) => {
+            if (exists) {
+                return await imageCache.get(key).then((result) => { return result; }).catch((error) => { console.log("Error in getCacheObject as the cache.get promise: ", error); });
+            }
+        }).catch((error) => { console.log("Error in getCacheObject at the checkCache promise: ", error); });
+        // if (checkCache("image", key)) {
+        //     console.log("==> ", typeof(key));
+        //     return await imageCache.get(key);
+        // } else {
+        //     return undefined;
+        // }
     } else if (cache == "content") {
-        if (checkCache("content", key)) {
-            return await contentCache.get(key);
-        } else {
-            return undefined;
-        }
+        return await checkCache("content", key).then(async (exists) => {
+            if (exists) {
+                return await imageCache.get(key).then((result) => { return result; }).catch((error) => { console.log("Error in getCacheObject as the cache.get promise: ", error); });
+            }
+        }).catch((error) => { console.log("Error in getCacheObject at the checkCache promise: ", error); });
+        // if (checkCache("content", key)) {
+        //     return await contentCache.get(key);
+        // } else {
+        //     return undefined;
+        // }
     } else {
-        if (checkCache("user", key)) {
-            return await contentCache.get(key);
-        } else {
-            return undefined;
-        }
+        return await checkCache("user", key).then(async (exists) => {
+            if (exists) {
+                return await imageCache.get(key).then((result) => { return result; }).catch((error) => { console.log("Error in getCacheObject as the cache.get promise: ", error); });
+            }
+        }).catch((error) => { console.log("Error in getCacheObject at the checkCache promise: ", error); });
+        // if (checkCache("user", key)) {
+        //     return await contentCache.get(key);
+        // } else {
+        //     return undefined;
+        // }
     }
 }
 
