@@ -110,7 +110,6 @@ export class Main extends Component {
     // }
 
     while (this.props.currentUser == undefined) {
-      console.log("In while");
       return (
         <View style={[styles.container, styles.horizontal]}>
           <ActivityIndicator size="large" color="#00ff00" />
@@ -119,7 +118,6 @@ export class Main extends Component {
     }
 
     try {
-      // console.log("Not In while");
       if (
         this.props.achievements != null ||
         this.props.achievements["achievements"][0] == undefined

@@ -70,7 +70,8 @@ const LoginScreen = () => {
 
   useEffect(() => {
     dispatch(fetchImages());
-    const language = i18n.language;
+    // const language = i18n.language;
+    const language = "en";
     if (language === "en") { //English
       dispatch(setEnglish());
       console.log("set language to en");

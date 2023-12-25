@@ -2,18 +2,10 @@
 
 buildscript {
     ext {
-        buildToolsVersion = "29.0.3"
+        buildToolsVersion = "33.0.2"
         minSdkVersion = 21
         compileSdkVersion = 33
-        targetSdkVersion = 31
-//        buildToolsVersion = '33.0.0'
-//        minSdkVersion = 'android-32'
-//        compileSdkVersion = 'android-32'
-//        targetSdkVersion = 'android-32'
-//         buildToolsVersion = findProperty('android.buildToolsVersion') ?: '33.0.0'
-//         minSdkVersion = Integer.parseInt(findProperty('android.minSdkVersion') ?: '32')
-//         compileSdkVersion = Integer.parseInt(findProperty('android.compileSdkVersion') ?: '32')
-//         targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '32')
+        targetSdkVersion = 33 // Was 31
         if (findProperty('android.kotlinVersion')) {
             kotlinVersion = findProperty('android.kotlinVersion')
         }
@@ -30,7 +22,6 @@ buildscript {
     dependencies {
         classpath('com.android.tools.build:gradle:7.4.2')
         classpath('com.facebook.react:react-native-gradle-plugin')
-        // classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50"
     }
 }
 
@@ -50,6 +41,10 @@ allprojects {
         maven { url 'https://www.jitpack.io' }
     }
 }
+
+// plugins {
+//     id("com.google.gms.google-services") version "4.3.15" apply false
+// }
 // @generated begin expo-camera-import - expo prebuild (DO NOT MODIFY) sync-f244f4f3d8bf7229102e8f992b525b8602c74770
 def expoCameraMavenPath = new File(["node", "--print", "require.resolve('expo-camera/package.json')"].execute(null, rootDir).text.trim(), "../android/maven")
 allprojects { repositories { maven { url(expoCameraMavenPath) } } }

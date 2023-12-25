@@ -20,7 +20,7 @@ const LANGUAGE_DETECTOR = {
     async: true,
     detect: callback => {
         getCacheObject("user", 'user-language').then((obj) => {
-            console.log("in lang detector");
+            // console.log("in lang detector");
             if (obj == undefined) {
                 callback('ru');
 

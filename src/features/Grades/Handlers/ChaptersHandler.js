@@ -8,9 +8,8 @@ import { View } from "react-native";
 
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
-import { getGradeData, getCacheObject } from "./Database";
+import { getGradeData } from "./Database";
 import { useSelector } from "react-redux";
-// import { cache } from "react-native-cache";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,31 +26,23 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
   const navigation = useNavigation();
 
   const imageMap = useSelector(state => state.imageMap.imageData);
-  console.log("IM: ", imageMap);
   useEffect(() => {
     switch (level) {
       case 1:
         {
-          if (getGradeData("Grade2") == 1) {
-            setGradeData(getCacheObject("content", "grades"));
-          } else {
-
-            getGradeData("Grade2").then(
-              (gradeData) => {
-                // console.log("Grade 2: ", gradeData);
-                setGradeData(gradeData);
-                setGradeNumber(2);
-              }
-            ).catch((err) => {
-              console.log("Error: ", err);
-            });
-          }
+          getGradeData("Grade2").then(
+            (gradeData) => {
+              setGradeData(gradeData);
+              setGradeNumber(2);
+            }
+          ).catch((err) => {
+            console.log("Error: ", err);
+          });
           break;
         }
       case 2: {
         getGradeData("Grade3").then(
           (gradeData) => {
-            // console.log("Grade 3: ", gradeData);
             setGradeData(gradeData);
             setGradeNumber(3);
           }

@@ -22,7 +22,7 @@ function HomeView() {
   const { t } = useTranslation();
 
   const imageMap = useSelector(state => state.imageMap.imageData);
-  // console.log("==> ", imageMap);
+  // console.log("Home Page ==> ", imageMap);
   return ( // source={require("../../../assets/homebg.png")}
     <ImageBg resizeMode="cover" source={{ uri: imageMap["assets/homebg.png"] }}>
       <ScrollView style={{ paddingTop: 50 }}>

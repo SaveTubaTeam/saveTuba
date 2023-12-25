@@ -2,8 +2,7 @@ import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
 
-import { AsyncStorage } from "@react-native-async-storage/async-storage";
-// import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -14,9 +13,21 @@ import { AsyncStorage } from "@react-native-async-storage/async-storage";
 
 // @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
+
+    const result = await getCacheObject("grades").then((result) => {
+        console.log("Result: ", result);
+        return result;
+    }).catch((error) => {
+        console.log("Error with getCacheObj in getGradeData: ", error);
+    });
+
+    if (result != null) {
+        console.log("Pulling grades from cache");
+        return result;
+    } else {
+        console.log("Pulling grades from DB");
         // Creating the list of chapters
         const chapterList = [];
-
         // Pulling the grade data and storing it to the above list
         await db.collection(grade).get()
             .then((snapshot) => {
@@ -26,10 +37,13 @@ async function getGradeData(grade) {
             }).catch((error) => {
                 console.log("Error: ", error);
             });
+        await setCache("grades", chapterList);
         return chapterList; // This returns the array
+    }
 }
 
-// This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one function and copy/paste the code for formatting the objects in each language. This could be refactored to look neater pretty easily.
+// This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one 
+// function and copy/paste the code for formatting the objects in each language. This could be refactored to look neater pretty easily.
 
 // @param grade **Specifies the grade 
 
@@ -42,6 +56,18 @@ async function getGradeData(grade) {
 
 //@ return lessons **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, numLessons, language) {
+    const result = await getCacheObject("lessons").then((result) => {
+        console.log("Result: ", result);
+        return result;
+    }).catch((error) => {
+        console.log("Error with getCacheObj in getLessonsData: ", error);
+    });
+
+    if (result != null) {
+        console.log("Pulling lessons from cache");
+        return result;
+    } else {
+        console.log("Pulling lessons from DB");
         // Use a map to more easily access correct minigames
         var lessons = [];
         console.log("lang ", language);
@@ -68,7 +94,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
 
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js metadata: ", error);
                 });
 
                 // pulling the minigames
@@ -79,7 +105,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
                     });
                     lessonObject.set("minigames", minigameList);
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js minigames: ", error);
                 });
 
                 //pulling the mastery 
@@ -89,7 +115,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
                     });
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js mastery: ", error);
                 });
                 lessons.push(lessonObject);
             } else if (language === "ru") { //Russian
@@ -106,7 +132,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
 
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js metadata: ", error);
                 });
 
                 // pulling the minigames
@@ -117,7 +143,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
                     });
                     lessonObject.set("minigames", minigameList);
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js minigames: ", error);
                 });
 
                 //pulling the mastery 
@@ -127,7 +153,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
                     });
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js mastery: ", error);
                 });
                 lessons.push(lessonObject);
             } else if (language === "kk") { //Kazakh
@@ -144,7 +170,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
 
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js metadata: ", error);
                 });
 
                 // pulling the minigames
@@ -155,7 +181,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
                     });
                     lessonObject.set("minigames", minigameList);
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js minigames: ", error);
                 });
 
                 //pulling the mastery 
@@ -165,12 +191,15 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
                     });
                 }).catch((error) => {
-                    console.log("Error in Database.js: ", error);
+                    console.log("Error in Database.js mastery: ", error);
                 });
                 lessons.push(lessonObject);
             }
         }
+        console.log("L: ", lessons);
+        await setCache("lessons", lessons);
         return lessons;
+    }
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
@@ -181,7 +210,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 
 // @return imageMap **The filled map object in the form <image path, image URL>
 async function createImageMap(folder, imageMap) {
-    console.log("Pulling images");
+    console.log("Pulling images from DB");
     // Going through the DB and finding all of the potential directories holding images
     var list = await createImageMapHelper(folder, []).then((listResult) => {
         return listResult;
@@ -438,24 +467,22 @@ async function postData() {
 }
 
 async function getCacheObject(key) {
-    console.log("Get Cache");
+    // console.log("in getCacheObj");
     try {
-        const jsonValue = await AsyncStorage.getItem(key).catch((error) => {
-            console.log("Error with getData in getCacheObject: ", error);
-        });
-        console.log(key, " value retrieved");
+        const jsonValue = await AsyncStorage.getItem(key);
+        // console.log(key, " value retrieved ==> ", jsonValue);
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
-        console.log("Error in getCache: ", e);
+        console.log("Error in getCacheObj: ", e);
         return null;
     }
 }
 
 async function setCache(key, value) {
+    // console.log("in setCache");
     try {
-        
         const jsonValue = JSON.stringify(value);
-        console.log("V: ", jsonValue, " Key: ", key);
+        // console.log("V: ", jsonValue, " Key: ", key);
         await AsyncStorage.setItem(key, jsonValue);
     } catch (e) {
         console.log("Error with storeData: ", e);

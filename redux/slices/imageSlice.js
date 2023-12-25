@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { createImageMap, getCacheObject } from '../../src/features/Grades/Handlers/Database';
+import { createImageMap, getCacheObject, setCache } from '../../src/features/Grades/Handlers/Database';
 
 const initialState = {
     loading: "idle",
@@ -8,16 +8,18 @@ const initialState = {
 };
 
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
-    console.log("fetchIM");
+    // console.log("fetchIM");
     const imageMap = {};
 
-    const result = await getCacheObject("images").then(async (result) => {
-        console.log("Result: ", result);
+    const result = await getCacheObject("images").then((result) => {
+        // console.log("Result: ", result);
         return result;
     }).catch(() => {
         console.log("Error in fetchImages getCacheObject");
     });
+
     if (result == null) {
+        console.log("Pulling from firebase in fetchIM");
         const map = await createImageMap("assets", imageMap).then((result) => {
             // console.log("R: ", result);
             // console.log("ImageMap Test =======> ", result["assets/badges/badge1.png"]);
@@ -26,7 +28,11 @@ export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => 
             console.log("Error in setting state: ", error);
             return error.message;
         });
+        await setCache("images", map);
         return map;
+    }else{
+        console.log("Pulling images from cache");
+        return result;
     }
 });
 

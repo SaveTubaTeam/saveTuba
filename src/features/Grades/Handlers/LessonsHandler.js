@@ -11,7 +11,6 @@ import { connect } from "react-redux";
 import IndividualLessonHandler from "./IndividualLessonHandler";
 import LessonsComponent from "../Components/LessonsComponent";
 import { getLessonsData } from "./Database.js";
-import { getCacheObject } from "./Database.js";
 
 const styles = StyleSheet.create({
   container: {
@@ -37,36 +36,28 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
     switch (gradeNumber) {
       case 2:
         {
-          try {
-            if (getLessonsData(2, selectedChapter, numLessons, language) == 1) {
-              setLessonsData(getCacheObject("content", "lessons"));
-            } else {
-              getLessonsData(2, selectedChapter, numLessons, language).then(
-                (result) => {
-                  setLessonsData(result);
-                }
-              ).catch((err) => {
-                console.log("Error in LessonsHandler.js: ", err);
-              });
-            }
-          } catch (error) {
-            console.log("Error in LessonsHandler.js catch: ", error);
-          }
-          break;
-        }
-      case 3: {
-        try {
-          getLessonsData(3, selectedChapter, numLessons, language).then(
+          getLessonsData(2, selectedChapter, numLessons, language).then(
             (result) => {
-              setLessonsData(result);
+              console.log("R: ", result);
+              try {
+                setLessonsData(result);
+              } catch (error) {
+                console.log("Especially useful error message: ", error);
+              }
             }
           ).catch((err) => {
             console.log("Error in LessonsHandler.js: ", err);
           });
-
-        } catch (error) {
-          console.log("Error in LessonsHandler.js catch: ", error);
+          break;
         }
+      case 3: {
+        getLessonsData(3, selectedChapter, numLessons, language).then(
+          (result) => {
+            setLessonsData(result);
+          }
+        ).catch((err) => {
+          console.log("Error in LessonsHandler.js: ", err);
+        });
         break;
       }
       case 4: {
@@ -85,7 +76,6 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
   }, []);
 
   while (lessonsData === null || lessonsData === undefined) {
-    console.log("In while");
     return (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" />
