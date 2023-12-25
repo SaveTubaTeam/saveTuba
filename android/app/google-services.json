@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218900793188",
+    "project_id": "savetuba-5e519",
+    "storage_bucket": "savetuba-5e519.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218900793188:android:a599ae33d1283389815c71",
+        "android_client_info": {
+          "package_name": "Savetuba.Beta.Version_001"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218900793188-bhpi2n0amicsorbpogfpe6vs5q2t0jed.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-SNkT7tSehjBM8J11ZKhMnhNhqvLeSg0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218900793188-bhpi2n0amicsorbpogfpe6vs5q2t0jed.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
