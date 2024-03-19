@@ -22,7 +22,7 @@ async function getGradeData(grade) {
     });
 
     if (result != null) {
-        console.log("Pulling grades from cache");
+        console.log("Pulling grades from cache: ", result);
         return result;
     } else {
         console.log("Pulling grades from DB");
@@ -37,7 +37,9 @@ async function getGradeData(grade) {
             }).catch((error) => {
                 console.log("Error: ", error);
             });
+        console.log(chapterList); //logging chapterList array
         await setCache("grades", chapterList);
+        //console.log(getCacheObject("grades")); //logging cache under key "grades"
         return chapterList; // This returns the array
     }
 }
@@ -196,8 +198,9 @@ async function getLessonsData(grade, chpt, numLessons, language) {
                 lessons.push(lessonObject);
             }
         }
-        console.log("L: ", lessons);
+        console.log("Lessons: ", lessons); //logging lessons array
         await setCache("lessons", lessons);
+        //console.log(getCacheObject("lessons")); //see lessons in cache
         return lessons;
     }
 }
@@ -260,6 +263,8 @@ async function createImageMapHelper(folder, pathList) {
     //This is the number of nested folders. This will need to be updated if the images directories are changed
     if (pathList.length === 14) {
         return pathList;
+    } else {
+        console.log("pathList needs updating");
     }
 }
 
@@ -470,7 +475,7 @@ async function getCacheObject(key) {
     // console.log("in getCacheObj");
     try {
         const jsonValue = await AsyncStorage.getItem(key);
-        // console.log(key, " value retrieved ==> ", jsonValue);
+        console.log(key, " value retrieved from cache ==> ", jsonValue);
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
         console.log("Error in getCacheObj: ", e);
@@ -482,7 +487,7 @@ async function setCache(key, value) {
     // console.log("in setCache");
     try {
         const jsonValue = JSON.stringify(value);
-        // console.log("V: ", jsonValue, " Key: ", key);
+        //console.log("Setting Cache --> Value: ", jsonValue, " Key: ", key);
         await AsyncStorage.setItem(key, jsonValue);
     } catch (e) {
         console.log("Error with storeData: ", e);

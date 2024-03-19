@@ -38,11 +38,11 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         {
           getLessonsData(2, selectedChapter, numLessons, language).then(
             (result) => {
-              console.log("R: ", result);
+              console.log("Result: ", result);
               try {
                 setLessonsData(result);
               } catch (error) {
-                console.log("Especially useful error message: ", error);
+                console.log("Error pulling data: ", error);
               }
             }
           ).catch((err) => {
@@ -53,7 +53,12 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
       case 3: {
         getLessonsData(3, selectedChapter, numLessons, language).then(
           (result) => {
-            setLessonsData(result);
+            console.log("Result: ", result);
+            try {
+              setLessonsData(result);
+            } catch (error) {
+              console.log("Error pulling data: ", error);
+            }
           }
         ).catch((err) => {
           console.log("Error in LessonsHandler.js: ", err);

@@ -30,6 +30,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
     switch (level) {
       case 1:
         {
+          console.log("Grade2 route selected");
           getGradeData("Grade2").then(
             (gradeData) => {
               setGradeData(gradeData);
@@ -41,6 +42,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
           break;
         }
       case 2: {
+        console.log("Grade3 route selected");
         getGradeData("Grade3").then(
           (gradeData) => {
             setGradeData(gradeData);
@@ -61,6 +63,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
       }
       default: {
         setGradeData(null);
+        setGradeNumber(null); //revisit
         break;
       }
     }
