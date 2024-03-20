@@ -665,7 +665,7 @@ export const Grade2 = {
               navigation: "Memory",
               title: <Translation>{(t) => t("common:memory")}</Translation>, // Memory
               description:
-                "Match the plant adaptations to the element they like",
+                "Сопаставьте приспособления растений к тому элементу, который им нравится",
               icon: require("../../../../assets/willpower.png"),
               backgroundColor: "dodgerblue",
               content: [
@@ -737,7 +737,7 @@ export const Grade2 = {
                     text:
                       "Перечислите несколько вещей, которые нужны растениям для выживания. Это одни и те же" +
                       "или разные вещи? Что произойдет, если одного ресурса будет слишком много?",
-                    placeholder: "Plants need...",
+                    placeholder: "Растениям нужны...",
                     image: require("../../../../assets/openresponse/innovation.png"),
                   },
                 ],
