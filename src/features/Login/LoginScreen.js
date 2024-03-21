@@ -8,7 +8,7 @@ import { auth } from "../../../firebase";
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";
-import { getCacheObject } from "../Grades/Handlers/Database";
+import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
 
 
 
@@ -175,6 +175,13 @@ const LoginScreen = () => {
               Change Data
             </TitleText>
           </Button> */}
+
+          {/*<Button onPress={() => postBoilerplate("GradeX", "ChapterX")}>
+            <TitleText color="secondary" size="body">
+              Post Boilerplate
+            </TitleText>
+        </Button>*/}
+
         </ButtonContainer>
       </ImageBg>
     </Container>

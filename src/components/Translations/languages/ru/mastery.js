@@ -4,7 +4,6 @@ export default {
   Grade One
   ~~~~~~~~~
   */
-
   /* CHAPTER 1 */
 
   g1c1l1_card1: "Spin the globe and stop it with your finger.",

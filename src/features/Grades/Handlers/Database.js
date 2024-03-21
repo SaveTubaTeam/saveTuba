@@ -1,8 +1,15 @@
 import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
 import { db, storage } from "../../../../firebase.js";
+import boilerplateLesson from  "./boilerplateLesson.json";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+//***all documentation falls under web api
+//documentation for count() https://firebase.google.com/docs/firestore/query-data/aggregation-queries 
+//documentation for set() https://firebase.google.com/docs/firestore/manage-data/add-data#node.js_1
+//documentation for get() https://firebase.google.com/docs/firestore/query-data/get-data
+//navigating the firestore database tree should be done as seen in postBoilerplate() via reference to doc() or collection().
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -21,10 +28,10 @@ async function getGradeData(grade) {
         console.log("Error with getCacheObj in getGradeData: ", error);
     });
 
-    if (result != null) {
+    /*if (result != null) {
         console.log("Pulling grades from cache: ", result);
         return result;
-    } else {
+    } else {*/
         console.log("Pulling grades from DB");
         // Creating the list of chapters
         const chapterList = [];
@@ -41,7 +48,7 @@ async function getGradeData(grade) {
         await setCache("grades", chapterList);
         //console.log(getCacheObject("grades")); //logging cache under key "grades"
         return chapterList; // This returns the array
-    }
+    //}
 }
 
 // This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one 
@@ -65,10 +72,10 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         console.log("Error with getCacheObj in getLessonsData: ", error);
     });
 
-    if (result != null) {
+    /*if (result != null) {
         console.log("Pulling lessons from cache");
         return result;
-    } else {
+    } else {*/
         console.log("Pulling lessons from DB");
         // Use a map to more easily access correct minigames
         var lessons = [];
@@ -202,7 +209,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         await setCache("lessons", lessons);
         //console.log(getCacheObject("lessons")); //see lessons in cache
         return lessons;
-    }
+    //}
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
@@ -263,8 +270,6 @@ async function createImageMapHelper(folder, pathList) {
     //This is the number of nested folders. This will need to be updated if the images directories are changed
     if (pathList.length === 14) {
         return pathList;
-    } else {
-        console.log("pathList needs updating");
     }
 }
 
@@ -324,6 +329,7 @@ async function changeData() {
 
 // This was meant to push all of the hardcoded data to the database as there was no admin console when it was written. Setup for both grade 2 and grade 3 right now. Grade 4 should go directly into the DBs
 // Leaving it in for propriety 
+//TODO: rewrite to take any formatted lesson .json file
 async function postData() {
     // Grade 2
     const chapters2 = grade2.Grade2.chapters;
@@ -469,13 +475,85 @@ async function postData() {
     //         }
     //     }
     // }
-}
+
+} //END OF postData()
+
+
+//use the below function to push boilerplate lesson templates into database for empty chapters. WARNING: CAN ERASE EXISTING DATA
+//See LoginScreen for function call location (this function will not work for params that do not exist!);
+//WARNING: If your params are incorrect you run the risk of erasing data!! Big no-no!
+//Chapter metadata MUST be manually defined beforehand, specifically numLessons attribute.
+    //@param gradeNumber grade num should be specified as such: "Grade1", "Grade2", etc. 
+    //@param chapterNumber specify as "Chapter1", "Chapter2", etc.
+    //function will fill boilerplate for all lessons in given chapter for all languages "English", "Kazakh", "Russian"
+    async function postBoilerplate(gradeNumber, chapterNumber) {
+        const chapterData = await db.collection(gradeNumber).doc(chapterNumber).get();
+        const numLessons = chapterData.data().numLessons; //getting number of lessons from chapter metadata
+
+        const mastery = boilerplateLesson.mastery; //grabbing mastery attribute
+        const minigames = boilerplateLesson.minigames; //grabbing all minigames (including objects within minigames)
+        
+        const languageArray = ["English", "Kazakh", "Russian"]; //array of languages
+        const backgroundColor = ["#2C3653", "#87CB28", "#004AAD", "#00C2CB", "#87CEFA", "#8C77AA", //collection of background colors for lesson cards
+                                "#B25C3E", "#AA1A44", "#F9F0D7", "#76220C", "#76B9F0", "#FC6467",
+                                "#6040AC", "#C85004", "#2A8FE5", "#603A70", "#56AEFF", "#F9A949",
+                                "#49326B", "#02084B", "#F6E134", "#80B673", "#9DCD5A", "#98DFEC",
+                                "#065D40", "#159D52", "#F9943B", "#53020C", "#060644", "#2A731D"];
+
+        for(let lessonIter=1; lessonIter<=numLessons; lessonIter++) {//iterating through lessons as defined in params.
+            let lessonNumber = "Lesson" + lessonIter //concatenating index of iterator to lesson for correct formatting. JavaScript forces lessonIter to a string for proper concatenation.
+            let data = { //grabbing metadata for each lesson
+                title: boilerplateLesson.title,
+                thumbnail: boilerplateLesson.thumbnail,
+                backgroundColor: backgroundColor[await Math.floor(Math.random()*backgroundColor.length)], //gets random background color from predefined array
+                navigation: lessonNumber
+            };
+
+            for(let languageIter = 0; languageIter < languageArray.length; languageIter++) { //languageIter iterates through languageArray to select a language
+                let language = languageArray[languageIter] //language defined as current index
+
+                //setting metadata for initial lesson's language document (i.e. metadata for "English", "Kazakh", "Russian")
+                await db.collection(gradeNumber).doc(chapterNumber).collection(lessonNumber).doc(language).set(data)
+                .then(() => {
+                    console.log("Current Language:", language);
+                    console.log("Boilerplate for", gradeNumber, chapterNumber, lessonNumber, " successfully pushed!");
+                })
+                .catch((error) => {
+                    console.error("Error updating language document: ", language, error);
+                });
+
+                //looping through all minigames in boilerplateLesson.json and setting boilerplate for each minigame in firestore.
+                for(let minigamesIter = 0; minigamesIter < minigames.length; minigamesIter++) {
+                    let minigameName = minigames[minigamesIter].navigation; //getting minigame name from minigame navigation attribute
+                        await db.collection(gradeNumber).doc(chapterNumber).collection(lessonNumber).doc(language).collection("minigames").doc(minigameName).set(minigames[minigamesIter])
+                            .then(() => {
+                                //pass
+                            }).catch((error) => {
+                                console.error("Error writing minigame: ", minigameName, error);
+                            });
+                } //end of minigames loop
+                console.log("Boilerplate for Minigames for ", gradeNumber, chapterNumber, lessonNumber, " successfully pushed!")
+
+                //setting mastery boilerplate in firestore
+                await db.collection(gradeNumber).doc(chapterNumber).collection(lessonNumber).doc(language).collection("mastery").doc("mastery").set(mastery)
+                            .then(() => {
+                                console.log("Boilerplate for Mastery for ", gradeNumber, chapterNumber, lessonNumber, " successfully written!");
+                            })
+                            .catch((error) => {
+                                console.error("Error writing mastery: ", error);
+                            });
+
+            } //end of language loop
+
+        } //end of lesson number loop
+    }
 
 async function getCacheObject(key) {
     // console.log("in getCacheObj");
     try {
         const jsonValue = await AsyncStorage.getItem(key);
-        console.log(key, " value retrieved from cache ==> ", jsonValue);
+        //console.log(key, " value retrieved from cache ==> ", jsonValue);
+        console.log(key, " value retrieved from cache");
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
         console.log("Error in getCacheObj: ", e);
@@ -495,4 +573,4 @@ async function setCache(key, value) {
     }
 }
 
-export { getGradeData, createImageMap, getLessonsData, postData, changeData, getCacheObject, setCache };
+export { getGradeData, createImageMap, getLessonsData, postData, changeData, getCacheObject, setCache, postBoilerplate };

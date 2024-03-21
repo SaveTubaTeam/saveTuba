@@ -63,7 +63,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
       }
       default: {
         setGradeData(null);
-        setGradeNumber(null); //revisit
+        setGradeNumber(null);
         break;
       }
     }
