@@ -21,7 +21,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
 
-    const result = await getCacheObject("grades").then((result) => {
+    const result = await getCacheObject(grade).then((result) => {
         console.log("Result: ", result);
         return result;
     }).catch((error) => {
@@ -45,7 +45,7 @@ async function getGradeData(grade) {
                 console.log("Error: ", error);
             });
         console.log(chapterList); //logging chapterList array
-        await setCache("grades", chapterList);
+        await setCache(grade, chapterList);
         //console.log(getCacheObject("grades")); //logging cache under key "grades"
         return chapterList; // This returns the array
     //}
@@ -552,8 +552,8 @@ async function getCacheObject(key) {
     // console.log("in getCacheObj");
     try {
         const jsonValue = await AsyncStorage.getItem(key);
-        //console.log(key, " value retrieved from cache ==> ", jsonValue);
         console.log(key, " value retrieved from cache");
+        console.log("all keys:", await AsyncStorage.getAllKeys());
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
         console.log("Error in getCacheObj: ", e);

@@ -80,6 +80,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
     }
   }, []);
 
+  //NOTE: ActivityIndicator component is a loading icon. https://reactnative.dev/docs/activityindicator
   while (lessonsData === null || lessonsData === undefined) {
     return (
       <View style={[styles.container, styles.horizontal]}>

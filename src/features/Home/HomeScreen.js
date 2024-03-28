@@ -35,7 +35,7 @@ function HomeView() {
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-        {/* <Image
+        {/* <Image //removing lock icon from Grade 2
           style={{
             position: "absolute",
             right: 20,

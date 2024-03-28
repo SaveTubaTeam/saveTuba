@@ -79,7 +79,9 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
-const SecondScreen = ({ data, imageMap }) => {
+//SecondScreen is rendered upon iterating through a maximum of four questions. 
+//This component SecondScreen is never called. Instead navigation directs us to LevelSystem.js
+const SecondScreen = ({ data, imageMap, score, prompt }) => {
   const navigation = useNavigation();
   // console.log("Second Screen ==> ", data);
   return (
@@ -87,8 +89,7 @@ const SecondScreen = ({ data, imageMap }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Prompt>
           <TitleText>
-            Congratulations, you've just finished your first quiz! Go back to
-            the lesson to continue learning!
+            {`Score: ${score} ${prompt}`}
           </TitleText>
           <Spacer size="large" />
           <SubmitButton onPress={() => navigation.navigate("Lesson")}>
@@ -100,12 +101,17 @@ const SecondScreen = ({ data, imageMap }) => {
   );
 };
 
+//Main function. Handles most logic. 
+//@param data is taken from QuizScreen format in Firebase
 const Start = ({ data, imageMap }) => {
   const navigation = useNavigation();
 
   const [correctAnswer, setCorrect] = useState(false);
 
+  //count is used to track the question number
   const [count, setCount] = useState(0);
+
+  //see renderAnswers for setScore() state change
   const [score, setScore] = useState(0);
 
   // const checkAnswer = (odg) => {
@@ -117,14 +123,15 @@ const Start = ({ data, imageMap }) => {
   console.log("Start ==> ", data.content[0].prompt);
   const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
 
+  //defining visibility state of each question
   const [visible, setVisible] = useState(false);
-
   const [firstVisible, setFirstVisible] = useState("flex");
   const [secondVisible, setSecondVisible] = useState("none");
   const [thirdVisible, setThirdVisible] = useState("none");
   const [fourthVisible, setFourthVisible] = useState("none");
 
-  const Modko = () => {
+  //ModalComponent returns answer Modal screen. Visibility of modal initially set to false.
+  const ModalComponent = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
         <View
@@ -157,16 +164,19 @@ const Start = ({ data, imageMap }) => {
                 if (count == 0) {
                   setCount(count + 1);
                   setCurrentPrompt(data.content[count + 1].prompt);
+                  console.log("Current Count:", count, "Current Prompt:", currentPrompt);
                   setFirstVisible("none");
                   setSecondVisible("flex");
                 } else if (count == 1) {
                   setCount(count + 1);
                   setCurrentPrompt(data.content[count + 1].prompt);
+                  console.log("Current Count:", count, "Current Prompt:", currentPrompt);
                   setSecondVisible("none");
                   setThirdVisible("flex");
                 } else if (count == 2 && data.content[count + 1] != null) {
                   setCount(count + 1);
                   setCurrentPrompt(data.content[count + 1].prompt);
+                  console.log("Current Count:", count, "Current Prompt:", currentPrompt);
                   setThirdVisible("none");
                   setFourthVisible("flex");
                 } else {
@@ -187,13 +197,18 @@ const Start = ({ data, imageMap }) => {
     );
   };
 
+  //The following function handles answer logic. Heavily dependent on correctly formatted data in Firebase.
+  //<Category/> is just a styled component. Should rename this component because its function was initially confusing to me.
   const renderAnswers = ({ item }) => {
     return (
       <>
         <Category
           activeOpacity="0.8"
           onPress={() => {
-            if (item.text == data.content[count].answers) {
+            console.log("Answer Choices:", data.content[count].answers); {/* NOTE: plural between answer and answers is the difference between pulling the entire answers array or just the answer!*/}
+            console.log("Correct Answer:", data.content[count].answer);
+            console.log("User Input:", item.text);
+            if (item.text == data.content[count].answer) {
               setCorrect(true);
               setScore(() => score + 1);
             } else {
@@ -216,11 +231,11 @@ const Start = ({ data, imageMap }) => {
             <TitleText size="title">{currentPrompt}</TitleText>
           </Question>
 
-          <FlatList // The flatlist used to load minigames and their data.
+          <FlatList //Question 1. Setting visibility in style prop. See renderAnswers() above for answer matching logic.
             scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
-            key={(item, index) => index}
+            //key={(item, index) => index}
             renderItem={renderAnswers}
             style={{ display: firstVisible }}
             contentContainerStyle={{
@@ -228,11 +243,11 @@ const Start = ({ data, imageMap }) => {
             }}
           />
 
-          <FlatList // The flatlist used to load minigames and their data.
+          <FlatList //Question 2
             scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
-            key={(item, index) => index}
+            //key={(item, index) => index}
             renderItem={renderAnswers}
             style={{ display: secondVisible }}
             contentContainerStyle={{
@@ -240,11 +255,11 @@ const Start = ({ data, imageMap }) => {
             }}
           />
 
-          <FlatList // The flatlist used to load minigames and their data.
+          <FlatList // Question 2
             scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
-            key={(item, index) => index}
+            //key={(item, index) => index}
             renderItem={renderAnswers}
             style={{ display: thirdVisible }}
             contentContainerStyle={{
@@ -252,11 +267,11 @@ const Start = ({ data, imageMap }) => {
             }}
           />
 
-          <FlatList // The flatlist used to load minigames and their data.
+          <FlatList // Question 4
             scrollEnabled={true}
             data={data.content[count].answers}
             keyExtractor={(item) => item.text}
-            key={(item, index) => index}
+            //key={(item, index) => index}
             renderItem={renderAnswers}
             style={{ display: fourthVisible }}
             contentContainerStyle={{
@@ -264,13 +279,14 @@ const Start = ({ data, imageMap }) => {
             }}
           />
 
-          <Modko visible={false} />
+          <ModalComponent visible={visible}  />
         </Container>
       </ImageBg>
     </>
   );
 };
 
+//Entry Point for logic.
 const QuizHandler = ({ data, addAchievement, imageMap }) => {
   // console.log("Handler ==> ", data);
   addAchievement("first-quiz-minigame");
@@ -280,7 +296,7 @@ const QuizHandler = ({ data, addAchievement, imageMap }) => {
         {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem} />
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem} /> {/*NOTE: Redirected to LevelSystem.js for final screen component*/}
     </Stack.Navigator>
   );
 };

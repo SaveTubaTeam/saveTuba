@@ -45,6 +45,7 @@ class LevelSystem extends Component {
       >
         <Container2 style={{ backgroundColor: "white" }}>
           <TitleText>
+            {`Score: ${score}\n`} {/*<-- using template string literal (unnecessary, see below)*/}
             {prompt}
             {"\n"} You gained {score * XP_PER_POINT}xp!
           </TitleText>
@@ -67,6 +68,8 @@ class LevelSystem extends Component {
   }
 }
 
+
+//never called here.
 function LevelSystem_({ route, navigation, currentUser }) {
   const { score } = route.params;
   const XP_PER_POINT = 45;

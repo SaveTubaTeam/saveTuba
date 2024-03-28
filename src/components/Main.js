@@ -27,6 +27,7 @@ const Tab = createBottomTabNavigator();
 // const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // The SaveTuba app contains the navigation containers for the main screens of the application. 
+//Utilizing tab-based navigation here. https://reactnavigation.org/docs/tab-based-navigation
 const SaveTuba = () => {
   return (
     <>
@@ -89,7 +90,7 @@ export class Main extends Component {
   }
 
 
-  render() {
+  render() { //render() is depreciated. Will be removed in the future https://react.dev/reference/react-dom/render
     
     // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
     // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
@@ -109,10 +110,12 @@ export class Main extends Component {
     //   console.log("Main.js >> currentUser undefined");
     // }
 
+
+    //NOTE: ActivityIndicator component is a loading icon. https://reactnative.dev/docs/activityindicator
     while (this.props.currentUser == undefined) {
       return (
         <View style={[styles.container, styles.horizontal]}>
-          <ActivityIndicator size="large" color="#00ff00" />
+          <ActivityIndicator size="large" color="#00ff00" /> 
         </View>
       );
     }

@@ -38,6 +38,9 @@ import { Provider } from "react-redux";
 
 // const store = configureStore({reducer: rootReducer, middleware: applyMiddleware(thunk)});
 
+//Platform import to detect and log current iOS/Android version
+import {Platform} from 'react-native';
+
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +69,9 @@ export default function App() {
   if (!balsamiqSansLoaded || !scadaLoaded) {
     return null;
   }
+
+  //detecting and logging iOS/Android version information
+  console.log("Current Phone:", Platform.OS, Platform.Version); //NOTE: Android will return API version, NOT OS version. Please refer to https://en.wikipedia.org/wiki/Android_version_history#Overview for correct version mapping.
 
   return (
     <>

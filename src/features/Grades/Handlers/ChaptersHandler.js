@@ -22,7 +22,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
   const [gradeNumber, setGradeNumber] = useState(null);
 
 
-  const { level } = route.params; // Level selected from Lesson navigation screen
+  const { level } = route.params; // Level selected from Lesson navigation screen. Level prop is defined in HomeScreen.js
   const navigation = useNavigation();
 
   const imageMap = useSelector(state => state.imageMap.imageData);
