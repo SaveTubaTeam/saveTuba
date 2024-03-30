@@ -219,7 +219,7 @@ function IndividualLessonHandler({
         >
           {() => (
             <ReorderHandler
-              data={
+              info={
                 lessonCompMap.get("Reorder")
               }
               navigation={navigation}

@@ -21,10 +21,10 @@ async function getGradeData(grade) {
         console.log("Error with getCacheObj in getGradeData: ", error);
     });
 
-    if (result != null) {
+    /*if (result != null) {
         console.log("Pulling grades from cache");
         return result;
-    } else {
+    } else {*/
         console.log("Pulling grades from DB");
         // Creating the list of chapters
         const chapterList = [];
@@ -39,7 +39,7 @@ async function getGradeData(grade) {
             });
         await setCache("grades", chapterList);
         return chapterList; // This returns the array
-    }
+    //}
 }
 
 // This will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one 
@@ -63,10 +63,10 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         console.log("Error with getCacheObj in getLessonsData: ", error);
     });
 
-    if (result != null) {
+    /*if (result != null) {
         console.log("Pulling lessons from cache");
         return result;
-    } else {
+    } else {*/
         console.log("Pulling lessons from DB");
         // Use a map to more easily access correct minigames
         var lessons = [];
@@ -199,7 +199,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         console.log("L: ", lessons);
         await setCache("lessons", lessons);
         return lessons;
-    }
+    //}
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
