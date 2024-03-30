@@ -193,57 +193,68 @@
                 {
                     "text": "",
                     "dormant": "coral",
-                    "active": "#DB756B"
+                    "active": "#DB756B",
+                    "index": 0
                 },
                 {
                     "text": "",
                     "dormant": "pink",
-                    "active": "#ffacbb"
+                    "active": "#ffacbb",
+                    "index": 1
                 },
                 {
                     "text": "",
                     "dormant": "dodgerblue",
-                    "active": "#3873E0"
+                    "active": "#3873E0",
+                    "index": 2
                 },
                 {
                     "text": "",
                     "dormant": "#ffa500",
-                    "active": "#e59400"
+                    "active": "#e59400",
+                    "index": 3
                 },
                 {
                     "text": "",
                     "dormant": "#19a127",
-                    "active": "#169023"
+                    "active": "#169023",
+                    "index": 4
                 },
                 {
                     "text": "",
                     "dormant": "#d38f9f",
-                    "active": "#cd8193"
+                    "active": "#cd8193",
+                    "index": 5
                 },
                 {
                     "text": "",
                     "dormant": "#6e57d2",
-                    "active": "#634ebd"
+                    "active": "#634ebd",
+                    "index": 6
                 },
                 {
                     "text": "",
                     "dormant": "coral",
-                    "active": "#DB756B"
+                    "active": "#DB756B",
+                    "index": 7
                 },
                 {
                     "text": "",
                     "dormant": "pink",
-                    "active": "#ffacbb"
+                    "active": "#ffacbb",
+                    "index": 8
                 },
                 {
                     "text": "",
                     "dormant": "dodgerblue",
-                    "active": "#3873E0"
+                    "active": "#3873E0",
+                    "index": 9
                 },
                 {
                     "text": "",
                     "dormant": "#ffa500",
-                    "active": "#e59400"
+                    "active": "#e59400",
+                    "index": 10
                 }
                 ]
             },

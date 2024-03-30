@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   StyleSheet,
@@ -66,18 +66,43 @@ const Item = styled.TouchableOpacity`
   margin: 5px 0;
 `;
 
+//To whoever is reading this: I'm still learning React state so I'm just putting this function here but it should (probably) go elsewhere.
+//This shuffles the array so that it isn't in the same order upon each entry to Reorder.
+//Below is a Fisher-Yates-Durstenfeld shuffle. https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
+//There's probably a way to shuffle w/ one line of code lol
+function shuffle(sourceArray) {
+  for (var i = 0; i < sourceArray.length - 1; i++) {
+      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+      var temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+  }
+  return sourceArray;
+}
+
+//entry point
 const ReorderHandler = ({
   info,
   selectedGrade,
   selectedChapter,
   selectedLesson,
 }) => {
-  //console.log(info);
+  shuffle(info.data); //shuffling data (this shuffle only happens once upon initial render)
   const [data, setData] = useState(info.data);
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
+  const [score, setScore] = useState(0);
   const navigation = useNavigation();
+
+  //Modko is shorthand for ModalComponent. Here we render the modal upon minigame completion via "visible" state
   const Modko = () => {
+    /*console.log(score);
+    if(score == 7) {
+      console.log("CORRECT ORDER");
+    } else {
+      console.log("INCORRECT ORDER");
+    }*/ //NOTE: score is only updated after onPress().
     return (
       <Modal transparent animationType="slide" visible={visible}>
         <View
@@ -86,6 +111,7 @@ const ReorderHandler = ({
           <ModalContainer>
             <View>
               <BodyText size="subtitle">
+                Score: {`${score}\n`}
                 Your response was submitted! Good job ✨
               </BodyText>
             </View>
@@ -107,9 +133,12 @@ const ReorderHandler = ({
         </View>
       </Modal>
     );
-  };
+  }; //end of Modko
+
+  //@param item the item to be rendered. renderItem() is called iteratively in the DraggableFlatList
+  //@param drag triggers drag animation upon item press. please see DraggableFlatList documentation
+  //@param isActive is true during item press
   const renderItem = ({ item, drag, isActive }) => {
-    console.log(item.text);
     return (
       <>
         <ScaleDecorator>
@@ -129,19 +158,19 @@ const ReorderHandler = ({
   };
 
   //DraggableFlatlist is used to interactively order the list: https://www.npmjs.com/package/react-native-draggable-flatlist?activeTab=readme
-  //Dependent on two packages:
+  //Current version 4.0.0 heavily dependent on two packages:
   //react-native-reanimated
   //react-native-gesture-handler
-  console.log("\nCurrent List:")
+  console.log("\nCurrent List:" + data.map((item) => `\n${item.index} ${item.text}`)); //logging current order of list
   return (
     <>
       <Container>
         <DraggableFlatList
-          scrollEnabled={false} //if true - first item is not draggable
+          scrollEnabled={false}
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}
-          keyExtractor={(item) => item.active}
+          keyExtractor={(item) => item.index}
           renderItem={renderItem}
           ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
           ListHeaderComponent={
@@ -155,7 +184,18 @@ const ReorderHandler = ({
           }
           ListFooterComponentStyle={{ marginTop: 10 }}
           ListFooterComponent={
-            <SubmitButton onPress={() => setVisible(!visible)}>
+            <SubmitButton onPress={() => {
+                //iterating through list to check for correct order and update score. This logic should (probably) be put somewhere else for better readability.
+                for(let i=0; i<Object.keys(data).length; i++) {
+                  console.log("Index:", data[i].index, "Iteration i:", i);
+                  if(data[i].index == i) {
+                    setScore((prevScore) => prevScore + 1);
+                  }
+                }
+
+                //setting visibility of modal to true;
+                setVisible(!visible);
+                }}>
               <BodyText color="secondary" size="subtitle">
                 {t("common:submit")}
               </BodyText>
