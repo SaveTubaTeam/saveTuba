@@ -125,6 +125,10 @@ const ReorderHandler = ({
     );
   };
 
+  //DraggableFlatlist is used to interactively order the list: https://www.npmjs.com/package/react-native-draggable-flatlist?activeTab=readme
+  //Dependent on two packages:
+  //react-native-reanimated
+  //react-native-gesture-handler
   return (
     <>
       <Container>
