@@ -80,8 +80,8 @@ const Question = styled.View`
 `;
 
 //SecondScreen is rendered upon iterating through a maximum of four questions. 
-//This component SecondScreen is never called. Instead navigation directs us to LevelSystem.js
-const SecondScreen = ({ data, imageMap, score, prompt }) => {
+//navigation used to erroneously direct us to LevelSystem.js...
+const SecondScreen = ({ data, imageMap }) => {
   const navigation = useNavigation();
   // console.log("Second Screen ==> ", data);
   return (
@@ -89,7 +89,7 @@ const SecondScreen = ({ data, imageMap, score, prompt }) => {
       <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
         <Prompt>
           <TitleText>
-            {`Score: ${score} ${prompt}`}
+            {`Hello World`}
           </TitleText>
           <Spacer size="large" />
           <SubmitButton onPress={() => navigation.navigate("Lesson")}>
@@ -131,6 +131,7 @@ const Start = ({ data, imageMap }) => {
   const [fourthVisible, setFourthVisible] = useState("none");
 
   //ModalComponent returns answer Modal screen. Visibility of modal initially set to false.
+  //Currently implemented for a maximum of four questions.
   const ModalComponent = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
@@ -290,13 +291,15 @@ const Start = ({ data, imageMap }) => {
 const QuizHandler = ({ data, addAchievement, imageMap }) => {
   // console.log("Handler ==> ", data);
   addAchievement("first-quiz-minigame");
-  return (
+  return ( //defining the stack
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }} component={LevelSystem} /> {/*NOTE: Redirected to LevelSystem.js for final screen component*/}
+      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
+        {() => <SecondScreen data={data} imageMap={imageMap} />}
+      </Stack.Screen>
     </Stack.Navigator>
   );
 };
