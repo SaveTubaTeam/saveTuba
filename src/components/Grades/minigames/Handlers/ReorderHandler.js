@@ -72,6 +72,7 @@ const ReorderHandler = ({
   selectedChapter,
   selectedLesson,
 }) => {
+  //console.log(info);
   const [data, setData] = useState(info.data);
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
@@ -108,10 +109,12 @@ const ReorderHandler = ({
     );
   };
   const renderItem = ({ item, drag, isActive }) => {
+    console.log(item.text);
     return (
       <>
         <ScaleDecorator>
         <Item
+          activeOpacity={1}
           style={{ backgroundColor: isActive ? item.active : item.dormant }}
           onPressIn={drag}
           disabled={isActive}
@@ -129,6 +132,7 @@ const ReorderHandler = ({
   //Dependent on two packages:
   //react-native-reanimated
   //react-native-gesture-handler
+  console.log("\nCurrent List:")
   return (
     <>
       <Container>
@@ -137,7 +141,7 @@ const ReorderHandler = ({
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item) => item.active}
           renderItem={renderItem}
           ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
           ListHeaderComponent={

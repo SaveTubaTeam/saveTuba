@@ -42,7 +42,13 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 // const store = configureStore({reducer: rootReducer, middleware: applyMiddleware(thunk)});
 
 //Platform import to detect and log current iOS/Android version
-import {Platform} from 'react-native';
+import { Platform, UIManager } from 'react-native';
+
+//Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
+if (Platform.OS === 'android') {
+  UIManager.setLayoutAnimationEnabledExperimental &&
+    UIManager.setLayoutAnimationEnabledExperimental(true);
+}
 
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();

@@ -52,7 +52,7 @@
     "react-native-cache": "^2.0.3",
     "react-native-cli": "^2.0.1",
     "react-native-country-flag": "^1.1.6",
-    "react-native-draggable-flatlist": "^3.1.2",
+    "react-native-draggable-flatlist": "4.0.0",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "~2.9.0",
     "react-native-leaderboard": "^1.0.6",
