@@ -27,11 +27,11 @@ function IndividualLessonHandler({
   const { t } = useTranslation();
   const imageMap = useSelector(state => state.imageMap.imageData);
 
-  var lessonCompMap = new Map();
+  //iterating through lessonData array to set a map of the lesson minigames
+  let lessonCompMap = new Map();
   for (const minigame in lessonData.get("minigames")) {
     lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
   }
-
 
   return (
     <NavigationContainer independent>
@@ -219,7 +219,7 @@ function IndividualLessonHandler({
         >
           {() => (
             <ReorderHandler
-              data={
+              info={
                 lessonCompMap.get("Reorder")
               }
               navigation={navigation}

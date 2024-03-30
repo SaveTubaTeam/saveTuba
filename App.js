@@ -36,6 +36,9 @@ import MainScreen from "./src/components/Main";
 import { store } from "./redux/store/store";
 import { Provider } from "react-redux";
 
+//ReorderHandler import. Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
 // const store = configureStore({reducer: rootReducer, middleware: applyMiddleware(thunk)});
 
 //Platform import to detect and log current iOS/Android version
@@ -75,6 +78,7 @@ export default function App() {
 
   return (
     <>
+      <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           {/* Put provider here */}
@@ -105,6 +109,7 @@ export default function App() {
         </Provider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
+      </GestureHandlerRootView>
     </>
   );
 }

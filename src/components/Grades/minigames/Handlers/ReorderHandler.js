@@ -24,6 +24,8 @@ import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { Spacer } from "../../../spacer.component";
 
+import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
+
 const Container = styled.View`
   flex: 1;
   justify-content: center;
@@ -108,16 +110,17 @@ const ReorderHandler = ({
   const renderItem = ({ item, drag, isActive }) => {
     return (
       <>
+        <ScaleDecorator>
         <Item
           style={{ backgroundColor: isActive ? item.active : item.dormant }}
-          activeOpacity={1}
-          onLongPress={drag}
+          onPressIn={drag}
           disabled={isActive}
         >
           <BodyText color="secondary" size="subtitle">
             {item.text}
           </BodyText>
         </Item>
+        </ScaleDecorator>
       </>
     );
   };
