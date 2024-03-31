@@ -68,27 +68,29 @@ const Item = styled.TouchableOpacity`
 
 //To whoever is reading this: I'm still learning React state so I'm just putting this function here but it should (probably) go elsewhere.
 //This shuffles the array so that it isn't in the same order upon each entry to Reorder.
-//Below is a Fisher-Yates-Durstenfeld shuffle. https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
-//There's probably a way to shuffle w/ one line of code lol
+//Below is a modified Fisher-Yates-Durstenfeld shuffle. https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
 function shuffle(sourceArray) {
-  for (var i = 0; i < sourceArray.length - 1; i++) {
-      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
-
-      var temp = sourceArray[j];
+  let len = sourceArray.length - 1;
+  for (let i = 1; i < len; i++) {
+      let j = i + Math.floor(Math.random() * (sourceArray.length - i));
+      let temp = sourceArray[j];
       sourceArray[j] = sourceArray[i];
       sourceArray[i] = temp;
   }
   return sourceArray;
 }
 
-//entry point
+//DATA ENTRY POINT
 const ReorderHandler = ({
   info,
   selectedGrade,
   selectedChapter,
   selectedLesson,
 }) => {
+  
+  console.log("Data In: ", info.data);
   shuffle(info.data); //shuffling data (this shuffle only happens once upon initial render)
+
   const [data, setData] = useState(info.data);
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
@@ -170,7 +172,7 @@ const ReorderHandler = ({
           data={data}
           style={{ width: "90%" }}
           onDragEnd={({ data }) => setData(data)}
-          keyExtractor={(item) => item.index}
+          keyExtractor={(item) => item.index + 1} //fixed bug where a key w/ index zero would be undraggable.
           renderItem={renderItem}
           ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
           ListHeaderComponent={

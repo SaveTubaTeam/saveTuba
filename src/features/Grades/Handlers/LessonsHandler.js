@@ -89,6 +89,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
     );
   }
 
+  //Below is the lesson stack. We can currently hold 21 lessons.
   return (
     <NavigationContainer independent>
       <Stack.Navigator>
@@ -109,10 +110,10 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
 
         <Stack.Screen name="Lesson1" options={{ headerShown: false }}>
           {() => (
-            <IndividualLessonHandler
+            <IndividualLessonHandler //selectedLesson and selectedChapter props are passed to src/components/mastery-flex.component.js where they are not used lol
               lessonData={lessonsData[0]}
               selectedChapter={selectedChapter}
-              selectedLesson={1}
+              selectedLesson={0}
             />
           )}
         </Stack.Screen>
@@ -127,7 +128,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
             <IndividualLessonHandler
               lessonData={lessonsData[1]}
               selectedChapter={selectedChapter}
-              selectedLesson={2}
+              selectedLesson={1}
             />
           )}
         </Stack.Screen>
@@ -215,7 +216,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[7]}
               selectedChapter={selectedChapter}
               selectedLesson={7}
             />
@@ -230,7 +231,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[8]}
               selectedChapter={selectedChapter}
               selectedLesson={8}
             />
@@ -245,7 +246,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[9]}
               selectedChapter={selectedChapter}
               selectedLesson={9}
             />
@@ -260,7 +261,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[10]}
               selectedChapter={selectedChapter}
               selectedLesson={10}
             />
@@ -275,7 +276,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[11]}
               selectedChapter={selectedChapter}
               selectedLesson={11}
             />
@@ -290,7 +291,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[12]}
               selectedChapter={selectedChapter}
               selectedLesson={12}
             />
@@ -305,7 +306,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[13]}
               selectedChapter={selectedChapter}
               selectedLesson={13}
             />
@@ -320,7 +321,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[14]}
               selectedChapter={selectedChapter}
               selectedLesson={14}
             />
@@ -335,7 +336,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[15]}
               selectedChapter={selectedChapter}
               selectedLesson={15}
             />
@@ -350,7 +351,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[16]}
               selectedChapter={selectedChapter}
               selectedLesson={16}
             />
@@ -365,7 +366,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonata={lessonsData}
+              lessonata={lessonsData[17]}
               selectedChapter={selectedChapter}
               selectedLesson={17}
             />
@@ -380,7 +381,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[18]}
               selectedChapter={selectedChapter}
               selectedLesson={18}
             />
@@ -395,7 +396,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[19]}
               selectedChapter={selectedChapter}
               selectedLesson={19}
             />
@@ -410,7 +411,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[20]}
               selectedChapter={selectedChapter}
               selectedLesson={20}
             />
@@ -425,7 +426,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         >
           {() => (
             <IndividualLessonHandler
-              lessonData={lessonsData}
+              lessonData={lessonsData[21]}
               selectedChapter={selectedChapter}
               selectedLesson={21}
             />

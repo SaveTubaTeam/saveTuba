@@ -73,7 +73,7 @@ const MasteryHandler2 = ({
           <Image
             style={{
               aspectRatio: 1,
-              width: "40%",
+              width: "60%",
               height: undefined,
               marginTop: 20,
             }}
@@ -88,7 +88,7 @@ const MasteryHandler2 = ({
   return (
     <Container>
       <ImageBg
-        style={{ paddingTop: 20, paddingBottom: 20 }}
+        style={{ paddingTop: 20 }}
         source={{ uri: imageMap["assets/mountains.jpeg"] }}
         resizeMode="cover"
       >
@@ -99,7 +99,7 @@ const MasteryHandler2 = ({
               data.cards
             )
           }
-          style={{ width: "80%" }}
+          style={{ width: "90%" }}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
           renderItem={renderItem}
