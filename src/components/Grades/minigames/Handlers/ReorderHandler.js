@@ -66,20 +66,6 @@ const Item = styled.TouchableOpacity`
   margin: 5px 0;
 `;
 
-//To whoever is reading this: I'm still learning React state so I'm just putting this function here but it should (probably) go elsewhere.
-//This shuffles the array so that it isn't in the same order upon each entry to Reorder.
-//Below is a modified Fisher-Yates-Durstenfeld shuffle. https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
-function shuffle(sourceArray) {
-  let len = sourceArray.length - 1;
-  for (let i = 1; i < len; i++) {
-      let j = i + Math.floor(Math.random() * (sourceArray.length - i));
-      let temp = sourceArray[j];
-      sourceArray[j] = sourceArray[i];
-      sourceArray[i] = temp;
-  }
-  return sourceArray;
-}
-
 //DATA ENTRY POINT
 const ReorderHandler = ({
   info,
@@ -88,8 +74,8 @@ const ReorderHandler = ({
   selectedLesson,
 }) => {
   
-  console.log("Data In: ", info.data);
-  shuffle(info.data); //shuffling data (this shuffle only happens once upon initial render)
+  //console.log("Data In: ", info.data);
+  info.data.sort(function (a, b) {return Math.random() - 0.5;}); //shuffling data (this shuffle happens once upon initial render) https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
 
   const [data, setData] = useState(info.data);
   const { t } = useTranslation();
@@ -113,7 +99,7 @@ const ReorderHandler = ({
           <ModalContainer>
             <View>
               <BodyText size="subtitle">
-                Score: {`${score}\n`}
+                Score: {`${score}/${data.length}\n`}
                 Your response was submitted! Good job ✨
               </BodyText>
             </View>
@@ -160,10 +146,9 @@ const ReorderHandler = ({
   };
 
   //DraggableFlatlist is used to interactively order the list: https://www.npmjs.com/package/react-native-draggable-flatlist?activeTab=readme
-  //Current version 4.0.0 heavily dependent on two packages:
+  //Current version 4.0.0 heavily dependent on two packages: (package versions can be unit tested here: https://snack.expo.dev/@computerjazz/draggable-flatlist-examples)
   //react-native-reanimated
   //react-native-gesture-handler
-  console.log("\nCurrent List:" + data.map((item) => `\n${item.index} ${item.text}`)); //logging current order of list
   return (
     <>
       <Container>
@@ -171,8 +156,11 @@ const ReorderHandler = ({
           scrollEnabled={false}
           data={data}
           style={{ width: "90%" }}
-          onDragEnd={({ data }) => setData(data)}
-          keyExtractor={(item) => item.index + 1} //fixed bug where a key w/ index zero would be undraggable.
+          onDragEnd={({ data }) => {
+            setData(data);
+            console.log("\nCurrent List:" + data.map((item) => `\n${item.index} ${item.text}`)); //logging current order of list
+          }}
+          keyExtractor={(item) => item.index + 1} //fixed bug where any key set to 0 would be undraggable.
           renderItem={renderItem}
           ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
           ListHeaderComponent={
@@ -187,7 +175,7 @@ const ReorderHandler = ({
           ListFooterComponentStyle={{ marginTop: 10 }}
           ListFooterComponent={
             <SubmitButton onPress={() => {
-                //iterating through list to check for correct order and update score. This logic should (probably) be put somewhere else for better readability.
+                //iterating through list to check for correct order and update score.
                 for(let i=0; i<Object.keys(data).length; i++) {
                   console.log("Index:", data[i].index, "Iteration i:", i);
                   if(data[i].index == i) {
