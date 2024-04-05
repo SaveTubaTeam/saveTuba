@@ -11,6 +11,8 @@ import { getFirestore, ref, onValue } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 
+//This whole file needs to be scratched to fit new toolkit
+
 // COULD BE SOURCE OF ERRORS USE THE FIREBASE.FIRESTORE() THING PLEASE CHECK
 
 export function fetchUser() {
@@ -59,7 +61,7 @@ export function addExperienceToUser(exp, currentUser) {
         currentUser.currentScore = currentUser.currentScore + exp;
 
         var nextLevelXP = Math.ceil(
-          Math.pow((currentUser.level + 1.0) / 0.2, 2.1)
+          Math.pow((currentUser.level + 1.0) / 0.2, 2.1) //calculates a scaling factor for number of experience points needed until the next level
         );
         // console.log("CurrentUSerScore: " + currentUser.currentScore + "\nNextLevelXP: " + nextLevelXP );
         if (currentUser.currentScore >= nextLevelXP) {

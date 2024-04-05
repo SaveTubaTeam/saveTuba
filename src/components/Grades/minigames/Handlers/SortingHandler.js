@@ -62,6 +62,7 @@ const SubmitButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
+//SecondScreen is not called. Navigation takes us to LevelSystem.js
 const SecondScreen = ({ data, imageMap }) => {
   const navigation = useNavigation();
   console.log("==> ", imageMap);

@@ -168,7 +168,7 @@ const ReorderHandler = ({
               <TitleText size="subtitle">{info.prompt}</TitleText>
               <Spacer size="medium" />
               <TitleText size="caption">
-                Hint: Long press to drag the items.
+                Hint: Sort the items from top (first) to bottom (last).
               </TitleText>
             </Prompt>
           }

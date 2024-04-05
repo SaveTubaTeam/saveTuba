@@ -505,7 +505,7 @@ async function postData() {
             let data = { //grabbing metadata for each lesson
                 title: boilerplateLesson.title,
                 thumbnail: boilerplateLesson.thumbnail,
-                backgroundColor: backgroundColor[await Math.floor(Math.random()*backgroundColor.length)], //gets random background color from predefined array
+                backgroundColor: backgroundColor[Math.floor(Math.random()*backgroundColor.length)], //gets random background color from predefined array
                 navigation: lessonNumber
             };
 

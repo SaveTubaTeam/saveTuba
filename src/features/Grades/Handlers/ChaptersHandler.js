@@ -13,8 +13,7 @@ import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
-
-// @param route **This is the route that will be used to determine the lesson
+// @param route **This is the route that will be used to determine the lesson. The parameter is passed as a prop from HomeScreen.js
 // @param addAchievement **Relic from the past team, I did nothing with this and have no idea what it does
 function ChaptersHandler({ route, addAchievement }) { //add achievements
 
@@ -54,24 +53,24 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
         break;
       }
       case 3: {
-        console.log("Need to fill in when data is available");
+        console.log("Grade 4 route selected. Need to fill in when data is available");
         break;
       }
       case 4: {
-        console.log("Need to fill in when data is available");
+        console.log("Grade 5 route selected. Need to fill in when data is available");
         break;
       }
       default: {
         setGradeData(null);
         setGradeNumber(null);
+        console.log("No Selected Grade\n");
         break;
       }
     }
   }, []);
 
   if (gradeData == null) {
-    console.log("No Selected Grade\n");
-    return <View></View>;
+    console.log("gradeData is currently null");
   }
 
   addAchievement("first-time-opening-grade");

@@ -36,6 +36,7 @@ const Icon = styled.Image`
   top: -20px;
 `;
 
+//This component renders each chapter in a grade. gradeData is taken as a param from ChaptersHandler.js
 function ChaptersComponent({ gradeData, navigation, imageMap }) {
   const nav = useNavigation();
   const { t } = useTranslation();

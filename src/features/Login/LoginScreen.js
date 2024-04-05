@@ -29,6 +29,7 @@ const InputContainer = styled.View`
   width: 60%;
 `;
 
+//TODO: figure out why props are being passed into these styled components below. Where do the props go??
 const Input = styled.TextInput`
   font-family: ${(props) => props.theme.fonts.body};
   background-color: ${(props) => props.theme.colors.bg.tertiary};
