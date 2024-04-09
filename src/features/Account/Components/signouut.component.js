@@ -37,8 +37,8 @@ class SignOut extends Component {
             auth
                 .signOut()
                 .then(() => {
-                    navigation.navigate("Login");
-                    this.props.signOutUser();
+                    navigation.navigate("Login"); //navigating back to Login page in navigation stack
+                    this.props.signOutUser(); //this action resets the user store to an initial state of null
                 })
                 .catch((error) => alert(error.message));
         };

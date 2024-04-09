@@ -71,7 +71,7 @@ const LoginScreen = () => {
 
   useEffect(() => {
     dispatch(fetchImages());
-    // const language = i18n.language;
+    // const language = i18n.language; --> need to check this out. default is always ru, overriding redux pattern
     const language = "en";
     if (language === "en") { //English
       dispatch(setEnglish());

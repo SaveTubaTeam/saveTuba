@@ -290,7 +290,7 @@ const Start = ({ data, imageMap }) => {
 //Entry Point for logic.
 const QuizHandler = ({ data, addAchievement, imageMap }) => {
   // console.log("Handler ==> ", data);
-  addAchievement("first-quiz-minigame");
+  //addAchievement("first-quiz-minigame");
   return ( //defining the stack
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>

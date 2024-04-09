@@ -213,11 +213,8 @@ async function getLessonsData(grade, chpt, numLessons, language) {
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
-
 // @param folder **This is the folder directory that stores the image in the Firebase storage
-
 // @param imageMap **This is the empty map object that will be passed from the handlers
-
 // @return imageMap **The filled map object in the form <image path, image URL>
 async function createImageMap(folder, imageMap) {
     console.log("Pulling images from DB");
@@ -252,9 +249,7 @@ async function createImageMap(folder, imageMap) {
 }
 
 // This creates a list of all directory paths in the Firebase storage 
-
 // @param folder **Same as the above function, it is the directory storing the image
-
 // @param pathList **This is a list of paths, I needed to create this first as the paths were necessary for pulling images and there is no efficient way to do this that I found.
 async function createImageMapHelper(folder, pathList) {
     let result = await storage.child(folder).listAll();

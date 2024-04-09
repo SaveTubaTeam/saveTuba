@@ -25,7 +25,7 @@ class LevelSystem extends Component {
     const { score } = route.params;
     const XP_PER_POINT = 15;
 
-    this.props.addExperienceToUser(score * XP_PER_POINT, currentUser);
+    //this.props.addExperienceToUser(score, currentUser);
   }
 
   render() {

@@ -21,7 +21,8 @@ function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  const imageMap = useSelector(state => state.imageMap.imageData);
+  const imageMap = useSelector(state => state.imageMap.imageData); //selecting imageData from imageMap slice.
+
   // console.log("Home Page ==> ", imageMap);
   return ( // source={require("../../../assets/homebg.png")}
     <ImageBg resizeMode="cover" source={{ uri: imageMap["assets/homebg.png"] }}>

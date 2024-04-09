@@ -145,13 +145,13 @@ const Start = ({ data, imageMap }) => {
     );
   };
 
-  const renderCategories = ({ item }) => {
+  const renderCategories = ({ item }) => { //here the item is the entire sorting minigame document from the db
     return (
       <>
         <Category
           activeOpacity="0.8"
           onPress={() => {
-            if (item.name == currentAnswer) {
+            if (item.name == currentAnswer) { //accessing item's name field via item.name
               setCorrect(true);
               setScore(score + 1);
             } else {
@@ -161,7 +161,7 @@ const Start = ({ data, imageMap }) => {
           }}
         >
           {item.image ? (
-            <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100 }} />
+            <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100 }} /> //accessing uri via imageMap
           ) : (
             <BodyText size="subtitle">{item.name}</BodyText>
           )}

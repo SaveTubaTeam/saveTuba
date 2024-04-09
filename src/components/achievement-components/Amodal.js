@@ -14,6 +14,16 @@ import {
 } from "../../../redux/actions/index";
 import { BodyText } from "../body-text.component";
 
+//   04/09/24 --> As of the time of writing, pop-up achievement modals using the 2022 team's redux store logic never worked. It only ever causes state mutation errors.
+//I believe the original intention of this file was to write logic to render a pop-up modal whenever and whereever an achievement
+//is gained. If an achievement is gained, addAchievement() is called which updates the user-achievement store.
+//Then the updated store generates a re-render (presumably of the entire app??) which is why the Amodal component
+//wraps the ENTIRE SaveTuba component in Main.js. This logic is a) highly susceptible to bugs b) incompatible with modern redux toolkit patterns.
+//Thus we no longer use the old user store logic anywhere.
+
+
+//creating the modal component which will sit inside of the Amodal component, rendered visible
+//inside of Amodal iff achievementModal has property ['isOpen'].
 const Modko = ({ visible, achievementModal }) => {
   const dispatch = useDispatch();
   // const [classModal, setClassModal] = useState(false);
@@ -87,6 +97,7 @@ const Modko = ({ visible, achievementModal }) => {
   );
 };
 
+//main component for this file.
 const Amodal = ({ achievementModal, children }) => {
   const dispatch = useDispatch();
   const [visible, setVisible] = useState(false);

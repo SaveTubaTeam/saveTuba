@@ -73,7 +73,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
     console.log("gradeData is currently null");
   }
 
-  addAchievement("first-time-opening-grade");
+  //addAchievement("first-time-opening-grade");
 
   return (
     <NavigationContainer independent>

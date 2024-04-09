@@ -120,7 +120,7 @@ export class Main extends Component {
       );
     }
 
-    try {
+    /*try {
       if (
         this.props.achievements != null ||
         this.props.achievements["achievements"][0] == undefined
@@ -129,7 +129,7 @@ export class Main extends Component {
       }
     } catch (err) {
       console.log(err);
-    }
+    }*/
 
     // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
     // So, to have pop up modals that works with redux, i.e. using dispatch will allow the modal to appear was difficult when I started
