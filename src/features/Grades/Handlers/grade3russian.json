@@ -1677,7 +1677,7 @@
                                 "icon": "assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "assets/snapshots/nature-bg.jpg",
-                                "prompt": "Draw a picture of a local ecosystem near you. Analyze the picture, is it being contaminated by waste or pollution?"
+                                "prompt": "Нарисуйте картину местной экосистемы поблизости от вас. Проанализируйте изображение: находится ли она под воздействием отходов или загрязнений?"
                             },
                             {
                                 "navigation": "Image Boom",
@@ -1688,8 +1688,8 @@
                                     "numberOfPrompts": 1,
                                     "prompts": [
                                         {
-                                            "text": "A habitat is where an animal lives. What is your habitat? List some things that you have in your home that you use everyday, how many of these things do you throw away daily?",
-                                            "placeholder": "On a daily basis, I throw away...",
+                                            "text": "Место обитания - это то, где живет животное. Каков ваше место обитания? Перечислите несколько вещей, которые вы используете каждый день дома, сколько из них вы выбрасываете ежедневно?",
+                                            "placeholder": "Ежедневно я выбрасываю...",
                                             "image": "assets/openresponse/innovation.png"
                                         }
                                     ]
@@ -1702,43 +1702,43 @@
                                 "imageBg": "assets/nat.jpg",
                                 "content": [
                                     {
-                                        "prompt": "The way that animals live in their habitat through changing themselves is called?",
+                                        "prompt": "Способ, которым животные приспосабливаются к своему месту обитания путем изменения себя, называется?",
                                         "answers": [
                                             {
-                                                "text": "Adaption"
+                                                "text": "Адаптация"
                                             },
                                             {
-                                                "text": "Adoption"
+                                                "text": "Трансформация"
                                             },
                                             {
-                                                "text": "Adhering"
+                                                "text": "Модификация"
                                             },
                                             {
-                                                "text": "Abomination"
+                                                "text": "Приспособление"
                                             }
                                         ],
-                                        "answer": "Adaptation"
+                                        "answer": "Адаптация"
                                     },
                                     {
-                                        "prompt": "What is the meaning of an ecosystem?",
+                                        "prompt": "Что означает экосистема?",
                                         "answers": [
                                             {
-                                                "text": "Only the plants living in their habitat"
+                                                "text": "Только растения, живущие в своем месте обитания"
                                             },
                                             {
-                                                "text": "Only animals living in their habitat"
+                                                "text": "Только животные, живущие в своем месте обитания"
                                             },
                                             {
-                                                "text": "All the living organisms and their habitat"
+                                                "text": "Все живые организмы и их место обитания"
                                             },
                                             {
-                                                "text": "Only referring to the habitat"
+                                                "text": "Только ссылка на место обитания"
                                             }
                                         ],
-                                        "answer": "All the living organisms and their habitat"
+                                        "answer": "Все живые организмы и их место обитания"
                                     },
                                     {
-                                        "prompt": "Правда или ложь: All habitats are important and help the environment regulate itself?",
+                                        "prompt": "Правда или ложь: Все места обитания важны и помогают окружающей среде саморегулироваться.",
                                         "answers": [
                                             {
                                                 "text": "Правда"
@@ -1750,22 +1750,22 @@
                                         "answer": "Правда"
                                     },
                                     {
-                                        "prompt": "What happens if there is a loss of habitats?",
+                                        "prompt": "Потеря мест обитания может иметь серьезные последствия как для окружающей среды, так и для её обитателей.",
                                         "answers": [
                                             {
-                                                "text": "Nothing, everything will stay the same"
+                                                "text": "Ничего не поменяется."
                                             },
                                             {
-                                                "text": "There will be a loss of animals"
+                                                "text": "Будет потеря животных."
                                             },
                                             {
-                                                "text": "A new habitat will form"
+                                                "text": "Сформируется новое место обитания."
                                             }
                                         ],
-                                        "answer": "There will be a loss of animals"
+                                        "answer": "Будет потеря животных."
                                     },
                                     {
-                                        "prompt": "Правда или ложь: One of the main causes for habitat loss is due to human activities?",
+                                        "prompt": "Правда или ложь: Является ли одной из основных причин потери мест обитания человеческая деятельность?",
                                         "answers": [
                                             {
                                                 "text": "Правда"
@@ -1783,41 +1783,41 @@
                                 "icon": "assets/recycle-bin.png",
                                 "backgroundColor": "coral",
                                 "content": {
-                                    "prompt": "Match the word to the definition using pictures",
+                                    "prompt": "Сопоставьте слово с определением с использованием изображений",
                                     "num": 3,
                                     "imageBg": "assets/farm.jpeg",
                                     "categories": [
                                         {
-                                            "name": "Soil, ground, & air"
+                                            "name": "Почва, земля и воздух"
                                         },
                                         {
-                                            "name": "Aquatic"
+                                            "name": "Водный"
                                         }
                                     ],
                                     "options": [
                                         {
                                             "title": "Fish",
-                                            "name": "Aquatic"
+                                            "name": "водный"
                                         },
                                         {
                                             "title": "Birds",
-                                            "name": "Soil, ground, & air"
+                                            "name": "Почва, земля и воздух"
                                         },
                                         {
                                             "title": "Reptiles",
-                                            "name": "Soil, ground, & air"
+                                            "name": "Почва, земля и воздух"
                                         },
                                         {
                                             "title": "Whales",
-                                            "name": "Aquatic"
+                                            "name": "водный"
                                         },
                                         {
                                             "title": "Earthworms",
-                                            "name": "Soil, ground, & air"
+                                            "name": "Почва, земля и воздух"
                                         },
                                         {
                                             "title": "Mites",
-                                            "name": "Soil, ground, & air"
+                                            "name": "Почва, земля и воздух"
                                         }
                                     ]
                                 }
@@ -2497,7 +2497,7 @@
                                 "icon": "assets/camera.png",
                                 "backgroundColor": "#FFD972",
                                 "backgroundimage": "assets/snapshots/nature-bg.jpg",
-                                "prompt": "Take a picture of an item that humans cannot digest but certain animals can."
+                                "prompt": "Сфотографируйте предмет, который человек не может переварить, но определенные животные могут."
                             },
                             {
                                 "navigation": "QuizScreen",
