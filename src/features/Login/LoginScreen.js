@@ -62,6 +62,9 @@ const ButtonOutLine = styled.TouchableOpacity`
   align-items: center;
   `;
 
+//Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
+
+
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
@@ -69,10 +72,11 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  //fetching images, setting global language
   useEffect(() => {
     dispatch(fetchImages());
     // const language = i18n.language; --> need to check this out. default is always ru, overriding redux pattern
-    const language = "en";
+    const language = "en"; //need a selector
     if (language === "en") { //English
       dispatch(setEnglish());
       console.log("set language to en");
@@ -84,21 +88,19 @@ const LoginScreen = () => {
       console.log("set language to kk");
     }
 
-    if (auth.currentUser) {
+    if (auth.currentUser) { //currentUser is either null or filled. Null is treated as a falsy.
+      console.log(auth.currentUser);
       navigation.replace("HomePage");
-
-
     }
+
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
+      if (user) { //evaluates to true if user is signed in.
         navigation.replace("HomePage");
-
-
       }
     });
 
     return unsubscribe;
-  }, []);
+  }, []); //end of useEffect(), renders only once.
 
   // const imageMap = useSelector(state => state.imageMap.imageData);
   // console.log("Image Map 1: ", imageMap);
@@ -112,6 +114,7 @@ const LoginScreen = () => {
   //     .catch((error) => alert(error.message));
   // };
 
+  //should be changed to signInWithPhoneNumber()
   const handleLogin = () => {
     auth
       .signInWithEmailAndPassword("tester@gmail.com", "test123") // changed from email, password
@@ -120,9 +123,6 @@ const LoginScreen = () => {
         console.log("Logged in with:", user.email);
       })
       .catch((error) => alert(error.message));
-
-
-
   };
 
 
