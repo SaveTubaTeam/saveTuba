@@ -14,7 +14,7 @@ import {
 } from "../../../redux/actions/index";
 import { BodyText } from "../body-text.component";
 
-//   04/09/24 --> As of the time of writing, pop-up achievement modals using the 2022 team's redux store logic never worked. It only ever causes state mutation errors.
+//   04/09/24 --> As of the time of writing, pop-up achievement modals using the 2022 team's redux store logic never worked.
 //I believe the original intention of this file was to write logic to render a pop-up modal whenever and whereever an achievement
 //is gained. If an achievement is gained, addAchievement() is called which updates the user-achievement store.
 //Then the updated store generates a re-render (presumably of the entire app??) which is why the Amodal component

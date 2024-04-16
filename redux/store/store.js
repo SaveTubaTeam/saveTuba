@@ -16,6 +16,7 @@ const rootReducer = combineReducers({
     languageSelector: languageSlice,
 });
 
+//configureStore() automatically adds thunk middleware via RTK toolkit
 export const store = configureStore({
     reducer: rootReducer
     

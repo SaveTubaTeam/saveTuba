@@ -4,13 +4,12 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
+import { Alert } from 'react-native';
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";
 import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
-
-
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -29,7 +28,6 @@ const InputContainer = styled.View`
   width: 60%;
 `;
 
-//TODO: figure out why props are being passed into these styled components below. Where do the props go??
 const Input = styled.TextInput`
   font-family: ${(props) => props.theme.fonts.body};
   background-color: ${(props) => props.theme.colors.bg.tertiary};
@@ -69,7 +67,7 @@ const LoginScreen = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
-  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
 
   //fetching images, setting global language
@@ -87,20 +85,21 @@ const LoginScreen = () => {
       dispatch(setKazakh());
       console.log("set language to kk");
     }
-
-    if (auth.currentUser) { //currentUser is either null or filled. Null is treated as a falsy.
+    /*if (auth.currentUser) { //currentUser is either null or filled. Null is treated as a falsy.
       console.log(auth.currentUser);
       navigation.replace("HomePage");
-    }
+    }*/
 
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) { //evaluates to true if user is signed in.
+    //we set an observer on the auth object via onAuthStateChanged()
+    const login = auth.onAuthStateChanged((user) => {
+      if (user) { //evaluates to true if user is signed in (not null or undefined)
+        console.log("Login successful. Pushing to HomePage");
         navigation.replace("HomePage");
       }
     });
 
-    return unsubscribe;
-  }, []); //end of useEffect(), renders only once.
+    return login;
+  }, []); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
   // const imageMap = useSelector(state => state.imageMap.imageData);
   // console.log("Image Map 1: ", imageMap);
@@ -114,15 +113,24 @@ const LoginScreen = () => {
   //     .catch((error) => alert(error.message));
   // };
 
-  //should be changed to signInWithPhoneNumber()
-  const handleLogin = () => {
-    auth
-      .signInWithEmailAndPassword("tester@gmail.com", "test123") // changed from email, password
+  //signInWithEmailAndPassword does not perform authorization. We append @x.x to the filtered phone number to sign in w/o auth and w/o the need for area code information (easier for school kids to sign in)
+  //Solution taken from here: https://stackoverflow.com/questions/37467492/how-to-provide-user-login-with-a-username-and-not-an-email
+  const handleLogin = async () => {
+    const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
+    const phone = cleanedPhoneNumber + '@x.x';
+
+    await auth
+      .signInWithEmailAndPassword("tester@gmail.com", "test123")
       .then((userCredentials) => {
-        const user = userCredentials.user;
+        const user = userCredentials.user; //referring to userCredentials properties
         console.log("Logged in with:", user.email);
+
+        //should dispatch user to store
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        Alert.alert("Invalid Login", "Hint:\nPhone numbers should be formatted: +7 8005550175");
+        console.log("Error: ", error.message);
+      });
   };
 
 
@@ -132,10 +140,10 @@ const LoginScreen = () => {
       <ImageBg source={require("../../../assets/loginBackground.png")}>
         <InputContainer>
           <Input
-            placeholder={t("common:email")} //Email
+            placeholder={t("common:email")} //Email changed to phone number
             placeholderTextColor="#696969"
-            value={email}
-            onChangeText={(text) => setEmail(text)} // Need to change for production
+            value={phoneNumber}
+            onChangeText={(text) => setPhoneNumber(text)} // Need to change for production
             autoCapitalize="none"
           />
           <Input
@@ -188,6 +196,6 @@ const LoginScreen = () => {
     </Container>
     // </SafeArea> // safe area is not needed because we want the background to go to the border
   );
-};
+}; //end of LoginScreen
 
 export default LoginScreen;

@@ -112,11 +112,11 @@ export class Register extends Component {
       .doc(classCode)
       .get()
       .then((snapshot) => {
-        if (snapshot.exists) {
-          classroom = snapshot.data()["students"];
+        if (snapshot.exists) { //if there is a matching classCode
+          classroom = snapshot.data()["students"]; //is classroom a variable??
           auth
             .createUserWithEmailAndPassword(email, password) // Creates the user
-            .then((result) => {
+            .then((result) => { //auth.currentUser now exists if account creation passes
               setDoc(doc(db, "users", auth.currentUser.uid), {
                 email,
                 first_name: firstName,
@@ -137,7 +137,7 @@ export class Register extends Component {
               });
 
               // setting sign up badge to true
-              setDoc(doc(db, "user-achievements", auth.currentUser.uid), {
+              setDoc(doc(db, "user-achievements", auth.currentUser.uid), { //sets achievements
                 achievements: achievements,
               });
 

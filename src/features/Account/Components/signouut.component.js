@@ -35,9 +35,11 @@ class SignOut extends Component {
 
         const handleSignOut = () => {
             auth
-                .signOut()
+                .signOut() //firebase auth api
                 .then(() => {
                     navigation.navigate("Login"); //navigating back to Login page in navigation stack
+
+                    //needs to be changed to rtk
                     this.props.signOutUser(); //this action resets the user store to an initial state of null
                 })
                 .catch((error) => alert(error.message));

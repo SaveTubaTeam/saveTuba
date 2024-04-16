@@ -134,11 +134,13 @@ export class Main extends Component {
     // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
     // So, to have pop up modals that works with redux, i.e. using dispatch will allow the modal to appear was difficult when I started
     // My solution was to create a "modal" that would contain the entire application within it and show the modal screen. I forget the videos I followed but based off other peoples solutions
+
+    //Update 4/13/24: Commented out Amodal global wrapper. User achievements should be implemented in a more functional way.
     return (
       <>
-        <Amodal >
+        {/* <Amodal > */}
           <SaveTuba />
-        </Amodal>
+        {/* </Amodal> */}
       </>
     );
   }
