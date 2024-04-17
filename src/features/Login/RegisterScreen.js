@@ -68,8 +68,8 @@ const InputContainer = styled.View`
   align-self: center;
 `;
 
-//Design pattern: userSlice state (redux) is NOT set in RegisterScreen. We only ever set user state via
-//dispatch(fetchUser()) which happens once in LoginScreen.js and nowhere else.
+//Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
+//dispatch(fetchUser()) which happens once in LoginScreen.js and nowhere else to minimize redundancy.
 const RegisterScreen = () => {
     const navigation = useNavigation();
     const { t } = useTranslation();
@@ -80,8 +80,8 @@ const RegisterScreen = () => {
     const [classCode, setClassCode] = useState("");
 
 
-    //registerUser creates a new user only if a valid class code already exists within firebase.
-    //triggered by signUp button's onPress.
+    //registerUser creates a new user only if a valid class code already exists within firebase's "classrooms" collection.
+    //Function is triggered by signUp button's onPress.
     //we also check for a phone number with length of 10 digits.
     const registerUser = async() => {
         const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
@@ -109,7 +109,7 @@ const RegisterScreen = () => {
     //2) add the user's phone number to the specified classCode's classrooms collection in firebase
     const createUser = async(cleanedPhoneNumber) => {
         const phone = cleanedPhoneNumber + '@x.x'; //see LoginScreen's handleLogin() for explanation
-        await auth.createUserWithEmailAndPassword(phone, password)
+        await auth.createUserWithEmailAndPassword(phone, password) //creating user (the variable "phone" is formatted like an email address)
             .then((userCredential) => { //successfully signed in
                 const user = userCredential.user;
 
@@ -126,7 +126,7 @@ const RegisterScreen = () => {
             })
             .catch((error) => { //firebase createUser failed
                 console.log("Error Code: ", error.code, "| Message: ", error.message);
-                Alert.alert("Invalid Registration", "Please try again");
+                Alert.alert("Invalid Registration", "Please try again. Make sure your password is longer than 6 characters.");
             });
     }
 
@@ -135,7 +135,7 @@ const RegisterScreen = () => {
         //1) setting user within the "users" doc
         await setDoc(doc(db, "users", cleanedPhoneNumber), {
             //setting user metadata
-            phoneNumber: phoneNumber,
+            phoneNumber: cleanedPhoneNumber,
             firstName: firstName,
             lastName: lastName,
             classCode: classCode
@@ -145,6 +145,13 @@ const RegisterScreen = () => {
         await updateDoc(doc(db, "classrooms", classCode), {
             students: arrayUnion(cleanedPhoneNumber)
         });
+
+        //resetting registration form state for sanity
+        setPhoneNumber("");
+        setPassword("");
+        setFirstName("");
+        setLastName("");
+        setClassCode("");
     } 
     //end of registerUser methods
 

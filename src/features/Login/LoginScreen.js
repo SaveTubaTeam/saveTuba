@@ -62,7 +62,6 @@ const ButtonOutLine = styled.TouchableOpacity`
 
 //Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
 
-
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
@@ -91,9 +90,17 @@ const LoginScreen = () => {
     }*/
 
     //we set an observer on the auth object via onAuthStateChanged()
-    const login = auth.onAuthStateChanged((user) => {
+    const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()
       if (user) { //evaluates to true if user is signed in (not null or undefined)
-        console.log("Login successful. Pushing to HomePage");
+        console.log("auth.currentUser.email:", auth.currentUser.email);
+
+        //should dispatch user to store here
+
+        //resetting login form state for sanity
+        setPhoneNumber("");
+        setPassword("");
+
+        console.log("Login successful. Pushing to HomePage!");
         navigation.replace("HomePage");
       }
     });
@@ -113,7 +120,8 @@ const LoginScreen = () => {
   //     .catch((error) => alert(error.message));
   // };
 
-  //signInWithEmailAndPassword does not perform authorization. We append @x.x to the filtered phone number to sign in w/o auth and w/o the need for area code information (easier for school kids to sign in)
+  //signInWithEmailAndPassword does not perform authorization. We append @x.x to the filtered phone number to sign in w/o phone number auth
+  //but still provide a unique "key" for each user.
   //Solution taken from here: https://stackoverflow.com/questions/37467492/how-to-provide-user-login-with-a-username-and-not-an-email
   const handleLogin = async () => {
     const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
@@ -121,14 +129,12 @@ const LoginScreen = () => {
 
     await auth
       .signInWithEmailAndPassword("tester@gmail.com", "test123")
-      .then((userCredentials) => {
-        const user = userCredentials.user; //referring to userCredentials properties
+      .then((userCredentials) => { //successfully signed in
+        const user = userCredentials.user; //referring to userCredentials (auth object) properties
         console.log("Logged in with:", user.email);
-
-        //should dispatch user to store
       })
       .catch((error) => {
-        Alert.alert("Invalid Login", "Hint:\nPhone numbers should be formatted: +7 8005550175");
+        Alert.alert("Invalid Login", "Hint - Phone numbers should be formatted:\n+7 8005550175");
         console.log("Error: ", error.message);
       });
   };
@@ -158,7 +164,6 @@ const LoginScreen = () => {
 
         <ButtonContainer>
           <Button onPress={() => {
-
             handleLogin();
           }}>
             <TitleText color="secondary" size="body">

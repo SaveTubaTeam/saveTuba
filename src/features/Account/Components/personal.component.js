@@ -85,7 +85,7 @@ export function PersonalCard(props) {
           </Row>
         </Spacer>
 
-        <TitleText size="subtitle">{currentUser?.email}</TitleText>
+        <TitleText size="subtitle">{"hello world"}</TitleText>
       </AvatarContainer>
     </Card>
   );

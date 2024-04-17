@@ -37,6 +37,7 @@ const Container = styled.View`
   align-items: center;
 `;
 
+//I believe this wrapper renders only once. Only the components within the Container are rerendered... may be wrong
 function AccountScreen() {
 
   const { i18n } = useTranslation();
@@ -44,6 +45,7 @@ function AccountScreen() {
   console.log("Code: ", selectedLanguageCode);
 
   const navigation = useNavigation();
+  console.log("Current User:", currentUser);
   const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
 
     if (selectedLanguageCode === "kk") {
