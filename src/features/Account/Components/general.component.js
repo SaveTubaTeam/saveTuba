@@ -36,6 +36,7 @@ const AvatarContainer = styled.View`
 
 const Row = styled.View`
   flex-direction: row;
+  align-items: center;
 `;
 
 const styles = StyleSheet.create({
@@ -98,6 +99,7 @@ export const GeneralCard = () => {
           <TitleText size="subtitle">{t("common:general")}</TitleText>
         </Spacer>
 
+        {/* Select Language */}
         <Selector />
 
         <Spacer position="bottom" size="large" />

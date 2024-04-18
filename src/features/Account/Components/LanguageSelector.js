@@ -9,15 +9,15 @@ import {
 } from "react-native";
 import { useTranslation } from "react-i18next";
 import CountryFlag from "react-native-country-flag";
-import styled from "styled-components/native";
+//import styled from "styled-components/native";
 
 import { BodyText } from "../../../components/body-text.component";
 import { useDispatch } from "react-redux";
-import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
+//import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
 
-const Row = styled.View`
+/* const Row = styled.View`
   flex-direction: row;
-`;
+`; */
 
 const Flag = ({ source }) => {
   return (
@@ -40,11 +40,13 @@ const LANGUAGES = [
 ];
 
 const Selector = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(); //useTranslation() docs: https://react.i18next.com/latest/usetranslation-hook
   const selectedLanguageCode = i18n.language;
 
-  const setLanguage = (code) => {
-    return i18n.changeLanguage(code);
+  const setLanguage = async(languageCode) => {
+    await i18n.changeLanguage(languageCode);
+
+    //IMLocalize.js (imported in App.js) acts as an event listener for changeLanguage(), caching the new language code under 'user-language'
   };
 
   return (
@@ -54,6 +56,8 @@ const Selector = () => {
           {t("common:languageSelector")}
         </BodyText>
       </View>
+      {/* Here we iterate through the three possible language codes, and map each code onto its own TouchableOpacity component.
+      language.code refers to either "en", "kk", or "ru", and language.label refers to the code's respective image component. */}
       {LANGUAGES.map((language) => {
         const selectedLanguage = language.code === selectedLanguageCode;
 

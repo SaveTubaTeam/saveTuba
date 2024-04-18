@@ -35,7 +35,7 @@ export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => 
         await setCache("images", map);
         return map;
     }else{
-        console.log("Pulling images from cache");
+        console.log("imageSlice.js: Pulling images from cache");
         return result;
     }
 }); //end of fetchImages thunk

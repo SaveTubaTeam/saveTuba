@@ -4,6 +4,7 @@ const initialState = {
     language: "na"
 };
 
+//useless slice?
 const languageSlice = createSlice({
     name: 'languageSelector',
     initialState,

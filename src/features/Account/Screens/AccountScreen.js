@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 import { useDispatch } from "react-redux";
 import React from "react";
 
-import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
+//import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
 import { SafeArea } from "../../../components/safe-area.component";
 import { PersonalCard } from "../Components/personal.component";
 import { GeneralCard } from "../Components/general.component";
@@ -39,15 +39,18 @@ const Container = styled.View`
 
 //I believe this wrapper renders only once. Only the components within the Container are rerendered... may be wrong
 function AccountScreen() {
+  console.log("AccountScreen.js rerendered");
 
   const { i18n } = useTranslation();
-  const selectedLanguageCode = i18n.language;
-  console.log("Code: ", selectedLanguageCode);
+  const selectedLanguageCode = i18n.language; //getting current language from i18n
+  //console.log("Code: ", selectedLanguageCode);
 
   const navigation = useNavigation();
-  console.log("Current User:", currentUser);
+  //console.log("Current User:", currentUser);
   const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
 
+  /*
+    //not functional
     if (selectedLanguageCode === "kk") {
       useDispatch(setKazakh());
     } else if (selectedLanguageCode === "ru") {
@@ -55,7 +58,7 @@ function AccountScreen() {
     } else if (selectedLanguageCode === "en") {
       useDispatch(setEnglish());
     }
-
+  */
   // const handleSignOut = () => {
   //   auth
   //     .signOut()
@@ -68,13 +71,14 @@ function AccountScreen() {
     <SafeArea>
       <ScrollView>
         <Container>
+          {/* profile card */}
           <PersonalCard currentUser={currentUser} />
 
           <Spacer size="large" />
-
+          {/* GeneralCard contains LanguageSelector, toggles for SFX & Reminders, Help & About*/}
           <GeneralCard />
-          <SignOut navigation={navigation} />
 
+          <SignOut navigation={navigation} />
 
         </Container>
       </ScrollView>

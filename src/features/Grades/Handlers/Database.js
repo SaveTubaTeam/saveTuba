@@ -17,7 +17,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // getting a pointer that will take me to the next level. That is why there are so many functions in this file.
 
 // @param grade **This is just the grade that you are querying for
-
 // @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
 
@@ -547,7 +546,7 @@ async function getCacheObject(key) {
     // console.log("in getCacheObj");
     try {
         const jsonValue = await AsyncStorage.getItem(key);
-        console.log(key, " value retrieved from cache");
+        console.log(`getCacheObject: getting "${key}" from cache`);
         console.log("all keys:", await AsyncStorage.getAllKeys());
         return jsonValue != null ? JSON.parse(jsonValue) : null;
     } catch (e) {
@@ -562,6 +561,7 @@ async function setCache(key, value) {
         const jsonValue = JSON.stringify(value);
         //console.log("Setting Cache --> Value: ", jsonValue, " Key: ", key);
         await AsyncStorage.setItem(key, jsonValue);
+        console.log(`setCache: "${key}" set to value of "${value}"`);
     } catch (e) {
         console.log("Error with storeData: ", e);
         // saving error

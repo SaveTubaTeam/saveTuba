@@ -28,7 +28,9 @@ const styles = StyleSheet.create({
 const Stack = createNativeStackNavigator();
 
 function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter }) {
-  const language = useSelector(state => state.languageSelector.language);
+  //const language = useSelector(state => state.languageSelector.language); //should just be using i18n w/ top-level context
+  const language = "en";
+  //after we get, lessonsData is either undefined or the array of lessons to be accessed by its respective IndividualLessonHandler
   const [lessonsData, setLessonsData] = useState(null);
   const navigation = useNavigation();
 
@@ -89,7 +91,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
     );
   }
 
-  //Below is the lesson stack. We can currently hold 21 lessons.
+  //Below is the lesson stack. We can currently hold up to 21 lessons.
   return (
     <NavigationContainer independent>
       <Stack.Navigator>

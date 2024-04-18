@@ -20,7 +20,7 @@ import {
 
 // Translation imports
 import { useTranslation } from "react-i18next";
-import "./src/components/Translations/IMLocalize";
+import "./src/components/Translations/IMLocalize"; //gets either cached language or phone's locale language
 
 // navigation stuff - temporarily will be in App.js
 import { NavigationContainer, TabActions } from "@react-navigation/native";

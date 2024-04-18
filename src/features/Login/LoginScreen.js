@@ -73,7 +73,7 @@ const LoginScreen = () => {
   useEffect(() => {
     dispatch(fetchImages());
     // const language = i18n.language; --> need to check this out. default is always ru, overriding redux pattern
-    const language = "en"; //need a selector
+    /*const language = "en"; //Faulty logic
     if (language === "en") { //English
       dispatch(setEnglish());
       console.log("set language to en");
@@ -83,7 +83,7 @@ const LoginScreen = () => {
     } else if (language === "kk") { //Kazakh
       dispatch(setKazakh());
       console.log("set language to kk");
-    }
+    }*/
     /*if (auth.currentUser) { //currentUser is either null or filled. Null is treated as a falsy.
       console.log(auth.currentUser);
       navigation.replace("HomePage");
@@ -103,9 +103,9 @@ const LoginScreen = () => {
         console.log("Login successful. Pushing to HomePage!");
         navigation.replace("HomePage");
       }
-    });
+    }); //end of login function
 
-    return login;
+    return login; //this line prevents login from being called more than once
   }, []); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
   // const imageMap = useSelector(state => state.imageMap.imageData);
