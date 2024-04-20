@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { Alert } from 'react-native';
@@ -41,7 +41,6 @@ const Input = styled.TextInput`
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
   color: green;
-  textdecorationcolor: green;
 `;
 
 const ImageBg = styled.ImageBackground`
@@ -69,11 +68,12 @@ const InputContainer = styled.View`
 `;
 
 //Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
-//dispatch(fetchUser()) which happens once in LoginScreen.js and nowhere else to minimize redundancy.
+//dispatch(fetchUser()) which happens upon login and nowhere else to minimize redundancy.
 const RegisterScreen = () => {
     const navigation = useNavigation();
     const { t } = useTranslation();
     const [phoneNumber, setPhoneNumber] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -82,80 +82,70 @@ const RegisterScreen = () => {
 
     //registerUser creates a new user only if a valid class code already exists within firebase's "classrooms" collection.
     //Function is triggered by signUp button's onPress.
-    //we also check for a phone number with length of 10 digits.
     const registerUser = async() => {
-        const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
+      await db.collection("classrooms").doc(classCode).get()
+        .then((snapshot) => { //checking if classCode exists
+          if(snapshot.exists) { 
 
-        if(cleanedPhoneNumber.length != 11) { //checking for phoneNumber length
-            Alert.alert("Invalid Phone Number", "Please format as follows: +7 8005550175")
+              createUser(); //see below
 
-        } else { //phoneNumber is of correct length
-            await db.collection("classrooms").doc(classCode).get()
-                .then((snapshot) => { //checking if classCode exists
-                    if(snapshot.exists) { 
-
-                        createUser(cleanedPhoneNumber); //see below
-
-                    } else {//classCode does not exist
-                        Alert.alert("Invalid ClassCode", "Please contact support.");
-                    }
-                });
-        }
+          } else {//classCode does not exist
+              Alert.alert("Invalid class code");
+          }
+        });
     }
 
-    //documentation for createUserWithEmailAndPassword: https://firebase.google.com/docs/auth/web/password-auth
-    //New users are identified by their "cleaned" phone number. if we successfully sign in, we 
+    //createUserWithEmailAndPassword: https://firebase.google.com/docs/auth/web/password-auth
+    //if we successfully sign in, we 
     //1) add the user (and initial user metadata) to our user list
-    //2) add the user's phone number to the specified classCode's classrooms collection in firebase
-    const createUser = async(cleanedPhoneNumber) => {
-        const phone = cleanedPhoneNumber + '@x.x'; //see LoginScreen's handleLogin() for explanation
-        await auth.createUserWithEmailAndPassword(phone, password) //creating user (the variable "phone" is formatted like an email address)
-            .then((userCredential) => { //successfully signed in
-                const user = userCredential.user;
+    //2) add the user's email to the specified classCode's classrooms collection in firebase
+    const createUser = async() => {
+      await auth.createUserWithEmailAndPassword(email, password) //creating user
+        .then((userCredential) => { //successfully signed in
+          const user = userCredential.user;
+          postUser(); //see below
 
-                postUser(cleanedPhoneNumber); //see below
-
-                //alert popup, OK button pushes user to Login screen. https://reactnative.dev/docs/alert
-                Alert.alert(`Welcome, ${firstName} ${lastName}!`, 
-                            `Your account has been successfully created!\nPhone Number: ${phone}`,
-                            [{text: 'OK', onPress: () => {
-                                console.log('OK Pressed. Pushing to Login screen');
-                                navigation.navigate("Login");
-                            }}]);
-
-            })
-            .catch((error) => { //firebase createUser failed
-                console.log("Error Code: ", error.code, "| Message: ", error.message);
-                Alert.alert("Invalid Registration", "Please try again. Make sure your password is longer than 6 characters.");
-            });
+          //alert popup, OK button pushes user to Login screen. https://reactnative.dev/docs/alert
+          Alert.alert(`Welcome, ${firstName} ${lastName}!`, 
+                      `Your account has been successfully created.`,
+                      [{text: 'OK', onPress: () => {
+                          console.log('OK Pressed. Pushing to Login screen');
+                          navigation.navigate("Login");
+                      }}]);
+        })
+        .catch((error) => { //firebase createUser failed
+            console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
+            Alert.alert("Invalid Registration", "Make sure your password is longer than 6 characters.");
+        });
     }
 
     //posting user to "users" and "classrooms" collection
-    const postUser = async(cleanedPhoneNumber) => {
-        //1) setting user within the "users" doc
-        await setDoc(doc(db, "users", cleanedPhoneNumber), {
-            //setting user metadata
-            phoneNumber: cleanedPhoneNumber,
-            firstName: firstName,
-            lastName: lastName,
-            classCode: classCode
-        });
-
-        //2) adding student's phoneNumber to the specified class within the "classrooms" doc
-        await updateDoc(doc(db, "classrooms", classCode), {
-            students: arrayUnion(cleanedPhoneNumber)
-        });
-
-        //resetting registration form state for sanity
-        setPhoneNumber("");
-        setPassword("");
-        setFirstName("");
-        setLastName("");
-        setClassCode("");
+    const postUser = async() => {
+      //1) setting user within the "users" doc
+      //const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //regex removing all non-digit chars
+      await setDoc(doc(db, "users", email), {
+        //setting user metadata
+        //phoneNumber: cleanedPhoneNumber,
+        email: email,
+        firstName: firstName,
+        lastName: lastName,
+        classCode: classCode,
+        experiencePoints: 0
+      });
+      //2) adding student's email to the specified class within the "classrooms" doc
+      await updateDoc(doc(db, "classrooms", classCode), {
+          students: arrayUnion(email)
+      });
+      //resetting registration form for sanity
+      //setPhoneNumber("");
+      setEmail("");
+      setPassword("");
+      setFirstName("");
+      setLastName("");
+      setClassCode("");
     } 
     //end of registerUser methods
 
-    //rendering components
     return (
         <Container behavior="padding">
           <ImageBg source={require("../../../assets/homepagebackground.png")}>
@@ -165,38 +155,45 @@ const RegisterScreen = () => {
             </TitleText>
   
             <InputContainer>
-              <Input
-                placeholder={t("common:email")}
-                onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
+              {/* <Input
+                placeholder={"Phone Number"}
+                onChangeText={(text) => setPhoneNumber(text)}
                 placeholderTextColor="#696969"
                 value={phoneNumber}
+                autoCapitalize="none"
+              /> */}
+              <Input
+                placeholder={t("common:email")}
+                onChangeText={(text) => setEmail(text)}
+                placeholderTextColor="#696969"
+                value={email}
                 autoCapitalize="none"
               />
               <Input
                 placeholder={t("common:password")}
                 secureTextEntry={true}
-                onChangeText={(password) => setPassword(password)}
+                onChangeText={(text) => setPassword(text)}
                 placeholderTextColor="#696969"
                 value={password}
                 autoCapitalize="none"
               />
               <Input
                 placeholder={t("common:firstname")}
-                onChangeText={(firstName) => setFirstName(firstName)}
+                onChangeText={(text) => setFirstName(text)}
                 placeholderTextColor="#696969"
                 value={firstName}
                 autoCapitalize="none"
               />
               <Input
                 placeholder={t("common:lastname")}
-                onChangeText={(lastName) => setLastName(lastName)}
+                onChangeText={(text) => setLastName(text)}
                 placeholderTextColor="#696969"
                 value={lastName}
                 autoCapitalize="none"
               />
               <Input
                 placeholder={t("common:classcode")}
-                onChangeText={(classCode) => setClassCode(classCode)}
+                onChangeText={(text) => setClassCode(text)}
                 placeholderTextColor="#696969"
                 value={classCode}
                 autoCapitalize="none"
@@ -205,14 +202,14 @@ const RegisterScreen = () => {
   
             <ButtonContainer>
               <Button
-                onPress={() => { registerUser() }}
+                onPress={() => { 
+                  registerUser();
+                }}
               >
                 <TitleText color="secondary" size="body">
                   {t("common:signup")}
                 </TitleText>
               </Button>
-            </ButtonContainer>
-
             {/* NOTE: Teacher Registration is now handled on the teacher interface web application only. */}
             {/* <ButtonContainer>
               <Button
@@ -225,11 +222,9 @@ const RegisterScreen = () => {
                 </TitleText>
               </Button>
             </ButtonContainer> */}
-  
-            <ButtonContainer>
               <BackButton
                 onPress={() => {
-                  navigation.navigate("Login");
+                  navigation.navigate("LoginEmail");
                 }}
               >
                 <TitleText color="primary" size="body">
@@ -237,6 +232,7 @@ const RegisterScreen = () => {
                 </TitleText>
               </BackButton>
             </ButtonContainer>
+
           </ImageBg>
         </Container>
       );

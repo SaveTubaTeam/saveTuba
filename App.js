@@ -27,8 +27,10 @@ import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Different Screens thus far
-import LoginScreen from "./src/features/Login/LoginScreen";
+import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
+import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"
 import Register from "./src/features/Login/Register";
+import RegisterScreen from "./src/features/Login/RegisterScreen";
 import RegisterTeacher from "./src/features/Login/RegisterTeacher";
 import MainScreen from "./src/components/Main";
 
@@ -90,20 +92,20 @@ export default function App() {
           {/* Put provider here */}
           <NavigationContainer>
             <Stack.Navigator>
+              {/* <Stack.Screen
+                options={{ headerShown: false }}
+                name="LoginPhone"
+                component={LoginScreenPhone}
+              /> */}
               <Stack.Screen
                 options={{ headerShown: false }}
-                name="Login"
-                component={LoginScreen}
+                name="LoginEmail"
+                component={LoginScreenEmail}
               />
               <Stack.Screen
                 options={{ headerShown: false }}
                 name="Register"
-                component={Register}
-              />
-              <Stack.Screen
-                options={{ headerShown: false }}
-                name="RegisterTeacher"
-                component={RegisterTeacher}
+                component={RegisterScreen}
               />
               <Stack.Screen
                 options={{ headerShown: false }}

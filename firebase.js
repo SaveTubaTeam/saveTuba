@@ -29,6 +29,7 @@ if (firebase.apps.length === 0) {
   app = firebase.app();
 }
 
+//currently using compat instead of modular Firebase Web APK: https://firebase.google.com/docs/web/modular-upgrade
 const db = firebase.firestore();
 const auth = firebase.auth();
 const storage = firebase.storage().ref();

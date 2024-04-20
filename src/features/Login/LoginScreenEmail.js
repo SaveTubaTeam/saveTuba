@@ -62,15 +62,16 @@ const ButtonOutLine = styled.TouchableOpacity`
 
 //Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
 
-const LoginScreen = () => {
+const LoginScreenEmail = () => {
   const dispatch = useDispatch();
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //fetching images, setting global language
+  //fetching images
   useEffect(() => {
+    console.log("inside LoginScreenEmail.js")
     dispatch(fetchImages());
     // const language = i18n.language; --> need to check this out. default is always ru, overriding redux pattern
     /*const language = "en"; //Faulty logic
@@ -97,7 +98,7 @@ const LoginScreen = () => {
         //should dispatch user to store here
 
         //resetting login form state for sanity
-        setPhoneNumber("");
+        setEmail("");
         setPassword("");
 
         console.log("Login successful. Pushing to HomePage!");
@@ -120,12 +121,10 @@ const LoginScreen = () => {
   //     .catch((error) => alert(error.message));
   // };
 
-  //signInWithEmailAndPassword does not perform authorization. We append @x.x to the filtered phone number to sign in w/o phone number auth
-  //but still provide a unique "key" for each user.
-  //Solution taken from here: https://stackoverflow.com/questions/37467492/how-to-provide-user-login-with-a-username-and-not-an-email
+  //TODO: remove tester
   const handleLogin = async () => {
-    const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
-    const phone = cleanedPhoneNumber + '@x.x';
+    /* const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
+    const phone = cleanedPhoneNumber + '@x.x'; */
 
     await auth
       .signInWithEmailAndPassword("tester@gmail.com", "test123")
@@ -139,6 +138,17 @@ const LoginScreen = () => {
       });
   };
 
+  const continueAsGuest = async() => {
+    await auth
+      .signInWithEmailAndPassword("tester@gmail.com", "test123")
+      .then((userCredentials) => {
+        const user = userCredentials.user;
+        console.log("Logged in with:", user.email);
+      }).catch(() => {
+        console.log("Error with Guest in LoginScreen");
+      })
+  }
+
 
   return (
     // <SafeArea>
@@ -148,8 +158,8 @@ const LoginScreen = () => {
           <Input
             placeholder={t("common:email")} //Email changed to phone number
             placeholderTextColor="#696969"
-            value={phoneNumber}
-            onChangeText={(text) => setPhoneNumber(text)} // Need to change for production
+            value={email}
+            onChangeText={(text) => setEmail(text)} // Need to change for production
             autoCapitalize="none"
           />
           <Input
@@ -171,11 +181,26 @@ const LoginScreen = () => {
             </TitleText>
           </Button>
 
+          {/* <ButtonOutLine onPress={() => navigation.push("LoginPhone")}>
+            <TitleText color="primary" size="body">
+              Phone Number Login
+            </TitleText>
+          </ButtonOutLine> */}
+
           <ButtonOutLine onPress={() => navigation.push("Register")}>
             <TitleText color="primary" size="body">
               {t("common:signup")}
             </TitleText>
           </ButtonOutLine>
+
+          {/* Guest Login */}
+          <Button onPress={() => {
+            continueAsGuest();
+          }}>
+            <TitleText color="secondary" size="body">
+              Continue as Guest
+            </TitleText>
+          </Button>
 
           {/* This posted the data that was pulled from the post method above */}
           {/* <Button onPress={postData}>
@@ -203,4 +228,4 @@ const LoginScreen = () => {
   );
 }; //end of LoginScreen
 
-export default LoginScreen;
+export default LoginScreenEmail;

@@ -25,6 +25,8 @@ const colorVariant = {
   secondary: "#ffffff",
   tertiary: "#C6DC3B",
   quaternary: "#fff8e7",
+  error: "#932216",
+  dark: "#212725"
 };
 
 const alignVariant = {

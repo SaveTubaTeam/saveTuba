@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { connect } from "react-redux";
-
+import { useTranslation } from "react-i18next";
 
 
 import IndividualLessonHandler from "./IndividualLessonHandler";
@@ -28,7 +28,10 @@ const styles = StyleSheet.create({
 const Stack = createNativeStackNavigator();
 
 function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter }) {
-  //const language = useSelector(state => state.languageSelector.language); //should just be using i18n w/ top-level context
+  //const language = useSelector(state => state.languageSelector.language); //should just be using i18n.language
+  /* const { i18n } = useTranslation();
+  const selectedLanguageCode = i18n.language; */
+
   const language = "en";
   //after we get, lessonsData is either undefined or the array of lessons to be accessed by its respective IndividualLessonHandler
   const [lessonsData, setLessonsData] = useState(null);

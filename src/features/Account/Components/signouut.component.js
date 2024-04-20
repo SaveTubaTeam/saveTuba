@@ -37,7 +37,7 @@ class SignOut extends Component {
             auth
                 .signOut() //firebase auth api
                 .then(() => { //successful signout
-                    navigation.navigate("Login"); //navigating back to Login page in navigation stack
+                    navigation.navigate("LoginEmail"); //navigating back to Login page in navigation stack
 
                     //Design Decision: we do NOT reset the user state after signOut() because it is unnecessary. 
                     //There is no way to log back in with the current user state unless you go through Login again, which sets the user state properly.
