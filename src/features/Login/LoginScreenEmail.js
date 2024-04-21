@@ -4,12 +4,14 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
-import { Alert } from 'react-native';
+import { Alert, Text } from 'react-native';
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";
 import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import SelectorLogin from "./LanguageSelectorLogin";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -59,6 +61,13 @@ const ButtonOutLine = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   align-items: center;
   `;
+
+  const BottomContainer = styled.View`
+  position: absolute;
+  bottom: 40;
+  width: 60%;
+  padding-horizontal: ${(props) => props.theme.space[3]};
+`;
 
 //Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
 
@@ -138,6 +147,7 @@ const LoginScreenEmail = () => {
       });
   };
 
+  //we sign in with the savetuba account for Guest
   const continueAsGuest = async() => {
     await auth
       .signInWithEmailAndPassword("tester@gmail.com", "test123")
@@ -147,6 +157,19 @@ const LoginScreenEmail = () => {
       }).catch(() => {
         console.log("Error with Guest in LoginScreen");
       })
+  }
+
+  //sending a password reset email: https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
+  const sendPasswordReset = async() => {
+    auth.languageCode = i18n.language; //setting current language code to localize email
+    console.log("language code for password reset email:", i18n.language)
+
+    await auth.sendPasswordResetEmail(email)
+        .then(() => {//password reset email sent successfully
+            Alert.alert("Password Reset Email Sent", "An email with instructions to reset your password has been sent to your inbox.");
+        }).catch((error) => {
+            Alert.alert("Error", "Please enter a valid email address");
+        })
   }
 
 
@@ -193,14 +216,17 @@ const LoginScreenEmail = () => {
             </TitleText>
           </ButtonOutLine>
 
-          {/* Guest Login */}
-          <Button onPress={() => {
-            continueAsGuest();
-          }}>
-            <TitleText color="secondary" size="body">
-              Continue as Guest
+          {/* Forgot Password link */}
+          <TouchableOpacity onPress= {() => {
+                console.log("Forgot Password button pressed");
+                sendPasswordReset();
+                }} style={{alignItems: 'center'}}>
+          <Text style={{textDecorationLine: 'underline'}}>
+            <TitleText color="secondary" size="button">
+              Forgot Password
             </TitleText>
-          </Button>
+            </Text>
+            </TouchableOpacity>
 
           {/* This posted the data that was pulled from the post method above */}
           {/* <Button onPress={postData}>
@@ -220,8 +246,19 @@ const LoginScreenEmail = () => {
               Post Boilerplate
             </TitleText>
         </Button>*/}
-
         </ButtonContainer>
+
+        <BottomContainer>
+        {/* LanguageSelector */}
+        <SelectorLogin />
+
+          {/* Guest Login */}
+          <ButtonOutLine onPress={() => continueAsGuest()} style={{marginTop: 10}}>
+            <TitleText color="primary" size="body">
+              Continue as Guest
+            </TitleText>
+          </ButtonOutLine>
+          </BottomContainer>
       </ImageBg>
     </Container>
     // </SafeArea> // safe area is not needed because we want the background to go to the border

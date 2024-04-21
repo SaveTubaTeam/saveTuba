@@ -10,6 +10,7 @@ import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch } from "react-redux";
 import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
+import SelectorLogin from "./LanguageSelectorLogin";
 
 const ImageBg = styled.ImageBackground`
   flex: 1;
@@ -59,6 +60,13 @@ const ButtonOutLine = styled.TouchableOpacity`
   border-radius: ${(props) => props.theme.sizes[2]};
   align-items: center;
   `;
+
+  const BottomContainer = styled.View`
+  position: absolute;
+  bottom: 40;
+  width: 60%;
+  padding-horizontal: ${(props) => props.theme.space[3]};
+`;
 
 //Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
 
@@ -196,15 +204,6 @@ const LoginScreenPhone = () => {
             </TitleText>
           </ButtonOutLine>
 
-          {/* Guest Login */}
-          <Button onPress={() => {
-            continueAsGuest();
-          }}>
-            <TitleText color="secondary" size="body">
-              Continue as Guest
-            </TitleText>
-          </Button>
-
           {/* This posted the data that was pulled from the post method above */}
           {/* <Button onPress={postData}>
             <TitleText color="secondary" size="body">
@@ -225,6 +224,19 @@ const LoginScreenPhone = () => {
         </Button>*/}
 
         </ButtonContainer>
+
+        <BottomContainer>
+          {/* LanguageSelector */}
+        <SelectorLogin />
+
+          {/* Guest Login */}
+          <ButtonOutLine onPress={() => continueAsGuest()} style={{marginTop: 10}}>
+            <TitleText color="primary" size="body">
+              Continue as Guest
+            </TitleText>
+          </ButtonOutLine>
+          </BottomContainer>
+
       </ImageBg>
     </Container>
     // </SafeArea> // safe area is not needed because we want the background to go to the border
