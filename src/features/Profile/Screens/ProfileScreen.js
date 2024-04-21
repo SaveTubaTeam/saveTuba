@@ -40,15 +40,7 @@ const ImageBg = styled.ImageBackground`
   align-items: center;
 `;
 
-function ProfileScreen({
-  currentUser,
-  store,
-  achievements,
-  fetchAchievements,
-  addAchievement,
-  closeAchievementModal,
-  achievementModal
-}) {
+function ProfileScreen() {
   const navigation = useNavigation();
   const dispatch = useDispatch();
 

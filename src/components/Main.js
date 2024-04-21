@@ -3,6 +3,7 @@ import { ActivityIndicator, StyleSheet, View } from "react-native";
 // Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { auth } from "../../firebase";
 
 // Different Screens thus far
 import HomeScreen from "../features/Home/HomeScreen";
@@ -50,7 +51,7 @@ const SaveTuba = () => {
         <Tab.Screen
           name="Profile"
           component={ProfileScreen}
-          store={store}
+          /* store={store} */
           options={{
             title: "",
             tabBarIcon: ({ color }) => (
@@ -83,15 +84,12 @@ const SaveTuba = () => {
   );
 };
 
-export class Main extends Component {
-  componentDidMount() {
+const Main = () => {
+  /* componentDidMount() {
     this.props.fetchUser();
     this.props.fetchAchievements();
-  }
+  } */
 
-
-  render() {
-    
     // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
     // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
     // if (this.props.currentUser != undefined) {
@@ -112,7 +110,7 @@ export class Main extends Component {
 
 
     //NOTE: ActivityIndicator component is a loading icon. https://reactnative.dev/docs/activityindicator
-    while (this.props.currentUser == undefined) {
+    while (auth.currentUser == undefined) {
       return (
         <View style={[styles.container, styles.horizontal]}>
           <ActivityIndicator size="large" color="#00ff00" /> 
@@ -143,8 +141,8 @@ export class Main extends Component {
         {/* </Amodal> */}
       </>
     );
-  }
-}
+  }//end of Main component
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -160,21 +158,19 @@ const styles = StyleSheet.create({
 // Boilerplate code going to be used everywhere
 // This is for loading in data from the local storage into the function, class, or components
 // Look at Redux folder at the index.js to understand more
-const mapStateToProps = (state) => ({
+/* const mapStateToProps = (state) => ({
   currentUser: state.userState.currentUser,
   achievements: state.userAchievements.achievements,
   achievementModal: state.modals.achievementModal,
   // imageMap: state.imageMap.,
-});
+}); */
 
 // // Boilerplate code also going to be used everywhere
 // // Similar to props, but instead allows you to use functions for Redux folder
-const mapDispatchToProps = (dispatch) =>
+/* const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     { fetchUser, fetchAchievements, addAchievement, },
     dispatch
-  );
+  ); */
 
-// Boilerplate code, if you want to use the local storage (Redux), than this needs to be the export statement of the component.
-// If you don't need the data or functions than just write null in their places below.
-export default connect(mapStateToProps, mapDispatchToProps)(Main);
+export default Main;

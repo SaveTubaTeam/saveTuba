@@ -3,7 +3,7 @@ import { auth } from "../../firebase";
 import { getDoc } from "firebase/firestore";
 
 const initialState = {
-    user: {}
+    userData: {}
 }
 
 //thunk fetchUser() is called after successful firebase api sign-in. We've already checked that the object is not null within LoginScreen.js.
@@ -29,13 +29,14 @@ const userSlice = createSlice({
     initialState: initialState,
     reducers: {
         signOutUser(state, action) {
-            state.user = {}; //RTK Immer handles state mutation
+            state.userData = {}; //RTK Immer handles state mutation
+            console.log("signOutUser dispatched to userSlice")
         }
     },
     extraReducers(builder) { //I'm not checking for fetchUser() failure here but it might be a nice failsafe check.
         builder.addCase(fetchUser.fulfilled, (state, action) => {
             console.log("fetchUsers status: fulfilled");
-            state.user = action.payload; //Immer replaces the existing state completely with whatever we return, which in our case is an object containing the user metadata.
+            state.userData = action.payload; //Immer replaces the existing state completely with whatever we return, which in our case is an object containing the user metadata.
         })
     }
 });
@@ -46,4 +47,4 @@ export default userSlice.reducer //exports all reducers from const usersSlice
 
 //writing a small selector function for the user state within userSlice. 
 //The purpose of this is to define a reusable selector function which does not need to be changed even when changing data formats in the reducer.
-export const selectCurrentUser = state => state.user.user;
+export const selectCurrentUser = state => state.user.userData;
