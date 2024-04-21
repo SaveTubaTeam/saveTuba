@@ -131,9 +131,9 @@ const MasteryHandler2 = ({
     </Container>
   );
 };
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(MasteryHandler2);
+export default MasteryHandler2;

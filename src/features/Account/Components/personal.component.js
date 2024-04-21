@@ -26,15 +26,15 @@ const Row = styled.View`
   align-items: center;
 `;
 
-//This is important!
-export function PersonalCard(props) {
+
+const PersonalCard = ({currentUser}) => {
   const { t } = useTranslation();
 
   const navigation = useNavigation();
-  const { currentUser } = props;
+  //const { currentUser } = props;
 
-  const [photo, setPhoto] = useState(null);
-
+  //const [photo, setPhoto] = useState(null);
+/* 
   const getProfilePicture = async (currentUser) => {
     console.log("in profile pic");
     const photoUri = await getCacheObject( "user",
@@ -47,30 +47,21 @@ export function PersonalCard(props) {
     React.useCallback(() => {
       getProfilePicture(currentUser);
     }, [currentUser])
-  );
+  ); */
 
   return (
     <Card>
       <AvatarContainer>
         <Spacer position="bottom" size="large">
           <Row>
-            {!photo && (
               <Avatar.Icon
                 size={180}
                 icon="head"
                 backgroundColor={theme.colors.ui.tertiary}
               />
-            )}
-            {photo && (
-              <Avatar.Image
-                size={180}
-                source={{ uri: photo }}
-                backgroundColor="#2182BD"
-              />
-            )}
 
             <TouchableOpacity
-              onPress={() => navigation.navigate("CameraScreen")}
+              //onPress={() => navigation.navigate("CameraScreen")}
             >
               {/* This will need to also be a feature in the firebase - language */}
               <FontAwesomeIcon
@@ -90,3 +81,5 @@ export function PersonalCard(props) {
     </Card>
   );
 }
+
+export default PersonalCard;

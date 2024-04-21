@@ -127,10 +127,11 @@ const Start = ({ data, imageMap }) => {
                   setCount(count + 1);
                 } else {
                   setVisible(!visible);
+
+                  //passing param props to LevelSystem
                   navigation.navigate("SecondScreen", {
                     score: score,
                     prompt: "Good job on completing this sorting exercise.",
-                    num: data.num,
                   });
                 }
               }}
@@ -304,9 +305,9 @@ const TestImages = {
   lvl_2_les_2_img_4: "assets/wateringplant.jpg",
 };
 
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(SortingHandler);
+export default SortingHandler;

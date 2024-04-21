@@ -102,7 +102,7 @@ const LoginScreenEmail = () => {
     //we set an observer on the auth object via onAuthStateChanged()
     const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()
       if (user) { //evaluates to true if user is signed in (not null or undefined)
-        console.log("auth.currentUser.email:", auth.currentUser.email);
+        console.log("auth.currentUser.email:", auth.currentUser.email); //**refers to the fb auth object and not our redux store
 
         //should dispatch user to store here
 

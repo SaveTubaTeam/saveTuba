@@ -159,9 +159,9 @@ const ImageBg = styled.ImageBackground`
   height: 100%;
 `;
 
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(HomeScreen);
+export default HomeScreen;

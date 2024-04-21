@@ -90,7 +90,7 @@ export class Main extends Component {
   }
 
 
-  render() { //render() is depreciated. Will be removed in the future https://react.dev/reference/react-dom/render
+  render() {
     
     // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
     // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.

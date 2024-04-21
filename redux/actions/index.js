@@ -12,7 +12,6 @@ import { auth, db } from "../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 
 //This whole file needs to be scratched to fit new toolkit
-//nothing here is written using async await lmao
 
 //   04/09/24 --> All of the below functions have been "unplugged" from the rest of the app, meaning that they
 //are no longer utilized/called anywhere.

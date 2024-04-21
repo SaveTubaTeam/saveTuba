@@ -194,9 +194,9 @@ const OpenResponseHandler = ({ questionSet, imageMap }) => {
     </View>
   );
 };
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(OpenResponseHandler);
+export default OpenResponseHandler;

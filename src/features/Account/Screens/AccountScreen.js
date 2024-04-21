@@ -7,7 +7,7 @@ import React from "react";
 
 //import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
 import { SafeArea } from "../../../components/safe-area.component";
-import { PersonalCard } from "../Components/personal.component";
+import PersonalCard from "../Components/personal.component";
 import { GeneralCard } from "../Components/general.component";
 import { Spacer } from "../../../components/spacer.component";
 import SignOut from "../Components/signouut.component";
@@ -39,7 +39,7 @@ const Container = styled.View`
 
 //I believe this wrapper renders only once. Only the components within the Container are rerendered... may be wrong
 function AccountScreen() {
-  console.log("AccountScreen.js rerendered");
+  //console.log("AccountScreen.js rerendered");
 
   const { i18n } = useTranslation();
   const selectedLanguageCode = i18n.language; //getting current language from i18n
@@ -47,7 +47,7 @@ function AccountScreen() {
 
   const navigation = useNavigation();
   //console.log("Current User:", currentUser);
-  const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
+  //const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
 
   /*
     //not functional
@@ -72,7 +72,7 @@ function AccountScreen() {
       <ScrollView>
         <Container>
           {/* profile card */}
-          <PersonalCard currentUser={currentUser} />
+          <PersonalCard currentUser={"placeholder"} />
 
           <Spacer size="large" />
           {/* GeneralCard contains LanguageSelector, toggles for SFX & Reminders, Help & About*/}
@@ -85,9 +85,9 @@ function AccountScreen() {
     </SafeArea>
   );
 }
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(AccountScreen);
+export default AccountScreen;

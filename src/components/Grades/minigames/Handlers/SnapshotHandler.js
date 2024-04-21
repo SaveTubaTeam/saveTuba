@@ -110,9 +110,9 @@ const SnapshotHandler = ({
     </>
   );
 };
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(SnapshotHandler);
+export default SnapshotHandler;

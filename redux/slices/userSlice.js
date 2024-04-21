@@ -1,24 +1,24 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { auth } from "../../../firebase";
+import { auth } from "../../firebase";
 import { getDoc } from "firebase/firestore";
 
 const initialState = {
-    user: null
+    user: {}
 }
 
 //thunk fetchUser() is called after successful firebase api sign-in. We've already checked that the object is not null within LoginScreen.js.
 //We then fetch the user who matches auth.currentUser.email from the firestore database
-//and populate initialState. (remember that auth.currentUser.email is actually a phone number with '@x.x' appended to the end lol)
+//and populate initialState with the user's metadata.
 export const fetchUser = createAsyncThunk("userSlice/fetchUser", async() => {
     //auth refers to the current firebase.auth object
-    const phoneNumber = auth.currentUser.email.replace('@x.x', ''); //removing '@x.x' to get the cleaned phone number
+    const email = auth.currentUser.email;
 
-    //matching user within "users" collection via phone number
-    const userFound = await getDoc(db, "users", phoneNumber); //getting a match
+    //matching user within "users" collection via email
+    const userFound = await getDoc(db, "users", email); //getting a match
     if(userFound.exists()) {
         console.log("User found:", userFound.data()); //data() returns an object w/ the user's metadata
         return userFound.data();
-    } else { //user was not found; document is undefined. This logic should be unreachable...
+    } else { //user was not found; document is undefined.
         console.log("User not found after calling fetchUser().");
     }
 })
@@ -27,7 +27,11 @@ export const fetchUser = createAsyncThunk("userSlice/fetchUser", async() => {
 const userSlice = createSlice({
     name: 'user',
     initialState: initialState,
-    reducers: {},
+    reducers: {
+        signOutUser(state, action) {
+            state.user = {}; //RTK Immer handles state mutation
+        }
+    },
     extraReducers(builder) { //I'm not checking for fetchUser() failure here but it might be a nice failsafe check.
         builder.addCase(fetchUser.fulfilled, (state, action) => {
             console.log("fetchUsers status: fulfilled");
@@ -35,6 +39,8 @@ const userSlice = createSlice({
         })
     }
 });
+
+export const { signOutUser } = userSlice.actions;
 
 export default userSlice.reducer //exports all reducers from const usersSlice
 

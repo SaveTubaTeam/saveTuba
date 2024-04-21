@@ -19,18 +19,9 @@ import { auth, db } from "../../../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 import { t } from "i18next";
 
-class LevelSystem extends Component {
-  componentDidMount() {
-    const { route, navigation, currentUser, dispatch } = this.props;
-    const { score } = route.params;
-    const XP_PER_POINT = 15;
-
-    //this.props.addExperienceToUser(score, currentUser);
-  }
-
-  render() {
-    const { route, navigation, currentUser, dispatch } = this.props;
-    const { score, prompt, num } = route.params;
+const LevelSystem = ({ route }) => {
+    //const { route, navigation, currentUser, dispatch } = this.props;
+    const { score, prompt } = route.params;
     const XP_PER_POINT = 15;
 
     // addExperienceToUser(45, currentUser);
@@ -65,12 +56,10 @@ class LevelSystem extends Component {
         </Container2>
       </SafeArea>
     );
-  }
 }
 
-
 //never called here.
-function LevelSystem_({ route, navigation, currentUser }) {
+/* function LevelSystem_({ route, navigation, currentUser }) {
   const { score } = route.params;
   const XP_PER_POINT = 45;
 
@@ -94,16 +83,16 @@ function LevelSystem_({ route, navigation, currentUser }) {
       </Container2>
     </SafeArea>
   );
-}
-
+} */
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) =>
-  bindActionCreators({ addExperienceToUser }, dispatch);
+  bindActionCreators({ addExperienceToUser }, dispatch); */
 
-export default connect(mapStateToProps, mapDispatchToProps)(LevelSystem);
+export default LevelSystem;
 
 const Container2 = styled.View`
   width: 90%;

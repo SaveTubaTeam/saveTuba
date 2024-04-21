@@ -122,10 +122,10 @@ const RegisterScreen = () => {
     //posting user to "users" and "classrooms" collection
     const postUser = async() => {
       //1) setting user within the "users" doc
-      //const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //regex removing all non-digit chars
+      const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //regex removing all non-digit chars
       await setDoc(doc(db, "users", email), {
         //setting user metadata
-        //phoneNumber: cleanedPhoneNumber,
+        phoneNumber: cleanedPhoneNumber,
         email: email,
         firstName: firstName,
         lastName: lastName,
@@ -138,6 +138,7 @@ const RegisterScreen = () => {
       });
       //resetting registration form for sanity
       //setPhoneNumber("");
+      setPhoneNumber("");
       setEmail("");
       setPassword("");
       setFirstName("");
@@ -155,13 +156,13 @@ const RegisterScreen = () => {
             </TitleText>
   
             <InputContainer>
-              {/* <Input
+              <Input
                 placeholder={"Phone Number"}
                 onChangeText={(text) => setPhoneNumber(text)}
                 placeholderTextColor="#696969"
                 value={phoneNumber}
                 autoCapitalize="none"
-              /> */}
+              />
               <Input
                 placeholder={t("common:email")}
                 onChangeText={(text) => setEmail(text)}

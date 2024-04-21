@@ -14,8 +14,7 @@ import { useSelector } from "react-redux";
 const Stack = createNativeStackNavigator();
 
 // @param route **This is the route that will be used to determine the lesson. The parameter is passed as a prop from HomeScreen.js
-// @param addAchievement **Relic from the past team, I did nothing with this and have no idea what it does
-function ChaptersHandler({ route, addAchievement }) { //add achievements
+function ChaptersHandler({ route }) { //add achievements
 
   const [gradeData, setGradeData] = useState(null);
   const [gradeNumber, setGradeNumber] = useState(null);
@@ -179,7 +178,7 @@ function ChaptersHandler({ route, addAchievement }) { //add achievements
     </NavigationContainer>
   );
 }
-
+/* deprecated
 // Boiler Plate code to include redux and firebase functions and data
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
@@ -191,7 +190,7 @@ const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     { addAchievement },
     dispatch
-  );
+  ); */
 
 // Last function to connect the component to props of redux/firebase
-export default connect(mapStateToProps, mapDispatchToProps)(ChaptersHandler);
+export default ChaptersHandler;

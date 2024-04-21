@@ -14,7 +14,7 @@ const Badge = styled.Image`
   aspect-ratio: 1;
 `;
 
-export const Badges = ({ badges }) => {
+export const Badges = () => {
   const navigation = useNavigation();
 
   // console.warn(badges);

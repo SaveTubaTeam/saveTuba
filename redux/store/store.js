@@ -7,6 +7,7 @@ import { achievementsModals } from "../reducers/achievementModal";
 
 import mapSlice from "../slices/imageSlice";
 import languageSlice from "../slices/languageSlice";
+import userSlice from "../slices/userSlice";
 
 const rootReducer = combineReducers({
     userState: user,

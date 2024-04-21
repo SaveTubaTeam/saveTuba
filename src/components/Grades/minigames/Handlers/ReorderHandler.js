@@ -197,9 +197,9 @@ const ReorderHandler = ({
     </>
   );
 };
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(ReorderHandler);
+export default ReorderHandler;

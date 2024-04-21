@@ -12,8 +12,8 @@ import LeaderboardCard from "../Components/leaderboard.component";
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
 
-import { connect, useDispatch } from "react-redux";
-import { bindActionCreators } from "redux";
+import { useDispatch } from "react-redux";
+//import { bindActionCreators } from "redux";
 
 import { useEffect } from "react";
 
@@ -52,7 +52,7 @@ function ProfileScreen({
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
-  const [visible, isVisible] = useState(achievementModal["isOpen"]);
+  //const [visible, isVisible] = useState(achievementModal["isOpen"]);
 
   // useEffect(() => {
   //   const unsubscribe = navigation.addListener('focus', () => {
@@ -66,11 +66,11 @@ function ProfileScreen({
       <SafeArea>
         <ScrollView>
           <Container>
-            <ProfileCard currentUser={currentUser} store={store} />
+            <ProfileCard />
 
             <Spacer size="large" />
 
-            <Badges badges={achievements} />
+            <Badges />
 
             <Spacer size="large" />
 
@@ -91,24 +91,4 @@ function ProfileScreen({
   );
 }
 
-// const ProfileScreenView({
-//   currentUser,
-//   store,
-//   achievements,
-
-// })
-
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-  achievements: store.userAchievements.achievements,
-  achievementModal: store.modals,
-  store: store,
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    { fetchAchievements, addAchievement, closeAchievementModal },
-    dispatch
-  );
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileScreen);
+export default ProfileScreen;

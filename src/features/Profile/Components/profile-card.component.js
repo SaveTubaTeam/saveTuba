@@ -43,7 +43,7 @@ const Row = styled.View`
   flex-direction: row;
 `;
 
-export function ProfileCard({ currentUser, store }) {
+export function ProfileCard() {
   const navigation = useNavigation();
   const { t } = useTranslation();
 
@@ -60,7 +60,8 @@ export function ProfileCard({ currentUser, store }) {
     <Card>
       <AvatarContainer>
         <Spacer position="bottom" size="large">
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+          <TouchableOpacity //onPress={() => navigation.navigate("Profile")}
+          >
             <Avatar.Icon
               size={180}
               icon="head"
@@ -68,7 +69,9 @@ export function ProfileCard({ currentUser, store }) {
             />
           </TouchableOpacity>
         </Spacer>
-        <TitleText size="subtitle">{currentUser?.username}</TitleText>
+
+        {/* username underneath avatar icon */}
+        <TitleText size="subtitle">placeholder</TitleText>
 
         <Spacer size="medium" />
         {/* <Row>
@@ -83,20 +86,26 @@ export function ProfileCard({ currentUser, store }) {
             </BodyText>
           </Achievements>
         </Row> */}
-        <ProgressBar currentUser={currentUser} />
+        <ProgressBar />
       </AvatarContainer>
     </Card>
   );
 }
 
-function ProgressBar({ currentUser }) {
-  if (currentUser?.level == null) {
+//filled with dummy variables. TODO: replace w/ userSlice
+function ProgressBar() {
+  //may need to uncomment this later:
+  /* if (currentUser?.level == null) {
     return <View></View>;
-  }
-  var nextLevelXP = Math.ceil(Math.pow((currentUser?.level + 1.0) / 0.2, 2.1));
+  } */
+
+  //3 is a dummy var
+  var nextLevelXP = Math.ceil(Math.pow((3 + 1.0) / 0.2, 2.1)); //calculating a scaling factor for the next level
 
   const width = 200;
-  const progress = currentUser.currentScore / nextLevelXP;
+
+  //375 is a dummy var
+  const progress = 375 / nextLevelXP; //calculating the percentage of width to be covered by lighter overlay
   return (
     <View
       style={{
@@ -116,14 +125,19 @@ function ProgressBar({ currentUser }) {
           fontStyle: "italic",
         }}
       >
-        {currentUser.currentScore} / {Math.ceil(nextLevelXP)} XP
+        {/* 375 is a dummy var. */}
+        375 / {Math.ceil(nextLevelXP)} XP
       </Text>
       <Row
         style={{
           justifyContent: "center",
         }}
       >
-        <Text>{currentUser.level}</Text>
+
+        {/* current level */}
+        <Text>A</Text>
+
+        {/* dark underlay of progress bar */}
         <View
           style={{
             flex: 1,
@@ -140,6 +154,8 @@ function ProgressBar({ currentUser }) {
             elevation: 10,
           }}
         >
+
+          {/* lighter overlay which scales with variable 'progress' */}
           <View
             style={{
               flex: 1,
@@ -152,7 +168,9 @@ function ProgressBar({ currentUser }) {
             }}
           ></View>
         </View>
-        <Text>{currentUser.level + 1}</Text>
+
+        {/* next level */}
+        <Text>B</Text>
       </Row>
     </View>
   );

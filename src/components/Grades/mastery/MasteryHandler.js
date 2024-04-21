@@ -130,9 +130,9 @@ const MasteryHandler = ({
     </Container>
   );
 };
-
+/* 
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(MasteryHandler);
+export default MasteryHandler;

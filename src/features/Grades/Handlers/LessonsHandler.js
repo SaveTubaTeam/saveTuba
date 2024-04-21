@@ -441,12 +441,11 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
     </NavigationContainer>
   );
 }
-
+/* 
 // Boiler Plate code to include redux and firebase functions and data
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
-
+}); */
 
 // Last function to connect the component to props of redux/firebase
-export default connect(mapStateToProps, null)(LessonsHandler);
+export default LessonsHandler;

@@ -172,9 +172,10 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
     </SafeArea>
   );
 }
+/* 
 // Boiler plate to connect redux/firebase to Lesson Component
 const mapStateToProps = (store) => ({
   currentUser: store.userState.currentUser,
-});
+}); */
 
-export default connect(mapStateToProps, null)(LessonsComponent);
+export default LessonsComponent;
