@@ -6,9 +6,8 @@ const initialState = {
     userData: {}
 }
 
-//thunk fetchUser() is called after successful firebase api sign-in. We've already checked that the object is not null within LoginScreen.js.
-//We then fetch the user who matches auth.currentUser.email from the firestore database
-//and populate initialState with the user's metadata.
+//thunk fetchUser() is called after successful firebase api sign-in. We've already checked that the auth object is not null within LoginScreen.js.
+//We then fetch the user who matches auth.currentUser.email from the firestore database and populate initialState's userData with the user's metadata.
 export const fetchUser = createAsyncThunk("userSlice/fetchUser", async() => {
     //auth refers to the current firebase.auth object
     const email = auth.currentUser.email;

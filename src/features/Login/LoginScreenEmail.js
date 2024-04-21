@@ -64,7 +64,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 
   const BottomContainer = styled.View`
   position: absolute;
-  bottom: 40;
+  bottom: 4%;
   width: 60%;
   padding-horizontal: ${(props) => props.theme.space[3]};
 `;
@@ -136,7 +136,7 @@ const LoginScreenEmail = () => {
     const phone = cleanedPhoneNumber + '@x.x'; */
 
     await auth
-      .signInWithEmailAndPassword("tester@gmail.com", "test123")
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => { //successfully signed in
         const user = userCredentials.user; //referring to userCredentials (auth object) properties
         console.log("Logged in with:", user.email);
@@ -150,7 +150,7 @@ const LoginScreenEmail = () => {
   //we sign in with the savetuba account for Guest
   const continueAsGuest = async() => {
     await auth
-      .signInWithEmailAndPassword("tester@gmail.com", "test123")
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log("Logged in with:", user.email);

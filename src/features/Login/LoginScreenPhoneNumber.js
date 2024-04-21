@@ -63,7 +63,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 
   const BottomContainer = styled.View`
   position: absolute;
-  bottom: 40;
+  bottom: 4%;
   width: 60%;
   padding-horizontal: ${(props) => props.theme.space[3]};
 `;
@@ -144,7 +144,7 @@ const LoginScreenPhone = () => {
     const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
 
     await auth
-      .signInWithEmailAndPassword("tester@gmail.com", "test123")
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => { //successfully signed in
         const user = userCredentials.user; //referring to userCredentials (auth object) properties
         console.log("Logged in with:", user.email);
@@ -159,7 +159,7 @@ const LoginScreenPhone = () => {
   //for Continue as Guest button, we login with a savetubateam account.
   const continueAsGuest = async() => {
     await auth
-      .signInWithEmailAndPassword("tester@gmail.com", "test123")
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => {
         const user = userCredentials.user;
         console.log("Logged in with:", user.email);

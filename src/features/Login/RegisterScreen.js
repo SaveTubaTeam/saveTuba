@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-import { Alert } from 'react-native';
+import { Alert, ActivityIndicator } from 'react-native';
 
 //firebase api imports (will be used to create user)
 import { setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
@@ -11,6 +11,7 @@ import { auth, db } from "../../../firebase";
 import { useTranslation } from "react-i18next";
 
 import { useNavigation } from "@react-navigation/native";
+//import { ActivityIndicator } from 'react-native-paper';
 
 //styled components
 const Button = styled.TouchableOpacity`
@@ -103,15 +104,17 @@ const RegisterScreen = () => {
       await auth.createUserWithEmailAndPassword(email, password) //creating user
         .then((userCredential) => { //successfully signed in
           const user = userCredential.user;
+          console.log("User Registered: ", auth.currentUser)
           postUser(); //see below
 
           //alert popup, OK button pushes user to Login screen. https://reactnative.dev/docs/alert
           Alert.alert(`Welcome, ${firstName} ${lastName}!`, 
                       `Your account has been successfully created.`,
-                      [{text: 'OK', onPress: () => {
+                      /* [{text: 'OK', onPress: () => {
                           console.log('OK Pressed. Pushing to Login screen');
-                          navigation.navigate("Login");
-                      }}]);
+                          navigation.navigate("LoginEmail");
+                      }}] */
+                      );
         })
         .catch((error) => { //firebase createUser failed
             console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
@@ -157,7 +160,7 @@ const RegisterScreen = () => {
   
             <InputContainer>
               <Input
-                placeholder={"Phone Number"}
+                placeholder={"Phone Number (ex +7 9435553201)"}
                 onChangeText={(text) => setPhoneNumber(text)}
                 placeholderTextColor="#696969"
                 value={phoneNumber}

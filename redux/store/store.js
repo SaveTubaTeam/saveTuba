@@ -1,4 +1,3 @@
-// DID NOT HAVE ANYTHING IN THIS FILE ORRIGNALLY::::::::::::::::::::::::::
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 /* import { user } from "../reducers/user";
@@ -12,7 +11,7 @@ import userSlice from "../slices/userSlice";
 const rootReducer = combineReducers({
     user: userSlice,
     imageMap: mapSlice,
-    languageSelector: languageSlice,
+    languageSelector: languageSlice, //NOTE: languageSlice does not work. Please refer to IMLocalize.js for i18n language event listener.
 });
 
 //configureStore() automatically adds thunk middleware via RTK toolkit
