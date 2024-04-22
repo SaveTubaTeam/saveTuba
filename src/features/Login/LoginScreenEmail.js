@@ -104,7 +104,7 @@ const LoginScreenEmail = () => {
       if (user) { //evaluates to true if user is signed in (not null or undefined)
         console.log("auth.currentUser.email:", auth.currentUser.email); //**refers to the fb auth object and not our redux store
 
-        //should dispatch user to store here
+        //should fetchUser and dispatch to store here, check if fulfilled before continuing
 
         //resetting login form state for sanity
         setEmail("");

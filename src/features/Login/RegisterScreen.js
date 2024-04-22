@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-import { Alert, ActivityIndicator } from 'react-native';
+import { Alert, ActivityIndicator, StyleSheet, View } from 'react-native';
 
 //firebase api imports (will be used to create user)
 import { setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
@@ -69,7 +69,7 @@ const InputContainer = styled.View`
 `;
 
 //Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
-//dispatch(fetchUser()) which happens upon login and nowhere else to minimize redundancy.
+//dispatch(fetchUser()) which happens upon Main.js render and nowhere else to minimize redundancy.
 const RegisterScreen = () => {
     const navigation = useNavigation();
     const { t } = useTranslation();
@@ -79,11 +79,13 @@ const RegisterScreen = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [classCode, setClassCode] = useState("");
+    const [loading, setLoading] = useState(false);
 
 
     //registerUser creates a new user only if a valid class code already exists within firebase's "classrooms" collection.
     //Function is triggered by signUp button's onPress.
     const registerUser = async() => {
+      setLoading(true);
       await db.collection("classrooms").doc(classCode).get()
         .then((snapshot) => { //checking if classCode exists
           if(snapshot.exists) { 
@@ -91,32 +93,32 @@ const RegisterScreen = () => {
               createUser(); //see below
 
           } else {//classCode does not exist
+              setLoading(false);
               Alert.alert("Invalid class code");
           }
         });
     }
 
     //createUserWithEmailAndPassword: https://firebase.google.com/docs/auth/web/password-auth
-    //if we successfully sign in, we 
+    //if we successfully register, we 
     //1) add the user (and initial user metadata) to our user list
     //2) add the user's email to the specified classCode's classrooms collection in firebase
     const createUser = async() => {
       await auth.createUserWithEmailAndPassword(email, password) //creating user
-        .then((userCredential) => { //successfully signed in
+        .then((userCredential) => {
+           //successfully registered. This API call also signs the user in, 
+           //which triggers the onAuthStateChanged() event listener in LoginScreen, 
+           //which pushes us to "HomeScreen" in the navigation stack.
           const user = userCredential.user;
           console.log("User Registered: ", auth.currentUser)
           postUser(); //see below
 
-          //alert popup, OK button pushes user to Login screen. https://reactnative.dev/docs/alert
+          //alert popup: https://reactnative.dev/docs/alert
           Alert.alert(`Welcome, ${firstName} ${lastName}!`, 
-                      `Your account has been successfully created.`,
-                      /* [{text: 'OK', onPress: () => {
-                          console.log('OK Pressed. Pushing to Login screen');
-                          navigation.navigate("LoginEmail");
-                      }}] */
-                      );
+                      `Your account has been successfully created.`);
         })
         .catch((error) => { //firebase createUser failed
+            setLoading(false);
             console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
             Alert.alert("Invalid Registration", "Make sure your password is longer than 6 characters.");
         });
@@ -147,99 +149,121 @@ const RegisterScreen = () => {
       setFirstName("");
       setLastName("");
       setClassCode("");
+      setLoading(false);
     } 
     //end of registerUser methods
 
     return (
         <Container behavior="padding">
-          <ImageBg source={require("../../../assets/homepagebackground.png")}>
-            <TitleText color="secondary" size="title">
-              {t("common:makeanewaccount")}
-              {/* Register For Save Tuba */}
-            </TitleText>
-  
-            <InputContainer>
-              <Input
-                placeholder={"Phone Number (ex +7 9435553201)"}
-                onChangeText={(text) => setPhoneNumber(text)}
-                placeholderTextColor="#696969"
-                value={phoneNumber}
-                autoCapitalize="none"
-              />
-              <Input
-                placeholder={t("common:email")}
-                onChangeText={(text) => setEmail(text)}
-                placeholderTextColor="#696969"
-                value={email}
-                autoCapitalize="none"
-              />
-              <Input
-                placeholder={t("common:password")}
-                secureTextEntry={true}
-                onChangeText={(text) => setPassword(text)}
-                placeholderTextColor="#696969"
-                value={password}
-                autoCapitalize="none"
-              />
-              <Input
-                placeholder={t("common:firstname")}
-                onChangeText={(text) => setFirstName(text)}
-                placeholderTextColor="#696969"
-                value={firstName}
-                autoCapitalize="none"
-              />
-              <Input
-                placeholder={t("common:lastname")}
-                onChangeText={(text) => setLastName(text)}
-                placeholderTextColor="#696969"
-                value={lastName}
-                autoCapitalize="none"
-              />
-              <Input
-                placeholder={t("common:classcode")}
-                onChangeText={(text) => setClassCode(text)}
-                placeholderTextColor="#696969"
-                value={classCode}
-                autoCapitalize="none"
-              />
-            </InputContainer>
-  
-            <ButtonContainer>
-              <Button
-                onPress={() => { 
-                  registerUser();
-                }}
-              >
-                <TitleText color="secondary" size="body">
-                  {t("common:signup")}
-                </TitleText>
-              </Button>
-            {/* NOTE: Teacher Registration is now handled on the teacher interface web application only. */}
-            {/* <ButtonContainer>
-              <Button
-                onPress={() => {
-                  this.props.navigation.navigate("RegisterTeacher");
-                }}
-              >
-                <TitleText color="secondary" size="body">
-                  {t("common:teachersignup")}
-                </TitleText>
-              </Button>
-            </ButtonContainer> */}
-              <BackButton
-                onPress={() => {
-                  navigation.navigate("LoginEmail");
-                }}
-              >
-                <TitleText color="primary" size="body">
-                  {t("common:back")}
-                </TitleText>
-              </BackButton>
-            </ButtonContainer>
+          {/* here a ternary operator is used to render a spinner if loading == true (see below) */}
+          {!loading ? (
+            <ImageBg source={require("../../../assets/homepagebackground.png")}>
+              <TitleText color="secondary" size="title">
+                {t("common:makeanewaccount")}
+                {/* Register For Save Tuba */}
+              </TitleText>
+    
+              <InputContainer>
+                <Input
+                  placeholder={"Phone Number (ex +7 9435553201)"}
+                  onChangeText={(text) => setPhoneNumber(text)}
+                  placeholderTextColor="#696969"
+                  value={phoneNumber}
+                  autoCapitalize="none"
+                />
+                <Input
+                  placeholder={t("common:email")}
+                  onChangeText={(text) => setEmail(text)}
+                  placeholderTextColor="#696969"
+                  value={email}
+                  autoCapitalize="none"
+                />
+                <Input
+                  placeholder={t("common:password")}
+                  secureTextEntry={true}
+                  onChangeText={(text) => setPassword(text)}
+                  placeholderTextColor="#696969"
+                  value={password}
+                  autoCapitalize="none"
+                />
+                <Input
+                  placeholder={t("common:firstname")}
+                  onChangeText={(text) => setFirstName(text)}
+                  placeholderTextColor="#696969"
+                  value={firstName}
+                  autoCapitalize="none"
+                />
+                <Input
+                  placeholder={t("common:lastname")}
+                  onChangeText={(text) => setLastName(text)}
+                  placeholderTextColor="#696969"
+                  value={lastName}
+                  autoCapitalize="none"
+                />
+                <Input
+                  placeholder={t("common:classcode")}
+                  onChangeText={(text) => setClassCode(text)}
+                  placeholderTextColor="#696969"
+                  value={classCode}
+                  autoCapitalize="none"
+                />
+              </InputContainer>
+    
+              <ButtonContainer>
 
-          </ImageBg>
+                {/* asynchronously register & push user to db, setting loading icon to visible while we do so */}
+                <Button
+                  onPress={() => {
+                    registerUser();
+                  }}
+                >
+                  <TitleText color="secondary" size="body">
+                    {t("common:signup")}
+                  </TitleText>
+                </Button>
+              {/* NOTE: Teacher Registration is now handled on the teacher interface web application only. */}
+              {/* <ButtonContainer>
+                <Button
+                  onPress={() => {
+                    this.props.navigation.navigate("RegisterTeacher");
+                  }}
+                >
+                  <TitleText color="secondary" size="body">
+                    {t("common:teachersignup")}
+                  </TitleText>
+                </Button>
+              </ButtonContainer> */}
+                <BackButton
+                  onPress={() => {
+                    navigation.navigate("LoginEmail");
+                  }}
+                >
+                  <TitleText color="primary" size="body">
+                    {t("common:back")}
+                  </TitleText>
+                </BackButton>
+              </ButtonContainer>
+
+            </ImageBg>
+          ) : (
+            <View style={[styles.container, styles.horizontal]}>
+              <ActivityIndicator size="large" color="#00ff00" />
+            </View>
+          )}
         </Container>
       );
 }
 
 export default RegisterScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  horizontal: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 10,
+  },
+});
