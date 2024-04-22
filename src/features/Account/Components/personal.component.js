@@ -10,6 +10,8 @@ import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 
 import { TitleText } from "../../../components/title-text.component";
 import { Spacer } from "../../../components/spacer.component";
@@ -27,8 +29,9 @@ const Row = styled.View`
 `;
 
 
-const PersonalCard = ({currentUser}) => {
+const PersonalCard = () => {
   const { t } = useTranslation();
+  const user = useSelector(selectCurrentUser);
 
   const navigation = useNavigation();
   //const { currentUser } = props;
@@ -76,7 +79,7 @@ const PersonalCard = ({currentUser}) => {
           </Row>
         </Spacer>
 
-        <TitleText size="subtitle">{"hello world"}</TitleText>
+        <TitleText size="subtitle">{`${user.email}`}</TitleText>
       </AvatarContainer>
     </Card>
   );

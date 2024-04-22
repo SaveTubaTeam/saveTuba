@@ -7,6 +7,8 @@ import { Avatar, Text } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import userSlice, { selectCurrentUser } from "../../../../redux/slices/userSlice";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -46,6 +48,7 @@ const Row = styled.View`
 export function ProfileCard() {
   const navigation = useNavigation();
   const { t } = useTranslation();
+  const user = useSelector(selectCurrentUser);
 
   // console.warn(store);
 
@@ -71,7 +74,7 @@ export function ProfileCard() {
         </Spacer>
 
         {/* username underneath avatar icon */}
-        <TitleText size="subtitle">placeholder</TitleText>
+        <TitleText size="subtitle">{`${user.firstName} ${user.lastName}`}</TitleText>
 
         <Spacer size="medium" />
         {/* <Row>
@@ -92,8 +95,8 @@ export function ProfileCard() {
   );
 }
 
-//filled with dummy variables. TODO: replace w/ userSlice
 function ProgressBar() {
+  const user = useSelector(selectCurrentUser);
   //may need to uncomment this later:
   /* if (currentUser?.level == null) {
     return <View></View>;

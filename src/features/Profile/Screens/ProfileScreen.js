@@ -12,9 +12,6 @@ import LeaderboardCard from "../Components/leaderboard.component";
 import { SafeArea } from "../../../components/safe-area.component";
 import { Spacer } from "../../../components/spacer.component";
 
-import { useDispatch } from "react-redux";
-//import { bindActionCreators } from "redux";
-
 import { useEffect } from "react";
 
 import { Button, Modal } from "react-native-paper";
@@ -42,7 +39,6 @@ const ImageBg = styled.ImageBackground`
 
 function ProfileScreen() {
   const navigation = useNavigation();
-  const dispatch = useDispatch();
 
   //const [visible, isVisible] = useState(achievementModal["isOpen"]);
 

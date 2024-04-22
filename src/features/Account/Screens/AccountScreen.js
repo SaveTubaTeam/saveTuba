@@ -72,7 +72,7 @@ function AccountScreen() {
       <ScrollView>
         <Container>
           {/* profile card */}
-          <PersonalCard currentUser={"placeholder"} />
+          <PersonalCard />
 
           <Spacer size="large" />
           {/* GeneralCard contains LanguageSelector, toggles for SFX & Reminders, Help & About*/}
