@@ -8,7 +8,8 @@ import { Alert, Text } from 'react-native';
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
 import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
@@ -73,6 +74,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 
 const LoginScreenEmail = () => {
   const dispatch = useDispatch();
+  const currentUserStore = useSelector(selectCurrentUser);
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
@@ -80,69 +82,36 @@ const LoginScreenEmail = () => {
 
   //fetching images
   useEffect(() => {
-    console.log("inside LoginScreenEmail.js")
+    console.log("\n\tinside LoginScreenEmail.js")
+    console.log('Most recent userData store:', currentUserStore);
     dispatch(fetchImages());
-    // const language = i18n.language; --> need to check this out. default is always ru, overriding redux pattern
-    /*const language = "en"; //Faulty logic
-    if (language === "en") { //English
-      dispatch(setEnglish());
-      console.log("set language to en");
-    } else if (language === "ru") { //Russian
-      dispatch(setRussian());
-      console.log("set language to ru");
-    } else if (language === "kk") { //Kazakh
-      dispatch(setKazakh());
-      console.log("set language to kk");
-    }*/
-    /*if (auth.currentUser) { //currentUser is either null or filled. Null is treated as a falsy.
-      console.log(auth.currentUser);
-      navigation.replace("HomePage");
-    }*/
 
     //we set an observer on the auth object via onAuthStateChanged()
     const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()
       if (user) { //evaluates to true if user is signed in (not null or undefined)
         console.log("auth.currentUser.email:", auth.currentUser.email); //**refers to the fb auth object and not our redux store
 
-        //should fetchUser and dispatch to store here, check if fulfilled before continuing
-
         //resetting login form state for sanity
         setEmail("");
         setPassword("");
 
-        console.log("Login successful. Pushing to HomePage!");
+        console.log("Firebase login successful. Pushing to HomePage for fetchUser()");
         navigation.replace("HomePage");
       }
     }); //end of login function
 
     return login; //this line prevents login from being called more than once
-  }, []); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
+  }, [currentUserStore, dispatch]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
-  // const imageMap = useSelector(state => state.imageMap.imageData);
-  // console.log("Image Map 1: ", imageMap);
-  // const handleSignup = () => {
-  //   auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((userCredentials) => {
-  //       const user = userCredentials.user;
-  //       console.log(user.email);
-  //     })
-  //     .catch((error) => alert(error.message));
-  // };
-
-  //TODO: remove tester
   const handleLogin = async () => {
-    /* const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
-    const phone = cleanedPhoneNumber + '@x.x'; */
-
     await auth
-      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
+      .signInWithEmailAndPassword(email, password)
       .then((userCredentials) => { //successfully signed in
         const user = userCredentials.user; //referring to userCredentials (auth object) properties
-        console.log("Logged in with:", user.email);
+        console.log("\n\tLogged in with:", user.email);
       })
       .catch((error) => {
-        Alert.alert("Invalid Login", "Hint - Phone numbers should be formatted:\n+7 8005550175");
+        Alert.alert("Invalid Login", "email or password is incorrect");
         console.log("Error: ", error.message);
       });
   };
@@ -153,13 +122,13 @@ const LoginScreenEmail = () => {
       .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log("Logged in with:", user.email);
+        console.log("\n\tLogged in with:", user.email);
       }).catch(() => {
         console.log("Error with Guest in LoginScreen");
       })
   }
 
-  //sending a password reset email: https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
+  //function to send a password reset email: https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
   const sendPasswordReset = async() => {
     auth.languageCode = i18n.language; //setting current language code to localize email
     console.log("language code for password reset email:", i18n.language)

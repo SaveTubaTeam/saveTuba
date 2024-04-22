@@ -8,7 +8,8 @@ import { Alert } from 'react-native';
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
 import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
 import SelectorLogin from "./LanguageSelectorLogin";
 
@@ -72,6 +73,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 
 const LoginScreenPhone = () => {
   const dispatch = useDispatch();
+  const currentUserStore = useSelector(selectCurrentUser);
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -79,23 +81,9 @@ const LoginScreenPhone = () => {
 
   //fetching images, setting global language
   useEffect(() => {
+    console.log("\n\tinside LoginScreenEmail.js")
+    console.log('most recent userData store:', currentUserStore);
     dispatch(fetchImages());
-    // const language = i18n.language; --> need to check this out. default is always ru, overriding redux pattern
-    /*const language = "en"; //Faulty logic
-    if (language === "en") { //English
-      dispatch(setEnglish());
-      console.log("set language to en");
-    } else if (language === "ru") { //Russian
-      dispatch(setRussian());
-      console.log("set language to ru");
-    } else if (language === "kk") { //Kazakh
-      dispatch(setKazakh());
-      console.log("set language to kk");
-    }*/
-    /*if (auth.currentUser) { //currentUser is either null or filled. Null is treated as a falsy.
-      console.log(auth.currentUser);
-      navigation.replace("HomePage");
-    }*/
 
     //we set an observer on the auth object via onAuthStateChanged()
     const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()
@@ -107,25 +95,14 @@ const LoginScreenPhone = () => {
         //resetting login form state for sanity
         setPhoneNumber("");
 
-        console.log("Login successful. Pushing to HomePage!");
+        console.log("Firebase login successful. Pushing to HomePage!");
         navigation.replace("HomePage");
       }
     }); //end of login function
 
     return login; //this line prevents login from being called more than once
-  }, []); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
+  }, [currentUserStore, dispatch]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
-  // const imageMap = useSelector(state => state.imageMap.imageData);
-  // console.log("Image Map 1: ", imageMap);
-  // const handleSignup = () => {
-  //   auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((userCredentials) => {
-  //       const user = userCredentials.user;
-  //       console.log(user.email);
-  //     })
-  //     .catch((error) => alert(error.message));
-  // };
 /* 
   let isRecaptchaRendered = false;
   const renderRecaptcha = async () => {
@@ -140,6 +117,7 @@ const LoginScreenPhone = () => {
   //TODO: need to switch to signInWithPhoneNumber
   //phone number for testing: +1 650-555-1234 code: 123456
   //might need additional config within android gradle and xcode
+  //also need to check for duplicate numbers before signing in because signInWithPhoneNumber creates an account -_-
   const handleLogin = async () => {
     const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //removing all non-numerical characters from input string via regex
 
@@ -147,7 +125,7 @@ const LoginScreenPhone = () => {
       .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => { //successfully signed in
         const user = userCredentials.user; //referring to userCredentials (auth object) properties
-        console.log("Logged in with:", user.email);
+        console.log("\n\tLogged in with:", user.email);
       })
       .catch((error) => {
         //Alert.alert("Invalid Login", "Hint - Phone numbers should be formatted:\n+7 8005550175");
@@ -162,7 +140,7 @@ const LoginScreenPhone = () => {
       .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => {
         const user = userCredentials.user;
-        console.log("Logged in with:", user.email);
+        console.log("\n\tLogged in with:", user.email);
       }).catch(() => {
         console.log("Error with Guest in LoginScreen");
       })

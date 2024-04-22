@@ -35,20 +35,19 @@ const LoadingScreen = () => {
 const SignOut = () => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
-    //const user = useSelector(selectCurrentUser);
+    const user = useSelector(selectCurrentUser);
 
-        const handleSignOut = () => {
-            auth.signOut() //firebase auth api
-                .then(() => { //successful signout
-                    navigation.navigate("LoginEmail"); //navigating back to Login page in navigation stack
-
-                    //dispatch(signOutUser()); //setting userSlice's user to null
-                })
-                .catch((error) => {
-                    alert("SignOut Failed");
-                    console.log(error.message);
-                });
-        };
+    const handleSignOut = async() => {
+        try {
+            console.log("signing out user:", auth.currentUser.email);
+            await auth.signOut(); // Sign out user from Firebase
+            dispatch(signOutUser()); // Update user state in Redux store to object w/ 'empty' attribute & status to 'idle'
+            navigation.navigate('LoginEmail'); // Navigate to login screen
+        } catch (error) { // Handle sign-out error
+            console.error('Sign out error:', error);
+            alert('SignOut Failed');
+        }
+    };
 
         return (
             <Button onPress={handleSignOut}>

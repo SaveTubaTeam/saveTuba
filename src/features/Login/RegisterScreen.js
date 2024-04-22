@@ -70,6 +70,8 @@ const InputContainer = styled.View`
 
 //Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
 //dispatch(fetchUser()) which happens upon Main.js render and nowhere else to minimize redundancy.
+
+//NOTE: there is an auth event listener in the login screens which redirects to HomeScreen upon successful account creation
 const RegisterScreen = () => {
     const navigation = useNavigation();
     const { t } = useTranslation();
@@ -110,7 +112,7 @@ const RegisterScreen = () => {
            //which triggers the onAuthStateChanged() event listener in LoginScreen, 
            //which pushes us to "HomeScreen" in the navigation stack.
           const user = userCredential.user;
-          console.log("User Registered: ", auth.currentUser)
+          console.log("\n\tUser Registered: ", auth.currentUser.email)
           postUser(); //see below
 
           //alert popup: https://reactnative.dev/docs/alert

@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from "react";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View, Alert } from "react-native";
 // Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
@@ -11,17 +11,11 @@ import AccountNav from "../features/Account/accountNav/accountNav";
 import ProfileScreen from "../features/Profile/Screens/ProfileScreen";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useNavigation } from "@react-navigation/native";
 
 // Redux Imports
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
-import { store } from "../../redux/store/store";
-
-import {
-  fetchUser,
-  fetchAchievements,
-  addAchievement,
-} from "../../redux/actions/index";
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser, fetchUser } from "../../redux/slices/userSlice";
 import Amodal from "./achievement-components/Amodal";
 
 const Tab = createBottomTabNavigator();
@@ -84,61 +78,62 @@ const SaveTuba = () => {
   );
 };
 
+//auth is already checked for null/undefined within login screens.
 const Main = () => {
-  /* componentDidMount() {
-    this.props.fetchUser();
-    this.props.fetchAchievements();
-  } */
+  const dispatch = useDispatch()
+  const userStatus = useSelector(state => state.user.status)
+  const user = useSelector(selectCurrentUser)
+  const navigation = useNavigation();
+  const [loading, setLoading] = useState(false); //for the spinner
 
-    // Checking if there is user loaded (Sometimes screens will load before the data is read and loaded)
-    // Checks if the first time they are in, this is to make sure that if something goes wrong in registering the user, or its an old account without achievements, that they will get achievements and achievement system will work.
-    // if (this.props.currentUser != undefined) {
-    // try {
-    //   if (
-    //     this.props.achievements != null ||
-    //     this.props.achievements["achievements"][0] == undefined
-    //   ) {
-    //     this.props.addAchievement("first-time-signing-up");
-    //     // this.props.fetchAchievements();
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // }
-    // } else {
-    //   console.log("Main.js >> currentUser undefined");
-    // }
+  //for 'rejected' load case inside of useEffect below
+  const handleFetchUserRejected = async() => {
+    console.log("fetchUser failed in Main.js. Pushing back to LoginEmail")
+    await auth.signOut()
+    Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
+    navigation.replace("LoginEmail");
+    setLoading(false)
+  }
 
+  //all this logic inside of useEffect is mainly for the spinner while we wait for fetchUser
+  useEffect(() => {
+    //defining variables for fetchUser()
+    let loginType;
+    let input;
+    //TODO: once phone number verification is working, should update this to check for phone number logintype
+      //this nested if statement is written really poorly and complicates things. should be refactored
+      if(auth.currentUser && auth.currentUser.email) {
+        loginType = 'email'
+        input = auth.currentUser.email
+        //console.log("\nloginType:", loginType, "\ninput:", input);
 
-    //NOTE: ActivityIndicator component is a loading icon. https://reactnative.dev/docs/activityindicator
-    while (auth.currentUser == undefined) {
-      return (
-        <View style={[styles.container, styles.horizontal]}>
-          <ActivityIndicator size="large" color="#00ff00" /> 
-        </View>
-      );
-    }
-
-    /*try {
-      if (
-        this.props.achievements != null ||
-        this.props.achievements["achievements"][0] == undefined
-      ) {
-        this.props.addAchievement("first-time-signing-up");
+        if(userStatus === 'idle') {
+          dispatch(fetchUser({loginType, input}));
+        }
+    
+        if(userStatus === 'loading') {
+          setLoading(true)
+        } else if(userStatus === 'finished') {
+          setLoading(false)
+          console.log("fetched user from store:", user)
+        } else if(userStatus === 'rejected') {
+          handleFetchUserRejected();
+        }
       }
-    } catch (err) {
-      console.log(err);
-    }*/
+  }, [userStatus, dispatch]); //had some problems keeping Main.js from rendering more than once so there's a lot of clutter in the terminal. sorry folks
 
-    // Eventually needs to be done better, functional but maybe not efficient in terms of memory or speed... not sure
-    // So, to have pop up modals that works with redux, i.e. using dispatch will allow the modal to appear was difficult when I started
-    // My solution was to create a "modal" that would contain the entire application within it and show the modal screen. I forget the videos I followed but based off other peoples solutions
+    //Update 4/22/24: removed Amodal global wrapper. User achievements should be implemented in a more functional way.
 
-    //Update 4/13/24: Commented out Amodal global wrapper. User achievements should be implemented in a more functional way.
+    //ternary operator to render a spinner while we wait for fetchUser()
     return (
       <>
-        {/* <Amodal > */}
+        {!loading ? (
           <SaveTuba />
-        {/* </Amodal> */}
+        ) : (
+          <View style={[styles.container, styles.horizontal]}>
+            <ActivityIndicator size="large" color="#00ff00" /> 
+          </View>
+        )}
       </>
     );
   }//end of Main component
