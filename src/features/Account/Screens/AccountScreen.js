@@ -46,27 +46,7 @@ function AccountScreen() {
   //console.log("Code: ", selectedLanguageCode);
 
   const navigation = useNavigation();
-  //console.log("Current User:", currentUser);
-  //const currentUser = auth.currentUser; // UPDATE NEEDED: USE REDUX
 
-  /*
-    //not functional
-    if (selectedLanguageCode === "kk") {
-      useDispatch(setKazakh());
-    } else if (selectedLanguageCode === "ru") {
-      useDispatch(setRussian());
-    } else if (selectedLanguageCode === "en") {
-      useDispatch(setEnglish());
-    }
-  */
-  // const handleSignOut = () => {
-  //   auth
-  //     .signOut()
-  //     .then(() => {
-  //       navigation.replace("Login");
-  //     })
-  //     .catch((error) => alert(error.message));
-  // };
   return (
     <SafeArea>
       <ScrollView>

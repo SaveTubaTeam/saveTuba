@@ -23,19 +23,11 @@ const ButtonText = styled.Text`
   font-weight: 700;
   font-size: ${(props) => props.theme.fontSizes.body};
 `;
-/* 
-const LoadingScreen = () => {
-    return (
-        <View backgroundColor>
-
-        </View>
-    )
-} */
 
 const SignOut = () => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
-    const user = useSelector(selectCurrentUser);
+    //const user = useSelector(selectCurrentUser);
 
     const handleSignOut = async() => {
         try {

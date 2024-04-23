@@ -141,7 +141,6 @@ const LoginScreenEmail = () => {
         })
   }
 
-
   return (
     // <SafeArea>
     <Container behavior="padding">

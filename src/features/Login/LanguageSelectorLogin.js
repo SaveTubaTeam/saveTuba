@@ -67,10 +67,6 @@ const SelectorLogin = () => {
               borderColor: "#748816",
               borderWidth: 2,
               borderRadius: 5,
-              shadowOpacity: 0.5,
-              shadowRadius: 1,
-              shadowColor: "#000",
-              shadowOffset: { width: 0, height: 2 },
               elevation: 5,
             }}
           >
