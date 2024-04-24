@@ -1,17 +1,12 @@
 import React, { Component, useEffect, useState } from "react";
 import { theme } from "../../../infrastructure/theme";
 import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
-
 import { Spacer } from "../../../components/spacer.component";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
 
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { fetchUser } from "../../../../redux/actions";
-import { addExperienceToUser } from "../../../../redux/actions";
 import { useNavigation } from "@react-navigation/native";
 
 import styled from "styled-components/native";
@@ -19,44 +14,6 @@ import styled from "styled-components/native";
 import { auth, db } from "../../../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 import { t } from "i18next";
-
-//old. See new LevelSystem modal below.
-/* const LevelSystem_ = ({ route }) => {
-    //const { route, navigation, currentUser, dispatch } = this.props;
-    const { score, prompt } = route.params;
-    const XP_PER_POINT = 15;
-
-    return (
-      <SafeArea
-        style={{
-          backgroundColor: "#CCE882",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Container2 style={{ backgroundColor: "white" }}>
-          <TitleText>
-            {`Score: ${score}\n`}
-            {prompt}
-            {"\n"} You gained {score * XP_PER_POINT}xp!
-          </TitleText>
-          
-          <Spacer size="large" />
-          <Pressable
-            style={{
-              backgroundColor: "#748816",
-              padding: 10,
-              borderRadius: 20,
-              width: 100,
-            }}
-            onPress={() => navigation.navigate("Lesson")}
-          >
-            <BodyText color="secondary">{t("common:back")}</BodyText>
-          </Pressable>
-        </Container2>
-      </SafeArea>
-    );
-} */
 
 const LevelSystem = ({ score, prompt, visible }) => {
   const navigation = useNavigation();
