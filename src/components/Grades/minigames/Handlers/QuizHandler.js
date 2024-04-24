@@ -79,46 +79,17 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
-//SecondScreen not used here.
-/* const SecondScreen = ({ data, imageMap }) => {
-  const navigation = useNavigation();
-  // console.log("Second Screen ==> ", data);
-  return (
-    <ImageBg source={imageMap[data.content[0]["imageBg"]]}>
-      <SafeArea style={{ justifyContent: "center", alignItems: "center" }}>
-        <Prompt>
-          <TitleText>
-            {`Hello World`}
-          </TitleText>
-          <Spacer size="large" />
-          <SubmitButton onPress={() => navigation.navigate("Lesson")}>
-            <BodyText color="secondary">Back</BodyText>
-          </SubmitButton>
-        </Prompt>
-      </SafeArea>
-    </ImageBg>
-  );
-}; */
-
 //Main function. Handles most logic. 
 //@param data is taken from QuizScreen format in Firebase
 const Start = ({ data, imageMap }) => {
   //const navigation = useNavigation();
 
   const [correctAnswer, setCorrect] = useState(false);
-
   //count is used to track the question number
   const [count, setCount] = useState(0);
-
   //see renderAnswers for setScore() state change
   const [score, setScore] = useState(0);
 
-  // const checkAnswer = (odg) => {
-  //   if (odg == correctAnswer) {
-  //     setScore(() => score + 1);
-  //   }
-  //   // console.log("Score: " + score + "/4");
-  // };
   console.log("Start ==> ", data.content[0].prompt);
   const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
   
@@ -296,7 +267,7 @@ const Start = ({ data, imageMap }) => {
 
             {/* marked for translation */}
           <LevelSystem visible={levelSystemVisible} score={score} 
-          prompt={`Congratulations, you've just finished your first quiz! Go back to the lesson to continue learning!`}
+          prompt={`Congratulations!\nYou've just finished this quiz!\nGo back to the lesson to continue learning.`}
           >
           </LevelSystem>
 

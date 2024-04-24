@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../title-text.component";
 import { BodyText } from "../../body-text.component";
 import { ImageBg } from "../grades.styles";
+import LevelSystem from "../../../features/Account/LevelSystem/LevelSystem";
 // import {getC} from "";
 
 const Container = styled.View`
@@ -54,6 +55,8 @@ const SubmitButton = styled(Button)`
   margin-bottom: 10px;
 `;
 
+
+//TODO: need to add ability to input file, also need to check if user has actually submitted anything. Can copy SnapshotHandler modal for that.
 const MasteryHandler = ({
   data,
   imageMap,
@@ -61,6 +64,7 @@ const MasteryHandler = ({
 }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   
   const renderItem = ({ item }) => {
 
@@ -119,6 +123,7 @@ const MasteryHandler = ({
               <SubmitButton
                 onPress={() => {
                   setText("");
+                  setLevelSystemVisible(!levelSystemVisible);
                 }}
               >
                 <BodyText color="secondary">{t("common:submit")}</BodyText>
@@ -127,6 +132,12 @@ const MasteryHandler = ({
           }
         />
       </ImageBg>
+
+        {/* marked for translation */}
+      <LevelSystem score={-2} visible={levelSystemVisible}
+      prompt={`Congratulations!\nYour response has been submitted.\n\nYou've just completed a mastery! Give yourself a pat on the back.`}> 
+      </LevelSystem>
+
     </Container>
   );
 };

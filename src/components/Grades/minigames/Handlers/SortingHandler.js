@@ -62,27 +62,6 @@ const SubmitButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
-//SecondScreen is not called. Navigation takes us to LevelSystem.js
-const SecondScreen = ({ data, imageMap }) => {
-  const navigation = useNavigation();
-  console.log("==> ", imageMap);
-  return (
-    <ImageBg source={{ uri: imageMap[data.imageBg] }}>
-      <Container>
-        <Prompt>
-          <TitleText>
-            Good job! Go back to the lesson to continue learning!
-          </TitleText>
-          <Spacer size="large" />
-          <SubmitButton onPress={() => navigation.navigate("Lesson")}>
-            <BodyText color="secondary">Back</BodyText>
-          </SubmitButton>
-        </Prompt>
-      </Container>
-    </ImageBg>
-  );
-};
-
 const Start = ({ data, imageMap }) => {
   // console.log("Data: ", imageMap);
   const [visible, setVisible] = useState(false);
@@ -105,6 +84,7 @@ const Start = ({ data, imageMap }) => {
         >
           <ModalContainer>
             <View>
+              {/* marked for translation */}
               <BodyText size="subtitle">
                 {correct == true
                   ? "That's right! Good job ✨"
@@ -127,13 +107,7 @@ const Start = ({ data, imageMap }) => {
                   setCount(count + 1);
                 } else {
                   setVisible(!visible);
-                  setLevelSystemVisible(!levelSystemVisible);
-
-                  /* //passing param props to LevelSystem
-                  navigation.navigate("SecondScreen", {
-                    score: score,
-                    prompt: "Good job on completing this sorting exercise.",
-                  }); */
+                  setLevelSystemVisible(!levelSystemVisible); //setting LevelSystem modal visible
                 }
               }}
             >
@@ -145,8 +119,9 @@ const Start = ({ data, imageMap }) => {
         </View>
       </Modal>
     );
-  };
+  }; //end of Modko
 
+  //TODO: categories should maybe show both images and text if applicable.
   const renderCategories = ({ item }) => { //here the item is the entire sorting minigame document from the db
     return (
       <>
@@ -170,7 +145,7 @@ const Start = ({ data, imageMap }) => {
         </Category>
       </>
     );
-  };
+  }; //end of renderCategories
 
   return (
     <>
@@ -184,7 +159,7 @@ const Start = ({ data, imageMap }) => {
             <TitleText>{currentOption}</TitleText>
           </Prompt>
 
-          <FlatList // The flatlist used to load minigames and their data.
+          <FlatList
             scrollEnabled={false}
             data={data.categories}
             keyExtractor={(item, index) => index}
@@ -199,7 +174,7 @@ const Start = ({ data, imageMap }) => {
 
             {/* marked for translation */}
           <LevelSystem visible={levelSystemVisible} score={score} 
-          prompt={'Good job on completing this sorting exercise.'}>
+          prompt={'Good job completing this sorting exercise!\nGo back to the lesson to continue learning.'}>
           </LevelSystem>
         </Container>
         {/*}
@@ -226,6 +201,7 @@ const Start = ({ data, imageMap }) => {
   );
 };
 
+//entry point
 const SortingHandler = ({ data, navigation, imageMap }) => {
   return (
     <Stack.Navigator>

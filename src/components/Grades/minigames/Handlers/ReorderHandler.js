@@ -81,12 +81,6 @@ const ReorderHandler = ({ info }) => {
 
   //Modko is shorthand for ModalComponent. Here we render the modal upon minigame completion via "visible" state
   const Modko = () => {
-    /*console.log(score);
-    if(score == 7) {
-      console.log("CORRECT ORDER");
-    } else {
-      console.log("INCORRECT ORDER");
-    }*/ //NOTE: score is only updated after onPress().
     return (
       <Modal transparent animationType="slide" visible={visible}>
         <View
@@ -217,17 +211,17 @@ const ReorderHandler = ({ info }) => {
             </SubmitButton>
           }
         />
+
+        {/* modals */}
         <Modko visible={false} />
+        {/* marked for translation */}
         <LevelSystem visible={levelSystemVisible} score={score} 
-        prompt={"Congratulations! You've successfully submitted this Reorder minigame."}>
+        prompt={"Good job completing this reorder minigame!\nGo back to the lesson to continue learning."}>
         </LevelSystem>
+
       </Container>
     </>
   );
 };
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default ReorderHandler;

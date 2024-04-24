@@ -10,6 +10,7 @@ import {
   Image,
 } from "react-native";
 import { ImageBg } from "../../grades.styles";
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
 
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
@@ -55,9 +56,9 @@ const SnapshotHandler = ({
   imageMap
 }) => {
   const { t } = useTranslation();
-  const [visible, setVisible] = useState(false);
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   const navigation = useNavigation();
-  const Modko = () => {
+  /* const Modko = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
         <View
@@ -87,7 +88,7 @@ const SnapshotHandler = ({
         </View>
       </Modal>
     );
-  };
+  }; */
 
   return (
     <>
@@ -97,15 +98,24 @@ const SnapshotHandler = ({
             <TitleText size="subtitle">{data.prompt}</TitleText>
           </Prompt>
           <Prompt>
+
             <ImageUpload />
-            <SubmitButton onPress={() => setVisible(true)}>
+
+            <SubmitButton onPress={() => setLevelSystemVisible(!levelSystemVisible)}>
               <BodyText color="secondary" size="subtitle">
                 {t("common:submit")}
               </BodyText>
             </SubmitButton>
+
           </Prompt>
         </ImageBg>
-        <Modko visible={false} />
+        {/* <Modko visible={false} /> */}
+        
+        {/* marked for translation */}
+        <LevelSystem score={-1} visible={levelSystemVisible}
+        prompt={'Your image has been submitted. Good job!\nGo back to the lesson to continue learning.'}>
+        </LevelSystem>
+
       </Container>
     </>
   );

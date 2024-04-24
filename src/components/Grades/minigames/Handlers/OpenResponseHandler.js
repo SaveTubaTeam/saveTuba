@@ -20,6 +20,7 @@ import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
 
 import { getChapterData, getLessonData, getGradeData } from "../../../../features/Grades/Handlers/Database.js";
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
 
 const ModalContainer = styled.View`
   background-color: white;
@@ -31,12 +32,15 @@ const ModalContainer = styled.View`
 
 const ImagePrompt = ({ questions, imageMap }) => {
   const [currentPrompt, setPrompt] = useState(0);
-  const [modalVisible, setModalVisible] = useState(false);
-  const [val, setVal] = React.useState("");
+  //const [modalVisible, setModalVisible] = useState(false);
+  const [value, setValue] = useState("");
   const [visible, setVisible] = useState(false);
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   const navigation = useNavigation();
 
   console.log("QW:", questions);
+
+  //modal popup for when the user doesn't type anything
   const Modko = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
@@ -45,8 +49,9 @@ const ImagePrompt = ({ questions, imageMap }) => {
         >
           <ModalContainer>
             <View>
+              {/* marked for translation */}
               <BodyText size="subtitle">
-                Your image was submitted! Good job ✨
+                {`hmmmm... it seems you haven't submitted anything\n`}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -57,10 +62,11 @@ const ImagePrompt = ({ questions, imageMap }) => {
                 paddingTop: 5,
                 paddingBottom: 5,
               }}
-              onPress={() => navigation.navigate("Lesson")}
+              onPress={() => setVisible(!visible)}
             >
+              {/* marked for translation */}
               <BodyText size="subtitle" color="secondary">
-                Back to the lesson
+                Try Again
               </BodyText>
             </TouchableOpacity>
           </ModalContainer>
@@ -135,11 +141,11 @@ const ImagePrompt = ({ questions, imageMap }) => {
               fontSize: 18,
               flexShrink: 1,
             }}
-            onChangeText={setVal}
+            onChangeText={setValue}
             placeholder={questions.prompts[currentPrompt].placeholder}
             placeholderTextColor={"#D5DBB9"}
             multiline={true}
-            value={val}
+            value={value}
           />
           <Button
             style={{
@@ -150,20 +156,34 @@ const ImagePrompt = ({ questions, imageMap }) => {
               borderRadius: 20,
             }}
             onPress={() => {
-              setVal("");
-              setVisible(!visible);
+              if(value === '') {
+                setVisible(!visible)
+              } else {
+                setLevelSystemVisible(!levelSystemVisible);
+              }
+
+              setValue("");
               if (currentPrompt < questions.numberOfPrompts - 1) {
                 setPrompt(currentPrompt + 1);
-              } else {
-                setModalVisible((modalVisible) => !modalVisible);
               }
             }}
           >
+            {/* marked for translation */}
             <BodyText color="secondary">Submit</BodyText>
           </Button>
         </View>
       </View>
-      <Modko visible={false} />
+
+      <Modko visible={visible} />
+
+            {/* marked for translation */}
+      <LevelSystem 
+        visible={levelSystemVisible}
+        score={-1}
+        prompt={"Your response has been submitted. Good job!\nGo back to the lesson to continue learning."}
+      >
+
+      </LevelSystem>
     </ScrollView>
   );
 };

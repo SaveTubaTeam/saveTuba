@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import { theme } from "../../../infrastructure/theme";
-import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
+import { View, Modal, Pressable, TouchableOpacity, Text, Image } from "react-native";
 import { Spacer } from "../../../components/spacer.component";
 
 import { TitleText } from "../../../components/title-text.component";
@@ -15,21 +15,48 @@ import { auth, db } from "../../../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 import { t } from "i18next";
 
+//LevelSystem is the final modal which shows up upon all minigame completions. Bad name - should maybe be renamed to CompletionModal
+//In the future this will be the one place that handles pushing content to db.
 const LevelSystem = ({ score, prompt, visible }) => {
   const navigation = useNavigation();
   const XP_PER_POINT = 15;
 
+  //some minigames have no score, so a score < 0 is passed into props. We check for this case below
+  //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
+  let scoreShown;
+  let finalXP;
+  if(score < 0) {
+    scoreShown = '';
+    score === -1 ? finalXP = 100 : finalXP = 300; //MasteryHandler passes a prop of -2 for more XP
+  } else {
+    scoreShown = `Final Score: ${score}\n\n`;
+    finalXP = score * XP_PER_POINT;
+  }
+  
   return (
     <Modal transparent animationType="slide" visible={visible}>
+      <View style={{ flex: 1 }}>
+      <Image 
+      style={{
+        position: "absolute",
+        bottom: 130,
+        right: -70,
+        width: "60%", // Adjust the width as needed
+        height: "40%", // Adjust the height as needed
+        transform: [{ scaleX: -1 }], // Flip the image horizontally
+        zIndex: 1, // Set a higher z-index to bring the image in front of the modal
+      }}
+      source={require("../../../../assets/tuba1.png")}
+      />
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <ModalContainer>
 
         <View>
           {/* marked for translation */}
           <BodyText size="subtitle">
-          {`Final Score: ${score}\n\n`}
+          {scoreShown}
           {`${prompt} ✨`}
-          {`\n\nYou gained ${score * XP_PER_POINT} xp!\n`}
+          {`\n\nYou gained ${finalXP} xp!\n`}
           </BodyText>
         </View>
 
@@ -54,6 +81,7 @@ const LevelSystem = ({ score, prompt, visible }) => {
         </TouchableOpacity>
 
       </ModalContainer>
+      </View>
       </View>
     </Modal>
   );

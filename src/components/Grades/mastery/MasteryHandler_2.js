@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../title-text.component";
 import { BodyText } from "../../body-text.component";
 import { ImageBg } from "../grades.styles";
+import LevelSystem from "../../../features/Account/LevelSystem/LevelSystem";
 
 const Container = styled.View`
   flex: 1;
@@ -62,7 +63,7 @@ const MasteryHandler2 = ({
 }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
-
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
 
   const renderItem = ({ item }) => {
     return (
@@ -120,6 +121,7 @@ const MasteryHandler2 = ({
               <SubmitButton
                 onPress={() => {
                   setText("");
+                  setLevelSystemVisible(!levelSystemVisible);
                 }}
               >
                 <BodyText color="secondary">{t("common:submit")}</BodyText>
@@ -128,6 +130,11 @@ const MasteryHandler2 = ({
           }
         />
       </ImageBg>
+
+          {/* marked for translation */}
+      <LevelSystem score={-2} visible={levelSystemVisible}
+      prompt={`Congratulations!\nYou've just completed a mastery! Give yourself a pat on the back.`}> 
+      </LevelSystem>
     </Container>
   );
 };

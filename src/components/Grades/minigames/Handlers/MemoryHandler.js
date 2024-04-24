@@ -20,7 +20,7 @@ import { Spacer } from "../../../spacer.component.js";
 export class MemoryHandler extends React.Component {
 
   constructor(props) {
-    // console.log("Constructor => ", props);
+    console.log("Constructor => ", props);
     super(props);
     this.renderCards = this.renderCards.bind(this);
     this.resetCards = this.resetCards.bind(this);
