@@ -86,7 +86,7 @@ const SecondScreen = ({ data, imageMap }) => {
 const Start = ({ data, imageMap }) => {
   // console.log("Data: ", imageMap);
   const [visible, setVisible] = useState(false);
-
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
@@ -127,12 +127,13 @@ const Start = ({ data, imageMap }) => {
                   setCount(count + 1);
                 } else {
                   setVisible(!visible);
+                  setLevelSystemVisible(!levelSystemVisible);
 
-                  //passing param props to LevelSystem
+                  /* //passing param props to LevelSystem
                   navigation.navigate("SecondScreen", {
                     score: score,
                     prompt: "Good job on completing this sorting exercise.",
-                  });
+                  }); */
                 }
               }}
             >
@@ -195,6 +196,11 @@ const Start = ({ data, imageMap }) => {
             numColumns={2}
           />
           <Modko visible={false} />
+
+            {/* marked for translation */}
+          <LevelSystem visible={levelSystemVisible} score={score} 
+          prompt={'Good job on completing this sorting exercise.'}>
+          </LevelSystem>
         </Container>
         {/*}
         <Option style={{ opacity: visibleOne }}>
@@ -226,11 +232,11 @@ const SortingHandler = ({ data, navigation, imageMap }) => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="SecondScreen"
         options={{ headerShown: false }}
         component={LevelSystem}
-      ></Stack.Screen>
+      ></Stack.Screen> */}
     </Stack.Navigator>
   );
 };

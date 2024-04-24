@@ -80,74 +80,8 @@ const Selector = () => {
         );
       })}
     </View>
-    // <View
-    //     style={{
-    //         flex: 1,
-    //         alignItems: 'center',
-    //         justifyContent: 'space-evenly',
-    //     }}>
-    //     <Row>
-    //         {LANGUAGES.map(language => {
-    //             const selectedLanguage = language.code === selectedLanguageCode;
-
-    //             return (
-    //                 <Pressable
-    //                     key={language.code}
-    //                     style={styles.buttonContainer}
-    //                     disabled={selectedLanguage}
-    //                     onPress={() => setLanguage(language.code)}
-    //                 >
-    //                     <Text
-    //                         style={[selectedLanguage ? styles.selectedText : styles.text]}
-    //                     >
-    //                         {language.label}
-    //                     </Text>
-    //                 </Pressable>
-    //             );
-    //         })}
-    //         <Pressable
-    //             key={language.code}
-    //             disabled={selectedLanguage}
-    //             onPress={() => setLanguage('en')}
-    //             style={{
-    //                 borderRadius: 8,
-    //                 backgroundColor:
-    //                     currentLanguage === 'en' ? '#748816' : '#C6DC3B',
-    //                 padding: 8,
-    //             }}>
-    //             <CountryFlag isoCode="us" size={25} />
-    //         </Pressable>
-    //         <Spacer position="left" size="small" />
-
-    //         <Pressable
-    //             key={language.code}
-    //             disabled={selectedLanguage}
-    //             onPress={() => setLanguage('kk')}
-    //             style={{
-    //                 borderRadius: 8,
-    //                 backgroundColor:
-    //                     currentLanguage === 'kk' ? '#748816' : '#C6DC3B',
-    //                 padding: 8,
-    //             }}>
-    //             <CountryFlag isoCode="kz" size={25} />
-    //         </Pressable>
-    //         <Spacer position="right" size="small" />
-    //         <Pressable
-    //             key={language.code}
-    //             disabled={selectedLanguage}
-    //             onPress={() => setLanguage('ru')}
-    //             style={{
-    //                 borderRadius: 8,
-    //                 backgroundColor:
-    //                     currentLanguage === 'ru' ? '#748816' : '#C6DC3B',
-    //                 padding: 8,
-    //             }}>
-    //             <CountryFlag isoCode="ru" size={25} />
-    //         </Pressable>
-    //     </Row>
-    // </View >
   );
-};
+}; //end of selector
 
 const styles = StyleSheet.create({
   container: {

@@ -23,6 +23,7 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { Spacer } from "../../../spacer.component";
+import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
 
 import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
 
@@ -35,7 +36,7 @@ const Container = styled.View`
 
 const ModalContainer = styled.View`
   background-color: white;
-  width: 60%;
+  width: 70%;
   padding: 30px;
   border-radius: 20px;
   border: 2px solid #cce882;
@@ -66,20 +67,15 @@ const Item = styled.TouchableOpacity`
   margin: 5px 0;
 `;
 
-//DATA ENTRY POINT
-const ReorderHandler = ({
-  info,
-  selectedGrade,
-  selectedChapter,
-  selectedLesson,
-}) => {
-  
+//ENTRY POINT
+const ReorderHandler = ({ info }) => {
   //console.log("Data In: ", info.data);
   info.data.sort(function (a, b) {return Math.random() - 0.5;}); //shuffling data (this shuffle happens once upon initial render) https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
 
   const [data, setData] = useState(info.data);
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   const [score, setScore] = useState(0);
   const navigation = useNavigation();
 
@@ -98,11 +94,13 @@ const ReorderHandler = ({
         >
           <ModalContainer>
             <View>
+              {/* marked for translation */}
               <BodyText size="subtitle">
                 Score: {`${score}/${data.length}\n`}
-                Your response was submitted! Good job ✨
               </BodyText>
             </View>
+
+            {/* button to return to menu */}
             <TouchableOpacity
               style={{
                 backgroundColor: "#748816",
@@ -111,12 +109,36 @@ const ReorderHandler = ({
                 paddingTop: 5,
                 paddingBottom: 5,
               }}
-              onPress={() => navigation.navigate("Lesson")}
+              onPress={() => {
+                setVisible(!visible);
+                setLevelSystemVisible(!levelSystemVisible);
+              }}
             >
+              {/* marked for translation */}
               <BodyText size="subtitle" color="secondary">
-                Back to the lesson
+                Return to Lessons
               </BodyText>
             </TouchableOpacity>
+
+            {/* button to try again */}
+            <TouchableOpacity
+              style={{
+                backgroundColor: "#748816",
+                borderRadius: 10,
+                marginTop: 10,
+                paddingTop: 5,
+                paddingBottom: 5,
+              }}
+              onPress={() => {
+                setVisible(!visible);
+              }}
+            >
+              {/* marked for translation */}
+              <BodyText size="subtitle" color="secondary">
+                Try Again
+              </BodyText>
+            </TouchableOpacity>
+
           </ModalContainer>
         </View>
       </Modal>
@@ -167,6 +189,8 @@ const ReorderHandler = ({
             <Prompt>
               <TitleText size="subtitle">{info.prompt}</TitleText>
               <Spacer size="medium" />
+
+              {/* marked for translation */}
               <TitleText size="caption">
                 Hint: Sort the items from top (first) to bottom (last).
               </TitleText>
@@ -176,6 +200,7 @@ const ReorderHandler = ({
           ListFooterComponent={
             <SubmitButton onPress={() => {
                 //iterating through list to check for correct order and update score.
+                console.log("\n\tcurrent order:")
                 for(let i=0; i<Object.keys(data).length; i++) {
                   console.log("Index:", data[i].index, "Iteration i:", i);
                   if(data[i].index == i) {
@@ -193,6 +218,9 @@ const ReorderHandler = ({
           }
         />
         <Modko visible={false} />
+        <LevelSystem visible={levelSystemVisible} score={score} 
+        prompt={"Congratulations! You've successfully submitted this Reorder minigame."}>
+        </LevelSystem>
       </Container>
     </>
   );

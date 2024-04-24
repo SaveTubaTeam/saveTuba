@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   View,
@@ -71,6 +71,7 @@ export class MemoryHandler extends React.Component {
         <View style={{ alignSelf: "center", width: "80%" }}>
           <BodyText size="subtitle">{this.props.data.description}</BodyText>
           <Spacer size="medium" />
+          {/* marked for translation */}
           <TitleText size="caption">Hint: Match images with words.</TitleText>
         </View>
         <View style={styles.body}>{this.renderRows.call(this)}</View>

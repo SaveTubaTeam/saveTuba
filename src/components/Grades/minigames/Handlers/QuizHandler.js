@@ -79,9 +79,8 @@ const Question = styled.View`
   margin-bottom: 20px;
 `;
 
-//SecondScreen is rendered upon iterating through a maximum of four questions. 
-//navigation used to erroneously direct us to LevelSystem.js...
-const SecondScreen = ({ data, imageMap }) => {
+//SecondScreen not used here.
+/* const SecondScreen = ({ data, imageMap }) => {
   const navigation = useNavigation();
   // console.log("Second Screen ==> ", data);
   return (
@@ -99,12 +98,12 @@ const SecondScreen = ({ data, imageMap }) => {
       </SafeArea>
     </ImageBg>
   );
-};
+}; */
 
 //Main function. Handles most logic. 
 //@param data is taken from QuizScreen format in Firebase
 const Start = ({ data, imageMap }) => {
-  const navigation = useNavigation();
+  //const navigation = useNavigation();
 
   const [correctAnswer, setCorrect] = useState(false);
 
@@ -122,29 +121,35 @@ const Start = ({ data, imageMap }) => {
   // };
   console.log("Start ==> ", data.content[0].prompt);
   const [currentPrompt, setCurrentPrompt] = useState(data.content[0].prompt);
-
+  
   //defining visibility state of each question
   const [visible, setVisible] = useState(false);
+  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   const [firstVisible, setFirstVisible] = useState("flex");
   const [secondVisible, setSecondVisible] = useState("none");
   const [thirdVisible, setThirdVisible] = useState("none");
   const [fourthVisible, setFourthVisible] = useState("none");
+
+  const navigation = useNavigation(); //navigation may not work inside of modals??
 
   //ModalComponent returns answer Modal screen. Visibility of modal initially set to false.
   //Currently implemented for a maximum of four questions.
   const ModalComponent = () => {
     return (
       <Modal transparent animationType="slide" visible={visible}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+
+        {/* takes ModalContainer styling from above*/}
           <ModalContainer>
+
+            {/* This TouchableOpacity is an x on the top right of the modal which does not move us to the next question */}
             <TouchableOpacity
               style={{ position: "absolute", right: 10, top: 5 }}
               onPress={() => setVisible(!visible)}
             >
               <BodyText>✖️</BodyText>
             </TouchableOpacity>
+
             <View>
               <BodyText size="subtitle">
                 {correctAnswer == true
@@ -152,6 +157,8 @@ const Start = ({ data, imageMap }) => {
                   : "Incorrect! Better luck next time 🍀"}
               </BodyText>
             </View>
+
+            {/* green button 'Next' at the bottom of modal to move to the next question */}
             <TouchableOpacity
               style={{
                 backgroundColor: "#748816",
@@ -161,7 +168,7 @@ const Start = ({ data, imageMap }) => {
                 paddingBottom: 5,
               }}
               onPress={() => {
-                setVisible(!visible);
+                setVisible(!visible); //setting modal visibility back to false
                 if (count == 0) {
                   setCount(count + 1);
                   setCurrentPrompt(data.content[count + 1].prompt);
@@ -181,18 +188,23 @@ const Start = ({ data, imageMap }) => {
                   setThirdVisible("none");
                   setFourthVisible("flex");
                 } else {
-                  navigation.navigate("SecondScreen", {
+                  /* navigation.navigate("SecondScreen", {
                     score: score,
                     prompt: "Congratulations, you've just finished your first quiz! Go back to the lesson to continue learning!"
-                  });
+                  }); */
+                  setLevelSystemVisible(!levelSystemVisible);
                 }
               }}
             >
+              {/* marked for translation */}
               <BodyText size="subtitle" color="secondary">
                 Next
               </BodyText>
+
             </TouchableOpacity>
+
           </ModalContainer>
+
         </View>
       </Modal>
     );
@@ -281,6 +293,13 @@ const Start = ({ data, imageMap }) => {
           />
 
           <ModalComponent visible={visible}  />
+
+            {/* marked for translation */}
+          <LevelSystem visible={levelSystemVisible} score={score} 
+          prompt={`Congratulations, you've just finished your first quiz! Go back to the lesson to continue learning!`}
+          >
+          </LevelSystem>
+
         </Container>
       </ImageBg>
     </>
@@ -297,9 +316,11 @@ const QuizHandler = ({ data, addAchievement, imageMap }) => {
         {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
 
-      <Stack.Screen name="SecondScreen" options={{ headerShown: false }}>
-        {() => <SecondScreen data={data} imageMap={imageMap} />}
-      </Stack.Screen>
+      {/* <Stack.Screen
+        name="SecondScreen"
+        options={{ headerShown: false }}
+        component={LevelSystem}
+      ></Stack.Screen> */}
     </Stack.Navigator>
   );
 };
