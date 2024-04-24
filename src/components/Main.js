@@ -78,13 +78,41 @@ const SaveTuba = () => {
   );
 };
 
-//auth is already checked for null/undefined within login screens.
+//Main handles the rendering of the SaveTuba navigation stack above, and calls fetchUser
 const Main = () => {
   const dispatch = useDispatch()
   const userStatus = useSelector(state => state.user.status)
   const user = useSelector(selectCurrentUser)
   const navigation = useNavigation();
-  const [loading, setLoading] = useState(false); //for the spinner
+  //const [loading, setLoading] = useState(false); //for the spinner
+
+  //here we check the status of fetchUser
+  useEffect(() => {
+    //defining variables for fetchUser()
+    let loginType;
+    let input;
+    //TODO: once phone number verification is working, should update this to check for phone number logintype
+      if(auth.currentUser) {
+        //checking if firebase auth was with email or phone number
+        if(auth.currentUser.email) {
+          loginType = 'email'
+          input = auth.currentUser.email
+        }
+        //console.log("\nloginType:", loginType, "\ninput:", input);
+
+        if(userStatus === 'idle') {
+          dispatch(fetchUser({loginType, input}));
+        }
+        
+        if(userStatus === 'finished') {
+          console.log("Main.js fetched user from store:", user)
+        }
+
+        if(userStatus === 'rejected') {
+          handleFetchUserRejected(); //see below
+        }
+      }
+  }, [userStatus, dispatch]); //had some problems keeping Main.js from rendering more than expected so there's a lot of clutter in the terminal. sorry folks
 
   //for 'rejected' load case inside of useEffect below
   const handleFetchUserRejected = async() => {
@@ -92,47 +120,19 @@ const Main = () => {
     await auth.signOut()
     Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
     navigation.replace("LoginEmail");
-    setLoading(false)
   }
-
-  //all this logic inside of useEffect is mainly for the spinner while we wait for fetchUser
-  useEffect(() => {
-    //defining variables for fetchUser()
-    let loginType;
-    let input;
-    //TODO: once phone number verification is working, should update this to check for phone number logintype
-      //this nested if statement is written really poorly and complicates things. should be refactored
-      if(auth.currentUser && auth.currentUser.email) {
-        loginType = 'email'
-        input = auth.currentUser.email
-        //console.log("\nloginType:", loginType, "\ninput:", input);
-
-        if(userStatus === 'idle') {
-          dispatch(fetchUser({loginType, input}));
-        }
-    
-        if(userStatus === 'loading') {
-          setLoading(true)
-        } else if(userStatus === 'finished') {
-          setLoading(false)
-          console.log("fetched user from store:", user)
-        } else if(userStatus === 'rejected') {
-          handleFetchUserRejected();
-        }
-      }
-  }, [userStatus, dispatch]); //had some problems keeping Main.js from rendering more than once so there's a lot of clutter in the terminal. sorry folks
 
     //Update 4/22/24: removed Amodal global wrapper. User achievements should be implemented in a more functional way.
 
     //ternary operator to render a spinner while we wait for fetchUser()
     return (
       <>
-        {!loading ? (
-          <SaveTuba />
-        ) : (
+        {userStatus === 'loading' ? (
           <View style={[styles.container, styles.horizontal]}>
-            <ActivityIndicator size="large" color="#00ff00" /> 
+          <ActivityIndicator size="large" color="#00ff00" /> 
           </View>
+        ) : (
+          <SaveTuba />
         )}
       </>
     );

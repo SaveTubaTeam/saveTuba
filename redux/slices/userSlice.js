@@ -39,7 +39,7 @@ const userSlice = createSlice({
     initialState: initialState,
     reducers: {
         signOutUser(state, action) {
-            state.userData = {'emptyUser': 'empty'}; //RTK Immer handles state mutation
+            state.userData = {'emptyUser': 'empty'};
             state.status = 'idle';
             console.log("signOutUser successfully dispatched to userSlice!")
         }
