@@ -1,5 +1,6 @@
 import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
+import grade3russian from "./grade3russian.json"
 import { db, storage } from "../../../../firebase.js";
 import boilerplateLesson from  "./boilerplateLesson.json";
 
@@ -326,7 +327,7 @@ async function changeData() {
 //TODO: rewrite to take any formatted lesson .json file
 async function postData() {
     // Grade 2
-    const chapters2 = grade2.Grade2.chapters;
+    /* const chapters2 = grade2.Grade2.chapters;
     const gradeName2 = Object.keys(grade2)[0];
     for (var chapters2Iter = 0; chapters2Iter < chapters2.length; chapters2Iter++) {
         var chapter2 = (chapters2Iter + 1).toString();
@@ -396,79 +397,86 @@ async function postData() {
             }
 
         }
-    }
+    } */
 
     // Grade 3
-    // const chapters3 = grade3.Grade3.chapters;
-    // const gradeName3 = Object.keys(grade3)[0];
-    // for (var chapters3Iter = 0; chapters3Iter < chapters3.length; chapters3Iter++) {
-    //     var chapter3 = (chapters3Iter + 1).toString();
-    //     var chapterDoc3 = "Chapter".concat(chapter3);
-    //     var lessons3 = grade3.Grade3.chapters[chapters3Iter].lessons;
+    const chapters3 = grade3russian.Grade3.chapters;
+    const language = "Russian"
+    const gradeName3 = Object.keys(grade3russian)[0];
+    //iterating through chapters
+    for (var chapters3Iter = 0; chapters3Iter < chapters3.length; chapters3Iter++) {
+         var chapter3 = (chapters3Iter + 1).toString();
+         var chapterDoc3 = "Chapter".concat(chapter3);
+         var lessons3 = grade3russian.Grade3.chapters[chapters3Iter].lessons;
 
-    //     for (var lessons3Iter = 0; lessons3Iter < lessons3.length; lessons3Iter++) {
-    //         var lesson3 = (lessons3Iter + 1).toString();
-    //         var lessonCollection3 = "Lesson".concat(lesson3);
-    //         var minigames3 = grade3.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].minigames;
+        //iterating through lessons
+         for (var lessons3Iter = 0; lessons3Iter < lessons3.length; lessons3Iter++) {
+             var lesson3 = (lessons3Iter + 1).toString();
+             var lessonCollection3 = "Lesson".concat(lesson3);
+             var minigames3 = grade3russian.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].minigames;
 
-    //         const data = {
-    //             title: lessons3[lessons3Iter].title,
-    //             thumbnail: lessons3[lessons3Iter].thumbnail,
-    //             backgroundColor: lessons3[lessons3Iter].backgroundColor,
-    //             navigation: "Lesson".concat((lessons3Iter + 1).toString())
-    //         };
+            //setting metadata for doc
+             const data = {
+                 title: lessons3[lessons3Iter].title,
+                 thumbnail: lessons3[lessons3Iter].thumbnail,
+                 backgroundColor: lessons3[lessons3Iter].backgroundColor,
+                 navigation: "Lesson".concat((lessons3Iter + 1).toString())
+             };
 
-    //         await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc("English").set(data)
-    //             .then(() => {
-    //                 console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully updated!");
-    //             })
-    //             .catch((error) => {
-    //                 // The document probably doesn't exist.
-    //                 console.error("Error updating document: ", error);
-    //             });
+            //selecting language within lesson
+             await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).set(data)
+                 .then(() => {
+                     console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully updated!");
+                 })
+                 .catch((error) => {
+                     // The document probably doesn't exist.
+                     console.error("Error updating document: ", error);
+                 });
 
 
+            //iterating through minigames
+             for (var minigames3Iter = 0; minigames3Iter < minigames3.length; minigames3Iter++) {
+                 var minigameName3 = minigames3[minigames3Iter].navigation;
+                 //selecting current minigame
+                 await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("minigames").doc(minigameName3).set(minigames3[minigames3Iter]).then(() => {
+                     console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                 })
+                     .catch((error) => {
+                         console.error("Error writing document: ", error);
+                     });
+             }
 
-    //         for (var minigames3Iter = 0; minigames3Iter < minigames3.length; minigames3Iter++) {
-    //             var minigameName3 = minigames3[minigames3Iter].navigation;
-    //             await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc("English").collection("minigames").doc(minigameName3).set(minigames3[minigames3Iter]).then(() => {
-    //                 console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
-    //             })
-    //                 .catch((error) => {
-    //                     console.error("Error writing document: ", error);
-    //                 });
-    //         }
+             //same for mastery
+             var mastery = grade3russian.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].mastery;
+             var mastery_2 = grade3russian.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].mastery_2;
+             if (mastery_2 === undefined || mastery_2 === null) {
+                 await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("mastery").doc("mastery").set(mastery)
+                     .then(() => {
+                         console.log("Mastery for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                     })
+                     .catch((error) => {
+                         console.error("Error writing document: ", error);
+                     });
+             } else {
 
-    //         var mastery = grade3.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].mastery;
-    //         var mastery_2 = grade3.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].mastery_2;
-    //         if (mastery_2 === undefined || mastery_2 === null) {
-    //             await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc("English").collection("mastery").doc("mastery").set(mastery)
-    //                 .then(() => {
-    //                     console.log("Mastery for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error writing document: ", error);
-    //                 });
-    //         } else {
+                 await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("mastery").doc("mastery").set(mastery)
+                     .then(() => {
+                         console.log("Mastery for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                     })
+                     .catch((error) => {
+                         console.error("Error writing document: ", error);
+                    });
 
-    //             await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc("English").collection("mastery").doc("mastery").set(mastery)
-    //                 .then(() => {
-    //                     console.log("Mastery for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error writing document: ", error);
-    //                 });
-
-    //             await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc("English").collection("mastery").doc("mastery_2").set(mastery_2)
-    //                 .then(() => {
-    //                     console.log("Mastery_2 for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
-    //                 })
-    //                 .catch((error) => {
-    //                     console.error("Error writing document: ", error);
-    //                 });
-    //         }
-    //     }
-    // }
+                await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("mastery").doc("mastery_2").set(mastery_2)
+                    .then(() => {
+                        console.log("Mastery_2 for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                    })
+                    .catch((error) => {
+                        console.error("Error writing document: ", error);
+                    });
+            }
+        }
+    }
 
 } //END OF postData()
 
