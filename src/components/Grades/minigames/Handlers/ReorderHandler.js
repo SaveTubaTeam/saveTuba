@@ -192,7 +192,10 @@ const ReorderHandler = ({ info }) => {
           }
           ListFooterComponentStyle={{ marginTop: 10 }}
           ListFooterComponent={
+
+            /* Submit Button */
             <SubmitButton onPress={() => {
+                setScore(0);//resetting score
                 //iterating through list to check for correct order and update score.
                 console.log("\n\tcurrent order:")
                 for(let i=0; i<Object.keys(data).length; i++) {
