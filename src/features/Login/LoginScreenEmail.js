@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import { auth } from "../../../firebase";
+import { auth, db } from "../../../firebase";
 import { Alert, Text } from 'react-native';
 
 import { fetchImages } from "../../../redux/slices/imageSlice";
@@ -133,12 +133,30 @@ const LoginScreenEmail = () => {
     auth.languageCode = i18n.language; //setting current language code to localize email
     console.log("language code for password reset email:", i18n.language)
 
-    await auth.sendPasswordResetEmail(email)
+    if(checkIfUserExists()) { //see below
+      await auth.sendPasswordResetEmail(email)
         .then(() => {//password reset email sent successfully
             Alert.alert("Password Reset Email Sent", "An email with instructions to reset your password has been sent to your inbox.");
         }).catch((error) => {
             Alert.alert("Error", "Please enter a valid email address");
         })
+    } else {
+      Alert.alert("Invalid Email", "No such account with the given email exists");
+    }
+  }
+
+  //helper for sendPassWordReset
+  const checkIfUserExists = async() => {
+    //checking if account exists
+    await db.collection('users').doc(email).get().then((snapshot) => {
+      if(snapshot.exists) {
+        console.log("user exists. sending password reset email to:", email);
+        return true;
+      } else {
+        console.log("user not found within 'users' collection");
+        return false;
+      }
+    })
   }
 
   return (
@@ -186,7 +204,7 @@ const LoginScreenEmail = () => {
 
           {/* Forgot Password link */}
           <TouchableOpacity onPress= {() => {
-                console.log("Forgot Password button pressed");
+                console.log("\n\tForgot Password button pressed");
                 sendPasswordReset();
                 }} style={{alignItems: 'center'}}>
           <Text style={{textDecorationLine: 'underline'}}>
