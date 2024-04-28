@@ -80,7 +80,7 @@ const LoginScreenEmail = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  //fetching images
+  //fetching images, updating the auth object with an observer to track changes to the existing user
   useEffect(() => {
     console.log("\n\tinside LoginScreenEmail.js")
     console.log('Most recent userData store:', currentUserStore);
@@ -103,6 +103,7 @@ const LoginScreenEmail = () => {
     return login; //this line prevents login from being called more than once
   }, [currentUserStore, dispatch]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
+  //this function is called upon pressing the login button
   const handleLogin = async () => {
     await auth
       .signInWithEmailAndPassword(email, password)
@@ -145,7 +146,7 @@ const LoginScreenEmail = () => {
     }
   }
 
-  //helper for sendPassWordReset
+  //helper for sendPasswordReset
   const checkIfUserExists = async() => {
     //checking if account exists
     await db.collection('users').doc(email).get().then((snapshot) => {
@@ -153,7 +154,7 @@ const LoginScreenEmail = () => {
         console.log("user exists. sending password reset email to:", email);
         return true;
       } else {
-        console.log("user not found within 'users' collection");
+        console.log(email, "not found within 'users' collection");
         return false;
       }
     })
