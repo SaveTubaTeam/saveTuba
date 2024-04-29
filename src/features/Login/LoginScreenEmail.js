@@ -131,8 +131,8 @@ const LoginScreenEmail = () => {
 
   //function to send a password reset email: https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
   const sendPasswordReset = async() => {
-    auth.languageCode = i18n.language; //setting current language code to localize email
-    console.log("language code for password reset email:", i18n.language)
+    auth.languageCode = i18n.language; //setting current language code to localize email.
+    console.log("language code for password reset email:", auth.languageCode);
 
     if(checkIfUserExists()) { //see below
       await auth.sendPasswordResetEmail(email)

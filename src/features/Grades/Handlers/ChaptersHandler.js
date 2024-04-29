@@ -13,12 +13,11 @@ import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
-// @param route **This is the route that will be used to determine the lesson. The parameter is passed as a prop from HomeScreen.js
+// @param route - Please see: https://reactnavigation.org/docs/params/ - Note how we define the route params in HomeScreen.js
 function ChaptersHandler({ route }) { //add achievements
 
   const [gradeData, setGradeData] = useState(null);
   const [gradeNumber, setGradeNumber] = useState(null);
-
 
   const { level } = route.params; // Level selected from Lesson navigation screen. Level prop is defined in HomeScreen.js
   const navigation = useNavigation();
@@ -26,7 +25,7 @@ function ChaptersHandler({ route }) { //add achievements
   const imageMap = useSelector(state => state.imageMap.imageData);
   useEffect(() => {
     switch (level) {
-      case 1:
+      case 2:
         {
           console.log("Grade2 route selected");
           getGradeData("Grade2").then(
@@ -39,7 +38,7 @@ function ChaptersHandler({ route }) { //add achievements
           });
           break;
         }
-      case 2: {
+      case 3: {
         console.log("Grade3 route selected");
         getGradeData("Grade3").then(
           (gradeData) => {
@@ -51,11 +50,11 @@ function ChaptersHandler({ route }) { //add achievements
         });
         break;
       }
-      case 3: {
+      case 4: {
         console.log("Grade 4 route selected. Need to fill in when data is available");
         break;
       }
-      case 4: {
+      case 5: {
         console.log("Grade 5 route selected. Need to fill in when data is available");
         break;
       }

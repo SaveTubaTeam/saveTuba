@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
 
 const Stack = createNativeStackNavigator();
 
+//LessonsHandler is initialized as a component within ChaptersHandler and takes four params
 function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter }) {
   //const language = useSelector(state => state.languageSelector.language); //should just be using i18n.language
   /* const { i18n } = useTranslation();

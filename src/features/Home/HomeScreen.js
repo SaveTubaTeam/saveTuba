@@ -30,7 +30,7 @@ function HomeView() {
         <TouchableOpacity
           style={style.roundButton1}
           onPress={() => {
-            navigation.push("ChaptersHandler", { level: 1 });
+            navigation.push("ChaptersHandler", { level: 2 }); //route.params sent into ChaptersHandler is defined here
           }}
         >
           <Text style={style.baseText}>2</Text>
@@ -49,7 +49,7 @@ function HomeView() {
         />  */}
         <TouchableOpacity
           style={style.roundButton2}
-          onPress={() => navigation.push("ChaptersHandler", { level: 2 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 3 })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
@@ -67,7 +67,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton1}
-          onPress={() => navigation.push("ChaptersHandler", { level: 3 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 4 })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -85,7 +85,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          onPress={() => navigation.push("ChaptersHandler", { level: 4 })}
+          onPress={() => navigation.push("ChaptersHandler", { level: 5 })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
@@ -121,7 +121,7 @@ const HomeScreen = () => {
         options={{
           headerShown: false,
         }}
-        initialParams={{ level: 1 }}
+        initialParams={{ level: 2 }}
       />
     </Stack.Navigator>
   );
