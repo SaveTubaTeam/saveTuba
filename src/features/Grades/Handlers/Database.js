@@ -6,11 +6,10 @@ import boilerplateLesson from  "./boilerplateLesson.json";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-//***all documentation falls under web api
-//documentation for count() https://firebase.google.com/docs/firestore/query-data/aggregation-queries 
-//documentation for set() https://firebase.google.com/docs/firestore/manage-data/add-data#node.js_1
-//documentation for get() https://firebase.google.com/docs/firestore/query-data/get-data
-//navigating the firestore database tree should be done as seen in postBoilerplate() via reference to doc() or collection().
+//***all documentation falls under web-namespaced api
+//documentation for set() https://firebase.google.com/docs/firestore/manage-data/add-data#web-namespaced-api_1
+//documentation for get() https://firebase.google.com/docs/firestore/query-data/get-data#web-namespaced-api_2
+//navigating the firestore database tree should be done via reference to doc() or collection().
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
@@ -134,6 +133,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         await setCache(`${chpt}:`, lessons);
         //console.log(getCacheObject("lessons")); //see lessons in cache
         return lessons;
+    //}
 }
 
 // The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
@@ -330,8 +330,7 @@ async function postData() {
 
 } //END OF postData()
 
-
-//use the below function to push boilerplate lesson templates into database for empty chapters. WARNING: CAN ERASE EXISTING DATA
+//use the below function to push boilerplate lesson templates into database for a specified empty chapter. WARNING: CAN ERASE EXISTING DATA
 //See LoginScreen for function call location (this function will not work for params that do not exist!);
 //WARNING: If your params are incorrect you run the risk of erasing data!! Big no-no!
 //Chapter metadata MUST be manually defined beforehand, specifically numLessons attribute.
