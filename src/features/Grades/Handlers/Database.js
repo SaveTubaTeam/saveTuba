@@ -19,9 +19,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 // @param grade **This is just the grade that you are querying for
 // @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
 async function getGradeData(grade) {
+    console.log(`\n\tNow in ${grade} Chapters`);
 
     const result = await getCacheObject(grade).then((result) => {
-        console.log("Result: ", result);
+        //console.log("Result: ", result);
         return result;
     }).catch((error) => {
         console.log("Error with getCacheObj in getGradeData: ", error);
@@ -60,7 +61,11 @@ async function getGradeData(grade) {
 // @param language **currently always set to "English"
 // @return lessons **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, numLessons, language) {
-    const result = await getCacheObject(`${chpt}`).then((result) => {
+    grade = "Grade".concat(grade.toString());
+    chpt = "Chapter".concat(chpt.toString());
+    console.log(`\n\tNow in ${grade} ${chpt} Lessons\n  lang:`, language);
+
+    const result = await getCacheObject(`${grade}-${chpt}-${language}`).then((result) => {
         console.log("Result: ", result);
         return result;
     }).catch((error) => {
@@ -74,9 +79,6 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         console.log("Pulling lessons from DB");
         // Use a map to more easily access correct minigames
         var lessons = [];
-        console.log("lang ", language);
-        grade = "Grade".concat(grade.toString());
-        chpt = "Chapter".concat(chpt.toString());
 
         //iterating through lessons
         for (var i = 1; i <= numLessons; i++) {
@@ -130,7 +132,7 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         }//end of lessons iteration
 
         console.log("Lessons: ", lessons); //logging lessons array
-        await setCache(`${chpt}:`, lessons);
+        await setCache(`${grade}-${chpt}-${language}`, lessons); //cache key looks like "Grade1-Chapter3"
         //console.log(getCacheObject("lessons")); //see lessons in cache
         return lessons;
     //}

@@ -44,7 +44,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
         {
           getLessonsData(2, selectedChapter, numLessons, language).then(
             (result) => {
-              console.log("Result: ", result);
+              //console.log("Result: ", result);
               try {
                 setLessonsData(result);
               } catch (error) {
@@ -59,7 +59,7 @@ function LessonsHandler({ numLessons, gradeNumber, gradeData, selectedChapter })
       case 3: {
         getLessonsData(3, selectedChapter, numLessons, language).then(
           (result) => {
-            console.log("Result: ", result);
+            //console.log("Result: ", result);
             try {
               setLessonsData(result);
             } catch (error) {
