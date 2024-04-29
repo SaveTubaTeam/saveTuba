@@ -1,6 +1,6 @@
 import grade2 from "./grade2.json";
 import grade3 from "./grade3.json";
-import grade3russian from "./grade3russian.json"
+import grade3russian from "./grade3russian.json";
 import { db, storage } from "../../../../firebase.js";
 import boilerplateLesson from  "./boilerplateLesson.json";
 
@@ -323,110 +323,37 @@ async function changeData() {
 
 
 // This was meant to push all of the hardcoded data to the database as there was no admin console when it was written. Setup for both grade 2 and grade 3 right now. Grade 4 should go directly into the DBs
-// Leaving it in for propriety 
-//TODO: rewrite to take any formatted lesson .json file
 async function postData() {
-    // Grade 2
-    /* const chapters2 = grade2.Grade2.chapters;
-    const gradeName2 = Object.keys(grade2)[0];
-    for (var chapters2Iter = 0; chapters2Iter < chapters2.length; chapters2Iter++) {
-        var chapter2 = (chapters2Iter + 1).toString();
-        var chapterDoc2 = "Chapter".concat(chapter2);
-        var lessons2 = grade2.Grade2.chapters[chapters2Iter].lessons;
+    // The following three variables should be adjusted as needed
+    const grade = grade2.Grade2; //this variable needs to be specified from import
+    const gradeName = "Grade2"; //obviously needs to be specified
+    const language = "Kazakh" //language obviously needs to be specified
 
-        for (var lessons2Iter = 0; lessons2Iter < lessons2.length; lessons2Iter++) {
-            var lesson2 = (lessons2Iter + 1).toString();
-            var lessonCollection2 = "Lesson".concat(lesson2);
-            var minigames2 = grade2.Grade2.chapters[chapters2Iter].lessons[lessons2Iter].minigames;
-
-            const data = {
-                title: lessons2[lessons2Iter].title,
-                thumbnail: lessons2[lessons2Iter].thumbnail,
-                backgroundColor: lessons2[lessons2Iter].backgroundColor,
-                navigation: "Lesson".concat((lessons2Iter + 1).toString())
-            };
-
-
-            await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc("English").set(data)
-                .then(() => {
-                    console.log("Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully updated!");
-                })
-                .catch((error) => {
-                    // The document probably doesn't exist.
-                    console.error("Error updating document: ", error);
-                });
-
-
-            for (var minigames2Iter = 0; minigames2Iter < minigames2.length; minigames2Iter++) {
-                var minigameName2 = minigames2[minigames2Iter].navigation;
-                await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc("English").collection("minigames").doc(minigameName2).set(minigames2[minigames2Iter])
-                    .then(() => {
-                        console.log("Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully written!");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-            }
-            var mastery = grade2.Grade2.chapters[chapters2Iter].lessons[lessons2Iter].mastery;
-            var mastery_2 = grade2.Grade2.chapters[chapters2Iter].lessons[lessons2Iter].mastery_2;
-            if (mastery_2 === undefined || mastery_2 === null) {
-                await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc("English").collection("mastery").doc("mastery").set(mastery)
-                    .then(() => {
-                        console.log("Mastery for Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully written!");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-            } else {
-
-                await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc("English").collection("mastery").doc("mastery").set(mastery)
-                    .then(() => {
-                        console.log("Mastery for Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully written!");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-
-                await db.collection(gradeName2).doc(chapterDoc2).collection(lessonCollection2).doc("English").collection("mastery").doc("mastery_2").set(mastery_2)
-                    .then(() => {
-                        console.log("Mastery_2 for Chapter ", (chapters2Iter + 1), " Lesson ", (lessons2Iter + 1), "successfully written!");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-            }
-
-        }
-    } */
-
-    // Grade 3
-    const chapters3 = grade3russian.Grade3.chapters;
-    const language = "Russian"
-    const gradeName3 = Object.keys(grade3russian)[0];
+    const chapters = grade.chapters;
     //iterating through chapters
-    for (var chapters3Iter = 0; chapters3Iter < chapters3.length; chapters3Iter++) {
-         var chapter3 = (chapters3Iter + 1).toString();
-         var chapterDoc3 = "Chapter".concat(chapter3);
-         var lessons3 = grade3russian.Grade3.chapters[chapters3Iter].lessons;
+    for (var chaptersIter = 0; chaptersIter < chapters.length; chaptersIter++) {
+         var chapter = (chaptersIter + 1).toString();
+         var chapterDoc = "Chapter".concat(chapter);
+         var lessons = grade.chapters[chaptersIter].lessons;
 
         //iterating through lessons
-         for (var lessons3Iter = 0; lessons3Iter < lessons3.length; lessons3Iter++) {
-             var lesson3 = (lessons3Iter + 1).toString();
-             var lessonCollection3 = "Lesson".concat(lesson3);
-             var minigames3 = grade3russian.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].minigames;
+         for (var lessonsIter = 0; lessonsIter < lessons.length; lessonsIter++) {
+             var lesson = (lessonsIter + 1).toString();
+             var lessonCollection = "Lesson".concat(lesson);
+             var minigames = grade.chapters[chaptersIter].lessons[lessonsIter].minigames;
 
             //setting metadata for doc
              const data = {
-                 title: lessons3[lessons3Iter].title,
-                 thumbnail: lessons3[lessons3Iter].thumbnail,
-                 backgroundColor: lessons3[lessons3Iter].backgroundColor,
-                 navigation: "Lesson".concat((lessons3Iter + 1).toString())
+                 title: lessons[lessonsIter].title,
+                 thumbnail: lessons[lessonsIter].thumbnail,
+                 backgroundColor: lessons[lessonsIter].backgroundColor,
+                 navigation: "Lesson".concat((lessonsIter + 1).toString())
              };
 
             //selecting language within lesson
-             await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).set(data)
+             await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).set(data)
                  .then(() => {
-                     console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully updated!");
+                     console.log("Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully updated!");
                  })
                  .catch((error) => {
                      // The document probably doesn't exist.
@@ -435,11 +362,11 @@ async function postData() {
 
 
             //iterating through minigames
-             for (var minigames3Iter = 0; minigames3Iter < minigames3.length; minigames3Iter++) {
-                 var minigameName3 = minigames3[minigames3Iter].navigation;
+             for (var minigamesIter = 0; minigamesIter < minigames.length; minigamesIter++) {
+                 var minigameName = minigames[minigamesIter].navigation;
                  //selecting current minigame
-                 await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("minigames").doc(minigameName3).set(minigames3[minigames3Iter]).then(() => {
-                     console.log("Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                 await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("minigames").doc(minigameName).set(minigames[minigamesIter]).then(() => {
+                     console.log("Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
                  })
                      .catch((error) => {
                          console.error("Error writing document: ", error);
@@ -447,29 +374,28 @@ async function postData() {
              }
 
              //same for mastery
-             var mastery = grade3russian.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].mastery;
-             var mastery_2 = grade3russian.Grade3.chapters[chapters3Iter].lessons[lessons3Iter].mastery_2;
+             var mastery = grade.chapters[chaptersIter].lessons[lessonsIter].mastery;
+             var mastery_2 = grade.chapters[chaptersIter].lessons[lessonsIter].mastery_2;
              if (mastery_2 === undefined || mastery_2 === null) {
-                 await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("mastery").doc("mastery").set(mastery)
+                 await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery").set(mastery)
                      .then(() => {
-                         console.log("Mastery for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                         console.log("Mastery for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
                      })
                      .catch((error) => {
                          console.error("Error writing document: ", error);
                      });
-             } else {
-
-                 await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("mastery").doc("mastery").set(mastery)
+             } else { //case where mastery_2 exists
+                 await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery").set(mastery)
                      .then(() => {
-                         console.log("Mastery for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                         console.log("Mastery for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
                      })
                      .catch((error) => {
                          console.error("Error writing document: ", error);
                     });
 
-                await db.collection(gradeName3).doc(chapterDoc3).collection(lessonCollection3).doc(language).collection("mastery").doc("mastery_2").set(mastery_2)
+                await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery_2").set(mastery_2)
                     .then(() => {
-                        console.log("Mastery_2 for Chapter ", (chapters3Iter + 1), " Lesson ", (lessons3Iter + 1), "successfully written!");
+                        console.log("Mastery_2 for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
                     })
                     .catch((error) => {
                         console.error("Error writing document: ", error);
@@ -548,7 +474,7 @@ async function postData() {
             } //end of language loop
 
         } //end of lesson number loop
-    }
+    }//end of postBoilerplate
 
 async function getCacheObject(key) {
     // console.log("in getCacheObj");
