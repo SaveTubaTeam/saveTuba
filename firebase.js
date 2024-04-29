@@ -12,7 +12,7 @@ import "firebase/compat/storage";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCa8CJLDlxZav6LylYflDDQQbL_m8tTZGs", //key should be hidden
+  apiKey: "AIzaSyCa8CJLDlxZav6LylYflDDQQbL_m8tTZGs", //This is the Google Cloud Console browser key inside of project savetuba-5e519
   authDomain: "savetuba-5e519.firebaseapp.com",
   projectId: "savetuba-5e519",
   storageBucket: "savetuba-5e519.appspot.com",
