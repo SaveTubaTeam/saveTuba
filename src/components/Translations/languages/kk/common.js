@@ -1,13 +1,20 @@
 export default {
   /* Chapters numbered */
-  chapterone: "1-бөлім",
-  chaptertwo: "2-бөлім",
-  chapterthree: "3-бөлім",
-  chapterfour: "4-бөлім",
-  chapterfive: "5-бөлім",
-  chaptersix: "6-бөлім",
-  chapterseven: "7-бөлім",
-  chaptereight: "8-бөлім",
+  chapter1: "1-бөлім",
+  chapter2: "2-бөлім",
+  chapter3: "3-бөлім",
+  chapter4: "4-бөлім",
+  chapter5: "5-бөлім",
+  chapter6: "6-бөлім",
+  chapter7: "7-бөлім",
+  chapter8: "8-бөлім",
+  chapter9: "Missing Translation",
+  chapter10: "Missing Translation",
+  chapter11: "Missing Translation",
+  chapter12: "Missing Translation",
+  chapter13: "Missing Translation",
+  chapter14: "Missing Translation",
+  chapter15: "Missing Translation",
 
   /* Minigame names */
   memory: "Translation missing",

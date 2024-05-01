@@ -149,16 +149,20 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={{uri: imageMap[data.imageBg]}}>
+      <ImageBg source={{uri: imageMap["assets/lessonbg.png"]}}>
         <Container>
+
+          {/* the overall prompt for this sorting exercise */}
           <Prompt>
             <BodyText size="subtitle">{data.prompt}</BodyText>
           </Prompt>
 
+          {/* current option */}
           <Prompt>
             <TitleText>{currentOption}</TitleText>
           </Prompt>
 
+          {/* This flatlist renders all of the possible categories */}
           <FlatList
             scrollEnabled={false}
             data={data.categories}
@@ -170,6 +174,8 @@ const Start = ({ data, imageMap }) => {
             }}
             numColumns={2}
           />
+
+          {/* shows user if they are correct/incorrect */}
           <Modko visible={false} />
 
             {/* marked for translation */}

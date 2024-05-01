@@ -251,9 +251,9 @@ async function changeData() {
 // This was meant to push all of the hardcoded data to the database as there was no admin console when it was written. Setup for both grade 2 and grade 3 right now. Grade 4 should go directly into the DBs
 async function postData() {
     // The following three variables should be adjusted as needed
-    const grade = grade2.Grade2; //this variable needs to be specified from import
+    const grade = grade2.Grade; //this variable needs to be specified from import
     const gradeName = "Grade2"; //obviously needs to be specified
-    const language = "Kazakh" //language obviously needs to be specified
+    const language = "Kazakh" //obviously needs to be specified
 
     const chapters = grade.chapters;
     //iterating through chapters

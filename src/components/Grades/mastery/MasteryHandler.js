@@ -92,7 +92,7 @@ const MasteryHandler = ({
     <Container>
       <ImageBg
         style={{ paddingTop: 20 }}
-        source={{uri: imageMap["assets/mountains.jpeg"]}}
+        source={{uri: imageMap["assets/lessonbg.png"]}}
         resizeMode="cover"
       >
         <FlatList // The flatlist used to load minigames and their data.

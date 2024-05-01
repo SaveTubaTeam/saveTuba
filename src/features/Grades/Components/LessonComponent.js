@@ -111,7 +111,8 @@ function LessonComponent({
               source={{ uri: imageMap[item["icon"]] }}
             ></Image>
             <TitleText size="subtitle" color="secondary">
-              {item["navigation"]}
+              {/* marked for translation, should have useTranslation */}
+              {item["navigation"]} 
             </TitleText>
           </View>
         </Adventure>

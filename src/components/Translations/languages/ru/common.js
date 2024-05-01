@@ -1,13 +1,20 @@
 export default {
   /* Chapters numbered */
-  chapterone: "Раздел 1",
-  chaptertwo: "Раздел 2",
-  chapterthree: "Раздел 3",
-  chapterfour: "Раздел 4",
-  chapterfive: "Раздел 5",
-  chaptersix: "Раздел 6",
-  chapterseven: "Раздел 7",
-  chaptereight: "Раздел 8",
+  chapter1: "Раздел 1",
+  chapter2: "Раздел 2",
+  chapter3: "Раздел 3",
+  chapter4: "Раздел 4",
+  chapter5: "Раздел 5",
+  chapter6: "Раздел 6",
+  chapter7: "Раздел 7",
+  chapter8: "Раздел 8",
+  chapter9: "Missing Translation",
+  chapter10: "Missing Translation",
+  chapter11: "Missing Translation",
+  chapter12: "Missing Translation",
+  chapter13: "Missing Translation",
+  chapter14: "Missing Translation",
+  chapter15: "Missing Translation",
 
   /* Minigame names */
   memory: "Объем памяти",

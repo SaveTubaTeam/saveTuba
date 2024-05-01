@@ -209,7 +209,7 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={{ uri: imageMap[data["imageBg"]] }}>
+      <ImageBg source={{ uri: imageMap["assets/nat.jpg"] }}>
         <Container>
           <Question>
             <TitleText size="title">{currentPrompt}</TitleText>

@@ -93,7 +93,7 @@ const SnapshotHandler = ({
   return (
     <>
       <Container>
-        <ImageBg source={{uri: imageMap[data.backgroundImage]}}>
+        <ImageBg source={{uri: imageMap["assets/lessonbg2.png"]}}>
           <Prompt>
             <TitleText size="subtitle">{data.prompt}</TitleText>
           </Prompt>

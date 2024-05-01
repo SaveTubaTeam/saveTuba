@@ -196,7 +196,7 @@ const OpenResponseHandler = ({ questionSet, imageMap }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBg
-        source={{uri: imageMap["assets/promptBackground.jpg"]}}
+        source={{uri: imageMap["assets/promptBackground.jpg"]}} //hardcoded background
         resizeMode="cover"
         style={{
           flex: 1,

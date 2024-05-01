@@ -1,10 +1,10 @@
 {
-  "Grade2": {
+  "Grade": {
     "numChapter": 3,
     "chapters": [
       {
         "navigation": "Chapter1",
-        "title": "common:chapterone",
+        "title": "common:chapterone", 
         "name": "gradeone:iamanexplorer",
         "icon": "assets/chapter-icons/location.png",
         "backgroundImage": "assets/mastery/bg/ch1.png",

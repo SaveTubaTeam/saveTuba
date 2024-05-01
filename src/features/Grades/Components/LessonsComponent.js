@@ -68,6 +68,10 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
               zIndex: 1000,
             }}
           >
+            {/* TODO: add attribute once it exists within firebase */}
+            {/* <BodyText align="left" size="mid" color="secondary">
+              {item.get("name")} //should be swapped w/ 'title' above
+            </BodyText> */}
             <TitleText align="left" size="subtitle" color="secondary">
               {item.get("title")}
             </TitleText>

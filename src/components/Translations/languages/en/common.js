@@ -1,13 +1,20 @@
 export default {
   /* Chapters numbered */
-  chapterone: "Chapter 1",
-  chaptertwo: "Chapter 2",
-  chapterthree: "Chapter 3",
-  chapterfour: "Chapter 4",
-  chapterfive: "Chapter 5",
-  chaptersix: "Chapter 6",
-  chapterseven: "Chapter 7",
-  chaptereight: "Chapter 8",
+  chapter1: "Chapter 1",
+  chapter2: "Chapter 2",
+  chapter3: "Chapter 3",
+  chapter4: "Chapter 4",
+  chapter5: "Chapter 5",
+  chapter6: "Chapter 6",
+  chapter7: "Chapter 7",
+  chapter8: "Chapter 8",
+  chapter9: "Chapter 9",
+  chapter10: "Chapter 10",
+  chapter11: "Chapter 11",
+  chapter12: "Chapter 12",
+  chapter13: "Chapter 13",
+  chapter14: "Chapter 14",
+  chapter15: "Chapter 15",
 
   /* Minigame names */
   memory: "Memory",

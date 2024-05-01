@@ -4,7 +4,7 @@ export const Grade4 = {
   chapters: [
     {
       navigation: "Chapter1",
-      title: <Translation>{(t) => t("common:chapterone")}</Translation>, // Chapter 1
+      title: <Translation>{(t) => t("common:chapter1")}</Translation>, // Chapter 1
       name: <Translation>{(t) => t("gradefour:worldofscience")}</Translation>, // World of science
       icon: require("../../../../assets/chapter-icons/atom.png"),
       colorOne: "chocolate",
@@ -13,7 +13,7 @@ export const Grade4 = {
     },
     {
       navigation: "Chapter2",
-      title: <Translation>{(t) => t("common:chaptertwo")}</Translation>, // Chapter 2
+      title: <Translation>{(t) => t("common:chapter2")}</Translation>, // Chapter 2
       name: <Translation>{(t) => t("gradefour:universe")}</Translation>, // Universe. Earth. Human
       icon: require("../../../../assets/chapter-icons/planet.png"),
       colorOne: "darkolivegreen",
