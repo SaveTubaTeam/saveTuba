@@ -8,13 +8,13 @@ export default {
   chapter6: "Раздел 6",
   chapter7: "Раздел 7",
   chapter8: "Раздел 8",
-  chapter9: "Missing Translation",
-  chapter10: "Missing Translation",
-  chapter11: "Missing Translation",
-  chapter12: "Missing Translation",
-  chapter13: "Missing Translation",
-  chapter14: "Missing Translation",
-  chapter15: "Missing Translation",
+  chapter9: "Раздел 9",
+  chapter10: "Раздел 10",
+  chapter11: "Раздел 11",
+  chapter12: "Раздел 12",
+  chapter13: "Раздел 13",
+  chapter14: "Раздел 14",
+  chapter15: "Раздел 15",
 
   /* Minigame names */
   memory: "Объем памяти",
@@ -23,8 +23,10 @@ export default {
   openresponse: "Изображение Бум",
   snapshot: "Фото",
   reorder: "Изменение порядка",
-  drawing: "Рисование",
-  flashcards: "Карточкалар",
+  mastery: "Мастерство",
+  mastery2: "Мастерство 2",
+ /*  drawing: "Рисование",
+  flashcards: "Карточкалар", */
 
   hello: "привет",
 

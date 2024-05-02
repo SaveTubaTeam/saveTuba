@@ -20,11 +20,13 @@ export default {
   memory: "Memory",
   sorting: "Sorting",
   quiz: "Quiz",
-  openresponse: "Open response",
+  openresponse: "Open Response",
   snapshot: "Snapshot",
   reorder: "Reorder",
-  drawing: "Drawing",
-  flashcards: "Flashcards",
+  mastery: "Mastery",
+  mastery2: "Mastery 2",
+ /*  drawing: "Drawing",
+  flashcards: "Flashcards", */
 
   hello: "Hello",
 
@@ -66,6 +68,4 @@ export default {
   home: "Home",
   profile: "Profile",
   settings: "Settings",
-  mastery: "Mastery",
-  mastery2: "Mastery 2",
 };

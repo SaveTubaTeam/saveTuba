@@ -268,7 +268,7 @@ async function postData() {
              var lessonCollection = "Lesson".concat(lesson);
              var minigames = grade.chapters[chaptersIter].lessons[lessonsIter].minigames;
 
-            //setting metadata for doc
+            //defining lesson metadata within language doc
              const data = {
                  title: lessons[lessonsIter].title,
                  thumbnail: lessons[lessonsIter].thumbnail,
@@ -276,7 +276,7 @@ async function postData() {
                  navigation: "Lesson".concat((lessonsIter + 1).toString())
              };
 
-            //selecting language within lesson
+            //selecting language within lesson and setting metadata
              await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).set(data)
                  .then(() => {
                      console.log("Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully updated!");
@@ -302,6 +302,12 @@ async function postData() {
              //same for mastery
              var mastery = grade.chapters[chaptersIter].lessons[lessonsIter].mastery;
              var mastery_2 = grade.chapters[chaptersIter].lessons[lessonsIter].mastery_2;
+
+             if(mastery === undefined || mastery === null || mastery === 'undefined') {
+                console.error('ERROR within postData() --> Mastery does not exist!!');
+                throw new Error('ERROR within postData() --> Mastery does not exist!!');
+             }
+
              if (mastery_2 === undefined || mastery_2 === null || mastery_2 === 'undefined') {
                  await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery").set(mastery)
                      .then(() => {
@@ -326,9 +332,10 @@ async function postData() {
                     .catch((error) => {
                         console.error("Error writing document: ", error);
                     });
-            }
-        }
-    }
+            } //end of adding mastery 
+
+        }// end of lesson iterations
+    }//end of chapters iterations
 
 } //END OF postData()
 

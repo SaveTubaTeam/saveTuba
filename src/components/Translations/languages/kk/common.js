@@ -8,23 +8,25 @@ export default {
   chapter6: "6-бөлім",
   chapter7: "7-бөлім",
   chapter8: "8-бөлім",
-  chapter9: "Missing Translation",
-  chapter10: "Missing Translation",
-  chapter11: "Missing Translation",
-  chapter12: "Missing Translation",
-  chapter13: "Missing Translation",
-  chapter14: "Missing Translation",
-  chapter15: "Missing Translation",
+  chapter9: "9-бөлім",
+  chapter10: "10-бөлім",
+  chapter11: "11-бөлім",
+  chapter12: "12-бөлім",
+  chapter13: "13-бөлім",
+  chapter14: "14-бөлім",
+  chapter15: "15-бөлім",
 
   /* Minigame names */
-  memory: "Translation missing",
-  sorting: "Translation missing",
+  memory: "Жад",
+  sorting: "Сұрыптау",
   quiz: "Викторина",
-  openresponse: "Translation missing",
+  openresponse: "Жауапты ашу",
   snapshot: "Сурет",
   reorder: "Қайта реттеу",
-  drawing: "Сурет салу",
-  flashcards: "Карточки",
+  mastery: "Шеберлік",
+  mastery2: "Шеберлік 2",
+  /* drawing: "Сурет салу",
+  flashcards: "Карточки", */
 
   hello: "Сәлем",
 
@@ -67,5 +69,4 @@ export default {
   home: "Үй",
   profile: "Профиль",
   settings: "Параметрлер",
-  mastery: "Шеберлік",
 };
