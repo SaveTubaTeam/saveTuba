@@ -302,7 +302,7 @@ async function postData() {
              //same for mastery
              var mastery = grade.chapters[chaptersIter].lessons[lessonsIter].mastery;
              var mastery_2 = grade.chapters[chaptersIter].lessons[lessonsIter].mastery_2;
-             if (mastery_2 === undefined || mastery_2 === null) {
+             if (mastery_2 === undefined || mastery_2 === null || mastery_2 === 'undefined') {
                  await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery").set(mastery)
                      .then(() => {
                          console.log("Mastery for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");

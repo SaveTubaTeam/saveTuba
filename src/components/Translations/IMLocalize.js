@@ -58,7 +58,7 @@ const LANGUAGE_DETECTOR = {
 
 //we can detect changeLanguage() here all the way from LanguageSelector.js
 i18n
-    // detect language by passing in our function defined above.
+    // detect language by passing in our object event listener defined above.
     .use(LANGUAGE_DETECTOR)
     // pass the i18n instance to react-i18next.
     .use(initReactI18next)

@@ -1,3 +1,4 @@
+import 'expo-dev-client';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import * as encoding from "text-encoding";
