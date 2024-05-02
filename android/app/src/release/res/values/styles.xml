@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Save TUBA</string>
-    <style name="AppTheme" parent="android:Theme.Light">
-        <item name="android:windowNoTitle">true</item>
-<!--        <item name="android:windowBackground">@color/translucent_red</item>-->
-<!--        <item name="android:listViewStyle">@style/MyListView</item>-->
-    </style>
-</resources>

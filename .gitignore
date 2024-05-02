@@ -10,6 +10,10 @@ npm-debug.*
 *.orig.*
 web-build/
 
+# Ignore 'android' and 'ios' folders
+/android/
+/ios/
+
 # Ignore all of the conversionary datasets
 # *.json
 # !package.json

@@ -1,7 +1,7 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
-// apply plugin: "org.jetbrains.kotlin"
-// import com.android.build.OutputFile
+
+import com.android.build.OutputFile
 
 def projectRoot = rootDir.getAbsoluteFile().getParentFile().getAbsolutePath()
 def expoDebuggableVariants = ['debug']
@@ -109,15 +109,15 @@ def reactNativeArchitectures() {
 }
 
 android {
-    ndkVersion '23.1.7779620'
-    compileSdk 33 // What is this supposed to be
-    
+    ndkVersion rootProject.ext.ndkVersion
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     namespace 'com.nadjastojanov.SaveTuba'
     defaultConfig {
-        applicationId 'Savetuba.Beta.Version_001'
+        applicationId 'com.nadjastojanov.SaveTuba'
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdk rootProject.ext.targetSdkVersion // should this include the 'rootProject.ext.'
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0.0"
     }
@@ -137,12 +137,6 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
-        release {
-            storeFile file('save_tuba_first_key.keystore')
-            storePassword 'savetuba'
-            keyAlias 'st_key_1'
-            keyPassword 'savetuba'
-        }
     }
     buildTypes {
         debug {
@@ -157,23 +151,22 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-    buildToolsVersion '33.0.2'
-    // Previous implementation
-//    // applicationVariants are e.g. debug, release
-//    applicationVariants.all { variant ->
-//        variant.outputs.each { output ->
-//            // For each separate APK per architecture, set a unique version code as described here:
-//            // https://developer.android.com/studio/build/configure-apk-splits.html
-//            // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
-//            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
-//            def abi = output.getFilter(OutputFile.abi)
-//            if (abi != null) {  // null for the universal-debug, universal-release variants
-//                output.versionCodeOverride =
-//                        defaultConfig.versionCode * 1000 + versionCodes.get(abi)
-//            }
-//
-//        }
-//    }
+
+    // applicationVariants are e.g. debug, release
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            // For each separate APK per architecture, set a unique version code as described here:
+            // https://developer.android.com/studio/build/configure-apk-splits.html
+            // Example: versionCode 1 will generate 1001 for armeabi-v7a, 1002 for x86, etc.
+            def versionCodes = ["armeabi-v7a": 1, "x86": 2, "arm64-v8a": 3, "x86_64": 4]
+            def abi = output.getFilter(OutputFile.ABI)
+            if (abi != null) {  // null for the universal-debug, universal-release variants
+                output.versionCodeOverride =
+                        defaultConfig.versionCode * 1000 + versionCodes.get(abi)
+            }
+
+        }
+    }
 }
 
 // Apply static values from `gradle.properties` to the `android.packagingOptions`
@@ -196,11 +189,7 @@ android {
     }
 }
 
-
-
 dependencies {
-    // implementation platform('com.google.firebase:firebase-bom:32.3.1')
-
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
@@ -243,11 +232,6 @@ dependencies {
         implementation jscFlavor
     }
 }
-
-// plugins {
-//     id 'com.android.application'
-//     id 'com.google.gms.google-services'
-// }
 
 apply from: new File(["node", "--print", "require.resolve('@react-native-community/cli-platform-android/package.json')"].execute(null, rootDir).text.trim(), "../native_modules.gradle");
 applyNativeModulesAppBuildGradle(project)
