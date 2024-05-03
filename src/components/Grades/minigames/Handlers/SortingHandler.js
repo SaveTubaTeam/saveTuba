@@ -26,7 +26,7 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
 `;
 
 const ModalContainer = styled.View`
@@ -38,7 +38,9 @@ const ModalContainer = styled.View`
 `;
 
 const Category = styled.TouchableOpacity`
+  width: 180px
   justify-content: center;
+  align-items: center;
   background-color: white;
   margin: 5px;
   padding: 10px;
@@ -123,6 +125,21 @@ const Start = ({ data, imageMap }) => {
 
   //TODO: categories should maybe show both images and text if applicable.
   const renderCategories = ({ item }) => { //here the item is the entire sorting minigame document from the db
+    let content;
+    if(item.image && item.textHidden) {
+      content = (
+          <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100, alignSelf: 'center' }} />
+    )} else if(item.image) {
+      content = (
+      <>
+        <BodyText size="subtitle">{item.name}</BodyText>
+        <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100, alignSelf: 'center'}} />
+      </>
+    )} else {
+      content = (
+      <BodyText size="subtitle">{item.name}</BodyText>
+    )}
+    
     return (
       <>
         <Category
@@ -137,11 +154,7 @@ const Start = ({ data, imageMap }) => {
             setVisible(true);
           }}
         >
-          {item.image ? (
-            <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100 }} /> //accessing uri via imageMap
-          ) : (
-            <BodyText size="subtitle">{item.name}</BodyText>
-          )}
+          {content}
         </Category>
       </>
     );
@@ -170,7 +183,7 @@ const Start = ({ data, imageMap }) => {
             key={(item, index) => index}
             renderItem={renderCategories}
             contentContainerStyle={{
-              alignItems: "center",
+              alignItems: "center"
             }}
             numColumns={2}
           />
@@ -183,25 +196,6 @@ const Start = ({ data, imageMap }) => {
           prompt={'Good job completing this sorting exercise!\nGo back to the lesson to continue learning.'}>
           </LevelSystem>
         </Container>
-        {/*}
-        <Option style={{ opacity: visibleOne }}>
-          <TitleText>{data.content[1].first}</TitleText>
-          {data.content[1].firstImage && (
-            <Img resizeMode="contain" source={data.content[1].firstImage} />
-          )}
-        </Option>
-        <Option style={{ opacity: visibleTwo }}>
-          <TitleText>{data.content[1].second}</TitleText>
-          {data.content[1].secondImage && (
-            <Img resizeMode="contain" source={data.content[1].secondImage} />
-          )}
-        </Option>
-        <Option style={{ opacity: visibleThree }}>
-          <TitleText>{data.content[1].third}</TitleText>
-          {data.content[1].thirdImage && (
-            <Img resizeMode="contain" source={data.content[1].thirdImage} />
-          )}
-          </Option>*/}
       </ImageBg>
     </>
   );
