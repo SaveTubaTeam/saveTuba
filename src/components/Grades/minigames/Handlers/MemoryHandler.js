@@ -20,11 +20,14 @@ import { Spacer } from "../../../spacer.component.js";
 export class MemoryHandler extends React.Component {
 
   constructor(props) {
-    console.log("Constructor => ", props);
+    //console.log("Constructor => ", props);
     super(props);
-    this.renderCards = this.renderCards.bind(this);
+
+    //binding this as a "parameter" conditional to rerender to each function
+    this.renderCardRow = this.renderCardRow.bind(this);
     this.resetCards = this.resetCards.bind(this);
 
+    //for shuffling array
     Array.prototype.shuffle = function () {
       var i = this.length,
         j,
@@ -38,11 +41,13 @@ export class MemoryHandler extends React.Component {
       }
       return this;
     };
-    // console.log("==> ", this.props.data.content);
+    console.log("==> ", this.props.data.content);
     let cards = this.props.data.content;
 
+    //new cards attribute on the this object
     this.cards = cards;
 
+    //mapping a id to each element
     this.cards.map((obj) => {
       let id = Math.random().toString(36).substring(7);
       obj.id = id;
@@ -50,15 +55,20 @@ export class MemoryHandler extends React.Component {
       obj.is_open = false;
     });
 
+    //we shuffle cards
     this.cards = this.cards.shuffle();
+
+    //defining another attribute of the this object
     this.state = {
       current_selection: [],
       selected_pairs: [],
       score: 0,
       cards: this.cards,
     };
-  }
 
+  } //end of constructor
+
+  //doesnt do anything
   restart() {
     return <Translation>{(t) => t("common:restart")}</Translation>;
   }
@@ -74,8 +84,12 @@ export class MemoryHandler extends React.Component {
           {/* marked for translation */}
           <TitleText size="caption">Hint: Match images with words.</TitleText>
         </View>
+
+        {/* come back to this */}
         <View style={styles.body}>{this.renderRows.call(this)}</View>
         <Score score={this.state.score} />
+
+        {/* Start Over button */}
         <TouchableOpacity
           style={{
             justifyContent: "center",
@@ -92,14 +106,16 @@ export class MemoryHandler extends React.Component {
     );
   }
 
+  //called when we press "Start over"
   resetCards() {
     let cards = this.cards.map((obj) => {
-      obj.is_open = false;
+      obj.is_open = false; //all cards are set to closed status
       return obj;
     });
 
     cards = cards.shuffle();
 
+    //wipes state
     this.setState({
       current_selection: [],
       selected_pairs: [],
@@ -109,18 +125,19 @@ export class MemoryHandler extends React.Component {
   }
 
   renderRows() {
-    let contents = this.getRowContents(this.state.cards);
-    // console.log("CT: ", contents);
+    let contents = this.getRowContents(this.state.cards); //rowified contents
+    console.log("Contents: ", contents);
     return contents.map((cards, index) => {
       return (
         <View key={index} style={styles.row}>
-          {this.renderCards(cards)}
+          {this.renderCardRow(cards)}
         </View>
       );
     });
   }
 
-  renderCards(cards) {
+  //called by renderRows()
+  renderCardRow(cards) {
     return cards.map((card, index) => {
       return (
         <Card
@@ -129,28 +146,32 @@ export class MemoryHandler extends React.Component {
           type={card.type}
           image={card.image}
           is_open={card.is_open}
+
+          /* clickCard is like onClick? Check docs */
           clickCard={this.clickCard.bind(this, card.id)}
+
           imageMap={this.props.imageMap}
         />
       );
     });
   }
 
+  //called by renderCardRow()
+  //@param id the card being clicked
   clickCard(id) {
     let selected_pairs = this.state.selected_pairs;
     let current_selection = this.state.current_selection;
     let score = this.state.score;
 
+    //cards is the entire 1D array array. findIndex() iterates through and finds a match
     let index = this.state.cards.findIndex((card) => {
       return card.id == id;
     });
 
     let cards = this.state.cards;
 
-    if (
-      cards[index].is_open == false &&
-      selected_pairs.indexOf(cards[index].name) === -1
-    ) {
+    //
+    if (cards[index].is_open == false && selected_pairs.indexOf(cards[index].name) === -1) {
       cards[index].is_open = true;
 
       current_selection.push({
@@ -159,13 +180,14 @@ export class MemoryHandler extends React.Component {
       });
 
       if (current_selection.length == 2) {
-        if (current_selection[0].name == current_selection[1].name) {
+        if (current_selection[0].name == current_selection[1].name) { //checking match
           score += 1;
           selected_pairs.push(cards[index].name);
+          console.log("Successfully matched pairs", selected_pairs);
         } else {
           cards[current_selection[0].index].is_open = false;
 
-          setTimeout(() => {
+          setTimeout(() => { //wait half a second and then flip both cards over
             cards[index].is_open = false;
             this.setState({
               cards: cards,
@@ -184,14 +206,15 @@ export class MemoryHandler extends React.Component {
     }
   }
 
+  //called by renderRows()
   getRowContents(cards) {
     let contents_r = [];
     let contents = [];
     let count = 0;
     cards.forEach((item) => {
       count += 1;
-      contents.push(item);
-      if (count == 4) {
+      contents.push(item); //pushing onto current row
+      if (count == 4) { //move to the next row
         contents_r.push(contents);
         count = 0;
         contents = [];
@@ -205,7 +228,6 @@ export class MemoryHandler extends React.Component {
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("==? ", props);
   }
 
   render() {
@@ -268,6 +290,8 @@ class Card extends React.Component {
           aspectRatio: 1,
         }}
       >
+        {/* CardSource is defined as Ionicon which is a library of vector icons. we take an icon_name of 'help-outline' */}
+        {/* which is a question mark */}
         <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
           <CardSource name={icon_name} size={50} color={icon_color} />
         </TouchableOpacity>
