@@ -87,5 +87,4 @@ export const ImageBg = styled.ImageBackground`
   justify-content: center;
   flex: 1;
   width: 100%;
-  justify-content: center;
 `;

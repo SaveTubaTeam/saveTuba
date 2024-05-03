@@ -295,15 +295,5 @@ const QuizHandler = ({ data, addAchievement, imageMap }) => {
     </Stack.Navigator>
   );
 };
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-});
-
-const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    { addAchievement },
-    dispatch
-  ); */
 
 export default QuizHandler;

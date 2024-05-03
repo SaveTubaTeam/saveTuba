@@ -88,17 +88,28 @@ const RegisterScreen = () => {
     //Function is triggered by signUp button's onPress.
     const registerUser = async() => {
       setLoading(true);
-      await db.collection("classrooms").doc(classCode).get()
-        .then((snapshot) => { //checking if classCode exists
-          if(snapshot.exists) { 
 
-              createUser(); //see below
+      if(classCode) {
 
-          } else {//classCode does not exist
-              setLoading(false);
-              Alert.alert("Invalid class code");
-          }
-        });
+        await db.collection("classrooms").doc(classCode).get()
+          .then((snapshot) => { //checking if classCode exists
+            if(snapshot.exists) { 
+
+                createUser(); //see below
+
+            } else {//classCode does not exist
+                setLoading(false);
+                /* marked for translation */
+                Alert.alert("Invalid class code");
+            }
+          });
+
+      } else { //classCode is falsy (empty string)
+        setLoading(false);
+        /* marked for translation */
+        Alert.alert("Invalid class code")
+      }
+
     }
 
     //createUserWithEmailAndPassword: https://firebase.google.com/docs/auth/web/password-auth
@@ -122,7 +133,8 @@ const RegisterScreen = () => {
         .catch((error) => { //firebase createUser failed
             setLoading(false);
             console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
-            Alert.alert("Invalid Registration", "Make sure your password is longer than 6 characters.");
+            /* marked for translation */
+            Alert.alert("Invalid Registration", "Email or password is invalid");
         });
     }
 

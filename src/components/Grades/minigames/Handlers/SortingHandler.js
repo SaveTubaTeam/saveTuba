@@ -26,7 +26,7 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 40px
 `;
 
 const ModalContainer = styled.View`
@@ -43,14 +43,14 @@ const Category = styled.TouchableOpacity`
   align-items: center;
   background-color: white;
   margin: 5px;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
 `;
 
 const Prompt = styled.View`
   width: 80%;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
 `;
@@ -123,18 +123,14 @@ const Start = ({ data, imageMap }) => {
     );
   }; //end of Modko
 
-  //TODO: categories should maybe show both images and text if applicable.
   const renderCategories = ({ item }) => { //here the item is the entire sorting minigame document from the db
     let content;
-    if(item.image && item.textHidden) {
+    if(item.image) {
       content = (
+        <>
+          <BodyText size="subtitle">{item.name}</BodyText>
           <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100, alignSelf: 'center' }} />
-    )} else if(item.image) {
-      content = (
-      <>
-        <BodyText size="subtitle">{item.name}</BodyText>
-        <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100, alignSelf: 'center'}} />
-      </>
+        </>
     )} else {
       content = (
       <BodyText size="subtitle">{item.name}</BodyText>
