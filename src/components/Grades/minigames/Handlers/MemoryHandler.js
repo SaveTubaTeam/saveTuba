@@ -9,13 +9,9 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
 import { Translation } from "react-i18next";
-// import { renderToString } from "react-dom/server";
-
-
 import { TitleText } from "../../../title-text.component.js";
 import { BodyText } from "../../../body-text.component.js";
 import { Spacer } from "../../../spacer.component.js";
-
 
 export class MemoryHandler extends React.Component {
 
@@ -68,13 +64,7 @@ export class MemoryHandler extends React.Component {
 
   } //end of constructor
 
-  //doesnt do anything
-  restart() {
-    return <Translation>{(t) => t("common:restart")}</Translation>;
-  }
-
   render() {
-    // const restart = renderToString(this.restart());
     return (
       // <Text> Hello </Text>
       <View style={styles.container}>
@@ -276,7 +266,6 @@ class Card extends React.Component {
     }
 
     return (
-      // <Text> Hello </Text>
       <ImageBackground
         source={{ uri: this.props.imageMap["assets/block.png"] }}
         style={{
