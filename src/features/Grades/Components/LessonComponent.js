@@ -182,64 +182,13 @@ function LessonComponent({
             width: "100%",
           }}
           ListFooterComponentStyle={{
-            alignItems: "center",
+            alignItems: "stretch",
+            width: "85%"
           }}
           ListFooterComponent={
 
             <MasteryFlex lessonData={lessonData} selectedChapter={selectedChapter} selectedLesson={selectedLesson} navigation={navigation} />
 
-
-            // Previous implementation
-            // Implemented by Hayden to show two different mastery cards. Do not delete
-            // <FlatList
-            //   data={
-            //     selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-            //       .mastery &&
-            //     Object.values(
-            //       selectedGrade.chapters[selectedChapter].lessons[selectedLesson]
-            //         .mastery
-            //     )
-            //   }
-            //   numColumns={1}
-            //   keyExtractor={(item, index) => index}
-            //   key={(item, index) => index}
-            //   renderItem={renderItem}
-            //   contentContainerStyle={{
-            //     width: "85%",
-            //     alignSelf: "center",
-            //   }}
-            //   style={{
-            //     marginBottom: 20,
-            //     width: "100%",
-            //   }}
-            //   ListFooterComponentStyle={{
-            //     alignItems: "center",
-            //   }}
-            //   ListFooterComponent={
-            //     <TouchableOpacity
-            //       style={{
-            //         width: "93%",
-            //         height: 150,
-            //         marginTop: 10,
-            //         borderRadius: 20,
-            //         justifyContent: "center",
-            //         overflow: "hidden",
-            //       }}
-            //       onPress={() => nav.navigate("Mastery")}
-            //     >
-            //       <ImageBg
-            //         style={{
-            //           borderRadius: 20,
-            //         }}
-            //         source={require("../../../../assets/mastery.png")}
-            //       >
-            //         <TitleText weight="bold" size="h5" color="quaternary">
-            //           {t("common:mastery")}
-            //         </TitleText>
-            //       </ImageBg>
-            //     </TouchableOpacity>
-            //   }
-            // />
           }
         />
       </Container>

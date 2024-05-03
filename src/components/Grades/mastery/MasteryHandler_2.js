@@ -54,35 +54,35 @@ const SubmitButton = styled(Button)`
   margin-bottom: 10px;
 `;
 
+//TODO: need to add ability to input file, also need to check if user has actually submitted anything. Can copy SnapshotHandler modal for that.
 const MasteryHandler2 = ({
   data,
-  selectedGrade,
-  selectedChapter,
-  selectedLesson,
-  imageMap
+  imageMap,
+  backgroundImage
 }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
   const [levelSystemVisible, setLevelSystemVisible] = useState(false);
-
+  
   const renderItem = ({ item }) => {
+
     return (
-      // <>
-      <Prompt>
-        <TitleText size="subtitle">{item.text}</TitleText>
-        {item.image && (
-          <Image
-            style={{
-              aspectRatio: 1,
-              width: "60%",
-              height: undefined,
-              marginTop: 20,
-            }}
-            source={item.image}
-          />
-        )}
-      </Prompt>
-      // </> 
+      <>
+        <Prompt>
+          <TitleText size="subtitle">{item.text}</TitleText>
+          {item.image && (
+            <Image
+              style={{
+                aspectRatio: 1,
+                width: "60%",
+                height: undefined,
+                marginTop: 20,
+              }}
+              source={{uri: imageMap[item.image]}}
+            />
+          )}
+        </Prompt>
+      </>
     );
   };
 
@@ -90,7 +90,7 @@ const MasteryHandler2 = ({
     <Container>
       <ImageBg
         style={{ paddingTop: 20 }}
-        source={{ uri: imageMap["assets/lessonbg.png"] }}
+        source={{uri: imageMap["assets/lessonbg.png"]}}
         resizeMode="cover"
       >
         <FlatList // The flatlist used to load minigames and their data.
@@ -131,10 +131,11 @@ const MasteryHandler2 = ({
         />
       </ImageBg>
 
-          {/* marked for translation */}
+        {/* marked for translation */}
       <LevelSystem score={-2} visible={levelSystemVisible}
-      prompt={`Congratulations!\nYou've just completed a mastery! Give yourself a pat on the back.`}> 
+      prompt={`Congratulations!\nYour response has been submitted.\n\nYou've just completed a mastery! Give yourself a pat on the back.`}> 
       </LevelSystem>
+
     </Container>
   );
 };

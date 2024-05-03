@@ -26,6 +26,7 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
   const imageMap = useSelector(state => state.imageMap.imageData);
+  console.log("HELLO!!",lessonData);
   //iterating through lessonData array to set a map of the lesson minigames
   let lessonCompMap = new Map();
   console.log(`\nChapter${selectedChapter} ${lessonData.get("navigation")} Minigames:`);
