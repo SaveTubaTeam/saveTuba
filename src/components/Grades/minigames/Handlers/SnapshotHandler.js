@@ -58,37 +58,6 @@ const SnapshotHandler = ({
   const { t } = useTranslation();
   const [levelSystemVisible, setLevelSystemVisible] = useState(false);
   const navigation = useNavigation();
-  /* const Modko = () => {
-    return (
-      <Modal transparent animationType="slide" visible={visible}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <ModalContainer>
-            <View>
-              <BodyText size="subtitle">
-                Your image was submitted! Good job ✨
-              </BodyText>
-            </View>
-            <TouchableOpacity
-              style={{
-                backgroundColor: "#748816",
-                borderRadius: 10,
-                marginTop: 10,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
-              onPress={() => navigation.navigate("Lesson")}
-            >
-              <BodyText size="subtitle" color="secondary">
-                Back to the lesson
-              </BodyText>
-            </TouchableOpacity>
-          </ModalContainer>
-        </View>
-      </Modal>
-    );
-  }; */
 
   return (
     <>
