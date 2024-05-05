@@ -53,7 +53,7 @@ const MemoryHandler = ({ data, imageMap }) => {
 
       }
 
-      //all elements are locked for .5 seconds to prevent unwanted user interactions
+      //all elements are locked for .25 seconds to prevent unwanted user interactions
       setTimeout(() => {
         setCurrentSelection([]);
         setArrayIsLocked(false); //unlock after timeout
@@ -78,20 +78,17 @@ const MemoryHandler = ({ data, imageMap }) => {
     //Documentation for .some(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
     const isOpen = successfullyMatchedPairs.includes(name) || currentSelection.some(card => card.index === index);
 
-    //called by the card's TouchableOpacity component (can only be called if isOpen == false for this card)
+    //called by the card's TouchableOpacity component
     const pressCard = () => {
-
       if (!isOpen && !successfullyMatchedPairs.includes(name) && !arrayIsLocked) {
         setCurrentSelection((previousSelectionArray) => { //safe array state mutation to add the clicked card to the selection
           return [...previousSelectionArray, { index: index, name: name }]
         });
       }
-
-    }; //end of clickCard()
+    }; //end of pressCard()
 
     let content;
-    //now checking content type
-    if(image) {
+    if(image) { //now checking content type to be displayed within the card
       content = (
         <Image source={{ uri: imageMap[image] }} style={{ width: 80, height: 80 }}/>
     )} else {
@@ -105,7 +102,7 @@ const MemoryHandler = ({ data, imageMap }) => {
       <TouchableOpacity 
             style={styles.card}
             onPress={() => {
-              pressCard(index);
+              pressCard();
           }}>
 
         <ImageBackground source={{ uri: imageMap["assets/block.png"] }} style={{ width: 80, height: 80 }}>
@@ -123,7 +120,7 @@ const MemoryHandler = ({ data, imageMap }) => {
   //a view to display the current score and CompletionModal upon completion.
   const Score = ({ score }) => {
     return (
-      <View style={styles.score_container}>
+      <View style={[styles.score_container, {width: "20%"}]}>
         <Text style={styles.score}>{score}</Text>
       </View>
     )};
@@ -143,9 +140,13 @@ const MemoryHandler = ({ data, imageMap }) => {
   }
 
   return (
-    <View style={styles.container}>
+    <ImageBackground source={{ uri: imageMap["assets/beach.jpg"] }} 
+    style={styles.container} 
+    imageStyle= {{ opacity: 0.7 }}
+    >
 
-      <View style={{ alignSelf: "center", width: "80%", position: "absolute", top: 50 }}>
+      <View style={{ alignSelf: "center", width: "80%", position: "absolute", 
+                     top: 25, backgroundColor: "#fff8e7", padding: 20, borderRadius: 20 }}>
         <BodyText size="title">{data.description}</BodyText>
         <Spacer size="medium" />
         {/* marked for translation */}
@@ -160,7 +161,7 @@ const MemoryHandler = ({ data, imageMap }) => {
 
       {/* Start Over button */}
       <TouchableOpacity
-        style={[styles.score_container, {bottom: 20}]}
+        style={[styles.score_container, { bottom: 25, borderRadius: 30, }]}
         onPress={() => {
           resetCards();
         }}
@@ -171,8 +172,11 @@ const MemoryHandler = ({ data, imageMap }) => {
       </TouchableOpacity>
 
         {/* marked for translation */}
-      <CompletionModal prompt={"Good job completing this memory minigame!\nGo back to the lesson to continue learning."} score={score} visible={completionModalVisible}></CompletionModal>
-    </View>
+      <CompletionModal 
+        prompt={"Good job completing this memory minigame!\nGo back to the lesson to continue learning."} 
+        score={score} visible={completionModalVisible}>
+      </CompletionModal>
+    </ImageBackground>
   );
 }
 
@@ -182,8 +186,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: "#fff8e7",
+    alignItems: 'center'
   },
   row: {
     flex: 1,
@@ -207,9 +210,12 @@ const styles = StyleSheet.create({
   },
   score_container: {
     position: "absolute",
-    bottom: 50,
-    width: "100%",
-    alignItems: "center"
+    bottom: 80,
+    width: "45%",
+    alignItems: "center",
+    backgroundColor: "#fff8e7",
+    borderRadius: 10,
+    padding: 10
   },
   grid: {
     flexDirection: 'row',
