@@ -16,7 +16,7 @@ import { BodyText } from "../../../body-text.component";
 import { SafeArea } from "../../../safe-area.component";
 import { Spacer } from "../../../spacer.component";
 import { ComplexAnimationBuilder } from "react-native-reanimated";
-import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const Stack = createNativeStackNavigator();
 
@@ -83,14 +83,14 @@ const Start = ({ data, imageMap }) => {
   
   //defining visibility state modals
   const [visible, setVisible] = useState(false);
-  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
 
   //called when we click "Next" on the answer modal. We iterate count until the end of the quiz
   const nextQuestion = () => {
     if (count < data.content.length - 1) { //if we still have questions, we iterate
       setCount(count + 1);
-    } else { //otherwise, we have completed the quiz and LevelSystem modal is set to visible
-      setLevelSystemVisible(!levelSystemVisible);
+    } else { //otherwise, we have completed the quiz and completion modal is set to visible
+      setCompletionModalVisible(!completionModalVisible);
     }
     setVisible(false); //closing answer modal
   };
@@ -193,10 +193,10 @@ const Start = ({ data, imageMap }) => {
           <ModalComponent visible={visible}  />
 
             {/* marked for translation */}
-          <LevelSystem visible={levelSystemVisible} score={score} 
+          <CompletionModal visible={completionModalVisible} score={score} 
           prompt={`Congratulations!\nYou've just finished this quiz!\nGo back to the lesson to continue learning.`}
           >
-          </LevelSystem>
+          </CompletionModal>
 
         </Container>
       </ImageBg>

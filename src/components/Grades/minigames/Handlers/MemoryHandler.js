@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
   View,
@@ -8,303 +8,181 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
-import { Translation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component.js";
 import { BodyText } from "../../../body-text.component.js";
 import { Spacer } from "../../../spacer.component.js";
+import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal.js";
 
-export class MemoryHandler extends React.Component {
+//@param data passed from IndividualLessonHandler
+//@param imageMap
+const MemoryHandler = ({ data, imageMap }) => {
+  const { t } = useTranslation();
+  const cardsArray = data.content;
 
-  constructor(props) {
-    //console.log("Constructor => ", props);
-    super(props);
+  const [currentSelection, setCurrentSelection] = useState([]);
+  const [successfullyMatchedPairs, setSuccessfullyMatchedPairs] = useState([]);
+  const [arrayIsLocked, setArrayIsLocked] = useState(false); //to track if user interactions are locked
+  const [score, setScore] = useState(0);
 
-    //binding this as a "parameter" conditional to rerender to each function
-    this.renderCardRow = this.renderCardRow.bind(this);
-    this.resetCards = this.resetCards.bind(this);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
 
-    //for shuffling array
-    Array.prototype.shuffle = function () {
-      var i = this.length,
-        j,
-        temp;
-      if (i == 0) return this;
-      while (--i) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = this[i];
-        this[i] = this[j];
-        this[j] = temp;
-      }
-      return this;
-    };
-    console.log("==> ", this.props.data.content);
-    let cards = this.props.data.content;
-
-    //new cards attribute on the this object
-    this.cards = cards;
-
-    //mapping a id to each element
-    this.cards.map((obj) => {
-      let id = Math.random().toString(36).substring(7);
-      obj.id = id;
-
-      obj.is_open = false;
-    });
-
-    //we shuffle cards
-    this.cards = this.cards.shuffle();
-
-    //defining another attribute of the this object
-    this.state = {
-      current_selection: [],
-      selected_pairs: [],
-      score: 0,
-      cards: this.cards,
-    };
-
-  } //end of constructor
-
-  render() {
-    return (
-      // <Text> Hello </Text>
-      <View style={styles.container}>
-        <View style={{ alignSelf: "center", width: "80%" }}>
-          <BodyText size="subtitle">{this.props.data.description}</BodyText>
-          <Spacer size="medium" />
-          {/* marked for translation */}
-          <TitleText size="caption">Hint: Match images with words.</TitleText>
-        </View>
-
-        {/* come back to this */}
-        <View style={styles.body}>{this.renderRows.call(this)}</View>
-        <Score score={this.state.score} />
-
-        {/* Start Over button */}
-        <TouchableOpacity
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            paddingBottom: 20,
-          }}
-          onPress={this.resetCards}
-        >
-          <BodyText size="subtitle">
-            <Translation>{(t) => t("common:restart")}</Translation>
-          </BodyText>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-
-  //called when we press "Start over"
-  resetCards() {
-    let cards = this.cards.map((obj) => {
-      obj.is_open = false; //all cards are set to closed status
-      return obj;
-    });
-
-    cards = cards.shuffle();
-
-    //wipes state
-    this.setState({
-      current_selection: [],
-      selected_pairs: [],
-      cards: cards,
-      score: 0,
-    });
-  }
-
-  renderRows() {
-    let contents = this.getRowContents(this.state.cards); //rowified contents
-    console.log("Contents: ", contents);
-    return contents.map((cards, index) => {
-      return (
-        <View key={index} style={styles.row}>
-          {this.renderCardRow(cards)}
-        </View>
-      );
-    });
-  }
-
-  //called by renderRows()
-  renderCardRow(cards) {
-    return cards.map((card, index) => {
-      return (
-        <Card
-          key={index}
-          name={card.name}
-          type={card.type}
-          image={card.image}
-          is_open={card.is_open}
-
-          /* clickCard is like onClick? Check docs */
-          clickCard={this.clickCard.bind(this, card.id)}
-
-          imageMap={this.props.imageMap}
-        />
-      );
-    });
-  }
-
-  //called by renderCardRow()
-  //@param id the card being clicked
-  clickCard(id) {
-    let selected_pairs = this.state.selected_pairs;
-    let current_selection = this.state.current_selection;
-    let score = this.state.score;
-
-    //cards is the entire 1D array array. findIndex() iterates through and finds a match
-    let index = this.state.cards.findIndex((card) => {
-      return card.id == id;
-    });
-
-    let cards = this.state.cards;
-
-    //
-    if (cards[index].is_open == false && selected_pairs.indexOf(cards[index].name) === -1) {
-      cards[index].is_open = true;
-
-      current_selection.push({
-        index: index,
-        name: cards[index].name,
-      });
-
-      if (current_selection.length == 2) {
-        if (current_selection[0].name == current_selection[1].name) { //checking match
-          score += 1;
-          selected_pairs.push(cards[index].name);
-          console.log("Successfully matched pairs", selected_pairs);
-        } else {
-          cards[current_selection[0].index].is_open = false;
-
-          setTimeout(() => { //wait half a second and then flip both cards over
-            cards[index].is_open = false;
-            this.setState({
-              cards: cards,
-            });
-          }, 500);
-        }
-
-        current_selection = [];
-      }
-
-      this.setState({
-        score: score,
-        cards: cards,
-        current_selection: current_selection,
-      });
+  //for the completion modal
+  useEffect(() => {
+    if (score === cardsArray.length / 2) {
+      setCompletionModalVisible(true);
     }
-  }
+  }, [score]);
 
-  //called by renderRows()
-  getRowContents(cards) {
-    let contents_r = [];
-    let contents = [];
-    let count = 0;
-    cards.forEach((item) => {
-      count += 1;
-      contents.push(item); //pushing onto current row
-      if (count == 4) { //move to the next row
-        contents_r.push(contents);
-        count = 0;
-        contents = [];
+  //to initially randomly sort the array
+  useEffect(() => {
+    cardsArray.sort(function (a, b) {return Math.random() - 0.5;});
+  }, []);
+
+  //to check if we have a match within currentSelection
+  useEffect(() => {
+    if (currentSelection.length === 2) {
+      setArrayIsLocked(true);//we don't want users interacting with more than two cards at a time
+
+      if (currentSelection[0].name === currentSelection[1].name) { //a match
+
+        setSuccessfullyMatchedPairs(previousMatchedPairsArray => {//performing safe array state mutation
+          return [...previousMatchedPairsArray, currentSelection[0].name]
+        });
+        setScore(prevScore => prevScore + 1); //score increment for matched pair
+
       }
-    });
 
-    return contents_r;
+      //all elements are locked for .5 seconds to prevent unwanted user interactions
+      setTimeout(() => {
+        setCurrentSelection([]);
+        setArrayIsLocked(false); //unlock after timeout
+      }, 250);
+    }
+  }, [currentSelection]);
+
+  //to reset the array and all state variables
+  const resetCards = () => {
+    cardsArray.sort(function (a, b) {return Math.random() - 0.5;}); //randomizing array again
+    setCurrentSelection([]);
+    setSuccessfullyMatchedPairs([]);
+    setScore(0);
+    setArrayIsLocked(false);
   }
-}
 
-class Card extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  //card is the individual card inside of the minigame. Each card tracks its own state via isOpen
+  //note: see renderCardsArray for params
+  const Card = ({ index, name, image }) => {
 
-  render() {
-    let CardSource = Ionicons;
-    let icon_name = "help-outline";
-    let icon_color = "#fff8e7";
+    //if the card is already matched or if it is in our currentSelection, isOpen evaluates to true.
+    //Documentation for .some(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+    const isOpen = successfullyMatchedPairs.includes(name) || currentSelection.some(card => card.index === index);
 
-    if (this.props.is_open && this.props.type) {
-      return (
-        <ImageBackground
-          source={{ uri: this.props.image }}
-          style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            marginRight: 5,
-            marginLeft: 5,
-            width: "100%",
-            height: undefined,
-            aspectRatio: 1,
-          }}
-        >
-          <Image source={{ uri: this.props.imageMap[this.props.image] }} style={{ width: 55, height: 55 }} />
-        </ImageBackground>
-      );
-    } else if (this.props.is_open) {
-      return (
-        <ImageBackground
-          source={{ uri: this.props.imageMap["assets/block.png"] }}
-          style={{
-            flex: 1,
-            alignItems: "center",
-            justifyContent: "center",
-            marginRight: 5,
-            marginLeft: 5,
-            width: "100%",
-            height: undefined,
-            aspectRatio: 1,
-          }}
-        >
+    //called by the card's TouchableOpacity component (can only be called if isOpen == false for this card)
+    const pressCard = () => {
+
+      if (!isOpen && !successfullyMatchedPairs.includes(name) && !arrayIsLocked) {
+        setCurrentSelection((previousSelectionArray) => { //safe array state mutation to add the clicked card to the selection
+          return [...previousSelectionArray, { index: index, name: name }]
+        });
+      }
+
+    }; //end of clickCard()
+
+    let content;
+    //now checking content type
+    if(image) {
+      content = (
+        <Image source={{ uri: imageMap[image] }} style={{ width: 80, height: 80 }}/>
+    )} else {
+      content = (
           <TitleText size="button" color="secondary">
-            {this.props.name}
+            {name}
           </TitleText>
-        </ImageBackground>
-      );
-    }
+    )}
 
     return (
-      <ImageBackground
-        source={{ uri: this.props.imageMap["assets/block.png"] }}
-        style={{
-          flex: 1,
-          alignItems: "center",
-          marginRight: 5,
-          marginLeft: 5,
-          justifyContent: "center",
-          width: "100%",
-          height: undefined,
-          aspectRatio: 1,
+      <TouchableOpacity 
+            style={styles.card}
+            onPress={() => {
+              pressCard(index);
+          }}>
+
+        <ImageBackground source={{ uri: imageMap["assets/block.png"] }} style={{ width: 80, height: 80 }}>
+    
+          {isOpen ? content : (
+              <Ionicons name={"help-outline"} size={80} color={"#fff8e7"} />
+          )}
+
+        </ImageBackground>
+
+      </TouchableOpacity>
+  )} //end of Card component
+
+
+  //a view to display the current score and CompletionModal upon completion.
+  const Score = ({ score }) => {
+    return (
+      <View style={styles.score_container}>
+        <Text style={styles.score}>{score}</Text>
+      </View>
+    )};
+
+  const renderCardsArray = () => {
+    //.map() extracts the individual card and the index
+    return cardsArray.map((card, index) => {
+      return (
+          <Card
+            index={index}
+            key={index}
+            name={card.name}
+            image={card.image}
+          />
+      );
+    });
+  }
+
+  return (
+    <View style={styles.container}>
+
+      <View style={{ alignSelf: "center", width: "80%", position: "absolute", top: 50 }}>
+        <BodyText size="title">{data.description}</BodyText>
+        <Spacer size="medium" />
+        {/* marked for translation */}
+        <TitleText size="caption">Hint: Match images with words.</TitleText>
+      </View>
+
+      <View style={styles.grid}>
+        {renderCardsArray()}
+      </View>
+
+      <Score score={score} />
+
+      {/* Start Over button */}
+      <TouchableOpacity
+        style={[styles.score_container, {bottom: 20}]}
+        onPress={() => {
+          resetCards();
         }}
       >
-        {/* CardSource is defined as Ionicon which is a library of vector icons. we take an icon_name of 'help-outline' */}
-        {/* which is a question mark */}
-        <TouchableOpacity activeOpacity="0.5" onPress={this.props.clickCard}>
-          <CardSource name={icon_name} size={50} color={icon_color} />
-        </TouchableOpacity>
-      </ImageBackground>
-    );
-  }
+        <BodyText size="subtitle">
+          {t("common:restart")}
+        </BodyText>
+      </TouchableOpacity>
+
+        {/* marked for translation */}
+      <CompletionModal prompt={"Good job completing this memory minigame!\nGo back to the lesson to continue learning."} score={score} visible={completionModalVisible}></CompletionModal>
+    </View>
+  );
 }
 
-class Score extends React.Component {
-  render() {
-    return (
-      // <Text> Hello </Text>
-      <View style={styles.score_container}>
-        <Text style={styles.score}>{this.props.score}</Text>
-      </View>
-    );
-  }
-}
+export default MemoryHandler;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100,
-    alignSelf: "stretch",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: "#fff8e7",
   },
   row: {
@@ -317,18 +195,27 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   card: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    margin: '1%', // Slightly space out the items
+    justifyContent: 'center', // Center the text vertically
+    alignItems: 'center', // Center the text horizontally
+    width: 80,
+    height: 80,
   },
   card_text: {
     fontSize: 50,
     fontWeight: "bold",
   },
   score_container: {
-    flex: 2,
-    alignItems: "center",
-    padding: 20,
+    position: "absolute",
+    bottom: 50,
+    width: "100%",
+    alignItems: "center"
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center', // This will distribute space evenly between the items horizontally.
+    width: '100%' // Ensure the grid takes full width available.
   },
   score: {
     fontSize: 40,

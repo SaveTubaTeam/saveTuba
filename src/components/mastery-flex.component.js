@@ -28,7 +28,7 @@ export const MasteryFlex = ({
 }) => {
     const nav = useNavigation();
     const { t } = useTranslation();
-    console.log(lessonData.mastery_2);
+    //console.log(lessonData.mastery_2);
 
     if (lessonData.mastery_2 !== "undefined" || lessonData.mastery_2 !== undefined) {
         return (

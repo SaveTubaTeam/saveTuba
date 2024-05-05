@@ -1,14 +1,13 @@
 import React from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler"; //works
-import { MemoryHandler } from "../../../components/Grades/minigames/Handlers/MemoryHandler"; //works
+import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryHandler"; //works
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler"; //works
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler"; //works
 import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2"; //works
@@ -26,19 +25,19 @@ function IndividualLessonHandler({
   const navigation = useNavigation();
   const { t } = useTranslation();
   const imageMap = useSelector(state => state.imageMap.imageData);
-  console.log("HELLO!!",lessonData);
+  console.log("Lesson Data: ",lessonData);
   //iterating through lessonData array to set a map of the lesson minigames
   let lessonCompMap = new Map();
   console.log(`\nChapter${selectedChapter} ${lessonData.get("navigation")} Minigames:`);
   for (let minigame in lessonData.get("minigames")) {
     lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
+
     console.log(lessonData.get("minigames")[minigame]["navigation"]);
   }
 
   return (
     <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
-        {/*  Need to improve this part here with a map for the minigames screen */}
         <Stack.Screen
           name="Lesson"
           options={{
@@ -286,11 +285,5 @@ function IndividualLessonHandler({
     </NavigationContainer>
   );
 }
-/* 
-// Boiler Plate code to include redux and firebase functions and data
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
-// Last function to connect the component to props of redux/firebase
 export default IndividualLessonHandler;

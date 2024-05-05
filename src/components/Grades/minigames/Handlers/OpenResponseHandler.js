@@ -20,7 +20,7 @@ import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
 
 import { getChapterData, getLessonData, getGradeData } from "../../../../features/Grades/Handlers/Database.js";
-import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const ModalContainer = styled.View`
   background-color: white;
@@ -35,7 +35,7 @@ const ImagePrompt = ({ questions, imageMap }) => {
   //const [modalVisible, setModalVisible] = useState(false);
   const [value, setValue] = useState("");
   const [visible, setVisible] = useState(false);
-  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
 
   console.log("QW:", questions);
@@ -159,7 +159,7 @@ const ImagePrompt = ({ questions, imageMap }) => {
               if(value === '') {
                 setVisible(!visible)
               } else {
-                setLevelSystemVisible(!levelSystemVisible);
+                setCompletionModalVisible(!completionModalVisible);
               }
 
               setValue("");
@@ -177,13 +177,13 @@ const ImagePrompt = ({ questions, imageMap }) => {
       <Modko visible={visible} />
 
             {/* marked for translation */}
-      <LevelSystem 
-        visible={levelSystemVisible}
+      <CompletionModal 
+        visible={completionModalVisible}
         score={-1}
         prompt={"Your response has been submitted. Good job!\nGo back to the lesson to continue learning."}
       >
 
-      </LevelSystem>
+      </CompletionModal>
     </ScrollView>
   );
 };

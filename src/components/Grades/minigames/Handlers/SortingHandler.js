@@ -18,7 +18,7 @@ import { SafeArea } from "../../../safe-area.component";
 import { ImageBg } from "../../grades.styles";
 import { Spacer } from "../../../spacer.component";
 
-import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const Stack = createNativeStackNavigator();
 
@@ -67,7 +67,7 @@ const SubmitButton = styled.TouchableOpacity`
 const Start = ({ data, imageMap }) => {
   // console.log("Data: ", imageMap);
   const [visible, setVisible] = useState(false);
-  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [correct, setCorrect] = useState(false);
 
   const [count, setCount] = useState(0);
@@ -102,14 +102,14 @@ const Start = ({ data, imageMap }) => {
                 paddingBottom: 5,
               }}
               onPress={() => {
-                if (count < data.num && data.options[count + 1] != null) {
+                if (count < data.options.length && data.options[count + 1] != null) {
                   setVisible(!visible);
                   setCurrentOption(data.options[count + 1].title);
                   setCurrentAnswer(data.options[count + 1].name);
                   setCount(count + 1);
                 } else {
                   setVisible(!visible);
-                  setLevelSystemVisible(!levelSystemVisible); //setting LevelSystem modal visible
+                  setCompletionModalVisible(!completionModalVisible);
                 }
               }}
             >
@@ -188,9 +188,9 @@ const Start = ({ data, imageMap }) => {
           <Modko visible={false} />
 
             {/* marked for translation */}
-          <LevelSystem visible={levelSystemVisible} score={score} 
+          <CompletionModal visible={completionModalVisible} score={score} 
           prompt={'Good job completing this sorting exercise!\nGo back to the lesson to continue learning.'}>
-          </LevelSystem>
+          </CompletionModal>
         </Container>
       </ImageBg>
     </>
@@ -204,11 +204,6 @@ const SortingHandler = ({ data, navigation, imageMap }) => {
       <Stack.Screen name="Start" options={{ headerShown: false }}>
         {() => <Start data={data} imageMap={imageMap} />}
       </Stack.Screen>
-      {/* <Stack.Screen
-        name="SecondScreen"
-        options={{ headerShown: false }}
-        component={LevelSystem}
-      ></Stack.Screen> */}
     </Stack.Navigator>
   );
 };
@@ -282,10 +277,5 @@ const TestImages = {
   lvl_2_les_2_img_3: "assets/tractor.jpg",
   lvl_2_les_2_img_4: "assets/wateringplant.jpg",
 };
-
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default SortingHandler;

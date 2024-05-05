@@ -149,22 +149,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// Boilerplate code going to be used everywhere
-// This is for loading in data from the local storage into the function, class, or components
-// Look at Redux folder at the index.js to understand more
-/* const mapStateToProps = (state) => ({
-  currentUser: state.userState.currentUser,
-  achievements: state.userAchievements.achievements,
-  achievementModal: state.modals.achievementModal,
-  // imageMap: state.imageMap.,
-}); */
-
-// // Boilerplate code also going to be used everywhere
-// // Similar to props, but instead allows you to use functions for Redux folder
-/* const mapDispatchToProps = (dispatch) =>
-  bindActionCreators(
-    { fetchUser, fetchAchievements, addAchievement, },
-    dispatch
-  ); */
-
 export default Main;

@@ -15,9 +15,9 @@ import { auth, db } from "../../../../firebase";
 import { getDoc, doc } from "firebase/firestore";
 import { t } from "i18next";
 
-//LevelSystem is the final modal which shows up upon all minigame completions. Bad name - should maybe be renamed to CompletionModal
+//CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
-const LevelSystem = ({ score, prompt, visible }) => {
+const CompletionModal = ({ score, prompt, visible }) => {
   const navigation = useNavigation();
   const XP_PER_POINT = 15;
 
@@ -29,6 +29,7 @@ const LevelSystem = ({ score, prompt, visible }) => {
     scoreShown = '';
     score === -1 ? finalXP = 100 : finalXP = 300; //MasteryHandler passes a prop of -2 for more XP
   } else {
+    /* marked for translation */
     scoreShown = `Final Score: ${score}\n\n`;
     finalXP = score * XP_PER_POINT;
   }
@@ -87,7 +88,7 @@ const LevelSystem = ({ score, prompt, visible }) => {
   );
 }
 
-export default LevelSystem;
+export default CompletionModal;
 
 const Container2 = styled.View`
   width: 90%;

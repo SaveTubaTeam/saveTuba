@@ -10,7 +10,7 @@ import {
   Image,
 } from "react-native";
 import { ImageBg } from "../../grades.styles";
-import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
+import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
@@ -56,7 +56,7 @@ const SnapshotHandler = ({
   imageMap
 }) => {
   const { t } = useTranslation();
-  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
 
   return (
@@ -70,7 +70,7 @@ const SnapshotHandler = ({
 
             <ImageUpload />
 
-            <SubmitButton onPress={() => setLevelSystemVisible(!levelSystemVisible)}>
+            <SubmitButton onPress={() => setCompletionModalVisible(!completionModalVisible)}>
               <BodyText color="secondary" size="subtitle">
                 {t("common:submit")}
               </BodyText>
@@ -81,9 +81,9 @@ const SnapshotHandler = ({
         {/* <Modko visible={false} /> */}
         
         {/* marked for translation */}
-        <LevelSystem score={-1} visible={levelSystemVisible}
+        <CompletionModal score={-1} visible={completionModalVisible}
         prompt={'Your image has been submitted. Good job!\nGo back to the lesson to continue learning.'}>
-        </LevelSystem>
+        </CompletionModal>
 
       </Container>
     </>

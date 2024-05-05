@@ -23,9 +23,9 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { Spacer } from "../../../spacer.component";
-import LevelSystem from "../../../../features/Account/LevelSystem/LevelSystem";
 
 import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
+import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const Container = styled.View`
   flex: 1;
@@ -75,7 +75,7 @@ const ReorderHandler = ({ info }) => {
   const [data, setData] = useState(info.data);
   const { t } = useTranslation();
   const [visible, setVisible] = useState(false);
-  const [levelSystemVisible, setLevelSystemVisible] = useState(false);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [score, setScore] = useState(0);
   const navigation = useNavigation();
 
@@ -105,7 +105,7 @@ const ReorderHandler = ({ info }) => {
               }}
               onPress={() => {
                 setVisible(!visible);
-                setLevelSystemVisible(!levelSystemVisible);
+                setCompletionModalVisible(!completionModalVisible);
               }}
             >
               {/* marked for translation */}
@@ -218,9 +218,9 @@ const ReorderHandler = ({ info }) => {
         {/* modals */}
         <Modko visible={false} />
         {/* marked for translation */}
-        <LevelSystem visible={levelSystemVisible} score={score} 
+        <CompletionModal visible={completionModalVisible} score={score} 
         prompt={"Good job completing this reorder minigame!\nGo back to the lesson to continue learning."}>
-        </LevelSystem>
+        </CompletionModal>
 
       </Container>
     </>
