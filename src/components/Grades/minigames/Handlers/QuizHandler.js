@@ -8,14 +8,10 @@ import {
   FlatList,
 } from "react-native";
 import styled from "styled-components/native";
-import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
-import { SafeArea } from "../../../safe-area.component";
-import { Spacer } from "../../../spacer.component";
-import { ComplexAnimationBuilder } from "react-native-reanimated";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const Stack = createNativeStackNavigator();
@@ -155,7 +151,6 @@ const Start = ({ data, imageMap }) => {
     return (
       <>
         <Category
-          activeOpacity="0.8"
           onPress={() => {
             console.log("Answer Choices:", data.content[count].answers); {/* NOTE: plural between answer and answers is the difference between pulling the entire answers array or just the answer!*/}
             console.log("Correct Answer:", data.content[count].answer);

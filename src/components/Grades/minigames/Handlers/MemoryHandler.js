@@ -53,11 +53,12 @@ const MemoryHandler = ({ data, imageMap }) => {
 
       }
 
-      //all elements are locked for .25 seconds to prevent unwanted user interactions
-      setTimeout(() => {
+      //all elements are locked for .5 seconds to prevent unwanted user interactions
+      const timer = setTimeout(() => {
         setCurrentSelection([]);
         setArrayIsLocked(false); //unlock after timeout
-      }, 250);
+      }, 500);
+      return () => clearTimeout(timer);
     }
   }, [currentSelection]);
 

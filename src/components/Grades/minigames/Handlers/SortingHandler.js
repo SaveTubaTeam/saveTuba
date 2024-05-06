@@ -139,7 +139,6 @@ const Start = ({ data, imageMap }) => {
     return (
       <>
         <Category
-          activeOpacity="0.8"
           onPress={() => {
             if (item.name == currentAnswer) { //accessing item's name field via item.name
               setCorrect(true);

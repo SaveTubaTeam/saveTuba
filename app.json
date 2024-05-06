@@ -4,10 +4,10 @@
     "primaryColor": "#C6DC3B",
     "description": "A sustainability learning experience for Almaty's youngest citizens.",
     "slug": "SaveTuba",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "privacy": "public",
-    "icon": "./assets/tuba-icon.png",
+    "icon": "./assets/Icon-App-60x60@3x.png",
     "splash": {
       "image": "./assets/splashScreen.png",
       "resizeMode": "cover",
@@ -27,7 +27,7 @@
     "android": {
       "softwareKeyboardLayoutMode": "pan",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/splashScreen.png",
+        "foregroundImage": "./assets/playstore-icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.nadjastojanov.SaveTuba"

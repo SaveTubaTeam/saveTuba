@@ -1,6 +1,7 @@
 {
   "cli": {
-    "version": ">= 3.10.2"
+    "version": ">= 3.10.2",
+    "appVersionSource": "remote"
   },
   "build": {
     "development": {
@@ -10,14 +11,16 @@
         "gradleCommand": ":app:assembleDebug"
       },
       "ios": {
-        "buildConfiguration": "Debug"
+        "simulator": true,
+        "cocoapods": "1.12.0"
       }
     },
     "preview": {
       "distribution": "internal"
     },
     "production": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "autoIncrement": true
     }
   },
   "submit": {

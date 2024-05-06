@@ -4,7 +4,6 @@ import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 
 import firebase from "firebase/app";
-// import RNfirebase from '@react-native-firebase';
 import { Firestore, setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
 
