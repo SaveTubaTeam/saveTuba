@@ -127,6 +127,7 @@ const RegisterScreen = () => {
           postUser(); //see below
 
           //alert popup: https://reactnative.dev/docs/alert
+          /* marked for translation */
           Alert.alert(`Welcome, ${firstName} ${lastName}!`, 
                       `Your account has been successfully created.`);
         })
@@ -156,7 +157,6 @@ const RegisterScreen = () => {
           students: arrayUnion(email)
       });
       //resetting registration form for sanity
-      //setPhoneNumber("");
       setPhoneNumber("");
       setEmail("");
       setPassword("");

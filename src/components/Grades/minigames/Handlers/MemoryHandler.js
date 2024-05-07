@@ -129,12 +129,15 @@ const MemoryHandler = ({ data, imageMap }) => {
   const renderCardsArray = () => {
     //.map() extracts the individual card and the index
     return cardsArray.map((card, index) => {
+      let imageCheckedForNull = "";
+      card.image ? imageCheckedForNull = card.image : imageCheckedForNull = "";
+      
       return (
           <Card
             index={index}
             key={index}
             name={card.name}
-            image={card.image}
+            image={imageCheckedForNull}
           />
       );
     });

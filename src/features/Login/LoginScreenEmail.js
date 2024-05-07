@@ -137,11 +137,14 @@ const LoginScreenEmail = () => {
     if(checkIfUserExists()) { //see below
       await auth.sendPasswordResetEmail(email)
         .then(() => {//password reset email sent successfully
+          /* marked for translation */
             Alert.alert("Password Reset Email Sent", "An email with instructions to reset your password has been sent to your inbox.");
         }).catch((error) => {
+          /* marked for translation */
             Alert.alert("Error", "Please enter a valid email address");
         })
     } else {
+      /* marked for translation */
       Alert.alert("Invalid Email", "No such account with the given email exists");
     }
   }
@@ -161,7 +164,6 @@ const LoginScreenEmail = () => {
   }
 
   return (
-    // <SafeArea>
     <Container behavior="padding">
       <ImageBg source={require("../../../assets/loginBackground.png")}>
         <InputContainer>
@@ -204,16 +206,18 @@ const LoginScreenEmail = () => {
           </ButtonOutLine>
 
           {/* Forgot Password link */}
-          <TouchableOpacity onPress= {() => {
-                console.log("\n\tForgot Password button pressed");
-                sendPasswordReset();
-                }} style={{alignItems: 'center'}}>
-          <Text style={{textDecorationLine: 'underline'}}>
-            <TitleText color="secondary" size="button">
+          <TouchableOpacity 
+            onPress= {() => {
+              console.log("\n\tForgot Password button pressed");
+              sendPasswordReset();
+            }} 
+            style={{alignItems: 'center'}}>
+            <Text style={{textDecorationLine: 'underline'}}>
+              <TitleText color="secondary" size="button">
               Forgot Password
-            </TitleText>
+              </TitleText>
             </Text>
-            </TouchableOpacity>
+          </TouchableOpacity>
 
           {/* This posted the data that was pulled from the post method above */}
           {/* <Button onPress={postData}>
@@ -236,6 +240,7 @@ const LoginScreenEmail = () => {
         </ButtonContainer>
 
         <BottomContainer>
+
         {/* LanguageSelector */}
         <SelectorLogin />
 
@@ -246,9 +251,9 @@ const LoginScreenEmail = () => {
             </TitleText>
           </ButtonOutLine>
           </BottomContainer>
+          
       </ImageBg>
     </Container>
-    // </SafeArea> // safe area is not needed because we want the background to go to the border
   );
 }; //end of LoginScreen
 
