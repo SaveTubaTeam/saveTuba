@@ -1,0 +1,4446 @@
+{
+  "chapters": [
+    {
+      "navigation": "Chapter1",
+      "title": "common:chapter1",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "indianred",
+      "colorTwo": "firebrick",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: Finding Things in the World",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the different sources of information.",
+              "content": [
+                {
+                  "name": "Observation"
+                },
+                {
+                  "name": "Observation",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Other people"
+                },
+                {
+                  "name": "Other people",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Internet"
+                },
+                {
+                  "name": "Internet",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Books"
+                },
+                {
+                  "name": "Books",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Experiments"
+                },
+                {
+                  "name": "Experiments",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Yourself"
+                },
+                {
+                  "name": "Yourself",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Match the tools to the image ",
+              "categories": [
+                {
+                  "name": "1.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "2.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "3.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "4.",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "1.",
+                  "title": "Electron Microscope"
+                },
+                {
+                  "name": "2.",
+                  "title": "Optical Microscope"
+                },
+                {
+                  "name": "3.",
+                  "title": "Flask"
+                },
+                {
+                  "name": "4.",
+                  "title": "Ruler"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Find out about a sustainable invention. Which scientist contributed the most to its development? Write a short response about why this invention is important. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Upload a picture of a sustainable invention that you described in the Open Response mini-game "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Find and describe a sustainable practice in this country that you can implement on your own.",
+              "cards": [
+                {
+                  "text": "Pick a country from the globe.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Why Does the Dandelion Look Like a Parachute?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Pick an object around you. Complete the sentence: Observing (your object), I found out that … "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a walk and on that walk, take a picture of a dandelion "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is not a human sense?",
+                  "answers": [
+                    "Sight",
+                    "Hearing",
+                    "Smell",
+                    "Intuition",
+                    "Taste",
+                    "Touch"
+                  ],
+                  "answer": "Intuition"
+                },
+                {
+                  "prompt": "Observation is the main method of learning about nature",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What is not a type of natural scientist?",
+                  "answers": [
+                    "Biologist",
+                    "Chemist",
+                    "Physicist",
+                    "Astronomer",
+                    "Economist"
+                  ],
+                  "answer": "Economist"
+                },
+                {
+                  "prompt": "Astronomers use what kind of building to observe objects through powerful telescopes?",
+                  "answers": [
+                    "Planetarium",
+                    "Observatory",
+                    "Museum",
+                    "Tower"
+                  ],
+                  "answer": "Observatory"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Order the steps to designing an experiment",
+              "data": [
+                {
+                  "text": "Create a goal of observation",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                },
+                {
+                  "text": "Choose an object for observation",
+                  "dormant": "coral",
+                  "active": "#DB756B"
+                },
+                {
+                  "text": "Think about the stages of observation",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                },
+                {
+                  "text": "Think about the necessary equipment",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "Choose the timeframe of observation",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                },
+                {
+                  "text": "Write down or draw the observation",
+                  "dormant": "#6e57d2",
+                  "active": "#634ebd"
+                },
+                {
+                  "text": "Make a conclusion",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Identify a man-made object that resembles something from nature. Upload a photo of that object.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: What is An Experiment?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Design an experiment connected to analyzing something in nature. Write down the plan for conducting it. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of what you are planning to analyze in your experiment "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the first step in the experiment?",
+                  "answers": [
+                    "Observation",
+                    "Test",
+                    "Hypothesis",
+                    "Prediction"
+                  ],
+                  "answer": "Observation"
+                },
+                {
+                  "prompt": "Lying in bed you notice that you get cold every time your brother opens the door. This is most closely associated with which step in conducting an experiment:",
+                  "answers": [
+                    "Forming a hypothesis",
+                    "Developing a test",
+                    "Making an observation",
+                    "Conclusion"
+                  ],
+                  "answer": "Making an observation"
+                },
+                {
+                  "prompt": "What is the last step in the experiment?",
+                  "answers": [
+                    "Conclusion",
+                    "Communication of results",
+                    "Observation",
+                    "Hypothesis formation"
+                  ],
+                  "answer": "Conclusion"
+                },
+                {
+                  "prompt": "What is a hypothesis?",
+                  "answers": [
+                    "An untestable statement.",
+                    "An experiment.",
+                    "Your best “educated guess” of what the answer to your question will be",
+                    "Whatever the teacher tells you is the truth."
+                  ],
+                  "answer": "Your best “educated guess” of what the answer to your question will be"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Order the steps to conducting an experiment",
+              "data": [
+                {
+                  "text": "Goal",
+                  "dormant": "#ffa500",
+                  "active": "#e59400"
+                },
+                {
+                  "text": "Hypothesis",
+                  "dormant": "#6e57d2",
+                  "active": "#634ebd"
+                },
+                {
+                  "text": "Resources",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Plan",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                },
+                {
+                  "text": "Experiment",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "Notes",
+                  "dormant": "orange",
+                  "active": "orangered"
+                },
+                {
+                  "text": "Conclusion",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 2: Wildlife",
+              "cards": [
+                {
+                  "text": "Pick a flower and leave it in water. Now, put something in the water such as food coloring.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Watch how the flower reacts. How is this similar to when water has other materials in it?",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter2",
+      "title": "common:chapter2",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "indigo",
+      "colorTwo": "mediumpurple",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: What Are the Secrets of Plants?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "What is your favorite plant? Take a picture. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "In which part of the plant is this obtained? ",
+              "categories": [
+                {
+                  "name": "Roots",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Leaves",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Roots",
+                  "title": "Water"
+                },
+                {
+                  "name": "Roots",
+                  "title": "Mineral Plant substances"
+                },
+                {
+                  "name": "Leaves",
+                  "title": "Air"
+                },
+                {
+                  "name": "Leaves",
+                  "title": "Solar Energy"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How does this affect the surrounding ecosystem? "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the different plants",
+              "content": [
+                {
+                  "name": "Flower"
+                },
+                {
+                  "name": "Flower",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Leaf"
+                },
+                {
+                  "name": "Leaf",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Fruit"
+                },
+                {
+                  "name": "Fruit",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Stem"
+                },
+                {
+                  "name": "Stem",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Root"
+                },
+                {
+                  "name": "Root",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Plant"
+                },
+                {
+                  "name": "Plant",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Note how the plant acquires its food. What are the factors in the plant cycle present?",
+              "cards": [
+                {
+                  "text": "Find a plant in the real world. Take a picture of the plant.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: How Do Plants Live?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How does this plant (cactus) survive in a place without water? "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the different environments",
+              "content": [
+                {
+                  "name": "Polar"
+                },
+                {
+                  "name": "Polar",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Tundra"
+                },
+                {
+                  "name": "Tundra",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Evergreen Forests"
+                },
+                {
+                  "name": "Evergreen Forests",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Seasonal Forests"
+                },
+                {
+                  "name": "Seasonal Forests",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Grasslands"
+                },
+                {
+                  "name": "Grasslands",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Deserts"
+                },
+                {
+                  "name": "Deserts",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Rainforests"
+                },
+                {
+                  "name": "Rainforests",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Oceans"
+                },
+                {
+                  "name": "Oceans",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a habitat in which your favorite plant grows. "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "How do the plants differ in their habitats?",
+              "cards": [
+                {
+                  "text": "Find two plants in different habitats. Take pictures of the plants.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: Who Hatched From the Egg?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "1. What makes a fish unique from other vertebrates?",
+                  "answers": [
+                    "Pass oxygenated water through their gills",
+                    "Fish breathe oxygen",
+                    "The bones of the fish make up their skeleton",
+                    "Fish can survive outside of their habitat"
+                  ],
+                  "answer": "Pass oxygenated water through their gills"
+                },
+                {
+                  "prompt": "2. Which one of these is not an insect?",
+                  "answers": [
+                    "Ants",
+                    "Fleas",
+                    "Termites",
+                    "Spiders"
+                  ],
+                  "answer": "Spiders"
+                },
+                {
+                  "prompt": "3. Which one of the following is a bird?",
+                  "answers": [
+                    "Penguin",
+                    "Bat",
+                    "Flying squirrel",
+                    "Butterflies"
+                  ],
+                  "answer": "Penguin"
+                },
+                {
+                  "prompt": "4. What is the smallest group of vertebrates?",
+                  "answers": [
+                    "Amphibians",
+                    "Insects",
+                    "Fish"
+                  ],
+                  "answer": ""
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "What type of vertebrate is this - Amphibians vs Mammals? ",
+              "categories": [
+                {
+                  "name": "Mammals",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Amphibians",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Mammals",
+                  "title": "Blue whale"
+                },
+                {
+                  "name": "Mammals",
+                  "title": "Platypus"
+                },
+                {
+                  "name": "Mammals",
+                  "title": "Kangaroo"
+                },
+                {
+                  "name": "Mammals",
+                  "title": "Horses"
+                },
+                {
+                  "name": "Mammals",
+                  "title": "Humans"
+                },
+                {
+                  "name": "Amphibians",
+                  "title": "Frog"
+                },
+                {
+                  "name": "Amphibians",
+                  "title": "Salamander"
+                },
+                {
+                  "name": "Amphibians",
+                  "title": "Mudpuppy"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Which group of animals lays eggs? Can you take a picture of one animal that lays eggs? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research and describe two different animals and how we could use their eggshells for different purposes.",
+              "cards": [
+                {
+                  "text": "Many animals hatch from eggs. The egg shells are of no use after the animals are hatched. Or are they?",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: Who Plays Hide and Seek?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Where does a dolphin live?",
+                  "answers": [
+                    "Ocean",
+                    "Rainforest",
+                    "Polar",
+                    "Tundra"
+                  ],
+                  "answer": "Ocean"
+                },
+                {
+                  "prompt": "Which of these are not methods of animals protecting themselves from predators?",
+                  "answers": [
+                    "Running towards the predator to talk it out",
+                    "Camouflage",
+                    "Having thick shells, sharp needles, and bright colors",
+                    "Running away from enemies"
+                  ],
+                  "answer": "Running towards the predator to talk it out"
+                },
+                {
+                  "prompt": "How has a turtle adapted to its environment?",
+                  "answers": [
+                    "Different shaped feet, mouth, and shells",
+                    "Amazing eyesight",
+                    "Ability to fly",
+                    "Quick, sharp movements"
+                  ],
+                  "answer": "Different shaped feet, mouth, and shells"
+                },
+                {
+                  "prompt": "Can animals live both underground and above ground?",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of these is not necessary for animal survival?",
+                  "answers": [
+                    "Water",
+                    "Food",
+                    "Shelter",
+                    "Trees"
+                  ],
+                  "answer": "Trees"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Can you name three underground animals? Explain how these animals have adapted to their surroundings and why their current environment is best. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "What type of vertebrate is this - Reptiles vs Birds? ",
+              "categories": [
+                {
+                  "name": "Reptiles",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Bird",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Reptiles",
+                  "title": "Dragon"
+                },
+                {
+                  "name": "Reptiles",
+                  "title": "Crocodile"
+                },
+                {
+                  "name": "Reptiles",
+                  "title": "Cobra"
+                },
+                {
+                  "name": "Reptiles",
+                  "title": "Turtle"
+                },
+                {
+                  "name": "Bird",
+                  "title": "Crow"
+                },
+                {
+                  "name": "Bird",
+                  "title": "Robin"
+                },
+                {
+                  "name": "Bird",
+                  "title": "Magpie"
+                },
+                {
+                  "name": "Bird",
+                  "title": "Pigeon"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Find an animal around you and identify its distinct physical features. Through the appearance of the animal, can you determine where the animal lives, moves and eats?",
+              "cards": [
+                {
+                  "text": "Animals can live above ground, underground, in water, on the sand, etc. Animals adapt to these different conditions in their environment through physical and mental adaptations.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5: How Are Animals Protected?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How do crocodiles prepare for the summer? Specifically, when there is drought? "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "What order are the seasons in? Start from January",
+              "data": [
+                {
+                  "text": "Spring",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "Summer",
+                  "dormant": "#6e57d2",
+                  "active": "#634ebd"
+                },
+                {
+                  "text": "Autumn",
+                  "dormant": "#d38f9f",
+                  "active": "#cd8193"
+                },
+                {
+                  "text": "Winter",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Why do birds migrate?",
+                  "answers": [
+                    "To look for resources, mainly food and nesting locations",
+                    "To escape the predators",
+                    "Birds are generally nomadic creatures and don’t stay in one place",
+                    "To practice their flight"
+                  ],
+                  "answer": "To look for resources, mainly food and nesting locations"
+                },
+                {
+                  "prompt": "Do all birds follow the same migration patterns?",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Why do bears prepare for the winter?",
+                  "answers": [
+                    "The winter is cold",
+                    "Bears cannot find food in this climate",
+                    "Spend quality time with their loved ones",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What should you not do when taking a trip out in nature?",
+                  "answers": [
+                    "Leave a trace on the nature trail to mark your accomplishment",
+                    "Walk briskly",
+                    "Collect rubbish",
+                    "Use refillable water bottles"
+                  ],
+                  "answer": "Leave a trace on the nature trail to mark your accomplishment"
+                },
+                {
+                  "prompt": "Why do animals need to be protected?",
+                  "answers": [
+                    "There are no space in museums for extinct animals",
+                    "Animals are fun to look at",
+                    "Animals can’t protect themselves naturally",
+                    "Animals fit into the food chain and extinction disrupts natural order"
+                  ],
+                  "answer": "Animals fit into the food chain and extinction disrupts natural order"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an animal that needs to be protected more "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "How do animals elude predators and humans with their body shape, coloring, and other physical features?",
+              "cards": [
+                {
+                  "text": "Animals are all part of a food chain. There are predators and there are prey. However, sometimes humans enter and disrupt the food chain. They poach and hunt animals.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson6",
+          "title": "6: Why Are We Standing?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "List many of the functions of the human skeleton "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Order by the number of bones a human has at each stage",
+              "data": [
+                {
+                  "text": "Baby",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                },
+                {
+                  "text": "Child",
+                  "dormant": "coral",
+                  "active": "#DB756B"
+                },
+                {
+                  "text": "Puberty",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Teenager",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "Adulthood",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "Senior",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                }
+              ]
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the different body parts.",
+              "content": [
+                {
+                  "name": "Ribs"
+                },
+                {
+                  "name": "Ribs",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Pelvic bone"
+                },
+                {
+                  "name": "Pelvic bone",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Skull"
+                },
+                {
+                  "name": "Skull",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Upper"
+                },
+                {
+                  "name": "Upper",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Spine"
+                },
+                {
+                  "name": "Spine",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Lower limbs"
+                },
+                {
+                  "name": "Lower limbs",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Observe the animal’s skeleton and describe how it helps the animal sustain their habits.",
+              "cards": [
+                {
+                  "text": "The human skeleton provides support from our body. Go outside and find an animal to do research on.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson7",
+          "title": "7: How Do We Smile?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "List many of the functions of our muscles "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Every muscle in the human body has a different shape",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What are the benefits of regular exercise?",
+                  "answers": [
+                    "Muscle training",
+                    "Improves mood and boosts energy",
+                    "Combats health conditions and diseases",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What is the largest muscle in the human body?",
+                  "answers": [
+                    "Pectoralis major",
+                    "Triceps brachii",
+                    "Gluteus maximus",
+                    "Quadriceps femoris"
+                  ],
+                  "answer": "Quadriceps femoris"
+                },
+                {
+                  "prompt": "What are the different types of muscle?",
+                  "answers": [
+                    "Smooth, cardiac, skeletal",
+                    "Smooth, cadaverous, skeletal",
+                    "Skeletal, smooth",
+                    "Cardiac, non-cardiac"
+                  ],
+                  "answer": "Smooth, cardiac, skeletal"
+                },
+                {
+                  "prompt": "How do the flexor and extensor muscles work together?",
+                  "answers": [
+                    "Extend the back and arm",
+                    "Bend the hand",
+                    "reduce the angle between bones",
+                    "bend and straighten the body's joints to produce motion"
+                  ],
+                  "answer": "bend and straighten the body's joints to produce motion"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Describe your present.",
+              "cards": [
+                {
+                  "text": "Smiling makes us happy. Give a present to a loved one to make them smile. But this shouldn’t be any present. Make sure the present you give them is a sustainable invention that they can use in many scenarios.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson8",
+          "title": "8: A Heavy Backpack",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Do you have perfect posture? If yes, tell me the reasons you do. If not, what should you do to improve your posture? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "A heavier backpack on a child has no effect on posture",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Why is the right posture important?",
+                  "answers": [
+                    "Maintain correct form while exercising",
+                    "Strengthen your balance",
+                    "Prevent injuries",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What does bad posture do to your spine?",
+                  "answers": [
+                    "Puts unnecessary pressure on your spine",
+                    "Evenly distributes the weight on your spine",
+                    "Keeps you comfortable and reduces injury risk",
+                    "Allows you to maintain a full range of motion"
+                  ],
+                  "answer": "Puts unnecessary pressure on your spine"
+                },
+                {
+                  "prompt": "How does your posture change over time?",
+                  "answers": [
+                    "Your posture will change depending on how you maintain it",
+                    "As you grow old, your spine will form a permanent curve",
+                    "Over time, your spine will become straighter due to stronger muscles",
+                    "All of the above"
+                  ],
+                  "answer": "Your posture will change depending on how you maintain it"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Is this an example of good posture or bad posture? ",
+              "categories": [
+                {
+                  "name": "Good posture",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Bad posture",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Good posture",
+                  "title": "Head up"
+                },
+                {
+                  "name": "Good posture",
+                  "title": "Standing up straight and tall"
+                },
+                {
+                  "name": "Good posture",
+                  "title": "Weight evenly distributed on feet"
+                },
+                {
+                  "name": "Good posture",
+                  "title": "Pull stomach in"
+                },
+                {
+                  "name": "Bad posture",
+                  "title": "Rounded shoulders"
+                },
+                {
+                  "name": "Bad posture",
+                  "title": "Hunched back"
+                },
+                {
+                  "name": "Bad posture",
+                  "title": "Head leaning forward"
+                },
+                {
+                  "name": "Bad posture",
+                  "title": "Back pain"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Your posture is the habitual position of your body when it is standing, sitting, or walking. The weight of any extra items such as your backpack can affect your posture. Look inside your backpack and see what you can reduce, reuse, recycle, and digitalize. Let’s try to make your backpack lighter and save the planet by using less paper!",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson9",
+          "title": "9: What Are Bacteria Afraid Of?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What are some unique ways or methods you stay clean? Explain them. If you don’t have any, research some and explain. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture or record a video of a good cleaning practice "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Washing your hands with soap and water can get rid of millions of microbes",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "How do we take care of our body throughout the day?",
+                  "answers": [
+                    "Wash our skin and face often",
+                    "Wash our hands with soap and water",
+                    "Wipe off sweat from our body",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What is one way scientists can study microbes?",
+                  "answers": [
+                    "Take a picture of the object containing microbes with their phone Camera 📷",
+                    "Use scientific instruments such as microscopes",
+                    "Analyze a bar of soap",
+                    "Scientists are not able to study microbes to their extremely miniscule size"
+                  ],
+                  "answer": "Use scientific instruments such as microscopes"
+                },
+                {
+                  "prompt": "How much bacteria do we approximately have?",
+                  "answers": [
+                    "Thousands",
+                    "Millions",
+                    "Billions",
+                    "Trillions"
+                  ],
+                  "answer": "Trillions"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Does this activity help with cleanliness or uncleanliness? ",
+              "categories": [
+                {
+                  "name": "Cleanliness",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Uncleanliness",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Cleanliness",
+                  "title": "Kim ate garlic bread for lunch and he brushed his teeth after"
+                },
+                {
+                  "name": "Cleanliness",
+                  "title": "Emily buys an exfoliator and scrub at the store as she wants to exfoliate once a week"
+                },
+                {
+                  "name": "Cleanliness",
+                  "title": "Marcos’ friends give him deodorant and tell him to use it"
+                },
+                {
+                  "name": "Cleanliness",
+                  "title": "Rachel feels like she should take a shower"
+                },
+                {
+                  "name": "Uncleanliness",
+                  "title": "Johnny is sweaty and tired of playing basketball so he heads to his class right after"
+                },
+                {
+                  "name": "Uncleanliness",
+                  "title": "Melissa uses the same sponge for weeks and doesn’t understand why it smells"
+                },
+                {
+                  "name": "Uncleanliness",
+                  "title": "Richard’s bedsheets start smelling funky so he sprays air freshener"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Your body is very complex and valuable, and to stay healthy we must take care of it. We want to sustain our health for as long as possible and make sure we don’t infect others. Describe how you wash your hands.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson10",
+          "title": "10: Why Do My Teeth Hurt?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Many animals have teeth, some small, some sharp, some large, some dull, but they all serve a purpose. However, teeth can serve more than one purpose and animal teeth can be used for many different functions. List some sustainable functions that (animal/human) teeth can be used for other than eating. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of two different foods and explain why one food is better for your teeth than the other "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Are these behaviors helpful or harmful to your teeth' health? ",
+              "categories": [
+                {
+                  "name": "Helpful",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Harmful",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Helpful",
+                  "title": "Brushing after every meal"
+                },
+                {
+                  "name": "Helpful",
+                  "title": "Cleaning your tongue"
+                },
+                {
+                  "name": "Helpful",
+                  "title": "Using a fluoride toothpaste"
+                },
+                {
+                  "name": "Helpful",
+                  "title": "Flossing your teeth once a day"
+                },
+                {
+                  "name": "Harmful",
+                  "title": "Eating sugary snacks"
+                },
+                {
+                  "name": "Harmful",
+                  "title": "Eating chips rather than sugary snacks"
+                },
+                {
+                  "name": "Harmful",
+                  "title": "Brushing once a day"
+                },
+                {
+                  "name": "Harmful",
+                  "title": "Look for flavor instead of fluoride in your toothpaste"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Order these animals by the amount of teeth they have",
+              "data": [
+                {
+                  "text": "Snail",
+                  "dormant": "#d38f9f",
+                  "active": "#cd8193"
+                },
+                {
+                  "text": "Whale Shark",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "Giant Armadillo",
+                  "dormant": "darkolivegreen",
+                  "active": "darkgreen"
+                },
+                {
+                  "text": "Humans",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Elephants",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "Ostrich",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 3: Substances and their Properties",
+              "cards": [
+                {
+                  "text": "Humans have many teeth but only one set of teeth. Good oral hygiene then is very important and you should properly care for your teeth every day and night.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "One form of taking care of your teeth is eating good food that doesn’t rot your teeth. Keep track of all the food and drinks you consume in a day and label each one with whether it is teeth-healthy or teeth-unhealthy.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter3",
+      "title": "common:chapter3",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "orange",
+      "colorTwo": "orangered",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: What Are the Properties of Air?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7492DB",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Everyone has a carbon footprint.",
+                  "answers": [
+                    "true",
+                    "false"
+                  ],
+                  "answer": "true"
+                },
+                {
+                  "prompt": "Which is not going to help reduce our carbon footprint?",
+                  "answers": [
+                    "eating local food",
+                    "recycling",
+                    "driving to school",
+                    "planting trees"
+                  ],
+                  "answer": "driving to school"
+                },
+                {
+                  "prompt": "What gas is increasing in large amounts due to human activities?",
+                  "answers": [
+                    "carbon dioxide",
+                    "oxygen",
+                    "diesel"
+                  ],
+                  "answer": "carbon dioxide"
+                },
+                {
+                  "prompt": "Name of the gas the plants take in",
+                  "answers": [
+                    "gas",
+                    "methane",
+                    "oxygen",
+                    "carbon dioxide"
+                  ],
+                  "answer": "carbon dioxide"
+                },
+                {
+                  "prompt": "Which one of these does not add CO2 to the atmosphere?",
+                  "answers": [
+                    "cooking with gas",
+                    "planting trees",
+                    "burning wood",
+                    "riding in a bus"
+                  ],
+                  "answer": "planting trees"
+                },
+                {
+                  "prompt": "What is CO2?",
+                  "answers": [
+                    "Carbon",
+                    "Oxygen",
+                    "Carbon dioxide",
+                    "A type of fizzy drink"
+                  ],
+                  "answer": "Carbon dioxide"
+                },
+                {
+                  "prompt": "While being cooled down, the air _______:",
+                  "answers": [
+                    "Expands",
+                    "Contracts"
+                  ],
+                  "answer": "Contracts"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Why don’t animals get cold in winter? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take three pictures of different thing that pollute the air in your city "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the causes of air pollution ",
+              "categories": [
+                {
+                  "name": "Natural",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Human",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Natural",
+                  "title": "Volcanoes"
+                },
+                {
+                  "name": "Natural",
+                  "title": "Wildfires"
+                },
+                {
+                  "name": "Human",
+                  "title": "Cigarette"
+                },
+                {
+                  "name": "Human",
+                  "title": "Planes"
+                },
+                {
+                  "name": "Human",
+                  "title": "Cars"
+                },
+                {
+                  "name": "Human",
+                  "title": "Factories"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Understand that all plants and animals need air. Describe what happens when a plant has limited air.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Where to Build a Factory?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74B1DB",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What happens to the temperature if more greenhouse gasses are released into the atmosphere?",
+                  "answers": [
+                    "Temperature goes up",
+                    "Temperature goes down"
+                  ],
+                  "answer": "Temperature goes up"
+                },
+                {
+                  "prompt": "Which of the following activities contributes the most to carbon emissions globally?",
+                  "answers": [
+                    "Deforestation",
+                    "Agriculture",
+                    "Burning fossil fuels",
+                    "Respiration"
+                  ],
+                  "answer": "Burning fossil fuels"
+                },
+                {
+                  "prompt": "Increased carbon dioxide may cause global warming by",
+                  "answers": [
+                    "allowing more sunlight into the atmosphere.",
+                    "reflecting more sunlight from clouds.",
+                    "reducing the amount of oxygen in the air.",
+                    "trapping more heat in the atmosphere."
+                  ],
+                  "answer": "trapping more heat in the atmosphere."
+                },
+                {
+                  "prompt": "Which is a natural source of greenhouse gasses?",
+                  "answers": [
+                    "aerosols",
+                    "deforestation",
+                    "volcanic eruptions",
+                    "burning fossil fuels"
+                  ],
+                  "answer": "volcanic eruptions"
+                },
+                {
+                  "prompt": "What is the greenhouse effect?",
+                  "answers": [
+                    "The warming of a planet due to trapped radiation.",
+                    "The cooling of Earth due to air pollution.",
+                    "The heating of a solid, such as a rock."
+                  ],
+                  "answer": "The warming of a planet due to trapped radiation."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Make a plan of how you will avoid polluting the air "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Upload a picture of the factory that causes the most pollution in the area. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the items ",
+              "categories": [
+                {
+                  "name": "Reuse",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Recycle",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Reduce",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Reuse",
+                  "title": "Refill a water bottle with water from home instead of buying a new one"
+                },
+                {
+                  "name": "Reuse",
+                  "title": "Update your computer rather than throwing it out and getting a replacement"
+                },
+                {
+                  "name": "Reuse",
+                  "title": "Ditch plastic bags and choose reusable, environmentally-friendly bags instead"
+                },
+                {
+                  "name": "Recycle",
+                  "title": "Separating cardboard to put in the recycling facility"
+                },
+                {
+                  "name": "Recycle",
+                  "title": "Separating lead batteries"
+                },
+                {
+                  "name": "Recycle",
+                  "title": "Separating glass"
+                },
+                {
+                  "name": "Recycle",
+                  "title": "Separating aluminum"
+                },
+                {
+                  "name": "Reduce",
+                  "title": "Only buy what you need"
+                },
+                {
+                  "name": "Reduce",
+                  "title": "Choose products with less packaging"
+                },
+                {
+                  "name": "Reduce",
+                  "title": "Look for items that you can reuse instead of buying"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Take note of the factors that caused these changes. Describe a plan to revert or mitigate some of the damages.",
+              "cards": [
+                {
+                  "text": "Find a factory or a place similar to a factory near your home. Do your best to research the ecosystem present there before the factory and after the factory.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: What Do We Know About Water?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74DBC2",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What does the word “pollute” mean?",
+                  "answers": [
+                    "to make something clean",
+                    "to make something cheaper",
+                    "to make something dirty"
+                  ],
+                  "answer": "to make something dirty"
+                },
+                {
+                  "prompt": "How much water is drinkable?",
+                  "answers": [
+                    "1 percent",
+                    "5 percent",
+                    "10 percent",
+                    "20 percent"
+                  ],
+                  "answer": "1 percent"
+                },
+                {
+                  "prompt": "Which is not a major source of water pollution in the modern world?",
+                  "answers": [
+                    "Animal feces and algae",
+                    "Agriculture industry chemicals",
+                    "Industrial chemical toxins",
+                    "Municipal waste (human & other)"
+                  ],
+                  "answer": "Animal feces and algae"
+                },
+                {
+                  "prompt": "Water pollution occurs when:",
+                  "answers": [
+                    "Harmful substances enter a water supply",
+                    "Industries dispose of waste safely and correctly.",
+                    "None of the above."
+                  ],
+                  "answer": "Harmful substances enter a water supply"
+                },
+                {
+                  "prompt": "There is nothing we can do to stop water pollution.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "We can prevent water pollution by:",
+                  "answers": [
+                    "Reduce the use of plastic.",
+                    "Properly dispose of chemicals.",
+                    "Clean up after your animals.",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "How many forms does water come in?",
+                  "answers": [
+                    "three",
+                    "two",
+                    "one"
+                  ],
+                  "answer": "three"
+                },
+                {
+                  "prompt": "What is precipitation?",
+                  "answers": [
+                    "Sweat from our bodies on hot days",
+                    "Warm rain but not cold snow or sleet",
+                    "Gas that we use in furnaces or ovens",
+                    "Any form of water that falls from the sky"
+                  ],
+                  "answer": "Any form of water that falls from the sky"
+                },
+                {
+                  "prompt": "Which example is a form of precipitation?",
+                  "answers": [
+                    "Dew",
+                    "Fog",
+                    "Frost",
+                    "Hail"
+                  ],
+                  "answer": "Hail"
+                },
+                {
+                  "prompt": "What is the water cycle?",
+                  "answers": [
+                    "the 3 forms of water",
+                    "the movement of water on, above, or below the surface of the Earth",
+                    "when water melts",
+                    "when clouds form"
+                  ],
+                  "answer": "the movement of water on, above, or below the surface of the Earth"
+                },
+                {
+                  "prompt": "Evaporation happens when the sun ___________ water and turns it into vapor.",
+                  "answers": [
+                    "cools",
+                    "heats up",
+                    "freezes",
+                    "lights up"
+                  ],
+                  "answer": "heats up"
+                },
+                {
+                  "prompt": "Water in its gas form is called __________,",
+                  "answers": [
+                    "water vapor",
+                    "precipitation",
+                    "ice",
+                    "air"
+                  ],
+                  "answer": "water vapor"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Describe the picture. What do you think should be changed? "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put the oceans from the smallest to the largest.",
+              "data": [
+                {
+                  "text": "Arctic",
+                  "dormant": "orange",
+                  "active": "orangered"
+                },
+                {
+                  "text": "Southern",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Indian",
+                  "dormant": "coral",
+                  "active": "#DB756B"
+                },
+                {
+                  "text": "Atlantic",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "Pacific.",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Draw a water cycle and take a picture of it. "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research where the water in your household comes from. Trace it back to the original source. Visit the source and find out the water purification method used. Reflect on the method and offer your own critiques and compliments.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: What Does a Person Need?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7874DB",
+          "content": [
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the following resources ",
+              "categories": [
+                {
+                  "name": "Natural Resources",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Human Resources",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Natural Resources",
+                  "title": "Sun"
+                },
+                {
+                  "name": "Natural Resources",
+                  "title": "Flowers"
+                },
+                {
+                  "name": "Natural Resources",
+                  "title": "River"
+                },
+                {
+                  "name": "Natural Resources",
+                  "title": "Soil"
+                },
+                {
+                  "name": "Human Resources",
+                  "title": "Lightbulb"
+                },
+                {
+                  "name": "Human Resources",
+                  "title": "Bike"
+                },
+                {
+                  "name": "Human Resources",
+                  "title": "Pencil"
+                },
+                {
+                  "name": "Human Resources",
+                  "title": "Pillow"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How do people use natural resources to create energy? Name one good (sustainable) way the energy is created and one bad (unsustainable) way? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is NOT a sustainable practice?",
+                  "answers": [
+                    "recycling",
+                    "reducing",
+                    "reusing",
+                    "buying"
+                  ],
+                  "answer": "buying"
+                },
+                {
+                  "prompt": "What is the term used to describe objects that are being washed and used again?",
+                  "answers": [
+                    "recycling",
+                    "reducing",
+                    "reusing",
+                    "buying"
+                  ],
+                  "answer": "reusing"
+                },
+                {
+                  "prompt": "What is the term used to describe objects that are being made into new materials?",
+                  "answers": [
+                    "recycling",
+                    "reducing",
+                    "reusing",
+                    "buying"
+                  ],
+                  "answer": "recycling"
+                },
+                {
+                  "prompt": "What is a landfill?",
+                  "answers": [
+                    "place where trash is piled up",
+                    "place where trash is reduced",
+                    "placed where trash is recycled",
+                    "place where trash is reused"
+                  ],
+                  "answer": "place where trash is piled up"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take three pictures of the ways you take care of the environment "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 4: Earth and Space",
+              "cards": [
+                {
+                  "text": "There are many natural resources present on Earth but man has mismanaged many of them. Nature is our friend and we must protect her.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Take a picture of a natural resource in your neighborhood. Learn about its past, present, and future. Describe the implications of its current usage.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter4",
+      "title": "common:chapter4",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "midnightblue",
+      "colorTwo": "mediumturquoise",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: The Sun and its Influence on Earth",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E09079",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Find out and describe how the Moon influences the oceans "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take photos of 5 solar panels in your city "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Solar Energy is not a renewable energy source.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Solar Energy is created by the ________.",
+                  "answers": [
+                    "Moon",
+                    "Sun",
+                    "Wind",
+                    "Water"
+                  ],
+                  "answer": "Sun"
+                },
+                {
+                  "prompt": "Disadvantages of using Solar Energy include:",
+                  "answers": [
+                    "It's Renewable",
+                    "Expensive to Install",
+                    "All the Above"
+                  ],
+                  "answer": "Expensive to Install"
+                },
+                {
+                  "prompt": "Advantages of using solar energy include:",
+                  "answers": [
+                    "Renewable",
+                    "Expensive to Install",
+                    "Expensive to store energy"
+                  ],
+                  "answer": "Renewable"
+                },
+                {
+                  "prompt": "Damaging your eyes can be caused by this",
+                  "answers": [
+                    "Infrared",
+                    "Ultraviolet",
+                    "Visible light",
+                    "All three mentioned"
+                  ],
+                  "answer": "Ultraviolet"
+                },
+                {
+                  "prompt": "Solar Cells convert light into electricity.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Plants need _________________ to do photosynthesis just like solar panels?",
+                  "answers": [
+                    "Food absorbed from ground",
+                    "Sun's energy",
+                    "Food broken down",
+                    "Minerals from the soil"
+                  ],
+                  "answer": "Sun's energy"
+                },
+                {
+                  "prompt": "Is solar energy renewable?",
+                  "answers": [
+                    "No",
+                    "Yes",
+                    "Solar energy is harder to find.",
+                    "Fossil fuels are much cheaper.",
+                    "Fossil fuels are more abundant.",
+                    "The sun's energy can never be harnessed."
+                  ],
+                  "answer": "Fossil fuels are much cheaper."
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the items ",
+              "categories": [
+                {
+                  "name": "Sun",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Moon",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Earth",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Sun",
+                  "title": "A medium size star"
+                },
+                {
+                  "name": "Sun",
+                  "title": "Its gravity holds all the planets in place"
+                },
+                {
+                  "name": "Sun",
+                  "title": "A burning ball of gas"
+                },
+                {
+                  "name": "Moon",
+                  "title": "No atmosphere"
+                },
+                {
+                  "name": "Moon",
+                  "title": "Scarred with craters"
+                },
+                {
+                  "name": "Moon",
+                  "title": "Takes about a month to revolve the Earth"
+                },
+                {
+                  "name": "Earth",
+                  "title": "3rd planet from Sun"
+                },
+                {
+                  "name": "Earth",
+                  "title": "Only planet that supports life"
+                },
+                {
+                  "name": "Earth",
+                  "title": "Has water and atmosphere"
+                },
+                {
+                  "name": "Earth",
+                  "title": "24 hours to rotate"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "The sun provides light and heats the Earth. However, like anything, nature should be kept in balance. There are balancing factors to neutralize the Sun’s tremendous amount of heat. Explain why we need sunscreen and explain how Earth’s ecosystems have their own built-in sunscreen.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Who Are the Sun’s Friends?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E07D78",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Research and describe the origin of the names of 3 planets of your choice. "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the different plants",
+              "content": [
+                {
+                  "name": "Mercury"
+                },
+                {
+                  "name": "Mercury",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Venus"
+                },
+                {
+                  "name": "Venus",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Earth"
+                },
+                {
+                  "name": "Earth",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Mars"
+                },
+                {
+                  "name": "Mars",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Jupiter"
+                },
+                {
+                  "name": "Jupiter",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Saturn"
+                },
+                {
+                  "name": "Saturn",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Uranus"
+                },
+                {
+                  "name": "Uranus",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Neptune"
+                },
+                {
+                  "name": "Neptune",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put the planets in order from the closest to the Sun to the furthest",
+              "data": [
+                {
+                  "text": "Neptune",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "Uranus",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "Saturn",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Jupiter",
+                  "dormant": "#ffa500",
+                  "active": "#e59400"
+                },
+                {
+                  "text": "Mars",
+                  "dormant": "#6e57d2",
+                  "active": "#634ebd"
+                },
+                {
+                  "text": "Earth",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                },
+                {
+                  "text": "Venus",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "Mercury",
+                  "dormant": "coral",
+                  "active": "#DB756B"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "1. Most of Earth's energy comes from…",
+                  "answers": [
+                    "the Earth's core",
+                    "the Sun",
+                    "hydroelectric power",
+                    "burning fossil fuels"
+                  ],
+                  "answer": "the Sun"
+                },
+                {
+                  "prompt": "2. The Earth acts like a greenhouse that catches and traps heat from the sun.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "3. _______________ is an increase in global temperatures believed to be caused in part by the greenhouse effect.",
+                  "answers": [
+                    "Climate",
+                    "Global Warming",
+                    "Climate Change",
+                    "Greenhouse Effect"
+                  ],
+                  "answer": "Global Warming"
+                },
+                {
+                  "prompt": "4. _______________ is a change in global and regional climate patterns attributed to an increase in atmospheric carbon dioxide from the burning of fossil fuels.",
+                  "answers": [
+                    "Radiation",
+                    "Climate Change",
+                    "Greenhouse Gas"
+                  ],
+                  "answer": "Climate Change"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Once done, draw our solar system with all its planets orbiting the Sun and try your best to show differences in size and shape.",
+              "cards": [
+                {
+                  "text": "There are many other planets in our solar system and they orbit the Sun. Life is only sustainable on planet Earth.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Make a case for another planet that might be able to support life. Formulate some changes that will make this planet a better place for life.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: Are Planets Alive?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF79E0",
+          "content": [
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put the planets in order from the smallest to the largest",
+              "data": [
+                {
+                  "text": "Mercury",
+                  "dormant": "darkolivegreen",
+                  "active": "darkgreen"
+                },
+                {
+                  "text": "Mars",
+                  "dormant": "#6e57d2",
+                  "active": "#634ebd"
+                },
+                {
+                  "text": "Venus",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Earth",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "Neptune",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "Uranus",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "Saturn",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                },
+                {
+                  "text": "Jupiter",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which is the closest planet to the Sun?",
+                  "answers": [
+                    "Mercury",
+                    "Earth",
+                    "Venus",
+                    "Neptune"
+                  ],
+                  "answer": "Mercury"
+                },
+                {
+                  "prompt": "Which planet do the moons Oberton and Titania belong to?",
+                  "answers": [
+                    "Uranus",
+                    "Earth",
+                    "Venus",
+                    "Jupiter"
+                  ],
+                  "answer": "Uranus"
+                },
+                {
+                  "prompt": "The largest volcano in the solar system is called Olympus Mons. Where is it?",
+                  "answers": [
+                    "Earth",
+                    "Mars",
+                    "Venus",
+                    "Jupiter"
+                  ],
+                  "answer": "Mars"
+                },
+                {
+                  "prompt": "What is the Great Red Spot on Jupiter?",
+                  "answers": [
+                    "A storm",
+                    "A lake",
+                    "A crater",
+                    "A volcano"
+                  ],
+                  "answer": "A storm"
+                },
+                {
+                  "prompt": "What is the Sun mainly made from?",
+                  "answers": [
+                    "Liquid lava",
+                    "Gas",
+                    "Rock",
+                    "Molten iron"
+                  ],
+                  "answer": "Gas"
+                },
+                {
+                  "prompt": "Which of these planets is the smallest?",
+                  "answers": [
+                    "Mercury",
+                    "Jupiter",
+                    "Uranus",
+                    "Earth"
+                  ],
+                  "answer": "Mercury"
+                },
+                {
+                  "prompt": "How many moons does Mars have?",
+                  "answers": [
+                    "50",
+                    "1",
+                    "2",
+                    "13"
+                  ],
+                  "answer": "2"
+                },
+                {
+                  "prompt": "What are comets mostly made of?",
+                  "answers": [
+                    "Dirty ice and dust",
+                    "Rusty metal",
+                    "Poisonous liquid",
+                    "Hot, liquid rock"
+                  ],
+                  "answer": "Dirty ice and dust"
+                },
+                {
+                  "prompt": "Where is the asteroid belt?",
+                  "answers": [
+                    "Between Earth and Mars",
+                    "Between Mars and Jupiter",
+                    "Between Jupiter and Saturn",
+                    "Between Earth and Venus"
+                  ],
+                  "answer": "Between Mars and Jupiter"
+                },
+                {
+                  "prompt": "Which of these best describes the atmosphere surrounding Venus?",
+                  "answers": [
+                    "Cold and wet",
+                    "Hot and poisonous",
+                    "Bright and sunny",
+                    "Cold and snowy"
+                  ],
+                  "answer": "Hot and poisonous"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "What are the effects of space exploration on our atmosphere? And do you believe the benefits of space exploration negate the cons?",
+              "cards": [
+                {
+                  "text": "Space exploration is very important in our day and age. We are on a mission to explore all the other planets.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Find out one planet that we are exploring currently. Then, figure out the method of exploration.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: Why Does Spring Follow Winter?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E0A279",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Record the temperature at 8 am, 1 pm, 6 pm, and 9 pm. What do you notice about the temperature change? Describe your observations. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the activities by season ",
+              "categories": [
+                {
+                  "name": "Autumn",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Winter",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Spring",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Summer",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Autumn",
+                  "title": "Making art out of leaves"
+                },
+                {
+                  "name": "Winter",
+                  "title": "Going ice-skatings"
+                },
+                {
+                  "name": "Spring",
+                  "title": "Planting a tree"
+                },
+                {
+                  "name": "Summer",
+                  "title": "Making homemade ice cream"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put the months in order",
+              "data": [
+                {
+                  "text": "January",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "February",
+                  "dormant": "#d38f9f",
+                  "active": "#cd8193"
+                },
+                {
+                  "text": "March",
+                  "dormant": "#6e57d2",
+                  "active": "#634ebd"
+                },
+                {
+                  "text": "April",
+                  "dormant": "darkolivegreen",
+                  "active": "darkgreen"
+                },
+                {
+                  "text": "May",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "June",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "July",
+                  "dormant": "orange",
+                  "active": "orangered"
+                },
+                {
+                  "text": "August",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "September",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                },
+                {
+                  "text": "October",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "November",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                },
+                {
+                  "text": "December",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Draw the change of a newly planted tree over days, months, and years. For example, you can draw a newly planted tree over the course of many days. Then, draw the change over the course of a few months (seasons changing). Then, draw the change over the course of a few years.",
+              "cards": [
+                {
+                  "text": "The calendar is a counting system of time divided into days, months, and years.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5: What Time is It?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E079A5",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What clock is the most accurate? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the sunset "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match a picture of a clock to the time it displays",
+              "content": [
+                {
+                  "name": "1:00pm"
+                },
+                {
+                  "name": "1:00pm",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "10:00am"
+                },
+                {
+                  "name": "10:00am",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "3:30pm"
+                },
+                {
+                  "name": "3:30pm",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "8:00am"
+                },
+                {
+                  "name": "8:00am",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "2:00am"
+                },
+                {
+                  "name": "2:00am",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "6:30pm"
+                },
+                {
+                  "name": "6:30pm",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 5: Physics of Nature",
+              "cards": [
+                {
+                  "text": "Humans have invented different ways to tell time from the sundial to the water clock.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Take a picture of any household item that shows time. Record and describe the pattern you see.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter5",
+      "title": "common:chapter5",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "lightpink",
+      "colorTwo": "mediumvioletred",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: Why Do Things Move?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Find three objects, people, animals in your home that you can describe forces that are acting upon them. For example, gravity is a force that affects humans by pulling them to the center of Earth. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "From the Open Response question, take a picture of one of the objects, people, animals you described. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "If two children are pulling each other with the same force, what will happen?",
+                  "answers": [
+                    "They both move backwards",
+                    "The children do not move at all",
+                    "Only one of them moves while the other one stays still",
+                    "The bigger child moves the smaller child"
+                  ],
+                  "answer": "The bigger child moves the smaller child"
+                },
+                {
+                  "prompt": "If you drop a pear from a building, what will be the main force acting on the pear?",
+                  "answers": [
+                    "Gravity",
+                    "Electric",
+                    "Magnetic",
+                    "Elastic"
+                  ],
+                  "answer": "Gravity"
+                },
+                {
+                  "prompt": "What are the different directions forces can move in?",
+                  "answers": [
+                    "Forwards",
+                    "Backwards",
+                    "Leftward",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "How can we relate physics to sustainability?",
+                  "answers": [
+                    "Different gasses and clouds affect the earth’s temperature",
+                    "Newton’s laws of motion are used for recycling",
+                    "There is less force acting on reusable objects",
+                    "None of the above"
+                  ],
+                  "answer": "Different gasses and clouds affect the earth’s temperature"
+                },
+                {
+                  "prompt": "What subject of physics is being studied as our primary energy source?",
+                  "answers": [
+                    "Nuclear Physics",
+                    "Electronics",
+                    "Magnetism",
+                    "All of the above"
+                  ],
+                  "answer": "Nuclear Physics"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Think about the many sustainable energy sources such as wind, solar, and water. How do we use forces to push or pull and generate energy?",
+              "cards": [
+                {
+                  "text": "Nothing in the world can move until there is a force either pushing or pulling it. Therefore, objects can only move when there is a force applied to them.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Who Is Faster?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Why are objects that are fast bad for the environment? Is it because of the energy required to power them? Do you have any ideas on making them more efficient? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an item you can measure speed with. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the items based on speed ",
+              "categories": [
+                {
+                  "name": "Fast",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Slow",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Fast",
+                  "title": "Car"
+                },
+                {
+                  "name": "Fast",
+                  "title": "Cheetah"
+                },
+                {
+                  "name": "Fast",
+                  "title": "Airplane"
+                },
+                {
+                  "name": "Fast",
+                  "title": "Speedboat"
+                },
+                {
+                  "name": "Slow",
+                  "title": "Human"
+                },
+                {
+                  "name": "Slow",
+                  "title": "Turtle"
+                },
+                {
+                  "name": "Slow",
+                  "title": "Small boat"
+                },
+                {
+                  "name": "Slow",
+                  "title": "Penguin"
+                },
+                {
+                  "name": "Slow",
+                  "title": "Dog"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put these vehicles in order of energy efficiency",
+              "data": [
+                {
+                  "text": "Roller-blades",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                },
+                {
+                  "text": "Bicycles",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Public subway",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "Public bus",
+                  "dormant": "coral",
+                  "active": "#DB756B"
+                },
+                {
+                  "text": "Cars",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                },
+                {
+                  "text": "Airplanes",
+                  "dormant": "#ffa500",
+                  "active": "#e59400"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Does high speed have any negative effects on the environment? Explain your answer.",
+              "cards": [
+                {
+                  "text": "The object that moves faster has a higher speed. This means that during the same time, the object with a higher speed will cover a longer distance.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: Transportation",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is a new/different form/mode of transportation that’s been added to your neighborhood? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a mode of transportation that is more environmentally friendly than other modes available "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Order these vehicles from oldest to newest",
+              "data": [
+                {
+                  "text": "Human",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                },
+                {
+                  "text": "Horseback riding",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "Car",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "Train",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Airplane",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                },
+                {
+                  "text": "Bullet train",
+                  "dormant": "#d38f9f",
+                  "active": "#cd8193"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which one of these animals is the saiga slower than?",
+                  "answers": [
+                    "Donkey",
+                    "Turtle",
+                    "Bears",
+                    "None of the above"
+                  ],
+                  "answer": "None of the above"
+                },
+                {
+                  "prompt": "How can we be more environmentally friendly with fast vehicles?",
+                  "answers": [
+                    "Carpool",
+                    "Turn the engine off when not in use",
+                    "Open the windows instead of AC",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "Can we use speed to make sustainable energy?",
+                  "answers": [
+                    "Use the speed of animals to generate energy like a hamster spinning on a wheel",
+                    "The speed of animals cannot be used to generate energy",
+                    "Use the speed of animals to generate energy like sitting on a cheetah running back and forth",
+                    "Although using animals for energy can be done, it is unethical and shouldn’t be done"
+                  ],
+                  "answer": "Although using animals for energy can be done, it is unethical and shouldn’t be done"
+                },
+                {
+                  "prompt": "How many legs are needed to run fast?",
+                  "answers": [
+                    "2, the less legs the faster you can run",
+                    "4, the more legs the faster you can run",
+                    "0, wings can help you fly faster than run",
+                    "It does not depend on the amount of legs"
+                  ],
+                  "answer": "It does not depend on the amount of legs"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Examine the noise level produced by each car in the video you took and do a mini-experiment. Are the louder cars worse to the environment? Why?",
+              "cards": [
+                {
+                  "text": "The Kazakhstan eagle might seem clumsy and immobile first, but it is indeed swift. Although the animal might seem loud, that doesn’t take away from its speed.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Go outside and examine the many cars on the road. Record a video of the cars passing by.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: How Much Does an Elephant Weigh?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF6CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a heavy object. How can we make this object lighter and more sustainable? "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Find one of the heaviest objects in your house. What is it made out of? Try to identify the composition of materials and then label each material as either environmentally friendly or not. Try your best! "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put these objects in order from lightest to heaviest",
+              "data": [
+                {
+                  "text": "Home plant",
+                  "dormant": "darkolivegreen",
+                  "active": "darkgreen"
+                },
+                {
+                  "text": "Rain bucket",
+                  "dormant": "orange",
+                  "active": "orangered"
+                },
+                {
+                  "text": "Bicycle",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                },
+                {
+                  "text": "Tree",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "Nuclear power generator",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Mass is hard to estimate when it comes to visually objects that we’ve never seen before. How heavy do you think a whale’s tongue is?",
+                  "answers": [
+                    "Heavier than an elephant, bike, and a human combined",
+                    "Heavier than a bike and a human",
+                    "Heavier than a human",
+                    "Not heavier than any of these listed above"
+                  ],
+                  "answer": "Heavier than an elephant, bike, and a human combined"
+                },
+                {
+                  "prompt": "If two objects are hit with the same force, which object will roll faster?",
+                  "answers": [
+                    "The object that is heavier",
+                    "The object that is lighter",
+                    "The object that has a more rectangular shape",
+                    "None of the objects because they are hit with the same force"
+                  ],
+                  "answer": "The object that is lighter"
+                },
+                {
+                  "prompt": "Do different countries have different measurement standards?",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of these do not belong?",
+                  "answers": [
+                    "Kilograms",
+                    "Grams",
+                    "Milligrams",
+                    "Inches"
+                  ],
+                  "answer": "Inches"
+                },
+                {
+                  "prompt": "When it comes to making everyday objects, we should _____.",
+                  "answers": [
+                    "Use less mass in order to save materials and be sustainable",
+                    "Use more mass in order to use more materials and be sustainable",
+                    "Use less mass because it is cheaper and spending less is sustainable",
+                    "Use less mass because spending less and saving materials are both sustainable"
+                  ],
+                  "answer": "Use less mass because spending less and saving materials are both sustainable"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Now that you understand how this works, we’ll compare different energy sources to each other. Some energy sources need less area and less mass to be effective than others. Research and describe the different energy sources and their requirements in terms of area and mass.",
+              "cards": [
+                {
+                  "text": "Objects of different mass will react differently when the same force is applied to them. The object with more mass will gain less speed than the object with less mass.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Ask a friend to help you in this activity. Take turns applying similar forces to different objects.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5: How to Get to Emerald City?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C75EB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the most environmentally-friendly light source in your home. Think properly, this is a trick question! "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "If you didn’t get the Camera 📷 question, the most environmentally-friendly light source is the Sun because it is natural. However, your home can still save more energy. Find a light source in your home and think about how you can save more energy. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the sources of light ",
+              "categories": [
+                {
+                  "name": "Natural",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Artificial",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Natural",
+                  "title": "Sun"
+                },
+                {
+                  "name": "Natural",
+                  "title": "Stars"
+                },
+                {
+                  "name": "Natural",
+                  "title": "Moon"
+                },
+                {
+                  "name": "Natural",
+                  "title": "Fireflies"
+                },
+                {
+                  "name": "Natural",
+                  "title": "Jellyfish"
+                },
+                {
+                  "name": "Artificial",
+                  "title": "Candle"
+                },
+                {
+                  "name": "Artificial",
+                  "title": "Electric bulb"
+                },
+                {
+                  "name": "Artificial",
+                  "title": "Neon lamp"
+                },
+                {
+                  "name": "Artificial",
+                  "title": "Sodium lamp"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Order these light sources From least sustainable to most sustainable",
+              "data": [
+                {
+                  "text": "The Sun",
+                  "dormant": "#19a127",
+                  "active": "#169023"
+                },
+                {
+                  "text": "The Stars",
+                  "dormant": "#d38f9f",
+                  "active": "#cd8193"
+                },
+                {
+                  "text": "Electric light",
+                  "dormant": "lightpink",
+                  "active": "mediumvioletred"
+                },
+                {
+                  "text": "Candle",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                },
+                {
+                  "text": "Neon lamp",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Grab a friend and head outside. Each time you spot a glass bottle before your friend you get a point. Each time you spot a recycle bin for said glass bottle you get a point. Keep track of the points and make sure you recycle all the glass bottles.",
+              "cards": [
+                {
+                  "text": "Light is a form of energy that allows living organisms to see the world around them. Our very own sun emits mass amounts of energy through rays of light. And everyday glass bottles are great at catching the sun’s rays. One might say they are too great because it can even cause a fire if they catch too much sunlight.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson6",
+          "title": "6: Where Did the Light Go?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an opaque and transparent object side to side. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What happens to rays of light when they meet another object? Does it go in a straight line or not? What sustainable benefits can we use these for? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "You are out on your balcony on a beautiful Sunday afternoon. The sun is shining and hitting the glass. How can we use this sustainably?",
+                  "answers": [
+                    "Use materials such as aluminum foil, etc. to cook with the sunlight",
+                    "Stand under the sunlight to naturally tan rather than artificially tan",
+                    "Grow a plant with the sunlight and then use the seeds from that plant to grow more",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "Which of these objects are translucent?",
+                  "answers": [
+                    "Glass",
+                    "Refrigerator",
+                    "Oven",
+                    "Kitchen table"
+                  ],
+                  "answer": "Glass"
+                },
+                {
+                  "prompt": "Which of these objects are translucent?",
+                  "answers": [
+                    "Door",
+                    "Sofa",
+                    "Dark Coffee table",
+                    "Sunglasses"
+                  ],
+                  "answer": "Sunglasses"
+                },
+                {
+                  "prompt": "Which of these objects are opaque?",
+                  "answers": [
+                    "Windows",
+                    "Glass",
+                    "Ice",
+                    "Kitchen sink"
+                  ],
+                  "answer": "Kitchen sink"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Describe what would happen if you left a crayon under the sun.",
+              "cards": [
+                {
+                  "text": "A ray of sunlight moves in a straight line and changes its behavior as it hits different objects. Some objects such as metal, wood, and stone absorb most of the light and do not allow it to pass through them.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson7",
+          "title": "7: What is That Sound?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a natural source of sound "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is the difference between natural sources of sound and artificial sources of sound? How can we use natural sources of sound for sustainable behaviors? "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the sounds ",
+              "categories": [
+                {
+                  "name": "Natural",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Unnatural",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Natural",
+                  "title": "A lion roaring"
+                },
+                {
+                  "name": "Natural",
+                  "title": "A waterfall"
+                },
+                {
+                  "name": "Natural",
+                  "title": "A wind on a tree"
+                },
+                {
+                  "name": "Natural",
+                  "title": "A waves at the beach"
+                },
+                {
+                  "name": "Natural",
+                  "title": "A volcano erupting"
+                },
+                {
+                  "name": "Natural",
+                  "title": "A horse neighing"
+                },
+                {
+                  "name": "Unnatural",
+                  "title": "A plane flying"
+                },
+                {
+                  "name": "Unnatural",
+                  "title": "A car honking"
+                },
+                {
+                  "name": "Unnatural",
+                  "title": "A bell ringing"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is a sustainable source of sound?",
+                  "answers": [
+                    "A rooster making noise to wake you up in the morning",
+                    "A speaker making louder, disruptive noise for everyone to hear",
+                    "A car revving its engine releasing gasses into the air",
+                    "All of the above"
+                  ],
+                  "answer": "A rooster making noise to wake you up in the morning"
+                },
+                {
+                  "prompt": "Is sound a form of energy?",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "How is sound produced?",
+                  "answers": [
+                    "Forward and backward movement called oscillation and the vibrations that propagate through the air are these sound waves.",
+                    "From a speaker located deep inside Earth’s core",
+                    "The Earth’s gravitational pulls waves to the center and pushes them out loudly",
+                    "None of the above"
+                  ],
+                  "answer": "Forward and backward movement called oscillation and the vibrations that propagate through the air are these sound waves."
+                },
+                {
+                  "prompt": "Can sound be amplified?",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What can lead to deafness?",
+                  "answers": [
+                    "Loud music at concerts",
+                    "Loud yelling into airs",
+                    "Loud noise from a construction site",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Identify loud noises and record their source, explanation, and loudness relative to each other in a notepad. Explain which sounds could be eliminated or reduced.",
+              "cards": [
+                {
+                  "text": "The sounds you hear tell you what is going on. Nowadays, there is a massive amount of sound pollution.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Did you know that shouting in someone’s ear can lead to deafness? Loud sounds near the eardrums over time can damage your hearing as well. We have to eliminate sound pollution and it can start from inside the household.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson8",
+          "title": "8: How Do We Hear Sounds?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of any device used to hear sounds "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Why are the theater, performance center, and stadiums arranged in that way? Does this help with sound production? What are your thoughts? "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the devices:",
+              "content": [
+                {
+                  "name": "Speakers"
+                },
+                {
+                  "name": "Speakers",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Wireless headphones"
+                },
+                {
+                  "name": "Wireless headphones",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Wired headphones"
+                },
+                {
+                  "name": "Wired headphones",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Telephone"
+                },
+                {
+                  "name": "Telephone",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Smartphone"
+                },
+                {
+                  "name": "Smartphone",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Laptop"
+                },
+                {
+                  "name": "Laptop",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Piano"
+                },
+                {
+                  "name": "Piano",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Electric keyboard"
+                },
+                {
+                  "name": "Electric keyboard",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Go outside and find three different animals. Take note of how they react to sound. Try and understand why they hear sounds in the manner that they do. Is it an evolutionary process? How does it help them maintain their lifestyle?",
+              "cards": [
+                {
+                  "text": "We all hear sounds differently. Animals, plants, and humans can all hear sounds.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson9",
+          "title": "9: The Thermometer",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF6CEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is the hottest part of Kazakhstan? Explain why "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "",
+              "categories": [
+                {
+                  "name": "Hot",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Cold",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Hot",
+                  "title": "Desert"
+                },
+                {
+                  "name": "Hot",
+                  "title": "Jungle"
+                },
+                {
+                  "name": "Hot",
+                  "title": "Sun"
+                },
+                {
+                  "name": "Hot",
+                  "title": "Heat"
+                },
+                {
+                  "name": "Cold",
+                  "title": "The Arctic"
+                },
+                {
+                  "name": "Cold",
+                  "title": "Antarctica"
+                },
+                {
+                  "name": "Cold",
+                  "title": "Snow"
+                },
+                {
+                  "name": "Cold",
+                  "title": "Ice"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the thermometer in your house. "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the types of thermometers",
+              "content": [
+                {
+                  "name": "Digital thermometers"
+                },
+                {
+                  "name": "Digital thermometers",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Ear (or tympanic) thermometers"
+                },
+                {
+                  "name": "Ear (or tympanic) thermometers",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Infrared thermometers"
+                },
+                {
+                  "name": "Infrared thermometers",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Strip-type thermometers"
+                },
+                {
+                  "name": "Strip-type thermometers",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Mercury thermometers"
+                },
+                {
+                  "name": "Mercury thermometers",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Describe why different plants, animals, and humans live in different temperatures.",
+              "cards": [
+                {
+                  "text": "Get a thermometer. Visit a nearby park and find three different plants.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Record the temperature of the leaves of the plants. Record the temperature of the soil of the plants. Identify any patterns for these plants in accordance with the temperature and their growth.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson10",
+          "title": "10: Where Does Frost Hide During the Summer?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C75EB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Ask your parents about summer and winter temperatures when they were kids. Compare it to the temperatures right now. Do you notice any differences? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of things that help us keep cooler in summer "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the animals based on their environment ",
+              "categories": [
+                {
+                  "name": "Cold Weather Animals",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Cold Weather Animals",
+                  "title": "Snowy Owl"
+                },
+                {
+                  "name": "Cold Weather Animals",
+                  "title": "Arctic Hare"
+                },
+                {
+                  "name": "Cold Weather Animals",
+                  "title": "Arctic Fox"
+                },
+                {
+                  "name": "Cold Weather Animals",
+                  "title": "Snow Leopard"
+                },
+                {
+                  "name": "Cold Weather Animals",
+                  "title": "Walrus"
+                },
+                {
+                  "name": "Cold Weather Animals",
+                  "title": "Penguin"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "title": "Meerkat"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "title": "Hippopotamus"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "title": "Iguana"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "title": "Snake"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "title": "Turtle"
+                },
+                {
+                  "name": "Hot Weather Animals",
+                  "title": "Alligator"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is likely to result from global warming?",
+                  "answers": [
+                    "Increase in surface temperatures",
+                    "Reduction in greenhouse gasses",
+                    "Decrease in air pollution"
+                  ],
+                  "answer": "Increase in surface temperatures"
+                },
+                {
+                  "prompt": "When weather patterns change over a long period of time, we call it ___",
+                  "answers": [
+                    "Climate adaptation",
+                    "Weather change",
+                    "Climate change",
+                    "Weather adaptation"
+                  ],
+                  "answer": "Climate change"
+                },
+                {
+                  "prompt": "What is the main gas that is trapping more heat close to the Earth, acting like a blanket?",
+                  "answers": [
+                    "Carbon dioxide",
+                    "Oxygen",
+                    "Nitrogen",
+                    "Argon",
+                    "Warmer",
+                    "Cooler"
+                  ],
+                  "answer": "Warmer"
+                },
+                {
+                  "prompt": "Climate change causes extreme weather conditions such as:",
+                  "answers": [
+                    "Flooding",
+                    "Heat Waves",
+                    "Hurricanes",
+                    "All of the above",
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Which human activity contributes the MOST carbon dioxide to the atmosphere?",
+                  "answers": [
+                    "Fishing",
+                    "Breathing",
+                    "Burning Fossil Fuels",
+                    "Farming"
+                  ],
+                  "answer": "Burning Fossil Fuels"
+                },
+                {
+                  "prompt": "Possible human solutions for limiting global warming and climate change are…",
+                  "answers": [
+                    "Being more energy-efficient",
+                    "Using renewable sources of energy",
+                    "Removing carbon from fossil fuel emissions",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "Melting land ice…",
+                  "answers": [
+                    "Causes sea levels to rise because it adds water to the ocean.",
+                    "Does not cause sea levels to rise because the water fills the space left by the melted sea ice."
+                  ],
+                  "answer": "Causes sea levels to rise because it adds water to the ocean."
+                },
+                {
+                  "prompt": "Why does cutting down trees increase global warming?",
+                  "answers": [
+                    "Trees soak up carbon dioxide",
+                    "Trees provide shade which counteracts global warming",
+                    "Trees absorbs the sun's energy without radiating back into the atmosphere",
+                    "Trees drain greenhouse gasses like methane from soil"
+                  ],
+                  "answer": "Trees soak up carbon dioxide"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Go outside to your nearest park. Understand how many animals keep cool in the summer or keep warm in the winter depending on the climate. Describe how changes to our body could help us keep climate in control similarly to them.",
+              "cards": [
+                {
+                  "text": "When people think of warmth, they think of sunny, summer days. Or you could think about cold, winter days with the heater on. Regardless, heat is a form of energy that is always being generated. However, generating heat in the winter can cost energy and leave a massive carbon footprint. Generating cold in the summer can cost energy and leave a massive carbon footprint.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson11",
+          "title": "11: What Are Magnets?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take pictures of the devices where magnets are used "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Are magnets environmentally friendly? Explain your answer. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is a magnet?",
+                  "answers": [
+                    "A magnet is a material that attracts wood, rubber, and glass.",
+                    "A magnet is a material that attracts certain metals, such as iron, nickel, and cobalt.",
+                    "A magnet has two poles, the north pole and the south pole.",
+                    "A magnet has two poles, the west pole and the east pole"
+                  ],
+                  "answer": "A magnet has two poles, the north pole and the south pole."
+                },
+                {
+                  "prompt": "3. Magnets attract all types of metals.",
+                  "answers": [
+                    "True",
+                    "False",
+                    "Attract",
+                    "Repel"
+                  ],
+                  "answer": "Attract"
+                },
+                {
+                  "prompt": "5. Identify the correct statement.",
+                  "answers": [
+                    "Magnets can pull through liquids, solids, and gasses.",
+                    "Magnets will not attract items when blocked by liquids, solids, and gasses."
+                  ],
+                  "answer": "Magnets can pull through liquids, solids, and gasses."
+                },
+                {
+                  "prompt": "6. Which toy would a magnet attract?",
+                  "answers": [
+                    "A teddy bear",
+                    "A metallic robot"
+                  ],
+                  "answer": "A metallic robot"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the materials ",
+              "categories": [
+                {
+                  "name": "Magnetic Materials",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Non-magnetic Materials",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Magnetic Materials",
+                  "title": "Iron"
+                },
+                {
+                  "name": "Magnetic Materials",
+                  "title": "Nickel"
+                },
+                {
+                  "name": "Magnetic Materials",
+                  "title": "Cobalt"
+                },
+                {
+                  "name": "Non-magnetic Materials",
+                  "title": "Rubber"
+                },
+                {
+                  "name": "Non-magnetic Materials",
+                  "title": "Plastic"
+                },
+                {
+                  "name": "Non-magnetic Materials",
+                  "title": "Feather"
+                },
+                {
+                  "name": "Non-magnetic Materials",
+                  "title": "Paper"
+                },
+                {
+                  "name": "Non-magnetic Materials",
+                  "title": "Leather"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Find a magnet and test its magnetism on different objects around the house. Record your observations. Now that you’ve done this, describe different ways you could use magnets.",
+              "cards": [
+                {
+                  "text": "Magnets are objects that can attract or repel other objects. They are present and are found around the world. There are many objects around the household that are magnetic that you may not know about.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson12",
+          "title": "12: Summer is Fun!",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Go to a library and pick a book you would like to read this summer. Take a picture of it "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What sustainable activities are you going to do this summer? "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the activities ",
+              "categories": [
+                {
+                  "name": "Sustainable",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Unsustainable",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Sustainable",
+                  "title": "Staying hydrated with a reusable bottle"
+                },
+                {
+                  "name": "Sustainable",
+                  "title": "Closing the shades to keep the room cooler"
+                },
+                {
+                  "name": "Sustainable",
+                  "title": "Riding a bike"
+                },
+                {
+                  "name": "Unsustainable",
+                  "title": "Playing video games all day"
+                },
+                {
+                  "name": "Unsustainable",
+                  "title": "Using AC all day"
+                },
+                {
+                  "name": "Unsustainable",
+                  "title": "Driving a car"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Rank transport from the most sustainable to the least sustainable.",
+              "data": [
+                {
+                  "text": "Cycling",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                },
+                {
+                  "text": "Bus",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "Train",
+                  "dormant": "orange",
+                  "active": "orangered"
+                },
+                {
+                  "text": "Car",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "Plane",
+                  "dormant": "coral",
+                  "active": "#DB756B"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Look through all the previous lessons and gather some ideas. Use only one lesson as your main inspiration but you can take ideas from all of them. Foster your own Mastery 🎓 challenge and make sure that at the end of the exercise your parents learn something. Take pictures, videos, and notes, and record all your observations. Great job scientists!",
+              "cards": [
+                {
+                  "text": "Your long summer vacation is about to begin. You’ve done a lot of sustainability research during the year, but there’s more. This time you will create a sustainability exercise for your parents.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,3656 @@
+{
+  "chapters": [
+    {
+      "navigation": "Chapter1",
+      "title": "common:chapter1",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "indianred",
+      "colorTwo": "firebrick",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: History of Scientific Discoveries",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a scientific discovery that you use on a daily basis. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is the difference between experiment and observation? Look at the diagram. Identify how a person uses each of the wheels in the picture. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following is an example of a discovery and its purpose?",
+                  "answers": [
+                    "a telescope to see the stars",
+                    "a lightbulb to warm the room",
+                    "an airplane to drive on the road",
+                    "a printing press to make fabric"
+                  ],
+                  "answer": "a telescope to see the stars"
+                },
+                {
+                  "prompt": "True or False: All bacteria are harmful.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "In the 19th century, what did people use to illuminate their houses?",
+                  "answers": [
+                    "Gas",
+                    "Water",
+                    "Coal"
+                  ],
+                  "answer": ""
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Walk around your house and find a notable scientific discovery. Take a picture of the object and list its functionality. Record any observations you find that stick out to you. Then, rate how sustainable it is. Come up with ideas to make it more sustainable.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Sources of Information",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of one of your most used source of information. It could be a book, electronic device, anything! "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Where do you get your information and knowledge about the environment? Is it an electronic source, a book, or even a person? What makes this information reliable? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "How is information different from knowledge?",
+                  "answers": [
+                    "Information and knowledge are the same",
+                    "Knowledge is understanding, information is not understanding",
+                    "Information is in a different language than knowledge",
+                    "Knowledge requires less learning and understanding than information"
+                  ],
+                  "answer": "Knowledge is understanding, information is not understanding"
+                },
+                {
+                  "prompt": "Which of the following are resources?",
+                  "answers": [
+                    "Your teacher",
+                    "A book",
+                    "The internet",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Then, identify and list the advantages and disadvantages of this source of information. Rank this source and its information on a scale of 1(unreliable) to 10(completely reliable).",
+              "cards": [
+                {
+                  "text": "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited. Record the link and research how reliable this source of information is.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: Planning and Conducting an Experiment",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Think about an experiment you might want to conduct at home. Identify this experiment. Then, take a picture of all or most of the materials required to conduct this experiment. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is a hypothesis and why is it important? What is the point of asking questions when conducting an experiment? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the best way to test your hypothesis?",
+                  "answers": [
+                    "Ask your friends if they think it’s correct",
+                    "By looking it up on the internet",
+                    "By carrying out an experiment and recording results",
+                    "By assuming the results of an experiment"
+                  ],
+                  "answer": "By carrying out an experiment and recording results"
+                },
+                {
+                  "prompt": "What is one of the first things you should do when you want to create an experiment?",
+                  "answers": [
+                    "Look at the conclusions",
+                    "Make observations",
+                    "Record results",
+                    "Collect all experimental materials"
+                  ],
+                  "answer": "Make observations"
+                },
+                {
+                  "prompt": "What is a hypothesis?",
+                  "answers": [
+                    "A scientific proposition to explain a process in nature or society",
+                    "A scientific explanation to explain why you are correct",
+                    "A scientific explanation to explain how you are incorrect",
+                    "A scientific explanation to explain why you should practice sustainable actions"
+                  ],
+                  "answer": "A scientific proposition to explain a process in nature or society"
+                },
+                {
+                  "prompt": "Why do we do experiments?",
+                  "answers": [
+                    "To go play outside",
+                    "To better understand the world around us",
+                    "To support your hypothesis",
+                    "To find the answer we are looking for"
+                  ],
+                  "answer": "To better understand the world around us"
+                },
+                {
+                  "prompt": "What is the last step of an experimental study?",
+                  "answers": [
+                    "Creating a hypothesis",
+                    "Asking questions",
+                    "Drawing conclusions",
+                    "Recording results"
+                  ],
+                  "answer": "Drawing conclusions"
+                },
+                {
+                  "prompt": "What is the definition of a discovery?",
+                  "answers": [
+                    "A new achievement that is being made in the course of scientific knowledge of nature and society",
+                    "Information about an object, natural phenomenon, scientific discovery.",
+                    "Possession of verified information"
+                  ],
+                  "answer": "A new achievement that is being made in the course of scientific knowledge of nature and society"
+                },
+                {
+                  "prompt": "True or False: There are still discoveries being made about sustainable practices in your area and around the world.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What is the definition of knowledge?",
+                  "answers": [
+                    "A new achievement that is being made in the course of scientific knowledge of nature and society",
+                    "Information about an object, natural phenomenon, scientific discovery.",
+                    "Possession of verified information",
+                    "None of the above"
+                  ],
+                  "answer": "Possession of verified information"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put the following steps in order for conducting an experiment.",
+              "data": [
+                {
+                  "text": "Determine the purpose of the study",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Formulate a hypothesis",
+                  "dormant": "orange",
+                  "active": "orangered"
+                },
+                {
+                  "text": "Find observations",
+                  "dormant": "midnightblue",
+                  "active": "mediumturquoise"
+                },
+                {
+                  "text": "Draw conclusions.",
+                  "dormant": "dodgerblue",
+                  "active": "#3873E0"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Think of one way you help reduce your environmental impact in your area. How would you test that you are making a difference? Come up with a hypothesis for an experiment to test your environmental impact. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Based on your hypothesis in the Open Response 📝 section, take a picture of yourself doing your task that helps reduce your environmental impact in your area! "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Match the action to the correct step of the experimental process. ",
+              "categories": [
+                {
+                  "name": "Observation",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Hypothesis",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Conclusion",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Purpose of study",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Observation",
+                  "title": "Elena sees that not all her plants in her garden are growing equally"
+                },
+                {
+                  "name": "Hypothesis",
+                  "title": "Sergey is coming up with  a way to explain a natural phenomenon he saw"
+                },
+                {
+                  "name": "Conclusion",
+                  "title": "Vladimir understands from his experiment that flowers cannot grow well in smog"
+                },
+                {
+                  "name": "Purpose of study",
+                  "title": "Aleksandr wants to figure out the effects of trash on plant growth"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 2: Live Nature",
+              "cards": [
+                {
+                  "text": "Scientists conduct research through experiments. This simple experiment can help you see pollution.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Air Pollution Experiment",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "It can be hard to understand the concept of air pollution as it is not always easy to see. This simple experiment can help you understand that there is more in the atmosphere than just air and why it is important to keep the atmosphere clean.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Here is what you will need:",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "A piece of clear plastic (such as a plate or a cup), petroleum jelly, a small rock, a sheet of white paper",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Spread petroleum jelly on your piece of clear plastic and place it outside. Use a rock or other heavy object to weigh it down. The example uses the clear plastic front from a picture frame. Take a picture of your plastic and leave it outside for 24 hours. After the time has passed, place the white paper behind the plastic to make it easier to see all the particles that have collected in the petroleum jelly. All of these particles are pollutants that exist in the air you breathe.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter2",
+      "title": "common:chapter2",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "indigo",
+      "colorTwo": "mediumpurple",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: How do Plant Leaves Work?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a zoomed in picture of the leaf of a plant. What can you identify from this picture? "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "List three plants that you see everyday. Why do you think that you see them so often? Think about the environmental conditions that they need to survive. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Draw a picture of the photosynthesis cycle. Be sure to include labels on your drawing and upload a picture! "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Identify the names of these common household plants: Quiz 📚 Finish the hypothesis: ‘If the plant will not receive water, then …” The plant will live The plant will not survive The plant will produce its own water The plant will grow very tall What do leaves do? Release oxygen back into the air Absorb carbon dioxide and sunlight through small holes (stomata) Create sugars for the plant All the above True or False: Chlorophyll is the substance that helps the leaves capture sunlight and transform it into sugars for the plant as well as giving the plants their green color. True False Which of the following is a true statement: A tree can release enough oxygen for a family of four to breathe within a year. Driving a car for two hours uses the same amount of oxygen a tree produces in two years. Chlorophyll is also found in algae and some bacteria. All the above statements are true True or False: Indoor plants can produce as much oxygen in the shade as some plants do in direct sunshine True False ",
+              "categories": [
+                {
+                  "name": "1.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "2.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "3.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "4.",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "1.",
+                  "title": "Spider Plant"
+                },
+                {
+                  "name": "2.",
+                  "title": "Gloxinia"
+                },
+                {
+                  "name": "3.",
+                  "title": "Snake Plant"
+                },
+                {
+                  "name": "4.",
+                  "title": "Jade Plant"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "How does the plant acquire its food? What are the factors in the plant cycle present? Start growing your own plant at home and track its growth daily and weekly.",
+              "cards": [
+                {
+                  "text": "Start by finding three plants outside and take some pictures of them.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: How do Plants Adapt to Living Conditions?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Split a piece of paper in half. On one side of the paper, draw a plant that received too much sunlight and on the other side of the paper, draw a plant that received too little light. Upload pictures of your drawing. How are they similar and how are they different? "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "List a couple of things that plants need in order to survive. Are these the same things we need to survive? What happens if there’s too much of one resource? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What happens when a plant receives too much heat?",
+                  "answers": [
+                    "The plants grow and bloom more quickly than usual",
+                    "The leaves are not their normal color",
+                    "The plant loses a lot of moisture",
+                    "All the above",
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "True or False: Plants can grow in climates with temperatures 0° C and below.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which types of plants have the adaptation to wait out extreme hot or cold temperatures before they begin to sprout",
+                  "answers": [
+                    "Bulbs and sprouts",
+                    "Flowers and herbs",
+                    "Trees and shrubs"
+                  ],
+                  "answer": "Bulbs and sprouts"
+                },
+                {
+                  "prompt": "What does it look like when plants have too much light?",
+                  "answers": [
+                    "They bloom more and have more leaflets",
+                    "The leaves turn away from the sun",
+                    "The spread their roots out more under the soil",
+                    "More chlorophyll is produced in the leaves to protect it"
+                  ],
+                  "answer": "The leaves turn away from the sun"
+                },
+                {
+                  "prompt": "What are the sign(s) that a plant does not have enough light?",
+                  "answers": [
+                    "Leaves turn pale",
+                    "The stems are shorter than normal",
+                    "Only one of the statements are true",
+                    "Both statements are true"
+                  ],
+                  "answer": "Both statements are true"
+                },
+                {
+                  "prompt": "What are some signs that a plant is in excess heat?",
+                  "answers": [
+                    "Leaves can change colors",
+                    "Grow more quickly than normal to produce seeds",
+                    "Leaves curl up",
+                    "All the above"
+                  ],
+                  "answer": "All the above"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Group these plants into the following two categories: ",
+              "categories": [
+                {
+                  "name": "Frost resistant that grow below 5 ° C",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Plants that cannot grow below 15 ° C",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Frost resistant that grow below 5 ° C",
+                  "title": "Wheat"
+                },
+                {
+                  "name": "Frost resistant that grow below 5 ° C",
+                  "title": "Corn"
+                },
+                {
+                  "name": "Frost resistant that grow below 5 ° C",
+                  "title": "Potatoes"
+                },
+                {
+                  "name": "Plants that cannot grow below 15 ° C",
+                  "title": "Watermelon"
+                },
+                {
+                  "name": "Plants that cannot grow below 15 ° C",
+                  "title": "Beans"
+                },
+                {
+                  "name": "Plants that cannot grow below 15 ° C",
+                  "title": "Cucumber"
+                },
+                {
+                  "name": "Plants that cannot grow below 15 ° C",
+                  "title": "Pumpkin"
+                }
+              ]
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the plant adaptations to the element that they like:",
+              "content": [
+                {
+                  "name": "Hydrophytes"
+                },
+                {
+                  "name": "Hydrophytes",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Cryophytes"
+                },
+                {
+                  "name": "Cryophytes",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Thermophiles"
+                },
+                {
+                  "name": "Thermophiles",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Heliophytes"
+                },
+                {
+                  "name": "Heliophytes",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Many plants have to adapt to survive in their environment. Sometimes humans cause environmental changes that occur too quickly for plants to adapt to. What are some human-made adaptations that help us, but hurt plants? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Explain how they’ve adapted to their living conditions and benefited from them.",
+              "cards": [
+                {
+                  "text": "Plants exist all over the world in many different conditions. Pick two countries on Earth and find plants native to the regions, respectively. Compare them to each other.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: Natural Plant Communities",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a community (natural or artificial) near you. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Which community (natural or artificial) is more environmentally friendly? Are there benefits to one or the other? List two examples of each type of community that you see in your area. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Match the items to their community: ",
+              "categories": [
+                {
+                  "name": "Natural community",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Artificial community",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Natural community",
+                  "title": "Forest"
+                },
+                {
+                  "name": "Natural community",
+                  "title": "Meadow"
+                },
+                {
+                  "name": "Natural community",
+                  "title": "Steppe"
+                },
+                {
+                  "name": "Natural community",
+                  "title": "Desert"
+                },
+                {
+                  "name": "Natural community",
+                  "title": "Lake"
+                },
+                {
+                  "name": "Natural community",
+                  "title": "Swamp"
+                },
+                {
+                  "name": "Artificial community",
+                  "title": "Field"
+                },
+                {
+                  "name": "Artificial community",
+                  "title": "Garden"
+                },
+                {
+                  "name": "Artificial community",
+                  "title": "Flowerbed"
+                },
+                {
+                  "name": "Artificial community",
+                  "title": "Pond"
+                },
+                {
+                  "name": "Artificial community",
+                  "title": "Vegetable garden"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is a natural community?",
+                  "answers": [
+                    "A group of plants and animals and their habitat",
+                    "A group of plants and animals that are not living in their habitat",
+                    "A group of only plants living in their habitat",
+                    "A group of only animals living in their habitat"
+                  ],
+                  "answer": "A group of plants and animals and their habitat"
+                },
+                {
+                  "prompt": "What does homogenous mean?",
+                  "answers": [
+                    "Of having only different features",
+                    "Of having mostly different features",
+                    "Of having some similar features",
+                    "Of having the same or similar features"
+                  ],
+                  "answer": "Of having the same or similar features"
+                },
+                {
+                  "prompt": "What is an artificial community?",
+                  "answers": [
+                    "A group of plants and animals and their habitat",
+                    "A group of plants and animals that are not living in their habitat",
+                    "A group of plants living in their habitat",
+                    "A group of animals living in their habitat"
+                  ],
+                  "answer": "A group of plants and animals that are not living in their habitat"
+                },
+                {
+                  "prompt": "True or False: Plants and animals don’t need each other to exist.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Homogeneous conditions of existence means:",
+                  "answers": [
+                    "Different plants can’t live in the same area",
+                    "Different plants can live in the same area",
+                    "Only specific plants can live in the same area",
+                    "No plants can live in the same area"
+                  ],
+                  "answer": "Different plants can live in the same area"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "There are both natural and artificial communities present in our habitat. Go outside and identify the natural and artificial communities present in your local area. What is similar between these two communities, what is different?",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: How Does a Person Influence the Life of Plants?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Cleaning up after ourselves in public is a great way to help improve the air quality. Draw some things that you often see outside on the ground that you can clean up or recycle. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How does the use of chemicals, such as pesticides and fertilizers, affect the growth of plants in the long term? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the definition of ‘pathogenic’?",
+                  "answers": [
+                    "Something that causes disease",
+                    "A microorganism",
+                    "A type of plant",
+                    "Something that grows very tall"
+                  ],
+                  "answer": "Something that causes disease"
+                },
+                {
+                  "prompt": "True or False: It can take up to 100 years to completely restore a forest that was cut down",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "How do plants protect the air?",
+                  "answers": [
+                    "Help clear the air of dust",
+                    "Help clear the air of soot",
+                    "Help clear the air of harmful gasses",
+                    "All the above",
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What does ‘anthropogenic’ mean?",
+                  "answers": [
+                    "Caused by human activity",
+                    "Caused by natural activity",
+                    "The relationship between prey and predator",
+                    "The idea of being sustainable"
+                  ],
+                  "answer": "Caused by human activity"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the following actions into whether they are helpful or harmful ",
+              "categories": [
+                {
+                  "name": "Helpful to improving the air quality",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Harmful to improving the air quality",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Helpful to improving the air quality",
+                  "title": "Picking up trash"
+                },
+                {
+                  "name": "Helpful to improving the air quality",
+                  "title": "Planting native plants"
+                },
+                {
+                  "name": "Helpful to improving the air quality",
+                  "title": "Local farming"
+                },
+                {
+                  "name": "Harmful to improving the air quality",
+                  "title": "Littering"
+                },
+                {
+                  "name": "Harmful to improving the air quality",
+                  "title": "Using chemicals"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research plant communities in your neighborhood that have been directly affected by humans. Then, research plant communities near you that have been indirectly affected by humans. These impacts can be positive or negative. Visit one of these communities and record your observations.",
+              "cards": [
+                {
+                  "text": "Humans are always interacting with their environment. They will directly and indirectly affect all plants and animals. We all have the ability to have a positive or negative impact on life.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "There are many reasons to make sure our impact is as positive as possible. For example, plants are very important to protect the air from dust, as well as dirty and harmful gasses. Humans have to make sure they keep plants in the best and most environmentally-sensible conditions.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research house plants that would do well in your environment and find one that would be easy to get. Identify and explain where you would put this in your house, and why it would do well there. Identify and explain how much sunlight it would get, and how often it would be watered. For an extra challenge, get this plant and actually take care of it, tracking its progress with pictures weekly.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5: Red Book of Plants",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an endangered animal from the Red Book of Plants. If you can’t find one, take a picture of it online so you can identify it the next time you see it. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What would be some ways that we could reduce the number of plants listed in the Red Book? How is practicing good sustainable habits going to help reduce the endangered species? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: The first Red book of Kazakhstan was published in 1978",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What plant grows 100-2000m above sea level and contains natural rubber?",
+                  "answers": [
+                    "Dandelion",
+                    "Sundew Rounded-Leaf",
+                    "Steppe Peony",
+                    "Wormwood"
+                  ],
+                  "answer": "Dandelion"
+                },
+                {
+                  "prompt": "What plant grows to about 15-50 cm and was used to make porridge?",
+                  "answers": [
+                    "Dandelion",
+                    "Sundew Rounded-Leaf",
+                    "Steppe Peony",
+                    "Wormwood"
+                  ],
+                  "answer": "Steppe Peony"
+                },
+                {
+                  "prompt": "What plant has small white flowers and is commonly found in swamps?",
+                  "answers": [
+                    "Dandelion",
+                    "Sundew Rounded-Leaf",
+                    "Steppe Peony",
+                    "Wormwood"
+                  ],
+                  "answer": "Sundew Rounded-Leaf"
+                },
+                {
+                  "prompt": "True or False: The Red Book only contains information about plants and not animals",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Sort the following plants into groups ",
+              "categories": [
+                {
+                  "name": "In the Red Book of Plants",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Not in the Red Book of Plants",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "In the Red Book of Plants",
+                  "title": "Picking up trash"
+                },
+                {
+                  "name": "In the Red Book of Plants",
+                  "title": "Planting native plants"
+                },
+                {
+                  "name": "In the Red Book of Plants",
+                  "title": "Local farming"
+                },
+                {
+                  "name": "In the Red Book of Plants",
+                  "title": "Regel's tulip (тюльпан Регеля)"
+                },
+                {
+                  "name": "In the Red Book of Plants",
+                  "title": "Steppe peony (пион степной)"
+                },
+                {
+                  "name": "In the Red Book of Plants",
+                  "title": "Roundleaf sundew (росянка круглолистная)"
+                },
+                {
+                  "name": "Not in the Red Book of Plants",
+                  "title": "Littering"
+                },
+                {
+                  "name": "Not in the Red Book of Plants",
+                  "title": "Using chemicals"
+                },
+                {
+                  "name": "Not in the Red Book of Plants",
+                  "title": "Red clover (клевер луговой)"
+                },
+                {
+                  "name": "Not in the Red Book of Plants",
+                  "title": "White birch (береза пушистая)"
+                },
+                {
+                  "name": "Not in the Red Book of Plants",
+                  "title": "Common apricot (абрикос обыкновенный)"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research a country that has an endangered plant that is not endangered in Kazakhstan. Why is it that Kazakhstan is able to have a healthy amount of this plant? Why is it endangered in the other country? Formulate some ideas on helping the other country get back to a healthy level for this plant.",
+              "cards": [
+                {
+                  "text": "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. Many countries keep their own list of endangered plants.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson6",
+          "title": "6: Vertebrates and Invertebrates Animals",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Draw a picture of a skeletal system with a vertebrate "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Name a couple animals that are vertebrates. Name a couple animals that are invertebrates. How are they similar? How are they different? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the function of a skeleton?",
+                  "answers": [
+                    "Gives necessary stability",
+                    "Helps movement",
+                    "Protects internal organs",
+                    "All the above"
+                  ],
+                  "answer": "All the above"
+                },
+                {
+                  "prompt": "Which animal is an invertebrate?",
+                  "answers": [
+                    "Cat",
+                    "Worm",
+                    "Turtle",
+                    "Bird"
+                  ],
+                  "answer": "Worm"
+                },
+                {
+                  "prompt": "Which animal is a vertebrate?",
+                  "answers": [
+                    "Worm",
+                    "Slugs",
+                    "Butterfly",
+                    "Fish"
+                  ],
+                  "answer": "Fish"
+                },
+                {
+                  "prompt": "Which group of animals have 3 body parts and 6 legs?",
+                  "answers": [
+                    "Crustaceans",
+                    "Insects",
+                    "Echinoderms",
+                    "Arachnids"
+                  ],
+                  "answer": "Insects"
+                },
+                {
+                  "prompt": "Which group of animals consist of snails, squid, octopuses, and oysters?",
+                  "answers": [
+                    "Crustaceans",
+                    "Insects",
+                    "Echinoderms",
+                    "Mollusk"
+                  ],
+                  "answer": "Mollusk"
+                }
+              ]
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the picture to animal",
+              "content": [
+                {
+                  "name": "Insect"
+                },
+                {
+                  "name": "Insect",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Arachnid"
+                },
+                {
+                  "name": "Arachnid",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Crustacean"
+                },
+                {
+                  "name": "Crustacean",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Mollusk"
+                },
+                {
+                  "name": "Mollusk",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Echinoderms"
+                },
+                {
+                  "name": "Echinoderms",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "It’s time to go on a trip! Find and identify both vertebrates and invertebrates. Take pictures of their structures. Annotate the pictures and show us how they’ve sustained themselves using their anatomy.",
+              "cards": [
+                {
+                  "text": "Vertebrates and invertebrates are both types of animals. The difference is that vertebrates have a skeleton or a backbone, while invertebrates don’t. In the wild, these animals use their physical capabilities to survive.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson7",
+          "title": "7: Animal Habitat",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Draw a picture of a local ecosystem near you. Analyze the picture, is it being contaminated by waste or pollution? "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "A habitat is where an animal lives. What is your habitat? List some things that you have in your home that you use everyday, how many of these things do you throw away daily? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "The way that animals live in their habitat though changing conditions is called:",
+                  "answers": [
+                    "Adaption",
+                    "Adoption",
+                    "Adhering",
+                    "Abomination"
+                  ],
+                  "answer": "Adaption"
+                },
+                {
+                  "prompt": "True or False: All habitats are important and help the environment regulate itself",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "The meaning of an ecosystem is:",
+                  "answers": [
+                    "Only the plants living in their habitat",
+                    "Only animals living in their habitat",
+                    "All the living organisms and their habitat",
+                    "Only referring to the habitat"
+                  ],
+                  "answer": "All the living organisms and their habitat"
+                },
+                {
+                  "prompt": "What happens if there is a loss of habitats?",
+                  "answers": [
+                    "Nothing, everything will stay the same",
+                    "There will be a loss of animals",
+                    "A new habitat will form"
+                  ],
+                  "answer": "There will be a loss of animals"
+                },
+                {
+                  "prompt": "True or False: One of the main causes for habitat loss is due to human activities",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Match the animal to its habitat. ",
+              "categories": [
+                {
+                  "name": "Aquatic",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Soil, Ground, & Air",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Aquatic",
+                  "title": "Fish"
+                },
+                {
+                  "name": "Aquatic",
+                  "title": "Whales"
+                },
+                {
+                  "name": "Soil, Ground, & Air",
+                  "title": "Birds"
+                },
+                {
+                  "name": "Soil, Ground, & Air",
+                  "title": "Reptiles"
+                },
+                {
+                  "name": "Soil, Ground, & Air",
+                  "title": "Earthworms"
+                },
+                {
+                  "name": "Soil, Ground, & Air",
+                  "title": "Mites"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out. Research an ecosystem in your area. Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
+              "cards": []
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Here’s the challenge: spend one hour a week outside in an area near you that needs trash picked up. Ask your family and your friends to come with you and help! Keep a log for a month, tracking the time spent each week picking up trash. The more the better!",
+              "cards": [
+                {
+                  "text": "Waste and trash can contaminate animal habitats and also harm animals directly. There are many ways humans can help with this problem and help keep them safe. One way is picking up trash and waste whenever we see it.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson8",
+          "title": "8: What Relationship Animals Exist in Nature",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take or find a picture of a relationship between two animals in nature, whether it be a beneficial or harmful relationship. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What type of relationship exists between these animals: a fox and a rabbit",
+                  "answers": [
+                    "Parasitism",
+                    "Neutralism",
+                    "Competition",
+                    "Predation"
+                  ],
+                  "answer": "Predation"
+                },
+                {
+                  "prompt": "What type of relationship exists between these animals: a frog and an antelope",
+                  "answers": [
+                    "Competition",
+                    "Symbiosis",
+                    "Neutralism",
+                    "Predation"
+                  ],
+                  "answer": "Neutralism"
+                },
+                {
+                  "prompt": "What type of relationship exists between these animals: a shark and a fish that attaches to the shark",
+                  "answers": [
+                    "Parasitism",
+                    "Neutralism",
+                    "Competition",
+                    "Predation"
+                  ],
+                  "answer": "Parasitism"
+                },
+                {
+                  "prompt": "What type of relationship exists between these animals: rhinos and birds",
+                  "answers": [
+                    "Symbiosis",
+                    "Neutralism",
+                    "Predation",
+                    "Competition"
+                  ],
+                  "answer": "Symbiosis"
+                }
+              ]
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "description": "Match the definition to the pictures",
+              "content": [
+                {
+                  "name": "Mutualism"
+                },
+                {
+                  "name": "Mutualism",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Parasitism"
+                },
+                {
+                  "name": "Parasitism",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Predation"
+                },
+                {
+                  "name": "Predation",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Neutralism"
+                },
+                {
+                  "name": "Neutralism",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Competition"
+                },
+                {
+                  "name": "Competition",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Although symbiosis is for animals, there are many naturally beneficial relationships in nature. Venture out into nature and identify beneficial relationships between plants and plants, humans and humans, or animals and animals. It doesn’t have to be a directly beneficial relationship but as long as they’re both receiving help from the other. Record your observations.",
+              "cards": [
+                {
+                  "text": "Animals, like humans, have relationships with each other. Animals can have both beneficial and harmful relationships. Symbiotic relationships, such as when the birds feed on insects that live on a rhino and the rhino provides the birds with food, are important for the survival of both animals.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson9",
+          "title": "9: What is the Relationship Between Plants and Animals?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a plant environment in which several plants mutually benefit each other. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: There are no relationships between plants that are similar to those between animals.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "True or False: There are relationships between plants and animals, similar to those between only animals.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following is an example of a mutualistic/symbiotic relationship between plants and animals?",
+                  "answers": [
+                    "Animals eat the plants",
+                    "Pollination",
+                    "Animals use plants to build nests",
+                    "Humans eat the plants"
+                  ],
+                  "answer": "Pollination"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Match the activity to the correct type of relationship it displays. ",
+              "categories": [
+                {
+                  "name": "Predation",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Mutualism",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Commensalism",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Predation",
+                  "title": "A Venus Flytrap catches a fly"
+                },
+                {
+                  "name": "Mutualism",
+                  "title": "Bees pollinate a plant"
+                },
+                {
+                  "name": "Commensalism",
+                  "title": "A bird makes a nest in a tree"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How do the relationships between plants and animals, such as mutualism, commensalism, and competition, impact the sustainability of plant communities and ecosystems? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Go outside and identify plants that have a mutualistic relationship with each other. How are these relationships similar and different to those between animals?",
+              "cards": [
+                {
+                  "text": "Plants also have relationships with each other, similar to humans and animals. Plants can have a mutualistic relationship with each other, such as pollination and protection.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson10",
+          "title": "10: How do Habitat Conditions Affect the Number of Animals?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an animal habitat with poor conditions. Analyze the picture and identify the ways the poor conditions could affect animal life. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following events would affect the number of animals in a habitat?",
+                  "answers": [
+                    "Fire",
+                    "Drought",
+                    "Floods",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "Which of the following is the main way droughts affect aquatic environments?",
+                  "answers": [
+                    "Droughts make non-aquatic animals thirstier and therefore drink more of their water.",
+                    "Droughts make the water saltier.",
+                    "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals.",
+                    "Droughts cause an increase in the fish population."
+                  ],
+                  "answer": "Droughts make the bodies of water shallower, through evaporation, killing off aquatic animals."
+                },
+                {
+                  "prompt": "True or False: Infectious diseases do not impact animal populations.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How do habitat conditions, such as availability of food, water and protection from predators, impact the number and diversity of animal populations in an ecosystem? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Find the habitat of a popular animal near you. Identify the habitat conditions that make it either suitable or unsuitable for this animal. Now, think of sustainable ways to improve the habitat for this animal.",
+              "cards": [
+                {
+                  "text": "Habitat conditions can destroy animals. Disease outbreaks such as Ebola can wipe out a large proportion of the species. Flooding can ruin animal’s habitats and if they don’t make it out of the danger zone, they die. Some habitat conditions are a cause of the natural cycle but many are due to man-made causes.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson11",
+          "title": "11: A Decrease in the Number of Animals",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an animal in your area that you believe won’t be here in ten years. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Deforestation doesn’t cause a serious decrease in the number of animals in the area.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Which of the following is the most likely outcome if someone cuts down many trees in a forest?",
+                  "answers": [
+                    "Many animals will lose their habitats.",
+                    "Many animals will lose their food sources.",
+                    "There will be an increased risk of flooding in the area.",
+                    "All of the above.",
+                    "Use of pesticides, deforestation",
+                    "Poisoning from industrial emissions, construction of dams",
+                    "Construction of dams, deforestation",
+                    "Use of pesticides, poisoning from industrial emissions"
+                  ],
+                  "answer": "Construction of dams, deforestation"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What are some potential causes for a decrease in the number of animals in a particular ecosystem, and how can we address these issues to promote sustainability and protect biodiversity? Think about laws we can implement. What would you suggest to the government as well? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species. Write a letter to your local official addressing these issues.",
+              "cards": [
+                {
+                  "text": "We all know that humans have caused an impact on the environment. Unfortunately, we have both directly and indirectly caused a decrease in the number of animals. Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Finally, look into projects and organizations trying to help the situation, how are they helping? How could you help support them?",
+              "cards": [
+                {
+                  "text": "Deforestation can occur in many different ways, and cause countless consequences in return. Research a forest that has recently experienced a disaster. Identify the causes and outcomes.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson12",
+          "title": "12: I Am an Animal",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an animal with similar bodily functions to humans; Essentially, this animal has a body part that has the same function as we use it for. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Humans are vertebrates.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following definitions is the best description of an organ?",
+                  "answers": [
+                    "A part of the human body.",
+                    "A part of an organism with an unspecified purpose.",
+                    "It is the heart of a vertebrate.",
+                    "A part of an organism that has its own location and purpose."
+                  ],
+                  "answer": "A part of an organism that has its own location and purpose."
+                },
+                {
+                  "prompt": "What technological advancement in the 1970s made it easier to see humans’ internal organs?",
+                  "answers": [
+                    "MRIs",
+                    "X-rays",
+                    "CTs",
+                    "None of the above"
+                  ],
+                  "answer": "MRIs"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What are the three main cavities of the human body? What are the main organs in each of these cavities? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Explain and expand. What human adaptations do you think were the most innovative? Why?",
+              "cards": [
+                {
+                  "text": "Pick an animal that resides near you and record it. Identify an organ in their body that you believe helps the most in their survival.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson13",
+          "title": "13: Journey of an Apple Through the Body",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an item that humans cannot digest but certain animals can. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Where does digestion begin?",
+                  "answers": [
+                    "The stomach",
+                    "The mouth",
+                    "The intestine",
+                    "The heart"
+                  ],
+                  "answer": "The mouth"
+                },
+                {
+                  "prompt": "Digestion allows humans to ____ nutrients from food, and transform it into ____.",
+                  "answers": [
+                    "Absorb; energy",
+                    "Reject; food",
+                    "Process; oxygen",
+                    "Sort; carbon dioxide"
+                  ],
+                  "answer": "Absorb; energy"
+                },
+                {
+                  "prompt": "Which of the following is the correct order of parts of the body that food travels through?",
+                  "answers": [
+                    "Stomach, esophagus, mouth, intestines",
+                    "Mouth, esophagus, stomach, intestines",
+                    "Mouth, stomach, esophagus, intestines",
+                    "Mouth, intestines, stomach, esophagus"
+                  ],
+                  "answer": "Mouth, esophagus, stomach, intestines"
+                },
+                {
+                  "prompt": "Which of the following is the name of the drawing that helps you to make more healthy decisions when choosing what food to eat?",
+                  "answers": [
+                    "Triangle of Choices",
+                    "Pyramid of Food Decisions",
+                    "Pyramid of Nutrition",
+                    "Tiers of Nutrition"
+                  ],
+                  "answer": "Pyramid of Nutrition"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "There are many factors to consider when it comes to sustainability in the food system, such as how food is grown or raised, how it is transported and distributed, and how much of it is wasted. The apple you eat might be healthy for you but is it healthy for the environment? Identify strategies that can be used when we produce and consume food, so that it is sustainable for the environment, animals, and human communities. "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "What are your results? Do your results surprise you?",
+              "cards": [
+                {
+                  "text": "Food and water are vital things to our survival, but humans waste a lot of that important resource. In your home, work with your family to record the amount of food wasted and amount of water wasted (not counting bath, showers, cleaning) every day for a week.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson14",
+          "title": "14: How Do We Breathe?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an environment that might be hard to breathe in. Identify and analyze why that might be (consider: air pollution, pesticides and contaminants, etc.) "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Gas exchange is a process that occurs in the lungs and takes oxygen and releases carbon dioxide.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "If the air we breathe in is unclean, containing materials such as dust, what part of the body collects it, preventing it from further entering the body?",
+                  "answers": [
+                    "Nose",
+                    "Lungs",
+                    "Bronchi",
+                    "Trachea"
+                  ],
+                  "answer": "Nose"
+                },
+                {
+                  "prompt": "What is the purpose of the trachea?",
+                  "answers": [
+                    "To only bring air into the lungs",
+                    "To filter out the good air from the bad",
+                    "To produce carbon dioxide",
+                    "To transport air in and out of the lungs"
+                  ],
+                  "answer": "To transport air in and out of the lungs"
+                },
+                {
+                  "prompt": "Which of the following gives the best description of the order in which the parts of the respiratory system help us to breathe?",
+                  "answers": [
+                    "Nose or mouth, Larynx and trachea, bronchi, lungs",
+                    "Mouth, lungs, bronchi",
+                    "Nose, larynx, lungs",
+                    "None of the above"
+                  ],
+                  "answer": "Nose or mouth, Larynx and trachea, bronchi, lungs"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How can we ensure that the air we breathe is safe and healthy for all living beings, and how can we protect and improve the quality of the air in our communities? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
+              "cards": [
+                {
+                  "text": "We take in air through our nose and/or mouth. Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible. We wouldn’t survive without breathing.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson15",
+          "title": "15: Human circulatory system",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a common unhealthy food in your household. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: The heart is responsible for the movement of blood in the body.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following is the responsibility of blood in the body?",
+                  "answers": [
+                    "Warm the body.",
+                    "Spread oxygen and nutrients to organs and tissues.",
+                    "Carry unnecessary and harmful substances to the excretory organs.",
+                    "All of the above."
+                  ],
+                  "answer": "All of the above."
+                },
+                {
+                  "prompt": "What do arteries do?",
+                  "answers": [
+                    "Carry food that has been digested",
+                    "Carry carbon dioxide",
+                    "Carry blood",
+                    "None of the above"
+                  ],
+                  "answer": "Carry blood"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research a cold-blooded animal. Think about how this helps them in nature and why their adaptations/evolution led to this. How do they survive in their habitat with this in mind? Expand.",
+              "cards": [
+                {
+                  "text": "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins. Blood has many responsibilities as well such as warming the body, carrying oxygen and nutrients, and more. A key fact to remember is that humans are warm-blooded.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson16",
+          "title": "16: How to Be Healthy?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an item that should be cleaned more often. For example, many humans don’t realize how dirty and unclean our phones are. What are some other items that we forget to clean? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following pairs accurately describe the best ways to strengthen immunity to diseases?",
+                  "answers": [
+                    "Vaccines, exposure to diseases",
+                    "Vaccines, personal hygiene care",
+                    "Washing your hands, bathing",
+                    "Personal hygiene care, nature"
+                  ],
+                  "answer": "Vaccines, personal hygiene care"
+                },
+                {
+                  "prompt": "True or False: Spending time in nature is not helpful for staying healthy.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Which of the following is the best definition for immunity?",
+                  "answers": [
+                    "The state of being at risk for certain diseases.",
+                    "The quality of being resistant to a disease or illness.",
+                    "The name for people who are never sick.",
+                    "The quality of being resistant to medicine."
+                  ],
+                  "answer": "The quality of being resistant to a disease or illness."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How can we protect the human body from infections in a sustainable way? What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 3: Substances and Their Properties",
+              "cards": [
+                {
+                  "text": "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications. When we feel unhealthy or sick, we visit the doctor’s office. But did you know that there are many natural remedies or medicines to everyday health problems?",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Visit the nearest forest, park, or nature enclosure. Look around for herbs, plants, seeds, etc. that can be used to naturally remedy everyday illnesses. Record your findings and bring them home.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter3",
+      "title": "common:chapter3",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "orange",
+      "colorTwo": "orangered",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: What Are The Substances?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7492DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an item undergoing change from one state of matter to another. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following is a state of matter?",
+                  "answers": [
+                    "Solid",
+                    "Liquid",
+                    "Gase",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "True or False: Once substances are in a certain state, it is impossible for them to move to another state.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "When something freezes, what state of matter does it start and then end in?",
+                  "answers": [
+                    "Solid to liquid state",
+                    "Liquid to gaseous state",
+                    "Solid state to gaseous state",
+                    "Liquid to solid state"
+                  ],
+                  "answer": "Liquid to solid state"
+                },
+                {
+                  "prompt": "On a hot day, a dog bowl of water is left out in the sun. At the end of the day, all of the water is gone. What state is the substance now in?",
+                  "answers": [
+                    "Gas",
+                    "Solid",
+                    "Liquid",
+                    "None of the above"
+                  ],
+                  "answer": "Gas"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "When we change an object from one state to another state of matter are we being sustainable? Don't changes of states of matter require energy? If so, think about some changes of matter that harm our environment. "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "To perform the activity, fill the glass 3/4 full of the clear soda. Then, add the raisins. Watch what happens. The science behind this experiment: Students will see the raisins “dancing” in the soda. The raisins will fall to the bottom of the glass and then float back up to the top. They will then fall again. What is happening in the carbonation gas from the soda adheres to the raisin. This causes the raisins to float to the top. Once the bubble pops at the surface, the raisin then falls to the bottom again.",
+              "cards": [
+                {
+                  "text": "There are three different states of substances. They can be in solid, liquid, or gas form. Under the right circumstances, substances can change from one state to another or they can change their states completely from top to bottom. Understand how the different states of matter interact with each other.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "This activity requires three materials: Glass, Raisins, Clear soda, such as Sprite. This simple states of matter experiment will allow you to see how solid, liquid, and gas substances react.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Composition of Air",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74B1DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Research a place with poor air quality. Take a picture of that place (you can take a picture of the image online). Can you identify any characteristics in the picture that show the poor air quality? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What gas makes up most of the air (78%)?",
+                  "answers": [
+                    "Nitrogen",
+                    "Oxygen",
+                    "Carbon dioxide",
+                    "Argon"
+                  ],
+                  "answer": "Nitrogen"
+                },
+                {
+                  "prompt": "True or False: We cannot breathe pure nitrogen on its own.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following gasses in air have no color and no smell?",
+                  "answers": [
+                    "Nitrogen",
+                    "Argon",
+                    "Oxygen",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What does the Amazon forest produce the most of all forests in the world?",
+                  "answers": [
+                    "Paper",
+                    "Pollution",
+                    "Oxygen",
+                    "Birds"
+                  ],
+                  "answer": "Oxygen"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "I think we can all agree that humans release chemicals, pollutants, pesticides, etc. into the air that negatively impact air quality. However, not everything we release into the air is necessarily harmful. What can humans release into the air that will positively impact the air quality? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research a planet with the best air composition to serve us humans. Explain and expand.",
+              "cards": [
+                {
+                  "text": "The air is very important for the life of every living thing on Earth. The air we breathe is a mixture of several different gasses. Imagine, though, that we are not able to inhabit Earth anymore.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: Air Properties",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74DBC2",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a representation of one of the many properties of air. (For example: a carbonated beverage with bubbles). "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Combustion refers to the process of burning something.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What substance supports combustion, while carbon dioxide does not?",
+                  "answers": [
+                    "Nitrogen",
+                    "Oxygen",
+                    "Argon",
+                    "It actually is carbon dioxide"
+                  ],
+                  "answer": "Oxygen"
+                },
+                {
+                  "prompt": "It is very difficult to breathe in a room with a lot of ____, and very little _____.",
+                  "answers": [
+                    "Carbon dioxide; oxygen",
+                    "Oxygen; carbon dioxide",
+                    "Both answers are correct",
+                    "Both answers are incorrect"
+                  ],
+                  "answer": "Carbon dioxide; oxygen"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What are the many properties of air, and how do they positively impact the environment? Why are these properties so important for maintaining homeostasis? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Did you discover that some of the water had been sucked up into the jar? Can you explain why this happened? Because the oxygen was gone the water moved up into the jar to fill the space left by the oxygen, and that it didn’t fill the whole jar because air is also made up of nitrogen and other gasses‘think this little experiment really helped them visualize what we had been talking about.",
+              "cards": [
+                {
+                  "text": "Air has many properties. The air has many gasses such as oxygen, nitrogen, carbon dioxide, etc. This experiment is called ‘What’s in the air?’ and all we need is a plate, candle, matches, play dough, a jar, and some coloured water.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "The first step is to use the play dough to stand the candle up in the middle of the plate. Then we pour the coloured water onto the plate around the candle. Next, ask someone to help you light the candle. What will happen when we put the jar over the top of the candle? We put the jar over the top to see if we were right. After a few seconds the candle went out. Do you notice if anything else has changed.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: Where is the Water?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7874DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the cleanest source of water in your home. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following have the highest water content?",
+                  "answers": [
+                    "Acorn",
+                    "Bean",
+                    "Lemon",
+                    "Potato"
+                  ],
+                  "answer": "Lemon"
+                },
+                {
+                  "prompt": "True or False: There is more water in potatoes than apples.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "True or False: Even though fruits and vegetables are solids, they are also made up of a lot of water.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Do you believe that everyone in the world has access to a water source? If so, it stands to reason that not everyone has the same type of water source. Can you think of the many different types of water sources that exist? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Find the nearest water source to your home. Observe and identify the practices used in sourcing this water and purifying it for human consumption. Record and take pictures of your observations.",
+              "cards": [
+                {
+                  "text": "Humans, plants, and animals all have a great amount of water within their bodies. No single living organism on Earth can survive without water, either. If water is so important, where do we get our water from?",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5: Natural Water Sources",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74D3DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the most natural water source near your home. If you cannot visit it, take a picture of it online. Look at the picture and see if you can understand what differentiates a natural water source from an unnatural one. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Most of the water on Earth is freshwater.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "In what ocean is the Mariana Trench located?",
+                  "answers": [
+                    "Pacific",
+                    "Atlantic",
+                    "Indian",
+                    "Artic"
+                  ],
+                  "answer": "Pacific"
+                },
+                {
+                  "prompt": "What is the largest river in Kazakhstan?",
+                  "answers": [
+                    "Yertis",
+                    "Yesil",
+                    "Zhem",
+                    "Oral"
+                  ],
+                  "answer": "Yertis"
+                },
+                {
+                  "prompt": "What is the largest lake in Kazakhstan?",
+                  "answers": [
+                    "Zaysan",
+                    "Aral",
+                    "Balkhash",
+                    "Alakol"
+                  ],
+                  "answer": "Balkhash"
+                },
+                {
+                  "prompt": "What source of fresh and clean water is caused by excess water seeping through soil and clay?",
+                  "answers": [
+                    "Lakes",
+                    "Groundwater/underground",
+                    "Rain",
+                    "Oceans"
+                  ],
+                  "answer": "Groundwater/underground"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Put the following oceans in order from largest to smallest",
+              "data": [
+                {
+                  "text": "Pacific",
+                  "dormant": "indianred",
+                  "active": "firebrick"
+                },
+                {
+                  "text": "Atlantic",
+                  "dormant": "indigo",
+                  "active": "mediumpurple"
+                },
+                {
+                  "text": "Indian",
+                  "dormant": "darkorange",
+                  "active": "goldenrod"
+                },
+                {
+                  "text": "Artic",
+                  "dormant": "pink",
+                  "active": "#ffacbb"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Not all communities possess access to a natural water source. However, the communities that do must address the issues of water pollution, overuse, and scarcity. Can you think of ways they address these issues and how you can address these same issues,, iif present, in your community? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "How much do you know about what’s in water? Visit the nearest body of water and research its composition. What does this tell you about the water? Record your thoughts.",
+              "cards": [
+                {
+                  "text": "Although we spend most of our lives on land, the Earth is mostly occupied by water. Bodies of water range from oceans, rivers, lakes, and seas. The largest body of water, an ocean, is very unexplored. There is so much of it but so little we know.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson6",
+          "title": "6: Careful Use of Human Drinking Water",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7492DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of your water meter to see how much water you’ve used this period. Take another picture at the same time next month to see if your habits have improved your water usage. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following household uses of water requires the largest amount of water?",
+                  "answers": [
+                    "Laundry",
+                    "Washing dishes",
+                    "Taking a bath",
+                    "Flushing the toilet"
+                  ],
+                  "answer": "Taking a bath"
+                },
+                {
+                  "prompt": "True or False: On average, taking a bath requires four times the amount of water it takes for a shower.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following is a way to reduce water consumption in households?",
+                  "answers": [
+                    "Take showers instead of baths",
+                    "Make sure the dishwasher is full before it gets run",
+                    "Turn of the sink when brushing your teeth",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "Which of the following is NOT a way to reduce water consumption in households?",
+                  "answers": [
+                    "Take shorter showers",
+                    "Wait to repair leaks in sinks and toilets",
+                    "Water plants only during cooler parts of the day",
+                    "Only run full loads of laundry"
+                  ],
+                  "answer": "Wait to repair leaks in sinks and toilets"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What are some ways that your local government can make sure that human drinking water isn’t used for wrongful purposes, such as wastefulness? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research ways to converse water, and implement three of these strategies for one day. How difficult were these things to do? Would you do them again in the future? For extra credit, try doing these three things for one week.",
+              "cards": [
+                {
+                  "text": "Human drinking water is not infinite. Water is needed to drink, cook, clean, wash, warm, etc. If we take clean water and return it dirty to nature, it won’t help the plants ecosystem. Therefore, it is in our best interests to conserve as much water as possible.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson7",
+          "title": "7: Water Purification Methods",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74B1DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a homemade water filtration method. You can do this after you complete the Mastery 🎓 challenge. To show the success of the water filtration method, take a before and after picture of the water. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the main way to purify water?",
+                  "answers": [
+                    "Mechanical",
+                    "Chemical",
+                    "Biological",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What occurs at water treatment plants?",
+                  "answers": [
+                    "It is where wastewater is treated.",
+                    "It is where freshwater is treated.",
+                    "It is where ocean water is treated.",
+                    "None of the above"
+                  ],
+                  "answer": "It is where wastewater is treated."
+                },
+                {
+                  "prompt": "Which method of purifying water removes things like branches, sand, leaves.",
+                  "answers": [
+                    "Mechanical",
+                    "Chemical",
+                    "Biological",
+                    "Methodological"
+                  ],
+                  "answer": "Mechanical"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How can we protect and restore aquatic ecosystems and the many benefits they provide, such as water purification, flood control, and habitat for a variety of species? Extend your answer to list several water purification methods, from natural to man made. "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "You will need a few supplies: 2 Glass Jars, Sand, Gravel, 3-4 Coffee Filters, Dirty Water, A Plastic Cup with a Hole Cut in the Bottom. Begin by getting a jar full of dirty water. We went to a little pond nearby to collect some water. In the plastic cup, start by lining the bottom with the coffee filters.  Then place a layer of clean sand followed by a layer of gravel. Place the cup into an empty jar. Pour the dirty water into the cup so it can filter down through the gravel, sand and coffee filters. Look at the difference in the water before and after! The filter collects all of the dirt and particles in it making the water much cleaner.",
+              "cards": [
+                {
+                  "text": "Although water is found almost everywhere, we can’t just drink it from the source. Water has to be rid of all contaminants and purified before human use. There are many ways to purify water with one easy household method being boiling water. I’ll show you another easy household method of purifying water.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson8",
+          "title": "8: What is Soil?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74DBC2",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of nutrient-rich soil. Analyze and identify why the soil in particular is nutrient-dense. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the purpose of soil?",
+                  "answers": [
+                    "To provide nutrition and support for plant roots and stems",
+                    "To provide a home for many animals",
+                    "The first two answers are correct",
+                    "Neither answers are correct"
+                  ],
+                  "answer": "The first two answers are correct"
+                },
+                {
+                  "prompt": "True or False: Most of the Earth’s surface is covered with a layer of soil of different thicknesses.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What must occur to begin the process of creating soil?",
+                  "answers": [
+                    "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles.",
+                    "Soil must be transported to the area.",
+                    "Organic matter must decompose in the area.",
+                    "All of the above."
+                  ],
+                  "answer": "Rocks, such as stones and minerals, are destroyed, making smaller mineral particles."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What role can soil play in slowing down climate change? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Step 3: Put the jar in a sunny spot for several days. Add water as needed. Soon you will have a beautiful vine growing from the top of the potato.",
+              "cards": [
+                {
+                  "text": "Soil is a mixture of minerals and organic matter that covers much of the Earth’s surface. Soil is very important and without it, most life on Earth could not survive. However, are there any plants that can grow without soil?",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Who Needs Dirt? In this science project, we’ll teach you to grow a sweet potato plant without soil -- all you'll use are toothpicks and water. What You'll Need: Toothpicks, Sweet potato, Glass, Water.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 1: Insert three toothpicks around a sweet potato near the large end so they stick out to the sides in different directions.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 2: Fill a glass most of the way with water. Put the sweet potato into the glass small-end first, and rest the toothpicks on the rim so they hold up the sweet potato. There should be enough water in the glass so that about 3/4 of the sweet potato is covered.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson9",
+          "title": "9: What is in Soil?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7874DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of soil after you’ve poured water on it. Analyze how the soil is affected. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What of the following is the best definition of humus?",
+                  "answers": [
+                    "Matter in soil made out of the remains of plants and animals.",
+                    "Minerals in soil.",
+                    "Grass that grows on top of the soil.",
+                    "Rocks embedded in the soil."
+                  ],
+                  "answer": "Matter in soil made out of the remains of plants and animals."
+                },
+                {
+                  "prompt": "True or False: Humus is more abundant in the upper layers of the soil than the lower layers.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "True or False: Rock and mineral particles are more abundant in the lower layers of the soil than the upper layers.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following conditions can cause the breakdown of rocks, and therefore soil formation?",
+                  "answers": [
+                    "Wind and water",
+                    "Solar heat",
+                    "Living organisms",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What are the most promising technologies and approaches for improving soil sustainability in different regions and contexts? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Step 7: You can also do this experiment with dirt you have collected from different areas and compare your findings. Draw pictures of each jar full of soil after you have shaken it and the dirt has settled to make picture comparisons.",
+              "cards": [
+                {
+                  "text": "As said previously, soil has two main components: minerals and organic matter. The mineral part of soil forms from rocks. Forces such as wind, water, and temperature changes break rocks into tiny bits. The organic part of soil forms when plants and animals die. The organic material is called humus and it helps to form the pores in the soil.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Dirt Discovery is a science project that will teach you about this soil composition. There's more to dirt than you think! Find out what it's made of. What You'll Need: Waterproof table covering, Jar with lid, Spoon, Dirt, Pitcher of water, Paper towels, Magnifying glass",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 1: Cover your work surface. Fill a jar halfway with dirt. Add water nearly to the top of the jar. Put the lid on, and tighten it securely.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 2: Shake the jar vigorously for a half a minute, and then set it down. Let the jar stand until the dirt and water settle. The soil will settle into layers.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 3: Observe the layers in the jar, and see what you can tell about them. How many layers are there? Which layer is made of the biggest particles? Which is the smallest? Can you guess why?",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 4: To further examine the different layers and what they are made of, you can sort out the soil materials and examine them. Use a spoon to skim off the objects floating in the water. Place them on a paper towel.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 5: Then carefully pour off the water on the top and scoop out the grains of the next level onto another paper towel. Do the same if there is another level.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 6: After each layer has been placed onto towels, they can be examined with the magnifying glass. What else can you tell about the different layers after further examination?",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson10",
+          "title": "10: Soil Properties",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74D3DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a dead plant, specifically the soil underneath it. Do you notice anything? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the best explanation for why air permeability is important for soil?",
+                  "answers": [
+                    "Without it the worms will die",
+                    "This allows air through the soil, which is needed or else plant roots will die.",
+                    "It lets rain through.",
+                    "None of the above."
+                  ],
+                  "answer": "This allows air through the soil, which is needed or else plant roots will die."
+                },
+                {
+                  "prompt": "Which of the following is the best definition of water permeability?",
+                  "answers": [
+                    "It describes the type of water needed for the soil.",
+                    "It is the ability of the soil to support worms and insects.",
+                    "It explains the pH of the soil.",
+                    "It is the ability of the soil to absorb and transmit water."
+                  ],
+                  "answer": "It is the ability of the soil to absorb and transmit water."
+                },
+                {
+                  "prompt": "Which of the following processes directly threatens the abundance of soil?",
+                  "answers": [
+                    "Earthquakes",
+                    "Pollution",
+                    "Erosion",
+                    "Evaporation"
+                  ],
+                  "answer": "Erosion"
+                },
+                {
+                  "prompt": "True or False: The life of humans, animals, and plants are all dependent on the existence of soil.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How can we prevent and slow down soil contamination from industrial and agricultural activities? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Step 4: Notice which beans sprout first. Measure the height of the plants every few days until the beans flower. Keep a chart. Which soil was the best?",
+              "cards": [
+                {
+                  "text": "Soil helps plants grow and provides the plants with nutrients. Some soils have different colors than others. Some soils are considered poor rather than rich. And some soils help plants grow more than others. Soil has many properties such as air permeability, water permeability, thermal conductivity, and fertility. From this, I want you to test which soils are better than others and observe what properties play a role in this.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "What You'll Need: Garden soil, Trowel, Small flowerpots with saucers, Water, Bean seeds, Tall stakes, Pencil or pen, Ruler, Paper (graph paper optional), Tape",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 1: Look in your yard for areas where plants grow poorly. Is the soil trampled and hard? Is the soil soft and loose where plants grow well? Look for sandy or heavy, clay-like soil.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 2: Gather samples of different soils and fill a flowerpot with each kind. Label your flowerpots: \"Hard, baked soil near the sidewalk,\" \"Loose, fluffy soil from the flower bed,\" etc.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Step 3: Water the pots, then plant two or three bean seeds in each. Put a stake in each pot for the beans to climb. Keep the pots moist (but not soggy) while the beans sprout.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson11",
+          "title": "11: What are Soils?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7492DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a nearby garden, agricultural reserve, etc. What effort and work is required to maintain it? How can we sustain it? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following statements is true about soil?",
+                  "answers": [
+                    "All of the following",
+                    "Dark soil is rich in humus",
+                    "Red soil is rich in iron",
+                    "Light soil is poor in minerals and humus"
+                  ],
+                  "answer": "All of the following"
+                },
+                {
+                  "prompt": "True or False: Clay soil absorbs water well and does not stick together.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "Which of the following is the main property of sandy soil?",
+                  "answers": [
+                    "It is very loose",
+                    "It is easy for water to pass through it",
+                    "It heats up and cools down quickly",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "What is the type of soil considered “best,” containing a lot of humus and is characterized by leaving a black greasy mark on the palm of your hand when compressed?",
+                  "answers": [
+                    "Chernozem",
+                    "Clay",
+                    "Humus soil",
+                    "Sand"
+                  ],
+                  "answer": "Chernozem"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How can we increase public awareness and understanding of the importance of soil health and sustainability? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Research what organic material improves soil structure. Why should people use this information?",
+              "cards": [
+                {
+                  "text": "Let’s take a deeper dive into soil fertility. Plants need nutrients just like people.  A fertile soil will contain all the major nutrients for basic plant nutrition, as well as other nutrients in smaller amounts.  Sadly, many soils don’t have good levels of all the necessary plant nutrients. Many solids also lack favorable conditions for plant uptake of certain nutrients.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson12",
+          "title": "12: How is our Planet?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74B1DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the moon at night. What does the shape tell you about the phase it is in? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What are the spheres of the earth?",
+                  "answers": [
+                    "Biosphere and lithosphere",
+                    "Hydrosphere and atmosphere",
+                    "Both answers are correct",
+                    "Neither answers are correct"
+                  ],
+                  "answer": "Both answers are correct"
+                },
+                {
+                  "prompt": "Which of the following is the best definition of the atmosphere of the earth?",
+                  "answers": [
+                    "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers.",
+                    "A solid shell that surrounds Earth, holding in the gasses needed for plants.",
+                    "A shell made up of gas, consisting of only one layer that protects the earth from asteroids.",
+                    "A solid shell that is only responsible for creating weather."
+                  ],
+                  "answer": "A gas shell containing the oxygen needed by living organisms to breathe. It consists of several layers."
+                },
+                {
+                  "prompt": "Which of the following is the best definition of the hydrosphere?",
+                  "answers": [
+                    "It is made up of the oceans, seas, lakes, rivers",
+                    "It has swamps, underground springs, and ice cover.",
+                    "It covers most of the earth’s surface.",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "True or False: The lithosphere is the upper solid shell of the Earth.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What inhabits the biosphere on Earth?",
+                  "answers": [
+                    "3 million species of plants, animals, fungi and bacteria.",
+                    "Earth’s core.",
+                    "The troposphere.",
+                    "Glaciers."
+                  ],
+                  "answer": "3 million species of plants, animals, fungi and bacteria."
+                },
+                {
+                  "prompt": "True or False: The lithosphere has never moved, and never will.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Do you think that most people care about our planet? What makes our planet unique and important? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "The Earth is the planet we inhabit. More than 4 billion years old, our planet is the third from the Sun. The Earth is mostly covered with water and that water is mostly salty. The Earth’s atmosphere is divided into 6 layers including the troposphere, stratosphere, mesosphere, thermosphere, exosphere, and ionosphere. The Earth is so cool and vast to us. But, the Earth really is nothing. Understanding how big the solar system the Earth is in is astounding.",
+              "cards": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson13",
+          "title": "13: History of Space Exploration",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74DBC2",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of the many stars in the night sky. Can you see any constellations? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the main way that space is explored?",
+                  "answers": [
+                    "Automatic spacecrafts",
+                    "Manned space flights",
+                    "Both answers are correct",
+                    "Neither answer is correct"
+                  ],
+                  "answer": "Both answers are correct"
+                },
+                {
+                  "prompt": "In what year was the first human flight to space?",
+                  "answers": [
+                    "1961",
+                    "1990",
+                    "1947",
+                    "1968"
+                  ],
+                  "answer": "1961"
+                },
+                {
+                  "prompt": "Which of the following advancements were created in connection with the development of the space industry?",
+                  "answers": [
+                    "Solar batteries",
+                    "Water filters",
+                    "Digital Camera 📷s",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Space exploration isn’t cheap and neither is it easy to execute. One of the costs of space exploration is the amount of fuel needed for the rocket launches and space missions. How can we minimize the environmental impact of rocket launches and space missions? What methods can we use to continue our space exploration without depleting Earth’s resources and harming the environment? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Try to thread the pipe cleaners through the colander wearing the glove, it is still fixed? Is it harder to do this activity wearing gloves than not?",
+              "cards": [
+                {
+                  "text": "Space exploration is worlds different from the exploration of Earth. Through our expeditions into space, we’ve learned about the properties of other planets and how habitable they are for us. We’ve learned about how our own planet fares against other planets. Space exploration has provided us with a lot of data, and every time we send a satellite or an astronaut up there, we receive new information. It’s important to keep those astronauts safe. What happens, though, if an astronaut lands into an issue?",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "CAN YOU FIX THE ASTRONAUTS GLOVE?",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Materials: Masking tape, Sellotape, Gaffer tape, Plasters, Thick washing up glove, Water, Sink or Washing up bowl. Look at the materials you have available to fix the glove, which do you think will work the best?",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "The glove needs to be airtight, how could you test this? Design several different tests to see if the glove is fixed.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Place your hand inside the glove and wiggle it around, does the fix stay in place?",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson14",
+          "title": "14: How Does the Earth Rotate?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7874DB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take multiple pictures of the Sun as it rises, stays, and sets. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "What is the best explanation for why there are different time zones in different places?",
+                  "answers": [
+                    "The sun revolves around the earth, making it light in some places and dark in others.",
+                    "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others.",
+                    "The earth revolves around the moon, making it night time on one half of the earth.",
+                    "None of the above."
+                  ],
+                  "answer": "The earth revolves around its axis while orbiting the sun, making it light in some places and dark in others."
+                },
+                {
+                  "prompt": "The earth rotates around the ____.",
+                  "answers": [
+                    "Moon",
+                    "Sun",
+                    "Other planets",
+                    "Milky way"
+                  ],
+                  "answer": "Sun"
+                },
+                {
+                  "prompt": "True or False: The earth rotates around an axis AND revolves around the sun.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What measures can be taken to reduce the amount of space debris and pollution in Earth's orbit? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Chapter 4: Physics of Nature",
+              "cards": [
+                {
+                  "text": "Earth’s movement around the sun wasn't always agreed upon. Many believed that the other planets revolved around the Earth. Since we now know that all the planets in our solar system revolve around the Sun, we can use that to formulate other theories. We also know that the Earth’s moon revolves around the Earth. This revolution around a celestial body or the Earth is called an orbit.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "For this exercise, research each planet and a related celestial object that orbits it. Then, compare the varying times it takes to complete one orbit.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter4",
+      "title": "common:chapter4",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "midnightblue",
+      "colorTwo": "mediumturquoise",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1: Elastic Force",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E09079",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an object/item that uses elastic force. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Elasticity is the property of bodies to restore their original position and shape.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "What is a common object that utilizes elasticity?",
+                  "answers": [
+                    "Car tires",
+                    "Balloons",
+                    "Long bridges",
+                    "All of the above"
+                  ],
+                  "answer": "All of the above"
+                },
+                {
+                  "prompt": "Which of the following statements about elastic forces is true?",
+                  "answers": [
+                    "If the elastic forces cannot handle the amount of external force, the body changes shape.",
+                    "The aim of the elastic force is to compress, shift, stretch, and bend.",
+                    "Both of the above answers are correct.",
+                    "Neither answers are correct."
+                  ],
+                  "answer": "Both of the above answers are correct."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is elastic force, and how does it differ from other types of force? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Thread the second pencil through the elastic band to hold it in place. Push down on the end of the spoon and let go. It should shoot upwards! Test your catapult with different objects, do lighter objects move further? Does the catapult work better if you flick the lolly stick with your finger or if you drop something onto the end.",
+              "cards": [
+                {
+                  "text": "The force of elasticity is one of the important ones. To expand, elastic distortion is when an object returns to its original shape when the force is gone. Inelastic distortion, the opposite, is when an object stays in the changed shape after the force is gone. Elastic potential energy is when an object is stretched and gains energy. We can test out elastic energy really easily.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "You’ll need: Shoe box, Wooden spoon or a lolly stick and milk carton top, 2 pencils or dowel, Elastic bands, Marshmallows or small light balls",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "SHOEBOX CATAPULT INSTRUCTIONS; Use the pencil to carefully pierce two holes in the shoe box. These need to be slightly towards one end of the box, about 2 cm from the top and at the same height. Glue a milk carton top to the lolly stick and leave to dry. Use the elastic bands to tie the lolly stick to the pencil/dowel and place the pencil/dowel through the holes.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Use the second pencil to make another hole in the box. This needs to be towards the bottom of the end of the box where the spoon is. Tie an elastic band around the handle of the spoon and thread the other end through the hole in the box.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2: Gravity",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E07D78",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an object experiencing gravity. (Hint: objects in freefall.) "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Which of the following things that occur on earth need gravity?",
+                  "answers": [
+                    "Holds the moon in orbit.",
+                    "Keeps objects on the surface of the earth.",
+                    "Keeps the shape of the earth’s atmosphere.",
+                    "All of the above."
+                  ],
+                  "answer": "All of the above."
+                },
+                {
+                  "prompt": "True or False: Gravity keeps people from floating off Earth, and keeps satellites in orbit.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "Which of the following is the best definition of inertia?",
+                  "answers": [
+                    "The property of the body to maintain a state of rest or movement until some external force acts on it.",
+                    "The property of a body to bounce back from an external force.",
+                    "The property that drags things down to the center of the earth",
+                    "The speed at which an object falls."
+                  ],
+                  "answer": "The property of the body to maintain a state of rest or movement until some external force acts on it."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is gravity, and how does it differ from other types of force? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "When you first held the cup in the air and removed your finger, gravity pulled the water down towards the ground and water pressure forced it out of the hole. However, when the cup and water fall at the same speed, there is no water pressure. Without this force, the water remains inside the cup as gravity pulls both to the ground.",
+              "cards": [
+                {
+                  "text": "The force of gravity is very important. Each planet has its own gravity as does anything with mass (however, objects, people, plants, and animals on Earth are so miniscule, our gravity is nothing). Gravity is what pulls objects down and towards the center. Let’s test this.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "This next experiment requires just three items: A paper cup, Water, A pencil",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "On the outside of the cup near the bottom, poke a hole using a pencil. Placing a finger over the hole, fill the cup with water. Remove your finger from the hole. You should find that the water flows out of the cup in an even, steady stream (if the water is not quite flowing smoothly, try poking a new hole and refill the cup with water).",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Next, holding your finger over the hole, fill the cup once again with water. Drop the cup, removing your finger from the hole at the same time. You’ll find that as the cup falls, no water flows out of the hole.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3: The Force of Friction and its Manifestation",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF79E0",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an object experiencing friction or an object that causes friction. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: Friction is stronger on smooth surfaces than rough surfaces.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "False"
+                },
+                {
+                  "prompt": "In which of the following scenarios is friction present?",
+                  "answers": [
+                    "Pressing the palms of your hands together and rubbing them quickly, creating heat.",
+                    "A pencil leaves traces on a piece of paper when they come into contact with each other.",
+                    "The rubber boots of climbers’ boots keep the climber from slipping off the rocks.",
+                    "All of the above."
+                  ],
+                  "answer": "All of the above."
+                },
+                {
+                  "prompt": "Which of the following can be created by friction?",
+                  "answers": [
+                    "Heat.",
+                    "Decline in speed.",
+                    "Both answers are correct.",
+                    "Neither answers are correct."
+                  ],
+                  "answer": "Both answers are correct."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is friction, and how does it differ from other types of force? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Now grab one of the book spines and have a friend grab the other spine. Pull on the books to see if you can pull them apart. Have a game of tug of war with the books. The books will stick together like glue because each page exerts friction against the other book's page. When the combined friction from each page is added up, it equals a big force. Do some tests by interlacing the pages. What if you only weave every ten pages or every twenty? Is the force still as strong? What is the least amount of weaving necessary to produce the glue-like effect?",
+              "cards": [
+                {
+                  "text": "There are four types of friction consisting of fluid friction, sliding friction, rolling friction, and static friction. Friction is a force that reduces motion between objects that are in contact. Friction can stop or slow down movement. When an object is smooth, there is less friction to be created compared to a rough object, where there is much friction to be created. Nonetheless, the force of friction is really strong. Let’s test that.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Phone Book Friction",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Materials: Two phone books about the same size (2 books with soft covers will work). This experiment was tested on the show Mythbusters. The phone books wouldn't come apart using all the Mythbusters' gadgets and even attaching the phone books between two cars. It took two tanks to pull the books apart. That's how strong friction can be. Phone books are usually used for this experiment, but books with many pages (100+) and soft covers will work. Textbooks work great as well. The main thing you want is two books of about equal size.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Before you begin, just half the books and put them together to show how easily they will come apart that way. Now, interlace the pages by alternating a page from each book. The pages of the books will be woven, and the spines will be facing out. Make sure several inches of the pages overlap. So you'll lay down the cover of book A, then the cover of book B over it. Then the back page of book A and the back page of book B. Then the next page and so on until the books' pages are woven together. You don't actually have to do every page for the experiment to work. You can weave a few pages at a time, so it won't be an all-day process.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4: How to Determine the Direction of Forces?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E0A279",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of an object that is experiencing a force. Highlight the direction of the force that is acting on it. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: The direction of gravity coincides with the direction of its free fall.",
+                  "answers": [
+                    "True",
+                    "False",
+                    "Opposite",
+                    "Equal",
+                    "Perpendicular",
+                    "All of the above"
+                  ],
+                  "answer": "Opposite"
+                },
+                {
+                  "prompt": "Which of the following most accurately describes what creates friction?",
+                  "answers": [
+                    "When one body is in free fall due to gravity.",
+                    "When bodies move across one another, causing two surfaces to come into contact.",
+                    "When a body bounces back after an external force acts on it.",
+                    "When a body breaks after an external force acts on it."
+                  ],
+                  "answer": "When bodies move across one another, causing two surfaces to come into contact."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "How do forces interact with matter, and how do they cause changes in the motion and behavior of objects? And, What are some common examples of forces in everyday life, and how do they affect the motion of objects? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "How could the cone fly higher? How could we slow down the flight of the cone? What would a smaller container affect it by?",
+              "cards": [
+                {
+                  "text": "The different forces have a direction unique to them. For example, the direction of gravity follows the direction of freefall. While the direction of friction is in the opposite direction of movement. And the elastic force depends on the deformation. Let’s play around with forces and change the conditions to see how the forces react",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "What you need: Milk jug – empty and rinsed, Sellotape, Paper, Decorations – optional. Make a cone shape using the paper and sellotape. Place the cone on top of the milk jug. Squeeze the milk jug hard. The cone rocket should shoot up into the air.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5: How Does the Shadow Appear?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E079A5",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Take a picture of a shadow. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "True or False: A shadow is an area of space where light does not enter.",
+                  "answers": [
+                    "True",
+                    "False"
+                  ],
+                  "answer": "True"
+                },
+                {
+                  "prompt": "A ____ light source gives a longer shadow.",
+                  "answers": [
+                    "Lower",
+                    "Higher",
+                    "Colored",
+                    "UV"
+                  ],
+                  "answer": "Lower"
+                },
+                {
+                  "prompt": "The ____ the light source is to the object being illuminated, the shorter the shadow is.",
+                  "answers": [
+                    "Farther",
+                    "More yellow",
+                    "Closer",
+                    "Redder"
+                  ],
+                  "answer": "Closer"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "What is a shadow, and how is it formed? What are the many factors that can affect a shadow. For example, the time of day is one factor. Can you think of any more? "
+            },
+            {
+              "navigation": "Mastery",
+              "prompt": "Hold up a pair of eyeglasses, what do you see in its shadow? Record your observations and try to come up with a hypothesis describing what you see.",
+              "cards": [
+                {
+                  "text": "Shadows are formed when an object is placed in the path of light. A transparent object cannot make any shadow as light passes straight through it. Translucent objects create little shadows as light is able to pass only a bit through them. Shadows also change over time. Let’s test that!",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
