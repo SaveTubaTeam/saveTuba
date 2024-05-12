@@ -1,8 +1,4 @@
-import grade2 from "./grade2.json";
-import grade3 from "./grade3.json";
-import grade3russian from "./grade3russian.json";
 import { db, storage } from "../../../../firebase.js";
-import boilerplateLesson from  "./boilerplateLesson.json";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 

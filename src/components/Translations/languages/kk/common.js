@@ -20,7 +20,7 @@ export default {
   memory: "Жад",
   sorting: "Сұрыптау",
   quiz: "Викторина",
-  openresponse: "Жауапты ашу",
+  imageboom: "Жауапты ашу",
   snapshot: "Сурет",
   reorder: "Қайта реттеу",
   mastery: "Шеберлік",

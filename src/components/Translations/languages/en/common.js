@@ -20,7 +20,7 @@ export default {
   memory: "Memory",
   sorting: "Sorting",
   quiz: "Quiz",
-  openresponse: "Open Response",
+  imageboom: "Image Boom",
   snapshot: "Snapshot",
   reorder: "Reorder",
   mastery: "Mastery",

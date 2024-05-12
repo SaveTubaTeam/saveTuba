@@ -20,7 +20,7 @@ export default {
   memory: "Объем памяти",
   sorting: "Сортировка",
   quiz: "Викторина",
-  openresponse: "Изображение Бум",
+  imageboom: "Изображение Бум",
   snapshot: "Фото",
   reorder: "Изменение порядка",
   mastery: "Мастерство",
