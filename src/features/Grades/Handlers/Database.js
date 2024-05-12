@@ -12,7 +12,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 //navigating the firestore database tree should be done via reference to doc() or collection().
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
-// Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Minigames ==> Minigames)
+// Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> MasteryAndMinigames)
 // The reason this is important is because when you query the DB you will only get one level at a time. So when I pull the Grade data I am essentially just
 // getting a pointer that will take me to the next level. That is why there are so many functions in this file.
 
