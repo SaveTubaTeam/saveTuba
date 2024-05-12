@@ -58,9 +58,10 @@
                   "answers": [
                     "Gas",
                     "Water",
-                    "Coal"
+                    "Coal",
+                    "All of the above"
                   ],
-                  "answer": ""
+                  "answer": "All of the above"
                 }
               ]
             },

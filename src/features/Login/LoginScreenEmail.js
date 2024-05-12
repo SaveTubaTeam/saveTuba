@@ -10,7 +10,7 @@ import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
-import { getCacheObject, postBoilerplate, postData, changeData } from "../Grades/Handlers/Database";
+import { getCacheObject, postBoilerplate, postData } from "../Grades/Handlers/Database";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
 
@@ -223,12 +223,6 @@ const LoginScreenEmail = () => {
           {/* <Button onPress={postData}>
             <TitleText color="secondary" size="body">
               Post
-            </TitleText>
-          </Button> */}
-
-          {/* <Button onPress={changeData}>
-            <TitleText color="secondary" size="body">
-              Change Data
             </TitleText>
           </Button> */}
 

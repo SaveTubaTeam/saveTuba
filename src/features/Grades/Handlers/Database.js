@@ -1,6 +1,9 @@
 import { db, storage } from "../../../../firebase.js";
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
+import en_grade2 from "../Data/en_grade2.json"
+import en_grade3 from "../Data/en_grade3.json"
+import en_grade4 from "../Data/en_grade4.json"
 
 //***all documentation falls under web-namespaced api
 //documentation for set() https://firebase.google.com/docs/firestore/manage-data/add-data#web-namespaced-api_1
@@ -190,150 +193,93 @@ async function createImageMapHelper(folder, pathList) {
     }
 }
 
-// This is meant to alter the metadata or add pieces of metadata for large sets of similarly formatted data at a single time. It is split into two parts, one for chapters and one for lessons. 
-async function changeData() {
-    const g2_chapters = grade2.Grade2.chapters;
-    for (var i = 0; i < g2_chapters.length; i++) {
+// The following three variables MUST be specified for postData()
+const GRADE_NAME = "Grade4"; 
+const LANGUAGE_CODE = "en" 
+const CHAPTERS = en_grade4.chapters; //needs to be specified from import
 
-        // ---------------------------------------------------------
-        // to change the chapter metadata
-        // ---------------------------------------------------------
-        const g2_lessons = grade2.Grade2.chapters[i].lessons;
-        const data = {
-            backgroundImage: g2_chapters[i].backgroundImage,
-            colorOne: g2_chapters[i].colorOne,
-            colorTwo: g2_chapters[i].colorTwo,
-            icon: g2_chapters[i].icon,
-            name: g2_chapters[i].name,
-            navigation: "Chapter".concat((i + 1).toString()),
-            title: g2_chapters[i].title,
-            numLessons: g2_lessons.length
-        };
-        await db.collection("Grade2").doc(g2_chapters[i].navigation).set(data)
-            .then(() => {
-                console.log("Chapter " + (i + 1) + " Lesson " + (i + 1) + "  successfully updated!");
-            })
-            .catch((error) => {
-                // The document probably doesn't exist.
-                console.error("Error updating document: ", error);
-            });
-
-        // ---------------------------------------------------------
-        // to change the lesson metadata
-        // ---------------------------------------------------------
-
-        // const g2_lessons = grade3.Grade3.chapters[i].lessons;
-        // for (var u = 0; u < g2_lessons.length; u++) {
-        //     const data = {
-        //         title: g2_lessons[u].title,
-        //         thumbnail: g2_lessons[u].thumbnail,
-        //         backgroundColor: g2_lessons[u].backgroundColor,
-        //         navigation: "Lesson".concat((u + 1).toString())
-        //     };
-        //     console.log("CH: ", g2_chapters[i].navigation, " LS: ", g2_lessons[u].navigation);
-        //     await db.collection("Grade3").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("English").update(data)
-        //         .then(() => {
-        //             console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
-        //         })
-        //         .catch((error) => {
-        //             // The document probably doesn't exist.
-        //             console.error("Error updating document: ", error);
-        //         });
-        // }
-    }
+const postData = () => {
+    CHAPTERS.forEach((chapter) => { //iterating through chapters array
+        postChapterData(chapter); //see below
+    })
 }
 
+// @param chapter the current chapter object
+const postChapterData = async(chapter) => {
+    let chapterData = {
+        navigation: chapter.navigation,
+        title: chapter.title,
+        name: chapter.name,
+        icon: chapter.icon,
+        colorOne: chapter.colorOne,
+        colorTwo: chapter.colorTwo
+    }
+    let chapterReference = db.collection(GRADE_NAME).doc(chapterData.navigation);
 
-// This was meant to push all of the hardcoded data to the database as there was no admin console when it was written. Setup for both grade 2 and grade 3 right now. Grade 4 should go directly into the DBs
-async function postData() {
-    // The following three variables should be adjusted as needed
-    const grade = grade2.Grade; //this variable needs to be specified from import
-    const gradeName = "Grade2"; //obviously needs to be specified
-    const language = "Kazakh" //obviously needs to be specified
+    try {
+        await chapterReference.set(chapterData); //setting chapter metadata
+        console.log(`${chapterData.navigation} set successfully!`);
+    } catch(error) {
+        console.error("postChapterData() ERROR:", error);
+    }
 
-    const chapters = grade.chapters;
-    //iterating through chapters
-    for (var chaptersIter = 0; chaptersIter < chapters.length; chaptersIter++) {
-         var chapter = (chaptersIter + 1).toString();
-         var chapterDoc = "Chapter".concat(chapter);
-         var lessons = grade.chapters[chaptersIter].lessons;
+    chapter.lessons.forEach((lesson) => {
+        postLessonData(lesson, chapterReference); //see below
+    })
+}
 
-        //iterating through lessons
-         for (var lessonsIter = 0; lessonsIter < lessons.length; lessonsIter++) {
-             var lesson = (lessonsIter + 1).toString();
-             var lessonCollection = "Lesson".concat(lesson);
-             var minigames = grade.chapters[chaptersIter].lessons[lessonsIter].minigames;
+//@param lesson the current lesson object
+//@param chapterReference a reference to the current chapter within our firebase tree.
+const postLessonData = async(lesson, chapterReference) => {
+    let lessonData = {
+        navigation: lesson.navigation,
+        title: lesson.title,
+        thumbnail: lesson.thumbnail,
+        backgroundColor: lesson.backgroundColor
+    }
+    let lessonLanguageReference =  chapterReference.collection(lessonData.navigation).doc(LANGUAGE_CODE);
 
-            //defining lesson metadata within language doc
-             const data = {
-                 title: lessons[lessonsIter].title,
-                 thumbnail: lessons[lessonsIter].thumbnail,
-                 backgroundColor: lessons[lessonsIter].backgroundColor,
-                 navigation: "Lesson".concat((lessonsIter + 1).toString())
-             };
+    try {
+        await lessonLanguageReference.set(lessonData); //setting lessonLanguage metadata
+        console.log(`\t${lessonData.navigation}-${LANGUAGE_CODE} set successfully!`);
+    } catch(error) {
+        console.error("postLessonData() ERROR:", error)
+    }
 
-            //selecting language within lesson and setting metadata
-             await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).set(data)
-                 .then(() => {
-                     console.log("Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully updated!");
-                 })
-                 .catch((error) => {
-                     // The document probably doesn't exist.
-                     console.error("Error updating document: ", error);
-                 });
+    let duplicates = {} //counting the number of duplicate objects
+    let masteryAndMinigames = lesson.content; //lesson.content is the array containing all of the mastery and minigame objects
 
+    //iterating through all the mastery and minigame objects (each one is referred to as 'currentObject' here)
+    masteryAndMinigames.forEach((currentObject) => {
+        let currentObjectName = currentObject.navigation
 
-            //iterating through minigames
-             for (var minigamesIter = 0; minigamesIter < minigames.length; minigamesIter++) {
-                 var minigameName = minigames[minigamesIter].navigation;
-                 //selecting current minigame
-                 await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("minigames").doc(minigameName).set(minigames[minigamesIter]).then(() => {
-                     console.log("Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
-                 })
-                     .catch((error) => {
-                         console.error("Error writing document: ", error);
-                     });
-             }
+        //first checking for duplicates
+        // Initialize this attribute's count to 1 if string is encountered for the first time, otherwise increment this attribute's count
+        !duplicates[currentObjectName] ? duplicates[currentObjectName] = 1 : duplicates[currentObjectName]++;
 
-             //same for mastery
-             var mastery = grade.chapters[chaptersIter].lessons[lessonsIter].mastery;
-             var mastery_2 = grade.chapters[chaptersIter].lessons[lessonsIter].mastery_2;
+        //if there are duplicates, we change the navigation name accordingly
+        if (duplicates[currentObjectName] > 1) {
+            currentObject.navigation = `${currentObjectName} ${duplicates[currentObjectName]}`;
+        }
 
-             if(mastery === undefined || mastery === null || mastery === 'undefined') {
-                console.error('ERROR within postData() --> Mastery does not exist!!');
-                throw new Error('ERROR within postData() --> Mastery does not exist!!');
-             }
+        postMasteryAndMinigames(currentObject, lessonLanguageReference); //see below
+    })
 
-             if (mastery_2 === undefined || mastery_2 === null || mastery_2 === 'undefined') {
-                 await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery").set(mastery)
-                     .then(() => {
-                         console.log("Mastery for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
-                     })
-                     .catch((error) => {
-                         console.error("Error writing document: ", error);
-                     });
-             } else { //case where mastery_2 exists
-                 await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery").set(mastery)
-                     .then(() => {
-                         console.log("Mastery for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
-                     })
-                     .catch((error) => {
-                         console.error("Error writing document: ", error);
-                    });
+    console.log("\t\tmasteryAndMinigames:");
+    lesson.content.map((element) => { console.log(`\t\t\t${element}`) })
+}
 
-                await db.collection(gradeName).doc(chapterDoc).collection(lessonCollection).doc(language).collection("mastery").doc("mastery_2").set(mastery_2)
-                    .then(() => {
-                        console.log("Mastery_2 for Chapter ", (chaptersIter + 1), " Lesson ", (lessonsIter + 1), "successfully written!");
-                    })
-                    .catch((error) => {
-                        console.error("Error writing document: ", error);
-                    });
-            } //end of adding mastery 
+//@param currentObject the current mastery or minigame object
+//@param lessonLanguageReference a reference to the current language within our current lesson down our firebase tree.
+const postMasteryAndMinigames = async(currentObject, lessonLanguageReference) => {
+    let masteryAndMinigamesReference = lessonLanguageReference.collection("masteryAndMinigames").doc(currentObject.navigation);
 
-        }// end of lesson iterations
-    }//end of chapters iterations
-
-} //END OF postData()
+    try{
+        await masteryAndMinigamesReference.set(currentObject);
+    } catch(error) {
+        console.error("postMasteryAndMinigames() ERROR:", error);
+    }
+}
 
 //use the below function to push boilerplate lesson templates into database for a specified empty chapter. WARNING: CAN ERASE EXISTING DATA
 //See LoginScreen for function call location (this function will not work for params that do not exist!);
@@ -430,4 +376,58 @@ async function setCache(key, value) {
     }
 }
 
-export { getGradeData, createImageMap, getLessonsData, postData, changeData, getCacheObject, setCache, postBoilerplate };
+
+// // This is meant to alter the metadata or add pieces of metadata for large sets of similarly formatted data at a single time. It is split into two parts, one for chapters and one for lessons. 
+// async function changeData() {
+//     const g2_chapters = grade2.Grade2.chapters;
+//     for (var i = 0; i < g2_chapters.length; i++) {
+
+//         // ---------------------------------------------------------
+//         // to change the chapter metadata
+//         // ---------------------------------------------------------
+//         const g2_lessons = grade2.Grade2.chapters[i].lessons;
+//         const data = {
+//             backgroundImage: g2_chapters[i].backgroundImage,
+//             colorOne: g2_chapters[i].colorOne,
+//             colorTwo: g2_chapters[i].colorTwo,
+//             icon: g2_chapters[i].icon,
+//             name: g2_chapters[i].name,
+//             navigation: "Chapter".concat((i + 1).toString()),
+//             title: g2_chapters[i].title,
+//             numLessons: g2_lessons.length
+//         };
+//         await db.collection("Grade2").doc(g2_chapters[i].navigation).set(data)
+//             .then(() => {
+//                 console.log("Chapter " + (i + 1) + " Lesson " + (i + 1) + "  successfully updated!");
+//             })
+//             .catch((error) => {
+//                 // The document probably doesn't exist.
+//                 console.error("Error updating document: ", error);
+//             });
+
+//         // ---------------------------------------------------------
+//         // to change the lesson metadata
+//         // ---------------------------------------------------------
+
+//         // const g2_lessons = grade3.Grade3.chapters[i].lessons;
+//         // for (var u = 0; u < g2_lessons.length; u++) {
+//         //     const data = {
+//         //         title: g2_lessons[u].title,
+//         //         thumbnail: g2_lessons[u].thumbnail,
+//         //         backgroundColor: g2_lessons[u].backgroundColor,
+//         //         navigation: "Lesson".concat((u + 1).toString())
+//         //     };
+//         //     console.log("CH: ", g2_chapters[i].navigation, " LS: ", g2_lessons[u].navigation);
+//         //     await db.collection("Grade3").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("English").update(data)
+//         //         .then(() => {
+//         //             console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
+//         //         })
+//         //         .catch((error) => {
+//         //             // The document probably doesn't exist.
+//         //             console.error("Error updating document: ", error);
+//         //         });
+//         // }
+//     }
+// }
+
+export { getGradeData, createImageMap, getLessonsData, postData, getCacheObject, setCache, postBoilerplate };

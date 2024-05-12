@@ -189,12 +189,6 @@ const LoginScreenPhone = () => {
             </TitleText>
           </Button> */}
 
-          {/* <Button onPress={changeData}>
-            <TitleText color="secondary" size="body">
-              Change Data
-            </TitleText>
-          </Button> */}
-
           {/*<Button onPress={() => postBoilerplate("GradeX", "ChapterX")}>
             <TitleText color="secondary" size="body">
               Post Boilerplate
