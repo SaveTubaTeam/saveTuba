@@ -17,6 +17,7 @@ import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
+//in HomeView, we render the HomeScreen's background and each Grade's circular TouchableOpacity
 function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
@@ -30,13 +31,13 @@ function HomeView() {
         <TouchableOpacity
           style={style.roundButton1}
           onPress={() => {
-            navigation.push("ChaptersHandler", { level: 2 }); //route.params sent into ChaptersHandler is defined here
+            navigation.push("ChaptersHandler", { grade: "Grade2" }); //route.params sent into ChaptersHandler is defined here
           }}
         >
           <Text style={style.baseText}>2</Text>
         </TouchableOpacity>
 
-        {/* <Image //removing lock icon from Grade 2
+        {/* <Image //removing lock icon from Grade 3
           style={{
             position: "absolute",
             right: 20,
@@ -49,12 +50,12 @@ function HomeView() {
         />  */}
         <TouchableOpacity
           style={style.roundButton2}
-          onPress={() => navigation.push("ChaptersHandler", { level: 3 })} //route.params sent into ChaptersHandler is defined here
+          onPress={() => navigation.push("ChaptersHandler", { grade: "Grade3" })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>3</Text>
         </TouchableOpacity>
 
-        <Image
+        {/* <Image //removing lock from grade 4
           style={{
             position: "absolute",
             left: 100,
@@ -64,10 +65,10 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        />
+        /> */}
         <TouchableOpacity
           style={style.roundButton1}
-          //onPress={() => navigation.push("ChaptersHandler", { level: 4 })} //route.params sent into ChaptersHandler is defined here
+          onPress={() => navigation.push("ChaptersHandler", { grade: "Grade4" })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
@@ -85,7 +86,7 @@ function HomeView() {
         />
         <TouchableOpacity
           style={style.roundButton2}
-          //onPress={() => navigation.push("ChaptersHandler", { level: 5 })} //route.params sent into ChaptersHandler is defined here
+          //onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>
@@ -121,7 +122,7 @@ const HomeScreen = () => {
         options={{
           headerShown: false,
         }}
-        initialParams={{ level: 2 }}
+        initialParams={{ grade: "Grade2" }}
       />
     </Stack.Navigator>
   );
@@ -158,10 +159,5 @@ const style = StyleSheet.create({
 const ImageBg = styled.ImageBackground`
   height: 100%;
 `;
-
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default HomeScreen;

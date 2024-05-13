@@ -12,13 +12,10 @@ import en_grade4 from "../Data/en_grade4.json"
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> MasteryAndMinigames)
-// The reason this is important is because when you query the DB you will only get one level at a time. So when I pull the Grade data I am essentially just
-// getting a pointer that will take me to the next level. That is why there are so many functions in this file.
-
-// @param grade **This is just the grade that you are querying for
-// @return chapterList **This will return the list of Chapters in the Grade, but not the data held by the chapters
+// @param grade a string, e.g. 'Grade2', which is the grade that you are querying for
+// @return chapterList **This will return an array of Chapters in the Grade, but NOT the data held by the chapters. This data is used to render each card in 'ChaptersComponent'
 async function getGradeData(grade) {
-    console.log(`\n\tNow in ${grade} Chapters`);
+    console.log(`\n\tgetGradeData() called. Now in ${grade} Chapters`);
 
     const result = await getCacheObject(grade).then((result) => {
         //console.log("Result: ", result);
@@ -32,10 +29,9 @@ async function getGradeData(grade) {
         return result;
     } else {*/
         console.log("Pulling grades from DB");
-        // Creating the list of chapters
-        const chapterList = [];
-        // Pulling the grade data and storing it to the above list
-        await db.collection(grade).get()
+        let chapterList = []; // Creating the list of chapters
+
+        await db.collection(grade).get() // Pulling the grade data and storing it to the above list
             .then((snapshot) => {
                 snapshot.forEach((doc) => { // moving through the snapshot objects individually
                     chapterList.push(doc.data()); // Pushing new object onto the array
@@ -43,6 +39,7 @@ async function getGradeData(grade) {
             }).catch((error) => {
                 console.log("Error: ", error);
             });
+        
         console.log("chapterList array:", chapterList); //logging chapterList array
         await setCache(grade, chapterList);
         //console.log(getCacheObject("grades")); //logging cache under key "grades"
@@ -50,21 +47,16 @@ async function getGradeData(grade) {
     //}
 }
 
-// getLessonsData() will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one 
-// function and copy/paste the code for formatting the objects in each language. This could be refactored to look neater pretty easily.
+// getLessonsData() will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one function.
 
-// @param grade **Specifies the grade 
-// @param chpt **Specifies the chapter
-// @param numLessons **This made it easier to query from the DB as there were quite a few issues with pulling dynamically. 
-//                   Plus when you pull the Chapter data I have an attribute attached to the metadata of each Grade that has the number of lessons in the Grade, as that is static
-// @param language **currently always set to "English"
-// @return lessons **This is just a list of the JSON formatted lessons 
-async function getLessonsData(grade, chpt, numLessons, language) {
-    grade = "Grade".concat(grade.toString());
-    chpt = "Chapter".concat(chpt.toString());
-    console.log(`\n\tNow in ${grade} ${chpt} Lessons\n  lang:`, language);
+// @param grade a string e.g. 'Grade2' the grade
+// @param chpt a string e.g. 'Chapter1' which specifies the chapter
+// @param languageCode **currently always set to "en"
+// @return lessonsList **This is just a list of the JSON formatted lessons 
+async function getLessonsData(grade, chpt, languageCode) {
+    console.log(`\n\tgetLessonsData() called. Now in ${grade} ${chpt} Lessons\n\t\tLANGUAGE_CODE:`, languageCode);
 
-    const result = await getCacheObject(`${grade}-${chpt}-${language}`).then((result) => {
+    const result = await getCacheObject(`${grade}-${chpt}-${languageCode}`).then((result) => {
         console.log("Result: ", result);
         return result;
     }).catch((error) => {
@@ -76,64 +68,55 @@ async function getLessonsData(grade, chpt, numLessons, language) {
         return result;
     } else {*/
         console.log("Pulling lessons from DB");
-        // Use a map to more easily access correct minigames
-        var lessons = [];
+        let lessonsList = [];
 
-        //iterating through lessons
-        for (var i = 1; i <= numLessons; i++) {
-            var lessonObject = new Map(); // may need to move back up
-            // const minigameList = new Map(); // Tried map and did not work due to the FlatList loading the minigame components
-            const minigameList = [];
-            const lessonNum = "Lesson".concat(i.toString());
+        let i = 1;
+        while (i<100) { //safeguarding against infinite loops
+            try {
+                let lessonReference = db.collection(grade).doc(chpt).collection(`Lesson${i}`).doc(languageCode);
+                let lessonSnapshot = await lessonReference.get()
+                if (!lessonSnapshot.exists) { break; }// Break the loop if the document doesn't exist
+                
+                let lessonObject = { //initializing lessonObject
+                    backgroundColor: "",
+                    navigation: "",
+                    thumbnail: "",
+                    title: "",
+                    masteryAndMinigames: []
+                };
 
-            // This will pull data from the specified language in the DB.
-            let docName;
-            if (language === "en") { //English
-                 docName = "English";
-            } else if(language == "ru") {
-                docName = "Russian";
-            } else if(language =="kk") {
-                docName = "Kazakh";
+                await lessonReference.get().then((doc) => { //setting lesson metadata
+                    lessonObject.backgroundColor = doc.data().backgroundColor;
+                    lessonObject.navigation =  doc.data().navigation;
+                    lessonObject.thumbnail = doc.data().thumbnail;
+                    lessonObject.title = doc.data().title;
+                }).catch((error) => {
+                    console.log("Error in getLessonsData():", error);
+                });
+
+                // now getting masteryAndMinigames array
+                let masteryAndMinigamesList = []; 
+                await lessonReference.collection("masteryAndMinigames").get().then((snapshot) => {
+                    snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                        masteryAndMinigamesList.push(doc.data());
+                    });
+                    lessonObject.masteryAndMinigames = masteryAndMinigamesList;
+                }).catch((error) => {
+                    console.log("Error in getLessonsData():", error);
+                });
+
+                lessonsList.push(lessonObject);
+                i++;
+
+            } catch (error) {
+                console.log("ERROR:", error);
+                break;
             }
-            // pulling the metadata
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).get().then((doc) => {
-                // moving through the snapshot objects individually
-                lessonObject.set("backgroundColor", doc.data().backgroundColor);
-                lessonObject.set("navigation", doc.data().navigation);
-                lessonObject.set("thumbnail", doc.data().thumbnail);
-                lessonObject.set("title", doc.data().title);
+        }
 
-            }).catch((error) => {
-                console.log("Error in Database.js metadata: ", error);
-            });
-
-            // pulling the minigames
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("minigames").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    minigameList.push(doc.data());
-
-                });
-                lessonObject.set("minigames", minigameList);
-            }).catch((error) => {
-                console.log("Error in Database.js minigames: ", error);
-            });
-
-            //pulling the mastery 
-            await db.collection(grade).doc(chpt).collection(lessonNum).doc(docName).collection("mastery").get().then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    lessonObject.set(doc.id, doc.data());
-
-                });
-            }).catch((error) => {
-                console.log("Error in Database.js mastery: ", error);
-            });
-            lessons.push(lessonObject);
-        }//end of lessons iteration
-
-        console.log("Lessons: ", lessons); //logging lessons array
-        await setCache(`${grade}-${chpt}-${language}`, lessons); //cache key looks like "Grade1-Chapter3"
-        //console.log(getCacheObject("lessons")); //see lessons in cache
-        return lessons;
+        console.log("Lessons: ", lessonsList); //logging lessons array
+        await setCache(`${grade}-${chpt}-${languageCode}`, lessonsList); //cache key looks like "Grade1-Chapter3-en"
+        return lessonsList;
     //}
 }
 
@@ -194,7 +177,7 @@ async function createImageMapHelper(folder, pathList) {
 }
 
 // The following three variables MUST be specified for postData()
-const GRADE_NAME = "Grade4"; 
+const GRADE_NAME = "placeholder"; 
 const LANGUAGE_CODE = "en" 
 const CHAPTERS = en_grade4.chapters; //needs to be specified from import
 
@@ -266,7 +249,7 @@ const postLessonData = async(lesson, chapterReference) => {
     })
 
     console.log("\t\tmasteryAndMinigames:");
-    lesson.content.map((element) => { console.log(`\t\t\t${element}`) })
+    lesson.content.forEach((element) => { console.log(`\t\t\t${element}`); })
 }
 
 //@param currentObject the current mastery or minigame object
@@ -278,6 +261,34 @@ const postMasteryAndMinigames = async(currentObject, lessonLanguageReference) =>
         await masteryAndMinigamesReference.set(currentObject);
     } catch(error) {
         console.error("postMasteryAndMinigames() ERROR:", error);
+    }
+}
+//end of postData() functions
+
+
+async function getCacheObject(key) {
+    // console.log("in getCacheObj");
+    try {
+        const jsonValue = await AsyncStorage.getItem(key);
+        console.log(`getCacheObject: getting "${key}" from cache`);
+        console.log("all keys:", await AsyncStorage.getAllKeys());
+        return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+        console.log("Error in getCacheObj: ", e);
+        return null;
+    }
+}
+
+async function setCache(key, value) {
+    // console.log("in setCache");
+    try {
+        const jsonValue = JSON.stringify(value);
+        //console.log("Setting Cache --> Value: ", jsonValue, " Key: ", key);
+        await AsyncStorage.setItem(key, jsonValue);
+        console.log(`setCache: "${key}" set to value of "${value}"`);
+    } catch (e) {
+        console.log("Error with storeData: ", e);
+        // saving error
     }
 }
 
@@ -349,85 +360,5 @@ const postMasteryAndMinigames = async(currentObject, lessonLanguageReference) =>
 
         } //end of lesson number loop
     }//end of postBoilerplate
-
-async function getCacheObject(key) {
-    // console.log("in getCacheObj");
-    try {
-        const jsonValue = await AsyncStorage.getItem(key);
-        console.log(`getCacheObject: getting "${key}" from cache`);
-        console.log("all keys:", await AsyncStorage.getAllKeys());
-        return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch (e) {
-        console.log("Error in getCacheObj: ", e);
-        return null;
-    }
-}
-
-async function setCache(key, value) {
-    // console.log("in setCache");
-    try {
-        const jsonValue = JSON.stringify(value);
-        //console.log("Setting Cache --> Value: ", jsonValue, " Key: ", key);
-        await AsyncStorage.setItem(key, jsonValue);
-        console.log(`setCache: "${key}" set to value of "${value}"`);
-    } catch (e) {
-        console.log("Error with storeData: ", e);
-        // saving error
-    }
-}
-
-
-// // This is meant to alter the metadata or add pieces of metadata for large sets of similarly formatted data at a single time. It is split into two parts, one for chapters and one for lessons. 
-// async function changeData() {
-//     const g2_chapters = grade2.Grade2.chapters;
-//     for (var i = 0; i < g2_chapters.length; i++) {
-
-//         // ---------------------------------------------------------
-//         // to change the chapter metadata
-//         // ---------------------------------------------------------
-//         const g2_lessons = grade2.Grade2.chapters[i].lessons;
-//         const data = {
-//             backgroundImage: g2_chapters[i].backgroundImage,
-//             colorOne: g2_chapters[i].colorOne,
-//             colorTwo: g2_chapters[i].colorTwo,
-//             icon: g2_chapters[i].icon,
-//             name: g2_chapters[i].name,
-//             navigation: "Chapter".concat((i + 1).toString()),
-//             title: g2_chapters[i].title,
-//             numLessons: g2_lessons.length
-//         };
-//         await db.collection("Grade2").doc(g2_chapters[i].navigation).set(data)
-//             .then(() => {
-//                 console.log("Chapter " + (i + 1) + " Lesson " + (i + 1) + "  successfully updated!");
-//             })
-//             .catch((error) => {
-//                 // The document probably doesn't exist.
-//                 console.error("Error updating document: ", error);
-//             });
-
-//         // ---------------------------------------------------------
-//         // to change the lesson metadata
-//         // ---------------------------------------------------------
-
-//         // const g2_lessons = grade3.Grade3.chapters[i].lessons;
-//         // for (var u = 0; u < g2_lessons.length; u++) {
-//         //     const data = {
-//         //         title: g2_lessons[u].title,
-//         //         thumbnail: g2_lessons[u].thumbnail,
-//         //         backgroundColor: g2_lessons[u].backgroundColor,
-//         //         navigation: "Lesson".concat((u + 1).toString())
-//         //     };
-//         //     console.log("CH: ", g2_chapters[i].navigation, " LS: ", g2_lessons[u].navigation);
-//         //     await db.collection("Grade3").doc(g2_chapters[i].navigation).collection(g2_lessons[u].navigation).doc("English").update(data)
-//         //         .then(() => {
-//         //             console.log("Chapter " + (i + 1) + " Lesson " + (u + 1) + "  successfully updated!");
-//         //         })
-//         //         .catch((error) => {
-//         //             // The document probably doesn't exist.
-//         //             console.error("Error updating document: ", error);
-//         //         });
-//         // }
-//     }
-// }
 
 export { getGradeData, createImageMap, getLessonsData, postData, getCacheObject, setCache, postBoilerplate };

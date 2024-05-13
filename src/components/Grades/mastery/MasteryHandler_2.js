@@ -55,11 +55,7 @@ const SubmitButton = styled(Button)`
 `;
 
 //TODO: need to add ability to input file, also need to check if user has actually submitted anything. Can copy SnapshotHandler modal for that.
-const MasteryHandler2 = ({
-  data,
-  imageMap,
-  backgroundImage
-}) => {
+const MasteryHandler2 = ({ objectData, imageMap }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
@@ -95,9 +91,9 @@ const MasteryHandler2 = ({
       >
         <FlatList // The flatlist used to load minigames and their data.
           data={
-            data.cards &&
+            objectData.cards &&
             Object.values(
-              data.cards
+              objectData.cards
             )
           }
           style={{ width: "90%" }}
@@ -110,7 +106,7 @@ const MasteryHandler2 = ({
           ListFooterComponentStyle={{ width: "100%", alignItems: "center" }}
           ListFooterComponent={
             <InputContainer>
-              <TitleText size="subtitle">{data.prompt}</TitleText>
+              <TitleText size="subtitle">{objectData.prompt}</TitleText>
               <Input
                 placeholder={t("common:enteryouranswer")}
                 placeholderTextColor={"#748816"}

@@ -68,76 +68,17 @@ const Item = styled.TouchableOpacity`
 `;
 
 //ENTRY POINT
-const ReorderHandler = ({ info }) => {
-  //console.log("Data In: ", info.data);
-  info.data.sort(function (a, b) {return Math.random() - 0.5;}); //shuffling data (this shuffle happens once upon initial render) https://stackoverflow.com/questions/3718282/javascript-shuffling-objects-inside-an-object-randomize
+//@param objectData the reorder object passed in from IndividualLessonHandler
+const ReorderHandler = ({ objectData }) => {
+  //console.log("Data In: ", objectData);
+  const originalArray = objectData.data;
+  objectData.data.sort(function (a, b) {return Math.random() - 0.5;}); //shuffling data (this shuffle happens once upon initial render)
 
-  const [data, setData] = useState(info.data);
+  const [data, setData] = useState(objectData.data);
   const { t } = useTranslation();
-  const [visible, setVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [score, setScore] = useState(0);
   const navigation = useNavigation();
-
-  //Modko is shorthand for ModalComponent. Here we render the modal upon minigame completion via "visible" state
-  const Modko = () => {
-    return (
-      <Modal transparent animationType="slide" visible={visible}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <ModalContainer>
-            <View>
-              {/* marked for translation */}
-              <BodyText size="subtitle">
-                Score: {`${score}/${data.length}\n`}
-              </BodyText>
-            </View>
-
-            {/* button to return to menu */}
-            <TouchableOpacity
-              style={{
-                backgroundColor: "#748816",
-                borderRadius: 10,
-                marginTop: 10,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
-              onPress={() => {
-                setVisible(!visible);
-                setCompletionModalVisible(!completionModalVisible);
-              }}
-            >
-              {/* marked for translation */}
-              <BodyText size="subtitle" color="secondary">
-                Return to Lessons
-              </BodyText>
-            </TouchableOpacity>
-
-            {/* button to try again */}
-            <TouchableOpacity
-              style={{
-                backgroundColor: "#748816",
-                borderRadius: 10,
-                marginTop: 10,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
-              onPress={() => {
-                setVisible(!visible);
-              }}
-            >
-              {/* marked for translation */}
-              <BodyText size="subtitle" color="secondary">
-                Try Again
-              </BodyText>
-            </TouchableOpacity>
-
-          </ModalContainer>
-        </View>
-      </Modal>
-    );
-  }; //end of Modko
 
   //@param item the item to be rendered. renderItem() is called iteratively in the DraggableFlatList
   //@param drag triggers drag animation upon item press. please see DraggableFlatList documentation
@@ -147,6 +88,7 @@ const ReorderHandler = ({ info }) => {
       <>
         <ScaleDecorator>
         <Item
+          key={item.text}
           activeOpacity={1}
           style={{ backgroundColor: isActive ? item.active : item.dormant }}
           onPressIn={drag}
@@ -174,14 +116,14 @@ const ReorderHandler = ({ info }) => {
           style={{ width: "90%" }}
           onDragEnd={({ data }) => {
             setData(data);
-            console.log("\nCurrent List:" + data.map((item) => `\n${item.index} ${item.text}`)); //logging current order of list
+            console.log("\nCurrent List:" + data.map((item) => `\n${item.text}`)); //logging current order of list
           }}
-          keyExtractor={(item) => item.index + 1} //fixed bug where any key set to 0 would be undraggable.
+          keyExtractor={(item) => item.text} //fixed bug where any key set to 0 would be undraggable.
           renderItem={renderItem}
           ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
           ListHeaderComponent={
             <Prompt>
-              <TitleText size="subtitle">{info.prompt}</TitleText>
+              <TitleText size="subtitle">{objectData.prompt}</TitleText>
               <Spacer size="medium" />
 
               {/* marked for translation */}
@@ -197,16 +139,13 @@ const ReorderHandler = ({ info }) => {
             <SubmitButton onPress={() => {
                 setScore(0);//resetting score
                 //iterating through list to check for correct order and update score.
-                console.log("\n\tcurrent order:")
                 for(let i=0; i<Object.keys(data).length; i++) {
-                  console.log("Index:", data[i].index, "Iteration i:", i);
-                  if(data[i].index == i) {
-                    setScore((prevScore) => prevScore + 1);
-                  }
+                  console.log(`\nUser: ${data[i].text}\nCorrect: ${originalArray[i].text}`)
+                  if(data[i].text === originalArray[i].text) { setScore((prevScore) => prevScore + 1); }
                 }
 
                 //setting visibility of modal to true;
-                setVisible(!visible);
+                setCompletionModalVisible(!completionModalVisible);
                 }}>
               <BodyText color="secondary" size="subtitle">
                 {t("common:submit")}
@@ -215,8 +154,6 @@ const ReorderHandler = ({ info }) => {
           }
         />
 
-        {/* modals */}
-        <Modko visible={false} />
         {/* marked for translation */}
         <CompletionModal visible={completionModalVisible} score={score} 
         prompt={"Good job completing this reorder minigame!\nGo back to the lesson to continue learning."}>

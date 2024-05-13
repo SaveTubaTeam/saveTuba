@@ -30,15 +30,13 @@ const ModalContainer = styled.View`
   border: 2px solid #cce882;
 `;
 
-const ImagePrompt = ({ questions, imageMap }) => {
-  const [currentPrompt, setPrompt] = useState(0);
+//@param data is the OpenResponse object passed in from OpenResponseHandler (see bottom of file)
+const ImagePrompt = ({ data, imageMap }) => {
   //const [modalVisible, setModalVisible] = useState(false);
   const [value, setValue] = useState("");
   const [visible, setVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
-
-  console.log("QW:", questions);
 
   //modal popup for when the user doesn't type anything
   const Modko = () => {
@@ -85,8 +83,8 @@ const ImagePrompt = ({ questions, imageMap }) => {
       >
         <View
           style={{
-            width: "80%",
-            padding: 20,
+            width: "100%",
+            padding: 15,
             alignItems: "center",
             backgroundColor: "white",
             marginTop: 20,
@@ -103,32 +101,27 @@ const ImagePrompt = ({ questions, imageMap }) => {
             }}
           >
             <ImageBg
-              source={{uri: imageMap[questions.prompts[currentPrompt].image]}}
+              source={{uri: imageMap[data.image]}}
               resizeMode="cover"
             ></ImageBg>
           </View>
           <TitleText size="subtitle">
-            {questions.prompts[currentPrompt].text}
+            {data.prompt}
           </TitleText>
         </View>
 
         <View
           style={{
-            width: "90%",
+            width: "100%",
             backgroundColor: "white",
-            marginTop: 10,
             marginBottom: 10,
             height: 250,
-            borderRadius: 30,
-            width: "100%",
-            height: 240,
-            backgroundColor: "white",
             borderRadius: 30,
             flex: 1,
             padding: 10,
             paddingLeft: 20,
             paddingRight: 20,
-            marginTop: 20,
+            marginTop: 15,
             alignContent: "flex-start",
             alignItems: "flex-start",
           }}
@@ -142,7 +135,8 @@ const ImagePrompt = ({ questions, imageMap }) => {
               flexShrink: 1,
             }}
             onChangeText={setValue}
-            placeholder={questions.prompts[currentPrompt].placeholder}
+            /* marked for translation */
+            placeholder={"I think..."}
             placeholderTextColor={"#D5DBB9"}
             multiline={true}
             value={value}
@@ -160,11 +154,6 @@ const ImagePrompt = ({ questions, imageMap }) => {
                 setVisible(!visible)
               } else {
                 setCompletionModalVisible(!completionModalVisible);
-              }
-
-              setValue("");
-              if (currentPrompt < questions.numberOfPrompts - 1) {
-                setPrompt(currentPrompt + 1);
               }
             }}
           >
@@ -188,10 +177,8 @@ const ImagePrompt = ({ questions, imageMap }) => {
   );
 };
 
-const OpenResponseHandler = ({ questionSet, imageMap }) => {
-  // getLessonData();
-  // const navigation = useNavigation();
-  // console.log(navigation);
+//@param objectData is the OpenResponse object
+const OpenResponseHandler = ({ objectData, imageMap }) => {
   
   return (
     <View style={{ flex: 1 }}>
@@ -208,15 +195,11 @@ const OpenResponseHandler = ({ questionSet, imageMap }) => {
             width: "90%",
           }}
         >
-          <ImagePrompt questions={questionSet} imageMap={imageMap} />
+          <ImagePrompt data={objectData} imageMap={imageMap} />
         </View>
       </ImageBg>
     </View>
   );
 };
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default OpenResponseHandler;

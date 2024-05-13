@@ -14,11 +14,11 @@ import { BodyText } from "../../../body-text.component.js";
 import { Spacer } from "../../../spacer.component.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal.js";
 
-//@param data passed from IndividualLessonHandler
+//@param objectData passed from IndividualLessonHandler
 //@param imageMap
-const MemoryHandler = ({ data, imageMap }) => {
+const MemoryHandler = ({ objectData, imageMap }) => {
   const { t } = useTranslation();
-  const cardsArray = data.content;
+  const cardsArray = objectData.content;
 
   const [currentSelection, setCurrentSelection] = useState([]);
   const [successfullyMatchedPairs, setSuccessfullyMatchedPairs] = useState([]);
@@ -53,11 +53,11 @@ const MemoryHandler = ({ data, imageMap }) => {
 
       }
 
-      //all elements are locked for .5 seconds to prevent unwanted user interactions
+      //all elements are locked for .25 seconds to prevent unwanted user interactions
       const timer = setTimeout(() => {
         setCurrentSelection([]);
         setArrayIsLocked(false); //unlock after timeout
-      }, 500);
+      }, 250);
       return () => clearTimeout(timer);
     }
   }, [currentSelection]);
@@ -151,7 +151,7 @@ const MemoryHandler = ({ data, imageMap }) => {
 
       <View style={{ alignSelf: "center", width: "80%", position: "absolute", 
                      top: 25, backgroundColor: "#fff8e7", padding: 20, borderRadius: 20 }}>
-        <BodyText size="title">{data.description}</BodyText>
+        <BodyText size="title">{objectData.description}</BodyText>
         <Spacer size="medium" />
         {/* marked for translation */}
         <TitleText size="caption">Hint: Match images with words.</TitleText>

@@ -28,6 +28,8 @@ export default {
  /*  drawing: "Drawing",
   flashcards: "Flashcards", */
 
+  PLACEHOLDER: "Missing Translation",
+
   hello: "Hello",
 
   reminders: "Reminders",

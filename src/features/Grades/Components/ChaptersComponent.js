@@ -10,7 +10,6 @@ import { Header } from "../../../components/Grades/grades.styles";
 import { BodyText } from "../../../components/body-text.component";
 import { TitleText } from "../../../components/title-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
-// import { Spacer } from "../../../components/spacer.component";
 
 const Container = styled.View`
   flex: 1;
@@ -36,7 +35,10 @@ const Icon = styled.Image`
   top: -20px;
 `;
 
-//This component renders each chapter in a grade. gradeData is taken as a param from ChaptersHandler.js
+//This component is responsible for creating every chapter card in the selected Grade
+//It is then rendered via ChaptersHandler.js
+
+//@param gradeData is an array of chapters and their metadata. it is taken as a param from ChaptersHandler.js
 function ChaptersComponent({ gradeData, navigation, imageMap }) {
   const nav = useNavigation();
   const { t } = useTranslation();
@@ -65,10 +67,10 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
         >
           <View style={{ position: "absolute", left: 30, bottom: 30 }}>
             <BodyText align="left" size="mid" color="secondary">
-              {item.title}
+              {t(item.title)}
             </BodyText>
             <TitleText align="left" size="title" color="secondary">
-              {item.name}
+              {t(item.name)}
             </TitleText>
           </View>
         </LinearGradient>
@@ -96,10 +98,5 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
     </SafeArea>
   );
 }
-/* 
-// Boiler plate to connect redux/firebase to Lesson Component
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default ChaptersComponent;

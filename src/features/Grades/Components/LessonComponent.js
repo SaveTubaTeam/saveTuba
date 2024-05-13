@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   FlatList,
@@ -72,29 +72,33 @@ const ProgContainer = styled.View`
   justify-content: center;
 `;
 
-function LessonComponent({
-  imageMap,
-  lessonData,
-  selectedChapter,
-  selectedLesson,
-  navigation,
-}) {
+//This component formats and renders all of the lesson's contents
+
+//@param lessonData the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
+function LessonComponent({ imageMap, lessonData, navigation }) {
+
+  const minigames = [];
+  const mastery = [];
+  //extracting mastery and minigame objects
+  console.log("LessonComponent:", lessonData.masteryAndMinigames);
+  lessonData.masteryAndMinigames.forEach((object) => {
+    object.navigation.includes("Mastery") ? mastery.push(object) : minigames.push(object);
+  })
 
   const nav = useNavigation();
   const { t } = useTranslation();
 
-  // console.log("IT: ", lessonData);
   const renderItem = ({ item }) => {
     return (
       <>
         <Adventure
           onPress={() => {
-            nav.navigate(item["navigation"]);
+            nav.navigate(item.navigation);
           }}
         >
           <View
             style={{
-              backgroundColor: item["backgroundColor"],
+              backgroundColor: item.backgroundColor,
               height: 150,
               borderRadius: 20,
               justifyContent: "center",
@@ -108,11 +112,10 @@ function LessonComponent({
                 width: undefined,
                 marginBottom: 5,
               }}
-              source={{ uri: imageMap[item["icon"]] }}
+              source={{ uri: imageMap[item.icon] }}
             ></Image>
             <TitleText size="subtitle" color="secondary">
-              {/* marked for translation, should have useTranslation */}
-              {item["navigation"]} 
+              {t(item.title)} 
             </TitleText>
           </View>
         </Adventure>
@@ -145,36 +148,49 @@ function LessonComponent({
           back={"Chapter"}
           navigation={navigation}
         />
-        <Tower
-          source={
-            { uri: imageMap[lessonData.get("thumbnail")] }
+
+        <FlatList // The flatlist used to load the lesson's content
+          ListHeaderComponent={
+            <View style={{
+              height: "100%",
+              width: "100%",
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center"
+            }}>
+              <Tower 
+              source={{ uri: imageMap[lessonData.thumbnail] }}
+              style={{
+                position: "absolute",
+                top: 10,
+                zIndex: 100,
+                height: 80,
+                width: 80,
+                borderRadius: 40
+              }}
+              />
+              <Head>
+                <TitleText size="title">
+                  {
+                    lessonData.title
+                  }
+                </TitleText>
+                <Spacer size="large" />
+
+                <Progress />
+              </Head>
+            </View>
           }
-        />
-        <Head>
-          <TitleText size="title">
-            {
-              lessonData.get("title")
-            }
-          </TitleText>
-          <Spacer size="large" />
-
-          <Progress />
-        </Head>
-
-        <FlatList // The flatlist used to load minigames and their data.
-          // Why are both needed in this Flatlist
+          
           data={
-            // throwing weird undefined is not a function error
-            // lessonDataCards[0]
-            lessonData.get("minigames")
-            // && Object.values(lessonData.get("minigames"))
+            minigames
           }
           numColumns={2}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
           renderItem={renderItem}
           contentContainerStyle={{
-            width: "85%",
+            width: "90%",
             alignSelf: "center",
           }}
           style={{
@@ -187,7 +203,7 @@ function LessonComponent({
           }}
           ListFooterComponent={
 
-            <MasteryFlex lessonData={lessonData} selectedChapter={selectedChapter} selectedLesson={selectedLesson} navigation={navigation} />
+            <MasteryFlex masteryArray={mastery} navigation={navigation} />
 
           }
         />
@@ -195,10 +211,5 @@ function LessonComponent({
     </SafeArea>
   );
 }
-/* 
-// Boiler plate to connect redux/firebase to Lesson Component
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default LessonComponent;

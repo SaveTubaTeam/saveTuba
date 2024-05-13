@@ -39,25 +39,28 @@ const CurrentLesson = styled.TouchableOpacity`
   margin-bottom: 10px;
 `;
 
-function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
+//This component renders every lesson card in the current chapter.
+
+//@param lessonsData an array of objects returned by getLessonsData() in LessonsHandler
+//       Each object within lessonsData is a lesson and all of that lesson's data (including mastery and minigame objects)
+function LessonsComponent({ lessonsData, navigation }) {
   const imageMap = useSelector(state => state.imageMap.imageData);
   const nav = useNavigation();
   const { t } = useTranslation();
   // console.log("LD: ", lessonsData);
 
   const renderItem = ({ item }) => {
-    return item.get("title") ==
-      item.get("title") ? (
+    return (
       <CurrentLesson
         onPress={() => {
-          nav.navigate(item.get("navigation"));
+          nav.navigate(item.navigation);
         }}
       >
         <View
           style={{
             flexDirection: "row",
             borderRadius: 20,
-            backgroundColor: item.get("backgroundColor"),
+            backgroundColor: item.backgroundColor,
           }}
         >
           <View
@@ -69,7 +72,7 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
             }}
           >
             <TitleText align="left" size="subtitle" color="secondary">
-              {item.get("title")}
+              {item.title}
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="secondary">
@@ -91,7 +94,7 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
                 flexDirection: "row",
               }}
               onPress={() => {
-                nav.navigate(item.get("navigation"));
+                nav.navigate(item.navigation);
               }}
             >
               <Ionicons
@@ -116,42 +119,11 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
               width: undefined,
               aspectRatio: 1,
             }}
-            source={{uri: imageMap[item.get("thumbnail")]}}
+            source={{uri: imageMap[item.thumbnail]}}
           />
         </View>
       </CurrentLesson>
-    ) : (
-      <Lesson
-        onPress={() => {
-          nav.navigate(item.get("navigation"));
-        }}
-      >
-        <View style={{ flexDirection: "row" }}>
-          <Image
-            style={{
-              borderTopLeftRadius: 20,
-              borderBottomLeftRadius: 20,
-              height: 100,
-              width: 100,
-            }}
-            source={{uri: imageMap[item.get("thumbnail")]}}
-          />
-          <View
-            style={{
-              width: "72%",
-              padding: 10,
-            }}
-          >
-            <TitleText align="left" size="mid" color="primary">
-              {item.get("title")}
-            </TitleText>
-            <Spacer size="small" />
-            <BodyText align="left">5/5</BodyText>
-          </View>
-        </View>
-      </Lesson>
-    );
-  };
+  )};
 
   return (
     <SafeArea>
@@ -172,10 +144,4 @@ function LessonsComponent({ lessonsData, selectedChapter, navigation }) {
     </SafeArea>
   );
 }
-/* 
-// Boiler plate to connect redux/firebase to Lesson Component
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
-
 export default LessonsComponent;

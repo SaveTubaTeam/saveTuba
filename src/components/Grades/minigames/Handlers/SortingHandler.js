@@ -197,11 +197,12 @@ const Start = ({ data, imageMap }) => {
 };
 
 //entry point
-const SortingHandler = ({ data, navigation, imageMap }) => {
+//@param objectData the sorting object passed in from IndividualLessonHandler
+const SortingHandler = ({ objectData, navigation, imageMap }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={data} imageMap={imageMap} />}
+        {() => <Start data={objectData} imageMap={imageMap} />}
       </Stack.Screen>
     </Stack.Navigator>
   );

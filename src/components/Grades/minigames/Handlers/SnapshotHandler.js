@@ -51,10 +51,8 @@ const SubmitButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
-const SnapshotHandler = ({
-  data,
-  imageMap
-}) => {
+//@param objectData the snapshot object passed in from IndividualLessonHandler
+const SnapshotHandler = ({ objectData, imageMap }) => {
   const { t } = useTranslation();
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
@@ -64,7 +62,7 @@ const SnapshotHandler = ({
       <Container>
         <ImageBg source={{uri: imageMap["assets/lessonbg2.png"]}}>
           <Prompt>
-            <TitleText size="subtitle">{data.prompt}</TitleText>
+            <TitleText size="subtitle">{objectData.prompt}</TitleText>
           </Prompt>
           <Prompt>
 

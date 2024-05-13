@@ -14,26 +14,38 @@ import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler"; //works
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
-
 const Stack = createNativeStackNavigator();
 
-function IndividualLessonHandler({
-  lessonData,
-  selectedChapter,
-  selectedLesson,
-}) {
+const SCREENS_CONFIG = [
+  { name: "Memory", title: "memory", Component: MemoryHandler },
+  { name: "Sorting", title: "sorting", Component: SortingHandler },
+  { name: "Quiz", title: "quiz", Component: QuizHandler },
+  { name: "Image Boom", title: "imageboom", Component: OpenResponseHandler },
+  { name: "Image Boom 2", title: "imageboom", Component: OpenResponseHandler },
+  { name: "Snapshot", title: "snapshot", Component: SnapshotHandler },
+  { name: "Snapshot 2", title: "snapshot", Component: SnapshotHandler },
+  { name: "Reorder", title: "reorder", Component: ReorderHandler },
+  { name: "Mastery", title: "mastery", Component: MasteryHandler },
+  { name: "Mastery 2", title: "mastery", Component: MasteryHandler },
+];
+
+//The below handler is responsible for rendering the selected lesson and all of its contents
+//via the LessonComponent.
+
+//@param lessonData is a lesson object taken from the lessonsData array and passed in as a prop
+function IndividualLessonHandler({ lessonData }) {
   const navigation = useNavigation();
   const { t } = useTranslation();
   const imageMap = useSelector(state => state.imageMap.imageData);
-  console.log("Lesson Data: ",lessonData);
-  //iterating through lessonData array to set a map of the lesson minigames
-  let lessonCompMap = new Map();
-  console.log(`\nChapter${selectedChapter} ${lessonData.get("navigation")} Minigames:`);
-  for (let minigame in lessonData.get("minigames")) {
-    lessonCompMap.set(lessonData.get("minigames")[minigame]["navigation"], lessonData.get("minigames")[minigame]);
+  console.log("Within IndividualLessonHandler Lesson Data:", lessonData);
 
-    console.log(lessonData.get("minigames")[minigame]["navigation"]);
-  }
+  //iterating through lessonData array to set a map of every minigame and mastery object for easy access
+  let lessonDataMap = new Map();
+  console.log(`\n\t${lessonData.navigation} masteryAndMinigames:`);
+  lessonData.masteryAndMinigames.forEach((currentObject) => {
+    lessonDataMap.set(currentObject.navigation, currentObject);
+    console.log(currentObject.navigation);
+  })
 
   return (
     <NavigationContainer independent>
@@ -48,239 +60,34 @@ function IndividualLessonHandler({
             <LessonComponent
               imageMap={imageMap}
               lessonData={lessonData}
-              selectedChapter={selectedChapter}
-              selectedLesson={selectedLesson}
               navigation={navigation}
             />
           )}
         </Stack.Screen>
 
-        <Stack.Screen
-          name="Memory"
-          options={{
-            title: t("common:memory"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <MemoryHandler
-              data={lessonCompMap.get("Memory")}
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="Sorting"
-          options={{
-            title: t("common:sorting"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <SortingHandler
-              data={
-                lessonCompMap.get("Sorting").content
-              }
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="QuizScreen"
-          options={{
-            title: t("common:quiz"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <QuizHandler
-              data={
-                lessonCompMap.get("QuizScreen")
-              }
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="Image Boom"
-          options={{
-            title: t("common:openresponse"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <OpenResponseHandler
-              questionSet={
-                lessonCompMap.get("Image Boom").data
-              }
-              navigation={navigation}
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="Image Boom 2"
-          options={{
-            title: t("common:openresponse"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-
-
-            <OpenResponseHandler
-              questionSet={
-                lessonCompMap.get("Image Boom 2").data
-              }
-              navigation={navigation}
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-
-        <Stack.Screen
-          name="Snapshot"
-          options={{
-            title: t("common:snapshot"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <SnapshotHandler
-              data={
-                lessonCompMap.get("Snapshot")
-              }
-              lessonData={lessonData}
-              navigation={navigation}
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="Reorder"
-          options={{
-            title: t("common:reorder"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <ReorderHandler
-              info={
-                lessonCompMap.get("Reorder")
-              }
-              navigation={navigation}
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="Mastery"
-          options={{
-            title: t("common:mastery"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {() => (
-            <MasteryHandler
-              data={
-                lessonData.get("mastery")
-              }
-              navigation={navigation}
-              imageMap={imageMap}
-            />
-          )}
-        </Stack.Screen>
-
-        <Stack.Screen
-          name="Mastery 2"
-          options={{
-            title: t("common:mastery"),
-            headerTintColor: "white",
-            headerBackTitleVisible: false,
-            headerStyle: {
-              backgroundColor: "#C6DC3B",
-            },
-            headerTitleStyle: {
-              fontFamily: "BalsamiqSans_400Regular",
-            },
-          }}
-        >
-          {
-
-            () => (
-
-              <MasteryHandler_2
-                data={
-                  lessonData.get("mastery_2")
-                }
+        {/* please refer to the SCREENS_CONFIG constant at the top of this file */}
+        {SCREENS_CONFIG.map(({ name, title, Component }) => (
+          <Stack.Screen
+            key={name}
+            name={name}
+            options={{
+              title: t(`common:${title}`),
+              headerTintColor: "white",
+              headerBackTitleVisible: false,
+              headerStyle: { backgroundColor: "#C6DC3B" },
+              headerTitleStyle: { fontFamily: "BalsamiqSans_400Regular" },
+            }}
+          >
+            {() => (
+              <Component
+                objectData={lessonDataMap.get(name)}
                 navigation={navigation}
                 imageMap={imageMap}
               />
             )}
-        </Stack.Screen>
+          </Stack.Screen>
+        ))}
+
       </Stack.Navigator>
     </NavigationContainer>
   );

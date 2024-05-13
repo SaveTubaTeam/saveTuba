@@ -147,18 +147,19 @@ const Start = ({ data, imageMap }) => {
       </Modal>
   )};
 
-  const renderAnswers = ({ item }) => {
+  const renderAnswers = ({ item, index }) => {
     return (
       <>
         <Category
+          key={index}
           onPress={() => {
             console.log("Answer Choices:", data.content[count].answers); {/* NOTE: plural between answer and answers is the difference between pulling the entire answers array or just the answer!*/}
             console.log("Correct Answer:", data.content[count].answer);
-            console.log("User Input:", item.text);
-            handleAnswer(item.text);
+            console.log("User Input:", item);
+            handleAnswer(item);
           }}
         >
-          <BodyText size="subtitle">{item.text}</BodyText>
+          <BodyText size="subtitle">{item}</BodyText>
         </Category>
       </>
     );
@@ -177,7 +178,7 @@ const Start = ({ data, imageMap }) => {
           <FlatList
             scrollEnabled={true}
             data={data.content[count].answers}
-            keyExtractor={(item) => item.text}
+            keyExtractor={(item) => item}
             renderItem={renderAnswers}
             style={{ display: "flex" }}
             contentContainerStyle={{
@@ -200,12 +201,13 @@ const Start = ({ data, imageMap }) => {
 };
 
 //Entry Point for logic.
-const QuizHandler = ({ data, addAchievement, imageMap }) => {
+//@param objectData the quiz object passed in from IndividualLessonHandler
+const QuizHandler = ({ objectData, imageMap }) => {
   // console.log("Handler ==> ", data);
   return ( //defining the stack
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={data} imageMap={imageMap} />}
+        {() => <Start data={objectData} imageMap={imageMap} />}
       </Stack.Screen>
     </Stack.Navigator>
   );

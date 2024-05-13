@@ -28,6 +28,8 @@ export default {
  /*  drawing: "Рисование",
   flashcards: "Карточкалар", */
 
+  PLACEHOLDER: "Missing Translation",
+
   hello: "привет",
 
   reminders: "Напоминания",
