@@ -40,17 +40,11 @@ function LessonsHandler({ gradeNumber, selectedChapter }) {
   useEffect(() => {
     console.log(`inside LessonsHandler.js: ${gradeNumber} | ${selectedChapter}`);
     getLessonsData(gradeNumber, selectedChapter, language).then(
-      (result) => {
-        //console.log("Result: ", result);
-        try {
-          setLessonsData(result);
-        } catch (error) {
-          console.log("Error pulling data: ", error);
-        }
-      }
-    ).catch((err) => {
-      console.log("Error in LessonsHandler.js: ", err);
-    });
+      (result) => { 
+        setLessonsData(result);
+      }).catch((err) => {
+        console.log("Error in LessonsHandler.js: ", err);
+      });
   }, []);
 
   //NOTE: ActivityIndicator component is a loading icon. https://reactnative.dev/docs/activityindicator

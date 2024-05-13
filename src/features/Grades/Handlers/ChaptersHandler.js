@@ -32,10 +32,9 @@ const ChaptersHandler = ({ route })  => { //add achievements
     getGradeData(grade).then(
       (gradeData) => {
         setGradeData(gradeData);
-      }
-    ).catch((err) => {
-      console.log("Error: ", err);
-    });
+      }).catch((err) => {
+        console.log("Error: ", err);
+      });
   }, []);
 
   //we return a loader while gradeData is fetched from the db
