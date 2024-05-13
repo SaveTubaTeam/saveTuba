@@ -25,8 +25,8 @@ const ChaptersHandler = ({ route })  => { //add achievements
   //grade is a string e.g. 'Grade2'
   const { grade } = route.params; // route param is defined and passed in by HomeScreen.js
   const navigation = useNavigation();
-
   const imageMap = useSelector(state => state.imageMap.imageData);
+  
   useEffect(() => {
     console.log(`${grade} route selected`);
     getGradeData(grade).then(

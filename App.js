@@ -3,7 +3,6 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import * as encoding from "text-encoding";
 import { LogBox } from "react-native";
-import setMap from "./src/features/Grades/Components/imagesComponent";
 
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
@@ -90,7 +89,6 @@ export default function App() {
       <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme}>
         <Provider store={store}>
-          {/* Put provider here */}
           <NavigationContainer>
             <Stack.Navigator>
               {/* <Stack.Screen
