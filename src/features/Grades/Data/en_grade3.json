@@ -10,7 +10,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: History of Scientific Discoveries",
+          "title": "1. History of Scientific Discoveries",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -58,15 +58,15 @@
                   "answers": [
                     "Gas",
                     "Water",
-                    "Coal",
-                    "All of the above"
+                    "Coal"
                   ],
-                  "answer": "All of the above"
+                  "answer": ""
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Walk around your house and find a notable scientific discovery. Take a picture of the object and list its functionality. Record any observations you find that stick out to you. Then, rate how sustainable it is. Come up with ideas to make it more sustainable.",
               "cards": []
             }
@@ -74,7 +74,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Sources of Information",
+          "title": "2. Sources of Information",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -123,6 +123,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Then, identify and list the advantages and disadvantages of this source of information. Rank this source and its information on a scale of 1(unreliable) to 10(completely reliable).",
               "cards": [
                 {
@@ -135,7 +136,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Planning and Conducting an Experiment",
+          "title": "3. Planning and Conducting an Experiment",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -247,24 +248,16 @@
               "prompt": "Put the following steps in order for conducting an experiment.",
               "data": [
                 {
-                  "text": "Determine the purpose of the study",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Determine the purpose of the study"
                 },
                 {
-                  "text": "Formulate a hypothesis",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Formulate a hypothesis"
                 },
                 {
-                  "text": "Find observations",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Find observations"
                 },
                 {
-                  "text": "Draw conclusions.",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Draw conclusions."
                 }
               ]
             },
@@ -328,6 +321,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 2: Live Nature",
               "cards": [
                 {
@@ -370,7 +364,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: How do Plant Leaves Work?",
+          "title": "1. How do Plant Leaves Work?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -441,6 +435,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How does the plant acquire its food? What are the factors in the plant cycle present? Start growing your own plant at home and track its growth daily and weekly.",
               "cards": [
                 {
@@ -453,7 +448,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: How do Plants Adapt to Living Conditions?",
+          "title": "2. How do Plants Adapt to Living Conditions?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -633,6 +628,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Explain how they’ve adapted to their living conditions and benefited from them.",
               "cards": [
                 {
@@ -645,7 +641,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Natural Plant Communities",
+          "title": "3. Natural Plant Communities",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -785,6 +781,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "There are both natural and artificial communities present in our habitat. Go outside and identify the natural and artificial communities present in your local area. What is similar between these two communities, what is different?",
               "cards": []
             }
@@ -792,7 +789,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: How Does a Person Influence the Life of Plants?",
+          "title": "4. How Does a Person Influence the Life of Plants?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -900,6 +897,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research plant communities in your neighborhood that have been directly affected by humans. Then, research plant communities near you that have been indirectly affected by humans. These impacts can be positive or negative. Visit one of these communities and record your observations.",
               "cards": [
                 {
@@ -914,6 +912,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research house plants that would do well in your environment and find one that would be easy to get. Identify and explain where you would put this in your house, and why it would do well there. Identify and explain how much sunlight it would get, and how often it would be watered. For an extra challenge, get this plant and actually take care of it, tracking its progress with pictures weekly.",
               "cards": []
             }
@@ -921,7 +920,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: Red Book of Plants",
+          "title": "5. Red Book of Plants",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -1059,6 +1058,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research a country that has an endangered plant that is not endangered in Kazakhstan. Why is it that Kazakhstan is able to have a healthy amount of this plant? Why is it endangered in the other country? Formulate some ideas on helping the other country get back to a healthy level for this plant.",
               "cards": [
                 {
@@ -1071,7 +1071,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: Vertebrates and Invertebrates Animals",
+          "title": "6. Vertebrates and Invertebrates Animals",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -1194,6 +1194,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "It’s time to go on a trip! Find and identify both vertebrates and invertebrates. Take pictures of their structures. Annotate the pictures and show us how they’ve sustained themselves using their anatomy.",
               "cards": [
                 {
@@ -1206,7 +1207,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: Animal Habitat",
+          "title": "7. Animal Habitat",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -1323,11 +1324,13 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "The community of living things and their habitats make up the ecosystem. There are many ecosystems nowadays that are in danger of dying out. Research an ecosystem in your area. Find out how humans have affected the ecosystem over time. What are some natural solutions we can apply to fix this?",
               "cards": []
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Here’s the challenge: spend one hour a week outside in an area near you that needs trash picked up. Ask your family and your friends to come with you and help! Keep a log for a month, tracking the time spent each week picking up trash. The more the better!",
               "cards": [
                 {
@@ -1340,7 +1343,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: What Relationship Animals Exist in Nature",
+          "title": "8. What Relationship Animals Exist in Nature",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -1445,6 +1448,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Although symbiosis is for animals, there are many naturally beneficial relationships in nature. Venture out into nature and identify beneficial relationships between plants and plants, humans and humans, or animals and animals. It doesn’t have to be a directly beneficial relationship but as long as they’re both receiving help from the other. Record your observations.",
               "cards": [
                 {
@@ -1457,7 +1461,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: What is the Relationship Between Plants and Animals?",
+          "title": "9. What is the Relationship Between Plants and Animals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -1547,6 +1551,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Go outside and identify plants that have a mutualistic relationship with each other. How are these relationships similar and different to those between animals?",
               "cards": [
                 {
@@ -1559,7 +1564,7 @@
         },
         {
           "navigation": "Lesson10",
-          "title": "10: How do Habitat Conditions Affect the Number of Animals?",
+          "title": "10. How do Habitat Conditions Affect the Number of Animals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -1616,6 +1621,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find the habitat of a popular animal near you. Identify the habitat conditions that make it either suitable or unsuitable for this animal. Now, think of sustainable ways to improve the habitat for this animal.",
               "cards": [
                 {
@@ -1628,7 +1634,7 @@
         },
         {
           "navigation": "Lesson11",
-          "title": "11: A Decrease in the Number of Animals",
+          "title": "11. A Decrease in the Number of Animals",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -1679,6 +1685,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Observe some of the habits of the people in your neighborhood that should be stopped in order to decrease harm to animal species. Write a letter to your local official addressing these issues.",
               "cards": [
                 {
@@ -1689,6 +1696,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Finally, look into projects and organizations trying to help the situation, how are they helping? How could you help support them?",
               "cards": [
                 {
@@ -1701,7 +1709,7 @@
         },
         {
           "navigation": "Lesson12",
-          "title": "12: I Am an Animal",
+          "title": "12. I Am an Animal",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -1758,6 +1766,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Explain and expand. What human adaptations do you think were the most innovative? Why?",
               "cards": [
                 {
@@ -1770,7 +1779,7 @@
         },
         {
           "navigation": "Lesson13",
-          "title": "13: Journey of an Apple Through the Body",
+          "title": "13. Journey of an Apple Through the Body",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -1839,6 +1848,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "What are your results? Do your results surprise you?",
               "cards": [
                 {
@@ -1851,7 +1861,7 @@
         },
         {
           "navigation": "Lesson14",
-          "title": "14: How Do We Breathe?",
+          "title": "14. How Do We Breathe?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -1918,6 +1928,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find a non-human living organism near you and research its respiration process. How does their breathing compare to your breathing?",
               "cards": [
                 {
@@ -1930,7 +1941,7 @@
         },
         {
           "navigation": "Lesson15",
-          "title": "15: Human circulatory system",
+          "title": "15. Human circulatory system",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -1987,6 +1998,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research a cold-blooded animal. Think about how this helps them in nature and why their adaptations/evolution led to this. How do they survive in their habitat with this in mind? Expand.",
               "cards": [
                 {
@@ -1999,7 +2011,7 @@
         },
         {
           "navigation": "Lesson16",
-          "title": "16: How to Be Healthy?",
+          "title": "16. How to Be Healthy?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -2056,6 +2068,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 3: Substances and Their Properties",
               "cards": [
                 {
@@ -2082,7 +2095,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: What Are The Substances?",
+          "title": "1. What Are The Substances?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -2149,6 +2162,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "To perform the activity, fill the glass 3/4 full of the clear soda. Then, add the raisins. Watch what happens. The science behind this experiment: Students will see the raisins “dancing” in the soda. The raisins will fall to the bottom of the glass and then float back up to the top. They will then fall again. What is happening in the carbonation gas from the soda adheres to the raisin. This causes the raisins to float to the top. Once the bubble pops at the surface, the raisin then falls to the bottom again.",
               "cards": [
                 {
@@ -2165,7 +2179,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Composition of Air",
+          "title": "2. Composition of Air",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -2232,6 +2246,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research a planet with the best air composition to serve us humans. Explain and expand.",
               "cards": [
                 {
@@ -2244,7 +2259,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Air Properties",
+          "title": "3. Air Properties",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -2301,6 +2316,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Did you discover that some of the water had been sucked up into the jar? Can you explain why this happened? Because the oxygen was gone the water moved up into the jar to fill the space left by the oxygen, and that it didn’t fill the whole jar because air is also made up of nitrogen and other gasses‘think this little experiment really helped them visualize what we had been talking about.",
               "cards": [
                 {
@@ -2317,7 +2333,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: Where is the Water?",
+          "title": "4. Where is the Water?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7874DB",
           "content": [
@@ -2372,6 +2388,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find the nearest water source to your home. Observe and identify the practices used in sourcing this water and purifying it for human consumption. Record and take pictures of your observations.",
               "cards": [
                 {
@@ -2384,7 +2401,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: Natural Water Sources",
+          "title": "5. Natural Water Sources",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74D3DB",
           "content": [
@@ -2459,24 +2476,16 @@
               "prompt": "Put the following oceans in order from largest to smallest",
               "data": [
                 {
-                  "text": "Pacific",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Pacific"
                 },
                 {
-                  "text": "Atlantic",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Atlantic"
                 },
                 {
-                  "text": "Indian",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Indian"
                 },
                 {
-                  "text": "Artic",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Artic"
                 }
               ]
             },
@@ -2490,6 +2499,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How much do you know about what’s in water? Visit the nearest body of water and research its composition. What does this tell you about the water? Record your thoughts.",
               "cards": [
                 {
@@ -2502,7 +2512,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: Careful Use of Human Drinking Water",
+          "title": "6. Careful Use of Human Drinking Water",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -2569,6 +2579,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research ways to converse water, and implement three of these strategies for one day. How difficult were these things to do? Would you do them again in the future? For extra credit, try doing these three things for one week.",
               "cards": [
                 {
@@ -2581,7 +2592,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: Water Purification Methods",
+          "title": "7. Water Purification Methods",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -2640,6 +2651,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "You will need a few supplies: 2 Glass Jars, Sand, Gravel, 3-4 Coffee Filters, Dirty Water, A Plastic Cup with a Hole Cut in the Bottom. Begin by getting a jar full of dirty water. We went to a little pond nearby to collect some water. In the plastic cup, start by lining the bottom with the coffee filters.  Then place a layer of clean sand followed by a layer of gravel. Place the cup into an empty jar. Pour the dirty water into the cup so it can filter down through the gravel, sand and coffee filters. Look at the difference in the water before and after! The filter collects all of the dirt and particles in it making the water much cleaner.",
               "cards": [
                 {
@@ -2652,7 +2664,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: What is Soil?",
+          "title": "8. What is Soil?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -2709,6 +2721,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Step 3: Put the jar in a sunny spot for several days. Add water as needed. Soon you will have a beautiful vine growing from the top of the potato.",
               "cards": [
                 {
@@ -2733,7 +2746,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: What is in Soil?",
+          "title": "9. What is in Soil?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7874DB",
           "content": [
@@ -2798,6 +2811,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Step 7: You can also do this experiment with dirt you have collected from different areas and compare your findings. Draw pictures of each jar full of soil after you have shaken it and the dirt has settled to make picture comparisons.",
               "cards": [
                 {
@@ -2838,7 +2852,7 @@
         },
         {
           "navigation": "Lesson10",
-          "title": "10: Soil Properties",
+          "title": "10. Soil Properties",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74D3DB",
           "content": [
@@ -2905,6 +2919,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Step 4: Notice which beans sprout first. Measure the height of the plants every few days until the beans flower. Keep a chart. Which soil was the best?",
               "cards": [
                 {
@@ -2933,7 +2948,7 @@
         },
         {
           "navigation": "Lesson11",
-          "title": "11: What are Soils?",
+          "title": "11. What are Soils?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -3000,6 +3015,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research what organic material improves soil structure. Why should people use this information?",
               "cards": [
                 {
@@ -3012,7 +3028,7 @@
         },
         {
           "navigation": "Lesson12",
-          "title": "12: How is our Planet?",
+          "title": "12. How is our Planet?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -3097,6 +3113,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "The Earth is the planet we inhabit. More than 4 billion years old, our planet is the third from the Sun. The Earth is mostly covered with water and that water is mostly salty. The Earth’s atmosphere is divided into 6 layers including the troposphere, stratosphere, mesosphere, thermosphere, exosphere, and ionosphere. The Earth is so cool and vast to us. But, the Earth really is nothing. Understanding how big the solar system the Earth is in is astounding.",
               "cards": []
             }
@@ -3104,7 +3121,7 @@
         },
         {
           "navigation": "Lesson13",
-          "title": "13: History of Space Exploration",
+          "title": "13. History of Space Exploration",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -3163,6 +3180,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Try to thread the pipe cleaners through the colander wearing the glove, it is still fixed? Is it harder to do this activity wearing gloves than not?",
               "cards": [
                 {
@@ -3191,7 +3209,7 @@
         },
         {
           "navigation": "Lesson14",
-          "title": "14: How Does the Earth Rotate?",
+          "title": "14. How Does the Earth Rotate?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7874DB",
           "content": [
@@ -3248,6 +3266,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 4: Physics of Nature",
               "cards": [
                 {
@@ -3274,7 +3293,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: Elastic Force",
+          "title": "1. Elastic Force",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E09079",
           "content": [
@@ -3331,6 +3350,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Thread the second pencil through the elastic band to hold it in place. Push down on the end of the spoon and let go. It should shoot upwards! Test your catapult with different objects, do lighter objects move further? Does the catapult work better if you flick the lolly stick with your finger or if you drop something onto the end.",
               "cards": [
                 {
@@ -3355,7 +3375,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Gravity",
+          "title": "2. Gravity",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E07D78",
           "content": [
@@ -3412,6 +3432,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "When you first held the cup in the air and removed your finger, gravity pulled the water down towards the ground and water pressure forced it out of the hole. However, when the cup and water fall at the same speed, there is no water pressure. Without this force, the water remains inside the cup as gravity pulls both to the ground.",
               "cards": [
                 {
@@ -3436,7 +3457,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: The Force of Friction and its Manifestation",
+          "title": "3. The Force of Friction and its Manifestation",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF79E0",
           "content": [
@@ -3493,6 +3514,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Now grab one of the book spines and have a friend grab the other spine. Pull on the books to see if you can pull them apart. Have a game of tug of war with the books. The books will stick together like glue because each page exerts friction against the other book's page. When the combined friction from each page is added up, it equals a big force. Do some tests by interlacing the pages. What if you only weave every ten pages or every twenty? Is the force still as strong? What is the least amount of weaving necessary to produce the glue-like effect?",
               "cards": [
                 {
@@ -3517,7 +3539,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: How to Determine the Direction of Forces?",
+          "title": "4. How to Determine the Direction of Forces?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E0A279",
           "content": [
@@ -3568,6 +3590,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How could the cone fly higher? How could we slow down the flight of the cone? What would a smaller container affect it by?",
               "cards": [
                 {
@@ -3584,7 +3607,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How Does the Shadow Appear?",
+          "title": "5. How Does the Shadow Appear?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E079A5",
           "content": [
@@ -3641,6 +3664,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Hold up a pair of eyeglasses, what do you see in its shadow? Record your observations and try to come up with a hypothesis describing what you see.",
               "cards": [
                 {

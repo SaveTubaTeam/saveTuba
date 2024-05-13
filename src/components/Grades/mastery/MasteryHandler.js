@@ -55,7 +55,6 @@ const SubmitButton = styled(Button)`
   margin-bottom: 10px;
 `;
 
-
 //TODO: need to add ability to input file, also need to check if user has actually submitted anything. Can copy SnapshotHandler modal for that.
 //@param objectData our Mastery object passed from IndividualLessonHandler
 const MasteryHandler = ({ objectData, imageMap }) => {
@@ -138,9 +137,5 @@ const MasteryHandler = ({ objectData, imageMap }) => {
     </Container>
   );
 };
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default MasteryHandler;

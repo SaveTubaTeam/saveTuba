@@ -10,7 +10,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: Finding Things in the World",
+          "title": "1. Finding Things in the World",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -125,6 +125,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find and describe a sustainable practice in this country that you can implement on your own.",
               "cards": [
                 {
@@ -137,7 +138,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Why Does the Dandelion Look Like a Parachute?",
+          "title": "2. Why Does the Dandelion Look Like a Parachute?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -213,44 +214,31 @@
               "prompt": "Order the steps to designing an experiment",
               "data": [
                 {
-                  "text": "Create a goal of observation",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Create a goal of observation"
                 },
                 {
-                  "text": "Choose an object for observation",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Choose an object for observation"
                 },
                 {
-                  "text": "Think about the stages of observation",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Think about the stages of observation"
                 },
                 {
-                  "text": "Think about the necessary equipment",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Think about the necessary equipment"
                 },
                 {
-                  "text": "Choose the timeframe of observation",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Choose the timeframe of observation"
                 },
                 {
-                  "text": "Write down or draw the observation",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Write down or draw the observation"
                 },
                 {
-                  "text": "Make a conclusion",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Make a conclusion"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Identify a man-made object that resembles something from nature. Upload a photo of that object.",
               "cards": []
             }
@@ -258,7 +246,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: What is An Experiment?",
+          "title": "3. What is An Experiment?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -333,44 +321,31 @@
               "prompt": "Order the steps to conducting an experiment",
               "data": [
                 {
-                  "text": "Goal",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Goal"
                 },
                 {
-                  "text": "Hypothesis",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Hypothesis"
                 },
                 {
-                  "text": "Resources",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Resources"
                 },
                 {
-                  "text": "Plan",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Plan"
                 },
                 {
-                  "text": "Experiment",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Experiment"
                 },
                 {
-                  "text": "Notes",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Notes"
                 },
                 {
-                  "text": "Conclusion",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Conclusion"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 2: Wildlife",
               "cards": [
                 {
@@ -397,7 +372,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: What Are the Secrets of Plants?",
+          "title": "1. What Are the Secrets of Plants?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -504,6 +479,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Note how the plant acquires its food. What are the factors in the plant cycle present?",
               "cards": [
                 {
@@ -516,7 +492,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: How Do Plants Live?",
+          "title": "2. How Do Plants Live?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -602,6 +578,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How do the plants differ in their habitats?",
               "cards": [
                 {
@@ -614,7 +591,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Who Hatched From the Egg?",
+          "title": "3. Who Hatched From the Egg?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -725,6 +702,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research and describe two different animals and how we could use their eggshells for different purposes.",
               "cards": [
                 {
@@ -737,7 +715,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: Who Plays Hide and Seek?",
+          "title": "4. Who Plays Hide and Seek?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -858,6 +836,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find an animal around you and identify its distinct physical features. Through the appearance of the animal, can you determine where the animal lives, moves and eats?",
               "cards": [
                 {
@@ -870,7 +849,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How Are Animals Protected?",
+          "title": "5. How Are Animals Protected?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -890,24 +869,16 @@
               "prompt": "What order are the seasons in? Start from January",
               "data": [
                 {
-                  "text": "Spring",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Spring"
                 },
                 {
-                  "text": "Summer",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Summer"
                 },
                 {
-                  "text": "Autumn",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Autumn"
                 },
                 {
-                  "text": "Winter",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Winter"
                 }
               ]
             },
@@ -976,6 +947,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How do animals elude predators and humans with their body shape, coloring, and other physical features?",
               "cards": [
                 {
@@ -988,7 +960,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: Why Are We Standing?",
+          "title": "6. Why Are We Standing?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -1008,34 +980,22 @@
               "prompt": "Order by the number of bones a human has at each stage",
               "data": [
                 {
-                  "text": "Baby",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Baby"
                 },
                 {
-                  "text": "Child",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Child"
                 },
                 {
-                  "text": "Puberty",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Puberty"
                 },
                 {
-                  "text": "Teenager",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Teenager"
                 },
                 {
-                  "text": "Adulthood",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Adulthood"
                 },
                 {
-                  "text": "Senior",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Senior"
                 }
               ]
             },
@@ -1092,6 +1052,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Observe the animal’s skeleton and describe how it helps the animal sustain their habits.",
               "cards": [
                 {
@@ -1104,7 +1065,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: How Do We Smile?",
+          "title": "7. How Do We Smile?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -1174,6 +1135,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Describe your present.",
               "cards": [
                 {
@@ -1186,7 +1148,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: A Heavy Backpack",
+          "title": "8. A Heavy Backpack",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -1297,6 +1259,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Your posture is the habitual position of your body when it is standing, sitting, or walking. The weight of any extra items such as your backpack can affect your posture. Look inside your backpack and see what you can reduce, reuse, recycle, and digitalize. Let’s try to make your backpack lighter and save the planet by using less paper!",
               "cards": []
             }
@@ -1304,7 +1267,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: What Are Bacteria Afraid Of?",
+          "title": "9. What Are Bacteria Afraid Of?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -1418,6 +1381,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Your body is very complex and valuable, and to stay healthy we must take care of it. We want to sustain our health for as long as possible and make sure we don’t infect others. Describe how you wash your hands.",
               "cards": []
             }
@@ -1425,7 +1389,7 @@
         },
         {
           "navigation": "Lesson10",
-          "title": "10: Why Do My Teeth Hurt?",
+          "title": "10. Why Do My Teeth Hurt?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -1503,39 +1467,28 @@
               "prompt": "Order these animals by the amount of teeth they have",
               "data": [
                 {
-                  "text": "Snail",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Snail"
                 },
                 {
-                  "text": "Whale Shark",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Whale Shark"
                 },
                 {
-                  "text": "Giant Armadillo",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Giant Armadillo"
                 },
                 {
-                  "text": "Humans",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Humans"
                 },
                 {
-                  "text": "Elephants",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Elephants"
                 },
                 {
-                  "text": "Ostrich",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Ostrich"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 3: Substances and their Properties",
               "cards": [
                 {
@@ -1562,7 +1515,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: What Are the Properties of Air?",
+          "title": "1. What Are the Properties of Air?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -1699,6 +1652,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Understand that all plants and animals need air. Describe what happens when a plant has limited air.",
               "cards": []
             }
@@ -1706,7 +1660,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Where to Build a Factory?",
+          "title": "2. Where to Build a Factory?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -1845,6 +1799,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Take note of the factors that caused these changes. Describe a plan to revert or mitigate some of the damages.",
               "cards": [
                 {
@@ -1857,7 +1812,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: What Do We Know About Water?",
+          "title": "3. What Do We Know About Water?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -2000,29 +1955,19 @@
               "prompt": "Put the oceans from the smallest to the largest.",
               "data": [
                 {
-                  "text": "Arctic",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Arctic"
                 },
                 {
-                  "text": "Southern",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Southern"
                 },
                 {
-                  "text": "Indian",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Indian"
                 },
                 {
-                  "text": "Atlantic",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Atlantic"
                 },
                 {
-                  "text": "Pacific.",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Pacific."
                 }
               ]
             },
@@ -2035,6 +1980,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research where the water in your household comes from. Trace it back to the original source. Visit the source and find out the water purification method used. Reflect on the method and offer your own critiques and compliments.",
               "cards": []
             }
@@ -2042,7 +1988,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: What Does a Person Need?",
+          "title": "4. What Does a Person Need?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7874DB",
           "content": [
@@ -2162,6 +2108,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 4: Earth and Space",
               "cards": [
                 {
@@ -2188,7 +2135,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: The Sun and its Influence on Earth",
+          "title": "1. The Sun and its Influence on Earth",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E09079",
           "content": [
@@ -2356,6 +2303,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "The sun provides light and heats the Earth. However, like anything, nature should be kept in balance. There are balancing factors to neutralize the Sun’s tremendous amount of heat. Explain why we need sunscreen and explain how Earth’s ecosystems have their own built-in sunscreen.",
               "cards": []
             }
@@ -2363,7 +2311,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Who Are the Sun’s Friends?",
+          "title": "2. Who Are the Sun’s Friends?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E07D78",
           "content": [
@@ -2448,44 +2396,28 @@
               "prompt": "Put the planets in order from the closest to the Sun to the furthest",
               "data": [
                 {
-                  "text": "Neptune",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Neptune"
                 },
                 {
-                  "text": "Uranus",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Uranus"
                 },
                 {
-                  "text": "Saturn",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Saturn"
                 },
                 {
-                  "text": "Jupiter",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Jupiter"
                 },
                 {
-                  "text": "Mars",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Mars"
                 },
                 {
-                  "text": "Earth",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Earth"
                 },
                 {
-                  "text": "Venus",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Venus"
                 },
                 {
-                  "text": "Mercury",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Mercury"
                 }
               ]
             },
@@ -2536,6 +2468,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Once done, draw our solar system with all its planets orbiting the Sun and try your best to show differences in size and shape.",
               "cards": [
                 {
@@ -2552,7 +2485,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Are Planets Alive?",
+          "title": "3. Are Planets Alive?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF79E0",
           "content": [
@@ -2564,44 +2497,28 @@
               "prompt": "Put the planets in order from the smallest to the largest",
               "data": [
                 {
-                  "text": "Mercury",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Mercury"
                 },
                 {
-                  "text": "Mars",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Mars"
                 },
                 {
-                  "text": "Venus",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Venus"
                 },
                 {
-                  "text": "Earth",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Earth"
                 },
                 {
-                  "text": "Neptune",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Neptune"
                 },
                 {
-                  "text": "Uranus",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Uranus"
                 },
                 {
-                  "text": "Saturn",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Saturn"
                 },
                 {
-                  "text": "Jupiter",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Jupiter"
                 }
               ]
             },
@@ -2715,6 +2632,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "What are the effects of space exploration on our atmosphere? And do you believe the benefits of space exploration negate the cons?",
               "cards": [
                 {
@@ -2731,7 +2649,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: Why Does Spring Follow Winter?",
+          "title": "4. Why Does Spring Follow Winter?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E0A279",
           "content": [
@@ -2794,69 +2712,46 @@
               "prompt": "Put the months in order",
               "data": [
                 {
-                  "text": "January",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "January"
                 },
                 {
-                  "text": "February",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "February"
                 },
                 {
-                  "text": "March",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "March"
                 },
                 {
-                  "text": "April",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "April"
                 },
                 {
-                  "text": "May",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "May"
                 },
                 {
-                  "text": "June",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "June"
                 },
                 {
-                  "text": "July",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "July"
                 },
                 {
-                  "text": "August",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "August"
                 },
                 {
-                  "text": "September",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "September"
                 },
                 {
-                  "text": "October",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "October"
                 },
                 {
-                  "text": "November",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "November"
                 },
                 {
-                  "text": "December",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "December"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Draw the change of a newly planted tree over days, months, and years. For example, you can draw a newly planted tree over the course of many days. Then, draw the change over the course of a few months (seasons changing). Then, draw the change over the course of a few years.",
               "cards": [
                 {
@@ -2869,7 +2764,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: What Time is It?",
+          "title": "5. What Time is It?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E079A5",
           "content": [
@@ -2941,6 +2836,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 5: Physics of Nature",
               "cards": [
                 {
@@ -2967,7 +2863,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: Why Do Things Move?",
+          "title": "1. Why Do Things Move?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -3046,6 +2942,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Think about the many sustainable energy sources such as wind, solar, and water. How do we use forces to push or pull and generate energy?",
               "cards": [
                 {
@@ -3058,7 +2955,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Who Is Faster?",
+          "title": "2. Who Is Faster?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -3140,39 +3037,28 @@
               "prompt": "Put these vehicles in order of energy efficiency",
               "data": [
                 {
-                  "text": "Roller-blades",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Roller-blades"
                 },
                 {
-                  "text": "Bicycles",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Bicycles"
                 },
                 {
-                  "text": "Public subway",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Public subway"
                 },
                 {
-                  "text": "Public bus",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Public bus"
                 },
                 {
-                  "text": "Cars",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Cars"
                 },
                 {
-                  "text": "Airplanes",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Airplanes"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Does high speed have any negative effects on the environment? Explain your answer.",
               "cards": [
                 {
@@ -3185,7 +3071,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Transportation",
+          "title": "3. Transportation",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -3212,34 +3098,22 @@
               "prompt": "Order these vehicles from oldest to newest",
               "data": [
                 {
-                  "text": "Human",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Human"
                 },
                 {
-                  "text": "Horseback riding",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Horseback riding"
                 },
                 {
-                  "text": "Car",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Car"
                 },
                 {
-                  "text": "Train",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Train"
                 },
                 {
-                  "text": "Airplane",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Airplane"
                 },
                 {
-                  "text": "Bullet train",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Bullet train"
                 }
               ]
             },
@@ -3293,6 +3167,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Examine the noise level produced by each car in the video you took and do a mini-experiment. Are the louder cars worse to the environment? Why?",
               "cards": [
                 {
@@ -3309,7 +3184,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: How Much Does an Elephant Weigh?",
+          "title": "4. How Much Does an Elephant Weigh?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF6CEB",
           "content": [
@@ -3336,29 +3211,19 @@
               "prompt": "Put these objects in order from lightest to heaviest",
               "data": [
                 {
-                  "text": "Home plant",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Home plant"
                 },
                 {
-                  "text": "Rain bucket",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Rain bucket"
                 },
                 {
-                  "text": "Bicycle",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Bicycle"
                 },
                 {
-                  "text": "Tree",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Tree"
                 },
                 {
-                  "text": "Nuclear power generator",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Nuclear power generator"
                 }
               ]
             },
@@ -3420,6 +3285,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Now that you understand how this works, we’ll compare different energy sources to each other. Some energy sources need less area and less mass to be effective than others. Research and describe the different energy sources and their requirements in terms of area and mass.",
               "cards": [
                 {
@@ -3436,7 +3302,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How to Get to Emerald City?",
+          "title": "5. How to Get to Emerald City?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C75EB",
           "content": [
@@ -3518,34 +3384,25 @@
               "prompt": "Order these light sources From least sustainable to most sustainable",
               "data": [
                 {
-                  "text": "The Sun",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "The Sun"
                 },
                 {
-                  "text": "The Stars",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "The Stars"
                 },
                 {
-                  "text": "Electric light",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Electric light"
                 },
                 {
-                  "text": "Candle",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Candle"
                 },
                 {
-                  "text": "Neon lamp",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Neon lamp"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Grab a friend and head outside. Each time you spot a glass bottle before your friend you get a point. Each time you spot a recycle bin for said glass bottle you get a point. Keep track of the points and make sure you recycle all the glass bottles.",
               "cards": [
                 {
@@ -3558,7 +3415,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: Where Did the Light Go?",
+          "title": "6. Where Did the Light Go?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -3627,6 +3484,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Describe what would happen if you left a crayon under the sun.",
               "cards": [
                 {
@@ -3639,7 +3497,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: What is That Sound?",
+          "title": "7. What is That Sound?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -3769,6 +3627,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Identify loud noises and record their source, explanation, and loudness relative to each other in a notepad. Explain which sounds could be eliminated or reduced.",
               "cards": [
                 {
@@ -3785,7 +3644,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: How Do We Hear Sounds?",
+          "title": "8. How Do We Hear Sounds?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -3871,6 +3730,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Go outside and find three different animals. Take note of how they react to sound. Try and understand why they hear sounds in the manner that they do. Is it an evolutionary process? How does it help them maintain their lifestyle?",
               "cards": [
                 {
@@ -3883,7 +3743,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: The Thermometer",
+          "title": "9. The Thermometer",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF6CEB",
           "content": [
@@ -3999,6 +3859,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Describe why different plants, animals, and humans live in different temperatures.",
               "cards": [
                 {
@@ -4015,7 +3876,7 @@
         },
         {
           "navigation": "Lesson10",
-          "title": "10: Where Does Frost Hide During the Summer?",
+          "title": "10. Where Does Frost Hide During the Summer?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C75EB",
           "content": [
@@ -4192,6 +4053,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Go outside to your nearest park. Understand how many animals keep cool in the summer or keep warm in the winter depending on the climate. Describe how changes to our body could help us keep climate in control similarly to them.",
               "cards": [
                 {
@@ -4204,7 +4066,7 @@
         },
         {
           "navigation": "Lesson11",
-          "title": "11: What Are Magnets?",
+          "title": "11. What Are Magnets?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -4320,6 +4182,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find a magnet and test its magnetism on different objects around the house. Record your observations. Now that you’ve done this, describe different ways you could use magnets.",
               "cards": [
                 {
@@ -4332,7 +4195,7 @@
         },
         {
           "navigation": "Lesson12",
-          "title": "12: Summer is Fun!",
+          "title": "12. Summer is Fun!",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -4402,34 +4265,25 @@
               "prompt": "Rank transport from the most sustainable to the least sustainable.",
               "data": [
                 {
-                  "text": "Cycling",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Cycling"
                 },
                 {
-                  "text": "Bus",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Bus"
                 },
                 {
-                  "text": "Train",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Train"
                 },
                 {
-                  "text": "Car",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Car"
                 },
                 {
-                  "text": "Plane",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Plane"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Look through all the previous lessons and gather some ideas. Use only one lesson as your main inspiration but you can take ideas from all of them. Foster your own Mastery 🎓 challenge and make sure that at the end of the exercise your parents learn something. Take pictures, videos, and notes, and record all your observations. Great job scientists!",
               "cards": [
                 {

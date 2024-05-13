@@ -171,9 +171,7 @@ function LessonComponent({ imageMap, lessonData, navigation }) {
               />
               <Head>
                 <TitleText size="title">
-                  {
-                    lessonData.title
-                  }
+                  { lessonData.title }
                 </TitleText>
                 <Spacer size="large" />
 

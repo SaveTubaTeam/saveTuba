@@ -21,7 +21,9 @@ export default {
   sorting: "Сортировка",
   quiz: "Викторина",
   imageboom: "Изображение Бум",
+  imageboom2: "Изображение Бум 2",
   snapshot: "Фото",
+  snapshot2: "Фото 2",
   reorder: "Изменение порядка",
   mastery: "Мастерство",
   mastery2: "Мастерство 2",
@@ -70,5 +72,4 @@ export default {
   home: "Дом",
   profile: "Профиль",
   settings: "Настройки",
-  mastery: "Мастерство",
 };

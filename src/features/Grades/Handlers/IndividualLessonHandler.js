@@ -10,23 +10,22 @@ import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandl
 import MemoryHandler from "../../../components/Grades/minigames/Handlers/MemoryHandler"; //works
 import SortingHandler from "../../../components/Grades/minigames/Handlers/SortingHandler"; //works
 import MasteryHandler from "../../../components/Grades/mastery/MasteryHandler"; //works
-import MasteryHandler_2 from "../../../components/Grades/mastery/MasteryHandler_2"; //works
 import SnapshotHandler from "../../../components/Grades/minigames/Handlers/SnapshotHandler"; //works
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
 const Stack = createNativeStackNavigator();
 
 const SCREENS_CONFIG = [
-  { name: "Memory", title: "memory", Component: MemoryHandler },
-  { name: "Sorting", title: "sorting", Component: SortingHandler },
-  { name: "Quiz", title: "quiz", Component: QuizHandler },
-  { name: "Image Boom", title: "imageboom", Component: OpenResponseHandler },
-  { name: "Image Boom 2", title: "imageboom", Component: OpenResponseHandler },
-  { name: "Snapshot", title: "snapshot", Component: SnapshotHandler },
-  { name: "Snapshot 2", title: "snapshot", Component: SnapshotHandler },
-  { name: "Reorder", title: "reorder", Component: ReorderHandler },
-  { name: "Mastery", title: "mastery", Component: MasteryHandler },
-  { name: "Mastery 2", title: "mastery", Component: MasteryHandler },
+  { name: "Memory", title: "common:memory", Component: MemoryHandler },
+  { name: "Sorting", title: "common:sorting", Component: SortingHandler },
+  { name: "Quiz", title: "common:quiz", Component: QuizHandler },
+  { name: "Image Boom", title: "common:imageboom", Component: OpenResponseHandler },
+  { name: "Image Boom 2", title: "common:imageboom2", Component: OpenResponseHandler },
+  { name: "Snapshot", title: "common:snapshot", Component: SnapshotHandler },
+  { name: "Snapshot 2", title: "common:snapshot2", Component: SnapshotHandler },
+  { name: "Reorder", title: "common:reorder", Component: ReorderHandler },
+  { name: "Mastery", title: "common:mastery", Component: MasteryHandler },
+  { name: "Mastery 2", title: "common:mastery2", Component: MasteryHandler },
 ];
 
 //The below handler is responsible for rendering the selected lesson and all of its contents
@@ -71,7 +70,7 @@ function IndividualLessonHandler({ lessonData }) {
             key={name}
             name={name}
             options={{
-              title: t(`common:${title}`),
+              title: t(title),
               headerTintColor: "white",
               headerBackTitleVisible: false,
               headerStyle: { backgroundColor: "#C6DC3B" },

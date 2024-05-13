@@ -10,7 +10,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: Higher and Lower Plants",
+          "title": "1. Higher and Lower Plants",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -31,6 +31,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research the characteristics of lower and higher plants. Identify how they are the same and how they are different. Which type of plant, higher or lower, are you more familiar with?",
               "cards": []
             }
@@ -38,7 +39,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Lower Plants",
+          "title": "2. Lower Plants",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -102,6 +103,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "For extra credit: Get one of these plants and maintain it, taking weekly progress pictures!",
               "cards": [
                 {
@@ -114,7 +116,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: How Do Plants Grow?",
+          "title": "3. How Do Plants Grow?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -141,64 +143,43 @@
               "prompt": "Put the following detailed stages of plant development in order:",
               "data": [
                 {
-                  "text": "A seed falls into soil.",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "A seed falls into soil."
                 },
                 {
-                  "text": "A seed in moist soil starts to germinate.",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "A seed in moist soil starts to germinate."
                 },
                 {
-                  "text": "The seed begins to open and roots appear.",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "The seed begins to open and roots appear."
                 },
                 {
-                  "text": "The roots embed themselves into the soil.",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "The roots embed themselves into the soil."
                 },
                 {
-                  "text": "The nutrients already in the seed run out.",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "The nutrients already in the seed run out."
                 },
                 {
-                  "text": "The plant starts to receive water and nutrients from the soil.",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "The plant starts to receive water and nutrients from the soil."
                 },
                 {
-                  "text": "Stems begin to form.",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Stems begin to form."
                 },
                 {
-                  "text": "1-2 thin leaves form on the stem.",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "1-2 thin leaves form on the stem."
                 },
                 {
-                  "text": "The plant becomes a sprout",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "The plant becomes a sprout"
                 },
                 {
-                  "text": "Flowers and/or fruit begins to appear",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Flowers and/or fruit begins to appear"
                 },
                 {
-                  "text": "Seeds are developed on the flower/fruit.",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Seeds are developed on the flower/fruit."
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Imagine a condition that would keep the plant from developing. What could this condition be, and when would it impact the plant the most in the cycle?",
               "cards": []
             }
@@ -206,7 +187,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: Why Does a Plant Need Flowers?",
+          "title": "4. Why Does a Plant Need Flowers?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF6CEB",
           "content": [
@@ -233,19 +214,13 @@
               "prompt": "Order the parts of the flower from the outermost part of the flower to the innermost part.",
               "data": [
                 {
-                  "text": "Sepals",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Sepals"
                 },
                 {
-                  "text": "Corolla petals",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Corolla petals"
                 },
                 {
-                  "text": "Stamens and the pistil",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Stamens and the pistil"
                 }
               ]
             },
@@ -286,6 +261,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Flowers grow on plants, but there are some plants that don’t have flowers. Identify 3 plants that do have flowers, and 3 that do not have flowers. How are these two groups different from each other? Lastly, research something a flower provides for a plant and summarize it here.",
               "cards": []
             }
@@ -293,7 +269,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How Are Seeds Formed?",
+          "title": "5. How Are Seeds Formed?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C75EB",
           "content": [
@@ -320,24 +296,16 @@
               "prompt": "Order the steps for the process of pollination from beginning to end.",
               "data": [
                 {
-                  "text": "A pollinator (like a bee), collects nectar from a flower.",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "A pollinator (like a bee), collects nectar from a flower."
                 },
                 {
-                  "text": "The pollinator rubs up against pollen from the stamens of the flower and it sticks to the pollinator’s body.",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "The pollinator rubs up against pollen from the stamens of the flower and it sticks to the pollinator’s body."
                 },
                 {
-                  "text": "The pollinator goes to another flower, carrying the pollen.",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "The pollinator goes to another flower, carrying the pollen."
                 },
                 {
-                  "text": "The pollinator reaches a flower and deposits its pollen on the stigma of the flower.",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "The pollinator reaches a flower and deposits its pollen on the stigma of the flower."
                 }
               ]
             },
@@ -351,6 +319,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Research ways that you can support pollination or bees. List your top 3 favorite methods that you found and describe how easy or hard you think these would be to replicate. Find one to do over the next week (or longer) and take pictures!",
               "cards": []
             }
@@ -358,7 +327,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: How Do Plants Develop?",
+          "title": "6. How Do Plants Develop?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -379,6 +348,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "List 3 plants and its purpose. Do you think a lot of people around you use plants for purposes like these? Why or why not?",
               "cards": [
                 {
@@ -391,7 +361,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: How Are Seeds Distributed?",
+          "title": "7. How Are Seeds Distributed?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -455,6 +425,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How long would it take to change this area?",
               "cards": [
                 {
@@ -479,7 +450,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: How to protect plants from extinction",
+          "title": "8. How to protect plants from extinction",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -543,6 +514,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 2: Animals",
               "cards": [
                 {
@@ -565,7 +537,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: What is Symbiosis?",
+          "title": "1. What is Symbiosis?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -594,6 +566,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Using the above chart, multiply the amount of servings you have of each food per year by the CO2 emissions. This is the carbon footprint for that food. Do this for each food, and add up your total. Conduct some research on what this total means, what is this amount of carbon emissions equal to? Does this surprise you? Analyze your results.",
               "cards": [
                 {
@@ -610,7 +583,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: How do Insects Grow?",
+          "title": "2. How do Insects Grow?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -637,29 +610,22 @@
               "prompt": "Order the following stages of development of insects.",
               "data": [
                 {
-                  "text": "Eggs",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Eggs"
                 },
                 {
-                  "text": "Larva",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Larva"
                 },
                 {
-                  "text": "Pupa",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Pupa"
                 },
                 {
-                  "text": "Adult",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Adult"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Choose one of these categories and do some research on examples, what they provide for the environment, and how humans could use them more effectively. Summarize your answer to these questions here!",
               "cards": [
                 {
@@ -672,7 +638,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Why do Animals Eat Different Foods?",
+          "title": "3. Why do Animals Eat Different Foods?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -728,6 +694,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find reliable sources that explain how a meat diet, versus a plant-based diet, impacts the environment. What are the pros and cons of each? Summarize your findings here. (Hint: Look into greenhouse gas emissions, water use, carbon footprint, etc.)",
               "cards": [
                 {
@@ -740,7 +707,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: How Do Animals Get Energy?",
+          "title": "4. How Do Animals Get Energy?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -767,29 +734,22 @@
               "prompt": "Put the steps of the energy transfer process in the correct order.",
               "data": [
                 {
-                  "text": "Energy of the sun",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Energy of the sun"
                 },
                 {
-                  "text": "Plant",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Plant"
                 },
                 {
-                  "text": "Herbivore",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Herbivore"
                 },
                 {
-                  "text": "Predator",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Predator"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "After entering your meal plan, answer the following questions? How different would this diet be from your current one? How difficult do you think it would be? Would this have a positive or negative impact on the environment? For extra points, actually follow your meal plan for one day and upload pictures of each meal!",
               "cards": [
                 {
@@ -802,7 +762,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How Are Food Chains Formed?",
+          "title": "5. How Are Food Chains Formed?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -829,34 +789,25 @@
               "prompt": "The hierarchy of the food chain generally follows the order of primary producers, to primary consumers, to secondary consumers, to tertiary consumers. Put the following animals in order according to this hierarchy.",
               "data": [
                 {
-                  "text": "Correct Order:",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Correct Order:"
                 },
                 {
-                  "text": "Leaves",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Leaves"
                 },
                 {
-                  "text": "Caterpillar",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Caterpillar"
                 },
                 {
-                  "text": "Fox",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Fox"
                 },
                 {
-                  "text": "Mountain Lion",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Mountain Lion"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Where do you think most of your food comes from? What are the practices used? These practices can apply to many things, such as treatment of the animals, methods of growing food, who grows and takes care of the food, etc. Analyze these practices. What could be improved?",
               "cards": [
                 {
@@ -869,7 +820,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: What Lives in Your Area?",
+          "title": "6. What Lives in Your Area?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -957,6 +908,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Many animals adapt to their environment in order to compete better for limited resources such as food. As humans, some of us have a very easy time at finding food, but many don’t. It is important to not waste food as that is wasting an incredibly valuable resource. This week, compete with your classmates to see which household can waste the least amount of food.",
               "cards": []
             }
@@ -964,7 +916,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: Rare and Endangered Animals",
+          "title": "7. Rare and Endangered Animals",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -1040,6 +992,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Now research all ten individually and write what is causing them to become extinct in reality. Which did you get right and what were the differences?",
               "cards": [
                 {
@@ -1052,7 +1005,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: How to Protect Animals",
+          "title": "8. How to Protect Animals",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -1073,6 +1026,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 3: Humans",
               "cards": [
                 {
@@ -1095,7 +1049,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: How the Excretory System Works",
+          "title": "1. How the Excretory System Works",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -1122,29 +1076,22 @@
               "prompt": "Put the following excretory organs involved in the passage of urine in order, starting from where the urine begins.",
               "data": [
                 {
-                  "text": "Kidneys",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Kidneys"
                 },
                 {
-                  "text": "Ureters",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Ureters"
                 },
                 {
-                  "text": "Bladder",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Bladder"
                 },
                 {
-                  "text": "Urethra",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Urethra"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "There are many different systems within our own bodies, making them incredibly complex. While these are amazing systems, sometimes things can go wrong. Whether these complications result in a very treatable illness, or more serious diseases, the access we all have to resources that will improve our health are varied. The United Nations has 17 Sustainable Development Goals, which you may have heard of. Do some research on SDG #3 Good Health and Well-Being. They mention several diseases and afflictions they are aiming to affect. Pick one of these to study for the next few lessons. To start, write a paragraph of what you find about the option you chose with a quick google search. Write down 3 questions you already have.",
               "cards": []
             }
@@ -1152,7 +1099,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: What is the Nervous System?",
+          "title": "2. What is the Nervous System?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -1179,39 +1126,25 @@
               "prompt": "Correctly order the steps of the human nervous system from input of stimulus to reaction.",
               "data": [
                 {
-                  "text": "Signals from the external environment come in through the nerves.",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Signals from the external environment come in through the nerves."
                 },
                 {
-                  "text": "The signal is transported to the spinal cord.",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "The signal is transported to the spinal cord."
                 },
                 {
-                  "text": "The signal is transported to the brain.",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "The signal is transported to the brain."
                 },
                 {
-                  "text": "The brain processes the signal.",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "The brain processes the signal."
                 },
                 {
-                  "text": "The information is transmitted back to the spinal cord.",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "The information is transmitted back to the spinal cord."
                 },
                 {
-                  "text": "The nerves carry the information to the organ it applies to.",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "The nerves carry the information to the organ it applies to."
                 },
                 {
-                  "text": "The organ executes the proper reaction.",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "The organ executes the proper reaction."
                 }
               ]
             },
@@ -1264,6 +1197,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "What would you do to improve their approach?",
               "cards": [
                 {
@@ -1296,7 +1230,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: The Nervous System",
+          "title": "3. The Nervous System",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -1317,6 +1251,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 4: Air and Water",
               "cards": [
                 {
@@ -1343,7 +1278,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: Properties of Substances",
+          "title": "1. Properties of Substances",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E09079",
           "content": [
@@ -1372,6 +1307,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Examine three different rooms and take notes on where the dust is found and in what areas it is either better or worse. Write a summary of your findings and the differences from area to area.",
               "cards": [
                 {
@@ -1384,7 +1320,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: What Are Substances?",
+          "title": "2. What Are Substances?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E07D78",
           "content": [
@@ -1456,6 +1392,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "In the last lesson, you were asked to look around your home and examine the dust levels. Now, do some research on how dust particles can cause breathing problems. Then, look into some ways that you can address the problems associated with indoor air quality.",
               "cards": []
             }
@@ -1463,7 +1400,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Do Substances Change?",
+          "title": "3. Do Substances Change?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF79E0",
           "content": [
@@ -1535,11 +1472,13 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "When substances are mixed together, those substances either retain their original properties or they change upon interaction with each other. Air pollution is actually a mixture. Air pollution is a substance made up of many different particles. Research what the parts of this mixture are and what their properties are. Write a paragraph summary of what you found.",
               "cards": []
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Create a presentation that you can give to your family addressing the following key topics: Why should you wait until a day with better air quality? How do you know it’s a bad air quality day?",
               "cards": [
                 {
@@ -1552,7 +1491,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: How Do the Properties of Substances Change?",
+          "title": "4. How Do the Properties of Substances Change?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E0A279",
           "content": [
@@ -1616,6 +1555,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Choose one of these sources to research further. Answer the following questions about your chosen source: What data supports that this is a main source of air pollution? Why is it a source of air pollution? What alternatives are there that could minimize the impact of this source?",
               "cards": [
                 {
@@ -1628,7 +1568,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How Air Moves",
+          "title": "5. How Air Moves",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E079A5",
           "content": [
@@ -1655,34 +1595,25 @@
               "prompt": "Put the following steps in the order they occur as sunlight heats the ground and the air near a water reservoir.",
               "data": [
                 {
-                  "text": "Sunlight heats the surface of the earth.",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Sunlight heats the surface of the earth."
                 },
                 {
-                  "text": "Air close to the ground is heated.",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Air close to the ground is heated."
                 },
                 {
-                  "text": "The air becomes lighter and rises.",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "The air becomes lighter and rises."
                 },
                 {
-                  "text": "Cold air from nearby water moves to land.",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Cold air from nearby water moves to land."
                 },
                 {
-                  "text": "The cold air from the water replaces the warm air.",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "The cold air from the water replaces the warm air."
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Think back to the alternatives to the source of air pollution you found in the last lesson. Do some research to find a person or corporation who is either providing an alternative or is fighting for alternatives. Brainstorm a list of questions you have for them and write a thoughtful letter or email asking these questions.",
               "cards": []
             }
@@ -1690,7 +1621,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: What Are the Benefits and Harms of the Wind?",
+          "title": "6. What Are the Benefits and Harms of the Wind?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E09079",
           "content": [
@@ -1754,6 +1685,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Does Kazakhstan utilize wind turbines already? How could you improve this?",
               "cards": [
                 {
@@ -1782,7 +1714,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: What is the Importance of Air?",
+          "title": "7. What is the Importance of Air?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E07D78",
           "content": [
@@ -1809,29 +1741,22 @@
               "prompt": "List the molecular components of air and order them according to their amounts, highest to lowest.",
               "data": [
                 {
-                  "text": "Nitrogen",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Nitrogen"
                 },
                 {
-                  "text": "Oxygen",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Oxygen"
                 },
                 {
-                  "text": "Argon",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Argon"
                 },
                 {
-                  "text": "Carbon dioxide",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Carbon dioxide"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Use good experimental procedures and make sure your hypothesis is realistic and testable.",
               "cards": [
                 {
@@ -1848,7 +1773,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: How Does Air Get Polluted?",
+          "title": "8. How Does Air Get Polluted?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF79E0",
           "content": [
@@ -1875,24 +1800,16 @@
               "prompt": "Air pollution in Kazakhstan specifically is due to many factors. Put the following contributors in order, starting with the largest impact.",
               "data": [
                 {
-                  "text": "Increase in mining",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Increase in mining"
                 },
                 {
-                  "text": "Burning of oil and gas, which leads to soot emissions.",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Burning of oil and gas, which leads to soot emissions."
                 },
                 {
-                  "text": "Emissions caused from cars",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Emissions caused from cars"
                 },
                 {
-                  "text": "Emissions from industrial production",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Emissions from industrial production"
                 }
               ]
             },
@@ -1941,6 +1858,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Below, identify where you hung the plate, upload a picture, and analyze what you see on the paper plate. What do these results tell you?",
               "cards": [
                 {
@@ -1965,7 +1883,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: The Water Cycle in Nature",
+          "title": "9. The Water Cycle in Nature",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E0A279",
           "content": [
@@ -1992,29 +1910,22 @@
               "prompt": "Order the following four steps of the water cycle as they would most likely occur, starting with evaporation.",
               "data": [
                 {
-                  "text": "Evaporation",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Evaporation"
                 },
                 {
-                  "text": "Condensation",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Condensation"
                 },
                 {
-                  "text": "Precipitation",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Precipitation"
                 },
                 {
-                  "text": "Water runoff",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Water runoff"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "The importance of water on our Earth cannot be overestimated. Most of our water on Earth is from the ocean, which is salt water. This means, it is not drinkable. We need freshwater, which makes up only 3% of the water on earth. But, only 1% is actually available for our use. Research why only 1% of this water is available and challenges that we are facing when it comes to access to freshwater. Summarize your findings here.",
               "cards": []
             }
@@ -2022,7 +1933,7 @@
         },
         {
           "navigation": "Lesson10",
-          "title": "10: What is Precipitation and Where Is It?",
+          "title": "10. What is Precipitation and Where Is It?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E079A5",
           "content": [
@@ -2049,24 +1960,16 @@
               "prompt": "Order the steps in the precipitation process from beginning to end.",
               "data": [
                 {
-                  "text": "Water vapor in the atmosphere due to evaporation combines to make bigger water droplets.",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Water vapor in the atmosphere due to evaporation combines to make bigger water droplets."
                 },
                 {
-                  "text": "Water droplets form clouds.",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Water droplets form clouds."
                 },
                 {
-                  "text": "Clouds get heavier as they combine with more water droplets.",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Clouds get heavier as they combine with more water droplets."
                 },
                 {
-                  "text": "When the droplets become too heavy, the clouds release the precipitation to earth.",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "When the droplets become too heavy, the clouds release the precipitation to earth."
                 }
               ]
             },
@@ -2115,6 +2018,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Make a guess at how much water you can save by fixing this habit, and then do some research to see what the number really is. Does the answer surprise you, why or why not?",
               "cards": [
                 {
@@ -2131,7 +2035,7 @@
         },
         {
           "navigation": "Lesson11",
-          "title": "11: What Does Water Dissolve?",
+          "title": "11. What Does Water Dissolve?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E09079",
           "content": [
@@ -2158,19 +2062,13 @@
               "prompt": "Salt (NaCl) is able to dissolve in water. Put the steps of that process in the correct order.",
               "data": [
                 {
-                  "text": "Water molecules pull the ions (Na and Cl) in the salt apart.",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Water molecules pull the ions (Na and Cl) in the salt apart."
                 },
                 {
-                  "text": "The ionic bond that holds the salt together is broken.",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "The ionic bond that holds the salt together is broken."
                 },
                 {
-                  "text": "The sodium and chloride are surrounded by water molecules.",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "The sodium and chloride are surrounded by water molecules."
                 }
               ]
             },
@@ -2219,6 +2117,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Part 2: You’ve been given two ways that you can help preserve water, but there are many more. Do some research to add on to the list of methods that can help preserve our water supply and ensure that we are using this valuable and limited resource in the most effective way possible. Pick one of these methods, which includes the two that have been presented in the past two lessons, and create an elevator pitch that tries to convince the audience on why they should utilize that method of water conservation. Try it out on a couple of friends and family members. Submit a video of it below.",
               "cards": [
                 {
@@ -2231,7 +2130,7 @@
         },
         {
           "navigation": "Lesson12",
-          "title": "12: How Does Water Get Polluted?",
+          "title": "12. How Does Water Get Polluted?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E07D78",
           "content": [
@@ -2258,29 +2157,22 @@
               "prompt": "Order the largest contributors to water pollution in Kazakhstan starting with the  highest contributor.",
               "data": [
                 {
-                  "text": "Housing and community services.",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Housing and community services."
                 },
                 {
-                  "text": "Energy sector.",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Energy sector."
                 },
                 {
-                  "text": "Chemical and metal production services.",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Chemical and metal production services."
                 },
                 {
-                  "text": "Coal and agriculture industries.",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Coal and agriculture industries."
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 5: Physics of Nature",
               "cards": [
                 {
@@ -2307,7 +2199,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: Why Do We See Objects?",
+          "title": "1. Why Do We See Objects?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -2387,6 +2279,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "For a week, take pictures of the sky in the morning and the evening. Make a log of what you see in the air. For example, can you see smog or pollutants? What do you suspect is there that you can’t see? Jot down observations everyday and try to find trends.",
               "cards": [
                 {
@@ -2399,7 +2292,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: What is Light Absorption?",
+          "title": "2. What is Light Absorption?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -2426,34 +2319,25 @@
               "prompt": "Put the following colors in order from absorbing the most to least amount of light.",
               "data": [
                 {
-                  "text": "Black",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Black"
                 },
                 {
-                  "text": "Blue",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Blue"
                 },
                 {
-                  "text": "Red",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Red"
                 },
                 {
-                  "text": "Yellow",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Yellow"
                 },
                 {
-                  "text": "White",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "White"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Utilizing and understanding how light gets absorbed can be a major advantage in the energy sector. Still pretty new to the industry, solar panels are being used as an alternative to other processes that create energy which use fossil fuels. Understanding how the sun can be converted into electricity is easier if you understand how plants convert the sun into energy as well! Compare and contrast how these things are similar and different. If you need to do some research to better understand solar energy, go ahead and do that first!",
               "cards": []
             }
@@ -2461,7 +2345,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Is It Possible to Change the Shadow?",
+          "title": "3. Is It Possible to Change the Shadow?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -2521,6 +2405,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How can the lack of light caused by smog or the overexposure of light caused by the deterioration of the atmosphere impact wildlife and habitat? List and describe three ways.",
               "cards": [
                 {
@@ -2533,7 +2418,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: What is Sound Reflection?",
+          "title": "4. What is Sound Reflection?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF6CEB",
           "content": [
@@ -2560,29 +2445,22 @@
               "prompt": "Order objects according to how good they are at reflecting sound. Start with the best and reflecting sound, ending at the worst of the objects provided.",
               "data": [
                 {
-                  "text": "Concrete",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Concrete"
                 },
                 {
-                  "text": "Glass",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Glass"
                 },
                 {
-                  "text": "Thick carpets",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Thick carpets"
                 },
                 {
-                  "text": "Curtains",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Curtains"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Take a video where sound pollution due to construction, cars, or any other viable source is occurring. What are the negative consequences? What could be put in place to improve this situation?",
               "cards": [
                 {
@@ -2595,7 +2473,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How to Reduce Sound?",
+          "title": "5. How to Reduce Sound?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C75EB",
           "content": [
@@ -2667,6 +2545,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Pick one of these to try to do for a whole week. Write a paragraph about your current habits when it comes to the option you chose and identify how you will improve it. Everyday, provide a journal entry of your efforts and reflect on how difficult or easy this is for you to accomplish everyday. Maybe it can become a permanent change! Share your efforts with your family and try to get them to join if you can!",
               "cards": [
                 {
@@ -2679,7 +2558,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: What is Thermal Conductivity?",
+          "title": "6. What is Thermal Conductivity?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#B56CEB",
           "content": [
@@ -2743,6 +2622,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "In the next few lessons, we will focus on this SDG in the effort to further understand how we can support this goal. Take this time to read through the website and summarize your initial reactions to the goal here.",
               "cards": [
                 {
@@ -2755,7 +2635,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: How is Thermal Conductivity Used?",
+          "title": "7. How is Thermal Conductivity Used?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#8C6BEB",
           "content": [
@@ -2811,6 +2691,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "With the information from the table in mind, what could your household do to decrease your energy usage? Create a detailed plan that addresses how you plan to change the consumption of energy from the appliance and how realistic implementing this change would be.",
               "cards": [
                 {
@@ -2823,7 +2704,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: Why Do You Need an Electroscope?",
+          "title": "8. Why Do You Need an Electroscope?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#6C9DEB",
           "content": [
@@ -2875,6 +2756,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Present to your family and focus on implementing this plan across a week. Upload your presentation here!",
               "cards": [
                 {
@@ -2887,7 +2769,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: What Bodies Conduct Electricity?",
+          "title": "9. What Bodies Conduct Electricity?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF6CEB",
           "content": [
@@ -2908,6 +2790,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 6: Substances and Their Properties",
               "cards": [
                 {
@@ -2934,7 +2817,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: What Are Minerals?",
+          "title": "1. What Are Minerals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -2998,6 +2881,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Plastic is a material that has had a huge impact on wildlife around the world. You probably have heard about all of the problems it causes, but what actually is it? Conduct research and write a paragraph summarizing what plastic is and the largest negative impacts it has on the environment.",
               "cards": []
             }
@@ -3005,7 +2889,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: How Are Minerals Formed?",
+          "title": "2. How Are Minerals Formed?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -3032,24 +2916,16 @@
               "prompt": "Put the following layers of the earth in order, starting with the outermost layer.",
               "data": [
                 {
-                  "text": "The crust",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "The crust"
                 },
                 {
-                  "text": "The mantle",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "The mantle"
                 },
                 {
-                  "text": "The outer core",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "The outer core"
                 },
                 {
-                  "text": "The inner core",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "The inner core"
                 }
               ]
             },
@@ -3090,6 +2966,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Last lesson we focused on getting to the bottom of what plastic really is. With that information, spend an hour walking around outside and picking up plastic (or any garbage) and disposing of it properly. Take pictures to show your progress.",
               "cards": []
             }
@@ -3097,7 +2974,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: What Are Combustible Materials?",
+          "title": "3. What Are Combustible Materials?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -3161,6 +3038,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "One big problem with plastic is that it takes a really long time to break down, increasing its harm to the environment. View the chart below to see how it compares to other materials. Can you think of something that is made of plastic that could instead be made out of one of these other materials that could break down easier? Explain your creative solution!",
               "cards": []
             }
@@ -3168,7 +3046,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: What Are Ore Minerals?",
+          "title": "4. What Are Ore Minerals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -3228,6 +3106,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "List three ways the country can take the profits from mined ore minerals to invest in the sustainable development of the country.",
               "cards": [
                 {
@@ -3240,7 +3119,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: What is Ferrous Metal?",
+          "title": "5. What is Ferrous Metal?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -3296,6 +3175,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Create a plan for these large mining companies to donate profits back to the city and country to reduce nationwide pollution output.",
               "cards": [
                 {
@@ -3308,7 +3188,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: What Are Metals?",
+          "title": "6. What Are Metals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -3364,6 +3244,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Once you identify this item, do some research to find an alternative already on the market that is more sustainable by not being a single use item. Summarize the product, how it would improve on the less sustainable product you currently use, and how you think it could improve.",
               "cards": [
                 {
@@ -3376,7 +3257,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: What Are Non-Metallic Minerals?",
+          "title": "7. What Are Non-Metallic Minerals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB755B",
           "content": [
@@ -3432,6 +3313,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "If the sustainable option is less affordable, what would you suggest to the company to make it more competitive? Are there any other reasons other than affordability that would keep a customer from choosing the environmentally friendly alternative?",
               "cards": [
                 {
@@ -3444,7 +3326,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: The Importance of Minerals",
+          "title": "8. The Importance of Minerals",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5C9E",
           "content": [
@@ -3504,6 +3386,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Name and detail three ways that these mineral profits can be used to build infrastructure for the country to become more sustainable.",
               "cards": [
                 {
@@ -3516,7 +3399,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: What Can Replace Minerals?",
+          "title": "9. What Can Replace Minerals?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DBA25C",
           "content": [
@@ -3537,6 +3420,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "A fun way to do this on your own is to create a piece of art out of household items that would otherwise be disposed of. Collect waste for a week and use it to create a work of art, it could be a sculpture, prototype of an invention, diagram, anything! Use this opportunity to get creative and demonstrate how waste can be recycled in a literal way to make something brand new! Upload a picture.",
               "cards": [
                 {
@@ -3549,7 +3433,7 @@
         },
         {
           "navigation": "Lesson10",
-          "title": "10: Consequences of Mining",
+          "title": "10. Consequences of Mining",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB5F5C",
           "content": [
@@ -3621,6 +3505,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Upload an image of the place you suggest this change to be made and create a plan of how you would achieve this.",
               "cards": [
                 {
@@ -3633,7 +3518,7 @@
         },
         {
           "navigation": "Lesson11",
-          "title": "11: Mining Around Us",
+          "title": "11. Mining Around Us",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
@@ -3701,6 +3586,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 7: Earth and Space",
               "cards": [
                 {
@@ -3723,7 +3609,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: What is Our Earth?",
+          "title": "1. What is Our Earth?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -3750,44 +3636,28 @@
               "prompt": "Order the planets in our solar system from farthest to closest to the sun.",
               "data": [
                 {
-                  "text": "Neptune",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Neptune"
                 },
                 {
-                  "text": "Uranus",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Uranus"
                 },
                 {
-                  "text": "Saturn",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Saturn"
                 },
                 {
-                  "text": "Jupiter",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Jupiter"
                 },
                 {
-                  "text": "Mars",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Mars"
                 },
                 {
-                  "text": "Earth",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Earth"
                 },
                 {
-                  "text": "Venus",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Venus"
                 },
                 {
-                  "text": "Mercury",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Mercury"
                 }
               ]
             },
@@ -3894,6 +3764,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Find a globe or map. Highlight what shape the earth and why you think that shape exists. What do you notice about the variety of colors on the map and what do the colors signify? Try drawing earth and coloring it in, putting a circle around where you live.",
               "cards": []
             }
@@ -3901,7 +3772,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: Mountains and Plains",
+          "title": "2. Mountains and Plains",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -3928,34 +3799,25 @@
               "prompt": "Order the top five tallest mountains from tallest to shortest.",
               "data": [
                 {
-                  "text": "Mount Everest",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Mount Everest"
                 },
                 {
-                  "text": "K2",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "K2"
                 },
                 {
-                  "text": "Kangchenjunga",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Kangchenjunga"
                 },
                 {
-                  "text": "Lhotse",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Lhotse"
                 },
                 {
-                  "text": "Makalu",
-                  "dormant": "midnightblue",
-                  "active": "mediumturquoise"
+                  "text": "Makalu"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "What is the difference between a mountain and a plain? Draw both and highlight where pollution would be higher in the Kazakh mountains or plains.",
               "cards": []
             }
@@ -3963,7 +3825,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Between Mountains",
+          "title": "3. Between Mountains",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -3984,6 +3846,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Relief being the difference between the lowest and highest point of a given area represents the space between our planets and constellations and the earth’s core. Polluted air often stays trapped in space and is our bank of oxygen. List three creative ways to improve the quality of this air and draw an image of the city with these methods being added to the image.",
               "cards": []
             }
@@ -3991,7 +3854,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: What Is in Space?",
+          "title": "4. What Is in Space?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7874DB",
           "content": [
@@ -4018,24 +3881,19 @@
               "prompt": "Order these things in space according to how far away they are from you.",
               "data": [
                 {
-                  "text": "Atmosphere",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Atmosphere"
                 },
                 {
-                  "text": "Satellites",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Satellites"
                 },
                 {
-                  "text": "Planets",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Planets"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Look at the sky at night and detail what you notice. What colors and figures stand out and how does it look relative to earth? Can you see the stars? If not, what does pollution have to do with it?",
               "cards": []
             }
@@ -4043,7 +3901,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: Cosmic Bodies",
+          "title": "5. Cosmic Bodies",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74D3DB",
           "content": [
@@ -4070,24 +3928,19 @@
               "prompt": "Order the three smallest cosmic bodies according to size, smallest to largest.",
               "data": [
                 {
-                  "text": "Meteoroid",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Meteoroid"
                 },
                 {
-                  "text": "Comet",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Comet"
                 },
                 {
-                  "text": "Asteroid",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Asteroid"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Draw the steps of formation for a small cosmic body. Find one and conduct research on it, finding its significance to the solar system.",
               "cards": []
             }
@@ -4095,7 +3948,7 @@
         },
         {
           "navigation": "Lesson6",
-          "title": "6: Influence of Space",
+          "title": "6. Influence of Space",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7492DB",
           "content": [
@@ -4151,6 +4004,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Search up the solar system. Draw all of the planets and explain what direction they move in. What is their relation to the sun and how does the quality of air and pollution influence our relationship with the sun?",
               "cards": []
             }
@@ -4158,7 +4012,7 @@
         },
         {
           "navigation": "Lesson7",
-          "title": "7: How Does the Earth Revolve Around the Sun?",
+          "title": "7. How Does the Earth Revolve Around the Sun?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74B1DB",
           "content": [
@@ -4185,39 +4039,28 @@
               "prompt": "Order the steps of earth’s cycle around the sun starting at Perihelion (Earth’s closest point to the Sun in orbit).",
               "data": [
                 {
-                  "text": "Perihelion",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Perihelion"
                 },
                 {
-                  "text": "Spring Equinox",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Spring Equinox"
                 },
                 {
-                  "text": "Summer Solstice",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Summer Solstice"
                 },
                 {
-                  "text": "Aphelion",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Aphelion"
                 },
                 {
-                  "text": "Autumn Equinox",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Autumn Equinox"
                 },
                 {
-                  "text": "Winter Solstice",
-                  "dormant": "dodgerblue",
-                  "active": "#3873E0"
+                  "text": "Winter Solstice"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "When the earth revolves around the sun, how does that impact the weather? In times when the temperature is lower, how does your country create heat? Find the most unsustainable way to create heat and provide replacements for each that are more sustainable.",
               "cards": []
             }
@@ -4225,7 +4068,7 @@
         },
         {
           "navigation": "Lesson8",
-          "title": "8: How Do the Sun’s Rays Land on Earth?",
+          "title": "8. How Do the Sun’s Rays Land on Earth?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#74DBC2",
           "content": [
@@ -4252,29 +4095,22 @@
               "prompt": "Order the steps of the sun.",
               "data": [
                 {
-                  "text": "Sunrise",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Sunrise"
                 },
                 {
-                  "text": "Daylight",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Daylight"
                 },
                 {
-                  "text": "Sunset",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Sunset"
                 },
                 {
-                  "text": "Nighttime",
-                  "dormant": "indigo",
-                  "active": "mediumpurple"
+                  "text": "Nighttime"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "How do the sun rays interact with the earth’s atmosphere and Ozone Layer? How does pollution deplete the atmosphere? Take a deodorant or hair spray and spray it away from your eyes. Shine a light through the cloud and write what you observe about light and its interaction with the atmosphere.",
               "cards": []
             }
@@ -4282,7 +4118,7 @@
         },
         {
           "navigation": "Lesson9",
-          "title": "9: What Are Seasonal Changes?",
+          "title": "9. What Are Seasonal Changes?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#7874DB",
           "content": [
@@ -4303,6 +4139,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Chapter 8: Forces and Movement",
               "cards": [
                 {
@@ -4325,7 +4162,7 @@
       "lessons": [
         {
           "navigation": "Lesson1",
-          "title": "1: The Law of Archimedes",
+          "title": "1. The Law of Archimedes",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E09079",
           "content": [
@@ -4352,34 +4189,25 @@
               "prompt": "Order the ways in which a force can be applied from the most to the least force.",
               "data": [
                 {
-                  "text": "Compression",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Compression"
                 },
                 {
-                  "text": "Tension",
-                  "dormant": "#6e57d2",
-                  "active": "#634ebd"
+                  "text": "Tension"
                 },
                 {
-                  "text": "Torsion",
-                  "dormant": "lightpink",
-                  "active": "mediumvioletred"
+                  "text": "Torsion"
                 },
                 {
-                  "text": "Shear",
-                  "dormant": "coral",
-                  "active": "#DB756B"
+                  "text": "Shear"
                 },
                 {
-                  "text": "Buoyant force",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Buoyant force"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Waste and pollution often sit on bodies of water. This is detrimental to the variety of wildlife and habitats. Find a river or lake and take a picture of any trash you can see. Document how the presence of trash sitting on the surface level of the water can impact the bodies of life living in that ecosystem.",
               "cards": []
             }
@@ -4387,7 +4215,7 @@
         },
         {
           "navigation": "Lesson2",
-          "title": "2: What is Buoyancy?",
+          "title": "2. What is Buoyancy?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E07D78",
           "content": [
@@ -4414,29 +4242,22 @@
               "prompt": "Order these household items from most buoyant to least buoyant",
               "data": [
                 {
-                  "text": "Rubber duck",
-                  "dormant": "pink",
-                  "active": "#ffacbb"
+                  "text": "Rubber duck"
                 },
                 {
-                  "text": "Plastic water bottle",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Plastic water bottle"
                 },
                 {
-                  "text": "Glass bottle",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Glass bottle"
                 },
                 {
-                  "text": "Iron skillet",
-                  "dormant": "darkorange",
-                  "active": "goldenrod"
+                  "text": "Iron skillet"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "What are three creative ways to dispose of trash floating on the surfaces of water and help reduce pollution?",
               "cards": []
             }
@@ -4444,7 +4265,7 @@
         },
         {
           "navigation": "Lesson3",
-          "title": "3: Archimedes in the Air",
+          "title": "3. Archimedes in the Air",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#DF79E0",
           "content": [
@@ -4471,24 +4292,19 @@
               "prompt": "Order the steps which allow the movement of air",
               "data": [
                 {
-                  "text": "Temperature difference",
-                  "dormant": "darkolivegreen",
-                  "active": "darkgreen"
+                  "text": "Temperature difference"
                 },
                 {
-                  "text": "Warm air moves down, cold air moves up",
-                  "dormant": "orange",
-                  "active": "orangered"
+                  "text": "Warm air moves down, cold air moves up"
                 },
                 {
-                  "text": "Rising air makes clouds",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Rising air makes clouds"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "The buoyancy and weight of different matters affect their ability to float. Air pollution is the most present form of pollution and sits in the lowest valleys within the city regions. Draw how you view pollution collecting within the city and write the top three solutions to reducing this pollution.",
               "cards": []
             }
@@ -4496,7 +4312,7 @@
         },
         {
           "navigation": "Lesson4",
-          "title": "4: How is the Law of Archimedes Applied?",
+          "title": "4. How is the Law of Archimedes Applied?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E0A279",
           "content": [
@@ -4523,29 +4339,22 @@
               "prompt": "Order the steps of a given item (basketball) falling into a pool of water",
               "data": [
                 {
-                  "text": "Basketball falls into water",
-                  "dormant": "indianred",
-                  "active": "firebrick"
+                  "text": "Basketball falls into water"
                 },
                 {
-                  "text": "Basketball pushes water down",
-                  "dormant": "#d38f9f",
-                  "active": "#cd8193"
+                  "text": "Basketball pushes water down"
                 },
                 {
-                  "text": "Buoyant force acts against the basketball",
-                  "dormant": "#19a127",
-                  "active": "#169023"
+                  "text": "Buoyant force acts against the basketball"
                 },
                 {
-                  "text": "Basketball floats",
-                  "dormant": "#ffa500",
-                  "active": "#e59400"
+                  "text": "Basketball floats"
                 }
               ]
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "Take a beaker or glass and fill it to the top with water. Place a round a waterproof object, such as a fruit or ball and place it in the glass. Notice that there is an upward force causing the water level to rise and for the object to push back up against your force pushing it down. What do you observe and what is causing this upward force?",
               "cards": []
             }
@@ -4553,7 +4362,7 @@
         },
         {
           "navigation": "Lesson5",
-          "title": "5: How do Bodies Float in Water?",
+          "title": "5. How do Bodies Float in Water?",
           "thumbnail": "assets/cotton.png",
           "backgroundColor": "#E079A5",
           "content": [
@@ -4617,6 +4426,7 @@
             },
             {
               "navigation": "Mastery",
+              "title": "common:mastery",
               "prompt": "The use of solar panels is increasing in their presence and ability. Detail three implementation strategies of attaching solar panels to floating bodies and other remote objects.",
               "cards": []
             }

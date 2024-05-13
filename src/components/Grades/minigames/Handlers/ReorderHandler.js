@@ -67,14 +67,40 @@ const Item = styled.TouchableOpacity`
   margin: 5px 0;
 `;
 
+REORDER_GRADIENTS = [
+  {active: "#c58bda", dormant: "#b897e8"}, 
+  {active: "#a9a2f2", dormant: "#9badf8"}, 
+  {active: "#8db8fc", dormant: "#81c1fc"}, 
+  {active: "#7ac9f9", dormant: "#77d1f5"}, 
+  {active: "#7ad8ef", dormant: "#82dee8"},
+  {active: "#b897e8", dormant: "#c58bda"}, 
+  {active: "#9badf8", dormant: "#a9a2f2"}, 
+  {active: "#81c1fc", dormant: "#8db8fc"}, 
+  {active: "#77d1f5", dormant: "#7ac9f9"}, 
+  {active: "#82dee8", dormant: "#7ad8ef"}];
+
 //ENTRY POINT
 //@param objectData the reorder object passed in from IndividualLessonHandler
 const ReorderHandler = ({ objectData }) => {
   //console.log("Data In: ", objectData);
-  const originalArray = objectData.data;
-  objectData.data.sort(function (a, b) {return Math.random() - 0.5;}); //shuffling data (this shuffle happens once upon initial render)
-
+  const [originalArray, setOriginalArray] = useState(objectData.data);
   const [data, setData] = useState(objectData.data);
+
+  useEffect(() => {
+    setOriginalArray(objectData.data); //to prevent unwanted re-rendering I useState the originalArray
+
+    const shuffledData = [...data]; // Creating a copy of data array for shuffling
+    shuffledData.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array
+
+    const styledData = shuffledData.map((element, index) => ({ //mapping our gradient onto the shuffled array.
+      ...element, //safe object mutation
+      active: REORDER_GRADIENTS[index % 9].active,
+      dormant: REORDER_GRADIENTS[index % 9].dormant
+    }));
+
+    setData(styledData); // Updating the data state with shuffled and mapped data
+  }, []);
+
   const { t } = useTranslation();
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [score, setScore] = useState(0);

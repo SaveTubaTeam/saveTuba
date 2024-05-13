@@ -177,8 +177,8 @@ async function createImageMapHelper(folder, pathList) {
 }
 
 // The following three variables MUST be specified for postData()
-const GRADE_NAME = "placeholder"; 
-const LANGUAGE_CODE = "en" 
+const GRADE_NAME = "Grade4"; //string specifying the grade, e.g. 'Grade2' 
+const LANGUAGE_CODE = "en"; //specifies the language, e.g. 'en', 'ru', 'kk'
 const CHAPTERS = en_grade4.chapters; //needs to be specified from import
 
 const postData = () => {
@@ -240,16 +240,17 @@ const postLessonData = async(lesson, chapterReference) => {
         // Initialize this attribute's count to 1 if string is encountered for the first time, otherwise increment this attribute's count
         !duplicates[currentObjectName] ? duplicates[currentObjectName] = 1 : duplicates[currentObjectName]++;
 
-        //if there are duplicates, we change the navigation name accordingly
+        //if there are duplicates, we change the navigation and title accordingly. duplicates[currentObjectName] is an int
         if (duplicates[currentObjectName] > 1) {
             currentObject.navigation = `${currentObjectName} ${duplicates[currentObjectName]}`;
+            currentObject.title = `${currentObject.title}${duplicates[currentObjectName]}`
         }
 
         postMasteryAndMinigames(currentObject, lessonLanguageReference); //see below
     })
 
     console.log("\t\tmasteryAndMinigames:");
-    lesson.content.forEach((element) => { console.log(`\t\t\t${element}`); })
+    lesson.content.forEach((element) => { console.log(`\t\t\t${element.navigation}`); })
 }
 
 //@param currentObject the current mastery or minigame object

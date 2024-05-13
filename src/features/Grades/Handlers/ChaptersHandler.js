@@ -63,8 +63,8 @@ const ChaptersHandler = ({ route })  => { //add achievements
           {/* We map each chapter to its own LessonsHandler */}
         {gradeData && gradeData.map((chapter, index) => (
           <Stack.Screen
-            key={`Chapter${index + 1}`}
-            name={`Chapter${index + 1}`}
+            key={index}
+            name={chapter.navigation}
             options={{ headerShown: false }}
           >
             {() => (

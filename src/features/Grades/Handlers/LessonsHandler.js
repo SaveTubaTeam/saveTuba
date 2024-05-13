@@ -83,12 +83,12 @@ function LessonsHandler({ gradeNumber, selectedChapter }) {
         {/* We map each lesson to its own IndividualLessonHandler */}
         {lessonsData && lessonsData.map((lesson, index) => (
           <Stack.Screen
-            key={`Lesson${index + 1}`}
-            name={`${lesson.navigation}`}
+            key={index}
+            name={lesson.navigation}
             options={{ headerShown: false }}
           >
             {() => (
-              <IndividualLessonHandler lessonData={lessonsData[index]} />
+              <IndividualLessonHandler lessonData={lesson} />
             )}
           </Stack.Screen>
         ))}

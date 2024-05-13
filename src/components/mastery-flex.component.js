@@ -46,7 +46,7 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
                     source={require("../../assets/mastery.png")}
                 >
                     <TitleText weight="bold" size="h5" color="quaternary">
-                        {t("common:mastery")}
+                        {t(mastery.title)}
                     </TitleText>
                 </ImageBg>
                 </TouchableOpacity>
