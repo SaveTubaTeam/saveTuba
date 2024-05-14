@@ -36,7 +36,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
   //to initially randomly sort the array
   useEffect(() => {
-    cardsArray.sort(function (a, b) {return Math.random() - 0.5;});
+    cardsArray.sort(() => Math.random() - 0.5); //shuffle array
   }, []);
 
   //to check if we have a match within currentSelection
@@ -64,7 +64,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
   //to reset the array and all state variables
   const resetCards = () => {
-    cardsArray.sort(function (a, b) {return Math.random() - 0.5;}); //randomizing array again
+    cardsArray.sort(() => Math.random() - 0.5); //randomizing array again
     setCurrentSelection([]);
     setSuccessfullyMatchedPairs([]);
     setScore(0);

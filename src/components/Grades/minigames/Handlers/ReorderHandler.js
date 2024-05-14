@@ -87,9 +87,9 @@ const ReorderHandler = ({ objectData }) => {
   const [data, setData] = useState(objectData.data);
 
   useEffect(() => {
-    setOriginalArray(objectData.data); //to prevent unwanted re-rendering I useState the originalArray
+    setOriginalArray(objectData.data); //to prevent unwanted re-rendering I useState the originalArray. Is probably unnecessary.
 
-    const shuffledData = [...data]; // Creating a copy of data array for shuffling
+    const shuffledData = [...data]; // Creating a copy of data array for safe mutation
     shuffledData.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array
 
     const styledData = shuffledData.map((element, index) => ({ //mapping our gradient onto the shuffled array.
