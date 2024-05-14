@@ -3,7 +3,7 @@ import { auth, db } from "../../firebase";
 import { getDoc } from "firebase/firestore";
 
 const initialState = {
-    userData: {'emptyUser': 'empty'},
+    userData: { 'emptyUser': 'empty', 'email': "" },
     status: 'idle'
 }
 
@@ -24,7 +24,7 @@ export const fetchUser = createAsyncThunk("userSlice/fetchUser", async({loginTyp
             return userData;
         } else { //no snapshot found, return empty object
             console.log("error in userSlice fetchUser(): NO SNAPSHOT FOUND")
-            return {'emptyUser': 'empty'};
+            return {'emptyUser': 'empty', 'email': "" };
         }
         
     } catch(error) {
@@ -39,7 +39,7 @@ const userSlice = createSlice({
     initialState: initialState,
     reducers: {
         signOutUser(state, action) {
-            state.userData = {'emptyUser': 'empty'};
+            state.userData = {'emptyUser': 'empty', 'email': ""};
             state.status = 'idle';
             console.log("signOutUser successfully dispatched to userSlice!")
         }
@@ -57,7 +57,7 @@ const userSlice = createSlice({
             })
             .addCase(fetchUser.rejected, (state, action) => {
                 state.status = 'rejected'
-                console.log("fetchUser status:", state.status, "|\nError:", action.error.message);
+                console.log("fetchUser status:", state.status, "\nError:", action.error.message);
             })
     }
 });
