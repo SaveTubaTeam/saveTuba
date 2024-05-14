@@ -165,10 +165,10 @@ const ReorderHandler = ({ objectData }) => {
             <SubmitButton onPress={() => {
                 setScore(0);//resetting score
                 //iterating through list to check for correct order and update score.
-                for(let i=0; i<Object.keys(data).length; i++) {
-                  console.log(`\nUser: ${data[i].text}\nCorrect: ${originalArray[i].text}`)
-                  if(data[i].text === originalArray[i].text) { setScore((prevScore) => prevScore + 1); }
-                }
+                data.forEach((item, index) => {
+                  console.log(`\nUser: ${item.text}\nCorrect: ${originalArray[index].text}`);
+                  if (item.text === originalArray[index].text) { setScore((prevScore) => prevScore + 1); }
+                });
 
                 //setting visibility of modal to true;
                 setCompletionModalVisible(!completionModalVisible);
