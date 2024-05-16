@@ -135,7 +135,7 @@ const ReorderHandler = ({ objectData }) => {
   //react-native-gesture-handler
   return (
     <>
-      <Container>
+      <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "#cce882" }}>
         <DraggableFlatList
           scrollEnabled={false}
           data={data}
@@ -146,7 +146,7 @@ const ReorderHandler = ({ objectData }) => {
           }}
           keyExtractor={(item) => item.text} //fixed bug where any key set to 0 would be undraggable.
           renderItem={renderItem}
-          ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10 }}
+          ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10, justifyContent: 'center' }}
           ListHeaderComponent={
             <Prompt>
               <TitleText size="subtitle">{objectData.prompt}</TitleText>
@@ -185,7 +185,7 @@ const ReorderHandler = ({ objectData }) => {
         prompt={t("minigames:reorderprompt")}>
         </CompletionModal>
 
-      </Container>
+      </ScrollView>
     </>
   );
 };

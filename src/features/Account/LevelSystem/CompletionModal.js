@@ -32,7 +32,7 @@ const CompletionModal = ({ score, prompt, visible }) => {
     score === -1 ? finalXP = 100 : finalXP = 300; //MasteryHandler passes a prop of -2 for more XP
   } else {
     /* marked for translation */
-    scoreShown = `Final Score: ${score}\n\n`;
+    scoreShown = `${t("minigames:finalscore")}: ${score}\n\n`;
     finalXP = score * XP_PER_POINT;
   }
   
@@ -59,7 +59,7 @@ const CompletionModal = ({ score, prompt, visible }) => {
           <BodyText size="subtitle">
           {scoreShown}
           {`${prompt} ✨`}
-          {`\n\nYou gained ${finalXP} xp!\n`}
+          {`\n\n+${finalXP} xp!\n`}
           </BodyText>
         </View>
 

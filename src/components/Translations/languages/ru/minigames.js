@@ -1,5 +1,6 @@
 export default {
    return: "Return",
+   finalscore: "Final Score",
 
    sortingprompt: "Good job completing this sorting exercise!\nGo back to the lesson to continue learning.",
    sortingcorrect: "That's right! Good job ✨",

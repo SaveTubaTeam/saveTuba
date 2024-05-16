@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  Image,
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
@@ -13,9 +12,11 @@ import { TitleText } from "../../../title-text.component.js";
 import { BodyText } from "../../../body-text.component.js";
 import { Spacer } from "../../../spacer.component.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal.js";
+import { Image } from "expo-image";
+
+const ASSETS_FILEPATH = "../../../../../assets/";
 
 //@param objectData passed from IndividualLessonHandler
-//@param imageMap
 const MemoryHandler = ({ objectData, imageMap }) => {
   const { t } = useTranslation();
   const cardsArray = objectData.content;
@@ -106,7 +107,8 @@ const MemoryHandler = ({ objectData, imageMap }) => {
               pressCard();
           }}>
 
-        <ImageBackground source={{ uri: imageMap["assets/block.png"] }} style={{ width: 80, height: 80 }}>
+        <ImageBackground source={require(`${ASSETS_FILEPATH}block.png`)} 
+                         style={{ width: 80, height: 80, justifyContent: 'center', alignItems: 'center' }}>
     
           {isOpen ? content : (
               <Ionicons name={"help-outline"} size={80} color={"#fff8e7"} />

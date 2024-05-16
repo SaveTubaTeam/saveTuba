@@ -41,7 +41,7 @@ async function getGradeData(grade) {
             });
         
         console.log("chapterList array:", chapterList); //logging chapterList array
-        await setCache(grade, chapterList);
+        //await setCache(grade, chapterList);
         //console.log(getCacheObject("grades")); //logging cache under key "grades"
         return chapterList; // This returns the array
     //}
@@ -115,7 +115,7 @@ async function getLessonsData(grade, chpt, languageCode) {
         }
 
         console.log("Lessons: ", lessonsList); //logging lessons array
-        await setCache(`${grade}-${chpt}-${languageCode}`, lessonsList); //cache key looks like "Grade1-Chapter3-en"
+        //await setCache(`${grade}-${chpt}-${languageCode}`, lessonsList); //cache key looks like "Grade1-Chapter3-en"
         return lessonsList;
     //}
 }
