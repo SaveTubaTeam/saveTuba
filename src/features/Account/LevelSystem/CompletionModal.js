@@ -8,6 +8,7 @@ import { BodyText } from "../../../components/body-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
 
 import { useNavigation } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
 
 import styled from "styled-components/native";
 
@@ -18,6 +19,7 @@ import { t } from "i18next";
 //CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
 const CompletionModal = ({ score, prompt, visible }) => {
+  const { t } = useTranslation();
   const navigation = useNavigation();
   const XP_PER_POINT = 15;
 
@@ -77,7 +79,7 @@ const CompletionModal = ({ score, prompt, visible }) => {
         >
           {/* marked for translation */}
         <BodyText size="subtitle" color="secondary">
-          Return
+          {t("minigames:return")}
         </BodyText>
         </TouchableOpacity>
 

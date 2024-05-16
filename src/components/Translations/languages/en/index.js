@@ -6,6 +6,7 @@ import gradefour from "./gradefour";
 import common from "./common";
 import mastery from "./mastery";
 import profile from "./profile";
+import minigames from "./minigames";
 
 export default {
   about,
@@ -16,4 +17,5 @@ export default {
   common,
   mastery,
   profile,
+  minigames,
 };

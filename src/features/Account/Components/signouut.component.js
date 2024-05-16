@@ -7,6 +7,7 @@ import styled from "styled-components/native";
 import { signOutUser, selectCurrentUser } from "../../../../redux/slices/userSlice";
 //import { bindActionCreators } from "redux";
 import { useNavigation } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from 'react-redux';
 
 const Button = styled(TouchableOpacity)`
@@ -27,6 +28,7 @@ const ButtonText = styled.Text`
 const SignOut = () => {
     const navigation = useNavigation();
     const dispatch = useDispatch();
+    const { t } = useTranslation();
     //const user = useSelector(selectCurrentUser);
 
     const handleSignOut = async() => {
@@ -43,18 +45,11 @@ const SignOut = () => {
 
         return (
             <Button onPress={handleSignOut}>
-                <ButtonText>Sign Out</ButtonText>
+                <ButtonText>{t("common:signout")}</ButtonText>
             </Button>
         );
 }
-/* 
-const MapStateToProps = (store) => ({
-    currentUser: store.userState.currentUser,
-});
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({signOutUser }, dispatch);
-
- */
 export default SignOut;
 
 

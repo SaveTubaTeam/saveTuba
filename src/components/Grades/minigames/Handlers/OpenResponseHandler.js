@@ -12,7 +12,7 @@ import {
 import { connect } from "react-redux";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-
+import { useTranslation } from "react-i18next";
 import { Button } from "react-native-paper";
 
 import { TitleText } from "../../../title-text.component";
@@ -37,6 +37,7 @@ const ImagePrompt = ({ data, imageMap }) => {
   const [visible, setVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
+  const { t } = useTranslation();
 
   //modal popup for when the user doesn't type anything
   const Modko = () => {
@@ -49,7 +50,7 @@ const ImagePrompt = ({ data, imageMap }) => {
             <View>
               {/* marked for translation */}
               <BodyText size="subtitle">
-                {`hmmmm... it seems you haven't submitted anything\n`}
+                {t("minigames:openresponsenosubmission")}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -64,7 +65,7 @@ const ImagePrompt = ({ data, imageMap }) => {
             >
               {/* marked for translation */}
               <BodyText size="subtitle" color="secondary">
-                Try Again
+                {t("minigames:openresponsetryagain")}
               </BodyText>
             </TouchableOpacity>
           </ModalContainer>
@@ -136,7 +137,7 @@ const ImagePrompt = ({ data, imageMap }) => {
             }}
             onChangeText={setValue}
             /* marked for translation */
-            placeholder={"I think..."}
+            placeholder={t("minigames:openresponsethink")}
             placeholderTextColor={"#D5DBB9"}
             multiline={true}
             value={value}
@@ -157,8 +158,7 @@ const ImagePrompt = ({ data, imageMap }) => {
               }
             }}
           >
-            {/* marked for translation */}
-            <BodyText color="secondary">Submit</BodyText>
+            <BodyText color="secondary">{t("common:submit")}</BodyText>
           </Button>
         </View>
       </View>
@@ -169,7 +169,7 @@ const ImagePrompt = ({ data, imageMap }) => {
       <CompletionModal 
         visible={completionModalVisible}
         score={-1}
-        prompt={"Your response has been submitted. Good job!\nGo back to the lesson to continue learning."}
+        prompt={t("minigames:openresponseprompt")}
       >
 
       </CompletionModal>

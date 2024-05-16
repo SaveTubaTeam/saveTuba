@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
@@ -70,7 +70,7 @@ const Question = styled.View`
 //@param data is taken from QuizScreen format in Firebase
 const Start = ({ data, imageMap }) => {
   //const navigation = useNavigation();
-
+  const { t } = useTranslation();
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
@@ -137,7 +137,7 @@ const Start = ({ data, imageMap }) => {
             >
               {/* marked for translation */}
               <BodyText size="subtitle" color="secondary">
-                Next
+                {t("minigames:quiznext")}
               </BodyText>
 
             </TouchableOpacity>
@@ -190,7 +190,7 @@ const Start = ({ data, imageMap }) => {
 
             {/* marked for translation */}
           <CompletionModal visible={completionModalVisible} score={score} 
-          prompt={`Congratulations!\nYou've just finished this quiz!\nGo back to the lesson to continue learning.`}
+          prompt={t("minigames:quizprompt")}
           >
           </CompletionModal>
 

@@ -213,8 +213,9 @@ const LoginScreenEmail = () => {
             }} 
             style={{alignItems: 'center'}}>
             <Text style={{textDecorationLine: 'underline'}}>
+              {/* marked for translation */}
               <TitleText color="secondary" size="button">
-              Forgot Password
+              {t("common:forgotpassword")}
               </TitleText>
             </Text>
           </TouchableOpacity>
@@ -239,9 +240,10 @@ const LoginScreenEmail = () => {
         <SelectorLogin />
 
           {/* Guest Login */}
+          {/* marked for translation */}
           <ButtonOutLine onPress={() => continueAsGuest()} style={{marginTop: 10}}>
             <TitleText color="primary" size="body">
-              Continue as Guest
+              {t("common:continueasguest")}
             </TitleText>
           </ButtonOutLine>
           </BottomContainer>

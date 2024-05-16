@@ -54,6 +54,8 @@ export default {
   makeanewaccount: "Создайте новый аккаунт",
   teachersignup: "Учитель Зарегистрироваться",
   signout: "Выйти",
+  continueasguest: "Missing Translation",
+  forgotpassword: "Missing Translation",
 
   email: "Эл. адрес",
   password: "Пароль",

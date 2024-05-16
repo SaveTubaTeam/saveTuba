@@ -131,7 +131,7 @@ const MasteryHandler = ({ objectData, imageMap }) => {
 
         {/* marked for translation */}
       <CompletionModal score={-2} visible={completionModalVisible}
-      prompt={`Congratulations!\nYour response has been submitted.\n\nYou've just completed a mastery! Give yourself a pat on the back.`}> 
+      prompt={t("minigames:masteryprompt")}> 
       </CompletionModal>
 
     </Container>

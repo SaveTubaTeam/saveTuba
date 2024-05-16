@@ -154,7 +154,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
         <BodyText size="title">{objectData.description}</BodyText>
         <Spacer size="medium" />
         {/* marked for translation */}
-        <TitleText size="caption">Hint: Match images with words.</TitleText>
+        <TitleText size="caption">{t("minigames:memoryhint")}</TitleText>
       </View>
 
       <View style={styles.grid}>
@@ -177,7 +177,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
         {/* marked for translation */}
       <CompletionModal 
-        prompt={"Good job completing this memory minigame!\nGo back to the lesson to continue learning."} 
+        prompt={t("minigames:memoryprompt")} 
         score={score} visible={completionModalVisible}>
       </CompletionModal>
     </ImageBackground>

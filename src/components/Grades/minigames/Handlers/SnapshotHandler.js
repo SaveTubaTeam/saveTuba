@@ -80,7 +80,7 @@ const SnapshotHandler = ({ objectData, imageMap }) => {
         
         {/* marked for translation */}
         <CompletionModal score={-1} visible={completionModalVisible}
-        prompt={'Your image has been submitted. Good job!\nGo back to the lesson to continue learning.'}>
+        prompt={t("minigames:snapshotprompt")}>
         </CompletionModal>
 
       </Container>

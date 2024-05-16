@@ -54,6 +54,8 @@ export default {
   makeanewaccount: "Make a new account",
   teachersignup: "Teacher Sign Up",
   signout: "Sign Out",
+  continueasguest: "Continue as Guest",
+  forgotpassword: "Forgot Password",
 
   email: "Email Address",
   password: "Password",

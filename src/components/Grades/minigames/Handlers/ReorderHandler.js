@@ -154,7 +154,7 @@ const ReorderHandler = ({ objectData }) => {
 
               {/* marked for translation */}
               <TitleText size="caption">
-                Hint: Sort the items from top (first) to bottom (last).
+                {t("minigames:reorderhint")}
               </TitleText>
             </Prompt>
           }
@@ -182,7 +182,7 @@ const ReorderHandler = ({ objectData }) => {
 
         {/* marked for translation */}
         <CompletionModal visible={completionModalVisible} score={score} 
-        prompt={"Good job completing this reorder minigame!\nGo back to the lesson to continue learning."}>
+        prompt={t("minigames:reorderprompt")}>
         </CompletionModal>
 
       </Container>

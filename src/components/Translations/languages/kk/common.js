@@ -52,9 +52,10 @@ export default {
   login: "Kipy",
   signup: "Тіркелу",
   makeanewaccount: "Жаңа есептік жазба жасаңыз",
-
   teachersignup: "Мұғалім тіркелу",
   signout: "Шығу",
+  continueasguest: "Missing Translation",
+  forgotpassword: "Missing Translation",
 
   email: "Электрондық пошта",
   password: "Пароль",

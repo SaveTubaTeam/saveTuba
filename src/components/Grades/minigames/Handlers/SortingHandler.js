@@ -11,7 +11,7 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { SafeArea } from "../../../safe-area.component";
@@ -77,6 +77,7 @@ const Start = ({ data, imageMap }) => {
   const [currentAnswer, setCurrentAnswer] = useState(data.options[count].name);
 
   const navigation = useNavigation();
+  const { t } = useTranslation();
 
   const Modko = () => {
     return (
@@ -89,8 +90,8 @@ const Start = ({ data, imageMap }) => {
               {/* marked for translation */}
               <BodyText size="subtitle">
                 {correct == true
-                  ? "That's right! Good job ✨"
-                  : "Incorrect! Better luck next time 🍀"}
+                  ? t("minigames:sortingcorrect")
+                  : t("minigames:sortingincorrect")}
               </BodyText>
             </View>
             <TouchableOpacity
@@ -188,7 +189,7 @@ const Start = ({ data, imageMap }) => {
 
             {/* marked for translation */}
           <CompletionModal visible={completionModalVisible} score={score} 
-          prompt={'Good job completing this sorting exercise!\nGo back to the lesson to continue learning.'}>
+          prompt={t("minigames:sortingprompt")}>
           </CompletionModal>
         </Container>
       </ImageBg>
