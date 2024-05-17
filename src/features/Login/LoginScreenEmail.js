@@ -222,7 +222,7 @@ const LoginScreenEmail = () => {
           </TouchableOpacity>
 
           {/* This posted the data that was pulled from the post method above */}
-          {/* <Button onPress={postData}>
+          {/* <Button onPress={postDataHard}>
             <TitleText color="secondary" size="body">
               postData()
             </TitleText>

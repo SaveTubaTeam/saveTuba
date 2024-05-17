@@ -59,23 +59,23 @@ function LessonsComponent({ lessonsData, navigation }) {
         <View
           style={{
             flexDirection: "row",
+            backgroundColor: "#FFFFFF",
             borderRadius: 20,
-            backgroundColor: item.backgroundColor,
           }}
         >
           <View
             style={{
-              width: "70%",
+              width: "60%",
               padding: 20,
               height: 200,
               zIndex: 1000,
             }}
           >
-            <TitleText align="left" size="subtitle" color="secondary">
+            <TitleText align="left" size="subtitle" color="primary">
               {item.title}
             </TitleText>
             <Spacer size="small" />
-            <BodyText align="left" color="secondary">
+            <BodyText align="left" color="primary">
               0/5
             </BodyText>
             <TouchableOpacity
@@ -87,9 +87,9 @@ function LessonsComponent({ lessonsData, navigation }) {
                 paddingBottom: 7,
                 paddingLeft: 15,
                 paddingRight: 20,
-                backgroundColor: "#fff",
+                backgroundColor: "#F6FEDB",
                 borderRadius: 20,
-                borderColor: "#fff",
+                borderColor: "#CCE882",
                 borderWidth: 2,
                 flexDirection: "row",
               }}
@@ -116,8 +116,9 @@ function LessonsComponent({ lessonsData, navigation }) {
               right: 0,
               bottom: 0,
               height: 200,
-              width: undefined,
+              width: "43%",
               aspectRatio: 1,
+              borderRadius: 20,
             }}
             source={{uri: imageMap[item.thumbnail]}}
           />

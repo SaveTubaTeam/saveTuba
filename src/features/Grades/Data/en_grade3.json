@@ -3,15 +3,15 @@
     {
       "navigation": "Chapter1",
       "title": "common:chapter1",
-      "name": "common:PLACEHOLDER",
-      "icon": "assets/cotton.png",
+      "name": "gradethree:iamaresearcher",
+      "icon": "assets/grade-three/chapter-icons/book.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. History of Scientific Discoveries",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/wheel.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -26,7 +26,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-three/chapter1/imageboom/innovation.png",
               "prompt": "What is the difference between experiment and observation? Look at the diagram. Identify how a person uses each of the wheels in the picture. "
             },
             {
@@ -75,7 +75,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Sources of Information",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/read.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -90,7 +90,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-three/chapter1/imageboom/innovation.png",
               "prompt": "Where do you get your information and knowledge about the environment? Is it an electronic source, a book, or even a person? What makes this information reliable? "
             },
             {
@@ -128,7 +128,7 @@
               "content": [
                 {
                   "text": "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited. Record the link and research how reliable this source of information is.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter1/mastery/eco-light.png"
                 }
               ]
             }
@@ -137,7 +137,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Planning and Conducting an Experiment",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/research.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -152,7 +152,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-three/chapter1/imageboom/innovation.png",
               "prompt": "What is a hypothesis and why is it important? What is the point of asking questions when conducting an experiment? "
             },
             {
@@ -326,19 +326,19 @@
               "content": [
                 {
                   "text": "Scientists conduct research through experiments. This simple experiment can help you see pollution.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter1/mastery/scientist.png"
                 },
                 {
                   "text": "Air Pollution Experiment",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter1/mastery/air-pollution.png"
                 },
                 {
                   "text": "It can be hard to understand the concept of air pollution as it is not always easy to see. This simple experiment can help you understand that there is more in the atmosphere than just air and why it is important to keep the atmosphere clean.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter1/mastery/ask-question.png"
                 },
                 {
                   "text": "Here is what you will need:",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter1/mastery/reuse.png"
                 },
                 {
                   "text": "A piece of clear plastic (such as a plate or a cup), petroleum jelly, a small rock, a sheet of white paper",
@@ -353,15 +353,15 @@
     {
       "navigation": "Chapter2",
       "title": "common:chapter2",
-      "name": "common:PLACEHOLDER",
-      "icon": "assets/cotton.png",
+      "name": "gradethree:wildlife",
+      "icon": "assets/grade-three/chapter-icons/antelope.png",
       "colorOne": "indigo",
       "colorTwo": "mediumpurple",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. How do Plant Leaves Work?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/leaf.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -445,7 +445,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. How do Plants Adapt to Living Conditions?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/wilted.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -638,7 +638,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Natural Plant Communities",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/jungle.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -786,7 +786,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. How Does a Person Influence the Life of Plants?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/gardening.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -917,7 +917,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. Red Book of Plants",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/red-book.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -1068,7 +1068,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Vertebrates and Invertebrates Animals",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/spine.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -1204,7 +1204,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. Animal Habitat",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/habitat.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -1340,7 +1340,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. What Relationship Animals Exist in Nature",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/dog-cat.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -1458,7 +1458,7 @@
         {
           "navigation": "Lesson9",
           "title": "9. What is the Relationship Between Plants and Animals?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/spring.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -1561,7 +1561,7 @@
         {
           "navigation": "Lesson10",
           "title": "10. How do Habitat Conditions Affect the Number of Animals?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/desert.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -1631,7 +1631,7 @@
         {
           "navigation": "Lesson11",
           "title": "11. A Decrease in the Number of Animals",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/fishing.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -1706,7 +1706,7 @@
         {
           "navigation": "Lesson12",
           "title": "12. I Am an Animal",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/magnifying-glass.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -1776,7 +1776,7 @@
         {
           "navigation": "Lesson13",
           "title": "13. Journey of an Apple Through the Body",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/apple.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -1858,7 +1858,7 @@
         {
           "navigation": "Lesson14",
           "title": "14. How Do We Breathe?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/breathing.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -2080,15 +2080,15 @@
     {
       "navigation": "Chapter3",
       "title": "common:chapter3",
-      "name": "common:PLACEHOLDER",
-      "icon": "assets/cotton.png",
+      "name": "gradethree:substances",
+      "icon": "assets/grade-three/chapter-icons/rock-garden.png",
       "colorOne": "orange",
       "colorTwo": "orangered",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. What Are The Substances?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/snowflake.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -2172,7 +2172,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Composition of Air",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/air.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -2252,7 +2252,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Air Properties",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/candle.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -2326,7 +2326,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. Where is the Water?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/duck.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -2394,7 +2394,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. Natural Water Sources",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/water-source.png",
           "backgroundColor": "#74D3DB",
           "content": [
             {
@@ -2505,7 +2505,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Careful Use of Human Drinking Water",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/water-bottle.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -2585,7 +2585,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. Water Purification Methods",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/water-filter.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -2657,7 +2657,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. What is Soil?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/soil.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -2739,7 +2739,7 @@
         {
           "navigation": "Lesson9",
           "title": "9. What is in Soil?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/soil-composition.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -2845,7 +2845,7 @@
         {
           "navigation": "Lesson10",
           "title": "10. Soil Properties",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/soil-types.png",
           "backgroundColor": "#74D3DB",
           "content": [
             {
@@ -2941,7 +2941,7 @@
         {
           "navigation": "Lesson11",
           "title": "11. What are Soils?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/soil-properties.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -3021,7 +3021,7 @@
         {
           "navigation": "Lesson12",
           "title": "12. How is our Planet?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/earth.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -3114,7 +3114,7 @@
         {
           "navigation": "Lesson13",
           "title": "13. History of Space Exploration",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/astronaut.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -3202,7 +3202,7 @@
         {
           "navigation": "Lesson14",
           "title": "14. How Does the Earth Rotate?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/earth-rotating.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -3274,15 +3274,15 @@
     {
       "navigation": "Chapter4",
       "title": "common:chapter4",
-      "name": "common:PLACEHOLDER",
-      "icon": "assets/cotton.png",
+      "name": "gradethree:physics",
+      "icon": "assets/grade-three/chapter-icons/rocket.png",
       "colorOne": "midnightblue",
       "colorTwo": "mediumturquoise",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. Elastic Force",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/elastic-spring.png",
           "backgroundColor": "#E09079",
           "content": [
             {
@@ -3364,7 +3364,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Gravity",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/gravity.png",
           "backgroundColor": "#E07D78",
           "content": [
             {
@@ -3446,7 +3446,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. The Force of Friction and its Manifestation",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/friction.png",
           "backgroundColor": "#DF79E0",
           "content": [
             {
@@ -3528,7 +3528,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. How to Determine the Direction of Forces?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/direction.png",
           "backgroundColor": "#E0A279",
           "content": [
             {
@@ -3596,7 +3596,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. How Does the Shadow Appear?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade-three/lesson-icons/shadow.png",
           "backgroundColor": "#E079A5",
           "content": [
             {
