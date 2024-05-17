@@ -13,7 +13,7 @@ const initialState = {
 //If not already cached, fetchImages pulls the images from db, puts them in an imageMap, and sets the map as "images" in the cache.
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
     // console.log("fetchIM");
-    const imageMap = {};
+    const imageMap = {}; //the image map is actually an object and not a 'Map'
 
     const result = await getCacheObject("images").then((result) => {
         // console.log("Result: ", result);
@@ -24,15 +24,22 @@ export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => 
 
     if (result == null) {
         console.log("Pulling from firebase in fetchImageMap");
+        //performance.now() is included in the default JS Web API runtime: https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
+        const start = performance.now(); // Start performance timer just before createImageMap
+
         const map = await createImageMap("assets", imageMap).then((result) => {
             // console.log("R: ", result);
             // console.log("ImageMap Test =======> ", result["assets/badges/badge1.png"]);
             return result;
         }).catch((error) => {
             console.log("Error in setting state: ", error);
-            return error.message;
         });
         await setCache("images", map);
+
+        const end = performance.now();
+        const elapsedTimeSeconds = (end - start) / 1000; // Convert to seconds
+        console.log(`fetchImages done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
+
         return map;
     }else{
         console.log("imageSlice.js: Pulling images from cache");

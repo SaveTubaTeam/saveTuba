@@ -3,7 +3,7 @@ import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect, useState } from "react";
 import * as encoding from "text-encoding";
 import { LogBox } from "react-native";
-
+import 'intl-pluralrules';
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -41,8 +41,6 @@ import { Provider } from "react-redux";
 //ReorderHandler import. Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
-// const store = configureStore({reducer: rootReducer, middleware: applyMiddleware(thunk)});
-
 //Platform import to detect and log current iOS/Android version
 import { Platform, UIManager } from 'react-native';
 
@@ -56,15 +54,14 @@ if (Platform.OS === 'android') {
 const Stack = createNativeStackNavigator();
 
 LogBox.ignoreAllLogs();
-LogBox.ignoreLogs(["Setting a timer"]);
+LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
+LogBox.ignoreLogs(['Constants.platform.ios.model has been deprecated']); //an odd package depreciation warning on SDK v48 after installing intl-pluralrules
 
 function Home() {
-  // setMap();
   return <MainScreen />;
 }
 
 export default function App() {
-
 
   // Loading fonts
   const [balsamiqSansLoaded] = useBalsamiqSans({

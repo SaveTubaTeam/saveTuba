@@ -91,26 +91,26 @@ const Main = () => {
     let loginType;
     let input;
     //TODO: once phone number verification is working, should update this to check for phone number logintype
-      if(auth.currentUser) {
-        //checking if firebase auth was with email or phone number
-        if(auth.currentUser.email) {
-          loginType = 'email'
-          input = auth.currentUser.email
-        }
-        //console.log("\nloginType:", loginType, "\ninput:", input);
-
-        if(userStatus === 'idle') {
-          dispatch(fetchUser({loginType, input}));
-        }
-        
-        if(userStatus === 'finished') {
-          console.log("Main.js fetched user from store:", user)
-        }
-
-        if(userStatus === 'rejected') {
-          handleFetchUserRejected(); //see below
-        }
+    if(auth.currentUser) {
+      //checking if firebase auth was with email or phone number
+      if(auth.currentUser.email) {
+        loginType = 'email'
+        input = auth.currentUser.email
       }
+      //console.log("\nloginType:", loginType, "\ninput:", input);
+
+      if(userStatus === 'idle') {
+        dispatch(fetchUser({loginType, input}));
+      }
+      
+      if(userStatus === 'finished') {
+        console.log("Main.js fetched user from store:", user)
+      }
+
+      if(userStatus === 'rejected') {
+        handleFetchUserRejected(); //see below
+      }
+    }
   }, [userStatus, dispatch]); //had some problems keeping Main.js from rendering more than expected so there's a lot of clutter in the terminal. sorry folks
 
   //for 'rejected' load case inside of useEffect

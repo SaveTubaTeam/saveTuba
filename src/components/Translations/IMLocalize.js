@@ -51,8 +51,6 @@ const LANGUAGE_DETECTOR = {
     cacheUserLanguage: async(language) => {
         await setCache('user-language', language);
         //console.log("IMLocalize.js: 'user-language' cache set to:", language);
-
-        //maybe need to implement a re-render of HomeScreen here
     }
 };
 

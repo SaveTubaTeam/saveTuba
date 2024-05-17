@@ -120,34 +120,46 @@ async function getLessonsData(grade, chpt, languageCode) {
     //}
 }
 
-// The imageMap is just a map taking the path and then returning the URL to pull from the DB. I honestly dont know if it makes more sense to just keep this local.
-// @param folder **This is the folder directory that stores the image in the Firebase storage
-// @param imageMap **This is the empty map object that will be passed from the handlers
+
+
+//On the topic of local vs cloud file storage:
+//
+// @hjo224 | Hayden: The below imageMap is just a map taking the path and then returning the URL to pull from the DB. 
+//                   I honestly dont know if it makes more sense to just keep this local. 
+//
+// @jac927 | James: I think Hayden's decision to use db file storage over local file storage is correct for the current use case.
+//                  This is because I am moving to expo-image due to RN's Image component causing unwanted flickering.
+//                  For expo-image, specifying a uri with imageMap is much more maintainable than alternatives (e.g. hardcoded local filepaths w/ expo-asset).
+
+
+//BENCHMARK 4/16/24: fetchImages done in 25.53 seconds. This is horrible.
+// @param folder **the folder directory that stores the image in the Firebase storage ('/assets') is passed in from fetchImages thunk.
+// @param imageMap **an empty map object is passed in from the fetchImages thunk
 // @return imageMap **The filled map object in the form <image path, image URL>
 async function createImageMap(folder, imageMap) {
     console.log("Pulling images from DB");
     // Going through the DB and finding all of the potential directories holding images
-    var list = await createImageMapHelper(folder, []).then((listResult) => {
+    const list = await createImageMapHelper(folder, [], 0).then((listResult) => {
         return listResult;
     });
 
-    // Pushing the current directory
+    // Pushing the root directory (param folder is 'assets') onto our list of directories that contain images
     list.push(folder);
 
     // Looping through list of paths and creating the map with the above format
-    for (const path in list) {
-        let result = await storage.child(list[path]).listAll();
-
+    for (const path of list) { //iterating over the values of the list array
+        let result = await storage.child(path).listAll(); // Get all files and subdirectories in the current path.
+        // Create promises to fetch the download URLs and metadata for each file
         let urlPromises = result.items.map(url => url.getDownloadURL());
         let pathPromises = result.items.map(path => path.getMetadata());
-
+        // await to resolve all promises
         let urlResolved = await Promise.all(urlPromises);
         let pathResolved = await Promise.all(pathPromises);
 
-        for (var x = 0; x < urlResolved.length; x++) {
+        for (let i = 0; i < urlResolved.length; i++) {//now populating imageMap
             try {
-                // console.log("=>", pathResolved[x].fullPath);
-                imageMap[pathResolved[x].fullPath] = urlResolved[x];
+                // console.log("=>", pathResolved[i].fullPath);
+                imageMap[pathResolved[i].fullPath] = urlResolved[i];
             } catch (error) {
                 console.log("Error: ", error);
             }
@@ -156,25 +168,35 @@ async function createImageMap(folder, imageMap) {
     return imageMap;
 }
 
-// This creates a list of all directory paths in the Firebase storage 
-// @param folder **Same as the above function, it is the directory storing the image
-// @param pathList **This is a list of paths, I needed to create this first as the paths were necessary for pulling images and there is no efficient way to do this that I found.
-async function createImageMapHelper(folder, pathList) {
-    let result = await storage.child(folder).listAll();
-    for (const folderRef of result.prefixes) {
-        try {
-            pathList.push(folderRef.fullPath);
-            await createImageMapHelper(folderRef.fullPath, pathList);
-
-        } catch (error) {
-            console.log("Error =====> ", error);
-        }
-    }
-    //This is the number of nested folders. This will need to be updated if the images directories are changed
-    if (pathList.length === 14) {
+// This !!recursively!! creates a list of all directory paths in the Firebase storage 
+// @param folder The directory storing the image
+// @param pathList This is a list of paths that gets accumulated as the function recurses.
+// @param depth tracks the current depth of the recursion, with 0 being passed in initially indicating the top-level directory.
+async function createImageMapHelper(folder, pathList, depth) {
+    // below is a Recursive Failsafe to check if the current depth exceeds the maximum allowed depth
+    // (think of nested folders like a binary tree where the depth of the folders corresponds to the height of the tree).
+    if (depth > 5) { //5 is an arbitrary number/cap to stop infinite loops beyond 5 layers of nesting
+        console.log("ERROR: Recursion limit reached, stopping further directory exploration.");
         return pathList;
     }
+
+    try{
+        let result = await storage.child(folder).listAll(); // get all items and subdirectories in the current folder.
+        //console.log(result.prefixes.length);
+        if (result.prefixes.length === 0) { //we check if the array (does the current folder have any arrays?) is empty (this is our main stop condition)
+            return pathList;
+        }
+
+        for (const folderRef of result.prefixes) { //iterating over each subdirectory found in the folder
+            pathList.push(folderRef.fullPath); //pushing the folder onto pathList
+            await createImageMapHelper(folderRef.fullPath, pathList, depth+1); //we call again and increment depth
+        }
+    } catch(error) {
+        console.log("Error =====> ", error);
+    }
+    return pathList
 }
+
 
 // The following three variables MUST be specified for postData()
 const GRADE_NAME = "Grade4"; //string specifying the grade, e.g. 'Grade2' 
@@ -266,6 +288,8 @@ const postMasteryAndMinigames = async(currentObject, lessonLanguageReference) =>
 }
 //end of postData() functions
 
+
+//for both getCacheObject and setCache, please see: https://reactnative.dev/docs/asyncstorage
 
 async function getCacheObject(key) {
     // console.log("in getCacheObj");
