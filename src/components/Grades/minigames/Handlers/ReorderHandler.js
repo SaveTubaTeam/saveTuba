@@ -84,7 +84,7 @@ REORDER_GRADIENTS = [
 const ReorderHandler = ({ objectData }) => {
   //console.log("Data In: ", objectData);
   const [originalArray, setOriginalArray] = useState(objectData.data);
-  const [data, setData] = useState(objectData.data);
+  const [data, setData] = useState(objectData.content);
 
   useEffect(() => {
     setOriginalArray(objectData.data); //to prevent unwanted re-rendering I useState the originalArray. Is probably unnecessary.

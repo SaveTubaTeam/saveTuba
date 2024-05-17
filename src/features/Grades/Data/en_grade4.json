@@ -33,7 +33,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Research the characteristics of lower and higher plants. Identify how they are the same and how they are different. Which type of plant, higher or lower, are you more familiar with?",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -105,7 +105,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "For extra credit: Get one of these plants and maintain it, taking weekly progress pictures!",
-              "cards": [
+              "content": [
                 {
                   "text": "Determine three functions that a lower plant can serve, which higher plants cannot. Why is this important? Additionally, research some lower plants that you could grow yourself and identify the effect this could have on the environment around you.",
                   "image": "assets/cotton.png"
@@ -141,7 +141,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the following detailed stages of plant development in order:",
-              "data": [
+              "content": [
                 {
                   "text": "A seed falls into soil."
                 },
@@ -181,7 +181,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Imagine a condition that would keep the plant from developing. What could this condition be, and when would it impact the plant the most in the cycle?",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -212,7 +212,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the parts of the flower from the outermost part of the flower to the innermost part.",
-              "data": [
+              "content": [
                 {
                   "text": "Sepals"
                 },
@@ -263,7 +263,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Flowers grow on plants, but there are some plants that don’t have flowers. Identify 3 plants that do have flowers, and 3 that do not have flowers. How are these two groups different from each other? Lastly, research something a flower provides for a plant and summarize it here.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -294,7 +294,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps for the process of pollination from beginning to end.",
-              "data": [
+              "content": [
                 {
                   "text": "A pollinator (like a bee), collects nectar from a flower."
                 },
@@ -321,7 +321,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Research ways that you can support pollination or bees. List your top 3 favorite methods that you found and describe how easy or hard you think these would be to replicate. Find one to do over the next week (or longer) and take pictures!",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -350,7 +350,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "List 3 plants and its purpose. Do you think a lot of people around you use plants for purposes like these? Why or why not?",
-              "cards": [
+              "content": [
                 {
                   "text": "Think about the plant you planted earlier.  Think about or research other plants that you could plant that could provide a clear purpose. Purposes could be that they provide food, habitats for animals, provide resources for pollinators and more.",
                   "image": "assets/cotton.png"
@@ -427,7 +427,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "How long would it take to change this area?",
-              "cards": [
+              "content": [
                 {
                   "text": "Find an area nearby that has greenery and plants. Observe the area, how do you think the plants got there? Find an area that you think that could use more plants. Take a picture of that area and develop a plan for how you would improve it using the following questions as a guide.",
                   "image": "assets/cotton.png"
@@ -475,7 +475,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Research plants in Kazakhstan that are at a risk of extinction. List them and put them in order, #1 being the plant facing the highest risk of extinction currently.",
-              "data": []
+              "content": []
             },
             {
               "navigation": "Sorting",
@@ -515,13 +515,8 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 2: Animals",
-              "cards": [
-                {
-                  "text": "Spend 15 mins researching how you can help plants at a risk for extinction. Pick your favorite method that you find and write a pitch that you would use to try to get someone to support this effort. Record a video with an adult in your life where you give them the pitch!",
-                  "image": "assets/cotton.png"
-                }
-              ]
+              "prompt": "Spend 15 mins researching how you can help plants at a risk for extinction. Pick your favorite method that you find and write a pitch that you would use to try to get someone to support this effort. Record a video with an adult in your life where you give them the pitch!",
+              "content": []
             }
           ]
         }
@@ -568,7 +563,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Using the above chart, multiply the amount of servings you have of each food per year by the CO2 emissions. This is the carbon footprint for that food. Do this for each food, and add up your total. Conduct some research on what this total means, what is this amount of carbon emissions equal to? Does this surprise you? Analyze your results.",
-              "cards": [
+              "content": [
                 {
                   "text": "While animals have many complex relationships with one another, they also have relationships with humans. Realistically, a lot of our relationships with wild animals are in the form of food. Did you know that the food you consume can contribute to your carbon footprint? Your carbon footprint is the amount of carbon dioxide released into the atmosphere as a result of your actions.",
                   "image": "assets/cotton.png"
@@ -608,7 +603,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the following stages of development of insects.",
-              "data": [
+              "content": [
                 {
                   "text": "Eggs"
                 },
@@ -627,7 +622,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Choose one of these categories and do some research on examples, what they provide for the environment, and how humans could use them more effectively. Summarize your answer to these questions here!",
-              "cards": [
+              "content": [
                 {
                   "text": "Insects can help the environment in many different ways and are very important to it. There are three main categories of insects that can be used to help the environment. These are pollinators, predators, and parasitizers.",
                   "image": "assets/cotton.png"
@@ -696,7 +691,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Find reliable sources that explain how a meat diet, versus a plant-based diet, impacts the environment. What are the pros and cons of each? Summarize your findings here. (Hint: Look into greenhouse gas emissions, water use, carbon footprint, etc.)",
-              "cards": [
+              "content": [
                 {
                   "text": "We can identify and research the diets of our favorite animals, but humans as a species are different from animals as many of us have very different diets from each other. Some people eat meat, some are vegetarians, pescatarians, or vegans. There are studies that show that meat consumption contributes to a large amount of greenhouse gas emissions. Do your own research on this topic.",
                   "image": "assets/cotton.png"
@@ -732,7 +727,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the steps of the energy transfer process in the correct order.",
-              "data": [
+              "content": [
                 {
                   "text": "Energy of the sun"
                 },
@@ -751,7 +746,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "After entering your meal plan, answer the following questions? How different would this diet be from your current one? How difficult do you think it would be? Would this have a positive or negative impact on the environment? For extra points, actually follow your meal plan for one day and upload pictures of each meal!",
-              "cards": [
+              "content": [
                 {
                   "text": "As humans, it is really important that we get enough energy from the food that we eat. Think back to the last lesson where you researched meat versus plant based diets. Pick either a vegetarian, pescatarian, or vegan diet to look into more closely. You may have to do some more research to identify what exactly each diet means. After doing some research, make a meal plan for one day that fits the diet you chose. Make a plan for what you would eat for breakfast, lunch and dinner.",
                   "image": "assets/cotton.png"
@@ -787,7 +782,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "The hierarchy of the food chain generally follows the order of primary producers, to primary consumers, to secondary consumers, to tertiary consumers. Put the following animals in order according to this hierarchy.",
-              "data": [
+              "content": [
                 {
                   "text": "Correct Order:"
                 },
@@ -809,7 +804,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Where do you think most of your food comes from? What are the practices used? These practices can apply to many things, such as treatment of the animals, methods of growing food, who grows and takes care of the food, etc. Analyze these practices. What could be improved?",
-              "cards": [
+              "content": [
                 {
                   "text": "The food chains of animals show us a clear delineation of how they get their food. The chain from which we get our food as humans can get a little more complicated, and may even be a mystery to many.",
                   "image": "assets/cotton.png"
@@ -910,7 +905,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Many animals adapt to their environment in order to compete better for limited resources such as food. As humans, some of us have a very easy time at finding food, but many don’t. It is important to not waste food as that is wasting an incredibly valuable resource. This week, compete with your classmates to see which household can waste the least amount of food.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -994,7 +989,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Now research all ten individually and write what is causing them to become extinct in reality. Which did you get right and what were the differences?",
-              "cards": [
+              "content": [
                 {
                   "text": "Compile a list of the top ten most endangered animals native to the country. Without researching, write one sentence next to each animal talking about why you think each animal is endangered.",
                   "image": "assets/cotton.png"
@@ -1027,13 +1022,8 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 3: Humans",
-              "cards": [
-                {
-                  "text": "Choose one animal from the list compiled above. Strategize and write about your proposed solution to protect that animal. Consider the diet, environment, and other factors contributing to the extinction of that animal.",
-                  "image": "assets/cotton.png"
-                }
-              ]
+              "prompt": "Choose one animal from the list compiled above. Strategize and write about your proposed solution to protect that animal. Consider the diet, environment, and other factors contributing to the extinction of that animal.",
+              "content": []
             }
           ]
         }
@@ -1074,7 +1064,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the following excretory organs involved in the passage of urine in order, starting from where the urine begins.",
-              "data": [
+              "content": [
                 {
                   "text": "Kidneys"
                 },
@@ -1093,7 +1083,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "There are many different systems within our own bodies, making them incredibly complex. While these are amazing systems, sometimes things can go wrong. Whether these complications result in a very treatable illness, or more serious diseases, the access we all have to resources that will improve our health are varied. The United Nations has 17 Sustainable Development Goals, which you may have heard of. Do some research on SDG #3 Good Health and Well-Being. They mention several diseases and afflictions they are aiming to affect. Pick one of these to study for the next few lessons. To start, write a paragraph of what you find about the option you chose with a quick google search. Write down 3 questions you already have.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1124,7 +1114,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Correctly order the steps of the human nervous system from input of stimulus to reaction.",
-              "data": [
+              "content": [
                 {
                   "text": "Signals from the external environment come in through the nerves."
                 },
@@ -1199,7 +1189,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "What would you do to improve their approach?",
-              "cards": [
+              "content": [
                 {
                   "text": "Think back to the disease you chose to study last lesson. In this lesson, research some of the organizations that are trying to help this problem. Make a slideshow that answers the following questions for at least two organizations:",
                   "image": "assets/cotton.png"
@@ -1252,14 +1242,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 4: Air and Water",
-              "cards": [
+              "prompt": "What is preventing certain groups of people  from this course of action? Upon reflecting, create a poster identifying one thing preventing treatment for some people. Identify the people who would experience this, and finally come up with your proposed solution to this problem.",
+              "content": [
                 {
                   "text": "Last lesson you made a slideshow about organizations working to address incredibly harmful diseases. In this lesson, identify treatments or practices that are supposed to either cure or positively affect the disease or affiliations you chose to study. Pick one of these approaches and reflect on reasons why people would not be able to acquire this treatment.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "What is preventing certain groups of people  from this course of action? Upon reflecting, create a poster identifying one thing preventing treatment for some people. Identify the people who would experience this, and finally come up with your proposed solution to this problem.",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -1309,7 +1295,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Examine three different rooms and take notes on where the dust is found and in what areas it is either better or worse. Write a summary of your findings and the differences from area to area.",
-              "cards": [
+              "content": [
                 {
                   "text": "Substances, like the air around us can become contaminated. Air quality is really important as poor air quality can lead to serious health problems. Indoor air quality can be impacted by the dust levels in your home. Dust can lead to breathing issues, especially for people with asthma. Take this time to look around different rooms of your home and examine them for dust.",
                   "image": "assets/cotton.png"
@@ -1394,7 +1380,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "In the last lesson, you were asked to look around your home and examine the dust levels. Now, do some research on how dust particles can cause breathing problems. Then, look into some ways that you can address the problems associated with indoor air quality.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1474,13 +1460,13 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "When substances are mixed together, those substances either retain their original properties or they change upon interaction with each other. Air pollution is actually a mixture. Air pollution is a substance made up of many different particles. Research what the parts of this mixture are and what their properties are. Write a paragraph summary of what you found.",
-              "cards": []
+              "content": []
             },
             {
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Create a presentation that you can give to your family addressing the following key topics: Why should you wait until a day with better air quality? How do you know it’s a bad air quality day?",
-              "cards": [
+              "content": [
                 {
                   "text": "Pollution in the air that leads to serious environmental consequences and health issues is a huge problem and it is difficult to know what, as individuals, we can do to help. If your lawnmower has a gasoline engine, then running it can pollute the air as much as a car. If the air quality that day is particularly bad, it is better to hold off mowing the lawn for another day.",
                   "image": "assets/cotton.png"
@@ -1557,7 +1543,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Choose one of these sources to research further. Answer the following questions about your chosen source: What data supports that this is a main source of air pollution? Why is it a source of air pollution? What alternatives are there that could minimize the impact of this source?",
-              "cards": [
+              "content": [
                 {
                   "text": "For the past few lessons, we’ve been focusing on air quality. This is a really important topic to understand and care about. While it is important to understand what you can do to improve the situation as an individual, you must also understand who and what the greatest contributors are to air quality issues. In Kazakhstan, the largest sources of air pollution are from manufacturing, transportation, thermal power, and residential heating systems.",
                   "image": "assets/cotton.png"
@@ -1593,7 +1579,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the following steps in the order they occur as sunlight heats the ground and the air near a water reservoir.",
-              "data": [
+              "content": [
                 {
                   "text": "Sunlight heats the surface of the earth."
                 },
@@ -1615,7 +1601,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Think back to the alternatives to the source of air pollution you found in the last lesson. Do some research to find a person or corporation who is either providing an alternative or is fighting for alternatives. Brainstorm a list of questions you have for them and write a thoughtful letter or email asking these questions.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1687,7 +1673,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Does Kazakhstan utilize wind turbines already? How could you improve this?",
-              "cards": [
+              "content": [
                 {
                   "text": "The energy that can be created by wind can be harnessed in really impactful ways. Wind energy or wind power are processes which create power and electricity through the use of wind. One way this occurs is through wind turbines.",
                   "image": "assets/cotton.png"
@@ -1739,7 +1725,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "List the molecular components of air and order them according to their amounts, highest to lowest.",
-              "data": [
+              "content": [
                 {
                   "text": "Nitrogen"
                 },
@@ -1758,7 +1744,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Use good experimental procedures and make sure your hypothesis is realistic and testable.",
-              "cards": [
+              "content": [
                 {
                   "text": "Let’s do an experiment! You have the opportunity to formulate your own experiment procedure and hypothesis that utilizes the sticky tape method. Cut a piece of clear tape and place it on the side of a building, leave it for 10 seconds, and then peel it off and out it onto a piece of paper. Label the date, time and location that this piece of tape is from. How many particles you get on the tape is a good indicator of air pollution in the area. But remember, the most dangerous forms of air pollution are a lot smaller than what would appear on tape.",
                   "image": "assets/cotton.png"
@@ -1798,7 +1784,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Air pollution in Kazakhstan specifically is due to many factors. Put the following contributors in order, starting with the largest impact.",
-              "data": [
+              "content": [
                 {
                   "text": "Increase in mining"
                 },
@@ -1860,7 +1846,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Below, identify where you hung the plate, upload a picture, and analyze what you see on the paper plate. What do these results tell you?",
-              "cards": [
+              "content": [
                 {
                   "text": "Let’s do one more experiment to help visualize the air pollution that surrounds us.",
                   "image": "assets/cotton.png"
@@ -1908,7 +1894,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the following four steps of the water cycle as they would most likely occur, starting with evaporation.",
-              "data": [
+              "content": [
                 {
                   "text": "Evaporation"
                 },
@@ -1927,7 +1913,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "The importance of water on our Earth cannot be overestimated. Most of our water on Earth is from the ocean, which is salt water. This means, it is not drinkable. We need freshwater, which makes up only 3% of the water on earth. But, only 1% is actually available for our use. Research why only 1% of this water is available and challenges that we are facing when it comes to access to freshwater. Summarize your findings here.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1958,7 +1944,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps in the precipitation process from beginning to end.",
-              "data": [
+              "content": [
                 {
                   "text": "Water vapor in the atmosphere due to evaporation combines to make bigger water droplets."
                 },
@@ -2020,7 +2006,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Make a guess at how much water you can save by fixing this habit, and then do some research to see what the number really is. Does the answer surprise you, why or why not?",
-              "cards": [
+              "content": [
                 {
                   "text": "There are things that everyone can do in order to preserve a resource as important as water. We will explore a few of those methods for preservation.",
                   "image": "assets/cotton.png"
@@ -2060,7 +2046,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Salt (NaCl) is able to dissolve in water. Put the steps of that process in the correct order.",
-              "data": [
+              "content": [
                 {
                   "text": "Water molecules pull the ions (Na and Cl) in the salt apart."
                 },
@@ -2119,7 +2105,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Part 2: You’ve been given two ways that you can help preserve water, but there are many more. Do some research to add on to the list of methods that can help preserve our water supply and ensure that we are using this valuable and limited resource in the most effective way possible. Pick one of these methods, which includes the two that have been presented in the past two lessons, and create an elevator pitch that tries to convince the audience on why they should utilize that method of water conservation. Try it out on a couple of friends and family members. Submit a video of it below.",
-              "cards": [
+              "content": [
                 {
                   "text": "Part 1: Let’s think some more about preserving water! How many days a week do you take showers? How many days a week do you take a bath? Believe it or not, showers require a significantly smaller amount of water than baths! If you take a 10 minute shower, then 25 gallons of water is used, while a bath would take 50 gallons. Calculate how much water you would save per week if you took a shower instead of a bath.",
                   "image": "assets/cotton.png"
@@ -2155,7 +2141,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the largest contributors to water pollution in Kazakhstan starting with the  highest contributor.",
-              "data": [
+              "content": [
                 {
                   "text": "Housing and community services."
                 },
@@ -2173,14 +2159,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 5: Physics of Nature",
-              "cards": [
+              "prompt": "Many individuals want to help clean up rivers and do their part to help. Try to find a river clean up that is happening nearby and join in! If there’s not one near you, then talk to a parent and get some friends and family to join you! Go to a nearby body of water, pick up any trash that you see and dispose of it properly. The more people that join you, the better!",
+              "content": [
                 {
                   "text": "Pollution in water has many harmful effects, one of which is harm to wildlife in the area. Many small rivers in Kazakhstan and the area have become polluted, largely due to industrial waste.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "Many individuals want to help clean up rivers and do their part to help. Try to find a river clean up that is happening nearby and join in! If there’s not one near you, then talk to a parent and get some friends and family to join you! Go to a nearby body of water, pick up any trash that you see and dispose of it properly. The more people that join you, the better!",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -2281,7 +2263,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "For a week, take pictures of the sky in the morning and the evening. Make a log of what you see in the air. For example, can you see smog or pollutants? What do you suspect is there that you can’t see? Jot down observations everyday and try to find trends.",
-              "cards": [
+              "content": [
                 {
                   "text": "There are a lot of things in the world that we cannot see. For example, air and all of the things that may be in it. We can often see smog, which is made up of pollutants. In this instance, we can see polluted air.",
                   "image": "assets/cotton.png"
@@ -2317,7 +2299,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the following colors in order from absorbing the most to least amount of light.",
-              "data": [
+              "content": [
                 {
                   "text": "Black"
                 },
@@ -2339,7 +2321,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Utilizing and understanding how light gets absorbed can be a major advantage in the energy sector. Still pretty new to the industry, solar panels are being used as an alternative to other processes that create energy which use fossil fuels. Understanding how the sun can be converted into electricity is easier if you understand how plants convert the sun into energy as well! Compare and contrast how these things are similar and different. If you need to do some research to better understand solar energy, go ahead and do that first!",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -2407,7 +2389,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "How can the lack of light caused by smog or the overexposure of light caused by the deterioration of the atmosphere impact wildlife and habitat? List and describe three ways.",
-              "cards": [
+              "content": [
                 {
                   "text": "While the shape of an object always determines the shape of its shadow, the size and shape of the shadow can change depending on the position of the light.",
                   "image": "assets/cotton.png"
@@ -2443,7 +2425,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order objects according to how good they are at reflecting sound. Start with the best and reflecting sound, ending at the worst of the objects provided.",
-              "data": [
+              "content": [
                 {
                   "text": "Concrete"
                 },
@@ -2462,7 +2444,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Take a video where sound pollution due to construction, cars, or any other viable source is occurring. What are the negative consequences? What could be put in place to improve this situation?",
-              "cards": [
+              "content": [
                 {
                   "text": "Sound pollution, often present in city environments, affects the quality of life of humans and animals alike.",
                   "image": "assets/cotton.png"
@@ -2547,7 +2529,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Pick one of these to try to do for a whole week. Write a paragraph about your current habits when it comes to the option you chose and identify how you will improve it. Everyday, provide a journal entry of your efforts and reflect on how difficult or easy this is for you to accomplish everyday. Maybe it can become a permanent change! Share your efforts with your family and try to get them to join if you can!",
-              "cards": [
+              "content": [
                 {
                   "text": "Noise pollution can have large negative consequences for wildlife. Environmentalists provide a few options for people to help remedy the situation. We can turn off appliances when we aren’t using them, use earbuds, plant more trees, and provide regular maintenance of vehicles and machines.",
                   "image": "assets/cotton.png"
@@ -2624,7 +2606,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "In the next few lessons, we will focus on this SDG in the effort to further understand how we can support this goal. Take this time to read through the website and summarize your initial reactions to the goal here.",
-              "cards": [
+              "content": [
                 {
                   "text": "Thermal conductivity refers to the transfer of heat, which is an important concept, not just in Physics class. The United Nations’ Sustainable Development Goal (SDG) #7, is Affordable and Clean Energy. Through the hyperlink, you will be brought to the United Nations’ website where they explain this goal in further detail.",
                   "image": "assets/cotton.png"
@@ -2693,7 +2675,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "With the information from the table in mind, what could your household do to decrease your energy usage? Create a detailed plan that addresses how you plan to change the consumption of energy from the appliance and how realistic implementing this change would be.",
-              "cards": [
+              "content": [
                 {
                   "text": "One way that we can support the goal of Affordable and Clean Energy is to be conscious of our current use of energy in our homes. See the table below to better understand how different appliances use energy.",
                   "image": "assets/cotton.png"
@@ -2758,7 +2740,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Present to your family and focus on implementing this plan across a week. Upload your presentation here!",
-              "cards": [
+              "content": [
                 {
                   "text": "Think back to the plan you made last lesson to reduce energy consumption. In order to enact your plan and make a real difference, we need to get your household on board! Create a presentation that details your plan, why this plan would be effective, why others should care about their energy consumption, and the positive impacts that could come from this change.",
                   "image": "assets/cotton.png"
@@ -2791,14 +2773,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 6: Substances and Their Properties",
-              "cards": [
+              "prompt": "Do some research on companies that have made strides in this area, and find one that you think could use some of those practices to improve. Write an open letter to the corporation, company, or industry addressing your concerns, what they could do better, and overall convince them to make a change.",
+              "content": [
                 {
                   "text": "Understanding how individuals can contribute to the goal of Affordable and Clean energy is a huge step in the right direction. What would be even better is if industry and large corporations also took important steps, including the implementation and use of clean and renewable energy.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "Do some research on companies that have made strides in this area, and find one that you think could use some of those practices to improve. Write an open letter to the corporation, company, or industry addressing your concerns, what they could do better, and overall convince them to make a change.",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -2883,7 +2861,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Plastic is a material that has had a huge impact on wildlife around the world. You probably have heard about all of the problems it causes, but what actually is it? Conduct research and write a paragraph summarizing what plastic is and the largest negative impacts it has on the environment.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -2914,7 +2892,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the following layers of the earth in order, starting with the outermost layer.",
-              "data": [
+              "content": [
                 {
                   "text": "The crust"
                 },
@@ -2968,7 +2946,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Last lesson we focused on getting to the bottom of what plastic really is. With that information, spend an hour walking around outside and picking up plastic (or any garbage) and disposing of it properly. Take pictures to show your progress.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -3040,7 +3018,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "One big problem with plastic is that it takes a really long time to break down, increasing its harm to the environment. View the chart below to see how it compares to other materials. Can you think of something that is made of plastic that could instead be made out of one of these other materials that could break down easier? Explain your creative solution!",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -3108,7 +3086,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "List three ways the country can take the profits from mined ore minerals to invest in the sustainable development of the country.",
-              "cards": [
+              "content": [
                 {
                   "text": "Kazakhstan holds vast mineral reserves which are largely undeveloped. The country possesses 30 % of the world's chrome ore reserves, 25 % of manganese ore, 10 % of iron ore, 5.5 % of copper, 10 % of lead and 13 % of zinc, according to official estimates.",
                   "image": "assets/cotton.png"
@@ -3177,7 +3155,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Create a plan for these large mining companies to donate profits back to the city and country to reduce nationwide pollution output.",
-              "cards": [
+              "content": [
                 {
                   "text": "A metal with the descriptor “ferrous” means that it has iron in its composition. Mining of ferrous metals is popular but causes pollution in the process. Mining companies often have to pay a negative externality tax that may not directly be in the form of cash to compensate for their creation of pollutants.",
                   "image": "assets/cotton.png"
@@ -3246,7 +3224,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Once you identify this item, do some research to find an alternative already on the market that is more sustainable by not being a single use item. Summarize the product, how it would improve on the less sustainable product you currently use, and how you think it could improve.",
-              "cards": [
+              "content": [
                 {
                   "text": "Everything that we use is made out of substances that when disposed of, have some sort of impact on the environment. Identify an item in your life that you use one time and dispose of. For example, using a baby wipe to clean and then throwing it out. This makes the baby wipe single use.",
                   "image": "assets/cotton.png"
@@ -3315,7 +3293,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "If the sustainable option is less affordable, what would you suggest to the company to make it more competitive? Are there any other reasons other than affordability that would keep a customer from choosing the environmentally friendly alternative?",
-              "cards": [
+              "content": [
                 {
                   "text": "Think back to the sustainable alternative you found in the last lesson. Is this product more or less affordable than the less sustainable option? Why do you think this is?",
                   "image": "assets/cotton.png"
@@ -3388,7 +3366,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Name and detail three ways that these mineral profits can be used to build infrastructure for the country to become more sustainable.",
-              "cards": [
+              "content": [
                 {
                   "text": "Gemstones in Kazakhstan including emeralds, sapphires, topazes and tourmalines, and high-quality quartz are popular exports of the country.",
                   "image": "assets/cotton.png"
@@ -3422,7 +3400,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "A fun way to do this on your own is to create a piece of art out of household items that would otherwise be disposed of. Collect waste for a week and use it to create a work of art, it could be a sculpture, prototype of an invention, diagram, anything! Use this opportunity to get creative and demonstrate how waste can be recycled in a literal way to make something brand new! Upload a picture.",
-              "cards": [
+              "content": [
                 {
                   "text": "At this point, you must understand the value of the resources we already have on Earth. Many resources are limited, making recycling a very important activity for every citizen to participate in. We can create brand new things from those no longer needed.",
                   "image": "assets/cotton.png"
@@ -3507,7 +3485,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Upload an image of the place you suggest this change to be made and create a plan of how you would achieve this.",
-              "cards": [
+              "content": [
                 {
                   "text": "Recycling is of course important, but there are many places including, homes, businesses, schools, that don’t make it easy for people to recycle. Look around your city and think critically to identify places that could provide an easy way for people to recycle and that don’t already.",
                   "image": "assets/cotton.png"
@@ -3587,13 +3565,8 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 7: Earth and Space",
-              "cards": [
-                {
-                  "text": "Write a letter to the owner of the place that you identified in the previous lesson. Explain in your letter why you think that they should implement a way to recycle in this area, the positive impacts it could have, and your proposed plan. Try to convince them to actually follow through on your plan!",
-                  "image": "assets/cotton.png"
-                }
-              ]
+              "prompt": "Write a letter to the owner of the place that you identified in the previous lesson. Explain in your letter why you think that they should implement a way to recycle in this area, the positive impacts it could have, and your proposed plan. Try to convince them to actually follow through on your plan!",
+              "content": []
             }
           ]
         }
@@ -3634,7 +3607,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the planets in our solar system from farthest to closest to the sun.",
-              "data": [
+              "content": [
                 {
                   "text": "Neptune"
                 },
@@ -3709,7 +3682,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the continent to its image.",
+              "prompt": "Match the continent to its image.",
               "content": [
                 {
                   "name": "North America"
@@ -3766,7 +3739,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Find a globe or map. Highlight what shape the earth and why you think that shape exists. What do you notice about the variety of colors on the map and what do the colors signify? Try drawing earth and coloring it in, putting a circle around where you live.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -3797,7 +3770,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the top five tallest mountains from tallest to shortest.",
-              "data": [
+              "content": [
                 {
                   "text": "Mount Everest"
                 },
@@ -3819,7 +3792,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "What is the difference between a mountain and a plain? Draw both and highlight where pollution would be higher in the Kazakh mountains or plains.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -3848,7 +3821,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Relief being the difference between the lowest and highest point of a given area represents the space between our planets and constellations and the earth’s core. Polluted air often stays trapped in space and is our bank of oxygen. List three creative ways to improve the quality of this air and draw an image of the city with these methods being added to the image.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -3879,7 +3852,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order these things in space according to how far away they are from you.",
-              "data": [
+              "content": [
                 {
                   "text": "Atmosphere"
                 },
@@ -3895,7 +3868,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Look at the sky at night and detail what you notice. What colors and figures stand out and how does it look relative to earth? Can you see the stars? If not, what does pollution have to do with it?",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -3926,7 +3899,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the three smallest cosmic bodies according to size, smallest to largest.",
-              "data": [
+              "content": [
                 {
                   "text": "Meteoroid"
                 },
@@ -3942,7 +3915,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Draw the steps of formation for a small cosmic body. Find one and conduct research on it, finding its significance to the solar system.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4006,7 +3979,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Search up the solar system. Draw all of the planets and explain what direction they move in. What is their relation to the sun and how does the quality of air and pollution influence our relationship with the sun?",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4037,7 +4010,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps of earth’s cycle around the sun starting at Perihelion (Earth’s closest point to the Sun in orbit).",
-              "data": [
+              "content": [
                 {
                   "text": "Perihelion"
                 },
@@ -4062,7 +4035,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "When the earth revolves around the sun, how does that impact the weather? In times when the temperature is lower, how does your country create heat? Find the most unsustainable way to create heat and provide replacements for each that are more sustainable.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4093,7 +4066,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps of the sun.",
-              "data": [
+              "content": [
                 {
                   "text": "Sunrise"
                 },
@@ -4112,7 +4085,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "How do the sun rays interact with the earth’s atmosphere and Ozone Layer? How does pollution deplete the atmosphere? Take a deodorant or hair spray and spray it away from your eyes. Shine a light through the cloud and write what you observe about light and its interaction with the atmosphere.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4140,13 +4113,8 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 8: Forces and Movement",
-              "cards": [
-                {
-                  "text": "List all of the seasons. How can you use one component of each season to generate energy and electricity for the city?",
-                  "image": "assets/cotton.png"
-                }
-              ]
+              "prompt": "List all of the seasons. How can you use one component of each season to generate energy and electricity for the city?",
+              "content": []
             }
           ]
         }
@@ -4187,7 +4155,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the ways in which a force can be applied from the most to the least force.",
-              "data": [
+              "content": [
                 {
                   "text": "Compression"
                 },
@@ -4209,7 +4177,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Waste and pollution often sit on bodies of water. This is detrimental to the variety of wildlife and habitats. Find a river or lake and take a picture of any trash you can see. Document how the presence of trash sitting on the surface level of the water can impact the bodies of life living in that ecosystem.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4240,7 +4208,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order these household items from most buoyant to least buoyant",
-              "data": [
+              "content": [
                 {
                   "text": "Rubber duck"
                 },
@@ -4259,7 +4227,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "What are three creative ways to dispose of trash floating on the surfaces of water and help reduce pollution?",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4290,7 +4258,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps which allow the movement of air",
-              "data": [
+              "content": [
                 {
                   "text": "Temperature difference"
                 },
@@ -4306,7 +4274,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "The buoyancy and weight of different matters affect their ability to float. Air pollution is the most present form of pollution and sits in the lowest valleys within the city regions. Draw how you view pollution collecting within the city and write the top three solutions to reducing this pollution.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4337,7 +4305,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps of a given item (basketball) falling into a pool of water",
-              "data": [
+              "content": [
                 {
                   "text": "Basketball falls into water"
                 },
@@ -4356,7 +4324,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Take a beaker or glass and fill it to the top with water. Place a round a waterproof object, such as a fruit or ball and place it in the glass. Notice that there is an upward force causing the water level to rise and for the object to push back up against your force pushing it down. What do you observe and what is causing this upward force?",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -4428,7 +4396,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "The use of solar panels is increasing in their presence and ability. Detail three implementation strategies of attaching solar panels to floating bodies and other remote objects.",
-              "cards": []
+              "content": []
             }
           ]
         }

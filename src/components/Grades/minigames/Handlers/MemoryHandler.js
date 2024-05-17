@@ -153,7 +153,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
       <View style={{ alignSelf: "center", width: "80%", position: "absolute", 
                      top: 25, backgroundColor: "#fff8e7", padding: 20, borderRadius: 20 }}>
-        <BodyText size="title">{objectData.description}</BodyText>
+        <BodyText size="title">{objectData.prompt}</BodyText>
         <Spacer size="medium" />
         {/* marked for translation */}
         <TitleText size="caption">{t("minigames:memoryhint")}</TitleText>

@@ -2,12 +2,12 @@ export default {
   /* Chapter names */
   plants: "Plants",
   animals: "Animals",
-  human: "Human",
-  airwater: "Substances and \ntheir properties. \nAir and water",
-  physics: "Physics of nature",
-  naturalresources: "Substances and \ntheir properties. \nNatural resources",
-  cosmos: "Earth and space",
-  forces: "Forces and movement",
+  human: "Humans",
+  airwater: "Substances and \ntheir Properties\nAir and water",
+  physics: "Physics of Nature",
+  naturalresources: "Substances and \ntheir properties\nNatural resources",
+  cosmos: "Earth and Space",
+  forces: "Forces and Movement",
 
   /* Chapter 1 lesson names */
   c1l1: "What are lower and higher plants",

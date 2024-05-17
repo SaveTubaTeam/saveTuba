@@ -19,7 +19,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the different sources of information.",
+              "prompt": "Match the different sources of information.",
               "content": [
                 {
                   "name": "Observation"
@@ -127,7 +127,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Find and describe a sustainable practice in this country that you can implement on your own.",
-              "cards": [
+              "content": [
                 {
                   "text": "Pick a country from the globe.",
                   "image": "assets/cotton.png"
@@ -212,7 +212,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps to designing an experiment",
-              "data": [
+              "content": [
                 {
                   "text": "Create a goal of observation"
                 },
@@ -240,7 +240,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Identify a man-made object that resembles something from nature. Upload a photo of that object.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -319,7 +319,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order the steps to conducting an experiment",
-              "data": [
+              "content": [
                 {
                   "text": "Goal"
                 },
@@ -346,14 +346,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 2: Wildlife",
-              "cards": [
+              "prompt": "Watch how the flower reacts. How is this similar to when water has other materials in it?",
+              "content": [
                 {
                   "text": "Pick a flower and leave it in water. Now, put something in the water such as food coloring.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "Watch how the flower reacts. How is this similar to when water has other materials in it?",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -431,7 +427,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the different plants",
+              "prompt": "Match the different plants",
               "content": [
                 {
                   "name": "Flower"
@@ -481,7 +477,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Note how the plant acquires its food. What are the factors in the plant cycle present?",
-              "cards": [
+              "content": [
                 {
                   "text": "Find a plant in the real world. Take a picture of the plant.",
                   "image": "assets/cotton.png"
@@ -509,7 +505,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the different environments",
+              "prompt": "Match the different environments",
               "content": [
                 {
                   "name": "Polar"
@@ -580,7 +576,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "How do the plants differ in their habitats?",
-              "cards": [
+              "content": [
                 {
                   "text": "Find two plants in different habitats. Take pictures of the plants.",
                   "image": "assets/cotton.png"
@@ -704,7 +700,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Research and describe two different animals and how we could use their eggshells for different purposes.",
-              "cards": [
+              "content": [
                 {
                   "text": "Many animals hatch from eggs. The egg shells are of no use after the animals are hatched. Or are they?",
                   "image": "assets/cotton.png"
@@ -838,7 +834,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Find an animal around you and identify its distinct physical features. Through the appearance of the animal, can you determine where the animal lives, moves and eats?",
-              "cards": [
+              "content": [
                 {
                   "text": "Animals can live above ground, underground, in water, on the sand, etc. Animals adapt to these different conditions in their environment through physical and mental adaptations.",
                   "image": "assets/cotton.png"
@@ -867,7 +863,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "What order are the seasons in? Start from January",
-              "data": [
+              "content": [
                 {
                   "text": "Spring"
                 },
@@ -949,7 +945,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "How do animals elude predators and humans with their body shape, coloring, and other physical features?",
-              "cards": [
+              "content": [
                 {
                   "text": "Animals are all part of a food chain. There are predators and there are prey. However, sometimes humans enter and disrupt the food chain. They poach and hunt animals.",
                   "image": "assets/cotton.png"
@@ -978,7 +974,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order by the number of bones a human has at each stage",
-              "data": [
+              "content": [
                 {
                   "text": "Baby"
                 },
@@ -1004,7 +1000,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the different body parts.",
+              "prompt": "Match the different body parts.",
               "content": [
                 {
                   "name": "Ribs"
@@ -1054,7 +1050,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Observe the animal’s skeleton and describe how it helps the animal sustain their habits.",
-              "cards": [
+              "content": [
                 {
                   "text": "The human skeleton provides support from our body. Go outside and find an animal to do research on.",
                   "image": "assets/cotton.png"
@@ -1137,7 +1133,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Describe your present.",
-              "cards": [
+              "content": [
                 {
                   "text": "Smiling makes us happy. Give a present to a loved one to make them smile. But this shouldn’t be any present. Make sure the present you give them is a sustainable invention that they can use in many scenarios.",
                   "image": "assets/cotton.png"
@@ -1261,7 +1257,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Your posture is the habitual position of your body when it is standing, sitting, or walking. The weight of any extra items such as your backpack can affect your posture. Look inside your backpack and see what you can reduce, reuse, recycle, and digitalize. Let’s try to make your backpack lighter and save the planet by using less paper!",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1383,7 +1379,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Your body is very complex and valuable, and to stay healthy we must take care of it. We want to sustain our health for as long as possible and make sure we don’t infect others. Describe how you wash your hands.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1465,7 +1461,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order these animals by the amount of teeth they have",
-              "data": [
+              "content": [
                 {
                   "text": "Snail"
                 },
@@ -1489,14 +1485,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 3: Substances and their Properties",
-              "cards": [
+              "prompt": "One form of taking care of your teeth is eating good food that doesn’t rot your teeth. Keep track of all the food and drinks you consume in a day and label each one with whether it is teeth-healthy or teeth-unhealthy.",
+              "content": [
                 {
                   "text": "Humans have many teeth but only one set of teeth. Good oral hygiene then is very important and you should properly care for your teeth every day and night.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "One form of taking care of your teeth is eating good food that doesn’t rot your teeth. Keep track of all the food and drinks you consume in a day and label each one with whether it is teeth-healthy or teeth-unhealthy.",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -1654,7 +1646,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Understand that all plants and animals need air. Describe what happens when a plant has limited air.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -1801,7 +1793,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Take note of the factors that caused these changes. Describe a plan to revert or mitigate some of the damages.",
-              "cards": [
+              "content": [
                 {
                   "text": "Find a factory or a place similar to a factory near your home. Do your best to research the ecosystem present there before the factory and after the factory.",
                   "image": "assets/cotton.png"
@@ -1953,7 +1945,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the oceans from the smallest to the largest.",
-              "data": [
+              "content": [
                 {
                   "text": "Arctic"
                 },
@@ -1982,7 +1974,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Research where the water in your household comes from. Trace it back to the original source. Visit the source and find out the water purification method used. Reflect on the method and offer your own critiques and compliments.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -2109,14 +2101,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 4: Earth and Space",
-              "cards": [
+              "prompt": "Take a picture of a natural resource in your neighborhood. Learn about its past, present, and future. Describe the implications of its current usage.",
+              "content": [
                 {
                   "text": "There are many natural resources present on Earth but man has mismanaged many of them. Nature is our friend and we must protect her.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "Take a picture of a natural resource in your neighborhood. Learn about its past, present, and future. Describe the implications of its current usage.",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -2305,7 +2293,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "The sun provides light and heats the Earth. However, like anything, nature should be kept in balance. There are balancing factors to neutralize the Sun’s tremendous amount of heat. Explain why we need sunscreen and explain how Earth’s ecosystems have their own built-in sunscreen.",
-              "cards": []
+              "content": []
             }
           ]
         },
@@ -2328,7 +2316,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the different plants",
+              "prompt": "Match the different plants",
               "content": [
                 {
                   "name": "Mercury"
@@ -2394,7 +2382,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the planets in order from the closest to the Sun to the furthest",
-              "data": [
+              "content": [
                 {
                   "text": "Neptune"
                 },
@@ -2470,7 +2458,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Once done, draw our solar system with all its planets orbiting the Sun and try your best to show differences in size and shape.",
-              "cards": [
+              "content": [
                 {
                   "text": "There are many other planets in our solar system and they orbit the Sun. Life is only sustainable on planet Earth.",
                   "image": "assets/cotton.png"
@@ -2495,7 +2483,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the planets in order from the smallest to the largest",
-              "data": [
+              "content": [
                 {
                   "text": "Mercury"
                 },
@@ -2634,7 +2622,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "What are the effects of space exploration on our atmosphere? And do you believe the benefits of space exploration negate the cons?",
-              "cards": [
+              "content": [
                 {
                   "text": "Space exploration is very important in our day and age. We are on a mission to explore all the other planets.",
                   "image": "assets/cotton.png"
@@ -2710,7 +2698,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put the months in order",
-              "data": [
+              "content": [
                 {
                   "text": "January"
                 },
@@ -2753,7 +2741,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Draw the change of a newly planted tree over days, months, and years. For example, you can draw a newly planted tree over the course of many days. Then, draw the change over the course of a few months (seasons changing). Then, draw the change over the course of a few years.",
-              "cards": [
+              "content": [
                 {
                   "text": "The calendar is a counting system of time divided into days, months, and years.",
                   "image": "assets/cotton.png"
@@ -2788,7 +2776,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match a picture of a clock to the time it displays",
+              "prompt": "Match a picture of a clock to the time it displays",
               "content": [
                 {
                   "name": "1:00pm"
@@ -2837,14 +2825,10 @@
             {
               "navigation": "Mastery",
               "title": "common:mastery",
-              "prompt": "Chapter 5: Physics of Nature",
-              "cards": [
+              "prompt": "Take a picture of any household item that shows time. Record and describe the pattern you see.",
+              "content": [
                 {
                   "text": "Humans have invented different ways to tell time from the sundial to the water clock.",
-                  "image": "assets/cotton.png"
-                },
-                {
-                  "text": "Take a picture of any household item that shows time. Record and describe the pattern you see.",
                   "image": "assets/cotton.png"
                 }
               ]
@@ -2944,7 +2928,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Think about the many sustainable energy sources such as wind, solar, and water. How do we use forces to push or pull and generate energy?",
-              "cards": [
+              "content": [
                 {
                   "text": "Nothing in the world can move until there is a force either pushing or pulling it. Therefore, objects can only move when there is a force applied to them.",
                   "image": "assets/cotton.png"
@@ -3035,7 +3019,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put these vehicles in order of energy efficiency",
-              "data": [
+              "content": [
                 {
                   "text": "Roller-blades"
                 },
@@ -3060,7 +3044,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Does high speed have any negative effects on the environment? Explain your answer.",
-              "cards": [
+              "content": [
                 {
                   "text": "The object that moves faster has a higher speed. This means that during the same time, the object with a higher speed will cover a longer distance.",
                   "image": "assets/cotton.png"
@@ -3096,7 +3080,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order these vehicles from oldest to newest",
-              "data": [
+              "content": [
                 {
                   "text": "Human"
                 },
@@ -3169,7 +3153,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Examine the noise level produced by each car in the video you took and do a mini-experiment. Are the louder cars worse to the environment? Why?",
-              "cards": [
+              "content": [
                 {
                   "text": "The Kazakhstan eagle might seem clumsy and immobile first, but it is indeed swift. Although the animal might seem loud, that doesn’t take away from its speed.",
                   "image": "assets/cotton.png"
@@ -3209,7 +3193,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Put these objects in order from lightest to heaviest",
-              "data": [
+              "content": [
                 {
                   "text": "Home plant"
                 },
@@ -3287,7 +3271,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Now that you understand how this works, we’ll compare different energy sources to each other. Some energy sources need less area and less mass to be effective than others. Research and describe the different energy sources and their requirements in terms of area and mass.",
-              "cards": [
+              "content": [
                 {
                   "text": "Objects of different mass will react differently when the same force is applied to them. The object with more mass will gain less speed than the object with less mass.",
                   "image": "assets/cotton.png"
@@ -3382,7 +3366,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Order these light sources From least sustainable to most sustainable",
-              "data": [
+              "content": [
                 {
                   "text": "The Sun"
                 },
@@ -3404,7 +3388,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Grab a friend and head outside. Each time you spot a glass bottle before your friend you get a point. Each time you spot a recycle bin for said glass bottle you get a point. Keep track of the points and make sure you recycle all the glass bottles.",
-              "cards": [
+              "content": [
                 {
                   "text": "Light is a form of energy that allows living organisms to see the world around them. Our very own sun emits mass amounts of energy through rays of light. And everyday glass bottles are great at catching the sun’s rays. One might say they are too great because it can even cause a fire if they catch too much sunlight.",
                   "image": "assets/cotton.png"
@@ -3486,7 +3470,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Describe what would happen if you left a crayon under the sun.",
-              "cards": [
+              "content": [
                 {
                   "text": "A ray of sunlight moves in a straight line and changes its behavior as it hits different objects. Some objects such as metal, wood, and stone absorb most of the light and do not allow it to pass through them.",
                   "image": "assets/cotton.png"
@@ -3629,7 +3613,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Identify loud noises and record their source, explanation, and loudness relative to each other in a notepad. Explain which sounds could be eliminated or reduced.",
-              "cards": [
+              "content": [
                 {
                   "text": "The sounds you hear tell you what is going on. Nowadays, there is a massive amount of sound pollution.",
                   "image": "assets/cotton.png"
@@ -3668,7 +3652,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the devices:",
+              "prompt": "Match the devices:",
               "content": [
                 {
                   "name": "Speakers"
@@ -3732,7 +3716,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Go outside and find three different animals. Take note of how they react to sound. Try and understand why they hear sounds in the manner that they do. Is it an evolutionary process? How does it help them maintain their lifestyle?",
-              "cards": [
+              "content": [
                 {
                   "text": "We all hear sounds differently. Animals, plants, and humans can all hear sounds.",
                   "image": "assets/cotton.png"
@@ -3818,7 +3802,7 @@
               "title": "common:memory",
               "icon": "assets/willpower.png",
               "backgroundColor": "dodgerblue",
-              "description": "Match the types of thermometers",
+              "prompt": "Match the types of thermometers",
               "content": [
                 {
                   "name": "Digital thermometers"
@@ -3861,7 +3845,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Describe why different plants, animals, and humans live in different temperatures.",
-              "cards": [
+              "content": [
                 {
                   "text": "Get a thermometer. Visit a nearby park and find three different plants.",
                   "image": "assets/cotton.png"
@@ -4055,7 +4039,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Go outside to your nearest park. Understand how many animals keep cool in the summer or keep warm in the winter depending on the climate. Describe how changes to our body could help us keep climate in control similarly to them.",
-              "cards": [
+              "content": [
                 {
                   "text": "When people think of warmth, they think of sunny, summer days. Or you could think about cold, winter days with the heater on. Regardless, heat is a form of energy that is always being generated. However, generating heat in the winter can cost energy and leave a massive carbon footprint. Generating cold in the summer can cost energy and leave a massive carbon footprint.",
                   "image": "assets/cotton.png"
@@ -4184,7 +4168,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Find a magnet and test its magnetism on different objects around the house. Record your observations. Now that you’ve done this, describe different ways you could use magnets.",
-              "cards": [
+              "content": [
                 {
                   "text": "Magnets are objects that can attract or repel other objects. They are present and are found around the world. There are many objects around the household that are magnetic that you may not know about.",
                   "image": "assets/cotton.png"
@@ -4263,7 +4247,7 @@
               "icon": "assets/reorder.png",
               "backgroundColor": "pink",
               "prompt": "Rank transport from the most sustainable to the least sustainable.",
-              "data": [
+              "content": [
                 {
                   "text": "Cycling"
                 },
@@ -4285,7 +4269,7 @@
               "navigation": "Mastery",
               "title": "common:mastery",
               "prompt": "Look through all the previous lessons and gather some ideas. Use only one lesson as your main inspiration but you can take ideas from all of them. Foster your own Mastery 🎓 challenge and make sure that at the end of the exercise your parents learn something. Take pictures, videos, and notes, and record all your observations. Great job scientists!",
-              "cards": [
+              "content": [
                 {
                   "text": "Your long summer vacation is about to begin. You’ve done a lot of sustainability research during the year, but there’s more. This time you will create a sustainability exercise for your parents.",
                   "image": "assets/cotton.png"

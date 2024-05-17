@@ -1,10 +1,10 @@
 export default {
   /* Chapter names */
-  iamanexplorer: "I am an explorer",
+  iamanexplorer: "I Am an Explorer",
   wildlife: "Wildlife",
-  substances: "Substances \nand their properties",
-  cosmos: "Earth and space",
-  physics: "Physics of nature",
+  substances: "Substances \nand their Properties",
+  cosmos: "Earth and Space",
+  physics: "Physics of Nature",
 
   /* Chapter 1 lesson names */
   c1l1: "1. Where to find out about everything in the world?",

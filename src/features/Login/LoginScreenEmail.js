@@ -10,7 +10,8 @@ import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
-import { getCacheObject, postBoilerplate, postData } from "../Grades/Handlers/Database";
+import { getCacheObject, postBoilerplate, postDataHard } from "../Grades/Handlers/Database";
+import { postData } from "../Grades/Handlers/PostData";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
 
@@ -223,7 +224,7 @@ const LoginScreenEmail = () => {
           {/* This posted the data that was pulled from the post method above */}
           {/* <Button onPress={postData}>
             <TitleText color="secondary" size="body">
-              Post
+              postData()
             </TitleText>
           </Button> */}
 

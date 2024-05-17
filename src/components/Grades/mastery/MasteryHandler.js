@@ -91,13 +91,8 @@ const MasteryHandler = ({ objectData, imageMap }) => {
         source={{uri: imageMap["assets/lessonbg.png"]}}
         resizeMode="cover"
       >
-        <FlatList // The flatlist used to load minigames and their data.
-          data={
-            objectData.cards &&
-            Object.values(
-              objectData.cards
-            )
-          }
+        <FlatList //
+          data={ objectData.content }
           style={{ width: "90%" }}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}

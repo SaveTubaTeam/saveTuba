@@ -1,10 +1,6 @@
 import { db, storage } from "../../../../firebase.js";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import en_grade2 from "../Data/en_grade2.json"
-import en_grade3 from "../Data/en_grade3.json"
-import en_grade4 from "../Data/en_grade4.json"
-
 //***all documentation falls under web-namespaced api
 //documentation for set() https://firebase.google.com/docs/firestore/manage-data/add-data#web-namespaced-api_1
 //documentation for get() https://firebase.google.com/docs/firestore/query-data/get-data#web-namespaced-api_2
@@ -129,7 +125,7 @@ async function getLessonsData(grade, chpt, languageCode) {
 //
 // @jac927 | James: I think Hayden's decision to use db file storage over local file storage is correct for the current use case.
 //                  This is because I am moving to expo-image due to RN's Image component causing unwanted flickering.
-//                  For expo-image, specifying a uri with imageMap is much more maintainable than alternatives (e.g. hardcoded local filepaths w/ expo-asset).
+//                  For expo-image, specifying a uri with imageMap is better than alternatives imo.
 
 
 //BENCHMARK 4/16/24: fetchImages done in 25.53 seconds. This is horrible.
@@ -152,7 +148,7 @@ async function createImageMap(folder, imageMap) {
         // Create promises to fetch the download URLs and metadata for each file
         let urlPromises = result.items.map(url => url.getDownloadURL());
         let pathPromises = result.items.map(path => path.getMetadata());
-        // await to resolve all promises
+        // await to resolve all promises. These two lines are the cause of the performance painpoint.
         let urlResolved = await Promise.all(urlPromises);
         let pathResolved = await Promise.all(pathPromises);
 
@@ -175,7 +171,7 @@ async function createImageMap(folder, imageMap) {
 async function createImageMapHelper(folder, pathList, depth) {
     // below is a Recursive Failsafe to check if the current depth exceeds the maximum allowed depth
     // (think of nested folders like a binary tree where the depth of the folders corresponds to the height of the tree).
-    if (depth > 5) { //5 is an arbitrary number/cap to stop infinite loops beyond 5 layers of nesting
+    if (depth > 10) { //10 is an arbitrary number/cap to stop infinite loops beyond 10 layers of nesting
         console.log("ERROR: Recursion limit reached, stopping further directory exploration.");
         return pathList;
     }
@@ -183,7 +179,8 @@ async function createImageMapHelper(folder, pathList, depth) {
     try{
         let result = await storage.child(folder).listAll(); // get all items and subdirectories in the current folder.
         //console.log(result.prefixes.length);
-        if (result.prefixes.length === 0) { //we check if the array (does the current folder have any arrays?) is empty (this is our main stop condition)
+        //we check if the array is empty (this is our main stop condition) (basically asking: does the current folder have any arrays?)
+        if (result.prefixes.length === 0) {
             return pathList;
         }
 
@@ -197,13 +194,43 @@ async function createImageMapHelper(folder, pathList, depth) {
     return pathList
 }
 
+//for both getCacheObject and setCache, please see: https://reactnative.dev/docs/asyncstorage
+
+async function getCacheObject(key) {
+    // console.log("in getCacheObj");
+    try {
+        const jsonValue = await AsyncStorage.getItem(key);
+        console.log(`getCacheObject: getting "${key}" from cache`);
+        console.log("all keys:", await AsyncStorage.getAllKeys());
+        return jsonValue != null ? JSON.parse(jsonValue) : null;
+    } catch (e) {
+        console.log("Error in getCacheObj: ", e);
+        return null;
+    }
+}
+
+async function setCache(key, value) {
+    // console.log("in setCache");
+    try {
+        const jsonValue = JSON.stringify(value);
+        //console.log("Setting Cache --> Value: ", jsonValue, " Key: ", key);
+        await AsyncStorage.setItem(key, jsonValue);
+        console.log(`setCache: "${key}" set to value of "${value}"`);
+    } catch (e) {
+        console.log("Error with storeData: ", e);
+        // saving error
+    }
+}
+
 
 // The following three variables MUST be specified for postData()
 const GRADE_NAME = "Grade4"; //string specifying the grade, e.g. 'Grade2' 
 const LANGUAGE_CODE = "en"; //specifies the language, e.g. 'en', 'ru', 'kk'
 const CHAPTERS = en_grade4.chapters; //needs to be specified from import
 
-const postData = () => {
+//this one is different from the postData in PostData.js as it does not check
+//for the existence of documents and overwrites everything.
+const postDataHard = () => {
     CHAPTERS.forEach((chapter) => { //iterating through chapters array
         postChapterData(chapter); //see below
     })
@@ -286,36 +313,6 @@ const postMasteryAndMinigames = async(currentObject, lessonLanguageReference) =>
         console.error("postMasteryAndMinigames() ERROR:", error);
     }
 }
-//end of postData() functions
-
-
-//for both getCacheObject and setCache, please see: https://reactnative.dev/docs/asyncstorage
-
-async function getCacheObject(key) {
-    // console.log("in getCacheObj");
-    try {
-        const jsonValue = await AsyncStorage.getItem(key);
-        console.log(`getCacheObject: getting "${key}" from cache`);
-        console.log("all keys:", await AsyncStorage.getAllKeys());
-        return jsonValue != null ? JSON.parse(jsonValue) : null;
-    } catch (e) {
-        console.log("Error in getCacheObj: ", e);
-        return null;
-    }
-}
-
-async function setCache(key, value) {
-    // console.log("in setCache");
-    try {
-        const jsonValue = JSON.stringify(value);
-        //console.log("Setting Cache --> Value: ", jsonValue, " Key: ", key);
-        await AsyncStorage.setItem(key, jsonValue);
-        console.log(`setCache: "${key}" set to value of "${value}"`);
-    } catch (e) {
-        console.log("Error with storeData: ", e);
-        // saving error
-    }
-}
 
 //use the below function to push boilerplate lesson templates into database for a specified empty chapter. WARNING: CAN ERASE EXISTING DATA
 //See LoginScreen for function call location (this function will not work for params that do not exist!);
@@ -386,4 +383,4 @@ async function setCache(key, value) {
         } //end of lesson number loop
     }//end of postBoilerplate
 
-export { getGradeData, createImageMap, getLessonsData, postData, getCacheObject, setCache, postBoilerplate };
+export { getGradeData, createImageMap, getLessonsData, getCacheObject, setCache, postDataHard, postBoilerplate };

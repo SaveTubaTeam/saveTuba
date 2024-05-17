@@ -1,12 +1,12 @@
 export default {
   /* Chapter names */
-  worldofscience: "World of science",
-  universe: "Universe. Earth. Human",
-  substances: "Substances and materials",
-  processes: "Processes in \nanimate and \ninanimate nature",
-  energy: "Energy and movement",
-  ecology: "Ecology and \nsustainable development",
-  discoveries: "Discoveries that \nchanged the world",
+  worldofscience: "World of Science",
+  universe: "Universe. Earth. Humans.",
+  substances: "Substances and Materials",
+  processes: "Processes in \nAnimate and \nInanimate Nature",
+  energy: "Energy and Movement",
+  ecology: "Ecology and \nSustainable Development",
+  discoveries: "Discoveries That \nChanged the World",
 
   /* Chapter 1 lesson names */
   c1l1: "The role of science in exploring the surrounding world",

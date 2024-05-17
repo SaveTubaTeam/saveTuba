@@ -1,6 +1,6 @@
 export default {
   /* Chapter names */
-  iamanexplorer: "Я-исследователь",
+  iamaresearcher: "Я-исследователь",
   wildlife: "Живая природа",
   substances: "Вещества и их свойства",
   physics: "Физика природы",
