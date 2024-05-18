@@ -1,0 +1,4230 @@
+{
+  "chapters": [
+    {
+      "navigation": "Chapter1",
+      "title": "common:chapter1",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "indianred",
+      "colorTwo": "firebrick",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1. Дүниедегі заттарды табу",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Сопоставьте различные источники информации.",
+              "content": [
+                {
+                  "name": "Открытие"
+                },
+                {
+                  "name": "Открытие",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Другие люди"
+                },
+                {
+                  "name": "Другие люди",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Интернет"
+                },
+                {
+                  "name": "Интернет",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Книги"
+                },
+                {
+                  "name": "Книги",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Эксперименты"
+                },
+                {
+                  "name": "Эксперименты",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Человек"
+                },
+                {
+                  "name": "Человек",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Выберите изображение, которое представляет объект ниже. ",
+              "categories": [
+                {
+                  "name": "1.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "2.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "3.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "4.",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "1.",
+                  "title": "Электрический Микроскоп"
+                },
+                {
+                  "name": "2.",
+                  "title": "Оптический Микроскоп"
+                },
+                {
+                  "name": "3.",
+                  "title": "Стакан"
+                },
+                {
+                  "name": "4.",
+                  "title": "Линейка"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Используя один из источников информации, узнайте о устойчивом изобретении. Какой ученый внес наибольший вклад в его развитие? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Загрузите фотографию устойчивого изобретения, описанного в мини-игре Open Response. "
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Осы елде өзіңіз жүзеге асыра алатын тұрақты тәжірибені табыңыз және сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Жер шарынан бір елді таңдаңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2. Одуванчик неге парашютке ұқсайды?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Выберите случайный предмет вокруг вас. Завершите предложение. Байқау (сіздің нысаныңыз), мен білдім ... "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Прогуляйтесь и сфотографируйте одуванчик. Загрузите свою фотографию ниже. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Что не является человеческим чувством?",
+                  "answers": [
+                    "Зрение",
+                    "Слух",
+                    "Обоняние",
+                    "Интуиция",
+                    "Вкус",
+                    "Касание"
+                  ],
+                  "answer": "Интуиция"
+                },
+                {
+                  "prompt": "Наблюдение - это основной метод изучения природы.",
+                  "answers": [
+                    "Правда",
+                    "Ложь"
+                  ],
+                  "answer": "Правда"
+                },
+                {
+                  "prompt": "Жаратылыстану ғылымының қандай түріне жатпайды?",
+                  "answers": [
+                    "Биолог",
+                    "Химик",
+                    "Физик",
+                    "Астроном",
+                    "Экономист"
+                  ],
+                  "answer": "Экономист"
+                },
+                {
+                  "prompt": "Астрономы используют какое здание для наблюдения за объектами через мощные телескопы?",
+                  "answers": [
+                    "Планетарий",
+                    "Обсерватория",
+                    "Музей",
+                    "Башня"
+                  ],
+                  "answer": "Обсерватория"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Упорядочите приведенные ниже пункты, чтобы показать, какие шаги необходимо предпринять при разработке эксперимента.",
+              "content": [
+                {
+                  "text": "Подумать о необходимом оборудовании"
+                },
+                {
+                  "text": "Подумать об этапах наблюдения"
+                },
+                {
+                  "text": "Выбрать временные рамки наблюдения"
+                },
+                {
+                  "text": "Выбрать объект для наблюдения"
+                },
+                {
+                  "text": "Записать или нарисовать наблюдение"
+                },
+                {
+                  "text": "Выбрать цель наблюдения"
+                },
+                {
+                  "text": "Сделать вывод"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Табиғаттағы бір нәрсеге ұқсайтын адам жасаған затты анықтаңыз.Осы нысанның фотосуретін жүктеңіз.",
+              "content": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3. Эксперимент дегеніміз не?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Табиғаттан не дейін жүз астына шығаруға байланысты эксперимент жасаңыз. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Ашық жауап мини-ойында экспериментке арналған заттың суретін алыңыз. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Эксперименттің бірінші қадамы не?",
+                  "answers": [
+                    "Бақылау",
+                    "Тест",
+                    "Гипотеза",
+                    "Болжам"
+                  ],
+                  "answer": "Бақылау"
+                },
+                {
+                  "prompt": "Болар ашылған жағдайда ағаның жатысы сезіндіріп, сіз өте соққан. Бұл эксперимент жүргізу кезіндегі қай қадаммен ең жақын байланысты?",
+                  "answers": [
+                    "Гипотеза құру",
+                    "Тест жасау",
+                    "Бақылау жасау",
+                    "Қорытынды"
+                  ],
+                  "answer": "Бақылау жасау"
+                },
+                {
+                  "prompt": "Эксперименттің соңғы кезеңі қандай?",
+                  "answers": [
+                    "Қорытынды",
+                    "Нәтижелерді байланыстыру",
+                    "Бақылау",
+                    "Гипотеза құру"
+                  ],
+                  "answer": "Қорытынды"
+                },
+                {
+                  "prompt": "Гипотеза не?",
+                  "answers": [
+                    "Сынақтан өтуге болмайтын айту",
+                    "Эксперимент.",
+                    "Сіздің сұрауыңызға жауап беру үшін ең жақсы білімді көзден жатқан болжам",
+                    "Мұғалімдің сізге айтқаны растық"
+                  ],
+                  "answer": "Сіздің сұрауыңызға жауап беру үшін ең жақсы білімді көзден жатқан болжам"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Төмендегі элементтерді ретке көйіңіз, експеримент жүргізу кезінде қай қадамдарды өткізу керек екенін көрсету үшін.",
+              "content": [
+                {
+                  "text": "Гипотеза"
+                },
+                {
+                  "text": "Ресурстар"
+                },
+                {
+                  "text": "Жазбалар"
+                },
+                {
+                  "text": "Мақсат"
+                },
+                {
+                  "text": "Жоспар"
+                },
+                {
+                  "text": "Қорытынды"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Гүлдің қалай әрекет ететінін қараңыз. Бұл судың құрамында басқа материалдар болған кездегіге қалай ұқсас?",
+              "content": [
+                {
+                  "text": "Гүлді теріп, суға қалдырыңыз. Енді суға тамақ бояуы сияқты бірдеңе салыңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter2",
+      "title": "common:chapter2",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "indigo",
+      "colorTwo": "mediumpurple",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1. Өсімдіктердің құпиясы қандай?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Какое ваше любимое растение? Сфотографируйте. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "В какой части растения это находится? ",
+              "categories": [
+                {
+                  "name": "Листья",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Корень",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Листья",
+                  "title": "Воздух"
+                },
+                {
+                  "name": "Листья",
+                  "title": "Солнечная энергия"
+                },
+                {
+                  "name": "Корень",
+                  "title": "Вода"
+                },
+                {
+                  "name": "Корень",
+                  "title": "Минеральные вещества растений"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Что происходит на этой фотографии? Как вы думаете, как это влияет на окружающую среду? "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Әртүрлі өсімдіктерді сәйкестендіріңіз",
+              "content": [
+                {
+                  "name": "Гүл"
+                },
+                {
+                  "name": "Гүл",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жапырақ"
+                },
+                {
+                  "name": "Жапырақ",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жеміс"
+                },
+                {
+                  "name": "Жеміс",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "дің"
+                },
+                {
+                  "name": "дің",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Түбір"
+                },
+                {
+                  "name": "Түбір",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Өсімдік"
+                },
+                {
+                  "name": "Өсімдік",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Өсімдіктің тағамды қалай алатынына назар аударыңыз. Өсімдік циклінде қандай факторлар бар?",
+              "content": [
+                {
+                  "text": "Нақты әлемде өсімдікті табыңыз. Өсімдіктің суретін түсіріңіз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2. Өсімдіктер қалай өмір сүреді?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Как это растение (кактус) выживает в месте, где нет воды? "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Сопоставьте различные природные среды обитания.",
+              "content": [
+                {
+                  "name": "Полярный круг"
+                },
+                {
+                  "name": "Полярный круг",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Тундра"
+                },
+                {
+                  "name": "Тундра",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Вечнозеленые леса"
+                },
+                {
+                  "name": "Вечнозеленые леса",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Сезонные леса"
+                },
+                {
+                  "name": "Сезонные леса",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Пастбище"
+                },
+                {
+                  "name": "Пастбище",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Пустыня"
+                },
+                {
+                  "name": "Пустыня",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Дождевые леса"
+                },
+                {
+                  "name": "Дождевые леса",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Океан"
+                },
+                {
+                  "name": "Океан",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Сфотографируйте среду обитания, в которой растет ваше любимое растение. "
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Өсімдіктердің тіршілік ету ортасы бойынша қандай айырмашылығы бар?",
+              "content": [
+                {
+                  "text": "Әртүрлі мекендейтін екі өсімдікті табыңыз. Өсімдіктерді суретке түсіру.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3. Жұмыртқадан кім шықты?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "1. Балықты басқа омыртқа мүшелерінен қандай әртүрлі қылып тұрады?",
+                  "answers": [
+                    "Балықлар оксигенді суды желілері арқылы өткізеді",
+                    "Балықлар оксигенді тінеді",
+                    "Балықтың тұяқтары қаңқасын құрады",
+                    "Балықтар өз орташылықтарынан тыс жағда өмір сүре алады"
+                  ],
+                  "answer": "Балықлар оксигенді суды желілері арқылы өткізеді"
+                },
+                {
+                  "prompt": "2. Бұлардың қайсысы құрт емес?",
+                  "answers": [
+                    "Шынышқы",
+                    "Тақырым",
+                    "Термиттер",
+                    "Өрмекшілер"
+                  ],
+                  "answer": "Өрмекшілер"
+                },
+                {
+                  "prompt": "3. Келесіден қайсысы құстың жаны?",
+                  "answers": [
+                    "Пингвин",
+                    "Қарақұс",
+                    "Ұшар бөлек",
+                    "Көбелек"
+                  ],
+                  "answer": "Пингвин"
+                },
+                {
+                  "prompt": "4. Омыртқа мүшелерінің ең кіші тобы қайсысы?",
+                  "answers": [
+                    "Амфибиялар",
+                    "Құрттар",
+                    "Балықтар",
+                    "Мемлекеттер"
+                  ],
+                  "answer": "Мемлекеттер"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл омыртқалылардың қандай түрі - қосмекенділер мен сүтқоректілер? ",
+              "categories": [
+                {
+                  "name": "Мемлекеттер",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Амфибиялар",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Мемлекеттер",
+                  "title": "Аттар"
+                },
+                {
+                  "name": "Мемлекеттер",
+                  "title": "Адамдар"
+                },
+                {
+                  "name": "Мемлекеттер",
+                  "title": "Қаласырғалар"
+                },
+                {
+                  "name": "Мемлекеттер",
+                  "title": "Қоксерек киттер"
+                },
+                {
+                  "name": "Амфибиялар",
+                  "title": "Құрбағалар"
+                },
+                {
+                  "name": "Амфибиялар",
+                  "title": "Саламандра"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Қай жануар топы жұмыртқаларды жатады? Жұмыртқа жататын бір жануар суретін алар аласыз ба? "
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Екі түрлі жануарларды зерттеп, сипаттаңыз және олардың жұмыртқа қабығын әртүрлі мақсаттарда қалай пайдалануға болатынын көрсетіңіз.",
+              "content": [
+                {
+                  "text": "Көптеген жануарлар жұмыртқадан шығады. Жұмыртқа қабығы жануарлардан шыққаннан кейін пайдасыз. Әлде олар ма?",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4. Жасырынбақ ойнайтын кім?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Дельфин қайда тұрады?",
+                  "answers": [
+                    "Мұхит",
+                    "Тропикалық орман",
+                    "Қытай",
+                    "Тундра"
+                  ],
+                  "answer": "Мұхит"
+                },
+                {
+                  "prompt": "Бұлардың қайсысы жануарлардың өздерін жыртқыштардан қорғану әдістері емес?",
+                  "answers": [
+                    "Жыртқышқа қару жүгіру және сөйлесу",
+                    "Камуфляж",
+                    "Қалың қабықтар, нырқылы үйректер және ашық түстер",
+                    "Дұшманнан жүгіру"
+                  ],
+                  "answer": "Жыртқышқа қару жүгіру және сөйлесу"
+                },
+                {
+                  "prompt": "Қалапа өз орташағына қалай үйлеседі?",
+                  "answers": [
+                    "Әр түрлі өкше аяқ, ауыз және қабықтар",
+                    "Тез, қатты қозғалыс",
+                    "Ұшу қабілеті",
+                    "Тамаша көру қабілеті"
+                  ],
+                  "answer": "Әр түрлі өкше аяқ, ауыз және қабықтар"
+                },
+                {
+                  "prompt": "Жануарлар жер астында және жер үстінде тұру мүмкін бе?",
+                  "answers": [
+                    "Шыны",
+                    "Жалған"
+                  ],
+                  "answer": "Шыны"
+                },
+                {
+                  "prompt": "Мыналардың қайсысы жануарлардың тіршілігіне қажет емес?",
+                  "answers": [
+                    "Су",
+                    "Тамақ",
+                    "Баспана",
+                    "Ағаштар"
+                  ],
+                  "answer": "Ағаштар"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Сен жер астындагы үш жануарды атауыңыз мүмкін бе? Осы жануарлар өздерінің қоршағанына қалай үйлеседі және олардың ағымдық ортасы неліктен жақсы екенін түсіндіріңіз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл омыртқалы жануарлардың қандай түрі - бауырымен жорғалаушылар құстар? ",
+              "categories": [
+                {
+                  "name": "Бауырымен жорғалаушылар",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Құс",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Бауырымен жорғалаушылар",
+                  "title": "Айдаһар"
+                },
+                {
+                  "name": "Бауырымен жорғалаушылар",
+                  "title": "Крокодил"
+                },
+                {
+                  "name": "Бауырымен жорғалаушылар",
+                  "title": "Кобра"
+                },
+                {
+                  "name": "Бауырымен жорғалаушылар",
+                  "title": "Тасбақа"
+                },
+                {
+                  "name": "Құс",
+                  "title": "Қарға"
+                },
+                {
+                  "name": "Құс",
+                  "title": "Робин"
+                },
+                {
+                  "name": "Құс",
+                  "title": "Магпи"
+                },
+                {
+                  "name": "Құс",
+                  "title": "Кептер"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Айналаңыздағы жануарды тауып, оның физикалық ерекшеліктерін анықтаңыз. Жануардың сыртқы түрі арқылы жануардың қайда өмір сүретінін, қозғалатынын және тамақтанатынын анықтай аласыз ба?",
+              "content": [
+                {
+                  "text": "Жануарлар жер үстінде, жер астында, суда, құмда, т.б. тіршілік ете алады. Жануарлар өз ортасындағы осы әртүрлі жағдайларға физикалық және психикалық бейімделу арқылы бейімделеді.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5. Жануарлар қалай қорғалады?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Құйрық қандай қолай құрағышты жайып береді? Жеккөзде, қолашайын жағдайда қандай жағдайда? "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Жыл мезгілдері қандай ретпен орналасқан? Қаңтардан басталады",
+              "content": [
+                {
+                  "text": "Көктем"
+                },
+                {
+                  "text": "Жаз"
+                },
+                {
+                  "text": "Күз"
+                },
+                {
+                  "text": "Қыс"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Құстар не үшін көшеді?",
+                  "answers": [
+                    "Ресурстарды іздеп, негізінен дамыту орындары мен ұшақ орны",
+                    "Жыртқыштардан қашу үшін",
+                    "Құстар өздері өзгеріске ұшыратын тұлғалар және бір жерде тұрмайды",
+                    "Ұшу қабілетін жаттығу үшін"
+                  ],
+                  "answer": "Ресурстарды іздеп, негізінен дамыту орындары мен ұшақ орны"
+                },
+                {
+                  "prompt": "Барлық құстар бірдей көшу үлгілеріне ере ме?",
+                  "answers": [
+                    "Шын",
+                    "Жалған"
+                  ],
+                  "answer": "Жалған"
+                },
+                {
+                  "prompt": "Аюлар қыстағы қаншалық дайындалу?",
+                  "answers": [
+                    "Қыс суық",
+                    "Бұл климатта айулар тамақ таба алмайды",
+                    "Сүйгендерімен көп уақыт өткізу",
+                    "Барлығы жоғарыда"
+                  ],
+                  "answer": "Барлығы жоғарыда"
+                },
+                {
+                  "prompt": "Табиғатқа саяхатқа шығатын кезде сіз не істемеуіңіз керек?",
+                  "answers": [
+                    "Табиғат жолында өз бағасыңызды белгілеу үшін из болдырыңыз",
+                    "Жылдам жүру",
+                    "Шығын жинау",
+                    "Толтыруға болатын су шышасын пайдалану"
+                  ],
+                  "answer": "Табиғат жолында өз бағасыңызды белгілеу үшін из болдырыңыз"
+                },
+                {
+                  "prompt": "Неліктен жануарларды қорғау керек?",
+                  "answers": [
+                    "Мұражайларда жойылып кеткен жануарларға арналған орын жоқ",
+                    "Жануарларды қарау қызықты",
+                    "Жануарлар өздерін табиғи түрде қорғай алмайды",
+                    "Жануарлар қоректік тізбекке енеді және жойылу табиғи тәртіпті бұзады"
+                  ],
+                  "answer": "Жануарлар қоректік тізбекке енеді және жойылу табиғи тәртіпті бұзады"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Көбірек қорғауды қажет ететін жануарды суретке түсіріңіз "
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Жануарлар дене пішінімен, түсімен және басқа физикалық ерекшеліктерімен жыртқыштар мен адамдарды қалай айналып өтеді?",
+              "content": [
+                {
+                  "text": "Жануарлардың барлығы қоректік тізбектің бір бөлігі. Жыртқыштар да бар, жыртқыштар да бар. Дегенмен, кейде адамдар еніп, қоректік тізбекті бұзады. Олар аң аулайды, аң аулайды.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson6",
+          "title": "6. Біз неге тұрамыз?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB8C5C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Адам сүйегінің көптеген функцияларын тізімдеп шығарыңыз. "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Адамның әр қай өмір жолындағы сүйек санын аздықтан көбейту бойынша ретке келтіріңіз.",
+              "content": [
+                {
+                  "text": "Балалық жас"
+                },
+                {
+                  "text": "Жас жас"
+                },
+                {
+                  "text": "Қарт жас"
+                },
+                {
+                  "text": "Шағала жас"
+                },
+                {
+                  "text": "Ержет жас"
+                }
+              ]
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Адам өміріндегі әр түрлі сүйектерді сәйкестендіріңіз.",
+              "content": [
+                {
+                  "name": "Ребра"
+                },
+                {
+                  "name": "Ребра",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Бедренный кость"
+                },
+                {
+                  "name": "Бедренный кость",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Тау жасық"
+                },
+                {
+                  "name": "Тау жасық",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жоғары ішек"
+                },
+                {
+                  "name": "Жоғары ішек",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Омыршақ"
+                },
+                {
+                  "name": "Омыршақ",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Төменгі ішек"
+                },
+                {
+                  "name": "Төменгі ішек",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Жануардың қаңқасын бақылаңыз және оның жануарға әдеттерін сақтауға қалай көмектесетінін сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Адам қаңқасы біздің денемізден қолдау көрсетеді. Сыртқа шығып, зерттеу жүргізу үшін жануар табыңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson7",
+          "title": "7. Біз қалай күлеміз?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB755B",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Біздің мүшелеріміздің көптеген функцияларын тізімдегіңіз. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Адам ағзасындағы әрбір бұлшықеттің пішіні әртүрлі",
+                  "answers": [
+                    "Рас",
+                    "Жалған"
+                  ],
+                  "answer": "Рас"
+                },
+                {
+                  "prompt": "Тұрақты жаттығулардың қандай пайдасы бар?",
+                  "answers": [
+                    "Бұлшық ет жаттығулары",
+                    "Көңіл-күйді жақсартады және энергияны арттырады",
+                    "Денсаулық жағдайы мен аурулармен күреседі",
+                    "Жоғарыда келтірілген барлығы"
+                  ],
+                  "answer": "Жоғарыда келтірілген барлығы"
+                },
+                {
+                  "prompt": "Адам ағзасындағы ең үлкен бұлшықет қандай?",
+                  "answers": [
+                    "Үлкен кеуде",
+                    "Трицепс браксы",
+                    "Gluteus Maximus",
+                    "Төрт аяқты мықын"
+                  ],
+                  "answer": "Төрт аяқты мықын"
+                },
+                {
+                  "prompt": "Қандай айырмашылықтар барnt түрлері бұлшықет?",
+                  "answers": [
+                    "Тегіс, жүрек, сүйек",
+                    "Тегіс, мәйітті, сүйекті",
+                    "Қаңқа, тегіс",
+                    "Жүрек, жүрек емес"
+                  ],
+                  "answer": "Тегіс, жүрек, сүйек"
+                },
+                {
+                  "prompt": "Бүккіш және созғыш бұлшықеттер қалай бірге жұмыс істейді?",
+                  "answers": [
+                    "Арқа мен қолды созыңыз",
+                    "Қолды бүгіңіз",
+                    "сүйектер арасындағы бұрышты азайтыңыз",
+                    "қозғалыс жасау үшін дененің буындарын бүгіп, түзетіңіз"
+                  ],
+                  "answer": "қозғалыс жасау үшін дененің буындарын бүгіп, түзетіңіз"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Сыйлығыңызды сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Күлімсіреу бізді бақытты етеді. Жақын адамыңызға сыйлық беріңіз, оның күлкісі келеді. Бірақ бұл сыйлық болмауы керек. Оларға беретін сыйлықтың олар көптеген сценарийлерде қолдануға болатын тұрақты өнертабыс екеніне көз жеткізіңіз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson8",
+          "title": "8. Ауыр рюкзак",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5C9E",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Сіздің қамтылысыңыз дұрыс па? Егер іә болса, неге деп ойлайсыз? Егер жоқ болса, қамтылысыңызды жақсарту жолдарын ойлауға болады ма? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Балаға ауыр сумка қамтылыға әсер етпейді, себебі ауырлық сумкада.",
+                  "answers": [
+                    "Шын",
+                    "Жалған"
+                  ],
+                  "answer": "Жалған"
+                },
+                {
+                  "prompt": "Дұрыс қамтылыс неге маңызды?",
+                  "answers": [
+                    "Жаттығу кезінде дұрыс форманы сақтау",
+                    "Теңдігіңізді нығайту",
+                    "Жараланулардан сақтану",
+                    "Барлығы жоғарыда"
+                  ],
+                  "answer": "Барлығы жоғарыда"
+                },
+                {
+                  "prompt": "Нашар қамтылыс қамтылысыңызға не істейді?",
+                  "answers": [
+                    "Қамтылысыңызға қажетті емес басым жасайды",
+                    "Өзіңіздің ауырлығыңызды тең таратады",
+                    "Сізді тыныштыру және жараланулардан сақтайды",
+                    "Толық көлем меншігін сақтауға мүмкіндік береді"
+                  ],
+                  "answer": "Қамтылысыңызға қажетті емес басым жасайды"
+                },
+                {
+                  "prompt": "Қамтылысыңыз уақыттай қалай өзгереді?",
+                  "answers": [
+                    "Қамтылысыңыз қандай сақтауыңызға байланысты өзгереді",
+                    "Қараңыз келе жатқанда, қамтылысыңыз тұрақты қисық болады",
+                    "Уақыт өткенден кейін, қамтылысыңыз мүшелеріңіз тым қуатты болғандықтан тура болады",
+                    "Барлығы жоғарыда"
+                  ],
+                  "answer": "Қамтылысыңыз қандай сақтауыңызға байланысты өзгереді"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл жақсы позаның немесе нашар қалыптың мысалы ма? ",
+              "categories": [
+                {
+                  "name": "Жақсы қамтылыс",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жаман қамтылыс",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Жақсы қамтылыс",
+                  "title": "Тура және биік тұру"
+                },
+                {
+                  "name": "Жақсы қамтылыс",
+                  "title": "Ауырлық тең аяқтарыңызда таралады"
+                },
+                {
+                  "name": "Жаман қамтылыс",
+                  "title": "Дөңгелеген өмір сүру"
+                },
+                {
+                  "name": "Жаман қамтылыс",
+                  "title": "Қысық артқа бұрылу"
+                },
+                {
+                  "name": "Жаман қамтылыс",
+                  "title": "Бас алдына қылығу"
+                },
+                {
+                  "name": "Жаман қамтылыс",
+                  "title": "Артқа ауру"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Сіздің позаңыз - сіздің денеңіз тұрғанда, отырғанда немесе жүргенде үйреншікті қалпы. Рюкзак сияқты кез келген қосымша заттардың салмағы сіздің қалпыңызға әсер етуі мүмкін. Рюкзактың ішіне қараңыз және нені азайтуға, қайта пайдалануға, қайта өңдеуге және цифрландыруға болатынын көріңіз. Қағазды аз пайдаланып, рюкзактарыңызды жеңілдетуге және планетаны сақтауға тырысайық!",
+              "content": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson9",
+          "title": "9. Бактериялар неден қорқады?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DBA25C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Біз қандай тәрізді сақтаймыз? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Қолдарыңызды жуу процессіндегі бейнеңізді жүктеп алыңыз. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Қолдарыңызды сабын мен сумен жуу микробтардың миллиондағанын жоя алады.",
+                  "answers": [
+                    "Шын",
+                    "Жалған"
+                  ],
+                  "answer": "Шын"
+                },
+                {
+                  "prompt": "Күн бойы біздер денемізге қандай көмек етеміз?",
+                  "answers": [
+                    "Терімізді және бетімізді жиі жуамыз",
+                    "Қолдарыңызды сабын және сумен жуамыз",
+                    "Терден терілімді сүріп аламыз",
+                    "Барлығы жоғарыда"
+                  ],
+                  "answer": "Барлығы жоғарыда"
+                },
+                {
+                  "prompt": "Ғалымдар микробтарды қандай зерттейді?",
+                  "answers": [
+                    "Микробтар болатын нысаны ұялы телефон камерасымен суретке түсіру",
+                    "Микроскоптар сияқты ғылыми құралдарды пайдалану",
+                    "Сабынды талдау",
+                    "Ғалымдар өте кіші өлшемдерінде микробтарды зерттей алмайды"
+                  ],
+                  "answer": "Микроскоптар сияқты ғылыми құралдарды пайдалану"
+                },
+                {
+                  "prompt": "Адам басына шама бактериялардың неше болуы мүмкін?",
+                  "answers": [
+                    "Мыңдаған",
+                    "Миллиондаған",
+                    "Миллиарддаған",
+                    "Триллиондаған"
+                  ],
+                  "answer": "Триллиондаған"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл қызмет тазалыққа не жоқ, тазалықсыздыққа көмек етеді ме? ",
+              "categories": [
+                {
+                  "name": "Тазалық",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Тазалықсыздық",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Тазалық",
+                  "title": "Ким түскіде сарымсақты нан иді, сондықтан ол кейін тісін суды."
+                },
+                {
+                  "name": "Тазалық",
+                  "title": "Емілі екзофолиант пен скраб сатып алды, қазір ол аптасына бір рет эксфолиация жасайды"
+                },
+                {
+                  "name": "Тазалық",
+                  "title": "Маркосқа достары деодорант берді және оны пайдалануға көрсетті"
+                },
+                {
+                  "name": "Тазалықсыздық",
+                  "title": "Мелісса аптасына бір рет сүнгі тазартады, бұл қышқыл ілік болды"
+                },
+                {
+                  "name": "Тазалықсыздық",
+                  "title": "Джонни баскетбол ойнады және теріледі, бірақ ол ойнап болғандан кейін тікелей сабаққа бара тұрады"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Сіздің денеңіз өте күрделі және құнды, сондықтан денсаулықты сақтау үшін біз оған қамқорлық жасауымыз керек. Біз денсаулығымызды мүмкіндігінше ұзақ уақытқа сақтап, басқаларға жұқтырмайтынымызға көз жеткізгіміз келеді. Қолыңызды қалай жуатыныңызды сипаттаңыз.",
+              "content": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson10",
+          "title": "10. Неліктен менің тістерім ауырады?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DB5F5C",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Көптеген жануарлардың тістері бар, олардың кейбіреулері кішкентай, кейбіреулері өткір, кейбіреулері үлкен, кейбіреулері түтіккен, бірақ олардың барлығы белгілі бір мақсатқа қызмет етеді. Дегенмен, тістер бірнеше мақсатқа қызмет ете алады және жануарлардың тістері әртүрлі функциялар үшін пайдаланылуы мүмкін. (жануар/адам) тістері тамақтанудан басқа үшін пайдалануға болатын кейбір тұрақты функцияларды тізімдеңіз. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Екі түрлі тағамның суретін түсіріп, бір тағамның екіншісіне қарағанда тісіңізге жақсырақ екенін түсіндіріңіз "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл әрекет сіздің тісіңізге пайдалы немесе зиянды ма? ",
+              "categories": [
+                {
+                  "name": "Пайдалы",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Зиянды",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Пайдалы",
+                  "title": "Әр тамақтан кейін тісті тазалау"
+                },
+                {
+                  "name": "Пайдалы",
+                  "title": "Тіліңізді тазалау"
+                },
+                {
+                  "name": "Зиянды",
+                  "title": "Шірін азық-түліктерді жеу"
+                },
+                {
+                  "name": "Зиянды",
+                  "title": "Чипстерді жеу"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Бұл жануарларды олардың тістерінің саны бойынша кему ретімен ретке келтіріңіз",
+              "content": [
+                {
+                  "text": "Шошқа"
+                },
+                {
+                  "text": "Үйрек"
+                },
+                {
+                  "text": "Адам"
+                },
+                {
+                  "text": "Үлкен броненосец"
+                },
+                {
+                  "text": "Құлаққап"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Тістеріңізге күтім жасаудың бір түрі - тістеріңізді шірітпейтін жақсы тамақ ішу. Бір күнде тұтынатын барлық тағамдар мен сусындарды қадағалаңыз және олардың әрқайсысына тіс сау немесе тіске зиян деп белгілеңіз.",
+              "content": [
+                {
+                  "text": "Адамдарда көп тістер бар, бірақ бір ғана тіс жинағы. Ауыз қуысының гигиенасы өте маңызды және сіз күндіз-түні тістеріңізге дұрыс күтім жасауыңыз керек.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter3",
+      "title": "common:chapter3",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "orange",
+      "colorTwo": "orangered",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1. Ауаның қандай қасиеттері бар?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7492DB",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Әр адамның қышқыл ізі бар",
+                  "answers": [
+                    "Шын",
+                    "Жалған"
+                  ],
+                  "answer": "Шын"
+                },
+                {
+                  "prompt": "Біздің қышқыл ізімізді кемітуге не көмек етпейді?",
+                  "answers": [
+                    "Жергілікті тамақтарды қолдану",
+                    "Қайта өңдеу",
+                    "Мектепке бару",
+                    "Ағаш қою"
+                  ],
+                  "answer": "Мектепке бару"
+                },
+                {
+                  "prompt": "Адамдардың әрекеті себепкен көбірек артқан газ қайсысы?",
+                  "answers": [
+                    "Қышқыл газ",
+                    "Оксидент",
+                    "Дизель"
+                  ],
+                  "answer": "Қышқыл газ"
+                },
+                {
+                  "prompt": "Өсімдіктер қай газды жинады?",
+                  "answers": [
+                    "Газ",
+                    "Метан",
+                    "Оксидент",
+                    "Қышқыл газ"
+                  ],
+                  "answer": "Қышқыл газ"
+                },
+                {
+                  "prompt": "Тізімделген нәрселерден қайсысы CO2 қосатын ғазды атмосферага қоспайды?",
+                  "answers": [
+                    "Газда тауыз ету",
+                    "Ағаш қою",
+                    "Ағашты жағу",
+                    "Автобуста жүзу"
+                  ],
+                  "answer": "Ағаш қою"
+                },
+                {
+                  "prompt": "CO2 деген не?",
+                  "answers": [
+                    "Қышқыл",
+                    "Оксидент",
+                    "Қышқыл газ",
+                    "Шипучий напитка түрі"
+                  ],
+                  "answer": "Қышқыл газ"
+                },
+                {
+                  "prompt": "Суықтыру процесінде ауа _____ .",
+                  "answers": [
+                    "Артады",
+                    "Азаяды"
+                  ],
+                  "answer": "Азаяды"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Неге жануарлар қыста соңып қалмайды? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Қалада ауаның кірлеуіне себеп болатын үлгі қызметтерінің үш фотосын жасап жүктеңіз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Ауа кірлеуінің себептерін сұрыптаңыз ",
+              "categories": [
+                {
+                  "name": "Адамдардың",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Табиғи",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Адамдардың",
+                  "title": "Заводтар"
+                },
+                {
+                  "name": "Адамдардың",
+                  "title": "Машиндар"
+                },
+                {
+                  "name": "Адамдардың",
+                  "title": "Ұшақтар"
+                },
+                {
+                  "name": "Адамдардың",
+                  "title": "Тамыр көзі"
+                },
+                {
+                  "name": "Адамдардың",
+                  "title": "Аэрозоль түтіндері"
+                },
+                {
+                  "name": "Табиғи",
+                  "title": "Орман өрттері"
+                },
+                {
+                  "name": "Табиғи",
+                  "title": "Вулкандар"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Барлық өсімдіктер мен жануарларға ауа қажет екенін түсіну. Өсімдіктің ауасы шектеулі болғанда не болатынын сипаттаңыз.",
+              "content": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2. Қай жерде зауыт салу керек?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74B1DB",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Егер парниктік газдар өрт сөйлесіне көп пайда болса, температура қалай өзгереді?",
+                  "answers": [
+                    "Температура артады",
+                    "Температура азайады"
+                  ],
+                  "answer": "Температура артады"
+                },
+                {
+                  "prompt": "Төменде атаулы көрсетілген іс-шаралардың қайсысы көмірдің шығарылымын үлкен масштабта көбейтеді?",
+                  "answers": [
+                    "Орман қырығы",
+                    "Агрокультура",
+                    "Кенішті топырақты жақсылау",
+                    "Немесе демісу"
+                  ],
+                  "answer": "Кенішті топырақты жақсылау"
+                },
+                {
+                  "prompt": "Қышқыл ғаздың мазмұны артуы орташа жылдамдықпен қызуға әкеледі ________.",
+                  "answers": [
+                    "көптеген күн жарығын өрт сөйлесіне біріктіріп.",
+                    "көптеген күн жарығын бұлттардан шегініп.",
+                    "ауа мөлшеріндегі кислороддың санын азайтып.",
+                    "көптеген жылуға өрт сөйлесіне тосып."
+                  ],
+                  "answer": "көптеген жылуға өрт сөйлесіне тосып."
+                },
+                {
+                  "prompt": "Парниктік газдардың табиғи көзі не?",
+                  "answers": [
+                    "Аэрозольдер",
+                    "Орман қырығы",
+                    "Вулкан шығарылымдары",
+                    "Кенішті топырақты жақсылау"
+                  ],
+                  "answer": "Вулкан шығарылымдары"
+                },
+                {
+                  "prompt": "Парниктік әсері не?",
+                  "answers": [
+                    "Шағын ишуның сақталуы себепті планетаның қызуы.",
+                    "Зерттеу өрт сөйлесінің кірістігінен Земля салқындайды.",
+                    "Бекітілген қатпарыш, мысалы, тасын қыздыратын."
+                  ],
+                  "answer": "Шағын ишуның сақталуы себепті планетаның қызуы."
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Жоспарды жасаңыз, сіз қалай ауа кірістігінен сақтанасыз. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Ауа кірістігіне ең көп әсер ететін заводтың фотосын жүктеңіз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Әрбір әрекеттің ресурстарды қандай түрде азайтатынын, жаңартатынын, немесе қайта өңдеуін анықтаңыз ",
+              "categories": [
+                {
+                  "name": "азайтады",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "жаңартады",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "қайта өңдейді",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "азайтады",
+                  "title": "Тек сізге қажет ететін затты алыңыз"
+                },
+                {
+                  "name": "азайтады",
+                  "title": "Жаңа алу орнына қайта пайдалануға болатын заттарды іздеп шығыңыз"
+                },
+                {
+                  "name": "азайтады",
+                  "title": "Бөлек көлемде алыңыз"
+                },
+                {
+                  "name": "азайтады",
+                  "title": "Кем упаковкасы бар өнімдерді таңдаңыз"
+                },
+                {
+                  "name": "жаңартады",
+                  "title": "Жаңа емес, бірақ үйден алынған сумен судың ұясын толтырыңыз"
+                },
+                {
+                  "name": "жаңартады",
+                  "title": "Жаңа компьютер алу орнына көп жылдық компьютеріңізді жаңартыңыз"
+                },
+                {
+                  "name": "жаңартады",
+                  "title": "Пластик сомаларды болдырмаңыз, олардың орнына көп рет қолдануға болатын, экологияға зиянсыз сомаларды таңдаңыз"
+                },
+                {
+                  "name": "қайта өңдейді",
+                  "title": "Шынын бөлу"
+                },
+                {
+                  "name": "қайта өңдейді",
+                  "title": "Алюминийді бөлу"
+                },
+                {
+                  "name": "қайта өңдейді",
+                  "title": "Қайта өңдеу үшін картонды бөлу"
+                },
+                {
+                  "name": "қайта өңдейді",
+                  "title": "Құршын аккумуляторларын бөлу"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Бұл өзгерістерге себеп болған факторларға назар аударыңыз. Кейбір залалдарды қайтару немесе азайту жоспарын сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Үйіңізге жақын жерде зауытты немесе зауытқа ұқсас орынды табыңыз. Зауытқа дейін және зауыттан кейінгі экожүйені зерттеу үшін бар күшіңізді салыңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3. Су туралы не білеміз?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#74DBC2",
+          "content": [
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "\"Кірлету\" сөзі не дейді?",
+                  "answers": [
+                    "Бірзатты таза жасау.",
+                    "Бірзатты арзан жасау.",
+                    "Бірзатты кірлету."
+                  ],
+                  "answer": "Бірзатты кірлету."
+                },
+                {
+                  "prompt": "Жер шарындағы судың қанша бөлігі ішімдік?",
+                  "answers": [
+                    "1%",
+                    "5%",
+                    "10%",
+                    "20%"
+                  ],
+                  "answer": "1%"
+                },
+                {
+                  "prompt": "Қазіргі заманда су кірлетудің негізгі көздерінен қайсысы ЕМЕС?",
+                  "answers": [
+                    "Жануарлардың болашағы және сұяқты жасыл биттер",
+                    "Ауыл шаруашылығында қолданылатын химиялық заттар",
+                    "Промышленностьтің химиялық токсиндері",
+                    "Шағын көшелер (адам & басқа)"
+                  ],
+                  "answer": "Жануарлардың болашағы және сұяқты жасыл биттер"
+                },
+                {
+                  "prompt": "Су кірлету келесі жағдайда болады:",
+                  "answers": [
+                    "Зиянды заттар су жатықтарына түседі.",
+                    "Промышленность қалдықтарын толық және дұрыс жолмен жабу жасайды.",
+                    "Жоғарыда аталмағандардың ешбірі"
+                  ],
+                  "answer": "Зиянды заттар су жатықтарына түседі."
+                },
+                {
+                  "prompt": "Біз су кірлетуін токтатуға ешбір нәрсе жасай алмаймыз",
+                  "answers": [
+                    "Расты",
+                    "Дұрыс емес"
+                  ],
+                  "answer": "Дұрыс емес"
+                },
+                {
+                  "prompt": "Біз су кірлетуін келесі арқылы кедергі көруге болады:",
+                  "answers": [
+                    "Пластика пайдалануын азайту",
+                    "Химиялық заттарды дұрыс жабу",
+                    "Өз қоймаларыңыздан кейіндергі тазалықты сақтау",
+                    "Жоғарыда аталғандардың барлығы"
+                  ],
+                  "answer": "Жоғарыда аталғандардың барлығы"
+                },
+                {
+                  "prompt": "Су қанша түрде келеді?",
+                  "answers": [
+                    "Үш",
+                    "Екі",
+                    "Бір"
+                  ],
+                  "answer": "Үш"
+                },
+                {
+                  "prompt": "Қандай болу үшін жауып түседі?",
+                  "answers": [
+                    "Ыстық күндерде беденімізден шығатын тер.",
+                    "Жылы жаңбыр, бірақ суық қар және айжарма емес.",
+                    "Пештамалар немесе пештамаларда пайдаланатын газ.",
+                    "Көктен түсетін суның кез келген формасы."
+                  ],
+                  "answer": "Көктен түсетін суның кез келген формасы."
+                },
+                {
+                  "prompt": "Қандай болу үшін міндетті түрде болады?",
+                  "answers": [
+                    "Шалақай",
+                    "Тұман",
+                    "Ширақай",
+                    "Бұракай"
+                  ],
+                  "answer": "Бұракай"
+                },
+                {
+                  "prompt": "Су циклі - бұл не?",
+                  "answers": [
+                    "Суның 3 формасы (бекірі, сұйық, газ)",
+                    "Суның Жер бетіндегі, жеріндегі немесе жеріндегі қозғалысы",
+                    "Су қайнаған кезде",
+                    "Бұлтырлар пайда болғанда"
+                  ],
+                  "answer": "Суның Жер бетіндегі, жеріндегі немесе жеріндегі қозғалысы"
+                },
+                {
+                  "prompt": "Ауримдағы күн _____ суды және оны буыт болатын.",
+                  "answers": [
+                    "салқындатады",
+                    "жылдайды",
+                    "мұздатады",
+                    "жарықтандырып"
+                  ],
+                  "answer": "жылдайды"
+                },
+                {
+                  "prompt": "Суның газ формасына _____ дейді.",
+                  "answers": [
+                    "су буыты",
+                    "жауып түсу",
+                    "мұз",
+                    "ава"
+                  ],
+                  "answer": "су буыты"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Суретті сипаттаңыз. Сіздер осындай өзгерту керек пе? "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Теңіздерді ең кішіден ең үлкеніне дейін ретке көшіріңіз",
+              "content": [
+                {
+                  "text": "Тынық"
+                },
+                {
+                  "text": "Үнді"
+                },
+                {
+                  "text": "Оңтүстік"
+                },
+                {
+                  "text": "Арктикалық"
+                },
+                {
+                  "text": "Атлантикалық"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Су циклін суретке салып, оның фотосын алыңыз. Циклдың бастапқыларын тастайыңыз! "
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Сіздің үйдегі судың қайдан келетінін зерттеңіз. Оны бастапқы көзге қайтарыңыз. Көзге барып, қолданылатын суды тазарту әдісін біліңіз. Әдіс туралы ойланыңыз және өз сындарыңыз бен мақтауларыңызды ұсыныңыз.",
+              "content": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4. Адамға не қажет?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#7874DB",
+          "content": [
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Сурет қай ресурстық санатқа жататынын анықтаңыз ",
+              "categories": [
+                {
+                  "name": "Азайту",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Азайту",
+                  "title": "Күн"
+                },
+                {
+                  "name": "Азайту",
+                  "title": "Тек сізге керекті затты сатып алыңыз"
+                },
+                {
+                  "name": "Азайту",
+                  "title": "Қол жеткізбейтін немесе сатып алуға болмайтын заттарды іздеп шығыңыз"
+                },
+                {
+                  "name": "Азайту",
+                  "title": "Жиі сатып алыңыз"
+                },
+                {
+                  "name": "Азайту",
+                  "title": "Аз орын алатын өнімдерді таңдаңыз"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "title": "Стеклони бөлу"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "title": "Компьютеріңізді толықтырату қорытынды жасаймын деп ойлаңыз"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "title": "Алюминийді бөлу"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "title": "Картонды қайта қолдану орнына жіберу"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "title": "Суретке қарай асқазан батареяларын бөлу"
+                },
+                {
+                  "name": "Қайта қолдану",
+                  "title": "Пластик сумкаларды тастап, қайта қолдануға болатын, өрт сақтауға арналған сумкаларды таңдаңыз"
+                }
+              ]
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Адамдар табиғат ресурстарын энергия жасау үшін қалай пайдаланады? Энергияның бір жақсы (тұрақты) жолын және бір негізгі жолын атаңыз. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Негізгі тұрақты емес практика?",
+                  "answers": [
+                    "Азайту",
+                    "Қайта қолдану",
+                    "Қайта өндіру",
+                    "Сатып алу"
+                  ],
+                  "answer": "Сатып алу"
+                },
+                {
+                  "prompt": "Не деп атайды, заттары жуып, қайта пайдалануға?",
+                  "answers": [
+                    "Азайту",
+                    "Қайта қолдану",
+                    "Қайта өндіру",
+                    "Сатып алу"
+                  ],
+                  "answer": "Қайта өндіру"
+                },
+                {
+                  "prompt": "Не деп атайды, заттары жаңа материалдарға өндіруғе?",
+                  "answers": [
+                    "Қайта өндіру",
+                    "Азайту",
+                    "Қайта қолдану",
+                    "Сатып алу"
+                  ],
+                  "answer": "Қайта өндіру"
+                },
+                {
+                  "prompt": "Қорытты жер не?",
+                  "answers": [
+                    "Мұсорды жинаған орын.",
+                    "Мұсорды азайтатын орын.",
+                    "Мұсорды қайта өндіретін орын.",
+                    "Мұсорды қайта пайдаланатын орын"
+                  ],
+                  "answer": "Мұсорды жинаған орын."
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Өрт сақтауға қандай әрекет ететініңіздің үш суретін түсіріңіз "
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Маңайыңыздағы табиғи ресурстарды суретке түсіріңіз. Оның өткені, бүгіні және болашағы туралы біліңіз. Оның қазіргі кездегі қолданылуының салдарын сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Жер бетінде көптеген табиғи ресурстар бар, бірақ адам олардың көпшілігін дұрыс пайдаланбаған. Табиғат – біздің досымыз, біз оны қорғауымыз керек.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter4",
+      "title": "common:chapter4",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "midnightblue",
+      "colorTwo": "mediumturquoise",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1. Күн және оның Жерге әсері",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E09079",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Ай мұхиттарға қандай әсер ететінін зерттеңіз. Сіз не үйрендіңіз? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Қалаңызда күн панелдерін көруге болатын ғимарат немесе орынды табыңыз. Сурет жүктеп қойыңыз! "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Күн энергиясы қайта қолданушы энергия дереккөзі емес",
+                  "answers": [
+                    "Дұрыс",
+                    "Дұрыс емес"
+                  ],
+                  "answer": "Дұрыс емес"
+                },
+                {
+                  "prompt": "Күн энергиясын ________ жасайды.",
+                  "answers": [
+                    "Ай",
+                    "Күн",
+                    "Жел",
+                    "Су"
+                  ],
+                  "answer": "Күн"
+                },
+                {
+                  "prompt": "Күн энергиясын пайдаланудың кемшіліктері мыналарды қамтиды:",
+                  "answers": [
+                    "Ол жаңартылатын",
+                    "Орнату қымбат",
+                    "Жоғарыда айтылғандардың барлығы"
+                  ],
+                  "answer": "Орнату қымбат"
+                },
+                {
+                  "prompt": "Күн энергиясын пайдаланудың артықшылықтарына мыналар жатады:",
+                  "answers": [
+                    "Жаңартылатын",
+                    "Орнату қымбат",
+                    "Энергияны сақтау үшін қымбат"
+                  ],
+                  "answer": "Жаңартылатын"
+                },
+                {
+                  "prompt": "Көздің зақымдануы осыдан туындауы мүмкін",
+                  "answers": [
+                    "Инфрақызыл",
+                    "Ультракүлгін",
+                    "INкөрінетін жарық",
+                    "Үшеуі де аталды"
+                  ],
+                  "answer": "Ультракүлгін"
+                },
+                {
+                  "prompt": "Күн батареялары күн энергиясын электр энергиясына айналдырады.",
+                  "answers": [
+                    "Дұрыс",
+                    "Дұрыс емес"
+                  ],
+                  "answer": "Дұрыс"
+                },
+                {
+                  "prompt": "Күн панельдері сияқты фотосинтез жасау үшін өсімдіктерге ________________ қажет?",
+                  "answers": [
+                    "Жерден сіңірілетін тағам",
+                    "Күн энергиясы",
+                    "Тамақ бұзылды",
+                    "Топырақтан алынатын минералдар"
+                  ],
+                  "answer": "Күн энергиясы"
+                },
+                {
+                  "prompt": "Күн энергиясы жаңартылатын ба?",
+                  "answers": [
+                    "Жоқ",
+                    "Иә"
+                  ],
+                  "answer": "Иә"
+                },
+                {
+                  "prompt": "Неліктен қазба отындары күн энергиясына қарағанда кеңінен қолданылады?",
+                  "answers": [
+                    "Күн энергиясын табу қиынырақ.",
+                    "Қазба отындары әлдеқайда арзан.",
+                    "Қазба отындары көбірек.",
+                    "Күннің энергиясын ешқашан пайдалану мүмкін емес."
+                  ],
+                  "answer": "Қазба отындары әлдеқайда арзан."
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Келесі сипаттамаға ең жақсы сәйкес келетін галактикалық бедергі күй? ",
+              "categories": [
+                {
+                  "name": "Күн",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Ай",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жер",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Күн",
+                  "title": "Орташа өлшемді жұлдыз"
+                },
+                {
+                  "name": "Күн",
+                  "title": "Өрт ететін газ шары"
+                },
+                {
+                  "name": "Күн",
+                  "title": "Жанып тұрған газ шары"
+                },
+                {
+                  "name": "Ай",
+                  "title": "Атмосфера жоқ"
+                },
+                {
+                  "name": "Ай",
+                  "title": "Кратерлермен жараланған"
+                },
+                {
+                  "name": "Ай",
+                  "title": "Жерді айналдыруға шамамен бір ай қажет"
+                },
+                {
+                  "name": "Жер",
+                  "title": "Күннен 3-ші планета"
+                },
+                {
+                  "name": "Жер",
+                  "title": "Тіршілікті қолдайтын жалғыз планета"
+                },
+                {
+                  "name": "Жер",
+                  "title": "Суы мен атмосферасы бар"
+                },
+                {
+                  "name": "Жер",
+                  "title": "Айналдыру үшін 24 сағат"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Күн жарық береді және жерді қыздырады. Дегенмен, кез келген нәрсе сияқты, табиғат те тепе-теңдікте сақталуы керек. Күннің орасан зор жылуын бейтараптандыру үшін теңдестіруші факторлар бар. Неліктен бізге күннен қорғайтын крем қажет екенін түсіндіріңіз және Жердің экожүйелерінің өздерінің кіріктірілген күннен қорғайтын кремі бар екенін түсіндіріңіз.",
+              "content": []
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2. Күннің достары кімдер?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E07D78",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Өзіңіз таңдаған 3 планетаның атауының шығу тегін зерттеп, сипаттаңыз. "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Әртүрлі өсімдіктерді сәйкестендіріңіз",
+              "content": [
+                {
+                  "name": "Меркурий"
+                },
+                {
+                  "name": "Меркурий",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Венера"
+                },
+                {
+                  "name": "Венера",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жер"
+                },
+                {
+                  "name": "Жер",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Марс"
+                },
+                {
+                  "name": "Марс",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Юпитер"
+                },
+                {
+                  "name": "Юпитер",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Сатурн"
+                },
+                {
+                  "name": "Сатурн",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Уран"
+                },
+                {
+                  "name": "Уран",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Нептун"
+                },
+                {
+                  "name": "Нептун",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Планеталарды Күнге ең жақыннан ең алысқа қарай ретке келтіріңіз",
+              "content": [
+                {
+                  "text": "Нептун"
+                },
+                {
+                  "text": "Уран"
+                },
+                {
+                  "text": "Сатурн"
+                },
+                {
+                  "text": "Юпитер"
+                },
+                {
+                  "text": "Марс"
+                },
+                {
+                  "text": "Жер"
+                },
+                {
+                  "text": "Венера"
+                },
+                {
+                  "text": "Меркурий"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "1. Жер энергиясының көп бөлігі…",
+                  "answers": [
+                    "жердің ядросы",
+                    "күн",
+                    "су электр қуаты",
+                    "қазба отындарын жағу"
+                  ],
+                  "answer": "күн"
+                },
+                {
+                  "prompt": "2. Жер күннен жылуды ұстап, ұстап тұратын жылыжай сияқты әрекет етеді.",
+                  "answers": [
+                    "Рас",
+                    "Жалған"
+                  ],
+                  "answer": "Рас"
+                },
+                {
+                  "prompt": "3. _______________ — ішінара парниктік әсерден туындады деп есептелетін жаһандық температураның артуы.",
+                  "answers": [
+                    "Климат",
+                    "Ғаламдық жылуы",
+                    "Климаттық өзгеріс",
+                    "Жылыжай эффектісі"
+                  ],
+                  "answer": "Ғаламдық жылуы"
+                },
+                {
+                  "prompt": "4. _______________ - қазба отындарын жағу нәтижесінде атмосфералық көмірқышқыл газының көбеюіне байланысты жаһандық және аймақтық климаттық үлгілердің өзгеруі.",
+                  "answers": [
+                    "Радиация",
+                    "Климаттық өзгеріс",
+                    "Парниктік газ"
+                  ],
+                  "answer": "Климаттық өзгеріс"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Аяқтағаннан кейін, Күн жүйесін Күнді айналып өтетін барлық планеталарымен сызыңыз және өлшемдер мен пішіндегі айырмашылықтарды көрсету үшін бар күшіңізді салыңыз.",
+              "content": [
+                {
+                  "text": "Біздің Күн жүйесінде көптеген басқа планеталар бар және олар Күнді айналады. Тіршілік тек Жер планетасында тұрақты.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Тіршілікті қамтамасыз ете алатын басқа планетаға жағдай жасаңыз. Бұл планетаны өмір үшін жақсы орынға айналдыратын кейбір өзгерістерді тұжырымдаңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3. AreТірі планеталар?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF79E0",
+          "content": [
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Планеталарды ең кішіден ең үлкеніне қарай ретімен орналастыр",
+              "content": [
+                {
+                  "text": "Меркурий"
+                },
+                {
+                  "text": "Марс"
+                },
+                {
+                  "text": "Венера"
+                },
+                {
+                  "text": "Жер"
+                },
+                {
+                  "text": "Нептун"
+                },
+                {
+                  "text": "Уран"
+                },
+                {
+                  "text": "Сатурн"
+                },
+                {
+                  "text": "Юпитер"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Күнге ең жақын планета қайсы?",
+                  "answers": [
+                    "Меркурий",
+                    "Жер",
+                    "Венера",
+                    "Нептун"
+                  ],
+                  "answer": "Меркурий"
+                },
+                {
+                  "prompt": "Обертон және Титания серіктері қай планетаға жатады?",
+                  "answers": [
+                    "Уран",
+                    "Жер",
+                    "Венера",
+                    "Юпитер"
+                  ],
+                  "answer": "Уран"
+                },
+                {
+                  "prompt": "Күн жүйесіндегі ең үлкен жанартау Олимп Монс деп аталады. Бұл қайда?",
+                  "answers": [
+                    "Жер",
+                    "Марс",
+                    "Венера",
+                    "Юпитер"
+                  ],
+                  "answer": "Марс"
+                },
+                {
+                  "prompt": "Юпитердегі Ұлы қызыл дақ дегеніміз не?",
+                  "answers": [
+                    "Дауыл",
+                    "Көл",
+                    "Кратер",
+                    "Жанартау"
+                  ],
+                  "answer": "Дауыл"
+                },
+                {
+                  "prompt": "Күн негізінен неден жасалған?",
+                  "answers": [
+                    "Жуу сұйықтығы",
+                    "Газ",
+                    "Рок",
+                    "Балқытылған темір"
+                  ],
+                  "answer": "Газ"
+                },
+                {
+                  "prompt": "Осы планеталардың қайсысы ең кішкентай?",
+                  "answers": [
+                    "Меркурий",
+                    "Юпитер",
+                    "Уран",
+                    "Жер"
+                  ],
+                  "answer": "Меркурий"
+                },
+                {
+                  "prompt": "Марстың неше серігі бар?",
+                  "answers": [
+                    "50",
+                    "1",
+                    "2",
+                    "13"
+                  ],
+                  "answer": "2"
+                },
+                {
+                  "prompt": "Комета негізінен неден тұрады?",
+                  "answers": [
+                    "Лас мұз және шаң",
+                    "Тот басқан металл",
+                    "Улы сұйықтық",
+                    "Ыстық, сұйық тас"
+                  ],
+                  "answer": "Лас мұз және шаң"
+                },
+                {
+                  "prompt": "Астероид белдеуі қайда орналасқан?",
+                  "answers": [
+                    "Жер мен Марс арасында",
+                    "Марс пен Юпитер арасында",
+                    "Юпитер мен Сатурн арасында",
+                    "Жер мен Венера арасында"
+                  ],
+                  "answer": "Марс пен Юпитер арасында"
+                },
+                {
+                  "prompt": "Мыналардың қайсысы Венераны қоршаған атмосфераны жақсы сипаттайды?",
+                  "answers": [
+                    "Суық және ылғалды",
+                    "Ыстық және улы",
+                    "Жарқын және шуақты",
+                    "Суық және қарлы"
+                  ],
+                  "answer": "Ыстық және улы"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Ғарыштық зерттеулердің біздің атмосфераға әсері қандай? Ал сіз ғарышты игерудің пайдасы зиянын жоққа шығаратынына сенесіз бе?",
+              "content": [
+                {
+                  "text": "Біздің заманымызда ғарышты зерттеу өте маңызды. Біз барлық басқа планеталарды зерттеу миссиясындамыз.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Біз қазір зерттеп жатқан бір планетаны табыңыз. Содан кейін барлау әдісін анықтаңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4. Неліктен көктем қыстың соңынан ереді?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E0A279",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Таңертеңгі сағат 8-де, 13.00-де, 18.00-де және кешкі 9-да температураны жазып алыңыз. Температураның өзгеруінен не байқадыңыз? Өз бақылауларыңызды сипаттаңыз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл өмір сүру әрекеті ең жақсы қай мезгілге сәйкес келеді? ",
+              "categories": [
+                {
+                  "name": "Қызару",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Қыс",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Көктем",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жаз",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Қызару",
+                  "title": "Түстен өсіп түскен парақтардан өнер тигу"
+                },
+                {
+                  "name": "Қыс",
+                  "title": "Мұздау жүзу"
+                },
+                {
+                  "name": "Көктем",
+                  "title": "Агаш қою"
+                },
+                {
+                  "name": "Жаз",
+                  "title": "Үйде өзіңіздікті майлап жасау"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Айларды сұрыптаңыз.",
+              "content": [
+                {
+                  "text": "Ақпан"
+                },
+                {
+                  "text": "Қыркүйек"
+                },
+                {
+                  "text": "Шілде"
+                },
+                {
+                  "text": "Сәуір"
+                },
+                {
+                  "text": "Қаңтар"
+                },
+                {
+                  "text": "Мамыр"
+                },
+                {
+                  "text": "Наурыз"
+                },
+                {
+                  "text": "Маусым"
+                },
+                {
+                  "text": "Тамыз"
+                },
+                {
+                  "text": "Қараша"
+                },
+                {
+                  "text": "Желтоқсан"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Жаңадан отырғызылған ағаштың күндер, айлар және жылдар бойынша өзгеруін сызыңыз. Мысалы, жаңадан отырғызылған ағашты көптеген күндер ішінде салуға болады. Содан кейін бірнеше ай ішінде өзгерісті сызыңыз (жыл мезгілдерінің ауысуы). Содан кейін бірнеше жыл ішінде өзгерісті сызыңыз.",
+              "content": [
+                {
+                  "text": "скүнтізбе – күндерге, айларға және жылдарға бөлінген уақытты санау жүйесі.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5. Сағат қанша?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#E079A5",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Зерттеу жасап, ең дәл сағатты табыңыз. Не үйрендіңіз? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Күн батуын суретке түсіріңіз. "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Сағатта көрсетілген уақытқа сәйкес келтіріңіз.",
+              "content": [
+                {
+                  "name": "1:00pm"
+                },
+                {
+                  "name": "1:00pm",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "10:00am"
+                },
+                {
+                  "name": "10:00am",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "3:30pm"
+                },
+                {
+                  "name": "3:30pm",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "8:00am"
+                },
+                {
+                  "name": "8:00am",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "2:00am"
+                },
+                {
+                  "name": "2:00am",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "6:30pm"
+                },
+                {
+                  "name": "6:30pm",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Уақытты көрсететін кез келген тұрмыстық затты суретке түсіріңіз. Көрген үлгіні жазып алыңыз және сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Адамдар күн сағатынан су сағатына дейін уақытты анықтаудың әртүрлі әдістерін ойлап тапты.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "navigation": "Chapter5",
+      "title": "common:chapter5",
+      "name": "common:PLACEHOLDER",
+      "icon": "assets/cotton.png",
+      "colorOne": "lightpink",
+      "colorTwo": "mediumvioletred",
+      "lessons": [
+        {
+          "navigation": "Lesson1",
+          "title": "1. Заттар неге қозғалады?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Үйіңізде табылатын үш нысан, адам немесе жануарды табыңыз, өздеріне қолданылатын күштерді сипаттауға болады. "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Ашық жауап сұрағынан сіз сипаттаған заттардың, адамдардың, жануарлардың біреуін суретке түсіріңіз. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Егер екі бала бірдей күшпен бір-бірінен апарса, не болады?",
+                  "answers": [
+                    "Екеуі де артқа жылжыды",
+                    "Балалар еш жылжымайтын",
+                    "Біреуі жылжыды, басқасы орында қалады",
+                    "Үлкен бала кіші баланы жылжытып отыр"
+                  ],
+                  "answer": "Үлкен бала кіші баланы жылжытып отыр"
+                },
+                {
+                  "prompt": "Егер сіз дәмді үйден төмен тастасаңыз, алдымен қолданылатын негізгі күш қандай болады?",
+                  "answers": [
+                    "Тығыздық",
+                    "Электр",
+                    "Магнитты",
+                    "Еластік"
+                  ],
+                  "answer": "Тығыздық"
+                },
+                {
+                  "prompt": "Күштер қай қызмет бағыттарына жылжытуы мүмкін?",
+                  "answers": [
+                    "Алға",
+                    "Артқа",
+                    "Сол жаққа",
+                    "Барлығы жоғарыда"
+                  ],
+                  "answer": "Барлығы жоғарыда"
+                },
+                {
+                  "prompt": "Физиканы қалыптастыруға қалай байланыстыруымызға болады?",
+                  "answers": [
+                    "Түрлі газдар мен бұлттар Жердің температурасына әсер етеді",
+                    "Ньютонның қозғалыс заңы қайта пайдалану үшін пайдаланылады",
+                    "Қайта пайдаланушы нысандарда кемінде күш қолданылады",
+                    "Жоғарыдағылардың ешқайсысы да емес"
+                  ],
+                  "answer": "Түрлі газдар мен бұлттар Жердің температурасына әсер етеді"
+                },
+                {
+                  "prompt": "Біздің негізгі энергия көзіміз ретінде физиканың қандай пәні зерттелуде?",
+                  "answers": [
+                    "Ядролық физика",
+                    "Электроника",
+                    "Магнитизм",
+                    "Жоғарыда келтірілген барлығы"
+                  ],
+                  "answer": "Ядролық физика"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Жел, күн және су сияқты көптеген тұрақты энергия көздері туралы ойланыңыз. Біз күштерді итеру немесе тарту және энергияны өндіру үшін қалай пайдаланамыз?",
+              "content": [
+                {
+                  "text": "Оны итеретін немесе тартатын күш болмайынша, дүниеде ештеңе қозғала алмайды. Сондықтан заттар оларға күш әсер еткенде ғана қозғала алады.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson2",
+          "title": "2. Кім жылдам?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Неліктен тез жаттығушы нысандар өте жиі қоршаған үшін нашар ма? Бұл оларды қолдану үшін керек енергия себебінен бе? Оларды тағы өзара жиі жасау туралы пікірлеріңіз бар ма? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Жылдамдықты өлшеу үшін пайдалануға болатын бір заттың суретін түсіріңіз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Келесіді тез немесе баяу үшін сұрыптаңыз. ",
+              "categories": [
+                {
+                  "name": "Тез",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Баяу",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Тез",
+                  "title": "Автомобиль"
+                },
+                {
+                  "name": "Тез",
+                  "title": "Барыс барысы"
+                },
+                {
+                  "name": "Баяу",
+                  "title": "Адам"
+                },
+                {
+                  "name": "Баяу",
+                  "title": "Таубақай"
+                },
+                {
+                  "name": "Баяу",
+                  "title": "Пингвин"
+                },
+                {
+                  "name": "Баяу",
+                  "title": "Кеме"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Бұл көлік құралдарын енергия тиімділігіне қарағанда ең тиімдісінен ең нашарына дейін ретке көшіріңіз.",
+              "content": [
+                {
+                  "text": "Адамдар"
+                },
+                {
+                  "text": "Электр велосипедтер"
+                },
+                {
+                  "text": "Метрополитен"
+                },
+                {
+                  "text": "Автобус"
+                },
+                {
+                  "text": "Автомобиль"
+                },
+                {
+                  "text": "Ұшақ"
+                },
+                {
+                  "text": "Велосипед"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Жоғары жылдамдықтың қоршаған ортаға кері әсері бар ма? Жауабыңызды түсіндіріңіз.",
+              "content": [
+                {
+                  "text": "Жылдамырақ қозғалатын нысанның жылдамдығы жоғары болады. Бұл бір уақытта жылдамдығы жоғары нысанның ұзақ қашықтықты басып өтетінін білдіреді.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson3",
+          "title": "3. Тасымалдау",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Сіздің ауданыңызға жаңа/өзге түрдегі көлік құралы қосылды ма? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Басқа қол жетімді көлік құралдарына қарағанда қоршаған үшін досымдырақ түрдегі көлік құралының суретін түсіріңіз. "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Бұл көлік құралдарын олардың шығарылған уақытына қарай қадімгіден жаңаға ретке көшіріңіз.",
+              "content": [
+                {
+                  "text": "Адамдар"
+                },
+                {
+                  "text": "Аттан тауып көлік қылу"
+                },
+                {
+                  "text": "Автомобиль"
+                },
+                {
+                  "text": "Поезд"
+                },
+                {
+                  "text": "Ұшақ"
+                },
+                {
+                  "text": "Тез поезд"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Бұл жануарлардың қайсысына сайғақ жаңбырдан баяу?",
+                  "answers": [
+                    "Есек",
+                    "Тасбақа",
+                    "Аю",
+                    "Ешқайсысы"
+                  ],
+                  "answer": "Ешқайсысы"
+                },
+                {
+                  "prompt": "Біз қалай тез көлік құралдарымен қоршағанға ыңғайлырақ болуымызға болады?",
+                  "answers": [
+                    "Карпул",
+                    "Пайдаланбай кезде моторды өшіру",
+                    "AC орнына терезелерді ашу",
+                    "Барлығы"
+                  ],
+                  "answer": "Барлығы"
+                },
+                {
+                  "prompt": "Біз жаттықтыру үшін тазарту қуатын пайдалана аламыз ба?",
+                  "answers": [
+                    "Жануарлардың жылдамдығын энергия өндіру үшін пайдалану, мысалы, айырықта айналып жүрген жыртқыш",
+                    "Жануарлардың жылдамдығын энергия өндіру үшін пайдалану мүмкін емес",
+                    "Жануарлардың жылдамдығын энергия өндіру үшін пайдалану, мысалы, барыс барысының артынан жатып, ол бойынша жүгіп отыру",
+                    "Жануарларды энергия үшін пайдалану мүмкін, бірақ ол етіксіз және орындалмауы керек"
+                  ],
+                  "answer": "Жануарларды энергия үшін пайдалану мүмкін, бірақ ол етіксіз және орындалмауы керек"
+                },
+                {
+                  "prompt": "Жаттығу үшін қанша тізеқ керек?",
+                  "answers": [
+                    "2, тізектердің саны аз болса, тезірек жатып аласыз",
+                    "4, тізектердің саны көп болса, тезірек жатып аласыз",
+                    "0, қанаттар жатуға нисбетен ұшуға тездете алады",
+                    "Бұл тізектердің санына тәуел емес"
+                  ],
+                  "answer": "Бұл тізектердің санына тәуел емес"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Түсірген бейнеде әрбір көлік шығаратын шу деңгейін тексеріп, шағын эксперимент жасаңыз. Көліктердің қаттырақ болуы қоршаған ортаға зиян келтіре ме? Неліктен?",
+              "content": [
+                {
+                  "text": "Қазақстан бүркіті алдымен ебедейсіз және қозғалмайтын болып көрінуі мүмкін, бірақ ол шынында да жүйрік. Жануар қатты болып көрінгенімен, бұл оның жылдамдығын төмендетпейді.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Сыртқа шығып, жолдағы көптеген көліктерді қараңыз. Жанынан өтіп бара жатқан көліктерді бейнеге түсіріңіз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson4",
+          "title": "4. Пілдің салмағы қанша?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF6CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Өйткені ойлай алатын ең ауыр заттың суретін алыңыз. Қалай болса осы затты азырақ материалдарды пайдалана отырып, жеңілірек және туралырақ қылуға болар еді? "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Ауыр затты ойлаңыз. Ол не нәрседен жасалған? Әр түрлі материалды қоршағансыз жақса қоршағандык пен емес деп белгілеңіз. "
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Бұл қоршағансыз заттарды ең жеңілден ең ауырға дейін ретке келтіріңіз.",
+              "content": [
+                {
+                  "text": "Шағын үй өсімдігі"
+                },
+                {
+                  "text": "Бос жаңбыр ведро"
+                },
+                {
+                  "text": "Велосипед"
+                },
+                {
+                  "text": "Ағаш"
+                },
+                {
+                  "text": "Ядролық энергия генераторы"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Көлемін өзге болмайтын заттарда ұқсату қиын. Сенімді, китың тілі қанша ауыр?",
+                  "answers": [
+                    "Фил, велосипед пен адамды бірге есептесек, китың тілі ауыртар",
+                    "Велосипед және адамдан ауыр",
+                    "Адамдан ауыр",
+                    "Бұлардың барлығынан да аз ауыр"
+                  ],
+                  "answer": "Фил, велосипед пен адамды бірге есептесек, китың тілі ауыртар"
+                },
+                {
+                  "prompt": "Егер екі затты бірдей күшпен ұдарсақ, қай зат жылдам өтіп өтеді?",
+                  "answers": [
+                    "Ең ауыр зат",
+                    "Ең жеңіл зат",
+                    "Ең шаршы формалы зат",
+                    "Ешбір зат емес, себебі оларды бірдей күшпен ұдыратын"
+                  ],
+                  "answer": "Ең жеңіл зат"
+                },
+                {
+                  "prompt": "Әр түрлі елдерде өлшеу стандарттары әр түрлі бола ма?",
+                  "answers": [
+                    "Иә",
+                    "Жоқ"
+                  ],
+                  "answer": "Иә"
+                },
+                {
+                  "prompt": "Бұлардың қайсысы қатемен?",
+                  "answers": [
+                    "Килограммдар",
+                    "Граммдар",
+                    "Миллиграммдар",
+                    "Дюймдар"
+                  ],
+                  "answer": "Дюймдар"
+                },
+                {
+                  "prompt": "Күнделікті заттарды жасауға келетін болсақ, біз _____ керек.",
+                  "answers": [
+                    "Материалдарды үнемдеу және тұрақты болу үшін массаны аз пайдаланыңыз",
+                    "Көбірек материалдарды пайдалану және тұрақты болу үшін көбірек массаны пайдаланыңыз",
+                    "Массаны азырақ пайдаланыңыз, себебі ол арзанырақ және аз жұмсау тұрақты",
+                    "Азырақ массаны пайдаланыңыз, өйткені аз жұмсау және материалдарды үнемдеу екеуі де тұрақты"
+                  ],
+                  "answer": "Азырақ массаны пайдаланыңыз, өйткені аз жұмсау және материалдарды үнемдеу екеуі де тұрақты"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Енді сіз мұның қалай жұмыс істейтінін түсінген болсаңыз, біз әртүрлі қуат көздерін бір-бірімен салыстырамыз. Кейбір энергия көздері басқаларға қарағанда тиімді болу үшін аз аумақты және аз массаны қажет етеді. Әртүрлі энергия көздерін және олардың ауданы мен массасы бойынша талаптарын зерттеп, сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Массалары әртүрлі заттарға бірдей күш әсер еткенде әртүрлі әрекет етеді. Массасы көп зат массасы аз затқа қарағанда жылдамдықты азайтады.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Досыңыздан осы әрекетте сізге көмектесуін сұраңыз. Әр түрлі заттарға ұқсас күштерді кезекпен қолдан.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson5",
+          "title": "5. Изумруд қаласына қалай жетуге болады?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C75EB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Үйіңіздегі ең қоршағансыз жарық көзінің суретін алыңыз. Нақты ойлаңыз, бұл сұрақ айқын емес! "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Үйдегі энергияны қалай қолдану керек екенін ойлаңыз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Жарық көздерін сұрыптаңыз ",
+              "categories": [
+                {
+                  "name": "Табиғи",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жасанды",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Табиғи",
+                  "title": "Күн"
+                },
+                {
+                  "name": "Табиғи",
+                  "title": "Жұлдыздар"
+                },
+                {
+                  "name": "Табиғи",
+                  "title": "Айдан келген отарты жарық"
+                },
+                {
+                  "name": "Жасанды",
+                  "title": "Шам"
+                },
+                {
+                  "name": "Жасанды",
+                  "title": "Электрлік шам"
+                },
+                {
+                  "name": "Жасанды",
+                  "title": "Неон лампасы"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Ең аз қоршағандықтан ең қоршағансызға дейін, бұл жарық көздерін ретке келтіріңіз.",
+              "content": [
+                {
+                  "text": "Күн"
+                },
+                {
+                  "text": "Жарық шыбыншы"
+                },
+                {
+                  "text": "Электрлік шам"
+                },
+                {
+                  "text": "Шам"
+                },
+                {
+                  "text": "Неон шамы"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Досыңызды алып, сыртқа шығыңыз. Досыңыздың алдында шыны бөтелкені байқаған сайын ұпай аласыз. Осы шыны бөтелкеге арналған қоқыс жәшігін байқаған сайын ұпай аласыз. Нүктелерді қадағалаңыз және барлық шыны бөтелкелерді қайта өңдегеніңізге көз жеткізіңіз.",
+              "content": [
+                {
+                  "text": "Жарық - тірі ағзаларға қоршаған әлемді көруге мүмкіндік беретін энергия түрі. Біздің күніміз жарық сәулелері арқылы көп мөлшерде энергия шығарады. Күнделікті шыны бөтелкелер күн сәулесін жақсы ұстайды. Біреу оларды тым керемет деп айтуға болады, өйткені олар тым көп күн сәулесін түсірсе, тіпті өртке әкелуі мүмкін.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson6",
+          "title": "6. Жарық қайда кетті?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Тыныш және мөлдір қараудың суретін алыңыз! "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Жарық сызығы мөлдір нысанды өткенде не болады? Ол тура жолдан өтеді немесе емес пе? "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Сіз әдемі жексенбінің түстен кейін балконыңыздасыз. Күн жарқырап, әйнекке тиіп тұр. Мұны қалай тұрақты пайдалана аламыз?",
+                  "answers": [
+                    "Күн сәулесімен пісіру үшін алюминий фольга, т.б. сияқты материалдарды пайдаланыңыз",
+                    "Жасанды күйгеннен гөрі табиғи күйдіру үшін күн сәулесінің астында тұрыңыз",
+                    "Күн сәулесімен өсімдік өсіріңіз, содан кейін көбірек өсу үшін сол өсімдіктің тұқымын пайдаланыңыз",
+                    "Жоғарыда келтірілген барлығы"
+                  ],
+                  "answer": "Жоғарыда келтірілген барлығы"
+                },
+                {
+                  "prompt": "Осы заттардың қайсысы мөлдір болып табылады?",
+                  "answers": [
+                    "Шыны",
+                    "Тоңазытқыш",
+                    "Пеш",
+                    "Асхана үстелі"
+                  ],
+                  "answer": "Шыны"
+                },
+                {
+                  "prompt": "Осы заттардың қайсысы мөлдір болып табылады?",
+                  "answers": [
+                    "Есік",
+                    "Диван",
+                    "Қою кофе үстелі",
+                    "Күннен қорғайтын көзілдірік"
+                  ],
+                  "answer": "Күннен қорғайтын көзілдірік"
+                },
+                {
+                  "prompt": "Осы объектілердің қайсысы мөлдір емес?",
+                  "answers": [
+                    "Windows",
+                    "Шыны",
+                    "Мұз",
+                    "Ас үйге арналған раковина"
+                  ],
+                  "answer": "Ас үйге арналған раковина"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Егер сіз қарындашты күн астында қалдырсаңыз, не болатынын сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Күн сәулесінің сәулесі түзу сызық бойымен қозғалады және әртүрлі заттарға соқтығысқан кезде мінез-құлқын өзгертеді. Металл, ағаш және тас сияқты кейбір заттар жарықтың көп бөлігін сіңіреді және олар арқылы өтуге мүмкіндік бермейді.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson7",
+          "title": "7. Бұл не дыбыс?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Табиғи дыбыс көзінің суретін алыңыз. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Табиғи дыбыс көздері мен жасанды дыбыс көздерінің айырмашылығы неде? Тұрақты қылық үшін табиғи дыбыс көздерін қалай пайдалана аламыз? "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Дыбыс көзін тиісті санатқа салыңыз. ",
+              "categories": [
+                {
+                  "name": "Табиғи",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жасандырылған",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Табиғи",
+                  "title": "Арыстан қарғыдайды"
+                },
+                {
+                  "name": "Табиғи",
+                  "title": "Қоңырау шалады"
+                },
+                {
+                  "name": "Табиғи",
+                  "title": "Жағалауда толқындар"
+                },
+                {
+                  "name": "Жасандырылған",
+                  "title": "Ұшақ ұшады"
+                },
+                {
+                  "name": "Жасандырылған",
+                  "title": "Автомобиль сигналын береді"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Барымдылық дыбыс көзі не?",
+                  "answers": [
+                    "Таңертең сізді ойындыру үшін күкірейтін төйек",
+                    "Бәріне естіген дыбыс шығаратын динамик",
+                    "Газды ауаға шығаратын машина двигателі",
+                    "Барлығы жоқ"
+                  ],
+                  "answer": "Таңертең сізді ойындыру үшін күкірейтін төйек"
+                },
+                {
+                  "prompt": "Дыбыс - бұл энергия түрі.",
+                  "answers": [
+                    "Шын",
+                    "Жалған"
+                  ],
+                  "answer": "Шын"
+                },
+                {
+                  "prompt": "Дыбыс қалай пайда болады?",
+                  "answers": [
+                    "Оссиляция деп аталатын алға және кейінгі қозғалыс және ауада таратылатын вибрациялар - бұл дыбыс толқындары.",
+                    "Жер үшекінен шығатын динамиктен",
+                    "Жердің құбылыс сипаттамасы толқындарды орталыққа жинау және оларды дыбысты шығару үшін шығарып салады",
+                    "Ешқандай араларында жоқ"
+                  ],
+                  "answer": "Оссиляция деп аталатын алға және кейінгі қозғалыс және ауада таратылатын вибрациялар - бұл дыбыс толқындары."
+                },
+                {
+                  "prompt": "Дыбыс күшейтілуі мүмкін.",
+                  "answers": [
+                    "Иә",
+                    "Жалған"
+                  ],
+                  "answer": "Иә"
+                },
+                {
+                  "prompt": "Саңыраулыққа не әкелуі мүмкін?",
+                  "answers": [
+                    "Концерттерде қатты музыка",
+                    "Ауаға қатты айқай",
+                    "Құрылыс алаңынан шыққан қатты шу",
+                    "Жоғарыда келтірілген барлығы"
+                  ],
+                  "answer": "Жоғарыда келтірілген барлығы"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Қатты шуды анықтап, олардың көзін, түсіндірмесін және бір-біріне қатысты қаттылығын блокнотқа жазыңыз. Қандай дыбыстарды жоюға немесе азайтуға болатынын түсіндіріңіз.",
+              "content": [
+                {
+                  "text": "Сіз естіген дыбыстар сізге не болып жатқанын айтады. Қазіргі уақытта дыбысты ластаудың жаппай мөлшері бар.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Сіз біреудің құлағына айқайлау кереңдікке әкелетінін білесіз бе? Уақыт өте келе құлақ қалқанына жақын қатты дыбыстар есту қабілетіңізге де зақым келтіруі мүмкін. Біз дыбысты ластауды жоюымыз керек және ол үй шаруашылығынан басталуы мүмкін.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson8",
+          "title": "8. Біз дыбыстарды қалай естиміз?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C9DEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Дыбысты есту үшін пайдаланылатын құрылғының суретін түсіріңіз. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Театрлар, орындалу орталықтары және стадиондар қандай құрылған? Бұл дыбыс өндіруге көмекші бола ма? Сіздің пікірлеріңіз қандай? "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Құрылғыларды сәйкестендіріңіз:",
+              "content": [
+                {
+                  "name": "Спикерлер"
+                },
+                {
+                  "name": "Спикерлер",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Сымсыз құлаққаптар"
+                },
+                {
+                  "name": "Сымсыз құлаққаптар",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Сымды құлаққаптар"
+                },
+                {
+                  "name": "Сымды құлаққаптар",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Телефон"
+                },
+                {
+                  "name": "Телефон",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Смартфон"
+                },
+                {
+                  "name": "Смартфон",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Ноутбук"
+                },
+                {
+                  "name": "Ноутбук",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Фортепиано"
+                },
+                {
+                  "name": "Фортепиано",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Электрлік пернетақта"
+                },
+                {
+                  "name": "Электрлік пернетақта",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Сыртқа шығып, үш түрлі жануарды табыңыз. Олардың дыбысқа қалай әрекет ететініне назар аударыңыз. Неліктен олар дыбыстарды солай еститінін түсінуге тырысыңыз. Бұл эволюциялық процесс пе? Бұл олардың өмір салтын сақтауға қалай көмектеседі?",
+              "content": [
+                {
+                  "text": "Дыбыстарды бәріміз әртүрлі естиміз. Жануарлар, өсімдіктер және адамдар дыбыстарды ести алады.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson9",
+          "title": "9. Термометр",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#DF6CEB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Қазақстандың ең жылы жері қай жер? Себебін айтып беріңіз "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Төмендегілерді дұрыс санатқа сортып келіңіз. ",
+              "categories": [
+                {
+                  "name": "Жылы",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Суық",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Жылы",
+                  "title": "Шөл"
+                },
+                {
+                  "name": "Жылы",
+                  "title": "Тропик орман"
+                },
+                {
+                  "name": "Жылы",
+                  "title": "Күн"
+                },
+                {
+                  "name": "Суық",
+                  "title": "Мұз"
+                },
+                {
+                  "name": "Суық",
+                  "title": "Антарктида"
+                }
+              ]
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Үйіңіздегі термометрдың фотосын түсіріңіз. "
+            },
+            {
+              "navigation": "Memory",
+              "title": "common:memory",
+              "icon": "assets/willpower.png",
+              "backgroundColor": "dodgerblue",
+              "prompt": "Термометрлердің түрлерін олардың суреттерімен сәйкестендіріңіз.",
+              "content": [
+                {
+                  "name": "Сандық"
+                },
+                {
+                  "name": "Сандық",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Құлақ"
+                },
+                {
+                  "name": "Құлақ",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Инфракрас"
+                },
+                {
+                  "name": "Инфракрас",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Жолақты"
+                },
+                {
+                  "name": "Жолақты",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Меркурий"
+                },
+                {
+                  "name": "Меркурий",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Неліктен әртүрлі өсімдіктер, жануарлар және адамдар әртүрлі температурада өмір сүретінін сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Термометр алыңыз. Жақын саябаққа барып, үш түрлі өсімдікті табыңыз.",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "text": "Өсімдіктердің жапырақтарының температурасын жазып алыңыз. Өсімдіктердің топырағының температурасын жазып алыңыз. Температураға және олардың өсуіне сәйкес осы өсімдіктердің кез келген үлгілерін анықтаңыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson10",
+          "title": "10. Жазда аяз қайда тығылады?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#6C75EB",
+          "content": [
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Сіздің ата-аналарыңызды жаз тау және қыс тау температурасы туралы сұраңыз, олар бала болған кезде. Бұлды қазіргі температуралармен салыстырыңыз. Сізде өзгерістер бола ма? "
+            },
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Жазда бізді жауып тұрғызатын заттардың суретін жасаңыз. "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл өкілдерді олардың үнемі климаты бойынша сұрыптаңыз. ",
+              "categories": [
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "title": "Қарлы үкі"
+                },
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "title": "Арктикалық қоян"
+                },
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "title": "Арктикалық түлкі"
+                },
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "title": "Барыс"
+                },
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "title": "Морж"
+                },
+                {
+                  "name": "Суық ауа райы жануарлары",
+                  "title": "Пингвин"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "title": "Миркат"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "title": "Гиппопотам"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "title": "Игуана"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "title": "Жылан"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "title": "Тасбақа"
+                },
+                {
+                  "name": "Ыстық ауа райы жануарлары",
+                  "title": "Аллигатор"
+                }
+              ]
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Қай екеуі жаһандық жылыну нәтижесінде болуы мүмкін?",
+                  "answers": [
+                    "Беткі температураның жоғарылауы",
+                    "Рпарниктік газдардың түзілуі",
+                    "Dауаның ластануының артуы"
+                  ],
+                  "answer": "Рпарниктік газдардың түзілуі"
+                },
+                {
+                  "prompt": "Қыркүйек шарттары ұзақ уақыт бойы өзгергенде, біз бұны қалай атаймыз?",
+                  "answers": [
+                    "Қыркүйек адаптациясы",
+                    "Ауа райы ауысуы",
+                    "Қыркүйек өзгеруі",
+                    "Ауа райы адаптациясы"
+                  ],
+                  "answer": "Қыркүйек өзгеруі"
+                },
+                {
+                  "prompt": "Не болмаса, негізгі газ земнеге жақында қыздықты тұтқызады, жәбей жасап?",
+                  "answers": [
+                    "Көмірдің двуоксиді",
+                    "Оксидент",
+                    "Азот",
+                    "Арғон"
+                  ],
+                  "answer": "Көмірдің двуоксиді"
+                },
+                {
+                  "prompt": "СО мөлшерінің артуы2 Атмосферадағы (көмірқышқыл газы) ауа температурасын _____ болады.",
+                  "answers": [
+                    "Жылырақ",
+                    "Салқындатқыш"
+                  ],
+                  "answer": "Жылырақ"
+                },
+                {
+                  "prompt": "Климаттың өзгеруі төтенше ауа райы жағдайларын тудырады, мысалы:",
+                  "answers": [
+                    "Су тасқыны",
+                    "Жылу толқындары",
+                    "Дауылдар",
+                    "Жоғарыда келтірілген барлығы"
+                  ],
+                  "answer": "Жоғарыда келтірілген барлығы"
+                },
+                {
+                  "prompt": "Атмосферадағы CO2 (Көмірдің двуоксиді) көлемдері өседі деп, ауа температурасы болады",
+                  "answers": [
+                    "Салқын",
+                    "Жылы"
+                  ],
+                  "answer": "Жылы"
+                },
+                {
+                  "prompt": "Атмосфераға көмірқышқыл газының НЕҒҰРЛЫМ адам әрекеті ықпал етеді?",
+                  "answers": [
+                    "Балық аулау",
+                    "Тыныс алу",
+                    "Қазба отындарын жағу",
+                    "Ауыл шаруашылығы"
+                  ],
+                  "answer": "Қазба отындарын жағу"
+                },
+                {
+                  "prompt": "Жаһандық жылынуды және климаттың өзгеруін шектеудің мүмкін адам шешімдері ...",
+                  "answers": [
+                    "Қуатты үнемдеу",
+                    "Жаңартылатын энергия көздерін пайдалану",
+                    "Қазба отын шығарындыларынан көміртекті жою",
+                    "Жоғарыда келтірілген барлығы"
+                  ],
+                  "answer": "Жоғарыда келтірілген барлығы"
+                },
+                {
+                  "prompt": "Еріп жатқан жер мұзы…",
+                  "answers": [
+                    "Теңіз деңгейінің көтерілуіне әкеледі, себебі ол мұхитқа су қосады.",
+                    "Dтеңіз деңгейінің көтерілуіне әкелмейді, өйткені су еріген теңіз мұзы қалдырған кеңістікті толтырады."
+                  ],
+                  "answer": "Теңіз деңгейінің көтерілуіне әкеледі, себебі ол мұхитқа су қосады."
+                },
+                {
+                  "prompt": "Неліктен ағаштарды кесу жаһандық жылынуды күшейтеді?",
+                  "answers": [
+                    "Ағаштар көмірқышқыл газын сіңіреді",
+                    "Тқамыс жаһандық жылынуға қарсы тұратын көлеңке береді",
+                    "Ағаштар күн энергиясын атмосфераға кері сәуле түсірместен сіңіреді",
+                    "Ағаштар метан сияқты парниктік газдарды топырақтан шығарады"
+                  ],
+                  "answer": "Ағаштар көмірқышқыл газын сіңіреді"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Ең жақын саябаққа сыртқа шығыңыз. Климатқа байланысты қанша жануар жазда салқын немесе қыста жылынатынын түсініңіз. Біздің денеміздегі өзгерістер климатты олар сияқты бақылауда ұстауға қалай көмектесетінін сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Жылу дегенде адамдар шуақты, жаз күндерін елестетеді. Немесе сіз жылытқышты қосулы суық, қысқы күндер туралы ойлай аласыз. Қалай болғанда да, жылу әрқашан өндірілетін энергия түрі болып табылады. Дегенмен, қыста жылу өндіру энергияны шығындауы және көміртегінің үлкен ізін қалдыруы мүмкін. Жазда суық генерациялау энергияны шығындап, көміртегі ізін қалдыруы мүмкін.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson11",
+          "title": "11. Магниттер дегеніміз не?",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#B56CEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Магниттер пайдаланылған құрылғылардың суреттерін жасаңыз. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Магниттер қоршаған жағдайға ықпалы ма? Сіздің жауабыңызды түсіндіріңіз. "
+            },
+            {
+              "navigation": "Quiz",
+              "title": "common:quiz",
+              "icon": "assets/creativity.png",
+              "backgroundColor": "mediumpurple",
+              "content": [
+                {
+                  "prompt": "Магнит не?",
+                  "answers": [
+                    "Магнит - бұл ағаш, резина және үвек тартатын материал.",
+                    "Магнит - бұл темір, никель, кобальттай сияқты кей бір металдарды тартатын материал."
+                  ],
+                  "answer": "Магнит - бұл темір, никель, кобальттай сияқты кей бір металдарды тартатын материал."
+                },
+                {
+                  "prompt": "Дұрыс мәліметті анықтаңыз.",
+                  "answers": [
+                    "Магнитте екі ұшық бар, шығыс ұшығы және оңтүстік ұшық.",
+                    "Магнитте екі ұшық бар, батыс ұшығы және шығыс ұшығы."
+                  ],
+                  "answer": "Магнитте екі ұшық бар, шығыс ұшығы және оңтүстік ұшық."
+                },
+                {
+                  "prompt": "3. Магниттер барлық металдарды тартады.",
+                  "answers": [
+                    "Расты",
+                    "Дұрыс емес"
+                  ],
+                  "answer": "Дұрыс емес"
+                },
+                {
+                  "prompt": "4. Бірдей магнит ұшықтары өздеріне _________ .",
+                  "answers": [
+                    "Тартатады",
+                    "Қуыстыратады"
+                  ],
+                  "answer": "Тартатады"
+                },
+                {
+                  "prompt": "5. Дұрыс тұжырымды анықтаңыз.",
+                  "answers": [
+                    "Магниттер сұйықтықтарды, қатты денелерді және газдарды тарта алады.",
+                    "Магниттер сұйықтықтармен, қатты заттармен және газдармен жабылған кезде заттарды тартпайды."
+                  ],
+                  "answer": "Магниттер сұйықтықтарды, қатты денелерді және газдарды тарта алады."
+                },
+                {
+                  "prompt": "6. Магнит қай ойыншықты өзіне тартады?",
+                  "answers": [
+                    "Тедди қонжық",
+                    "Металл робот"
+                  ],
+                  "answer": "Металл робот"
+                }
+              ]
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Бұл материалдарды магнитизмілері бойынша сұрыптаңыз. ",
+              "categories": [
+                {
+                  "name": "Магниттік",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Магниттік емес",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Магниттік",
+                  "title": "Темір"
+                },
+                {
+                  "name": "Магниттік",
+                  "title": "Никель"
+                },
+                {
+                  "name": "Магниттік",
+                  "title": "Кобальт"
+                },
+                {
+                  "name": "Магниттік емес",
+                  "title": "Пластик"
+                },
+                {
+                  "name": "Магниттік емес",
+                  "title": "Резина"
+                },
+                {
+                  "name": "Магниттік емес",
+                  "title": "Боз ұдеріс пендік"
+                },
+                {
+                  "name": "Магниттік емес",
+                  "title": "Қағаз"
+                },
+                {
+                  "name": "Магниттік емес",
+                  "title": "Былғары"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Магнит табыңыз және оның магниттілігін үйдің айналасындағы әртүрлі заттарда тексеріңіз. Бақылауларыңызды жазып алыңыз. Енді сіз мұны жасағаннан кейін магниттерді пайдаланудың әртүрлі жолдарын сипаттаңыз.",
+              "content": [
+                {
+                  "text": "Магниттер - бұл басқа заттарды тарта алатын немесе кері қайтаратын объектілер. Олар бар және бүкіл әлемде кездеседі. Үй шаруашылығының айналасында магнитті көптеген заттар бар, олар туралы сіз білмейтін шығарсыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "navigation": "Lesson12",
+          "title": "12. Жаз - көңілді!",
+          "thumbnail": "assets/cotton.png",
+          "backgroundColor": "#8C6BEB",
+          "content": [
+            {
+              "navigation": "Snapshot",
+              "title": "common:snapshot",
+              "icon": "assets/camera.png",
+              "backgroundColor": "#FFD972",
+              "prompt": "Кітапханага барыңыз да, бұл жаз оқу үшін кітап таңдаңыз. Оның суретін алыңыз. "
+            },
+            {
+              "navigation": "Image Boom",
+              "backgroundColor": "palevioletred",
+              "title": "common:imageboom",
+              "icon": "assets/image.png",
+              "image": "assets/cotton.png",
+              "prompt": "Бұл жазда қандай тұрақты қызметтерді жасайсыз? "
+            },
+            {
+              "navigation": "Sorting",
+              "title": "common:sorting",
+              "icon": "assets/recycle-bin.png",
+              "backgroundColor": "coral",
+              "prompt": "Осы материалдарды магнитизм бойынша сұрыптаңыз. ",
+              "categories": [
+                {
+                  "name": "Тұрақты",
+                  "image": "assets/cotton.png"
+                },
+                {
+                  "name": "Тұрақты емес",
+                  "image": "assets/cotton.png"
+                }
+              ],
+              "options": [
+                {
+                  "name": "Тұрақты",
+                  "title": "Қайта пайдаланушы бутылкамен су ішу"
+                },
+                {
+                  "name": "Тұрақты",
+                  "title": "Бөлме жағын күлу үшін жалғыздарды жабу"
+                },
+                {
+                  "name": "Тұрақты емес",
+                  "title": "Күн бойы видео ойындар ойнау"
+                },
+                {
+                  "name": "Тұрақты емес",
+                  "title": "Күн бойы кондиционерді қолдану"
+                },
+                {
+                  "name": "Тұрақты емес",
+                  "title": "Машинада жуу"
+                }
+              ]
+            },
+            {
+              "navigation": "Reorder",
+              "title": "common:reorder",
+              "icon": "assets/reorder.png",
+              "backgroundColor": "pink",
+              "prompt": "Транспортты ең тұрақтыдан ең тұрақты емеске дейін сұрыптаңыз.",
+              "content": [
+                {
+                  "text": "Трамвай"
+                },
+                {
+                  "text": "Электрдік темір жол"
+                },
+                {
+                  "text": "Велосипедмен жүзу"
+                },
+                {
+                  "text": "Машина"
+                },
+                {
+                  "text": "Ұшақ"
+                }
+              ]
+            },
+            {
+              "navigation": "Mastery",
+              "title": "common:mastery",
+              "prompt": "Барлық өткен сабақтарды қарап шығыңыз және кейбір идеяларды жинаңыз. Негізгі шабыт ретінде тек бір сабақты пайдаланыңыз, бірақ сіз олардың барлығынан идея ала аласыз. Өзіңіздің шеберлігіңізге шақырыңыз және жаттығудың соңында ата-анаңыз бір нәрсені үйренетініне көз жеткізіңіз. Суреттер, бейнелер және жазбалар түсіріп, барлық бақылауларыңызды жазып алыңыз. Керемет ғалымдар!",
+              "content": [
+                {
+                  "text": "Сіздің ұзақ жазғы демалысыңыз басталғалы жатыр. Сіз бір жыл ішінде көптеген тұрақтылық зерттеулерін жасадыңыз, бірақ одан да көп. Бұл жолы сіз ата-анаңызға тұрақтылық жаттығуын жасайсыз.",
+                  "image": "assets/cotton.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

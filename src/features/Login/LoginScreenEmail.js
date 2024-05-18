@@ -10,8 +10,8 @@ import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
-import { getCacheObject, postBoilerplate, postDataHard } from "../Grades/Handlers/Database";
-import { postData } from "../Grades/Handlers/PostData";
+import { getCacheObject, postDataHard } from "../Grades/Handlers/Database";
+import { postDataSoft } from "../Grades/Handlers/PostDataSoft";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
 
@@ -221,18 +221,20 @@ const LoginScreenEmail = () => {
             </Text>
           </TouchableOpacity>
 
-          {/* This posted the data that was pulled from the post method above */}
+          {/* !!This writes over all data in the grade's language!! */}
           {/* <Button onPress={postDataHard}>
             <TitleText color="secondary" size="body">
-              postData()
+              postDataHard()
             </TitleText>
           </Button> */}
 
-          {/*<Button onPress={() => postBoilerplate("GradeX", "ChapterX")}>
+          {/* This updates the data without deleting image filepath data */}
+          {/* <Button onPress={postDataSoft}>
             <TitleText color="secondary" size="body">
-              Post Boilerplate
+              postDataSoft()
             </TitleText>
-        </Button>*/}
+          </Button> */}
+
         </ButtonContainer>
 
         <BottomContainer>

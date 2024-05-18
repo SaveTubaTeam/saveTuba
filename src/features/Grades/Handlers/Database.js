@@ -1,5 +1,6 @@
 import { db, storage } from "../../../../firebase.js";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 import en_grade2 from "../Data/en_grade2.json"
 import en_grade3 from "../Data/en_grade3.json"
 import en_grade4 from "../Data/en_grade4.json"
@@ -70,7 +71,7 @@ async function getLessonsData(grade, chpt, languageCode) {
         let lessonsList = [];
 
         let i = 1;
-        while (i<100) { //safeguarding against infinite loops
+        while (i<50) { //safeguarding against infinite loops. 50 is an arbitrary number/cap
             try {
                 let lessonReference = db.collection(grade).doc(chpt).collection(`Lesson${i}`).doc(languageCode);
                 let lessonSnapshot = await lessonReference.get()
@@ -182,7 +183,7 @@ async function createImageMapHelper(folder, pathList, depth) {
     try{
         let result = await storage.child(folder).listAll(); // get all items and subdirectories in the current folder.
         //console.log(result.prefixes.length);
-        //we check if the array is empty (this is our main stop condition) (basically asking: does the current folder have any arrays?)
+        //we check if the array is empty (this is our main stop condition, basically asking: does the current folder have any folders?)
         if (result.prefixes.length === 0) {
             return pathList;
         }
@@ -226,10 +227,10 @@ async function setCache(key, value) {
 }
 
 
-// The following three variables MUST be specified for postData()
-const GRADE_NAME = "Grade2"; //string specifying the grade, e.g. 'Grade2' 
-const LANGUAGE_CODE = "en"; //specifies the language, e.g. 'en', 'ru', 'kk'
-const CHAPTERS = en_grade2.chapters; //needs to be specified from import
+// The following three variables should be changed every time you run the function.
+const GRADE_NAME = "Grade4"; //string specifying the grade, e.g. 'Grade2' 
+const LANGUAGE_CODE = "kk"; //specifies the language, e.g. 'en', 'ru', 'kk'
+const CHAPTERS = en_grade4.chapters; //needs to be specified from import
 
 //this one is different from the postData in PostData.js as it does not check
 //for the existence of documents and overwrites everything.
@@ -249,7 +250,7 @@ const postChapterData = async(chapter) => {
         colorOne: chapter.colorOne,
         colorTwo: chapter.colorTwo
     }
-    let chapterReference = db.collection(GRADE_NAME).doc(chapterData.navigation);
+    const chapterReference = db.collection(GRADE_NAME).doc(chapterData.navigation);
 
     try {
         await chapterReference.set(chapterData); //setting chapter metadata
@@ -266,13 +267,13 @@ const postChapterData = async(chapter) => {
 //@param lesson the current lesson object
 //@param chapterReference a reference to the current chapter within our firebase tree.
 const postLessonData = async(lesson, chapterReference) => {
-    let lessonData = {
+    const lessonData = {
         navigation: lesson.navigation,
         title: lesson.title,
         thumbnail: lesson.thumbnail,
         backgroundColor: lesson.backgroundColor
     }
-    let lessonLanguageReference =  chapterReference.collection(lessonData.navigation).doc(LANGUAGE_CODE);
+    const lessonLanguageReference =  chapterReference.collection(lessonData.navigation).doc(LANGUAGE_CODE);
 
     try {
         await lessonLanguageReference.set(lessonData); //setting lessonLanguage metadata
@@ -298,92 +299,24 @@ const postLessonData = async(lesson, chapterReference) => {
             currentObject.title = `${currentObject.title}${duplicates[currentObjectName]}`
         }
 
-        postMasteryAndMinigames(currentObject, lessonLanguageReference); //see below
+        postMasteryAndMinigameData(currentObject, lessonLanguageReference); //see below
     })
 
-    console.log("\t\tmasteryAndMinigames:");
-    lesson.content.forEach((element) => { console.log(`\t\t\t${element.navigation}`); })
+    // console.log("\t\tmasteryAndMinigames:");
+    // lesson.content.forEach((element) => { console.log(`\t\t\t${element.navigation}`); })
 }
 
 //@param currentObject the current mastery or minigame object
 //@param lessonLanguageReference a reference to the current language within our current lesson down our firebase tree.
-const postMasteryAndMinigames = async(currentObject, lessonLanguageReference) => {
-    let masteryAndMinigamesReference = lessonLanguageReference.collection("masteryAndMinigames").doc(currentObject.navigation);
+const postMasteryAndMinigameData = async(currentObject, lessonLanguageReference) => {
+    const masteryAndMinigamesReference = lessonLanguageReference.collection("masteryAndMinigames").doc(currentObject.navigation);
 
     try{
         await masteryAndMinigamesReference.set(currentObject);
+        console.log(`\t\t${currentObject.navigation} set successfully!`);
     } catch(error) {
-        console.error("postMasteryAndMinigames() ERROR:", error);
+        console.error("postMasteryAndMinigameData() ERROR:", error);
     }
 }
 
-//use the below function to push boilerplate lesson templates into database for a specified empty chapter. WARNING: CAN ERASE EXISTING DATA
-//See LoginScreen for function call location (this function will not work for params that do not exist!);
-//WARNING: If your params are incorrect you run the risk of erasing data!! Big no-no!
-//Chapter metadata MUST be manually defined beforehand, specifically numLessons attribute.
-    //@param gradeNumber grade num should be specified as such: "Grade1", "Grade2", etc. 
-    //@param chapterNumber specify as "Chapter1", "Chapter2", etc.
-    //function will fill boilerplate for all lessons in given chapter for all languages "English", "Kazakh", "Russian"
-    async function postBoilerplate(gradeNumber, chapterNumber) {
-        const chapterData = await db.collection(gradeNumber).doc(chapterNumber).get();
-        const numLessons = chapterData.data().numLessons; //getting number of lessons from chapter metadata
-
-        const mastery = boilerplateLesson.mastery; //grabbing mastery attribute
-        const minigames = boilerplateLesson.minigames; //grabbing all minigames (including objects within minigames)
-        
-        const languageArray = ["English", "Kazakh", "Russian"]; //array of languages
-        const backgroundColor = ["#2C3653", "#87CB28", "#004AAD", "#00C2CB", "#87CEFA", "#8C77AA", //collection of background colors for lesson cards
-                                "#B25C3E", "#AA1A44", "#F9F0D7", "#76220C", "#76B9F0", "#FC6467",
-                                "#6040AC", "#C85004", "#2A8FE5", "#603A70", "#56AEFF", "#F9A949",
-                                "#49326B", "#02084B", "#F6E134", "#80B673", "#9DCD5A", "#98DFEC",
-                                "#065D40", "#159D52", "#F9943B", "#53020C", "#060644", "#2A731D"];
-
-        for(let lessonIter=1; lessonIter<=numLessons; lessonIter++) {//iterating through lessons as defined in params.
-            let lessonNumber = "Lesson" + lessonIter //concatenating index of iterator to lesson for correct formatting. JavaScript forces lessonIter to a string for proper concatenation.
-            let data = { //grabbing metadata for each lesson
-                title: boilerplateLesson.title,
-                thumbnail: boilerplateLesson.thumbnail,
-                backgroundColor: backgroundColor[Math.floor(Math.random()*backgroundColor.length)], //gets random background color from predefined array
-                navigation: lessonNumber
-            };
-
-            for(let languageIter = 0; languageIter < languageArray.length; languageIter++) { //languageIter iterates through languageArray to select a language
-                let language = languageArray[languageIter] //language defined as current index
-
-                //setting metadata for initial lesson's language document (i.e. metadata for "English", "Kazakh", "Russian")
-                await db.collection(gradeNumber).doc(chapterNumber).collection(lessonNumber).doc(language).set(data)
-                .then(() => {
-                    console.log("Current Language:", language);
-                    console.log("Boilerplate for", gradeNumber, chapterNumber, lessonNumber, " successfully pushed!");
-                })
-                .catch((error) => {
-                    console.error("Error updating language document: ", language, error);
-                });
-
-                //looping through all minigames in boilerplateLesson.json and setting boilerplate for each minigame in firestore.
-                for(let minigamesIter = 0; minigamesIter < minigames.length; minigamesIter++) {
-                    let minigameName = minigames[minigamesIter].navigation; //getting minigame name from minigame navigation attribute
-                        await db.collection(gradeNumber).doc(chapterNumber).collection(lessonNumber).doc(language).collection("minigames").doc(minigameName).set(minigames[minigamesIter])
-                            .then(() => {
-                                //pass
-                            }).catch((error) => {
-                                console.error("Error writing minigame: ", minigameName, error);
-                            });
-                } //end of minigames loop
-                console.log("Boilerplate for Minigames for ", gradeNumber, chapterNumber, lessonNumber, " successfully pushed!")
-
-                //setting mastery boilerplate in firestore
-                await db.collection(gradeNumber).doc(chapterNumber).collection(lessonNumber).doc(language).collection("mastery").doc("mastery").set(mastery)
-                            .then(() => {
-                                console.log("Boilerplate for Mastery for ", gradeNumber, chapterNumber, lessonNumber, " successfully written!");
-                            })
-                            .catch((error) => {
-                                console.error("Error writing mastery: ", error);
-                            });
-
-            } //end of language loop
-
-        } //end of lesson number loop
-    }//end of postBoilerplate
-
-export { getGradeData, createImageMap, getLessonsData, getCacheObject, setCache, postDataHard, postBoilerplate };
+export { getGradeData, createImageMap, getLessonsData, getCacheObject, setCache, postDataHard };
