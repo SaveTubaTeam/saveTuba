@@ -132,7 +132,7 @@ async function getLessonsData(grade, chpt, languageCode) {
 //                  For expo-image, specifying a uri with imageMap is better than alternatives imo.
 
 
-//BENCHMARK 4/16/24: fetchImages done in 25.53 seconds. This is horrible.
+//BENCHMARK 4/16/24: fetchImages done in 25.53 seconds. This is horrible. Update 4/19: I'm in Kazakhstan and fetchImages now takes 68.03 seconds waahhhh
 // @param folder **the folder directory that stores the image in the Firebase storage ('/assets') is passed in from fetchImages thunk.
 // @param imageMap **an empty map object is passed in from the fetchImages thunk
 // @return imageMap **The filled map object in the form <image path, image URL>

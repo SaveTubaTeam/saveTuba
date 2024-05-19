@@ -33,13 +33,15 @@ const Stack = createNativeStackNavigator();
 //@param gradeNumber a string representing the selected grade, e.g. 'Grade2'
 //@param selectedChapter a string representing the selected chapter, e.g. 'Chapter1'
 function LessonsHandler({ gradeNumber, selectedChapter }) {
-  const language = "en"; //hardcoded
+  //const language = "en"; //hardcoded
+  const { t, i18n } = useTranslation();
+  const languageCode = i18n.language;
   const [lessonsData, setLessonsData] = useState(null);
   const navigation = useNavigation();
 
   useEffect(() => {
     console.log(`inside LessonsHandler.js: ${gradeNumber} | ${selectedChapter}`);
-    getLessonsData(gradeNumber, selectedChapter, language).then(
+    getLessonsData(gradeNumber, selectedChapter, languageCode).then(
       (result) => { 
         setLessonsData(result);
       }).catch((err) => {
