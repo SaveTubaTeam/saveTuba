@@ -50,7 +50,7 @@ const ImagePrompt = ({ data, imageMap }) => {
             <View>
               {/* marked for translation */}
               <BodyText size="subtitle">
-                {t("minigames:openresponsenosubmission")}
+                {t("minigames:nosubmission")}
               </BodyText>
             </View>
             <TouchableOpacity

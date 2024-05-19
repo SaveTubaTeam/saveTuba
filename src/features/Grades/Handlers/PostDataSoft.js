@@ -14,8 +14,8 @@ import kk_grade4 from "../Data/kk_grade4.json"
 
 // The following three variables should be changed every time you run the function.
 const GRADE_NAME = "Grade2"; //string specifying the grade, e.g. 'Grade2' 
-const LANGUAGE_CODE = "kk"; //specifies the language, e.g. 'en', 'ru', 'kk'
-const CHAPTERS = kk_grade2.chapters; //needs to be specified from import
+const LANGUAGE_CODE = "ru"; //specifies the language, e.g. 'en', 'ru', 'kk'
+const CHAPTERS = ru_grade2.chapters; //needs to be specified from import
 
 //postDataSoft is meant to post updated data into the firebase tree without overriding images.
 //my work flow is as follows: 
@@ -137,7 +137,7 @@ const postMasteryAndMinigameData = (currentObject, lessonLanguageReference) => {
          if(doc.exists) { //we only want to modify attributes that refer to texts (e.g. prompts, names, anything that can be translated)
             updateMasteryAndMinigameObject(currentObject, masteryAndMinigamesReference, doc);
          } else {
-            console.log("ERROR minigame does not exist");
+            console.log(`ERROR: minigame ${currentObject.navigation} does not exist`);
             //setMasteryAndMinigames(currentObject, masteryAndMinigamesReference);
          }
       });

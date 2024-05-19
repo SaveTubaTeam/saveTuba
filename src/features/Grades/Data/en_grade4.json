@@ -3,7 +3,7 @@
     {
       "navigation": "Chapter1",
       "title": "common:chapter1",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:plants",
       "icon": "assets/cotton.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
@@ -525,7 +525,7 @@
     {
       "navigation": "Chapter2",
       "title": "common:chapter2",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:animals",
       "icon": "assets/cotton.png",
       "colorOne": "indigo",
       "colorTwo": "mediumpurple",
@@ -1032,7 +1032,7 @@
     {
       "navigation": "Chapter3",
       "title": "common:chapter3",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:human",
       "icon": "assets/cotton.png",
       "colorOne": "orange",
       "colorTwo": "orangered",
@@ -1257,7 +1257,7 @@
     {
       "navigation": "Chapter4",
       "title": "common:chapter4",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:airwater",
       "icon": "assets/cotton.png",
       "colorOne": "midnightblue",
       "colorTwo": "mediumturquoise",
@@ -2174,7 +2174,7 @@
     {
       "navigation": "Chapter5",
       "title": "common:chapter5",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:physics",
       "icon": "assets/cotton.png",
       "colorOne": "lightpink",
       "colorTwo": "mediumvioletred",
@@ -2788,7 +2788,7 @@
     {
       "navigation": "Chapter6",
       "title": "common:chapter6",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:naturalresources",
       "icon": "assets/cotton.png",
       "colorOne": "darkorange",
       "colorTwo": "goldenrod",
@@ -3575,7 +3575,7 @@
     {
       "navigation": "Chapter7",
       "title": "common:chapter7",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:cosmos",
       "icon": "assets/cotton.png",
       "colorOne": "darkolivegreen",
       "colorTwo": "darkgreen",
@@ -4123,7 +4123,7 @@
     {
       "navigation": "Chapter8",
       "title": "common:chapter8",
-      "name": "common:PLACEHOLDER",
+      "name": "gradefour:forces",
       "icon": "assets/cotton.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",

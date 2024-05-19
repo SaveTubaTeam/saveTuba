@@ -1589,7 +1589,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter3/imageboom/winter.png",
               "prompt": "Why don’t animals get cold in winter? "
             },
             {
@@ -1716,7 +1716,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter3/imageboom/smog.png",
               "prompt": "Make a plan of how you will avoid polluting the air "
             },
             {
@@ -1796,7 +1796,7 @@
               "content": [
                 {
                   "text": "Find a factory or a place similar to a factory near your home. Do your best to research the ecosystem present there before the factory and after the factory.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter3/mastery/factory.png"
                 }
               ]
             }
@@ -1936,7 +1936,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter3/imageboom/water-pollution.jpg",
               "prompt": "Describe the picture. What do you think should be changed? "
             },
             {
@@ -2040,7 +2040,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter3/imageboom/innovation.png",
               "prompt": "How do people use natural resources to create energy? Name one good (sustainable) way the energy is created and one bad (unsustainable) way? "
             },
             {
@@ -2105,7 +2105,7 @@
               "content": [
                 {
                   "text": "There are many natural resources present on Earth but man has mismanaged many of them. Nature is our friend and we must protect her.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter3/mastery/ecology.png"
                 }
               ]
             }
@@ -2132,7 +2132,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter4/imageboom/tide.png",
               "prompt": "Find out and describe how the Moon influences the oceans "
             },
             {
@@ -2308,7 +2308,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter4/imageboom/planets.png",
               "prompt": "Research and describe the origin of the names of 3 planets of your choice. "
             },
             {
@@ -2323,56 +2323,56 @@
                 },
                 {
                   "name": "Mercury",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/mercury.png"
                 },
                 {
                   "name": "Venus"
                 },
                 {
                   "name": "Venus",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/venus.png"
                 },
                 {
                   "name": "Earth"
                 },
                 {
                   "name": "Earth",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/earth.png"
                 },
                 {
                   "name": "Mars"
                 },
                 {
                   "name": "Mars",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/mars.png"
                 },
                 {
                   "name": "Jupiter"
                 },
                 {
                   "name": "Jupiter",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/jupiter.png"
                 },
                 {
                   "name": "Saturn"
                 },
                 {
                   "name": "Saturn",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/saturn.png"
                 },
                 {
                   "name": "Uranus"
                 },
                 {
                   "name": "Uranus",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/uranus.png"
                 },
                 {
                   "name": "Neptune"
                 },
                 {
                   "name": "Neptune",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/memory/neptune.png"
                 }
               ]
             },
@@ -2461,7 +2461,7 @@
               "content": [
                 {
                   "text": "There are many other planets in our solar system and they orbit the Sun. Life is only sustainable on planet Earth.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/mastery/solar-system.png"
                 },
                 {
                   "text": "Make a case for another planet that might be able to support life. Formulate some changes that will make this planet a better place for life.",
@@ -2625,7 +2625,7 @@
               "content": [
                 {
                   "text": "Space exploration is very important in our day and age. We are on a mission to explore all the other planets.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/mastery/astronaut.png"
                 },
                 {
                   "text": "Find out one planet that we are exploring currently. Then, figure out the method of exploration.",
@@ -2744,7 +2744,7 @@
               "content": [
                 {
                   "text": "The calendar is a counting system of time divided into days, months, and years.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/mastery/calendar.png"
                 }
               ]
             }
@@ -2761,7 +2761,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter4/imageboom/3pm.png",
               "prompt": "What clock is the most accurate? "
             },
             {
@@ -2829,7 +2829,7 @@
               "content": [
                 {
                   "text": "Humans have invented different ways to tell time from the sundial to the water clock.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter4/mastery/watch.png"
                 }
               ]
             }
@@ -2856,7 +2856,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/gravity.png",
               "prompt": "Find three objects, people, animals in your home that you can describe forces that are acting upon them. For example, gravity is a force that affects humans by pulling them to the center of Earth. "
             },
             {
@@ -2931,7 +2931,7 @@
               "content": [
                 {
                   "text": "Nothing in the world can move until there is a force either pushing or pulling it. Therefore, objects can only move when there is a force applied to them.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/renewable-energy.png"
                 }
               ]
             }
@@ -2948,7 +2948,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/racing.png",
               "prompt": "Why are objects that are fast bad for the environment? Is it because of the energy required to power them? Do you have any ideas on making them more efficient? "
             },
             {
@@ -3064,7 +3064,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/bus.png",
               "prompt": "What is a new/different form/mode of transportation that’s been added to your neighborhood? "
             },
             {
@@ -3156,11 +3156,11 @@
               "content": [
                 {
                   "text": "The Kazakhstan eagle might seem clumsy and immobile first, but it is indeed swift. Although the animal might seem loud, that doesn’t take away from its speed.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/eagle.png"
                 },
                 {
                   "text": "Go outside and examine the many cars on the road. Record a video of the cars passing by.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/traffic-jam.png"
                 }
               ]
             }
@@ -3184,7 +3184,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/heavy.png",
               "prompt": "Find one of the heaviest objects in your house. What is it made out of? Try to identify the composition of materials and then label each material as either environmentally friendly or not. Try your best! "
             },
             {
@@ -3302,7 +3302,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/innovation.png",
               "prompt": "If you didn’t get the Camera 📷 question, the most environmentally-friendly light source is the Sun because it is natural. However, your home can still save more energy. Find a light source in your home and think about how you can save more energy. "
             },
             {
@@ -3391,7 +3391,7 @@
               "content": [
                 {
                   "text": "Light is a form of energy that allows living organisms to see the world around them. Our very own sun emits mass amounts of energy through rays of light. And everyday glass bottles are great at catching the sun’s rays. One might say they are too great because it can even cause a fire if they catch too much sunlight.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/glass-bottle.png"
                 }
               ]
             }
@@ -3415,7 +3415,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/prism.png",
               "prompt": "What happens to rays of light when they meet another object? Does it go in a straight line or not? What sustainable benefits can we use these for? "
             },
             {
@@ -3473,7 +3473,7 @@
               "content": [
                 {
                   "text": "A ray of sunlight moves in a straight line and changes its behavior as it hits different objects. Some objects such as metal, wood, and stone absorb most of the light and do not allow it to pass through them.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/crayons.png"
                 }
               ]
             }
@@ -3497,7 +3497,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/megaphone.png",
               "prompt": "What is the difference between natural sources of sound and artificial sources of sound? How can we use natural sources of sound for sustainable behaviors? "
             },
             {
@@ -3616,7 +3616,7 @@
               "content": [
                 {
                   "text": "The sounds you hear tell you what is going on. Nowadays, there is a massive amount of sound pollution.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/loud-speaker.png"
                 },
                 {
                   "text": "Did you know that shouting in someone’s ear can lead to deafness? Loud sounds near the eardrums over time can damage your hearing as well. We have to eliminate sound pollution and it can start from inside the household.",
@@ -3644,7 +3644,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/stadium.png",
               "prompt": "Why are the theater, performance center, and stadiums arranged in that way? Does this help with sound production? What are your thoughts? "
             },
             {
@@ -3719,7 +3719,7 @@
               "content": [
                 {
                   "text": "We all hear sounds differently. Animals, plants, and humans can all hear sounds.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/bunny.png"
                 }
               ]
             }
@@ -3736,7 +3736,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/hot.png",
               "prompt": "What is the hottest part of Kazakhstan? Explain why "
             },
             {
@@ -3809,35 +3809,35 @@
                 },
                 {
                   "name": "Digital thermometers",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/memory/thermometer.png"
                 },
                 {
                   "name": "Ear (or tympanic) thermometers"
                 },
                 {
                   "name": "Ear (or tympanic) thermometers",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/memory/ear.png"
                 },
                 {
                   "name": "Infrared thermometers"
                 },
                 {
                   "name": "Infrared thermometers",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/memory/infrared.png"
                 },
                 {
                   "name": "Strip-type thermometers"
                 },
                 {
                   "name": "Strip-type thermometers",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/memory/strip.png"
                 },
                 {
                   "name": "Mercury thermometers"
                 },
                 {
                   "name": "Mercury thermometers",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/memory/mercury.png"
                 }
               ]
             },
@@ -3848,11 +3848,11 @@
               "content": [
                 {
                   "text": "Get a thermometer. Visit a nearby park and find three different plants.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/gradetwo/chapter5/mastery/thermometer.png"
                 },
                 {
                   "text": "Record the temperature of the leaves of the plants. Record the temperature of the soil of the plants. Identify any patterns for these plants in accordance with the temperature and their growth.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/gradetwo/chapter5/mastery/hot-temperature.png"
                 }
               ]
             }
@@ -3869,7 +3869,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/gradetwo/chapter5/imageboom/cold.png",
               "prompt": "Ask your parents about summer and winter temperatures when they were kids. Compare it to the temperatures right now. Do you notice any differences? "
             },
             {
@@ -4042,7 +4042,7 @@
               "content": [
                 {
                   "text": "When people think of warmth, they think of sunny, summer days. Or you could think about cold, winter days with the heater on. Regardless, heat is a form of energy that is always being generated. However, generating heat in the winter can cost energy and leave a massive carbon footprint. Generating cold in the summer can cost energy and leave a massive carbon footprint.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/heater.png"
                 }
               ]
             }
@@ -4066,7 +4066,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/magnetism.png",
               "prompt": "Are magnets environmentally friendly? Explain your answer. "
             },
             {
@@ -4171,7 +4171,7 @@
               "content": [
                 {
                   "text": "Magnets are objects that can attract or repel other objects. They are present and are found around the world. There are many objects around the household that are magnetic that you may not know about.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/magnet.png"
                 }
               ]
             }
@@ -4195,7 +4195,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-two/chapter5/imageboom/palm-tree.png",
               "prompt": "What sustainable activities are you going to do this summer? "
             },
             {
@@ -4272,7 +4272,7 @@
               "content": [
                 {
                   "text": "Your long summer vacation is about to begin. You’ve done a lot of sustainability research during the year, but there’s more. This time you will create a sustainability exercise for your parents.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-two/chapter5/mastery/search.png"
                 }
               ]
             }

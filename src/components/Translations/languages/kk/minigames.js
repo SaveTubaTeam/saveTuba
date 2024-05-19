@@ -17,7 +17,7 @@ export default {
    openresponseprompt: "Your response has been submitted. Good job!\nGo back to the lesson to continue learning.",
    openresponsethink: "I think...",
    openresponsetryagain: "Try Again",
-   openresponsenosubmission: "hmmmm... it seems you haven't submitted anything\n",
+   nosubmission: "hmmmm... it seems you haven't submitted anything\n",
 
    memoryprompt: "Good job completing this memory minigame!\nGo back to the lesson to continue learning.",
    memoryhint: "Hint: Match images with words.",

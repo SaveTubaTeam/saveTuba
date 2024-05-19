@@ -147,13 +147,14 @@ async function createImageMap(folder, imageMap) {
     list.push(folder);
 
     // Looping through list of paths and creating the map with the above format
-    for (const path of list) { //iterating over the values of the list array
+    for (const path of list) { //iterating over the values of the list array sequentially
         let result = await storage.child(path).listAll(); // Get all files and subdirectories in the current path.
         // Create promises to fetch the download URLs and metadata for each file
         let urlPromises = result.items.map(url => url.getDownloadURL());
         let pathPromises = result.items.map(path => path.getMetadata());
         // await to resolve all promises. These two lines are the cause of the performance painpoint.
         let urlResolved = await Promise.all(urlPromises);
+
         let pathResolved = await Promise.all(pathPromises);
 
         for (let i = 0; i < urlResolved.length; i++) {//now populating imageMap

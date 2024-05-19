@@ -376,7 +376,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-three/chapter2/imageboom/innovation.png",
               "prompt": "List three plants that you see everyday. Why do you think that you see them so often? Think about the environmental conditions that they need to survive. "
             },
             {
@@ -395,19 +395,19 @@
               "categories": [
                 {
                   "name": "1.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/sorting/spider-plant.png"
                 },
                 {
                   "name": "2.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/sorting/gloxinia.png"
                 },
                 {
                   "name": "3.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/sorting/snake-plant.png"
                 },
                 {
                   "name": "4.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/sorting/jade.png"
                 }
               ],
               "options": [
@@ -436,7 +436,7 @@
               "content": [
                 {
                   "text": "Start by finding three plants outside and take some pictures of them.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/plants-pot.png"
                 }
               ]
             }
@@ -460,7 +460,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-three/chapter2/imageboom/innovation.png",
               "prompt": "List a couple of things that plants need in order to survive. Are these the same things we need to survive? What happens if there’s too much of one resource? "
             },
             {
@@ -589,28 +589,28 @@
                 },
                 {
                   "name": "Hydrophytes",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/rain.png"
                 },
                 {
                   "name": "Cryophytes"
                 },
                 {
                   "name": "Cryophytes",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/snowflake.png"
                 },
                 {
                   "name": "Thermophiles"
                 },
                 {
                   "name": "Thermophiles",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/temperature.png"
                 },
                 {
                   "name": "Heliophytes"
                 },
                 {
                   "name": "Heliophytes",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/sunshine.png"
                 }
               ]
             },
@@ -619,7 +619,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade-three/chapter2/imageboom/innovation.png",
               "prompt": "Many plants have to adapt to survive in their environment. Sometimes humans cause environmental changes that occur too quickly for plants to adapt to. What are some human-made adaptations that help us, but hurt plants? "
             },
             {
@@ -629,7 +629,7 @@
               "content": [
                 {
                   "text": "Plants exist all over the world in many different conditions. Pick two countries on Earth and find plants native to the regions, respectively. Compare them to each other.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/find-plants.png"
                 }
               ]
             }
@@ -898,11 +898,11 @@
               "content": [
                 {
                   "text": "Humans are always interacting with their environment. They will directly and indirectly affect all plants and animals. We all have the ability to have a positive or negative impact on life.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/human-plant.png"
                 },
                 {
                   "text": "There are many reasons to make sure our impact is as positive as possible. For example, plants are very important to protect the air from dust, as well as dirty and harmful gasses. Humans have to make sure they keep plants in the best and most environmentally-sensible conditions.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/care-nature.png"
                 }
               ]
             },
@@ -1059,7 +1059,7 @@
               "content": [
                 {
                   "text": "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. Many countries keep their own list of endangered plants.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/agriculture-book.png"
                 }
               ]
             }
@@ -1156,35 +1156,35 @@
                 },
                 {
                   "name": "Insect",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/beetle.png"
                 },
                 {
                   "name": "Arachnid"
                 },
                 {
                   "name": "Arachnid",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/spider.png"
                 },
                 {
                   "name": "Crustacean"
                 },
                 {
                   "name": "Crustacean",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/crab.png"
                 },
                 {
                   "name": "Mollusk"
                 },
                 {
                   "name": "Mollusk",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/snail.png"
                 },
                 {
                   "name": "Echinoderms"
                 },
                 {
                   "name": "Echinoderms",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/starfish.png"
                 }
               ]
             },
@@ -1195,7 +1195,7 @@
               "content": [
                 {
                   "text": "Vertebrates and invertebrates are both types of animals. The difference is that vertebrates have a skeleton or a backbone, while invertebrates don’t. In the wild, these animals use their physical capabilities to survive.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/earthworm.png"
                 }
               ]
             }
@@ -1331,7 +1331,7 @@
               "content": [
                 {
                   "text": "Waste and trash can contaminate animal habitats and also harm animals directly. There are many ways humans can help with this problem and help keep them safe. One way is picking up trash and waste whenever we see it.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/mastery/ecosystem-circle.png"
                 }
               ]
             }
@@ -1410,35 +1410,35 @@
                 },
                 {
                   "name": "Mutualism",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/beetle.png"
                 },
                 {
                   "name": "Parasitism"
                 },
                 {
                   "name": "Parasitism",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/spider.png"
                 },
                 {
                   "name": "Predation"
                 },
                 {
                   "name": "Predation",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/crab.png"
                 },
                 {
                   "name": "Neutralism"
                 },
                 {
                   "name": "Neutralism",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/snail.png"
                 },
                 {
                   "name": "Competition"
                 },
                 {
                   "name": "Competition",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/beetle.png"
                 }
               ]
             },
@@ -1449,7 +1449,7 @@
               "content": [
                 {
                   "text": "Animals, like humans, have relationships with each other. Animals can have both beneficial and harmful relationships. Symbiotic relationships, such as when the birds feed on insects that live on a rhino and the rhino provides the birds with food, are important for the survival of both animals.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade-three/chapter2/memory/symbiosis.png"
                 }
               ]
             }
