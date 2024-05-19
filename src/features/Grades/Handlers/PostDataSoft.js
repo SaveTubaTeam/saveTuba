@@ -146,8 +146,8 @@ const postMasteryAndMinigameData = (currentObject, lessonLanguageReference) => {
    }
 }
 
-//We only want update attributes that contain curriculum text. Curriculum text attributes are either 'prompt' or stored within 'content' arrays. Certain minigames differ in attribute names.
-//This function overlays the existing content and prompt data with the new data in currentObject.
+//We only want update attributes that contain curriculum text. Curriculum text attributes are either 'prompt' or stored within content arrays.
+//This function overlays existing data with the new data in currentObject.
 //@param currentObject a reference to our currentObject
 //@param masteryAndMinigamesReference a reference to our current minigame within firestore
 //@param doc the document stored by the masteryAndMinigamesReference
