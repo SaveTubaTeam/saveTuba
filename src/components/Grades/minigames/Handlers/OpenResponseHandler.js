@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   Pressable,
   FlatList,
-  Image,
 } from "react-native";
 import { connect } from "react-redux";
 import styled from "styled-components/native";
@@ -101,10 +100,7 @@ const ImagePrompt = ({ data, imageMap }) => {
               overflow: "hidden",
             }}
           >
-            <ImageBg
-              source={{uri: imageMap[data.image]}}
-              resizeMode="cover"
-            ></ImageBg>
+            <ImageBg source={{uri: imageMap[data.image]}} resizeMode="cover"/>
           </View>
           <TitleText size="subtitle">
             {data.prompt}

@@ -35,7 +35,7 @@ const Stack = createNativeStackNavigator();
 function LessonsHandler({ gradeNumber, selectedChapter }) {
   //const language = "en"; //hardcoded
   const { t, i18n } = useTranslation();
-  const languageCode = i18n.language;
+  const languageCode = i18n.language; //setting the languageCode to the current language
   const [lessonsData, setLessonsData] = useState(null);
   const navigation = useNavigation();
 

@@ -1,6 +1,6 @@
 import 'expo-dev-client';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import * as encoding from "text-encoding";
 import { LogBox } from "react-native";
 import 'intl-pluralrules';
@@ -17,6 +17,7 @@ import {
   BalsamiqSans_400Regular,
   BalsamiqSans_700Bold,
 } from "@expo-google-fonts/balsamiq-sans";
+import * as SplashScreen from 'expo-splash-screen';
 
 // Translation imports
 import { useTranslation } from "react-i18next";
@@ -53,6 +54,9 @@ if (Platform.OS === 'android') {
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
 
+// Keep the splash screen visible while we fetch resources
+SplashScreen.preventAutoHideAsync();
+
 LogBox.ignoreAllLogs();
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
 LogBox.ignoreLogs(['Constants.platform.ios.model has been deprecated']); //an odd package depreciation warning on SDK v48 after installing intl-pluralrules
@@ -62,6 +66,7 @@ function Home() {
 }
 
 export default function App() {
+  const [appIsReady, setAppIsReady] = useState(false);
 
   // Loading fonts
   const [balsamiqSansLoaded] = useBalsamiqSans({
@@ -74,7 +79,27 @@ export default function App() {
     Scada_700Bold,
   });
 
-  if (!balsamiqSansLoaded || !scadaLoaded) {
+  useEffect(() => {
+    async function prepare() {
+      try {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+      } catch (e) {
+        console.warn(e);
+      } finally {
+        setAppIsReady(true); // Tell the application to render
+      }
+    }
+    prepare();
+  }, []);
+
+  //copy pasted from: https://docs.expo.dev/versions/latest/sdk/splash-screen/
+  const onLayoutRootView = useCallback(async () => {
+    if (appIsReady) {
+      await SplashScreen.hideAsync();
+    }
+  }, [appIsReady]);
+
+  if (!appIsReady || !balsamiqSansLoaded || !scadaLoaded) {
     return null;
   }
 
@@ -83,7 +108,7 @@ export default function App() {
 
   return (
     <>
-      <GestureHandlerRootView style={{ flex: 1 }}>
+      <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <NavigationContainer>
