@@ -6,9 +6,7 @@ const initialState = {
     imageData: { title: "ttest", id: "test1" },
     error: null,
 };
-
-//Note to self: if performance of imageMap is an issue, might have to use a memoized selector instead of 
-//regular useSelector() wherever imageSlice is refered to.
+//Why is this a thunk and not a normal DB function???
 
 //If not already cached, fetchImages pulls the images from db, puts them in an imageMap, and sets the map as "images" in the cache.
 export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => {
@@ -34,7 +32,7 @@ export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => 
         }).catch((error) => {
             console.log("Error in setting state: ", error);
         });
-        await setCache("images", map);
+        await setCache("images", map); //setCache is almost instant
 
         const end = performance.now();
         const elapsedTimeSeconds = (end - start) / 1000; // Convert to seconds

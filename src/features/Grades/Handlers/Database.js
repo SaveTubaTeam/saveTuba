@@ -139,33 +139,46 @@ async function getLessonsData(grade, chpt, languageCode) {
 async function createImageMap(folder, imageMap) {
     console.log("Pulling images from DB");
     // Going through the DB and finding all of the potential directories holding images
+
+    const start = performance.now(); // Start performance timer
     const list = await createImageMapHelper(folder, [], 0).then((listResult) => {
+        const helperEnd = performance.now();
+        const elapsedTimeSeconds = (helperEnd - start) / 1000;
+        console.log(`createImageMapHelper done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
         return listResult;
     });
 
     // Pushing the root directory (param folder is 'assets') onto our list of directories that contain images
     list.push(folder);
 
-    // Looping through list of paths and creating the map with the above format
-    for (const path of list) { //iterating over the values of the list array sequentially
-        let result = await storage.child(path).listAll(); // Get all files and subdirectories in the current path.
-        // Create promises to fetch the download URLs and metadata for each file
-        let urlPromises = result.items.map(url => url.getDownloadURL());
-        let pathPromises = result.items.map(path => path.getMetadata());
-        // await to resolve all promises. These two lines are the cause of the performance painpoint.
-        let urlResolved = await Promise.all(urlPromises);
+    // Fetching URLs and metadata concurrently for all files in each directory
+    await Promise.all(list.map(async (path) => {
+        try {
+            const result = await storage.child(path).listAll(); // Get all files and subdirectories in the current path.
+            // console.log("RESULT ARRAY", result.items);
+            // console.log("PREFIXES ARRAY", result.prefixes);
 
-        let pathResolved = await Promise.all(pathPromises);
+            // Creating promises to fetch the download URLs and metadata for each file
+            const urlPromises = result.items.map(url => url.getDownloadURL());
+            const pathPromises = result.items.map(path => path.getMetadata());
+            const [urlResolved, pathResolved] = await Promise.all([Promise.all(urlPromises), Promise.all(pathPromises)]); // await to resolve all promises.
 
-        for (let i = 0; i < urlResolved.length; i++) {//now populating imageMap
-            try {
-                // console.log("=>", pathResolved[i].fullPath);
+            // console.log("urlResolved object:", urlResolved[0]);
+            // console.log("pathResolved object:", pathResolved[0]);
+
+            // Populating imageMap
+            for (let i = 0; i < urlResolved.length; i++) {
                 imageMap[pathResolved[i].fullPath] = urlResolved[i];
-            } catch (error) {
-                console.log("Error: ", error);
             }
+        } catch (error) {
+            console.log("Error:", error);
         }
-    }
+    }));
+
+    const promisesEnd = performance.now();
+    const elapsedTimeSeconds = (promisesEnd - start) / 1000;
+    console.log(`createImageMap done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
+
     return imageMap;
 }
 
