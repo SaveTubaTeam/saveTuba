@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { useTranslation } from "react-i18next";
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import {
     // Mastery,
     // Adventure,
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
 export const MasteryFlex = ({ masteryArray, navigation }) => {
     const nav = useNavigation();
     const { t } = useTranslation();
+    const imageMap = useSelector(state => state.imageMap.imageData);
 
     return (
         <View style={styles.container}>
@@ -40,15 +42,13 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
                 onPress={() => nav.navigate(mastery.navigation)}
                 >
                     <ImageBg
-                    style={{
-                        borderRadius: 20,
-                    }}
-                    source={require("../../assets/mastery.png")}
-                >
-                    <TitleText weight="bold" size="h5" color="quaternary">
-                        {t(mastery.title)}
-                    </TitleText>
-                </ImageBg>
+                    style={{ borderRadius: 20 }}
+                    source={{ uri: imageMap['assets/mastery.png'] }}
+                    >
+                        <TitleText weight="bold" size="h5" color="quaternary">
+                            {t(mastery.title)}
+                        </TitleText>
+                    </ImageBg>
                 </TouchableOpacity>
             ))}
         </View>

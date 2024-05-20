@@ -107,14 +107,17 @@ const MemoryHandler = ({ objectData, imageMap }) => {
               pressCard();
           }}>
 
-        <ImageBackground source={require(`${ASSETS_FILEPATH}block.png`)} 
-                         style={{ width: 80, height: 80, justifyContent: 'center', alignItems: 'center' }}>
-    
-          {isOpen ? content : (
-              <Ionicons name={"help-outline"} size={80} color={"#fff8e7"} />
+        <View style={{ width: 80, height: 80, justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+          <Image
+            source={{ uri: imageMap['assets/block.png'] }}
+            style={{ width: 80, height: 80, position: 'absolute' }}
+          />
+          {isOpen ? (
+            content
+          ) : (
+            <Ionicons name="help-outline" size={80} color="#fff8e7" />
           )}
-
-        </ImageBackground>
+        </View>
 
       </TouchableOpacity>
   )} //end of Card component

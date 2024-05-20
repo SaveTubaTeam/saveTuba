@@ -81,7 +81,8 @@ const SaveTuba = () => {
 //Main handles the rendering of the SaveTuba navigation stack above, and calls/handles fetchUser
 const Main = () => {
   const dispatch = useDispatch()
-  const userStatus = useSelector(state => state.user.status)
+  const userStatus = useSelector(state => state.user.status);
+  const imageMap = useSelector(state => state.imageMap.imageData);
   const user = useSelector(selectCurrentUser)
   const navigation = useNavigation();
 
@@ -111,6 +112,7 @@ const Main = () => {
         handleFetchUserRejected(); //see below
       }
     }
+
   }, [userStatus, dispatch]); //had some problems keeping Main.js from rendering more than expected so there's a lot of clutter in the terminal. sorry folks
 
   //for 'rejected' load case inside of useEffect

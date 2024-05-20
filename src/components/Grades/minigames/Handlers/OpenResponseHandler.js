@@ -8,7 +8,7 @@ import {
   Pressable,
   FlatList,
 } from "react-native";
-import { connect } from "react-redux";
+import { Image } from 'expo-image';
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
@@ -29,7 +29,7 @@ const ModalContainer = styled.View`
   border: 2px solid #cce882;
 `;
 
-//@param data is the OpenResponse object passed in from OpenResponseHandler (see bottom of file)
+//@param data is the OpenResponse object passed in from OpenResponseHandler
 const ImagePrompt = ({ data, imageMap }) => {
   //const [modalVisible, setModalVisible] = useState(false);
   const [value, setValue] = useState("");
@@ -100,7 +100,11 @@ const ImagePrompt = ({ data, imageMap }) => {
               overflow: "hidden",
             }}
           >
-            <ImageBg source={{uri: imageMap[data.image]}} resizeMode="cover"/>
+            <Image 
+              source={{uri: imageMap[data.image]}} 
+              style={{ width: 150, height: 150, borderRadius: 20 }} 
+              contentFit="cover"
+            />
           </View>
           <TitleText size="subtitle">
             {data.prompt}
