@@ -21,11 +21,13 @@
       "**/*"
     ],
     "ios": {
+      "googleServicesFile": "./GoogleService-Info.plist",
       "supportsTablet": true,
       "bundleIdentifier": "com.nadjastojanov.SaveTuba"
     },
     "android": {
       "softwareKeyboardLayoutMode": "pan",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/playstore-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -41,10 +43,20 @@
       }
     },
     "plugins": [
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
       [
         "expo-dev-launcher",
         {
           "launchModeExperimental": "most-recent"
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
         }
       ]
     ]

@@ -83,11 +83,11 @@ REORDER_GRADIENTS = [
 //@param objectData the reorder object passed in from IndividualLessonHandler
 const ReorderHandler = ({ objectData }) => {
   //console.log("Data In: ", objectData);
-  const [originalArray, setOriginalArray] = useState(objectData.data);
+  const [originalArray, setOriginalArray] = useState(objectData.content);
   const [data, setData] = useState(objectData.content);
 
   useEffect(() => {
-    setOriginalArray(objectData.data); //to prevent unwanted re-rendering I useState the originalArray. Is probably unnecessary.
+    setOriginalArray(objectData.content); //to prevent unwanted re-rendering I useState the originalArray. Is probably unnecessary.
 
     const shuffledData = [...data]; // Creating a copy of data array for safe mutation
     shuffledData.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array
