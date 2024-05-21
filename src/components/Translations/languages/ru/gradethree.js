@@ -1,9 +1,9 @@
 export default {
   /* Chapter names */
-  iamaresearcher: "Я-исследователь",
-  wildlife: "Живая природа",
+  introduction: "Я-исследователь",
+  livenature: "Живая природа",
   substances: "Вещества и их свойства",
-  physics: "Физика природы",
+  physicsofnature: "Физика природы",
 
   /* Chapter 1 lesson names */
   c1l1: "История научных открытий",

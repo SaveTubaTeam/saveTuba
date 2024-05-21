@@ -1,9 +1,9 @@
 export default {
   /* Chapter names */
-  iamaresearcher: "Мен зерттеушімін",
-  wildlife: "Тірі табиғат",
+  introduction: "Мен зерттеушімін",
+  livenature: "Тірі табиғат",
   substances: "Заттар және \nолардың қасиеттері",
-  physics: "Табиғат физикасы",
+  physicsofnature: "Табиғат физикасы",
 
   /* Chapter 1 lesson names */
   c1l1: "Ғылыми жаңалықтардың тарихы",

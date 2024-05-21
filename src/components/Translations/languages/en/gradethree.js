@@ -1,9 +1,9 @@
 export default {
   /* Chapter names */
-  iamaresearcher: "I Am a Researcher",
-  wildlife: "Live Nature",
+  introduction: "I Am a Researcher",
+  livenature: "Live Nature",
   substances: "Substances and \ntheir properties",
-  physics: "Natural Resources",
+  physicsofnature: "Physics of Nature",
  
 
   /* Chapter 1 lesson names */
