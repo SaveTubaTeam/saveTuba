@@ -59,7 +59,6 @@ SplashScreen.preventAutoHideAsync();
 
 LogBox.ignoreAllLogs();
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
-LogBox.ignoreLogs(['Constants.platform.ios.model has been deprecated']); //an odd package depreciation warning on SDK v48 after installing intl-pluralrules
 
 function Home() {
   return <MainScreen />;

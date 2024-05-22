@@ -16,9 +16,9 @@ import kk_grade4 from "../Data/kk_grade4.json"
 import kk_grade5_FIELDWORK from "../Data/kk_grade5_FIELDWORK.json"
 
 // The following three variables should be changed every time you run the function.
-const GRADE_NAME = "Grade4"; //string specifying the grade, e.g. 'Grade2' 
+const GRADE_NAME = "Grade5"; //string specifying the grade, e.g. 'Grade2' 
 const LANGUAGE_CODE = "ru"; //specifies the language, e.g. 'en', 'ru', 'kk'
-const CHAPTERS = ru_grade4.chapters; //needs to be specified from import
+const CHAPTERS = ru_grade5_FIELDWORK.chapters; //needs to be specified from import
 
 //postDataSoft is meant to post updated data into the firebase tree without overriding images.
 //my work flow is as follows: 

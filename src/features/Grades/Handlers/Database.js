@@ -244,7 +244,7 @@ async function setCache(key, value) {
 
 // The following three variables should be changed every time you run the function.
 const GRADE_NAME = "Grade5"; //string specifying the grade, e.g. 'Grade2' 
-const LANGUAGE_CODE = "kk"; //specifies the language, e.g. 'en', 'ru', 'kk'
+const LANGUAGE_CODE = "ru"; //specifies the language, e.g. 'en', 'ru', 'kk'
 const CHAPTERS = en_grade5_FIELDWORK.chapters; //needs to be specified from import
 
 //this one is different from the postData in PostData.js as it does not check

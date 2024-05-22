@@ -4,14 +4,14 @@
       "navigation": "Chapter1",
       "title": "common:chapter1",
       "name": "gradefive:worldofscience",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade5/chapter-icons/worldofscience.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. The Role of Science in the Surrounding World",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/science.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -26,7 +26,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade5/chapter1/lightyears.png",
               "prompt": "Humans are constantly advancing, in the fields of science, technology, and so much more. In order to innovate and advance, some people have to be “the first.” For example, Abu Nasir Al-Farabi, was one of the first to study the stars. Understanding and knowledge of the stars gives us insights into how the whole world works. Think of a recent innovation, invention, or discovery. Do some research into who, or what group of people, led to this development. How did it happen? What would life be like without this development? "
             },
             {
@@ -45,7 +45,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Observing and Measuring Nature",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/observingnature.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -79,7 +79,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Processing and Evaluating Observations",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/processingandevaluating.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -116,14 +116,14 @@
       "navigation": "Chapter2",
       "title": "common:chapter2",
       "name": "gradefive:universe",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade5/chapter-icons/theuniverse.png",
       "colorOne": "indigo",
       "colorTwo": "mediumpurple",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. The Starry Sky",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/starrysky.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -138,7 +138,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade5/chapter2/lightyears.png",
               "prompt": "How would you describe light years to a student younger than you? "
             },
             {
@@ -169,55 +169,55 @@
               "content": [
                 {
                   "text": "You already know that some of the sources of environmental pollution are cars, thermal power plants, and industrial enterprises. But other sources lead to light pollution that can make stargazing difficult.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/powerplant.png"
                 },
                 {
                   "text": "Light pollution is the illumination of the night by artificial light sources (electric lamps, fire, etc.), interfering with astronomical observations and changing the biorhythms of living organisms. It represents excessive use of outdoor light and has many harmful effects on the environment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/lightpollution.png"
                 },
                 {
                   "text": "To better understand the process of light pollution, let's conduct a small experiment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/experiment.png"
                 },
                 {
                   "text": "Conditions and materials for the experiment: The room where the experiment will be carried out should have curtains on the windows to darken the room so that no artificial light comes in and it is possible to control the amount of light received and the light source (flashlight). A flashlight, a sheet of thick paper of a dark (black) color, scissors, a pencil, a pin or paper clip for fixation, and adhesive tape (duct tape, tape).",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/window.png"
                 },
                 {
                   "text": "Using scissors, cut a piece of dark paper into a circle so that it is larger than the front of your flashlight.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/scissors.png"
                 },
                 {
                   "text": "Using pencils or a pen, make several holes in the piece of paper. The holes should resemble your zodiac sign constellations (Aries, Sagittarius, Capricorn, etc.) or as you wish.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/constellations.png"
                 },
                 {
                   "text": "Tightly attach the paper ready for the experiment to the front of the flashlight with adhesive tape (duct tape, tape) so that there is no gap at the edges.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/tape.png"
                 },
                 {
                   "text": "Take the flashlight to a darkened room.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/flashlight.png"
                 },
                 {
                   "text": "Turn on the flashlight and aim the light at the ceiling. If you don't see anything on the ceiling, you will need to enlarge the holes on the paper.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/notebook.png"
                 },
                 {
                   "text": "Then point the flashlight back at the ceiling and use curtains or blinds to add some light to the room. Observe how your constellations are visible.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/windowcurtains.png"
                 },
                 {
                   "text": "Repeat the experiment, but subject to increased lighting of the room.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/lighting.png"
                 },
                 {
                   "text": "Record your observations in the table.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/observation.png"
                 },
                 {
                   "text": "Try to leave comments on your observations in this experiment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/observation2.png"
                 }
               ]
             }
@@ -226,7 +226,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. The Sun and the Solar System",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/solarsystem.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -278,15 +278,15 @@
               "categories": [
                 {
                   "name": "Asteroids",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/asteroid.png"
                 },
                 {
                   "name": "Comets",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/comet.png"
                 },
                 {
                   "name": "Sun",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/sun.png"
                 }
               ],
               "options": [
@@ -305,10 +305,6 @@
                 {
                   "name": "Comets",
                   "title": "Dust"
-                },
-                {
-                  "name": "Comets",
-                  "title": "Rock"
                 },
                 {
                   "name": "Comets",
@@ -331,27 +327,27 @@
               "content": [
                 {
                   "text": "In the last lesson, you used an experiment to visualize a model of light pollution. Now you need to do a little research. Using materials from online resources, you need to find information about the consequences of light pollution on the environment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/reducelightpollution.png"
                 },
                 {
                   "text": "Answer the following questions:",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/lightpollution.png"
                 },
                 {
                   "text": "What do you mean by light pollution?",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/lighting.png"
                 },
                 {
                   "text": "Name the sources of light pollution.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/sourcesoflight.png"
                 },
                 {
                   "text": "List some examples of the effects of light pollution on the environment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/questions.png"
                 },
                 {
                   "text": "Offer recommendations to reduce the impact of light pollution on the environment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/research.png"
                 }
               ]
             }
@@ -360,7 +356,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. The Earth",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/earth.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -375,7 +371,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade5/chapter2/changeofseasons.png",
               "prompt": "What is associated with the change of seasons (spring, summer, autumn, winter) of the year on Earth? "
             },
             {
@@ -385,15 +381,15 @@
               "content": [
                 {
                   "text": "At this point in your life, you probably have at least a basic understanding of what everyday actions are helpful or harmful to our earth. Pick a couple of hours at home to observe the actions of yourself and your family at some point in the day. Think critically about the consequences of everyday actions.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/helpingtheearth.png"
                 },
                 {
                   "text": "After you’re done observing, identify an action or habit done by yourself or your family as a whole, that you think has a negative impact on the environment. Come up with a way to address this action or habit that could improve it or replace it. Additionally, identify how this change would be better for the environment.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/habit.png"
                 },
                 {
                   "text": "Create a plan to implement this change and try it out for at least a week. How difficult do you think this will be?",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/weeklyplan.png"
                 }
               ]
             }
@@ -402,7 +398,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. How Did Our Planet Appear?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/birthofplanet.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -417,7 +413,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade5/chapter2/geochronologicaltable.png",
               "prompt": "What is a geochronological table? What information does it contain? "
             },
             {
@@ -451,35 +447,35 @@
               "content": [
                 {
                   "text": "Knowledge of the main gasses and their role is important to understanding how our planet came to be. While some gasses play an important role in life for our planet, others can pose a danger to the Earth. There are seven gasses called greenhouse gasses, which, when released into the atmosphere in large quantities, cause serious harm to the environment, leading to climate warming.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/gasses.png"
                 },
                 {
                   "text": "Carbon dioxide",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/carbondioxide.png"
                 },
                 {
                   "text": "Methane",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/methane.png"
                 },
                 {
                   "text": "Nitrous oxide",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/nitrousoxide.png"
                 },
                 {
                   "text": "Hydrofluorocarbons",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/hydrofluorocarbons.png"
                 },
                 {
                   "text": "Perfluorocarbons",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/perfluorocarbons.png"
                 },
                 {
                   "text": "Sulfur hexafluoride",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/sulfurhexafluoride.png"
                 },
                 {
                   "text": "Nitrogen trifluoride",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/nitrogentrifluoride.png"
                 }
               ]
             }
@@ -488,7 +484,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. The Structure of the Earth and its Shells",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/earthlayers.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -503,7 +499,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade5/chapter2/platetectonics.png",
               "prompt": "What is plate tectonics? What causes the movement of lithospheric plates? What consequences can they cause? "
             },
             {
@@ -534,11 +530,11 @@
               "content": [
                 {
                   "text": "The resources and materials that are important to our lives and the creation of common objects, come from the earth. Some of these materials come from underground. Some materials are also non-renewable. Therefore, there is a finite amount of these resources.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/renewablematerials.png"
                 },
                 {
                   "text": "Some non-renewable resources are coal, natural gas, and oil. Many of these nonrenewable resources and the methods used to get them, can be really harmful to the earth. There are alternative options to these resources. These alternatives include the use of wind or solar energy. The use of solar panels is an increasingly popular alternative that many homeowners are opting for.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/solarpanels.png"
                 }
               ]
             }
@@ -547,7 +543,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. The Origin of Life on Earth",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/originoflife.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -562,7 +558,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade5/chapter2/species.png",
               "prompt": "Organisms evolve and adapt to their environment, causing them to change over time. If our climate continues to warm, what development will be important for species to make? Come up with a couple ideas. "
             },
             {
@@ -572,7 +568,7 @@
               "content": [
                 {
                   "text": "Life on earth has its limitations, and all species have not been successful on it. There are many species that have gone extinct, or at risk of extinction. As humans, it is important that we make sustainable decisions in order to keep the habitats of these animals intact.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade5/chapter2/habitat.png"
                 }
               ]
             }
@@ -584,14 +580,14 @@
       "navigation": "Chapter3",
       "title": "common:chapter3",
       "name": "gradefive:universe2",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade5/chapter-icons/theuniversecontinued.png",
       "colorOne": "orange",
       "colorTwo": "orangered",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. From the Map to the Plan of the Local Land",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/mappingland.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -633,7 +629,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Conditional Signs",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/symbols.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -706,7 +702,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Polar and Route Deflection",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/landmarks.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -748,7 +744,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. Continents and Islands",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/island.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -782,7 +778,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. Research of the Oceans",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/ocean.png",
           "backgroundColor": "#74D3DB",
           "content": [
             {
@@ -844,7 +840,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Distribution of People on the Surface of the Earth",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/people.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -957,7 +953,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. Ethnicities on Earth",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade5/lesson-icons/ethnicities.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
