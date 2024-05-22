@@ -3,15 +3,15 @@
     {
       "navigation": "Chapter1",
       "title": "common:chapter1",
-      "name": "gradethree:iamaresearcher",
-      "icon": "assets/grade-three/chapter-icons/book.png",
+      "name": "gradethree:introduction",
+      "icon": "assets/grade3/chapter-icons/book.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. History of Scientific Discoveries",
-          "thumbnail": "assets/grade-three/lesson-icons/wheel.png",
+          "thumbnail": "assets/grade3/lesson-icons/wheel.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -26,7 +26,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-three/chapter1/imageboom/innovation.png",
+              "image": "assets/grade3/chapter1/wheel.jpeg",
               "prompt": "What is the difference between experiment and observation? Look at the diagram. Identify how a person uses each of the wheels in the picture. "
             },
             {
@@ -75,7 +75,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Sources of Information",
-          "thumbnail": "assets/grade-three/lesson-icons/read.png",
+          "thumbnail": "assets/grade3/lesson-icons/read.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -90,7 +90,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-three/chapter1/imageboom/innovation.png",
+              "image": "assets/grade3/chapter1/Information.png",
               "prompt": "Where do you get your information and knowledge about the environment? Is it an electronic source, a book, or even a person? What makes this information reliable? "
             },
             {
@@ -128,7 +128,7 @@
               "content": [
                 {
                   "text": "Use your electronic device to research easy ways to be more sustainable in the house. Take note of the different websites you visited. Record the link and research how reliable this source of information is.",
-                  "image": "assets/grade-three/chapter1/mastery/eco-light.png"
+                  "image": "assets/grade3/chapter1/eco-light.png"
                 }
               ]
             }
@@ -137,7 +137,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Planning and Conducting an Experiment",
-          "thumbnail": "assets/grade-three/lesson-icons/research.png",
+          "thumbnail": "assets/grade3/lesson-icons/research.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -152,7 +152,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-three/chapter1/imageboom/innovation.png",
+              "image": "assets/grade3/chapter1/Hypothesis.png",
               "prompt": "What is a hypothesis and why is it important? What is the point of asking questions when conducting an experiment? "
             },
             {
@@ -266,7 +266,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter1/Positiveimpact.png",
               "prompt": "Think of one way you help reduce your environmental impact in your area. How would you test that you are making a difference? Come up with a hypothesis for an experiment to test your environmental impact. "
             },
             {
@@ -285,19 +285,19 @@
               "categories": [
                 {
                   "name": "Observation",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter1/Observation.png"
                 },
                 {
                   "name": "Hypothesis",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter1/Hypothesis.png"
                 },
                 {
                   "name": "Conclusion",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter1/Conclusion.png"
                 },
                 {
                   "name": "Purpose of study",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter1/Purposeofstudy.png"
                 }
               ],
               "options": [
@@ -326,23 +326,23 @@
               "content": [
                 {
                   "text": "Scientists conduct research through experiments. This simple experiment can help you see pollution.",
-                  "image": "assets/grade-three/chapter1/mastery/scientist.png"
+                  "image": "assets/grade3/chapter1/scientist.png"
                 },
                 {
                   "text": "Air Pollution Experiment",
-                  "image": "assets/grade-three/chapter1/mastery/air-pollution.png"
+                  "image": "assets/grade3/chapter1/air-pollution.png"
                 },
                 {
                   "text": "It can be hard to understand the concept of air pollution as it is not always easy to see. This simple experiment can help you understand that there is more in the atmosphere than just air and why it is important to keep the atmosphere clean.",
-                  "image": "assets/grade-three/chapter1/mastery/ask-question.png"
+                  "image": "assets/grade3/chapter1/ask-question.png"
                 },
                 {
                   "text": "Here is what you will need:",
-                  "image": "assets/grade-three/chapter1/mastery/reuse.png"
+                  "image": "assets/grade3/chapter1/reuse.png"
                 },
                 {
                   "text": "A piece of clear plastic (such as a plate or a cup), petroleum jelly, a small rock, a sheet of white paper",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter1/Rocks.png"
                 }
               ]
             }
@@ -353,15 +353,15 @@
     {
       "navigation": "Chapter2",
       "title": "common:chapter2",
-      "name": "gradethree:wildlife",
-      "icon": "assets/grade-three/chapter-icons/antelope.png",
+      "name": "gradethree:livenature",
+      "icon": "assets/grade3/chapter-icons/antelope.png",
       "colorOne": "indigo",
       "colorTwo": "mediumpurple",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. How do Plant Leaves Work?",
-          "thumbnail": "assets/grade-three/lesson-icons/leaf.png",
+          "thumbnail": "assets/grade3/lesson-icons/leaf.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -376,7 +376,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-three/chapter2/imageboom/innovation.png",
+              "image": "assets/grade3/chapter2/Environmentalcondition.png",
               "prompt": "List three plants that you see everyday. Why do you think that you see them so often? Think about the environmental conditions that they need to survive. "
             },
             {
@@ -395,19 +395,19 @@
               "categories": [
                 {
                   "name": "1.",
-                  "image": "assets/grade-three/chapter2/sorting/spider-plant.png"
+                  "image": "assets/grade3/chapter2/spider-plant.png"
                 },
                 {
                   "name": "2.",
-                  "image": "assets/grade-three/chapter2/sorting/gloxinia.png"
+                  "image": "assets/grade3/chapter2/gloxinia.png"
                 },
                 {
                   "name": "3.",
-                  "image": "assets/grade-three/chapter2/sorting/snake-plant.png"
+                  "image": "assets/grade3/chapter2/snake-plant.png"
                 },
                 {
                   "name": "4.",
-                  "image": "assets/grade-three/chapter2/sorting/jade.png"
+                  "image": "assets/grade3/chapter2/jade.png"
                 }
               ],
               "options": [
@@ -436,7 +436,7 @@
               "content": [
                 {
                   "text": "Start by finding three plants outside and take some pictures of them.",
-                  "image": "assets/grade-three/chapter2/mastery/plants-pot.png"
+                  "image": "assets/grade3/chapter2/plants-pot.png"
                 }
               ]
             }
@@ -445,7 +445,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. How do Plants Adapt to Living Conditions?",
-          "thumbnail": "assets/grade-three/lesson-icons/wilted.png",
+          "thumbnail": "assets/grade3/lesson-icons/wilted.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -460,7 +460,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-three/chapter2/imageboom/innovation.png",
+              "image": "assets/grade3/chapter2/Wateringpot.png",
               "prompt": "List a couple of things that plants need in order to survive. Are these the same things we need to survive? What happens if there’s too much of one resource? "
             },
             {
@@ -539,11 +539,11 @@
               "categories": [
                 {
                   "name": "Frost resistant that grow below 5 ° C",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Winterresistantplant.png"
                 },
                 {
                   "name": "Plants that cannot grow below 15 ° C",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Desertplant.png"
                 }
               ],
               "options": [
@@ -589,28 +589,28 @@
                 },
                 {
                   "name": "Hydrophytes",
-                  "image": "assets/grade-three/chapter2/memory/rain.png"
+                  "image": "assets/grade3/chapter2/rain.png"
                 },
                 {
                   "name": "Cryophytes"
                 },
                 {
                   "name": "Cryophytes",
-                  "image": "assets/grade-three/chapter2/memory/snowflake.png"
+                  "image": "assets/grade3/chapter2/snowflake.png"
                 },
                 {
                   "name": "Thermophiles"
                 },
                 {
                   "name": "Thermophiles",
-                  "image": "assets/grade-three/chapter2/memory/temperature.png"
+                  "image": "assets/grade3/chapter2/temperature.png"
                 },
                 {
                   "name": "Heliophytes"
                 },
                 {
                   "name": "Heliophytes",
-                  "image": "assets/grade-three/chapter2/memory/sunshine.png"
+                  "image": "assets/grade3/chapter2/sunshine.png"
                 }
               ]
             },
@@ -619,7 +619,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-three/chapter2/imageboom/innovation.png",
+              "image": "assets/grade3/chapter2/Humaninvention.png",
               "prompt": "Many plants have to adapt to survive in their environment. Sometimes humans cause environmental changes that occur too quickly for plants to adapt to. What are some human-made adaptations that help us, but hurt plants? "
             },
             {
@@ -629,7 +629,7 @@
               "content": [
                 {
                   "text": "Plants exist all over the world in many different conditions. Pick two countries on Earth and find plants native to the regions, respectively. Compare them to each other.",
-                  "image": "assets/grade-three/chapter2/mastery/find-plants.png"
+                  "image": "assets/grade3/chapter2/find-plants.png"
                 }
               ]
             }
@@ -638,7 +638,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Natural Plant Communities",
-          "thumbnail": "assets/grade-three/lesson-icons/jungle.png",
+          "thumbnail": "assets/grade3/lesson-icons/jungle.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -653,7 +653,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Countryside.png",
               "prompt": "Which community (natural or artificial) is more environmentally friendly? Are there benefits to one or the other? List two examples of each type of community that you see in your area. "
             },
             {
@@ -665,11 +665,11 @@
               "categories": [
                 {
                   "name": "Natural community",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Natural.png"
                 },
                 {
                   "name": "Artificial community",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Artifical.png"
                 }
               ],
               "options": [
@@ -786,7 +786,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. How Does a Person Influence the Life of Plants?",
-          "thumbnail": "assets/grade-three/lesson-icons/gardening.png",
+          "thumbnail": "assets/grade3/lesson-icons/gardening.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -801,7 +801,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Fertilizers.png",
               "prompt": "How does the use of chemicals, such as pesticides and fertilizers, affect the growth of plants in the long term? "
             },
             {
@@ -861,11 +861,11 @@
               "categories": [
                 {
                   "name": "Helpful to improving the air quality",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Helpfultoair.png"
                 },
                 {
                   "name": "Harmful to improving the air quality",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Hurtfultoair.png"
                 }
               ],
               "options": [
@@ -898,11 +898,11 @@
               "content": [
                 {
                   "text": "Humans are always interacting with their environment. They will directly and indirectly affect all plants and animals. We all have the ability to have a positive or negative impact on life.",
-                  "image": "assets/grade-three/chapter2/mastery/human-plant.png"
+                  "image": "assets/grade3/chapter2/human-plant.png"
                 },
                 {
                   "text": "There are many reasons to make sure our impact is as positive as possible. For example, plants are very important to protect the air from dust, as well as dirty and harmful gasses. Humans have to make sure they keep plants in the best and most environmentally-sensible conditions.",
-                  "image": "assets/grade-three/chapter2/mastery/care-nature.png"
+                  "image": "assets/grade3/chapter2/care-nature.png"
                 }
               ]
             },
@@ -917,7 +917,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. Red Book of Plants",
-          "thumbnail": "assets/grade-three/lesson-icons/red-book.png",
+          "thumbnail": "assets/grade3/lesson-icons/red-book.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -932,7 +932,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/RedBookofPlants.jpg",
               "prompt": "What would be some ways that we could reduce the number of plants listed in the Red Book? How is practicing good sustainable habits going to help reduce the endangered species? "
             },
             {
@@ -998,11 +998,11 @@
               "categories": [
                 {
                   "name": "In the Red Book of Plants",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/X.png"
                 },
                 {
                   "name": "Not in the Red Book of Plants",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Checkmark.png"
                 }
               ],
               "options": [
@@ -1059,7 +1059,7 @@
               "content": [
                 {
                   "text": "All the endangered plants are listed in the Red Book. If you look at the drawings in this chapter, these are some of the rare plants and endangered plants in Kazakhstan. Many countries keep their own list of endangered plants.",
-                  "image": "assets/grade-three/chapter2/mastery/agriculture-book.png"
+                  "image": "assets/grade3/chapter2/agriculture-book.png"
                 }
               ]
             }
@@ -1068,7 +1068,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Vertebrates and Invertebrates Animals",
-          "thumbnail": "assets/grade-three/lesson-icons/spine.png",
+          "thumbnail": "assets/grade3/lesson-icons/spine.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -1083,7 +1083,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Invertebrates.png",
               "prompt": "Name a couple animals that are vertebrates. Name a couple animals that are invertebrates. How are they similar? How are they different? "
             },
             {
@@ -1156,35 +1156,35 @@
                 },
                 {
                   "name": "Insect",
-                  "image": "assets/grade-three/chapter2/memory/beetle.png"
+                  "image": "assets/grade3/chapter2/beetle.png"
                 },
                 {
                   "name": "Arachnid"
                 },
                 {
                   "name": "Arachnid",
-                  "image": "assets/grade-three/chapter2/memory/spider.png"
+                  "image": "assets/grade3/chapter2/spider.png"
                 },
                 {
                   "name": "Crustacean"
                 },
                 {
                   "name": "Crustacean",
-                  "image": "assets/grade-three/chapter2/memory/crab.png"
+                  "image": "assets/grade3/chapter2/crab.png"
                 },
                 {
                   "name": "Mollusk"
                 },
                 {
                   "name": "Mollusk",
-                  "image": "assets/grade-three/chapter2/memory/snail.png"
+                  "image": "assets/grade3/chapter2/snail.png"
                 },
                 {
                   "name": "Echinoderms"
                 },
                 {
                   "name": "Echinoderms",
-                  "image": "assets/grade-three/chapter2/memory/starfish.png"
+                  "image": "assets/grade3/chapter2/starfish.png"
                 }
               ]
             },
@@ -1195,7 +1195,7 @@
               "content": [
                 {
                   "text": "Vertebrates and invertebrates are both types of animals. The difference is that vertebrates have a skeleton or a backbone, while invertebrates don’t. In the wild, these animals use their physical capabilities to survive.",
-                  "image": "assets/grade-three/chapter2/mastery/earthworm.png"
+                  "image": "assets/grade3/chapter2/Vertebrates.png"
                 }
               ]
             }
@@ -1204,7 +1204,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. Animal Habitat",
-          "thumbnail": "assets/grade-three/lesson-icons/habitat.png",
+          "thumbnail": "assets/grade3/lesson-icons/habitat.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -1219,7 +1219,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Habitat.png",
               "prompt": "A habitat is where an animal lives. What is your habitat? List some things that you have in your home that you use everyday, how many of these things do you throw away daily? "
             },
             {
@@ -1284,11 +1284,11 @@
               "categories": [
                 {
                   "name": "Aquatic",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Aquaticanimals.png"
                 },
                 {
                   "name": "Soil, Ground, & Air",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Landanimal.png"
                 }
               ],
               "options": [
@@ -1331,7 +1331,7 @@
               "content": [
                 {
                   "text": "Waste and trash can contaminate animal habitats and also harm animals directly. There are many ways humans can help with this problem and help keep them safe. One way is picking up trash and waste whenever we see it.",
-                  "image": "assets/grade-three/chapter2/mastery/ecosystem-circle.png"
+                  "image": "assets/grade3/chapter2/ecosystem-circle.png"
                 }
               ]
             }
@@ -1340,7 +1340,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. What Relationship Animals Exist in Nature",
-          "thumbnail": "assets/grade-three/lesson-icons/dog-cat.png",
+          "thumbnail": "assets/grade3/lesson-icons/dog-cat.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -1410,35 +1410,35 @@
                 },
                 {
                   "name": "Mutualism",
-                  "image": "assets/grade-three/chapter2/memory/beetle.png"
+                  "image": "assets/grade3/chapter2/beetle.png"
                 },
                 {
                   "name": "Parasitism"
                 },
                 {
                   "name": "Parasitism",
-                  "image": "assets/grade-three/chapter2/memory/spider.png"
+                  "image": "assets/grade3/chapter2/spider.png"
                 },
                 {
                   "name": "Predation"
                 },
                 {
                   "name": "Predation",
-                  "image": "assets/grade-three/chapter2/memory/crab.png"
+                  "image": "assets/grade3/chapter2/crab.png"
                 },
                 {
                   "name": "Neutralism"
                 },
                 {
                   "name": "Neutralism",
-                  "image": "assets/grade-three/chapter2/memory/snail.png"
+                  "image": "assets/grade3/chapter2/snail.png"
                 },
                 {
                   "name": "Competition"
                 },
                 {
                   "name": "Competition",
-                  "image": "assets/grade-three/chapter2/memory/beetle.png"
+                  "image": "assets/grade3/chapter2/beetle.png"
                 }
               ]
             },
@@ -1449,7 +1449,7 @@
               "content": [
                 {
                   "text": "Animals, like humans, have relationships with each other. Animals can have both beneficial and harmful relationships. Symbiotic relationships, such as when the birds feed on insects that live on a rhino and the rhino provides the birds with food, are important for the survival of both animals.",
-                  "image": "assets/grade-three/chapter2/memory/symbiosis.png"
+                  "image": "assets/grade3/chapter2/symbiosis.png"
                 }
               ]
             }
@@ -1458,7 +1458,7 @@
         {
           "navigation": "Lesson9",
           "title": "9. What is the Relationship Between Plants and Animals?",
-          "thumbnail": "assets/grade-three/lesson-icons/spring.png",
+          "thumbnail": "assets/grade3/lesson-icons/spring.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -1561,7 +1561,7 @@
         {
           "navigation": "Lesson10",
           "title": "10. How do Habitat Conditions Affect the Number of Animals?",
-          "thumbnail": "assets/grade-three/lesson-icons/desert.png",
+          "thumbnail": "assets/grade3/lesson-icons/desert.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -1631,7 +1631,7 @@
         {
           "navigation": "Lesson11",
           "title": "11. A Decrease in the Number of Animals",
-          "thumbnail": "assets/grade-three/lesson-icons/fishing.png",
+          "thumbnail": "assets/grade3/lesson-icons/fishing.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -1706,7 +1706,7 @@
         {
           "navigation": "Lesson12",
           "title": "12. I Am an Animal",
-          "thumbnail": "assets/grade-three/lesson-icons/magnifying-glass.png",
+          "thumbnail": "assets/grade3/lesson-icons/magnifying-glass.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -1776,7 +1776,7 @@
         {
           "navigation": "Lesson13",
           "title": "13. Journey of an Apple Through the Body",
-          "thumbnail": "assets/grade-three/lesson-icons/apple.png",
+          "thumbnail": "assets/grade3/lesson-icons/apple.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -1858,7 +1858,7 @@
         {
           "navigation": "Lesson14",
           "title": "14. How Do We Breathe?",
-          "thumbnail": "assets/grade-three/lesson-icons/breathing.png",
+          "thumbnail": "assets/grade3/lesson-icons/breathing.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -1938,7 +1938,7 @@
         {
           "navigation": "Lesson15",
           "title": "15. Human circulatory system",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade3/chapter2/Circulatorysystem.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -2008,7 +2008,7 @@
         {
           "navigation": "Lesson16",
           "title": "16. How to Be Healthy?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade3/chapter2/Healthy.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -2081,14 +2081,14 @@
       "navigation": "Chapter3",
       "title": "common:chapter3",
       "name": "gradethree:substances",
-      "icon": "assets/grade-three/chapter-icons/rock-garden.png",
+      "icon": "assets/grade3/chapter-icons/rock-garden.png",
       "colorOne": "orange",
       "colorTwo": "orangered",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. What Are The Substances?",
-          "thumbnail": "assets/grade-three/lesson-icons/snowflake.png",
+          "thumbnail": "assets/grade3/lesson-icons/snowflake.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -2172,7 +2172,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Composition of Air",
-          "thumbnail": "assets/grade-three/lesson-icons/air.png",
+          "thumbnail": "assets/grade3/lesson-icons/air.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -2252,7 +2252,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Air Properties",
-          "thumbnail": "assets/grade-three/lesson-icons/candle.png",
+          "thumbnail": "assets/grade3/lesson-icons/candle.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -2326,7 +2326,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. Where is the Water?",
-          "thumbnail": "assets/grade-three/lesson-icons/duck.png",
+          "thumbnail": "assets/grade3/lesson-icons/duck.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -2394,7 +2394,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. Natural Water Sources",
-          "thumbnail": "assets/grade-three/lesson-icons/water-source.png",
+          "thumbnail": "assets/grade3/lesson-icons/water-source.png",
           "backgroundColor": "#74D3DB",
           "content": [
             {
@@ -2505,7 +2505,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Careful Use of Human Drinking Water",
-          "thumbnail": "assets/grade-three/lesson-icons/water-bottle.png",
+          "thumbnail": "assets/grade3/lesson-icons/water-bottle.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -2585,7 +2585,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. Water Purification Methods",
-          "thumbnail": "assets/grade-three/lesson-icons/water-filter.png",
+          "thumbnail": "assets/grade3/lesson-icons/water-filter.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -2657,7 +2657,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. What is Soil?",
-          "thumbnail": "assets/grade-three/lesson-icons/soil.png",
+          "thumbnail": "assets/grade3/lesson-icons/soil.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -2739,7 +2739,7 @@
         {
           "navigation": "Lesson9",
           "title": "9. What is in Soil?",
-          "thumbnail": "assets/grade-three/lesson-icons/soil-composition.png",
+          "thumbnail": "assets/grade3/lesson-icons/soil-composition.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -2845,7 +2845,7 @@
         {
           "navigation": "Lesson10",
           "title": "10. Soil Properties",
-          "thumbnail": "assets/grade-three/lesson-icons/soil-types.png",
+          "thumbnail": "assets/grade3/lesson-icons/soil-types.png",
           "backgroundColor": "#74D3DB",
           "content": [
             {
@@ -2941,7 +2941,7 @@
         {
           "navigation": "Lesson11",
           "title": "11. What are Soils?",
-          "thumbnail": "assets/grade-three/lesson-icons/soil-properties.png",
+          "thumbnail": "assets/grade3/lesson-icons/soil-properties.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -3021,7 +3021,7 @@
         {
           "navigation": "Lesson12",
           "title": "12. How is our Planet?",
-          "thumbnail": "assets/grade-three/lesson-icons/earth.png",
+          "thumbnail": "assets/grade3/lesson-icons/earth.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -3114,7 +3114,7 @@
         {
           "navigation": "Lesson13",
           "title": "13. History of Space Exploration",
-          "thumbnail": "assets/grade-three/lesson-icons/astronaut.png",
+          "thumbnail": "assets/grade3/lesson-icons/astronaut.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -3202,7 +3202,7 @@
         {
           "navigation": "Lesson14",
           "title": "14. How Does the Earth Rotate?",
-          "thumbnail": "assets/grade-three/lesson-icons/earth-rotating.png",
+          "thumbnail": "assets/grade3/lesson-icons/earth-rotating.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -3274,15 +3274,15 @@
     {
       "navigation": "Chapter4",
       "title": "common:chapter4",
-      "name": "gradethree:physics",
-      "icon": "assets/grade-three/chapter-icons/rocket.png",
+      "name": "gradethree:physicsofnature",
+      "icon": "assets/grade3/chapter-icons/rocket.png",
       "colorOne": "midnightblue",
       "colorTwo": "mediumturquoise",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. Elastic Force",
-          "thumbnail": "assets/grade-three/lesson-icons/elastic-spring.png",
+          "thumbnail": "assets/grade3/lesson-icons/elastic-spring.png",
           "backgroundColor": "#E09079",
           "content": [
             {
@@ -3364,7 +3364,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Gravity",
-          "thumbnail": "assets/grade-three/lesson-icons/gravity.png",
+          "thumbnail": "assets/grade3/lesson-icons/gravity.png",
           "backgroundColor": "#E07D78",
           "content": [
             {
@@ -3446,7 +3446,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. The Force of Friction and its Manifestation",
-          "thumbnail": "assets/grade-three/lesson-icons/friction.png",
+          "thumbnail": "assets/grade3/lesson-icons/friction.png",
           "backgroundColor": "#DF79E0",
           "content": [
             {
@@ -3528,7 +3528,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. How to Determine the Direction of Forces?",
-          "thumbnail": "assets/grade-three/lesson-icons/direction.png",
+          "thumbnail": "assets/grade3/lesson-icons/direction.png",
           "backgroundColor": "#E0A279",
           "content": [
             {
@@ -3596,7 +3596,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. How Does the Shadow Appear?",
-          "thumbnail": "assets/grade-three/lesson-icons/shadow.png",
+          "thumbnail": "assets/grade3/lesson-icons/shadow.png",
           "backgroundColor": "#E079A5",
           "content": [
             {

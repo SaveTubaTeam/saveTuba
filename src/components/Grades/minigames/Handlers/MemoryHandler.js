@@ -149,7 +149,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
   }
 
   return (
-    <ImageBackground source={{ uri: imageMap["assets/beach.jpg"] }} 
+    <ImageBackground source={require("../../../../../assets/beach.jpg")} 
     style={styles.container} 
     imageStyle= {{ opacity: 0.7 }}
     >

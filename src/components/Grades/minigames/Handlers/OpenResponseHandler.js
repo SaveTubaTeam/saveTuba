@@ -183,7 +183,7 @@ const OpenResponseHandler = ({ objectData, imageMap }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBg
-        source={{uri: imageMap["assets/promptBackground.jpg"]}} //hardcoded background
+        source={require("../../../../../assets/promptBackground.jpg")} //hardcoded background
         resizeMode="cover"
         style={{
           flex: 1,

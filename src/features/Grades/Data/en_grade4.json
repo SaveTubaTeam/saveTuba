@@ -4,14 +4,14 @@
       "navigation": "Chapter1",
       "title": "common:chapter1",
       "name": "gradefour:plants",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Plants.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. Higher and Lower Plants",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/plants.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -26,7 +26,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Plants.png",
               "prompt": "Why is it important for there to be higher and lower plants in nature? "
             },
             {
@@ -40,7 +40,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Lower Plants",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/moss.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -55,7 +55,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Smallplants.png",
               "prompt": "If all lower plants ceased to exist, what would the impact of that be on the ecosystem? Type the top three reasons why lower plants are essential to their ecosystem. Then, put them in order, #1 being the most important reason. "
             },
             {
@@ -67,11 +67,11 @@
               "categories": [
                 {
                   "name": "North America",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/NorthAmerica.png"
                 },
                 {
                   "name": "Kazakhstan",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Kazakhstan.png"
                 }
               ],
               "options": [
@@ -108,7 +108,7 @@
               "content": [
                 {
                   "text": "Determine three functions that a lower plant can serve, which higher plants cannot. Why is this important? Additionally, research some lower plants that you could grow yourself and identify the effect this could have on the environment around you.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Plants.png"
                 }
               ]
             }
@@ -117,7 +117,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. How Do Plants Grow?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/seeds.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -132,7 +132,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Seedgermination.png",
               "prompt": "What conditions are needed for germination of a seed? How difficult are these  conditions to produce? "
             },
             {
@@ -188,7 +188,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. Why Does a Plant Need Flowers?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/flowers.png",
           "backgroundColor": "#DF6CEB",
           "content": [
             {
@@ -203,7 +203,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Flowers.png",
               "prompt": "Describe in a couple sentences what the interaction is between plants and flowers in nature. "
             },
             {
@@ -233,15 +233,15 @@
               "categories": [
                 {
                   "name": "Sepals",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Sepals.png"
                 },
                 {
                   "name": "Corolla Petals",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Corollapetals.png"
                 },
                 {
                   "name": "Pistil",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Pistil.png"
                 }
               ],
               "options": [
@@ -270,7 +270,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. How Are Seeds Formed?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/seedbag.png",
           "backgroundColor": "#6C75EB",
           "content": [
             {
@@ -285,7 +285,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Seeds.png",
               "prompt": "Provide a definition of a seed. What is its purpose in creating life? "
             },
             {
@@ -314,7 +314,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Bees.png",
               "prompt": "What do you think would happen if there were less pollinators, such as bees? "
             },
             {
@@ -328,7 +328,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. How Do Plants Develop?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/plantdevelopment.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -343,7 +343,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Processes.png",
               "prompt": "What happens during the germination of a plant? Describe the process that occurs. "
             },
             {
@@ -353,7 +353,7 @@
               "content": [
                 {
                   "text": "Think about the plant you planted earlier.  Think about or research other plants that you could plant that could provide a clear purpose. Purposes could be that they provide food, habitats for animals, provide resources for pollinators and more.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Plants.png"
                 }
               ]
             }
@@ -362,7 +362,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. How Are Seeds Distributed?",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/wind.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -377,7 +377,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/Wildplants.png",
               "prompt": "Describe one way in which new, wild plants emerge. "
             },
             {
@@ -389,15 +389,15 @@
               "categories": [
                 {
                   "name": "Wind",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Seedsinthewind.png"
                 },
                 {
                   "name": "Spikes",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Spikyseeds.png"
                 },
                 {
                   "name": "Bursting",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Burstingseeds.png"
                 }
               ],
               "options": [
@@ -430,19 +430,19 @@
               "content": [
                 {
                   "text": "Find an area nearby that has greenery and plants. Observe the area, how do you think the plants got there? Find an area that you think that could use more plants. Take a picture of that area and develop a plan for how you would improve it using the following questions as a guide.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/City.png"
                 },
                 {
                   "text": "What would you plant here?",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Planting.png"
                 },
                 {
                   "text": "How would adding plants here help?",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Farming.png"
                 },
                 {
                   "text": "Who would maintain it? Would it need maintenance?",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Gardener.png"
                 }
               ]
             }
@@ -451,7 +451,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. How to protect plants from extinction",
-          "thumbnail": "assets/cotton.png",
+          "thumbnail": "assets/grade4/lesson-icons/protectplants.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -466,7 +466,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter1/wasteland.png",
               "prompt": "What do you think would happen in 1 year, 10 years, and 100 years if plants ceased to exist? "
             },
             {
@@ -486,11 +486,11 @@
               "categories": [
                 {
                   "name": "At risk for extinction",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Extinct.png"
                 },
                 {
                   "name": "Not at risk for extinction",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter1/Endangered.png"
                 }
               ],
               "options": [
@@ -526,7 +526,7 @@
       "navigation": "Chapter2",
       "title": "common:chapter2",
       "name": "gradefour:animals",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Animals.png",
       "colorOne": "indigo",
       "colorTwo": "mediumpurple",
       "lessons": [
@@ -548,7 +548,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Symbiosis.png",
               "prompt": "Why is the process of symbiosis important in the animal, marine life, and insect ecosystem? "
             },
             {
@@ -556,7 +556,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Mutualisticanimals.png",
               "prompt": "An example of a mutualistic relationship is between an anemone and a clownfish. Anemones are incredibly vulnerable to environmental changes due to climate change. These changes cause bleaching of the anemones. Their internal food supply is lost and these conditions can lead to their death. Hypothesize what you think would happen to the clownfish if there was loss of a lot of anemone due to bleaching. If you’re not sure, conduct some outside research. "
             },
             {
@@ -566,11 +566,11 @@
               "content": [
                 {
                   "text": "While animals have many complex relationships with one another, they also have relationships with humans. Realistically, a lot of our relationships with wild animals are in the form of food. Did you know that the food you consume can contribute to your carbon footprint? Your carbon footprint is the amount of carbon dioxide released into the atmosphere as a result of your actions.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Carbonfootprint.png"
                 },
                 {
                   "text": "The food you eat matters! Let’s calculate an estimate of your carbon footprint due to food consumption for a few common foods. Estimate how many servings you have of each of the above foods in one year.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Foodserving.png"
                 }
               ]
             }
@@ -594,7 +594,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Insectdevelopment.png",
               "prompt": "Describe the insect development process from birth to maturity. Identify each stage and expand on each. "
             },
             {
@@ -625,7 +625,7 @@
               "content": [
                 {
                   "text": "Insects can help the environment in many different ways and are very important to it. There are three main categories of insects that can be used to help the environment. These are pollinators, predators, and parasitizers.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Insectsintheenvironment.png"
                 }
               ]
             }
@@ -649,7 +649,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Foodsources.png",
               "prompt": "Describe the different categories of animals based on the foods they eat. Why is it important that different animals have different sources of food? "
             },
             {
@@ -661,11 +661,11 @@
               "categories": [
                 {
                   "name": "Carnivore’s diet",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Carnivorediet.png"
                 },
                 {
                   "name": "Herbivore’s diet",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Herbivorediet.png"
                 }
               ],
               "options": [
@@ -694,7 +694,7 @@
               "content": [
                 {
                   "text": "We can identify and research the diets of our favorite animals, but humans as a species are different from animals as many of us have very different diets from each other. Some people eat meat, some are vegetarians, pescatarians, or vegans. There are studies that show that meat consumption contributes to a large amount of greenhouse gas emissions. Do your own research on this topic.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Greenhousegas.png"
                 }
               ]
             }
@@ -718,7 +718,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Plantsourcesofenergy.png",
               "prompt": "Identify the various sources of energy for animals and the sources of energy for plants and describe each source. "
             },
             {
@@ -749,7 +749,7 @@
               "content": [
                 {
                   "text": "As humans, it is really important that we get enough energy from the food that we eat. Think back to the last lesson where you researched meat versus plant based diets. Pick either a vegetarian, pescatarian, or vegan diet to look into more closely. You may have to do some more research to identify what exactly each diet means. After doing some research, make a meal plan for one day that fits the diet you chose. Make a plan for what you would eat for breakfast, lunch and dinner.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Diet.png"
                 }
               ]
             }
@@ -773,7 +773,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Foodchain.png",
               "prompt": "Describe what a food chain is and how the structure of the food chain in any given ecosystem looks. "
             },
             {
@@ -807,7 +807,7 @@
               "content": [
                 {
                   "text": "The food chains of animals show us a clear delineation of how they get their food. The chain from which we get our food as humans can get a little more complicated, and may even be a mystery to many.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Animals.png"
                 }
               ]
             }
@@ -831,7 +831,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Kazakhgazelle.png",
               "prompt": "What animal is native to your area or an area near you? How are the population levels of this animal? "
             },
             {
@@ -839,7 +839,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Environment.png",
               "prompt": "Animals adapt to their environment and have specific features due to the area they are native to. Pick an animal and do some research on their environment. What features and adaptations do they have that are necessary for this environment? "
             },
             {
@@ -927,7 +927,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Endangered.png",
               "prompt": "Do you think many people know what animals are endangered? How could you increase awareness of this issue? "
             },
             {
@@ -939,15 +939,15 @@
               "categories": [
                 {
                   "name": "Safe",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Safe.png"
                 },
                 {
                   "name": "Endangered",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Endangered.png"
                 },
                 {
                   "name": "Extinct",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Extinction.png"
                 }
               ],
               "options": [
@@ -992,7 +992,7 @@
               "content": [
                 {
                   "text": "Compile a list of the top ten most endangered animals native to the country. Without researching, write one sentence next to each animal talking about why you think each animal is endangered.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade4/chapter2/Endangeredanimalinkazakhstan.png"
                 }
               ]
             }
@@ -1016,7 +1016,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade4/chapter2/Risktoanimals.png",
               "prompt": "Describe the largest risks animals face in the world. Propose how those dangers could be addressed. "
             },
             {
@@ -1033,7 +1033,7 @@
       "navigation": "Chapter3",
       "title": "common:chapter3",
       "name": "gradefour:human",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Humans.png",
       "colorOne": "orange",
       "colorTwo": "orangered",
       "lessons": [
@@ -1258,7 +1258,7 @@
       "navigation": "Chapter4",
       "title": "common:chapter4",
       "name": "gradefour:airwater",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/airandwater.png",
       "colorOne": "midnightblue",
       "colorTwo": "mediumturquoise",
       "lessons": [
@@ -2175,7 +2175,7 @@
       "navigation": "Chapter5",
       "title": "common:chapter5",
       "name": "gradefour:physics",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Physics.png",
       "colorOne": "lightpink",
       "colorTwo": "mediumvioletred",
       "lessons": [
@@ -2789,7 +2789,7 @@
       "navigation": "Chapter6",
       "title": "common:chapter6",
       "name": "gradefour:naturalresources",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Naturalresources.png",
       "colorOne": "darkorange",
       "colorTwo": "goldenrod",
       "lessons": [
@@ -3576,7 +3576,7 @@
       "navigation": "Chapter7",
       "title": "common:chapter7",
       "name": "gradefour:cosmos",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Cosmos.png",
       "colorOne": "darkolivegreen",
       "colorTwo": "darkgreen",
       "lessons": [
@@ -4124,7 +4124,7 @@
       "navigation": "Chapter8",
       "title": "common:chapter8",
       "name": "gradefour:forces",
-      "icon": "assets/cotton.png",
+      "icon": "assets/grade4/chapter-icons/Forces.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
       "lessons": [

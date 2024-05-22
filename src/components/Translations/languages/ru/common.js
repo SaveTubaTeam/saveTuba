@@ -17,18 +17,16 @@ export default {
   chapter15: "Раздел 15",
 
   /* Minigame names */
-  memory: "Объем памяти",
-  sorting: "Сортировка",
+  memory: "Проверка знаний",
+  sorting: "Группировка",
   quiz: "Викторина",
-  imageboom: "Изображение Бум",
-  imageboom2: "Изображение Бум 2",
-  snapshot: "Фото",
-  snapshot2: "Фото 2",
-  reorder: "Изменение порядка",
+  imageboom: "Открытый ответ",
+  imageboom2: "Открытый ответ 2",
+  snapshot: "Сделай снимок",
+  snapshot2: "Сделай снимок 2",
+  reorder: "Расстановка по порядку",
   mastery: "Мастерство",
   mastery2: "Мастерство 2",
- /*  drawing: "Рисование",
-  flashcards: "Карточкалар", */
 
   PLACEHOLDER: "Missing Translation",
 
@@ -42,26 +40,26 @@ export default {
   help: "Помощь",
   about: "О нас",
 
-  start: "Начинать",
+  start: "Начать",
   back: "Назад",
   submit: "Отправить",
   enteryouranswer: "Введите ответ...",
   pickanimage: "Выберите картинку",
   restart: "Начать заново",
 
-  login: "Авторизоваться",
+  login: "Войти",
   signup: "Зарегистрироваться",
   makeanewaccount: "Создайте новый аккаунт",
-  teachersignup: "Учитель Зарегистрироваться",
+  teachersignup: "Вход для учителя",
   signout: "Выйти",
-  continueasguest: "Missing Translation",
-  forgotpassword: "Missing Translation",
+  continueasguest: "Продолжить как гость",
+  forgotpassword: "Забыли пароль?",
 
   email: "Эл. адрес",
   password: "Пароль",
   username: "Имя пользователя",
-  firstname: "Первый Имя",
-  lastname: "Прошлой Имя",
+  firstname: "Имя",
+  lastname: "Фамилия",
   classcode: "Код класса",
 
   levels: "Классы",
@@ -71,7 +69,7 @@ export default {
 
   friends: "Друзья",
   badges: "Значки",
-  home: "Дом",
+  home: "Главная",
   profile: "Профиль",
   settings: "Настройки",
 };

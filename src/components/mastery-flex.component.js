@@ -43,7 +43,7 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
                 >
                     <ImageBg
                     style={{ borderRadius: 20 }}
-                    source={{ uri: imageMap['assets/mastery.png'] }}
+                    source={require("../../assets/mastery.png")}
                     >
                         <TitleText weight="bold" size="h5" color="quaternary">
                             {t(mastery.title)}

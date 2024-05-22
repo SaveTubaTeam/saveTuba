@@ -167,7 +167,7 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={{ uri: imageMap["assets/nat.jpg"] }}>
+      <ImageBg source={require("../../../../../assets/nat.jpg")}>
         <Container>
           <Question>
             <TitleText size="title">{data.content[count].prompt}</TitleText>

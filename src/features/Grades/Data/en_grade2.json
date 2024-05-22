@@ -4,14 +4,14 @@
       "navigation": "Chapter1",
       "title": "common:chapter1",
       "name": "gradetwo:iamanexplorer",
-      "icon": "assets/grade-two/chapter-icons/location.png",
+      "icon": "assets/grade2/chapter-icons/location.png",
       "colorOne": "indianred",
       "colorTwo": "firebrick",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. Finding Things in the World",
-          "thumbnail": "assets/grade-two/lesson-icons/globe.png",
+          "thumbnail": "assets/grade2/lesson-icons/globe.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -26,42 +26,42 @@
                 },
                 {
                   "name": "Observation",
-                  "image": "assets/grade-two/chapter1/memory/laboratory.png"
+                  "image": "assets/grade2/chapter1/laboratory.png"
                 },
                 {
                   "name": "Other people"
                 },
                 {
                   "name": "Other people",
-                  "image": "assets/grade-two/chapter1/memory/people.png"
+                  "image": "assets/grade2/chapter1/people.png"
                 },
                 {
                   "name": "Internet"
                 },
                 {
                   "name": "Internet",
-                  "image": "assets/grade-two/chapter1/memory/world-grid.png"
+                  "image": "assets/grade2/chapter1/world-grid.png"
                 },
                 {
                   "name": "Books"
                 },
                 {
                   "name": "Books",
-                  "image": "assets/grade-two/chapter1/memory/book.png"
+                  "image": "assets/grade2/chapter1/book.png"
                 },
                 {
                   "name": "Experiments"
                 },
                 {
                   "name": "Experiments",
-                  "image": "assets/grade-two/chapter1/memory/experiment.png"
+                  "image": "assets/grade2/chapter1/experiment.png"
                 },
                 {
                   "name": "Yourself"
                 },
                 {
                   "name": "Yourself",
-                  "image": "assets/grade-two/chapter1/memory/girl.png"
+                  "image": "assets/grade2/chapter1/girl.png"
                 }
               ]
             },
@@ -74,19 +74,19 @@
               "categories": [
                 {
                   "name": "1.",
-                  "image": "assets/grade-two/chapter1/sorting/microscope.png"
+                  "image": "assets/grade2/chapter1/microscope.png"
                 },
                 {
                   "name": "2.",
-                  "image": "assets/grade-two/chapter1/sorting/optical.png"
+                  "image": "assets/grade2/chapter1/optical.png"
                 },
                 {
                   "name": "3.",
-                  "image": "assets/grade-two/chapter1/sorting/beaker.png"
+                  "image": "assets/grade2/chapter1/beaker.png"
                 },
                 {
                   "name": "4.",
-                  "image": "assets/grade-two/chapter1/sorting/ruler.png"
+                  "image": "assets/grade2/chapter1/ruler.png"
                 }
               ],
               "options": [
@@ -113,7 +113,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter1/imageboom/innovation.png",
+              "image": "assets/grade2/chapter1/innovation.png",
               "prompt": "Find out about a sustainable invention. Which scientist contributed the most to its development? Write a short response about why this invention is important. "
             },
             {
@@ -130,7 +130,7 @@
               "content": [
                 {
                   "text": "Pick a country from the globe.",
-                  "image": "assets/grade-two/chapter1/mastery/earth-globe.png"
+                  "image": "assets/grade2/chapter1/earth-globe.png"
                 }
               ]
             }
@@ -139,7 +139,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Why Does the Dandelion Look Like a Parachute?",
-          "thumbnail": "assets/grade-two/lesson-icons/dandelion.png",
+          "thumbnail": "assets/grade2/lesson-icons/dandelion.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -147,7 +147,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter1/imageboom/observing.png",
+              "image": "assets/grade2/chapter1/observing.png",
               "prompt": "Pick an object around you. Complete the sentence: Observing (your object), I found out that … "
             },
             {
@@ -247,7 +247,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. What is An Experiment?",
-          "thumbnail": "assets/grade-two/lesson-icons/experiment.png",
+          "thumbnail": "assets/grade2/lesson-icons/experiment.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -255,7 +255,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter1/imageboom/scientist.png",
+              "image": "assets/grade2/chapter1/scientist.png",
               "prompt": "Design an experiment connected to analyzing something in nature. Write down the plan for conducting it. "
             },
             {
@@ -350,7 +350,7 @@
               "content": [
                 {
                   "text": "Pick a flower and leave it in water. Now, put something in the water such as food coloring.",
-                  "image": "assets/grade-two/chapter1/mastery/colorant.png"
+                  "image": "assets/grade2/chapter1/colorant.png"
                 }
               ]
             }
@@ -362,14 +362,14 @@
       "navigation": "Chapter2",
       "title": "common:chapter2",
       "name": "gradetwo:wildlife",
-      "icon": "assets/grade-two/chapter-icons/butterfly.png",
+      "icon": "assets/grade2/chapter-icons/butterfly.png",
       "colorOne": "indigo",
       "colorTwo": "mediumpurple",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. What Are the Secrets of Plants?",
-          "thumbnail": "assets/grade-two/lesson-icons/plant-hand.png",
+          "thumbnail": "assets/grade2/lesson-icons/plant-hand.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -388,11 +388,11 @@
               "categories": [
                 {
                   "name": "Roots",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Root.png"
                 },
                 {
                   "name": "Leaves",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/leaves.png"
                 }
               ],
               "options": [
@@ -419,7 +419,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/deforestation.png",
+              "image": "assets/grade2/chapter2/deforestation.png",
               "prompt": "How does deforestation affect the surrounding ecosystem? "
             },
             {
@@ -434,42 +434,42 @@
                 },
                 {
                   "name": "Flower",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Flowers.png"
                 },
                 {
                   "name": "Leaf"
                 },
                 {
                   "name": "Leaf",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Leaf.png"
                 },
                 {
                   "name": "Fruit"
                 },
                 {
                   "name": "Fruit",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Fruit.png"
                 },
                 {
                   "name": "Stem"
                 },
                 {
                   "name": "Stem",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Stem.speg"
                 },
                 {
                   "name": "Root"
                 },
                 {
                   "name": "Root",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Root.png"
                 },
                 {
                   "name": "Plant"
                 },
                 {
                   "name": "Plant",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Plant.png"
                 }
               ]
             },
@@ -480,7 +480,7 @@
               "content": [
                 {
                   "text": "Find a plant in the real world. Take a picture of the plant.",
-                  "image": "assets/grade-two/chapter2/mastery/sprout.png"
+                  "image": "assets/grade2/chapter2/sprout.png"
                 }
               ]
             }
@@ -489,7 +489,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. How Do Plants Live?",
-          "thumbnail": "assets/grade-two/lesson-icons/plant-water.png",
+          "thumbnail": "assets/grade2/lesson-icons/plant-water.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -497,7 +497,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/desert.png",
+              "image": "assets/grade2/chapter2/desert.png",
               "prompt": "How does this plant (cactus) survive in a place without water? "
             },
             {
@@ -512,56 +512,56 @@
                 },
                 {
                   "name": "Polar",
-                  "image": "assets/grade-two/chapter2/memory/polar.png"
+                  "image": "assets/grade2/chapter2/polar.png"
                 },
                 {
                   "name": "Tundra"
                 },
                 {
                   "name": "Tundra",
-                  "image": "assets/grade-two/chapter2/memory/tundra.png"
+                  "image": "assets/grade2/chapter2/tundra.png"
                 },
                 {
                   "name": "Evergreen Forests"
                 },
                 {
                   "name": "Evergreen Forests",
-                  "image": "assets/grade-two/chapter2/memory/evergreen.png"
+                  "image": "assets/grade2/chapter2/evergreen.png"
                 },
                 {
                   "name": "Seasonal Forests"
                 },
                 {
                   "name": "Seasonal Forests",
-                  "image": "assets/grade-two/chapter2/memory/seasonal.png"
+                  "image": "assets/grade2/chapter2/seasonal.png"
                 },
                 {
                   "name": "Grasslands"
                 },
                 {
                   "name": "Grasslands",
-                  "image": "assets/grade-two/chapter2/memory/grasslands.png"
+                  "image": "assets/grade2/chapter2/grasslands.png"
                 },
                 {
                   "name": "Deserts"
                 },
                 {
                   "name": "Deserts",
-                  "image": "assets/grade-two/chapter2/memory/deserts.png"
+                  "image": "assets/grade2/chapter2/deserts.png"
                 },
                 {
                   "name": "Rainforests"
                 },
                 {
                   "name": "Rainforests",
-                  "image": "assets/grade-two/chapter2/memory/rainforests.png"
+                  "image": "assets/grade2/chapter2/rainforests.png"
                 },
                 {
                   "name": "Oceans"
                 },
                 {
                   "name": "Oceans",
-                  "image": "assets/grade-two/chapter2/memory/oceans.png"
+                  "image": "assets/grade2/chapter2/oceans.png"
                 }
               ]
             },
@@ -579,7 +579,7 @@
               "content": [
                 {
                   "text": "Find two plants in different habitats. Take pictures of the plants.",
-                  "image": "assets/grade-two/chapter2/mastery/habitat.png"
+                  "image": "assets/grade2/chapter2/habitat.png"
                 }
               ]
             }
@@ -588,7 +588,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Who Hatched From the Egg?",
-          "thumbnail": "assets/grade-two/lesson-icons/dino.png",
+          "thumbnail": "assets/grade2/lesson-icons/dino.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -647,11 +647,11 @@
               "categories": [
                 {
                   "name": "Mammals",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/mammal.png"
                 },
                 {
                   "name": "Amphibians",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Amphibian.png"
                 }
               ],
               "options": [
@@ -703,7 +703,7 @@
               "content": [
                 {
                   "text": "Many animals hatch from eggs. The egg shells are of no use after the animals are hatched. Or are they?",
-                  "image": "assets/grade-two/chapter2/mastery/chick.png"
+                  "image": "assets/grade2/chapter2/chick.png"
                 }
               ]
             }
@@ -712,7 +712,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. Who Plays Hide and Seek?",
-          "thumbnail": "assets/grade-two/lesson-icons/chameleon.png",
+          "thumbnail": "assets/grade2/lesson-icons/chameleon.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -776,7 +776,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/rabbit.png",
+              "image": "assets/grade2/chapter2/rabbit.png",
               "prompt": "Can you name three underground animals? Explain how these animals have adapted to their surroundings and why their current environment is best. "
             },
             {
@@ -788,11 +788,11 @@
               "categories": [
                 {
                   "name": "Reptiles",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Reptile.png"
                 },
                 {
                   "name": "Bird",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Bird.png"
                 }
               ],
               "options": [
@@ -837,7 +837,7 @@
               "content": [
                 {
                   "text": "Animals can live above ground, underground, in water, on the sand, etc. Animals adapt to these different conditions in their environment through physical and mental adaptations.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/animaladaptations.jpeg"
                 }
               ]
             }
@@ -846,7 +846,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. How Are Animals Protected?",
-          "thumbnail": "assets/grade-two/lesson-icons/birdfeeder.png",
+          "thumbnail": "assets/grade2/lesson-icons/birdfeeder.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -854,7 +854,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/croc.png",
+              "image": "assets/grade2/chapter2/croc.png",
               "prompt": "How do crocodiles prepare for the summer? Specifically, when there is drought? "
             },
             {
@@ -948,7 +948,7 @@
               "content": [
                 {
                   "text": "Animals are all part of a food chain. There are predators and there are prey. However, sometimes humans enter and disrupt the food chain. They poach and hunt animals.",
-                  "image": "assets/grade-two/chapter2/mastery/predator.png"
+                  "image": "assets/grade2/chapter2/predator.png"
                 }
               ]
             }
@@ -957,7 +957,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Why Are We Standing?",
-          "thumbnail": "assets/grade-two/lesson-icons/skeleton.png",
+          "thumbnail": "assets/grade2/lesson-icons/skeleton.png",
           "backgroundColor": "#DB8C5C",
           "content": [
             {
@@ -965,7 +965,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/anatomy.png",
+              "image": "assets/grade2/chapter2/anatomy.png",
               "prompt": "List many of the functions of the human skeleton "
             },
             {
@@ -1007,42 +1007,42 @@
                 },
                 {
                   "name": "Ribs",
-                  "image": "assets/grade-two/chapter2/memory/skeleton.png"
+                  "image": "assets/grade2/chapter2/skeleton.png"
                 },
                 {
                   "name": "Pelvic bone"
                 },
                 {
                   "name": "Pelvic bone",
-                  "image": "assets/grade-two/chapter2/memory/pelvis.png"
+                  "image": "assets/grade2/chapter2/pelvis.png"
                 },
                 {
                   "name": "Skull"
                 },
                 {
                   "name": "Skull",
-                  "image": "assets/grade-two/chapter2/memory/skull.png"
+                  "image": "assets/grade2/chapter2/skull.png"
                 },
                 {
                   "name": "Upper"
                 },
                 {
                   "name": "Upper",
-                  "image": "assets/grade-two/chapter2/memory/human-back.png"
+                  "image": "assets/grade2/chapter2/human-back.png"
                 },
                 {
                   "name": "Spine"
                 },
                 {
                   "name": "Spine",
-                  "image": "assets/grade-two/chapter2/memory/spinal-column.png"
+                  "image": "assets/grade2/chapter2/spinal-column.png"
                 },
                 {
                   "name": "Lower limbs"
                 },
                 {
                   "name": "Lower limbs",
-                  "image": "assets/grade-two/chapter2/memory/running.png"
+                  "image": "assets/grade2/chapter2/running.png"
                 }
               ]
             },
@@ -1053,7 +1053,7 @@
               "content": [
                 {
                   "text": "The human skeleton provides support from our body. Go outside and find an animal to do research on.",
-                  "image": "assets/grade-two/chapter2/mastery/x-ray.png"
+                  "image": "assets/grade2/chapter2/x-ray.png"
                 }
               ]
             }
@@ -1062,7 +1062,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. How Do We Smile?",
-          "thumbnail": "assets/grade-two/lesson-icons/sunshine.png",
+          "thumbnail": "assets/grade2/lesson-icons/sunshine.png",
           "backgroundColor": "#DB755B",
           "content": [
             {
@@ -1070,7 +1070,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/strong.png",
+              "image": "assets/grade2/chapter2/strong.png",
               "prompt": "List many of the functions of our muscles "
             },
             {
@@ -1136,7 +1136,7 @@
               "content": [
                 {
                   "text": "Smiling makes us happy. Give a present to a loved one to make them smile. But this shouldn’t be any present. Make sure the present you give them is an invention that they can use in many scenarios.",
-                  "image": "assets/grade-two/chapter2/mastery/apple.png"
+                  "image": "assets/grade2/chapter2/apple.png"
                 }
               ]
             }
@@ -1145,7 +1145,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. A Heavy Backpack",
-          "thumbnail": "assets/grade-two/lesson-icons/backpack.png",
+          "thumbnail": "assets/grade2/lesson-icons/backpack.png",
           "backgroundColor": "#DB5C9E",
           "content": [
             {
@@ -1153,7 +1153,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/posture.png",
+              "image": "assets/grade2/chapter2/posture.png",
               "prompt": "Do you have perfect posture? If yes, tell me the reasons you do. If not, what should you do to improve your posture? "
             },
             {
@@ -1211,11 +1211,11 @@
               "categories": [
                 {
                   "name": "Good posture",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/goodposture.png"
                 },
                 {
                   "name": "Bad posture",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Badposture.png"
                 }
               ],
               "options": [
@@ -1264,7 +1264,7 @@
         {
           "navigation": "Lesson9",
           "title": "9. What Are Bacteria Afraid Of?",
-          "thumbnail": "assets/grade-two/lesson-icons/microbes.png",
+          "thumbnail": "assets/grade2/lesson-icons/microbes.png",
           "backgroundColor": "#DBA25C",
           "content": [
             {
@@ -1272,7 +1272,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter2/imageboom/clean.png",
+              "image": "assets/grade2/chapter2/clean.png",
               "prompt": "What are some unique ways or methods you stay clean? Explain them. If you don’t have any, research some and explain. "
             },
             {
@@ -1337,11 +1337,11 @@
               "categories": [
                 {
                   "name": "Cleanliness",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/cleanliness.png"
                 },
                 {
                   "name": "Uncleanliness",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Uncleanliness.png"
                 }
               ],
               "options": [
@@ -1386,7 +1386,7 @@
         {
           "navigation": "Lesson10",
           "title": "10. Why Do My Teeth Hurt?",
-          "thumbnail": "assets/grade-two/lesson-icons/toothache.png",
+          "thumbnail": "assets/grade2/lesson-icons/toothache.png",
           "backgroundColor": "#DB5F5C",
           "content": [
             {
@@ -1394,7 +1394,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade2/chapter2/Teeth.png",
               "prompt": "Many animals have teeth, some small, some sharp, some large, some dull, but they all serve a purpose. However, teeth can serve more than one purpose and animal teeth can be used for many different functions. List some sustainable functions that (animal/human) teeth can be used for other than eating. "
             },
             {
@@ -1413,11 +1413,11 @@
               "categories": [
                 {
                   "name": "Helpful",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Helpful.png"
                 },
                 {
                   "name": "Harmful",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter2/Harmful.png"
                 }
               ],
               "options": [
@@ -1489,7 +1489,7 @@
               "content": [
                 {
                   "text": "Humans have many teeth but only one set of teeth. Good oral hygiene then is very important and you should properly care for your teeth every day and night.",
-                  "image": "assets/grade-two/chapter2/mastery/drink-water.png"
+                  "image": "assets/grade2/chapter2/drink-water.png"
                 }
               ]
             }
@@ -1501,14 +1501,14 @@
       "navigation": "Chapter3",
       "title": "common:chapter3",
       "name": "gradetwo:substances",
-      "icon": "assets/grade-two/chapter-icons/chemistry.png",
+      "icon": "assets/grade2/chapter-icons/chemistry.png",
       "colorOne": "orange",
       "colorTwo": "orangered",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. What Are the Properties of Air?",
-          "thumbnail": "assets/grade-two/lesson-icons/air.png",
+          "thumbnail": "assets/grade2/lesson-icons/air.png",
           "backgroundColor": "#7492DB",
           "content": [
             {
@@ -1589,7 +1589,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter3/imageboom/winter.png",
+              "image": "assets/grade2/chapter3/winter.png",
               "prompt": "Why don’t animals get cold in winter? "
             },
             {
@@ -1608,11 +1608,11 @@
               "categories": [
                 {
                   "name": "Natural",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Natural.png"
                 },
                 {
                   "name": "Human",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Human.png"
                 }
               ],
               "options": [
@@ -1653,7 +1653,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Where to Build a Factory?",
-          "thumbnail": "assets/grade-two/lesson-icons/factory.png",
+          "thumbnail": "assets/grade2/lesson-icons/factory.png",
           "backgroundColor": "#74B1DB",
           "content": [
             {
@@ -1716,7 +1716,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter3/imageboom/smog.png",
+              "image": "assets/grade2/chapter3/smog.png",
               "prompt": "Make a plan of how you will avoid polluting the air "
             },
             {
@@ -1735,15 +1735,15 @@
               "categories": [
                 {
                   "name": "Reuse",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Reuse.png"
                 },
                 {
                   "name": "Recycle",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Recycle.png"
                 },
                 {
                   "name": "Reduce",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Reduce.png"
                 }
               ],
               "options": [
@@ -1796,7 +1796,7 @@
               "content": [
                 {
                   "text": "Find a factory or a place similar to a factory near your home. Do your best to research the ecosystem present there before the factory and after the factory.",
-                  "image": "assets/grade-two/chapter3/mastery/factory.png"
+                  "image": "assets/grade2/chapter3/factory.png"
                 }
               ]
             }
@@ -1805,7 +1805,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. What Do We Know About Water?",
-          "thumbnail": "assets/grade-two/lesson-icons/water.png",
+          "thumbnail": "assets/grade2/lesson-icons/water.png",
           "backgroundColor": "#74DBC2",
           "content": [
             {
@@ -1936,7 +1936,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter3/imageboom/water-pollution.jpg",
+              "image": "assets/grade2/chapter3/water-pollution.jpg",
               "prompt": "Describe the picture. What do you think should be changed? "
             },
             {
@@ -1981,7 +1981,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. What Does a Person Need?",
-          "thumbnail": "assets/grade-two/lesson-icons/sun.png",
+          "thumbnail": "assets/grade2/lesson-icons/sun.png",
           "backgroundColor": "#7874DB",
           "content": [
             {
@@ -1993,11 +1993,11 @@
               "categories": [
                 {
                   "name": "Natural Resources",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Naturalresources.png"
                 },
                 {
                   "name": "Human Resources",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter3/Humanresources.png"
                 }
               ],
               "options": [
@@ -2040,7 +2040,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter3/imageboom/innovation.png",
+              "image": "assets/grade2/chapter3/Ore.png",
               "prompt": "How do people use natural resources to create energy? Name one good (sustainable) way the energy is created and one bad (unsustainable) way? "
             },
             {
@@ -2105,7 +2105,7 @@
               "content": [
                 {
                   "text": "There are many natural resources present on Earth but man has mismanaged many of them. Nature is our friend and we must protect her.",
-                  "image": "assets/grade-two/chapter3/mastery/ecology.png"
+                  "image": "assets/grade2/chapter3/ecology.png"
                 }
               ]
             }
@@ -2117,14 +2117,14 @@
       "navigation": "Chapter4",
       "title": "common:chapter4",
       "name": "gradetwo:cosmos",
-      "icon": "assets/grade-two/chapter-icons/planet.png",
+      "icon": "assets/grade2/chapter-icons/planet.png",
       "colorOne": "midnightblue",
       "colorTwo": "mediumturquoise",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. The Sun and its Influence on Earth",
-          "thumbnail": "assets/grade-two/lesson-icons/sunflower.png",
+          "thumbnail": "assets/grade2/lesson-icons/sunflower.png",
           "backgroundColor": "#E09079",
           "content": [
             {
@@ -2132,7 +2132,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter4/imageboom/tide.png",
+              "image": "assets/grade2/chapter4/tide.png",
               "prompt": "Find out and describe how the Moon influences the oceans "
             },
             {
@@ -2235,15 +2235,15 @@
               "categories": [
                 {
                   "name": "Sun",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Sun.png"
                 },
                 {
                   "name": "Moon",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Moon.png"
                 },
                 {
                   "name": "Earth",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Earth.png"
                 }
               ],
               "options": [
@@ -2300,7 +2300,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Who Are the Sun’s Friends?",
-          "thumbnail": "assets/grade-two/lesson-icons/solar-system.png",
+          "thumbnail": "assets/grade2/lesson-icons/solar-system.png",
           "backgroundColor": "#E07D78",
           "content": [
             {
@@ -2308,7 +2308,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter4/imageboom/planets.png",
+              "image": "assets/grade2/chapter4/planets.png",
               "prompt": "Research and describe the origin of the names of 3 planets of your choice. "
             },
             {
@@ -2323,56 +2323,56 @@
                 },
                 {
                   "name": "Mercury",
-                  "image": "assets/grade-two/chapter4/memory/mercury.png"
+                  "image": "assets/grade2/chapter4/mercury.png"
                 },
                 {
                   "name": "Venus"
                 },
                 {
                   "name": "Venus",
-                  "image": "assets/grade-two/chapter4/memory/venus.png"
+                  "image": "assets/grade2/chapter4/venus.png"
                 },
                 {
                   "name": "Earth"
                 },
                 {
                   "name": "Earth",
-                  "image": "assets/grade-two/chapter4/memory/earth.png"
+                  "image": "assets/grade2/chapter4/earth.png"
                 },
                 {
                   "name": "Mars"
                 },
                 {
                   "name": "Mars",
-                  "image": "assets/grade-two/chapter4/memory/mars.png"
+                  "image": "assets/grade2/chapter4/mars.png"
                 },
                 {
                   "name": "Jupiter"
                 },
                 {
                   "name": "Jupiter",
-                  "image": "assets/grade-two/chapter4/memory/jupiter.png"
+                  "image": "assets/grade2/chapter4/jupiter.png"
                 },
                 {
                   "name": "Saturn"
                 },
                 {
                   "name": "Saturn",
-                  "image": "assets/grade-two/chapter4/memory/saturn.png"
+                  "image": "assets/grade2/chapter4/saturn.png"
                 },
                 {
                   "name": "Uranus"
                 },
                 {
                   "name": "Uranus",
-                  "image": "assets/grade-two/chapter4/memory/uranus.png"
+                  "image": "assets/grade2/chapter4/uranus.png"
                 },
                 {
                   "name": "Neptune"
                 },
                 {
                   "name": "Neptune",
-                  "image": "assets/grade-two/chapter4/memory/neptune.png"
+                  "image": "assets/grade2/chapter4/neptune.png"
                 }
               ]
             },
@@ -2461,11 +2461,11 @@
               "content": [
                 {
                   "text": "There are many other planets in our solar system and they orbit the Sun. Life is only sustainable on planet Earth.",
-                  "image": "assets/grade-two/chapter4/mastery/solar-system.png"
+                  "image": "assets/grade2/chapter4/solar-system.png"
                 },
                 {
                   "text": "Make a case for another planet that might be able to support life. Formulate some changes that will make this planet a better place for life.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Mars.png"
                 }
               ]
             }
@@ -2474,7 +2474,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Are Planets Alive?",
-          "thumbnail": "assets/grade-two/lesson-icons/planet.png",
+          "thumbnail": "assets/grade2/lesson-icons/planet.png",
           "backgroundColor": "#DF79E0",
           "content": [
             {
@@ -2625,7 +2625,7 @@
               "content": [
                 {
                   "text": "Space exploration is very important in our day and age. We are on a mission to explore all the other planets.",
-                  "image": "assets/grade-two/chapter4/mastery/astronaut.png"
+                  "image": "assets/grade2/chapter4/astronaut.png"
                 },
                 {
                   "text": "Find out one planet that we are exploring currently. Then, figure out the method of exploration.",
@@ -2638,7 +2638,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. Why Does Spring Follow Winter?",
-          "thumbnail": "assets/grade-two/lesson-icons/spring.png",
+          "thumbnail": "assets/grade2/lesson-icons/spring.png",
           "backgroundColor": "#E0A279",
           "content": [
             {
@@ -2646,7 +2646,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grae-two/chapter4/Temperature.png",
               "prompt": "Record the temperature at 8 am, 1 pm, 6 pm, and 9 pm. What do you notice about the temperature change? Describe your observations. "
             },
             {
@@ -2658,19 +2658,19 @@
               "categories": [
                 {
                   "name": "Autumn",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Autumn.png"
                 },
                 {
                   "name": "Winter",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Winter.png"
                 },
                 {
                   "name": "Spring",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Spring.png"
                 },
                 {
                   "name": "Summer",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/Summer.png"
                 }
               ],
               "options": [
@@ -2744,7 +2744,7 @@
               "content": [
                 {
                   "text": "The calendar is a counting system of time divided into days, months, and years.",
-                  "image": "assets/grade-two/chapter4/mastery/calendar.png"
+                  "image": "assets/grade2/chapter4/calendar.png"
                 }
               ]
             }
@@ -2753,7 +2753,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. What Time is It?",
-          "thumbnail": "assets/grade-two/lesson-icons/alarm.png",
+          "thumbnail": "assets/grade2/lesson-icons/alarm.png",
           "backgroundColor": "#E079A5",
           "content": [
             {
@@ -2761,7 +2761,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter4/imageboom/3pm.png",
+              "image": "assets/grade2/chapter4/3pm.png",
               "prompt": "What clock is the most accurate? "
             },
             {
@@ -2783,42 +2783,42 @@
                 },
                 {
                   "name": "1:00pm",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/1pm.jpeg"
                 },
                 {
                   "name": "10:00am"
                 },
                 {
                   "name": "10:00am",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/10am.png"
                 },
                 {
                   "name": "3:30pm"
                 },
                 {
                   "name": "3:30pm",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/3_30pm.png"
                 },
                 {
                   "name": "8:00am"
                 },
                 {
                   "name": "8:00am",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/8am.png"
                 },
                 {
                   "name": "2:00am"
                 },
                 {
                   "name": "2:00am",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/2am.png"
                 },
                 {
                   "name": "6:30pm"
                 },
                 {
                   "name": "6:30pm",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter4/6_30pm.png"
                 }
               ]
             },
@@ -2829,7 +2829,7 @@
               "content": [
                 {
                   "text": "Humans have invented different ways to tell time from the sundial to the water clock.",
-                  "image": "assets/grade-two/chapter4/mastery/watch.png"
+                  "image": "assets/grade2/chapter4/watch.png"
                 }
               ]
             }
@@ -2841,14 +2841,14 @@
       "navigation": "Chapter5",
       "title": "common:chapter5",
       "name": "gradetwo:physics",
-      "icon": "assets/grade-two/chapter-icons/physics.png",
+      "icon": "assets/grade2/chapter-icons/physics.png",
       "colorOne": "lightpink",
       "colorTwo": "mediumvioletred",
       "lessons": [
         {
           "navigation": "Lesson1",
           "title": "1. Why Do Things Move?",
-          "thumbnail": "assets/grade-two/lesson-icons/force.png",
+          "thumbnail": "assets/grade2/lesson-icons/force.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -2856,7 +2856,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/gravity.png",
+              "image": "assets/grade2/chapter5/gravity.png",
               "prompt": "Find three objects, people, animals in your home that you can describe forces that are acting upon them. For example, gravity is a force that affects humans by pulling them to the center of Earth. "
             },
             {
@@ -2931,7 +2931,7 @@
               "content": [
                 {
                   "text": "Nothing in the world can move until there is a force either pushing or pulling it. Therefore, objects can only move when there is a force applied to them.",
-                  "image": "assets/grade-two/chapter5/mastery/renewable-energy.png"
+                  "image": "assets/grade2/chapter5/renewable-energy.png"
                 }
               ]
             }
@@ -2940,7 +2940,7 @@
         {
           "navigation": "Lesson2",
           "title": "2. Who Is Faster?",
-          "thumbnail": "assets/grade-two/lesson-icons/race.png",
+          "thumbnail": "assets/grade2/lesson-icons/race.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -2948,7 +2948,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/racing.png",
+              "image": "assets/grade2/chapter5/racing.png",
               "prompt": "Why are objects that are fast bad for the environment? Is it because of the energy required to power them? Do you have any ideas on making them more efficient? "
             },
             {
@@ -2967,11 +2967,11 @@
               "categories": [
                 {
                   "name": "Fast",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Fast.png"
                 },
                 {
                   "name": "Slow",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Slow.png"
                 }
               ],
               "options": [
@@ -3056,7 +3056,7 @@
         {
           "navigation": "Lesson3",
           "title": "3. Transportation",
-          "thumbnail": "assets/grade-two/lesson-icons/noise.png",
+          "thumbnail": "assets/grade2/lesson-icons/noise.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -3064,7 +3064,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/bus.png",
+              "image": "assets/grade2/chapter5/bus.png",
               "prompt": "What is a new/different form/mode of transportation that’s been added to your neighborhood? "
             },
             {
@@ -3156,11 +3156,11 @@
               "content": [
                 {
                   "text": "The Kazakhstan eagle might seem clumsy and immobile first, but it is indeed swift. Although the animal might seem loud, that doesn’t take away from its speed.",
-                  "image": "assets/grade-two/chapter5/mastery/eagle.png"
+                  "image": "assets/grade2/chapter5/eagle.png"
                 },
                 {
                   "text": "Go outside and examine the many cars on the road. Record a video of the cars passing by.",
-                  "image": "assets/grade-two/chapter5/mastery/traffic-jam.png"
+                  "image": "assets/grade2/chapter5/traffic-jam.png"
                 }
               ]
             }
@@ -3169,7 +3169,7 @@
         {
           "navigation": "Lesson4",
           "title": "4. How Much Does an Elephant Weigh?",
-          "thumbnail": "assets/grade-two/lesson-icons/elephant.png",
+          "thumbnail": "assets/grade2/lesson-icons/elephant.png",
           "backgroundColor": "#DF6CEB",
           "content": [
             {
@@ -3184,7 +3184,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/heavy.png",
+              "image": "assets/grade2/chapter5/heavy.png",
               "prompt": "Find one of the heaviest objects in your house. What is it made out of? Try to identify the composition of materials and then label each material as either environmentally friendly or not. Try your best! "
             },
             {
@@ -3274,11 +3274,11 @@
               "content": [
                 {
                   "text": "Objects of different mass will react differently when the same force is applied to them. The object with more mass will gain less speed than the object with less mass.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Objectsofdifferentforces.png"
                 },
                 {
                   "text": "Ask a friend to help you in this activity. Take turns applying similar forces to different objects.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Appliedforce.png"
                 }
               ]
             }
@@ -3287,7 +3287,7 @@
         {
           "navigation": "Lesson5",
           "title": "5. How to Get to Emerald City?",
-          "thumbnail": "assets/grade-two/lesson-icons/prism.png",
+          "thumbnail": "assets/grade2/lesson-icons/prism.png",
           "backgroundColor": "#6C75EB",
           "content": [
             {
@@ -3302,7 +3302,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/innovation.png",
+              "image": "assets/grade2/chapter5/innovation.png",
               "prompt": "If you didn’t get the Camera 📷 question, the most environmentally-friendly light source is the Sun because it is natural. However, your home can still save more energy. Find a light source in your home and think about how you can save more energy. "
             },
             {
@@ -3314,11 +3314,11 @@
               "categories": [
                 {
                   "name": "Natural",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Natural.png"
                 },
                 {
                   "name": "Artificial",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Artifical.png"
                 }
               ],
               "options": [
@@ -3391,7 +3391,7 @@
               "content": [
                 {
                   "text": "Light is a form of energy that allows living organisms to see the world around them. Our very own sun emits mass amounts of energy through rays of light. And everyday glass bottles are great at catching the sun’s rays. One might say they are too great because it can even cause a fire if they catch too much sunlight.",
-                  "image": "assets/grade-two/chapter5/mastery/glass-bottle.png"
+                  "image": "assets/grade2/chapter5/glass-bottle.png"
                 }
               ]
             }
@@ -3400,7 +3400,7 @@
         {
           "navigation": "Lesson6",
           "title": "6. Where Did the Light Go?",
-          "thumbnail": "assets/grade-two/lesson-icons/rays.png",
+          "thumbnail": "assets/grade2/lesson-icons/rays.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -3415,7 +3415,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/prism.png",
+              "image": "assets/grade2/chapter5/prism.png",
               "prompt": "What happens to rays of light when they meet another object? Does it go in a straight line or not? What sustainable benefits can we use these for? "
             },
             {
@@ -3473,7 +3473,7 @@
               "content": [
                 {
                   "text": "A ray of sunlight moves in a straight line and changes its behavior as it hits different objects. Some objects such as metal, wood, and stone absorb most of the light and do not allow it to pass through them.",
-                  "image": "assets/grade-two/chapter5/mastery/crayons.png"
+                  "image": "assets/grade2/chapter5/crayons.png"
                 }
               ]
             }
@@ -3482,7 +3482,7 @@
         {
           "navigation": "Lesson7",
           "title": "7. What is That Sound?",
-          "thumbnail": "assets/grade-two/lesson-icons/music.png",
+          "thumbnail": "assets/grade2/lesson-icons/music.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -3497,7 +3497,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/megaphone.png",
+              "image": "assets/grade2/chapter5/megaphone.png",
               "prompt": "What is the difference between natural sources of sound and artificial sources of sound? How can we use natural sources of sound for sustainable behaviors? "
             },
             {
@@ -3509,11 +3509,11 @@
               "categories": [
                 {
                   "name": "Natural",
-                  "image": "assets/cotton.png"
+                  "image": "assets/Natural.png"
                 },
                 {
                   "name": "Unnatural",
-                  "image": "assets/cotton.png"
+                  "image": "assets/Artifical.png"
                 }
               ],
               "options": [
@@ -3616,11 +3616,11 @@
               "content": [
                 {
                   "text": "The sounds you hear tell you what is going on. Nowadays, there is a massive amount of sound pollution.",
-                  "image": "assets/grade-two/chapter5/mastery/loud-speaker.png"
+                  "image": "assets/grade2/chapter5/Soundpollution.png"
                 },
                 {
                   "text": "Did you know that shouting in someone’s ear can lead to deafness? Loud sounds near the eardrums over time can damage your hearing as well. We have to eliminate sound pollution and it can start from inside the household.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Shouting.png"
                 }
               ]
             }
@@ -3629,7 +3629,7 @@
         {
           "navigation": "Lesson8",
           "title": "8. How Do We Hear Sounds?",
-          "thumbnail": "assets/grade-two/lesson-icons/ear.png",
+          "thumbnail": "assets/grade2/lesson-icons/ear.png",
           "backgroundColor": "#6C9DEB",
           "content": [
             {
@@ -3644,7 +3644,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/stadium.png",
+              "image": "assets/grade2/chapter5/stadium.png",
               "prompt": "Why are the theater, performance center, and stadiums arranged in that way? Does this help with sound production? What are your thoughts? "
             },
             {
@@ -3659,56 +3659,56 @@
                 },
                 {
                   "name": "Speakers",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Speakers.png"
                 },
                 {
                   "name": "Wireless headphones"
                 },
                 {
                   "name": "Wireless headphones",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Wirelessheadphones.png"
                 },
                 {
                   "name": "Wired headphones"
                 },
                 {
                   "name": "Wired headphones",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Wiredheadphone.png"
                 },
                 {
                   "name": "Telephone"
                 },
                 {
                   "name": "Telephone",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Telephone.png"
                 },
                 {
                   "name": "Smartphone"
                 },
                 {
                   "name": "Smartphone",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Smartphone.png"
                 },
                 {
                   "name": "Laptop"
                 },
                 {
                   "name": "Laptop",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Laptop.png"
                 },
                 {
                   "name": "Piano"
                 },
                 {
                   "name": "Piano",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Piano.png"
                 },
                 {
                   "name": "Electric keyboard"
                 },
                 {
                   "name": "Electric keyboard",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Electrokeyboard.png"
                 }
               ]
             },
@@ -3719,7 +3719,7 @@
               "content": [
                 {
                   "text": "We all hear sounds differently. Animals, plants, and humans can all hear sounds.",
-                  "image": "assets/grade-two/chapter5/mastery/bunny.png"
+                  "image": "assets/grade2/chapter5/bunny.png"
                 }
               ]
             }
@@ -3728,7 +3728,7 @@
         {
           "navigation": "Lesson9",
           "title": "9. The Thermometer",
-          "thumbnail": "assets/grade-two/lesson-icons/thermometer.png",
+          "thumbnail": "assets/grade2/lesson-icons/thermometer.png",
           "backgroundColor": "#DF6CEB",
           "content": [
             {
@@ -3736,7 +3736,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/hot.png",
+              "image": "assets/grade2/chapter5/hot.png",
               "prompt": "What is the hottest part of Kazakhstan? Explain why "
             },
             {
@@ -3748,11 +3748,11 @@
               "categories": [
                 {
                   "name": "Hot",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Hot.png"
                 },
                 {
                   "name": "Cold",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Cold.png"
                 }
               ],
               "options": [
@@ -3809,35 +3809,35 @@
                 },
                 {
                   "name": "Digital thermometers",
-                  "image": "assets/grade-two/chapter5/memory/thermometer.png"
+                  "image": "assets/grade2/chapter5/thermometer.png"
                 },
                 {
                   "name": "Ear (or tympanic) thermometers"
                 },
                 {
                   "name": "Ear (or tympanic) thermometers",
-                  "image": "assets/grade-two/chapter5/memory/ear.png"
+                  "image": "assets/grade2/chapter5/ear.png"
                 },
                 {
                   "name": "Infrared thermometers"
                 },
                 {
                   "name": "Infrared thermometers",
-                  "image": "assets/grade-two/chapter5/memory/infrared.png"
+                  "image": "assets/grade2/chapter5/infrared.png"
                 },
                 {
                   "name": "Strip-type thermometers"
                 },
                 {
                   "name": "Strip-type thermometers",
-                  "image": "assets/grade-two/chapter5/memory/strip.png"
+                  "image": "assets/grade2/chapter5/strip.png"
                 },
                 {
                   "name": "Mercury thermometers"
                 },
                 {
                   "name": "Mercury thermometers",
-                  "image": "assets/grade-two/chapter5/memory/mercury.png"
+                  "image": "assets/grade2/chapter5/mercury.png"
                 }
               ]
             },
@@ -3848,11 +3848,11 @@
               "content": [
                 {
                   "text": "Get a thermometer. Visit a nearby park and find three different plants.",
-                  "image": "assets/gradetwo/chapter5/mastery/thermometer.png"
+                  "image": "assets/gradetwo/chapter5/thermometer.png"
                 },
                 {
                   "text": "Record the temperature of the leaves of the plants. Record the temperature of the soil of the plants. Identify any patterns for these plants in accordance with the temperature and their growth.",
-                  "image": "assets/gradetwo/chapter5/mastery/hot-temperature.png"
+                  "image": "assets/gradetwo/chapter5/hot-temperature.png"
                 }
               ]
             }
@@ -3861,7 +3861,7 @@
         {
           "navigation": "Lesson10",
           "title": "10. Where Does Frost Hide During the Summer?",
-          "thumbnail": "assets/grade-two/lesson-icons/frost.png",
+          "thumbnail": "assets/grade2/lesson-icons/frost.png",
           "backgroundColor": "#6C75EB",
           "content": [
             {
@@ -3869,7 +3869,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/gradetwo/chapter5/imageboom/cold.png",
+              "image": "assets/gradetwo/chapter5/cold.png",
               "prompt": "Ask your parents about summer and winter temperatures when they were kids. Compare it to the temperatures right now. Do you notice any differences? "
             },
             {
@@ -3888,11 +3888,11 @@
               "categories": [
                 {
                   "name": "Cold Weather Animals",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Coldweatheranimals.png"
                 },
                 {
                   "name": "Hot Weather Animals",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Hotweatheranimal.png"
                 }
               ],
               "options": [
@@ -4042,7 +4042,7 @@
               "content": [
                 {
                   "text": "When people think of warmth, they think of sunny, summer days. Or you could think about cold, winter days with the heater on. Regardless, heat is a form of energy that is always being generated. However, generating heat in the winter can cost energy and leave a massive carbon footprint. Generating cold in the summer can cost energy and leave a massive carbon footprint.",
-                  "image": "assets/grade-two/chapter5/mastery/heater.png"
+                  "image": "assets/grade2/chapter5/heater.png"
                 }
               ]
             }
@@ -4051,7 +4051,7 @@
         {
           "navigation": "Lesson11",
           "title": "11. What Are Magnets?",
-          "thumbnail": "assets/grade-two/lesson-icons/magnet.png",
+          "thumbnail": "assets/grade2/lesson-icons/magnet.png",
           "backgroundColor": "#B56CEB",
           "content": [
             {
@@ -4066,7 +4066,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/magnetism.png",
+              "image": "assets/grade2/chapter5/magnetism.png",
               "prompt": "Are magnets environmentally friendly? Explain your answer. "
             },
             {
@@ -4122,11 +4122,11 @@
               "categories": [
                 {
                   "name": "Magnetic Materials",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Magnetic.png"
                 },
                 {
                   "name": "Non-magnetic Materials",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Non-magnetic.png"
                 }
               ],
               "options": [
@@ -4171,7 +4171,7 @@
               "content": [
                 {
                   "text": "Magnets are objects that can attract or repel other objects. They are present and are found around the world. There are many objects around the household that are magnetic that you may not know about.",
-                  "image": "assets/grade-two/chapter5/mastery/magnet.png"
+                  "image": "assets/grade2/chapter5/magnet.png"
                 }
               ]
             }
@@ -4180,7 +4180,7 @@
         {
           "navigation": "Lesson12",
           "title": "12. Summer is Fun!",
-          "thumbnail": "assets/grade-two/lesson-icons/summer.png",
+          "thumbnail": "assets/grade2/lesson-icons/summer.png",
           "backgroundColor": "#8C6BEB",
           "content": [
             {
@@ -4195,7 +4195,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/grade-two/chapter5/imageboom/palm-tree.png",
+              "image": "assets/grade2/chapter5/palm-tree.png",
               "prompt": "What sustainable activities are you going to do this summer? "
             },
             {
@@ -4207,11 +4207,11 @@
               "categories": [
                 {
                   "name": "Sustainable",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/sustainable.png"
                 },
                 {
                   "name": "Unsustainable",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade2/chapter5/Non-sustainable.png"
                 }
               ],
               "options": [
@@ -4272,7 +4272,7 @@
               "content": [
                 {
                   "text": "Your long summer vacation is about to begin. You’ve done a lot of sustainability research during the year, but there’s more. This time you will create a sustainability exercise for your parents.",
-                  "image": "assets/grade-two/chapter5/mastery/search.png"
+                  "image": "assets/grade2/chapter5/search.png"
                 }
               ]
             }

@@ -49,7 +49,7 @@ const CompletionModal = ({ score, prompt, visible }) => {
         transform: [{ scaleX: -1 }], // Flip the image horizontally
         zIndex: 1, // Set a higher z-index to bring the image in front of the modal
       }}
-      source={require("../../../../assets/tuba1.png")}
+      source={require("../../../../assets/tuba-low-quality.png")}
       />
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <ModalContainer>

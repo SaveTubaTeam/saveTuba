@@ -88,7 +88,7 @@ const MasteryHandler = ({ objectData, imageMap }) => {
     <Container>
       <ImageBg
         style={{ paddingTop: 20 }}
-        source={{uri: imageMap["assets/lessonbg.png"]}}
+        source={require("../../../../assets/lessonbg.png")}
         resizeMode="cover"
       >
         <FlatList //

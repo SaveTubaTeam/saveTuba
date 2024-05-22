@@ -158,7 +158,7 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={{uri: imageMap["assets/lessonbg.png"]}}>
+      <ImageBg source={require("../../../../../assets/lessonbg.png")}>
         <Container>
 
           {/* the overall prompt for this sorting exercise */}
