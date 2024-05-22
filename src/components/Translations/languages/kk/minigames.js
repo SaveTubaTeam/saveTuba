@@ -1,26 +1,26 @@
 export default {
-   return: "Return",
-   finalscore: "Final Score",
+   return: "Қайту",
+   finalscore: "Нәтиже",
 
-   sortingprompt: "Good job completing this sorting exercise!\nGo back to the lesson to continue learning.",
-   sortingcorrect: "That's right! Good job ✨",
-   sortingincorrect: "Incorrect! Better luck next time 🍀",
+   sortingprompt: "Тамаша! Топтастыру жаттығуын аяқтадыңыз!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
+   sortingcorrect: "Дұрыс! Тамаша жұмыс ✨",
+   sortingincorrect: "Қате! Келесі рет жаса аласыз 🍀",
 
-   snapshotprompt: "Your image has been submitted. Good job!\nGo back to the lesson to continue learning.",
+   snapshotprompt: "Сіздің суретіңіз жіберілді. Тамаша!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
 
-   reorderprompt: "Good job completing this reorder minigame!\nGo back to the lesson to continue learning.",
-   reorderhint: "Hint: Sort the items from top (first) to bottom (last).",
+   reorderprompt: "Тамаша! Сіз бұл реттеу мини-ойынын аяқтадыңыз!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
+   reorderhint: "Кеңес: Элементтерді жоғарыдан (бірінші) төменге (соңғы) орналастырыңыз.",
 
-   quizprompt: "Congratulations!\nYou've just finished this quiz!\nGo back to the lesson to continue learning.",
-   quiznext: "Next",
+   quizprompt: "Тамаша!\nСіз бұл викторинаны аяқтадыңыз!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
+   quiznext: "Келесі",
 
-   openresponseprompt: "Your response has been submitted. Good job!\nGo back to the lesson to continue learning.",
-   openresponsethink: "I think...",
-   openresponsetryagain: "Try Again",
-   nosubmission: "hmmmm... it seems you haven't submitted anything\n",
+   openresponseprompt: "Сіздің жауабыңыз жіберілді. Тамаша!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
+   openresponsethink: "Менің ойымша...",
+   openresponsetryagain: "Қайтадан көріңіз",
+   nosubmission: "хммм... сіз ештеңе жібермеген сияқтысыз\n",
 
-   memoryprompt: "Good job completing this memory minigame!\nGo back to the lesson to continue learning.",
-   memoryhint: "Hint: Match images with words.",
+   memoryprompt: "Тамаша! Сіз бұл есте сақтау мини-ойынын аяқтадыңыз!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
+   memoryhint: "Кеңес: Суреттерді сөздермен сәйкестендіріңіз.",
 
-   masteryprompt: "Congratulations!\nYour response has been submitted.\n\nYou've just completed a mastery! Give yourself a pat on the back.",
+   masteryprompt: "Құттықтаймыз!\nСіздің жауабыңыз жіберілді.\n\nСіз шеберлікті аяқтадыңыз! Өзіңізді мақтаңыз.",
 }

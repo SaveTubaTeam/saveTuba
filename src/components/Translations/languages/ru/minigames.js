@@ -1,26 +1,26 @@
 export default {
-   return: "Return",
-   finalscore: "Final Score",
+   return: "Вернуться",
+   finalscore: "Итоговый результат",
 
-   sortingprompt: "Good job completing this sorting exercise!\nGo back to the lesson to continue learning.",
-   sortingcorrect: "That's right! Good job ✨",
-   sortingincorrect: "Incorrect! Better luck next time 🍀",
+   sortingprompt: "Отличная работа! Вы завершили это упражнение по группировке!\nВернитесь к уроку, чтобы продолжить обучение.",
+   sortingcorrect: "Верно! Отличная работа ✨",
+   sortingincorrect: "Неверно! В следующий раз повезет больше 🍀",
 
-   snapshotprompt: "Your image has been submitted. Good job!\nGo back to the lesson to continue learning.",
+   snapshotprompt: "Ваше изображение отправлено. Отличная работа!\nВернитесь к уроку, чтобы продолжить обучение.",
 
-   reorderprompt: "Good job completing this reorder minigame!\nGo back to the lesson to continue learning.",
-   reorderhint: "Hint: Sort the items from top (first) to bottom (last).",
+   reorderprompt: "Отличная работа! Вы завершили эту мини-игру по упорядочиванию!\nВернитесь к уроку, чтобы продолжить обучение.",
+   reorderhint: "Подсказка: Расположите элементы сверху (первый) вниз (последний).",
 
-   quizprompt: "Congratulations!\nYou've just finished this quiz!\nGo back to the lesson to continue learning.",
-   quiznext: "Next",
+   quizprompt: "Поздравляем!\nВы только что завершили этот тест!\nВернитесь к уроку, чтобы продолжить обучение.",
+   quiznext: "Далее",
 
-   openresponseprompt: "Your response has been submitted. Good job!\nGo back to the lesson to continue learning.",
-   openresponsethink: "I think...",
-   openresponsetryagain: "Try Again",
-   nosubmission: "hmmmm... it seems you haven't submitted anything\n",
+   openresponseprompt: "Ваш ответ отправлен. Отличная работа!\nВернитесь к уроку, чтобы продолжить обучение.",
+   openresponsethink: "Я думаю...",
+   openresponsetryagain: "Попробуйте снова",
+   nosubmission: "хммм... похоже, вы ничего не отправили\n",
 
-   memoryprompt: "Good job completing this memory minigame!\nGo back to the lesson to continue learning.",
-   memoryhint: "Hint: Match images with words.",
+   memoryprompt: "Отличная работа! Вы завершили эту мини-игру на проверку памяти!\nВернитесь к уроку, чтобы продолжить обучение.",
+   memoryhint: "Подсказка: Соедините изображения со словами.",
 
-   masteryprompt: "Congratulations!\nYour response has been submitted.\n\nYou've just completed a mastery! Give yourself a pat on the back.",
+   masteryprompt: "Поздравляем!\nВаш ответ отправлен.\n\nВы только что достигли мастерства! Похвалите себя.",
 }

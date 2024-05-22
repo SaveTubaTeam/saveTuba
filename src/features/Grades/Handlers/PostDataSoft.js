@@ -3,19 +3,22 @@ import { db } from "../../../../firebase.js";
 import en_grade2 from "../Data/en_grade2.json"
 import en_grade3 from "../Data/en_grade3.json"
 import en_grade4 from "../Data/en_grade4.json"
+import en_grade5_FIELDWORK from "../Data/en_grade5_FIELDWORK.json"
 
 import ru_grade2 from "../Data/ru_grade2.json"
 import ru_grade3 from "../Data/ru_grade3.json"
 import ru_grade4 from "../Data/ru_grade4.json"
+import ru_grade5_FIELDWORK from "../Data/ru_grade5_FIELDWORK.json"
 
 import kk_grade2 from "../Data/kk_grade2.json"
 import kk_grade3 from "../Data/kk_grade3.json"
 import kk_grade4 from "../Data/kk_grade4.json"
+import kk_grade5_FIELDWORK from "../Data/kk_grade5_FIELDWORK.json"
 
 // The following three variables should be changed every time you run the function.
-const GRADE_NAME = "Grade2"; //string specifying the grade, e.g. 'Grade2' 
-const LANGUAGE_CODE = "ru"; //specifies the language, e.g. 'en', 'ru', 'kk'
-const CHAPTERS = ru_grade2.chapters; //needs to be specified from import
+const GRADE_NAME = "Grade5"; //string specifying the grade, e.g. 'Grade2' 
+const LANGUAGE_CODE = "kk"; //specifies the language, e.g. 'en', 'ru', 'kk'
+const CHAPTERS = kk_grade5_FIELDWORK.chapters; //needs to be specified from import
 
 //postDataSoft is meant to post updated data into the firebase tree without overriding images.
 //my work flow is as follows: 
@@ -155,10 +158,11 @@ const updateMasteryAndMinigameObject = async(currentObject, masteryAndMinigamesR
    try {
       const existingObjectData = doc.data(); //getting the existing data object
 
+      //console.log(existingObjectData);
       //The 'content' attribute applies to Reorder, Quiz, Memory, and Mastery. However, each of these minigames has a differently structured array.
       //Memory, Mastery, and Sorting have content arrays that need to be directly modified element by element because they have images.
       //The Sorting minigame is special because it has two arrays of content: 'categories' and 'options'. Only the 'categories' array contains images.
-      if(existingObjectData.content) {
+      if(existingObjectData.content || existingObjectData.categories) {
          if(existingObjectData.navigation.includes("Memory") || existingObjectData.navigation.includes("Mastery")) {
             existingObjectData.content = updateContent(existingObjectData.content, currentObject.content);
          } else if(existingObjectData.navigation.includes("Sorting")) {
@@ -174,6 +178,8 @@ const updateMasteryAndMinigameObject = async(currentObject, masteryAndMinigamesR
       if(existingObjectData.prompt) { //updating the minigame prompt
          existingObjectData.prompt = currentObject.prompt;
       }
+
+      //console.log(currentObject);
 
       await masteryAndMinigamesReference.update({ ...existingObjectData });
       console.log(`\t\t${currentObject.navigation} successfully updated!`);

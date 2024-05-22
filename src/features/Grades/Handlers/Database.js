@@ -4,6 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import en_grade2 from "../Data/en_grade2.json"
 import en_grade3 from "../Data/en_grade3.json"
 import en_grade4 from "../Data/en_grade4.json"
+import en_grade5_FIELDWORK from "../Data/en_grade5_FIELDWORK.json"
 
 //***all documentation falls under web-namespaced api
 //documentation for set() https://firebase.google.com/docs/firestore/manage-data/add-data#web-namespaced-api_1
@@ -242,9 +243,9 @@ async function setCache(key, value) {
 
 
 // The following three variables should be changed every time you run the function.
-const GRADE_NAME = "Grade4"; //string specifying the grade, e.g. 'Grade2' 
+const GRADE_NAME = "Grade5"; //string specifying the grade, e.g. 'Grade2' 
 const LANGUAGE_CODE = "kk"; //specifies the language, e.g. 'en', 'ru', 'kk'
-const CHAPTERS = en_grade4.chapters; //needs to be specified from import
+const CHAPTERS = en_grade5_FIELDWORK.chapters; //needs to be specified from import
 
 //this one is different from the postData in PostData.js as it does not check
 //for the existence of documents and overwrites everything.

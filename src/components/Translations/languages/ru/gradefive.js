@@ -1,7 +1,8 @@
 export default {
   /* Chapter names */
   worldofscience: "Мир науки",
-  universe: "Вселенная. Земля. Человек",
+  universe: "Вселенная. Земля.",
+  universe: "Вселенная. Человек.",
   substances: "Вещества и материалы",
   processes: "Процессы в живой \nи неживой природе",
   energy: "Энергия и движение",

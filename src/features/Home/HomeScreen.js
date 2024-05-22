@@ -73,8 +73,8 @@ function HomeView() {
           <Text style={style.baseText}>4</Text>
         </TouchableOpacity>
 
-        <Image
-          style={{
+        {/* <Image
+          style={{ //removing lock from grade 5
             position: "absolute",
             right: 20,
             top: 350,
@@ -83,10 +83,10 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        />
+        /> */}
         <TouchableOpacity
           style={style.roundButton2}
-          //onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
+          onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
         >
           <Text style={style.baseText}>5</Text>
         </TouchableOpacity>

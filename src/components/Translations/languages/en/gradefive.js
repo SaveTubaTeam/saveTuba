@@ -1,7 +1,8 @@
 export default {
   /* Chapter names */
   worldofscience: "World of Science",
-  universe: "Universe. Earth. Humans.",
+  universe: "The Universe and Earth",
+  universe2: "The Universe and Humans",
   substances: "Substances and Materials",
   processes: "Processes in \nAnimate and \nInanimate Nature",
   energy: "Energy and Movement",
