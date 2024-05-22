@@ -34,7 +34,6 @@
     "expo-image": "~1.0.2",
     "expo-image-picker": "~14.1.1",
     "expo-linear-gradient": "~12.1.2",
-    "expo-modules-autolinking": "~1.1.0 || ~1.2.0",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.4",
     "expo-updates": "~0.16.4",

@@ -20,7 +20,7 @@ export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => 
         console.log("Error in fetchImages getCacheObject");
     });
 
-    //if (result == null) {
+    if (result == null) {
         console.log("Pulling from firebase in fetchImageMap");
         //performance.now() is included in the default JS Web API runtime: https://developer.mozilla.org/en-US/docs/Web/API/Performance/now
         const start = performance.now(); // Start performance timer just before createImageMap
@@ -39,10 +39,10 @@ export const fetchImages = createAsyncThunk("mapSlice/fetchImages", async () => 
         console.log(`fetchImages done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
 
         return map;
-    // }else{
-    //     console.log("imageSlice.js: Pulling images from cache");
-    //     return result;
-    // }
+    }else{
+        console.log("imageSlice.js: Pulling images from cache");
+        return result;
+    }
 }); //end of fetchImages thunk
 
 const mapSlice = createSlice({
