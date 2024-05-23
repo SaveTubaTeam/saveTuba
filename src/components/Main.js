@@ -92,7 +92,7 @@ const Main = () => {
     let loginType;
     let input;
     //TODO: once phone number verification is working, should update this to check for phone number logintype
-    if(auth.currentUser) {
+    if(auth.currentUser) { //truthy if auth was successful
       //checking if firebase auth was with email or phone number
       if(auth.currentUser.email) {
         loginType = 'email'

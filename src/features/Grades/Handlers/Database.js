@@ -162,7 +162,12 @@ async function createImageMap(folder, imageMap) {
             // Creating promises to fetch the download URLs and metadata for each file
             const urlPromises = result.items.map(url => url.getDownloadURL());
             const pathPromises = result.items.map(path => path.getMetadata());
-            const [urlResolved, pathResolved] = await Promise.all([Promise.all(urlPromises), Promise.all(pathPromises)]); // await to resolve all promises.
+
+            // await to resolve all promises. i think this is a batch process but i am probably wrong
+            const [urlResolved, pathResolved] = await Promise.all([
+                Promise.all(urlPromises), 
+                Promise.all(pathPromises)
+            ]); // await to resolve all promises.
 
             // console.log("urlResolved object:", urlResolved[0]);
             // console.log("pathResolved object:", pathResolved[0]);
@@ -191,7 +196,7 @@ async function createImageMapHelper(folder, pathList, depth) {
     // below is a Recursive Failsafe to check if the current depth exceeds the maximum allowed depth
     // (think of nested folders like a binary tree where the depth of the folders corresponds to the height of the tree).
     if (depth > 10) { //10 is an arbitrary number/cap to stop infinite loops beyond 10 layers of nesting
-        console.log("ERROR: Recursion limit reached, stopping further directory exploration.");
+        console.error("ERROR: Recursion limit reached, stopping further directory exploration.");
         return pathList;
     }
 
@@ -203,10 +208,14 @@ async function createImageMapHelper(folder, pathList, depth) {
             return pathList;
         }
 
-        for (const folderRef of result.prefixes) { //iterating over each subdirectory found in the folder
+        // .map() initiates operations in the array concurrently
+        const promises = result.prefixes.map((folderRef) => { //iterating over each subdirectory found in the folder
             pathList.push(folderRef.fullPath); //pushing the folder onto pathList
-            await createImageMapHelper(folderRef.fullPath, pathList, depth+1); //we call again and increment depth
-        }
+            return createImageMapHelper(folderRef.fullPath, pathList, depth + 1); //we call again and increment depth
+        });
+
+        await Promise.all(promises); // Wait for all recursive calls to complete
+
     } catch(error) {
         console.log("Error =====> ", error);
     }

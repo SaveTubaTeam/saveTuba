@@ -1,8 +1,8 @@
 export default {
   /* Chapter names */
   worldofscience: "Ғылым әлемі",
-  universe: "Ғалам. Жер.",
-  universe2: "Ғалам. Адам.",
+  universe: "Әлем және Жер",
+  universe2: "Әлем мен Жер жалғасын тапты",
   substances: "Заттар мен материалдар",
   processes: "Жанды және \nжансыз \nтабиғаттағы процестер",
   energy: "Энергия және қозғалыс",
