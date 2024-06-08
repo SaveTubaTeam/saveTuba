@@ -13,8 +13,8 @@ import en_grade5_FIELDWORK from "../Data/en_grade5_FIELDWORK.json"
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
 // Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> MasteryAndMinigames)
-// @param grade a string, e.g. 'Grade2', which is the grade that you are querying for
-// @return chapterList **This will return an array of Chapters in the Grade, but NOT the data held by the chapters. This data is used to render each card in 'ChaptersComponent'
+// @param {string} grade a string, e.g. 'Grade2', which is the grade that you are querying for
+// @return {JSON} chapterList **This will return an array of Chapters in the Grade, but NOT the data held by the chapters. This data is used to render each card in 'ChaptersComponent'
 async function getGradeData(grade) {
     console.log(`\n\tgetGradeData() called. Now in ${grade} Chapters`);
 
@@ -50,10 +50,10 @@ async function getGradeData(grade) {
 
 // getLessonsData() will pull the lesson data and then save it in a format that we can use. Its really long because I just decided to keep it all in one function.
 
-// @param grade a string e.g. 'Grade2' the grade
-// @param chpt a string e.g. 'Chapter1' which specifies the chapter
-// @param languageCode **currently always set to "en"
-// @return lessonsList **This is just a list of the JSON formatted lessons 
+// @param {string} grade a string e.g. 'Grade2' the grade
+// @param {string} chpt a string e.g. 'Chapter1' which specifies the chapter
+// @param {string} languageCode **currently always set to "en"
+// @return {JSON} lessonsList **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, languageCode) {
     console.log(`\n\tgetLessonsData() called. Now in ${grade} ${chpt} Lessons\n\t\tLANGUAGE_CODE:`, languageCode);
 

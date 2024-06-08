@@ -19,6 +19,7 @@ export default {
   /* Minigame names */
   memory: "Проверка знаний",
   sorting: "Группировка",
+  sorting: "Группировка 2",
   quiz: "Викторина",
   imageboom: "Открытый ответ",
   imageboom2: "Открытый ответ 2",

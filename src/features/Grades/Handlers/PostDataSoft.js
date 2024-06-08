@@ -22,7 +22,7 @@ const CHAPTERS = kk_grade5_FIELDWORK.chapters; //needs to be specified from impo
 
 //postDataSoft is meant to post updated data into the firebase tree without overriding images.
 //my work flow is as follows: 
-//1. I call postDataHard on the english JSON files (which contains the image filepath data that I manually entered) I do so for all langauge codes. 
+//1. I call postDataHard on the english JSON files (which contains all the image filepath data that I manually entered). I do so for all langauge codes. 
 //2. now the image filepath data is in firebase for all languages, so I call postDataSoft on the respective ru and kk files to soft post the language data without deleting the images.
 const postDataSoft = () => {
     CHAPTERS.forEach((chapter) => { //iterating through chapters array
@@ -30,22 +30,14 @@ const postDataSoft = () => {
     })
 }
 
+//we do not touch the existing chapter data at all!
 // @param chapter the current chapter object in JSON
 const postChapterData = async(chapter) => {
-    const chapterData = {
-        navigation: chapter.navigation,
-        title: chapter.title,
-        name: chapter.name,
-        icon: chapter.icon,
-        colorOne: chapter.colorOne,
-        colorTwo: chapter.colorTwo
-    }
-    const chapterReference = db.collection(GRADE_NAME).doc(chapterData.navigation);
+    const chapterReference = db.collection(GRADE_NAME).doc(chapter.navigation);
 
     chapterReference.get().then((doc) => {
       if(!doc.exists) {
-         console.log(`ERROR ${chapterData.navigation} does not exist`);
-         //setChapterData(chapterData, chapterReference);
+         console.log(`ERROR ${chapter.navigation} metadata does not exist`);
       }
     })
 
@@ -53,15 +45,6 @@ const postChapterData = async(chapter) => {
         postLessonData(lesson, chapterReference);
     })
 }
-
-// const setChapterData = async(chapterData, chapterReference) => {
-//    try {
-//       await chapterReference.set(chapterData); //setting chapter metadata
-//       console.log(`${GRADE_NAME} ${chapterData.navigation} set successfully!`);
-//    } catch(error) {
-//       console.log("setChapterData() error:", error);
-//    }
-// }
 
 //@param lesson the current lesson object in JSON
 //@param chapterReference a reference to the current chapter within our firebase tree.
@@ -78,8 +61,7 @@ const postLessonData = async(lesson, chapterReference) => {
       if(doc.exists) { //we want to modify only the title attribute
          updateLessonData(lessonData, lessonLanguageReference, doc);
       } else {
-         console.log(`ERROR ${lessonData.navigation}-${LANGUAGE_CODE} does not exist`);
-         //setLessonData(lessonData, lessonLanguageReference);
+         console.log(`ERROR ${lessonData.navigation}-${LANGUAGE_CODE} metadata does not exist`);
       }
     });
 
@@ -121,15 +103,6 @@ const updateLessonData = async(lessonData, lessonLanguageReference, doc) => {
    }
 }
 
-// const setLessonData = async(lessonData, lessonLanguageReference) => {
-//    try {
-//       await lessonLanguageReference.set(lessonData); //setting lessonLanguage metadata
-//       console.log(`\t${lessonData.navigation}-${LANGUAGE_CODE} set successfully!`);
-//    } catch(error) {
-//       console.error("postLessonData() ERROR:", error)
-//    }
-// }
-
 //@param currentObject the current mastery or minigame object within our JSON
 //@param lessonLanguageReference a reference to the current language within our current lesson down our firebase tree.
 const postMasteryAndMinigameData = (currentObject, lessonLanguageReference) => {
@@ -140,8 +113,7 @@ const postMasteryAndMinigameData = (currentObject, lessonLanguageReference) => {
          if(doc.exists) { //we only want to modify attributes that refer to texts (e.g. prompts, names, anything that can be translated)
             updateMasteryAndMinigameObject(currentObject, masteryAndMinigamesReference, doc);
          } else {
-            console.log(`ERROR: minigame ${currentObject.navigation} does not exist`);
-            //setMasteryAndMinigames(currentObject, masteryAndMinigamesReference);
+            console.log(`ERROR: minigame ${currentObject.navigation} metadata does not exist`);
          }
       });
    } catch(error) {
@@ -150,7 +122,7 @@ const postMasteryAndMinigameData = (currentObject, lessonLanguageReference) => {
 }
 
 //We only want update attributes that contain curriculum text. Curriculum text attributes are either 'prompt' or stored within content arrays.
-//This function overlays existing data with the new data in currentObject.
+//This function overlays existing data with the new data in currentObject without touching images.
 //@param currentObject a reference to our currentObject
 //@param masteryAndMinigamesReference a reference to our current minigame within firestore
 //@param doc the document stored by the masteryAndMinigamesReference
@@ -161,56 +133,45 @@ const updateMasteryAndMinigameObject = async(currentObject, masteryAndMinigamesR
       //console.log(existingObjectData);
       //The 'content' attribute applies to Reorder, Quiz, Memory, and Mastery. However, each of these minigames has a differently structured array.
       //Memory, Mastery, and Sorting have content arrays that need to be directly modified element by element because they have images.
-      //The Sorting minigame is special because it has two arrays of content: 'categories' and 'options'. Only the 'categories' array contains images.
-      if(existingObjectData.content || existingObjectData.categories) {
-         if(existingObjectData.navigation.includes("Memory") || existingObjectData.navigation.includes("Mastery")) {
-            existingObjectData.content = updateContent(existingObjectData.content, currentObject.content);
-         } else if(existingObjectData.navigation.includes("Sorting")) {
-            existingObjectData.categories = updateContent(existingObjectData.categories, currentObject.categories);
-            existingObjectData.options = currentObject.options;
-         } else if(existingObjectData.navigation.includes("Reorder") || existingObjectData.navigation.includes("Quiz")){ //case for Reorder and Quiz
-            existingObjectData.content = currentObject.content;
-         } else {
-            console.log(`ERROR updating content for ${existingObjectData.navigation}`);
-         }
-      };
+      //The Sorting minigame is special because it has two arrays of content: 'categories' and 'options'. Only the 'categories' array contains images
+      if(existingObjectData.navigation.includes("Memory") || existingObjectData.navigation.includes("Mastery")) {
+         existingObjectData.content = updateContent(existingObjectData.content, currentObject.content);
+      } else if(existingObjectData.navigation.includes("Sorting")) {
+         existingObjectData.categories = updateContent(existingObjectData.categories, currentObject.categories);
+         existingObjectData.options = currentObject.options;
+      } else if(existingObjectData.navigation.includes("Reorder") || existingObjectData.navigation.includes("Quiz")){ //case for Reorder and Quiz
+         existingObjectData.content = currentObject.content;
+      }
+      /*  else {
+         console.log(`no content attribute for ${existingObjectData.navigation}`);
+      } */
 
       if(existingObjectData.prompt) { //updating the minigame prompt
          existingObjectData.prompt = currentObject.prompt;
       }
 
-      //console.log(currentObject);
-
       await masteryAndMinigamesReference.update({ ...existingObjectData });
       console.log(`\t\t${currentObject.navigation} successfully updated!`);
    } catch(error) {
-      console.log("updateMasteryAndMinigames() ERROR:", error)
+      console.log(`updateMasteryAndMinigames() ERROR ${currentObject.navigation}:`, error)
    }
 }
 
 //this updates the content array. The existing content is 'overlaid' with the new content while we preserve images.
 //note: if the length of the minigame array is changed within google docs, we will not see the change reflected in firebase.
-//@return result the updated array
+// @return result the updated array
 const updateContent = (existingContent, newContent) => {
    const result = [];
 
    for(let i=0; i<existingContent.length; i++) { //iterating through the length of existingContent
 
       if(existingContent[i].hasOwnProperty('image')) { //see here for hasOwnProperty(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
-         delete newContent[i]['image']; //delete this property from newContent so it does not override the existing content
+         delete newContent[i]['image']; //delete this property from newContent so it does not override the existing content. See here for the delete keyword: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
       }
 
       result.push({ ...existingContent[i], ...newContent[i] }); //we perform a "merge" using object destructuring. order matters here!
    }
    return result;
 }
-
-// const setMasteryAndMinigames = async(currentObject, masteryAndMinigamesReference) => {
-//    try{
-//       await masteryAndMinigamesReference.set(currentObject);
-//    } catch(error) {
-//       console.error("setMasteryAndMinigames() ERROR:", error);
-//    }
-// }
 
 export { postDataSoft }

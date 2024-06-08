@@ -18,6 +18,7 @@ const Stack = createNativeStackNavigator();
 const SCREENS_CONFIG = [
   { name: "Memory", title: "common:memory", Component: MemoryHandler },
   { name: "Sorting", title: "common:sorting", Component: SortingHandler },
+  { name: "Sorting 2", title: "common:sorting2", Component: SortingHandler },
   { name: "Quiz", title: "common:quiz", Component: QuizHandler },
   { name: "Image Boom", title: "common:imageboom", Component: OpenResponseHandler },
   { name: "Image Boom 2", title: "common:imageboom2", Component: OpenResponseHandler },

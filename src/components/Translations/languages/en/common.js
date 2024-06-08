@@ -19,6 +19,7 @@ export default {
   /* Minigame names */
   memory: "Memory",
   sorting: "Sorting",
+  sorting2: "Sorting",
   quiz: "Quiz",
   imageboom: "Image Boom",
   imageboom2: "Image Boom 2",

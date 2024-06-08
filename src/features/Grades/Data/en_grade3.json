@@ -1511,15 +1511,15 @@
               "categories": [
                 {
                   "name": "Predation",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Predation.png"
                 },
                 {
                   "name": "Mutualism",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Mutualism(1).png"
                 },
                 {
                   "name": "Commensalism",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Commensalism.png"
                 }
               ],
               "options": [
@@ -1542,7 +1542,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Ecosystem.png",
               "prompt": "How do the relationships between plants and animals, such as mutualism, commensalism, and competition, impact the sustainability of plant communities and ecosystems? "
             },
             {
@@ -1552,7 +1552,7 @@
               "content": [
                 {
                   "text": "Plants also have relationships with each other, similar to humans and animals. Plants can have a mutualistic relationship with each other, such as pollination and protection.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Plantsandhumans.png"
                 }
               ]
             }
@@ -1612,7 +1612,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Animaldiversity.png",
               "prompt": "How do habitat conditions, such as availability of food, water and protection from predators, impact the number and diversity of animal populations in an ecosystem? "
             },
             {
@@ -1622,7 +1622,7 @@
               "content": [
                 {
                   "text": "Habitat conditions can destroy animals. Disease outbreaks such as Ebola can wipe out a large proportion of the species. Flooding can ruin animal’s habitats and if they don’t make it out of the danger zone, they die. Some habitat conditions are a cause of the natural cycle but many are due to man-made causes.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Flooding.png"
                 }
               ]
             }
@@ -1676,7 +1676,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Government.png",
               "prompt": "What are some potential causes for a decrease in the number of animals in a particular ecosystem, and how can we address these issues to promote sustainability and protect biodiversity? Think about laws we can implement. What would you suggest to the government as well? "
             },
             {
@@ -1686,7 +1686,7 @@
               "content": [
                 {
                   "text": "We all know that humans have caused an impact on the environment. Unfortunately, we have both directly and indirectly caused a decrease in the number of animals. Animals directly die from our pesticides and poisoning. Animals indirectly die from our deforestation, dam building, swamp draining, etc.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Pesticides.png"
                 }
               ]
             },
@@ -1697,7 +1697,7 @@
               "content": [
                 {
                   "text": "Deforestation can occur in many different ways, and cause countless consequences in return. Research a forest that has recently experienced a disaster. Identify the causes and outcomes.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Deforestation.png"
                 }
               ]
             }
@@ -1757,7 +1757,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Organs.png",
               "prompt": "What are the three main cavities of the human body? What are the main organs in each of these cavities? "
             },
             {
@@ -1767,7 +1767,7 @@
               "content": [
                 {
                   "text": "Pick an animal that resides near you and record it. Identify an organ in their body that you believe helps the most in their survival.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Nativeanimals.png"
                 }
               ]
             }
@@ -1839,7 +1839,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Food systems.png",
               "prompt": "There are many factors to consider when it comes to sustainability in the food system, such as how food is grown or raised, how it is transported and distributed, and how much of it is wasted. The apple you eat might be healthy for you but is it healthy for the environment? Identify strategies that can be used when we produce and consume food, so that it is sustainable for the environment, animals, and human communities. "
             },
             {
@@ -1849,7 +1849,7 @@
               "content": [
                 {
                   "text": "Food and water are vital things to our survival, but humans waste a lot of that important resource. In your home, work with your family to record the amount of food wasted and amount of water wasted (not counting bath, showers, cleaning) every day for a week.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Family.png"
                 }
               ]
             }
@@ -1919,7 +1919,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Airquality.png",
               "prompt": "How can we ensure that the air we breathe is safe and healthy for all living beings, and how can we protect and improve the quality of the air in our communities? "
             },
             {
@@ -1929,7 +1929,7 @@
               "content": [
                 {
                   "text": "We take in air through our nose and/or mouth. Our nose filters out dust and dangerous particles to make sure our lungs breathe the best air possible. We wouldn’t survive without breathing.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Nose.png"
                 }
               ]
             }
@@ -1989,7 +1989,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Healthy.png",
               "prompt": "What should an individual do to stay healthy? What do they need from their environment in order to stay healthy? "
             },
             {
@@ -1999,7 +1999,7 @@
               "content": [
                 {
                   "text": "Oxygen is transported through our body through blood vessels. There are many blood vessels such as arteries, capillaries, and veins. Blood has many responsibilities as well such as warming the body, carrying oxygen and nutrients, and more. A key fact to remember is that humans are warm-blooded.",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Blood.png"
                 }
               ]
             }
@@ -2059,7 +2059,7 @@
               "backgroundColor": "palevioletred",
               "title": "common:imageboom",
               "icon": "assets/image.png",
-              "image": "assets/cotton.png",
+              "image": "assets/grade3/chapter2/Infection.png",
               "prompt": "How can we protect the human body from infections in a sustainable way? What cleaning supplies do you see used most often? Are these supplies environmentally friendly? Why? "
             },
             {
@@ -2069,7 +2069,7 @@
               "content": [
                 {
                   "text": "The most valuable thing we have is our health. To strengthen our health we can take care of our personal hygiene and take vaccinations and medications. When we feel unhealthy or sick, we visit the doctor’s office. But did you know that there are many natural remedies or medicines to everyday health problems?",
-                  "image": "assets/cotton.png"
+                  "image": "assets/grade3/chapter2/Doctor.png"
                 }
               ]
             }

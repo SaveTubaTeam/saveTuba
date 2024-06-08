@@ -3,11 +3,18 @@ export default {
   worldofscience: "Мир науки",
   universe: "Вселенная и Земля",
   universe2: "Вселенная и Земля, продолжение",
-  substances: "Вещества и материалы",
-  processes: "Процессы в живой \nи неживой природе",
-  energy: "Энергия и движение",
-  ecology: "Экология и \nустойчивое развитие",
-  discoveries: "Открытия, меняющие мир",
+  itemsandmaterials: "Предметы и материалы",
+  itemsandmaterials2: "Предметы и материалы (продолжение)",
+  natureprocesses: "Процессы в живой \nи неживой природе",
+  energyandmotion: "Энергия и движение",
+  ecologyanddevelopment: "Экология и \nустойчивое развитие",
+  discoveryofscience: "Открытие научных новостей", 
+
+  // substances: "Вещества и материалы",
+  // processes: "Процессы в живой \nи неживой природе",
+  // energy: "Энергия и движение",
+  // ecology: "Экология и \nустойчивое развитие",
+  // discoveries: "Открытия, меняющие мир",
 
   /* Chapter 1 lesson names */
   c1l1: "Роль науки в познании окружающего мира",

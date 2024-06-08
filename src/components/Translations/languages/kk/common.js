@@ -19,6 +19,7 @@ export default {
   /* Minigame names */
   memory: "Білімді тексеру",
   sorting: "Топтастыру",
+  sorting: "Топтастыру 2",
   quiz: "Викторина",
   imageboom: "Ашық жауап",
   imageboom2: "Ашық жауап 2",
