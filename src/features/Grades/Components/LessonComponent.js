@@ -78,14 +78,20 @@ const ProgContainer = styled.View`
 
 //@param lessonData the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
 function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, navigation }) {
-  const minigames = [];
-  const mastery = [];
-  masteryAndMinigamesData.forEach((object) => {
-    object.navigation.includes("Mastery") ? mastery.push(object) : minigames.push(object);
-  })
+  const [minigames, setMinigames] = useState(null);
+  const [mastery, setMastery] = useState(null);
 
   useEffect(() => {
     console.log("inside LessonComponent.js.");
+    const masteryCopy = [];
+    const minigamesCopy = [];
+
+    masteryAndMinigamesData.forEach((object) => {
+      object.navigation.includes("Mastery") ? masteryCopy.push(object) : minigamesCopy.push(object);
+    });
+
+    setMastery(masteryCopy);
+    setMinigames(minigamesCopy);
   }, []);
 
   const nav = useNavigation();
@@ -143,6 +149,17 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
     );
   };
 
+  //we return a loader while rendering
+  while (minigames === null || mastery === null) {
+    return (
+      <SafeArea>
+        <Container>
+          <ActivityIndicator size="large" color="#00ff00" />
+        </Container>
+      </SafeArea>
+    );
+  }
+
   return (
     <SafeArea>
       <Container>
@@ -162,7 +179,7 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
               alignItems: "center"
             }}>
               <Tower 
-              source={{ uri: imageMap[lessonData.thumbnail] }}
+              source={{ uri: lessonData.thumbnailDownloadURL }}
               style={{
                 position: "absolute",
                 top: 10,
