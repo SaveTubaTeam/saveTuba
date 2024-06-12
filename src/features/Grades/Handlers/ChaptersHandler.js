@@ -29,12 +29,21 @@ const ChaptersHandler = ({ route })  => { //add achievements
   
   useEffect(() => {
     console.log(`${grade} route selected`);
+
+    const start = performance.now(); // Start performance timer
+
     getGradeData(grade).then(
       (gradeData) => {
         setGradeData(gradeData);
+
+        const end = performance.now();
+        const elapsedTimeSeconds = (end - start) / 1000; // Convert to seconds
+        console.log(`getMasteryAndMinigamesData done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
+
       }).catch((err) => {
         console.log("Error: ", err);
       });
+    
   }, []);
 
   //we return a loader while gradeData is fetched from the db

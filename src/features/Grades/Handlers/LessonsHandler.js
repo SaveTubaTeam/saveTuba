@@ -41,12 +41,21 @@ function LessonsHandler({ gradeNumber, selectedChapter }) {
 
   useEffect(() => {
     console.log(`inside LessonsHandler.js: ${gradeNumber} | ${selectedChapter}`);
+
+    const start = performance.now(); // Start performance timer
+
     getLessonsData(gradeNumber, selectedChapter, languageCode).then(
       (result) => { 
         setLessonsData(result);
+
+        const end = performance.now();
+        const elapsedTimeSeconds = (end - start) / 1000; // Convert to seconds
+        console.log(`getLessonsData done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
+
       }).catch((err) => {
-        console.log("Error in LessonsHandler.js: ", err);
+        console.log("Error in LessonsHandler.js with getLessonsData:", err);
       });
+
   }, []);
 
   //NOTE: ActivityIndicator component is a loading icon. https://reactnative.dev/docs/activityindicator
@@ -77,6 +86,7 @@ function LessonsHandler({ gradeNumber, selectedChapter }) {
         </Stack.Screen>
 
         {/* We map each lesson to its own IndividualLessonHandler */}
+        {/*  We need all the lesson metadata unlike in LessonsHandler because LessonComponent needs the original lesson metadata */}
         {lessonsData && lessonsData.map((lesson, index) => (
           <Stack.Screen
             key={index}
@@ -84,7 +94,11 @@ function LessonsHandler({ gradeNumber, selectedChapter }) {
             options={{ headerShown: false }}
           >
             {() => (
-              <IndividualLessonHandler lessonData={lesson} />
+              <IndividualLessonHandler 
+                gradeNumber={gradeNumber}
+                selectedChapter={selectedChapter}
+                lessonData={lesson}
+              />
             )}
           </Stack.Screen>
         ))}

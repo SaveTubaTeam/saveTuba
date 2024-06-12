@@ -6,6 +6,8 @@ import {
   ScrollView,
   TouchableOpacityBase,
   TouchableOpacity,
+  StyleSheet,
+  ActivityIndicator
 } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
@@ -75,15 +77,16 @@ const ProgContainer = styled.View`
 //This component formats and renders all of the lesson's contents
 
 //@param lessonData the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
-function LessonComponent({ imageMap, lessonData, navigation }) {
-
+function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, navigation }) {
   const minigames = [];
   const mastery = [];
-  //extracting mastery and minigame objects
-  console.log("LessonComponent:", lessonData.masteryAndMinigames);
-  lessonData.masteryAndMinigames.forEach((object) => {
+  masteryAndMinigamesData.forEach((object) => {
     object.navigation.includes("Mastery") ? mastery.push(object) : minigames.push(object);
   })
+
+  useEffect(() => {
+    console.log("inside LessonComponent.js.");
+  }, []);
 
   const nav = useNavigation();
   const { t } = useTranslation();
