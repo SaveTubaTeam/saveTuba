@@ -1,5 +1,6 @@
 import React from "react";
-import { FlatList, View, Image } from "react-native";
+import { FlatList, View } from "react-native";
+import { Image } from "expo-image";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -74,7 +75,7 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
             </TitleText>
           </View>
         </LinearGradient>
-        <Icon source={{uri: imageMap[item.icon]}} />
+        <Icon source={{uri: item.iconDownloadURL}} />
       </Chapter>
     );
   };

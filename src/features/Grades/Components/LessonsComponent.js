@@ -1,4 +1,5 @@
-import { FlatList, View, Image, TouchableOpacity } from "react-native";
+import { FlatList, View, TouchableOpacity } from "react-native";
+import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components/native";
@@ -120,7 +121,7 @@ function LessonsComponent({ lessonsData, navigation }) {
               aspectRatio: 1,
               borderRadius: 20,
             }}
-            source={{uri: imageMap[item.thumbnail]}}
+            source={{ uri: item.thumbnailDownloadURL }}
           />
         </View>
       </CurrentLesson>

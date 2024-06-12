@@ -101,7 +101,7 @@ const ImagePrompt = ({ data, imageMap }) => {
             }}
           >
             <Image 
-              source={{uri: imageMap[data.image]}} 
+              source={{uri: data.imageDownloadURL}} 
               style={{ width: 150, height: 150, borderRadius: 20 }} 
               contentFit="cover"
             />

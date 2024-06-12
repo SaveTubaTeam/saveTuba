@@ -5,8 +5,8 @@ import {
   Pressable,
   TouchableOpacity,
   FlatList,
-  Image,
 } from "react-native";
+import { Image } from "expo-image";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -130,7 +130,11 @@ const Start = ({ data, imageMap }) => {
       content = (
         <>
           <BodyText size="subtitle">{item.name}</BodyText>
-          <Image source={{uri: imageMap[item.image]}} style={{ width: 100, height: 100, alignSelf: 'center' }} />
+          <Image 
+            key={item.name}
+            source={{ uri: item.imageDownloadURL }} 
+            style={{ width: 100, height: 100, alignSelf: 'center' }} 
+          />
         </>
     )} else {
       content = (

@@ -50,7 +50,8 @@ async function getGradeData(grade) {
 
 // getLessonsData() will pull the lesson data and then save it in a format that we can use.
 
-//BENCHMARK 6/12/24: this is the slowest function by a mile. For large chapters with many lessons load time is ~2 seconds, which will most definitely be a higher value in KZ
+//BENCHMARK 6/12/24: this is the slowest function by a mile. For large chapters with many lessons, load time is ~2 seconds, which will most definitely be a higher value in KZ
+//Performance improvements could be made by having this function performI concurrently
 
 // @param {string} grade a string e.g. 'Grade2' the grade
 // @param {string} chpt a string e.g. 'Chapter1' which specifies the chapter
@@ -73,6 +74,7 @@ async function getLessonsData(grade, chpt, languageCode) {
         console.log("Pulling lessons from DB");
         const lessonsList = [];
 
+        //the below logic could be improved by iterating through the lessons in the same manner as in getGradeData
         const MAX_NUM_LESSONS = 50; //to prevent infinite loops
         for(let i=1; i<MAX_NUM_LESSONS; i++) {
             let individualLessonData = await getIndividualLessonData(grade, chpt, i, languageCode);
@@ -91,6 +93,7 @@ async function getLessonsData(grade, chpt, languageCode) {
 }
 
 //getLessonsData helper!
+//@param {int} lessonNumber the for-loop i variable
 async function getIndividualLessonData(grade, chpt, lessonNumber, languageCode) {
     try {
         let lessonReference = db.collection(grade).doc(chpt).collection(`Lesson${lessonNumber}`).doc(languageCode);

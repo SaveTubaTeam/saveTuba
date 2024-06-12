@@ -19,7 +19,7 @@ const ASSETS_FILEPATH = "../../../../../assets/";
 //@param objectData passed from IndividualLessonHandler
 const MemoryHandler = ({ objectData, imageMap }) => {
   const { t } = useTranslation();
-  const cardsArray = objectData.content;
+  const [cardsArray, setCardsArray] = useState(null);
 
   const [currentSelection, setCurrentSelection] = useState([]);
   const [successfullyMatchedPairs, setSuccessfullyMatchedPairs] = useState([]);
@@ -30,14 +30,20 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
   //for the completion modal
   useEffect(() => {
-    if (score === cardsArray.length / 2) {
-      setCompletionModalVisible(true);
+    if(cardsArray) {
+      if (score === cardsArray.length / 2) {
+        setCompletionModalVisible(true);
+      }
     }
-  }, [score]);
+  }, [score, cardsArray]);
 
   //to initially randomly sort the array
   useEffect(() => {
-    cardsArray.sort(() => Math.random() - 0.5); //shuffle array
+    console.log(objectData.content);
+    const cardsArrayShuffled = [...objectData.content];
+    cardsArrayShuffled.sort(() => Math.random() - 0.5); //shuffle array
+
+    setCardsArray(cardsArrayShuffled);
   }, []);
 
   //to check if we have a match within currentSelection
@@ -65,7 +71,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
   //to reset the array and all state variables
   const resetCards = () => {
-    cardsArray.sort(() => Math.random() - 0.5); //randomizing array again
+    setCardsArray(prevCardsArray => prevCardsArray.sort(() => Math.random() - 0.5)); //randomizing array again
     setCurrentSelection([]);
     setSuccessfullyMatchedPairs([]);
     setScore(0);
@@ -74,8 +80,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
   //card is the individual card inside of the minigame. Each card tracks its own state via isOpen
   //note: see renderCardsArray for params
-  const Card = ({ index, name, image }) => {
-
+  const Card = ({ index, name, image, imageDownloadURL, imageBlurHash }) => {
     //if the card is already matched or if it is in our currentSelection, isOpen evaluates to true.
     //Documentation for .some(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
     const isOpen = successfullyMatchedPairs.includes(name) || currentSelection.some(card => card.index === index);
@@ -88,11 +93,14 @@ const MemoryHandler = ({ objectData, imageMap }) => {
         });
       }
     }; //end of pressCard()
-
     let content;
     if(image) { //now checking content type to be displayed within the card
       content = (
-        <Image source={{ uri: imageMap[image] }} style={{ width: 80, height: 80 }}/>
+        <Image 
+          key={index}
+          source={{ uri: imageDownloadURL }} 
+          style={{ width: 80, height: 80, borderRadius: 4 }}
+        />
     )} else {
       content = (
           <TitleText size="button" color="secondary">
@@ -134,17 +142,30 @@ const MemoryHandler = ({ objectData, imageMap }) => {
   const renderCardsArray = () => {
     //.map() extracts the individual card and the index
     return cardsArray.map((card, index) => {
-      let imageCheckedForNull = "";
-      card.image ? imageCheckedForNull = card.image : imageCheckedForNull = "";
       
-      return (
+      if(card.image) {
+        return (
+            <Card
+              index={index}
+              key={index}
+              name={card.name}
+              image={card.image}
+              imageDownloadURL={card.imageDownloadURL}
+              imageBlurHash={card.imageBlurHash}
+            />
+        );
+      } else {
+        return (
           <Card
             index={index}
             key={index}
             name={card.name}
-            image={imageCheckedForNull}
+            image={null}
+            imageDownloadURL={undefined}
+            imageBlurHash={undefined}
           />
-      );
+        );
+      } 
     });
   }
 
@@ -163,7 +184,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
       </View>
 
       <View style={styles.grid}>
-        {renderCardsArray()}
+        {cardsArray && renderCardsArray()}
       </View>
 
       <Score score={score} />

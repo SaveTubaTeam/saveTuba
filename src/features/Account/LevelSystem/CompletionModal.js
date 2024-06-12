@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import { theme } from "../../../infrastructure/theme";
-import { View, Modal, Pressable, TouchableOpacity, Text, Image } from "react-native";
+import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
+import { Image } from "expo-image";
 import { Spacer } from "../../../components/spacer.component";
 
 import { TitleText } from "../../../components/title-text.component";

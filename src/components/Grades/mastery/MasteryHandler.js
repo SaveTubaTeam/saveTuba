@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { FlatList, Image } from "react-native";
+import { FlatList } from "react-native";
+import { Image } from "expo-image";
 import { Button } from "react-native-paper";
 import { connect } from "react-redux";
 
@@ -75,8 +76,9 @@ const MasteryHandler = ({ objectData, imageMap }) => {
                 width: "60%",
                 height: undefined,
                 marginTop: 20,
+                borderRadius: 4
               }}
-              source={{uri: imageMap[item.image]}}
+              source={{uri: item.imageDownloadURL}}
             />
           )}
         </Prompt>

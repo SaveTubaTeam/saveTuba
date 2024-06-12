@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import {
   View,
   FlatList,
-  Image,
   ScrollView,
   TouchableOpacityBase,
   TouchableOpacity,
   StyleSheet,
   ActivityIndicator
 } from "react-native";
+import { Image } from "expo-image";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -115,8 +115,8 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
                 width: undefined,
                 marginBottom: 5,
               }}
-              source={{ uri: imageMap[item.icon] }}
-            ></Image>
+              source={{ uri: item.iconDownloadURL }}
+            />
             <TitleText size="subtitle" color="secondary">
               {t(item.title)} 
             </TitleText>

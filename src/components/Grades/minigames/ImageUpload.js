@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { Image } from "react-native";
+import { Image } from "expo-image";
 import * as ImagePicker from "expo-image-picker";
 import { useTranslation } from "react-i18next";
 
@@ -29,7 +29,7 @@ export default function ImageUpload() {
 
     console.log(result);
 
-    if (!result.cancelled) {
+    if (!result.canceled) {
       setImage(result.uri);
     }
   };

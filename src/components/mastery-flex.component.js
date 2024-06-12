@@ -11,12 +11,28 @@ import {
     // Header,
     ImageBg,
 } from "./Grades/grades.styles";
-
+import { Image } from "expo-image";
 
 const styles = StyleSheet.create({
     flexDirection: 'row',
     container: {
         flex: 1
+    },
+    image: { 
+        alignItems: "center",
+        justifyContent: "center",
+        flex: 1,
+        width: "100%",
+        borderRadius: 20
+    },
+    overlay: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
 });
 
@@ -32,6 +48,7 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
                 <TouchableOpacity
                 key={index}
                 style={{
+                    position: 'relative',
                     width: "110%",
                     height: 150,
                     margin: 10,
@@ -41,14 +58,17 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
                 }}
                 onPress={() => nav.navigate(mastery.navigation)}
                 >
-                    <ImageBg
-                    style={{ borderRadius: 20 }}
-                    source={require("../../assets/mastery.png")}
+                    <Image
+                        style={styles.image}
+                        source={require("../../assets/mastery.png")}
                     >
+                    </Image>
+                    {/* Absolute positioning for TitleText */}
+                    <View style={styles.overlay}>
                         <TitleText weight="bold" size="h5" color="quaternary">
                             {t(mastery.title)}
                         </TitleText>
-                    </ImageBg>
+                    </View>
                 </TouchableOpacity>
             ))}
         </View>
