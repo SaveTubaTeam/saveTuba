@@ -75,7 +75,7 @@ const InputContainer = styled.View`
 const RegisterScreen = () => {
     const navigation = useNavigation();
     const { t } = useTranslation();
-    const [phoneNumber, setPhoneNumber] = useState("");
+    //const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [firstName, setFirstName] = useState("");
@@ -135,17 +135,17 @@ const RegisterScreen = () => {
             setLoading(false);
             console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
             /* marked for translation */
-            Alert.alert("Invalid Registration", "Email or password is invalid");
+            Alert.alert("Invalid Registration", "Email or password is invalid. Make sure your password is at least 6 characters.");
         });
     }
 
     //posting user to "users" and "classrooms" collection
     const postUser = async() => {
       //1) setting user within the "users" doc
-      const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //regex removing all non-digit chars
+      //const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //regex removing all non-digit chars
       await setDoc(doc(db, "users", email), {
         //setting user metadata
-        phoneNumber: cleanedPhoneNumber,
+        //phoneNumber: cleanedPhoneNumber,
         email: email,
         firstName: firstName,
         lastName: lastName,
@@ -157,7 +157,7 @@ const RegisterScreen = () => {
           students: arrayUnion(email)
       });
       //resetting registration form for sanity
-      setPhoneNumber("");
+      //setPhoneNumber("");
       setEmail("");
       setPassword("");
       setFirstName("");
@@ -178,13 +178,13 @@ const RegisterScreen = () => {
               </TitleText>
     
               <InputContainer>
-                <Input
+                {/* <Input
                   placeholder={"Phone Number (ex +7 9435553201)"}
                   onChangeText={(text) => setPhoneNumber(text)}
                   placeholderTextColor="#696969"
                   value={phoneNumber}
                   autoCapitalize="none"
-                />
+                /> */}
                 <Input
                   placeholder={t("common:email")}
                   onChangeText={(text) => setEmail(text)}
