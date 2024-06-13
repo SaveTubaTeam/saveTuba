@@ -102,6 +102,7 @@ const ImagePrompt = ({ data, imageMap }) => {
           >
             <Image 
               source={{uri: data.imageDownloadURL}} 
+              placeholder={data.imageBlurHash}
               style={{ width: 150, height: 150, borderRadius: 20 }} 
               contentFit="cover"
             />
@@ -183,7 +184,7 @@ const OpenResponseHandler = ({ objectData, imageMap }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBg
-        source={require("../../../../../assets/promptBackground.jpg")} //hardcoded background
+        source={require("../../../../../assets/openResponseBg.jpg")} //hardcoded background
         resizeMode="cover"
         style={{
           flex: 1,

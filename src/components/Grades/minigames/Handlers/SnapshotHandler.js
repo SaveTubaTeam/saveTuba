@@ -60,7 +60,7 @@ const SnapshotHandler = ({ objectData, imageMap }) => {
   return (
     <>
       <Container>
-        <ImageBg source={require("../../../../../assets/lessonbg2.png")}>
+        <ImageBg source={require("../../../../../assets/snapshotbg.png")}>
           <Prompt>
             <TitleText size="subtitle">{objectData.prompt}</TitleText>
           </Prompt>

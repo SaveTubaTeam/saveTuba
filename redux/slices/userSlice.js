@@ -12,6 +12,8 @@ const initialState = {
 //@param loginType either 'phoneNumber' or 'email' to query against collection
 //@param input the actual number or email being passed from the login screens
 export const fetchUser = createAsyncThunk("userSlice/fetchUser", async({loginType, input}) => {
+    //input.includes("@") ? input = "email" : input = "phone"
+    console.log(`loginType: ${loginType}, input: ${input}`);
     //querying against the collection https://firebase.google.com/docs/firestore/query-data/queries
     const query = db.collection('users').where(loginType, '==', input);
 

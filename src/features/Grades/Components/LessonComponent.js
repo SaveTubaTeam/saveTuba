@@ -180,6 +180,7 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
             }}>
               <Tower 
               source={{ uri: lessonData.thumbnailDownloadURL }}
+              placeholder={lessonData.thumbnailBlurHash}
               style={{
                 position: "absolute",
                 top: 10,

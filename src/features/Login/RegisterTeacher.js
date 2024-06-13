@@ -131,7 +131,7 @@ export class RegisterTeacher extends Component {
 
         return (
             <Container>
-            <ImageBg source={require("../../../assets/homepagebackground.png")}>
+            <ImageBg source={require("../../../assets/registerScreenBg.png")}>
               <TitleText color="secondary" size="title">
                 Зарегистрируйтесь, чтобы сохранить Tuba
                 {/* Register For Save Tuba */}

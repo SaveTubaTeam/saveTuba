@@ -133,6 +133,7 @@ const Start = ({ data, imageMap }) => {
           <Image 
             key={item.name}
             source={{ uri: item.imageDownloadURL }} 
+            placeholder={item.imageBlurHash}
             style={{ width: 100, height: 100, alignSelf: 'center' }} 
           />
         </>
@@ -162,7 +163,7 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={require("../../../../../assets/lessonbg.png")}>
+      <ImageBg source={require("../../../../../assets/sortingbg.jpg")}>
         <Container>
 
           {/* the overall prompt for this sorting exercise */}

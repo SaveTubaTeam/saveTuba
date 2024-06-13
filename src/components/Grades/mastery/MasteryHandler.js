@@ -79,6 +79,7 @@ const MasteryHandler = ({ objectData, imageMap }) => {
                 borderRadius: 4
               }}
               source={{uri: item.imageDownloadURL}}
+              placeholder={item.imageBlurHash}
             />
           )}
         </Prompt>
@@ -90,7 +91,7 @@ const MasteryHandler = ({ objectData, imageMap }) => {
     <Container>
       <ImageBg
         style={{ paddingTop: 20 }}
-        source={require("../../../../assets/lessonbg.png")}
+        source={require("../../../../assets/masterybg.png")}
         resizeMode="cover"
       >
         <FlatList //

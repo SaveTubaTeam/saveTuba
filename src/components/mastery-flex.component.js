@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
 
 
 export const MasteryFlex = ({ masteryArray, navigation }) => {
+    const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery.png?alt=media&token=ad62687c-a8ae-4936-82ae-cc71f6343c79"
+    const masteryIconBlurHash = "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7"
+
     const nav = useNavigation();
     const { t } = useTranslation();
     const imageMap = useSelector(state => state.imageMap.imageData);
@@ -60,7 +63,8 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
                 >
                     <Image
                         style={styles.image}
-                        source={require("../../assets/mastery.png")}
+                        source={masteryIconPNG}
+                        placeholder={masteryIconBlurHash}
                     >
                     </Image>
                     {/* Absolute positioning for TitleText */}

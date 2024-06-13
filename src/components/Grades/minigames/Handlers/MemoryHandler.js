@@ -18,6 +18,10 @@ const ASSETS_FILEPATH = "../../../../../assets/";
 
 //@param objectData passed from IndividualLessonHandler
 const MemoryHandler = ({ objectData, imageMap }) => {
+  //blockPNG refers to the image at assets/block.png in firebase storage
+  const blockPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fblock.png?alt=media&token=502d0477-07f5-4084-95a3-28d492793425"
+  const blockBlurHash = "UBO-r[9u0hNd~BWBRkof5Xoes.af^*a|WCay";
+
   const { t } = useTranslation();
   const [cardsArray, setCardsArray] = useState(null);
 
@@ -99,6 +103,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
         <Image 
           key={index}
           source={{ uri: imageDownloadURL }} 
+          placeholder={imageBlurHash}
           style={{ width: 80, height: 80, borderRadius: 4 }}
         />
     )} else {
@@ -117,7 +122,8 @@ const MemoryHandler = ({ objectData, imageMap }) => {
 
         <View style={{ width: 80, height: 80, justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
           <Image
-            source={{ uri: imageMap['assets/block.png'] }}
+            source={{ uri: blockPNG }}
+            placeholder={blockBlurHash}
             style={{ width: 80, height: 80, position: 'absolute' }}
           />
           {isOpen ? (
@@ -170,7 +176,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
   }
 
   return (
-    <ImageBackground source={require("../../../../../assets/beach.jpg")} 
+    <ImageBackground source={require("../../../../../assets/memorybg.jpg")} 
     style={styles.container} 
     imageStyle= {{ opacity: 0.7 }}
     >

@@ -186,7 +186,7 @@ export class Register extends Component {
 
     return (
       <Container behavior="padding">
-        <ImageBg source={require("../../../assets/homepagebackground.png")}>
+        <ImageBg source={require("../../../assets/registerScreenBg.png")}>
           <TitleText color="secondary" size="title">
             {t("common:makeanewaccount")}
             {/* Register For Save Tuba */}

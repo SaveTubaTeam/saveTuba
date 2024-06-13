@@ -50,7 +50,6 @@ function ProfileScreen() {
   // }, [navigation]);
   // console.warn(achievements);
   return (
-    <ImageBg source={require("../../../../assets/basic-bg.png")}>
       <SafeArea>
         <ScrollView>
           <Container>
@@ -75,7 +74,6 @@ function ProfileScreen() {
           </View>
         </Modal> */}
       </SafeArea>
-    </ImageBg>
   );
 }
 

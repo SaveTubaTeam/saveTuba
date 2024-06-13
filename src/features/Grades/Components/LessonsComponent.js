@@ -66,7 +66,7 @@ function LessonsComponent({ lessonsData, navigation }) {
         >
           <View
             style={{
-              width: "60%",
+              width: "58%",
               padding: 20,
               height: 200,
               zIndex: 1000,
@@ -117,11 +117,11 @@ function LessonsComponent({ lessonsData, navigation }) {
               right: 0,
               bottom: 0,
               height: 200,
-              width: "43%",
+              width: "44%",
               aspectRatio: 1,
-              borderRadius: 20,
             }}
             source={{ uri: item.thumbnailDownloadURL }}
+            placeholder={item.thumbnailBlurHash}
           />
         </View>
       </CurrentLesson>

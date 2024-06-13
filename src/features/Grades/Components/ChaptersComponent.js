@@ -75,7 +75,10 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
             </TitleText>
           </View>
         </LinearGradient>
-        <Icon source={{uri: item.iconDownloadURL}} />
+        <Icon 
+          source={{uri: item.iconDownloadURL}}
+          placeholder={item.iconBlurHash}
+        />
       </Chapter>
     );
   };

@@ -9,7 +9,7 @@ import {
   Modal,
   Pressable,
   FlatList,
-  Image,
+  ImageBackground,
 } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
@@ -130,12 +130,19 @@ const ReorderHandler = ({ objectData }) => {
   };
 
   //DraggableFlatlist is used to interactively order the list: https://www.npmjs.com/package/react-native-draggable-flatlist?activeTab=readme
-  //Current version 4.0.0 heavily dependent on two packages: (package versions can be unit tested here: https://snack.expo.dev/@computerjazz/draggable-flatlist-examples)
+  //Current version 4.0.0 heavily dependent on two packages: (package versions can be unit tested here [THIS SNACK IS NOW DEPRECATED]: https://snack.expo.dev/@computerjazz/draggable-flatlist-examples)
   //react-native-reanimated
   //react-native-gesture-handler
   return (
-    <>
-      <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "#cce882" }}>
+    <ImageBackground source={require("../../../../../assets/reorderbg.jpg")} 
+    style={{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    }} 
+    imageStyle= {{ opacity: 0.7 }}
+    >
+      <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }} style={{ flex: 1, width: '100%' }}>
         <DraggableFlatList
           scrollEnabled={false}
           data={data}
@@ -186,7 +193,7 @@ const ReorderHandler = ({ objectData }) => {
         </CompletionModal>
 
       </ScrollView>
-    </>
+    </ImageBackground>
   );
 };
 

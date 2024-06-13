@@ -12,20 +12,23 @@
       },
       "ios": {
         "simulator": true,
-        "cocoapods": "1.13.0"
-      }
+        "cocoapods": "1.14.3"
+      },
+      "channel": "development"
     },
     "preview": {
       "distribution": "internal",
       "ios": {
-        "cocoapods": "1.13.0"
-      }
+        "cocoapods": "1.14.3"
+      },
+      "channel": "preview"
     },
     "production": {
       "autoIncrement": true,
       "ios": {
         "image": "sdk-49"
-      }
+      },
+      "channel": "production"
     }
   },
   "submit": {

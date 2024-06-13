@@ -7,14 +7,14 @@
     "version": "1.0.2",
     "orientation": "portrait",
     "privacy": "public",
-    "icon": "./assets/Icon-App-60x60@3x.png",
+    "icon": "./assets/appIcon.png",
     "splash": {
       "image": "./assets/splashScreen.png",
       "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "url": "com.nadjastojanov.SaveTuba",
+      "url": "https://u.expo.dev/4bc56c03-41a0-49df-96e2-596bfa1d1aaf",
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
@@ -47,6 +47,9 @@
           "launchModeExperimental": "most-recent"
         }
       ]
-    ]
+    ],
+    "runtimeVersion": {
+      "policy": "appVersion"
+    }
   }
 }

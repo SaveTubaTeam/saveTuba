@@ -167,7 +167,7 @@ const Start = ({ data, imageMap }) => {
 
   return (
     <>
-      <ImageBg source={require("../../../../../assets/nat.jpg")}>
+      <ImageBg source={require("../../../../../assets/quizbg.jpg")}>
         <Container>
           <Question>
             <TitleText size="title">{data.content[count].prompt}</TitleText>

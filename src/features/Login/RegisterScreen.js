@@ -171,7 +171,7 @@ const RegisterScreen = () => {
         <Container behavior="padding">
           {/* here a ternary operator is used to render a spinner if loading == true (see below) */}
           {!loading ? (
-            <ImageBg source={require("../../../assets/homepagebackground.png")}>
+            <ImageBg source={require("../../../assets/registerScreenBg.png")}>
               <TitleText color="secondary" size="title">
                 {t("common:makeanewaccount")}
                 {/* Register For Save Tuba */}
