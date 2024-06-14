@@ -32,7 +32,8 @@ const Stack = createNativeStackNavigator();
 //LessonsHandler is initialized as a component within ChaptersHandler and takes props there.
 //@param gradeNumber a string representing the selected grade, e.g. 'Grade2'
 //@param selectedChapter a string representing the selected chapter, e.g. 'Chapter1'
-function LessonsHandler({ gradeNumber, selectedChapter }) {
+//@param {int} numLessons the number of lessons in the selected chapter
+function LessonsHandler({ gradeNumber, selectedChapter, numLessons }) {
   //const language = "en"; //hardcoded
   const { t, i18n } = useTranslation();
   const languageCode = i18n.language; //setting the languageCode to the current language
@@ -44,7 +45,7 @@ function LessonsHandler({ gradeNumber, selectedChapter }) {
 
     const start = performance.now(); // Start performance timer
 
-    getLessonsData(gradeNumber, selectedChapter, languageCode).then(
+    getLessonsData(gradeNumber, selectedChapter, numLessons, languageCode).then(
       (result) => { 
         setLessonsData(result);
 

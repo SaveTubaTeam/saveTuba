@@ -53,11 +53,14 @@ async function getGradeData(grade) {
 //BENCHMARK 6/12/24: this is the slowest function by a mile. For large chapters with many lessons, load time is ~2 seconds, which will most definitely be a higher value in KZ
 //Performance improvements could be made by having this function perform concurrently
 
+//BENCHMARK 6/14/24: with concurrency this function now runs in less than 1 second regarless of the number of lessons!
+
 // @param {string} grade a string e.g. 'Grade2' the grade
 // @param {string} chpt a string e.g. 'Chapter1' which specifies the chapter
+// @param {int} numLessons the number of lessons in the given chapter
 // @param {string} languageCode **currently always set to "en"
 // @return {Object[]} lessonsList **This is just a list of the JSON formatted lessons 
-async function getLessonsData(grade, chpt, languageCode) {
+async function getLessonsData(grade, chpt, numLessons, languageCode) {
     console.log(`\n\tgetLessonsData() called. Now in ${grade} ${chpt} Lessons\n\t\tLANGUAGE_CODE:`, languageCode);
 
     const result = await getCacheObject(`${grade}-${chpt}-${languageCode}`).then((result) => {
@@ -72,20 +75,14 @@ async function getLessonsData(grade, chpt, languageCode) {
         return result;
     } else {*/
         console.log("Pulling lessons from DB");
-        const lessonsList = [];
+        const lessonPromises = [];
 
-        //the below logic could be improved by introducing concurrency. 
-        //In order to avoid extraneous iteration we would probably need a numLessons attribute in each chapter's metadata.
-        const MAX_NUM_LESSONS = 50; //to prevent infinite loops
-        for(let i=1; i<MAX_NUM_LESSONS; i++) {
-            let individualLessonData = await getIndividualLessonData(grade, chpt, i, languageCode);
-
-            if(individualLessonData === null) {
-                break; //break the getLessonsData loop
-            }
-            
-            lessonsList.push(individualLessonData);
+        for(let i=1; i<=numLessons; i++) {
+            lessonPromises.push(getIndividualLessonData(grade, chpt, i, languageCode));
         }
+
+        //resolving all promises, filtering out nulls
+        const lessonsList = (await Promise.all(lessonPromises)).filter(lesson => lesson !== null);
 
         console.log("Lessons: ", lessonsList); //logging lessons array
         //await setCache(`${grade}-${chpt}-${languageCode}`, lessonsList); //cache key looks like "Grade1-Chapter3-en"

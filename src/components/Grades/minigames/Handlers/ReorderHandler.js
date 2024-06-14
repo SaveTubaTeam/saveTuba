@@ -42,12 +42,13 @@ const ModalContainer = styled.View`
 `;
 
 const Prompt = styled.View`
-  width: 100%;
+  width: 90%;
   background-color: #fff;
   border-radius: 30px;
   padding: 20px;
   margin-bottom: 10px;
   align-items: center;
+  align-self: center;
 `;
 
 const SubmitButton = styled.TouchableOpacity`
@@ -64,6 +65,7 @@ const Item = styled.TouchableOpacity`
   border-radius: 10px;
   padding: 10px;
   margin: 5px 0;
+  align-self: center;
 `;
 
 const REORDER_GRADIENTS = [
@@ -131,7 +133,7 @@ const ReorderHandler = ({ objectData }) => {
 
   const HeaderComponent = () => {
     return (
-      <Prompt style={{ alignItems: "center", paddingTop: 10, justifyContent: 'center' }}>
+      <Prompt style={{ alignItems: "center", justifyContent: 'center' }}>
         <TitleText size="subtitle">{objectData.prompt}</TitleText>
         <Spacer size="medium" />
         <TitleText size="caption">
@@ -179,7 +181,7 @@ const ReorderHandler = ({ objectData }) => {
       <DragList
         scrollEnabled={true}
         nestedScrollEnabled={true}
-        contentContainerStyle={{ paddingTop: 20, flexGrow: 0 }}
+        contentContainerStyle={{ paddingTop: 20, flexGrow: 0, width: "100%" }}
         data={data}
         keyExtractor={(item) => item.text}
         onReordered={onReordered}

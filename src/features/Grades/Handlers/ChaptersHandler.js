@@ -79,6 +79,7 @@ const ChaptersHandler = ({ route })  => { //add achievements
               <LessonsHandler
                 gradeNumber={grade}
                 selectedChapter={chapter.navigation}
+                numLessons={chapter.numLessons}
               />
             )}
           </Stack.Screen>
