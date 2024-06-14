@@ -23,8 +23,6 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { Spacer } from "../../../spacer.component";
-
-import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const Container = styled.View`
@@ -67,7 +65,7 @@ const Item = styled.TouchableOpacity`
   margin: 5px 0;
 `;
 
-REORDER_GRADIENTS = [
+const REORDER_GRADIENTS = [
   {active: "#c58bda", dormant: "#b897e8"}, 
   {active: "#a9a2f2", dormant: "#9badf8"}, 
   {active: "#8db8fc", dormant: "#81c1fc"}, 
@@ -94,8 +92,8 @@ const ReorderHandler = ({ objectData }) => {
 
     const styledData = shuffledData.map((element, index) => ({ //mapping our gradient onto the shuffled array.
       ...element, //safe object mutation
-      active: REORDER_GRADIENTS[index % 9].active,
-      dormant: REORDER_GRADIENTS[index % 9].dormant
+      active: REORDER_GRADIENTS[index % 10].active,
+      dormant: REORDER_GRADIENTS[index % 10].dormant
     }));
 
     setData(styledData); // Updating the data state with shuffled and mapped data
@@ -113,17 +111,16 @@ const ReorderHandler = ({ objectData }) => {
     return (
       <>
         <ScaleDecorator>
-        <Item
-          key={item.text}
-          activeOpacity={1}
-          style={{ backgroundColor: isActive ? item.active : item.dormant }}
-          onPressIn={drag}
-          disabled={isActive}
-        >
-          <BodyText color="secondary" size="subtitle">
-            {item.text}
-          </BodyText>
-        </Item>
+          <Item
+            activeOpacity={1}
+            style={{ backgroundColor: isActive ? item.active : item.dormant }}
+            onPressIn={drag}
+            disabled={isActive}
+          >
+            <BodyText color="secondary" size="subtitle">
+              {item.text}
+            </BodyText>
+          </Item>
         </ScaleDecorator>
       </>
     );
@@ -142,34 +139,29 @@ const ReorderHandler = ({ objectData }) => {
     }} 
     imageStyle= {{ opacity: 0.7 }}
     >
-      <ScrollView contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }} style={{ flex: 1, width: '100%' }}>
         <DraggableFlatList
-          scrollEnabled={false}
+          scrollEnabled={true}
           data={data}
-          style={{ width: "90%" }}
+          contentContainerStyle={{ flex: 1, width: "100%", alignItems: 'center', justifyContent: 'center' }}
           onDragEnd={({ data }) => {
             setData(data);
             console.log("\nCurrent List:" + data.map((item) => `\n${item.text}`)); //logging current order of list
           }}
           keyExtractor={(item) => item.text} //fixed bug where any key set to 0 would be undraggable.
           renderItem={renderItem}
-          ListHeaderComponentStyle={{ alignItems: "center", paddingTop: 10, justifyContent: 'center' }}
-          ListHeaderComponent={
-            <Prompt>
+          ListHeaderComponent={() => { return (
+            <Prompt style={{ alignItems: "center", paddingTop: 10, justifyContent: 'center' }}>
               <TitleText size="subtitle">{objectData.prompt}</TitleText>
               <Spacer size="medium" />
-
-              {/* marked for translation */}
               <TitleText size="caption">
                 {t("minigames:reorderhint")}
               </TitleText>
             </Prompt>
-          }
-          ListFooterComponentStyle={{ marginTop: 10 }}
-          ListFooterComponent={
-
-            /* Submit Button */
-            <SubmitButton onPress={() => {
+          )}}
+          ListFooterComponent={() => { return (
+            <SubmitButton 
+                style={{ marginTop: 10 }}
+                onPress={() => {
                 setScore(0);//resetting score
                 //iterating through list to check for correct order and update score.
                 data.forEach((item, index) => {
@@ -178,13 +170,13 @@ const ReorderHandler = ({ objectData }) => {
                 });
 
                 //setting visibility of modal to true;
-                setCompletionModalVisible(!completionModalVisible);
+                setCompletionModalVisible(currentVisible => !currentVisible);
                 }}>
               <BodyText color="secondary" size="subtitle">
                 {t("common:submit")}
               </BodyText>
             </SubmitButton>
-          }
+          )}}
         />
 
         {/* marked for translation */}
@@ -192,7 +184,6 @@ const ReorderHandler = ({ objectData }) => {
         prompt={t("minigames:reorderprompt")}>
         </CompletionModal>
 
-      </ScrollView>
     </ImageBackground>
   );
 };

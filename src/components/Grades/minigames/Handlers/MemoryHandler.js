@@ -173,7 +173,7 @@ const Card = ({ index, name, image, imageDownloadURL, imageBlurHash, isOpen, onP
       {isOpen ? (
         content
       ) : (
-        <Ionicons name="help-outline" size={80} color="#fff8e7" />
+        <Ionicons name="flower-outline" size={55} color="#fff8e7" />
       )}
 
     </TouchableOpacity>

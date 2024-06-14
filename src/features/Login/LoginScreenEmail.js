@@ -85,7 +85,7 @@ const LoginScreenEmail = () => {
   useEffect(() => {
     console.log("\n\tinside LoginScreenEmail.js")
     console.log('Most recent userData store:', currentUserStore);
-    dispatch(fetchImages());
+    //dispatch(fetchImages());
 
     //we set an observer on the auth object via onAuthStateChanged()
     const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()

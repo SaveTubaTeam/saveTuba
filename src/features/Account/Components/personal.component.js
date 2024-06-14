@@ -61,19 +61,21 @@ const PersonalCard = () => {
                 size={180}
                 icon="head"
                 backgroundColor={theme.colors.ui.tertiary}
-              />
+              >
+              </Avatar.Icon>
 
             <TouchableOpacity
               //onPress={() => navigation.navigate("CameraScreen")}
             >
-              {/* This will need to also be a feature in the firebase - language */}
               <FontAwesomeIcon
-                position="absolute"
                 icon={faCamera}
                 size={60}
-                top={20}
-                right={-10}
-                color={theme.colors.ui.primary}
+                style={{
+                  position: 'absolute',
+                  top: 20,
+                  right: -10,
+                  color: theme.colors.ui.primary,
+                }}
               />
             </TouchableOpacity>
           </Row>

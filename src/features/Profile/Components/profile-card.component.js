@@ -4,8 +4,6 @@ import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import { Avatar, Text } from "react-native-paper";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faLeaf } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import userSlice, { selectCurrentUser } from "../../../../redux/slices/userSlice";

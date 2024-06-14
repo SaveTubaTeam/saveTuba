@@ -46,7 +46,8 @@
         {
           "launchModeExperimental": "most-recent"
         }
-      ]
+      ],
+      "expo-font"
     ],
     "runtimeVersion": {
       "policy": "appVersion"

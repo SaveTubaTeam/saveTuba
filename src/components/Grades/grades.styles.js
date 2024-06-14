@@ -26,7 +26,7 @@ export const Header = ({ title, back, navigation }) => {
           }}
           onPress={() => navigation.navigate(back)}
         >
-          <Ionicons name="md-chevron-back-outline" size={26} color="#748816" />
+          <Ionicons name="chevron-back" size={26} color="#748816" />
         </TouchableOpacity>
         <Text
           style={{

@@ -99,7 +99,7 @@ function LessonsComponent({ lessonsData, navigation }) {
               }}
             >
               <Ionicons
-                name="md-play"
+                name="caret-forward"
                 size={16}
                 color="#748816"
                 style={{ paddingRight: 5, paddingTop: 1 }}
