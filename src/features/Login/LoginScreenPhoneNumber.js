@@ -6,8 +6,6 @@ import styled from "styled-components/native";
 import { auth } from "../../../firebase";
 import { Alert } from 'react-native';
 
-import { fetchImages } from "../../../redux/slices/imageSlice";
-import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
 import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
@@ -83,7 +81,6 @@ const LoginScreenPhone = () => {
   useEffect(() => {
     console.log("\n\tinside LoginScreenEmail.js")
     console.log('most recent userData store:', currentUserStore);
-    //dispatch(fetchImages());
 
     //we set an observer on the auth object via onAuthStateChanged()
     const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()

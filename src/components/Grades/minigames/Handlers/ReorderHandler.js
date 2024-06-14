@@ -13,11 +13,6 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-
-import { connect } from "react-redux";
-import DraggableFlatList, {
-  ScaleDecorator,
-} from "react-native-draggable-flatlist";
 import DragList from 'react-native-draglist';
 
 import { useTranslation } from "react-i18next";

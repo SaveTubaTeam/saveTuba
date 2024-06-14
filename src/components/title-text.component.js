@@ -41,7 +41,7 @@ const getVariant = (weight, size, color, align) => {
   const colorValue = colorVariant[color];
   const alignValue = alignVariant[align];
 
-  return `fontWeight: ${weightValue} fontSize: ${sizeValue}px color:${colorValue} textAlign:${alignValue}`;
+  return `fontWeight: ${weightValue}; fontSize: ${sizeValue}px; color:${colorValue}; textAlign:${alignValue};`;
 };
 
 const TText = styled.Text`
@@ -49,14 +49,7 @@ const TText = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading};
 `;
 
-export const TitleText = ({ weight, size, color, align, children }) => {
+export const TitleText = ({ weight="regular", size="title", color="primary", align="center", children }) => {
   const variant = getVariant(weight, size, color, align);
   return <TText variant={variant}>{children}</TText>;
-};
-
-TitleText.defaultProps = {
-  weight: "regular",
-  size: "title",
-  color: "primary",
-  align: "center",
 };

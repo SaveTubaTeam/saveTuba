@@ -2,7 +2,7 @@ import 'expo-dev-client';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect, useState, useCallback } from "react";
 import * as encoding from "text-encoding";
-import { LogBox } from "react-native";
+import { LogBox, View } from "react-native";
 import 'intl-pluralrules';
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
@@ -28,7 +28,6 @@ import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Different Screens thus far
-import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
 import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"
 import Register from "./src/features/Login/Register";
 import RegisterScreen from "./src/features/Login/RegisterScreen";
@@ -46,10 +45,10 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Platform, UIManager } from 'react-native';
 
 //Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
-if (Platform.OS === 'android') {
+/* if (Platform.OS === 'android') {
   UIManager.setLayoutAnimationEnabledExperimental &&
     UIManager.setLayoutAnimationEnabledExperimental(true);
-}
+} */
 
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
@@ -106,8 +105,7 @@ export default function App() {
   console.log("Current Phone:", Platform.OS, Platform.Version); //NOTE: Android will return API version, NOT OS version. Please refer to https://en.wikipedia.org/wiki/Android_version_history#Overview for correct version mapping.
 
   return (
-    <>
-      <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
+    <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <NavigationContainer>
@@ -137,7 +135,6 @@ export default function App() {
         </Provider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
-      </GestureHandlerRootView>
-    </>
+    </GestureHandlerRootView>
   );
 }

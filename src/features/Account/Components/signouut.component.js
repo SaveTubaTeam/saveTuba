@@ -19,7 +19,7 @@ const Button = styled(TouchableOpacity)`
   margin-top: ${(props) => props.theme.space[3]};
 `;
 const ButtonText = styled.Text`
-  font-family: ${(props) => props.theme.fonts.heading}
+  font-family: ${(props) => props.theme.fonts.heading};
   color: white;
   font-weight: 700;
   font-size: ${(props) => props.theme.fontSizes.body};

@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { combineReducers } from "redux";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+//import { combineReducers } from "redux";
 /* import { user } from "../reducers/user";
 import { achievements } from "../reducers/user-achievements";
 import { achievementsModals } from "../reducers/achievementModal"; */

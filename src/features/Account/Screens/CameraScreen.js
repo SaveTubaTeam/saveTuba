@@ -2,10 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styled from "styled-components/native";
-import { Camera } from "expo-camera";
+import { CameraView } from "expo-camera";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const ProfileCamera = styled(Camera)`
+const ProfileCamera = styled(CameraView)`
   width: 100%;
   height: 100%;
   flex: 1;
@@ -33,7 +33,7 @@ const CameraScreen = (props) => {
 
   useEffect(() => {
     (async () => {
-      const { status } = await Camera.requestCameraPermissionsAsync();
+      const { status } = await CameraView.requestCameraPermissionsAsync();
       setHasPermission(status === "granted");
     })();
   }, []);
@@ -47,7 +47,7 @@ const CameraScreen = (props) => {
   return (
     <ProfileCamera
       ref={(camera) => (cameraRef.current = camera)}
-      type={Camera.Constants.Type.front}
+      type={CameraView.Constants.Type.front}
     >
       <TouchableOpacity onPress={snap}>
         <InnerSnap />
