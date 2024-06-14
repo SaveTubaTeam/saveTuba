@@ -1,6 +1,5 @@
 import React from "react";
-import { FlatList, View } from "react-native";
-import { Image } from "expo-image";
+import { FlatList, View, Image } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { connect } from "react-redux";
@@ -32,7 +31,7 @@ const Icon = styled.Image`
   aspect-ratio: 1;
 
   position: absolute;
-  right: 30px;
+  right: 25px;
   top: -20px;
 `;
 
@@ -77,7 +76,6 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
         </LinearGradient>
         <Icon 
           source={{uri: item.iconDownloadURL}}
-          placeholder={item.iconBlurHash}
         />
       </Chapter>
     );

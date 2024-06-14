@@ -128,7 +128,7 @@ const Main = () => {
     //ternary operator to render a spinner while we wait for fetchUser()
     return (
       <>
-        {userStatus === 'loading' ? (
+        {userStatus === 'loading' || userStatus === 'idle' ? (
           <View style={[styles.container, styles.horizontal]}>
           <ActivityIndicator size="large" color="#00ff00" /> 
           </View>

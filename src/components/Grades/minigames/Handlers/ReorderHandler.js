@@ -18,6 +18,7 @@ import { connect } from "react-redux";
 import DraggableFlatList, {
   ScaleDecorator,
 } from "react-native-draggable-flatlist";
+import DragList from 'react-native-draglist';
 
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
@@ -104,27 +105,63 @@ const ReorderHandler = ({ objectData }) => {
   const [score, setScore] = useState(0);
   const navigation = useNavigation();
 
-  //@param item the item to be rendered. renderItem() is called iteratively in the DraggableFlatList
-  //@param drag triggers drag animation upon item press. please see DraggableFlatList documentation
-  //@param isActive is true during item press
-  const renderItem = ({ item, drag, isActive }) => {
+  function renderItem(info) {
+    const { item, onDragStart, onDragEnd, isActive } = info;
+
     return (
-      <>
-        <ScaleDecorator>
-          <Item
-            activeOpacity={1}
-            style={{ backgroundColor: isActive ? item.active : item.dormant }}
-            onPressIn={drag}
-            disabled={isActive}
-          >
-            <BodyText color="secondary" size="subtitle">
-              {item.text}
-            </BodyText>
-          </Item>
-        </ScaleDecorator>
-      </>
+      <Item
+        key={item}
+        onPressIn={onDragStart}
+        onPressOut={onDragEnd}
+        style={{ backgroundColor: isActive ? item.active : item.dormant }}
+      >
+        <BodyText color="secondary" size="subtitle">{item.text}</BodyText>
+      </Item>
     );
-  };
+  }
+
+  function onReordered(fromIndex, toIndex) {
+    const copy = [...data]; // Create a copy of the array to avoid mutating state directly
+    const removed = copy.splice(fromIndex, 1); // Remove the item from 'fromIndex'
+
+    copy.splice(toIndex, 0, removed[0]); // Insert the removed item at 'toIndex'
+    setData(copy); // Update state with the new order
+    console.log("\nCurrent List:" + data.map((item) => `\n${item.text}`)); //logging current order of list
+  }
+
+  const HeaderComponent = () => {
+    return (
+      <Prompt style={{ alignItems: "center", paddingTop: 10, justifyContent: 'center' }}>
+        <TitleText size="subtitle">{objectData.prompt}</TitleText>
+        <Spacer size="medium" />
+        <TitleText size="caption">
+          {t("minigames:reorderhint")}
+        </TitleText>
+      </Prompt>
+    );
+  }
+
+  const FooterComponent = () => {
+    return (
+      <SubmitButton 
+        style={{ marginTop: 10 }}
+        onPress={() => {
+        setScore(0);//resetting score
+        //iterating through list to check for correct order and update score.
+        data.forEach((item, index) => {
+          console.log(`\nUser: ${item.text}\nCorrect: ${originalArray[index].text}`);
+          if (item.text === originalArray[index].text) { setScore((prevScore) => prevScore + 1); }
+        });
+
+        //setting visibility of modal to true;
+        setCompletionModalVisible(currentVisible => !currentVisible);
+        }}>
+        <BodyText color="secondary" size="subtitle">
+          {t("common:submit")}
+        </BodyText>
+      </SubmitButton>
+    );
+  }
 
   //DraggableFlatlist is used to interactively order the list: https://www.npmjs.com/package/react-native-draggable-flatlist?activeTab=readme
   //Current version 4.0.0 heavily dependent on two packages: (package versions can be unit tested here [THIS SNACK IS NOW DEPRECATED]: https://snack.expo.dev/@computerjazz/draggable-flatlist-examples)
@@ -139,45 +176,17 @@ const ReorderHandler = ({ objectData }) => {
     }} 
     imageStyle= {{ opacity: 0.7 }}
     >
-        <DraggableFlatList
-          scrollEnabled={true}
-          data={data}
-          contentContainerStyle={{ flex: 1, width: "100%", alignItems: 'center', justifyContent: 'center' }}
-          onDragEnd={({ data }) => {
-            setData(data);
-            console.log("\nCurrent List:" + data.map((item) => `\n${item.text}`)); //logging current order of list
-          }}
-          keyExtractor={(item) => item.text} //fixed bug where any key set to 0 would be undraggable.
-          renderItem={renderItem}
-          ListHeaderComponent={() => { return (
-            <Prompt style={{ alignItems: "center", paddingTop: 10, justifyContent: 'center' }}>
-              <TitleText size="subtitle">{objectData.prompt}</TitleText>
-              <Spacer size="medium" />
-              <TitleText size="caption">
-                {t("minigames:reorderhint")}
-              </TitleText>
-            </Prompt>
-          )}}
-          ListFooterComponent={() => { return (
-            <SubmitButton 
-                style={{ marginTop: 10 }}
-                onPress={() => {
-                setScore(0);//resetting score
-                //iterating through list to check for correct order and update score.
-                data.forEach((item, index) => {
-                  console.log(`\nUser: ${item.text}\nCorrect: ${originalArray[index].text}`);
-                  if (item.text === originalArray[index].text) { setScore((prevScore) => prevScore + 1); }
-                });
-
-                //setting visibility of modal to true;
-                setCompletionModalVisible(currentVisible => !currentVisible);
-                }}>
-              <BodyText color="secondary" size="subtitle">
-                {t("common:submit")}
-              </BodyText>
-            </SubmitButton>
-          )}}
-        />
+      <DragList
+        scrollEnabled={true}
+        nestedScrollEnabled={true}
+        contentContainerStyle={{ paddingTop: 20, flexGrow: 0 }}
+        data={data}
+        keyExtractor={(item) => item.text}
+        onReordered={onReordered}
+        renderItem={renderItem}
+        ListHeaderComponent={HeaderComponent}
+        ListFooterComponent={FooterComponent}
+      />
 
         {/* marked for translation */}
         <CompletionModal visible={completionModalVisible} score={score} 
