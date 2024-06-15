@@ -26,8 +26,9 @@ import "./src/components/Translations/IMLocalize"; //gets either cached language
 // navigation stuff
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { enableFreeze } from 'react-native-screens';
-enableFreeze(true);
+import { enableFreeze, enableScreens } from 'react-native-screens';
+enableFreeze(false);
+enableScreens();
 
 import 'react-native-reanimated';
 
@@ -44,6 +45,7 @@ import { Provider } from "react-redux";
 
 //ReorderHandler import. Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 //Platform import to detect and log current iOS/Android version
 import { Platform, UIManager } from 'react-native';
