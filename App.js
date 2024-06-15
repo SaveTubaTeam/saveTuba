@@ -23,12 +23,13 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useTranslation } from "react-i18next";
 import "./src/components/Translations/IMLocalize"; //gets either cached language or phone's locale language
 
+import { enableFreeze, enableScreens } from 'react-native-screens';
+enableFreeze(true);
+enableScreens();
+
 // navigation stuff
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { enableFreeze } from 'react-native-screens';
-enableFreeze(true);
-
 import 'react-native-reanimated';
 
 // Different Screens thus far
