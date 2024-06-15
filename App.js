@@ -23,9 +23,13 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useTranslation } from "react-i18next";
 import "./src/components/Translations/IMLocalize"; //gets either cached language or phone's locale language
 
-// navigation stuff - temporarily will be in App.js
+// navigation stuff
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { enableFreeze } from 'react-native-screens';
+enableFreeze(true);
+
+import 'react-native-reanimated';
 
 // Different Screens thus far
 import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
@@ -112,11 +116,6 @@ export default function App() {
         <Provider store={store}>
           <NavigationContainer>
             <Stack.Navigator>
-              {/* <Stack.Screen
-                options={{ headerShown: false }}
-                name="LoginPhone"
-                component={LoginScreenPhone}
-              /> */}
               <Stack.Screen
                 options={{ headerShown: false }}
                 name="LoginEmail"

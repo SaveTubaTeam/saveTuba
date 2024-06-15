@@ -22,7 +22,7 @@ export const Header = ({ title, back, navigation }) => {
             position: "absolute",
             left: 10,
             flexDirection: "row",
-            paddingTop: 8,
+            paddingTop: 3,
           }}
           onPress={() => navigation.navigate(back)}
         >
@@ -33,8 +33,7 @@ export const Header = ({ title, back, navigation }) => {
             fontFamily: "BalsamiqSans_400Regular",
             color: "#748816",
             fontSize: 20,
-            paddingTop: 8,
-            paddingBottom: 8,
+            paddingBottom: 10,
           }}
         >
           {title}
