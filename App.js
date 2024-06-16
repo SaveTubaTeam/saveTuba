@@ -1,22 +1,16 @@
 import 'expo-dev-client';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-import React, { useEffect, useState, useCallback } from "react";
+import * as React from 'react';
+import { useEffect, useState, useCallback } from "react";
 import * as encoding from "text-encoding";
-import { LogBox, View } from "react-native";
+import { LogBox, View, ActivityIndicator, Text } from "react-native";
 import 'intl-pluralrules';
 // Theme stuff
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
-import {
-  useFonts as useScada,
-  Scada_400Regular,
-  Scada_700Bold,
-} from "@expo-google-fonts/scada";
-import {
-  useFonts as useBalsamiqSans,
-  BalsamiqSans_400Regular,
-  BalsamiqSans_700Bold,
-} from "@expo-google-fonts/balsamiq-sans";
+import { useFonts } from 'expo-font';
+import { Scada_400Regular, Scada_700Bold } from "@expo-google-fonts/scada";
+import { BalsamiqSans_400Regular, BalsamiqSans_700Bold } from "@expo-google-fonts/balsamiq-sans";
 import * as SplashScreen from 'expo-splash-screen';
 
 // Translation imports
@@ -26,17 +20,14 @@ import "./src/components/Translations/IMLocalize"; //gets either cached language
 // navigation stuff
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { enableFreeze, enableScreens } from 'react-native-screens';
-enableFreeze(false);
+import { enableScreens } from 'react-native-screens';
 enableScreens();
 
-import 'react-native-reanimated';
+// import 'react-native-reanimated';
 
 // Different Screens thus far
 import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"
-import Register from "./src/features/Login/Register";
 import RegisterScreen from "./src/features/Login/RegisterScreen";
-import RegisterTeacher from "./src/features/Login/RegisterTeacher";
 import MainScreen from "./src/components/Main";
 
 // Redux Imports
@@ -44,11 +35,12 @@ import { store } from "./redux/store/store";
 import { Provider } from "react-redux";
 
 //ReorderHandler import. Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+// import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 //Platform import to detect and log current iOS/Android version
 import { Platform, UIManager } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 //Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
 /* if (Platform.OS === 'android') {
@@ -60,9 +52,9 @@ import { Platform, UIManager } from 'react-native';
 const Stack = createNativeStackNavigator();
 
 // Keep the splash screen visible while we fetch resources
-SplashScreen.preventAutoHideAsync();
+//SplashScreen.preventAutoHideAsync();
 
-LogBox.ignoreAllLogs();
+//LogBox.ignoreAllLogs();
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
 
 function Home() {
@@ -70,48 +62,53 @@ function Home() {
 }
 
 export default function App() {
-  const [appIsReady, setAppIsReady] = useState(false);
+  //const [appIsReady, setAppIsReady] = useState(false);
 
   // Loading fonts
-  const [balsamiqSansLoaded] = useBalsamiqSans({
+  let [fontsLoaded, error] = useFonts({
     BalsamiqSans_400Regular,
     BalsamiqSans_700Bold,
-  });
-
-  const [scadaLoaded] = useScada({
     Scada_400Regular,
     Scada_700Bold,
   });
 
-  useEffect(() => {
-    async function prepare() {
-      try {
-        await new Promise(resolve => setTimeout(resolve, 3000)); //artificial timeout
-      } catch (e) {
-        console.warn(e);
-      } finally {
-        setAppIsReady(true); // Tell the application to render
-      }
-    }
-    prepare();
-  }, []);
+  // useEffect(() => {
+  //   async function prepare() {
+  //     try {
+  //       await new Promise(resolve => setTimeout(resolve, 3000)); //artificial timeout
+  //     } catch (e) {
+  //       console.warn(e);
+  //     } finally {
+  //       setAppIsReady(true); // Tell the application to render
+  //     }
+  //   }
+  //   prepare();
+  // }, []);
 
   //copy pasted from: https://docs.expo.dev/versions/latest/sdk/splash-screen/
-  const onLayoutRootView = useCallback(async () => {
-    if (appIsReady) {
-      await SplashScreen.hideAsync();
-    }
-  }, [appIsReady]);
+  // const onLayoutRootView = useCallback(async () => {
+  //   if (appIsReady) {
+  //     await SplashScreen.hideAsync();
+  //   }
+  // }, [appIsReady]);
 
-  if (!appIsReady || !balsamiqSansLoaded || !scadaLoaded) {
-    return null;
+  if (error) {
+    return <Text>Error loading fonts: {error.message}</Text>;
+  }
+
+  if (!fontsLoaded) {
+    return (
+      <View style={{ flex: 1}}>
+        <ActivityIndicator size="large" color="#00ff00" />
+      </View>
+    );
   }
 
   //detecting and logging iOS/Android version information
   console.log("Current Phone:", Platform.OS, Platform.Version); //NOTE: Android will return API version, NOT OS version. Please refer to https://en.wikipedia.org/wiki/Android_version_history#Overview for correct version mapping.
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
+    <GestureHandlerRootView style={{ flex: 1 }} >
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <NavigationContainer>

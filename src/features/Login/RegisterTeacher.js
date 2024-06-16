@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { setDoc, doc } from "firebase/firestore";
-
-import { renderToString } from "react-dom/server";
 import { auth, db } from "../../../firebase";
 import { Translation } from "react-i18next";
 import { t } from "i18next";

@@ -7,8 +7,6 @@ import firebase from "firebase/app";
 import { Firestore, setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
 
-import { renderToString } from "react-dom/server";
-
 import { Translation } from "react-i18next";
 import { t } from "i18next";
 import { achievements } from "../../../redux/reducers/user-achievements";
