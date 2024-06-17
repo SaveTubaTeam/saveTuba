@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 // import { Button } from "react-native-paper";
 import { BadgeImages } from "../Grades/minigames/Handlers/BadgeHandler";
 
-import { bindActionCreators } from "redux";
+//import { bindActionCreators } from "redux";
 import { connect, useSelector, useDispatch } from "react-redux";
 import {
   fetchAchievements,

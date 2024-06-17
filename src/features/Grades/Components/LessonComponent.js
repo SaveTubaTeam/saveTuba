@@ -178,7 +178,7 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
               justifyContent: "center",
               alignItems: "center"
             }}>
-              <Tower 
+              <Image 
               source={{ uri: lessonData.thumbnailDownloadURL }}
               placeholder={lessonData.thumbnailBlurHash}
               style={{

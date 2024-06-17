@@ -2,7 +2,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { addAchievement } from "../../../../redux/actions";
 import React, { useState, useEffect } from "react";
-import { bindActionCreators } from "redux";
+//import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
 
@@ -38,7 +38,7 @@ const ChaptersHandler = ({ route })  => { //add achievements
 
         const end = performance.now();
         const elapsedTimeSeconds = (end - start) / 1000; // Convert to seconds
-        console.log(`getMasteryAndMinigamesData done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
+        console.log(`getGradeData done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
 
       }).catch((err) => {
         console.log("Error: ", err);

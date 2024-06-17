@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useTranslation } from "react-i18next";
-import CountryFlag from "react-native-country-flag";
+//import CountryFlag from "react-native-country-flag";
 //import styled from "styled-components/native";
 
 import { BodyText } from "../../../components/body-text.component";

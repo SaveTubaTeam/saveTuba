@@ -208,7 +208,7 @@ async function createImageMapHelper(folder, pathList, depth) {
     // below is a Recursive Failsafe to check if the current depth exceeds the maximum allowed depth
     // (think of nested folders like a binary tree where the depth of the folders corresponds to the height of the tree).
     if (depth > 10) { //10 is an arbitrary number/cap to stop infinite loops beyond 10 layers of nesting
-        console.error("ERROR: Recursion limit reached, stopping further directory exploration.");
+        console.warn("ERROR: Recursion limit reached, stopping further directory exploration.");
         return pathList;
     }
 
@@ -292,7 +292,7 @@ const postChapterData = async(chapter) => {
         await chapterReference.set(chapterData); //setting chapter metadata
         console.log(`${chapterData.navigation} set successfully!`);
     } catch(error) {
-        console.error("postChapterData() ERROR:", error);
+        console.warn("postChapterData() ERROR:", error);
     }
 
     chapter.lessons.forEach((lesson) => {
@@ -315,7 +315,7 @@ const postLessonData = async(lesson, chapterReference) => {
         await lessonLanguageReference.set(lessonData); //setting lessonLanguage metadata
         console.log(`\t${lessonData.navigation}-${LANGUAGE_CODE} set successfully!`);
     } catch(error) {
-        console.error("postLessonData() ERROR:", error)
+        console.warn("postLessonData() ERROR:", error)
     }
 
     let duplicates = {} //counting the number of duplicate objects
@@ -351,7 +351,7 @@ const postMasteryAndMinigameData = async(currentObject, lessonLanguageReference)
         await masteryAndMinigamesReference.set(currentObject);
         console.log(`\t\t${currentObject.navigation} set successfully!`);
     } catch(error) {
-        console.error("postMasteryAndMinigameData() ERROR:", error);
+        console.warn("postMasteryAndMinigameData() ERROR:", error);
     }
 }
 

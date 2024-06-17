@@ -12,7 +12,7 @@ import { renderToString } from "react-dom/server";
 import { Translation } from "react-i18next";
 import { t } from "i18next";
 import { achievements } from "../../../redux/reducers/user-achievements";
-import { bindActionCreators } from "redux";
+//import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { useDispatch } from "react-redux";

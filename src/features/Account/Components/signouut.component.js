@@ -38,7 +38,7 @@ const SignOut = () => {
             dispatch(signOutUser()); // Update user state in Redux store to object w/ 'empty' attribute & status to 'idle'
             navigation.navigate('LoginEmail'); // Navigate to login screen
         } catch (error) { // Handle sign-out error
-            console.error('Sign out error:', error);
+            console.warn('Sign out error:', error);
             alert('SignOut Failed');
         }
     };
