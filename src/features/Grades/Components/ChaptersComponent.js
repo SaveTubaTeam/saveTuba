@@ -51,14 +51,8 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
       >
         <LinearGradient
           colors={[item.colorOne, item.colorTwo]}
-          start={{
-            x: 0,
-            y: 0,
-          }}
-          end={{
-            x: 1,
-            y: 1,
-          }}
+          start={{ x: 0, y: 0, }}
+          end={{ x: 1, y: 1, }}
           style={{
             height: 150,
             padding: 20,

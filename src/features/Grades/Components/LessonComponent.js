@@ -208,6 +208,7 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
           renderItem={renderItem}
+          persistentScrollbar={true}
           contentContainerStyle={{
             width: "90%",
             alignSelf: "center",

@@ -38,7 +38,7 @@ const CompletionModal = ({ score, prompt, visible }) => {
   }
   
   return (
-    <Modal transparent animationType="slide" visible={visible}>
+    <Modal transparent animationType="none" visible={visible}>
       <View style={{ flex: 1 }}>
       <Image 
       style={{

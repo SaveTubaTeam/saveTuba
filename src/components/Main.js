@@ -83,7 +83,7 @@ const Main = () => {
   const dispatch = useDispatch()
   const userStatus = useSelector(state => state.user.status);
   const imageMap = useSelector(state => state.imageMap.imageData);
-  const user = useSelector(selectCurrentUser)
+  const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 
   //here we check the status of fetchUser

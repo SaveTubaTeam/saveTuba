@@ -14,5 +14,6 @@ export const colors = {
     primary: "#748816", // dark green
     secondary: "#ffffff", // white
     tertiary: "#C6DC3B",
+    black: "#000000",
   },
 };

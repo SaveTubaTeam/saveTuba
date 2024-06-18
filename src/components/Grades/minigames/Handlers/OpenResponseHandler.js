@@ -18,6 +18,8 @@ import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
 
+import ImageUpload from "../ImageUpload";
+
 import { getChapterData, getLessonData, getGradeData } from "../../../../features/Grades/Handlers/Database.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
@@ -31,149 +33,34 @@ const ModalContainer = styled.View`
 
 //@param data is the OpenResponse object passed in from OpenResponseHandler
 const ImagePrompt = ({ data, imageMap }) => {
-  //const [modalVisible, setModalVisible] = useState(false);
-  const [value, setValue] = useState("");
-  const [visible, setVisible] = useState(false);
-  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
   const { t } = useTranslation();
 
-  //modal popup for when the user doesn't type anything
-  const Modko = () => {
-    return (
-      <Modal transparent animationType="slide" visible={visible}>
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <ModalContainer>
-            <View>
-              {/* marked for translation */}
-              <BodyText size="subtitle">
-                {t("minigames:nosubmission")}
-              </BodyText>
-            </View>
-            <TouchableOpacity
-              style={{
-                backgroundColor: "#748816",
-                borderRadius: 10,
-                marginTop: 10,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
-              onPress={() => setVisible(!visible)}
-            >
-              {/* marked for translation */}
-              <BodyText size="subtitle" color="secondary">
-                {t("minigames:openresponsetryagain")}
-              </BodyText>
-            </TouchableOpacity>
-          </ModalContainer>
-        </View>
-      </Modal>
-    );
-  };
-
   return (
     <ScrollView>
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-        }}
-      >
         <View
           style={{
-            width: "100%",
+            width: "90%",
             padding: 15,
             alignItems: "center",
             backgroundColor: "white",
-            marginTop: 20,
-            borderRadius: 30,
+            margin: 20,
+            borderRadius: 15,
           }}
         >
-          <View
-            style={{
-              width: 150,
-              height: 150,
-              borderRadius: 20,
-              marginBottom: 10,
-              overflow: "hidden",
-            }}
-          >
             <Image 
               source={{uri: data.imageDownloadURL}} 
               placeholder={data.imageBlurHash}
-              style={{ width: 150, height: 150, borderRadius: 20 }} 
+              style={{ width: 150, height: 150, borderRadius: 10, marginBottom: 10, }} 
               contentFit="cover"
             />
-          </View>
           <TitleText size="subtitle">
             {data.prompt}
           </TitleText>
         </View>
 
-        <View
-          style={{
-            width: "100%",
-            backgroundColor: "white",
-            marginBottom: 10,
-            height: 250,
-            borderRadius: 30,
-            flex: 1,
-            padding: 10,
-            paddingLeft: 20,
-            paddingRight: 20,
-            marginTop: 15,
-            alignContent: "flex-start",
-            alignItems: "flex-start",
-          }}
-        >
-          <TextInput
-            style={{
-              flex: 1,
-              fontFamily: "BalsamiqSans_400Regular",
-              color: "#748816",
-              fontSize: 18,
-              flexShrink: 1,
-            }}
-            onChangeText={setValue}
-            /* marked for translation */
-            placeholder={t("minigames:openresponsethink")}
-            placeholderTextColor={"#D5DBB9"}
-            multiline={true}
-            value={value}
-          />
-          <Button
-            style={{
-              width: "80%",
-              height: 40,
-              backgroundColor: "#748816",
-              alignSelf: "center",
-              borderRadius: 20,
-            }}
-            onPress={() => {
-              if(value === '') {
-                setVisible(!visible)
-              } else {
-                setCompletionModalVisible(!completionModalVisible);
-              }
-            }}
-          >
-            <BodyText color="secondary">{t("common:submit")}</BodyText>
-          </Button>
-        </View>
-      </View>
+        <ImageUpload score={-1} prompt={"minigames:openresponseprompt"}/>
 
-      <Modko visible={visible} />
-
-            {/* marked for translation */}
-      <CompletionModal 
-        visible={completionModalVisible}
-        score={-1}
-        prompt={t("minigames:openresponseprompt")}
-      >
-
-      </CompletionModal>
     </ScrollView>
   );
 };
@@ -193,7 +80,7 @@ const OpenResponseHandler = ({ objectData, imageMap }) => {
         <View
           style={{
             flex: 1,
-            width: "90%",
+            width: "100%",
           }}
         >
           <ImagePrompt data={objectData} imageMap={imageMap} />

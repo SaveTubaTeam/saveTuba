@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
   Image,
+  ScrollView
 } from "react-native";
 import { ImageBg } from "../../grades.styles";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
@@ -25,30 +26,13 @@ const Container = styled.View`
   background-color: #cce882;
 `;
 
-const ModalContainer = styled.View`
-  background-color: white;
-  width: 60%;
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid #cce882;
-`;
-
 const Prompt = styled.View`
-  width: 80%;
+  width: 95%;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 20px;
   margin-bottom: 10px;
-  align-items: center;
-`;
-
-const SubmitButton = styled.TouchableOpacity`
-  width: 60%;
-  height: 40px;
-  background-color: #748816;
   align-self: center;
-  justify-content: center;
-  border-radius: 20px;
 `;
 
 //@param objectData the snapshot object passed in from IndividualLessonHandler
@@ -58,33 +42,22 @@ const SnapshotHandler = ({ objectData, imageMap }) => {
   const navigation = useNavigation();
 
   return (
-    <>
       <Container>
         <ImageBg source={require("../../../../../assets/snapshotbg.png")}>
+          <ScrollView contentContainerStyle={{
+            flexGrow: 1,
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
           <Prompt>
             <TitleText size="subtitle">{objectData.prompt}</TitleText>
           </Prompt>
-          <Prompt>
 
-            <ImageUpload />
+            <ImageUpload score={-1} prompt={"minigames:snapshotprompt"} />
 
-            <SubmitButton onPress={() => setCompletionModalVisible(!completionModalVisible)}>
-              <BodyText color="secondary" size="subtitle">
-                {t("common:submit")}
-              </BodyText>
-            </SubmitButton>
-
-          </Prompt>
+          </ScrollView>
         </ImageBg>
-        {/* <Modko visible={false} /> */}
-        
-        {/* marked for translation */}
-        <CompletionModal score={-1} visible={completionModalVisible}
-        prompt={t("minigames:snapshotprompt")}>
-        </CompletionModal>
-
       </Container>
-    </>
   );
 };
 

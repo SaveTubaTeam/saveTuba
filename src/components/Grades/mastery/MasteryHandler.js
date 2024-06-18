@@ -9,8 +9,7 @@ import { useTranslation } from "react-i18next";
 import { TitleText } from "../../title-text.component";
 import { BodyText } from "../../body-text.component";
 import { ImageBg } from "../grades.styles";
-import CompletionModal from "../../../features/Account/LevelSystem/CompletionModal";
-// import {getC} from "";
+import ImageUpload from "../minigames/ImageUpload";
 
 const Container = styled.View`
   flex: 1;
@@ -19,12 +18,13 @@ const Container = styled.View`
 `;
 
 const Prompt = styled.View`
-  width: 100%;
+  width: 350px;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
   align-items: center;
+  overflow: hidden;
 `;
 
 const InputContainer = styled.View`
@@ -35,104 +35,58 @@ const InputContainer = styled.View`
   padding: 20px;
 `;
 
-const Input = styled.TextInput`
-  flex: 1;
-  font-family: Scada_400Regular;
-  color: #748816;
-  background-color: #fff;
-  font-size: 18px;
-  margin: 10px;
-  padding: 10px;
-  border: 2px dashed #c6dc3b;
-  border-radius: 5px;
-`;
-
-const SubmitButton = styled(Button)`
-  width: 80%;
-  height: 40px;
-  background-color: #748816;
-  align-self: center;
-  border-radius: 20px;
-  margin-bottom: 10px;
-`;
 
 //TODO: need to add ability to input file, also need to check if user has actually submitted anything. Can copy SnapshotHandler modal for that.
 //@param objectData our Mastery object passed from IndividualLessonHandler
 const MasteryHandler = ({ objectData, imageMap }) => {
   const [text, setText] = useState("");
   const { t } = useTranslation();
-  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   
   const renderItem = ({ item }) => {
 
     return (
-      <>
-        <Prompt>
-          <TitleText size="subtitle">{item.text}</TitleText>
-          {item.image && (
-            <Image
-              style={{
-                aspectRatio: 1,
-                width: "60%",
-                height: undefined,
-                marginTop: 20,
-                borderRadius: 4
-              }}
-              source={{uri: item.imageDownloadURL}}
-              placeholder={item.imageBlurHash}
-            />
-          )}
-        </Prompt>
-      </>
+      <Prompt>
+        <TitleText size="subtitle">{item.text}</TitleText>
+        {item.image && (
+          <Image
+            style={{ width: 200, height: 200, borderRadius: 10, margin: 10 }}
+            source={{uri: item.imageDownloadURL}}
+            placeholder={item.imageBlurHash}
+          />
+        )}
+      </Prompt>
     );
   };
 
   return (
-    <Container>
-      <ImageBg
-        style={{ paddingTop: 20 }}
-        source={require("../../../../assets/masterybg.png")}
-        resizeMode="cover"
-      >
-        <FlatList //
-          data={ objectData.content }
-          style={{ width: "90%" }}
-          keyExtractor={(item, index) => index}
-          key={(item, index) => index}
-          renderItem={renderItem}
-          contentContainerStyle={{
-            alignItems: "center",
-          }}
-          ListFooterComponentStyle={{ width: "100%", alignItems: "center" }}
-          ListFooterComponent={
-            <InputContainer>
+    <ImageBg
+      resizeMode="cover"
+      style={{
+        flex: 1,
+        paddingTop: 20
+      }}
+      source={require("../../../../assets/masterybg.png")}
+    >
+      <FlatList //
+        data={ objectData.content }
+        style={{ width: "100%" }}
+        keyExtractor={(item, index) => index}
+        key={(item, index) => index}
+        renderItem={renderItem}
+        contentContainerStyle={{
+          alignItems: "center"
+        }}
+        ListFooterComponentStyle={{ width: "100%", alignItems: "center" }}
+        ListFooterComponent={
+          <>
+            <Prompt>
               <TitleText size="subtitle">{objectData.prompt}</TitleText>
-              <Input
-                placeholder={t("common:enteryouranswer")}
-                placeholderTextColor={"#748816"}
-                multiline={true}
-                onChangeText={(input) => setText(input)}
-                value={text}
-              />
-              <SubmitButton
-                onPress={() => {
-                  setText("");
-                  setCompletionModalVisible(!completionModalVisible);
-                }}
-              >
-                <BodyText color="secondary">{t("common:submit")}</BodyText>
-              </SubmitButton>
-            </InputContainer>
-          }
-        />
-      </ImageBg>
-
-        {/* marked for translation */}
-      <CompletionModal score={-2} visible={completionModalVisible}
-      prompt={t("minigames:masteryprompt")}> 
-      </CompletionModal>
-
-    </Container>
+            </Prompt>
+            <ImageUpload score={-2} prompt={"minigames:masteryprompt"}/>
+          </>
+        }
+      />
+    </ImageBg>
   );
 };
 

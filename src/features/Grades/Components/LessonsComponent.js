@@ -139,6 +139,7 @@ function LessonsComponent({ lessonsData, navigation }) {
           style={{ width: "100%" }}
           data={lessonsData}
           renderItem={renderItem}
+          persistentScrollbar={true}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
         />

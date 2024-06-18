@@ -47,7 +47,7 @@ export default {
   back: "Back",
   submit: "Submit",
   enteryouranswer: "Enter your answer...",
-  pickanimage: "Choose an image",
+  pickanimage: "Upload submissions",
   restart: "Start over",
 
   login: "Log In",

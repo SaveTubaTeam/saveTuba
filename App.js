@@ -50,6 +50,8 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 //Platform import to detect and log current iOS/Android version
 import { Platform, UIManager } from 'react-native';
 
+import Toast from 'react-native-toast-message';
+
 //Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
 if (Platform.OS === 'android') {
   UIManager.setLayoutAnimationEnabledExperimental &&
@@ -111,8 +113,7 @@ export default function App() {
   console.log("Current Phone:", Platform.OS, Platform.Version); //NOTE: Android will return API version, NOT OS version. Please refer to https://en.wikipedia.org/wiki/Android_version_history#Overview for correct version mapping.
 
   return (
-    <>
-      <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
+    <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <NavigationContainer>
@@ -137,7 +138,7 @@ export default function App() {
         </Provider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
-      </GestureHandlerRootView>
-    </>
+      <Toast />
+    </GestureHandlerRootView>
   );
 }
