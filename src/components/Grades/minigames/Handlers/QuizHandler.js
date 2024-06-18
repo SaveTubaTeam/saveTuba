@@ -189,7 +189,7 @@ const Start = ({ data, imageMap }) => {
           <ModalComponent visible={visible}  />
 
             {/* marked for translation */}
-          <CompletionModal visible={completionModalVisible} score={score} 
+          <CompletionModal startCompletionProcess={completionModalVisible} score={score} 
           prompt={t("minigames:quizprompt")}
           >
           </CompletionModal>

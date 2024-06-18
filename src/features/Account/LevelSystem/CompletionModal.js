@@ -11,6 +11,7 @@ import { SafeArea } from "../../../components/safe-area.component";
 
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
+import LoadingModal from "./LoadingModal";
 
 import styled from "styled-components/native";
 
@@ -20,79 +21,108 @@ import { t } from "i18next";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
-const CompletionModal = ({ score, prompt, visible }) => {
+const CompletionModal = ({ score, prompt, startCompletionProcess, content }) => {
+
+
+  //TODO: update user experience in redux store, post new user to the respective document
+  // grab the current location via useContext in IndividualLessonHandler 
+  //and a minigameType prop passed in from each handler
+  //sort through the user's collection for the current completion and 
+  //post score (if relevant), submission time, content
+
   const { t } = useTranslation();
   const navigation = useNavigation();
   const XP_PER_POINT = 15;
 
-  //some minigames have no score, so a score < 0 is passed into props. We check for this case below
-  //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
-  let scoreShown;
-  let finalXP;
-  if(score < 0) {
-    scoreShown = '';
-    score === -1 ? finalXP = 100 : finalXP = 300; //MasteryHandler passes a prop of -2 for more XP
-  } else {
-    /* marked for translation */
-    scoreShown = `${t("minigames:finalscore")}: ${score}\n\n`;
-    finalXP = score * XP_PER_POINT;
+  const [scoreShown, setScoreShown] = useState("");
+  const [finalXP, setFinalXP] = useState(0);
+  const [loadingModal, setLoadingModal] = useState(false);
+  const [completionModalVisible, setCompletionModalVisible] = useState(false);
+
+  useEffect(() => {
+    //some minigames have no score, so a score < 0 is passed into props. We check for this case below
+    //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
+    if(score < 0) {
+      setScoreShown("");
+      score === -1 ? setFinalXP(100) : setFinalXP(300); //MasteryHandler passes a prop of -2 for more XP
+    } else {
+      /* marked for translation */
+      setScoreShown(`${t("minigames:finalscore")}: ${score}\n\n`);
+      setFinalXP(score * XP_PER_POINT);
+    }
+  }, [score])
+
+  const performCompletionProcess = async () => {
+    if(startCompletionProcess) {
+      setLoadingModal(true);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setLoadingModal(false);
+      setCompletionModalVisible(true);
+    }
   }
+
+  useEffect(() => {
+    performCompletionProcess();
+  }, [startCompletionProcess])
   
   return (
-    <Modal transparent animationType="fade" visible={visible}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", zIndex: 1, elevation: -2 }}>
-        <ModalContainer>
+    <>
+      <LoadingModal visible={loadingModal} />
+      <Modal transparent animationType="none" visible={completionModalVisible}>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", zIndex: 1, elevation: -2 }}>
+          <ModalContainer>
 
-          {/* marked for translation */}
-          <BodyText size="subtitle">
-          {scoreShown}
-          {`${prompt} ✨`}
-          {`\n\n+${finalXP} xp!\n`}
+            {/* marked for translation */}
+            <BodyText size="subtitle">
+            {scoreShown}
+            {`${prompt} ✨`}
+            {`\n\n+${finalXP} xp!\n`}
+            </BodyText>
+
+          {/* green button 'Return' at the bottom of modal to move out of minigame */}
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#748816",
+              borderRadius: 10,
+              marginTop: 10,
+              paddingTop: 5,
+              paddingBottom: 5
+            }}
+            onPress={() => {
+              console.log("pushing back to Lessons");
+              navigation.navigate("Lesson");
+            }}
+          >
+            {/* marked for translation */}
+          <BodyText size="subtitle" color="secondary">
+            {t("minigames:return")}
           </BodyText>
+          </TouchableOpacity>
 
-        {/* green button 'Return' at the bottom of modal to move out of minigame */}
-        <TouchableOpacity
-          style={{
-            backgroundColor: "#748816",
-            borderRadius: 10,
-            marginTop: 10,
-            paddingTop: 5,
-            paddingBottom: 5
-          }}
-          onPress={() => {
-            console.log("pushing back to Lessons");
-            navigation.navigate("Lesson");
-          }}
-        >
-          {/* marked for translation */}
-        <BodyText size="subtitle" color="secondary">
-          {t("minigames:return")}
-        </BodyText>
-        </TouchableOpacity>
-
-        </ModalContainer>
-      </View>
-        <Image 
-      style={{
-        position: "absolute",
-        bottom: 130,
-        right: -70,
-        width: "60%", // Adjust the width as needed
-        height: "40%", // Adjust the height as needed
-        transform: [{ scaleX: -1 }], // Flip the image horizontally
-        zIndex: 2, // Set a higher z-index to bring the image in front of the modal
-        elevation: -1 //NOTE: zIndex doesn't work w/ Android so we use negative elevations as a hotfix
-      }}
-      source={require("../../../../assets/tuba-low-quality.png")}
-      />
-      <LottieView 
-        source={require("../../../../assets/lottie-animations/confetti-animation.json")}
-        autoPlay={true}
-        loop={false}
-        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}
-        resizeMode='cover'
-      />
-    </Modal>
+          </ModalContainer>
+        </View>
+          <Image 
+        style={{
+          position: "absolute",
+          bottom: 130,
+          right: -70,
+          width: "60%", // Adjust the width as needed
+          height: "40%", // Adjust the height as needed
+          transform: [{ scaleX: -1 }], // Flip the image horizontally
+          zIndex: 2, // Set a higher z-index to bring the image in front of the modal
+          elevation: -1 //NOTE: zIndex doesn't work w/ Android so we use negative elevations as a hotfix
+        }}
+        source={require("../../../../assets/tuba-low-quality.png")}
+        />
+        <LottieView 
+          source={require("../../../../assets/lottie-animations/confetti-animation.json")}
+          autoPlay={true}
+          loop={false}
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}
+          resizeMode='cover'
+        />
+      </Modal>
+    </>
   );
 }
 

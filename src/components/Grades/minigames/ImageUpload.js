@@ -54,6 +54,7 @@ const SubmitButton = styled.TouchableOpacity`
 
 export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
+  const [finalURIArray, setFinalURIArray] = useState([]);
   const [loadingModal, setLoadingModal] = useState(false);
   const { t } = useTranslation();
   const user = useSelector(selectCurrentUser);
@@ -161,9 +162,12 @@ export default function ImageUpload({ score, prompt }) {
       <SubmitButton onPress={async() => {
         if(imageAssetsArray) {
           try {
+            let uris = [];
             for(let i=0; i<imageAssetsArray.length; i++) {
               await uploadImageAsync(imageAssetsArray[i].uri);
+              uris.push(imageAssetsArray[i].uri);
             }
+            setFinalURIArray(uris);
             setLoadingModal(false);
             setCompletionModalVisible(!completionModalVisible);
           } catch (error) {
@@ -184,7 +188,7 @@ export default function ImageUpload({ score, prompt }) {
         </BodyText>
       </SubmitButton>
 
-      <CompletionModal score={score} visible={completionModalVisible} prompt={t(prompt)} />
+      <CompletionModal score={score} startCompletionProcess={completionModalVisible} prompt={t(prompt)} content={finalURIArray}/>
 
       <LoadingModal visible={loadingModal} />
 

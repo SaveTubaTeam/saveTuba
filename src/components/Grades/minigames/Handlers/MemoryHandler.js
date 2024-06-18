@@ -129,7 +129,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
         {/* marked for translation */}
       <CompletionModal 
         prompt={t("minigames:memoryprompt")} 
-        score={score} visible={completionModalVisible}>
+        score={score} startCompletionProcess={completionModalVisible}>
       </CompletionModal>
     </ImageBackground>
   );

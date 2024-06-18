@@ -38,7 +38,6 @@ const Prompt = styled.View`
 //@param objectData the snapshot object passed in from IndividualLessonHandler
 const SnapshotHandler = ({ objectData, imageMap }) => {
   const { t } = useTranslation();
-  const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const navigation = useNavigation();
 
   return (
