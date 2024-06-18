@@ -3,6 +3,7 @@ import { theme } from "../../../infrastructure/theme";
 import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
 import { Image } from "expo-image";
 import { Spacer } from "../../../components/spacer.component";
+import LottieView from "lottie-react-native";
 
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -38,40 +39,25 @@ const CompletionModal = ({ score, prompt, visible }) => {
   }
   
   return (
-    <Modal transparent animationType="none" visible={visible}>
-      <View style={{ flex: 1 }}>
-      <Image 
-      style={{
-        position: "absolute",
-        bottom: 130,
-        right: -70,
-        width: "60%", // Adjust the width as needed
-        height: "40%", // Adjust the height as needed
-        transform: [{ scaleX: -1 }], // Flip the image horizontally
-        zIndex: 1, // Set a higher z-index to bring the image in front of the modal
-      }}
-      source={require("../../../../assets/tuba-low-quality.png")}
-      />
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <ModalContainer>
+    <Modal transparent animationType="fade" visible={visible}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", zIndex: 1, elevation: -2 }}>
+        <ModalContainer>
 
-        <View>
           {/* marked for translation */}
           <BodyText size="subtitle">
           {scoreShown}
           {`${prompt} ✨`}
           {`\n\n+${finalXP} xp!\n`}
           </BodyText>
-        </View>
 
-        {/* green button 'Back' at the bottom of modal to move out of minigame */}
+        {/* green button 'Return' at the bottom of modal to move out of minigame */}
         <TouchableOpacity
           style={{
             backgroundColor: "#748816",
             borderRadius: 10,
             marginTop: 10,
             paddingTop: 5,
-            paddingBottom: 5,
+            paddingBottom: 5
           }}
           onPress={() => {
             console.log("pushing back to Lessons");
@@ -84,9 +70,28 @@ const CompletionModal = ({ score, prompt, visible }) => {
         </BodyText>
         </TouchableOpacity>
 
-      </ModalContainer>
+        </ModalContainer>
       </View>
-      </View>
+        <Image 
+      style={{
+        position: "absolute",
+        bottom: 130,
+        right: -70,
+        width: "60%", // Adjust the width as needed
+        height: "40%", // Adjust the height as needed
+        transform: [{ scaleX: -1 }], // Flip the image horizontally
+        zIndex: 2, // Set a higher z-index to bring the image in front of the modal
+        elevation: -1 //NOTE: zIndex doesn't work w/ Android so we use negative elevations as a hotfix
+      }}
+      source={require("../../../../assets/tuba-low-quality.png")}
+      />
+      <LottieView 
+        source={require("../../../../assets/lottie-animations/confetti-animation.json")}
+        autoPlay={true}
+        loop={false}
+        style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}
+        resizeMode='cover'
+      />
     </Modal>
   );
 }

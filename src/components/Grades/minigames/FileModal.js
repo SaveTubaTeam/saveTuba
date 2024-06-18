@@ -9,29 +9,33 @@ export default function FileModal({ showSelectedFile, setShowSelectedFile, conte
    const video = useRef(null);
    const [status, setStatus] = useState({});
 
+   let exitIcon = (
+      <TouchableOpacity
+         style={{ 
+         position: "absolute", 
+         right: 25, top: 20, 
+         transform: [{ scaleX: 2 }, { scaleY: 2 }],
+         zIndex: 1,
+         }}
+         onPress={() => setShowSelectedFile(false)}
+      >
+         <BodyText>❌</BodyText>
+      </TouchableOpacity>
+   )
+
    let file = null;
    if(content && content.type === 'image') {
       file = (
-      <>
+      <View style={styles.fileWrapper}>
          <Image
           source={{ uri: content.uri }}
           style={styles.file}
          />
-         <TouchableOpacity
-            style={{ 
-            position: "absolute", 
-            right: 50, top: 50, 
-            transform: [{ scaleX: 2 }, { scaleY: 2 }],
-            zIndex: 1,
-            }}
-            onPress={() => setShowSelectedFile(false)}
-         >
-            <BodyText>❌</BodyText>
-         </TouchableOpacity>
-      </>
+         {exitIcon}
+      </View>
    )} else if(content && content.type === 'video') {
       file = (
-      <View style={styles.container}>
+      <View style={styles.fileWrapper}>
       <Video
         ref={video}
         style={styles.file}
@@ -49,17 +53,7 @@ export default function FileModal({ showSelectedFile, setShowSelectedFile, conte
             status.isPlaying ? video.current.pauseAsync() : video.current.playAsync()
           }
         />
-      <TouchableOpacity
-         style={{ 
-         position: "absolute", 
-         right: 30, top: 110, 
-         transform: [{ scaleX: 2 }, { scaleY: 2 }],
-         zIndex: 1,
-         }}
-         onPress={() => setShowSelectedFile(false)}
-      >
-         <BodyText>❌</BodyText>
-      </TouchableOpacity>
+      {exitIcon}
     </View>
    )}
 
@@ -87,18 +81,19 @@ const Container = styled.View`
 `;
 
 const styles = StyleSheet.create({
-   container: {
-     flex: 1,
-     justifyContent: 'center',
+   fileWrapper: {
+      width: 350,
+      height: 650,
+      marginBottom: 10,
    },
    file: {
       width: 350,
-      height: 700,
+      height: 650,
       borderRadius: 5,
       marginBottom: 10,
       borderColor: "#323B09",
       borderWidth: 3,
-      backgroundColor: "#323B09"
+      backgroundColor: "#FFFFFF"
    },
    buttons: {
       flexDirection: 'row',

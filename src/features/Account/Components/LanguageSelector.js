@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useTranslation } from "react-i18next";
+import { useNavigation } from "@react-navigation/native";
 //import CountryFlag from "react-native-country-flag";
 //import styled from "styled-components/native";
 
@@ -42,9 +43,11 @@ const LANGUAGES = [
 const Selector = () => {
   const { t, i18n } = useTranslation(); //useTranslation() docs: https://react.i18next.com/latest/usetranslation-hook
   const selectedLanguageCode = i18n.language;
+  const navigation = useNavigation();
 
   const setLanguage = async(languageCode) => {
     await i18n.changeLanguage(languageCode);
+    navigation.popToTop(); //pop to the top of the HomeScreen stack
 
     //IMLocalize.js (imported in App.js) acts as an event listener for changeLanguage(), caching the new language code under 'user-language'
   };

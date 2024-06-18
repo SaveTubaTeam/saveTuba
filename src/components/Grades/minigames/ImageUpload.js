@@ -54,7 +54,7 @@ const SubmitButton = styled.TouchableOpacity`
 
 export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
-  const [imageUploading, setImageUploading] = useState(false);
+  const [loadingModal, setLoadingModal] = useState(false);
   const { t } = useTranslation();
   const user = useSelector(selectCurrentUser);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
@@ -63,6 +63,16 @@ export default function ImageUpload({ score, prompt }) {
   const [selectedFileContent, setSelectedFileContent] = useState(null);
   //console.log(user);
 
+  /* marked for translation */
+  function showMaxDurationToast() {
+    Toast.show({
+      type: 'error',
+      text1: 'Error: Video exceeded 5 minutes',
+      text2: 'Split your videos into 3 minutes each!',
+      visibilityTime: 3000,
+    });
+  } 
+
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({ //see: https://docs.expo.dev/versions/latest/sdk/imagepicker/
@@ -70,16 +80,26 @@ export default function ImageUpload({ score, prompt }) {
       allowsEditing: false,
       allowsMultipleSelection: true,
       quality: 0, //compresses image to lowest quality for this library
+      selectionLimit: 10,
+      videoExportPreset: ImagePicker.VideoExportPreset.MediumQuality, //videoExportPreset is deprecated on iOS. not sure if it works.
     });
 
     console.log(result);
     if (!result.canceled) {
+
+      //video duration is in milliseconds. 300000ms = 5 mins
+      const hasExcessivelyLongVideo = result.assets.some(asset => asset.duration > 300000); //see here for .some(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+      if (hasExcessivelyLongVideo) {
+        showMaxDurationToast();
+        return; // Prevent further processing or uploading
+      }
+
       setImageAssetsArray(result.assets);
     }
   };
 
   async function uploadImageAsync(uri) {
-    setImageUploading(true);
+    setLoadingModal(true);
     // Why are we using XMLHttpRequest? See:
     // https://github.com/expo/expo/issues/2402#issuecomment-443726662
     const blob = await new Promise((resolve, reject) => {
@@ -109,34 +129,6 @@ export default function ImageUpload({ score, prompt }) {
     console.log(`${imageFileName} uploaded to: classes/${user.classCode}/${user.email}/${imageFileName}`)
   
     //return await getDownloadURL(fileRef);
-  }
-
-  const renderItem = ({ item, index }) => {
-
-    let file = item.fileName;
-    if (item.fileName.length > 30) {
-      file = item.fileName.substring(item.fileName.length - 30);
-    }
-    return (
-      <File 
-        key={index}
-        onPress={() => {
-          setShowSelectedFile(true);
-          setSelectedFileContent(item);
-        }}
-      >
-        <BodyText size="button" color="secondary">{file}</BodyText>
-      </File>
-  )}
-
-  /* marked for translation */
-  const showToast = () => {
-    Toast.show({
-      type: 'error',
-      text1: 'No Photo Selected',
-      text2: 'Select photos or videos from your photo library',
-      visibilityTime: 2000,
-    });
   }
 
   return (
@@ -172,13 +164,19 @@ export default function ImageUpload({ score, prompt }) {
             for(let i=0; i<imageAssetsArray.length; i++) {
               await uploadImageAsync(imageAssetsArray[i].uri);
             }
-            setImageUploading(false);
+            setLoadingModal(false);
             setCompletionModalVisible(!completionModalVisible);
           } catch (error) {
             console.warn(error);
           }
         } else {
-          showToast();
+          /* marked for translation */
+          Toast.show({
+            type: 'error',
+            text1: 'No Photo Selected',
+            text2: 'Select photos or videos from your photo library',
+            visibilityTime: 2000,
+          });
         }
       }}>
         <BodyText color="secondary" size="subtitle">
@@ -188,7 +186,7 @@ export default function ImageUpload({ score, prompt }) {
 
       <CompletionModal score={score} visible={completionModalVisible} prompt={t(prompt)} />
 
-      <LoadingModal visible={imageUploading} />
+      <LoadingModal visible={loadingModal} />
 
       <FileModal showSelectedFile={showSelectedFile} setShowSelectedFile={setShowSelectedFile} content={selectedFileContent} />
     </Prompt>

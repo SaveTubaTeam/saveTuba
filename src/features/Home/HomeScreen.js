@@ -104,6 +104,7 @@ const HomeScreen = () => {
         name="Grades"
         component={HomeView}
         options={{
+          headerShown: true,
           title: t("common:levels"), // Grades
           headerStyle: {
             backgroundColor: "#C6DC3B",
