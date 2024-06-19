@@ -171,7 +171,7 @@ export default function ImageUpload({ score, prompt, activityType }) {
             setLoadingModal(false);
             setCompletionModalVisible(!completionModalVisible);
           } catch (error) {
-            console.warn(error);
+            console.error(error);
           }
         } else {
           /* marked for translation */

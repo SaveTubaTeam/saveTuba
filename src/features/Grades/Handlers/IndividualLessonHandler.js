@@ -1,10 +1,11 @@
-import React, { useEffect, useState, createContext } from "react";
+import React, { useEffect, useState } from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { getMasteryAndMinigamesData } from "./Database.js";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { CurriculumLocationContext } from "./HandlerContexts.js";
 
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
@@ -16,8 +17,6 @@ import SnapshotHandler from "../../../components/Grades/minigames/Handlers/Snaps
 import ReorderHandler from "../../../components/Grades/minigames/Handlers/ReorderHandler";
 
 const Stack = createNativeStackNavigator();
-
-const CurriculumLocationContext = createContext();
 
 const styles = StyleSheet.create({
   container: {
@@ -158,5 +157,4 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
   );
 }
 
-export { CurriculumLocationContext }
 export default IndividualLessonHandler;

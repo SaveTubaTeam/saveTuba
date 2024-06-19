@@ -1,24 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-//import { combineReducers } from "redux";
-/* import { user } from "../reducers/user";
-import { achievements } from "../reducers/user-achievements";
-import { achievementsModals } from "../reducers/achievementModal"; */
-
 import mapSlice from "../slices/imageSlice";
 import languageSlice from "../slices/languageSlice";
 import userSlice from "../slices/userSlice";
-
-// const rootReducer = combineReducers({
-//     user: userSlice,
-//     imageMap: mapSlice,
-//     languageSelector: languageSlice,
-// });
+import { apiSlice } from "../apiSlice";
 
 //configureStore() automatically adds thunk middleware via RTK toolkit
+//middleware is boilerplate from RTK Query setup docs
 export const store = configureStore({
     reducer: {
         user: userSlice,
         imageMap: mapSlice,
         languageSelector: languageSlice,
-    }
+        [apiSlice.reducerPath]: apiSlice.reducer
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
 });

@@ -221,20 +221,6 @@ const LoginScreenEmail = () => {
             </Text>
           </TouchableOpacity>
 
-          {/* !!This writes over all data in the grade's language!! */}
-          {/* <Button onPress={postDataHard}>
-            <TitleText color="secondary" size="body">
-              postDataHard()
-            </TitleText>
-          </Button> */}
-
-          {/* This updates the data without deleting image filepath data */}
-          {/* <Button onPress={postDataSoft}>
-            <TitleText color="secondary" size="body">
-              postDataSoft()
-            </TitleText>
-          </Button> */}
-
         </ButtonContainer>
 
         <BottomContainer>

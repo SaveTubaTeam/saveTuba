@@ -15,7 +15,8 @@ import { useNavigation } from "@react-navigation/native";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser, fetchUser } from "../../redux/slices/userSlice";
+import { selectCurrentUser, fetchUser, signInUser } from "../../redux/slices/userSlice";
+import { useGetUserQuery } from "../../redux/apiSlice";
 import Amodal from "./achievement-components/Amodal";
 
 const Tab = createBottomTabNavigator();
@@ -81,60 +82,56 @@ const SaveTuba = () => {
 //Main handles the rendering of the SaveTuba navigation stack above, and calls/handles fetchUser
 const Main = () => {
   const dispatch = useDispatch()
-  const userStatus = useSelector(state => state.user.status);
   const imageMap = useSelector(state => state.imageMap.imageData);
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 
-  //here we check the status of fetchUser
+  // Define loginType and input based on signedIn state and auth.currentUser
+  let loginType = auth.currentUser ? 'email' : 'none';
+  let input = auth.currentUser ? auth.currentUser.email : 'none';
+
+  // Execute useGetUserQuery only when signedIn is true and auth.currentUser is defined
+  const { data: userData, isLoading, isSuccess, isError, error } = useGetUserQuery(
+    { loginType, input },
+    { skip: !auth.currentUser }
+  );
+
   useEffect(() => {
-    //defining variables for fetchUser()
-    let loginType;
-    let input;
-    //TODO: once phone number verification is working, should update this to check for phone number logintype
-    if(auth.currentUser) { //truthy if auth was successful
-      //checking if firebase auth was with email or phone number
-      if(auth.currentUser.email) {
-        loginType = 'email'
-        input = auth.currentUser.email
-      }
-      //console.log("\nloginType:", loginType, "\ninput:", input);
-
-      if(userStatus === 'idle') {
-        dispatch(fetchUser({loginType, input}));
-      }
-      
-      if(userStatus === 'finished') {
-        console.log("Main.js fetched user from store:", user)
-      }
-
-      if(userStatus === 'rejected') {
-        handleFetchUserRejected(); //see below
-      }
+    if (isSuccess) {
+      dispatch(signInUser({ userData: userData }));
+    } else if (isError) {
+      console.error(error);
+      handleFetchUserRejected();
     }
+  }, [isSuccess, isError, userData]);
 
-  }, [userStatus, dispatch]); //had some problems keeping Main.js from rendering more than expected so there's a lot of clutter in the terminal. sorry folks
+  let content;
+  if(isLoading) {
+    content = (
+      <View style={[styles.container, styles.horizontal]}>
+        <ActivityIndicator size="large" color="#00ff00" /> 
+      </View>
+    );
+  } else if(isSuccess) {
+    content = (
+      <SaveTuba />
+    );
+  } else if(isError) {
+    content = null;
+  }
 
-  //for 'rejected' load case inside of useEffect
   const handleFetchUserRejected = async() => {
     console.log("fetchUser failed in Main.js. Pushing back to LoginEmail")
-    await auth.signOut()
+    await auth.signOut();
     Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
     navigation.replace("LoginEmail");
   }
 
-    //Update 4/22/24: removed Amodal global wrapper. User achievements should be implemented in a more functional way.
+    //Update 4/22/24: removed Amodal global wrapper. User achievements/badges should be implemented in a more functional way.
 
-    //ternary operator to render a spinner while we wait for fetchUser()
     return (
       <>
-        {userStatus === 'loading' || userStatus === 'idle' ? (
-          <View style={[styles.container, styles.horizontal]}>
-          <ActivityIndicator size="large" color="#00ff00" /> 
-          </View>
-        ) : (
-          <SaveTuba />
-        )}
+        {content}
       </>
     );
   }//end of Main component

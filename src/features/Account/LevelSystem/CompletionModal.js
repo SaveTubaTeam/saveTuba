@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { CurriculumLocationContext } from "../../Grades/Handlers/IndividualLessonHandler";
+import { CurriculumLocationContext } from "../../Grades/Handlers/HandlerContexts";
 import { theme } from "../../../infrastructure/theme";
 import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
 import { Image } from "expo-image";

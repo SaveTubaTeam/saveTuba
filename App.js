@@ -67,10 +67,6 @@ SplashScreen.preventAutoHideAsync();
 LogBox.ignoreAllLogs();
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
 
-function Home() {
-  return <MainScreen />;
-}
-
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
 
@@ -90,9 +86,11 @@ export default function App() {
       try {
         await new Promise(resolve => setTimeout(resolve, 3000)); //artificial timeout
       } catch (e) {
-        console.warn(e);
+        console.error(e);
       } finally {
         setAppIsReady(true); // Tell the application to render
+        //detecting and logging iOS/Android version information
+        console.log("Current Phone:", Platform.OS, Platform.Version); //NOTE: Android will return API version, NOT OS version. Please refer to https://en.wikipedia.org/wiki/Android_version_history#Overview for correct version mapping.
       }
     }
     prepare();
@@ -108,9 +106,6 @@ export default function App() {
   if (!appIsReady || !balsamiqSansLoaded || !scadaLoaded) {
     return null;
   }
-
-  //detecting and logging iOS/Android version information
-  console.log("Current Phone:", Platform.OS, Platform.Version); //NOTE: Android will return API version, NOT OS version. Please refer to https://en.wikipedia.org/wiki/Android_version_history#Overview for correct version mapping.
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }} onLayout={onLayoutRootView} >
@@ -131,7 +126,7 @@ export default function App() {
               <Stack.Screen
                 options={{ headerShown: false }}
                 name="HomePage"
-                component={Home}
+                component={MainScreen}
               />
             </Stack.Navigator>
           </NavigationContainer>
