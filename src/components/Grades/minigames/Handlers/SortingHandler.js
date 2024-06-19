@@ -193,9 +193,12 @@ const Start = ({ data, imageMap }) => {
           <Modko visible={false} />
 
             {/* marked for translation */}
-          <CompletionModal startCompletionProcess={completionModalVisible} score={score} 
-          prompt={t("minigames:sortingprompt")}>
-          </CompletionModal>
+          <CompletionModal 
+            startCompletionProcess={completionModalVisible} 
+            score={score} 
+            prompt={t("minigames:sortingprompt")}
+            activityType={"Sorting"}
+          />
         </Container>
       </ImageBg>
     </>

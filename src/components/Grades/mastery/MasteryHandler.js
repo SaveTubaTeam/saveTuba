@@ -82,7 +82,7 @@ const MasteryHandler = ({ objectData, imageMap }) => {
             <Prompt>
               <TitleText size="subtitle">{objectData.prompt}</TitleText>
             </Prompt>
-            <ImageUpload score={-2} prompt={"minigames:masteryprompt"}/>
+            <ImageUpload score={-2} prompt={"minigames:masteryprompt"} activityType={"Mastery"} />
           </>
         }
       />

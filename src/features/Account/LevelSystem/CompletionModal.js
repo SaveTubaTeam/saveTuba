@@ -1,4 +1,5 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { CurriculumLocationContext } from "../../Grades/Handlers/IndividualLessonHandler";
 import { theme } from "../../../infrastructure/theme";
 import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
 import { Image } from "expo-image";
@@ -13,6 +14,9 @@ import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
 
+import { useDispatch, useSelector } from "react-redux";
+import { selectCurrentUser, addExperienceToUser } from "../../../../redux/slices/userSlice";
+
 import styled from "styled-components/native";
 
 import { auth, db } from "../../../../firebase";
@@ -21,8 +25,20 @@ import { t } from "i18next";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
-const CompletionModal = ({ score, prompt, startCompletionProcess, content }) => {
+const CompletionModal = ({ score, prompt, startCompletionProcess, content, activityType }) => {
+  const user = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
+  const { gradeNumber, chapterNumber, lessonNumber} = useContext(CurriculumLocationContext);
 
+  function concatenateFirstAndLastLetters(str) {
+    const firstLetter = str[0];
+    const lastLetter = str[str.length - 1];
+    return firstLetter + lastLetter;
+  }
+
+  const gradeID = concatenateFirstAndLastLetters(gradeNumber);
+  const chapterID = concatenateFirstAndLastLetters(chapterNumber);
+  const lessonID = concatenateFirstAndLastLetters(lessonNumber);
 
   //TODO: update user experience in redux store, post new user to the respective document
   // grab the current location via useContext in IndividualLessonHandler 
@@ -40,6 +56,10 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content }) => 
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
 
   useEffect(() => {
+    if(!startCompletionProcess) { return; } //guard clause
+
+    console.log(user);
+    console.log(`Completion ID: ${gradeID}${chapterID}${lessonID}_${activityType}`);
     //some minigames have no score, so a score < 0 is passed into props. We check for this case below
     //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
     if(score < 0) {
@@ -50,21 +70,21 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content }) => 
       setScoreShown(`${t("minigames:finalscore")}: ${score}\n\n`);
       setFinalXP(score * XP_PER_POINT);
     }
-  }, [score])
+    //state is not updated locally so we have to calculate the xp again for the below function
+    performCompletionProcess(score < 0 ? (score === -1 ? 100 : 300) : score * XP_PER_POINT);
+  }, [score, startCompletionProcess])
 
-  const performCompletionProcess = async () => {
-    if(startCompletionProcess) {
-      setLoadingModal(true);
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setLoadingModal(false);
-      setCompletionModalVisible(true);
-    }
+  const performCompletionProcess = async (newExperiencePoints) => {
+    console.log(`now performing completion process . . .`);
+    setLoadingModal(true);
+    dispatch(addExperienceToUser({ newExperiencePoints: newExperiencePoints })); //synchronous
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    setLoadingModal(false);
+    setCompletionModalVisible(true);
   }
 
-  useEffect(() => {
-    performCompletionProcess();
-  }, [startCompletionProcess])
-  
   return (
     <>
       <LoadingModal visible={loadingModal} />

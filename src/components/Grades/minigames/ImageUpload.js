@@ -52,7 +52,7 @@ const SubmitButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
-export default function ImageUpload({ score, prompt }) {
+export default function ImageUpload({ score, prompt, activityType }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
   const [finalURIArray, setFinalURIArray] = useState([]);
   const [loadingModal, setLoadingModal] = useState(false);
@@ -177,7 +177,7 @@ export default function ImageUpload({ score, prompt }) {
           /* marked for translation */
           Toast.show({
             type: 'error',
-            text1: 'No Photo Selected',
+            text1: 'Nothing Submitted',
             text2: 'Select photos or videos from your photo library',
             visibilityTime: 2000,
           });
@@ -188,11 +188,21 @@ export default function ImageUpload({ score, prompt }) {
         </BodyText>
       </SubmitButton>
 
-      <CompletionModal score={score} startCompletionProcess={completionModalVisible} prompt={t(prompt)} content={finalURIArray}/>
+      <CompletionModal 
+        score={score} 
+        startCompletionProcess={completionModalVisible} 
+        prompt={t(prompt)} 
+        content={finalURIArray} 
+        activityType={activityType}
+      />
 
       <LoadingModal visible={loadingModal} />
 
-      <FileModal showSelectedFile={showSelectedFile} setShowSelectedFile={setShowSelectedFile} content={selectedFileContent} />
+      <FileModal 
+        showSelectedFile={showSelectedFile} 
+        setShowSelectedFile={setShowSelectedFile} 
+        content={selectedFileContent} 
+      />
     </Prompt>
   );
 }

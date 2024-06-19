@@ -52,7 +52,11 @@ const SnapshotHandler = ({ objectData, imageMap }) => {
             <TitleText size="subtitle">{objectData.prompt}</TitleText>
           </Prompt>
 
-            <ImageUpload score={-1} prompt={"minigames:snapshotprompt"} />
+            <ImageUpload 
+              score={-1} 
+              prompt={"minigames:snapshotprompt"} 
+              activityType={"Snapshot"}
+            />
 
           </ScrollView>
         </ImageBg>

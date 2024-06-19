@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useTranslation } from "react-i18next";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useNavigationState } from "@react-navigation/native";
 //import CountryFlag from "react-native-country-flag";
 //import styled from "styled-components/native";
 
@@ -47,7 +47,7 @@ const Selector = () => {
 
   const setLanguage = async(languageCode) => {
     await i18n.changeLanguage(languageCode);
-    navigation.popToTop(); //pop to the top of the HomeScreen stack
+    navigation.popToTop(); //throws an error but works like a charm
 
     //IMLocalize.js (imported in App.js) acts as an event listener for changeLanguage(), caching the new language code under 'user-language'
   };

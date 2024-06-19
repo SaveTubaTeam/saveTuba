@@ -188,9 +188,12 @@ const ReorderHandler = ({ objectData }) => {
       />
 
         {/* marked for translation */}
-        <CompletionModal startCompletionProcess={completionModalVisible} score={score} 
-        prompt={t("minigames:reorderprompt")}>
-        </CompletionModal>
+        <CompletionModal 
+          startCompletionProcess={completionModalVisible} 
+          score={score} 
+          prompt={t("minigames:reorderprompt")}
+          activityType={"Reorder"}
+        />
 
     </ImageBackground>
   );

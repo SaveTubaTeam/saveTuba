@@ -59,7 +59,7 @@ const ImagePrompt = ({ data, imageMap }) => {
           </TitleText>
         </View>
 
-        <ImageUpload score={-1} prompt={"minigames:openresponseprompt"}/>
+        <ImageUpload score={-1} prompt={"minigames:openresponseprompt"} activityType={"ImageBoom"}/>
 
     </ScrollView>
   );

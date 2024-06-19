@@ -3,7 +3,7 @@ import { auth, db } from "../../firebase";
 import { getDoc } from "firebase/firestore";
 
 const initialState = {
-    userData: { 'emptyUser': 'empty', 'email': "" },
+    userData: { 'emptyUser': 'empty', 'email': "", 'experiencePoints': 0 },
     status: 'idle'
 }
 
@@ -41,9 +41,14 @@ const userSlice = createSlice({
     initialState: initialState,
     reducers: {
         signOutUser(state, action) {
-            state.userData = {'emptyUser': 'empty', 'email': ""};
+            state.userData = {'emptyUser': 'empty', 'email': "", 'experiencePoints': 0 };
             state.status = 'idle';
             console.log("signOutUser successfully dispatched to userSlice!")
+        },
+        addExperienceToUser(state, action) {
+            const { newExperiencePoints } = action.payload;
+            state.userData.experiencePoints += newExperiencePoints; 
+            console.log(`added ${newExperiencePoints} to userSlice`);
         }
     },
     extraReducers(builder) {
@@ -64,7 +69,7 @@ const userSlice = createSlice({
     }
 });
 
-export const { signOutUser } = userSlice.actions;
+export const { signOutUser, addExperienceToUser } = userSlice.actions;
 
 export default userSlice.reducer //exports all reducers from const usersSlice
 
