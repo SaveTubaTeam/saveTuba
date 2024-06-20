@@ -82,7 +82,7 @@ async function postCompletion(userEmail, completionID, content) {
 
    if (Array.isArray(content)) { //true if content is an array (from ImageUpload [Mastery, ImageBoom, Snapshot])
       completionData.imageFilePaths = content;
-   } else if (typeof variable === 'string') { //true if content is from Memory, Sorting, Quiz, Reorder
+   } else if (typeof content === 'string') { //true if content is from Memory, Sorting, Quiz, Reorder
       completionData.score = content;
    } else {
       throw new Error("incorrect data type for 'content' in postCompletion")
@@ -94,7 +94,7 @@ async function postCompletion(userEmail, completionID, content) {
    completionData.completionID = completionID;
 
    const completionDocRef = db.collection('users').doc(userEmail).collection("Completions").doc(completionID);
-   await completionDocRef.set(completionData);
+   await completionDocRef.set(completionData); //if the document exists, we write over it.
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
    console.log(`\t\t\t\tpostCompletion done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);

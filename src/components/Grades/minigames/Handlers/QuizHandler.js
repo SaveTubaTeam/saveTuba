@@ -194,6 +194,7 @@ const Start = ({ data, imageMap }) => {
             score={score} 
             prompt={t("minigames:quizprompt")}
             activityType={"Quiz"}
+            totalPossibleScore={data.content.length}
           >
           </CompletionModal>
 

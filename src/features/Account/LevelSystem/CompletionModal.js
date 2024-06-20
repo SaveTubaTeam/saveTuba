@@ -16,14 +16,14 @@ import LoadingModal from "./LoadingModal";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
-import { useUpdateUserXPMutation } from "../../../../redux/apiSlice";
+import { useUpdateUserXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
 
 import styled from "styled-components/native";
 import { t } from "i18next";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
-const CompletionModal = ({ score, prompt, startCompletionProcess, content, activityType }) => {
+const CompletionModal = ({ score, prompt, startCompletionProcess, content, activityType, totalPossibleScore }) => {
   const user = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
   const { gradeNumber, chapterNumber, lessonNumber} = useContext(CurriculumLocationContext);
@@ -37,6 +37,8 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
   const gradeID = concatenateFirstAndLastLetters(gradeNumber);
   const chapterID = concatenateFirstAndLastLetters(chapterNumber);
   const lessonID = concatenateFirstAndLastLetters(lessonNumber);
+
+  const completionID = `${gradeID}${chapterID}${lessonID}_${activityType}`;
 
   //TODO: classroom tag in apiSlice.js
   //sort through the user's collection in firestore for the current completion and 
@@ -52,11 +54,12 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
 
   const [updateUserXP] = useUpdateUserXPMutation();
+  const [postCompletion] = usePostCompletionMutation();
 
   useEffect(() => {
     if(!startCompletionProcess) { return; } //guard clause
 
-    console.log(`Completion ID: ${gradeID}${chapterID}${lessonID}_${activityType}`);
+    console.log(`Completion ID: ${completionID}`);
     //some minigames have no score, so a score < 0 is passed into props. We check for this case below
     //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
     if(score < 0) {
@@ -84,7 +87,18 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
         classCode: user.classCode
       }).unwrap();
 
-      //await new Promise(resolve => setTimeout(resolve, 2000));
+      let submittedContent;
+      if(score < 0) {
+        submittedContent = content;
+      } else {
+        submittedContent = `${score}/${totalPossibleScore}`;
+      }
+
+      await postCompletion({ 
+        userEmail: user.email, 
+        completionID: completionID, 
+        content: submittedContent 
+      }).unwrap();
 
       setLoadingModal(false);
       setCompletionModalVisible(true);

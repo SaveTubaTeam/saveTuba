@@ -132,6 +132,7 @@ const MemoryHandler = ({ objectData, imageMap }) => {
         score={score} 
         startCompletionProcess={completionModalVisible}
         activityType={"Memory"}
+        totalPossibleScore={score}
       />
     </ImageBackground>
   );

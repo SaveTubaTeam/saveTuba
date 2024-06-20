@@ -193,6 +193,7 @@ const ReorderHandler = ({ objectData }) => {
           score={score} 
           prompt={t("minigames:reorderprompt")}
           activityType={"Reorder"}
+          totalPossibleScore={objectData.content.length}
         />
 
     </ImageBackground>

@@ -198,6 +198,7 @@ const Start = ({ data, imageMap }) => {
             score={score} 
             prompt={t("minigames:sortingprompt")}
             activityType={"Sorting"}
+            totalPossibleScore={data.options.length}
           />
         </Container>
       </ImageBg>
