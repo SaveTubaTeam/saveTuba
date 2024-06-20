@@ -19,9 +19,6 @@ import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import { useUpdateUserXPMutation } from "../../../../redux/apiSlice";
 
 import styled from "styled-components/native";
-
-import { auth, db } from "../../../../firebase";
-import { getDoc, doc } from "firebase/firestore";
 import { t } from "i18next";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
@@ -41,10 +38,8 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
   const chapterID = concatenateFirstAndLastLetters(chapterNumber);
   const lessonID = concatenateFirstAndLastLetters(lessonNumber);
 
-  //TODO: update user experience in redux store, post new user to the respective document
-  // grab the current location via useContext in IndividualLessonHandler 
-  //and a minigameType prop passed in from each handler
-  //sort through the user's collection for the current completion and 
+  //TODO: classroom tag in apiSlice.js
+  //sort through the user's collection in firestore for the current completion and 
   //post score (if relevant), submission time, content
 
   const { t } = useTranslation();
@@ -61,7 +56,6 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
   useEffect(() => {
     if(!startCompletionProcess) { return; } //guard clause
 
-    console.log(user);
     console.log(`Completion ID: ${gradeID}${chapterID}${lessonID}_${activityType}`);
     //some minigames have no score, so a score < 0 is passed into props. We check for this case below
     //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
@@ -77,10 +71,10 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
     performCompletionProcess(score < 0 ? (score === -1 ? 100 : 300) : score * XP_PER_POINT);
   }, [score, startCompletionProcess])
 
-  const performCompletionProcess = async (newXP) => {
+  const performCompletionProcess = async(newXP) => {
     try {
       const start = performance.now(); // Start performance timer
-      console.log("\n\tnow performing completion process . . .");
+      console.log("\n\t!!! now performing completion process . . .");
       setLoadingModal(true);
 
       await updateUserXP({ 
@@ -96,7 +90,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
       setCompletionModalVisible(true);
 
       const elapsedTimeSeconds = (performance.now() - start) / 1000;
-      console.log(`\n\tperformCompletionProcess done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+      console.log(`\n\t!!! performCompletionProcess done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
     } catch(error) {
       console.error(error);
       return;

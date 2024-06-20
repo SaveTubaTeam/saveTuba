@@ -75,7 +75,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 
 const LoginScreenEmail = () => {
   const dispatch = useDispatch();
-  const currentUserStore = useSelector(selectCurrentUser);
+  const currentUserSliceStore = useSelector(state => state.user);
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
@@ -84,7 +84,7 @@ const LoginScreenEmail = () => {
   //fetching images, updating the auth object with an observer to track changes to the existing user
   useEffect(() => {
     console.log("\n\tinside LoginScreenEmail.js")
-    console.log('Most recent userData store:', currentUserStore);
+    console.log('Most recent userSlice store:', currentUserSliceStore);
     //dispatch(fetchImages());
 
     //we set an observer on the auth object via onAuthStateChanged()
@@ -102,7 +102,7 @@ const LoginScreenEmail = () => {
     }); //end of login function
 
     return login; //this line prevents login from being called more than once
-  }, [currentUserStore, dispatch]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
+  }, [currentUserSliceStore, dispatch]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
   //this function is called upon pressing the login button
   const handleLogin = async () => {

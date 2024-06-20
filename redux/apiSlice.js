@@ -1,5 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getUser, updateUserXP } from "../src/features/Grades/Handlers/UserFunctions";
+import { getUser, updateUserXP, getCompletionsArray, postCompletion } from "../src/features/Grades/Handlers/UserFunctions";
 
 export const apiSlice = createApi({
    reducerPath: "api",
@@ -24,7 +24,7 @@ export const apiSlice = createApi({
       updateUserXP: builder.mutation({
          async queryFn({ newXP, oldXP, email, classCode }) {
             try {
-               console.log("\t\t\trunning updateUserXP in apiSlice.js . . . [User cache is now invalid!]");
+               console.log("\t\t\trunning updateUserXP in apiSlice.js . . . ['User' query cache invalidated]");
                await updateUserXP(newXP, oldXP, email, classCode);
                return { data: "updated" };
             } catch(error) {
@@ -35,7 +35,36 @@ export const apiSlice = createApi({
          invalidatesTags: ["User"],
       }),
 
-   }),
+      getCompletionsArray: builder.query({
+         async queryFn({ userEmail }) {
+            try {
+               console.log("\t\t\trunning getCompletionsArray in apiSlice.js . . .");
+               const completionsArray = await getCompletionsArray(userEmail);
+               return { data: completionsArray };
+            } catch(error) {
+               return { error: error.message };
+            }
+         },
+         providesTags: ["Completions"],
+      }),
+
+      postCompletion: builder.mutation({
+         async queryFn({ userEmail, completionID, content }) {
+            try {
+               console.log("\t\t\trunning postCompletion in apiSlice.js . . . ['Completion' query cache invalidated]");
+               await postCompletion(userEmail, completionID, content);
+               return { data: "posted" };
+            } catch(error) {
+               return { error: error.message };
+            }
+         },
+         invalidatesTags: ["Completions"],
+      }),
+
+   })
 });
 
-export const { useGetUserQuery, useUpdateUserXPMutation } = apiSlice;
+export const { useGetUserQuery, 
+               useUpdateUserXPMutation, 
+               useGetCompletionsArrayQuery, 
+               usePostCompletionMutation } = apiSlice;

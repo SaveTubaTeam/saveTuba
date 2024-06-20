@@ -15,8 +15,8 @@ import { useNavigation } from "@react-navigation/native";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser, fetchUser, signInUser } from "../../redux/slices/userSlice";
-import { useGetUserQuery } from "../../redux/apiSlice";
+import { selectCurrentUser, signInUser, addCompletionsToReduxStore } from "../../redux/slices/userSlice";
+import { useGetUserQuery, useGetCompletionsArrayQuery } from "../../redux/apiSlice";
 import Amodal from "./achievement-components/Amodal";
 
 const Tab = createBottomTabNavigator();
@@ -90,36 +90,51 @@ const Main = () => {
   let userEmail = auth.currentUser ? auth.currentUser.email : 'none';
 
   // Execute useGetUserQuery only when auth.currentUser is defined
-  const { data: userData, isLoading, isSuccess, isError, error } = useGetUserQuery(
+  const { data: userData, isLoading: userLoading, isSuccess: userSuccess, isError: userError, error: userErrorMessage } = useGetUserQuery(
     { userEmail: userEmail },
     { skip: !auth.currentUser }
   );
 
   useEffect(() => {
-    if (isSuccess) {
+    if (userSuccess) {
       dispatch(signInUser({ userData: userData }));
-    } else if (isError) {
-      console.error(error);
-      handleFetchUserRejected();
+    } else if (userError) {
+      console.error(userErrorMessage);
+      handleUserRejected();
     }
-  }, [isSuccess, isError, userData]);
+  }, [userSuccess, userError, userErrorMessage, userData]);
+
+  // Execute useGetUserQuery only when userData has been successfully dispatched to store from the above useEffect
+  const { data: completionsArray, isLoading: completionsLoading, isSuccess: completionsSuccess, isError: completionsError, error: completionsErrorMessage } = useGetCompletionsArrayQuery(
+    { userEmail: userEmail },
+    { skip: user.emptyUser ? true : false }
+  );
+
+  useEffect(() => {
+    if (completionsSuccess) {
+      dispatch(addCompletionsToReduxStore({ completions: completionsArray }));
+    } else if (completionsError) {
+      console.error(completionsErrorMessage);
+      handleUserRejected();
+    }
+  }, [completionsSuccess, completionsError, completionsErrorMessage, completionsArray])
 
   let content;
-  if(isLoading) {
+  if(userLoading || completionsLoading) {
     content = (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" /> 
       </View>
     );
-  } else if(isSuccess) {
+  } else if(userSuccess && completionsSuccess) {
     content = (
       <SaveTuba />
     );
-  } else if(isError) {
+  } else if(userError || completionsError) {
     content = null;
   }
 
-  const handleFetchUserRejected = async() => {
+  const handleUserRejected = async() => {
     console.log("fetchUser failed in Main.js. Pushing back to LoginEmail")
     await auth.signOut();
     Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
