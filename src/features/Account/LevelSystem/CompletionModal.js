@@ -15,7 +15,8 @@ import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser, addExperienceToUser } from "../../../../redux/slices/userSlice";
+import { selectCurrentUser } from "../../../../redux/slices/userSlice";
+import { useUpdateUserXPMutation } from "../../../../redux/apiSlice";
 
 import styled from "styled-components/native";
 
@@ -55,6 +56,8 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
   const [loadingModal, setLoadingModal] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
 
+  const [updateUserXP] = useUpdateUserXPMutation();
+
   useEffect(() => {
     if(!startCompletionProcess) { return; } //guard clause
 
@@ -74,15 +77,30 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
     performCompletionProcess(score < 0 ? (score === -1 ? 100 : 300) : score * XP_PER_POINT);
   }, [score, startCompletionProcess])
 
-  const performCompletionProcess = async (newExperiencePoints) => {
-    console.log(`now performing completion process . . .`);
-    setLoadingModal(true);
-    dispatch(addExperienceToUser({ newExperiencePoints: newExperiencePoints })); //synchronous
+  const performCompletionProcess = async (newXP) => {
+    try {
+      const start = performance.now(); // Start performance timer
+      console.log("\n\tnow performing completion process . . .");
+      setLoadingModal(true);
 
-    await new Promise(resolve => setTimeout(resolve, 2000));
+      await updateUserXP({ 
+        newXP: newXP, 
+        oldXP: user.experiencePoints,
+        email: user.email,
+        classCode: user.classCode
+      }).unwrap();
 
-    setLoadingModal(false);
-    setCompletionModalVisible(true);
+      //await new Promise(resolve => setTimeout(resolve, 2000));
+
+      setLoadingModal(false);
+      setCompletionModalVisible(true);
+
+      const elapsedTimeSeconds = (performance.now() - start) / 1000;
+      console.log(`\n\tperformCompletionProcess done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+    } catch(error) {
+      console.error(error);
+      return;
+    }
   }
 
   return (

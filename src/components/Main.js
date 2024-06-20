@@ -79,20 +79,19 @@ const SaveTuba = () => {
   );
 };
 
-//Main handles the rendering of the SaveTuba navigation stack above, and calls/handles fetchUser
+//Main handles the rendering of the SaveTuba navigation stack above
 const Main = () => {
   const dispatch = useDispatch()
   const imageMap = useSelector(state => state.imageMap.imageData);
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 
-  // Define loginType and input based on signedIn state and auth.currentUser
-  let loginType = auth.currentUser ? 'email' : 'none';
-  let input = auth.currentUser ? auth.currentUser.email : 'none';
+  // Define userEmail only if auth.currentUser is defined
+  let userEmail = auth.currentUser ? auth.currentUser.email : 'none';
 
-  // Execute useGetUserQuery only when signedIn is true and auth.currentUser is defined
+  // Execute useGetUserQuery only when auth.currentUser is defined
   const { data: userData, isLoading, isSuccess, isError, error } = useGetUserQuery(
-    { loginType, input },
+    { userEmail: userEmail },
     { skip: !auth.currentUser }
   );
 

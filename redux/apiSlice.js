@@ -1,5 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getUser } from "../src/features/Grades/Handlers/UserFunctions";
+import { getUser, updateUserXP } from "../src/features/Grades/Handlers/UserFunctions";
 
 export const apiSlice = createApi({
    reducerPath: "api",
@@ -8,12 +8,27 @@ export const apiSlice = createApi({
    endpoints: (builder) => ({
 
       getUser: builder.query({
-         async queryFn({loginType, input}) {
+         async queryFn({ userEmail }) {
             try {
-               const userData = await getUser(loginType, input);
+               console.log("\t\t\trunning getUser in apiSlice.js . . .");
+               const userData = await getUser(userEmail);
                return { data: userData };
             } catch(error) {
-               console.log("ERROR with getUser():", error);
+               console.error("ERROR with getUser():", error);
+               return { error: error.message };
+            }
+         },
+         providesTags: ["User"],
+      }),
+
+      updateUserXP: builder.mutation({
+         async queryFn({ newXP, oldXP, email, classCode }) {
+            try {
+               console.log("\t\t\trunning updateUserXP in apiSlice.js . . . [User cache is now invalid!]");
+               await updateUserXP(newXP, oldXP, email, classCode);
+               return { data: "updated" };
+            } catch(error) {
+               console.error("ERROR with updateUserXP():", error);
                return { error: error.message };
             }
          },
@@ -23,4 +38,4 @@ export const apiSlice = createApi({
    }),
 });
 
-export const { useGetUserQuery } = apiSlice;
+export const { useGetUserQuery, useUpdateUserXPMutation } = apiSlice;

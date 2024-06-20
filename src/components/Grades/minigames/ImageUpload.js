@@ -119,17 +119,18 @@ export default function ImageUpload({ score, prompt, activityType }) {
 
     let imageFileName = uri.substring(uri.lastIndexOf('/') + 1);
     //console.log(imageFileName);
+    const bucketFilePath = `classes/${user.classCode}/${user.email}/${imageFileName}`
   
-    const fileRef = storage.child(`classes/${user.classCode}/${user.email}/${imageFileName}`);
+    const fileRef = storage.child(bucketFilePath);
     //console.log(fileRef);
     await uploadBytes(fileRef, blob);
   
     // We're done with the blob, close and release it
     blob.close();
 
-    console.log(`${imageFileName} uploaded to: classes/${user.classCode}/${user.email}/${imageFileName}`)
+    console.log(`${imageFileName} uploaded to: ${bucketFilePath}`)
   
-    //return await getDownloadURL(fileRef);
+    return bucketFilePath;
   }
 
   return (
@@ -141,9 +142,9 @@ export default function ImageUpload({ score, prompt, activityType }) {
 
       {imageAssetsArray && imageAssetsArray.map((item, index) => {
         
-        let file = item.fileName;
-        if (item.fileName.length > 30) {
-          file = item.fileName.substring(item.fileName.length - 30);
+        let file = item.uri;
+        if (item.uri.length > 30) {
+          file = item.uri.substring(item.uri.length - 30);
         }
 
         return (
@@ -162,12 +163,12 @@ export default function ImageUpload({ score, prompt, activityType }) {
       <SubmitButton onPress={async() => {
         if(imageAssetsArray) {
           try {
-            let uris = [];
+            let filePathArray = [];
             for(let i=0; i<imageAssetsArray.length; i++) {
-              await uploadImageAsync(imageAssetsArray[i].uri);
-              uris.push(imageAssetsArray[i].uri);
+              let bucketFilePath = await uploadImageAsync(imageAssetsArray[i].uri);
+              filePathArray.push(bucketFilePath);
             }
-            setFinalURIArray(uris);
+            setFinalURIArray(filePathArray);
             setLoadingModal(false);
             setCompletionModalVisible(!completionModalVisible);
           } catch (error) {

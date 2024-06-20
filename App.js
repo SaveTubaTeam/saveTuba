@@ -124,7 +124,10 @@ export default function App() {
                 component={RegisterScreen}
               />
               <Stack.Screen
-                options={{ headerShown: false }}
+                options={{ 
+                  headerShown: false,
+                  animation: 'fade'
+                }}
                 name="HomePage"
                 component={MainScreen}
               />

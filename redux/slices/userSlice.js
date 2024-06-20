@@ -3,7 +3,7 @@ import { auth, db } from "../../firebase";
 import { getDoc } from "firebase/firestore";
 
 const initialState = {
-    userData: { 'emptyUser': 'empty', 'email': "", 'experiencePoints': 0 },
+    userData: { emptyUser: 'empty' },
 }
 
 //slice boilerplate
@@ -14,10 +14,10 @@ const userSlice = createSlice({
         signInUser(state, action) {
             const { userData } = action.payload;
             state.userData = userData;
-            console.log("Main.js fetched user from store:", userData);
+            console.log("getUser dispatched signInUser and retrieved user from store:", userData);
         },
         signOutUser(state, action) {
-            state.userData = {'emptyUser': 'empty', 'email': "", 'experiencePoints': 0 };
+            state.userData = { emptyUser: 'empty' };
             console.log("signOutUser successfully dispatched to userSlice!")
         },
         addExperienceToUser(state, action) {
