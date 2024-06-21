@@ -19,7 +19,6 @@ import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import { useUpdateUserXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
 
 import styled from "styled-components/native";
-import { t } from "i18next";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
@@ -39,10 +38,6 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
   const lessonID = concatenateFirstAndLastLetters(lessonNumber);
 
   const completionID = `${gradeID}${chapterID}${lessonID}_${activityType}`;
-
-  //TODO: classroom tag in apiSlice.js
-  //sort through the user's collection in firestore for the current completion and 
-  //post score (if relevant), submission time, content
 
   const { t } = useTranslation();
   const navigation = useNavigation();
@@ -80,12 +75,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
       console.log("\n\t!!! now performing completion process . . .");
       setLoadingModal(true);
 
-      await updateUserXP({ 
-        newXP: newXP, 
-        oldXP: user.experiencePoints,
-        email: user.email,
-        classCode: user.classCode
-      }).unwrap();
+      await updateUserXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email, classCode: user.classCode }).unwrap();
 
       let submittedContent;
       if(score < 0) {
@@ -94,11 +84,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
         submittedContent = `${score}/${totalPossibleScore}`;
       }
 
-      await postCompletion({ 
-        userEmail: user.email, 
-        completionID: completionID, 
-        content: submittedContent 
-      }).unwrap();
+      await postCompletion({ userEmail: user.email, completionID: completionID, content: submittedContent }).unwrap();
 
       setLoadingModal(false);
       setCompletionModalVisible(true);

@@ -5,6 +5,7 @@ import { getDoc } from "firebase/firestore";
 const initialState = {
     userData: { emptyUser: 'empty' },
     completions: [],
+    classroom: {}
 }
 
 //slice boilerplate
@@ -21,15 +22,20 @@ const userSlice = createSlice({
             console.log("signOutUser successfully dispatched to userSlice!")
             return initialState; //reset state
         },
-        addCompletionsToReduxStore(state, action) {
+        addCompletions(state, action) {
             const { completions } = action.payload;
             state.completions = completions;
             console.log("getCompletionsArray dispatched addCompletions | COMPLETIONS:", completions);
+        },
+        addClassroom(state, action) {
+            const { classroomObject } = action.payload;
+            state.classroom = classroomObject;
+            console.log("getClassroom dispatched addClassroom | CLASSROOM:", classroomObject);
         }
     }
 });
 
-export const { signInUser, signOutUser, addCompletionsToReduxStore } = userSlice.actions;
+export const { signInUser, signOutUser, addCompletions, addClassroom } = userSlice.actions;
 export default userSlice.reducer //exports all reducers from const usersSlice
 
 //writing a small selector function for the user state within userSlice. 

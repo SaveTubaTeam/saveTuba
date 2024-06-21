@@ -1,5 +1,5 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getUser, updateUserXP, getCompletionsArray, postCompletion } from "../src/features/Grades/Handlers/UserFunctions";
+import { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroom } from "../src/features/Grades/Handlers/UserFunctions";
 
 export const apiSlice = createApi({
    reducerPath: "api",
@@ -61,10 +61,24 @@ export const apiSlice = createApi({
          invalidatesTags: ["Completions"],
       }),
 
+      getClassroom: builder.query({
+         async queryFn({ classCode }) {
+            try {
+               console.log("\t\t\trunning getClassroom in apiSlice.js . . .");
+               const classroomObject = await getClassroom(classCode);
+               return { data: classroomObject };
+            } catch(error) {
+               return { error: error.message };
+            }
+         },
+         providesTags: ["Classroom"]
+      }),
+
    })
 });
 
 export const { useGetUserQuery, 
                useUpdateUserXPMutation, 
                useGetCompletionsArrayQuery, 
-               usePostCompletionMutation } = apiSlice;
+               usePostCompletionMutation,
+               useGetClassroomQuery } = apiSlice;

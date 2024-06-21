@@ -26,7 +26,7 @@ function HomeView() {
 
   // console.log("Home Page ==> ", imageMap);
   return ( // source={require("../../../assets/homebg.png")}
-    <ImageBg resizeMode="cover" source={require("../../../assets/homebg.png")}>
+    <ImageBg resizeMode="cover" source={require("../../../assets/homeBg.jpg")}>
       <ScrollView style={{ paddingTop: 50 }}>
         <TouchableOpacity
           style={style.roundButton1}
@@ -138,7 +138,7 @@ const style = StyleSheet.create({
     padding: 10,
     left: 25,
     borderRadius: 100,
-    backgroundColor: "#CCE882",
+    backgroundColor: "#CCE882"
   },
   roundButton2: {
     width: 125,
@@ -149,10 +149,10 @@ const style = StyleSheet.create({
     left: -25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
-    alignSelf: "flex-end",
+    alignSelf: "flex-end"
   },
   baseText: {
-    fontSize: 50,
+    fontSize: 55,
     color: "white",
   },
 });

@@ -9,15 +9,15 @@ import { auth } from "../../firebase";
 import HomeScreen from "../features/Home/HomeScreen";
 import AccountNav from "../features/Account/accountNav/accountNav";
 import ProfileScreen from "../features/Profile/Screens/ProfileScreen";
+import AssignmentsPage from "../features/Home/AssignmentsPage";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
 
 // Redux Imports
 import { useDispatch, useSelector } from "react-redux";
-import { selectCurrentUser, signInUser, addCompletionsToReduxStore } from "../../redux/slices/userSlice";
-import { useGetUserQuery, useGetCompletionsArrayQuery } from "../../redux/apiSlice";
-import Amodal from "./achievement-components/Amodal";
+import { selectCurrentUser, signInUser, addCompletions, addClassroom } from "../../redux/slices/userSlice";
+import { useGetUserQuery, useGetCompletionsArrayQuery, useGetClassroomQuery } from "../../redux/apiSlice";
 
 const Tab = createBottomTabNavigator();
 // const store = createStore(rootReducer, applyMiddleware(thunk));
@@ -36,7 +36,7 @@ const SaveTuba = () => {
           tabBarHideOnKeyboard: true,
 
           tabBarIconStyle: {
-            marginTop: 5,
+            marginTop: 4,
           },
           tabBarStyle: {
             backgroundColor: "#C6DC3B",
@@ -60,7 +60,17 @@ const SaveTuba = () => {
           options={{
             title: "",
             tabBarIcon: ({ color }) => (
-              <Ionicons name="home" color={color} size={32} />
+              <Ionicons name="school" color={color} size={32} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Assignments"
+          component={AssignmentsPage}
+          options={{
+            title: "",
+            tabBarIcon: ({ color }) => (
+              <Ionicons name="library" color={color} size={32} />
             ),
           }}
         />
@@ -104,7 +114,7 @@ const Main = () => {
     }
   }, [userSuccess, userError, userErrorMessage, userData]);
 
-  // Execute useGetUserQuery only when userData has been successfully dispatched to store from the above useEffect
+  // Execute useGetCompletionsArrayQuery only when userData has been successfully dispatched to store from the above useEffect
   const { data: completionsArray, isLoading: completionsLoading, isSuccess: completionsSuccess, isError: completionsError, error: completionsErrorMessage } = useGetCompletionsArrayQuery(
     { userEmail: userEmail },
     { skip: user.emptyUser ? true : false }
@@ -112,30 +122,45 @@ const Main = () => {
 
   useEffect(() => {
     if (completionsSuccess) {
-      dispatch(addCompletionsToReduxStore({ completions: completionsArray }));
+      dispatch(addCompletions({ completions: completionsArray }));
     } else if (completionsError) {
       console.error(completionsErrorMessage);
       handleUserRejected();
     }
-  }, [completionsSuccess, completionsError, completionsErrorMessage, completionsArray])
+  }, [completionsSuccess, completionsError, completionsErrorMessage, completionsArray]);
+
+  // Execute useGetClassroomQuery only when userData has been successfully dispatched to store.
+  const { data: classroomObject, isLoading: classroomLoading, isSuccess: classroomSuccess, isError: classroomError, error: classroomErrorMessage } = useGetClassroomQuery(
+    { classCode: user.classCode },
+    { skip: user.emptyUser ? true : false }
+  );
+
+  useEffect(() => {
+    if (classroomSuccess) {
+      dispatch(addClassroom({ classroomObject: classroomObject }));
+    } else if (classroomError) {
+      console.error(classroomErrorMessage);
+      handleUserRejected();
+    }
+  }, [classroomSuccess, classroomError, classroomErrorMessage, classroomObject]);
 
   let content;
-  if(userLoading || completionsLoading) {
+  if(userLoading || completionsLoading || classroomLoading) {
     content = (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" /> 
       </View>
     );
-  } else if(userSuccess && completionsSuccess) {
+  } else if(userSuccess && completionsSuccess && classroomSuccess) {
     content = (
       <SaveTuba />
     );
-  } else if(userError || completionsError) {
+  } else if(userError || completionsError || classroomError) {
     content = null;
   }
 
   const handleUserRejected = async() => {
-    console.log("fetchUser failed in Main.js. Pushing back to LoginEmail")
+    console.error("user queries failed in Main.js. Pushing back to LoginEmail")
     await auth.signOut();
     Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
     navigation.replace("LoginEmail");
@@ -143,12 +168,12 @@ const Main = () => {
 
     //Update 4/22/24: removed Amodal global wrapper. User achievements/badges should be implemented in a more functional way.
 
-    return (
-      <>
-        {content}
-      </>
-    );
-  }//end of Main component
+  return (
+    <>
+      {content}
+    </>
+  );
+}//end of Main component
 
 const styles = StyleSheet.create({
   container: {

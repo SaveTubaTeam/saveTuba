@@ -9,15 +9,16 @@ async function getUser(userEmail) {
    }
    const userRef = db.collection('users').doc(userEmail);
    const userSnapshot = await userRef.get();
-   if(userSnapshot.exists) {
-      const userData = userSnapshot.data();
-
-      const elapsedTimeSeconds = (performance.now() - start) / 1000;
-      console.log(`\t\t\t\tgetUser done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
-      return userData;
-   } else { //no user found
+   if(!userSnapshot.exists) {
       throw new Error("ERROR in UserFunctions.js getUser(): NO SNAPSHOT FOUND");
    }
+
+   const userData = userSnapshot.data();
+   const elapsedTimeSeconds = (performance.now() - start) / 1000;
+
+   console.log(`\t\t\t\tgetUser done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+   return userData;
+   
 }
 
 async function updateUserXP(newXP, oldXP, email, classCode) {
@@ -29,14 +30,14 @@ async function updateUserXP(newXP, oldXP, email, classCode) {
 
    const userDoc = await userRef.get();
    if (!userDoc.exists) { 
-      throw new Error(`User document ${email} not found.`);
+      throw new Error(`User ${email} not found.`);
    }
 
    await userRef.update({ experiencePoints: xp }); //update user's document
 
    const classroomDoc = await classroomRef.get();
    if (!classroomDoc.exists) {
-         throw new Error(`Classroom document ${classCode} not found.`);
+         throw new Error(`Classroom ${classCode} not found.`);
    }
    
    const studentsArray = classroomDoc.data().students;
@@ -100,7 +101,29 @@ async function postCompletion(userEmail, completionID, content) {
    console.log(`\t\t\t\tpostCompletion done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
 }
 
-export { getUser, updateUserXP, getCompletionsArray, postCompletion };
+async function getClassroom(classCode) {
+   const start = performance.now(); // Start performance timer
+
+   const classroomObject = {};
+
+   const classroomRef = db.collection("classrooms").doc(classCode);
+   const classroomSnapshot = await classroomRef.get();
+   if (!classroomSnapshot.exists) {
+      throw new Error(`Classroom ${classCode} not found.`);
+   }
+
+   const classroomDoc = classroomSnapshot.data();
+   classroomObject.teacher = classroomDoc.teachers[0];
+   classroomObject.className = classroomDoc.className;
+   classroomObject.gradeLevel = classroomDoc.gradeLevel;
+
+   const elapsedTimeSeconds = (performance.now() - start) / 1000;
+   console.log(`\t\t\t\tpostCompletion done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+
+   return classroomObject;
+}
+
+export { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroom };
 
 
 
