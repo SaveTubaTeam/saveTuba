@@ -355,4 +355,4 @@ const postMasteryAndMinigameData = async(currentObject, lessonLanguageReference)
     }
 }
 
-export { getGradeData, createImageMap, getLessonsData, getMasteryAndMinigamesData, getCacheObject, setCache, postDataHard };
+export { getGradeData, createImageMap, getLessonsData, getIndividualLessonData, getMasteryAndMinigamesData, getCacheObject, setCache, postDataHard };

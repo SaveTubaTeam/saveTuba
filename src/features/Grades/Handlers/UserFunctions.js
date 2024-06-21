@@ -114,6 +114,7 @@ async function getClassroom(classCode) {
 
    const classroomDoc = classroomSnapshot.data();
    classroomObject.teacher = classroomDoc.teachers[0];
+   classroomObject.classCode = classroomDoc.classCode;
    classroomObject.className = classroomDoc.className;
    classroomObject.gradeLevel = classroomDoc.gradeLevel;
 

@@ -56,7 +56,7 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
           style={{
             height: 150,
             padding: 20,
-            borderRadius: 40,
+            borderRadius: 25,
           }}
         >
           <View style={{ position: "absolute", left: 30, bottom: 30 }}>

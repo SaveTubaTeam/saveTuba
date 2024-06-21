@@ -67,7 +67,7 @@ const MasteryHandler = ({ objectData, imageMap }) => {
       }}
       source={require("../../../../assets/masterybg.png")}
     >
-      <FlatList //
+      <FlatList
         data={ objectData.content }
         style={{ width: "100%" }}
         keyExtractor={(item, index) => index}
