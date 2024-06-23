@@ -85,7 +85,7 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        await new Promise(resolve => setTimeout(resolve, 3000)); //artificial timeout
+        await new Promise(resolve => setTimeout(resolve, 2000)); //artificial timeout
       } catch (e) {
         console.error(e);
       } finally {

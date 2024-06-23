@@ -64,7 +64,8 @@ export default {
   classcode: "Код класса",
 
   levels: "Классы",
-  chapters: "Разделы",
+  grade: "Класс",
+  chapter: "Глава",
   lessons: "Уроки",
   lesson: "Урок",
 

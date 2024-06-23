@@ -66,7 +66,8 @@ export default {
   classcode: "Сынып коды",
 
   levels: "Сыныптары",
-  chapters: "Бөлімдер",
+  grade: "Сынып",
+  chapter: "Тарау",
   lessons: "Сабақтар",
   lesson: "Сабақ",
 

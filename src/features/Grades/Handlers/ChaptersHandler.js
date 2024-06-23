@@ -1,9 +1,7 @@
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { addAchievement } from "../../../../redux/actions";
 import React, { useState, useEffect } from "react";
-//import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
 
 import ChaptersComponent from "../Components/ChaptersComponent";
@@ -56,37 +54,35 @@ const ChaptersHandler = ({ route })  => { //add achievements
   }
 
   return (
-    <NavigationContainer independent>
-      <Stack.Navigator initialRouteName="Grade">
-        <Stack.Screen name="Grade" options={{ headerShown: false }}>
+    <Stack.Navigator initialRouteName="Grade">
+      <Stack.Screen name="Grade" options={{ headerShown: false }}>
+        {() => (
+          <ChaptersComponent
+            navigation={navigation}
+            gradeData={gradeData}
+            gradeNumber={grade}
+          />
+        )}
+      </Stack.Screen>
+
+        {/* We map each chapter to its own LessonsHandler */}
+      {gradeData && gradeData.map((chapter, index) => (
+        <Stack.Screen
+          key={index}
+          name={chapter.navigation}
+          options={{ headerShown: false }}
+        >
           {() => (
-            <ChaptersComponent
-              navigation={navigation}
-              gradeData={gradeData}
-              imageMap={imageMap}
+            <LessonsHandler
+              gradeNumber={grade}
+              selectedChapter={chapter.navigation}
+              numLessons={chapter.numLessons}
             />
           )}
         </Stack.Screen>
+      ))}
 
-          {/* We map each chapter to its own LessonsHandler */}
-        {gradeData && gradeData.map((chapter, index) => (
-          <Stack.Screen
-            key={index}
-            name={chapter.navigation}
-            options={{ headerShown: false }}
-          >
-            {() => (
-              <LessonsHandler
-                gradeNumber={grade}
-                selectedChapter={chapter.navigation}
-                numLessons={chapter.numLessons}
-              />
-            )}
-          </Stack.Screen>
-        ))}
-
-      </Stack.Navigator>
-    </NavigationContainer>
+    </Stack.Navigator>
   );
 }
 

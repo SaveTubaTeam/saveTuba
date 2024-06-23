@@ -44,7 +44,7 @@ const CurrentLesson = styled.TouchableOpacity`
 
 //@param lessonsData an array of objects returned by getLessonsData() in LessonsHandler
 //       Each object within lessonsData is a lesson and all of that lesson's data (including mastery and minigame objects)
-function LessonsComponent({ lessonsData, navigation }) {
+function LessonsComponent({ lessonsData, navigation, chapterNumber }) {
   const imageMap = useSelector(state => state.imageMap.imageData);
   const nav = useNavigation();
   const { t } = useTranslation();
@@ -131,7 +131,7 @@ function LessonsComponent({ lessonsData, navigation }) {
     <SafeArea>
       <Container>
         <Header
-          title={t("common:lessons")}
+          title={`${t("common:chapter")} ${chapterNumber.match(/\d+/g)}`}
           back="Grade"
           navigation={navigation}
         />

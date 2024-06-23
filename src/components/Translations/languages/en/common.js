@@ -66,7 +66,8 @@ export default {
   classcode: "Class Code",
 
   levels: "Grades",
-  chapters: "Chapters",
+  grade: "Grade",
+  chapter: "Chapter",
   lessons: "Lessons",
   lesson: "Lesson",
 

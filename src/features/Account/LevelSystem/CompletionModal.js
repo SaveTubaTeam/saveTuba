@@ -75,7 +75,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
       console.log("\n\t!!! now performing completion process . . .");
       setLoadingModal(true);
 
-      await updateUserXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email, classCode: user.classCode }).unwrap();
+      await updateUserXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email }).unwrap();
 
       let submittedContent;
       if(score < 0) {

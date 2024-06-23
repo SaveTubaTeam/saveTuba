@@ -7,15 +7,17 @@ import { TitleText } from "../../components/title-text.component";
 import { Surface, Title } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import { getIndividualLessonData } from "../Grades/Handlers/Database";
+import { useNavigation, useNavigationState } from "@react-navigation/native";
 
 export default function AssignmentCard({ content }) {
    const { t, i18n } = useTranslation();
    const languageCode = i18n.language;
+   const navigation = useNavigation();
 
    /* marked for translation */
-   const assignmentGrade = `Grade ${getNumbersAfterLetter(content.assignmentID, "G")}`;
-   const assignmentChapter = `Chapter ${getNumbersAfterLetter(content.assignmentID, "C")}`;
-   const assignmentLesson = `Lesson ${getNumbersAfterLetter(content.assignmentID, "L")}`;
+   const assignmentGrade = `Grade${getNumbersAfterLetter(content.assignmentID, "G")}`;
+   const assignmentChapter = `Chapter${getNumbersAfterLetter(content.assignmentID, "C")}`;
+   const assignmentLesson = `Lesson${getNumbersAfterLetter(content.assignmentID, "L")}`;
 
    const gradeParam = `Grade${getNumbersAfterLetter(content.assignmentID, "G")}`
    const chapterParam = `Chapter${getNumbersAfterLetter(content.assignmentID, "C")}`;
@@ -23,7 +25,7 @@ export default function AssignmentCard({ content }) {
 
    const [individualLessonData, setIndividualLessonData] = useState({
       title: ". . .",
-      thumbnailDownloadURL: "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery.png?alt=media&token=ad62687c-a8ae-4936-82ae-cc71f6343c79",
+      thumbnailDownloadURL: "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7",
       thumbnailBlurHash: "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7",
    });
 
@@ -34,13 +36,34 @@ export default function AssignmentCard({ content }) {
          }).catch((err) => {
             console.error("Error: ", err);
          });
-   }, [gradeParam, chapterParam, lessonParam, languageCode])
+   }, [gradeParam, chapterParam, lessonParam, languageCode]);
+
+   async function pushToLesson() {
+      const lessonNumber = `Lesson${lessonParam}`;
+      navigation.navigate("Home");
+      navigation.navigate("ChaptersHandler", { grade: gradeParam });
+
+      await new Promise(resolve => setTimeout(resolve, 500));
+      navigation.navigate(chapterParam);
+
+      await new Promise(resolve => setTimeout(resolve, 800));
+      navigation.navigate(lessonNumber);
+   }
+
+   //dark red, dark blue
+   const topRow = [ { color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", },
+                    { color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)"} ]
+   const opacity = [0, 1];
 
    return (
-      <Surface style={styles.assignmentCard} elevation={3}>
-         <View style={styles.topSection}>
+      <Surface style={styles.assignmentCard} elevation={5}>
+
+         <CompletionOverlay opacity={opacity[0]} />
+
+         <View style={[styles.topSection, { backgroundColor: topRow[1].color, borderColor: topRow[1].border }]}>
             <TitleText align="left" size="mid" color="quaternary" weight="bold">
-               {`${assignmentGrade} / ${assignmentChapter} / ${assignmentLesson}`}
+               {/* marked for translation */}
+               {`Date Due:  ${parseDate(content.dateDue)}`}
             </TitleText>
          </View>
 
@@ -49,7 +72,7 @@ export default function AssignmentCard({ content }) {
                {individualLessonData.title}
             </TitleText>
 
-            <TouchableOpacity style={styles.startButton}>
+            <TouchableOpacity style={styles.buttonBottomRow} onPress={async() => await pushToLesson()}>
               <Ionicons
                name="caret-forward"
                size={14}
@@ -60,14 +83,15 @@ export default function AssignmentCard({ content }) {
                 {t("common:start")}
               </BodyText>
 
-               <View style={{ position: "absolute", paddingLeft: 120, paddingTop: 5 }}>
-                  <BodyText size="button" color="dark" weight="medium">
-                     {/* marked for translation */}
-                     {`due:  ${parseDate(content.dateDue)}`}
-                  </BodyText>
-               </View>
-
             </TouchableOpacity>
+
+            <View style={styles.textBottomRow}>
+               <BodyText size="button" color="dark" weight="medium">
+                  {/* marked for translation */}
+                  {`${assignmentGrade}/${assignmentChapter}/${assignmentLesson}`}
+               </BodyText>
+            </View>
+
          </View>
          <Image 
             style={styles.bottomSectionRight}
@@ -75,6 +99,16 @@ export default function AssignmentCard({ content }) {
             placeholder={individualLessonData.thumbnailBlurHash}
          />
       </Surface>
+   )
+}
+
+function CompletionOverlay({ opacity }) {
+   let pointerEvents = (opacity === 1) ? "auto" : "none";
+   let zIndex = opacity === 1 ? 2 : -1
+   return (
+      <View style={[styles.overlay, { zIndex: zIndex, pointerEvents: pointerEvents, opacity: opacity }]}>
+         <Ionicons name="checkmark-circle" size={140} color="#7ED339" style={{ paddingTop: 10 }}/>
+      </View>
    )
 }
 
@@ -108,25 +142,24 @@ function parseDate(dateString) {
 const styles = StyleSheet.create({
    assignmentCard: {
       width: 360,
-      height: 165,
+      height: 160,
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
       borderRadius: 15,
       marginTop: 17,
    },
    topSection: {
       height: 45,
-      backgroundColor: 'rgba(71, 81, 92, 0.95)',
       borderTopLeftRadius: 15,
       borderTopRightRadius: 15,
       borderBottomWidth: 5,
-      borderColor: "rgba(71, 81, 92, 0.85)",
       paddingLeft: 15,
       paddingTop: 10,
       flexDirection: "row",
+      zIndex: 1,
    },
    bottomSectionLeft: {
       width: "75%",
-      height: 120,
+      height: 115,
       paddingLeft: 15,
       paddingRight: 15,
       paddingTop: 10,
@@ -139,18 +172,34 @@ const styles = StyleSheet.create({
       width: "25%",
       height: 120,
    },
-   startButton: {
+   buttonBottomRow: {
       position: "absolute",
       bottom: 10,
       left: 10,
       paddingTop: 5,
       paddingBottom: 5,
       paddingLeft: 10,
-      paddingRight: 15,
+      paddingRight: 12,
       backgroundColor: "#F6FEDB",
       borderRadius: 20,
       borderColor: "#CCE882",
       borderWidth: 2,
       flexDirection: "row",
+      zIndex: 0
+   },
+   textBottomRow: {
+      flexDirection: "row",
+      position: "absolute",
+      top: 81,
+      bottom: 15,
+      position: "absolute", 
+      left: 102,
+      zIndex: -1,
+   },
+   overlay: {
+      ...StyleSheet.absoluteFillObject, //to fill the parent
+      alignItems: "center",
+      borderRadius: 15,
+      backgroundColor: "rgba(131, 219, 59, 0.3)"
    }
 })

@@ -21,7 +21,7 @@ const Container = styled.View`
 const Chapter = styled.TouchableOpacity`
   width: 90%;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   align-self: center;
 `;
 
@@ -39,7 +39,7 @@ const Icon = styled.Image`
 //It is then rendered via ChaptersHandler.js
 
 //@param gradeData is an array of chapters and their metadata. it is taken as a param from ChaptersHandler.js
-function ChaptersComponent({ gradeData, navigation, imageMap }) {
+function ChaptersComponent({ gradeData, navigation, gradeNumber }) {
   const nav = useNavigation();
   const { t } = useTranslation();
   const renderItem = ({ item }) => {
@@ -56,7 +56,7 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
           style={{
             height: 150,
             padding: 20,
-            borderRadius: 25,
+            borderRadius: 30,
           }}
         >
           <View style={{ position: "absolute", left: 30, bottom: 30 }}>
@@ -79,7 +79,7 @@ function ChaptersComponent({ gradeData, navigation, imageMap }) {
     <SafeArea>
       <Container>
         <Header
-          title={t("common:chapters")}
+          title={`${t("common:grade")} ${gradeNumber.match(/\d+/g)}`}
           back="Grades"
           navigation={navigation}
         />

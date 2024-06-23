@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { NavigationContainer, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -110,7 +110,6 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
       value={{gradeNumber: gradeNumber, 
               chapterNumber: selectedChapter, 
               lessonNumber: lessonData.navigation}}>
-    <NavigationContainer independent>
       <Stack.Navigator initialRouteName="Lesson">
         <Stack.Screen
           name="Lesson"
@@ -152,7 +151,6 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
         ))}
 
       </Stack.Navigator>
-    </NavigationContainer>
     </CurriculumLocationContext.Provider>
   );
 }

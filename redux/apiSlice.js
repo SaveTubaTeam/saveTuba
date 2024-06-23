@@ -22,10 +22,10 @@ export const apiSlice = createApi({
       }),
 
       updateUserXP: builder.mutation({
-         async queryFn({ newXP, oldXP, email, classCode }) {
+         async queryFn({ newXP, oldXP, email }) {
             try {
                console.log("\t\t\trunning updateUserXP in apiSlice.js . . . ['User' query cache invalidated]");
-               await updateUserXP(newXP, oldXP, email, classCode);
+               await updateUserXP(newXP, oldXP, email);
                return { data: "updated" };
             } catch(error) {
                console.error("ERROR with updateUserXP():", error);

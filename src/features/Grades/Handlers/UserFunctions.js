@@ -21,11 +21,10 @@ async function getUser(userEmail) {
    
 }
 
-async function updateUserXP(newXP, oldXP, email, classCode) {
+async function updateUserXP(newXP, oldXP, email) {
    const start = performance.now(); // Start performance timer
 
    const userRef = db.collection('users').doc(email);
-   const classroomRef = db.collection("classrooms").doc(classCode);
    const xp = oldXP + newXP;
 
    const userDoc = await userRef.get();
@@ -34,20 +33,6 @@ async function updateUserXP(newXP, oldXP, email, classCode) {
    }
 
    await userRef.update({ experiencePoints: xp }); //update user's document
-
-   const classroomDoc = await classroomRef.get();
-   if (!classroomDoc.exists) {
-         throw new Error(`Classroom ${classCode} not found.`);
-   }
-   
-   const studentsArray = classroomDoc.data().students;
-   studentsArray.forEach((student) => {
-         if (student.email === email) {
-            student.experiencePoints += newXP;
-         }
-   });
-
-   await classroomRef.update({ students: studentsArray });
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
    console.log(`\t\t\t\tupdateUserXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
@@ -119,7 +104,7 @@ async function getClassroom(classCode) {
    classroomObject.gradeLevel = classroomDoc.gradeLevel;
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
-   console.log(`\t\t\t\tpostCompletion done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+   console.log(`\t\t\t\tgetClassroom done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
 
    return classroomObject;
 }

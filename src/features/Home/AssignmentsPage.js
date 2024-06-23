@@ -51,13 +51,13 @@ function AssignmentsPage() {
             style={{ width: "100%", height: "100%" }}
             keyExtractor={(item, index) => index.toString()}
             renderItem={renderItem}
-            contentContainerStyle={{ alignItems: "center", marginTop: 7 }}
+            contentContainerStyle={{ alignItems: "center", marginTop: 5 }}
          />
       )
    } else {
       content = (
          <View style={styles.container}>
-            <ActivityIndicator size="large" color="#748816" style={{ transform: [{ scaleX: 5 }, { scaleY: 5 }] }} /> 
+            <ActivityIndicator size="large" color="#C6DC3B" style={{ transform: [{ scaleX: 3 }, { scaleY: 3 }] }} /> 
          </View>
       )
    }
@@ -88,8 +88,7 @@ const styles = StyleSheet.create({
    container: {
       height: "100%",
       width: "100%",
-      justifyContent: 'center',
-      backgroundColor: "rgba(128, 128, 128, 0.4)",
+      justifyContent: 'center'
    },
    header: {
       width: "100%",

@@ -26,66 +26,64 @@ const Tab = createBottomTabNavigator();
 //Utilizing tab-based navigation here. https://reactnavigation.org/docs/tab-based-navigation
 const SaveTuba = () => {
   return (
-    <>
-      <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={{
-          tabBarActiveTintColor: theme.colors.ui.tertiary,
-          tabBarInactiveTintColor: "#fff",
-          headerShown: false,
-          tabBarHideOnKeyboard: true,
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        tabBarActiveTintColor: theme.colors.ui.tertiary,
+        tabBarInactiveTintColor: "#fff",
+        headerShown: false,
+        tabBarHideOnKeyboard: true,
 
-          tabBarIconStyle: {
-            marginTop: 4,
-          },
-          tabBarStyle: {
-            backgroundColor: "#C6DC3B",
-          },
+        tabBarIconStyle: {
+          marginTop: 4,
+        },
+        tabBarStyle: {
+          backgroundColor: "#C6DC3B",
+        },
+      }}
+    >
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        /* store={store} */
+        options={{
+          title: "",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="person" color={color} size={32} />
+          ),
         }}
-      >
-        <Tab.Screen
-          name="Profile"
-          component={ProfileScreen}
-          /* store={store} */
-          options={{
-            title: "",
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="person" color={color} size={32} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{
-            title: "",
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="school" color={color} size={32} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Assignments"
-          component={AssignmentsPage}
-          options={{
-            title: "",
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="library" color={color} size={32} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name="Settings"
-          component={AccountNav}
-          options={{
-            title: "",
-            tabBarIcon: ({ color }) => (
-              <Ionicons name="settings" color={color} size={32} />
-            ),
-          }}
-        />
-      </Tab.Navigator>
-    </>
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          title: "",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="school" color={color} size={32} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Assignments"
+        component={AssignmentsPage}
+        options={{
+          title: "",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="library" color={color} size={32} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={AccountNav}
+        options={{
+          title: "",
+          tabBarIcon: ({ color }) => (
+            <Ionicons name="settings" color={color} size={32} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
 };
 

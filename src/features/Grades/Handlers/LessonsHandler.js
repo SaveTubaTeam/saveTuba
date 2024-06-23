@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -70,42 +69,41 @@ function LessonsHandler({ gradeNumber, selectedChapter, numLessons }) {
 
   //Below is the lesson stack. We can currently hold up to 21 lessons.
   return (
-    <NavigationContainer independent>
-      <Stack.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen
+        name={"Chapter"}
+        options={{
+          headerShown: false,
+        }}
+      >
+        {() => (
+          <LessonsComponent
+            lessonsData={lessonsData}
+            navigation={navigation}
+            chapterNumber={selectedChapter}
+          />
+        )}
+      </Stack.Screen>
+
+      {/* We map each lesson to its own IndividualLessonHandler */}
+      {/*  We need all the lesson metadata unlike in LessonsHandler because LessonComponent needs the original lesson metadata */}
+      {lessonsData && lessonsData.map((lesson, index) => (
         <Stack.Screen
-          name={"Chapter"}
-          options={{
-            headerShown: false,
-          }}
+          key={index}
+          name={lesson.navigation}
+          options={{ headerShown: false }}
         >
           {() => (
-            <LessonsComponent
-              lessonsData={lessonsData}
-              navigation={navigation}
+            <IndividualLessonHandler 
+              gradeNumber={gradeNumber}
+              selectedChapter={selectedChapter}
+              lessonData={lesson}
             />
           )}
         </Stack.Screen>
+      ))}
 
-        {/* We map each lesson to its own IndividualLessonHandler */}
-        {/*  We need all the lesson metadata unlike in LessonsHandler because LessonComponent needs the original lesson metadata */}
-        {lessonsData && lessonsData.map((lesson, index) => (
-          <Stack.Screen
-            key={index}
-            name={lesson.navigation}
-            options={{ headerShown: false }}
-          >
-            {() => (
-              <IndividualLessonHandler 
-                gradeNumber={gradeNumber}
-                selectedChapter={selectedChapter}
-                lessonData={lesson}
-              />
-            )}
-          </Stack.Screen>
-        ))}
-
-      </Stack.Navigator>
-    </NavigationContainer>
+    </Stack.Navigator>
   );
 }
 

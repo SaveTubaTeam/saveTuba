@@ -164,7 +164,7 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
     <SafeArea>
       <Container>
         <Header
-          title={t("common:lesson")}
+          title={`${t("common:lesson")} ${lessonData.navigation.match(/\d+/g)}`}
           back={"Chapter"}
           navigation={navigation}
         />

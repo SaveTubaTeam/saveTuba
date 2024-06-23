@@ -8,7 +8,7 @@ export default function LoadingModal({ visible }) {
          <Container>
             <ActivityIndicator 
                size="large" 
-               color="#323B09" 
+               color="#C6DC3B" 
                style={{ transform: [{ scaleX: 2 }, { scaleY: 2 }] }} 
                animating={visible}
             /> 
@@ -21,5 +21,5 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.6);
+  background-color: rgba(128, 128, 128, 0.4);
 `;
