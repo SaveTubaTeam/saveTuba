@@ -55,7 +55,7 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
 
   const [masteryAndMinigamesData, setMasteryAndMinigamesData] = useState(null);
   const [masteryAndMinigamesMap, setMasteryAndMinigamesMap] = useState(null);
-  console.log("Within IndividualLessonHandler Lesson Data:", lessonData);
+  //console.log("Within IndividualLessonHandler Lesson Data:", lessonData);
 
   useEffect(() => {
     console.log(`inside IndividualLessonHandler.js: ${gradeNumber} | ${selectedChapter} | ${lessonData.navigation}`);

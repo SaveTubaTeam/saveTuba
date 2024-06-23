@@ -26,7 +26,7 @@
     "production": {
       "autoIncrement": true,
       "ios": {
-        "image": "sdk-49"
+        "image": "sdk-50"
       },
       "channel": "production"
     }
