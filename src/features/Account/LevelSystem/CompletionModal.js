@@ -59,14 +59,14 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, activ
     //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
     if(score < 0) {
       setScoreShown("");
-      score === -1 ? setFinalXP(100) : setFinalXP(300); //MasteryHandler passes a prop of -2 for more XP
+      score === -1 ? setFinalXP(100) : setFinalXP(1500); //MasteryHandler passes a prop of -2 for more XP!
     } else {
       /* marked for translation */
       setScoreShown(`${t("minigames:finalscore")}: ${score}\n\n`);
       setFinalXP(score * XP_PER_POINT);
     }
     //state is not updated locally so we have to calculate the xp again for the below function
-    performCompletionProcess(score < 0 ? (score === -1 ? 100 : 300) : score * XP_PER_POINT);
+    performCompletionProcess(score < 0 ? (score === -1 ? 100 : 1500) : score * XP_PER_POINT);
   }, [score, startCompletionProcess])
 
   const performCompletionProcess = async(newXP) => {

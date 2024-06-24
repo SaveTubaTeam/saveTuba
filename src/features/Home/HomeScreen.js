@@ -1,16 +1,10 @@
 import React, { useEffect } from "react";
 import styled from "styled-components/native";
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-} from "react-native";
+import { Text, StyleSheet, TouchableOpacity, ScrollView, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { connect } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { Surface } from "react-native-paper";
 
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 import { useSelector } from "react-redux";
@@ -28,16 +22,17 @@ function HomeView() {
   return ( // source={require("../../../assets/homebg.png")}
     <ImageBg resizeMode="cover" source={require("../../../assets/homeBg.jpg")}>
       <ScrollView style={{ paddingTop: 50 }}>
-        <TouchableOpacity
-          style={style.roundButton1}
-          onPress={() => {
-            navigation.push("ChaptersHandler", { grade: "Grade2" }); //route.params sent into ChaptersHandler is defined here
-          }}
-        >
-          <Text style={style.baseText}>2</Text>
-        </TouchableOpacity>
+        <Surface style={style.roundButton1} elevation={3}>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.push("ChaptersHandler", { grade: "Grade2" }); //route.params sent into ChaptersHandler is defined here
+            }}
+          >
+            <Text style={style.baseText}>2</Text>
+          </TouchableOpacity>
+        </Surface>
 
-        {/* <Image //removing lock icon from Grade 3
+        <Image //grade3 lock
           style={{
             position: "absolute",
             right: 20,
@@ -47,15 +42,17 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        />  */}
-        <TouchableOpacity
-          style={style.roundButton2}
-          onPress={() => navigation.push("ChaptersHandler", { grade: "Grade3" })} //route.params sent into ChaptersHandler is defined here
-        >
-          <Text style={style.baseText}>3</Text>
-        </TouchableOpacity>
+        /> 
 
-        {/* <Image //removing lock from grade 4
+        <Surface style={style.roundButton2} elevation={3}>
+          <TouchableOpacity
+            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade3" })} //route.params sent into ChaptersHandler is defined here
+          >
+            <Text style={style.baseText}>3</Text>
+          </TouchableOpacity>
+        </Surface>
+
+        <Image //grade4 lock
           style={{
             position: "absolute",
             left: 100,
@@ -65,16 +62,18 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        /> */}
-        <TouchableOpacity
-          style={style.roundButton1}
-          onPress={() => navigation.push("ChaptersHandler", { grade: "Grade4" })} //route.params sent into ChaptersHandler is defined here
-        >
-          <Text style={style.baseText}>4</Text>
-        </TouchableOpacity>
+        />
 
-        {/* <Image
-          style={{ //removing lock from grade 5
+        <Surface style={style.roundButton1} elevation={3}>
+          <TouchableOpacity
+            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade4" })} //route.params sent into ChaptersHandler is defined here
+          >
+            <Text style={style.baseText}>4</Text>
+          </TouchableOpacity>
+        </Surface>
+
+        <Image
+          style={{ //grade5 lock
             position: "absolute",
             right: 20,
             top: 350,
@@ -83,13 +82,16 @@ function HomeView() {
             height: 60,
           }}
           source={require("../../../assets/lock.png")}
-        /> */}
-        <TouchableOpacity
-          style={style.roundButton2}
-          onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
-        >
-          <Text style={style.baseText}>5</Text>
-        </TouchableOpacity>
+        />
+
+        <Surface style={style.roundButton2} elevation={3}>
+          <TouchableOpacity
+            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
+          >
+            <Text style={style.baseText}>5</Text>
+          </TouchableOpacity>
+        </Surface>
+
       </ScrollView>
     </ImageBg>
   );

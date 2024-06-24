@@ -50,11 +50,11 @@ function AssignmentsPage() {
       return () => { 
          unsubscribe(); 
          console.log("-------- unsubscribed from assignments listener --------")
-      } // Unsubscribe when component unmounts (here this means on signout)
+      } // Unsubscribe when component unmounts (here this means on signout or when hmr reloading)
 
    }, [completions]) //end of useEffect. 
    //assignments will always update cuz of the listener, 
-   //and we add a dependency completions to also update this useEffect
+   //and we add a dependency completions to also update this useEffect when user completes an activity
 
    let content;
    if(assignments) {
@@ -107,16 +107,20 @@ function HeaderComponent({ title }) {
 //need to add error handling to this function chain. also note that we do not modify the original arrays
 function sortAssignments(assignments, completions) {
    const completionIDArray = [];
+   const submissionTimeArray = [];
    let completedAssignments = [];
    let uncompletedAssignments = [];
 
    for(const completion of completions) {
       const completionID = completion.completionID.split("_")[0];
       completionIDArray.push(completionID);
+
+      const submissionTime = completion.submissionTime;
+      submissionTimeArray.push(submissionTime);
    }
 
    for(const assignment of assignments) {
-      const modifiedAssignment = countOccurences(completionIDArray, assignment);
+      const modifiedAssignment = determineStatus(completions, assignment);
 
       if(modifiedAssignment.completionStatus) {
          completedAssignments.push(modifiedAssignment);
@@ -130,21 +134,31 @@ function sortAssignments(assignments, completions) {
    uncompletedAssignments = sortByDateDue(uncompletedAssignments);
 
    //we want uncompleted assignments to show up at the top of the screen so they go first
-   const sortedAssignments = uncompletedAssignments.concat(completedAssignments) //for .concat() see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+   let sortedAssignments = uncompletedAssignments.concat(completedAssignments) //for .concat() see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
    
-   //TODO: add an attribute to each object 'overdue'
-   //maybe a function called addOverdueAttribute
    console.log("\n\t\tSORTEDASSIGNMENTS:", sortedAssignments);
    return sortedAssignments;
 }
 
-function countOccurences(completionIDArray, assignment) {
+//also adds an attribute to each object 'overdue'
+function determineStatus(completions, assignment) {
    let count = 0;
    let completionStatus = false;
+   let overdueStatus = false;
 
-   for(const completionID of completionIDArray) {
-      if(completionID === assignment.assignmentID) {
+   for(const completion of completions) {
+      if(completion.completionID.split("_")[0] === assignment.assignmentID) {
          count++;
+      }
+
+      const parsedSubmissionDate = parseDateForConstructor(completion.submissionTime);
+      const parsedDateDue = parseDateForConstructor(assignment.dateDue);
+
+      const submissionDate = new Date(parsedSubmissionDate.year, (parsedSubmissionDate.month - 1), parsedSubmissionDate.day, parsedSubmissionDate.hours, parsedSubmissionDate.minutes, parsedSubmissionDate.seconds);
+      const dateDue = new Date(parsedDateDue.year, (parsedDateDue.month - 1), parsedDateDue.day, parsedDateDue.hours, parsedDateDue.minutes, parsedDateDue.seconds);
+
+      if(submissionDate > dateDue) {
+         overdueStatus = true;
       }
    }
 
@@ -155,6 +169,7 @@ function countOccurences(completionIDArray, assignment) {
    const modifiedAssignment = assignment; //adding two attributes to a new object
    modifiedAssignment.numCompletions = count;
    modifiedAssignment.completionStatus = completionStatus;
+   modifiedAssignment.overdue = overdueStatus;
 
    return modifiedAssignment;
 }
@@ -190,6 +205,12 @@ function parseDateForConstructor(dateString) {
    //console.log(`hours: ${hours} [${typeof hours}], minutes: ${minutes} [${typeof minutes}], seconds: ${seconds} [${typeof seconds}]`);
 
    return { year: year, month: month, day: day, hours: hours, minutes: minutes, seconds: seconds };
+}
+
+function addOverdueAttributes(sortedAssignments) {
+   for(const assignment in sortedAssignments) {
+
+   }
 }
 
 const styles = StyleSheet.create({

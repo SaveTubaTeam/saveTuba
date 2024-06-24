@@ -4,7 +4,7 @@ import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 import { BodyText } from "../../components/body-text.component";
 import { TitleText } from "../../components/title-text.component";
-import { Surface, Title } from "react-native-paper";
+import { Surface } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import { getIndividualLessonData } from "../Grades/Handlers/Database";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
@@ -47,33 +47,39 @@ const AssignmentCard = memo(({ content }) => {
       await new Promise(resolve => setTimeout(resolve, 500));
       navigation.navigate(chapterParam);
 
-      await new Promise(resolve => setTimeout(resolve, 800));
+      await new Promise(resolve => setTimeout(resolve, 1500));
       navigation.navigate(lessonNumber);
    }
 
-   //dark red, dark blue
-   const topRow = [ { color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", },
-                    { color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" } ]
+   //default set to red #db473b
+   const [topRowColor, setTopRowColor] = useState({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
    const [opacity, setOpacity] = useState(0);
 
-   useEffect(() =>{
-      if(content.completionStatus) {
-         setOpacity(1);
+   useEffect(() => {
+      content.completionStatus ? setOpacity(1) : setOpacity(0);
+
+      if(!content.overdue) { //set to blue #418098
+      setTopRowColor({ color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" });
+      //set to purple #9241ba
+      //setTopRowColor({ color: "rgba(146, 65, 186, 0.8)", border: "rgba(146, 65, 186, 1)" })
+      } else { //use default red topRowColor if overdue
+         setTopRowColor({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
       }
-   }, [content])
+   }, [content]);
 
    return (
-      <Surface style={styles.assignmentCard} elevation={5}>
+      <Surface style={styles.assignmentCard} elevation={3}>
 
          <CompletionOverlay opacity={opacity} />
 
-         <View style={[styles.topSection, { backgroundColor: topRow[1].color, borderColor: topRow[1].border }]}>
+         <View style={[styles.topSection, { backgroundColor: topRowColor.color, borderColor: topRowColor.border }]}>
             <TitleText align="left" size="mid" color="quaternary" weight="bold">
                {/* marked for translation */}
                {`Date Due:  ${parseDate(content.dateDue)}`}
             </TitleText>
 
             <TitleText size="mid" color="quaternary" weight="bold">
+               {/* numCompletions refers to the number of activities that have been completed in the given lesson */}
                {`${content.numCompletions}/${content.numActivities}`}
             </TitleText>
          </View>

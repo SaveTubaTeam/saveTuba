@@ -80,7 +80,14 @@ async function postCompletion(userEmail, completionID, content) {
    completionData.completionID = completionID;
 
    const completionDocRef = db.collection('users').doc(userEmail).collection("Completions").doc(completionID);
-   await completionDocRef.set(completionData); //if the document exists, we write over it.
+   const completionDoc = await completionDocRef.get()
+   if(completionDoc.exists) { //we want to keep the submissionTime of the first submission, so we do not write over it.
+      const dontUpdateSubmissionTime = completionData;
+      delete dontUpdateSubmissionTime.submissionTime;
+      await completionDocRef.update({ ...dontUpdateSubmissionTime });
+   } else { //Note how we set the ref and not the document
+      await completionDocRef.set(completionData); //if the document does not exist, we set it.
+   }
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
    console.log(`\t\t\t\tpostCompletion done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
