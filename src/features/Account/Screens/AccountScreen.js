@@ -4,32 +4,11 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { useDispatch } from "react-redux";
 import React from "react";
-
-//import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
 import { SafeArea } from "../../../components/safe-area.component";
 import PersonalCard from "../Components/personal.component";
 import { GeneralCard } from "../Components/general.component";
 import { Spacer } from "../../../components/spacer.component";
 import SignOut from "../Components/signouut.component";
-import { auth } from "../../../../firebase";
-import { connect } from "react-redux";
-// import { AchievementContext } from "../../../contexts/AchievementContext";
-
-// const Button = styled(TouchableOpacity)`
-//   background-color: ${(props) => props.theme.colors.ui.tertiary};
-//   width: 60%;
-//   padding: ${(props) => props.theme.space[3]};
-//   border-radius: ${(props) => props.theme.sizes[2]};
-//   align-items: center;
-//   margin-top: ${(props) => props.theme.space[3]};
-// `;
-
-// const ButtonText = styled.Text`
-//   font-family: ${(props) => props.theme.fonts.heading}
-//   color: white;
-//   font-weight: 700;
-//   font-size: ${(props) => props.theme.fontSizes.body};
-// `;
 
 const Container = styled.View`
   flex: 1;
@@ -37,10 +16,7 @@ const Container = styled.View`
   align-items: center;
 `;
 
-//I believe this wrapper renders only once. Only the components within the Container are rerendered... may be wrong
 function AccountScreen() {
-  //console.log("AccountScreen.js rerendered");
-
   const { i18n } = useTranslation();
   const selectedLanguageCode = i18n.language; //getting current language from i18n
   //console.log("Code: ", selectedLanguageCode);
@@ -65,9 +41,5 @@ function AccountScreen() {
     </SafeArea>
   );
 }
-/* 
-const mapStateToProps = (store) => ({
-  currentUser: store.userState.currentUser,
-}); */
 
 export default AccountScreen;

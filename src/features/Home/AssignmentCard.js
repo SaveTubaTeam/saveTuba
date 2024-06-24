@@ -54,16 +54,20 @@ const AssignmentCard = memo(({ content }) => {
    //default set to red #db473b
    const [topRowColor, setTopRowColor] = useState({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
    const [opacity, setOpacity] = useState(0);
+   /* marked for translation */
+   const [dateText, setDateText] = useState("Date Due");
 
    useEffect(() => {
       content.completionStatus ? setOpacity(1) : setOpacity(0);
 
       if(!content.overdue) { //set to blue #418098
-      setTopRowColor({ color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" });
-      //set to purple #9241ba
-      //setTopRowColor({ color: "rgba(146, 65, 186, 0.8)", border: "rgba(146, 65, 186, 1)" })
+         setTopRowColor({ color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" });
+         setDateText("Date Due") /* marked for translation */
+         //set to purple #9241ba
+         //setTopRowColor({ color: "rgba(146, 65, 186, 0.8)", border: "rgba(146, 65, 186, 1)" })
       } else { //use default red topRowColor if overdue
          setTopRowColor({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
+         setDateText("OVERDUE") /* marked for translation */
       }
    }, [content]);
 
@@ -75,7 +79,7 @@ const AssignmentCard = memo(({ content }) => {
          <View style={[styles.topSection, { backgroundColor: topRowColor.color, borderColor: topRowColor.border }]}>
             <TitleText align="left" size="mid" color="quaternary" weight="bold">
                {/* marked for translation */}
-               {`Date Due:  ${parseDate(content.dateDue)}`}
+               {`${dateText}:  ${parseDate(content.dateDue)}`}
             </TitleText>
 
             <TitleText size="mid" color="quaternary" weight="bold">
@@ -90,16 +94,11 @@ const AssignmentCard = memo(({ content }) => {
             </TitleText>
 
             <TouchableOpacity style={styles.buttonBottomRow} onPress={pushToLesson}>
-              <Ionicons
-               name="caret-forward"
-               size={14}
-               color="#748816"
-               style={{ paddingRight: 3, paddingTop: 1.5 }}
-              />
+              <Ionicons name="caret-forward" size={14} color="#748816" style={{ paddingRight: 3, paddingTop: 1.5 }} />
+              
               <BodyText align="left" color="primary" size="button">
                 {t("common:start")}
               </BodyText>
-
             </TouchableOpacity>
 
             <View style={styles.textBottomRow}>
@@ -108,8 +107,8 @@ const AssignmentCard = memo(({ content }) => {
                   {`${assignmentGrade}/${assignmentChapter}/${assignmentLesson}`}
                </BodyText>
             </View>
-
          </View>
+
          <Image 
             style={styles.bottomSectionRight}
             source={individualLessonData.thumbnailDownloadURL}

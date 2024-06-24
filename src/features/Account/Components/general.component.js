@@ -29,52 +29,6 @@ import { theme } from "../../../infrastructure/theme";
 
 import Selector from "./LanguageSelector";
 
-const AvatarContainer = styled.View`
-  align-items: center;
-  width: 100%;
-`;
-
-const Row = styled.View`
-  flex-direction: row;
-  align-items: center;
-`;
-
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
-  },
-});
-
 //Settings screen
 
 export const GeneralCard = () => {
@@ -123,7 +77,7 @@ export const GeneralCard = () => {
           />
         </Row>
 
-        <Row>
+        {/* <Row>
           <BodyText color="quaternary">{t("common:reminders")}</BodyText>
           <Switch
             trackColor={{ false: "#767577", true: "#81b0ff" }}
@@ -141,7 +95,7 @@ export const GeneralCard = () => {
               ],
             }}
           />
-        </Row>
+        </Row> */}
         <Spacer size="medium" />
 
         <Row>
@@ -217,3 +171,50 @@ export const GeneralCard = () => {
     </Card>
   );
 };
+
+
+const AvatarContainer = styled.View`
+  align-items: center;
+  width: 100%;
+`;
+
+const Row = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 35,
+    alignItems: "center",
+  },
+  button: {
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  buttonOpen: {
+    backgroundColor: "#F194FF",
+  },
+  buttonClose: {
+    backgroundColor: "#2196F3",
+  },
+  textStyle: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+  },
+});

@@ -1,6 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { auth, db } from "../../firebase";
-import { getDoc } from "firebase/firestore";
 
 const initialState = {
     userData: { emptyUser: 'empty' },
