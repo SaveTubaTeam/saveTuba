@@ -66,7 +66,7 @@ SplashScreen.preventAutoHideAsync();
 
 LogBox.ignoreAllLogs();
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
-LogBox.ignoreLogs(["ImmutableStateInvariantMiddleware took"]); //to ignore odd redux toolkit development mode warning. Maybe should be unignored if redux performance gets noticeably slow
+LogBox.ignoreLogs([/ImmutableStateInvariantMiddleware took/]); //to regex ignore odd redux toolkit development mode warning. Maybe should be unignored if redux performance gets noticeably slow
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);

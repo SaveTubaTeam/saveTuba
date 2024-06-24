@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { View, Modal, TouchableOpacity, FlatList } from "react-native";
 import { Image } from "expo-image";
 import styled from "styled-components/native";
-import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";

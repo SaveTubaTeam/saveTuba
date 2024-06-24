@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { View, Text, StyleSheet, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
@@ -9,7 +9,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { getIndividualLessonData } from "../Grades/Handlers/Database";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
 
-export default function AssignmentCard({ content }) {
+//memoized
+const AssignmentCard = memo(({ content }) => {
    const { t, i18n } = useTranslation();
    const languageCode = i18n.language;
    const navigation = useNavigation();
@@ -52,18 +53,28 @@ export default function AssignmentCard({ content }) {
 
    //dark red, dark blue
    const topRow = [ { color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", },
-                    { color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)"} ]
-   const opacity = [0, 1];
+                    { color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" } ]
+   const [opacity, setOpacity] = useState(0);
+
+   useEffect(() =>{
+      if(content.completionStatus) {
+         setOpacity(1);
+      }
+   }, [content])
 
    return (
       <Surface style={styles.assignmentCard} elevation={5}>
 
-         <CompletionOverlay opacity={opacity[0]} />
+         <CompletionOverlay opacity={opacity} />
 
          <View style={[styles.topSection, { backgroundColor: topRow[1].color, borderColor: topRow[1].border }]}>
             <TitleText align="left" size="mid" color="quaternary" weight="bold">
                {/* marked for translation */}
                {`Date Due:  ${parseDate(content.dateDue)}`}
+            </TitleText>
+
+            <TitleText size="mid" color="quaternary" weight="bold">
+               {`${content.numCompletions}/${content.numActivities}`}
             </TitleText>
          </View>
 
@@ -72,7 +83,7 @@ export default function AssignmentCard({ content }) {
                {individualLessonData.title}
             </TitleText>
 
-            <TouchableOpacity style={styles.buttonBottomRow} onPress={async() => await pushToLesson()}>
+            <TouchableOpacity style={styles.buttonBottomRow} onPress={pushToLesson}>
               <Ionicons
                name="caret-forward"
                size={14}
@@ -100,11 +111,11 @@ export default function AssignmentCard({ content }) {
          />
       </Surface>
    )
-}
+});
 
 function CompletionOverlay({ opacity }) {
    let pointerEvents = (opacity === 1) ? "auto" : "none";
-   let zIndex = opacity === 1 ? 2 : -1
+   let zIndex = (opacity === 1) ? 2 : -1;
    return (
       <View style={[styles.overlay, { zIndex: zIndex, pointerEvents: pointerEvents, opacity: opacity }]}>
          <Ionicons name="checkmark-circle" size={140} color="#7ED339" style={{ paddingTop: 10 }}/>
@@ -134,7 +145,7 @@ function parseDate(dateString) {
    const dateParts = datePart.split('/');
    const dayMonth = dateParts.slice(0, 2).join('/'); // Remove the year part (last element) from the dateParts array
    
-   // Combine the modified date part with the time part
+   // Combine the modified date part with the time part (seconds removed)
    const modifiedDateString = `${dayMonth}, ${parts[1].slice(0, -3)}`;
    return modifiedDateString;
 }
@@ -153,8 +164,10 @@ const styles = StyleSheet.create({
       borderTopRightRadius: 15,
       borderBottomWidth: 5,
       paddingLeft: 15,
+      paddingRight: 15,
       paddingTop: 10,
       flexDirection: "row",
+      justifyContent: "space-between",
       zIndex: 1,
    },
    bottomSectionLeft: {
@@ -203,3 +216,5 @@ const styles = StyleSheet.create({
       backgroundColor: "rgba(131, 219, 59, 0.3)"
    }
 })
+
+export default AssignmentCard;

@@ -1,11 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ImageBackground,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, View, Text, ImageBackground, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component.js";
@@ -13,11 +7,9 @@ import { BodyText } from "../../../body-text.component.js";
 import { Spacer } from "../../../spacer.component.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal.js";
 import { Image } from "expo-image";
-const ASSETS_FILEPATH = "../../../../../assets/";
 
 //@param objectData passed from IndividualLessonHandler
-const MemoryHandler = ({ objectData, imageMap }) => {
-
+const MemoryHandler = ({ objectData }) => {
   const { t } = useTranslation();
   const [cardsArray, setCardsArray] = useState(null);
 
@@ -68,14 +60,6 @@ const MemoryHandler = ({ objectData, imageMap }) => {
       return () => clearTimeout(timer);
     }
   }, [currentSelection]);
-
-/*   const resetCards = () => {
-    setCardsArray(prevCardsArray => prevCardsArray.sort(() => Math.random() - 0.5)); //randomizing array again
-    setCurrentSelection([]);
-    setSuccessfullyMatchedPairs([]);
-    setScore(0);
-    setArrayIsLocked(false);
-  } */
 
     //we memoize the cards array to cache previous card renders
   const renderCardsArray = useMemo(() => {
