@@ -74,4 +74,5 @@ export default {
   home: "Главная",
   profile: "Профиль",
   settings: "Настройки",
+  leaderboard: "Таблица лидеров",
 };

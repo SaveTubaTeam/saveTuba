@@ -26,7 +26,7 @@ function AssignmentsPage() {
          .onSnapshot((querySnapshot) => { //querySnapshot will always exist (no undefined)
 
             if(querySnapshot.size === 0) { //guard clause for empty snapshot
-               console.log("ASSIGNMENTS ARRAY IS EMPTY");
+               console.log("ASSIGNMENTS SNAPSHOT IS EMPTY");
                return;
             }
             // const docChanges = querySnapshot.docChanges();
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
       height: "100%",
       width: "100%",
       justifyContent: 'center',
-      backgroundColor: "rgba(65, 128, 152, 0.1)"
+      backgroundColor: "rgba(65, 128, 152, 0.2)"
    }
 })
 

@@ -12,6 +12,7 @@ function ProfileScreen() {
       <SafeArea>
         <ScrollView>
           <Container>
+
             <ProfileCard />
 
             <Spacer size="large" />
@@ -21,6 +22,7 @@ function ProfileScreen() {
             <Spacer size="large" />
 
             <LeaderboardCard />
+            
           </Container>
         </ScrollView>
       </SafeArea>

@@ -76,4 +76,5 @@ export default {
   home: "Home",
   profile: "Profile",
   settings: "Settings",
+  leaderboard: "Leaderboard"
 };

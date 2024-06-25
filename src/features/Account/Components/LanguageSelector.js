@@ -32,7 +32,6 @@ const Selector = () => {
   const setLanguage = async(languageCode) => {
     await i18n.changeLanguage(languageCode);
     navigation.popToTop(); //throws an error in development mode but works like a charm
-
     //IMLocalize.js (imported in App.js) acts as an event listener for changeLanguage(), caching the new language code under 'user-language'
   };
 

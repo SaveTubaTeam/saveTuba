@@ -76,4 +76,5 @@ export default {
   home: "Басты бет",
   profile: "Профиль",
   settings: "Параметрлер",
+  leaderboard: "Көшбасшылар тақтасы",
 };

@@ -117,19 +117,3 @@ async function getClassroom(classCode) {
 }
 
 export { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroom };
-
-
-
-//EXAMPLE QUERY COLLECTION
-// const query = db.collection('users').where(loginType, '==', input);
-
-//    //using get() to retrieve query snapshot. Only one doc should exist within the snapshot. 
-//    //*There is a possiblity that duplicate phone numbers could exist...
-//    const snapshot = await query.get() //snapshot is a 'docs' array
-//    if(!snapshot.empty) {
-//       const userData = snapshot.docs[0].data(); //getting only the first doc in the array
-//       return userData;
-//    } else { //no snapshot found
-//       console.log("ERROR in UserFunctions.js getUser(): NO SNAPSHOT FOUND");
-//       throw new Error("no shapshot found for getUser");
-//    }
