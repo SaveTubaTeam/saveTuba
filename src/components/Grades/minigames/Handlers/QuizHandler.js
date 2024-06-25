@@ -68,14 +68,14 @@ const Question = styled.View`
 
 //Main function. Handles most logic. 
 //@param data is taken from QuizScreen format in Firebase
-const Start = ({ data, imageMap }) => {
+const Start = ({ data }) => {
   //const navigation = useNavigation();
   const { t } = useTranslation();
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
 
-  console.log("Start ==> ", data.content[0].prompt);
+  //console.log("Start ==> ", data.content[0].prompt);
   
   //defining visibility state modals
   const [visible, setVisible] = useState(false);
@@ -206,12 +206,12 @@ const Start = ({ data, imageMap }) => {
 
 //Entry Point for logic.
 //@param objectData the quiz object passed in from IndividualLessonHandler
-const QuizHandler = ({ objectData, imageMap }) => {
+const QuizHandler = ({ objectData }) => {
   // console.log("Handler ==> ", data);
   return ( //defining the stack
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={objectData} imageMap={imageMap} />}
+        {() => <Start data={objectData} />}
       </Stack.Screen>
     </Stack.Navigator>
   );
