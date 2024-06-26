@@ -10,8 +10,7 @@ import { fetchImages } from "../../../redux/slices/imageSlice";
 import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
-import { getCacheObject, postDataHard } from "../Grades/Handlers/Database";
-import { postDataSoft } from "../Grades/Handlers/PostDataSoft";
+import { getCacheObject } from "../Grades/Handlers/Database";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
 

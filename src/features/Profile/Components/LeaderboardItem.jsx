@@ -7,7 +7,7 @@ const RANK_COLORS = ["#748816", "#879e1a", "#99b41d", "#acca21", "#bcdc29", "#c3
 
 /** 
  * @param {Object} item
- * @param {int} index
+ * @param {int} index the index of the item within our LeaderboardCard Flatlist
 */
 export default function LeaderboardItem({ item, index }) {
 

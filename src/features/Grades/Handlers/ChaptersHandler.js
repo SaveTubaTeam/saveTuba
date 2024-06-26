@@ -1,13 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { addAchievement } from "../../../../redux/actions";
 import React, { useState, useEffect } from "react";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
-
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
-import { getGradeData } from "./Database";
-import { useSelector } from "react-redux";
+import { useGetGradeDataQuery } from "../../../../redux/curriculumApiSlice";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,45 +13,34 @@ const Stack = createNativeStackNavigator();
 
 // @param route a string representing the grade, e.g. 'Grade2'
 //Please see: https://reactnavigation.org/docs/params/ - Note how we define the route params in HomeScreen.js
-const ChaptersHandler = ({ route })  => { //add achievements
-
-  const [gradeData, setGradeData] = useState(null);
-
+const ChaptersHandler = ({ route })  => {
   //grade is a string e.g. 'Grade2'
-  const { grade } = route.params; // route param is defined and passed in by HomeScreen.js
+  const { grade } = route.params; // route param is defined and passed in by HomeScreen.js. We pass it as a param to useGetGradeDataQuery
   const navigation = useNavigation();
-  const imageMap = useSelector(state => state.imageMap.imageData);
-  
+
+  const { data: gradeData, isLoading: gradeLoading, isSuccess: gradeSuccess, isError: gradeError, error: gradeErrorMessage } = useGetGradeDataQuery(
+    { grade: grade }
+  )
+
   useEffect(() => {
-    console.log(`${grade} route selected`);
+    if(gradeSuccess) {
+      console.log("Current Location:", grade)
+    }
+  }, [gradeSuccess])
 
-    const start = performance.now(); // Start performance timer
-
-    getGradeData(grade).then(
-      (gradeData) => {
-        setGradeData(gradeData);
-
-        const end = performance.now();
-        const elapsedTimeSeconds = (end - start) / 1000; // Convert to seconds
-        console.log(`getGradeData done in ${elapsedTimeSeconds.toFixed(2)} seconds`);
-
-      }).catch((err) => {
-        console.log("Error: ", err);
-      });
-    
-  }, []);
-
-  //we return a loader while gradeData is fetched from the db
-  while (gradeData === null || gradeData === undefined) {
-    return (
+  let content;
+  if(gradeLoading) {
+    content = (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" />
       </View>
-    );
-  }
-
-  return (
-    <Stack.Navigator initialRouteName="Grade">
+    )
+  } else if(gradeError) {
+    console.error(gradeErrorMessage);
+    content = null;
+  } else if(gradeSuccess) {
+    content = (
+      <Stack.Navigator initialRouteName="Grade">
       <Stack.Screen name="Grade" options={{ headerShown: false }}>
         {() => (
           <ChaptersComponent
@@ -65,7 +51,7 @@ const ChaptersHandler = ({ route })  => { //add achievements
         )}
       </Stack.Screen>
 
-        {/* We map each chapter to its own LessonsHandler */}
+      {/* We map each chapter to its own LessonsHandler */}
       {gradeData && gradeData.map((chapter, index) => (
         <Stack.Screen
           key={index}
@@ -81,8 +67,14 @@ const ChaptersHandler = ({ route })  => { //add achievements
           )}
         </Stack.Screen>
       ))}
-
     </Stack.Navigator>
+    )
+  }
+
+  return (
+    <>
+      {content}
+    </>
   );
 }
 

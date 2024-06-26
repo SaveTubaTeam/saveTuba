@@ -90,7 +90,6 @@ const SaveTuba = () => {
 //Main handles the rendering of the SaveTuba navigation stack above
 const Main = () => {
   const dispatch = useDispatch()
-  const imageMap = useSelector(state => state.imageMap.imageData);
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 

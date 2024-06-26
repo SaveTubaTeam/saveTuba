@@ -77,7 +77,7 @@ const ProgContainer = styled.View`
 //This component formats and renders all of the lesson's contents
 
 //@param lessonData the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
-function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, navigation }) {
+function LessonComponent({ imageMap, lessonData, activitiesData, navigation }) {
   const [minigames, setMinigames] = useState(null);
   const [mastery, setMastery] = useState(null);
 
@@ -86,7 +86,7 @@ function LessonComponent({ imageMap, lessonData, masteryAndMinigamesData, naviga
     const masteryCopy = [];
     const minigamesCopy = [];
 
-    masteryAndMinigamesData.forEach((object) => {
+    activitiesData.forEach((object) => {
       object.navigation.includes("Mastery") ? masteryCopy.push(object) : minigamesCopy.push(object);
     });
 

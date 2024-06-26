@@ -12,40 +12,29 @@ import en_grade5_FIELDWORK from "../Data/en_grade5_FIELDWORK.json"
 //navigating the firestore database tree should be done via reference to doc() or collection().
 
 // This will pull the grade data and save it in a list, each element being the data for a single Grade
-// Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> MasteryAndMinigames)
+// Look at the Firebase and inspect the structure of each level (Grade ==> Chapter ==> Lessons ==> Lesson ==> Activities)
 // @param {string} grade a string, e.g. 'Grade2', which is the grade that you are querying for
 // @return {Object[]} chapterList **This will return an array of Chapters in the Grade, but NOT the data held by the chapters. This data is used to render each card in 'ChaptersComponent'
 async function getGradeData(grade) {
     console.log(`\n\tgetGradeData() called. Now in ${grade} Chapters`);
+    const start = performance.now(); 
 
-    const result = await getCacheObject(grade).then((result) => {
-        //console.log("Result: ", result);
-        return result;
-    }).catch((error) => {
-        console.log("Error with getCacheObj in getGradeData: ", error);
-    });
-
-    /*if (result != null) {
-        console.log("Pulling grades from cache: ", result);
-        return result;
-    } else {*/
-        console.log("Pulling grades from DB");
-        let chapterList = []; // Creating the list of chapters
-
-        await db.collection(grade).get() // Pulling the grade data and storing it to the above list
-            .then((snapshot) => {
-                snapshot.forEach((doc) => { // moving through the snapshot objects individually
-                    chapterList.push(doc.data()); // Pushing new object onto the array
-                });
-            }).catch((error) => {
-                console.log("Error: ", error);
+    console.log("Pulling grades from DB");
+    let chapterList = []; // Creating the list of chapters
+    await db.collection(grade).get() // Pulling the grade data and storing it to the above list
+        .then((snapshot) => {
+            snapshot.forEach((doc) => { // moving through the snapshot objects individually
+                chapterList.push(doc.data()); // Pushing new object onto the array
             });
-        
-        console.log("chapterList array:", chapterList); //logging chapterList array
-        //await setCache(grade, chapterList);
-        //console.log(getCacheObject("grades")); //logging cache under key "grades"
-        return chapterList; // This returns the array
-    //}
+        }).catch((error) => {
+            console.log("Error: ", error);
+        });
+
+    const elapsedTimeSeconds = (performance.now() - start) / 1000;
+    console.log(`\t\t\t\tgetGradeData done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+    console.log("chapterList array:", chapterList); //logging chapterList array
+
+    return chapterList; // This returns the array
 }
 
 // getLessonsData() will pull the lesson data and then save it in a format that we can use.
@@ -62,32 +51,24 @@ async function getGradeData(grade) {
 // @return {Object[]} lessonsList **This is just a list of the JSON formatted lessons 
 async function getLessonsData(grade, chpt, numLessons, languageCode) {
     console.log(`\n\tgetLessonsData() called. Now in ${grade} ${chpt} Lessons\n\t\tLANGUAGE_CODE:`, languageCode);
+    const start = performance.now(); 
 
-    const result = await getCacheObject(`${grade}-${chpt}-${languageCode}`).then((result) => {
-        console.log("Result: ", result);
-        return result;
-    }).catch((error) => {
-        console.log("Error with getCacheObj in getLessonsData: ", error);
-    });
+    console.log("Pulling lessons from DB");
+    const lessonPromises = [];
 
-    /*if (result != null) {
-        console.log("Pulling lessons from cache");
-        return result;
-    } else {*/
-        console.log("Pulling lessons from DB");
-        const lessonPromises = [];
+    for(let i=1; i<=numLessons; i++) {
+        lessonPromises.push(getIndividualLessonData(grade, chpt, i, languageCode));
+    }
 
-        for(let i=1; i<=numLessons; i++) {
-            lessonPromises.push(getIndividualLessonData(grade, chpt, i, languageCode));
-        }
+    //resolving all promises, filtering out nulls
+    const lessonsList = (await Promise.all(lessonPromises)).filter(lesson => lesson !== null);
 
-        //resolving all promises, filtering out nulls
-        const lessonsList = (await Promise.all(lessonPromises)).filter(lesson => lesson !== null);
+    const elapsedTimeSeconds = (performance.now() - start) / 1000;
+    console.log(`\t\t\t\tgetLessonsData done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+    console.log("Lessons: ", lessonsList); //logging lessons array
 
-        console.log("Lessons: ", lessonsList); //logging lessons array
-        //await setCache(`${grade}-${chpt}-${languageCode}`, lessonsList); //cache key looks like "Grade1-Chapter3-en"
-        return lessonsList;
-    //}
+    return lessonsList;
+
 }
 
 //getLessonsData helper!
@@ -113,24 +94,24 @@ async function getIndividualLessonData(grade, chpt, lessonNumber, languageCode) 
  * @param {string} lesson e.g. 'Lesson1'
  * @param {string} languageCode e.g. 'en'
 */
-async function getMasteryAndMinigamesData(grade, chpt, lesson, languageCode) {
-    console.log(`\n\tgetMasteryAndMinigames() called. Now in ${grade} ${chpt} ${lesson}\n\t\tLANGUAGE_CODE:`, languageCode);
+async function getActivitiesData(grade, chpt, lesson, languageCode) {
+    console.log(`\n\tgetActivities() called. Now in ${grade} ${chpt} ${lesson}\n\t\tLANGUAGE_CODE:`, languageCode);
     console.log(`Pulling ${lesson} mastery and minigames from DB`);
 
-    let masteryAndMinigamesReference = db.collection(grade).doc(chpt).collection(lesson).doc(languageCode).collection("masteryAndMinigames");
+    let activitiesReference = db.collection(grade).doc(chpt).collection(lesson).doc(languageCode).collection("masteryAndMinigames");
 
-    // now getting masteryAndMinigames array
-    let masteryAndMinigamesList = []; 
-    await masteryAndMinigamesReference.get().then((snapshot) => {
+    // now getting Activities array
+    let activitiesList = []; 
+    await activitiesReference.get().then((snapshot) => {
         snapshot.forEach((doc) => { // moving through the snapshot objects individually
-            masteryAndMinigamesList.push(doc.data());
+            activitiesList.push(doc.data());
         });
     }).catch((error) => {
         console.log("Error in getLessonsData():", error);
     });
 
-    console.log("masteryAndMinigames:", masteryAndMinigamesList);
-    return masteryAndMinigamesList;
+    console.log("activities:", activitiesList);
+    return activitiesList;
 }
 
 
@@ -262,97 +243,4 @@ async function setCache(key, value) {
     }
 }
 
-
-// The following three variables should be changed every time you run the function.
-const GRADE_NAME = "Grade5"; //string specifying the grade, e.g. 'Grade2' 
-const LANGUAGE_CODE = "ru"; //specifies the language, e.g. 'en', 'ru', 'kk'
-const CHAPTERS = en_grade5_FIELDWORK.chapters; //needs to be specified from import
-
-//this one is different from the postData in PostData.js as it does not check
-//for the existence of documents and overwrites everything.
-const postDataHard = () => {
-    CHAPTERS.forEach((chapter) => { //iterating through chapters array
-        postChapterData(chapter); //see below
-    })
-}
-
-// @param chapter the current chapter object
-const postChapterData = async(chapter) => {
-    let chapterData = {
-        navigation: chapter.navigation,
-        title: chapter.title,
-        name: chapter.name,
-        icon: chapter.icon,
-        colorOne: chapter.colorOne,
-        colorTwo: chapter.colorTwo
-    }
-    const chapterReference = db.collection(GRADE_NAME).doc(chapterData.navigation);
-
-    try {
-        await chapterReference.set(chapterData); //setting chapter metadata
-        console.log(`${chapterData.navigation} set successfully!`);
-    } catch(error) {
-        console.warn("postChapterData() ERROR:", error);
-    }
-
-    chapter.lessons.forEach((lesson) => {
-        postLessonData(lesson, chapterReference); //see below
-    })
-}
-
-//@param lesson the current lesson object
-//@param chapterReference a reference to the current chapter within our firebase tree.
-const postLessonData = async(lesson, chapterReference) => {
-    const lessonData = {
-        navigation: lesson.navigation,
-        title: lesson.title,
-        thumbnail: lesson.thumbnail,
-        backgroundColor: lesson.backgroundColor
-    }
-    const lessonLanguageReference =  chapterReference.collection(lessonData.navigation).doc(LANGUAGE_CODE);
-
-    try {
-        await lessonLanguageReference.set(lessonData); //setting lessonLanguage metadata
-        console.log(`\t${lessonData.navigation}-${LANGUAGE_CODE} set successfully!`);
-    } catch(error) {
-        console.warn("postLessonData() ERROR:", error)
-    }
-
-    let duplicates = {} //counting the number of duplicate objects
-    let masteryAndMinigames = lesson.content; //lesson.content is the array containing all of the mastery and minigame objects
-
-    //iterating through all the mastery and minigame objects (each one is referred to as 'currentObject' here)
-    masteryAndMinigames.forEach((currentObject) => {
-        let currentObjectName = currentObject.navigation
-
-        //first checking for duplicates
-        // Initialize this attribute's count to 1 if string is encountered for the first time, otherwise increment this attribute's count
-        !duplicates[currentObjectName] ? duplicates[currentObjectName] = 1 : duplicates[currentObjectName]++;
-
-        //if there are duplicates, we change the navigation and title accordingly. duplicates[currentObjectName] is an int
-        if (duplicates[currentObjectName] > 1) {
-            currentObject.navigation = `${currentObjectName} ${duplicates[currentObjectName]}`;
-            currentObject.title = `${currentObject.title}${duplicates[currentObjectName]}`
-        }
-
-        postMasteryAndMinigameData(currentObject, lessonLanguageReference); //see below
-    })
-
-    // console.log("\t\tmasteryAndMinigames:");
-    // lesson.content.forEach((element) => { console.log(`\t\t\t${element.navigation}`); })
-}
-
-//@param currentObject the current mastery or minigame object
-//@param lessonLanguageReference a reference to the current language within our current lesson down our firebase tree.
-const postMasteryAndMinigameData = async(currentObject, lessonLanguageReference) => {
-    const masteryAndMinigamesReference = lessonLanguageReference.collection("masteryAndMinigames").doc(currentObject.navigation);
-
-    try{
-        await masteryAndMinigamesReference.set(currentObject);
-        console.log(`\t\t${currentObject.navigation} set successfully!`);
-    } catch(error) {
-        console.warn("postMasteryAndMinigameData() ERROR:", error);
-    }
-}
-
-export { getGradeData, createImageMap, getLessonsData, getIndividualLessonData, getMasteryAndMinigamesData, getCacheObject, setCache, postDataHard };
+export { getGradeData, createImageMap, getLessonsData, getIndividualLessonData, getActivitiesData, getCacheObject, setCache };

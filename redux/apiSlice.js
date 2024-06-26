@@ -4,7 +4,7 @@ import { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroo
 export const apiSlice = createApi({
    reducerPath: "api",
    baseQuery: fakeBaseQuery(),
-   tagTypes: ["User", "Completions", "Classroom"],
+   tagTypes: ["User", "Completions", "Classroom", "GradeData", "LessonsData", "ActivitiesData"],
    endpoints: (builder) => ({
 
       getUser: builder.query({

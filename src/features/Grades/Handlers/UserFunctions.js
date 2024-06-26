@@ -1,4 +1,4 @@
-import { db, storage } from "../../../../firebase.js";
+import { db } from "../../../../firebase.js";
 
 async function getUser(userEmail) {
    const start = performance.now(); // Start performance timer
@@ -63,7 +63,6 @@ async function getCompletionsArray(userEmail) {
 
 async function postCompletion(userEmail, completionID, content) {
    const start = performance.now(); // Start performance timer
-
    const completionData = {};
 
    if (Array.isArray(content)) { //true if content is an array (from ImageUpload [Mastery, ImageBoom, Snapshot])

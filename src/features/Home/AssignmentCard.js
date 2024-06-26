@@ -1,5 +1,5 @@
 import React, { useEffect, useState, memo } from "react";
-import { View, Text, StyleSheet, ActivityIndicator, FlatList, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 import { BodyText } from "../../components/body-text.component";
@@ -8,6 +8,7 @@ import { Surface } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
 import { getIndividualLessonData } from "../Grades/Handlers/Database";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
+import { useGetGradeDataQuery, useGetLessonsDataQuery, useGetActivitiesDataQuery } from "../../../redux/curriculumApiSlice";
 
 //memoized
 const AssignmentCard = memo(({ content }) => {
@@ -39,17 +40,44 @@ const AssignmentCard = memo(({ content }) => {
          });
    }, [gradeParam, chapterParam, lessonParam, languageCode]);
 
-   async function pushToLesson() {
-      const lessonNumber = `Lesson${lessonParam}`;
-      navigation.navigate("Home");
-      navigation.navigate("ChaptersHandler", { grade: gradeParam });
+   const [buttonPressed, setButtonPressed] = useState(false);
 
-      await new Promise(resolve => setTimeout(resolve, 500));
-      navigation.navigate(chapterParam);
+   const { isSuccess: gradeSuccess } = useGetGradeDataQuery(
+      { grade: gradeParam },
+      { skip: !buttonPressed }
+   );
+   const { isSuccess: lessonsSuccess } = useGetLessonsDataQuery(
+      { grade: gradeParam, chpt: chapterParam, numLessons: lessonParam, languageCode: languageCode },
+      { skip: !buttonPressed }
+   );
+   const { isSuccess: activitiesSuccess } = useGetActivitiesDataQuery(
+      { grade: gradeParam, chpt: chapterParam, lesson: `Lesson${lessonParam}`, languageCode: languageCode },
+      { skip: !buttonPressed }
+   );
 
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      navigation.navigate(lessonNumber);
-   }
+   // jac927 6/26/24 | Dear whoever is reading, I fell into a rabbit hole of optimization for the below pushToLesson function.
+   // I would advise that you think of a radically different solution than to continue to optimize this function.
+   // The missing piece of the puzzle is a page focus listener for each layer of stack navigation.
+   // This pushToLesson function will not work if rendering for any of the below navigation 'layers' takes longer than 300ms.
+   useEffect(() => {
+      async function pushToLesson() {
+         if(gradeSuccess && lessonsSuccess && activitiesSuccess) {
+            navigation.navigate("Home");
+
+            await new Promise(resolve => setTimeout(resolve, 100));
+            navigation.navigate("ChaptersHandler", { grade: gradeParam });
+
+            await new Promise(resolve => setTimeout(resolve, 100));
+            navigation.navigate(chapterParam);
+
+            await new Promise(resolve => setTimeout(resolve, 300));
+            navigation.navigate(`Lesson${lessonParam}`);
+            setButtonPressed(false);
+         }
+      }
+
+      pushToLesson();
+   }, [gradeSuccess, lessonsSuccess, activitiesSuccess]);
 
    //default set to red #db473b
    const [topRowColor, setTopRowColor] = useState({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
@@ -60,7 +88,7 @@ const AssignmentCard = memo(({ content }) => {
    useEffect(() => {
       content.completionStatus ? setOpacity(1) : setOpacity(0);
 
-      if(!content.overdue) { //set to blue #418098
+      if(!content.overdue || content.completionStatus) { //set to blue #418098
          setTopRowColor({ color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" });
          setDateText("Date Due") /* marked for translation */
          //set to purple #9241ba
@@ -77,12 +105,12 @@ const AssignmentCard = memo(({ content }) => {
          <CompletionOverlay opacity={opacity} />
 
          <View style={[styles.topSection, { backgroundColor: topRowColor.color, borderColor: topRowColor.border }]}>
-            <TitleText align="left" size="mid" color="quaternary" weight="bold">
+            <TitleText align="left" size="subtitle" color="quaternary" weight="bold">
                {/* marked for translation */}
                {`${dateText}:  ${parseDate(content.dateDue)}`}
             </TitleText>
 
-            <TitleText size="mid" color="quaternary" weight="bold">
+            <TitleText size="subtitle" color="quaternary" weight="bold">
                {/* numCompletions refers to the number of activities that have been completed in the given lesson */}
                {`${content.numCompletions}/${content.numActivities}`}
             </TitleText>
@@ -93,7 +121,9 @@ const AssignmentCard = memo(({ content }) => {
                {individualLessonData.title}
             </TitleText>
 
-            <TouchableOpacity style={styles.buttonBottomRow} onPress={pushToLesson}>
+            <TouchableOpacity style={styles.buttonBottomRow} 
+               onPress={() => { setButtonPressed(true); }}
+            >
               <Ionicons name="caret-forward" size={14} color="#748816" style={{ paddingRight: 3, paddingTop: 1.5 }} />
               
               <BodyText align="left" color="primary" size="button">
@@ -157,7 +187,7 @@ function parseDate(dateString) {
 
 const styles = StyleSheet.create({
    assignmentCard: {
-      width: 360,
+      width: 370,
       height: 160,
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
       borderRadius: 15,
@@ -168,9 +198,9 @@ const styles = StyleSheet.create({
       borderTopLeftRadius: 15,
       borderTopRightRadius: 15,
       borderBottomWidth: 5,
-      paddingLeft: 15,
-      paddingRight: 15,
-      paddingTop: 10,
+      paddingLeft: 12,
+      paddingRight: 12,
+      paddingTop: 7,
       flexDirection: "row",
       justifyContent: "space-between",
       zIndex: 1,
