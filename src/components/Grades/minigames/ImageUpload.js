@@ -8,7 +8,7 @@ import { uploadBytes } from "firebase/storage";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import CompletionModal from "../../../features/Account/LevelSystem/CompletionModal";
-import { StyleSheet, FlatList, View, TouchableOpacity } from "react-native";
+import { StyleSheet } from "react-native";
 import LoadingModal from "../../../features/Account/LevelSystem/LoadingModal";
 import Toast from 'react-native-toast-message';
 import FileModal from "./FileModal";

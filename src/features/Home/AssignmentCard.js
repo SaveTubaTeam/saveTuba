@@ -17,9 +17,9 @@ const AssignmentCard = memo(({ content }) => {
    const navigation = useNavigation();
 
    /* marked for translation */
-   const assignmentGrade = `Grade${getNumbersAfterLetter(content.assignmentID, "G")}`;
-   const assignmentChapter = `Chapter${getNumbersAfterLetter(content.assignmentID, "C")}`;
-   const assignmentLesson = `Lesson${getNumbersAfterLetter(content.assignmentID, "L")}`;
+   const assignmentGrade = `${t("common:grade")}${getNumbersAfterLetter(content.assignmentID, "G")}`;
+   const assignmentChapter = `${t("common:chapter")}${getNumbersAfterLetter(content.assignmentID, "C")}`;
+   const assignmentLesson = `${t("common:lesson")}${getNumbersAfterLetter(content.assignmentID, "L")}`;
 
    const gradeParam = `Grade${getNumbersAfterLetter(content.assignmentID, "G")}`
    const chapterParam = `Chapter${getNumbersAfterLetter(content.assignmentID, "C")}`;
@@ -88,12 +88,12 @@ const AssignmentCard = memo(({ content }) => {
    useEffect(() => {
       content.completionStatus ? setOpacity(1) : setOpacity(0);
 
-      if(!content.overdue || content.completionStatus) { //set to blue #418098
+      if((!content.overdue && content.completionStatus) || (!content.overdue && !content.completionStatus)) { //set to blue #418098
          setTopRowColor({ color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" });
          setDateText("Date Due") /* marked for translation */
          //set to purple #9241ba
          //setTopRowColor({ color: "rgba(146, 65, 186, 0.8)", border: "rgba(146, 65, 186, 1)" })
-      } else { //use default red topRowColor if overdue
+      } else if(content.overdue) { //use default red topRowColor if overdue
          setTopRowColor({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
          setDateText("OVERDUE") /* marked for translation */
       }

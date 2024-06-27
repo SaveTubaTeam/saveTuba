@@ -1,38 +1,19 @@
-/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import {
-  Switch,
-  Alert,
-  Modal,
-  StyleSheet,
-  Text,
-  Pressable,
-  View,
-} from "react-native";
-
-import { useNavigation } from "@react-navigation/native";
+import { Switch, Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import {
-  faCircleInfo,
-  faCircleQuestion,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 import { moderateScale } from "react-native-size-matters";
 import { useTranslation } from "react-i18next";
-
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
-
 import Selector from "./LanguageSelector";
 
-//Settings screen
-
 export const GeneralCard = () => {
-  const navigation = useNavigation();
   const { t } = useTranslation();
 
   const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(false);
@@ -61,19 +42,12 @@ export const GeneralCard = () => {
         <Row>
           <BodyText color="quaternary">{t("common:soundeffects")}</BodyText>
           <Switch
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
-            thumbColor={isSoundEffectsEnabled ? "#f5dd4b" : "#f4f3f4"}
+            trackColor={{ false: "#767577", true: "rgba(65,128,152,0.9)" }}
+            thumbColor={isSoundEffectsEnabled ? "#60BBDD" : "#f4f3f4"}
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitchSE}
             value={isSoundEffectsEnabled}
-            style={{
-              transform: [
-                { scaleX: moderateScale(0.8, 0.2) },
-                {
-                  scaleY: moderateScale(0.8, 0.2),
-                },
-              ],
-            }}
+            style={{ transform: [{ scaleX: moderateScale(0.8, 0.2) }, {scaleY: moderateScale(0.8, 0.2) }] }}
           />
         </Row>
 
@@ -105,7 +79,7 @@ export const GeneralCard = () => {
             {/* This will need to also be a feature in the firebase - language */}
             <FontAwesomeIcon
               icon={faCircleQuestion}
-              size={16}
+              size={21}
               color={theme.colors.ui.primary}
             />
           </TouchableOpacity>
@@ -130,6 +104,7 @@ export const GeneralCard = () => {
               </View>
             </View>
           </Modal>
+          
         </Row>
         <Spacer size="medium" />
 
@@ -140,7 +115,7 @@ export const GeneralCard = () => {
             {/* This will need to also be a feature in the firebase - language */}
             <FontAwesomeIcon
               icon={faCircleInfo}
-              size={16}
+              size={21}
               color={theme.colors.ui.primary}
             />
           </TouchableOpacity>

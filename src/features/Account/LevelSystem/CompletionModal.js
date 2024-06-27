@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { theme } from "../../../infrastructure/theme";
-import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
+import { View, Modal, TouchableOpacity, Text, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import { Spacer } from "../../../components/spacer.component";
 import LottieView from "lottie-react-native";
@@ -13,7 +13,6 @@ import LoadingModal from "./LoadingModal";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import { useUpdateUserXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
-
 import styled from "styled-components/native";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
@@ -99,7 +98,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
     <>
       <LoadingModal visible={loadingModal} />
       <Modal transparent animationType="none" visible={completionModalVisible}>
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", zIndex: 1, elevation: -2 }}>
+        <View style={styles.modalContainer}>
           <ModalContainer>
 
             {/* marked for translation */}
@@ -111,17 +110,8 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 
           {/* green button 'Return' at the bottom of modal to move out of minigame */}
           <TouchableOpacity
-            style={{
-              backgroundColor: "#748816",
-              borderRadius: 10,
-              marginTop: 10,
-              paddingTop: 5,
-              paddingBottom: 5
-            }}
-            onPress={() => {
-              console.log("pushing back to Lessons");
-              navigation.navigate("Lesson");
-            }}
+            style={styles.greenButtonModal}
+            onPress={() => { navigation.navigate("Lesson"); }}
           >
             {/* marked for translation */}
           <BodyText size="subtitle" color="secondary">
@@ -131,24 +121,16 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 
           </ModalContainer>
         </View>
-          <Image 
-        style={{
-          position: "absolute",
-          bottom: 130,
-          right: -70,
-          width: "60%", // Adjust the width as needed
-          height: "40%", // Adjust the height as needed
-          transform: [{ scaleX: -1 }], // Flip the image horizontally
-          zIndex: 2, // Set a higher z-index to bring the image in front of the modal
-          elevation: -1 //NOTE: zIndex doesn't work w/ Android so we use negative elevations as a hotfix
-        }}
-        source={require("../../../../assets/tuba-low-quality.png")}
+
+        <Image 
+          style={styles.tubaImage}
+          source={require("../../../../assets/tuba-low-quality.png")}
         />
         <LottieView 
           source={require("../../../../assets/lottie-animations/confetti-animation.json")}
           autoPlay={true}
           loop={false}
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", zIndex: 0 }}
+          style={styles.confettiContainer}
           resizeMode='cover'
         />
       </Modal>
@@ -157,6 +139,41 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 }
 
 export default CompletionModal;
+
+const styles = StyleSheet.create({
+  greenButtonModal: {
+    backgroundColor: "#748816",
+    borderRadius: 10,
+    marginTop: 10,
+    paddingTop: 5,
+    paddingBottom: 5
+  },
+  tubaImage: {
+    position: "absolute",
+    bottom: 130,
+    right: -70,
+    width: "60%",
+    height: "40%",
+    transform: [{ scaleX: -1 }], // Flip the image horizontally
+    zIndex: 2, // Set a higher z-index to bring the image in front of the modal
+    elevation: -1 //NOTE: zIndex doesn't work w/ Android modals so we use negative elevations as a hotfix
+  },
+  modalContainer:{
+    flex: 1, 
+    justifyContent: "center", 
+    alignItems: "center", 
+    zIndex: 1, 
+    elevation: -2
+  },
+  confettiContainer: {
+    position: "absolute", 
+    top: 0, 
+    left: 0, 
+    width: "100%", 
+    height: "100%", 
+    zIndex: 0
+  }
+})
 
 const Container2 = styled.View`
   width: 90%;

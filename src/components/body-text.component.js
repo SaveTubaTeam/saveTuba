@@ -27,7 +27,7 @@ const colorVariant = {
   tertiary: "#C6DC3B",
   quaternary: "#666",
   light: "#F6FFCE",
-  dark: 'rgba(71, 81, 92, 1)'
+  dark: '#555555'
 };
 
 const alignVariant = {

@@ -29,16 +29,12 @@ function AssignmentsPage() {
                console.log("ASSIGNMENTS SNAPSHOT IS EMPTY");
                return;
             }
-            // const docChanges = querySnapshot.docChanges();
-            // if(docChanges.length === 0) { //guard clause for no changes
-            //    return;
-            // }
 
             let assignmentsArray = [];
             querySnapshot.forEach((doc) => {
                assignmentsArray.push(doc.data());
             });
-            console.log("\t\tASSIGNMENTS:", assignmentsArray);
+            console.log("\t\tNUMBER OF ASSIGNMENTS:", assignmentsArray.length);
             
             const sortedAssignments = sortAssignments(assignmentsArray, completions);
             setAssignments(sortedAssignments);

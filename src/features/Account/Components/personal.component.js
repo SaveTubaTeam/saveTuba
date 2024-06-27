@@ -1,10 +1,5 @@
-/* eslint-disable react/prop-types */
-import React, { useState } from "react";
-import { useFocusEffect } from "@react-navigation/native";
+import React from "react";
 import styled from "styled-components/native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
-import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
@@ -12,12 +7,10 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
-
 import { TitleText } from "../../../components/title-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
-import { getCacheObject } from "../../Grades/Handlers/Database";
 
 const AvatarContainer = styled.View`
   align-items: center;
@@ -28,29 +21,9 @@ const Row = styled.View`
   align-items: center;
 `;
 
-
 const PersonalCard = () => {
   const { t } = useTranslation();
   const user = useSelector(selectCurrentUser);
-
-  const navigation = useNavigation();
-  //const { currentUser } = props;
-
-  //const [photo, setPhoto] = useState(null);
-/* 
-  const getProfilePicture = async (currentUser) => {
-    console.log("in profile pic");
-    const photoUri = await getCacheObject( "user",
-      `${currentUser?.firstName}-photo`
-    );
-    setPhoto(photoUri);
-  };
-
-  useFocusEffect(
-    React.useCallback(() => {
-      getProfilePicture(currentUser);
-    }, [currentUser])
-  ); */
 
   return (
     <Card>

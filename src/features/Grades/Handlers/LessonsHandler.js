@@ -108,8 +108,6 @@ function concatenateFirstAndLast(str) {
   return firstLetter + lastLetter;
 }
 
-export { determineTally }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,

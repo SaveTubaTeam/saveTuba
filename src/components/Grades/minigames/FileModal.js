@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { View, Modal, TouchableOpacity, ActivityIndicator, StyleSheet, Button } from "react-native";
+import { View, Modal, TouchableOpacity, StyleSheet, Button } from "react-native";
 import styled from "styled-components/native";
 import { BodyText } from "../../body-text.component";
 import { Image } from "expo-image";
@@ -11,12 +11,7 @@ export default function FileModal({ showSelectedFile, setShowSelectedFile, conte
 
    let exitIcon = (
       <TouchableOpacity
-         style={{ 
-         position: "absolute", 
-         right: 25, top: 20, 
-         transform: [{ scaleX: 2 }, { scaleY: 2 }],
-         zIndex: 1,
-         }}
+         style={styles.exitIcon}
          onPress={() => setShowSelectedFile(false)}
       >
          <BodyText>❌</BodyText>
@@ -105,4 +100,10 @@ const styles = StyleSheet.create({
       backgroundColor: "#748816",
       borderRadius: 20,
    },
+   exitIcon: {
+      position: "absolute", 
+      right: 25, top: 20, 
+      transform: [{ scaleX: 2 }, { scaleY: 2 }],
+      zIndex: 1,
+   }
 });

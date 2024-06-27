@@ -10,7 +10,6 @@ import { Spacer } from "../../../components/spacer.component";
 import { MasteryFlex } from "../../../components/mastery-flex.component";
 import { Adventure, Header } from "../../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
-import { determineTally } from "../Handlers/LessonsHandler";
 import { useSelector } from "react-redux";
 
 //This component formats and renders all of the lesson's contents
@@ -40,9 +39,10 @@ function LessonComponent({ individualLessonData, activitiesData }) {
 
   useEffect(() => {
       //updating the completion tally by listening to changes in completions
+      const tally = determineTally(gradeNumber, chapterNumber, individualLessonData.navigation, completions);
       const updatedLesson = {
         ...individualLessonData,
-        completionTally: determineTally(gradeNumber, chapterNumber, individualLessonData.navigation, completions),
+        completionTally: tally,
       }
       setLessonData(updatedLesson);
   }, [individualLessonData, completions])
@@ -138,6 +138,25 @@ function LessonComponent({ individualLessonData, activitiesData }) {
       </Container>
     </SafeArea>
   );
+}
+
+function determineTally(grade, chapter, lesson, completions) {
+  const gradeID = concatenateFirstAndLast(grade);
+  const chapterID = concatenateFirstAndLast(chapter);
+  const lessonID = concatenateFirstAndLast(lesson);
+  const fullLessonID = `${gradeID}${chapterID}${lessonID}`
+
+  //From the answer provided by @Jamiec here: https://stackoverflow.com/questions/9996727/count-instances-of-string-in-an-array
+  //note the implicit return!
+  let tallyCount = completions.filter((completion) => completion.completionID.split("_")[0] === fullLessonID ).length
+
+  return tallyCount
+}
+
+function concatenateFirstAndLast(str) {
+  const firstLetter = str[0];
+  const lastLetter = str[str.length - 1];
+  return firstLetter + lastLetter;
 }
 
 export default LessonComponent;

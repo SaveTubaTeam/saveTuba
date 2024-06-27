@@ -20,7 +20,6 @@ const MasteryHandler = ({ objectData }) => {
   }, [])
   
   const renderItem = ({ item }) => {
-
     return (
       <Prompt>
         <TitleText size="subtitle">{item.text}</TitleText>
@@ -47,9 +46,7 @@ const MasteryHandler = ({ objectData }) => {
         keyExtractor={(item, index) => index}
         key={(item, index) => index}
         renderItem={renderItem}
-        contentContainerStyle={{
-          alignItems: "center"
-        }}
+        contentContainerStyle={{ alignItems: "center" }}
         ListFooterComponentStyle={{ width: "100%", alignItems: "center" }}
         ListFooterComponent={
           <>

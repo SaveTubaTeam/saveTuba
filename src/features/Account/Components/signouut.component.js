@@ -16,7 +16,8 @@ const Button = styled(TouchableOpacity)`
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
   align-items: center;
-  margin-top: ${(props) => props.theme.space[3]};
+  margin-top: ${(props) => props.theme.space[1]};
+  margin-bottom: ${(props) => props.theme.space[3]};
 `;
 const ButtonText = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading}

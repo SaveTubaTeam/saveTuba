@@ -16,26 +16,8 @@ import { View } from "react-native";
 export function ProfileCard() {
   const { t } = useTranslation();
   const user = useSelector(selectCurrentUser);
-  const classroom = useSelector(state => state.user.classroom);
 
   return (
-    <>
-    {/* <Card> FOR THE PARENT VIEW
-      <View style={styles.cardContainerRow}>
-        <View style={{ flexDirection: "column", width: "60%" }}>
-          <TitleText size="subtitle" align="left" weight="bold">{classroom.className}</TitleText>
-          <TitleText size="subtitle" align="left" weight="bold">{`${t("common:grade")} ${extractNumbers(classroom.gradeLevel)}`}</TitleText>
-          <Spacer size="small" />
-
-          <TitleText size="body" align="left">{`Class Code: ${classroom.classCode}`}</TitleText>
-          <TitleText size="body" align="left">{`Teacher: ${classroom.teacher.firstName} ${classroom.teacher.lastName}`}</TitleText>
-        </View>
-        <Avatar.Icon size={105} icon="head" backgroundColor={theme.colors.ui.tertiary}/>
-      </View>
-    </Card>
-
-    <Spacer size="large" /> */}
-
     <Card>
       <Avatar.Icon size={180} icon="head" backgroundColor={theme.colors.ui.tertiary} style={{ marginBottom: 10, alignSelf: "center"}}/>
       {/* username underneath avatar icon */}
@@ -45,7 +27,6 @@ export function ProfileCard() {
 
       <ProgressBar />
     </Card>
-    </>
   );
 }
 
@@ -108,17 +89,6 @@ function findThresholdIndexes(number) {
 
   return [lowerIndex, upperIndex];
 }
-
-function extractNumbers(str) {
-  // Using regular expression to extract numbers (\d+)
-  const numbers = str.match(/\d+/g);
-  // Joining the array of numbers into a single string
-  return numbers ? numbers.join('') : '';
-}
-
-const AvatarContainer = styled.View`
-  align-items: center;
-`;
 
 const Row = styled.View`
   flex-direction: row;
