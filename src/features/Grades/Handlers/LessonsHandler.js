@@ -1,6 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import IndividualLessonHandler from "./IndividualLessonHandler";
@@ -17,24 +16,34 @@ const Stack = createNativeStackNavigator();
 //@param gradeNumber a string representing the selected grade, e.g. 'Grade2'
 //@param selectedChapter a string representing the selected chapter, e.g. 'Chapter1'
 //@param {int} numLessons the number of lessons in the selected chapter
-function LessonsHandler({ selectedChapter, numLessons }) {
+export default function LessonsHandler({ selectedChapter, numLessons }) {
   const { t, i18n } = useTranslation();
   const languageCode = i18n.language; //setting the languageCode to the current language
   const dispatch = useDispatch();
-  const gradeNumber = useSelector(state => state.curriculum.grade)
+  const gradeNumber = useSelector(state => state.curriculum.grade);
+  const completions = useSelector(state => state.user.completions);
+  const [lessonsData, setLessonsData] = useState(null);
 
-  const { data: lessonsData, isLoading: lessonsLoading, isSuccess: lessonsSuccess, isError: lessonsError, error: lessonsErrorMessage } = useGetLessonsDataQuery(
+  const { data: lessonsDataQuery, isLoading: lessonsLoading, isSuccess: lessonsSuccess, isError: lessonsError, error: lessonsErrorMessage } = useGetLessonsDataQuery(
     { grade: gradeNumber, chpt: selectedChapter, numLessons: numLessons, languageCode: languageCode }
   )
 
   useEffect(() => {
-    if(lessonsSuccess) {
+    if(lessonsSuccess && lessonsDataQuery) {
       dispatch(addChapter({ chapter: selectedChapter }));
+
+      //adding an attribute to each lesson
+      const updatedLessons = lessonsDataQuery.map((lesson) => ({
+        ...lesson,
+        completionTally: determineTally(gradeNumber, selectedChapter, lesson.navigation, completions),
+      }));
+
+      setLessonsData(updatedLessons);
     }
-  }, [lessonsSuccess])
+  }, [lessonsSuccess, lessonsDataQuery, completions])
 
   let content;
-  if(lessonsLoading) {
+  if(lessonsLoading || (lessonsData === null)) {
     content = (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" />
@@ -43,7 +52,7 @@ function LessonsHandler({ selectedChapter, numLessons }) {
   } else if(lessonsError) {
     console.error(lessonsErrorMessage);
     content = null;
-  } else if(lessonsSuccess) {
+  } else if(lessonsSuccess && lessonsData) {
     content = (
       <Stack.Navigator>
         <Stack.Screen name={"Chapter"} options={{ headerShown: false }}>
@@ -80,7 +89,26 @@ function LessonsHandler({ selectedChapter, numLessons }) {
   );
 }
 
-export default LessonsHandler;
+function determineTally(grade, chapter, lesson, completions) {
+  const gradeID = concatenateFirstAndLast(grade);
+  const chapterID = concatenateFirstAndLast(chapter);
+  const lessonID = concatenateFirstAndLast(lesson);
+  const fullLessonID = `${gradeID}${chapterID}${lessonID}`
+
+  //From the answer provided by @Jamiec here: https://stackoverflow.com/questions/9996727/count-instances-of-string-in-an-array
+  //note the implicit return!
+  let tallyCount = completions.filter((completion) => completion.completionID.split("_")[0] === fullLessonID ).length
+
+  return tallyCount
+}
+
+function concatenateFirstAndLast(str) {
+  const firstLetter = str[0];
+  const lastLetter = str[str.length - 1];
+  return firstLetter + lastLetter;
+}
+
+export { determineTally }
 
 const styles = StyleSheet.create({
   container: {

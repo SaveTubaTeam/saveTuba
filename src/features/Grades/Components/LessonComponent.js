@@ -10,14 +10,20 @@ import { Spacer } from "../../../components/spacer.component";
 import { MasteryFlex } from "../../../components/mastery-flex.component";
 import { Adventure, Header } from "../../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
+import { determineTally } from "../Handlers/LessonsHandler";
+import { useSelector } from "react-redux";
 
 //This component formats and renders all of the lesson's contents
-//@param lessonData the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
-function LessonComponent({ lessonData, activitiesData }) {
+//@param data the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
+function LessonComponent({ individualLessonData, activitiesData }) {
   const nav = useNavigation();
   const { t } = useTranslation();
   const [minigames, setMinigames] = useState(null);
   const [mastery, setMastery] = useState(null);
+  const [lessonData, setLessonData] = useState(individualLessonData);
+  const gradeNumber = useSelector(state => state.curriculum.grade);
+  const chapterNumber = useSelector(state => state.curriculum.chapter);
+  const completions = useSelector(state => state.user.completions);
 
   useEffect(() => {
     console.log("inside LessonComponent.js.");
@@ -31,6 +37,15 @@ function LessonComponent({ lessonData, activitiesData }) {
     setMastery(masteryCopy);
     setMinigames(minigamesCopy);
   }, []);
+
+  useEffect(() => {
+      //updating the completion tally by listening to changes in completions
+      const updatedLesson = {
+        ...individualLessonData,
+        completionTally: determineTally(gradeNumber, chapterNumber, individualLessonData.navigation, completions),
+      }
+      setLessonData(updatedLesson);
+  }, [individualLessonData, completions])
 
   const renderItem = ({ item }) => {
     return (
@@ -49,16 +64,23 @@ function LessonComponent({ lessonData, activitiesData }) {
   };
 
   const Progress = () => {
+    const chunks = [];
+    for (let i = 0; i < lessonData.numActivities; i++) {
+
+      let chunkStyle = { backgroundColor: "rgba(135, 66, 22, 0.25)" }
+      if(i < lessonData.completionTally) {
+        chunkStyle = { backgroundColor: "#748816" }
+      }
+
+      chunks.push(<Chunk key={i} style={chunkStyle}/>);
+    }
+
     return (
       <ProgContainer>
         <View style={{ flexDirection: "row", marginRight: 10 }}>
-          <Chunk />
-          <Chunk />
-          <Chunk />
-          <Chunk />
-          <Chunk />
+          {chunks}
         </View>
-        <BodyText>5/5</BodyText>
+        <BodyText>{`${lessonData.completionTally}/${lessonData.numActivities}`}</BodyText>
       </ProgContainer>
     );
   };
@@ -171,8 +193,7 @@ const Chunk = styled.View`
   margin-top: 5px;
   width: 30px;
   height: 10px;
-  background-color: #748816;
-  border: 1px solid white;
+  border: 1px #fff8e7;
 `;
 
 const Head = styled.View`

@@ -77,7 +77,7 @@ function IndividualLessonHandler({ lessonData }) {
         <Stack.Screen name="Lesson" options={{ headerShown: false }}>
           {() => (
             <LessonComponent
-              lessonData={lessonData}
+              individualLessonData={lessonData}
               activitiesData={activitiesData}
             />
           )}

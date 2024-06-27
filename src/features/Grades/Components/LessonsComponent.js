@@ -31,7 +31,7 @@ function LessonsComponent({ lessonsData }) {
             </TitleText>
             <Spacer size="small" />
             <BodyText align="left" color="primary">
-              0/5
+              {`${item.completionTally}/${item.numActivities}`}
             </BodyText>
 
             <TouchableOpacity style={styles.startButton} 
