@@ -5,6 +5,8 @@ import { View, ActivityIndicator, StyleSheet } from "react-native";
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
 import { useGetGradeDataQuery } from "../../../../redux/curriculumApiSlice";
+import { useDispatch } from "react-redux";
+import { addGrade } from "../../../../redux/slices/curriculumLocationSlice";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +19,7 @@ const ChaptersHandler = ({ route })  => {
   //grade is a string e.g. 'Grade2'
   const { grade } = route.params; // route param is defined and passed in by HomeScreen.js. We pass it as a param to useGetGradeDataQuery
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const { data: gradeData, isLoading: gradeLoading, isSuccess: gradeSuccess, isError: gradeError, error: gradeErrorMessage } = useGetGradeDataQuery(
     { grade: grade }
@@ -24,7 +27,7 @@ const ChaptersHandler = ({ route })  => {
 
   useEffect(() => {
     if(gradeSuccess) {
-      console.log("Current Location:", grade)
+      dispatch(addGrade({ grade: grade }))
     }
   }, [gradeSuccess])
 

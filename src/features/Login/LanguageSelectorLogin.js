@@ -1,23 +1,6 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Pressable,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
-//import CountryFlag from "react-native-country-flag";
-//import styled from "styled-components/native";
-
-/* import { BodyText } from "../../../components/body-text.component";
-import { useDispatch } from "react-redux"; */
-//import { setEnglish, setKazakh, setRussian } from "../../../../redux/slices/languageSlice";
-
-/* const Row = styled.View`
-  flex-direction: row;
-`; */
 
 const Flag = ({ source }) => {
   return (

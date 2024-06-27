@@ -1,6 +1,7 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
 import { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroom } from "../src/features/Grades/Handlers/UserFunctions";
 
+//this file contains all the user queries/mutations
 export const apiSlice = createApi({
    reducerPath: "api",
    baseQuery: fakeBaseQuery(),

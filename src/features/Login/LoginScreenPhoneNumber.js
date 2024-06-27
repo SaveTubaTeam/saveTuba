@@ -5,12 +5,8 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth } from "../../../firebase";
 import { Alert } from 'react-native';
-
-import { fetchImages } from "../../../redux/slices/imageSlice";
-import { setKazakh, setEnglish, setRussian } from "../../../redux/slices/languageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, fetchUser } from "../../../redux/slices/userSlice";
-import { getCacheObject, postBoilerplate } from "../Grades/Handlers/Database";
 import SelectorLogin from "./LanguageSelectorLogin";
 
 const ImageBg = styled.ImageBackground`

@@ -1,47 +1,57 @@
 import React from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTheme } from "@react-navigation/native";
+import { pageBack } from "../../../redux/slices/curriculumLocationSlice";
+import { useNavigation } from "@react-navigation/native";
 
-export const Header = ({ title, back, navigation }) => {
+export const Header = ({ title, back, reduxParam }) => {
   const theme = useTheme();
-  return (
-    <>
-      <View
-        style={{
-          width: "100%",
-          justifyContents: "center",
-          alignItems: "center",
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
 
-          backgroundColor: "#C6DC3B",
-        }}
-      >
-        <TouchableOpacity
-          style={{
-            position: "absolute",
-            left: 10,
-            flexDirection: "row",
-            paddingTop: 3,
+  return (
+      <View style={styles.headerContainer}>
+
+        <TouchableOpacity style={styles.backButton}
+          onPress={() => { 
+            navigation.navigate(back);
+            dispatch(pageBack({ curriculumLayer: reduxParam }));
           }}
-          onPress={() => navigation.navigate(back)}
         >
           <Ionicons name="chevron-back" size={26} color="#748816" />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontFamily: "BalsamiqSans_400Regular",
-            color: "#748816",
-            fontSize: 20,
-            paddingBottom: 10,
-          }}
-        >
+
+        <Text style={styles.text}>
           {title}
         </Text>
+
       </View>
-    </>
   );
 };
+
+const styles = StyleSheet.create({
+  headerContainer: {
+    width: "100%",
+    justifyContents: "center",
+    alignItems: "center",
+    backgroundColor: "#C6DC3B",
+  },
+  backButton: {
+    position: "absolute",
+    left: 10,
+    flexDirection: "row",
+    paddingTop: 3,
+  },
+  text: {
+    fontFamily: "BalsamiqSans_400Regular",
+    color: "#748816",
+    fontSize: 20,
+    paddingBottom: 10,
+  }
+})
 
 export const Container = styled.View`
   flex: 1;

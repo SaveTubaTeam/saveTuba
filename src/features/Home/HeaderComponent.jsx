@@ -14,7 +14,7 @@ export default function HeaderComponent({ title }) {
  
          <TouchableOpacity style={styles.parentIcon} onPress={() => {
             dispatch(apiSlice.util.resetApiState());
-            console.log("\t\t\t!RTK QUERY API CACHE INVALIDATED GLOBALLY!")
+            console.log("--------! RTK QUERY API CACHE INVALIDATED GLOBALLY !--------");
          }}>
             <Ionicons name="people-circle" size={45} color="#748816" />
          </TouchableOpacity>

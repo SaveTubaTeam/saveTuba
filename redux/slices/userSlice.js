@@ -23,7 +23,7 @@ const userSlice = createSlice({
         addCompletions(state, action) {
             const { completions } = action.payload;
             state.completions = completions;
-            console.log("getCompletionsArray dispatched addCompletions | COMPLETIONS:", completions);
+            console.log("getCompletionsArray dispatched addCompletions | ACTIVITY COMPLETIONS:", completions.length);
         },
         addClassroom(state, action) {
             const { classroomObject } = action.payload;
@@ -36,6 +36,4 @@ const userSlice = createSlice({
 export const { signInUser, signOutUser, addCompletions, addClassroom } = userSlice.actions;
 export default userSlice.reducer //exports all reducers from const usersSlice
 
-//writing a small selector function for the user state within userSlice. 
-//The purpose of this is to define a reusable selector function which does not need to be changed even when changing data formats in the reducer.
 export const selectCurrentUser = state => state.user.userData;

@@ -11,30 +11,6 @@ import { BodyText } from "../../../components/body-text.component";
 import { TitleText } from "../../../components/title-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
 
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: #cce882;
-`;
-
-const Chapter = styled.TouchableOpacity`
-  width: 90%;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  align-self: center;
-`;
-
-const Icon = styled.Image`
-  height: 100px;
-  width: undefined;
-  aspect-ratio: 1;
-
-  position: absolute;
-  right: 25px;
-  top: -20px;
-`;
-
 //This component is responsible for creating every chapter card in the selected Grade
 //It is then rendered via ChaptersHandler.js
 
@@ -42,13 +18,10 @@ const Icon = styled.Image`
 function ChaptersComponent({ gradeData, navigation, gradeNumber }) {
   const nav = useNavigation();
   const { t } = useTranslation();
+
   const renderItem = ({ item }) => {
     return (
-      <Chapter
-        onPress={() => {
-          nav.navigate(item.navigation);
-        }}
-      >
+      <Chapter onPress={() => { nav.navigate(item.navigation); }}>
         <LinearGradient
           colors={[item.colorOne, item.colorTwo]}
           start={{ x: 0, y: 0, }}
@@ -81,7 +54,7 @@ function ChaptersComponent({ gradeData, navigation, gradeNumber }) {
         <Header
           title={`${t("common:grade")} ${gradeNumber.match(/\d+/g)}`}
           back="Grades"
-          navigation={navigation}
+          reduxParam="grade"
         />
         <FlatList
           style={{ width: "100%" }}
@@ -96,3 +69,26 @@ function ChaptersComponent({ gradeData, navigation, gradeNumber }) {
 }
 
 export default ChaptersComponent;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #cce882;
+`;
+
+const Chapter = styled.TouchableOpacity`
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  align-self: center;
+`;
+
+const Icon = styled.Image`
+  height: 100px;
+  width: undefined;
+  aspect-ratio: 1;
+  position: absolute;
+  right: 25px;
+  top: -20px;
+`;

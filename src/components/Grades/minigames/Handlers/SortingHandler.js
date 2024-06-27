@@ -9,7 +9,8 @@ import { BodyText } from "../../../body-text.component";
 import { SafeArea } from "../../../safe-area.component";
 import { ImageBg } from "../../grades.styles";
 import { Spacer } from "../../../spacer.component";
-
+import { useDispatch } from "react-redux";
+import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 
 const Stack = createNativeStackNavigator();
@@ -27,9 +28,12 @@ const Start = ({ objectData }) => {
   const [currentAnswer, setCurrentAnswer] = useState(optionsArray[count].name);
 
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   //shuffling options upon initial render.
   useEffect(() => {
+    dispatch(addActivity({ activity: "Sorting" }));
+    
     const shuffledOptions = [...objectData.options];
     shuffledOptions.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array
 

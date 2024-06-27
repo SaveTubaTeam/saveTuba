@@ -58,7 +58,7 @@ const AssignmentCard = memo(({ content }) => {
    // jac927 6/26/24 | Dear whoever is reading, I fell into a rabbit hole of optimization for the below pushToLesson function.
    // I would advise that you think of a radically different solution than to continue to optimize this function.
    // The missing piece of the puzzle is a page focus listener for each layer of stack navigation.
-   // This pushToLesson function will not work if rendering for any of the below navigation 'layers' takes longer than 300ms.
+   // This pushToLesson function will not work if rendering for any of the below navigation 'layers' takes longer than 500ms.
    useEffect(() => {
       async function pushToLesson() {
          if(gradeSuccess && lessonsSuccess && activitiesSuccess) {
@@ -67,10 +67,10 @@ const AssignmentCard = memo(({ content }) => {
             await new Promise(resolve => setTimeout(resolve, 100));
             navigation.navigate("ChaptersHandler", { grade: gradeParam });
 
-            await new Promise(resolve => setTimeout(resolve, 100));
+            await new Promise(resolve => setTimeout(resolve, 300));
             navigation.navigate(chapterParam);
 
-            await new Promise(resolve => setTimeout(resolve, 300));
+            await new Promise(resolve => setTimeout(resolve, 500));
             navigation.navigate(`Lesson${lessonParam}`);
             setButtonPressed(false);
          }

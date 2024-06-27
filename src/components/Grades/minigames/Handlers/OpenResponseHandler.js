@@ -1,27 +1,14 @@
-import React, { useState } from "react";
-import {
-  View,
-  TextInput,
-  ScrollView,
-  Modal,
-  TouchableOpacity,
-  Pressable,
-  FlatList,
-} from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, ScrollView } from "react-native";
 import { Image } from 'expo-image';
 import styled from "styled-components/native";
-import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
-import { Button } from "react-native-paper";
-
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { ImageBg } from "../../grades.styles";
-
 import ImageUpload from "../ImageUpload";
-
-import { getChapterData, getLessonData, getGradeData } from "../../../../features/Grades/Handlers/Database.js";
-import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
+import { useDispatch } from "react-redux";
+import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 const ModalContainer = styled.View`
   background-color: white;
@@ -32,9 +19,13 @@ const ModalContainer = styled.View`
 `;
 
 //@param data is the OpenResponse object passed in from OpenResponseHandler
-const ImagePrompt = ({ data, imageMap }) => {
-  const navigation = useNavigation();
+const ImagePrompt = ({ data }) => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
+
+  useEffect(() => {
+    dispatch(addActivity({ activity: "ImageBoom" }));
+  },[])
 
   return (
     <ScrollView>
@@ -66,25 +57,19 @@ const ImagePrompt = ({ data, imageMap }) => {
 };
 
 //@param objectData is the OpenResponse object
-const OpenResponseHandler = ({ objectData, imageMap }) => {
+const OpenResponseHandler = ({ objectData }) => {
   
   return (
     <View style={{ flex: 1 }}>
       <ImageBg
         source={require("../../../../../assets/openResponseBg.jpg")} //hardcoded background
         resizeMode="cover"
-        style={{
-          flex: 1,
-        }}
+        style={{ flex: 1 }}
       >
-        <View
-          style={{
-            flex: 1,
-            width: "100%",
-          }}
-        >
-          <ImagePrompt data={objectData} imageMap={imageMap} />
+        <View style={{ flex: 1, width: "100%" }}>
+          <ImagePrompt data={objectData} />
         </View>
+
       </ImageBg>
     </View>
   );

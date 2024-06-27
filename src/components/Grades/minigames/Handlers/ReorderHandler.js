@@ -1,69 +1,14 @@
 import React, { useState, useEffect } from "react";
-import {
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-  TextInput,
-  ScrollView,
-  Modal,
-  Pressable,
-  FlatList,
-  ImageBackground,
-} from "react-native";
+import { ImageBackground } from "react-native";
 import styled from "styled-components/native";
-import { useNavigation } from "@react-navigation/native";
-
-import { connect } from "react-redux";
 import DragList from 'react-native-draglist';
-
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import { Spacer } from "../../../spacer.component";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: #cce882;
-`;
-
-const ModalContainer = styled.View`
-  background-color: white;
-  width: 70%;
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid #cce882;
-`;
-
-const Prompt = styled.View`
-  width: 90%;
-  background-color: #fff;
-  border-radius: 30px;
-  padding: 20px;
-  margin-bottom: 10px;
-  align-items: center;
-  align-self: center;
-`;
-
-const SubmitButton = styled.TouchableOpacity`
-  width: 60%;
-  height: 40px;
-  background-color: #748816;
-  align-self: center;
-  justify-content: center;
-  border-radius: 20px;
-`;
-
-const Item = styled.TouchableOpacity`
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 5px 0;
-  align-self: center;
-`;
+import { useDispatch } from "react-redux";
+import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 const REORDER_GRADIENTS = [
   {active: "#c58bda", dormant: "#b897e8"}, 
@@ -81,11 +26,12 @@ const REORDER_GRADIENTS = [
 //@param objectData the reorder object passed in from IndividualLessonHandler
 const ReorderHandler = ({ objectData }) => {
   //console.log("Data In: ", objectData);
+  const dispatch = useDispatch();
   const [originalArray, setOriginalArray] = useState(objectData.content);
   const [data, setData] = useState(objectData.content);
 
   useEffect(() => {
-    setOriginalArray(objectData.content); //to prevent unwanted re-rendering I useState the originalArray. Is probably unnecessary.
+    dispatch(addActivity({ activity: "Reorder" }))
 
     const shuffledData = [...data]; // Creating a copy of data array for safe mutation
     shuffledData.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array
@@ -102,7 +48,6 @@ const ReorderHandler = ({ objectData }) => {
   const { t } = useTranslation();
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [score, setScore] = useState(0);
-  const navigation = useNavigation();
 
   function renderItem(info) {
     const { item, onDragStart, onDragEnd, isActive } = info;
@@ -167,13 +112,9 @@ const ReorderHandler = ({ objectData }) => {
   //react-native-reanimated
   //react-native-gesture-handler
   return (
-    <ImageBackground source={require("../../../../../assets/reorderbg.jpg")} 
-    style={{
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    }} 
-    imageStyle= {{ opacity: 0.7 }}
+    <ImageBackground 
+      source={require("../../../../../assets/reorderbg.jpg")} 
+      style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} 
     >
       <DragList
         scrollEnabled={true}
@@ -201,3 +142,30 @@ const ReorderHandler = ({ objectData }) => {
 };
 
 export default ReorderHandler;
+
+const Prompt = styled.View`
+  width: 90%;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+  align-self: center;
+`;
+
+const SubmitButton = styled.TouchableOpacity`
+  width: 60%;
+  height: 40px;
+  background-color: #748816;
+  align-self: center;
+  justify-content: center;
+  border-radius: 20px;
+`;
+
+const Item = styled.TouchableOpacity`
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+  align-self: center;
+`;

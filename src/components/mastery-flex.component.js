@@ -43,7 +43,6 @@ export const MasteryFlex = ({ masteryArray, navigation }) => {
 
     const nav = useNavigation();
     const { t } = useTranslation();
-    const imageMap = useSelector(state => state.imageMap.imageData);
 
     return (
         <View style={styles.container}>

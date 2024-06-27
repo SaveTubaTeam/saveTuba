@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import IndividualLessonHandler from "./IndividualLessonHandler";
 import LessonsComponent from "../Components/LessonsComponent";
 import { useGetLessonsDataQuery } from "../../../../redux/curriculumApiSlice";
+import { useDispatch } from "react-redux";
+import { addChapter } from "../../../../redux/slices/curriculumLocationSlice";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +21,7 @@ function LessonsHandler({ gradeNumber, selectedChapter, numLessons }) {
   const { t, i18n } = useTranslation();
   const languageCode = i18n.language; //setting the languageCode to the current language
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const { data: lessonsData, isLoading: lessonsLoading, isSuccess: lessonsSuccess, isError: lessonsError, error: lessonsErrorMessage } = useGetLessonsDataQuery(
     { grade: gradeNumber, chpt: selectedChapter, numLessons: numLessons, languageCode: languageCode }
@@ -26,7 +29,7 @@ function LessonsHandler({ gradeNumber, selectedChapter, numLessons }) {
 
   useEffect(() => {
     if(lessonsSuccess) {
-      console.log("Current Location:", gradeNumber, selectedChapter)
+      dispatch(addChapter({ chapter: selectedChapter }));
     }
   }, [lessonsSuccess])
 

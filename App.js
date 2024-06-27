@@ -1,7 +1,7 @@
 import 'expo-dev-client';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect, useState, useCallback } from "react";
-import * as encoding from "text-encoding";
+import * as encoding from "text-encoding"; //NECESSARY IMPORT! for i18n I believe
 import { LogBox } from "react-native";
 import 'intl-pluralrules';
 // Theme stuff
@@ -18,13 +18,9 @@ import {
   BalsamiqSans_700Bold,
 } from "@expo-google-fonts/balsamiq-sans";
 import * as SplashScreen from 'expo-splash-screen';
-
-// Translation imports
-import { useTranslation } from "react-i18next";
 import "./src/components/Translations/IMLocalize"; //gets either cached language or phone's locale language
 
-import { enableFreeze, enableScreens } from 'react-native-screens';
-enableFreeze(true);
+import { enableScreens } from 'react-native-screens';
 enableScreens();
 
 // navigation stuff
@@ -32,24 +28,20 @@ import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //import 'react-native-reanimated';
 
-// Different Screens thus far
-import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
+//import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
 import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"
-import Register from "./src/features/Login/Register";
 import RegisterScreen from "./src/features/Login/RegisterScreen";
-import RegisterTeacher from "./src/features/Login/RegisterTeacher";
 import MainScreen from "./src/components/Main";
 
 // Redux Imports
 import { store } from "./redux/store/store";
 import { Provider } from "react-redux";
 
-//ReorderHandler import. Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
+//Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 //Platform import to detect and log current iOS/Android version
 import { Platform, UIManager } from 'react-native';
-
 import Toast from 'react-native-toast-message';
 
 //Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
@@ -64,9 +56,9 @@ const Stack = createNativeStackNavigator();
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
-LogBox.ignoreAllLogs();
+//The below .ignore lines apply only to LogBox and not the actual console. Was a point of confusion for me.
+LogBox.ignoreAllLogs(); //ignores warnings only!
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
-LogBox.ignoreLogs([/ImmutableStateInvariantMiddleware took/]); //to regex ignore odd redux toolkit development mode warning. Maybe should be unignored if redux performance gets noticeably slow
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);

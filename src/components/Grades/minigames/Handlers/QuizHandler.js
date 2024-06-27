@@ -1,85 +1,32 @@
-import React, { useState } from "react";
-import {
-  View,
-  Modal,
-  Pressable,
-  TouchableOpacity,
-  Text,
-  FlatList,
-} from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Modal, TouchableOpacity, Text, FlatList } from "react-native";
 import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
+import { useDispatch } from "react-redux";
+import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 const Stack = createNativeStackNavigator();
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-`;
-
-const ImageBg = styled.ImageBackground`
-  width: 100%;
-  height: 100%;
-`;
-
-const Category = styled.TouchableOpacity`
-  justify-content: center;
-  background-color: white;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 10px;
-  width: 200px;
-`;
-
-const ModalContainer = styled.View`
-  background-color: white;
-  width: 60%;
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid #cce882;
-`;
-
-const Prompt = styled.View`
-  width: 80%;
-  background-color: #fff;
-  border-radius: 30px;
-  padding: 20px;
-  margin-bottom: 10px;
-`;
-const SubmitButton = styled.TouchableOpacity`
-  width: 100px;
-  justify-content: center;
-  height: 40px;
-  background-color: #748816;
-  align-self: center;
-  border-radius: 20px;
-`;
-
-const Question = styled.View`
-  width: 90%;
-  margin-bottom: 20px;
-`;
 
 //Main function. Handles most logic. 
 //@param data is taken from QuizScreen format in Firebase
 const Start = ({ data }) => {
-  //const navigation = useNavigation();
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const [correctAnswer, setCorrectAnswer] = useState(false);
   const [count, setCount] = useState(0);
   const [score, setScore] = useState(0);
-
-  //console.log("Start ==> ", data.content[0].prompt);
   
   //defining visibility state modals
   const [visible, setVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
+
+  useEffect(() => {
+    dispatch(addActivity({ activity: "Quiz" }));
+  },[])
 
   //called when we click "Next" on the answer modal. We iterate count until the end of the quiz
   const nextQuestion = () => {
@@ -166,48 +113,45 @@ const Start = ({ data }) => {
   };
 
   return (
-    <>
-      <ImageBg source={require("../../../../../assets/quizbg.jpg")}>
-        <Container>
-          <Question>
-            <TitleText size="title">{data.content[count].prompt}</TitleText>
-          </Question>
+    <ImageBg source={require("../../../../../assets/quizbg.jpg")}>
+      <Container>
+        <Question>
+          <TitleText size="title">{data.content[count].prompt}</TitleText>
+        </Question>
 
-          {/* Flatlist takes content from our current count in data */}
-          {/* If count changes, we have changed the data inside of Flatlist and then Flatlist is forced to re-render. */}
-          <FlatList
-            scrollEnabled={true}
-            data={data.content[count].answers}
-            keyExtractor={(item) => item}
-            renderItem={renderAnswers}
-            style={{ display: "flex" }}
-            contentContainerStyle={{
-              alignItems: "center",
-            }}
-          />
+        {/* Flatlist takes content from our current count in data */}
+        {/* If count changes, we have changed the data inside of Flatlist and then Flatlist is forced to re-render. */}
+        <FlatList
+          scrollEnabled={true}
+          data={data.content[count].answers}
+          keyExtractor={(item) => item}
+          renderItem={renderAnswers}
+          style={{ display: "flex" }}
+          contentContainerStyle={{
+            alignItems: "center",
+          }}
+        />
 
-          <ModalComponent visible={visible}  />
+        <ModalComponent visible={visible}  />
 
-            {/* marked for translation */}
-          <CompletionModal 
-            startCompletionProcess={completionModalVisible} 
-            score={score} 
-            prompt={t("minigames:quizprompt")}
-            activityType={"Quiz"}
-            totalPossibleScore={data.content.length}
-          >
-          </CompletionModal>
+          {/* marked for translation */}
+        <CompletionModal 
+          startCompletionProcess={completionModalVisible} 
+          score={score} 
+          prompt={t("minigames:quizprompt")}
+          activityType={"Quiz"}
+          totalPossibleScore={data.content.length}
+        >
+        </CompletionModal>
 
-        </Container>
-      </ImageBg>
-    </>
+      </Container>
+    </ImageBg>
   );
 };
 
 //Entry Point for logic.
 //@param objectData the quiz object passed in from IndividualLessonHandler
 const QuizHandler = ({ objectData }) => {
-  // console.log("Handler ==> ", data);
   return ( //defining the stack
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
@@ -218,3 +162,53 @@ const QuizHandler = ({ objectData }) => {
 };
 
 export default QuizHandler;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+`;
+
+const ImageBg = styled.ImageBackground`
+  width: 100%;
+  height: 100%;
+`;
+
+const Category = styled.TouchableOpacity`
+  justify-content: center;
+  background-color: white;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+`;
+
+const ModalContainer = styled.View`
+  background-color: white;
+  width: 60%;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #cce882;
+`;
+
+const Prompt = styled.View`
+  width: 80%;
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+`;
+const SubmitButton = styled.TouchableOpacity`
+  width: 100px;
+  justify-content: center;
+  height: 40px;
+  background-color: #748816;
+  align-self: center;
+  border-radius: 20px;
+`;
+
+const Question = styled.View`
+  width: 90%;
+  margin-bottom: 20px;
+`;

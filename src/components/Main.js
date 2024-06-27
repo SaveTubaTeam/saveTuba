@@ -33,7 +33,6 @@ const SaveTuba = () => {
         tabBarInactiveTintColor: "#fff",
         headerShown: false,
         tabBarHideOnKeyboard: true,
-
         tabBarIconStyle: {
           marginTop: 4,
         },
@@ -45,7 +44,6 @@ const SaveTuba = () => {
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
-        /* store={store} */
         options={{
           title: "",
           tabBarIcon: ({ color }) => (

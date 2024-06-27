@@ -7,9 +7,12 @@ import { BodyText } from "../../../body-text.component.js";
 import { Spacer } from "../../../spacer.component.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal.js";
 import { Image } from "expo-image";
+import { useDispatch } from "react-redux";
+import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 //@param objectData passed from IndividualLessonHandler
 const MemoryHandler = ({ objectData }) => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const [cardsArray, setCardsArray] = useState(null);
 
@@ -32,6 +35,8 @@ const MemoryHandler = ({ objectData }) => {
   //to initially randomly sort the array
   useEffect(() => {
     console.log(objectData.content);
+    dispatch(addActivity({ activity: "Memory" }));
+    
     const cardsArrayShuffled = [...objectData.content];
     cardsArrayShuffled.sort(() => Math.random() - 0.5); //shuffle array
 
@@ -91,9 +96,9 @@ const MemoryHandler = ({ objectData }) => {
   };
 
   return (
-    <ImageBackground source={require("../../../../../assets/memorybg.jpg")} 
-    style={styles.container} 
-    imageStyle= {{ opacity: 0.7 }}
+    <ImageBackground 
+      source={require("../../../../../assets/memorybg.jpg")} 
+      style={styles.container} 
     >
 
       <View style={{ alignSelf: "center", width: "80%", position: "absolute", 

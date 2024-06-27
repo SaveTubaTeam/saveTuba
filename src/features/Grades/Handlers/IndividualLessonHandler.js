@@ -6,6 +6,10 @@ import { useSelector } from "react-redux";
 import { useGetActivitiesDataQuery } from "../../../../redux/curriculumApiSlice.js";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { CurriculumLocationContext } from "./HandlerContexts.js";
+import { Header } from "../../../components/Grades/grades.styles.js";
+import { SafeArea } from "../../../components/safe-area.component.js";
+import { useDispatch } from "react-redux";
+import { addLesson } from "../../../../redux/slices/curriculumLocationSlice.js";
 
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
@@ -39,10 +43,8 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
   const navigation = useNavigation();
   const { t, i18n } = useTranslation();
   const languageCode = i18n.language;
-  const imageMap = useSelector(state => state.imageMap.imageData);
-
-  //const [activitiesData, setActivitiesData] = useState(null);
   const [activitiesMap, setActivitiesMap] = useState(null);
+  const dispatch = useDispatch();
 
   const { data: activitiesData, isLoading: activitiesLoading, isSuccess: activitiesSuccess, isError: activitiesError, error: activitiesErrorMessage } = useGetActivitiesDataQuery(
     { grade: gradeNumber, chpt: selectedChapter, lesson: lessonData.navigation, languageCode: languageCode }
@@ -58,7 +60,8 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
       })
 
       setActivitiesMap(map);
-      console.log("Current Location:", gradeNumber, selectedChapter, lessonData.navigation)
+
+      dispatch(addLesson({ lesson: lessonData.navigation }));
     }
   }, [activitiesSuccess]);
 
@@ -79,15 +82,9 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
               chapterNumber: selectedChapter, 
               lessonNumber: lessonData.navigation}}>
       <Stack.Navigator initialRouteName="Lesson">
-        <Stack.Screen
-          name="Lesson"
-          options={{
-            headerShown: false,
-          }}
-        >
+        <Stack.Screen name="Lesson" options={{ headerShown: false }}>
           {() => (
             <LessonComponent
-              imageMap={imageMap}
               lessonData={lessonData}
               activitiesData={activitiesData}
               navigation={navigation}
@@ -100,20 +97,16 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
           <Stack.Screen
             key={name}
             name={name}
-            options={{
-              title: t(title),
-              headerTintColor: "white",
-              headerBackTitleVisible: false,
-              headerStyle: { backgroundColor: "#C6DC3B" },
-              headerTitleStyle: { fontFamily: "BalsamiqSans_400Regular" },
-            }}
+            options={{ headerShown: false }}
           >
             {() => (
-              <Component
-                objectData={activitiesMap.get(name)}
-                navigation={navigation}
-                imageMap={imageMap}
-              />
+              <SafeArea>
+                <Header title={t(title)} back={"Lesson"} reduxParam={"activity"}/>
+                <Component
+                  objectData={activitiesMap.get(name)}
+                  navigation={navigation}
+                />
+              </SafeArea>
             )}
           </Stack.Screen>
         ))}
@@ -131,7 +124,6 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
 }
 
 export default IndividualLessonHandler;
-
 
 const styles = StyleSheet.create({
   container: {
