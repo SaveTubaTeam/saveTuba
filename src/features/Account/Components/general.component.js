@@ -12,6 +12,8 @@ import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
 import Selector from "./LanguageSelector";
+import AboutModal from "./AboutModal";
+import HelpModal from "./HelpModal";
 
 export const GeneralCard = () => {
   const { t } = useTranslation();
@@ -51,25 +53,6 @@ export const GeneralCard = () => {
           />
         </Row>
 
-        {/* <Row>
-          <BodyText color="quaternary">{t("common:reminders")}</BodyText>
-          <Switch
-            trackColor={{ false: "#767577", true: "#81b0ff" }}
-            thumbColor={isRemindersEnabled ? "#f5dd4b" : "#f4f3f4"}
-            ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitchR}
-            value={isRemindersEnabled}
-            // figure out flex in order to make switch more inlign
-            style={{
-              transform: [
-                { scaleX: moderateScale(0.8, 0.2) },
-                {
-                  scaleY: moderateScale(0.8, 0.2),
-                },
-              ],
-            }}
-          />
-        </Row> */}
         <Spacer size="medium" />
 
         <Row>
@@ -83,29 +66,10 @@ export const GeneralCard = () => {
               color={theme.colors.ui.primary}
             />
           </TouchableOpacity>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalHelpVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-              setModalHelpVisible(!modalHelpVisible);
-            }}
-          >
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <Text style={styles.modalText}>{t("about:help")}</Text>
-                <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => setModalHelpVisible(!modalHelpVisible)}
-                >
-                  <Text style={styles.textStyle}>{t("about:close")}</Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
           
+          <HelpModal modalHelpVisible={modalHelpVisible} setModalHelpVisible={setModalHelpVisible}/>
         </Row>
+
         <Spacer size="medium" />
 
         <Row>
@@ -119,34 +83,15 @@ export const GeneralCard = () => {
               color={theme.colors.ui.primary}
             />
           </TouchableOpacity>
-          <Modal
-            animationType="slide"
-            transparent={true}
-            visible={modalAboutVisible}
-            onRequestClose={() => {
-              Alert.alert("Modal has been closed.");
-              setModalAboutVisible(!modalAboutVisible);
-            }}
-          >
-            <View style={styles.centeredView}>
-              <View style={styles.modalView}>
-                <Text style={styles.modalText}>{t("about:about")}</Text>
-                <Pressable
-                  style={[styles.button, styles.buttonClose]}
-                  onPress={() => setModalAboutVisible(!modalAboutVisible)}
-                >
-                  <Text style={styles.textStyle}>{t("about:close")}</Text>
-                </Pressable>
-              </View>
-            </View>
-          </Modal>
+        
+          <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
         </Row>
+
         <Spacer size="medium" />
       </AvatarContainer>
     </Card>
   );
 };
-
 
 const AvatarContainer = styled.View`
   align-items: center;
@@ -157,39 +102,3 @@ const Row = styled.View`
   flex-direction: row;
   align-items: center;
 `;
-
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
-    alignItems: "center",
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: "#F194FF",
-  },
-  buttonClose: {
-    backgroundColor: "#2196F3",
-  },
-  textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
-  },
-});
