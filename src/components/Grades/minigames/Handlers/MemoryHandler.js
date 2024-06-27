@@ -120,7 +120,6 @@ const MemoryHandler = ({ objectData }) => {
         prompt={t("minigames:memoryprompt")} 
         score={score} 
         startCompletionProcess={completionModalVisible}
-        activityType={"Memory"}
         totalPossibleScore={score}
       />
     </ImageBackground>

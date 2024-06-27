@@ -52,7 +52,7 @@ const SubmitButton = styled.TouchableOpacity`
   border-radius: 20px;
 `;
 
-export default function ImageUpload({ score, prompt, activityType }) {
+export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
   const [finalURIArray, setFinalURIArray] = useState([]);
   const [loadingModal, setLoadingModal] = useState(false);
@@ -194,7 +194,6 @@ export default function ImageUpload({ score, prompt, activityType }) {
         startCompletionProcess={completionModalVisible} 
         prompt={t(prompt)} 
         content={finalURIArray} 
-        activityType={activityType}
       />
 
       <LoadingModal visible={loadingModal} />

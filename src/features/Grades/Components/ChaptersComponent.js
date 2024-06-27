@@ -2,9 +2,8 @@ import React from "react";
 import { FlatList, View, Image } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
-import { connect } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
-
+import { useSelector } from "react-redux"
 import { useTranslation } from "react-i18next";
 import { Header } from "../../../components/Grades/grades.styles";
 import { BodyText } from "../../../components/body-text.component";
@@ -15,7 +14,8 @@ import { SafeArea } from "../../../components/safe-area.component";
 //It is then rendered via ChaptersHandler.js
 
 //@param gradeData is an array of chapters and their metadata. it is taken as a param from ChaptersHandler.js
-function ChaptersComponent({ gradeData, navigation, gradeNumber }) {
+function ChaptersComponent({ gradeData }) {
+  const gradeNumber = useSelector(state => state.curriculum.grade)
   const nav = useNavigation();
   const { t } = useTranslation();
 

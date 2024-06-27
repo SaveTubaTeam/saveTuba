@@ -1,19 +1,15 @@
-import React, { useEffect, useState, useContext } from "react";
-import { CurriculumLocationContext } from "../../Grades/Handlers/HandlerContexts";
+import React, { useEffect, useState } from "react";
 import { theme } from "../../../infrastructure/theme";
 import { View, Modal, Pressable, TouchableOpacity, Text } from "react-native";
 import { Image } from "expo-image";
 import { Spacer } from "../../../components/spacer.component";
 import LottieView from "lottie-react-native";
-
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
-
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
-
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import { useUpdateUserXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
@@ -22,10 +18,12 @@ import styled from "styled-components/native";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
 //In the future this will be the one place that handles pushing content to db.
-const CompletionModal = ({ score, prompt, startCompletionProcess, content, activityType, totalPossibleScore }) => {
+const CompletionModal = ({ score, prompt, startCompletionProcess, content, totalPossibleScore }) => {
   const user = useSelector(selectCurrentUser);
-  const dispatch = useDispatch();
-  const { gradeNumber, chapterNumber, lessonNumber} = useContext(CurriculumLocationContext);
+  const gradeNumber = useSelector(state => state.curriculum.grade);
+  const chapterNumber = useSelector(state => state.curriculum.chapter);
+  const lessonNumber = useSelector(state => state.curriculum.lesson);
+  const activityType = useSelector(state => state.curriculum.activity);
 
   function concatenateFirstAndLastLetters(str) {
     const firstLetter = str[0];

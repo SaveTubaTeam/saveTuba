@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Modal, TouchableOpacity, Text, FlatList } from "react-native";
+import { View, Modal, TouchableOpacity, Text, FlatList, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
@@ -73,13 +73,7 @@ const Start = ({ data }) => {
 
             {/* green button 'Next' at the bottom of modal to move to the next question */}
             <TouchableOpacity
-              style={{
-                backgroundColor: "#748816",
-                borderRadius: 10,
-                marginTop: 10,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
+              style={styles.greenButtonModal}
               onPress={nextQuestion}
             >
               {/* marked for translation */}
@@ -139,7 +133,6 @@ const Start = ({ data }) => {
           startCompletionProcess={completionModalVisible} 
           score={score} 
           prompt={t("minigames:quizprompt")}
-          activityType={"Quiz"}
           totalPossibleScore={data.content.length}
         >
         </CompletionModal>
@@ -162,6 +155,16 @@ const QuizHandler = ({ objectData }) => {
 };
 
 export default QuizHandler;
+
+const styles = StyleSheet.create({
+  greenButtonModal: {
+    backgroundColor: "#748816",
+    borderRadius: 10,
+    marginTop: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+  }
+})
 
 const Container = styled.View`
   flex: 1;

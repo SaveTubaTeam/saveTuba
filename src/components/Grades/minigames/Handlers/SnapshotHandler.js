@@ -33,7 +33,6 @@ const SnapshotHandler = ({ objectData }) => {
             <ImageUpload 
               score={-1} 
               prompt={"minigames:snapshotprompt"} 
-              activityType={"Snapshot"}
             />
 
           </ScrollView>

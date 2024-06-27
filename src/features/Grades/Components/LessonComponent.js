@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, FlatList, ScrollView, TouchableOpacityBase, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native";
+import { View, FlatList, StyleSheet, ActivityIndicator } from "react-native";
 import { Image } from "expo-image";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
@@ -8,12 +8,14 @@ import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { MasteryFlex } from "../../../components/mastery-flex.component";
-import { Adventure, Header, ImageBg, Mastery } from "../../../components/Grades/grades.styles";
+import { Adventure, Header } from "../../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
 
 //This component formats and renders all of the lesson's contents
 //@param lessonData the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
-function LessonComponent({ lessonData, activitiesData, navigation }) {
+function LessonComponent({ lessonData, activitiesData }) {
+  const nav = useNavigation();
+  const { t } = useTranslation();
   const [minigames, setMinigames] = useState(null);
   const [mastery, setMastery] = useState(null);
 
@@ -29,9 +31,6 @@ function LessonComponent({ lessonData, activitiesData, navigation }) {
     setMastery(masteryCopy);
     setMinigames(minigamesCopy);
   }, []);
-
-  const nav = useNavigation();
-  const { t } = useTranslation();
 
   const renderItem = ({ item }) => {
     return (
@@ -110,7 +109,7 @@ function LessonComponent({ lessonData, activitiesData, navigation }) {
           style={{ marginBottom: 20, width: "100%" }}
           ListFooterComponentStyle={{ alignItems: "stretch", width: "85%" }}
           ListFooterComponent={
-            <MasteryFlex masteryArray={mastery} navigation={navigation} />
+            <MasteryFlex masteryArray={mastery} />
           }
         />
 

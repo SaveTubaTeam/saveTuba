@@ -133,7 +133,6 @@ const ReorderHandler = ({ objectData }) => {
           startCompletionProcess={completionModalVisible} 
           score={score} 
           prompt={t("minigames:reorderprompt")}
-          activityType={"Reorder"}
           totalPossibleScore={objectData.content.length}
         />
 

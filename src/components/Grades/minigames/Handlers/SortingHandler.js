@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Modal, TouchableOpacity, FlatList } from "react-native";
+import { View, Modal, TouchableOpacity, FlatList, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -58,13 +58,7 @@ const Start = ({ objectData }) => {
               </BodyText>
             </View>
             <TouchableOpacity
-              style={{
-                backgroundColor: "#748816",
-                borderRadius: 10,
-                marginTop: 10,
-                paddingTop: 5,
-                paddingBottom: 5,
-              }}
+              style={styles.greenButtonModal}
               onPress={() => {
                 if (count < optionsArray.length && optionsArray[count + 1] != null) {
                   setVisible(!visible);
@@ -159,7 +153,6 @@ const Start = ({ objectData }) => {
           startCompletionProcess={completionModalVisible} 
           score={score} 
           prompt={t("minigames:sortingprompt")}
-          activityType={"Sorting"}
           totalPossibleScore={optionsArray.length}
         />
       </Container>
@@ -179,6 +172,15 @@ const SortingHandler = ({ objectData }) => {
   );
 };
 
+const styles = StyleSheet.create({
+  greenButtonModal: {
+    backgroundColor: "#748816",
+    borderRadius: 10,
+    marginTop: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+  }
+})
 
 const Container = styled.View`
   flex: 1;

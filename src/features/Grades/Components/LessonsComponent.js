@@ -15,9 +15,10 @@ import { useTranslation } from "react-i18next";
 //This component renders every lesson card in the current chapter.
 //@param lessonsData an array of objects returned by getLessonsData() in LessonsHandler
 //       Each object within lessonsData is a lesson and all of that lesson's data (including mastery and minigame objects)
-function LessonsComponent({ lessonsData, navigation, chapterNumber }) {
+function LessonsComponent({ lessonsData }) {
   const nav = useNavigation();
   const { t } = useTranslation();
+  const chapterNumber = useSelector(state => state.curriculum.chapter)
 
   const renderItem = ({ item }) => {
     return (

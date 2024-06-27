@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
-import { useSelector } from "react-redux";
 import { useGetActivitiesDataQuery } from "../../../../redux/curriculumApiSlice.js";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import { CurriculumLocationContext } from "./HandlerContexts.js";
 import { Header } from "../../../components/Grades/grades.styles.js";
 import { SafeArea } from "../../../components/safe-area.component.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addLesson } from "../../../../redux/slices/curriculumLocationSlice.js";
-
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler"; //works
@@ -37,21 +33,23 @@ const SCREENS_CONFIG = [
 ];
 
 //The below handler is responsible for rendering the selected lesson and all of its contents via the LessonComponent.
-
 //@param lessonData is a lesson object taken from the lessonsData array and passed in as a prop
-function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
-  const navigation = useNavigation();
+function IndividualLessonHandler({ lessonData }) {
   const { t, i18n } = useTranslation();
   const languageCode = i18n.language;
   const [activitiesMap, setActivitiesMap] = useState(null);
   const dispatch = useDispatch();
+  const gradeNumber = useSelector(state => state.curriculum.grade)
+  const chapterNumber = useSelector(state => state.curriculum.chapter)
 
   const { data: activitiesData, isLoading: activitiesLoading, isSuccess: activitiesSuccess, isError: activitiesError, error: activitiesErrorMessage } = useGetActivitiesDataQuery(
-    { grade: gradeNumber, chpt: selectedChapter, lesson: lessonData.navigation, languageCode: languageCode }
+    { grade: gradeNumber, chpt: chapterNumber, lesson: lessonData.navigation, languageCode: languageCode }
   )
 
   useEffect(() => { 
     if(activitiesSuccess) {
+      dispatch(addLesson({ lesson: lessonData.navigation }));
+
       let map = new Map(); //iterating through activities array to set a map of every minigame and mastery object for easy access
       console.log(`\n\t${lessonData.navigation} activities:`);
       activitiesData.forEach((currentObject) => {
@@ -60,8 +58,6 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
       })
 
       setActivitiesMap(map);
-
-      dispatch(addLesson({ lesson: lessonData.navigation }));
     }
   }, [activitiesSuccess]);
 
@@ -77,17 +73,12 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
     content = null;
   } else if(activitiesSuccess) {
     content = (
-    <CurriculumLocationContext.Provider 
-      value={{gradeNumber: gradeNumber, 
-              chapterNumber: selectedChapter, 
-              lessonNumber: lessonData.navigation}}>
       <Stack.Navigator initialRouteName="Lesson">
         <Stack.Screen name="Lesson" options={{ headerShown: false }}>
           {() => (
             <LessonComponent
               lessonData={lessonData}
               activitiesData={activitiesData}
-              navigation={navigation}
             />
           )}
         </Stack.Screen>
@@ -102,17 +93,13 @@ function IndividualLessonHandler({ gradeNumber, selectedChapter, lessonData }) {
             {() => (
               <SafeArea>
                 <Header title={t(title)} back={"Lesson"} reduxParam={"activity"}/>
-                <Component
-                  objectData={activitiesMap.get(name)}
-                  navigation={navigation}
-                />
+                <Component objectData={activitiesMap.get(name)} />
               </SafeArea>
             )}
           </Stack.Screen>
         ))}
 
       </Stack.Navigator>
-    </CurriculumLocationContext.Provider>
     )
   }
 

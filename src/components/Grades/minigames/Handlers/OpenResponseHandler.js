@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView } from "react-native";
+import { View, ScrollView, StyleSheet } from "react-native";
 import { Image } from 'expo-image';
 import styled from "styled-components/native";
 import { useTranslation } from "react-i18next";
@@ -9,14 +9,6 @@ import { ImageBg } from "../../grades.styles";
 import ImageUpload from "../ImageUpload";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
-
-const ModalContainer = styled.View`
-  background-color: white;
-  width: 60%;
-  padding: 30px;
-  border-radius: 20px;
-  border: 2px solid #cce882;
-`;
 
 //@param data is the OpenResponse object passed in from OpenResponseHandler
 const ImagePrompt = ({ data }) => {
@@ -29,16 +21,7 @@ const ImagePrompt = ({ data }) => {
 
   return (
     <ScrollView>
-        <View
-          style={{
-            width: "90%",
-            padding: 15,
-            alignItems: "center",
-            backgroundColor: "white",
-            margin: 20,
-            borderRadius: 15,
-          }}
-        >
+        <View style={styles.contentContainer}>
             <Image 
               source={{uri: data.imageDownloadURL}} 
               placeholder={data.imageBlurHash}
@@ -50,7 +33,7 @@ const ImagePrompt = ({ data }) => {
           </TitleText>
         </View>
 
-        <ImageUpload score={-1} prompt={"minigames:openresponseprompt"} activityType={"ImageBoom"}/>
+        <ImageUpload score={-1} prompt={"minigames:openresponseprompt"} />
 
     </ScrollView>
   );
@@ -76,3 +59,14 @@ const OpenResponseHandler = ({ objectData }) => {
 };
 
 export default OpenResponseHandler;
+
+const styles = StyleSheet.create({
+  contentContainer: {
+    width: "90%",
+    padding: 15,
+    alignItems: "center",
+    backgroundColor: "white",
+    margin: 20,
+    borderRadius: 15,
+  }
+})

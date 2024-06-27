@@ -47,9 +47,7 @@ const ChaptersHandler = ({ route })  => {
       <Stack.Screen name="Grade" options={{ headerShown: false }}>
         {() => (
           <ChaptersComponent
-            navigation={navigation}
             gradeData={gradeData}
-            gradeNumber={grade}
           />
         )}
       </Stack.Screen>
@@ -63,7 +61,6 @@ const ChaptersHandler = ({ route })  => {
         >
           {() => (
             <LessonsHandler
-              gradeNumber={grade}
               selectedChapter={chapter.navigation}
               numLessons={chapter.numLessons}
             />

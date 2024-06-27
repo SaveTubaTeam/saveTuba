@@ -19,7 +19,7 @@ const curriculumApiSlice = apiSlice.injectEndpoints({
                result ? [{ type: "GradeData", id: grade }] : [{ type: "GradeData" }],
       }),
 
-      getLessonsData: builder.query({
+      getLessonsData: builder.query({ //numLessons is an int
          async queryFn({ grade, chpt, numLessons, languageCode }) {
             try {
                console.log("\t\t\trunning getLessonsData in curriculumApiSlice.js . . .");

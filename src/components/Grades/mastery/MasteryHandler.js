@@ -38,10 +38,7 @@ const MasteryHandler = ({ objectData }) => {
   return (
     <ImageBg
       resizeMode="cover"
-      style={{
-        flex: 1,
-        paddingTop: 20
-      }}
+      style={{ flex: 1, paddingTop: 20 }}
       source={require("../../../../assets/masterybg.png")}
     >
       <FlatList
@@ -59,7 +56,7 @@ const MasteryHandler = ({ objectData }) => {
             <Prompt>
               <TitleText size="subtitle">{objectData.prompt}</TitleText>
             </Prompt>
-            <ImageUpload score={-2} prompt={"minigames:masteryprompt"} activityType={"Mastery"} />
+            <ImageUpload score={-2} prompt={"minigames:masteryprompt"} />
           </>
         }
       />
@@ -83,12 +80,4 @@ const Prompt = styled.View`
   margin-bottom: 10px;
   align-items: center;
   overflow: hidden;
-`;
-
-const InputContainer = styled.View`
-  width: 100%;
-  background-color: white;
-  margin: 10px;
-  border-radius: 30px;
-  padding: 20px;
 `;
