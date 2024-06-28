@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, View, Modal, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
-import styled from "styled-components";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Image } from "expo-image";
 import SaigaCarousel from "./SaigaCarousel";
+import LottieView from "lottie-react-native";
 
 export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    const { t } = useTranslation();
@@ -61,6 +61,20 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
                source={require("../../../../assets/tuba-low-quality.png")}
             />
 
+            <LottieView 
+               source={require("../../../../assets/lottie-animations/flowers1-animation.json")}
+               autoPlay={true}
+               loop={false}
+               style={styles.flowerAnimationOne}
+            />
+
+            <LottieView 
+               source={require("../../../../assets/lottie-animations/flowers2-animation.json")}
+               autoPlay={true}
+               loop={false}
+               style={styles.flowerAnimationTwo}
+            />
+
          </View>
       </Modal>
    )
@@ -89,7 +103,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       borderWidth: 3,
       borderColor: "#CCE882",
-      width: "70%",
+      width: "60%",
       marginTop: 10,
       paddingTop: 5,
       paddingBottom: 5,
@@ -102,4 +116,22 @@ const styles = StyleSheet.create({
       height: "40%",
       transform: [{ rotate: "-5deg" }, { scaleX: 0.7 }, { scaleY: 0.7 }]
    },
+   flowerAnimationOne: {
+      position: "absolute",
+      top: -265,
+      right: -105,
+      width: "80%",
+      height: "80%",
+      transform: [{ rotate: "25deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }],
+      zIndex: -1,
+   },
+   flowerAnimationTwo: {
+      position: "absolute",
+      bottom: -270,
+      left: -120,
+      width: "100%",
+      height: "100%",
+      transform: [{ rotate: "10deg" }, { scaleX: 0.5 }, { scaleY: 0.5 }],
+      zIndex: -1,
+   }
 })

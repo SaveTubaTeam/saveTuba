@@ -30,7 +30,7 @@ export default function SaigaCarousel() {
          mode={"horizontal-stack"}
          loop={true}
          autoPlay={true}
-         autoPlayInterval={2500}
+         autoPlayInterval={2000}
          autoPlayReverse={true}
          data={data}
          modeConfig={{ snapDirection: "right", stackInterval: 18 }}
