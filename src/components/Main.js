@@ -157,6 +157,7 @@ const Main = () => {
   const handleUserRejected = async() => {
     console.error("user queries failed in Main.js. Pushing back to LoginEmail")
     await auth.signOut();
+    /* marked for translation */
     Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
     navigation.replace("LoginEmail");
   }

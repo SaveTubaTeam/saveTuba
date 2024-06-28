@@ -35,7 +35,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             </BodyText>
 
             <Spacer size="large" />
-            <Spacer size="medium" />
+            <Spacer size="large" />
 
             {/* marked for translation */}
             <BodyText size="title" weight="bold">
@@ -43,6 +43,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             </BodyText>
 
             <Spacer size="large" />
+            <Spacer size="small" />
 
             <TouchableOpacity
                style={styles.greenButtonModal}

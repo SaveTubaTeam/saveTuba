@@ -1,5 +1,5 @@
 import React, {Component } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Alert } from "react-native";
 //import { connect } from "react-redux";
 import { auth } from "../../../../firebase";
 import styled from "styled-components/native";
@@ -39,8 +39,10 @@ const SignOut = () => {
             dispatch(signOutUser()); // Update user state in Redux store to object w/ 'empty' attribute & status to 'idle'
             navigation.navigate('LoginEmail'); // Navigate to login screen
         } catch (error) { // Handle sign-out error
-            console.warn('Sign out error:', error);
-            alert('SignOut Failed');
+            console.error('Sign out error:', error);
+            /* marked for translation */
+            Alert.alert('SignOut Failed', "that shouldn't have happened - please contact support");
+            navigation.navigate('LoginEmail');
         }
     };
 

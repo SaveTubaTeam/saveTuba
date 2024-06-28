@@ -8,62 +8,7 @@ import { Alert, Text } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
-
-const ImageBg = styled.ImageBackground`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-const InputContainer = styled.View`
-  width: 60%;
-`;
-
-const Input = styled.TextInput`
-  font-family: ${(props) => props.theme.fonts.body};
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: ${(props) => props.theme.space[2]};
-`;
-
-const ButtonContainer = styled.View`
-  width: 60%;
-  margin-top: ${(props) => props.theme.sizes[2]};
-`;
-
-const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 100%;
-  align-items: center;
-`;
-
-const ButtonOutLine = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  margin-top: ${(props) => props.theme.space[1]};
-  border: ${(props) => props.theme.space[1]} solid
-    ${(props) => props.theme.colors.ui.tertiary};
-  width: 100%;
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  align-items: center;
-  `;
-
-  const BottomContainer = styled.View`
-  position: absolute;
-  bottom: 4%;
-  width: 60%;
-  padding-horizontal: ${(props) => props.theme.space[3]};
-`;
+import Toast from 'react-native-toast-message';
 
 //Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
 
@@ -107,7 +52,12 @@ const LoginScreenEmail = () => {
         console.log("\n\tLogged in with:", user.email);
       })
       .catch((error) => {
-        Alert.alert("Invalid Login", "email or password is incorrect");
+        Toast.show({
+          type: 'error',
+          text1: "Invalid Login",
+          text2: "Email or password is incorrect",
+          visibilityTime: 3000,
+        });
         console.log("Error: ", error.message);
       });
   };
@@ -133,14 +83,29 @@ const LoginScreenEmail = () => {
       await auth.sendPasswordResetEmail(email)
         .then(() => {//password reset email sent successfully
           /* marked for translation */
-            Alert.alert("Password Reset Email Sent", "An email with instructions to reset your password has been sent to your inbox.");
+          Toast.show({
+            type: 'info',
+            text1: "Password Reset Email Sent",
+            text2: "An email with instructions to reset your password has been sent to your inbox.",
+            visibilityTime: 3000,
+          });
         }).catch((error) => {
           /* marked for translation */
-            Alert.alert("Error", "Please enter a valid email address");
+          Toast.show({
+            type: 'error',
+            text1: "Error",
+            text2: "Please enter a valid email address",
+            visibilityTime: 3000,
+          });
         })
     } else {
       /* marked for translation */
-      Alert.alert("Invalid Email", "No such account with the given email exists");
+      Toast.show({
+        type: 'error',
+        text1: "Invalid Email",
+        text2: "No such account with the given email exists",
+        visibilityTime: 3000,
+      });
     }
   }
 
@@ -237,3 +202,60 @@ const LoginScreenEmail = () => {
 }; //end of LoginScreen
 
 export default LoginScreenEmail;
+
+
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+const InputContainer = styled.View`
+  width: 60%;
+`;
+
+const Input = styled.TextInput`
+  font-family: ${(props) => props.theme.fonts.body};
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: ${(props) => props.theme.space[2]};
+`;
+
+const ButtonContainer = styled.View`
+  width: 60%;
+  margin-top: ${(props) => props.theme.sizes[2]};
+`;
+
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  width: 100%;
+  align-items: center;
+`;
+
+const ButtonOutLine = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  margin-top: ${(props) => props.theme.space[1]};
+  border: ${(props) => props.theme.space[1]} solid
+    ${(props) => props.theme.colors.ui.tertiary};
+  width: 100%;
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  align-items: center;
+  `;
+
+  const BottomContainer = styled.View`
+  position: absolute;
+  bottom: 4%;
+  width: 60%;
+  padding-horizontal: ${(props) => props.theme.space[3]};
+`;

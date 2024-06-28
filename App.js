@@ -4,7 +4,6 @@ import React, { useEffect, useState, useCallback } from "react";
 import * as encoding from "text-encoding"; //NECESSARY IMPORT! for i18n I believe
 import { LogBox } from "react-native";
 import 'intl-pluralrules';
-// Theme stuff
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
 import {
@@ -27,7 +26,6 @@ enableScreens();
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-//import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
 import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"
 import RegisterScreen from "./src/features/Login/RegisterScreen";
 import MainScreen from "./src/components/Main";

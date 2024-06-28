@@ -2,71 +2,11 @@ import React, { useEffect, useState } from 'react';
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { Alert, ActivityIndicator, StyleSheet, View } from 'react-native';
-
-//firebase api imports (will be used to create user)
+import Toast from 'react-native-toast-message';
 import { setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
-
-//i18next imports
 import { useTranslation } from "react-i18next";
-
 import { useNavigation } from "@react-navigation/native";
-//import { ActivityIndicator } from 'react-native-paper';
-
-//styled components
-const Button = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: 10px;
-  width: 100%;
-  align-items: center;
-`;
-const BackButton = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  border: ${(props) => props.theme.space[1]} solid
-    ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: ${(props) => props.theme.space[4]};
-  bottom: 0;
-`;
-
-const Input = styled.TextInput`
-  font-family: ${(props) => props.theme.fonts.body};
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: ${(props) => props.theme.space[2]};
-  color: green;
-`;
-
-const ImageBg = styled.ImageBackground`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-// align-content: center;
-const ButtonContainer = styled.View`
-  width: 50%;
-  align-self: center;
-`;
-const InputContainer = styled.View`
-  width: 70%;
-  margin-top: 30px;
-  align-self: center;
-`;
 
 //Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
 //dispatch(fetchUser()) which happens upon Main.js render and nowhere else to minimize redundancy.
@@ -100,14 +40,22 @@ const RegisterScreen = () => {
             } else {//classCode does not exist
                 setLoading(false);
                 /* marked for translation */
-                Alert.alert("Invalid class code");
+                Toast.show({
+                  type: 'error',
+                  text1: 'Invalid Class Code',
+                  visibilityTime: 3000,
+                });
             }
           });
 
       } else { //classCode is falsy (empty string)
         setLoading(false);
         /* marked for translation */
-        Alert.alert("Invalid class code")
+        Toast.show({
+          type: 'error',
+          text1: 'Invalid Class Code',
+          visibilityTime: 3000,
+        });
       }
 
     }
@@ -128,14 +76,23 @@ const RegisterScreen = () => {
 
           //alert popup: https://reactnative.dev/docs/alert
           /* marked for translation */
-          Alert.alert(`Welcome, ${firstName} ${lastName}!`, 
-                      `Your account has been successfully created.`);
+          Toast.show({
+            type: 'success',
+            text1: `Welcome, ${firstName} ${lastName}!`,
+            text2: `Your account has been successfully created.`,
+            visibilityTime: 3000,
+          });
         })
         .catch((error) => { //firebase createUser failed
             setLoading(false);
             console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
             /* marked for translation */
-            Alert.alert("Invalid Registration", "Email or password is invalid. Make sure your password is at least 6 characters.");
+            Toast.show({
+              type: 'error',
+              text1: "Invalid Registration",
+              text2: "Email or password is invalid. Make sure your password is at least 6 characters.",
+              visibilityTime: 3000,
+            });
         });
     }
 
@@ -281,3 +238,57 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
+const Button = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: 10px;
+  width: 100%;
+  align-items: center;
+`;
+const BackButton = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  border: ${(props) => props.theme.space[1]} solid
+    ${(props) => props.theme.colors.ui.tertiary};
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: ${(props) => props.theme.space[4]};
+  bottom: 0;
+`;
+
+const Input = styled.TextInput`
+  font-family: ${(props) => props.theme.fonts.body};
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: ${(props) => props.theme.space[2]};
+  color: green;
+`;
+
+const ImageBg = styled.ImageBackground`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+// align-content: center;
+const ButtonContainer = styled.View`
+  width: 50%;
+  align-self: center;
+`;
+const InputContainer = styled.View`
+  width: 70%;
+  margin-top: 30px;
+  align-self: center;
+`;
