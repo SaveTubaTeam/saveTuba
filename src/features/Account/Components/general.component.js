@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components/native";
-import { Switch, Alert, Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Switch, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCircleInfo, faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
@@ -17,15 +17,8 @@ import HelpModal from "./HelpModal";
 
 export const GeneralCard = () => {
   const { t } = useTranslation();
-
   const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(false);
-  const toggleSwitchSE = () =>
-    setIsSoundEffectsEnabled((previousState) => !previousState);
-
-  const [isRemindersEnabled, setIsRemindersEnabled] = useState(false);
-  const toggleSwitchR = () =>
-    setIsRemindersEnabled((previousState) => !previousState);
-
+  const toggleSwitchSE = () => setIsSoundEffectsEnabled((previousState) => !previousState);
   const [modalHelpVisible, setModalHelpVisible] = useState(false);
   const [modalAboutVisible, setModalAboutVisible] = useState(false);
 
@@ -55,37 +48,27 @@ export const GeneralCard = () => {
 
         <Spacer size="medium" />
 
-        <Row>
+        <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
+          <Row>
           <BodyText>{t("common:help")}</BodyText>
           <Spacer position="right" size="medium" />
-          <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
-            {/* This will need to also be a feature in the firebase - language */}
-            <FontAwesomeIcon
-              icon={faCircleQuestion}
-              size={21}
-              color={theme.colors.ui.primary}
-            />
-          </TouchableOpacity>
-          
-          <HelpModal modalHelpVisible={modalHelpVisible} setModalHelpVisible={setModalHelpVisible}/>
-        </Row>
+          <FontAwesomeIcon icon={faCircleQuestion} size={21} color={theme.colors.ui.primary} />
+          </Row>
+        </TouchableOpacity>
+        
+      <HelpModal modalHelpVisible={modalHelpVisible} setModalHelpVisible={setModalHelpVisible}/>
 
         <Spacer size="medium" />
 
-        <Row>
+        <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
+          <Row>
           <BodyText>{t("common:about")}</BodyText>
           <Spacer position="right" size="medium" />
-          <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
-            {/* This will need to also be a feature in the firebase - language */}
-            <FontAwesomeIcon
-              icon={faCircleInfo}
-              size={21}
-              color={theme.colors.ui.primary}
-            />
-          </TouchableOpacity>
+          <FontAwesomeIcon icon={faCircleInfo} size={21} color={theme.colors.ui.primary} />
+          </Row>
+        </TouchableOpacity>
         
-          <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
-        </Row>
+      <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
 
         <Spacer size="medium" />
       </AvatarContainer>

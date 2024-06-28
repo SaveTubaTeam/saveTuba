@@ -148,7 +148,7 @@ function determineTally(grade, chapter, lesson, completions) {
 
   //From the answer provided by @Jamiec here: https://stackoverflow.com/questions/9996727/count-instances-of-string-in-an-array
   //note the implicit return!
-  let tallyCount = completions.filter((completion) => completion.completionID.split("_")[0] === fullLessonID ).length
+  let tallyCount = completions.filter((completion) => completion.completionID.split("_")[0] === fullLessonID).length
 
   return tallyCount
 }

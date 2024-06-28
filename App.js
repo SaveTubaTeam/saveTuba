@@ -26,7 +26,6 @@ enableScreens();
 // navigation stuff
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-//import 'react-native-reanimated';
 
 //import LoginScreenPhone from "./src/features/Login/LoginScreenPhoneNumber";
 import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"

@@ -97,7 +97,9 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
   return (
     <>
       <LoadingModal visible={loadingModal} />
-      <Modal transparent animationType="none" visible={completionModalVisible}>
+      <Modal transparent animationType="none" visible={completionModalVisible}
+        onRequestClose={() => { navigation.navigate("Lesson"); }}
+      >
         <View style={styles.modalContainer}>
           <ModalContainer>
 
@@ -175,25 +177,10 @@ const styles = StyleSheet.create({
   }
 })
 
-const Container2 = styled.View`
-  width: 90%;
-  padding: 20px;
-  border-radius: 20px;
-  justify-content: center;
-  align-items: center;
-`;
-
 const ModalContainer = styled.View`
   background-color: white;
   width: 70%;
   padding: 30px;
   border-radius: 20px;
   border: 2px solid #cce882;
-`;
-
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
 `;

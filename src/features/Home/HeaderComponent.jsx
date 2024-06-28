@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Modal } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { useDispatch } from "react-redux";
 import { apiSlice } from "../../../redux/apiSlice";
 import styled from "styled-components/native";
 import { useSelector } from "react-redux";
@@ -10,7 +9,6 @@ import { useTranslation } from "react-i18next";
 import { BodyText } from "../../components/body-text.component";
 
 export default function HeaderComponent({ title }) {
-   const dispatch = useDispatch();
    const [modalVisible, setModalVisible] = useState(false);
 
    return (
@@ -47,6 +45,13 @@ const ACTIVITY_COLORS = {"imageboom": "palevioletred",
 function ModalComponent({ visible, setModalVisible }) {
    const completions = useSelector(state => state.user.completions);
    const { t } = useTranslation();
+   const [reversedCompletions, setReversedCompletions] = useState(completions);
+
+   //reversing completions array so latest is at the top
+   useEffect(() => {
+      const temp = [...completions];
+      setReversedCompletions(temp.reverse());
+   },[completions]);
 
    const renderItem = ({item}) => {
       const completionID = item.completionID.split("_")[0];
@@ -66,8 +71,10 @@ function ModalComponent({ visible, setModalVisible }) {
    }
 
    return (
-      <Modal transparent animationType="none" visible={visible}>
-       <View style={styles.modalContainer}>
+      <Modal transparent animationType="none" visible={visible}
+         onRequestClose={() => { setModalVisible(false); }}
+      >
+      <View style={styles.modalContainer}>
          <ModalContainer>
 
             <TouchableOpacity
@@ -78,7 +85,7 @@ function ModalComponent({ visible, setModalVisible }) {
             </TouchableOpacity>
 
             <FlatList 
-               data={ completions }
+               data={ reversedCompletions }
                keyExtractor={(item, index) => index}
                renderItem={renderItem}
                contentContainerStyle={{ alignItems: "center", paddingBottom: 30 }}
