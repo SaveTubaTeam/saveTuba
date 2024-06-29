@@ -130,8 +130,8 @@ const MemoryHandler = ({ objectData }) => {
 //note: see renderCardsArray for params
 const Card = ({ index, name, image, imageDownloadURL, imageBlurHash, isOpen, onPress, arrayIsLocked }) => {
   //blockPNG refers to the image at assets/block.png in firebase storage
-  const blockPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fblock.png?alt=media&token=502d0477-07f5-4084-95a3-28d492793425"
-  const blockBlurHash = "UBO-r[9u0hNd~BWBRkof5Xoes.af^*a|WCay";
+  const blockPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fblock.png?alt=media&token=fceeff99-3624-45e4-9456-ff18403a586d"
+  const blockBlurHash = "UBO-r[9u0hNd~BWBR*of5Woes.af^*fQWCay";
 
   const content = useMemo(() => {
     if(image) { //now checking content type to be displayed within the card

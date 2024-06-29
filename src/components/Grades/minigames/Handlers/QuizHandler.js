@@ -63,6 +63,7 @@ const Start = ({ data }) => {
               <BodyText>✖️</BodyText>
             </TouchableOpacity>
 
+            {/* marked for translation */}
             <View>
               <BodyText size="subtitle">
                 {correctAnswer == true

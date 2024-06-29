@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { theme } from "../../../infrastructure/theme";
-import { View, Modal, TouchableOpacity, Text, StyleSheet } from "react-native";
-import { Image } from "expo-image";
+import { View, Modal, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import { Spacer } from "../../../components/spacer.component";
 import LottieView from "lottie-react-native";
 import { TitleText } from "../../../components/title-text.component";
@@ -152,11 +151,11 @@ const styles = StyleSheet.create({
   },
   tubaImage: {
     position: "absolute",
-    bottom: 130,
-    right: -70,
-    width: "60%",
-    height: "40%",
-    transform: [{ scaleX: -1 }], // Flip the image horizontally
+    bottom: -100,
+    right: -200,
+    width: 500,
+    height: "100%",
+    transform: [{ scaleX: -1 }, { scaleX: 0.3 }, { scaleY: 0.3 }, { rotate: "-2deg" }],
     zIndex: 2, // Set a higher z-index to bring the image in front of the modal
     elevation: -1 //NOTE: zIndex doesn't work w/ Android modals so we use negative elevations as a hotfix
   },

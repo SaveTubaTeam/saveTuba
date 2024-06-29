@@ -24,7 +24,7 @@ export default function ClassroomCard() {
             </View>
             
             <TouchableOpacity>
-               <MaterialCommunityIcons name="pencil-circle" color="#60BBDD" size={45} />
+               <MaterialCommunityIcons name="pencil-circle" color="rgba(65, 128, 152, 0.9)" size={45} />
             </TouchableOpacity>
          </View>
       </Card>

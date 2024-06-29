@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Image } from "expo-image";
 
 export const MasteryFlex = ({ masteryArray }) => {
-    const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery.png?alt=media&token=ad62687c-a8ae-4936-82ae-cc71f6343c79"
+    const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery.png?alt=media&token=1ec7f126-e0cd-4dd8-bfe4-165acab89248"
     const masteryIconBlurHash = "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7"
     const nav = useNavigation();
     const { t } = useTranslation();

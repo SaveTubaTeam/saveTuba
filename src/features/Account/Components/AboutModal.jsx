@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, View, Modal, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Modal, TouchableOpacity, Image } from "react-native";
 import { useTranslation } from "react-i18next";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
-import { Image } from "expo-image";
 import SaigaCarousel from "./SaigaCarousel";
 import LottieView from "lottie-react-native";
 
@@ -111,11 +110,11 @@ const styles = StyleSheet.create({
    },
    tubaImage: {
       position: "absolute",
-      top: 280,
-      left: -15,
+      top: 270,
+      left: -30,
       width: "55%",
       height: "40%",
-      transform: [{ rotate: "-5deg" }, { scaleX: 0.7 }, { scaleY: 0.7 }]
+      transform: [{ rotate: "-5deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }]
    },
    flowerAnimationOne: {
       position: "absolute",
