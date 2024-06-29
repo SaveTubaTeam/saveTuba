@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { StyleSheet, View, Text, ImageBackground, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Text, ImageBackground, TouchableOpacity, ActivityIndicator } from "react-native";
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component.js";
@@ -15,7 +15,7 @@ const MemoryHandler = ({ objectData }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [cardsArray, setCardsArray] = useState(null);
-
+  const [imagesPrefetched, setImagesPrefetched] = useState(false);
   const [currentSelection, setCurrentSelection] = useState([]);
   const [successfullyMatchedPairs, setSuccessfullyMatchedPairs] = useState([]);
   const [arrayIsLocked, setArrayIsLocked] = useState(false); //to track if user interactions are locked
@@ -32,15 +32,18 @@ const MemoryHandler = ({ objectData }) => {
     }
   }, [score, cardsArray]);
 
-  //to initially randomly sort the array
+  //to initially randomly sort the array and prefetch all images
   useEffect(() => {
     console.log(objectData.content);
     dispatch(addActivity({ activity: "Memory" }));
+
+    prefetchMemoryImages(objectData.content);
     
     const cardsArrayShuffled = [...objectData.content];
     cardsArrayShuffled.sort(() => Math.random() - 0.5); //shuffle array
 
     setCardsArray(cardsArrayShuffled);
+    setImagesPrefetched(true);
   }, []);
 
   //to check if we have a match within currentSelection
@@ -95,6 +98,18 @@ const MemoryHandler = ({ objectData }) => {
     }
   };
 
+  while(!imagesPrefetched) {
+    return (
+      <ImageBackground 
+        source={require("../../../../../assets/memorybg.jpg")}
+        style={styles.container} 
+        fadeDuration={0}
+      >
+        <ActivityIndicator size="large" color="#00ff00" /> 
+      </ImageBackground>
+    )
+  }
+
   return (
     <ImageBackground 
       source={require("../../../../../assets/memorybg.jpg")}
@@ -102,8 +117,7 @@ const MemoryHandler = ({ objectData }) => {
       fadeDuration={0}
     >
 
-      <View style={{ alignSelf: "center", width: "80%", position: "absolute", 
-                     top: 25, backgroundColor: "#fff8e7", padding: 20, borderRadius: 20 }}>
+      <View style={styles.prompt}>
         <BodyText size="title">{objectData.prompt}</BodyText>
         <Spacer size="medium" />
         {/* marked for translation */}
@@ -183,7 +197,18 @@ const Score = ({ score }) => {
     <View style={[styles.score_container, {width: "20%"}]}>
       <Text style={styles.score}>{score}</Text>
     </View>
-  )};
+  )
+};
+
+//see: https://docs.expo.dev/versions/latest/sdk/image/#prefetchurls-cachepolicy
+async function prefetchMemoryImages(content) {
+  for(const item of content) {
+    if(item.image) {
+      await Image.prefetch(item.imageDownloadURL);
+    }
+  }
+  console.log("\tprefetchMemoryImages complete!");
+}
 
 export default MemoryHandler;
 
@@ -201,6 +226,15 @@ const styles = StyleSheet.create({
     flex: 8,
     padding: 10,
     marginTop: 20,
+  },
+  prompt: {
+    alignSelf: "center", 
+    width: "80%", 
+    position: "absolute", 
+    top: 25, 
+    backgroundColor: "#fff8e7", 
+    padding: 20, 
+    borderRadius: 20,
   },
   card: {
     margin: '1%', // Slightly space out the items

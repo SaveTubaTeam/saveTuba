@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
       justifyContent: "center",
       flex: 1,
       width: "100%",
-      paddingTop: 20
     },
    container: {
       height: "100%",
