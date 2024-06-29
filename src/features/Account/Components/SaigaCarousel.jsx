@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
-import { View } from "react-native";
+import { View, Image } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
-import { Image } from "react-native";
 import { StyleSheet } from "react-native";
 
 const SAIGA_PICTURES = [
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
    cardContainer: {
       width: 300,
       height: 250,
-      backgroundColor: "#ffffff",
+      backgroundColor: "#F5F5DC",
       borderRadius: 10,
       alignItems: "center",
       justifyContent: "center",

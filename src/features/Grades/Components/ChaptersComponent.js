@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View, Image } from "react-native";
+import { FlatList, View, Image, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -26,11 +26,7 @@ function ChaptersComponent({ gradeData }) {
           colors={[item.colorOne, item.colorTwo]}
           start={{ x: 0, y: 0, }}
           end={{ x: 1, y: 1, }}
-          style={{
-            height: 150,
-            padding: 20,
-            borderRadius: 30,
-          }}
+          style={styles.gradientStyle}
         >
           <View style={{ position: "absolute", left: 30, bottom: 30 }}>
             <BodyText align="left" size="mid" color="secondary">
@@ -41,7 +37,8 @@ function ChaptersComponent({ gradeData }) {
             </TitleText>
           </View>
         </LinearGradient>
-        <Icon 
+        <Image 
+          style={styles.chapterIcon}
           source={{uri: item.iconDownloadURL}}
         />
       </Chapter>
@@ -68,6 +65,21 @@ function ChaptersComponent({ gradeData }) {
   );
 }
 
+const styles = StyleSheet.create({
+  chapterIcon: {
+    height: 100,
+    aspectRatio: 1,
+    position: "absolute",
+    right: 25,
+    top: -20,
+  },
+  gradientStyle: {
+    height: 150,
+    padding: 20,
+    borderRadius: 30,
+  }
+})
+
 export default ChaptersComponent;
 
 const Container = styled.View`
@@ -82,13 +94,4 @@ const Chapter = styled.TouchableOpacity`
   margin-top: 20px;
   margin-bottom: 10px;
   align-self: center;
-`;
-
-const Icon = styled.Image`
-  height: 100px;
-  width: undefined;
-  aspect-ratio: 1;
-  position: absolute;
-  right: 25px;
-  top: -20px;
 `;

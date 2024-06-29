@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { theme } from "../../../infrastructure/theme";
+import { db } from "../../../../firebase";
 import { View, Modal, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-import { Spacer } from "../../../components/spacer.component";
 import LottieView from "lottie-react-native";
-import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
-import { SafeArea } from "../../../components/safe-area.component";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
@@ -43,6 +40,8 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
   const [finalXP, setFinalXP] = useState(0);
   const [loadingModal, setLoadingModal] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
+  const [previouslySubmitted, setPreviouslySubmitted] = useState(false);
+  const [text, setText] = useState("");
 
   const [updateUserXP] = useUpdateUserXPMutation();
   const [postCompletion] = usePostCompletionMutation();
@@ -58,7 +57,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
       score === -1 ? setFinalXP(100) : setFinalXP(1500); //MasteryHandler passes a prop of -2 for more XP!
     } else {
       /* marked for translation */
-      setScoreShown(`${t("minigames:finalscore")}: ${score}\n\n`);
+      setScoreShown(`${t("minigames:finalscore")}: ${score}/${totalPossibleScore}\n\n`);
       setFinalXP(score * XP_PER_POINT);
     }
     //state is not updated locally so we have to calculate the xp again for the below function
@@ -71,7 +70,16 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
       console.log("\n\t!!! now performing completion process . . .");
       setLoadingModal(true);
 
-      await updateUserXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email }).unwrap();
+      const completionRef = db.collection("users").doc(user.email).collection("Completions").doc(completionID);
+      const completionSnapshot = await completionRef.get();
+      if(completionSnapshot.exists) {
+        console.log(`${user.firstName} has already previously submitted ${completionID}.`);
+        setPreviouslySubmitted(true);
+      } else {
+        console.log(`it is ${user.firstName}'s first time submitting ${completionID}`);
+        console.log(`!!! ADDING EXPERIENCE TO USER !!!`);
+        await updateUserXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email }).unwrap();
+      }
 
       let submittedContent;
       if(score < 0) {
@@ -93,6 +101,14 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
     }
   }
 
+  useEffect(() => {
+    if(!previouslySubmitted) {
+      setText(`${scoreShown}${prompt} ✨\n\n+${finalXP} XP!\n`);
+    } else { //marked for translation
+      setText(`${scoreShown}${prompt} ✨\n\nYou've already claimed XP for this activity 😔\n`);
+    }
+  }, [previouslySubmitted])
+
   return (
     <>
       <LoadingModal visible={loadingModal} />
@@ -104,9 +120,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 
             {/* marked for translation */}
             <BodyText size="subtitle">
-            {scoreShown}
-            {`${prompt} ✨`}
-            {`\n\n+${finalXP} xp!\n`}
+            {text}
             </BodyText>
 
           {/* green button 'Return' at the bottom of modal to move out of minigame */}
@@ -151,13 +165,12 @@ const styles = StyleSheet.create({
   },
   tubaImage: {
     position: "absolute",
-    bottom: -100,
-    right: -200,
+    bottom: -90,
+    right: -230,
     width: 500,
     height: "100%",
-    transform: [{ scaleX: -1 }, { scaleX: 0.3 }, { scaleY: 0.3 }, { rotate: "-2deg" }],
+    transform: [{ scaleX: -1 }, { scaleX: 0.3 }, { scaleY: 0.3 }, { rotate: "-5deg" }],
     zIndex: 2, // Set a higher z-index to bring the image in front of the modal
-    elevation: -1 //NOTE: zIndex doesn't work w/ Android modals so we use negative elevations as a hotfix
   },
   modalContainer:{
     flex: 1, 
@@ -177,9 +190,9 @@ const styles = StyleSheet.create({
 })
 
 const ModalContainer = styled.View`
-  background-color: white;
-  width: 70%;
+  background-color: #F6FEDB;
+  width: 72%;
   padding: 30px;
   border-radius: 20px;
-  border: 2px solid #cce882;
+  border: 5px solid #cce882;
 `;

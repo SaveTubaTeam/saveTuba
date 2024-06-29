@@ -100,21 +100,19 @@ const Start = ({ objectData }) => {
     )}
     
     return (
-      <>
-        <Category
-          onPress={() => {
-            if (item.name == currentAnswer) { //accessing item's name field via item.name
-              setCorrect(true);
-              setScore(prevScore => prevScore + 1);
-            } else {
-              setCorrect(false);
-            }
-            setVisible(true);
-          }}
-        >
-          {content}
-        </Category>
-      </>
+      <Category
+        onPress={() => {
+          if (item.name == currentAnswer) { //accessing item's name field via item.name
+            setCorrect(true);
+            setScore(prevScore => prevScore + 1);
+          } else {
+            setCorrect(false);
+          }
+          setVisible(true);
+        }}
+      >
+        {content}
+      </Category>
     );
   }; //end of renderCategories
 
@@ -213,15 +211,6 @@ const Prompt = styled.View`
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 10px;
-`;
-
-const SubmitButton = styled.TouchableOpacity`
-  width: 100px;
-  justify-content: center;
-  height: 40px;
-  background-color: #748816;
-  align-self: center;
-  border-radius: 20px;
 `;
 
 export default SortingHandler;
