@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { View, ScrollView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet, ImageBackground } from "react-native";
 import { Image } from 'expo-image';
-import styled from "styled-components/native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
-import { BodyText } from "../../../body-text.component";
-import { ImageBg } from "../../grades.styles";
 import ImageUpload from "../ImageUpload";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
@@ -44,16 +41,17 @@ const OpenResponseHandler = ({ objectData }) => {
   
   return (
     <View style={{ flex: 1 }}>
-      <ImageBg
-        source={require("../../../../../assets/openResponseBg.jpg")} //hardcoded background
+      <ImageBackground
+        source={require("../../../../../assets/openResponseBg.jpg")}
         resizeMode="cover"
-        style={{ flex: 1 }}
+        style={styles.imageBackground}
+        fadeDuration={0}
       >
         <View style={{ flex: 1, width: "100%" }}>
           <ImagePrompt data={objectData} />
         </View>
 
-      </ImageBg>
+      </ImageBackground>
     </View>
   );
 };
@@ -68,5 +66,12 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     margin: 20,
     borderRadius: 15,
-  }
+  },
+  imageBackground: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    width: "100%",
+    paddingTop: 20
+  },
 })

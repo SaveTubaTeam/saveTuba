@@ -59,6 +59,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             <Image 
                style={styles.tubaImage}
                source={require("../../../../assets/tuba-low-quality.png")}
+               fadeDuration={300}
             />
 
             <LottieView 
@@ -132,6 +133,6 @@ const styles = StyleSheet.create({
       width: "100%",
       height: "100%",
       transform: [{ rotate: "10deg" }, { scaleX: 0.5 }, { scaleY: 0.5 }],
-      zIndex: -1,
+      zIndex: 2,
    }
 })

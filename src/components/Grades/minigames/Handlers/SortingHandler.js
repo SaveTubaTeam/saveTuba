@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { View, Modal, TouchableOpacity, FlatList, StyleSheet } from "react-native";
+import { View, Modal, TouchableOpacity, FlatList, StyleSheet, ImageBackground } from "react-native";
 import { Image } from "expo-image";
 import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../../title-text.component";
 import { BodyText } from "../../../body-text.component";
-import { SafeArea } from "../../../safe-area.component";
-import { ImageBg } from "../../grades.styles";
-import { Spacer } from "../../../spacer.component";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
@@ -117,7 +114,11 @@ const Start = ({ objectData }) => {
   }; //end of renderCategories
 
   return (
-    <ImageBg source={require("../../../../../assets/sortingbg.jpg")}>
+    <ImageBackground 
+      source={require("../../../../../assets/sortingbg.jpg")}
+      style={styles.imageBackground}
+      fadeDuration={0}
+    >
       <Container>
 
         {/* the overall prompt for this sorting exercise */}
@@ -154,7 +155,7 @@ const Start = ({ objectData }) => {
           totalPossibleScore={optionsArray.length}
         />
       </Container>
-    </ImageBg>
+    </ImageBackground>
   );
 };
 
@@ -171,6 +172,13 @@ const SortingHandler = ({ objectData }) => {
 };
 
 const styles = StyleSheet.create({
+  imageBackground: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    width: "100%",
+    paddingTop: 20
+  },
   greenButtonModal: {
     backgroundColor: "#748816",
     borderRadius: 10,

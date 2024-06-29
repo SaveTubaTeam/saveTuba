@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
-import { Alert, ActivityIndicator, StyleSheet, View } from 'react-native';
+import { Alert, ActivityIndicator, StyleSheet, View, ImageBackground } from 'react-native';
 import Toast from 'react-native-toast-message';
 import { setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
@@ -128,20 +128,16 @@ const RegisterScreen = () => {
         <Container behavior="padding">
           {/* here a ternary operator is used to render a spinner if loading == true (see below) */}
           {!loading ? (
-            <ImageBg source={require("../../../assets/registerScreenBg.png")}>
+            <ImageBackground 
+              source={require("../../../assets/registerScreenBg.png")}
+              style={styles.imageBackground}
+              fadeDuration={0}
+            >
               <TitleText color="secondary" size="title">
                 {t("common:makeanewaccount")}
-                {/* Register For Save Tuba */}
               </TitleText>
     
               <InputContainer>
-                {/* <Input
-                  placeholder={"Phone Number (ex +7 9435553201)"}
-                  onChangeText={(text) => setPhoneNumber(text)}
-                  placeholderTextColor="#696969"
-                  value={phoneNumber}
-                  autoCapitalize="none"
-                /> */}
                 <Input
                   placeholder={t("common:email")}
                   onChangeText={(text) => setEmail(text)}
@@ -183,39 +179,20 @@ const RegisterScreen = () => {
               <ButtonContainer>
 
                 {/* asynchronously register & push user to db, setting loading icon to visible while we do so */}
-                <Button
-                  onPress={() => {
-                    registerUser();
-                  }}
-                >
+                <Button onPress={() => {registerUser(); }}>
                   <TitleText color="secondary" size="body">
                     {t("common:signup")}
                   </TitleText>
                 </Button>
-              {/* NOTE: Teacher Registration is now handled on the teacher interface web application only. */}
-              {/* <ButtonContainer>
-                <Button
-                  onPress={() => {
-                    this.props.navigation.navigate("RegisterTeacher");
-                  }}
-                >
-                  <TitleText color="secondary" size="body">
-                    {t("common:teachersignup")}
-                  </TitleText>
-                </Button>
-              </ButtonContainer> */}
-                <BackButton
-                  onPress={() => {
-                    navigation.navigate("LoginEmail");
-                  }}
-                >
+              
+                <BackButton onPress={() => { navigation.navigate("Login"); }}>
                   <TitleText color="primary" size="body">
                     {t("common:back")}
                   </TitleText>
                 </BackButton>
               </ButtonContainer>
 
-            </ImageBg>
+            </ImageBackground>
           ) : (
             <View style={[styles.container, styles.horizontal]}>
               <ActivityIndicator size="large" color="#00ff00" />
@@ -228,6 +205,13 @@ const RegisterScreen = () => {
 export default RegisterScreen;
 
 const styles = StyleSheet.create({
+  imageBackground: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -267,14 +251,6 @@ const Input = styled.TextInput`
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: ${(props) => props.theme.space[2]};
   color: green;
-`;
-
-const ImageBg = styled.ImageBackground`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Container = styled.View`

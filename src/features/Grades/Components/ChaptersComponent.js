@@ -40,6 +40,7 @@ function ChaptersComponent({ gradeData }) {
         <Image 
           style={styles.chapterIcon}
           source={{uri: item.iconDownloadURL}}
+          fadeDuration={100}
         />
       </Chapter>
     );

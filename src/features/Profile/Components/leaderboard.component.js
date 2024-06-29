@@ -11,12 +11,16 @@ import { db } from "../../../../firebase";
 export default function LeaderboardCard() {
   const [leaderboard, setLeaderboard] = useState(null);
   const { t } = useTranslation();
-  const classCode = useSelector(state => state.user.classroom.classCode);
-
+  const classroom = useSelector(state => state.user.classroom);
+  
   //leaderboard listener. see: https://firebase.google.com/docs/firestore/query-data/listen#web_9
   //This will receive a new query snapshot every time the query results change (that is, when a document is added, removed, or modified).
   useEffect(() => {
-    const unsubscribe = db.collection('users').where("classCode", '==', classCode)
+    if(!classroom || Object.keys(classroom).length === 0) { //guard clause against uninitialized classroom
+      return; 
+    } 
+
+    const unsubscribe = db.collection('users').where("classCode", '==', classroom.classCode)
         .onSnapshot((querySnapshot) => {
 
           if(querySnapshot.size === 0) { //guard clause for empty snapshot
@@ -45,7 +49,7 @@ export default function LeaderboardCard() {
       unsubscribe(); 
       console.log("-------- unsubscribed from leaderboard listener --------")
     } // Unsubscribe when component unmounts (here this means on signout or when hmr reloading)
-  }, []);
+  }, [classroom]);
 
   let content;
   if(leaderboard) {

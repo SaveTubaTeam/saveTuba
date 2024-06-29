@@ -11,6 +11,11 @@ export default function ClassroomCard() {
    const { t } = useTranslation();
    const classroom = useSelector(state => state.user.classroom);
 
+   //to check for an empty object: https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
+   if(!classroom || Object.keys(classroom).length === 0) { //guard clause against uninitialized classroom
+      return null;
+   }
+
    return (
       <Card>
          <View style={styles.cardContainerRow}>

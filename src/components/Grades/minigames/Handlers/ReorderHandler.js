@@ -27,7 +27,6 @@ const REORDER_GRADIENTS = [
 const ReorderHandler = ({ objectData }) => {
   //console.log("Data In: ", objectData);
   const dispatch = useDispatch();
-  const [originalArray, setOriginalArray] = useState(objectData.content);
   const [data, setData] = useState(objectData.content);
 
   useEffect(() => {
@@ -93,8 +92,8 @@ const ReorderHandler = ({ objectData }) => {
         setScore(0);//resetting score
         //iterating through list to check for correct order and update score.
         data.forEach((item, index) => {
-          console.log(`\nUser: ${item.text}\nCorrect: ${originalArray[index].text}`);
-          if (item.text === originalArray[index].text) { setScore((prevScore) => prevScore + 1); }
+          console.log(`\nUser: ${item.text}\nCorrect: ${objectData.content[index].text}`);
+          if (item.text === objectData.content[index].text) { setScore((prevScore) => prevScore + 1); }
         });
 
         //setting visibility of modal to true;
@@ -107,14 +106,11 @@ const ReorderHandler = ({ objectData }) => {
     );
   }
 
-  //DraggableFlatlist is used to interactively order the list: https://www.npmjs.com/package/react-native-draggable-flatlist?activeTab=readme
-  //Current version 4.0.0 heavily dependent on two packages: (package versions can be unit tested here [THIS SNACK IS NOW DEPRECATED]: https://snack.expo.dev/@computerjazz/draggable-flatlist-examples)
-  //react-native-reanimated
-  //react-native-gesture-handler
   return (
     <ImageBackground 
-      source={require("../../../../../assets/reorderbg.jpg")} 
+      source={require("../../../../../assets/reorderbg.jpg")}
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} 
+      fadeDuration={0}
     >
       <DragList
         scrollEnabled={true}
@@ -143,10 +139,10 @@ const ReorderHandler = ({ objectData }) => {
 export default ReorderHandler;
 
 const Prompt = styled.View`
-  width: 90%;
+  width: 95%;
   background-color: #fff;
-  border-radius: 30px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 25px;
   margin-bottom: 10px;
   align-items: center;
   align-self: center;

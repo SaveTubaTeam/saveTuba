@@ -42,6 +42,7 @@ export default function SaigaCarousel() {
                <Image 
                   source={SAIGA_PICTURES[index]}
                   style={styles.saigaImage}
+                  fadeDuration={100}
                />
             </View>
          )}

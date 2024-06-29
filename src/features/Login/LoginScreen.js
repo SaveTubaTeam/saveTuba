@@ -4,15 +4,13 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import { auth, db } from "../../../firebase";
-import { Alert, Text } from 'react-native';
+import { Alert, Text, StyleSheet, ImageBackground } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
 
-//Please see here for firebase.auth() v8 documentation: https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth
-
-const LoginScreenEmail = () => {
+const LoginScreen = () => {
   const dispatch = useDispatch();
   const currentUserSliceStore = useSelector(state => state.user);
   const { t, i18n } = useTranslation();
@@ -22,7 +20,7 @@ const LoginScreenEmail = () => {
 
   //fetching images, updating the auth object with an observer to track changes to the existing user
   useEffect(() => {
-    console.log("\n\tinside LoginScreenEmail.js")
+    console.log("\n\tinside LoginScreen.js")
     console.log('Most recent userSlice store:', currentUserSliceStore);
     //dispatch(fetchImages());
 
@@ -90,6 +88,7 @@ const LoginScreenEmail = () => {
             visibilityTime: 3000,
           });
         }).catch((error) => {
+          console.error(error);
           /* marked for translation */
           Toast.show({
             type: 'error',
@@ -111,7 +110,6 @@ const LoginScreenEmail = () => {
 
   //helper for sendPasswordReset
   const checkIfUserExists = async() => {
-    //checking if account exists
     await db.collection('users').doc(email).get().then((snapshot) => {
       if(snapshot.exists) {
         console.log("user exists. sending password reset email to:", email);
@@ -125,39 +123,35 @@ const LoginScreenEmail = () => {
 
   return (
     <Container behavior="padding">
-      <ImageBg source={require("../../../assets/loginBackground.png")}>
+      <ImageBackground 
+        source={require("../../../assets/loginBackground.png")}
+        style={styles.container}
+        fadeDuration={0}
+      >
         <InputContainer>
           <Input
-            placeholder={t("common:email")} //Email changed to phone number
+            placeholder={t("common:email")}
             placeholderTextColor="#696969"
             value={email}
-            onChangeText={(text) => setEmail(text)} // Need to change for production
+            onChangeText={(text) => setEmail(text)}
             autoCapitalize="none"
           />
           <Input
             placeholder={t("common:password")} //Password
             placeholderTextColor="#696969"
             value={password}
-            onChangeText={(text) => setPassword(text)} // Need to change for production
+            onChangeText={(text) => setPassword(text)}
             autoCapitalize="none"
             secureTextEntry
           />
         </InputContainer>
 
         <ButtonContainer>
-          <Button onPress={() => {
-            handleLogin();
-          }}>
+          <Button onPress={() => { handleLogin(); }}>
             <TitleText color="secondary" size="body">
               {t("common:login")}
             </TitleText>
           </Button>
-
-          {/* <ButtonOutLine onPress={() => navigation.push("LoginPhone")}>
-            <TitleText color="primary" size="body">
-              Phone Number Login
-            </TitleText>
-          </ButtonOutLine> */}
 
           <ButtonOutLine onPress={() => navigation.push("Register")}>
             <TitleText color="primary" size="body">
@@ -175,17 +169,15 @@ const LoginScreenEmail = () => {
             <Text style={{textDecorationLine: 'underline'}}>
               {/* marked for translation */}
               <TitleText color="secondary" size="button">
-              {t("common:forgotpassword")}
+                {t("common:forgotpassword")}
               </TitleText>
             </Text>
           </TouchableOpacity>
-
         </ButtonContainer>
 
         <BottomContainer>
-
-        {/* LanguageSelector */}
-        <SelectorLogin />
+          {/* LanguageSelector */}
+          <SelectorLogin />
 
           {/* Guest Login */}
           {/* marked for translation */}
@@ -194,23 +186,25 @@ const LoginScreenEmail = () => {
               {t("common:continueasguest")}
             </TitleText>
           </ButtonOutLine>
-          </BottomContainer>
+
+        </BottomContainer>
           
-      </ImageBg>
+      </ImageBackground>
     </Container>
   );
 }; //end of LoginScreen
 
-export default LoginScreenEmail;
+export default LoginScreen;
 
-
-const ImageBg = styled.ImageBackground`
-  flex: 1;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-`;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  }
+})
 
 const Container = styled.View`
   flex: 1;

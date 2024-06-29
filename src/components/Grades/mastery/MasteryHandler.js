@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
-import { FlatList } from "react-native";
+import { FlatList, ImageBackground, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../title-text.component";
-import { BodyText } from "../../body-text.component";
-import { ImageBg } from "../grades.styles";
 import ImageUpload from "../minigames/ImageUpload";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../redux/slices/curriculumLocationSlice";
@@ -35,10 +33,11 @@ const MasteryHandler = ({ objectData }) => {
   };
 
   return (
-    <ImageBg
+    <ImageBackground
       resizeMode="cover"
-      style={{ flex: 1, paddingTop: 20 }}
+      style={styles.imageBackground}
       source={require("../../../../assets/masterybg.png")}
+      fadeDuration={0}
     >
       <FlatList
         data={ objectData.content }
@@ -57,17 +56,21 @@ const MasteryHandler = ({ objectData }) => {
           </>
         }
       />
-    </ImageBg>
+    </ImageBackground>
   );
 };
 
 export default MasteryHandler;
 
-const Container = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
+const styles = StyleSheet.create({
+  imageBackground: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    width: "100%",
+    paddingTop: 20
+  },
+})
 
 const Prompt = styled.View`
   width: 350px;

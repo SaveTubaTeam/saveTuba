@@ -97,8 +97,9 @@ const MemoryHandler = ({ objectData }) => {
 
   return (
     <ImageBackground 
-      source={require("../../../../../assets/memorybg.jpg")} 
+      source={require("../../../../../assets/memorybg.jpg")}
       style={styles.container} 
+      fadeDuration={0}
     >
 
       <View style={{ alignSelf: "center", width: "80%", position: "absolute", 

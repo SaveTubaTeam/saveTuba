@@ -2,7 +2,7 @@ import 'expo-dev-client';
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React, { useEffect, useState, useCallback } from "react";
 import * as encoding from "text-encoding"; //NECESSARY IMPORT! for i18n I believe
-import { LogBox } from "react-native";
+import { LogBox, Image, Platform, UIManager } from "react-native";
 import 'intl-pluralrules';
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/infrastructure/theme";
@@ -26,7 +26,7 @@ enableScreens();
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import LoginScreenEmail from "./src/features/Login/LoginScreenEmail"
+import LoginScreen from "./src/features/Login/LoginScreen"
 import RegisterScreen from "./src/features/Login/RegisterScreen";
 import MainScreen from "./src/components/Main";
 
@@ -36,9 +36,6 @@ import { Provider } from "react-redux";
 
 //Wrapping here at root node https://docs.swmansion.com/react-native-gesture-handler/docs/fundamentals/installation
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-
-//Platform import to detect and log current iOS/Android version
-import { Platform, UIManager } from 'react-native';
 import Toast from 'react-native-toast-message';
 
 //Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
@@ -74,7 +71,7 @@ export default function App() {
   useEffect(() => {
     async function prepare() {
       try {
-        await new Promise(resolve => setTimeout(resolve, 1000)); //artificial timeout
+        await new Promise(resolve => setTimeout(resolve, 500)); //artificial timeout buffer
       } catch (e) {
         console.error(e);
       } finally {
@@ -104,20 +101,17 @@ export default function App() {
           <NavigationContainer>
             <Stack.Navigator>
               <Stack.Screen
-                options={{ headerShown: false }}
-                name="LoginEmail"
-                component={LoginScreenEmail}
+                options={{ headerShown: false, animation: 'fade' }}
+                name="Login"
+                component={LoginScreen}
               />
               <Stack.Screen
-                options={{ headerShown: false }}
+                options={{ headerShown: false, animation: 'fade' }}
                 name="Register"
                 component={RegisterScreen}
               />
               <Stack.Screen
-                options={{ 
-                  headerShown: false,
-                  animation: 'fade'
-                }}
+                options={{ headerShown: false, animation: 'fade' }}
                 name="HomePage"
                 component={MainScreen}
               />

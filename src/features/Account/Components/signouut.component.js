@@ -37,12 +37,12 @@ const SignOut = () => {
             console.log("signing out user:", auth.currentUser.email);
             await auth.signOut(); // Sign out user from Firebase
             dispatch(signOutUser()); // Update user state in Redux store to object w/ 'empty' attribute & status to 'idle'
-            navigation.navigate('LoginEmail'); // Navigate to login screen
+            navigation.navigate('Login'); // Navigate to login screen
         } catch (error) { // Handle sign-out error
             console.error('Sign out error:', error);
             /* marked for translation */
             Alert.alert('SignOut Failed', "that shouldn't have happened - please contact support");
-            navigation.navigate('LoginEmail');
+            navigation.navigate('Login');
         }
     };
 

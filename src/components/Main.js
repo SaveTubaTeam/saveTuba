@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ActivityIndicator, StyleSheet, View, Alert } from "react-native";
-// Theme stuff
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { auth } from "../../firebase";
@@ -13,14 +12,10 @@ import AssignmentsPage from "../features/Home/AssignmentsPage";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";
-
-// Redux Imports
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser, signInUser, addCompletions, addClassroom } from "../../redux/slices/userSlice";
 import { useGetUserQuery, useGetCompletionsArrayQuery, useGetClassroomQuery } from "../../redux/apiSlice";
-
 const Tab = createBottomTabNavigator();
-// const store = createStore(rootReducer, applyMiddleware(thunk));
 
 // The SaveTuba app contains the navigation containers for the main screens of the application. 
 //Utilizing tab-based navigation here. https://reactnavigation.org/docs/tab-based-navigation
@@ -33,12 +28,8 @@ const SaveTuba = () => {
         tabBarInactiveTintColor: "#fff",
         headerShown: false,
         tabBarHideOnKeyboard: true,
-        tabBarIconStyle: {
-          marginTop: 4,
-        },
-        tabBarStyle: {
-          backgroundColor: "#C6DC3B",
-        },
+        tabBarIconStyle: { marginTop: 4 },
+        tabBarStyle: { backgroundColor: "#C6DC3B" },
       }}
     >
       <Tab.Screen
@@ -155,15 +146,14 @@ const Main = () => {
   }
 
   const handleUserRejected = async() => {
-    console.error("user queries failed in Main.js. Pushing back to LoginEmail")
+    console.error("user queries failed in Main.js. Pushing back to Login")
     await auth.signOut();
     /* marked for translation */
-    Alert.alert("uh oh...", "that shouldn't have happened - please contact support")
-    navigation.replace("LoginEmail");
+    Alert.alert("uh oh...", "that shouldn't have happened - please contact support at savetuba2023@gmail.com");
+    navigation.replace("Login");
   }
 
-    //Update 4/22/24: removed Amodal global wrapper. User achievements/badges should be implemented in a more functional way.
-
+  //Update 4/22/24: removed Amodal global wrapper. User achievements/badges should be implemented in a more functional way.
   return (
     <>
       {content}

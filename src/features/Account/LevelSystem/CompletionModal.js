@@ -140,6 +140,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
         <Image 
           style={styles.tubaImage}
           source={require("../../../../assets/tuba-low-quality.png")}
+          fadeDuration={100}
         />
         <LottieView 
           source={require("../../../../assets/lottie-animations/confetti-animation.json")}

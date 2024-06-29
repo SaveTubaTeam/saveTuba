@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ActivityIndicator, FlatList } from "react-native";
+import { View, Text, StyleSheet, ActivityIndicator, FlatList, ImageBackground } from "react-native";
 import { SafeArea } from "../../components/safe-area.component";
-import { ImageBg } from "../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { db } from "../../../firebase";
@@ -11,18 +10,18 @@ import sortAssignments from "./sortAssignments";
 
 function AssignmentsPage() {
    const { t } = useTranslation();
-   const classroomObject = useSelector(state => state.user.classroom);
+   const classroom = useSelector(state => state.user.classroom);
    const [assignments, setAssignments] = useState(null);
    const completions = useSelector(state => state.user.completions);
 
    // realtime listener
    useEffect(() => {
-      if(!classroomObject) { //guard clause
+      if(!classroom || Object.keys(classroom).length === 0) { //guard clause against uninitialized classroom
          setAssignments(null);
          return; 
       } 
 
-      const unsubscribe = db.collection("teachers").doc(classroomObject.teacher.email).collection(`Assignments_${classroomObject.classCode}`)
+      const unsubscribe = db.collection("teachers").doc(classroom.teacher.email).collection(`Assignments_${classroom.classCode}`)
          .onSnapshot((querySnapshot) => { //querySnapshot will always exist (no undefined)
 
             if(querySnapshot.size === 0) { //guard clause for empty snapshot
@@ -49,7 +48,7 @@ function AssignmentsPage() {
          console.log("-------- unsubscribed from assignments listener --------")
       } // Unsubscribe when component unmounts (here this means on signout or when hmr reloading)
 
-   }, [completions]) //end of useEffect. 
+   }, [completions, classroom]) //end of useEffect. 
    //assignments will always update cuz of the listener, 
    //and we add a dependency completions to also update this useEffect when user completes an activity
 
@@ -77,14 +76,26 @@ function AssignmentsPage() {
          {/* marked for translation */}
          <HeaderComponent title={"Assignments"} />
 
-         <ImageBg source={require("../../../assets/assignmentsBg.jpg")} resizeMode="cover">
+         <ImageBackground 
+            source={require("../../../assets/assignmentsBg.jpg")}
+            resizeMode="cover"
+            style={styles.imageBackground}
+            fadeDuration={0}
+         >
             {content}
-         </ImageBg>
+         </ImageBackground>
       </SafeArea>
    )
 }
 
 const styles = StyleSheet.create({
+   imageBackground: {
+      alignItems: "center",
+      justifyContent: "center",
+      flex: 1,
+      width: "100%",
+      paddingTop: 20
+    },
    container: {
       height: "100%",
       width: "100%",

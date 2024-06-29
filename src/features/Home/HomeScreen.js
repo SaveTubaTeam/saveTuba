@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components/native";
-import { Text, StyleSheet, TouchableOpacity, ScrollView, Image, View } from "react-native";
+import { Text, StyleSheet, TouchableOpacity, ScrollView, Image, ImageBackground, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { Surface } from "react-native-paper";
 import { SafeArea } from "../../components/safe-area.component";
 import HeaderComponent from "./HeaderComponent";
-
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 import { useSelector } from "react-redux";
 
@@ -17,13 +16,19 @@ const Stack = createNativeStackNavigator();
 function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
+  const classroom = useSelector(state => state.user.classroom);
 
   return ( 
     <SafeArea>
 
     <HeaderComponent title={t("common:levels")} />
 
-    <ImageBg resizeMode="cover" source={require("../../../assets/homeBg.jpg")}>
+    <ImageBackground 
+      style={styles.container}
+      resizeMode="cover" 
+      source={require("../../../assets/homeBg.jpg")}
+      fadeDuration={0}
+    >
       <ScrollView style={{ paddingTop: 50 }}>
         <Surface style={styles.roundButton1} elevation={3}>
           <TouchableOpacity
@@ -75,7 +80,7 @@ function HomeView() {
         </Surface>
 
       </ScrollView>
-    </ImageBg>
+    </ImageBackground>
     </SafeArea>
   );
 }
@@ -102,6 +107,9 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  container:{
+    height: "100%"
+  },
   roundButton1: {
     width: 125,
     height: 125,
@@ -128,9 +136,5 @@ const styles = StyleSheet.create({
     color: "white",
   }
 });
-
-const ImageBg = styled.ImageBackground`
-  height: 100%;
-`;
 
 export default HomeScreen;

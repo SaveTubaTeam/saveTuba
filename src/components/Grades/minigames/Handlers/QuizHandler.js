@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Modal, TouchableOpacity, Text, FlatList, StyleSheet } from "react-native";
+import { View, Modal, TouchableOpacity, Text, FlatList, StyleSheet, ImageBackground } from "react-native";
 import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
@@ -91,24 +91,26 @@ const Start = ({ data }) => {
 
   const renderAnswers = ({ item, index }) => {
     return (
-      <>
-        <Category
-          key={index}
-          onPress={() => {
-            console.log("Answer Choices:", data.content[count].answers); {/* NOTE: plural between answer and answers is the difference between pulling the entire answers array or just the answer!*/}
-            console.log("Correct Answer:", data.content[count].answer);
-            console.log("User Input:", item);
-            handleAnswer(item);
-          }}
-        >
-          <BodyText size="subtitle">{item}</BodyText>
-        </Category>
-      </>
+      <Category
+        key={index}
+        onPress={() => {
+          console.log("Answer Choices:", data.content[count].answers); {/* NOTE: plural between answer and answers is the difference between pulling the entire answers array or just the answer!*/}
+          console.log("Correct Answer:", data.content[count].answer);
+          console.log("User Input:", item);
+          handleAnswer(item);
+        }}
+      >
+        <BodyText size="subtitle">{item}</BodyText>
+      </Category>
     );
   };
 
   return (
-    <ImageBg source={require("../../../../../assets/quizbg.jpg")}>
+    <ImageBackground 
+      source={require("../../../../../assets/quizbg.jpg")}
+      style={styles.container}
+      fadeDuration={0}
+    >
       <Container>
         <Question>
           <TitleText size="title">{data.content[count].prompt}</TitleText>
@@ -139,7 +141,7 @@ const Start = ({ data }) => {
         </CompletionModal>
 
       </Container>
-    </ImageBg>
+    </ImageBackground>
   );
 };
 
@@ -158,6 +160,10 @@ const QuizHandler = ({ objectData }) => {
 export default QuizHandler;
 
 const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    height: "100%",
+  },
   greenButtonModal: {
     backgroundColor: "#748816",
     borderRadius: 10,
@@ -172,11 +178,6 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
   padding-top: 100px;
-`;
-
-const ImageBg = styled.ImageBackground`
-  width: 100%;
-  height: 100%;
 `;
 
 const Category = styled.TouchableOpacity`

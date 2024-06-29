@@ -1,16 +1,8 @@
-// Import the functions you need from the SDKs you need
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/firestore";
 import "firebase/compat/storage";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-//firebase javascript sdk version release notes:
-//https://firebase.google.com/support/release-notes/js#10.9.0
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCa8CJLDlxZav6LylYflDDQQbL_m8tTZGs", //This is the Google Cloud Console browser key inside of project savetuba-5e519
   authDomain: "savetuba-5e519.firebaseapp.com",
@@ -22,7 +14,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 let app;
-
 if (firebase.apps.length === 0) {
   app = firebase.initializeApp(firebaseConfig);
 } else {
@@ -33,5 +24,6 @@ if (firebase.apps.length === 0) {
 const db = firebase.firestore();
 const auth = firebase.auth();
 const storage = firebase.storage().ref();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-export { db, auth, app, storage };
+export { db, auth, app, storage, googleProvider };

@@ -8,12 +8,8 @@ const Flag = ({ source }) => {
   return (
     <Image
       source={source}
-      style={{
-        borderRadius: 3,
-        height: undefined,
-        width: 50,
-        aspectRatio: 1.5,
-      }}
+      style={styles.image}
+      fadeDuration={100}
     />
   );
 };
@@ -52,14 +48,7 @@ const Selector = () => {
             key={language.code}
             disabled={selectedLanguage}
             onPress={() => setLanguage(language.code)}
-            style={{
-              alignSelf: "center",
-              marginTop: 10,
-              borderColor: "#C6DC3B",
-              borderWidth: 3,
-              borderRadius: 5,
-              elevation: 5,
-            }}
+            style={styles.touchableContainer}
           >
             {language.label}
           </TouchableOpacity>
@@ -70,6 +59,20 @@ const Selector = () => {
 }; //end of selector
 
 const styles = StyleSheet.create({
+  touchableContainer: {
+    alignSelf: "center",
+    marginTop: 10,
+    borderColor: "#C6DC3B",
+    borderWidth: 3,
+    borderRadius: 5,
+    elevation: 5,
+  },
+  image: {
+    borderRadius: 3,
+    height: undefined,
+    width: 50,
+    aspectRatio: 1.5,
+  },
   container: {
     paddingHorizontal: 16,
   },
