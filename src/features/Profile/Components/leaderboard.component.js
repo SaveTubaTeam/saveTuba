@@ -16,7 +16,8 @@ export default function LeaderboardCard() {
   //leaderboard listener. see: https://firebase.google.com/docs/firestore/query-data/listen#web_9
   //This will receive a new query snapshot every time the query results change (that is, when a document is added, removed, or modified).
   useEffect(() => {
-    if(!classroom || Object.keys(classroom).length === 0) { //guard clause against uninitialized classroom
+    if(!classroom || Object.keys(classroom).length === 0 || classroom.dummyClassroom) { //guard clause against uninitialized classroom
+      setLeaderboard(null);
       return; 
     } 
 

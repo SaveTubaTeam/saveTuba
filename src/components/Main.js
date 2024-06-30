@@ -76,12 +76,14 @@ const SaveTuba = () => {
   );
 };
 
-//Main handles the rendering of the SaveTuba navigation stack above
+//Main handles the rendering of the SaveTuba navigation stack above. 
+//Excessive logging happens upon multiple signins with the same account. No clue why
 const Main = () => {
   const dispatch = useDispatch()
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 
+  //TODO: guarding against invalid auth object should be more robust
   // Define userEmail only if auth.currentUser is defined
   let userEmail = auth.currentUser ? auth.currentUser.email : 'none';
 
@@ -115,7 +117,6 @@ const Main = () => {
     }
   }, [completionsSuccess, completionsError, completionsErrorMessage, completionsArray]);
 
-  // Execute useGetClassroomQuery only when userData has been successfully dispatched to store.
   const { data: classroomObject, isLoading: classroomLoading, isSuccess: classroomSuccess, isError: classroomError, error: classroomErrorMessage } = useGetClassroomQuery(
     { classCode: user.classCode },
     { skip: user.emptyUser ? true : false }

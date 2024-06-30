@@ -50,8 +50,8 @@ export default {
   pickanimage: "Upload submissions",
   restart: "Start over",
 
-  login: "Log In",
-  signup: "Sign Up",
+  login: "Sign In",
+  signup: "Register",
   makeanewaccount: "Make a new account",
   teachersignup: "Teacher Sign Up",
   signout: "Sign Out",

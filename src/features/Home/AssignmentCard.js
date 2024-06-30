@@ -105,15 +105,15 @@ const AssignmentCard = memo(({ content }) => {
          <CompletionOverlay opacity={opacity} />
 
          <View style={[styles.topSection, { backgroundColor: topRowColor.color, borderColor: topRowColor.border }]}>
-            <TitleText align="left" size="subtitle" color="quaternary" weight="bold">
+            <BodyText align="left" size="subtitle" color="beige" weight="bold">
                {/* marked for translation */}
                {`${dateText}:  ${parseDate(content.dateDue)}`}
-            </TitleText>
+            </BodyText>
 
-            <TitleText size="subtitle" color="quaternary" weight="bold">
+            <BodyText size="subtitle" color="beige" weight="bold">
                {/* numCompletions refers to the number of activities that have been completed in the given lesson */}
                {`${content.numCompletions}/${content.numActivities}`}
-            </TitleText>
+            </BodyText>
          </View>
 
          <View style={styles.bottomSectionLeft}>

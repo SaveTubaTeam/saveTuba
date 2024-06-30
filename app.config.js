@@ -1,4 +1,4 @@
-{
+export default {
   "expo": {
     "name": "Save Tuba",
     "primaryColor": "#C6DC3B",
@@ -22,7 +22,8 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.nadjastojanov.SaveTuba"
+      "bundleIdentifier": "com.nadjastojanov.SaveTuba",
+      "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST
     },
     "android": {
       "softwareKeyboardLayoutMode": "pan",
@@ -30,7 +31,8 @@
         "foregroundImage": "./assets/playstore-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.nadjastojanov.SaveTuba"
+      "package": "com.nadjastojanov.SaveTuba",
+      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON
     },
     "web": {
       "favicon": "./assets/favicon.png"

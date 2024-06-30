@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import styled from "styled-components/native";
 import { Text, StyleSheet, TouchableOpacity, ScrollView, Image, ImageBackground, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -16,7 +15,14 @@ const Stack = createNativeStackNavigator();
 function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
-  const classroom = useSelector(state => state.user.classroom);
+  const classroom = useSelector(state.user.classroom);
+  const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
+
+  useEffect(() => {
+    if(classroom.dummyClassroom) {
+      setClassCodeModalVisible(true);
+    }
+  },[classroom])
 
   return ( 
     <SafeArea>

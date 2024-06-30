@@ -27,8 +27,9 @@ import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import LoginScreen from "./src/features/Login/LoginScreen"
+import AlternativeLoginScreen from './src/features/Login/AlternativeLoginScreen';
 import RegisterScreen from "./src/features/Login/RegisterScreen";
-import MainScreen from "./src/components/Main";
+import Main from "./src/components/Main";
 
 // Redux Imports
 import { store } from "./redux/store/store";
@@ -107,13 +108,18 @@ export default function App() {
               />
               <Stack.Screen
                 options={{ headerShown: false, animation: 'fade' }}
+                name="AlternativeLogin"
+                component={AlternativeLoginScreen}
+              />
+              <Stack.Screen
+                options={{ headerShown: false, animation: 'fade' }}
                 name="Register"
                 component={RegisterScreen}
               />
               <Stack.Screen
                 options={{ headerShown: false, animation: 'fade' }}
-                name="HomePage"
-                component={MainScreen}
+                name="Main"
+                component={Main}
               />
             </Stack.Navigator>
           </NavigationContainer>

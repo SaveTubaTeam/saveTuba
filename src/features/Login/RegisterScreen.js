@@ -3,7 +3,6 @@ import styled from "styled-components/native";
 import { TitleText } from "../../components/title-text.component";
 import { Alert, ActivityIndicator, StyleSheet, View, ImageBackground } from 'react-native';
 import Toast from 'react-native-toast-message';
-import { setDoc, updateDoc, doc, arrayUnion } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
@@ -13,193 +12,173 @@ import { useNavigation } from "@react-navigation/native";
 
 //NOTE: there is an auth event listener in the login screens which redirects to HomeScreen upon successful account creation
 const RegisterScreen = () => {
-    const navigation = useNavigation();
-    const { t } = useTranslation();
-    //const [phoneNumber, setPhoneNumber] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [classCode, setClassCode] = useState("");
-    const [loading, setLoading] = useState(false);
+  const navigation = useNavigation();
+  const { t } = useTranslation();
+  //const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    Toast.show({
+      type: 'info',
+      text1: "Have a Google Account?",
+      text2: "No need to register! Head back to the Google login page.",
+      visibilityTime: 4000,
+    });
+  }, []);
 
-    //registerUser creates a new user only if a valid class code already exists within firebase's "classrooms" collection.
-    //Function is triggered by signUp button's onPress.
-    const registerUser = async() => {
-      setLoading(true);
+  //createUserWithEmailAndPassword: https://firebase.google.com/docs/auth/web/password-auth
+  //if we successfully register, we add the user (and initial user metadata) to Firestore
+  async function createUser() {
+    setLoading(true);
+    await auth.createUserWithEmailAndPassword(email, password) //creating user
+      .then((userCredential) => {
+          //successfully registered. This API call also signs the user in, 
+          //which triggers the onAuthStateChanged() event listener in LoginScreen, 
+          //which pushes us to "HomeScreen" in the navigation stack.
+        const user = userCredential.user;
+        console.log("\n\tUser Registered: ", auth.currentUser.email)
+        postUser(); //see below
 
-      if(classCode) {
-
-        await db.collection("classrooms").doc(classCode).get()
-          .then((snapshot) => { //checking if classCode exists
-            if(snapshot.exists) { 
-
-                createUser(); //see below
-
-            } else {//classCode does not exist
-                setLoading(false);
-                /* marked for translation */
-                Toast.show({
-                  type: 'error',
-                  text1: 'Invalid Class Code',
-                  visibilityTime: 3000,
-                });
-            }
-          });
-
-      } else { //classCode is falsy (empty string)
-        setLoading(false);
         /* marked for translation */
         Toast.show({
-          type: 'error',
-          text1: 'Invalid Class Code',
-          visibilityTime: 3000,
+          type: 'success',
+          text1: `Welcome, ${firstName} ${lastName}!`,
+          text2: `Your account has been successfully created.`,
+          visibilityTime: 4000,
         });
-      }
-
-    }
-
-    //createUserWithEmailAndPassword: https://firebase.google.com/docs/auth/web/password-auth
-    //if we successfully register, we 
-    //1) add the user (and initial user metadata) to our user list
-    //2) add the user's email to the specified classCode's classrooms collection in firebase
-    const createUser = async() => {
-      await auth.createUserWithEmailAndPassword(email, password) //creating user
-        .then((userCredential) => {
-           //successfully registered. This API call also signs the user in, 
-           //which triggers the onAuthStateChanged() event listener in LoginScreen, 
-           //which pushes us to "HomeScreen" in the navigation stack.
-          const user = userCredential.user;
-          console.log("\n\tUser Registered: ", auth.currentUser.email)
-          postUser(); //see below
-
-          //alert popup: https://reactnative.dev/docs/alert
-          /* marked for translation */
+      })
+      /* marked for translation */
+      .catch((error) => { //firebase createUser failed
+        setLoading(false);
+        const errorCode = error.code;
+        if(errorCode === "auth/email-already-in-use") {
           Toast.show({
-            type: 'success',
-            text1: `Welcome, ${firstName} ${lastName}!`,
-            text2: `Your account has been successfully created.`,
-            visibilityTime: 3000,
+            type: 'error',
+            text1: "Account Already Exists",
+            text2: "An account with this email already exists",
+            visibilityTime: 4000,
           });
-        })
-        .catch((error) => { //firebase createUser failed
-            setLoading(false);
-            console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
-            /* marked for translation */
-            Toast.show({
-              type: 'error',
-              text1: "Invalid Registration",
-              text2: "Email or password is invalid. Make sure your password is at least 6 characters.",
-              visibilityTime: 3000,
-            });
-        });
-    }
-
-    //posting user to "users" and "classrooms" collection
-    const postUser = async() => {
-      //1) setting user within the "users" doc
-      //const cleanedPhoneNumber = phoneNumber.replace(/\D/g,''); //regex removing all non-digit chars
-      await setDoc(doc(db, "users", email), {
-        //setting user metadata
-        //phoneNumber: cleanedPhoneNumber,
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-        classCode: classCode,
-        experiencePoints: 0
+        } else if(errorCode === "auth/invalid-email") {
+          Toast.show({
+            type: 'error',
+            text1: "Invalid Email",
+            text2: "Please enter a valid email address",
+            visibilityTime: 4000,
+          });
+        } else if(errorCode === "auth/weak-password") {
+          Toast.show({
+            type: 'error',
+            text1: "Weak Password",
+            text2: "Make sure your password is longer than 6 characters",
+            visibilityTime: 4000,
+          });
+        } else { //default catch others
+          Toast.show({
+            type: 'error',
+            text1: "Invalid Registration",
+            text2: "Please try again or contact support at savetuba2023@gmail.com",
+            visibilityTime: 4000,
+          });
+        }
+        console.log("RegisterScreen.js createUser | Error Code: ", error.code, "| Message: ", error.message);
       });
-      //2) adding student's email to the specified class within the "classrooms" doc
-      await updateDoc(doc(db, "classrooms", classCode), {
-          students: arrayUnion(email)
-      });
-      //resetting registration form for sanity
-      //setPhoneNumber("");
-      setEmail("");
-      setPassword("");
-      setFirstName("");
-      setLastName("");
-      setClassCode("");
-      setLoading(false);
-    } 
-    //end of registerUser methods
+  }
 
+  //posting user to "users" and "classrooms" collection
+  async function postUser(){
+    await db.collection("users").doc(email).set({
+      email: email,
+      firstName: firstName,
+      lastName: lastName,
+      classCode: "dummyClassroom",
+      experiencePoints: 0
+    });
+    dispatch(triggerNewUser({isNewUser: true }));
+    //resetting registration form for sanity
+    setEmail("");
+    setPassword("");
+    setFirstName("");
+    setLastName("");
+    setLoading(false);
+  } 
+
+  while(loading) {
     return (
-        <Container behavior="padding">
-          {/* here a ternary operator is used to render a spinner if loading == true (see below) */}
-          {!loading ? (
-            <ImageBackground 
-              source={require("../../../assets/registerScreenBg.png")}
-              style={styles.imageBackground}
-              fadeDuration={0}
-            >
-              <TitleText color="secondary" size="title">
-                {t("common:makeanewaccount")}
-              </TitleText>
-    
-              <InputContainer>
-                <Input
-                  placeholder={t("common:email")}
-                  onChangeText={(text) => setEmail(text)}
-                  placeholderTextColor="#696969"
-                  value={email}
-                  autoCapitalize="none"
-                />
-                <Input
-                  placeholder={t("common:password")}
-                  secureTextEntry={true}
-                  onChangeText={(text) => setPassword(text)}
-                  placeholderTextColor="#696969"
-                  value={password}
-                  autoCapitalize="none"
-                />
-                <Input
-                  placeholder={t("common:firstname")}
-                  onChangeText={(text) => setFirstName(text)}
-                  placeholderTextColor="#696969"
-                  value={firstName}
-                  autoCapitalize="none"
-                />
-                <Input
-                  placeholder={t("common:lastname")}
-                  onChangeText={(text) => setLastName(text)}
-                  placeholderTextColor="#696969"
-                  value={lastName}
-                  autoCapitalize="none"
-                />
-                <Input
-                  placeholder={t("common:classcode")}
-                  onChangeText={(text) => setClassCode(text)}
-                  placeholderTextColor="#696969"
-                  value={classCode}
-                  autoCapitalize="none"
-                />
-              </InputContainer>
-    
-              <ButtonContainer>
+      <Container behavior="padding">
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#00ff00" />
+        </View>
+      </Container>
+    );
+  }
 
-                {/* asynchronously register & push user to db, setting loading icon to visible while we do so */}
-                <Button onPress={() => {registerUser(); }}>
-                  <TitleText color="secondary" size="body">
-                    {t("common:signup")}
-                  </TitleText>
-                </Button>
-              
-                <BackButton onPress={() => { navigation.navigate("Login"); }}>
-                  <TitleText color="primary" size="body">
-                    {t("common:back")}
-                  </TitleText>
-                </BackButton>
-              </ButtonContainer>
+  return (
+    <Container behavior="padding">
+      <ImageBackground 
+        source={require("../../../assets/registerScreenBg.png")}
+        style={styles.imageBackground}
+        fadeDuration={0}
+      >
+        <TitleText color="secondary" size="title">
+          {t("common:makeanewaccount")}
+        </TitleText>
 
-            </ImageBackground>
-          ) : (
-            <View style={[styles.container, styles.horizontal]}>
-              <ActivityIndicator size="large" color="#00ff00" />
-            </View>
-          )}
-        </Container>
-      );
+        <InputContainer>
+          <Input
+            placeholder={t("common:email")}
+            onChangeText={(text) => setEmail(text)}
+            placeholderTextColor="#696969"
+            value={email}
+            autoCapitalize="none"
+          />
+          <Input
+            placeholder={t("common:password")}
+            secureTextEntry={true}
+            onChangeText={(text) => setPassword(text)}
+            placeholderTextColor="#696969"
+            value={password}
+            autoCapitalize="none"
+          />
+          <Input
+            placeholder={t("common:firstname")}
+            onChangeText={(text) => setFirstName(text)}
+            placeholderTextColor="#696969"
+            value={firstName}
+            autoCapitalize="none"
+          />
+          <Input
+            placeholder={t("common:lastname")}
+            onChangeText={(text) => setLastName(text)}
+            placeholderTextColor="#696969"
+            value={lastName}
+            autoCapitalize="none"
+          />
+        </InputContainer>
+
+        <ButtonContainer>
+          {/* asynchronously register & push user to db, setting loading icon to visible while we do so */}
+          <Button onPress={() => {createUser(); }}>
+            <TitleText color="secondary" size="body">
+              {t("common:signup")}
+            </TitleText>
+          </Button>
+        </ButtonContainer>
+
+        <BottomContainer>
+          <ButtonOutLine onPress={() => navigation.navigate("AlternativeLogin")} style={{marginTop: 10}}>
+            <TitleText color="primary" size="body">
+              {t("common:back")}
+            </TitleText>
+          </ButtonOutLine>
+        </BottomContainer>
+
+      </ImageBackground>
+    </Container>
+  );
 }
 
 export default RegisterScreen;
@@ -228,20 +207,9 @@ const Button = styled.TouchableOpacity`
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
   margin-top: 10px;
+  margin-bottom: 100px;
   width: 100%;
   align-items: center;
-`;
-const BackButton = styled.TouchableOpacity`
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  border: ${(props) => props.theme.space[1]} solid
-    ${(props) => props.theme.colors.ui.tertiary};
-  padding: ${(props) => props.theme.space[3]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  width: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: ${(props) => props.theme.space[4]};
-  bottom: 0;
 `;
 
 const Input = styled.TextInput`
@@ -258,9 +226,8 @@ const Container = styled.View`
   justify-content: center;
   align-items: center;
 `;
-// align-content: center;
 const ButtonContainer = styled.View`
-  width: 50%;
+  width: 60%;
   align-self: center;
 `;
 const InputContainer = styled.View`
@@ -268,3 +235,21 @@ const InputContainer = styled.View`
   margin-top: 30px;
   align-self: center;
 `;
+
+const BottomContainer = styled.View`
+position: absolute;
+bottom: 15%;
+width: 50%;
+padding-horizontal: ${(props) => props.theme.space[3]};
+`;
+
+const ButtonOutLine = styled.TouchableOpacity`
+  background-color: ${(props) => props.theme.colors.bg.tertiary};
+  margin-top: ${(props) => props.theme.space[1]};
+  border: ${(props) => props.theme.space[1]} solid
+    ${(props) => props.theme.colors.ui.tertiary};
+  width: 100%;
+  padding: ${(props) => props.theme.space[3]};
+  border-radius: ${(props) => props.theme.sizes[2]};
+  align-items: center;
+  `;

@@ -105,7 +105,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
     if(!previouslySubmitted) {
       setText(`${scoreShown}${prompt} ✨\n\n+${finalXP} XP!\n`);
     } else { //marked for translation
-      setText(`${scoreShown}${prompt} ✨\n\nYou've already claimed XP for this activity 😔\n`);
+      setText(`${scoreShown}${prompt}\n\nYou've already claimed XP for this activity 😔\n`);
     }
   }, [previouslySubmitted])
 
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
 })
 
 const ModalContainer = styled.View`
-  background-color: #F6FEDB;
+  background-color: #fcfff4;
   width: 72%;
   padding: 30px;
   border-radius: 20px;

@@ -16,7 +16,7 @@ function AssignmentsPage() {
 
    // realtime listener
    useEffect(() => {
-      if(!classroom || Object.keys(classroom).length === 0) { //guard clause against uninitialized classroom
+      if(!classroom || Object.keys(classroom).length === 0 || classroom.dummyClassroom) { //guard clause against uninitialized classroom
          setAssignments(null);
          return; 
       } 

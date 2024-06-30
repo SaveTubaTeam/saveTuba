@@ -27,7 +27,8 @@ const colorVariant = {
   tertiary: "#C6DC3B",
   quaternary: "#666",
   light: "#F6FFCE",
-  dark: '#555555'
+  dark: '#555555',
+  beige: "#fff8e7"
 };
 
 const alignVariant = {

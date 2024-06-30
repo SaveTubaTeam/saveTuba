@@ -93,6 +93,8 @@ async function postCompletion(userEmail, completionID, content) {
 }
 
 async function getClassroom(classCode) {
+   if(classCode === "dummyClassroom") { return; } //guard clause against faulty code in Main.js
+
    const start = performance.now(); // Start performance timer
 
    const classroomObject = {};

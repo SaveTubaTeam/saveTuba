@@ -12,7 +12,8 @@ export default function ClassroomCard() {
    const classroom = useSelector(state => state.user.classroom);
 
    //to check for an empty object: https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
-   if(!classroom || Object.keys(classroom).length === 0) { //guard clause against uninitialized classroom
+    //guard clause against uninitialized classroom
+   if(!classroom || Object.keys(classroom).length === 0 || classroom.dummyClassroom) {
       return null;
    }
 

@@ -53,7 +53,7 @@ const SelectorLogin = () => {
 const styles = StyleSheet.create({
   touchableContainer: {
     alignSelf: "center",
-    marginTop: 10,
+    margin: 5,
     borderColor: "#748816",
     borderWidth: 2,
     borderRadius: 5,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   rowLayout: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
   },
   title: {
     color: "#444",

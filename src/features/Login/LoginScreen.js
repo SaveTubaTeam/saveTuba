@@ -3,122 +3,182 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import { auth, db } from "../../../firebase";
-import { Alert, Text, StyleSheet, ImageBackground } from 'react-native';
+import { auth, db, googleProvider } from "../../../firebase";
+import { StyleSheet, ImageBackground, Image } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { triggerNewUser } from "../../../redux/slices/userSlice";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
+import { GoogleSignin, statusCodes } from "@react-native-google-signin/google-signin";
 
 const LoginScreen = () => {
-  const dispatch = useDispatch();
-  const currentUserSliceStore = useSelector(state => state.user);
+  const userSlice = useSelector(state => state.user);
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const [loading, setLoading] = useState(false);
 
-  //fetching images, updating the auth object with an observer to track changes to the existing user
+  //updating the auth object with an observer to track changes to the existing user
   useEffect(() => {
+    GoogleSignin.configure({
+      webClientId: "218900793188-0krdujh2ub4j1bkiddti006k2cste6jo.apps.googleusercontent.com",
+    });
+    auth.languageCode = i18n.language;
+    
     console.log("\n\tinside LoginScreen.js")
-    console.log('Most recent userSlice store:', currentUserSliceStore);
-    //dispatch(fetchImages());
+    console.log('Most recent userSlice store:', userSlice);
 
     //we set an observer on the auth object via onAuthStateChanged()
-    const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for handleLogin()
-      if (user) { //evaluates to true if user is signed in (not null or undefined)
-        console.log("auth.currentUser.email:", auth.currentUser.email); //**refers to the fb auth object and not our redux store
+    const login = auth.onAuthStateChanged((user) => { //basically listening/waiting for google sign in
+      //evaluates to true if user is signed in (not null or undefined) and we've finished setting up the user's account in Firestore
+      if (user) {  //see here for User object attributes: https://firebase.google.com/docs/reference/js/v8/firebase.User
+        console.log(`\n\n\t!!! USER SIGNED IN: ${user.email} !!!`); //**refers to the fb auth object and not our redux store
 
-        //resetting login form state for sanity
-        setEmail("");
-        setPassword("");
-
-        console.log("Firebase login successful. Pushing to HomePage for fetchUser()");
-        navigation.replace("HomePage");
+        if(!loading) {
+          console.log("Firebase auth successful. Pushing to Main . . .");
+          navigation.replace("Main");
+        }
       }
     }); //end of login function
 
     return login; //this line prevents login from being called more than once
-  }, [currentUserSliceStore, dispatch]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
+  }, [userSlice]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
 
-  //this function is called upon pressing the login button
-  const handleLogin = async () => {
+  /* marked for translation */
+  async function googleSignIn() {
+    try {
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      const googleCredential = googleProvider.credential(userInfo.idToken);
+      handleGAuth(googleCredential);
+    } catch (error) {
+      if (isErrorWithCode(error)) {
+        switch (error.code) {
+          case statusCodes.SIGN_IN_CANCELLED:
+            // user cancelled the login flow
+            Toast.show({
+              type: 'error',
+              text1: "Exited Google Sign In",
+              visibilityTime: 2000,
+            });
+            break;
+          case statusCodes.IN_PROGRESS:
+            // operation (eg. sign in) already in progress
+            Toast.show({
+              type: 'error',
+              text1: "Google Sign In Already In Progress",
+              text2: "Please try again or contact support at savetuba2023@gmail.com",
+              visibilityTime: 4000,
+            });
+            break;
+          case statusCodes.PLAY_SERVICES_NOT_AVAILABLE:
+            // play services not available or outdated
+            Toast.show({
+              type: 'error',
+              text1: "Google Play Services Unavailable",
+              text2: "Please try again or contact support at savetuba2023@gmail.com",
+              visibilityTime: 4000,
+            });
+            break;
+          default:
+          // some other error happened
+          showDefaultToast();
+        }
+      } else { //catch-all not related to google auth
+        showDefaultToast();
+      }
+    }
+  };
+
+  //see: https://firebase.google.com/docs/auth/web/google-signin#web_9
+  async function handleGAuth(googleCredential) {
     await auth
-      .signInWithEmailAndPassword(email, password)
-      .then((userCredentials) => { //successfully signed in
-        const user = userCredentials.user; //referring to userCredentials (auth object) properties
+      .signInWithCredential(googleCredential)
+      .then((result) => { //successfully signed in. see here for properties of the result object: https://firebase.google.com/docs/reference/js/v8/firebase.auth#usercredential
+        setLoading(true);
+        const user = result.user;
+        const isNewUser = result.additionalUserInfo.isNewUser;
         console.log("\n\tLogged in with:", user.email);
+        postUser(user, isNewUser);
       })
-      .catch((error) => {
-        Toast.show({
-          type: 'error',
-          text1: "Invalid Login",
-          text2: "Email or password is incorrect",
-          visibilityTime: 3000,
-        });
-        console.log("Error: ", error.message);
+      /* marked for translation */
+      .catch((error) => { //auth error codes: https://firebase.google.com/docs/reference/js/auth#autherrorcodes
+        const errorCode = error.code;
+        console.log(`ERROR: ${errorCode} | ${error.message}`);
+        showDefaultToast();
       });
   };
 
+  function showDefaultToast() {
+    Toast.show({
+      type: 'error',
+      text1: "Google Sign In Failed",
+      text2: "Please try again or contact support at savetuba2023@gmail.com",
+      visibilityTime: 4000,
+    });
+  }
+
   //we sign in with the savetuba account for Guest
-  const continueAsGuest = async() => {
+  async function continueAsGuest() {
     await auth
       .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then((userCredentials) => {
         const user = userCredentials.user;
+        dispatch(triggerNewUser({isNewUser: true }));
         console.log("\n\tLogged in with:", user.email);
       }).catch(() => {
+        Toast.show({
+          type: 'error',
+          text1: "Guest Login Failed",
+          text2: "Please try again or contact support at savetuba2023@gmail.com",
+          visibilityTime: 4000,
+        });
         console.log("Error with Guest in LoginScreen");
       })
   }
 
-  //function to send a password reset email: https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email
-  const sendPasswordReset = async() => {
-    auth.languageCode = i18n.language; //setting current language code to localize email.
-    console.log("language code for password reset email:", auth.languageCode);
-
-    if(checkIfUserExists()) { //see below
-      await auth.sendPasswordResetEmail(email)
-        .then(() => {//password reset email sent successfully
-          /* marked for translation */
-          Toast.show({
-            type: 'info',
-            text1: "Password Reset Email Sent",
-            text2: "An email with instructions to reset your password has been sent to your inbox.",
-            visibilityTime: 3000,
-          });
-        }).catch((error) => {
-          console.error(error);
-          /* marked for translation */
-          Toast.show({
-            type: 'error',
-            text1: "Error",
-            text2: "Please enter a valid email address",
-            visibilityTime: 3000,
-          });
-        })
-    } else {
-      /* marked for translation */
-      Toast.show({
-        type: 'error',
-        text1: "Invalid Email",
-        text2: "No such account with the given email exists",
-        visibilityTime: 3000,
-      });
+  async function postUser(user, isNewUser){
+    if(!isNewUser) { //guard clause for returning (non-new) users
+      setLoading(false);
+      return; 
     }
+
+    //isNewUser should be boolean true here
+    dispatch(triggerNewUser({isNewUser: isNewUser }));
+
+    //default is antelope-profile-pic.jpg in our storage bucket under /assets/
+    let photoURL = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fantelope-profile-pic.jpg?alt=media&token=26382673-a602-4c7d-b255-18ae83bc525a";
+    if(user.photoURL) { //the profile photo has dimensions of 96x96
+      photoURL = user.photoURL
+    }
+
+    await db.collection("users").doc(user.email).set({
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      classCode: "dummyClassroom",
+      photoURL: photoURL,
+      experiencePoints: 0,
+    });
+
+    Toast.show({
+      type: 'success',
+      text1: `Welcome, ${user.firstName} ${user.lastName}!`,
+      text2: `Your account has been successfully created.`,
+      visibilityTime: 4000,
+    });
+
+    setLoading(false);
   }
 
-  //helper for sendPasswordReset
-  const checkIfUserExists = async() => {
-    await db.collection('users').doc(email).get().then((snapshot) => {
-      if(snapshot.exists) {
-        console.log("user exists. sending password reset email to:", email);
-        return true;
-      } else {
-        console.log(email, "not found within 'users' collection");
-        return false;
-      }
-    })
+  while(loading) {
+    return (
+      <Container behavior="padding">
+        <View style={[styles.container, styles.horizontal]}>
+          <ActivityIndicator size="large" color="#00ff00" />
+        </View>
+      </Container>
+    );
   }
 
   return (
@@ -128,51 +188,25 @@ const LoginScreen = () => {
         style={styles.container}
         fadeDuration={0}
       >
-        <InputContainer>
-          <Input
-            placeholder={t("common:email")}
-            placeholderTextColor="#696969"
-            value={email}
-            onChangeText={(text) => setEmail(text)}
-            autoCapitalize="none"
-          />
-          <Input
-            placeholder={t("common:password")} //Password
-            placeholderTextColor="#696969"
-            value={password}
-            onChangeText={(text) => setPassword(text)}
-            autoCapitalize="none"
-            secureTextEntry
-          />
-        </InputContainer>
-
         <ButtonContainer>
-          <Button onPress={() => { handleLogin(); }}>
-            <TitleText color="secondary" size="body">
-              {t("common:login")}
-            </TitleText>
-          </Button>
+          <ButtonOutLine onPress={() => { googleSignIn(); }}>
+            <Image 
+              source={require("../../../assets/googleLogoButton.png")}
+              style={styles.image}
+              fadeDuration={0}
+            />
 
-          <ButtonOutLine onPress={() => navigation.push("Register")}>
             <TitleText color="primary" size="body">
-              {t("common:signup")}
+              {/* marked for translation */}
+              {`      Sign in with Google`}
             </TitleText>
           </ButtonOutLine>
 
-          {/* Forgot Password link */}
-          <TouchableOpacity 
-            onPress= {() => {
-              console.log("\n\tForgot Password button pressed");
-              sendPasswordReset();
-            }} 
-            style={{alignItems: 'center'}}>
-            <Text style={{textDecorationLine: 'underline'}}>
-              {/* marked for translation */}
-              <TitleText color="secondary" size="button">
-                {t("common:forgotpassword")}
-              </TitleText>
-            </Text>
-          </TouchableOpacity>
+          <Button onPress={() => navigation.push("AlternativeLogin")}>
+            <TitleText color="secondary" size="body">
+              Other
+            </TitleText>
+          </Button>
         </ButtonContainer>
 
         <BottomContainer>
@@ -181,7 +215,7 @@ const LoginScreen = () => {
 
           {/* Guest Login */}
           {/* marked for translation */}
-          <ButtonOutLine onPress={() => continueAsGuest()} style={{marginTop: 10}}>
+          <ButtonOutLine onPress={() => continueAsGuest()} style={{ marginTop: 10 }}>
             <TitleText color="primary" size="body">
               {t("common:continueasguest")}
             </TitleText>
@@ -203,6 +237,12 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
+  },
+  image: {
+    position: "absolute",
+    width: 45,
+    height: 45,
+    left: 5,
   }
 })
 
@@ -210,17 +250,6 @@ const Container = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-`;
-const InputContainer = styled.View`
-  width: 60%;
-`;
-
-const Input = styled.TextInput`
-  font-family: ${(props) => props.theme.fonts.body};
-  background-color: ${(props) => props.theme.colors.bg.tertiary};
-  padding: ${(props) => props.theme.sizes[1]} ${(props) => props.theme.sizes[2]};
-  border-radius: ${(props) => props.theme.sizes[2]};
-  margin-top: ${(props) => props.theme.space[2]};
 `;
 
 const ButtonContainer = styled.View`
@@ -232,24 +261,24 @@ const Button = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.ui.tertiary};
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
+  margin-top: ${(props) => props.theme.space[1]};
   width: 100%;
   align-items: center;
 `;
 
 const ButtonOutLine = styled.TouchableOpacity`
   background-color: ${(props) => props.theme.colors.bg.tertiary};
-  margin-top: ${(props) => props.theme.space[1]};
   border: ${(props) => props.theme.space[1]} solid
     ${(props) => props.theme.colors.ui.tertiary};
   width: 100%;
   padding: ${(props) => props.theme.space[3]};
   border-radius: ${(props) => props.theme.sizes[2]};
-  align-items: center;
-  `;
+  justify-content: center;
+`;
 
   const BottomContainer = styled.View`
   position: absolute;
   bottom: 4%;
-  width: 60%;
+  width: 70%;
   padding-horizontal: ${(props) => props.theme.space[3]};
 `;

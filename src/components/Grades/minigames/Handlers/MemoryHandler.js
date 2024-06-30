@@ -80,10 +80,7 @@ const MemoryHandler = ({ objectData }) => {
             <Card
               index={index}
               key={index}
-              name={card.name}
-              image={card.image}
-              imageDownloadURL={card.imageDownloadURL}
-              imageBlurHash={card.imageBlurHash}
+              card={card}
               isOpen={successfullyMatchedPairs.includes(card.name) || currentSelection.some(card => card.index === index)}
               onPress={() => checkCurrentSelection(index, card.name)}
               arrayIsLocked={arrayIsLocked}
@@ -143,27 +140,27 @@ const MemoryHandler = ({ objectData }) => {
 
 //card is the individual card inside of the minigame. Each card tracks its own state via isOpen
 //note: see renderCardsArray for params
-const Card = ({ index, name, image, imageDownloadURL, imageBlurHash, isOpen, onPress, arrayIsLocked }) => {
+const Card = ({ index, card, isOpen, onPress, arrayIsLocked }) => {
   //blockPNG refers to the image at assets/block.png in firebase storage
   const blockPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fblock.png?alt=media&token=fceeff99-3624-45e4-9456-ff18403a586d"
   const blockBlurHash = "UBO-r[9u0hNd~BWBR*of5Woes.af^*fQWCay";
 
   const content = useMemo(() => {
-    if(image) { //now checking content type to be displayed within the card
+    if(card.image) { //now checking content type to be displayed within the card
       return (
         <Image 
           key={index}
-          source={{ uri: imageDownloadURL }} 
-          placeholder={imageBlurHash}
+          source={{ uri: card.imageDownloadURL }} 
+          placeholder={card.imageBlurHash}
           style={{ width: 80, height: 80, borderRadius: 4 }}
         />
     )} else {
       return (
           <TitleText size="button" color="secondary">
-            {name}
+            {card.name}
           </TitleText>
     )}
-  }, [image, imageDownloadURL, imageBlurHash])
+  }, [card])
 
   return (
     <TouchableOpacity 
