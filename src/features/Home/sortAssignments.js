@@ -1,23 +1,9 @@
 //this function performs very quickly. 
 //if we are experiencing slowdowns for assignments/completions, it most likely? has to do with something else
-//need to add error handling to this function chain. also note that we do not modify the original arrays
+//need to add error handling to this file. also note that we do not modify the original arrays but make copies instead.
 export default function sortAssignments(assignments, completions) {
-   if (!Array.isArray(completions) || !completions.length) { // array does not exist, is not an array, or is empty
-      return assignments; //guard clause if there are no completions for the current user
-   }
-
-   const completionIDArray = [];
-   const submissionTimeArray = [];
    let completedAssignments = [];
    let uncompletedAssignments = [];
-
-   for(const completion of completions) {
-      const completionID = completion.completionID.split("_")[0];
-      completionIDArray.push(completionID);
-
-      const submissionTime = completion.submissionTime;
-      submissionTimeArray.push(submissionTime);
-   }
 
    for(const assignment of assignments) {
       const modifiedAssignment = determineStatus(completions, assignment);
@@ -30,7 +16,7 @@ export default function sortAssignments(assignments, completions) {
    }
 
    //original array is now in two parts. we can now sort each part independently.
-   //second parameter is to switch the 'comparator'
+   //second parameter is to switch the 'comparator' (yes I know its not actually a comparator)
    completedAssignments = sortByDateDue(completedAssignments, "top");
    uncompletedAssignments = sortByDateDue(uncompletedAssignments, "bottom");
    
@@ -48,7 +34,7 @@ export default function sortAssignments(assignments, completions) {
    uncompletedAssignments.push(...overdueAssignments);
 
    //we want uncompleted assignments to show up at the top of the screen so they go first
-   let sortedAssignments = uncompletedAssignments.concat(completedAssignments) //for .concat() see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+   let sortedAssignments = uncompletedAssignments.concat(completedAssignments); //for .concat() see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
    
    console.log("\n\t\tSORTEDASSIGNMENTS:", sortedAssignments);
    return sortedAssignments;
@@ -59,28 +45,36 @@ function determineStatus(completions, assignment) {
    let count = 0;
    let completionStatus = false;
    let overdueStatus = false;
+   let assignmentCompletionArray = [];
+
+   const dateNow = new Date();
+   const dateDue = parsedDate(assignment.dateDue);
+
+   if (!Array.isArray(completions) || !completions.length) { // array does not exist, is not an array, or is empty
+      console.log("NO COMPLETIONS AVAILABLE"); //(we still continue w/ the function. this is just for logging purposes)
+   }
 
    for(const completion of completions) {
-      if(completion.completionID.split("_")[0] === assignment.assignmentID) {
+      if(completion.completionID.split("_")[0] !== assignment.assignmentID) {
          count++;
-      }
-
-      const parsedSubmissionDate = parseDateForConstructor(completion.submissionTime);
-      const parsedDateDue = parseDateForConstructor(assignment.dateDue);
-
-      const submissionDate = new Date(parsedSubmissionDate.year, (parsedSubmissionDate.month - 1), parsedSubmissionDate.day, parsedSubmissionDate.hours, parsedSubmissionDate.minutes, parsedSubmissionDate.seconds);
-      const dateDue = new Date(parsedDateDue.year, (parsedDateDue.month - 1), parsedDateDue.day, parsedDateDue.hours, parsedDateDue.minutes, parsedDateDue.seconds);
-
-      if(submissionDate > dateDue) {
-         overdueStatus = true;
+         assignmentCompletionArray.push(completion);
       }
    }
 
-   if(count === assignment.numActivities) {
+   if(count !== assignment.numActivities) {
+      if(dateNow > dateDue) {
+         overdueStatus = true;
+      }
+      completionStatus = false;
+   } else { //here, count is equal to numActivities. Thus assignmentCompletionArray is nonempty
+      const latestSubmissionDate = getLatestDate(assignmentCompletionArray);
+      if(latestSubmissionDate > dateDue) {
+         overdue = true;
+      }
       completionStatus = true;
    }
 
-   const modifiedAssignment = assignment; //adding two attributes to a new object
+   const modifiedAssignment = assignment; //adding some attributes to a new object
    modifiedAssignment.numCompletions = count;
    modifiedAssignment.completionStatus = completionStatus;
    modifiedAssignment.overdue = overdueStatus;
@@ -88,17 +82,24 @@ function determineStatus(completions, assignment) {
    return modifiedAssignment;
 }
 
+function getLatestDate(assignmentCompletionArray) {
+   let latestAssignmentDate = new Date(0); //epoch time lol
+
+   for(const assignmentCompletion of assignmentCompletionArray) {
+      const assignmentDate = parsedDate(assignmentCompletion.submissionTime);
+      if(assignmentDate > latestAssignmentDate) {
+         latestAssignmentDate = assignmentDate;
+      }
+   }
+   return latestAssignmentDate;
+}
+
 //for .sort() see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 function sortByDateDue(array, comparator) {
    array.sort((a, b) => {
-      const parsedA = parseDateForConstructor(a.dateDue);
-      const parsedB = parseDateForConstructor(b.dateDue);
+      const dateA = parsedDate(a.dateDue);
+      const dateB = parsedDate(b.dateDue);
       
-      //Date() constructor params: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
-      //NOTE: monthIndex is zero-indexed
-      const dateA = new Date(parsedA.year, (parsedA.month - 1), parsedA.day, parsedA.hours, parsedA.minutes, parsedA.seconds);
-      const dateB = new Date(parsedB.year, (parsedB.month - 1), parsedB.day, parsedB.hours, parsedB.minutes, parsedB.seconds);
-
       //console.log(`\nDate A: ${dateA} [${dateA.valueOf()}], Date B: ${dateB} [${dateA.valueOf()}]`);
       //dateB - dateA will sort the future to the top etc.
       //dateA - dateB will sort what has already been completed to the top
@@ -113,7 +114,7 @@ function sortByDateDue(array, comparator) {
    return array;
 }
 
-function parseDateForConstructor(dateString) {
+function parsedDate(dateString) {
    let [datePart, timePart] = dateString.split(', ');
    //console.log(`datePart: ${datePart} [${typeof datePart}], timePart:, ${timePart} [${typeof timePart}]`);
 
@@ -123,5 +124,8 @@ function parseDateForConstructor(dateString) {
    let [hours, minutes, seconds] = timePart.split(':').map(Number);
    //console.log(`hours: ${hours} [${typeof hours}], minutes: ${minutes} [${typeof minutes}], seconds: ${seconds} [${typeof seconds}]`);
 
-   return { year: year, month: month, day: day, hours: hours, minutes: minutes, seconds: seconds };
+   //Date() constructor params: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/Date
+   //NOTE: monthIndex is zero-indexed
+   const parsedDateObject = new Date(year, (month-1), day, hours, minutes, seconds);
+   return parsedDateObject;
 }

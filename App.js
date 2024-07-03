@@ -100,7 +100,7 @@ export default function App() {
       <ThemeProvider theme={theme}>
         <Provider store={store}>
           <NavigationContainer>
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName='Login'>
               <Stack.Screen
                 options={{ headerShown: false, animation: 'fade' }}
                 name="Login"

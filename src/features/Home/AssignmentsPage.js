@@ -21,11 +21,12 @@ function AssignmentsPage() {
          return; 
       } 
 
-      const unsubscribe = db.collection("teachers").doc(classroom.teacher.email).collection(`Assignments_${classroom.classCode}`)
-         .onSnapshot((querySnapshot) => { //querySnapshot will always exist (no undefined)
+      const assignmentsRef = db.collection("teachers").doc(classroom.teacher.email).collection(`Assignments_${classroom.classCode}`)
 
+      const unsubscribe = assignmentsRef.onSnapshot((querySnapshot) => { //querySnapshot will always exist (no undefined)
             if(querySnapshot.size === 0) { //guard clause for empty snapshot
                console.log("ASSIGNMENTS SNAPSHOT IS EMPTY");
+               setAssignments(null);
                return;
             }
 

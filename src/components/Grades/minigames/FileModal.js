@@ -57,7 +57,6 @@ export default function FileModal({ showSelectedFile, setShowSelectedFile, conte
          transparent={true} 
          animationType="fade" 
          visible={showSelectedFile}
-         onRequestClose={() => setShowSelectedFile(false)}
       >
          <Container>
 

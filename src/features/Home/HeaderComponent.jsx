@@ -71,9 +71,7 @@ function ModalComponent({ visible, setModalVisible }) {
    }
 
    return (
-      <Modal transparent animationType="none" visible={visible}
-         onRequestClose={() => { setModalVisible(false); }}
-      >
+      <Modal transparent animationType="none" visible={visible}>
       <View style={styles.modalContainer}>
          <ModalContainer>
 

@@ -4,7 +4,6 @@ const initialState = {
     userData: { emptyUser: 'empty' },
     completions: [],
     classroom: {},
-    isNewUser: false,
 }
 
 //slice boilerplate
@@ -30,16 +29,11 @@ const userSlice = createSlice({
             const { classroomObject } = action.payload;
             state.classroom = classroomObject;
             console.log("getClassroom dispatched addClassroom | CLASSROOM:", classroomObject);
-        },
-        triggerNewUser(state, action) {
-            const { isNewUser } = action.payload;
-            state.isNewUser = isNewUser;
-            console.log("!!! NEW USER DETECTED (OR LOGGED IN AS GUEST) !!!");
         }
     }
 });
 
-export const { signInUser, signOutUser, addCompletions, addClassroom, triggerNewUser } = userSlice.actions;
+export const { signInUser, signOutUser, addCompletions, addClassroom } = userSlice.actions;
 export default userSlice.reducer //exports all reducers from const usersSlice
 
 export const selectCurrentUser = state => state.user.userData;

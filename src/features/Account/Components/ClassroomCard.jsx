@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { View, StyleSheet, TouchableOpacity } from "react-native"
 import { Spacer } from "../../../components/spacer.component"
 import { TitleText } from "../../../components/title-text.component"
@@ -6,9 +6,11 @@ import { Card } from "../../../components/card.component"
 import { useSelector } from "react-redux"
 import { useTranslation } from "react-i18next"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
+import ClassCodeModal from "../../Home/ClassCodeModal"
 
 export default function ClassroomCard() {
    const { t } = useTranslation();
+   const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
    const classroom = useSelector(state => state.user.classroom);
 
    //to check for an empty object: https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
@@ -18,6 +20,7 @@ export default function ClassroomCard() {
    }
 
    return (
+      <>
       <Card>
          <View style={styles.cardContainerRow}>
             <View style={{ flexDirection: "column", width: "60%" }}>
@@ -29,11 +32,15 @@ export default function ClassroomCard() {
                <TitleText size="body" align="left">{`Teacher: ${classroom.teacher.firstName} ${classroom.teacher.lastName}`}</TitleText>
             </View>
             
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => {
+               //setClassCodeModalVisible(!classCodeModalVisible);
+            }}>
                <MaterialCommunityIcons name="pencil-circle" color="rgba(65, 128, 152, 0.9)" size={45} />
             </TouchableOpacity>
          </View>
       </Card>
+      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} />
+      </>
    )
 }
 

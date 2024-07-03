@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { ActivityIndicator, StyleSheet, View, Alert } from "react-native";
 import { theme } from "../infrastructure/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { auth } from "../../firebase";
+import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { signOutUser } from "../../redux/slices/userSlice";
 
 // Different Screens thus far
 import HomeScreen from "../features/Home/HomeScreen";
@@ -77,13 +79,16 @@ const SaveTuba = () => {
 };
 
 //Main handles the rendering of the SaveTuba navigation stack above. 
-//Excessive logging happens upon multiple signins with the same account. No clue why
+//Excessive rendering happens upon multiple signins with the same account in the same session. No clue why
+//The issue does not persist if the app is refreshed. So frustrating.
+// I think it might be a memory leak or something like. Maybe we are missing cleanup functions?
 const Main = () => {
   const dispatch = useDispatch()
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 
-  //TODO: guarding against invalid auth object should be more robust
+  //TODO: guarding against invalid data should be more robust
+
   // Define userEmail only if auth.currentUser is defined
   let userEmail = auth.currentUser ? auth.currentUser.email : 'none';
 
@@ -97,7 +102,7 @@ const Main = () => {
     if (userSuccess) {
       dispatch(signInUser({ userData: userData }));
     } else if (userError) {
-      console.error(userErrorMessage);
+      console.error("userErrorMessage:", userErrorMessage);
       handleUserRejected();
     }
   }, [userSuccess, userError, userErrorMessage, userData]);
@@ -112,7 +117,7 @@ const Main = () => {
     if (completionsSuccess) {
       dispatch(addCompletions({ completions: completionsArray }));
     } else if (completionsError) {
-      console.error(completionsErrorMessage);
+      console.error("completionsErrorMessage:", completionsErrorMessage);
       handleUserRejected();
     }
   }, [completionsSuccess, completionsError, completionsErrorMessage, completionsArray]);
@@ -126,7 +131,7 @@ const Main = () => {
     if (classroomSuccess) {
       dispatch(addClassroom({ classroomObject: classroomObject }));
     } else if (classroomError) {
-      console.error(classroomErrorMessage);
+      console.error("classroomErrorMessage:", classroomErrorMessage);
       handleUserRejected();
     }
   }, [classroomSuccess, classroomError, classroomErrorMessage, classroomObject]);
@@ -147,7 +152,11 @@ const Main = () => {
   }
 
   const handleUserRejected = async() => {
-    console.error("user queries failed in Main.js. Pushing back to Login")
+    console.error("user queries failed in Main.js. Pushing back to Login");
+    dispatch(signOutUser());
+    if(GoogleSignin.getCurrentUser()) { //null if not signed in with google
+      await GoogleSignin.signOut();
+    }
     await auth.signOut();
     /* marked for translation */
     Alert.alert("uh oh...", "that shouldn't have happened - please contact support at savetuba2023@gmail.com");
@@ -160,7 +169,7 @@ const Main = () => {
       {content}
     </>
   );
-}//end of Main component
+};//end of Main component
 
 const styles = StyleSheet.create({
   container: {

@@ -24,7 +24,7 @@ export default function SaigaCarousel() {
          style={styles.carouselContainer}
          width={275}
          height={350}
-         pagingEnabled={false}
+         pagingEnabled={true}
          snapEnabled={true}
          mode={"horizontal-stack"}
          loop={true}
@@ -55,11 +55,11 @@ const styles = StyleSheet.create({
    carouselContainer: {
       alignItems: "center",
       justifyContent: "center",
-      padding: 200
+      padding: 200,
    },
    cardContainer: {
-      width: 300,
-      height: 250,
+      width: "100%",
+      height: "100%",
       backgroundColor: "#F5F5DC",
       borderRadius: 10,
       alignItems: "center",

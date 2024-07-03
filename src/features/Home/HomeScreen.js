@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Text, StyleSheet, TouchableOpacity, ScrollView, Image, ImageBackground, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -8,6 +8,9 @@ import { SafeArea } from "../../components/safe-area.component";
 import HeaderComponent from "./HeaderComponent";
 import ChaptersHandler from "../Grades/Handlers/ChaptersHandler";
 import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../../redux/slices/userSlice";
+import ClassCodeModal from "./ClassCodeModal";
+import AboutModal from "../Account/Components/AboutModal";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,14 +18,24 @@ const Stack = createNativeStackNavigator();
 function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
-  const classroom = useSelector(state.user.classroom);
+  const classroom = useSelector(state => state.user.classroom);
+  const user = useSelector(selectCurrentUser);
   const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
+  const [modalAboutVisible, setModalAboutVisible] = useState(false);
 
   useEffect(() => {
     if(classroom.dummyClassroom) {
+      console.log("Class Code Modal Visible!");
       setClassCodeModalVisible(true);
+    } else if(!classroom.dummyClassroom) {
+      setClassCodeModalVisible(false);
+      if(user.isNewUser) {
+        setModalAboutVisible(true);
+      } else {
+        setModalAboutVisible(false);
+      }
     }
-  },[classroom])
+  },[classroom, user]);
 
   return ( 
     <SafeArea>
@@ -86,6 +99,11 @@ function HomeView() {
         </Surface>
 
       </ScrollView>
+
+      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} />
+
+      <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
+
     </ImageBackground>
     </SafeArea>
   );
@@ -114,7 +132,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   container:{
-    height: "100%"
+    height: "100%",
   },
   roundButton1: {
     width: 125,

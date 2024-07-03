@@ -17,6 +17,7 @@ const SignOut = () => {
         try {
             console.log("signing out user:", auth.currentUser.email);
 
+            //TODO: should log something here to indicate that we are signing out of google auth
             if(GoogleSignin.getCurrentUser()) { //null if not signed in with google
                 handleGoogleSignOut();
             }

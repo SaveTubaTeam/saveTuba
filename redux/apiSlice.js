@@ -1,5 +1,13 @@
 import { createApi, fakeBaseQuery } from "@reduxjs/toolkit/query/react";
-import { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroom } from "../src/features/Grades/Handlers/UserFunctions";
+import { 
+   getUser, 
+   updateXP, 
+   updateClassCode,
+   updateIsNewUser,
+   getCompletionsArray, 
+   postCompletion, 
+   getClassroom 
+} from "../src/features/Grades/Handlers/UserFunctions";
 
 //this file contains all the user queries/mutations
 export const apiSlice = createApi({
@@ -22,14 +30,42 @@ export const apiSlice = createApi({
          providesTags: ["User"],
       }),
 
-      updateUserXP: builder.mutation({
+      updateXP: builder.mutation({
          async queryFn({ newXP, oldXP, email }) {
             try {
-               console.log("\t\t\trunning updateUserXP in apiSlice.js . . . ['User' query cache invalidated]");
-               await updateUserXP(newXP, oldXP, email);
+               console.log("\t\t\trunning updateXP in apiSlice.js . . . ['User' query cache invalidated]");
+               await updateXP(newXP, oldXP, email);
                return { data: "updated" };
             } catch(error) {
-               console.error("ERROR with updateUserXP():", error);
+               console.error("ERROR with updateXP():", error);
+               return { error: error.message };
+            }
+         },
+         invalidatesTags: ["User"],
+      }),
+
+      updateClassCode: builder.mutation({
+         async queryFn({ classCode, email }) {
+            try {
+               console.log("\t\t\trunning updateClassCode in apiSlice.js . . . ['User' and 'Classroom' query caches invalidated]");
+               await updateClassCode(classCode, email);
+               return { data: "updated" };
+            } catch(error) {
+               console.error("ERROR with updateClassCode():", error);
+               return { error: error.message };
+            }
+         },
+         invalidatesTags: ["User", "Classroom"],
+      }),
+
+      updateIsNewUser: builder.mutation({
+         async queryFn({ email }) {
+            try {
+               console.log("\t\t\trunning updateIsNewUser in apiSlice.js . . . ['User' query cache invalidated]");
+               await updateIsNewUser(email);
+               return { data: "updated" };
+            } catch(error) {
+               console.error("ERROR with updateIsNewUser():", error);
                return { error: error.message };
             }
          },
@@ -79,7 +115,9 @@ export const apiSlice = createApi({
 });
 
 export const { useGetUserQuery, 
-               useUpdateUserXPMutation, 
+               useUpdateXPMutation,
+               useUpdateClassCodeMutation, 
+               useUpdateIsNewUserMutation,
                useGetCompletionsArrayQuery, 
                usePostCompletionMutation,
                useGetClassroomQuery } = apiSlice;

@@ -21,7 +21,7 @@ async function getUser(userEmail) {
    
 }
 
-async function updateUserXP(newXP, oldXP, email) {
+async function updateXP(newXP, oldXP, email) {
    const start = performance.now(); // Start performance timer
 
    const userRef = db.collection('users').doc(email);
@@ -35,7 +35,36 @@ async function updateUserXP(newXP, oldXP, email) {
    await userRef.update({ experiencePoints: xp }); //update user's document
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
-   console.log(`\t\t\t\tupdateUserXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+   console.log(`\t\t\t\tupdateXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+}
+
+async function updateClassCode(classCode, email) {
+   const start = performance.now(); // Start performance timer
+
+   const userRef = db.collection('users').doc(email);
+   const userDoc = await userRef.get();
+   if (!userDoc.exists) { 
+      throw new Error(`User ${email} not found.`);
+   }
+
+   await userRef.update({ classCode: classCode });
+
+   const elapsedTimeSeconds = (performance.now() - start) / 1000;
+   console.log(`\t\t\t\tupdateXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+}
+
+async function updateIsNewUser(email) {
+   const start = performance.now(); // Start performance timer
+
+   const userRef = db.collection('users').doc(email);
+   const userDoc = await userRef.get();
+   if (!userDoc.exists) { 
+      throw new Error(`User ${email} not found.`);
+   }
+   await userRef.update({ isNewUser: false });
+
+   const elapsedTimeSeconds = (performance.now() - start) / 1000;
+   console.log(`\t\t\t\tupdateXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
 }
 
 async function getCompletionsArray(userEmail) {
@@ -93,11 +122,9 @@ async function postCompletion(userEmail, completionID, content) {
 }
 
 async function getClassroom(classCode) {
-   if(classCode === "dummyClassroom") { return; } //guard clause against faulty code in Main.js
-
    const start = performance.now(); // Start performance timer
 
-   const classroomObject = {};
+   let classroomObject = {};
 
    const classroomRef = db.collection("classrooms").doc(classCode);
    const classroomSnapshot = await classroomRef.get();
@@ -106,10 +133,14 @@ async function getClassroom(classCode) {
    }
 
    const classroomDoc = classroomSnapshot.data();
-   classroomObject.teacher = classroomDoc.teachers[0];
-   classroomObject.classCode = classroomDoc.classCode;
-   classroomObject.className = classroomDoc.className;
-   classroomObject.gradeLevel = classroomDoc.gradeLevel;
+   if(classroomDoc.teachers) {
+      classroomObject.teacher = classroomDoc.teachers[0];
+      classroomObject.classCode = classroomDoc.classCode;
+      classroomObject.className = classroomDoc.className;
+      classroomObject.gradeLevel = classroomDoc.gradeLevel;
+   } else { //to catch dummyClassroom
+      classroomObject = classroomDoc;
+   }
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
    console.log(`\t\t\t\tgetClassroom done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
@@ -117,4 +148,4 @@ async function getClassroom(classCode) {
    return classroomObject;
 }
 
-export { getUser, updateUserXP, getCompletionsArray, postCompletion, getClassroom };
+export { getUser, updateXP, updateClassCode, updateIsNewUser, getCompletionsArray, postCompletion, getClassroom };

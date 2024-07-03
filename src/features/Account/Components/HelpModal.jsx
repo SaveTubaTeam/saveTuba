@@ -10,9 +10,7 @@ export default function HelpModal({ modalHelpVisible, setModalHelpVisible }) {
    const { t } = useTranslation();
 
    return (
-      <Modal animationType="slide" transparent={true} visible={modalHelpVisible}
-         onRequestClose={() => { setModalHelpVisible(!modalHelpVisible); }}
-      >
+      <Modal animationType="slide" transparent={true} visible={modalHelpVisible}>
          <View style={styles.modalContainer}>
             <ModalContainer>
 

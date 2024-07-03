@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyleSheet, View, Modal, TouchableOpacity, Image } from "react-native";
 import { useTranslation } from "react-i18next";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import SaigaCarousel from "./SaigaCarousel";
 import LottieView from "lottie-react-native";
+import { useUpdateIsNewUserMutation } from "../../../../redux/apiSlice";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 
 export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    const { t } = useTranslation();
+   const user = useSelector(selectCurrentUser);
+   const [updateIsNewUser] = useUpdateIsNewUserMutation();
+
+   useEffect(() => {
+      if(modalAboutVisible) {
+         console.log("About Modal Visible!")
+      }
+   }, [modalAboutVisible])
 
    return (
-      <Modal animationType="slide" transparent={true} visible={modalAboutVisible}
-         onRequestClose={() => { setModalAboutVisible(!modalAboutVisible); }}
-      >
+      <Modal animationType="slide" transparent={true} visible={modalAboutVisible}>
          <View style={styles.modalContainer}>
             <Spacer size="large" />
 
@@ -46,7 +55,10 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
 
             <TouchableOpacity
                style={styles.greenButtonModal}
-               onPress={() => { setModalAboutVisible(!modalAboutVisible); }}
+               onPress={ async() => { 
+                  setModalAboutVisible(!modalAboutVisible); 
+                  await updateIsNewUser({ email: user.email }).unwrap();
+               }}
             >
                {/* marked for translation. i want this to say enter */}
                <BodyText size="title" color="secondary">
@@ -111,16 +123,16 @@ const styles = StyleSheet.create({
    },
    tubaImage: {
       position: "absolute",
-      top: 270,
-      left: -30,
+      top: "43%",
+      left: "-15%",
       width: "55%",
       height: "40%",
-      transform: [{ rotate: "-5deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }]
+      transform: [{ rotate: "-8deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }]
    },
    flowerAnimationOne: {
       position: "absolute",
-      top: -265,
-      right: -105,
+      top: "-38%",
+      right: "-32%",
       width: "80%",
       height: "80%",
       transform: [{ rotate: "25deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }],
@@ -128,11 +140,11 @@ const styles = StyleSheet.create({
    },
    flowerAnimationTwo: {
       position: "absolute",
-      bottom: -270,
-      left: -120,
+      bottom: "-40%",
+      left: "-35%",
       width: "100%",
       height: "100%",
-      transform: [{ rotate: "10deg" }, { scaleX: 0.5 }, { scaleY: 0.5 }],
+      transform: [{ rotate: "12deg" }, { scaleX: 0.5 }, { scaleY: 0.5 }],
       zIndex: 2,
    }
 })

@@ -60,7 +60,7 @@ export const GeneralCard = () => {
 
         <Spacer size="medium" />
 
-        <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
+        <TouchableOpacity onPress={() => setModalAboutVisible(!modalAboutVisible)}>
           <Row>
           <BodyText>{t("common:about")}</BodyText>
           <Spacer position="right" size="medium" />

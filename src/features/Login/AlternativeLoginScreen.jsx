@@ -34,6 +34,8 @@ const AlternativeLoginScreen = () => {
       .then((userCredentials) => { //successfully signed in
         const user = userCredentials.user; //referring to userCredentials (auth object) properties
         console.log("\n\tLogged in with:", user.email);
+        console.log("Firebase auth successful. Pushing to Main . . .");
+        navigation.replace("Main");
       })
       /* marked for translation */
       .catch((error) => { //auth error codes: https://firebase.google.com/docs/reference/js/auth#autherrorcodes

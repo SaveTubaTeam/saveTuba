@@ -10,7 +10,6 @@ import { useNavigation } from "@react-navigation/native";
 //Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
 //dispatch(fetchUser()) which happens upon Main.js render and nowhere else to minimize redundancy.
 
-//NOTE: there is an auth event listener in the login screens which redirects to HomeScreen upon successful account creation
 const RegisterScreen = () => {
   const navigation = useNavigation();
   const { t } = useTranslation();
@@ -36,9 +35,6 @@ const RegisterScreen = () => {
     setLoading(true);
     await auth.createUserWithEmailAndPassword(email, password) //creating user
       .then((userCredential) => {
-          //successfully registered. This API call also signs the user in, 
-          //which triggers the onAuthStateChanged() event listener in LoginScreen, 
-          //which pushes us to "HomeScreen" in the navigation stack.
         const user = userCredential.user;
         console.log("\n\tUser Registered: ", auth.currentUser.email)
         postUser(); //see below
@@ -90,14 +86,21 @@ const RegisterScreen = () => {
 
   //posting user to "users" and "classrooms" collection
   async function postUser(){
+    let photoURL = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fantelope-profile-pic.jpg?alt=media&token=26382673-a602-4c7d-b255-18ae83bc525a";
+
     await db.collection("users").doc(email).set({
       email: email,
       firstName: firstName,
       lastName: lastName,
       classCode: "dummyClassroom",
-      experiencePoints: 0
+      photoURL: photoURL,
+      experiencePoints: 0,
+      isNewUser: true,
     });
-    dispatch(triggerNewUser({isNewUser: true }));
+
+    console.log("new user auth successful. Pushing to Main . . .");
+    navigation.replace("Main");
+
     //resetting registration form for sanity
     setEmail("");
     setPassword("");

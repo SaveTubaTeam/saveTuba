@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
-import { useUpdateUserXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
+import { useUpdateXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
 import styled from "styled-components/native";
 
 //CompletionModal is the final modal which shows up upon all minigame completions.
@@ -43,7 +43,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
   const [previouslySubmitted, setPreviouslySubmitted] = useState(false);
   const [text, setText] = useState("");
 
-  const [updateUserXP] = useUpdateUserXPMutation();
+  const [updateXP] = useUpdateXPMutation();
   const [postCompletion] = usePostCompletionMutation();
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
       } else {
         console.log(`it is ${user.firstName}'s first time submitting ${completionID}`);
         console.log(`!!! ADDING EXPERIENCE TO USER !!!`);
-        await updateUserXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email }).unwrap();
+        await updateXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email }).unwrap();
       }
 
       let submittedContent;
@@ -112,9 +112,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
   return (
     <>
       <LoadingModal visible={loadingModal} />
-      <Modal transparent animationType="none" visible={completionModalVisible}
-        onRequestClose={() => { navigation.navigate("Lesson"); }}
-      >
+      <Modal transparent animationType="none" visible={completionModalVisible}>
         <View style={styles.modalContainer}>
           <ModalContainer>
 
