@@ -55,13 +55,13 @@ function determineStatus(completions, assignment) {
    }
 
    for(const completion of completions) {
-      if(completion.completionID.split("_")[0] !== assignment.assignmentID) {
+      if(completion.completionID.split("_")[0] === assignment.assignmentID) {
          count++;
          assignmentCompletionArray.push(completion);
       }
    }
 
-   if(count !== assignment.numActivities) {
+   if(count < assignment.numActivities) {
       if(dateNow > dateDue) {
          overdueStatus = true;
       }

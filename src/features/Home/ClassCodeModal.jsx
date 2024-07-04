@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Alert } from "react-native";
 import { useTranslation } from "react-i18next";
 import SignOut from "../Account/Components/SignOutComponent";
@@ -18,6 +18,12 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
    const [textInputBoxColor, setTextInputBoxColor] = useState("rgba(128, 128, 128, 0.9)");
    const user = useSelector(selectCurrentUser);
    const dispatch = useDispatch();
+
+   useEffect(() => {
+      if(classCodeModalVisible) {
+         console.log("Class Code Modal Visible!");
+      }
+   }, [classCodeModalVisible])
 
    const [updateClassCode] = useUpdateClassCodeMutation();
 

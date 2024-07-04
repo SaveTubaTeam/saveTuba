@@ -55,10 +55,14 @@ const AssignmentCard = memo(({ content }) => {
       { skip: !buttonPressed }
    );
 
-   // jac927 6/26/24 | Dear whoever is reading, I fell into a rabbit hole of optimization for the below pushToLesson function.
+   // jac927 6/26/24 | James: Dear whoever is reading, I fell into a rabbit hole of optimization for the below pushToLesson function.
    // I would advise that you think of a radically different solution than to continue to optimize this function.
    // The missing piece of the puzzle is a page focus listener for each layer of stack navigation.
    // This pushToLesson function will not work if rendering for any of the below navigation 'layers' takes longer than 500ms.
+
+   // jac927 7/4/24 | James: Found a glitch where the completionID has a chance to be out of sync with the navigation stack and/or 
+   // redux curriculumLocationSlice if the navigation stack fails to render on time. This causes a mismatch
+   // in the completionID and the actual curriculum location of the user. Looking for a fix...
    useEffect(() => {
       async function pushToLesson() {
          if(gradeSuccess && lessonsSuccess && activitiesSuccess) {

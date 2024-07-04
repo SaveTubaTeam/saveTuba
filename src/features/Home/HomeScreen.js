@@ -27,7 +27,6 @@ function HomeView() {
   useEffect(() => {
     if(classroom.dummyClassroom) {
       setModalAboutVisible(false);
-      console.log("Class Code Modal Visible!");
       setClassCodeModalVisible(true);
     } else if(!classroom.dummyClassroom) {
       setClassCodeModalVisible(false);
