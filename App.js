@@ -17,7 +17,7 @@ import {
   BalsamiqSans_700Bold,
 } from "@expo-google-fonts/balsamiq-sans";
 import * as SplashScreen from 'expo-splash-screen';
-import "./src/components/Translations/IMLocalize"; //gets either cached language or phone's locale language
+import "./src/components/Translations/IMLocalize"; //gets cached language or default kk
 
 import { enableScreens } from 'react-native-screens';
 enableScreens();

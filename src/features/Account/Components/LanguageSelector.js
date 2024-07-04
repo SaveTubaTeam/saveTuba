@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
 import { BodyText } from "../../../components/body-text.component";
+import { StackActions } from "@react-navigation/native";
 
 const Flag = ({ source }) => {
   return (
@@ -27,7 +28,9 @@ const Selector = () => {
 
   const setLanguage = async(languageCode) => {
     await i18n.changeLanguage(languageCode);
-    navigation.popToTop(); //throws an error in development mode but works like a charm
+
+    //see: https://reactnavigation.org/docs/stack-actions/#poptotop
+    navigation.dispatch(StackActions.popToTop()); //throws an error in development mode but works like a charm in prod
     //IMLocalize.js (imported in App.js) acts as an event listener for changeLanguage(), caching the new language code under 'user-language'
   };
 

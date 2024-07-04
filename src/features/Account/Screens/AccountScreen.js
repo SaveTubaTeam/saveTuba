@@ -7,7 +7,7 @@ import { SafeArea } from "../../../components/safe-area.component";
 import PersonalCard from "../Components/personal.component";
 import { GeneralCard } from "../Components/general.component";
 import { Spacer } from "../../../components/spacer.component";
-import SignOut from "../Components/signouut.component";
+import SignOut from "../Components/SignOutComponent";
 import ClassroomCard from "../Components/ClassroomCard";
 
 const Container = styled.View`

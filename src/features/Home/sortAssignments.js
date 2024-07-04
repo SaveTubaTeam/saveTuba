@@ -69,7 +69,7 @@ function determineStatus(completions, assignment) {
    } else { //here, count is equal to numActivities. Thus assignmentCompletionArray is nonempty
       const latestSubmissionDate = getLatestDate(assignmentCompletionArray);
       if(latestSubmissionDate > dateDue) {
-         overdue = true;
+         overdueStatus = true;
       }
       completionStatus = true;
    }

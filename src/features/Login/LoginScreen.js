@@ -11,6 +11,7 @@ import { apiSlice } from "../../../redux/apiSlice";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
 import { GoogleSignin, statusCodes, isErrorWithCode } from "@react-native-google-signin/google-signin";
+import { Constants } from "expo-constants";
 
 const LoginScreen = () => {
   const userSlice = useSelector(state => state.user);
@@ -113,9 +114,12 @@ const LoginScreen = () => {
   };
 
   //we sign in with the savetuba account for Guest
+  //also please see: https://docs.expo.dev/eas-update/environment-variables/#using-variables-in-appconfigjs
+  //the expo docs say that this method is not preferred for referencing .env variables.
+  //I, however, do not want to set up EAS Update because I am lazy and I do not understand it.
   async function continueAsGuest() {
     await auth
-      .signInWithEmailAndPassword("savetuba2023@gmail.com", process.env.GUEST_LOGIN_PASSWORD)
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", Constants.expoConfig.extra.GUEST_LOGIN_PASSWORD)
       .then(async(userCredentials) => {
         const user = userCredentials.user;
         await checkIfTuba(user.email);
@@ -192,7 +196,7 @@ const LoginScreen = () => {
       console.log(`LOGGING IN AS GUEST: ${email}`);
       await db.collection('users').doc(email).update({ isNewUser: true }); //to always trigger the about modal
       //re: https://redux-toolkit.js.org/rtk-query/api/created-api/api-slice-utils#invalidatetags
-      dispatch(apiSlice.util.invalidateTags(["User"])); //force a refetch of the stale cache
+      dispatch(apiSlice.util.invalidateTags(["User"])); //manually force a refetch of now stale cache
     }
   }
 
@@ -255,8 +259,8 @@ const LoginScreen = () => {
 //@returns {string[]} index 1 is first name, index 2 is last name or empty string if it doesnt exist
 //NOTE: 
 // - this is error-prone to first names with more than one word
-// - this is also error-prone to a displayName without a first name
-// - function behaviour is unknown if displayName is " " or ""
+// - this is also error-prone to a displayName without a first name (only last name - is that even possible?)
+// - function behaviour is unknown if entire displayName is " " or ""
 function parseDisplayName(displayName) {
   try {
     const result = [];

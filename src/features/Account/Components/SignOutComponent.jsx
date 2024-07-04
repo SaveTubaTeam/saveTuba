@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from 'react-redux';
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
+import { StackActions } from "@react-navigation/native";
 
 const SignOut = () => {
     const navigation = useNavigation();
@@ -17,14 +18,15 @@ const SignOut = () => {
         try {
             console.log("signing out user:", auth.currentUser.email);
 
-            //TODO: should log something here to indicate that we are signing out of google auth
             if(GoogleSignin.getCurrentUser()) { //null if not signed in with google
                 handleGoogleSignOut();
             }
 
             await auth.signOut(); // Sign out user from Firebase
-            dispatch(signOutUser()); // Update user state in Redux store to object w/ 'empty' attribute & status to 'idle'
-            navigation.navigate('Login'); // Navigate to login screen
+            dispatch(signOutUser()); // reset user state in Redux store to initialState
+
+            //re: https://reactnavigation.org/docs/stack-actions/#replace
+            navigation.dispatch(StackActions.replace("Login")); // Navigate to login screen
         } catch (error) { // Handle sign-out error
             console.error('Sign out error:', error);
             /* marked for translation */

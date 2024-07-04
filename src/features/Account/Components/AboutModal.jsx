@@ -5,20 +5,30 @@ import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import SaigaCarousel from "./SaigaCarousel";
 import LottieView from "lottie-react-native";
-import { useUpdateIsNewUserMutation } from "../../../../redux/apiSlice";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
+import { useDispatch } from "react-redux";
+import { apiSlice } from "../../../../redux/apiSlice";
+import { db } from "../../../../firebase";
 
 export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    const { t } = useTranslation();
    const user = useSelector(selectCurrentUser);
-   const [updateIsNewUser] = useUpdateIsNewUserMutation();
+   const dispatch = useDispatch();
 
    useEffect(() => {
       if(modalAboutVisible) {
          console.log("About Modal Visible!")
       }
-   }, [modalAboutVisible])
+   }, [modalAboutVisible]);
+
+   async function handleClose() {
+      setModalAboutVisible(!modalAboutVisible); 
+      console.log("Closing About Modal . . .");
+      await db.collection('users').doc(user.email).update({ isNewUser: false });
+      //re: https://redux-toolkit.js.org/rtk-query/api/created-api/api-slice-utils#invalidatetags
+      dispatch(apiSlice.util.invalidateTags(["User"])); //manually force a refetch of now stale cache
+   }
 
    return (
       <Modal animationType="slide" transparent={true} visible={modalAboutVisible}>
@@ -42,23 +52,18 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             Help me complete activities that improve our environment.
             </BodyText>
 
-            <Spacer size="large" />
-            <Spacer size="large" />
+            <Spacer size="medium" />
 
             {/* marked for translation */}
             <BodyText size="title" weight="bold">
             Welcome To My World!
             </BodyText>
 
-            <Spacer size="large" />
-            <Spacer size="small" />
+            <Spacer size="medium" />
 
             <TouchableOpacity
                style={styles.greenButtonModal}
-               onPress={ async() => { 
-                  setModalAboutVisible(!modalAboutVisible); 
-                  await updateIsNewUser({ email: user.email }).unwrap();
-               }}
+               onPress={async() => { await handleClose(); }}
             >
                {/* marked for translation. i want this to say enter */}
                <BodyText size="title" color="secondary">
@@ -98,7 +103,10 @@ const styles = StyleSheet.create({
       backgroundColor: "#F5F5DC",
       width: "100%",
       height: "100%",
-      padding: 30,
+      paddingTop: 30,
+      paddingBottom: 10,
+      paddingLeft: 30,
+      paddingRight: 30,
       borderTopRightRadius: 40,
       borderTopLeftRadius: 40,
       justifyContent: "center",
@@ -117,7 +125,7 @@ const styles = StyleSheet.create({
       borderWidth: 3,
       borderColor: "#CCE882",
       width: "60%",
-      marginTop: 10,
+      marginTop: 15,
       paddingTop: 5,
       paddingBottom: 5,
    },
@@ -136,7 +144,6 @@ const styles = StyleSheet.create({
       width: "80%",
       height: "80%",
       transform: [{ rotate: "25deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }],
-      zIndex: -1,
    },
    flowerAnimationTwo: {
       position: "absolute",
@@ -145,6 +152,6 @@ const styles = StyleSheet.create({
       width: "100%",
       height: "100%",
       transform: [{ rotate: "12deg" }, { scaleX: 0.5 }, { scaleY: 0.5 }],
-      zIndex: 2,
+      zIndex: -1,
    }
 })

@@ -53,20 +53,6 @@ async function updateClassCode(classCode, email) {
    console.log(`\t\t\t\tupdateXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
 }
 
-async function updateIsNewUser(email) {
-   const start = performance.now(); // Start performance timer
-
-   const userRef = db.collection('users').doc(email);
-   const userDoc = await userRef.get();
-   if (!userDoc.exists) { 
-      throw new Error(`User ${email} not found.`);
-   }
-   await userRef.update({ isNewUser: false });
-
-   const elapsedTimeSeconds = (performance.now() - start) / 1000;
-   console.log(`\t\t\t\tupdateXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
-}
-
 async function getCompletionsArray(userEmail) {
    const start = performance.now(); // Start performance timer
 
@@ -148,4 +134,4 @@ async function getClassroom(classCode) {
    return classroomObject;
 }
 
-export { getUser, updateXP, updateClassCode, updateIsNewUser, getCompletionsArray, postCompletion, getClassroom };
+export { getUser, updateXP, updateClassCode, getCompletionsArray, postCompletion, getClassroom };

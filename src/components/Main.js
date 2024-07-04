@@ -78,16 +78,15 @@ const SaveTuba = () => {
   );
 };
 
-//Main handles the rendering of the SaveTuba navigation stack above. 
-//Excessive rendering happens upon multiple signins with the same account in the same session. No clue why
-//The issue does not persist if the app is refreshed. So frustrating.
-// I think it might be a memory leak or something like. Maybe we are missing cleanup functions?
+// jac927 7/4/24 | I was able to remove some odd duping behaviour in Main.js where consecutive (n-many) 
+//                 sign-ins in the same session would cause n-many component dupes. Did this by using 
+//                 react-navigation's StackActions.replace instead of the regular navigation.navigate 
+//                 to wipe the <SaveTuba /> tab navigator from the stack completely upon sign-out. See SignOutComponent.jsx for the implementation.
+
 const Main = () => {
   const dispatch = useDispatch()
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
-
-  //TODO: guarding against invalid data should be more robust
 
   // Define userEmail only if auth.currentUser is defined
   let userEmail = auth.currentUser ? auth.currentUser.email : 'none';

@@ -23,6 +23,7 @@ function HomeView() {
   const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
   const [modalAboutVisible, setModalAboutVisible] = useState(false);
 
+  //had a hard time with this so everything is very explicitly stated to prevent duplicate modals
   useEffect(() => {
     if(classroom.dummyClassroom) {
       console.log("Class Code Modal Visible!");

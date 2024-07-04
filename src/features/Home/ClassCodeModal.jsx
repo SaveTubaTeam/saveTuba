@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Alert } from "react-native";
 import { useTranslation } from "react-i18next";
-import SignOut from "../Account/Components/signouut.component";
+import SignOut from "../Account/Components/SignOutComponent";
 import styled from "styled-components";
 import { BodyText } from "../../components/body-text.component";
 import { db } from "../../../firebase";

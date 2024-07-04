@@ -3,7 +3,6 @@ import {
    getUser, 
    updateXP, 
    updateClassCode,
-   updateIsNewUser,
    getCompletionsArray, 
    postCompletion, 
    getClassroom 
@@ -58,20 +57,6 @@ export const apiSlice = createApi({
          invalidatesTags: ["User", "Classroom"],
       }),
 
-      updateIsNewUser: builder.mutation({
-         async queryFn({ email }) {
-            try {
-               console.log("\t\t\trunning updateIsNewUser in apiSlice.js . . . ['User' query cache invalidated]");
-               await updateIsNewUser(email);
-               return { data: "updated" };
-            } catch(error) {
-               console.error("ERROR with updateIsNewUser():", error);
-               return { error: error.message };
-            }
-         },
-         invalidatesTags: ["User"],
-      }),
-
       getCompletionsArray: builder.query({
          async queryFn({ userEmail }) {
             try {
@@ -117,7 +102,6 @@ export const apiSlice = createApi({
 export const { useGetUserQuery, 
                useUpdateXPMutation,
                useUpdateClassCodeMutation, 
-               useUpdateIsNewUserMutation,
                useGetCompletionsArrayQuery, 
                usePostCompletionMutation,
                useGetClassroomQuery } = apiSlice;
