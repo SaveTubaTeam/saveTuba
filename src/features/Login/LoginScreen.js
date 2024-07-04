@@ -11,7 +11,7 @@ import { apiSlice } from "../../../redux/apiSlice";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
 import { GoogleSignin, statusCodes, isErrorWithCode } from "@react-native-google-signin/google-signin";
-import { Constants } from "expo-constants";
+import Constants from "expo-constants";
 
 const LoginScreen = () => {
   const userSlice = useSelector(state => state.user);
