@@ -54,7 +54,7 @@ export const apiSlice = createApi({
                return { error: error.message };
             }
          },
-         invalidatesTags: ["User", "Classroom"],
+         invalidatesTags: ["User"],
       }),
 
       getCompletionsArray: builder.query({

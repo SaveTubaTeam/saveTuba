@@ -40,8 +40,7 @@ export default {
     "extra": {
       "eas": {
         "projectId": "4bc56c03-41a0-49df-96e2-596bfa1d1aaf"
-      },
-      "GUEST_LOGIN_PASSWORD": process.env.GUEST_LOGIN_PASSWORD,
+      }
     },
     "plugins": [
       [

@@ -50,7 +50,7 @@ async function updateClassCode(classCode, email) {
    await userRef.update({ classCode: classCode });
 
    const elapsedTimeSeconds = (performance.now() - start) / 1000;
-   console.log(`\t\t\t\tupdateXP done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
+   console.log(`\t\t\t\tupdateClassCode done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
 }
 
 async function getCompletionsArray(userEmail) {

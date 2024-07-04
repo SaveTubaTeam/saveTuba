@@ -33,13 +33,13 @@ export default function ClassroomCard() {
             </View>
             
             <TouchableOpacity onPress={() => {
-               //setClassCodeModalVisible(!classCodeModalVisible);
+               setClassCodeModalVisible(true);
             }}>
                <MaterialCommunityIcons name="pencil-circle" color="rgba(65, 128, 152, 0.9)" size={45} />
             </TouchableOpacity>
          </View>
       </Card>
-      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} />
+      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} setClassCodeModalVisible={setClassCodeModalVisible} />
       </>
    )
 }

@@ -29,11 +29,15 @@ const userSlice = createSlice({
             const { classroomObject } = action.payload;
             state.classroom = classroomObject;
             console.log("getClassroom dispatched addClassroom | CLASSROOM:", classroomObject);
+        },
+        hackDummyClassroom(state, action) {
+            state.classroom.dummyClassroom = false;
+            console.log("manually changed state.classroom.dummyClassroom.dummyClassroom to false");
         }
     }
 });
 
-export const { signInUser, signOutUser, addCompletions, addClassroom } = userSlice.actions;
+export const { signInUser, signOutUser, addCompletions, addClassroom, hackDummyClassroom } = userSlice.actions;
 export default userSlice.reducer //exports all reducers from const usersSlice
 
 export const selectCurrentUser = state => state.user.userData;

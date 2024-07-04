@@ -23,7 +23,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    }, [modalAboutVisible]);
 
    async function handleClose() {
-      setModalAboutVisible(!modalAboutVisible); 
+      setModalAboutVisible(false); 
       console.log("Closing About Modal . . .");
       await db.collection('users').doc(user.email).update({ isNewUser: false });
       //re: https://redux-toolkit.js.org/rtk-query/api/created-api/api-slice-utils#invalidatetags

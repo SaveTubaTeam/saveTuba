@@ -8,17 +8,18 @@ import { db } from "../../../firebase";
 import { useUpdateClassCodeMutation } from "../../../redux/apiSlice";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../redux/slices/userSlice";
+import Toast from 'react-native-toast-message';
+import { useDispatch } from "react-redux";
+import { hackDummyClassroom } from "../../../redux/slices/userSlice";
 
-export default function ClassCodeModal({ classCodeModalVisible }) {
+export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModalVisible }) {
    const { t } = useTranslation();
    const [classCode, setClassCode] = useState("");
    const [textInputBoxColor, setTextInputBoxColor] = useState("rgba(128, 128, 128, 0.9)");
    const user = useSelector(selectCurrentUser);
+   const dispatch = useDispatch();
 
    const [updateClassCode] = useUpdateClassCodeMutation();
-
-   //re: https://stackoverflow.com/questions/42456069/how-to-open-keyboard-automatically-in-react-native
-   const inputRef = useRef();
 
    async function handleClassCode() {
       console.log("CLASSCODE ENTERED:", classCode);
@@ -28,11 +29,17 @@ export default function ClassCodeModal({ classCodeModalVisible }) {
          Alert.alert("Class Code Does Not Exist", `Please try again. Class code ${classCode} does not exist.`);
          setTextInputBoxColor("rgba(219, 71, 59, 0.7)"); //setting color to red
       } else { //class code exists. closing modal, dispatching change to be handled by query functions in Main
+         //hack to immediately update class code
+         dispatch(hackDummyClassroom({ classCode: classCode }));
+
+         console.log("Closing Class Code Modal . . .");
          await updateClassCode({ classCode: classCode, email: user.email }).unwrap();
+         setClassCodeModalVisible(false);
+         setClassCode("");
          Toast.show({
             type: 'success',
             text1: 'Success!',
-            text2: `Classroom ${classCode} found`,
+            text2: `Now in classroom ${classCode}`,
             visibilityTime: 3000,
          });
       }
@@ -54,9 +61,8 @@ export default function ClassCodeModal({ classCodeModalVisible }) {
                   Enter Your Class Code to Continue
                </BodyText>
 
-               <TextInput 
-                  ref={inputRef}
-                  //onLayout={()=> inputRef.current.focus()}
+               <TextInput
+                  autoFocus={true}
                   onPressIn={() => {
                      setTextInputBoxColor("rgba(128, 128, 128, 0.9)"); //resetting color to grey
                      setClassCode(""); //clearing TextInput
@@ -96,7 +102,7 @@ const ModalContainer = styled.View`
   background-color: white;
   width: 85%;
   height: 80%;
-  padding: 20px;
+  padding: 35px;
   border-radius: 20px;
   border: 10px solid #cce882;
   align-items: center;
@@ -116,11 +122,9 @@ const styles = StyleSheet.create({
       borderColor: "#748816",
       borderWidth: 5,
       borderRadius: 25,
-      marginBottom: 30,
-      paddingTop: 15,
-      paddingBottom: 15,
-      paddingLeft: 70,
-      paddingRight: 70
+      marginBottom: 20,
+      paddingVertical: 15,
+      paddingHorizontal: 70,
    },
    textInput: {
       height: "30%",

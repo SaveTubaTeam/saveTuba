@@ -23,9 +23,10 @@ function HomeView() {
   const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
   const [modalAboutVisible, setModalAboutVisible] = useState(false);
 
-  //had a hard time with this so everything is very explicitly stated to prevent duplicate modals
+  //had a hard time with this so everything is very explicitly stated to ensure correct behaviour
   useEffect(() => {
     if(classroom.dummyClassroom) {
+      setModalAboutVisible(false);
       console.log("Class Code Modal Visible!");
       setClassCodeModalVisible(true);
     } else if(!classroom.dummyClassroom) {
@@ -101,7 +102,7 @@ function HomeView() {
 
       </ScrollView>
 
-      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} />
+      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} setClassCodeModalVisible={setClassCodeModalVisible} />
 
       <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
 

@@ -11,7 +11,6 @@ import { apiSlice } from "../../../redux/apiSlice";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
 import { GoogleSignin, statusCodes, isErrorWithCode } from "@react-native-google-signin/google-signin";
-import Constants from "expo-constants";
 
 const LoginScreen = () => {
   const userSlice = useSelector(state => state.user);
@@ -114,12 +113,9 @@ const LoginScreen = () => {
   };
 
   //we sign in with the savetuba account for Guest
-  //also please see: https://docs.expo.dev/eas-update/environment-variables/#using-variables-in-appconfigjs
-  //the expo docs say that this method is not preferred for referencing .env variables.
-  //I, however, do not want to set up EAS Update because I am lazy and I do not understand it.
   async function continueAsGuest() {
     await auth
-      .signInWithEmailAndPassword("savetuba2023@gmail.com", Constants.expoConfig.extra.GUEST_LOGIN_PASSWORD)
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
       .then(async(userCredentials) => {
         const user = userCredentials.user;
         await checkIfTuba(user.email);
