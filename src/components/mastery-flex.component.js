@@ -4,10 +4,12 @@ import { StyleSheet, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { useTranslation } from "react-i18next";
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
 import { Image } from "expo-image";
 
 export const MasteryFlex = ({ masteryArray }) => {
+    //https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=75691377-12d8-4f35-89ec-c2bd96210712
+    //UBGQ{Sja06bZAGj@}naz06bG~jn*0*jt=ua|
+
     const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery.png?alt=media&token=1ec7f126-e0cd-4dd8-bfe4-165acab89248"
     const masteryIconBlurHash = "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7"
     const nav = useNavigation();

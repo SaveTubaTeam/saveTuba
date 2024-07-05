@@ -11,14 +11,14 @@ import { MasteryFlex } from "../../../components/mastery-flex.component";
 import { Adventure, Header } from "../../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
+import LottieView from "lottie-react-native";
 
 //This component formats and renders all of the lesson's contents
 //@param data the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
 function LessonComponent({ individualLessonData, activitiesData }) {
   const nav = useNavigation();
   const { t } = useTranslation();
-  const [minigames, setMinigames] = useState(null);
-  const [mastery, setMastery] = useState(null);
+  const [activities, setActivities] = useState(null);
   const [lessonData, setLessonData] = useState(individualLessonData);
   const gradeNumber = useSelector(state => state.curriculum.grade);
   const chapterNumber = useSelector(state => state.curriculum.chapter);
@@ -26,15 +26,17 @@ function LessonComponent({ individualLessonData, activitiesData }) {
 
   useEffect(() => {
     console.log("inside LessonComponent.js.");
-    const masteryCopy = [];
-    const minigamesCopy = [];
+    prefetchActivityIcons(activitiesData);
 
-    activitiesData.forEach((object) => {
-      object.navigation.includes("Mastery") ? masteryCopy.push(object) : minigamesCopy.push(object);
-    });
-
-    setMastery(masteryCopy);
-    setMinigames(minigamesCopy);
+    const activitiesCopy = [...activitiesData];
+    //pushing mastery to the end of the array
+    for(let i=0; i<activitiesCopy.length; i++) {
+      if(activitiesCopy[i].navigation.includes("Mastery")) {
+        const [ masteryActivity ] = activitiesCopy.splice(i, 1);
+        activitiesCopy.push(masteryActivity);
+      }
+    }
+    setActivities(activitiesCopy);
   }, []);
 
   useEffect(() => {
@@ -48,12 +50,35 @@ function LessonComponent({ individualLessonData, activitiesData }) {
   }, [individualLessonData, completions])
 
   const renderItem = ({ item }) => {
+    let downloadURL;
+    let backgroundColor;
+    let content = null;
+
+    //mastery icons aren't in firebase (but they could be with a bit of modification to curriculumToFirebase)
+    if(item.navigation.includes("Mastery")) {
+      downloadURL = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=5abf0c85-29fb-4c5f-820b-90bd8494c2d2",
+      backgroundColor = "#60BBDD";
+      content = (
+        <LottieView 
+          source={require("../../../../assets/lottie-animations/mastery-flowers-animation.json")}
+          autoPlay={true}
+          loop={false}
+          style={{ position: "absolute", aspectRatio: 1, width: "100%", height: "100%" }}
+          resizeMode='cover'
+        />
+      )
+    } else {
+      downloadURL = item.iconDownloadURL
+      backgroundColor = item.backgroundColor
+    }
+
     return (
       <Adventure onPress={() => { nav.navigate(item.navigation); }}>
-        <View style={[{ backgroundColor: item.backgroundColor }, styles.cardContainer]}>
+        <View style={[{ backgroundColor: backgroundColor }, styles.cardContainer]}>
+          {content}
           <Image
             style={styles.cardImage}
-            source={{ uri: item.iconDownloadURL }}
+            source={{ uri: downloadURL }}
           />
           <TitleText size="subtitle" color="secondary">
             {t(item.title)} 
@@ -85,7 +110,7 @@ function LessonComponent({ individualLessonData, activitiesData }) {
     );
   };
 
-  while (minigames === null || mastery === null) {
+  while (activities === null) {
     return (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" />
@@ -121,18 +146,19 @@ function LessonComponent({ individualLessonData, activitiesData }) {
             </View>
           }
           
-          data={ minigames }
+          data={ activities }
           numColumns={2}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
           renderItem={renderItem}
           persistentScrollbar={true}
           contentContainerStyle={{ width: "90%", alignSelf: "center" }}
-          style={{ marginBottom: 20, width: "100%" }}
-          ListFooterComponentStyle={{ alignItems: "stretch", width: "85%" }}
-          ListFooterComponent={
-            <MasteryFlex masteryArray={mastery} />
-          }
+          style={{ width: "100%" }}
+          // style={{ marginBottom: 20, width: "100%" }}
+          // ListFooterComponentStyle={{ alignItems: "stretch", width: "85%" }}
+          // ListFooterComponent={
+          //   <MasteryFlex masteryArray={mastery} />
+          // }
         />
 
       </Container>
@@ -157,6 +183,17 @@ function concatenateFirstAndLast(str) {
   const firstLetter = str[0];
   const lastLetter = str[str.length - 1];
   return firstLetter + lastLetter;
+}
+
+async function prefetchActivityIcons(content) {
+  for(const item of content) {
+    if(item.icon) {
+      await Image.prefetch(item.iconDownloadURL);
+    }
+  }
+  //mastery image
+  await Image.prefetch("https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=5abf0c85-29fb-4c5f-820b-90bd8494c2d2");
+  console.log("\tprefetchActivityIcons complete!");
 }
 
 export default LessonComponent;
