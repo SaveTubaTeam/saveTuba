@@ -5,45 +5,56 @@ import { TouchableOpacity } from 'react-native';
 import { useTranslation } from "react-i18next";
 import React from 'react';
 import { Image } from "expo-image";
+import { Ionicons } from "@expo/vector-icons";
 
 export const MasteryFlex = ({ masteryArray }) => {
-    //https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=75691377-12d8-4f35-89ec-c2bd96210712
-    //UBGQ{Sja06bZAGj@}naz06bG~jn*0*jt=ua|
-
-    const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery.png?alt=media&token=1ec7f126-e0cd-4dd8-bfe4-165acab89248"
-    const masteryIconBlurHash = "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7"
+    //mastery-icon.png in our storage bucket under assets/
+    const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=0ac84171-64cf-4a71-9d6b-8b4d9f67ded1"
     const nav = useNavigation();
     const { t } = useTranslation();
 
     return (
         <View style={styles.container}>
 
-            {masteryArray.map((mastery, index) => (
+            {masteryArray && masteryArray.map((mastery, index) => {
+                let opacity = 0;
+                if(mastery.completionStatus === true) {
+                    opacity = 1;
+                }
+
+                return (
                 <TouchableOpacity
                     key={index}
                     style={styles.contentContainer}
                     onPress={() => nav.navigate(mastery.navigation)}
                 >
+                    <CompletionOverlay opacity={opacity} />
                     <Image
                         style={styles.image}
                         source={masteryIconPNG}
-                        placeholder={masteryIconBlurHash}
                     />
-                    {/* Absolute positioning for TitleText */}
-                    <View style={styles.overlay}>
-                        <TitleText weight="bold" size="h5" color="quaternary">
+                    <View style={styles.text}>
+                        <TitleText weight="regular" size="h5" color="quaternary">
                             {t(mastery.title)}
                         </TitleText>
                     </View>
                 </TouchableOpacity>
-            ))}
+                )
+            })}
 
         </View>
     );
 };
 
+function CompletionOverlay({ opacity }) {
+    return (
+      <View style={[styles.overlay, { opacity: opacity }]}>
+        <Ionicons name="checkmark-circle" size={40} color="rgba(126, 211, 57, 0.8)" />
+      </View>
+   )
+}
+
 const styles = StyleSheet.create({
-    flexDirection: 'row',
     container: {
         flex: 1
     },
@@ -52,24 +63,29 @@ const styles = StyleSheet.create({
         width: "110%",
         height: 150,
         margin: 10,
+        padding: 5,
         borderRadius: 20,
         justifyContent: "center",
         overflow: "hidden",
+        backgroundColor: "#60BBDD",
+        flexDirection: 'row',
     },
     image: { 
-        alignItems: "center",
         justifyContent: "center",
-        flex: 1,
-        width: "100%",
-        borderRadius: 20
+        aspectRatio: 1,
+        left: "-10%",
+    },
+    text: {
+        justifyContent: 'center',
+        left: "-10%",
     },
     overlay: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
+        ...StyleSheet.absoluteFillObject, //to fill the parent
+        alignItems: "flex-start",
+        justifyContent: "flex-start",
+        borderRadius: 20,
+        backgroundColor: "rgba(131, 219, 59, 0.2)",
+        pointerEvents: 'none',
+        zIndex: 2
+    }
 });

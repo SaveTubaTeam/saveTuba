@@ -15,20 +15,20 @@ import styled from "styled-components/native";
 //In the future this will be the one place that handles pushing content to db.
 const CompletionModal = ({ score, prompt, startCompletionProcess, content, totalPossibleScore }) => {
   const user = useSelector(selectCurrentUser);
-  const gradeNumber = useSelector(state => state.curriculum.grade);
-  const chapterNumber = useSelector(state => state.curriculum.chapter);
-  const lessonNumber = useSelector(state => state.curriculum.lesson);
+  const grade = useSelector(state => state.curriculum.grade);
+  const chapter = useSelector(state => state.curriculum.chapter);
+  const lesson = useSelector(state => state.curriculum.lesson);
   const activityType = useSelector(state => state.curriculum.activity);
 
-  function concatenateFirstAndLastLetters(str) {
-    const firstLetter = str[0];
-    const lastLetter = str[str.length - 1];
-    return firstLetter + lastLetter;
+  function concatenateFirstLetterAndLastNumbers(str) {
+    const firstLetter = str.charAt(0);
+    const numbers = str.match(/\d+/g).join(''); // Regex extracting the numbers
+    return firstLetter + numbers;
   }
 
-  const gradeID = concatenateFirstAndLastLetters(gradeNumber);
-  const chapterID = concatenateFirstAndLastLetters(chapterNumber);
-  const lessonID = concatenateFirstAndLastLetters(lessonNumber);
+  const gradeID = concatenateFirstLetterAndLastNumbers(grade);
+  const chapterID = concatenateFirstLetterAndLastNumbers(chapter);
+  const lessonID = concatenateFirstLetterAndLastNumbers(lesson);
 
   const completionID = `${gradeID}${chapterID}${lessonID}_${activityType}`;
 
@@ -77,7 +77,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
         setPreviouslySubmitted(true);
       } else {
         console.log(`it is ${user.firstName}'s first time submitting ${completionID}`);
-        console.log(`!!! ADDING EXPERIENCE TO USER !!!`);
+        console.log(`!!! ADDING ${newXP} EXPERIENCE TO USER !!!`);
         await updateXP({ newXP: newXP, oldXP: user.experiencePoints, email: user.email }).unwrap();
       }
 
@@ -102,12 +102,13 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
   }
 
   useEffect(() => {
+    console.log("FINALXP:", finalXP);
     if(!previouslySubmitted) {
       setText(`${scoreShown}${prompt} ✨\n\n+${finalXP} XP!\n`);
     } else { //marked for translation
       setText(`${scoreShown}${prompt}\n\nYou've already claimed XP for this activity 😔\n`);
     }
-  }, [previouslySubmitted])
+  }, [previouslySubmitted, finalXP, scoreShown, prompt]);
 
   return (
     <>

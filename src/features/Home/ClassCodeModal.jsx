@@ -16,6 +16,7 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
    const { t } = useTranslation();
    const [classCode, setClassCode] = useState("");
    const [textInputBoxColor, setTextInputBoxColor] = useState("rgba(128, 128, 128, 0.9)");
+   const [escapeVisible, setEscapeVisible] = useState(false);
    const user = useSelector(selectCurrentUser);
    const dispatch = useDispatch();
 
@@ -24,6 +25,14 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
          console.log("Class Code Modal Visible!");
       }
    }, [classCodeModalVisible])
+
+   useEffect(() => {
+      if(user && (user.classroom !== "dummyClassroom")) {
+         setEscapeVisible(true);
+      } else {
+         setEscapeVisible(false);
+      }
+   }, [user])
 
    const [updateClassCode] = useUpdateClassCodeMutation();
 
@@ -52,16 +61,37 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
    }
 
    async function checkClassCodeExists() {
+      //.trim removes all whitespace from both ends of the string
+      if(classCode.trim() === "") { //guard clause against empty strings or strings with spaces
+         return false;
+      }
+
       const classroomRef = db.collection("classrooms").doc(classCode);
       const classroomSnapshot = await classroomRef.get();
       //console.log(classroomSnapshot.exists);
       return classroomSnapshot.exists; //boolean true or false
    }
 
+   let exitIcon = null;
+   if(escapeVisible) {
+      exitIcon = (
+         <TouchableOpacity style={styles.exitIcon}
+            onPress={() => {
+               console.log("Closing Class Code Modal . . .");
+               setClassCodeModalVisible(false);
+               setClassCode("");
+            }}
+         >  
+            <BodyText>❌</BodyText>
+         </TouchableOpacity>
+      );
+   }
+
    return (
       <Modal animationType="none" transparent={true} visible={classCodeModalVisible}>
          <View style={styles.modalContainer}>
             <ModalContainer>
+               {exitIcon}
                <View style={{paddingTop: 15}}/>
                <BodyText size="h5">
                   Enter Your Class Code to Continue
@@ -143,5 +173,10 @@ const styles = StyleSheet.create({
       fontFamily: "Scada_400Regular",
       color: "white",
       fontSize: 50,
+   },
+   exitIcon: {
+      position: "absolute", 
+      right: "8%", top: "4%", 
+      transform: [{ scaleX: 2 }, { scaleY: 2 }],
    }
 })

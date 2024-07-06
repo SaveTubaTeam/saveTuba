@@ -12,7 +12,7 @@ import {
 export const apiSlice = createApi({
    reducerPath: "api",
    baseQuery: fakeBaseQuery(),
-   tagTypes: ["User", "Completions", "Classroom", "GradeData", "LessonsData", "ActivitiesData"],
+   tagTypes: ["User", "Completions", "Classroom", "GradeData", "LessonsData", "IndividualLessonData", "ActivitiesData"],
    endpoints: (builder) => ({
 
       getUser: builder.query({

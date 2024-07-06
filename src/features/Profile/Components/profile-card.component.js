@@ -32,7 +32,7 @@ export function ProfileCard() {
 
 //random numbers for level thresholds. 
 //if the max threshold is exceeded, the progress bar extends out of the screen to the right lol
-const LEVEL_THRESHOLDS = [5934, 14351, 30907, 190373, 1513880, 3053286];
+const LEVEL_THRESHOLDS = [3000, 9000, 27000, 81000, 243000, 729000, 2187000];
 
 function ProgressBar() {
   const user = useSelector(selectCurrentUser);

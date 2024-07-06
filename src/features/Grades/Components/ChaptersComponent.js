@@ -15,7 +15,7 @@ import { SafeArea } from "../../../components/safe-area.component";
 
 //@param gradeData is an array of chapters and their metadata. it is taken as a param from ChaptersHandler.js
 function ChaptersComponent({ gradeData }) {
-  const gradeNumber = useSelector(state => state.curriculum.grade)
+  const grade = useSelector(state => state.curriculum.grade)
   const nav = useNavigation();
   const { t } = useTranslation();
 
@@ -50,7 +50,7 @@ function ChaptersComponent({ gradeData }) {
     <SafeArea>
       <Container>
         <Header
-          title={`${t("common:grade")} ${gradeNumber.match(/\d+/g)}`}
+          title={`${t("common:grade")} ${grade.match(/\d+/g)}`}
           back="Grades"
           reduxParam="grade"
         />

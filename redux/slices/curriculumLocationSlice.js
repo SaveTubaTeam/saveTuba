@@ -4,7 +4,8 @@ const initialState = {
    grade: "",
    chapter: "",
    lesson: "",
-   activity: ""
+   activity: "",
+   navigationDrill: null,
 };
 
 const curriculumSlice = createSlice({
@@ -35,9 +36,13 @@ const curriculumSlice = createSlice({
          const { curriculumLayer } = action.payload;
          console.log(`Moved out of ${state[curriculumLayer]}`);
          state[curriculumLayer] = ""; //resetting layer
+      },
+      modifyNavigationDrill(state, action) {
+         const { navigationDrill } = action.payload;
+         state.navigationDrill = navigationDrill;
       }
    }
 });
 
-export const { addGrade, addChapter, addLesson, addActivity, pageBack } = curriculumSlice.actions;
+export const { addGrade, addChapter, addLesson, addActivity, pageBack, updatePageFocus } = curriculumSlice.actions;
 export default curriculumSlice.reducer //exports all reducers from const usersSlice

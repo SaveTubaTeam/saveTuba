@@ -11,74 +11,72 @@ import { MasteryFlex } from "../../../components/mastery-flex.component";
 import { Adventure, Header } from "../../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import LottieView from "lottie-react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 //This component formats and renders all of the lesson's contents
 //@param data the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
 function LessonComponent({ individualLessonData, activitiesData }) {
   const nav = useNavigation();
   const { t } = useTranslation();
-  const [activities, setActivities] = useState(null);
+  const [minigames, setMinigames] = useState(null);
+  const [mastery, setMastery] = useState(null);
   const [lessonData, setLessonData] = useState(individualLessonData);
-  const gradeNumber = useSelector(state => state.curriculum.grade);
-  const chapterNumber = useSelector(state => state.curriculum.chapter);
+  const grade = useSelector(state => state.curriculum.grade);
+  const chapter = useSelector(state => state.curriculum.chapter);
   const completions = useSelector(state => state.user.completions);
 
-  useEffect(() => {
-    console.log("inside LessonComponent.js.");
-    prefetchActivityIcons(activitiesData);
+  const gradeID = concatenateFirstLetterAndLastNumbers(grade);
+  const chapterID = concatenateFirstLetterAndLastNumbers(chapter);
+  const lessonID = concatenateFirstLetterAndLastNumbers(individualLessonData.navigation);
+  const fullLessonID = `${gradeID}${chapterID}${lessonID}`
 
-    const activitiesCopy = [...activitiesData];
-    //pushing mastery to the end of the array
-    for(let i=0; i<activitiesCopy.length; i++) {
-      if(activitiesCopy[i].navigation.includes("Mastery")) {
-        const [ masteryActivity ] = activitiesCopy.splice(i, 1);
-        activitiesCopy.push(masteryActivity);
-      }
-    }
-    setActivities(activitiesCopy);
+  useEffect(() => {
+    async function fetchIconsAndSetActivities() {
+      console.log("inside LessonComponent.");
+      await prefetchActivityIcons(activitiesData);
+    };
+
+    fetchIconsAndSetActivities();
   }, []);
 
   useEffect(() => {
       //updating the completion tally by listening to changes in completions
-      const tally = determineTally(gradeNumber, chapterNumber, individualLessonData.navigation, completions);
+      const tally = determineTally(fullLessonID, completions);
       const updatedLesson = {
         ...individualLessonData,
         completionTally: tally,
       }
       setLessonData(updatedLesson);
-  }, [individualLessonData, completions])
+  }, [individualLessonData, completions]);
+
+  useEffect(() => {
+    const masteryCopy = [];
+    const minigamesCopy = [];
+    const activitiesArray = checkActivitiesCompletion(activitiesData, completions, fullLessonID);
+    //console.log("MODIFIED ACTIVITIES:", activitiesArray);
+
+    activitiesArray.forEach((activity) => {
+      activity.navigation.includes("Mastery") ? masteryCopy.push(activity) : minigamesCopy.push(activity);
+    });
+
+    setMastery(masteryCopy);
+    setMinigames(minigamesCopy);
+  }, [activitiesData, completions]);
 
   const renderItem = ({ item }) => {
-    let downloadURL;
-    let backgroundColor;
-    let content = null;
-
-    //mastery icons aren't in firebase (but they could be with a bit of modification to curriculumToFirebase)
-    if(item.navigation.includes("Mastery")) {
-      downloadURL = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=5abf0c85-29fb-4c5f-820b-90bd8494c2d2",
-      backgroundColor = "#60BBDD";
-      content = (
-        <LottieView 
-          source={require("../../../../assets/lottie-animations/mastery-flowers-animation.json")}
-          autoPlay={true}
-          loop={false}
-          style={{ position: "absolute", aspectRatio: 1, width: "100%", height: "100%" }}
-          resizeMode='cover'
-        />
-      )
-    } else {
-      downloadURL = item.iconDownloadURL
-      backgroundColor = item.backgroundColor
+    let opacity = 0;
+    if(item.completionStatus === true) { 
+      opacity = 1;
     }
-
     return (
       <Adventure onPress={() => { nav.navigate(item.navigation); }}>
-        <View style={[{ backgroundColor: backgroundColor }, styles.cardContainer]}>
-          {content}
+
+        <CompletionOverlay opacity={opacity} />
+
+        <View style={[{ backgroundColor: item.backgroundColor }, styles.cardContainer]}>
           <Image
             style={styles.cardImage}
-            source={{ uri: downloadURL }}
+            source={{ uri: item.iconDownloadURL }}
           />
           <TitleText size="subtitle" color="secondary">
             {t(item.title)} 
@@ -88,7 +86,15 @@ function LessonComponent({ individualLessonData, activitiesData }) {
     );
   };
 
-  const Progress = () => {
+  function CompletionOverlay({ opacity }) {
+    return (
+      <View style={[styles.overlay, { opacity: opacity }]}>
+        <Ionicons name="checkmark-circle" size={40} color="rgba(126, 211, 57, 0.8)" />
+      </View>
+   )
+  }
+
+  function Progress() {
     const chunks = [];
     for (let i = 0; i < lessonData.numActivities; i++) {
 
@@ -110,7 +116,7 @@ function LessonComponent({ individualLessonData, activitiesData }) {
     );
   };
 
-  while (activities === null) {
+  if (mastery === null || minigames === null) {
     return (
       <View style={[styles.container, styles.horizontal]}>
         <ActivityIndicator size="large" color="#00ff00" />
@@ -146,19 +152,18 @@ function LessonComponent({ individualLessonData, activitiesData }) {
             </View>
           }
           
-          data={ activities }
+          data={ minigames }
           numColumns={2}
           keyExtractor={(item, index) => index}
           key={(item, index) => index}
           renderItem={renderItem}
           persistentScrollbar={true}
           contentContainerStyle={{ width: "90%", alignSelf: "center" }}
-          style={{ width: "100%" }}
-          // style={{ marginBottom: 20, width: "100%" }}
-          // ListFooterComponentStyle={{ alignItems: "stretch", width: "85%" }}
-          // ListFooterComponent={
-          //   <MasteryFlex masteryArray={mastery} />
-          // }
+          style={{ marginBottom: 20, width: "100%" }}
+          ListFooterComponentStyle={{ alignItems: "stretch", width: "85%" }}
+          ListFooterComponent={
+            <MasteryFlex masteryArray={mastery} />
+          }
         />
 
       </Container>
@@ -166,23 +171,22 @@ function LessonComponent({ individualLessonData, activitiesData }) {
   );
 }
 
-function determineTally(grade, chapter, lesson, completions) {
-  const gradeID = concatenateFirstAndLast(grade);
-  const chapterID = concatenateFirstAndLast(chapter);
-  const lessonID = concatenateFirstAndLast(lesson);
-  const fullLessonID = `${gradeID}${chapterID}${lessonID}`
+export default LessonComponent;
 
+function determineTally(fullLessonID, completions) {
   //From the answer provided by @Jamiec here: https://stackoverflow.com/questions/9996727/count-instances-of-string-in-an-array
-  //note the implicit return!
-  let tallyCount = completions.filter((completion) => completion.completionID.split("_")[0] === fullLessonID).length
+  //note the .length!
+  let tallyCount = completions.filter((completion) => {
+    return completion.completionID.split("_")[0] === fullLessonID
+  }).length
 
   return tallyCount
 }
 
-function concatenateFirstAndLast(str) {
-  const firstLetter = str[0];
-  const lastLetter = str[str.length - 1];
-  return firstLetter + lastLetter;
+function concatenateFirstLetterAndLastNumbers(str) {
+  const firstLetter = str.charAt(0);
+  const numbers = str.match(/\d+/g).join(''); // Regex extracting the numbers
+  return firstLetter + numbers;
 }
 
 async function prefetchActivityIcons(content) {
@@ -191,12 +195,26 @@ async function prefetchActivityIcons(content) {
       await Image.prefetch(item.iconDownloadURL);
     }
   }
-  //mastery image
-  await Image.prefetch("https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=5abf0c85-29fb-4c5f-820b-90bd8494c2d2");
+  //mastery-icon.png in our storage bucket under assets/
+  await Image.prefetch("https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=0ac84171-64cf-4a71-9d6b-8b4d9f67ded1")
   console.log("\tprefetchActivityIcons complete!");
 }
 
-export default LessonComponent;
+function checkActivitiesCompletion(activities, completions, fullLessonID) {
+  const completionIDArray = [];
+  for(const completion of completions) {
+    if(completion.completionID.split("_")[0] === fullLessonID) {
+      completionIDArray.push(completion.completionID);
+    }
+  }
+
+  const activitiesArray = activities.map((activity) => ({
+    ...activity,  // spread activity to avoid immutability
+    completionStatus: completionIDArray.includes(`${fullLessonID}_${activity.navigation}`) //.includes returns boolean true or false
+  }));
+
+  return activitiesArray;
+}
 
 const styles = StyleSheet.create({
   flatlistHeaderContainer: {
@@ -235,6 +253,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     padding: 10,
   },
+  overlay: {
+    ...StyleSheet.absoluteFillObject, //to fill the parent
+    alignItems: "flex-start",
+    justifyContent: "flex-start",
+    borderRadius: 20,
+    backgroundColor: "rgba(131, 219, 59, 0.2)",
+    pointerEvents: 'none',
+    zIndex: 2
+  }
 })
 
 const Container = styled.View`

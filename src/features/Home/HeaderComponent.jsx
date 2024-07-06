@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   },
   exitIcon: {
       position: "absolute", 
-      right: 25, top: 20, 
+      right: "6%", top: "3%", 
       transform: [{ scaleX: 2 }, { scaleY: 2 }],
       zIndex: 1,
   },

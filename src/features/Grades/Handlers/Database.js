@@ -57,7 +57,7 @@ async function getLessonsData(grade, chpt, numLessons, languageCode) {
     const lessonPromises = [];
 
     for(let i=1; i<=numLessons; i++) {
-        lessonPromises.push(getIndividualLessonData(grade, chpt, i, languageCode));
+        lessonPromises.push(getIndividualLessonData(grade, chpt, `Lesson${i}`, languageCode));
     }
 
     //resolving all promises, filtering out nulls
@@ -72,10 +72,10 @@ async function getLessonsData(grade, chpt, numLessons, languageCode) {
 }
 
 //getLessonsData helper!
-//@param {int} lessonNumber the for-loop i variable
-async function getIndividualLessonData(grade, chpt, lessonNumber, languageCode) {
+//@param {string} e.g. 'Lesson2'
+async function getIndividualLessonData(grade, chpt, lesson, languageCode) {
     try {
-        let lessonReference = db.collection(grade).doc(chpt).collection(`Lesson${lessonNumber}`).doc(languageCode);
+        let lessonReference = db.collection(grade).doc(chpt).collection(lesson).doc(languageCode);
         let lessonSnapshot = await lessonReference.get();
 
         if (lessonSnapshot.exists) {

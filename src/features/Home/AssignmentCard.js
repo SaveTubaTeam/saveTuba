@@ -6,24 +6,25 @@ import { BodyText } from "../../components/body-text.component";
 import { TitleText } from "../../components/title-text.component";
 import { Surface } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
-import { getIndividualLessonData } from "../Grades/Handlers/Database";
+import { useSelector } from "react-redux";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
-import { useGetGradeDataQuery, useGetLessonsDataQuery, useGetActivitiesDataQuery } from "../../../redux/curriculumApiSlice";
+import { useGetGradeDataQuery, useGetLessonsDataQuery, useGetIndividualLessonDataQuery, useGetActivitiesDataQuery } from "../../../redux/curriculumApiSlice";
 
 //memoized
 const AssignmentCard = memo(({ content }) => {
    const { t, i18n } = useTranslation();
    const languageCode = i18n.language;
    const navigation = useNavigation();
+   const curriculumSlice = useSelector(state => state.curriculum);
 
    /* marked for translation */
    const assignmentGrade = `${t("common:grade")}${getNumbersAfterLetter(content.assignmentID, "G")}`;
    const assignmentChapter = `${t("common:chapter")}${getNumbersAfterLetter(content.assignmentID, "C")}`;
    const assignmentLesson = `${t("common:lesson")}${getNumbersAfterLetter(content.assignmentID, "L")}`;
 
-   const gradeParam = `Grade${getNumbersAfterLetter(content.assignmentID, "G")}`
-   const chapterParam = `Chapter${getNumbersAfterLetter(content.assignmentID, "C")}`;
-   const lessonParam = getNumbersAfterLetter(content.assignmentID, "L");
+   const grade = `Grade${getNumbersAfterLetter(content.assignmentID, "G")}`
+   const chapter = `Chapter${getNumbersAfterLetter(content.assignmentID, "C")}`;
+   const lesson = `Lesson${getNumbersAfterLetter(content.assignmentID, "L")}`;
 
    const [individualLessonData, setIndividualLessonData] = useState({
       title: ". . .",
@@ -31,29 +32,30 @@ const AssignmentCard = memo(({ content }) => {
       thumbnailBlurHash: "UdFG2eEfNG#kt:xZjrWAXAxas;W=RkWVoft7",
    });
 
+   const { data: queryResult, isSuccess: individualLessonSuccess } = useGetIndividualLessonDataQuery(
+      { grade: grade, chpt: chapter, lesson: lesson, languageCode: languageCode }
+   )
+
    useEffect(() => {
-      getIndividualLessonData(gradeParam, chapterParam, lessonParam, languageCode)
-         .then((result) => {
-            setIndividualLessonData(result);
-         }).catch((err) => {
-            console.error("Error: ", err);
-         });
-   }, [gradeParam, chapterParam, lessonParam, languageCode]);
+      if(individualLessonSuccess) {
+         setIndividualLessonData(queryResult);
+      }
+   }, [individualLessonSuccess])
 
-   const [buttonPressed, setButtonPressed] = useState(false);
+   // const [buttonPressed, setButtonPressed] = useState(false);
 
-   const { isSuccess: gradeSuccess } = useGetGradeDataQuery(
-      { grade: gradeParam },
-      { skip: !buttonPressed }
-   );
-   const { isSuccess: lessonsSuccess } = useGetLessonsDataQuery(
-      { grade: gradeParam, chpt: chapterParam, numLessons: lessonParam, languageCode: languageCode },
-      { skip: !buttonPressed }
-   );
-   const { isSuccess: activitiesSuccess } = useGetActivitiesDataQuery(
-      { grade: gradeParam, chpt: chapterParam, lesson: `Lesson${lessonParam}`, languageCode: languageCode },
-      { skip: !buttonPressed }
-   );
+   // const { isLoading: gradeLoading, isSuccess: gradeSuccess } = useGetGradeDataQuery(
+   //    { grade: grade },
+   //    { skip: !buttonPressed }
+   // );
+   // const { isLoading: lessonsLoading, isSuccess: lessonsSuccess } = useGetLessonsDataQuery( //NOTE how numLessons is hardcoded!!!
+   //    { grade: grade, chpt: chapter, numLessons: 25, languageCode: languageCode },
+   //    { skip: !buttonPressed }
+   // );
+   // const { isLoading: activitiesLoading,isSuccess: activitiesSuccess } = useGetActivitiesDataQuery(
+   //    { grade: grade, chpt: chapter, lesson: lesson, languageCode: languageCode },
+   //    { skip: !buttonPressed }
+   // );
 
    // jac927 6/26/24 | James: Dear whoever is reading, I fell into a rabbit hole of optimization for the below pushToLesson function.
    // I would advise that you think of a radically different solution than to continue to optimize this function.
@@ -61,27 +63,45 @@ const AssignmentCard = memo(({ content }) => {
    // This pushToLesson function will not work if rendering for any of the below navigation 'layers' takes longer than 500ms.
 
    // jac927 7/4/24 | James: Found a glitch where the completionID has a chance to be out of sync with the navigation stack and/or 
-   // redux curriculumLocationSlice if the navigation stack fails to render on time. This causes a mismatch
+   // redux curriculumLocationSlice if the navigation stack fails to render on time from this function. This causes a mismatch
    // in the completionID and the actual curriculum location of the user. Looking for a fix...
-   useEffect(() => {
-      async function pushToLesson() {
-         if(gradeSuccess && lessonsSuccess && activitiesSuccess) {
-            navigation.navigate("Home");
+   
+   async function pushToLesson() {
+      console.log("pushing . . . ");
+      //TODO: implement useFocusEffect into curriculum handlers
+      //navigation drill will be passed to redux store here
+      //individuallessonhandler will pass null to cleanup
 
-            await new Promise(resolve => setTimeout(resolve, 100));
-            navigation.navigate("ChaptersHandler", { grade: gradeParam });
+      // navigation.navigate("Home");
+      // navigation.navigate("ChaptersHandler", { grade: grade });
 
-            await new Promise(resolve => setTimeout(resolve, 300));
-            navigation.navigate(chapterParam);
+      // while(curriculumSlice.grade === "") {
+      //    await new Promise(resolve => setTimeout(resolve, 100));
+      // }
+      // if(curriculumSlice.grade) {
+      //    navigation.navigate(chapter);
+      // }
 
-            await new Promise(resolve => setTimeout(resolve, 500));
-            navigation.navigate(`Lesson${lessonParam}`);
-            setButtonPressed(false);
-         }
-      }
+      // while(curriculumSlice.chapter === "") {
+      //    await new Promise(resolve => setTimeout(resolve, 100));
+      // }
+      // if(curriculumSlice.chapter) {
+      //    navigation.navigate(lesson);
+      // }
 
-      pushToLesson();
-   }, [gradeSuccess, lessonsSuccess, activitiesSuccess]);
+      // if(gradeSuccess && lessonsSuccess && activitiesSuccess) {
+      //    navigation.navigate("Home");
+
+      //    await new Promise(resolve => setTimeout(resolve, 100));
+      //    navigation.navigate("ChaptersHandler", { grade: grade });
+
+      //    await new Promise(resolve => setTimeout(resolve, 300));
+      //    navigation.navigate(chapter);
+
+      //    await new Promise(resolve => setTimeout(resolve, 500));
+      //    navigation.navigate(lesson);
+      // }
+   }
 
    //default set to red #db473b
    const [topRowColor, setTopRowColor] = useState({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
@@ -126,7 +146,7 @@ const AssignmentCard = memo(({ content }) => {
             </TitleText>
 
             <TouchableOpacity style={styles.buttonBottomRow} 
-               onPress={() => { setButtonPressed(true); }}
+               onPress={async() => { await pushToLesson(); }}
             >
               <Ionicons name="caret-forward" size={14} color="#748816" style={{ paddingRight: 3, paddingTop: 1.5 }} />
               
@@ -169,7 +189,7 @@ function getNumbersAfterLetter(inputString, letter) {
    
    // Check if there's a match and return the captured group (numbers after the letter)
    if (match && match[1]) {
-     return match[1]; // match[1] contains the captured group (numbers)
+     return parseInt(match[1]); // match[1] contains the captured group and we return a type number
    } else {
      console.error("ERROR in getNumbersAfterLetter");
      return null;

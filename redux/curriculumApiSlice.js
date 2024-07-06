@@ -1,5 +1,5 @@
 import { apiSlice } from "./apiSlice"
-import { getGradeData, getLessonsData, getActivitiesData } from "../src/features/Grades/Handlers/Database"
+import { getGradeData, getLessonsData, getIndividualLessonData, getActivitiesData } from "../src/features/Grades/Handlers/Database"
 
 const curriculumApiSlice = apiSlice.injectEndpoints({
    endpoints: (builder) => ({
@@ -34,6 +34,22 @@ const curriculumApiSlice = apiSlice.injectEndpoints({
                result ? [{ type: "LessonsData", id: chpt }] : [{ type: "LessonsData" }],
       }),
 
+      //this is not used in the curriculum stack. It is instead used to render assignment cards.
+      getIndividualLessonData: builder.query({ 
+         async queryFn({ grade, chpt, lesson, languageCode }) {
+            try {
+               //console.log("\t\t\trunning getIndividualLessonData in curriculumApiSlice.js . . .");
+               const individualLessonData = await getIndividualLessonData(grade, chpt, lesson, languageCode);
+               return { data: individualLessonData };
+            } catch(error) {
+               console.error("ERROR with getIndividualLessonData():", error);
+               return { error: error.message };
+            }
+         },
+         providesTags: (result, error, { lesson }) => 
+               result ? [{ type: "IndividualLessonData", id: lesson }] : [{ type: "IndividualLessonData" }],
+      }),
+
       getActivitiesData: builder.query({
          async queryFn({ grade, chpt, lesson, languageCode }) { //this lesson param is a string
             try {
@@ -55,4 +71,5 @@ const curriculumApiSlice = apiSlice.injectEndpoints({
 
 export const { useGetGradeDataQuery,
                useGetLessonsDataQuery,
+               useGetIndividualLessonDataQuery,
                useGetActivitiesDataQuery } = curriculumApiSlice;

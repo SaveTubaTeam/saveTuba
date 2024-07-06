@@ -39,11 +39,11 @@ function IndividualLessonHandler({ lessonData }) {
   const languageCode = i18n.language;
   const [activitiesMap, setActivitiesMap] = useState(null);
   const dispatch = useDispatch();
-  const gradeNumber = useSelector(state => state.curriculum.grade)
-  const chapterNumber = useSelector(state => state.curriculum.chapter)
+  const grade = useSelector(state => state.curriculum.grade)
+  const chapter = useSelector(state => state.curriculum.chapter)
 
   const { data: activitiesData, isLoading: activitiesLoading, isSuccess: activitiesSuccess, isError: activitiesError, error: activitiesErrorMessage } = useGetActivitiesDataQuery(
-    { grade: gradeNumber, chpt: chapterNumber, lesson: lessonData.navigation, languageCode: languageCode }
+    { grade: grade, chpt: chapter, lesson: lessonData.navigation, languageCode: languageCode }
   )
 
   useEffect(() => { 

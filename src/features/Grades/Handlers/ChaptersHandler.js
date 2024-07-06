@@ -61,7 +61,7 @@ const ChaptersHandler = ({ route })  => {
         >
           {() => (
             <LessonsHandler
-              selectedChapter={chapter.navigation}
+              chapter={chapter.navigation}
               numLessons={chapter.numLessons}
             />
           )}

@@ -35,7 +35,7 @@ export default function ClassroomCard() {
             <TouchableOpacity onPress={() => {
                setClassCodeModalVisible(true);
             }}>
-               <MaterialCommunityIcons name="pencil-circle" color="rgba(65, 128, 152, 0.9)" size={45} />
+               <MaterialCommunityIcons name="pencil-circle" color="rgba(96, 187, 221, 0.6)" size={45} />
             </TouchableOpacity>
          </View>
       </Card>
