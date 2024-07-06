@@ -79,9 +79,9 @@ const SaveTuba = () => {
 };
 
 // jac927 7/4/24 | James: I was able to remove some odd duping behaviour in Main.js where consecutive (n-many) 
-// sign-ins in the same session would cause n-many component dupes. Did this by using 
-// react-navigation's StackActions.replace instead of the regular navigation.navigate 
-// to wipe the <SaveTuba /> tab navigator from the stack completely upon sign-out. See SignOutComponent.jsx for the implementation.
+// sign-ins in the same session would cause n-many Main.js component dupes. I fixed this bug by using react-navigation's 
+// StackActions.replace() instead of navigation.navigate(). The .replace() method wipes the <SaveTuba /> tab navigator 
+// from the stack completely. See SignOutComponent.jsx for the implementation.
 
 const Main = () => {
   const dispatch = useDispatch()

@@ -335,7 +335,7 @@ const ButtonOutLine = styled.TouchableOpacity`
 
   const BottomContainer = styled.View`
   position: absolute;
-  bottom: 4%;
+  bottom: 5%;
   width: 70%;
   padding-horizontal: ${(props) => props.theme.space[3]};
 `;

@@ -105,6 +105,7 @@ function sortByDateDue(array, comparator) {
       //console.log(`\nDate A: ${dateA} [${dateA.valueOf()}], Date B: ${dateB} [${dateA.valueOf()}]`);
       //dateB - dateA will sort the future to the top etc.
       //dateA - dateB will sort what has already been completed to the top
+      // .getTime() converts the Date objects to milliseconds since epoch
       if(comparator === "top") {
          return dateB.getTime() - dateA.getTime();
       } else if(comparator === "bottom") {

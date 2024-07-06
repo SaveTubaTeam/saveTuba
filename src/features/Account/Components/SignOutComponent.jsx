@@ -19,7 +19,7 @@ const SignOut = () => {
             console.log("signing out user:", auth.currentUser.email);
 
             if(GoogleSignin.getCurrentUser()) { //null if not signed in with google
-                handleGoogleSignOut();
+                await GoogleSignin.signOut();
             }
 
             await auth.signOut(); // Sign out user from Firebase
@@ -30,19 +30,11 @@ const SignOut = () => {
         } catch (error) { // Handle sign-out error
             console.error('Sign out error:', error);
             /* marked for translation */
-            Alert.alert('SignOut Failed', "that shouldn't have happened - please contact support");
+            Alert.alert('SignOut Failed', "that shouldn't have happened - please contact support at savetuba2023@gmail.com");
             navigation.navigate('Login');
         }
     };
     
-    async function handleGoogleSignOut() {
-        try {
-            await GoogleSignin.signOut();
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
     return (
         <Button onPress={handleSignOut}>
             <ButtonText>{t("common:signout")}</ButtonText>

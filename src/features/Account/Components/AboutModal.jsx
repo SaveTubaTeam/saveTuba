@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { StyleSheet, View, Modal, TouchableOpacity, Image } from "react-native";
+import { StyleSheet, View, Modal, TouchableOpacity, Image, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
@@ -30,9 +30,12 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
       dispatch(apiSlice.util.invalidateTags(["User"])); //manually force a refetch of now stale cache
    }
 
+   let marginTop;
+   Platform.OS === 'ios' ? marginTop = 60 : marginTop = 0;
+
    return (
       <Modal animationType="slide" transparent={true} visible={modalAboutVisible}>
-         <View style={styles.modalContainer}>
+         <View style={[styles.modalContainer, { marginTop: marginTop }]}>
             <Spacer size="large" />
 
             {/* marked for translation */}
@@ -40,7 +43,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             Hi! I'm Tuba
             </BodyText>
 
-            <Spacer size="large" />
+            <Spacer size="medium" />
 
             <BodyText size="subtitle">
             I am an endangered Saiga Antelope native to the Kazakh Steppes.
@@ -48,6 +51,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
 
             <SaigaCarousel />
 
+            <View style={styles.belowPictureContainer}>
             <BodyText size="subtitle">
             Help me complete activities that improve our environment.
             </BodyText>
@@ -59,7 +63,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             Welcome To My World!
             </BodyText>
 
-            <Spacer size="medium" />
+            <Spacer size="large" />
 
             <TouchableOpacity
                style={styles.greenButtonModal}
@@ -72,6 +76,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             </TouchableOpacity>
 
             <Spacer size="large" />
+            </View>
 
             <Image 
                style={styles.tubaImage}
@@ -101,23 +106,21 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
 const styles = StyleSheet.create({
    modalContainer:{
       backgroundColor: "#F5F5DC",
-      width: "100%",
-      height: "100%",
+      ...StyleSheet.absoluteFillObject,
       paddingTop: 30,
       paddingBottom: 10,
-      paddingLeft: 30,
-      paddingRight: 30,
+      paddingLeft: 35,
+      paddingRight: 35,
       borderTopRightRadius: 40,
       borderTopLeftRadius: 40,
-      justifyContent: "center",
+      flexDirection: "column",
       alignItems: "center",
       flex: 1,
-      flexDirection: "column",
-      justifyContent: "space-between",
       borderTopWidth: 5,
       borderLeftWidth: 5,
       borderRightWidth: 5,
       borderColor: "#748816",
+      justifyContent: "center",
    },
    greenButtonModal: {
       backgroundColor: "#748816",
@@ -129,10 +132,17 @@ const styles = StyleSheet.create({
       paddingTop: 5,
       paddingBottom: 5,
    },
+   belowPictureContainer: {
+      flex: 1,
+      width: "100%", 
+      justifyContent: "center", 
+      alignItems: "center", 
+      bottom: "-37%"
+   },
    tubaImage: {
-      position: "absolute",
-      top: "43%",
-      left: "-15%",
+      position: "relative",
+      bottom: "20%",
+      right: "45%",
       width: "55%",
       height: "40%",
       transform: [{ rotate: "-8deg" }, { scaleX: 0.6 }, { scaleY: 0.6 }]

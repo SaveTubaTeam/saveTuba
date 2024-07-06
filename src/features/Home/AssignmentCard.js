@@ -172,7 +172,7 @@ function parseDate(dateString) {
 
 const styles = StyleSheet.create({
    assignmentCard: {
-      width: 370,
+      width: 375,
       height: 160,
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
       borderRadius: 15,

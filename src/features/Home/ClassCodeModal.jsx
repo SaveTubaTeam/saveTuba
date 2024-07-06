@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Alert } from "react-native";
+import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Alert, KeyboardAvoidingView, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import SignOut from "../Account/Components/SignOutComponent";
 import styled from "styled-components";
@@ -87,9 +87,13 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
       );
    }
 
+   //regarding KeyboardAvoidingView: https://reactnative.dev/docs/keyboardavoidingview#behavior
    return (
       <Modal animationType="none" transparent={true} visible={classCodeModalVisible}>
-         <View style={styles.modalContainer}>
+         <KeyboardAvoidingView 
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+            style={styles.modalContainer}
+         >
             <ModalContainer>
                {exitIcon}
                <View style={{paddingTop: 15}}/>
@@ -103,7 +107,7 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
                      setTextInputBoxColor("rgba(128, 128, 128, 0.9)"); //resetting color to grey
                      setClassCode(""); //clearing TextInput
                   }}
-                  editable
+                  editable={true}
                   autoCapitalize="characters"
                   maxLength={6}
                   onChangeText={text => setClassCode(text)}
@@ -113,7 +117,7 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
                   placeholderTextColor="white"
                   textAlign="center"
                   textAlignVertical="center"
-                  caretHidden
+                  caretHidden={true}
                />
 
             <TouchableOpacity
@@ -129,7 +133,7 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
                <SignOut />
 
             </ModalContainer>
-         </View>
+         </KeyboardAvoidingView>
       </Modal>
    )
 }
