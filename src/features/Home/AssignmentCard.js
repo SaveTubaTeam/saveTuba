@@ -45,20 +45,16 @@ const AssignmentCard = memo(({ content }) => {
       }
    }, [individualLessonSuccess])
 
-   // jac927 6/26/24 | James: If you are refactoring the below pushToLesson function, I would advise 
-   //that you think of a radically different solution than to continue to optimize this function. 
-   // The missing piece of the puzzle is a page rendering completion listener for each layer of stack navigation.
-
-   // jac927 7/4/24 | James: Found a glitch where the completionID had a chance to be out of sync 
-   // with our expected curriculum location if a) the navigation stack failed to render on time 
-   // b) a stale navigation screen was present. This caused the wrong lesson to be displayed on screen.
-   // I hotfixed this by resetting the HomeScreen stack w/ StackActions.popToTop()
+   // jac927 7/6/24 | James Fixed a glitch w/ pushToLesson() where the completionID had a chance to be out of sync 
+   // with our expected curriculum location if either a) the navigation stack failed to render on time 
+   // b) a stale navigation screen was present, which caused the wrong lesson to be displayed on screen.
+   // I patched this by resetting the HomeScreen stack w/ StackActions.popToTop() before each push.
 
    async function pushToLesson() {
-      //resetting previous push (if any)
-      navigation.dispatch(StackActions.popToTop());
+      //clearing previous push (if any)
+      navigation.dispatch(StackActions.popToTop()); //popping all curriculum screens (which are now stale in relation to the new push)
       navigation.navigate("Home");
-      dispatch(resetLocation());
+      dispatch(resetLocation()); //resetting curriculumLocationSlice for sanity
 
       console.log(`\t\tpushing to ${grade} ${chapter} ${lesson} . . . `);
       dispatch(updateAssignmentDrill({ 

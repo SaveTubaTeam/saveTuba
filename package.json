@@ -22,7 +22,6 @@
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "@reduxjs/toolkit": "^1.9.5",
-    "cocoapods": "^0.0.0",
     "expo": "~50.0.19",
     "expo-av": "~13.10.6",
     "expo-camera": "~14.1.3",
@@ -63,7 +62,8 @@
     "@babel/core": "^7.20.0",
     "@types/react": "~18.2.14",
     "eslint": "^8.9.0",
-    "eslint-plugin-react": "^7.28.0"
+    "eslint-plugin-react": "^7.28.0",
+    "typescript": "^5.5.3"
   },
   "private": true
 }

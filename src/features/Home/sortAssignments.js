@@ -1,3 +1,5 @@
+//@ts-check
+
 //this function performs very quickly. 
 //if we are experiencing slowdowns for assignments/completions, it most likely? has to do with something else
 //need to add error handling to this file. also note that we do not modify the original arrays but make copies instead.
@@ -104,11 +106,11 @@ function sortByDateDue(array, comparator) {
       //dateB - dateA will sort the future to the top etc.
       //dateA - dateB will sort what has already been completed to the top
       if(comparator === "top") {
-         return dateB - dateA;
+         return dateB.getTime() - dateA.getTime();
       } else if(comparator === "bottom") {
-         return dateA - dateB;
+         return dateA.getTime() - dateB.getTime();
       }
-      return dateA - dateB; //default behaviour if no 'comparator'
+      return dateA.getTime() - dateB.getTime(); //default behaviour if no 'comparator'
    })
 
    return array;
