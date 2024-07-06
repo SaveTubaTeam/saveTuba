@@ -5,7 +5,7 @@ const initialState = {
    chapter: "",
    lesson: "",
    activity: "",
-   navigationDrill: null,
+   assignmentDrill: null,
 };
 
 const curriculumSlice = createSlice({
@@ -37,12 +37,16 @@ const curriculumSlice = createSlice({
          console.log(`Moved out of ${state[curriculumLayer]}`);
          state[curriculumLayer] = ""; //resetting layer
       },
-      modifyNavigationDrill(state, action) {
-         const { navigationDrill } = action.payload;
-         state.navigationDrill = navigationDrill;
+      updateAssignmentDrill(state, action) {
+         const { assignmentDrill } = action.payload;
+         state.assignmentDrill = assignmentDrill;
+      },
+      resetLocation(state, action) {
+         console.log("clearing location slice for pushToLesson . . .");
+         return initialState;
       }
    }
 });
 
-export const { addGrade, addChapter, addLesson, addActivity, pageBack, updatePageFocus } = curriculumSlice.actions;
+export const { addGrade, addChapter, addLesson, addActivity, pageBack, updateAssignmentDrill, resetLocation } = curriculumSlice.actions;
 export default curriculumSlice.reducer //exports all reducers from const usersSlice

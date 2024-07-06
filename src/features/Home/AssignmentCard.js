@@ -6,16 +6,19 @@ import { BodyText } from "../../components/body-text.component";
 import { TitleText } from "../../components/title-text.component";
 import { Surface } from "react-native-paper";
 import { Ionicons } from "@expo/vector-icons";
-import { useSelector } from "react-redux";
-import { useNavigation, useNavigationState } from "@react-navigation/native";
-import { useGetGradeDataQuery, useGetLessonsDataQuery, useGetIndividualLessonDataQuery, useGetActivitiesDataQuery } from "../../../redux/curriculumApiSlice";
+import { useNavigation } from "@react-navigation/native";
+import { resetLocation } from "../../../redux/slices/curriculumLocationSlice";
+import { useGetIndividualLessonDataQuery } from "../../../redux/curriculumApiSlice";
+import { updateAssignmentDrill } from "../../../redux/slices/curriculumLocationSlice";
+import { useDispatch } from "react-redux";
+import { StackActions } from "@react-navigation/native";
 
 //memoized
 const AssignmentCard = memo(({ content }) => {
    const { t, i18n } = useTranslation();
    const languageCode = i18n.language;
+   const dispatch = useDispatch();
    const navigation = useNavigation();
-   const curriculumSlice = useSelector(state => state.curriculum);
 
    /* marked for translation */
    const assignmentGrade = `${t("common:grade")}${getNumbersAfterLetter(content.assignmentID, "G")}`;
@@ -42,65 +45,27 @@ const AssignmentCard = memo(({ content }) => {
       }
    }, [individualLessonSuccess])
 
-   // const [buttonPressed, setButtonPressed] = useState(false);
+   // jac927 6/26/24 | James: If you are refactoring the below pushToLesson function, I would advise 
+   //that you think of a radically different solution than to continue to optimize this function. 
+   // The missing piece of the puzzle is a page rendering completion listener for each layer of stack navigation.
 
-   // const { isLoading: gradeLoading, isSuccess: gradeSuccess } = useGetGradeDataQuery(
-   //    { grade: grade },
-   //    { skip: !buttonPressed }
-   // );
-   // const { isLoading: lessonsLoading, isSuccess: lessonsSuccess } = useGetLessonsDataQuery( //NOTE how numLessons is hardcoded!!!
-   //    { grade: grade, chpt: chapter, numLessons: 25, languageCode: languageCode },
-   //    { skip: !buttonPressed }
-   // );
-   // const { isLoading: activitiesLoading,isSuccess: activitiesSuccess } = useGetActivitiesDataQuery(
-   //    { grade: grade, chpt: chapter, lesson: lesson, languageCode: languageCode },
-   //    { skip: !buttonPressed }
-   // );
+   // jac927 7/4/24 | James: Found a glitch where the completionID had a chance to be out of sync 
+   // with our expected curriculum location if a) the navigation stack failed to render on time 
+   // b) a stale navigation screen was present. This caused the wrong lesson to be displayed on screen.
+   // I hotfixed this by resetting the HomeScreen stack w/ StackActions.popToTop()
 
-   // jac927 6/26/24 | James: Dear whoever is reading, I fell into a rabbit hole of optimization for the below pushToLesson function.
-   // I would advise that you think of a radically different solution than to continue to optimize this function.
-   // The missing piece of the puzzle is a page focus listener for each layer of stack navigation.
-   // This pushToLesson function will not work if rendering for any of the below navigation 'layers' takes longer than 500ms.
-
-   // jac927 7/4/24 | James: Found a glitch where the completionID has a chance to be out of sync with the navigation stack and/or 
-   // redux curriculumLocationSlice if the navigation stack fails to render on time from this function. This causes a mismatch
-   // in the completionID and the actual curriculum location of the user. Looking for a fix...
-   
    async function pushToLesson() {
-      console.log("pushing . . . ");
-      //TODO: implement useFocusEffect into curriculum handlers
-      //navigation drill will be passed to redux store here
-      //individuallessonhandler will pass null to cleanup
+      //resetting previous push (if any)
+      navigation.dispatch(StackActions.popToTop());
+      navigation.navigate("Home");
+      dispatch(resetLocation());
 
-      // navigation.navigate("Home");
-      // navigation.navigate("ChaptersHandler", { grade: grade });
+      console.log(`\t\tpushing to ${grade} ${chapter} ${lesson} . . . `);
+      dispatch(updateAssignmentDrill({ 
+         assignmentDrill: { grade: grade, chapter: chapter, lesson: lesson } 
+      }));
 
-      // while(curriculumSlice.grade === "") {
-      //    await new Promise(resolve => setTimeout(resolve, 100));
-      // }
-      // if(curriculumSlice.grade) {
-      //    navigation.navigate(chapter);
-      // }
-
-      // while(curriculumSlice.chapter === "") {
-      //    await new Promise(resolve => setTimeout(resolve, 100));
-      // }
-      // if(curriculumSlice.chapter) {
-      //    navigation.navigate(lesson);
-      // }
-
-      // if(gradeSuccess && lessonsSuccess && activitiesSuccess) {
-      //    navigation.navigate("Home");
-
-      //    await new Promise(resolve => setTimeout(resolve, 100));
-      //    navigation.navigate("ChaptersHandler", { grade: grade });
-
-      //    await new Promise(resolve => setTimeout(resolve, 300));
-      //    navigation.navigate(chapter);
-
-      //    await new Promise(resolve => setTimeout(resolve, 500));
-      //    navigation.navigate(lesson);
-      // }
+      navigation.navigate("ChaptersHandler", { grade: grade });
    }
 
    //default set to red #db473b

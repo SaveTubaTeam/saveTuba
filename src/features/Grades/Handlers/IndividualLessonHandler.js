@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { useGetActivitiesDataQuery } from "../../../../redux/curriculumApiSlice.js";
@@ -7,6 +7,7 @@ import { Header } from "../../../components/Grades/grades.styles.js";
 import { SafeArea } from "../../../components/safe-area.component.js";
 import { useDispatch, useSelector } from "react-redux";
 import { addLesson } from "../../../../redux/slices/curriculumLocationSlice.js";
+import { updateAssignmentDrill } from "../../../../redux/slices/curriculumLocationSlice.js";
 import LessonComponent from "../Components/LessonComponent";
 import OpenResponseHandler from "../../../components/Grades/minigames/Handlers/OpenResponseHandler"; //works
 import QuizHandler from "../../../components/Grades/minigames/Handlers/QuizHandler"; //works
@@ -39,16 +40,19 @@ function IndividualLessonHandler({ lessonData }) {
   const languageCode = i18n.language;
   const [activitiesMap, setActivitiesMap] = useState(null);
   const dispatch = useDispatch();
-  const grade = useSelector(state => state.curriculum.grade)
-  const chapter = useSelector(state => state.curriculum.chapter)
+  const grade = useSelector(state => state.curriculum.grade);
+  const chapter = useSelector(state => state.curriculum.chapter);
 
   const { data: activitiesData, isLoading: activitiesLoading, isSuccess: activitiesSuccess, isError: activitiesError, error: activitiesErrorMessage } = useGetActivitiesDataQuery(
     { grade: grade, chpt: chapter, lesson: lessonData.navigation, languageCode: languageCode }
   )
 
+  useEffect(() => {
+    dispatch(addLesson({ lesson: lessonData.navigation }));
+  }, [])
+
   useEffect(() => { 
     if(activitiesSuccess) {
-      dispatch(addLesson({ lesson: lessonData.navigation }));
 
       let map = new Map(); //iterating through activities array to set a map of every minigame and mastery object for easy access
       console.log(`\n\t${lessonData.navigation} activities:`);

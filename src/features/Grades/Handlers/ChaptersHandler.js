@@ -1,12 +1,13 @@
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { View, ActivityIndicator, StyleSheet } from "react-native";
 import ChaptersComponent from "../Components/ChaptersComponent";
 import LessonsHandler from "./LessonsHandler";
 import { useGetGradeDataQuery } from "../../../../redux/curriculumApiSlice";
 import { useDispatch } from "react-redux";
 import { addGrade } from "../../../../redux/slices/curriculumLocationSlice";
+import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
@@ -20,16 +21,26 @@ const ChaptersHandler = ({ route })  => {
   const { grade } = route.params; // route param is defined and passed in by HomeScreen.js. We pass it as a param to useGetGradeDataQuery
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const assignmentDrill = useSelector(state => state.curriculum.assignmentDrill);
 
   const { data: gradeData, isLoading: gradeLoading, isSuccess: gradeSuccess, isError: gradeError, error: gradeErrorMessage } = useGetGradeDataQuery(
     { grade: grade }
   )
 
   useEffect(() => {
-    if(gradeSuccess) {
-      dispatch(addGrade({ grade: grade }))
+    dispatch(addGrade({ grade: grade }))
+  }, []);
+
+  useEffect(() => {
+    async function drill() {
+      if(gradeSuccess && assignmentDrill) {
+        await new Promise(resolve => setTimeout(resolve, 200));
+        navigation.navigate(assignmentDrill.chapter);
+      }
     }
-  }, [gradeSuccess])
+
+    drill();
+  }, [gradeSuccess, assignmentDrill])
 
   let content;
   if(gradeLoading) {

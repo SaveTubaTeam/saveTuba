@@ -1,16 +1,16 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import IndividualLessonHandler from "./IndividualLessonHandler";
 import LessonsComponent from "../Components/LessonsComponent";
 import { useGetLessonsDataQuery } from "../../../../redux/curriculumApiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { addChapter } from "../../../../redux/slices/curriculumLocationSlice";
+import { useNavigation } from "@react-navigation/native";
+import { updateAssignmentDrill } from "../../../../redux/slices/curriculumLocationSlice";
 
 const Stack = createNativeStackNavigator();
-
-//This handler renders the current chapter's lesson cards, as well as the necessary navigation stack
 
 //LessonsHandler is initialized as a component within ChaptersHandler and takes props there.
 //@param grade a string representing the selected grade, e.g. 'Grade2'
@@ -22,15 +22,20 @@ export default function LessonsHandler({ chapter, numLessons }) {
   const dispatch = useDispatch();
   const grade = useSelector(state => state.curriculum.grade);
   const completions = useSelector(state => state.user.completions);
+  const assignmentDrill = useSelector(state => state.curriculum.assignmentDrill);
+  const navigation = useNavigation();
   const [lessonsData, setLessonsData] = useState(null);
 
   const { data: lessonsDataQuery, isLoading: lessonsLoading, isSuccess: lessonsSuccess, isError: lessonsError, error: lessonsErrorMessage } = useGetLessonsDataQuery(
     { grade: grade, chpt: chapter, numLessons: numLessons, languageCode: languageCode }
   )
 
+  useEffect(() =>{
+    dispatch(addChapter({ chapter: chapter }));
+  }, [])
+
   useEffect(() => {
     if(lessonsSuccess && lessonsDataQuery) {
-      dispatch(addChapter({ chapter: chapter }));
 
       //adding an attribute to each lesson
       const updatedLessons = lessonsDataQuery.map((lesson) => ({
@@ -40,7 +45,19 @@ export default function LessonsHandler({ chapter, numLessons }) {
 
       setLessonsData(updatedLessons);
     }
-  }, [lessonsSuccess, lessonsDataQuery, completions])
+  }, [lessonsSuccess, lessonsDataQuery, completions]);
+
+  useEffect(() => {
+    async function drill() {
+      if(lessonsSuccess && assignmentDrill) {
+        await new Promise(resolve => setTimeout(resolve, 400));
+        navigation.navigate(assignmentDrill.lesson);
+        dispatch(updateAssignmentDrill({ assignmentDrill: null }));
+      }
+    }
+
+    drill();
+  }, [lessonsSuccess, assignmentDrill])
 
   let content;
   if(lessonsLoading || (lessonsData === null)) {
