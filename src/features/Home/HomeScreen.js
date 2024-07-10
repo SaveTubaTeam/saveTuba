@@ -86,14 +86,14 @@ function HomeView() {
           </TouchableOpacity>
         </Surface>
 
-        <Image //grade5 lock
+        {/* <Image //grade5 lock
           style={{ position: "absolute", right: 20, top: 350, zIndex: 1000, width: 60, height: 60 }}
           source={require("../../../assets/lock.png")}
-        />
+        /> */}
 
         <Surface style={styles.roundButton2} elevation={3}>
           <TouchableOpacity
-            //onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
+            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
           >
             <Text style={styles.baseText}>5</Text>
           </TouchableOpacity>

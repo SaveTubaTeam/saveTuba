@@ -24,7 +24,8 @@ function AssignmentsPage() {
       const assignmentsRef = db.collection("teachers").doc(classroom.teacher.email).collection(`Assignments_${classroom.classCode}`)
 
       const unsubscribe = assignmentsRef.onSnapshot((querySnapshot) => { //querySnapshot will always exist (no undefined)
-            if(querySnapshot.size === 0) { //guard clause for empty snapshot
+            //re: https://firebase.google.com/docs/reference/js/v8/firebase.firestore.QuerySnapshot
+            if(querySnapshot.empty) { //guard clause for empty snapshot
                console.log("ASSIGNMENTS SNAPSHOT IS EMPTY");
                setAssignments(null);
                return;
@@ -60,7 +61,7 @@ function AssignmentsPage() {
             data={ assignments }
             style={{ width: "100%", height: "100%" }}
             keyExtractor={(item, index) => index.toString()}
-            renderItem={({ item }) => <AssignmentCard content={item} />}
+            renderItem={({ item }) => <AssignmentCard content={item}/>}
             contentContainerStyle={{ alignItems: "center", marginTop: 5 }}
          />
       )

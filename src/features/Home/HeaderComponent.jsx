@@ -6,7 +6,6 @@ import { apiSlice } from "../../../redux/apiSlice";
 import styled from "styled-components/native";
 import { useSelector } from "react-redux";
 import { FlatList } from "react-native-gesture-handler";
-import { useTranslation } from "react-i18next";
 import { BodyText } from "../../components/body-text.component";
 
 export default function HeaderComponent({ title }) {

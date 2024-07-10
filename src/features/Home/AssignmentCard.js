@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
@@ -13,12 +13,11 @@ import { updateAssignmentDrill } from "../../../redux/slices/curriculumLocationS
 import { useDispatch } from "react-redux";
 import { StackActions } from "@react-navigation/native";
 
-//memoized
-const AssignmentCard = memo(({ content }) => {
+const AssignmentCard = ({ content }) => {
    const { t, i18n } = useTranslation();
-   const languageCode = i18n.language;
    const dispatch = useDispatch();
    const navigation = useNavigation();
+   const languageCode = i18n.language;
 
    const assignmentGrade = `${t("common:grade")}${getNumbersAfterLetter(content.assignmentID, "G")}`;
    const assignmentChapter = `${t("common:chapter")}${getNumbersAfterLetter(content.assignmentID, "C")}`;
@@ -42,9 +41,9 @@ const AssignmentCard = memo(({ content }) => {
       if(individualLessonSuccess) {
          setIndividualLessonData(queryResult);
       }
-   }, [individualLessonSuccess])
+   }, [individualLessonSuccess, queryResult])
 
-   // jac927 7/6/24 | James Fixed a glitch w/ pushToLesson() where the completionID had a chance to be out of sync 
+   // jac927 7/6/24 | James: Fixed a glitch w/ pushToLesson() where the completionID had a chance to be out of sync 
    // with our expected curriculum location if either a) the navigation stack failed to render on time 
    // b) a stale navigation screen was present, which caused the wrong lesson to be displayed on screen.
    // I patched this by resetting the HomeScreen stack w/ StackActions.popToTop() before each push.
@@ -128,7 +127,7 @@ const AssignmentCard = memo(({ content }) => {
          />
       </Surface>
    )
-});
+};
 
 function CompletionOverlay({ opacity }) {
    let pointerEvents = (opacity === 1) ? "auto" : "none";
@@ -197,9 +196,9 @@ const styles = StyleSheet.create({
    bottomSectionRight: {
       borderBottomRightRadius: 15,
       position: "absolute",
-      right: 0,
+      right: -0.2,
       bottom: 0,
-      width: "25%",
+      width: "26%",
       height: 120,
    },
    buttonBottomRow: {
