@@ -12,45 +12,7 @@ import { StyleSheet } from "react-native";
 import LoadingModal from "../../../features/Account/LevelSystem/LoadingModal";
 import Toast from 'react-native-toast-message';
 import FileModal from "./FileModal";
-
 import { BodyText } from "../../body-text.component";
-
-const ImageBox = styled.TouchableOpacity`
-  border: 2px #748816 dashed;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 90%;
-`;
-
-const Prompt = styled.View`
-  width: 90%;
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 10px;
-  align-items: center;
-  align-self: center;
-`;
-
-const File = styled.TouchableOpacity`
-  padding: 10px;
-  width: 95%
-  border-radius: 5px;
-  margin-bottom: 10px;
-  background-color: #808080;
-  align-self: center;
-`;
-
-const SubmitButton = styled.TouchableOpacity`
-  margin-top: 5px
-  width: 55%;
-  height: 40px;
-  background-color: #748816;
-  align-self: center;
-  justify-content: center;
-  border-radius: 20px;
-`;
 
 export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
@@ -68,8 +30,8 @@ export default function ImageUpload({ score, prompt }) {
   function showMaxDurationToast() {
     Toast.show({
       type: 'error',
-      text1: 'Error: Video exceeded 5 minutes',
-      text2: 'Split your videos into 3 minutes each!',
+      text1: t("error:maxduration"),
+      text2: t("error:splitvideo"),
       visibilityTime: 3000,
     });
   } 
@@ -136,7 +98,6 @@ export default function ImageUpload({ score, prompt }) {
   return (
     <Prompt>
       <ImageBox onPress={pickImage}>
-        {/* marked for translation */}
         <BodyText size="subtitle">{t("common:pickanimage")}</BodyText>
       </ImageBox>
 
@@ -178,8 +139,8 @@ export default function ImageUpload({ score, prompt }) {
           /* marked for translation */
           Toast.show({
             type: 'error',
-            text1: 'Nothing Submitted',
-            text2: 'Select photos or videos from your photo library',
+            text1: t("error:nothingsubmitted"),
+            text2: t("error:selectfromlibrary"),
             visibilityTime: 2000,
           });
         }
@@ -212,3 +173,40 @@ const styles = StyleSheet.create({
     flex: 1,
   }
 });
+
+const ImageBox = styled.TouchableOpacity`
+  border: 2px #748816 dashed;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 90%;
+`;
+
+const Prompt = styled.View`
+  width: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
+  align-items: center;
+  align-self: center;
+`;
+
+const File = styled.TouchableOpacity`
+  padding: 10px;
+  width: 95%
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #808080;
+  align-self: center;
+`;
+
+const SubmitButton = styled.TouchableOpacity`
+  margin-top: 5px
+  width: 55%;
+  height: 40px;
+  background-color: #748816;
+  align-self: center;
+  justify-content: center;
+  border-radius: 20px;
+`;

@@ -47,7 +47,6 @@ const Start = ({ objectData }) => {
         >
           <ModalContainer>
             <View>
-              {/* marked for translation */}
               <BodyText size="subtitle">
                 {correct == true
                   ? t("minigames:sortingcorrect")
@@ -147,7 +146,6 @@ const Start = ({ objectData }) => {
         {/* shows user if they are correct/incorrect */}
         <Modko visible={false} />
 
-          {/* marked for translation */}
         <CompletionModal 
           startCompletionProcess={completionModalVisible} 
           score={score} 

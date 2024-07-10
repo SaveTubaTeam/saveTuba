@@ -27,9 +27,9 @@ export default function ClassroomCard() {
                <TitleText size="subtitle" align="left" weight="bold">{classroom.className}</TitleText>
                <TitleText size="subtitle" align="left" weight="bold">{`${t("common:grade")} ${extractNumbers(classroom.gradeLevel)}`}</TitleText>
                <Spacer size="small" />
+               <TitleText size="body" align="left">{`${t("common:classcode")}: ${classroom.classCode}`}</TitleText>
                {/* marked for translation */}
-               <TitleText size="body" align="left">{`Class Code: ${classroom.classCode}`}</TitleText>
-               <TitleText size="body" align="left">{`Teacher: ${classroom.teacher.firstName} ${classroom.teacher.lastName}`}</TitleText>
+               <TitleText size="body" align="left">{`${t("common:teacher")}: ${classroom.teacher.firstName} ${classroom.teacher.lastName}`}</TitleText>
             </View>
             
             <TouchableOpacity onPress={() => {

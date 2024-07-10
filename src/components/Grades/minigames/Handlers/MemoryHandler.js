@@ -117,7 +117,6 @@ const MemoryHandler = ({ objectData }) => {
       <View style={styles.prompt}>
         <BodyText size="title">{objectData.prompt}</BodyText>
         <Spacer size="medium" />
-        {/* marked for translation */}
         <TitleText size="caption">{t("minigames:memoryhint")}</TitleText>
       </View>
 
@@ -127,7 +126,6 @@ const MemoryHandler = ({ objectData }) => {
 
       <Score score={score} />
 
-        {/* marked for translation */}
       <CompletionModal 
         prompt={t("minigames:memoryprompt")} 
         score={score} 

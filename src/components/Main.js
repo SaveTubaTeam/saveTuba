@@ -5,6 +5,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { auth } from "../../firebase";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { signOutUser } from "../../redux/slices/userSlice";
+import { useTranslation } from "react-i18next";
 
 // Different Screens thus far
 import HomeScreen from "../features/Home/HomeScreen";
@@ -84,6 +85,7 @@ const SaveTuba = () => {
 // from the stack completely. See SignOutComponent.jsx for the implementation.
 
 const Main = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch()
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
@@ -158,7 +160,7 @@ const Main = () => {
     }
     await auth.signOut();
     /* marked for translation */
-    Alert.alert("uh oh...", "that shouldn't have happened - please contact support at savetuba2023@gmail.com");
+    Alert.alert(t("error:uhoh"), t("error:contactsupport"));
     navigation.replace("Login");
   }
 

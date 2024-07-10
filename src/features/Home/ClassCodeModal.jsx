@@ -124,9 +124,9 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
                style={styles.greenButtonModal}
                onPress={handleClassCode}
             >
-               {/* marked for translation. i want this to say enter */}
+               {/* marked for translation */}
                <BodyText size="subtitle" color="primary">
-                  Continue!
+                  {t("about:continue")}
                </BodyText>
             </TouchableOpacity>
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Modal } from "react-native";
+import { useTranslation } from "react-i18next";
 import { Ionicons } from "@expo/vector-icons";
 import { apiSlice } from "../../../redux/apiSlice";
 import styled from "styled-components/native";
@@ -9,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import { BodyText } from "../../components/body-text.component";
 
 export default function HeaderComponent({ title }) {
+   const { t } = useTranslation();
    const [modalVisible, setModalVisible] = useState(false);
 
    return (
@@ -89,7 +91,9 @@ function ModalComponent({ visible, setModalVisible }) {
                contentContainerStyle={{ alignItems: "center", paddingBottom: 30 }}
                ListHeaderComponent={
                   /* marked for translation */
-                  <BodyText size="h5" weight="bold" color="quaternary">Completions</BodyText>
+                  <BodyText size="h5" weight="bold" color="quaternary">
+                     {t("common:completions")}
+                  </BodyText>
                }
                ListHeaderComponentStyle={{ paddingBottom: 20 }}
             />

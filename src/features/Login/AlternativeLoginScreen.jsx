@@ -43,15 +43,14 @@ const AlternativeLoginScreen = () => {
         if(errorCode === "auth/wrong-password") {
           Toast.show({
             type: 'error',
-            text1: "Incorrect Password",
-            text2: "Password is incorrect",
+            text1: t("error:incorrectpassword"),
             visibilityTime: 4000,
           });
         } else { //default catch others
           Toast.show({
             type: 'error',
-            text1: "Invalid Login",
-            text2: "Please try again or contact support at savetuba2023@gmail.com",
+            text1: t("error:invalidlogin"),
+            text2: t("error:tryagain"),
             visibilityTime: 4000,
           });
         }
@@ -71,8 +70,8 @@ const AlternativeLoginScreen = () => {
           /* marked for translation */
           Toast.show({
             type: 'info',
-            text1: "Password Reset Email Sent",
-            text2: "An email with instructions to reset your password has been sent to your inbox.",
+            text1: t("common:resetemail"),
+            text2: t("common:senttoinbox"),
             visibilityTime: 4000,
           });
         }).catch((error) => {
@@ -80,8 +79,8 @@ const AlternativeLoginScreen = () => {
           /* marked for translation */
           Toast.show({
             type: 'error',
-            text1: "Error",
-            text2: "Please enter a valid email address",
+            text1: t("error:error"),
+            text2: t("error:pleaseentervalidemail"),
             visibilityTime: 4000,
           });
         })
@@ -89,8 +88,8 @@ const AlternativeLoginScreen = () => {
       /* marked for translation */
       Toast.show({
         type: 'error',
-        text1: "Invalid Email",
-        text2: "No such account with the given email exists",
+        text1: t("error:invalidemail"),
+        text2: t("error:nosuchaccountexists"),
         visibilityTime: 4000,
       });
     }
@@ -155,7 +154,6 @@ const AlternativeLoginScreen = () => {
             }} 
             style={{alignItems: 'center'}}>
             <Text style={{textDecorationLine: 'underline'}}>
-              {/* marked for translation */}
               <TitleText color="secondary" size="button">
                 {t("common:forgotpassword")}
               </TitleText>

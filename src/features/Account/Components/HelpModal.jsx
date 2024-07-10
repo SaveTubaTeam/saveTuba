@@ -24,7 +24,6 @@ export default function HelpModal({ modalHelpVisible, setModalHelpVisible }) {
                   style={styles.greenButtonModal}
                   onPress={() => setModalHelpVisible(!modalHelpVisible)}
                >
-                  {/* marked for translation */}
                   <BodyText size="subtitle" color="secondary">
                      {t("about:close")}
                   </BodyText>

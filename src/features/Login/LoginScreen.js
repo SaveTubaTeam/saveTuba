@@ -25,8 +25,8 @@ const LoginScreen = () => {
     GoogleSignin.configure({
       webClientId: "218900793188-0krdujh2ub4j1bkiddti006k2cste6jo.apps.googleusercontent.com",
     });
-    console.log("\n\tinside LoginScreen.js")
-  }, [])
+    console.log("\n\tinside LoginScreen.js");
+  }, [i18n])
 
   //updating the auth object with an observer to track changes to the existing user
   useEffect(() => {
@@ -37,10 +37,10 @@ const LoginScreen = () => {
       if (user) {  //see here for User object attributes: https://firebase.google.com/docs/reference/js/v8/firebase.User
         console.log(`\n\n\t!!! USER SIGNED IN: ${user.email} !!!`);
       }
-    }); //end of login function
+    });
 
-    return login; //this line prevents login from being called more than once
-  }, [userSlice, i18n]); //end of useEffect(). I believe rerender happens every time button onPress event is triggered.
+    return login;
+  }, [userSlice]); 
 
   /* marked for translation */
   async function googleSignIn() {
@@ -50,6 +50,7 @@ const LoginScreen = () => {
 
       //this line is tricky: https://stackoverflow.com/questions/70607284/provider-credential-is-undefined-in-expo-firebase-google-authentication
       const googleCredential = GoogleAuthProvider.credential(userInfo.idToken);
+
       setLoading(true);
       await handleGAuth(googleCredential);
       setLoading(false);
@@ -61,7 +62,7 @@ const LoginScreen = () => {
             // user cancelled the login flow
             Toast.show({
               type: 'info',
-              text1: "Exited Google Sign In",
+              text1: t("error:exitedgooglesignin"),
               visibilityTime: 2000,
             });
             break;
@@ -69,8 +70,8 @@ const LoginScreen = () => {
             // operation (eg. sign in) already in progress
             Toast.show({
               type: 'error',
-              text1: "Google Sign In Already In Progress",
-              text2: "Please try again or contact support at savetuba2023@gmail.com",
+              text1: t("error:alreadyinprogress"),
+              text2: t("error:tryagain"),
               visibilityTime: 4000,
             });
             break;
@@ -78,8 +79,8 @@ const LoginScreen = () => {
             // play services not available or outdated
             Toast.show({
               type: 'error',
-              text1: "Google Play Services Unavailable",
-              text2: "Please try again or contact support at savetuba2023@gmail.com",
+              text1: t("error:playservicesunavailable"),
+              text2: t("error:tryagain"),
               visibilityTime: 4000,
             });
             break;
@@ -105,7 +106,6 @@ const LoginScreen = () => {
         console.log("\n\tLogged in with:", user.email);
         await postUserIfNew(user);
       })
-      /* marked for translation */
       .catch((error) => { //auth error codes: https://firebase.google.com/docs/reference/js/auth#autherrorcodes
         console.log(`ERROR: ${error.code} | ${error.message}`);
         showDefaultToast();
@@ -124,8 +124,8 @@ const LoginScreen = () => {
       }).catch((error) => {
         Toast.show({
           type: 'error',
-          text1: "Guest Login Failed",
-          text2: "Please try again or contact support at savetuba2023@gmail.com",
+          text1: t("error:guestloginfailed"),
+          text2: t("error:tryagain"),
           visibilityTime: 4000,
         });
         console.log(`ERROR with Guest in LoginScreen: ${error}`);
@@ -143,12 +143,11 @@ const LoginScreen = () => {
         //console.log("USER EXISTS");
         console.log("returning user auth successful. Pushing to Main . . .");
         navigation.replace("Main");
-        return;
+        return; //break early
       }
       
-      //default is antelope-profile-pic.jpg in our storage bucket under /assets/
-      let photoURL = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fantelope-profile-pic.jpg?alt=media&token=26382673-a602-4c7d-b255-18ae83bc525a";
-      if(user.photoURL) { //the profile photo has dimensions of 96x96
+      let photoURL = "";
+      if(user.photoURL) { //google profile photos have a dimension of 96x96 px
         photoURL = user.photoURL
       }
 
@@ -160,7 +159,7 @@ const LoginScreen = () => {
         email: user.email,
         firstName: displayName[0],
         lastName: displayName[1],
-        classCode: "dummyClassroom",
+        classCode: "dummyClassroom", //to trigger enter classcode modal
         photoURL: photoURL,
         experiencePoints: 0,
         isNewUser: true,
@@ -169,18 +168,19 @@ const LoginScreen = () => {
       console.log("new user auth successful. Pushing to Main . . .");
       navigation.replace("Main");
 
+      /* marked for translation */
       Toast.show({
         type: 'success',
-        text1: `Welcome, ${displayName[0]} ${displayName[1]}!`,
-        text2: `Your account has been successfully created.`,
+        text1: `${t("common:welcome")}, ${displayName[0]} ${displayName[1]}!`,
+        text2: t("common:accountsuccessfullycreated"),
         visibilityTime: 4000,
       });
     } catch(error) {
       console.error("Error posting user to Firestore:", error);
       Toast.show({
         type: 'error',
-        text1: "Account Creation Failed",
-        text2: "Please try again or contact support at savetuba2023@gmail.com",
+        text1: t("error:accountcreationfailed"),
+        text2: t("error:tryagain"),
         visibilityTime: 4000,
       });
     }
@@ -214,7 +214,7 @@ const LoginScreen = () => {
         fadeDuration={0}
       >
         <ButtonContainer>
-          <ButtonOutLine onPress={() => { googleSignIn(); }}>
+          <ButtonOutLine onPress={googleSignIn}>
             <Image 
               source={require("../../../assets/googleLogoButton.png")}
               style={styles.image}
@@ -223,13 +223,13 @@ const LoginScreen = () => {
 
             <TitleText color="primary" size="body">
               {/* marked for translation */}
-              {`      Sign in with Google`}
+              {`      ${t("common:googlesignin")}`}
             </TitleText>
           </ButtonOutLine>
 
           <Button onPress={() => navigation.push("AlternativeLogin")}>
             <TitleText color="secondary" size="body">
-              Other
+              {t("common:other")}
             </TitleText>
           </Button>
         </ButtonContainer>
@@ -252,35 +252,34 @@ const LoginScreen = () => {
   );
 }; //end of LoginScreen
 
-//@returns {string[]} index 1 is first name, index 2 is last name or empty string if it doesnt exist
-//NOTE: 
-// - this is error-prone to first names with more than one word
-// - this is also error-prone to a displayName without a first name (only last name - is that even possible?)
-// - function behaviour is unknown if entire displayName is " " or ""
+//@returns {string[]} index 0 is first name, index 1 is last name or empty string if it doesnt exist
+//NOTE edge cases: 
+// - this function is error-prone to first names with more than one word
+// - function behaviour is unknown if entire displayName is " " or "" (is that even possible?)
 function parseDisplayName(displayName) {
   try {
     const result = [];
-    const parts = displayName.split(' ');
+    const parts = displayName.trim().split(' ');
     
     result.push(parts[0]); //first name
 
-    if(parts.length === 1) { //no space found
+    if(parts.length === 1) { //no space for split found
       result.push(" "); //empty string for last name
-    } else {
+    } else { //last name exists
       result.push(parts[1]);
     }
 
     return result;
   } catch(error) {
-    console.error('Error splitting string:', error.message);
+    console.error('Error parsing display name:', error.message);
   }
 }
 
 function showDefaultToast() {
   Toast.show({
     type: 'error',
-    text1: "Google Sign In Failed",
-    text2: "Please try again or contact support at savetuba2023@gmail.com",
+    text1: t("error:googlesigninfailed"),
+    text2: t("error:tryagain"),
     visibilityTime: 4000,
   });
 }

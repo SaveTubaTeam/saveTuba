@@ -67,8 +67,8 @@ const Start = ({ data }) => {
             <View>
               <BodyText size="subtitle">
                 {correctAnswer == true
-                  ? "That's right! Good job ✨"
-                  : "Incorrect! Better luck next time 🍀"}
+                  ? t("minigames:quizcorrect")
+                  : t("minigames:quizincorrect")}
               </BodyText>
             </View>
 
@@ -77,7 +77,6 @@ const Start = ({ data }) => {
               style={styles.greenButtonModal}
               onPress={nextQuestion}
             >
-              {/* marked for translation */}
               <BodyText size="subtitle" color="secondary">
                 {t("minigames:quiznext")}
               </BodyText>
@@ -131,7 +130,6 @@ const Start = ({ data }) => {
 
         <ModalComponent visible={visible}  />
 
-          {/* marked for translation */}
         <CompletionModal 
           startCompletionProcess={completionModalVisible} 
           score={score} 

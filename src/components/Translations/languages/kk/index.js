@@ -7,6 +7,7 @@ import common from "./common";
 import mastery from "./mastery";
 import profile from "./profile";
 import minigames from "./minigames";
+import error from "./error";
 
 export default {
   about,
@@ -18,4 +19,5 @@ export default {
   mastery,
   profile,
   minigames,
+  error,
 };

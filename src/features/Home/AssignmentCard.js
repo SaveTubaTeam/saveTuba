@@ -20,7 +20,6 @@ const AssignmentCard = memo(({ content }) => {
    const dispatch = useDispatch();
    const navigation = useNavigation();
 
-   /* marked for translation */
    const assignmentGrade = `${t("common:grade")}${getNumbersAfterLetter(content.assignmentID, "G")}`;
    const assignmentChapter = `${t("common:chapter")}${getNumbersAfterLetter(content.assignmentID, "C")}`;
    const assignmentLesson = `${t("common:lesson")}${getNumbersAfterLetter(content.assignmentID, "L")}`;
@@ -68,19 +67,19 @@ const AssignmentCard = memo(({ content }) => {
    const [topRowColor, setTopRowColor] = useState({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
    const [opacity, setOpacity] = useState(0);
    /* marked for translation */
-   const [dateText, setDateText] = useState("Date Due");
+   const [dateText, setDateText] = useState(t("minigames:datedue"));
 
    useEffect(() => {
       content.completionStatus ? setOpacity(1) : setOpacity(0);
 
       if((!content.overdue && content.completionStatus) || (!content.overdue && !content.completionStatus)) { //set to blue #418098
          setTopRowColor({ color: "rgba(65, 128, 152, 0.8)", border: "rgba(65, 128, 152, 1)" });
-         setDateText("Date Due") /* marked for translation */
+         setDateText(t("minigames:datedue")) /* marked for translation */
          //set to purple #9241ba
          //setTopRowColor({ color: "rgba(146, 65, 186, 0.8)", border: "rgba(146, 65, 186, 1)" })
       } else if(content.overdue) { //use default red topRowColor if overdue
          setTopRowColor({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
-         setDateText("OVERDUE") /* marked for translation */
+         setDateText(t("minigames:overdue")) /* marked for translation */
       }
    }, [content]);
 
@@ -91,7 +90,6 @@ const AssignmentCard = memo(({ content }) => {
 
          <View style={[styles.topSection, { backgroundColor: topRowColor.color, borderColor: topRowColor.border }]}>
             <BodyText align="left" size="subtitle" color="beige" weight="bold">
-               {/* marked for translation */}
                {`${dateText}:  ${parseDate(content.dateDue)}`}
             </BodyText>
 
@@ -118,7 +116,6 @@ const AssignmentCard = memo(({ content }) => {
 
             <View style={styles.textBottomRow}>
                <BodyText size="button" color="dark" weight="medium">
-                  {/* marked for translation */}
                   {`${assignmentGrade}/${assignmentChapter}/${assignmentLesson}`}
                </BodyText>
             </View>

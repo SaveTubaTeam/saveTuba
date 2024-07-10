@@ -40,27 +40,27 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
 
             {/* marked for translation */}
             <BodyText size="h3" weight="bold">
-            Hi! I'm Tuba
+            {t("about:hi")}
             </BodyText>
 
             <Spacer size="medium" />
 
             <BodyText size="subtitle">
-            I am an endangered Saiga Antelope native to the Kazakh Steppes.
+            {t("about:whoami")}
             </BodyText>
 
             <SaigaCarousel />
 
             <View style={styles.belowPictureContainer}>
             <BodyText size="subtitle">
-            Help me complete activities that improve our environment.
+            {t("about:helpme")}
             </BodyText>
 
             <Spacer size="medium" />
 
             {/* marked for translation */}
             <BodyText size="title" weight="bold">
-            Welcome To My World!
+            {t("about:welcome")}
             </BodyText>
 
             <Spacer size="large" />
@@ -69,9 +69,9 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
                style={styles.greenButtonModal}
                onPress={async() => { await handleClose(); }}
             >
-               {/* marked for translation. i want this to say enter */}
+               {/* marked for translation */}
                <BodyText size="title" color="secondary">
-                  Continue
+                  {t("about:continue")}
                </BodyText>
             </TouchableOpacity>
 

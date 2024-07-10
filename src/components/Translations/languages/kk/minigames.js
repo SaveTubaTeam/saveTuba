@@ -1,6 +1,11 @@
 export default {
    return: "Қайту",
+   datedue: "Date Due",
+   overdue: "OVERDUE",
+
+   /* Completion Modal */
    finalscore: "Нәтиже",
+   alreadyclaimedxp: "You've already claimed XP for this activity 😔",
 
    sortingprompt: "Тамаша! Топтастыру жаттығуын аяқтадыңыз!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
    sortingcorrect: "Дұрыс! Тамаша жұмыс ✨",
@@ -13,6 +18,8 @@ export default {
 
    quizprompt: "Тамаша!\nСіз бұл викторинаны аяқтадыңыз!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
    quiznext: "Келесі",
+   quizcorrect: "That's right! Good job ✨",
+   quizincorrect: "Incorrect! Better luck next time 🍀",
 
    openresponseprompt: "Сіздің жауабыңыз жіберілді. Тамаша!\nСабақты жалғастыру үшін сабаққа оралыңыз.",
    openresponsethink: "Менің ойымша...",

@@ -75,7 +75,7 @@ function AssignmentsPage() {
    return (
       <SafeArea>
          {/* marked for translation */}
-         <HeaderComponent title={"Assignments"} />
+         <HeaderComponent title={t("common:assignments")} />
 
          <ImageBackground 
             source={require("../../../assets/assignmentsBg.jpg")}

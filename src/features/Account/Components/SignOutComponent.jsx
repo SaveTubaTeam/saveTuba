@@ -30,7 +30,7 @@ const SignOut = () => {
         } catch (error) { // Handle sign-out error
             console.error('Sign out error:', error);
             /* marked for translation */
-            Alert.alert('SignOut Failed', "that shouldn't have happened - please contact support at savetuba2023@gmail.com");
+            Alert.alert(t("error:signoutfailed"), t("error:contactsupport"));
             navigation.navigate('Login');
         }
     };

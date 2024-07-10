@@ -60,10 +60,10 @@ function HomeView() {
           </TouchableOpacity>
         </Surface>
 
-        <Image //grade3 lock
+        {/* <Image //grade3 lock
           style={{ position: "absolute", right: 20, top: 105, zIndex: 1000, width: 60, height: 60 }}
           source={require("../../../assets/lock.png")}
-        /> 
+        />  */}
 
         <Surface style={styles.roundButton2} elevation={3}>
           <TouchableOpacity
@@ -73,10 +73,10 @@ function HomeView() {
           </TouchableOpacity>
         </Surface>
 
-        <Image //grade4 lock
+        {/* <Image //grade4 lock
           style={{ position: "absolute", left: 100, top: 230, zIndex: 1000, width: 60, height: 60 }}
           source={require("../../../assets/lock.png")}
-        />
+        /> */}
 
         <Surface style={styles.roundButton1} elevation={3}>
           <TouchableOpacity
@@ -93,7 +93,7 @@ function HomeView() {
 
         <Surface style={styles.roundButton2} elevation={3}>
           <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
+            //onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
           >
             <Text style={styles.baseText}>5</Text>
           </TouchableOpacity>

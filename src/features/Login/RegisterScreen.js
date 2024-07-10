@@ -20,11 +20,12 @@ const RegisterScreen = () => {
   const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
 
+  /* marked for translation */
   useEffect(() => {
     Toast.show({
       type: 'info',
-      text1: "Have a Google Account?",
-      text2: "No need to register! Head back to the Google login page.",
+      text1: t("common:havegoogle"),
+      text2: t("common:backtogooglelogin"),
       visibilityTime: 4000,
     });
   }, []);
@@ -42,8 +43,8 @@ const RegisterScreen = () => {
         /* marked for translation */
         Toast.show({
           type: 'success',
-          text1: `Welcome, ${firstName} ${lastName}!`,
-          text2: `Your account has been successfully created.`,
+          text1: `${t("common:welcome")}, ${firstName} ${lastName}!`,
+          text2: t("common:accountsuccessfullycreated"),
           visibilityTime: 4000,
         });
       })
@@ -54,29 +55,29 @@ const RegisterScreen = () => {
         if(errorCode === "auth/email-already-in-use") {
           Toast.show({
             type: 'error',
-            text1: "Account Already Exists",
-            text2: "An account with this email already exists",
+            text1: t("error:accounterror"),
+            text2: t("error:accountalreadyexists"),
             visibilityTime: 4000,
           });
         } else if(errorCode === "auth/invalid-email") {
           Toast.show({
             type: 'error',
-            text1: "Invalid Email",
-            text2: "Please enter a valid email address",
+            text1: t("error:invalidemail"),
+            text2: t("error:pleaseentervalidemail"),
             visibilityTime: 4000,
           });
         } else if(errorCode === "auth/weak-password") {
           Toast.show({
             type: 'error',
-            text1: "Weak Password",
-            text2: "Make sure your password is longer than 6 characters",
+            text1: t("error:weakpassword"),
+            text2: t("error:passwordinstructions"),
             visibilityTime: 4000,
           });
         } else { //default catch others
           Toast.show({
             type: 'error',
-            text1: "Invalid Registration",
-            text2: "Please try again or contact support at savetuba2023@gmail.com",
+            text1: t("error:invalidregistration"),
+            text2: t("error:tryagain"),
             visibilityTime: 4000,
           });
         }

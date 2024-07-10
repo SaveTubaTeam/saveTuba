@@ -56,7 +56,6 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
       setScoreShown("");
       score === -1 ? setFinalXP(100) : setFinalXP(1500); //MasteryHandler passes a prop of -2 for more XP!
     } else {
-      /* marked for translation */
       setScoreShown(`${t("minigames:finalscore")}: ${score}/${totalPossibleScore}\n\n`);
       setFinalXP(score * XP_PER_POINT);
     }
@@ -106,7 +105,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
     if(!previouslySubmitted) {
       setText(`${scoreShown}${prompt} ✨\n\n+${finalXP} XP!\n`);
     } else { //marked for translation
-      setText(`${scoreShown}${prompt}\n\nYou've already claimed XP for this activity 😔\n`);
+      setText(`${scoreShown}${prompt}\n\n${t("minigames:alreadyclaimedxp")}\n`);
     }
   }, [previouslySubmitted, finalXP, scoreShown, prompt]);
 
@@ -117,7 +116,6 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
         <View style={styles.modalContainer}>
           <ModalContainer>
 
-            {/* marked for translation */}
             <BodyText size="subtitle">
             {text}
             </BodyText>
@@ -127,7 +125,6 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
             style={styles.greenButtonModal}
             onPress={() => { navigation.navigate("Lesson"); }}
           >
-            {/* marked for translation */}
           <BodyText size="subtitle" color="secondary">
             {t("minigames:return")}
           </BodyText>

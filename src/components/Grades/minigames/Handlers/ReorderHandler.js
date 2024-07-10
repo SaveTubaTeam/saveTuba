@@ -124,7 +124,6 @@ const ReorderHandler = ({ objectData }) => {
         ListFooterComponent={FooterComponent}
       />
 
-        {/* marked for translation */}
         <CompletionModal 
           startCompletionProcess={completionModalVisible} 
           score={score} 

@@ -1,6 +1,11 @@
 export default {
    return: "Return",
+   datedue: "Date Due",
+   overdue: "OVERDUE",
+
+   /* Completion Modal */
    finalscore: "Final Score",
+   alreadyclaimedxp: "You've already claimed XP for this activity 😔",
 
    sortingprompt: "Good job completing this sorting exercise!\nGo back to the lesson to continue learning.",
    sortingcorrect: "That's right! Good job ✨",
@@ -13,6 +18,8 @@ export default {
 
    quizprompt: "Congratulations!\nYou've just finished this quiz!\nGo back to the lesson to continue learning.",
    quiznext: "Next",
+   quizcorrect: "That's right! Good job ✨",
+   quizincorrect: "Incorrect! Better luck next time 🍀",
 
    openresponseprompt: "Your response has been submitted. Good job!\nGo back to the lesson to continue learning.",
    openresponsethink: "I think...",
