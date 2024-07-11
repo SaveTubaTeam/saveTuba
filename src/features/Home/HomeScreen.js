@@ -23,19 +23,25 @@ function HomeView() {
   const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
   const [modalAboutVisible, setModalAboutVisible] = useState(false);
 
-  //had a hard time with this so everything is very explicitly stated to ensure correct behaviour
+  //had a hard time with this useEffect. still kinda jank for some reason - about modal opens immediately just cuz it wants to
   useEffect(() => {
-    if(classroom.dummyClassroom) {
-      setModalAboutVisible(false);
+    console.log("\tWELCOME MODAL LOGIC in HomeScreen.js:");
+    console.log('dummyClassroom:', classroom.dummyClassroom);
+    console.log('isNewUser:', user.isNewUser);
+    console.log('classCode:', user.classCode)
+
+    if ((classroom.dummyClassroom === true) && (user.classCode === 'dummyClassroom')) {
       setClassCodeModalVisible(true);
-    } else if(!classroom.dummyClassroom) {
+      setModalAboutVisible(false);
+      console.log("force closed about modal");
+    } else if(user.classCode !== 'dummyClassroom') {
       setClassCodeModalVisible(false);
-      if(user.isNewUser) {
+      if (user.isNewUser) {
+        console.log('Condition met: user.isNewUser and classroom.dummyClassroom is undefined');
         setModalAboutVisible(true);
-      } else {
-        setModalAboutVisible(false);
       }
     }
+
   },[classroom, user]);
 
   return ( 

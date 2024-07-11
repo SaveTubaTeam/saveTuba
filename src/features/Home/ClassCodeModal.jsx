@@ -27,10 +27,8 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
    }, [classCodeModalVisible])
 
    useEffect(() => {
-      if(user && (user.classroom !== "dummyClassroom")) {
+      if(user && (user.classCode !== "dummyClassroom")) {
          setEscapeVisible(true);
-      } else {
-         setEscapeVisible(false);
       }
    }, [user])
 
