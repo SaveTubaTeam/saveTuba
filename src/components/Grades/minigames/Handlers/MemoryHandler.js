@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 //@param objectData passed from IndividualLessonHandler
-const MemoryHandler = ({ objectData }) => {
+const MemoryHandler = ({ objectData, activityType }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [cardsArray, setCardsArray] = useState(null);
@@ -35,7 +35,7 @@ const MemoryHandler = ({ objectData }) => {
   //to initially randomly sort the array and prefetch all images
   useEffect(() => {
     console.log(objectData.content);
-    dispatch(addActivity({ activity: "Memory" }));
+    dispatch(addActivity({ activity: activityType }));
 
     prefetchMemoryImages(objectData.content);
     

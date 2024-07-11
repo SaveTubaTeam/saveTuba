@@ -115,7 +115,7 @@ const LoginScreen = () => {
   //we sign in with the savetuba account for Guest
   async function continueAsGuest() {
     await auth
-      .signInWithEmailAndPassword("savetuba2023@gmail.com", "SaveTubaLehigh")
+      .signInWithEmailAndPassword("savetuba2023@gmail.com", "JFtJAcsk")
       .then(async(userCredentials) => {
         const user = userCredentials.user;
         await checkIfTuba(user.email);
@@ -147,8 +147,12 @@ const LoginScreen = () => {
       }
       
       let photoURL = "";
-      if(user.photoURL) { //google profile photos have a dimension of 96x96 px
-        photoURL = user.photoURL
+      if(user.photoURL) { 
+        // google profile photos have a default dimension of 96x96 px
+        // we regex replace =s96 in the photoURL to upscale to 400x400 px w/ '=s400-c'
+        // See: https://support.google.com/mail/thread/11538455/how-can-i-view-someones-profile-picture-in-better-resolution?hl=en
+        const upscaledImage = user.photoURL.replace(/=s\d+-c$/, '=s400-c');
+        photoURL = upscaledImage;
       }
 
       console.log("posting user to firestore . . .");

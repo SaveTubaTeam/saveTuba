@@ -43,7 +43,7 @@
     "react-dom": "18.2.0",
     "react-i18next": "^11.16.9",
     "react-native": "0.73.6",
-    "react-native-draglist": "^3.6.0",
+    "react-native-draglist": "^3.6.1",
     "react-native-gesture-handler": "~2.14.0",
     "react-native-paper": "^4.11.2",
     "react-native-reanimated": "~3.6.2",

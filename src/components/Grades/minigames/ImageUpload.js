@@ -42,7 +42,7 @@ export default function ImageUpload({ score, prompt }) {
       mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: false,
       allowsMultipleSelection: true,
-      quality: 0, //compresses image to lowest quality for this library
+      quality: 0.4, //moderately compresses image
       selectionLimit: 10,
       videoExportPreset: ImagePicker.VideoExportPreset.MediumQuality, //videoExportPreset is deprecated on iOS. not sure if it works.
     });

@@ -9,12 +9,12 @@ import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../redux/slices/curriculumLocationSlice";
 
 //@param objectData our Mastery object passed from IndividualLessonHandler
-const MasteryHandler = ({ objectData }) => {
+const MasteryHandler = ({ objectData, activityType }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(addActivity({ activity: "Mastery" }));
+    dispatch(addActivity({ activity: activityType }));
   }, [])
   
   const renderItem = ({ item }) => {

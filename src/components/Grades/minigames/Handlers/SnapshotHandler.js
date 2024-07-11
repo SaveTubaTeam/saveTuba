@@ -8,12 +8,12 @@ import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 //@param objectData the snapshot object passed in from IndividualLessonHandler
-const SnapshotHandler = ({ objectData }) => {
+const SnapshotHandler = ({ objectData, activityType }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
   useEffect(() => {
-    dispatch(addActivity({ activity: "Snapshot" }));
+    dispatch(addActivity({ activity: activityType }));
   },[])
 
   return (

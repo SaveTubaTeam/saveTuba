@@ -87,14 +87,12 @@ const RegisterScreen = () => {
 
   //posting user to "users" and "classrooms" collection
   async function postUser(){
-    let photoURL = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fantelope-profile-pic.jpg?alt=media&token=26382673-a602-4c7d-b255-18ae83bc525a";
-
     await db.collection("users").doc(email).set({
       email: email,
       firstName: firstName,
       lastName: lastName,
       classCode: "dummyClassroom",
-      photoURL: photoURL,
+      photoURL: "", //empty photoURL
       experiencePoints: 0,
       isNewUser: true,
     });

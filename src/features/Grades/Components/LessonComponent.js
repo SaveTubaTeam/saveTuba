@@ -53,7 +53,7 @@ function LessonComponent({ individualLessonData, activitiesData }) {
     const masteryCopy = [];
     const minigamesCopy = [];
     const activitiesArray = checkActivitiesCompletion(activitiesData, completions, fullLessonID);
-    //console.log("MODIFIED ACTIVITIES:", activitiesArray);
+    console.log("MODIFIED ACTIVITIES:", activitiesArray);
 
     activitiesArray.forEach((activity) => {
       activity.navigation.includes("Mastery") ? masteryCopy.push(activity) : minigamesCopy.push(activity);
@@ -202,11 +202,18 @@ async function prefetchActivityIcons(content) {
 
 function checkActivitiesCompletion(activities, completions, fullLessonID) {
   const completionIDArray = [];
+  console.log("\t\tfullLessonID:", fullLessonID);
+
+  //pushing this lesson's completions onto completionIDArray
   for(const completion of completions) {
-    if(completion.completionID.split("_")[0] === fullLessonID) {
-      completionIDArray.push(completion.completionID);
+    let completionID = completion.completionID;
+
+    if(completionID.split("_")[0] === fullLessonID) {
+      completionIDArray.push(completionID);
     }
   }
+
+  console.log("\tINDIVIDUAL COMPLETIONS:", completionIDArray);
 
   const activitiesArray = activities.map((activity) => ({
     ...activity,  // spread activity to avoid immutability

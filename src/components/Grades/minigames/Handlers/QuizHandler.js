@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 
 //Main function. Handles most logic. 
 //@param data is taken from QuizScreen format in Firebase
-const Start = ({ data }) => {
+const Start = ({ data, activityType }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const [correctAnswer, setCorrectAnswer] = useState(false);
@@ -25,7 +25,7 @@ const Start = ({ data }) => {
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
 
   useEffect(() => {
-    dispatch(addActivity({ activity: "Quiz" }));
+    dispatch(addActivity({ activity: activityType }));
   },[])
 
   //called when we click "Next" on the answer modal. We iterate count until the end of the quiz
@@ -145,11 +145,11 @@ const Start = ({ data }) => {
 
 //Entry Point for logic.
 //@param objectData the quiz object passed in from IndividualLessonHandler
-const QuizHandler = ({ objectData }) => {
+const QuizHandler = ({ objectData, activityType }) => {
   return ( //defining the stack
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start data={objectData} />}
+        {() => <Start data={objectData} activityType={activityType} />}
       </Stack.Screen>
     </Stack.Navigator>
   );

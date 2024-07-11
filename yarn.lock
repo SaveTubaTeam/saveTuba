@@ -7469,10 +7469,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.2.tgz#e691d4a8e9c789365655539ab372762b0efb54f0"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-native-draglist@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/react-native-draglist/-/react-native-draglist-3.6.0.tgz#06f9cd59b781df858e37f3d8b85a0fcec5404327"
-  integrity sha512-uNzuwbCzkkOoR7tdvhBfMW6n3klreMytN6J9z5y5Q2qm3emVTrXJnFLOsL/aI1bD34u8NkFTEttnOf94LkJFhA==
+react-native-draglist@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-draglist/-/react-native-draglist-3.6.1.tgz#9f85eaaee63052361f1edaf0a2d10b1405b7d3e3"
+  integrity sha512-2TvKq7bF62qC8tqwzlzfA5f0YoKlYrkYQ3R1jM+fg1H0tAFTDQrgiMmQDvbrV16vymj85AI8cLOgpp+9GvMN9Q==
 
 react-native-gesture-handler@~2.14.0:
   version "2.14.1"

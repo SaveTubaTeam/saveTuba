@@ -8,12 +8,12 @@ import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 
 //@param data is the OpenResponse object passed in from OpenResponseHandler
-const ImagePrompt = ({ data }) => {
+const ImagePrompt = ({ data, activityType }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
 
   useEffect(() => {
-    dispatch(addActivity({ activity: "ImageBoom" }));
+    dispatch(addActivity({ activity: activityType }));
   },[])
 
   return (
@@ -37,7 +37,7 @@ const ImagePrompt = ({ data }) => {
 };
 
 //@param objectData is the OpenResponse object
-const OpenResponseHandler = ({ objectData }) => {
+const OpenResponseHandler = ({ objectData, activityType }) => {
   
   return (
     <View style={{ flex: 1 }}>
@@ -48,7 +48,7 @@ const OpenResponseHandler = ({ objectData }) => {
         fadeDuration={0}
       >
         <View style={{ flex: 1, width: "100%" }}>
-          <ImagePrompt data={objectData} />
+          <ImagePrompt data={objectData} activityType={activityType} />
         </View>
 
       </ImageBackground>

@@ -97,7 +97,7 @@ function IndividualLessonHandler({ lessonData }) {
             {() => (
               <SafeArea>
                 <Header title={t(title)} back={"Lesson"} reduxParam={"activity"}/>
-                <Component objectData={activitiesMap.get(name)} />
+                <Component objectData={activitiesMap.get(name)} activityType={name} />
               </SafeArea>
             )}
           </Stack.Screen>

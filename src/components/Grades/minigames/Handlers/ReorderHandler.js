@@ -24,13 +24,13 @@ const REORDER_GRADIENTS = [
 
 //ENTRY POINT
 //@param objectData the reorder object passed in from IndividualLessonHandler
-const ReorderHandler = ({ objectData }) => {
+const ReorderHandler = ({ objectData, activityType }) => {
   //console.log("Data In: ", objectData);
   const dispatch = useDispatch();
   const [data, setData] = useState(objectData.content);
 
   useEffect(() => {
-    dispatch(addActivity({ activity: "Reorder" }))
+    dispatch(addActivity({ activity: activityType }))
 
     const shuffledData = [...data]; // Creating a copy of data array for safe mutation
     shuffledData.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array

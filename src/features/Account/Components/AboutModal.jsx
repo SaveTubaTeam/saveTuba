@@ -82,6 +82,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
                style={styles.tubaImage}
                source={require("../../../../assets/tuba-low-quality.png")}
                fadeDuration={500}
+               overflow="visible"
             />
 
             <LottieView 

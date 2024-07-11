@@ -12,7 +12,7 @@ import CompletionModal from "../../../../features/Account/LevelSystem/Completion
 
 const Stack = createNativeStackNavigator();
 
-const Start = ({ objectData }) => {
+const Start = ({ objectData, activityType }) => {
   const [visible, setVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
   const [correct, setCorrect] = useState(false);
@@ -29,7 +29,7 @@ const Start = ({ objectData }) => {
 
   //shuffling options upon initial render.
   useEffect(() => {
-    dispatch(addActivity({ activity: "Sorting" }));
+    dispatch(addActivity({ activity: activityType }));
     
     const shuffledOptions = [...objectData.options];
     shuffledOptions.sort(() => Math.random() - 0.5); // Shuffling the copy of the data array

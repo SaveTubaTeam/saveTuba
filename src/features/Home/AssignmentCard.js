@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
    assignmentCard: {
       width: 375,
       height: 160,
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      backgroundColor: 'rgba(255, 255, 255, 1)',
       borderRadius: 15,
       marginTop: 17,
    },
