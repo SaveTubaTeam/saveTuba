@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect } from "react";
 import styled from "styled-components/native";
-import { TouchableOpacity, StyleSheet, Image } from "react-native";
+import { TouchableOpacity, StyleSheet } from "react-native";
 import { Avatar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
@@ -12,6 +12,7 @@ import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
 import { View } from "react-native";
+import { Image } from "expo-image";
 
 export function ProfileCard() {
   const { t } = useTranslation();
@@ -21,24 +22,25 @@ export function ProfileCard() {
   if(user.photoURL) {
     userIcon = (
       <Image 
-        style={{ width: 180, height: 180, marginBottom: 10, alignSelf: "center", borderRadius: 180 }}
+        style={{ width: 180, height: 180, borderRadius: 180, position: "absolute" }}
         source={{ uri: user.photoURL }}
       />
     )
   } else {
-    userIcon = (
-      <Avatar.Icon 
-        size={180} 
-        icon="head" 
-        backgroundColor={theme.colors.ui.tertiary} 
-        style={{ marginBottom: 10, alignSelf: "center" }}
-      />
-    )
+    userIcon = null;
   }
 
   return (
     <Card>
+      <View style={{ alignItems: "center" }}>
+      <Avatar.Icon 
+        size={180} 
+        icon="head" 
+        backgroundColor={theme.colors.ui.tertiary} 
+        style={{ marginBottom: 10, position: "relative" }}
+      />
       {userIcon}
+      </View>
 
       {/* username underneath avatar icon */}
       <TitleText size="h5">{`${user.firstName} ${user.lastName}`}</TitleText>

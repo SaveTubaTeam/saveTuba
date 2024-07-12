@@ -44,12 +44,13 @@ export default function ImageUpload({ score, prompt }) {
       allowsMultipleSelection: true,
       quality: 0.4, //moderately compresses image
       selectionLimit: 10,
+      preferredAssetRepresentationMode: "compatible", //ios only
+      videoQuality: 1, //ios only
       videoExportPreset: ImagePicker.VideoExportPreset.MediumQuality, //videoExportPreset is deprecated on iOS. not sure if it works.
     });
 
     console.log(result);
     if (!result.canceled) {
-
       //video duration is in milliseconds. 300000ms = 5 mins
       const hasExcessivelyLongVideo = result.assets.some(asset => asset.duration > 300000); //see here for .some(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
       if (hasExcessivelyLongVideo) {

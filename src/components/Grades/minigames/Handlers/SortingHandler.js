@@ -159,11 +159,11 @@ const Start = ({ objectData, activityType }) => {
 
 //entry point
 //@param objectData the sorting object passed in from IndividualLessonHandler
-const SortingHandler = ({ objectData }) => {
+const SortingHandler = ({ objectData, activityType }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Start" options={{ headerShown: false }}>
-        {() => <Start objectData={objectData} />}
+        {() => <Start objectData={objectData} activityType={activityType} />}
       </Stack.Screen>
     </Stack.Navigator>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { TouchableOpacity, View, Image } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { Avatar } from "react-native-paper";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
@@ -11,6 +11,7 @@ import { TitleText } from "../../../components/title-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Card } from "../../../components/card.component";
 import { theme } from "../../../infrastructure/theme";
+import { Image } from "expo-image";
 
 const Row = styled.View`
   flex-direction: row;
@@ -25,18 +26,12 @@ const PersonalCard = () => {
   if(user.photoURL) {
     userIcon = (
       <Image 
-        style={{ width: 180, height: 180, borderRadius: 180 }}
+        style={{ width: 180, height: 180, borderRadius: 180, position: "absolute" }}
         source={{ uri: user.photoURL }}
       />
     )
   } else {
-    userIcon = (
-      <Avatar.Icon
-        size={180}
-        icon="head"
-        backgroundColor={theme.colors.ui.tertiary}
-      />
-    )
+    userIcon = null;
   }
 
   return (
@@ -44,20 +39,19 @@ const PersonalCard = () => {
       <View style={{ alignItems: "center" }}>
         <Spacer position="bottom" size="large">
           <Row>
-            {userIcon}
+          <Avatar.Icon
+            size={180}
+            icon="head"
+            backgroundColor={theme.colors.ui.tertiary}
+            style={{ position: "relative", zIndex: -1 }}
+          />
+          {userIcon}
 
-            <TouchableOpacity
-              //onPress={() => navigation.navigate("CameraScreen")}
-            >
+            <TouchableOpacity>
               <FontAwesomeIcon
                 icon={faCamera}
                 size={60}
-                style={{
-                  position: 'absolute',
-                  top: 20,
-                  right: -10,
-                  color: theme.colors.ui.primary,
-                }}
+                style={{ position: 'absolute', top: 20, right: -10, color: theme.colors.ui.primary, zIndex: 1 }}
               />
             </TouchableOpacity>
           </Row>

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { View, StyleSheet, Text, TouchableOpacity, Modal } from "react-native";
 import { useTranslation } from "react-i18next";
 import { Ionicons } from "@expo/vector-icons";
-import { apiSlice } from "../../../redux/apiSlice";
 import styled from "styled-components/native";
 import { useSelector } from "react-redux";
 import { FlatList } from "react-native-gesture-handler";
@@ -56,7 +55,7 @@ function ModalComponent({ visible, setModalVisible }) {
 
    const renderItem = ({item}) => {
       const completionID = item.completionID.split("_")[0];
-      const activityStr = item.completionID.split("_")[1].toLowerCase();
+      const activityStr = item.completionID.split("_")[1].toLowerCase().replace(/\s/g, "");
       const activity = t(`common:${activityStr}`)
       const grade = `${t("common:grade")}${getNumbersAfterLetter(completionID, "G")}`;
       const chapter = `${t("common:chapter")}${getNumbersAfterLetter(completionID, "C")}`;
