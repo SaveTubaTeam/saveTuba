@@ -44,7 +44,7 @@ export default function ImageUpload({ score, prompt }) {
       allowsMultipleSelection: true,
       quality: 0.4, //moderately compresses image
       selectionLimit: 10,
-      preferredAssetRepresentationMode: "compatible", //ios only
+      preferredAssetRepresentationMode: ImagePicker.UIImagePickerPreferredAssetRepresentationMode.Compatible, //ios only
       videoQuality: 1, //ios only
       videoExportPreset: ImagePicker.VideoExportPreset.MediumQuality, //videoExportPreset is deprecated on iOS. not sure if it works.
     });
@@ -151,7 +151,7 @@ export default function ImageUpload({ score, prompt }) {
         </BodyText>
       </SubmitButton>
 
-      <CompletionModal 
+      <CompletionModal
         score={score} 
         startCompletionProcess={completionModalVisible} 
         prompt={t(prompt)} 

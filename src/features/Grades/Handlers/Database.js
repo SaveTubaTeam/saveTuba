@@ -1,3 +1,5 @@
+//@ts-check
+
 import { db, storage } from "../../../../firebase.js";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 

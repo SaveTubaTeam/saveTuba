@@ -1,4 +1,11 @@
+//for more details about Expo w/ typescript: https://docs.expo.dev/guides/typescript/
+
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "strict": false, //we have very loosy-goosy type safety lol.
+    "allowJs": true,
+    "checkJs": false, //typescript will not check a js file unless @ts-check is specified at the top of the file
+    "noUncheckedIndexedAccess": true,
+  },
   "extends": "expo/tsconfig.base"
 }

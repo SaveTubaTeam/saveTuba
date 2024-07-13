@@ -1,3 +1,5 @@
+//@ts-check
+
 import { db } from "../../../../firebase.js";
 
 async function getUser(userEmail) {
@@ -124,6 +126,7 @@ async function getClassroom(classCode) {
       classroomObject.className = classroomDoc.className;
       classroomObject.gradeLevel = classroomDoc.gradeLevel;
    } else { //to catch dummyClassroom
+      //@ts-ignore
       classroomObject = classroomDoc;
    }
 
