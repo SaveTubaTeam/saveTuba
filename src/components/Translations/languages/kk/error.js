@@ -1,44 +1,43 @@
 export default {
-   error: "Error",
-   tryagain: "Please try again or contact support at savetuba2023@gmail.com",
+   error: "Қате",
+   tryagain: "Қайталап көріңіз немесе қолдау қызметіне savetuba2023@gmail.com мекенжайы бойынша хабарласыңыз",
 
    /* Main.js error when rejecting user */
-   uhoh: "uh oh...",
-   contactsupport: "that shouldn't have happened - please contact support at savetuba2023@gmail.com",
+   uhoh: "Ой...",
+   contactsupport: "Бұл болмауы керек еді - қолдау қызметіне savetuba2023@gmail.com мекенжайы бойынша хабарласыңыз",
 
    /* ImageUpload.js Toasts */
-   maxduration: "Error: Video exceeded 5 minutes",
-   splitvideo: "Split your videos into 3 minutes each!",
-   nothingsubmitted: "Nothing Submitted",
-   selectfromlibrary: "Select photos or videos from your photo library",
+   maxduration: "Қате: Видео ұзақтығы 5 минуттан асады",
+   splitvideo: "Видеоларыңызды әрқайсысы 3 минуттан бөліңіз!",
+   nothingsubmitted: "Ештеңе жіберілмеді",
+   selectfromlibrary: "Фотосуреттер немесе бейнелерді кітапханаңыздан таңдаңыз",
 
    /* SignOutComponent */
-   signoutfailed: "Sign Out Failed",
+   signoutfailed: "Жүйеден шығу сәтсіз аяқталды",
 
    /* Google Sign In */
-   googlesigninfailed: "Google Sign In Failed",
-   exitedgooglesignin: "Exited Google Sign In",
-   alreadyinprogress: "Google Sign In Already In Progress",
-   playservicesunavailable: "Google Play Services Unavailable",
-   accountcreationfailed: "Account Creation Failed",
+   googlesigninfailed: "Google арқылы кіру сәтсіз аяқталды",
+   exitedgooglesignin: "Google арқылы кіруден шықты",
+   alreadyinprogress: "Google арқылы кіру қазірдің өзінде орындалуда",
+   playservicesunavailable: "Google Play қызметтері қолжетімсіз",
+   accountcreationfailed: "Есептік жазбаны жасау сәтсіз аяқталды",
 
    /* Guest login */
-   guestloginfailed: "Guest Login Failed",
+   guestloginfailed: "Қонақ ретінде жүйеге кіру сәтсіз аяқталды",
 
    /* Alt Login Screen (regular email password signin) */
-   incorrectpassword: "Incorrect Password",
-   invalidlogin: "Invalid Login",
+   incorrectpassword: "Қате құпия сөз",
+   invalidlogin: "Қате кіру",
 
    /* Alt Register Screen */
-   accounterror: "Account Already Exists",
-   accountalreadyexists: "An account with this email already exists",
-   invalidemail: "Invalid Email",
-   weakpassword: "Weak Password",
-   passwordinstructions: "Make sure your password is longer than 6 characters",
-   invalidregistration: "Invalid Registration",
+   accounterror: "Есептік жазба бар",
+   accountalreadyexists: "Осы электрондық пошта мекенжайымен есептік жазба бар",
+   invalidemail: "Қате электрондық пошта мекенжайы",
+   weakpassword: "Әлсіз құпия сөз",
+   passwordinstructions: "Құпия сөзіңіздің ұзындығы 6 таңбадан артық екеніне көз жеткізіңіз",
+   invalidregistration: "Қате тіркелу",
 
    /* password reset */
-   invalidemail: "Invalid Email",
-   pleaseentervalidemail: "Please enter a valid email address",
-   nosuchaccountexists: "No such account with the given email exists",
-};
+   pleaseentervalidemail: "Жарамды электрондық пошта мекенжайын енгізіңіз",
+   nosuchaccountexists: "Көрсетілген электрондық пошта мекенжайымен есептік жазба жоқ",
+}

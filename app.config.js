@@ -23,7 +23,18 @@ export default {
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.nadjastojanov.SaveTuba",
-      "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST
+      "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "NSAppTransportSecurity": {
+          "NSExceptionDomains": {
+            'exp.direct': {
+              "NSIncludesSubdomains": true,
+              "NSExceptionAllowsInsecureHTTPLoads": true,
+            },
+          },
+        },
+      },
     },
     "android": {
       "softwareKeyboardLayoutMode": "pan",

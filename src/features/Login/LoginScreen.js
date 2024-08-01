@@ -227,7 +227,7 @@ const LoginScreen = () => {
 
             <TitleText color="primary" size="body">
               {/* marked for translation */}
-              {`      ${t("common:googlesignin")}`}
+              {`       ${t("common:googlesignin")}`}
             </TitleText>
           </ButtonOutLine>
 

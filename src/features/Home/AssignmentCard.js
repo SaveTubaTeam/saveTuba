@@ -80,7 +80,7 @@ const AssignmentCard = ({ content }) => {
          setTopRowColor({ color: "rgba(219, 71, 59, 0.8)", border: "rgba(219, 71, 59, 1)", });
          setDateText(t("minigames:overdue")) /* marked for translation */
       }
-   }, [content]);
+   }, [content, i18n.language]);
 
    return (
       <Surface style={styles.assignmentCard} elevation={3}>

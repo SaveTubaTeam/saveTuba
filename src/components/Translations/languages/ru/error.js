@@ -1,44 +1,43 @@
 export default {
-   error: "Error",
-   tryagain: "Please try again or contact support at savetuba2023@gmail.com",
+   error: "Ошибка",
+   tryagain: "Пожалуйста, попробуйте снова или свяжитесь с поддержкой по адресу savetuba2023@gmail.com",
 
    /* Main.js error when rejecting user */
-   uhoh: "uh oh...",
-   contactsupport: "that shouldn't have happened - please contact support at savetuba2023@gmail.com",
+   uhoh: "Ой...",
+   contactsupport: "Этого не должно было случиться - пожалуйста, свяжитесь с поддержкой по адресу savetuba2023@gmail.com",
 
    /* ImageUpload.js Toasts */
-   maxduration: "Error: Video exceeded 5 minutes",
-   splitvideo: "Split your videos into 3 minutes each!",
-   nothingsubmitted: "Nothing Submitted",
-   selectfromlibrary: "Select photos or videos from your photo library",
+   maxduration: "Ошибка: Видео превышает 5 минут",
+   splitvideo: "Разделите свои видео на 3 минуты каждое!",
+   nothingsubmitted: "Ничего не отправлено",
+   selectfromlibrary: "Выберите фотографии или видео из вашей библиотеки",
 
    /* SignOutComponent */
-   signoutfailed: "Sign Out Failed",
+   signoutfailed: "Не удалось выйти из системы",
 
    /* Google Sign In */
-   googlesigninfailed: "Google Sign In Failed",
-   exitedgooglesignin: "Exited Google Sign In",
-   alreadyinprogress: "Google Sign In Already In Progress",
-   playservicesunavailable: "Google Play Services Unavailable",
-   accountcreationfailed: "Account Creation Failed",
+   googlesigninfailed: "Не удалось войти через Google",
+   exitedgooglesignin: "Вышел из входа через Google",
+   alreadyinprogress: "Вход через Google уже выполняется",
+   playservicesunavailable: "Сервисы Google Play недоступны",
+   accountcreationfailed: "Не удалось создать аккаунт",
 
    /* Guest login */
-   guestloginfailed: "Guest Login Failed",
+   guestloginfailed: "Не удалось войти в систему для гостя",
 
    /* Alt Login Screen (regular email password signin) */
-   incorrectpassword: "Incorrect Password",
-   invalidlogin: "Invalid Login",
+   incorrectpassword: "Неверный пароль",
+   invalidlogin: "Неверный вход",
 
    /* Alt Register Screen */
-   accounterror: "Account Already Exists",
-   accountalreadyexists: "An account with this email already exists",
-   invalidemail: "Invalid Email",
-   weakpassword: "Weak Password",
-   passwordinstructions: "Make sure your password is longer than 6 characters",
-   invalidregistration: "Invalid Registration",
+   accounterror: "Аккаунт уже существует",
+   accountalreadyexists: "Аккаунт с этим адресом электронной почты уже существует",
+   invalidemail: "Неверный адрес электронной почты",
+   weakpassword: "Слабый пароль",
+   passwordinstructions: "Убедитесь, что ваш пароль длиннее 6 символов",
+   invalidregistration: "Неверная регистрация",
 
    /* password reset */
-   invalidemail: "Invalid Email",
-   pleaseentervalidemail: "Please enter a valid email address",
-   nosuchaccountexists: "No such account with the given email exists",
-};
+   pleaseentervalidemail: "Пожалуйста, введите действующий адрес электронной почты",
+   nosuchaccountexists: "Аккаунта с указанным адресом электронной почты не существует",
+}

@@ -9,5 +9,4 @@ export default {
     helpme: "Help me complete activities that improve our environment.",
     welcome: "Welcome To My World!",
     continue: "Continue",
-
 }

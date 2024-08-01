@@ -31,13 +31,11 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    }
 
    let marginTop;
-   Platform.OS === 'ios' ? marginTop = 60 : marginTop = 0;
+   Platform.OS === 'ios' ? marginTop = 30 : marginTop = 0;
 
    return (
       <Modal animationType="slide" transparent={true} visible={modalAboutVisible}>
          <View style={[styles.modalContainer, { marginTop: marginTop }]}>
-            <Spacer size="large" />
-
             {/* marked for translation */}
             <BodyText size="h3" weight="bold">
             {t("about:hi")}
@@ -56,14 +54,10 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
             {t("about:helpme")}
             </BodyText>
 
-            <Spacer size="medium" />
-
             {/* marked for translation */}
             <BodyText size="title" weight="bold">
             {t("about:welcome")}
             </BodyText>
-
-            <Spacer size="large" />
 
             <TouchableOpacity
                style={styles.greenButtonModal}
@@ -110,8 +104,8 @@ const styles = StyleSheet.create({
       ...StyleSheet.absoluteFillObject,
       paddingTop: 30,
       paddingBottom: 10,
-      paddingLeft: 35,
-      paddingRight: 35,
+      paddingLeft: 10,
+      paddingRight: 10,
       borderTopRightRadius: 40,
       borderTopLeftRadius: 40,
       flexDirection: "column",
