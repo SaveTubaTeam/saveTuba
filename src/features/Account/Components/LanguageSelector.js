@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
 import { BodyText } from "../../../components/body-text.component";
 import { StackActions } from "@react-navigation/native";
+import { Audio } from 'expo-av';
 
 const Flag = ({ source }) => {
   return (
@@ -25,6 +26,8 @@ const Selector = () => {
   const { t, i18n } = useTranslation(); //useTranslation() docs: https://react.i18next.com/latest/usetranslation-hook
   const selectedLanguageCode = i18n.language;
   const navigation = useNavigation();
+  const [sound, setSound] = useState();
+
 
   const setLanguage = async(languageCode) => {
     await i18n.changeLanguage(languageCode);
@@ -33,6 +36,26 @@ const Selector = () => {
     navigation.dispatch(StackActions.popToTop()); //throws an error in development mode but works like a charm in prod
     //IMLocalize.js (imported in App.js) acts as an event listener for changeLanguage(), caching the new language code under 'user-language'
   };
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/switchLanguage.wav')
+    );
+    setSound(sound);
+    
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   return (
     <View style={styles.container}>
@@ -50,7 +73,7 @@ const Selector = () => {
           <TouchableOpacity
             key={language.code}
             disabled={selectedLanguage}
-            onPress={() => setLanguage(language.code)}
+            onPress={() => setLanguage(language.code) && playSound()}
             style={styles.touchableContainer}
           >
             {language.label}

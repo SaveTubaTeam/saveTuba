@@ -1,13 +1,35 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { StyleSheet, View, Modal, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { BodyText } from "../../../components/body-text.component";
 import { Spacer } from "../../../components/spacer.component";
 import { Image } from "expo-image";
+import { Audio } from "expo-av";
 
 export default function HelpModal({ modalHelpVisible, setModalHelpVisible }) {
    const { t } = useTranslation();
+   const [sound, setSound] = useState();
+
+   async function playSound() {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/popupClose.wav')
+      );
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
+  
 
    return (
       <Modal animationType="slide" transparent={true} visible={modalHelpVisible}>
@@ -22,7 +44,7 @@ export default function HelpModal({ modalHelpVisible, setModalHelpVisible }) {
 
                <TouchableOpacity
                   style={styles.greenButtonModal}
-                  onPress={() => setModalHelpVisible(!modalHelpVisible)}
+                  onPress={() => {playSound(); setModalHelpVisible(!modalHelpVisible)}}
                >
                   <BodyText size="subtitle" color="secondary">
                      {t("about:close")}

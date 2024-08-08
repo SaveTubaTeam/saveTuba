@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { FlatList, View, Image, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { useNavigation } from "@react-navigation/native";
@@ -9,6 +9,7 @@ import { Header } from "../../../components/Grades/grades.styles";
 import { BodyText } from "../../../components/body-text.component";
 import { TitleText } from "../../../components/title-text.component";
 import { SafeArea } from "../../../components/safe-area.component";
+import { Audio } from "expo-av";
 
 //This component is responsible for creating every chapter card in the selected Grade
 //It is then rendered via ChaptersHandler.js
@@ -18,10 +19,30 @@ function ChaptersComponent({ gradeData }) {
   const grade = useSelector(state => state.curriculum.grade)
   const nav = useNavigation();
   const { t } = useTranslation();
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/pageForward.wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   const renderItem = ({ item }) => {
     return (
-      <Chapter onPress={() => { nav.navigate(item.navigation); }}>
+      <Chapter onPress={() => {playSound(); nav.navigate(item.navigation); }}>
         <LinearGradient
           colors={[item.colorOne, item.colorTwo]}
           start={{ x: 0, y: 0, }}

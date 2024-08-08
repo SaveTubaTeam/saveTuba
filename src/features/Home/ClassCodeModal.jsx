@@ -11,6 +11,7 @@ import { selectCurrentUser } from "../../../redux/slices/userSlice";
 import Toast from 'react-native-toast-message';
 import { useDispatch } from "react-redux";
 import { hackDummyClassroom } from "../../../redux/slices/userSlice";
+import { Audio } from "expo-av";
 
 export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModalVisible }) {
    const { t } = useTranslation();
@@ -19,6 +20,25 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
    const [escapeVisible, setEscapeVisible] = useState(false);
    const user = useSelector(selectCurrentUser);
    const dispatch = useDispatch();
+   const [sound, setSound] = useState();
+
+   async function playSound(soundFile) {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(soundFile);
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
 
    useEffect(() => {
       if(classCodeModalVisible) {
@@ -35,6 +55,7 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
    const [updateClassCode] = useUpdateClassCodeMutation();
 
    async function handleClassCode() {
+      await playSound(require('../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')); // Play the sound before proceeding
       console.log("CLASSCODE ENTERED:", classCode);
       const classCodeExists = await checkClassCodeExists();
       if(!classCodeExists) { 
@@ -78,6 +99,7 @@ export default function ClassCodeModal({ classCodeModalVisible, setClassCodeModa
                console.log("Closing Class Code Modal . . .");
                setClassCodeModalVisible(false);
                setClassCode("");
+               playSound(require('../../../assets/saveTubaSoundEffects/popupClose.wav'));
             }}
          >  
             <BodyText>❌</BodyText>

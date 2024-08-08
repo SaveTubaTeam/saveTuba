@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import React, { useState, useEffect } from 'react';
 
 const initialState = {
    grade: "",
@@ -7,6 +8,7 @@ const initialState = {
    activity: "",
    assignmentDrill: null,
 };
+
 
 const curriculumSlice = createSlice({
    name: 'curriculum',

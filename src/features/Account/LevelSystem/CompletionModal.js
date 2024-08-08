@@ -10,9 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import { useUpdateXPMutation, usePostCompletionMutation } from "../../../../redux/apiSlice";
 import styled from "styled-components/native";
+import { Audio } from "expo-av";
 
-//CompletionModal is the final modal which shows up upon all minigame completions.
-//In the future this will be the one place that handles pushing content to db.
 const CompletionModal = ({ score, prompt, startCompletionProcess, content, totalPossibleScore }) => {
   const user = useSelector(selectCurrentUser);
   const grade = useSelector(state => state.curriculum.grade);
@@ -45,27 +44,44 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 
   const [updateXP] = useUpdateXPMutation();
   const [postCompletion] = usePostCompletionMutation();
+  const [sound, setSound] = useState();
+
+  async function playSound(soundFile) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( soundFile
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   useEffect(() => {
     if(!startCompletionProcess) { return; } //guard clause
 
     console.log(`Completion ID: ${completionID}`);
-    //some minigames have no score, so a score < 0 is passed into props. We check for this case below
-    //*specifically SnapshotHandler and OpenResponseHandler pass a -1 into LevelSystem, MasteryHandler passes a -2 as props
     if(score < 0) {
       setScoreShown("");
-      score === -1 ? setFinalXP(100) : setFinalXP(1500); //MasteryHandler passes a prop of -2 for more XP!
+      score === -1 ? setFinalXP(100) : setFinalXP(1500);
     } else {
       setScoreShown(`${t("minigames:finalscore")}: ${score}/${totalPossibleScore}\n\n`);
       setFinalXP(score * XP_PER_POINT);
     }
-    //state is not updated locally so we have to calculate the xp again for the below function
     performCompletionProcess(score < 0 ? (score === -1 ? 100 : 1500) : score * XP_PER_POINT);
   }, [score, startCompletionProcess])
 
   const performCompletionProcess = async(newXP) => {
     try {
-      const start = performance.now(); // Start performance timer
+      const start = performance.now();
       console.log("\n\t!!! now performing completion process . . .");
       setLoadingModal(true);
 
@@ -91,6 +107,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 
       setLoadingModal(false);
       setCompletionModalVisible(true);
+      playSound(require('../../../../assets/saveTubaSoundEffects/minigameComplete.wav'));
 
       const elapsedTimeSeconds = (performance.now() - start) / 1000;
       console.log(`\n\t!!! performCompletionProcess done in ${elapsedTimeSeconds.toFixed(2)} seconds\n`);
@@ -104,7 +121,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
     console.log("FINALXP:", finalXP);
     if(!previouslySubmitted) {
       setText(`${scoreShown}${prompt} ✨\n\n+${finalXP} XP!\n`);
-    } else { //marked for translation
+    } else {
       setText(`${scoreShown}${prompt}\n\n${t("minigames:alreadyclaimedxp")}\n`);
     }
   }, [previouslySubmitted, finalXP, scoreShown, prompt]);
@@ -112,7 +129,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
   return (
     <>
       <LoadingModal visible={loadingModal} />
-      <Modal transparent animationType="none" visible={completionModalVisible}>
+      <Modal transparent animationType="none" visible={completionModalVisible} >
         <View style={styles.modalContainer}>
           <ModalContainer>
 
@@ -120,10 +137,9 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
             {text}
             </BodyText>
 
-          {/* green button 'Return' at the bottom of modal to move out of minigame */}
           <TouchableOpacity
             style={styles.greenButtonModal}
-            onPress={() => { navigation.navigate("Lesson"); }}
+            onPress={() => { playSound(require('../../../../assets/saveTubaSoundEffects/pageBack.wav')); navigation.navigate("Lesson"); }}
           >
           <BodyText size="subtitle" color="secondary">
             {t("minigames:return")}
@@ -168,7 +184,7 @@ const styles = StyleSheet.create({
     width: 500,
     height: "100%",
     transform: [{ scaleX: -1 }, { scaleX: 0.3 }, { scaleY: 0.3 }, { rotate: "-5deg" }],
-    zIndex: 2, // Set a higher z-index to bring the image in front of the modal
+    zIndex: 2,
   },
   modalContainer:{
     flex: 1, 

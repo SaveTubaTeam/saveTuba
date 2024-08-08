@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Text, StyleSheet, TouchableOpacity, ScrollView, Image, ImageBackground, View } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+  Image,
+  ImageBackground,
+  View,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
@@ -11,6 +19,7 @@ import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../../redux/slices/userSlice";
 import ClassCodeModal from "./ClassCodeModal";
 import AboutModal from "../Account/Components/AboutModal";
+import { Audio } from "expo-av";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,100 +27,123 @@ const Stack = createNativeStackNavigator();
 function HomeView() {
   const navigation = useNavigation();
   const { t } = useTranslation();
-  const classroom = useSelector(state => state.user.classroom);
+  const classroom = useSelector((state) => state.user.classroom);
   const user = useSelector(selectCurrentUser);
   const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
   const [modalAboutVisible, setModalAboutVisible] = useState(false);
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log("Loading Sound");
+    const { sound } = await Audio.Sound.createAsync(
+      require("../../../assets/saveTubaSoundEffects/pageForward.wav")
+    );
+    setSound(sound);
+
+    console.log("Playing Sound");
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log("Unloading Sound");
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   //had a hard time with this useEffect. still kinda jank for some reason - about modal opens immediately just cuz it wants to
   useEffect(() => {
     console.log("\tWELCOME MODAL LOGIC in HomeScreen.js:");
-    console.log('dummyClassroom:', classroom.dummyClassroom);
-    console.log('isNewUser:', user.isNewUser);
-    console.log('classCode:', user.classCode)
+    console.log("dummyClassroom:", classroom.dummyClassroom);
+    console.log("isNewUser:", user.isNewUser);
+    console.log("classCode:", user.classCode);
 
-    if ((classroom.dummyClassroom === true) && (user.classCode === 'dummyClassroom')) {
+    if (
+      classroom.dummyClassroom === true &&
+      user.classCode === "dummyClassroom"
+    ) {
       setClassCodeModalVisible(true);
       setModalAboutVisible(false);
       console.log("force closed about modal");
-    } else if(user.classCode !== 'dummyClassroom') {
+    } else if (user.classCode !== "dummyClassroom") {
       setClassCodeModalVisible(false);
       if (user.isNewUser) {
-        console.log('Condition met: user.isNewUser and classroom.dummyClassroom is undefined');
+        console.log(
+          "Condition met: user.isNewUser and classroom.dummyClassroom is undefined"
+        );
         setModalAboutVisible(true);
       }
     }
+  }, [classroom, user]);
 
-  },[classroom, user]);
-
-  return ( 
+  return (
     <SafeArea>
+      <HeaderComponent title={t("common:levels")} />
 
-    <HeaderComponent title={t("common:levels")} />
+      <ImageBackground
+        style={styles.container}
+        resizeMode="cover"
+        source={require("../../../assets/homeBg.jpg")}
+        fadeDuration={0}
+      >
+        <ScrollView style={{ paddingTop: 50 }}>
+          <Surface style={styles.roundButton1} elevation={3}>
+            <TouchableOpacity
+              onPress={() => {
+                playSound();
+                navigation.push("ChaptersHandler", { grade: "Grade2" });
+              }}
+            >
+              <Text style={styles.baseText}>2</Text>
+            </TouchableOpacity>
+          </Surface>
 
-    <ImageBackground 
-      style={styles.container}
-      resizeMode="cover" 
-      source={require("../../../assets/homeBg.jpg")}
-      fadeDuration={0}
-    >
-      <ScrollView style={{ paddingTop: 50 }}>
-        <Surface style={styles.roundButton1} elevation={3}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.push("ChaptersHandler", { grade: "Grade2" }); //route.params sent into ChaptersHandler is defined here
-            }}
-          >
-            <Text style={styles.baseText}>2</Text>
-          </TouchableOpacity>
-        </Surface>
+          <Surface style={styles.roundButton2} elevation={3}>
+            <TouchableOpacity
+              onPress={() => {
+                playSound();
+                navigation.push("ChaptersHandler", { grade: "Grade3" });
+              }}
+            >
+              <Text style={styles.baseText}>3</Text>
+            </TouchableOpacity>
+          </Surface>
 
-        {/* <Image //grade3 lock
-          style={{ position: "absolute", right: 20, top: 105, zIndex: 1000, width: 60, height: 60 }}
-          source={require("../../../assets/lock.png")}
-        />  */}
+          <Surface style={styles.roundButton1} elevation={3}>
+            <TouchableOpacity
+              onPress={() => {
+                playSound();
+                navigation.push("ChaptersHandler", { grade: "Grade4" });
+              }}
+            >
+              <Text style={styles.baseText}>4</Text>
+            </TouchableOpacity>
+          </Surface>
 
-        <Surface style={styles.roundButton2} elevation={3}>
-          <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade3" })} //route.params sent into ChaptersHandler is defined here
-          >
-            <Text style={styles.baseText}>3</Text>
-          </TouchableOpacity>
-        </Surface>
+          <Surface style={styles.roundButton2} elevation={3}>
+            <TouchableOpacity
+              onPress={() => {
+                playSound();
+                navigation.push("ChaptersHandler", { grade: "Grade5" });
+              }}
+            >
+              <Text style={styles.baseText}>5</Text>
+            </TouchableOpacity>
+          </Surface>
+        </ScrollView>
 
-        {/* <Image //grade4 lock
-          style={{ position: "absolute", left: 100, top: 230, zIndex: 1000, width: 60, height: 60 }}
-          source={require("../../../assets/lock.png")}
-        /> */}
+        <ClassCodeModal
+          classCodeModalVisible={classCodeModalVisible}
+          setClassCodeModalVisible={setClassCodeModalVisible}
+        />
 
-        <Surface style={styles.roundButton1} elevation={3}>
-          <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade4" })} //route.params sent into ChaptersHandler is defined here
-          >
-            <Text style={styles.baseText}>4</Text>
-          </TouchableOpacity>
-        </Surface>
-
-        {/* <Image //grade5 lock
-          style={{ position: "absolute", right: 20, top: 350, zIndex: 1000, width: 60, height: 60 }}
-          source={require("../../../assets/lock.png")}
-        /> */}
-
-        <Surface style={styles.roundButton2} elevation={3}>
-          <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
-          >
-            <Text style={styles.baseText}>5</Text>
-          </TouchableOpacity>
-        </Surface>
-
-      </ScrollView>
-
-      <ClassCodeModal classCodeModalVisible={classCodeModalVisible} setClassCodeModalVisible={setClassCodeModalVisible} />
-
-      <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
-
-    </ImageBackground>
+        <AboutModal
+          modalAboutVisible={modalAboutVisible}
+          setModalAboutVisible={setModalAboutVisible}
+        />
+      </ImageBackground>
     </SafeArea>
   );
 }
@@ -138,7 +170,7 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     height: "100%",
   },
   roundButton1: {
@@ -149,7 +181,7 @@ const styles = StyleSheet.create({
     padding: 10,
     left: 25,
     borderRadius: 100,
-    backgroundColor: "#CCE882"
+    backgroundColor: "#CCE882",
   },
   roundButton2: {
     width: 125,
@@ -160,12 +192,12 @@ const styles = StyleSheet.create({
     left: -25,
     borderRadius: 100,
     backgroundColor: "#CCE882",
-    alignSelf: "flex-end"
+    alignSelf: "flex-end",
   },
   baseText: {
     fontSize: 55,
     color: "white",
-  }
+  },
 });
 
 export default HomeScreen;

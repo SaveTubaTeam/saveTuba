@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { Image } from "expo-image";
 import * as ImagePicker from "expo-image-picker";
@@ -13,6 +13,7 @@ import LoadingModal from "../../../features/Account/LevelSystem/LoadingModal";
 import Toast from 'react-native-toast-message';
 import FileModal from "./FileModal";
 import { BodyText } from "../../body-text.component";
+import { Audio } from "expo-av";
 
 export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
@@ -24,6 +25,26 @@ export default function ImageUpload({ score, prompt }) {
 
   const [showSelectedFile, setShowSelectedFile] = useState(false);
   const [selectedFileContent, setSelectedFileContent] = useState(null);
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/popupOpen.wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
   //console.log(user);
 
   /* marked for translation */

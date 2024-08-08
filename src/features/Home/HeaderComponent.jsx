@@ -6,10 +6,30 @@ import styled from "styled-components/native";
 import { useSelector } from "react-redux";
 import { FlatList } from "react-native-gesture-handler";
 import { BodyText } from "../../components/body-text.component";
+import { Audio } from "expo-av";
 
 export default function HeaderComponent({ title }) {
    const { t } = useTranslation();
    const [modalVisible, setModalVisible] = useState(false);
+   const [sound, setSound] = useState();
+
+   async function playSound(soundFile) {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(soundFile);
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
 
    return (
       <>
@@ -21,6 +41,7 @@ export default function HeaderComponent({ title }) {
          <TouchableOpacity 
             style={styles.parentIcon} 
             onPress={() => {
+            playSound(require('../../../assets/saveTubaSoundEffects/popupOpen.wav'));
             setModalVisible(true);
             // dispatch(apiSlice.util.resetApiState());
             // console.log("--------! RTK QUERY API CACHE INVALIDATED GLOBALLY !--------");
@@ -46,6 +67,25 @@ function ModalComponent({ visible, setModalVisible }) {
    const completions = useSelector(state => state.user.completions);
    const { t } = useTranslation();
    const [reversedCompletions, setReversedCompletions] = useState(completions);
+   const [sound, setSound] = useState();
+
+   async function playSound(soundFile) {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync(soundFile);
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
 
    //reversing completions array so latest is at the top
    useEffect(() => {
@@ -77,7 +117,7 @@ function ModalComponent({ visible, setModalVisible }) {
 
             <TouchableOpacity
                style={styles.exitIcon}
-               onPress={() => setModalVisible(false)}
+               onPress={() => {playSound(require('../../../assets/saveTubaSoundEffects/popupClose.wav')); setModalVisible(false)}}
             >
                <BodyText>❌</BodyText>
             </TouchableOpacity>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect , useState} from "react";
 import { StyleSheet, View, Modal, TouchableOpacity, Image, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
 import { BodyText } from "../../../components/body-text.component";
@@ -10,11 +10,32 @@ import { selectCurrentUser } from "../../../../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { apiSlice } from "../../../../redux/apiSlice";
 import { db } from "../../../../firebase";
+import { Audio } from "expo-av";
 
 export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    const { t } = useTranslation();
    const user = useSelector(selectCurrentUser);
    const dispatch = useDispatch();
+   const [sound, setSound] = useState();
+   
+   async function playSound() {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/popupClose.wav')
+      );
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
 
    useEffect(() => {
       if(modalAboutVisible) {
@@ -67,7 +88,7 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
 
             <TouchableOpacity
                style={styles.greenButtonModal}
-               onPress={async() => { await handleClose(); }}
+               onPress={async() => { await playSound(); await handleClose(); }}
             >
                {/* marked for translation */}
                <BodyText size="title" color="secondary">

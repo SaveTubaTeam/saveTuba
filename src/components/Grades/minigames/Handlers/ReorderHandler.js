@@ -9,6 +9,7 @@ import { Spacer } from "../../../spacer.component";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
+import { Audio } from "expo-av";
 
 const REORDER_GRADIENTS = [
   {active: "#c58bda", dormant: "#b897e8"}, 
@@ -28,6 +29,26 @@ const ReorderHandler = ({ objectData, activityType }) => {
   //console.log("Data In: ", objectData);
   const dispatch = useDispatch();
   const [data, setData] = useState(objectData.content);
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../../assets/saveTubaSoundEffects/pageForward.wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   useEffect(() => {
     dispatch(addActivity({ activity: activityType }))
@@ -54,7 +75,7 @@ const ReorderHandler = ({ objectData, activityType }) => {
     return (
       <Item
         key={item}
-        onPressIn={onDragStart}
+        onPressIn={() => { playSound(); onDragStart(); }}
         onPressOut={onDragEnd}
         style={{ backgroundColor: isActive ? item.active : item.dormant }}
       >

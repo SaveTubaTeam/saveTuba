@@ -9,6 +9,7 @@ import CompletionModal from "../../../../features/Account/LevelSystem/Completion
 import { Image } from "expo-image";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
+import { Audio } from "expo-av";
 
 //@param objectData passed from IndividualLessonHandler
 const MemoryHandler = ({ objectData, activityType }) => {
@@ -22,6 +23,26 @@ const MemoryHandler = ({ objectData, activityType }) => {
   const [score, setScore] = useState(0);
 
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   //for the completion modal
   useEffect(() => {
@@ -82,7 +103,7 @@ const MemoryHandler = ({ objectData, activityType }) => {
               key={index}
               card={card}
               isOpen={successfullyMatchedPairs.includes(card.name) || currentSelection.some(card => card.index === index)}
-              onPress={() => checkCurrentSelection(index, card.name)}
+              onPress={() => { playSound(); checkCurrentSelection(index, card.name)}}
               arrayIsLocked={arrayIsLocked}
             />
         );

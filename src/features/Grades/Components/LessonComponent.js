@@ -12,6 +12,7 @@ import { Adventure, Header } from "../../../components/Grades/grades.styles";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { Ionicons } from "@expo/vector-icons";
+import { Audio } from "expo-av";
 
 //This component formats and renders all of the lesson's contents
 //@param data the lesson object which contains all of that lesson's metadata and mastery and minigame objects.
@@ -21,6 +22,7 @@ function LessonComponent({ individualLessonData, activitiesData }) {
   const [minigames, setMinigames] = useState(null);
   const [mastery, setMastery] = useState(null);
   const [lessonData, setLessonData] = useState(individualLessonData);
+  const [sound, setSound] = useState();
   const grade = useSelector(state => state.curriculum.grade);
   const chapter = useSelector(state => state.curriculum.chapter);
   const completions = useSelector(state => state.user.completions);
@@ -29,6 +31,25 @@ function LessonComponent({ individualLessonData, activitiesData }) {
   const chapterID = concatenateFirstLetterAndLastNumbers(chapter);
   const lessonID = concatenateFirstLetterAndLastNumbers(individualLessonData.navigation);
   const fullLessonID = `${gradeID}${chapterID}${lessonID}`
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/minigameSelect.wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   useEffect(() => {
     async function fetchIconsAndSetActivities() {
@@ -69,7 +90,7 @@ function LessonComponent({ individualLessonData, activitiesData }) {
       opacity = 1;
     }
     return (
-      <Adventure onPress={() => { nav.navigate(item.navigation); }}>
+      <Adventure onPress={() => { playSound(); nav.navigate(item.navigation); }}>
 
         <CompletionOverlay opacity={opacity} />
 

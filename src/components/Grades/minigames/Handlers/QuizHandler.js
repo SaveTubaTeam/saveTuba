@@ -8,6 +8,7 @@ import { BodyText } from "../../../body-text.component";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
+import { Audio } from "expo-av";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,27 @@ const Start = ({ data, activityType }) => {
   //defining visibility state modals
   const [visible, setVisible] = useState(false);
   const [completionModalVisible, setCompletionModalVisible] = useState(false);
+
+  const [sound, setSound] = useState();
+
+  async function playSound(soundFile) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(soundFile
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   useEffect(() => {
     dispatch(addActivity({ activity: activityType }));
@@ -44,6 +66,10 @@ const Start = ({ data, activityType }) => {
     setCorrectAnswer(correct);
     if (correct) {
       setScore(score + 1);
+      playSound(require('../../../../../assets/saveTubaSoundEffects/switchLanguage.wav'));
+    }
+    else{
+      playSound(require('../../../../../assets/saveTubaSoundEffects/answerIncorrect.wav'));
     }
     setVisible(true);
   };
@@ -58,7 +84,7 @@ const Start = ({ data, activityType }) => {
             {/* This TouchableOpacity is an x on the top right of the modal which does not move us to the next question */}
             <TouchableOpacity
               style={{ position: "absolute", right: 10, top: 5 }}
-              onPress={() => setVisible(!visible)}
+              onPress={() => { playSound(require('../../../../../assets/saveTubaSoundEffects/popupClose.wav')); setVisible(!visible)}}
             >
               <BodyText>✖️</BodyText>
             </TouchableOpacity>
@@ -75,7 +101,7 @@ const Start = ({ data, activityType }) => {
             {/* green button 'Next' at the bottom of modal to move to the next question */}
             <TouchableOpacity
               style={styles.greenButtonModal}
-              onPress={nextQuestion}
+              onPress={() => {nextQuestion(); playSound(require('../../../../../assets/saveTubaSoundEffects/pageForward.wav'))}}
             >
               <BodyText size="subtitle" color="secondary">
                 {t("minigames:quiznext")}
@@ -96,6 +122,7 @@ const Start = ({ data, activityType }) => {
           console.log("Answer Choices:", data.content[count].answers); {/* NOTE: plural between answer and answers is the difference between pulling the entire answers array or just the answer!*/}
           console.log("Correct Answer:", data.content[count].answer);
           console.log("User Input:", item);
+          //playSound(require('../../../../../assets/saveTubaSoundEffects/menuSelect(memory).wav'));
           handleAnswer(item);
         }}
       >

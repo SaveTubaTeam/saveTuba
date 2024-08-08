@@ -9,6 +9,7 @@ import { BodyText } from "../../../body-text.component";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../../../redux/slices/curriculumLocationSlice.js";
 import CompletionModal from "../../../../features/Account/LevelSystem/CompletionModal";
+import { Audio } from "expo-av";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,27 @@ const Start = ({ objectData, activityType }) => {
 
   const { t } = useTranslation();
   const dispatch = useDispatch();
+
+  const [sound, setSound] = useState();
+
+  async function playSound(soundFile) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( soundFile
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   //shuffling options upon initial render.
   useEffect(() => {
@@ -65,6 +87,7 @@ const Start = ({ objectData, activityType }) => {
                   setVisible(!visible);
                   setCompletionModalVisible(!completionModalVisible);
                 }
+                playSound(require('../../../../../assets/saveTubaSoundEffects/pageBack.wav'));
               }}
             >
               <BodyText size="subtitle" color="secondary">
@@ -101,8 +124,10 @@ const Start = ({ objectData, activityType }) => {
           if (item.name == currentAnswer) { //accessing item's name field via item.name
             setCorrect(true);
             setScore(prevScore => prevScore + 1);
+            playSound(require('../../../../../assets/saveTubaSoundEffects/switchLanguage.wav'));
           } else {
             setCorrect(false);
+            playSound(require('../../../../../assets/saveTubaSoundEffects/answerIncorrect.wav'));
           }
           setVisible(true);
         }}

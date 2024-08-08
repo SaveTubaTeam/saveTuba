@@ -6,6 +6,7 @@ import Toast from 'react-native-toast-message';
 import { auth, db } from "../../../firebase";
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
+import { Audio } from "expo-av";
 
 //Design pattern: userSlice user state (redux) is NOT set in RegisterScreen. We only ever set user state via
 //dispatch(fetchUser()) which happens upon Main.js render and nowhere else to minimize redundancy.
@@ -19,6 +20,26 @@ const RegisterScreen = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [sound, setSound] = useState();
+
+  async function playSound(soundFile) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(soundFile);
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
 
   /* marked for translation */
   useEffect(() => {
@@ -163,7 +184,7 @@ const RegisterScreen = () => {
 
         <ButtonContainer>
           {/* asynchronously register & push user to db, setting loading icon to visible while we do so */}
-          <Button onPress={() => {createUser(); }}>
+          <Button onPress={() => { playSound(require('../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')); createUser(); }}>
             <TitleText color="secondary" size="body">
               {t("common:signup")}
             </TitleText>
@@ -171,7 +192,7 @@ const RegisterScreen = () => {
         </ButtonContainer>
 
         <BottomContainer>
-          <ButtonOutLine onPress={() => navigation.navigate("AlternativeLogin")} style={{marginTop: 10}}>
+          <ButtonOutLine onPress={() => {playSound(require('../../../assets/saveTubaSoundEffects/pageBack.wav')); navigation.navigate("AlternativeLogin")}} style={{marginTop: 10}}>
             <TitleText color="primary" size="body">
               {t("common:back")}
             </TitleText>

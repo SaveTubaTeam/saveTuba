@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect} from "react"
 import { View, StyleSheet, TouchableOpacity } from "react-native"
 import { Spacer } from "../../../components/spacer.component"
 import { TitleText } from "../../../components/title-text.component"
@@ -7,11 +7,31 @@ import { useSelector } from "react-redux"
 import { useTranslation } from "react-i18next"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
 import ClassCodeModal from "../../Home/ClassCodeModal"
+import { Audio } from "expo-av";
 
 export default function ClassroomCard() {
    const { t } = useTranslation();
    const [classCodeModalVisible, setClassCodeModalVisible] = useState(false);
    const classroom = useSelector(state => state.user.classroom);
+   const [sound, setSound] = useState();
+
+   async function playSound() {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync( require("../../../../assets/saveTubaSoundEffects/popupOpen.wav"));
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
 
    //to check for an empty object: https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
     //guard clause against uninitialized classroom
@@ -34,6 +54,7 @@ export default function ClassroomCard() {
             
             <TouchableOpacity onPress={() => {
                setClassCodeModalVisible(true);
+               playSound();
             }}>
                <MaterialCommunityIcons name="pencil-circle" color="rgba(96, 187, 221, 0.6)" size={45} />
             </TouchableOpacity>

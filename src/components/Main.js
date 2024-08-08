@@ -7,6 +7,9 @@ import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { signOutUser } from "../../redux/slices/userSlice";
 import { useTranslation } from "react-i18next";
 
+// Import Audio
+import { Audio } from 'expo-av';
+
 // Different Screens thus far
 import HomeScreen from "../features/Home/HomeScreen";
 import AccountNav from "../features/Account/accountNav/accountNav";
@@ -20,9 +23,27 @@ import { selectCurrentUser, signInUser, addCompletions, addClassroom } from "../
 import { useGetUserQuery, useGetCompletionsArrayQuery, useGetClassroomQuery } from "../../redux/apiSlice";
 const Tab = createBottomTabNavigator();
 
-// The SaveTuba app contains the navigation containers for the main screens of the application. 
-//Utilizing tab-based navigation here. https://reactnavigation.org/docs/tab-based-navigation
 const SaveTuba = () => {
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(require('../../assets/saveTubaSoundEffects/menuSelect(memory).wav'));
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -43,6 +64,10 @@ const SaveTuba = () => {
           tabBarIcon: ({ color }) => (
             <Ionicons name="person" color={color} size={32} />
           ),
+          tabBarOnPress: (e) => {
+            playSound();
+            e.defaultHandler();
+          },
         }}
       />
       <Tab.Screen
@@ -53,6 +78,10 @@ const SaveTuba = () => {
           tabBarIcon: ({ color }) => (
             <Ionicons name="school" color={color} size={32} />
           ),
+          tabBarOnPress: (e) => {
+            playSound();
+            e.defaultHandler();
+          },
         }}
       />
       <Tab.Screen
@@ -63,6 +92,10 @@ const SaveTuba = () => {
           tabBarIcon: ({ color }) => (
             <Ionicons name="library" color={color} size={32} />
           ),
+          tabBarOnPress: (e) => {
+            playSound();
+            e.defaultHandler();
+          },
         }}
       />
       <Tab.Screen
@@ -73,27 +106,24 @@ const SaveTuba = () => {
           tabBarIcon: ({ color }) => (
             <Ionicons name="settings" color={color} size={32} />
           ),
+          tabBarOnPress: (e) => {
+            playSound();
+            e.defaultHandler();
+          },
         }}
       />
     </Tab.Navigator>
   );
 };
 
-// jac927 7/4/24 | James: I was able to remove some odd duping behaviour in Main.js where consecutive (n-many) 
-// sign-ins in the same session would cause n-many Main.js component dupes. I fixed this bug by using react-navigation's 
-// StackActions.replace() instead of navigation.navigate(). The .replace() method wipes the <SaveTuba /> tab navigator 
-// from the stack completely. See SignOutComponent.jsx for the implementation.
-
 const Main = () => {
   const { t } = useTranslation();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const user = useSelector(selectCurrentUser);
   const navigation = useNavigation();
 
-  // Define userEmail only if auth.currentUser is defined
   let userEmail = auth.currentUser ? auth.currentUser.email : 'none';
 
-  // Execute useGetUserQuery only when auth.currentUser is defined
   const { data: userData, isLoading: userLoading, isSuccess: userSuccess, isError: userError, error: userErrorMessage } = useGetUserQuery(
     { userEmail: userEmail },
     { skip: !auth.currentUser }
@@ -108,7 +138,6 @@ const Main = () => {
     }
   }, [userSuccess, userError, userErrorMessage, userData]);
 
-  // Execute useGetCompletionsArrayQuery only when userData has been successfully dispatched to store from the above useEffect
   const { data: completionsArray, isLoading: completionsLoading, isSuccess: completionsSuccess, isError: completionsError, error: completionsErrorMessage } = useGetCompletionsArrayQuery(
     { userEmail: userEmail },
     { skip: user.emptyUser ? true : false }
@@ -155,22 +184,20 @@ const Main = () => {
   const handleUserRejected = async() => {
     console.error("user queries failed in Main.js. Pushing back to Login");
     dispatch(signOutUser());
-    if(GoogleSignin.getCurrentUser()) { //null if not signed in with google
+    if(GoogleSignin.getCurrentUser()) { 
       await GoogleSignin.signOut();
     }
     await auth.signOut();
-    /* marked for translation */
     Alert.alert(t("error:uhoh"), t("error:contactsupport"));
     navigation.replace("Login");
   }
 
-  //Update 4/22/24: removed Amodal global wrapper. User achievements/badges should be implemented in a more functional way.
   return (
     <>
       {content}
     </>
   );
-};//end of Main component
+};
 
 const styles = StyleSheet.create({
   container: {

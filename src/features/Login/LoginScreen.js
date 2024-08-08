@@ -11,6 +11,7 @@ import { apiSlice } from "../../../redux/apiSlice";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
 import { GoogleSignin, statusCodes, isErrorWithCode } from "@react-native-google-signin/google-signin";
+import { Audio } from "expo-av";
 
 const LoginScreen = () => {
   const userSlice = useSelector(state => state.user);
@@ -18,6 +19,25 @@ const LoginScreen = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
+  const [sound, setSound] = useState();
+
+  async function playSound(soundFile) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(soundFile);
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   //initial config
   useEffect(() => {
@@ -218,7 +238,7 @@ const LoginScreen = () => {
         fadeDuration={0}
       >
         <ButtonContainer>
-          <ButtonOutLine onPress={googleSignIn}>
+          <ButtonOutLine onPress={() => {playSound(require('../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')); googleSignIn();}}>
             <Image 
               source={require("../../../assets/googleLogoButton.png")}
               style={styles.image}
@@ -231,7 +251,7 @@ const LoginScreen = () => {
             </TitleText>
           </ButtonOutLine>
 
-          <Button onPress={() => navigation.push("AlternativeLogin")}>
+          <Button onPress={() => { playSound(require('../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')); navigation.push("AlternativeLogin"); }}>
             <TitleText color="secondary" size="body">
               {t("common:other")}
             </TitleText>
@@ -243,7 +263,7 @@ const LoginScreen = () => {
           <SelectorLogin />
 
           {/* Guest Login */}
-          <ButtonOutLine onPress={() => continueAsGuest()} style={{ marginTop: 10 }}>
+          <ButtonOutLine onPress={() => {playSound(require('../../../assets/saveTubaSoundEffects/gainXP.wav')); continueAsGuest()}} style={{ marginTop: 10 }}>
             <TitleText color="primary" size="body">
               {t("common:continueasguest")}
             </TitleText>

@@ -3,7 +3,7 @@ import { Image } from "expo-image";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import styled from "styled-components/native";
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import { useSelector } from "react-redux";
 import { TitleText } from "../../../components/title-text.component";
 import { BodyText } from "../../../components/body-text.component";
@@ -11,6 +11,7 @@ import { SafeArea } from "../../../components/safe-area.component";
 import { Header } from "../../../components/Grades/grades.styles";
 import { Spacer } from "../../../components/spacer.component";
 import { useTranslation } from "react-i18next";
+import { Audio } from "expo-av";
 
 //This component renders every lesson card in the current chapter.
 //@param lessonsData an array of objects returned by getLessonsData() in LessonsHandler
@@ -19,10 +20,30 @@ function LessonsComponent({ lessonsData }) {
   const nav = useNavigation();
   const { t } = useTranslation();
   const chapterNumber = useSelector(state => state.curriculum.chapter)
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../../assets/saveTubaSoundEffects/pageForward.wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   const renderItem = ({ item }) => {
     return (
-      <CurrentLesson onPress={() => { nav.navigate(item.navigation); }}>
+      <CurrentLesson onPress={() => { playSound(); nav.navigate(item.navigation); }}>
         <View style={styles.rowContainer}>
 
           <View style={styles.textContainerLeft}>
@@ -36,6 +57,7 @@ function LessonsComponent({ lessonsData }) {
 
             <TouchableOpacity style={styles.startButton} 
               onPress={() => { 
+                playSound();
                 nav.navigate(item.navigation);
               }}
             >

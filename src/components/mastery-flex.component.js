@@ -3,15 +3,36 @@ import { TitleText } from "./title-text.component";
 import { StyleSheet, View } from 'react-native';
 import { TouchableOpacity } from 'react-native';
 import { useTranslation } from "react-i18next";
-import React from 'react';
+import React ,{useEffect, useState} from 'react';
 import { Image } from "expo-image";
 import { Ionicons } from "@expo/vector-icons";
+import { Audio } from "expo-av";
 
 export const MasteryFlex = ({ masteryArray }) => {
     //mastery-icon.png in our storage bucket under assets/
     const masteryIconPNG = "https://firebasestorage.googleapis.com/v0/b/savetuba-5e519.appspot.com/o/assets%2Fmastery-icon.png?alt=media&token=0ac84171-64cf-4a71-9d6b-8b4d9f67ded1"
     const nav = useNavigation();
     const { t } = useTranslation();
+    const [sound, setSound] = useState();
+
+    async function playSound() {
+        console.log('Loading Sound');
+        const { sound } = await Audio.Sound.createAsync( require('../../assets/saveTubaSoundEffects/minigameSelect.wav')
+        );
+        setSound(sound);
+    
+        console.log('Playing Sound');
+        await sound.playAsync();
+      }
+    
+      useEffect(() => {
+        return sound
+          ? () => {
+              console.log('Unloading Sound');
+              sound.unloadAsync();
+            }
+          : undefined;
+      }, [sound]);
 
     return (
         <View style={styles.container}>
@@ -26,7 +47,7 @@ export const MasteryFlex = ({ masteryArray }) => {
                 <TouchableOpacity
                     key={index}
                     style={styles.contentContainer}
-                    onPress={() => nav.navigate(mastery.navigation)}
+                    onPress={() => { playSound(); nav.navigate(mastery.navigation)}}
                 >
                     <CompletionOverlay opacity={opacity} />
                     <Image

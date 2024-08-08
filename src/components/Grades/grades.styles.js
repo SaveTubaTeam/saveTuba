@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useEffect, useState} from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
@@ -6,18 +6,41 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useTheme } from "@react-navigation/native";
 import { pageBack } from "../../../redux/slices/curriculumLocationSlice";
 import { useNavigation } from "@react-navigation/native";
+import { Audio } from "expo-av";
 
 export const Header = ({ title, back, reduxParam }) => {
   const theme = useTheme();
   const dispatch = useDispatch();
   const navigation = useNavigation();
+  const [sound, setSound] = useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync( require('../../../assets/saveTubaSoundEffects/pageBack.wav')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   return (
       <View style={styles.headerContainer}>
 
         <TouchableOpacity style={styles.backButton}
           onPress={() => { 
+
             navigation.navigate(back);
+            playSound();
             dispatch(pageBack({ curriculumLayer: reduxParam }));
           }}
         >

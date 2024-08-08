@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { Switch, StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
@@ -14,13 +14,63 @@ import { theme } from "../../../infrastructure/theme";
 import Selector from "./LanguageSelector";
 import AboutModal from "./AboutModal";
 import HelpModal from "./HelpModal";
+import { Audio } from "expo-av";
+
+// Import all sound files
+import soundeffectsOn from "../../../../assets/saveTubaSoundEffects/soundeffectsOn.wav";
+import popupOpen from "../../../../assets/saveTubaSoundEffects/popupOpen.wav";
+// Add more sound imports as needed
+
+const soundMap = {
+  soundeffectsOn,
+  popupOpen
+  // Add more sounds to the map as needed
+};
 
 export const GeneralCard = () => {
   const { t } = useTranslation();
-  const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(false);
-  const toggleSwitchSE = () => setIsSoundEffectsEnabled((previousState) => !previousState);
+  const [isSoundEffectsEnabled, setIsSoundEffectsEnabled] = useState(true);
   const [modalHelpVisible, setModalHelpVisible] = useState(false);
   const [modalAboutVisible, setModalAboutVisible] = useState(false);
+  const [sound, setSound] = useState();
+
+  async function playSound(soundName) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(soundMap[soundName]);
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
+  const toggleSwitchSE = () => {
+    setIsSoundEffectsEnabled((previousState) => {
+      const newState = !previousState;
+      if (newState) {
+        playSound("soundeffectsOn");
+      }
+      return newState;
+    });
+  };
+
+  const handleHelpPress = () => {
+    setModalHelpVisible(true);
+    playSound("popupOpen");
+  };
+
+  const handleAboutPress = () => {
+    setModalAboutVisible(true);
+    playSound("popupOpen");
+  };
 
   return (
     <Card>
@@ -42,33 +92,33 @@ export const GeneralCard = () => {
             ios_backgroundColor="#3e3e3e"
             onValueChange={toggleSwitchSE}
             value={isSoundEffectsEnabled}
-            style={{ transform: [{ scaleX: moderateScale(0.8, 0.2) }, {scaleY: moderateScale(0.8, 0.2) }] }}
+            style={{ transform: [{ scaleX: moderateScale(0.8, 0.2) }, { scaleY: moderateScale(0.8, 0.2) }] }}
           />
         </Row>
 
         <Spacer size="medium" />
 
-        <TouchableOpacity onPress={() => setModalHelpVisible(true)}>
+        <TouchableOpacity onPress={handleHelpPress}>
           <Row>
-          <BodyText>{t("common:help")}</BodyText>
-          <Spacer position="right" size="medium" />
-          <FontAwesomeIcon icon={faCircleQuestion} size={21} color={theme.colors.ui.primary} />
+            <BodyText>{t("common:help")}</BodyText>
+            <Spacer position="right" size="medium" />
+            <FontAwesomeIcon icon={faCircleQuestion} size={21} color={theme.colors.ui.primary} />
           </Row>
         </TouchableOpacity>
         
-      <HelpModal modalHelpVisible={modalHelpVisible} setModalHelpVisible={setModalHelpVisible}/>
+        <HelpModal modalHelpVisible={modalHelpVisible} setModalHelpVisible={setModalHelpVisible} />
 
         <Spacer size="medium" />
 
-        <TouchableOpacity onPress={() => setModalAboutVisible(true)}>
+        <TouchableOpacity onPress={handleAboutPress}>
           <Row>
-          <BodyText>{t("common:about")}</BodyText>
-          <Spacer position="right" size="medium" />
-          <FontAwesomeIcon icon={faCircleInfo} size={21} color={theme.colors.ui.primary} />
+            <BodyText>{t("common:about")}</BodyText>
+            <Spacer position="right" size="medium" />
+            <FontAwesomeIcon icon={faCircleInfo} size={21} color={theme.colors.ui.primary} />
           </Row>
         </TouchableOpacity>
         
-      <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
+        <AboutModal modalAboutVisible={modalAboutVisible} setModalAboutVisible={setModalAboutVisible} />
 
         <Spacer size="medium" />
       </AvatarContainer>

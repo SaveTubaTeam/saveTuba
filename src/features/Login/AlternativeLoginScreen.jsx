@@ -7,12 +7,32 @@ import { auth, db } from "../../../firebase";
 import { Alert, Text, StyleSheet, ImageBackground } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Toast from 'react-native-toast-message';
+import { Audio } from "expo-av";
 
 const AlternativeLoginScreen = () => {
   const { t, i18n } = useTranslation();
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [sound, setSound] = useState();
+
+  async function playSound(soundFile) {
+    console.log('Loading Sound');
+    const { sound } = await Audio.Sound.createAsync(soundFile);
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
 
   //updating the auth object with an observer to track changes to the existing user
   useEffect(() => {
@@ -134,13 +154,13 @@ const AlternativeLoginScreen = () => {
         </InputContainer>
 
         <ButtonContainer>
-          <ButtonOutLine onPress={() => { handleLogin(); }}>
+        <ButtonOutLine onPress={() => { playSound(require('../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')); handleLogin(); }}>
             <TitleText color="primary" size="body">
               {t("common:login")}
             </TitleText>
           </ButtonOutLine>
 
-          <Button onPress={() => navigation.push("Register")}>
+          <Button onPress={() => { playSound(require('../../../assets/saveTubaSoundEffects/menuSelect(memory).wav')); navigation.push("Register")}}>
             <TitleText color="secondary" size="body">
               {t("common:signup")}
             </TitleText>
@@ -162,7 +182,7 @@ const AlternativeLoginScreen = () => {
         </ButtonContainer>
 
         <BottomContainer>
-          <ButtonOutLine onPress={() => navigation.navigate("Login")} style={{marginTop: 10}}>
+          <ButtonOutLine onPress={() =>{ playSound(require('../../../assets/saveTubaSoundEffects/pageBack.wav')); navigation.navigate("Login")}} style={{marginTop: 10}}>
             <TitleText color="primary" size="body">
               {t("common:back")}
             </TitleText>

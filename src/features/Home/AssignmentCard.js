@@ -12,6 +12,7 @@ import { useGetIndividualLessonDataQuery } from "../../../redux/curriculumApiSli
 import { updateAssignmentDrill } from "../../../redux/slices/curriculumLocationSlice";
 import { useDispatch } from "react-redux";
 import { StackActions } from "@react-navigation/native";
+import { Audio } from "expo-av";
 
 const AssignmentCard = ({ content }) => {
    const { t, i18n } = useTranslation();
@@ -36,6 +37,26 @@ const AssignmentCard = ({ content }) => {
    const { data: queryResult, isSuccess: individualLessonSuccess } = useGetIndividualLessonDataQuery(
       { grade: grade, chpt: chapter, lesson: lesson, languageCode: languageCode }
    )
+   const [sound, setSound] = useState();
+
+   async function playSound() {
+      console.log('Loading Sound');
+      const { sound } = await Audio.Sound.createAsync( require('../../../assets/saveTubaSoundEffects/pageForward.wav')
+      );
+      setSound(sound);
+  
+      console.log('Playing Sound');
+      await sound.playAsync();
+    }
+  
+    useEffect(() => {
+      return sound
+        ? () => {
+            console.log('Unloading Sound');
+            sound.unloadAsync();
+          }
+        : undefined;
+    }, [sound]);
 
    useEffect(() => {
       if(individualLessonSuccess) {
@@ -104,7 +125,7 @@ const AssignmentCard = ({ content }) => {
             </TitleText>
 
             <TouchableOpacity style={styles.buttonBottomRow} 
-               onPress={async() => { await pushToLesson(); }}
+               onPress={async() => { await playSound(); await pushToLesson(); }}
             >
               <Ionicons name="caret-forward" size={14} color="#748816" style={{ paddingRight: 3, paddingTop: 1.5 }} />
               
