@@ -30,12 +30,12 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
       dispatch(apiSlice.util.invalidateTags(["User"])); //manually force a refetch of now stale cache
    }
 
-   let marginTop;
-   Platform.OS === 'ios' ? marginTop = 30 : marginTop = 0;
+   // let marginTop;
+   // Platform.OS === 'ios' ? marginTop = 30 : marginTop = 0;
 
    return (
       <Modal animationType="slide" transparent={true} visible={modalAboutVisible}>
-         <View style={[styles.modalContainer, { marginTop: marginTop }]}>
+         <View style={[styles.modalContainer, { marginTop: 50 }]}>
             {/* marked for translation */}
             <BodyText size="h3" weight="bold">
             {t("about:hi")}
