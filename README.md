@@ -25,24 +25,58 @@ It is highly recommended that you follow the tutorials on official documentation
 - [Expo](https://docs.expo.dev/tutorial/overview/)
 - [Redux](https://redux.js.org/tutorials/essentials/part-1-overview-concepts)
 - Firebase (note that we work with the "Web namespaced API")
-  - [Firestore](https://firebase.google.com/docs/firestore/quickstart)
-  - [Auth](https://firebase.google.com/docs/auth/web/start)
-  - [Cloud Storage](https://firebase.google.com/docs/storage/web/start)
+  - [Firebase Firestore](https://firebase.google.com/docs/firestore/quickstart)
+  - [Firebase Authentication](https://firebase.google.com/docs/auth/web/start)
+  - [Firebase Cloud Storage](https://firebase.google.com/docs/storage/web/start)
 
-The *only* YouTube channel recommended by the team (for Expo/Firebase integration, EAS build, [EAS submit](https://www.youtube.com/watch?v=PdwYDatvJ2I), [Google Sign In](https://www.youtube.com/watch?v=HY3O_wrvDsI), etc.): https://www.youtube.com/@MissCoding
+The *only* YouTube channel recommended by the team (for Expo/Firebase integration, EAS build, [EAS submit](https://www.youtube.com/watch?v=PdwYDatvJ2I), [Google Sign In](https://www.youtube.com/watch?v=HY3O_wrvDsI), etc.) is: https://www.youtube.com/@MissCoding
 
 Other notable packages:
-[React Navigation](https://reactnavigation.org/docs/getting-started) - page router
-[React Native Google Sign In](https://react-native-google-signin.github.io/docs/original) - a native module for Google sign-in
-[i18next](https://react.i18next.com/) - Javascript internationalization framework. [See here for more](https://locize.com/blog/react-i18next/).
+- [React Navigation](https://reactnavigation.org/docs/getting-started) - page router
+- [React Native Google Sign In](https://react-native-google-signin.github.io/docs/original) - a native module for Google sign-in
+- [i18next](https://react.i18next.com/) - Javascript internationalization framework. [See here for more](https://locize.com/blog/react-i18next/).
 
 ## Environment Setup & Installation
 
-Assuming you already have node and git installed
+Assuming you already have [node](https://nodejs.org/en/download/package-manager) and [git](https://github.com/git-guides/install-git) installed, run the following in a new folder:
+
+```
+git clone https://github.com/SaveTubaTeam/saveTuba.git
+npm install
+```
+
+Note that `npm install` installs all of the packages listed in our package.json within our local directory. Now we need to install a few CLI packages, the first being eas-cli. eas-cli allows us to use [Expo Application Services (EAS)](https://docs.expo.dev/eas/) for building and deploying our app.
+
+```
+npm install --global eas-cli
+eas login
+```
+
+The first command globally installs eas-cli. The last command will prompt you to login to EAS; use our team's [EAS login info](#developer-access) to do so. The `eas whoami` command should verify that you've signed in. 
+
+Next, we install the gcloud CLI. Carefully follow the instructions [here](https://cloud.google.com/sdk/docs/install) to install. We will use gcloud for exporting and importing data from Firebase. The `gcloud --version` command should verify you've installed gcloud correctly once you've done so.
+
+Now, in order to actually run our app, we need two things. One is a valid build of our app, and the other is an emulator to run our build. Let's install our emulators first:
+
+**For both macOS & Windows**, follow the tutorial here to set up Android Studio: https://docs.expo.dev/workflow/android-studio-emulator/
+
+**For macOS only**, follow the tutorial here to set up Xcode: https://docs.expo.dev/workflow/ios-simulator/. Note: it is recommended that you use Android Studio for development because Xcode sucks. Use Xcode for platform-specific testing. We will be using Android Studio for the rest of this setup guide.
+
+And now for the build, **copy and paste the following link in your Android emulator's browser and install the .apk**: https://expo.dev/accounts/savetubateam/projects/SaveTuba/builds/47edb106-71c1-4229-aa16-659ba1d25dd5 (last updated 10/19/24, note that builds are invalidated after 2 weeks)
+
+In your terminal, run the following command to start the development build:
+
+```
+npx expo start --dev-client
+```
+
+If you followed Expo's beginner tutorial you will notice we **do not** use Expo Go as React Native Google Sign In is a native module and does not work with Expo Go. So we are using Expo development builds. That's it. You're all set up! Try and change some simple things and see how the app updates (almost) instantly.
 
 ## Developer Access
 
 includes dev secrets
+
+Once you're logged into our team Expo account, go to https://expo.dev to see our team's dashboard.
 
 ## App Deployment
 
@@ -58,11 +92,11 @@ Why? include reasoning behind the system
 
 ### Previous Software Team Leads
 
-James Chang (team of '24)
-Hayden Ossinger (team of '23)
-Nadja Stojanovic (team of '22)
+James Chang (team of '24)  
+Hayden Ossinger (team of '23)  
+Nadja Stojanovic (team of '22)  
 
-Malika Buribayeva (Head of External Relations, team of '23 to '24)
+Malika Buribayeva (Head of External Relations, team of '23 to '24)  
 Malika is from Almaty and has several points of contact in the educational sphere. She is the bridge between us and our external partners. All questions regarding contacts overseas should be directed to her.
 
 ### Miscellaneous
@@ -73,7 +107,7 @@ Below you can find a collection of my favorite conference talks, tech videos, ar
 - Carson Gross, ["The Grug Brained Developer"](https://grugbrain.dev/)
 - Rich Hickey, ["Hammock Driven Development"](https://www.youtube.com/watch?v=f84n5oFoZBc&t=856s)
 - Michael Chan, ["Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=-NP_upexPFg)
-- [Arthur O'Dwyer's C++ Blog](https://quuxplusone.github.io/blog/2023/11/20/roast-pig/)
+- Arthur O'Dwyer's [C++ Blog](https://quuxplusone.github.io/blog/2023/11/20/roast-pig/)
 - Theo Browne, ["Deploying on Fridays"](https://www.youtube.com/watch?v=nCK0ey0qqsk)
 - Stripe's [dev blog](https://increment.com/)
 - Ben Awad on ["Best Practices"](https://www.youtube.com/watch?v=gc8mDZwUlfo)
