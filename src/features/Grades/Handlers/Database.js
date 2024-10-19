@@ -120,10 +120,10 @@ async function getActivitiesData(grade, chpt, lesson, languageCode) {
 
 //On the topic of local vs cloud file storage:
 //
-// hjo224@lehigh.edu | Hayden: The below imageMap is just a map taking the path and then returning the URL to pull from the DB. 
+// hjo224 | Hayden: The below imageMap is just a map taking the path and then returning the URL to pull from the DB. 
 // I honestly dont know if it makes more sense to just keep this local. 
 //
-// jac927@bu.edu | James: I think Hayden's decision to use db file storage over local file storage is correct for our use case.
+// jac927 | James: I think Hayden's decision to use db file storage over local file storage is correct for our use case.
 // This is because I am moving to expo-image due to RN's Image component causing unwanted flickering.
 // For expo-image, specifying a uri with imageMap is better than alternatives imo.
 

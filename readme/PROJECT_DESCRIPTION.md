@@ -1,4 +1,4 @@
-jac927@bu.edu | James: Below is a brief project description written for Lehigh's CS Capstone program. Last updated 10/19/24
+@jac927 10/19/24 | James: Below is a brief project description written for Lehigh's CS Capstone program.
 
 ##Kazakhstan: Save Tuba – Gamifying Sustainability Education for Kazakhstan’s Youngest Learners
 

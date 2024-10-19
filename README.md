@@ -58,11 +58,11 @@ Why? include reasoning behind the system
 
 ### Previous Software Team Leads
 
-James Chang (team of '24) | jac927@bu.edu
-Hayden Ossinger (team of '23) | hjo224@lehigh.edu
-Nadja Stojanovic (team of '22) | nas225@lehigh.edu
+James Chang (team of '24)
+Hayden Ossinger (team of '23)
+Nadja Stojanovic (team of '22)
 
-Malika Buribayeva (Head of External Relations, team of '23 to '24) | mabc26@lehigh.edu
+Malika Buribayeva (Head of External Relations, team of '23 to '24)
 Malika is from Almaty and has several points of contact in the educational sphere. She is the bridge between us and our external partners. All questions regarding contacts overseas should be directed to her.
 
 ### Miscellaneous
