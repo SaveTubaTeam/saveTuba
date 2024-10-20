@@ -1,5 +1,9 @@
 ## [SaveTuba](https://savetuba.com/)
 
+
+https://github.com/user-attachments/assets/7e4e0a23-0f91-4243-9f47-b6932478f484
+
+
 Save Tuba is an educational platform for environmental sustainability education in Kazakhstan. For a more in-depth project description, please see [PROJECT_DESCRIPTION.md](./readme/PROJECT_DESCRIPTION.md).
 
 This README is the central documentation point for the entire set of Save Tuba repositories. Below you will find everything you need to get started. Welcome aboard!
