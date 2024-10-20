@@ -1,10 +1,10 @@
-## [SaveTuba](https://savetuba.com/)
+## SaveTuba
 
-Save Tuba is an educational platform for environmental sustainability education in Kazakhstan. For a more in-depth project description, please see [PROJECT_DESCRIPTION.md](./readme/PROJECT_DESCRIPTION.md).
+Save Tuba (https://savetuba.com/) is an educational platform for environmental sustainability education in Kazakhstan. For a more in-depth project description, please see [PROJECT_DESCRIPTION.md](./readme/PROJECT_DESCRIPTION.md).
 
-This README is the central documentation point for the entire set of Save Tuba repositories. Here you will find everything you need to get started with our mobile app. Welcome aboard!
+This README is the central technical documentation point for the entire set of Save Tuba repositories. Here you will find everything you need to get started with our mobile app. Welcome aboard!
 
-For reference, please see [CLI_CHEATSHEET.md] for a cheatsheet of important CLI commands.
+For reference, please see [CLI_CHEATSHEET.md](./readme/CLI_CHEATSHEET.md) for a cheatsheet of important CLI commands.
 
 https://github.com/user-attachments/assets/7e4e0a23-0f91-4243-9f47-b6932478f484
 
@@ -13,7 +13,7 @@ https://github.com/user-attachments/assets/7e4e0a23-0f91-4243-9f47-b6932478f484
 * [Learning Resources & General Overview of Tech Stack](#learning-resources--general-overview-of-tech-stack)
 * [Environment Setup & Getting Started](#environment-setup--getting-started)
 * [Developer Access](#developer-access)
-* [App Deployment](#app-deployment)
+* [Mobile App Deployment](#mobile-app-deployment)
 * [Polyrepo Structure & Data Flow](#polyrepo-structure--data-flow)
 * [Other](#previous-software-team-leads)
 
@@ -35,7 +35,8 @@ It is highly recommended that you follow tutorials on official documentation sit
 
 The *only* YouTube channels recommended by the team are:
 - [Miss Coding](https://www.youtube.com/@MissCoding) (for Expo/Firebase integration, EAS build, [EAS submit](https://www.youtube.com/watch?v=PdwYDatvJ2I), [Google Sign In](https://www.youtube.com/watch?v=HY3O_wrvDsI), etc.)
-- [the official Firebase channel](https://www.youtube.com/watch?v=v_hR4K4auoQ&list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ)
+- [the official Firebase channel](https://www.youtube.com/@Firebase) (for [tutorials](https://www.youtube.com/watch?v=v_hR4K4auoQ&list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ), [Firebase Security Rules](https://www.youtube.com/watch?v=QEuu9X9L-MU&list=PLl-K7zZEsYLn8h1NyU_OV6dX8mBhH2s_L))
+- [the official Expo channel](https://www.youtube.com/@ExpoDevelopers) (PLEASE SEE: [Debugging app crashes with Keith Kurak from the Expo team](https://www.youtube.com/watch?v=LvCci4Bwmpc))
 
 Other notable packages:
 - [React Navigation](https://reactnavigation.org/docs/getting-started) - page router
@@ -44,14 +45,15 @@ Other notable packages:
 
 ## Environment Setup & Getting Started
 
-Assuming you already have [node](https://nodejs.org/en/download/package-manager) and [git](https://github.com/git-guides/install-git) installed, run the following in a new folder:
+Assuming you already have [node](https://nodejs.org/en/download/package-manager) and [git](https://github.com/git-guides/install-git) installed, run the following in a new directory:
 
 ```
 git clone https://github.com/SaveTubaTeam/saveTuba.git
+cd ./saveTuba
 npm install
 ```
 
-Note that `npm install` installs all of the packages listed in our package.json within our local directory. Now we need to install a few CLI packages, the first being eas-cli. eas-cli allows us to use [Expo Application Services (EAS)](https://docs.expo.dev/eas/) for building and deploying our app.
+Note that `npm install` installs all of the packages listed in our package.json file. Now we need to install a few CLI packages, the first being eas-cli. eas-cli allows us to use [Expo Application Services (EAS)](https://docs.expo.dev/eas/) for building and deploying our app.
 
 ```
 npm install --global eas-cli
@@ -60,7 +62,13 @@ eas login
 
 Above, the first command globally installs eas-cli. The second command will prompt you to login to EAS; use our team's [EAS login info](#developer-access) to do so. The `eas whoami` command should verify that you've signed in. 
 
-Next, we install the gcloud CLI. Carefully follow the instructions [here](https://cloud.google.com/sdk/docs/install) to install. We will use gcloud for exporting and importing data from Firebase. The `gcloud --version` command should verify you've installed gcloud correctly once you've done so.
+Next, we install the gcloud CLI. Carefully follow the instructions [here](https://cloud.google.com/sdk/docs/install) to install. We will use gcloud for exporting and importing data from Firebase. The `gcloud --version` command should verify you've installed gcloud correctly once you've done so. Then run:
+
+```
+gcloud auth login
+```
+
+If you run `gcloud auth list` you should see you've signed in correctly; running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
 
 Now, in order to actually run our app, we need two things. One is a valid build of our app, and the other is an emulator to run our build. Let's install our emulators first:
 
@@ -90,19 +98,42 @@ That's it. You're all set up! Try and change some simple things and see how the 
 
 After onboarding, you will be granted admin access to a number of resources including the team's shared Google Drive, Firebase (and Google Cloud console), and Jira/Confluence. If you do not have access for any reason, please contact our faculty advisor Sean Vassilaros. All other resources, including Expo developer login information, can be found in our shared Google Drive in this excel sheet: https://docs.google.com/spreadsheets/d/1arZ3kNvUUUYryvG9KBVtXL5exw28cFbEZe05KJmE9GI
 
-Using the login info on the above spreadsheet, go to https://expo.dev and log in to see our team's dashboard. You'll be able to see all of our past and current dev builds.
+Using the login info on the above spreadsheet, go to https://expo.dev and log in to see our team's dashboard. You'll also be able to see all of our past and current builds.
 
-Our Firebase security rules and Google Workspaces API key can be found in the following folder: https://drive.google.com/drive/u/1/folders/1u0ivD2nIwGcX-wS_4ex43hDb3Clj8hAC
+Our Firebase security rules and Google Docs API key can be found in the following folder: https://drive.google.com/drive/u/1/folders/1u0ivD2nIwGcX-wS_4ex43hDb3Clj8hAC
 
-## App Deployment
+## Mobile App Deployment
 
-Before we dive into specifics, as a brief overview, the entire build to deployment pipeline for the mobile app looks something like this:
+As a brief overview, the entire build to deployment pipeline for the mobile app looks something like this:
 
 [commit to github] --> [create eas dev builds] --> [test in emulator] --> [create eas preview/prod builds] --> [test on phones] --> [deploy prod builds to iOS App Store and Google Play]
 
-PLEASE SEE: [Debugging app crashes with Keith Kurak from the Expo team](https://www.youtube.com/watch?v=LvCci4Bwmpc)
+To create a new dev build for the emulators, run the following:
 
-also go over firebase security rules
+```
+eas build --profile development --platform {android | ios}
+```
+
+For Android test builds on actual phones, build a preview profile via `eas build --profile preview --platform android`. Send your Android testers the build link once it's done. They will be able to download and install the build onto their phones.
+
+For iOS test builds (to be deployed on TestFlight), build a production profile via `eas build --profile production --platform ios` Please follow the tutorial outlined here to upload to TestFlight: https://www.youtube.com/watch?v=PdwYDatvJ2I.
+
+as of 10/19/24 you are unable to use TestFlight because it is my personal Apple account
+
+Before moving onto the next step of deploying to production, we need to talk about Firebase Security Rules. Learn more here: https://firebase.google.com/docs/rules
+
+- [Authentication](https://firebase.google.com/docs/rules/rules-and-auth)
+- [Language](https://firebase.google.com/docs/rules/rules-language)
+- [Behaviour](https://firebase.google.com/docs/rules/rules-behavior)
+- [Security Rules Language Reference API](https://firebase.google.com/docs/reference/security/database)
+
+Firebase allows us to publicly expose our Firebase API key at heavy risk: misconfigured security rules allow for read/write access to sensitive data. In order to prevent bad rules, testing can be done in [Firebase's web interface](https://firebase.google.com/docs/rules/simulator) or [via emulator](https://firebase.google.com/docs/firestore/security/test-rules-emulator). The team implores that you extensively test all rules before deploying.
+
+Unlike Firebase API keys, traditional API keys such as the Google Docs API key used in [curriculumToFirebase](https://github.com/SaveTubaTeam/curriculumToFirebase) must be kept a secret and should NOT be committed to our repositories. 
+
+@jac927 10/20/24 | James: if there are additional API keys that need to be hidden during deployment (currently there are none of this kind) you should look to hide them via Google Cloud Functions.
+
+TODO: write pushing to prod tutorial once we get our app store and google play accounts
 
 ## Polyrepo Structure & Data Flow
 
