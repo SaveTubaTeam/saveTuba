@@ -2,7 +2,7 @@
 
 Save Tuba is an educational platform for environmental sustainability education in Kazakhstan. For a more in-depth project description, please see [PROJECT_DESCRIPTION.md](./readme/PROJECT_DESCRIPTION.md).
 
-This README is the central documentation point for the entire set of Save Tuba repositories. Below you will find everything you need to get started. Welcome aboard!
+This README is the central documentation point for the entire set of Save Tuba repositories. Here you will find everything you need to get started with our mobile app. Welcome aboard!
 
 For reference, please see [CLI_CHEATSHEET.md] for a cheatsheet of important CLI commands.
 
@@ -14,14 +14,16 @@ https://github.com/user-attachments/assets/7e4e0a23-0f91-4243-9f47-b6932478f484
 * [Environment Setup & Getting Started](#environment-setup--getting-started)
 * [Developer Access](#developer-access)
 * [App Deployment](#app-deployment)
-* [Repo Structure & Data Flow](#repo-structure--data-flow)
+* [Polyrepo Structure & Data Flow](#polyrepo-structure--data-flow)
 * [Other](#previous-software-team-leads)
 
 ## Learning Resources & General Overview of Tech Stack
 
 The Save Tuba mobile app is written in a Javascript framework called React Native, allowing us to build to both iOS & Android with just Javascript! We also use Expo for native build support; Expo is a set of libraries and build tools that allows us to build React Native apps with ease. We use Redux and RTK Query for state management and data fetching. Firebase is our NoSQL database. These technologies are the [industry preferred solution](https://evanbacon.dev/blog/expo-2024?x) to developing on both iOS and Android without having to make two separate apps and build pipelines.
 
-It is highly recommended that you follow the tutorials on official documentation sites as opposed to following YouTube tutorials. For this project you **need** to be comfortable reading documentation; blindly copy-pasting from YouTube will get you stuck in "tutorial hell".
+This project requires that you have proficiency with Javascript/HTML/CSS and Git/GitHub. For complete beginners, we recommend [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript). Note that we will be using asynchronous programming regularly. For a review of how to use Git/GitHub, see [the Git book](https://git-scm.com/book/en/v2) or [Git and GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV).
+
+It is highly recommended that you follow tutorials on official documentation sites as opposed to following YouTube tutorials. For this project you **need** to be comfortable reading documentation; blindly copy-pasting from YouTube will get you stuck in "tutorial hell".
 
 - [React Native](https://reactnative.dev/docs/getting-started)
 - [Expo](https://docs.expo.dev/tutorial/overview/)
@@ -31,7 +33,9 @@ It is highly recommended that you follow the tutorials on official documentation
   - [Firebase Authentication](https://firebase.google.com/docs/auth/web/start)
   - [Firebase Cloud Storage](https://firebase.google.com/docs/storage/web/start)
 
-The *only* YouTube channel recommended by the team (for Expo/Firebase integration, EAS build, [EAS submit](https://www.youtube.com/watch?v=PdwYDatvJ2I), [Google Sign In](https://www.youtube.com/watch?v=HY3O_wrvDsI), etc.) is: https://www.youtube.com/@MissCoding
+The *only* YouTube channels recommended by the team are:
+- [Miss Coding](https://www.youtube.com/@MissCoding) (for Expo/Firebase integration, EAS build, [EAS submit](https://www.youtube.com/watch?v=PdwYDatvJ2I), [Google Sign In](https://www.youtube.com/watch?v=HY3O_wrvDsI), etc.)
+- [the official Firebase channel](https://www.youtube.com/watch?v=v_hR4K4auoQ&list=PLl-K7zZEsYLluG5MCVEzXAQ7ACZBCuZgZ)
 
 Other notable packages:
 - [React Navigation](https://reactnavigation.org/docs/getting-started) - page router
@@ -66,7 +70,13 @@ Now, in order to actually run our app, we need two things. One is a valid build 
 
 And now for the build, **copy and paste the following link in your Android emulator's browser and install the .apk**: https://expo.dev/accounts/savetubateam/projects/SaveTuba/builds/47edb106-71c1-4229-aa16-659ba1d25dd5 (last updated 10/19/24, note that new builds are invalidated after 2 weeks)
 
-In your terminal, run the following command to start the development build:
+![Step 1](./readme/Download_App_Emulator.png)
+
+![Step 2](./readme/Install_App_Emulator(1).png)
+
+![Step 3](./readme/Install_App_Emulator(2).png)
+
+Open your app on the emulator. Back in your terminal, run the following command to start the development build:
 
 ```
 npx expo start --dev-client
@@ -92,6 +102,8 @@ Before we dive into specifics, as a brief overview, the entire build to deployme
 
 PLEASE SEE: [Debugging app crashes with Keith Kurak from the Expo team](https://www.youtube.com/watch?v=LvCci4Bwmpc)
 
+also go over firebase security rules
+
 ## Polyrepo Structure & Data Flow
 
 Why? include reasoning behind the system
@@ -102,7 +114,7 @@ James Chang (team of '24)
 Hayden Ossinger (team of '23)  
 Nadja Stojanovic (team of '22)  
 
-Malika Buribayeva (Head of External Relations, team of '23 to '24)  
+Malika Buribayeva (Head of External Relations, team of '23 and '24)  
 Malika is from Almaty and has several points of contact in the educational sphere. She is the bridge between us and our external partners. All questions regarding contacts overseas should be directed to her.
 
 ### Miscellaneous
@@ -110,14 +122,16 @@ Malika is from Almaty and has several points of contact in the educational spher
 Below you can find a collection of my favorite conference talks, tech videos, articles, and dev blogs. Enjoy!
 
 - Josh Comeau's [CSS Blog](https://www.joshwcomeau.com/) ([this](https://www.joshwcomeau.com/css/interactive-guide-to-grid/) and [this](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/) are must reads!)
+- Philip Roberts, ["What the heck is the event loop anyway?"](https://www.youtube.com/watch?v=8aGhZQkoFbQ) (if you watch only one video from this list let it be this one)
+- Anjana Vakil, ["Learning Functional Programming with JavaScript"](https://www.youtube.com/watch?v=e-5obm1G_FY)
 - Carson Gross, ["The Grug Brained Developer"](https://grugbrain.dev/)
 - Rich Hickey, ["Hammock Driven Development"](https://www.youtube.com/watch?v=f84n5oFoZBc&t=856s)
 - Michael Chan, ["Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=-NP_upexPFg)
-- Arthur O'Dwyer's [C++ Blog](https://quuxplusone.github.io/blog/2023/11/20/roast-pig/)
 - Theo Browne, ["Deploying on Fridays"](https://www.youtube.com/watch?v=nCK0ey0qqsk)
 - Stripe's [dev blog](https://increment.com/)
 - Ben Awad on ["Best Practices"](https://www.youtube.com/watch?v=gc8mDZwUlfo)
 - Ben Orenstein, ["How to talk to developers"](https://www.youtube.com/watch?v=l9JXH7JPjR4)
+- Arthur O'Dwyer's [C++ Blog](https://quuxplusone.github.io/blog/2023/11/20/roast-pig/)
 - Rich Harris, ["Rethinking reactivity"](https://youtu.be/AdNJ3fydeao?si=QgQEFlq1wHa9G9OC)
 - Saron Yitbarek, ["Transitions: the easiest way to improve your tech talk"](https://medium.com/@saronyitbarek/transitions-the-easiest-way-to-improve-your-tech-talk-ebe4d40a3257)
 - Theo Browne, ["Rethinking the Technical Interview"](https://www.youtube.com/watch?v=H2OjewTu_fY)
