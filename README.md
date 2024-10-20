@@ -144,15 +144,15 @@ TODO: write pushing to prod tutorial once we get our app store and google play a
 
 ## Polyrepo Structure & Data Flow
 
-In this section we will answer two questions: 
-1. **How does the platform work?**
-2. **Why have we architected the system this way?**
+**In this section we will answer two questions:**
+1. How does the platform work?
+2. Why have we architected the system this way?
 
 In order to answer our first question, let us consider the entire set of Save Tuba repositories. As of 2024 we have:
 
-- the /saveTuba repo, which houses our mobile app
-- the /saveTubaTeacher repo, which houses our teacher interface web app
-- the /curriculumToFirebase repo, which houses a web interface that pushes curriculum content from Google Docs into our Firebase database
+- the **/saveTuba** repo, which houses our mobile app
+- the **/saveTubaTeacher** repo, which houses our teacher interface web app
+- the **/curriculumToFirebase** repo, which houses a web interface that pushes curriculum content from Google Docs into our Firebase database
 
 Understanding the interaction between these repos requires understanding of our curriculum. Our curriculum is organized in the following manner: 
 
@@ -162,30 +162,30 @@ In our code, we are able to ID each and every minigame in the following format: 
 
 Now let us look at an example interaction between our mobile app and teacher interface repos.
 
-1. A student on the mobile app is in a class with the example classCode TJOAEM. They are placed in this class on the app.
-2. In the teacher interface, a teacher assigns Grade 2 Chapter 3 Lesson 1 (thereby assigning all of the minigames contained within that lesson) to classCode TJOAEM. The assignment ID is G2C3L1.
-3. On the mobile app, the student sees an assignment for G2C3L1. They then complete the minigames in this lesson. Each minigame completion has an ID as follows: G2C3L1_Quiz, G2C3L1_Snapshot, etc.
-4. In the teacher interface, the teacher views their students' progress in the class TJOAEM. The interface fetches all of the completion documents for each student in class TJOAEM. For our particular example student, let's say there is a match between the ID of a completion document and the ID of the assignment: this means the student has completed at least one minigame in the assigned lesson.
+1. A student on the mobile app is in a class with the example classCode **TJOAEM**. They are placed in this class on the app.
+2. In the teacher interface, a teacher assigns Grade 2 Chapter 3 Lesson 1 (thereby assigning all of the minigames contained within that lesson) to classCode **TJOAEM**. The assignment ID is **G2C3L1**.
+3. On the mobile app, the student sees an assignment for **G2C3L1**. They then complete the minigames in this lesson. Each minigame completion has an ID as follows: **G2C3L1**_Quiz, **G2C3L1**_Snapshot, etc.
+4. In the teacher interface, the teacher views their students' progress in the class **TJOAEM**. The interface fetches all of the completion documents for each student in class **TJOAEM**. For our particular example student, there is a match between the ID of a completion document and the ID of the assignment. This means the student has completed at least one minigame in the assigned lesson.
+
+A diagram detailing the backend structure of our curriculum can be found here: https://docs.google.com/drawings/d/1ovPMbssiIZCtwBWzquHQSWYXgrC_0DbvGT9WYxYoPXM. A diagram detailing the backend organization of users, classrooms, and teachers can be found here: https://docs.google.com/drawings/d/1raQQlftbeLA8N3h1zTlLjwmMHjUmOcFby1Mr6vSp5T0.
 
 ![Polyrepo Diagram](./readme/Polyrepo_Structure.png)
 
-A diagram detailing the backend structure of our curriculum can be found [here](https://docs.google.com/drawings/d/1ovPMbssiIZCtwBWzquHQSWYXgrC_0DbvGT9WYxYoPXM). A diagram detailing the backend organization of users, classrooms, and teachers can be found [here](https://docs.google.com/drawings/d/1raQQlftbeLA8N3h1zTlLjwmMHjUmOcFby1Mr6vSp5T0).
-
 Onto the why:
 
-**Q. Why does the teacher interface need only completion IDs?**
+**Q. Why does the teacher interface need only completion IDs?**  
 A. In order to minimize the complexity of our system, we pass only IDs back and forth. This minimizes the amount of JSON being changed in our Firebase documents and adheres to typical nonrelational database patterns. That is to say, on the teacher interface, the completion data corresponding to an ID can be pulled on-demand using key-value pairs.
 
-**Q. Why does the mobile app need only assignment IDs?**
+**Q. Why does the mobile app need only assignment IDs?**  
 A. In keeping with the above answer, we want to pass only IDs to minimize complexity. On the mobile app, all curriculum content is pulled on-demand from our curriculum documents in Firebase. So all we need is to track a student's completions via completion IDs within Firebase, and then the teacher interface has everything it needs.
 
-**Q. How are students organized into classes?**
+**Q. How are students organized into classes?**  
 A. Each student is prompted to enter a class code on their initial sign-in on the mobile app. In Firebase, this class code is appended to the student's document once it is entered. The class code is also appended to the teacher's document.
 
-**Q. Why is our curriculum in Google Docs?**
+**Q. Why is our curriculum in Google Docs?**  
 A. Our non-tech teammates need a comfortable place to write new curriculum. They have decided on Google Docs. The challenge for the software team, then, is to convert all 500+ pages of curriculum documents into scriptable JSON which can be fed into Firebase. This challenge is solved by the script in /curriculumToFirebase
 
-### Previous Software Team Leads
+## Previous Software Team Leads
 
 James Chang (team of '24)  
 Hayden Ossinger (team of '23)  
@@ -194,7 +194,7 @@ Nadja Stojanovic (team of '22)
 Malika Buribayeva (Head of External Relations, team of '23 and '24)  
 Malika is from Almaty and has several points of contact in the educational sphere. She is the bridge between us and our external partners. All questions regarding contacts overseas should be directed to her.
 
-### Miscellaneous
+## Miscellaneous
 
 Below you can find a collection of my favorite conference talks, tech videos, articles, and dev blogs. Enjoy!
 
