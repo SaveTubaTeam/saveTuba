@@ -4,16 +4,16 @@ Save Tuba is an educational platform for environmental sustainability education 
 
 This README is the central documentation point for the entire set of Save Tuba repositories. Below you will find everything you need to get started. Welcome aboard!
 
-Note: for reference, please see [CLI_CHEATSHEET.md] for a cheatsheet of important CLI commands.
+For reference, please see [CLI_CHEATSHEET.md] for a cheatsheet of important CLI commands.
 
 ## Table of Contents
 
 * [Learning Resources & General Overview of Tech Stack](#learning-resources--general-overview-of-tech-stack)
-* [Environment Setup & Installation](#environment-setup--installation)
+* [Environment Setup & Getting Started](#environment-setup--getting-started)
 * [Developer Access](#developer-access)
 * [App Deployment](#app-deployment)
 * [Repo Structure & Data Flow](#repo-structure--data-flow)
-* [Other](#previous-software-team-lead-contacts)
+* [Other](#previous-software-team-leads)
 
 ## Learning Resources & General Overview of Tech Stack
 
@@ -36,7 +36,7 @@ Other notable packages:
 - [React Native Google Sign In](https://react-native-google-signin.github.io/docs/original) - a native module for Google sign-in
 - [i18next](https://react.i18next.com/) - Javascript internationalization framework. [See here for more](https://locize.com/blog/react-i18next/).
 
-## Environment Setup & Installation
+## Environment Setup & Getting Started
 
 Assuming you already have [node](https://nodejs.org/en/download/package-manager) and [git](https://github.com/git-guides/install-git) installed, run the following in a new folder:
 
@@ -52,7 +52,7 @@ npm install --global eas-cli
 eas login
 ```
 
-The first command globally installs eas-cli. The last command will prompt you to login to EAS; use our team's [EAS login info](#developer-access) to do so. The `eas whoami` command should verify that you've signed in. 
+Above, the first command globally installs eas-cli. The second command will prompt you to login to EAS; use our team's [EAS login info](#developer-access) to do so. The `eas whoami` command should verify that you've signed in. 
 
 Next, we install the gcloud CLI. Carefully follow the instructions [here](https://cloud.google.com/sdk/docs/install) to install. We will use gcloud for exporting and importing data from Firebase. The `gcloud --version` command should verify you've installed gcloud correctly once you've done so.
 
@@ -62,7 +62,7 @@ Now, in order to actually run our app, we need two things. One is a valid build 
 
 **For macOS only**, follow the tutorial here to set up Xcode: https://docs.expo.dev/workflow/ios-simulator/. Note: it is recommended that you use Android Studio for development because Xcode sucks. Use Xcode for platform-specific testing. We will be using Android Studio for the rest of this setup guide.
 
-And now for the build, **copy and paste the following link in your Android emulator's browser and install the .apk**: https://expo.dev/accounts/savetubateam/projects/SaveTuba/builds/47edb106-71c1-4229-aa16-659ba1d25dd5 (last updated 10/19/24, note that builds are invalidated after 2 weeks)
+And now for the build, **copy and paste the following link in your Android emulator's browser and install the .apk**: https://expo.dev/accounts/savetubateam/projects/SaveTuba/builds/47edb106-71c1-4229-aa16-659ba1d25dd5 (last updated 10/19/24, note that new builds are invalidated after 2 weeks)
 
 In your terminal, run the following command to start the development build:
 
@@ -70,13 +70,17 @@ In your terminal, run the following command to start the development build:
 npx expo start --dev-client
 ```
 
-If you followed Expo's beginner tutorial you will notice we **do not** use Expo Go as React Native Google Sign In is a native module and does not work with Expo Go. So we are using Expo development builds. That's it. You're all set up! Try and change some simple things and see how the app updates (almost) instantly.
+*Note: if you followed Expo's beginner tutorial, you'll notice we **do not** use Expo Go, as React Native Google Sign In is a native module and does not work with Expo Go. So we are using Expo development builds.*
+
+That's it. You're all set up! Try and change some simple things and see how the app updates (almost) instantly.
 
 ## Developer Access
 
-includes dev secrets
+After onboarding you will be granted admin access to a number of resources including the team's shared Google Drive, Firebase (and Google Cloud console), and Jira/Confluence. If you do not have access for any reason, please contact our faculty advisor Sean Vassilaros. All other resources, including Expo developer login information, can be found in our shared Google Drive in this excel sheet: https://docs.google.com/spreadsheets/d/1arZ3kNvUUUYryvG9KBVtXL5exw28cFbEZe05KJmE9GI
 
-Once you're logged into our team Expo account, go to https://expo.dev to see our team's dashboard.
+Using the login info on the above spreadsheet, go to https://expo.dev and log in to see our team's dashboard. You'll be able to see all of our past and current dev builds.
+
+Our Firebase security rules and Google Workspaces API key can be found in the following folder: https://drive.google.com/drive/u/1/folders/1u0ivD2nIwGcX-wS_4ex43hDb3Clj8hAC
 
 ## App Deployment
 
@@ -84,7 +88,7 @@ Before we dive into specifics, as a brief overview, the entire build to deployme
 
 [commit to github] --> [create eas dev builds] --> [test in emulator] --> [create eas preview/prod builds] --> [test on phones] --> [deploy prod builds to iOS App Store and Google Play]
 
-PLEASE SEE: [Debugging app crashes with Keith Kurak from Expo](https://www.youtube.com/watch?v=LvCci4Bwmpc)
+PLEASE SEE: [Debugging app crashes with Keith Kurak from the Expo team](https://www.youtube.com/watch?v=LvCci4Bwmpc)
 
 ## Polyrepo Structure & Data Flow
 
