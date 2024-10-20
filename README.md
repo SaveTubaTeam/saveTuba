@@ -68,7 +68,13 @@ Next, we install the gcloud CLI. Carefully follow the instructions [here](https:
 gcloud auth login
 ```
 
-If you run `gcloud auth list` you should see you've signed in correctly; running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
+If you run `gcloud auth list` you should see you've signed in correctly. Next:
+
+```
+gcloud config set project savetuba-5e519
+```
+
+Running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
 
 Now, in order to actually run our app, we need two things. One is a valid build of our app, and the other is an emulator to run our build. Let's install our emulators first:
 
@@ -106,19 +112,19 @@ Our Firebase security rules and Google Docs API key can be found in the followin
 
 As a brief overview, the entire build to deployment pipeline for the mobile app looks something like this:
 
-[commit to github] --> [create eas dev builds] --> [test in emulator] --> [create eas preview/prod builds] --> [test on phones] --> [deploy prod builds to iOS App Store and Google Play]
+**[commit to github] --> [create eas dev builds] --> [test in emulator] --> [create eas preview/prod builds] --> [test on phones] --> [deploy prod builds to iOS App Store and Google Play]**
 
-To create a new dev build for the emulators, run the following:
+**To create a new dev build for your emulators**, run the following:
 
 ```
 eas build --profile development --platform {android | ios}
 ```
 
-For Android test builds on actual phones, build a preview profile via `eas build --profile preview --platform android`. Send your Android testers the build link once it's done. They will be able to download and install the build onto their phones.
+**For Android test builds on actual phones**, build a preview profile via `eas build --profile preview --platform android`. Send your Android testers the build link once it's done. They will be able to download and install the build onto their phones.
 
-For iOS test builds (to be deployed on TestFlight), build a production profile via `eas build --profile production --platform ios` Please follow the tutorial outlined here to upload to TestFlight: https://www.youtube.com/watch?v=PdwYDatvJ2I.
+**For iOS test builds (to be deployed on TestFlight)**, build a production profile via `eas build --profile production --platform ios`. Please follow the tutorial outlined here to upload to TestFlight: https://www.youtube.com/watch?v=PdwYDatvJ2I.
 
-as of 10/19/24 you are unable to use TestFlight because it is my personal Apple account
+*as of 10/20/24 you are unable to use TestFlight because it is my personal Apple account*
 
 Before moving onto the next step of deploying to production, we need to talk about Firebase Security Rules. Learn more here: https://firebase.google.com/docs/rules
 
@@ -127,17 +133,57 @@ Before moving onto the next step of deploying to production, we need to talk abo
 - [Behaviour](https://firebase.google.com/docs/rules/rules-behavior)
 - [Security Rules Language Reference API](https://firebase.google.com/docs/reference/security/database)
 
-Firebase allows us to publicly expose our Firebase API key at heavy risk: misconfigured security rules allow for read/write access to sensitive data. In order to prevent bad rules, testing can be done in [Firebase's web interface](https://firebase.google.com/docs/rules/simulator) or [via emulator](https://firebase.google.com/docs/firestore/security/test-rules-emulator). The team implores that you extensively test all rules before deploying.
+> [!CAUTION]
+> Firebase allows us to publicly expose our Firebase API key at heavy risk: misconfigured security rules allow for read/write access to sensitive data. In order to prevent bad rules, testing should be done in [Firebase's web interface](https://firebase.google.com/docs/rules/simulator) or [via emulator](https://firebase.google.com/docs/firestore/security/test-rules-emulator). **The team implores that you extensively test all rules before deploying.**
 
 Unlike Firebase API keys, traditional API keys such as the Google Docs API key used in [curriculumToFirebase](https://github.com/SaveTubaTeam/curriculumToFirebase) must be kept a secret and should NOT be committed to our repositories. 
 
-@jac927 10/20/24 | James: if there are additional API keys that need to be hidden during deployment (currently there are none of this kind) you should look to hide them via Google Cloud Functions.
+*@jac927 10/20/24 | James: if there are additional API keys that need to be hidden during deployment (currently there are none of this kind) you should look to hide them via Google Cloud Functions.*
 
 TODO: write pushing to prod tutorial once we get our app store and google play accounts
 
 ## Polyrepo Structure & Data Flow
 
-Why? include reasoning behind the system
+In this section we will answer two questions: 
+1. **How does the platform work?**
+2. **Why have we architected the system this way?**
+
+In order to answer our first question, let us consider the entire set of Save Tuba repositories. As of 2024 we have:
+
+- the /saveTuba repo, which houses our mobile app
+- the /saveTubaTeacher repo, which houses our teacher interface web app
+- the /curriculumToFirebase repo, which houses a web interface that pushes curriculum content from Google Docs into our Firebase database
+
+Understanding the interaction between these repos requires understanding of our curriculum. Our curriculum is organized in the following manner: 
+
+**[grade] --> [chapter] --> [lesson] --> [minigame]**
+
+In our code, we are able to ID each and every minigame in the following format: G#C#L#_MINIGAME. For example, Grade 1 Chapter 2 Lesson 3 Reorder will look like G1C2L3_Reorder. The minigame's language (Kazakh, Russian, or English) is determined by the user's language preference client-side.
+
+Now let us look at an example interaction between our mobile app and teacher interface repos.
+
+1. A student on the mobile app is in a class with the example classCode TJOAEM. They are placed in this class on the app.
+2. In the teacher interface, a teacher assigns Grade 2 Chapter 3 Lesson 1 (thereby assigning all of the minigames contained within that lesson) to classCode TJOAEM. The assignment ID is G2C3L1.
+3. On the mobile app, the student sees an assignment for G2C3L1. They then complete the minigames in this lesson. Each minigame completion has an ID as follows: G2C3L1_Quiz, G2C3L1_Snapshot, etc.
+4. In the teacher interface, the teacher views their students' progress in the class TJOAEM. The interface fetches all of the completion documents for each student in class TJOAEM. For our particular example student, let's say there is a match between the ID of a completion document and the ID of the assignment: this means the student has completed at least one minigame in the assigned lesson.
+
+![Polyrepo Diagram](./readme/Polyrepo_Structure.png)
+
+A diagram detailing the backend structure of our curriculum can be found [here](https://docs.google.com/drawings/d/1ovPMbssiIZCtwBWzquHQSWYXgrC_0DbvGT9WYxYoPXM). A diagram detailing the backend organization of users, classrooms, and teachers can be found [here](https://docs.google.com/drawings/d/1raQQlftbeLA8N3h1zTlLjwmMHjUmOcFby1Mr6vSp5T0).
+
+Onto the why:
+
+**Q. Why does the teacher interface need only completion IDs?**
+A. In order to minimize the complexity of our system, we pass only IDs back and forth. This minimizes the amount of JSON being changed in our Firebase documents and adheres to typical nonrelational database patterns. That is to say, on the teacher interface, the completion data corresponding to an ID can be pulled on-demand using key-value pairs.
+
+**Q. Why does the mobile app need only assignment IDs?**
+A. In keeping with the above answer, we want to pass only IDs to minimize complexity. On the mobile app, all curriculum content is pulled on-demand from our curriculum documents in Firebase. So all we need is to track a student's completions via completion IDs within Firebase, and then the teacher interface has everything it needs.
+
+**Q. How are students organized into classes?**
+A. Each student is prompted to enter a class code on their initial sign-in on the mobile app. In Firebase, this class code is appended to the student's document once it is entered. The class code is also appended to the teacher's document.
+
+**Q. Why is our curriculum in Google Docs?**
+A. Our non-tech teammates need a comfortable place to write new curriculum. They have decided on Google Docs. The challenge for the software team, then, is to convert all 500+ pages of curriculum documents into scriptable JSON which can be fed into Firebase. This challenge is solved by the script in /curriculumToFirebase
 
 ### Previous Software Team Leads
 

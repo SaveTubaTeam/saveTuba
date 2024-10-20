@@ -1,4 +1,4 @@
-### [Expo CLI](https://docs.expo.dev/more/expo-cli/) & [EAS](https://github.com/expo/eas-cli?tab=readme-ov-file#commands)
+### Expo CLI (https://docs.expo.dev/more/expo-cli/) & EAS (https://github.com/expo/eas-cli?tab=readme-ov-file#commands)
 
 `npx expo install <PACKAGE_NAME>` e.g. `npx expo install expo-image-picker` to install a package compatible with our current expo SDK version. PLEASE PREFER THIS INSTEAD OF `npm install <PACKAGE_NAME>`.
 
@@ -26,7 +26,7 @@ See also (instructions for importing and exporting data): https://firebase.googl
 
 `git merge <BRANCH_NAME>` to merge the specified branch into your branch
 
-`git origin -v` to see the origin location
+`git remote -v` to see the remote location(s)
 
 `git log --graph` to see a log of all previous commits
 
