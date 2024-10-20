@@ -76,7 +76,7 @@ That's it. You're all set up! Try and change some simple things and see how the 
 
 ## Developer Access
 
-After onboarding you will be granted admin access to a number of resources including the team's shared Google Drive, Firebase (and Google Cloud console), and Jira/Confluence. If you do not have access for any reason, please contact our faculty advisor Sean Vassilaros. All other resources, including Expo developer login information, can be found in our shared Google Drive in this excel sheet: https://docs.google.com/spreadsheets/d/1arZ3kNvUUUYryvG9KBVtXL5exw28cFbEZe05KJmE9GI
+After onboarding, you will be granted admin access to a number of resources including the team's shared Google Drive, Firebase (and Google Cloud console), and Jira/Confluence. If you do not have access for any reason, please contact our faculty advisor Sean Vassilaros. All other resources, including Expo developer login information, can be found in our shared Google Drive in this excel sheet: https://docs.google.com/spreadsheets/d/1arZ3kNvUUUYryvG9KBVtXL5exw28cFbEZe05KJmE9GI
 
 Using the login info on the above spreadsheet, go to https://expo.dev and log in to see our team's dashboard. You'll be able to see all of our past and current dev builds.
 
