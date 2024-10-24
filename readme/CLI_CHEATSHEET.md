@@ -32,9 +32,9 @@ See also (instructions for importing and exporting data): https://firebase.googl
 
 `git commit -am "COMMIT_MESSAGE"` a commit shortcut
 
-`git fetch <UPSTREAM_LOCATION> <BRANCH_NAME>` e.g. `git fetch origin master` to fetch a remote branch (note that `fetch/merge` is preferred to `pull` when merge conflicts arise)
+`git fetch <REMOTE_NAME> <BRANCH_NAME>` e.g. `git fetch origin master` to fetch a remote branch (note that `fetch/merge` is preferred to `pull` when merge conflicts arise)
 
-`git push <UPSTREAM_LOCATION> <BRANCH_NAME>` to push to remote
+`git push <REMOTE_NAME> <BRANCH_NAME>` to push to remote
 
 `git branch` lists all local branches
 

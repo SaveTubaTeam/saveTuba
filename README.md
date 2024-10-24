@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/7e4e0a23-0f91-4243-9f47-b6932478f484
 
 ## Learning Resources & General Overview of Tech Stack
 
-The Save Tuba mobile app is written in a Javascript framework called React Native, allowing us to build to both iOS & Android with just Javascript! We also use Expo for native build support; Expo is a set of libraries and build tools that allows us to build React Native apps with ease. We use Redux and RTK Query for state management and data fetching. Firebase is our NoSQL database. These technologies are the [industry preferred solution](https://evanbacon.dev/blog/expo-2024?x) to developing on both iOS and Android without having to make two separate apps and build pipelines.
+The Save Tuba mobile app is written in a Javascript framework called React Native, allowing us to build to both iOS & Android with just Javascript! We also use Expo for native build support; Expo is a set of libraries and build tools that allows us to build React Native apps with ease. We use Redux and RTK Query for state management and data fetching. Firebase is our NoSQL database. React Native and Expo are the [industry preferred solutions](https://evanbacon.dev/blog/expo-2024?x) to developing on both iOS and Android without having to make two separate apps and build pipelines. In order to flatten the learning curve as much as possible, our mobile tech stack closely mirrors our web tech stack so that we only need to learn things once to build everywhere.
 
 This project requires that you have proficiency with Javascript/HTML/CSS and Git/GitHub. For complete beginners, we recommend [The Odin Project](https://www.theodinproject.com/paths/full-stack-javascript). Note that we will be using asynchronous programming regularly. For a review of how to use Git/GitHub, see [the Git book](https://git-scm.com/book/en/v2) or [Git and GitHub for Poets](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV).
 
@@ -39,8 +39,9 @@ The *only* YouTube channels recommended by the team are:
 - [the official Expo channel](https://www.youtube.com/@ExpoDevelopers) (PLEASE SEE: [Debugging app crashes with Keith Kurak from the Expo team](https://www.youtube.com/watch?v=LvCci4Bwmpc))
 
 Other notable packages:
-- [React Navigation](https://reactnavigation.org/docs/getting-started) - page router
+- [React Navigation](https://reactnavigation.org/docs/getting-started) - page router built by the team at Expo
 - [React Native Google Sign In](https://react-native-google-signin.github.io/docs/original) - a native module for Google sign-in
+- [Lottie](https://airbnb.io/lottie/#/react-native?id=usage) - Airbnb's open source animation library
 - [i18next](https://react.i18next.com/) - Javascript internationalization framework. [See here for more](https://locize.com/blog/react-i18next/).
 
 ## Environment Setup & Getting Started
@@ -74,7 +75,7 @@ If you run `gcloud auth list` you should see you've signed in correctly. Next:
 gcloud config set project savetuba-5e519
 ```
 
-Running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
+If you do not yet have admin access to the team's Google Cloud console this command will not work. Otherwise, running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
 
 Now, in order to actually run our app, we need two things. One is a valid build of our app, and the other is an emulator to run our build. Let's install our emulators first:
 
@@ -102,7 +103,7 @@ That's it. You're all set up! Try and change some simple things and see how the 
 
 ## Developer Access
 
-After onboarding, you will be granted admin access to a number of resources including the team's shared Google Drive, Firebase (and Google Cloud console), and Jira/Confluence. If you do not have access for any reason, please contact our faculty advisor Sean Vassilaros. All other resources, including Expo developer login information, can be found in our shared Google Drive in this excel sheet: https://docs.google.com/spreadsheets/d/1arZ3kNvUUUYryvG9KBVtXL5exw28cFbEZe05KJmE9GI
+After onboarding, you will be granted admin access to a number of resources including the team's shared Google Drive, Firebase, Google Cloud console, and Jira/Confluence. If you do not have access for any reason, please contact our faculty advisor Sean Vassilaros. All other resources, including Expo developer login information, can be found in our shared Google Drive in this excel sheet: https://docs.google.com/spreadsheets/d/1arZ3kNvUUUYryvG9KBVtXL5exw28cFbEZe05KJmE9GI
 
 Using the login info on the above spreadsheet, go to https://expo.dev and log in to see our team's dashboard. You'll also be able to see all of our past and current builds.
 
@@ -112,7 +113,7 @@ Our Firebase security rules and Google Docs API key can be found in the followin
 
 As a brief overview, the entire build to deployment pipeline for the mobile app looks something like this:
 
-**[commit to github] --> [create eas dev builds] --> [test in emulator] --> [create eas preview/prod builds] --> [test on phones] --> [deploy prod builds to iOS App Store and Google Play]**
+**[commit to github] --> [create eas dev builds] --> [develop in emulator] --> [create eas preview/prod builds] --> [test on phones] --> [deploy prod builds to iOS App Store and Google Play]**
 
 **To create a new dev build for your emulators**, run the following:
 
@@ -134,9 +135,9 @@ Before moving onto the next step of deploying to production, we need to talk abo
 - [Security Rules Language Reference API](https://firebase.google.com/docs/reference/security/database)
 
 > [!CAUTION]
-> Firebase allows us to publicly expose our Firebase API key at heavy risk: misconfigured security rules allow for read/write access to sensitive data. In order to prevent bad rules, testing should be done in [Firebase's web interface](https://firebase.google.com/docs/rules/simulator) or [via emulator](https://firebase.google.com/docs/firestore/security/test-rules-emulator). **The team implores that you extensively test all rules before deploying.**
+> Firebase allows us to publicly expose our Firebase API key at heavy risk: misconfigured security rules allow for unfettered read/write access to sensitive data. In order to prevent bad rules, testing should be done in [Firebase's web interface](https://firebase.google.com/docs/rules/simulator) or [via emulator](https://firebase.google.com/docs/firestore/security/test-rules-emulator). **The team implores that you extensively test all rules before deploying.**
 
-Unlike Firebase API keys, traditional API keys such as the Google Docs API key used in [curriculumToFirebase](https://github.com/SaveTubaTeam/curriculumToFirebase) must be kept a secret and should NOT be committed to our repositories. 
+Unlike Firebase API keys, traditional API keys such as the Google Docs API key used in [/curriculumToFirebase](https://github.com/SaveTubaTeam/curriculumToFirebase) must be kept a secret and should NOT be committed to our repositories. 
 
 *@jac927 10/20/24 | James: if there are additional API keys that need to be hidden during deployment (currently there are none of this kind) you should look to hide them via Google Cloud Functions.*
 
@@ -145,7 +146,7 @@ TODO: write pushing to prod tutorial once we get our app store and google play a
 ## Polyrepo Structure & Data Flow
 
 **In this section we will answer two questions:**
-1. How does the platform work?
+1. How does the Save Tuba platform work?
 2. Why have we architected the system this way?
 
 In order to answer our first question, let us consider the entire set of Save Tuba repositories. As of 2024 we have:
@@ -160,27 +161,28 @@ Understanding the interaction between these repos requires understanding of our 
 
 In our code, we are able to ID each and every minigame in the following format: G#C#L#_MINIGAME. For example, Grade 1 Chapter 2 Lesson 3 Reorder will look like G1C2L3_Reorder. The minigame's language (Kazakh, Russian, or English) is determined by the user's language preference client-side.
 
-Now let us look at an example interaction between our mobile app and teacher interface repos.
+Now let us look at an example interaction between our mobile app and teacher interface repos, in which students are put into classrooms and teachers give assignments to these classrooms.
 
-1. A student on the mobile app is in a class with the example classCode **TJOAEM**. They are placed in this class on the app.
+1. A student on the mobile app is in a classroom with the example classCode **TJOAEM**. They are placed in this class on the app.
 2. In the teacher interface, a teacher assigns Grade 2 Chapter 3 Lesson 1 (thereby assigning all of the minigames contained within that lesson) to classCode **TJOAEM**. The assignment ID is **G2C3L1**.
-3. On the mobile app, the student sees an assignment for **G2C3L1**. They then complete the minigames in this lesson. Each minigame completion has an ID as follows: **G2C3L1**_Quiz, **G2C3L1**_Snapshot, etc.
-4. In the teacher interface, the teacher views their students' progress in the class **TJOAEM**. The interface fetches all of the completion documents for each student in class **TJOAEM**. For our particular example student, there is a match between the ID of a completion document and the ID of the assignment. This means the student has completed at least one minigame in the assigned lesson.
+3. On the mobile app, the student sees an assignment for **G2C3L1**. They then complete the minigames in this lesson. Each minigame completion has an ID as follows: **G2C3L1_Quiz**, **G2C3L1_Snapshot**, etc.
+4. In the teacher interface, the teacher views their students' progress in class **TJOAEM**. The interface fetches all of the completion documents for each student in class **TJOAEM**. For our particular example student, there is a match between the ID of a completion document and the ID of the assignment. This means the student has completed at least one minigame in the assigned lesson.
 
-A diagram detailing the backend structure of our curriculum can be found here: https://docs.google.com/drawings/d/1ovPMbssiIZCtwBWzquHQSWYXgrC_0DbvGT9WYxYoPXM. A diagram detailing the backend organization of users, classrooms, and teachers can be found here: https://docs.google.com/drawings/d/1raQQlftbeLA8N3h1zTlLjwmMHjUmOcFby1Mr6vSp5T0.
+A diagram detailing the backend nosql organization of our curriculum can be found here: https://docs.google.com/drawings/d/1ovPMbssiIZCtwBWzquHQSWYXgrC_0DbvGT9WYxYoPXM.  
+A diagram detailing the backend nosql organization of users, classrooms, and teachers can be found here: https://docs.google.com/drawings/d/1raQQlftbeLA8N3h1zTlLjwmMHjUmOcFby1Mr6vSp5T0.
 
 ![Polyrepo Diagram](./readme/Polyrepo_Structure.png)
 
 Onto the why:
 
 **Q. Why does the teacher interface need only completion IDs?**  
-A. In order to minimize the complexity of our system, we pass only IDs back and forth. This minimizes the amount of JSON being changed in our Firebase documents and adheres to typical nonrelational database patterns. That is to say, on the teacher interface, the completion data corresponding to an ID can be pulled on-demand using key-value pairs.
+A. In order to minimize the complexity of our system, we pass only IDs back and forth. This minimizes the amount of JSON being changed in our Firebase documents and adheres to typical nonrelational database patterns. That is to say, on the teacher interface, all of the data corresponding to a completion ID can be pulled on-demand using key-value pairs.
 
 **Q. Why does the mobile app need only assignment IDs?**  
-A. In keeping with the above answer, we want to pass only IDs to minimize complexity. On the mobile app, all curriculum content is pulled on-demand from our curriculum documents in Firebase. So all we need is to track a student's completions via completion IDs within Firebase, and then the teacher interface has everything it needs.
+A. In keeping with the above answer, we want to pass only IDs to minimize complexity. On the mobile app, all curriculum content is pulled on-demand from our curriculum documents in Firebase. So all we need is to track a student's completions via completion IDs, and then the teacher interface has everything it needs.
 
-**Q. How are students organized into classes?**  
-A. Each student is prompted to enter a class code on their initial sign-in on the mobile app. In Firebase, this class code is appended to the student's document once it is entered. The class code is also appended to the teacher's document.
+**Q. How are students organized into classrooms?**  
+A. Each student is prompted to enter a class code on their initial sign-in on the mobile app. In Firebase, this class code is appended to the student's document once it is entered. The class code is also appended to the corresponding teacher's document.
 
 **Q. Why is our curriculum in Google Docs?**  
 A. Our non-tech teammates need a comfortable place to write new curriculum. They have decided on Google Docs. The challenge for the software team, then, is to convert all 500+ pages of curriculum documents into scriptable JSON which can be fed into Firebase. This challenge is solved by the script in /curriculumToFirebase
