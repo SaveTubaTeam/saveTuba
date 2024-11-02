@@ -61,21 +61,7 @@ npm install --global eas-cli
 eas login
 ```
 
-Above, the first command globally installs eas-cli. The second command will prompt you to login to EAS; use our team's [EAS login info](#developer-access) to do so. The `eas whoami` command should verify that you've signed in. 
-
-Next, we install the gcloud CLI. Carefully follow the instructions [here](https://cloud.google.com/sdk/docs/install) to install. We will use gcloud for exporting and importing data from Firebase. The `gcloud --version` command should verify you've installed gcloud correctly once you've done so. Then run:
-
-```
-gcloud auth login
-```
-
-If you run `gcloud auth list` you should see you've signed in correctly. Next:
-
-```
-gcloud config set project savetuba-5e519
-```
-
-If you do not yet have admin access to the team's Google Cloud console this command will not work. Otherwise, running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
+Above, the first command globally installs eas-cli. The second command will prompt you to login to EAS; use our team's [Expo login info](#developer-access) to do so. The `eas whoami` command should verify that you've signed in.
 
 Now, in order to actually run our app, we need two things. One is a valid build of our app, and the other is an emulator to run our build. Let's install our emulators first:
 
@@ -97,9 +83,23 @@ Open your app on the emulator. Back in your terminal, run the following command 
 npx expo start --dev-client
 ```
 
-*Note: if you followed Expo's beginner tutorial, you'll notice we **do not** use Expo Go, as React Native Google Sign In is a native module and does not work with Expo Go. So we are using Expo development builds.*
+*Note: if you followed Expo's beginner tutorial, you'll notice we **do not** use Expo Go. This is because one of our packages, React Native Google Sign In, is a native module and does not work with Expo Go. So we are using Expo development builds.*
 
 That's it. You're all set up! Try and change some simple things and see how the app updates (almost) instantly.
+
+*Optional:* Install the gcloud CLI, which can be used for exporting and importing our Firebase data directly from the command line. Carefully follow the instructions [here](https://cloud.google.com/sdk/docs/install) to install. The `gcloud --version` command should verify you've installed gcloud correctly once you've done so. Then run:
+
+```
+gcloud auth login
+```
+
+If you run `gcloud auth list` you should see you've signed in correctly. Next:
+
+```
+gcloud config set project savetuba-5e519
+```
+
+If you do not yet have admin access to the team's Google Cloud console this command will not work. Otherwise, running `gcloud config list project` should yield `project = savetuba-5e519` in your terminal.
 
 ## Developer Access
 
@@ -108,6 +108,8 @@ After onboarding, you will be granted admin access to a number of resources incl
 Using the login info on the above spreadsheet, go to https://expo.dev and log in to see our team's dashboard. You'll also be able to see all of our past and current builds.
 
 Our Firebase security rules and Google Docs API key can be found in the following folder: https://drive.google.com/drive/u/1/folders/1u0ivD2nIwGcX-wS_4ex43hDb3Clj8hAC
+
+*@jac927 11/2/24 | James: As of 2024, our Firebase Blaze Plan is provided by Dr. Eric Obeysekare, whom you will meet if you're doing GSIF. If the Save Tuba project ever becomes shelf-stable we should use those funds to make our own Firebase billing account instead of using Eric's card.*
 
 ## Mobile App Deployment
 
@@ -121,9 +123,18 @@ As a brief overview, the entire build to deployment pipeline for the mobile app 
 eas build --profile development --platform {android | ios}
 ```
 
-**For Android test builds on actual phones**, build a preview profile via `eas build --profile preview --platform android`. Send your Android testers the build link once it's done. They will be able to download and install the build onto their phones.
+**For Android test builds on actual phones**, build a preview profile via:
 
-**For iOS test builds (to be deployed on TestFlight)**, build a production profile via `eas build --profile production --platform ios`. Please follow the tutorial outlined here to upload to TestFlight: https://www.youtube.com/watch?v=PdwYDatvJ2I.
+```
+eas build --profile preview --platform android
+```
+Send your Android testers the build link once it's done. They will be able to download and install the build onto their phones.
+
+**For iOS test builds (to be deployed on TestFlight)**, build a production profile via: 
+```
+eas build --profile production --platform ios
+```
+Please follow the tutorial outlined here to upload to TestFlight: https://www.youtube.com/watch?v=PdwYDatvJ2I.
 
 *as of 10/20/24 you are unable to use TestFlight because it is my personal Apple account*
 
