@@ -10,7 +10,7 @@ import ChaptersHandler from "../CurriculumStack/Handlers/ChaptersHandler";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/slices/userSlice";
 import ClassCodeModal from "./ClassCodeModal";
-import AboutModal from "../Account/Components/AboutModal";
+import AboutModal from "./AboutModal";
 
 const Stack = createNativeStackNavigator();
 
@@ -52,7 +52,7 @@ function HomeView() {
     <ImageBackground 
       style={styles.container}
       resizeMode="cover" 
-      source={require("../../../assets/homeBg.jpg")}
+      source={require("../../assets/homeBg.jpg")}
       fadeDuration={0}
     >
       <ScrollView style={{ paddingTop: 50 }}>
@@ -68,7 +68,7 @@ function HomeView() {
 
         {/* <Image //grade3 lock
           style={{ position: "absolute", right: 20, top: 105, zIndex: 1000, width: 60, height: 60 }}
-          source={require("../../../assets/lock.png")}
+          source={require("../../assets/lock.png")}
         />  */}
 
         <Surface style={styles.roundButton2} elevation={3}>
@@ -81,7 +81,7 @@ function HomeView() {
 
         {/* <Image //grade4 lock
           style={{ position: "absolute", left: 100, top: 230, zIndex: 1000, width: 60, height: 60 }}
-          source={require("../../../assets/lock.png")}
+          source={require("../../assets/lock.png")}
         /> */}
 
         <Surface style={styles.roundButton1} elevation={3}>
@@ -94,7 +94,7 @@ function HomeView() {
 
         {/* <Image //grade5 lock
           style={{ position: "absolute", right: 20, top: 350, zIndex: 1000, width: 60, height: 60 }}
-          source={require("../../../assets/lock.png")}
+          source={require("../../assets/lock.png")}
         /> */}
 
         <Surface style={styles.roundButton2} elevation={3}>

@@ -1,8 +1,8 @@
 import React, {Component } from "react";
 import { TouchableOpacity, View, Alert } from "react-native";
-import { auth } from "../../../../firebase";
+import { auth } from "../../firebase";
 import styled from "styled-components/native";
-import { signOutUser, selectCurrentUser } from "../../../../redux/slices/userSlice";
+import { signOutUser, selectCurrentUser } from "../../redux/slices/userSlice";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import { useSelector, useDispatch } from 'react-redux';

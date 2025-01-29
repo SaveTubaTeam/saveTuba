@@ -4,7 +4,7 @@ import { FlatList, ImageBackground, StyleSheet } from "react-native";
 import { Image } from "expo-image";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../styled-components/title-text.component";
-import ImageUpload from "../../components/Grades/minigames/ImageUpload";
+import ImageUpload from "../Modals/ImageUpload";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../redux/slices/curriculumLocationSlice";
 
@@ -36,7 +36,7 @@ const MasteryHandler = ({ objectData, activityType }) => {
     <ImageBackground
       resizeMode="cover"
       style={styles.imageBackground}
-      source={require("../../../../assets/masterybg.png")}
+      source={require("../../../assets/masterybg.png")}
       fadeDuration={0}
     >
       <FlatList

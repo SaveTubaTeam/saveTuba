@@ -6,7 +6,7 @@ import styled from "styled-components/native";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { TitleText } from "../../styled-components/title-text.component";
-import { BodyText } from "../../../components/body-text.component";
+import { BodyText } from "../../styled-components/body-text.component";
 import { SafeArea } from "../../styled-components/safe-area.component";
 import { CurriculumHeader } from "./CurriculumHeader";
 import { Spacer } from "../../styled-components/spacer.component";

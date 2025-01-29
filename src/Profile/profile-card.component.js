@@ -5,12 +5,12 @@ import { TouchableOpacity, StyleSheet } from "react-native";
 import { Avatar, Text } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../../../redux/slices/userSlice";
-import { TitleText } from "../../../styled-components/title-text.component";
-import { BodyText } from "../../../components/body-text.component";
-import { Spacer } from "../../../styled-components/spacer.component";
-import { Card } from "../../../components/card.component";
-import { theme } from "../../../infrastructure/theme";
+import { selectCurrentUser } from "../../redux/slices/userSlice";
+import { TitleText } from "../styled-components/title-text.component";
+import { BodyText } from "../styled-components/body-text.component";
+import { Spacer } from "../styled-components/spacer.component";
+import { Card } from "../styled-components/card.component";
+import { theme } from "../styled-components/theme";
 import { View } from "react-native";
 import { Image } from "expo-image";
 

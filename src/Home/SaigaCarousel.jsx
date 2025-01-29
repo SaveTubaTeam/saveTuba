@@ -4,11 +4,11 @@ import Carousel from "react-native-reanimated-carousel";
 import { StyleSheet } from "react-native";
 
 const SAIGA_PICTURES = [
-   require("../../../../assets/saiga-carousel/saiga_antelope1.jpg"),
-   require("../../../../assets/saiga-carousel/saiga_antelope4.jpg"),
-   require("../../../../assets/saiga-carousel/saiga_antelope5.jpg"),
-   require("../../../../assets/saiga-carousel/saiga_antelope7.jpg"),
-   require("../../../../assets/saiga-carousel/saiga_antelope8.jpg"),
+   require("../../assets/saiga-carousel/saiga_antelope1.jpg"),
+   require("../../assets/saiga-carousel/saiga_antelope4.jpg"),
+   require("../../assets/saiga-carousel/saiga_antelope5.jpg"),
+   require("../../assets/saiga-carousel/saiga_antelope7.jpg"),
+   require("../../assets/saiga-carousel/saiga_antelope8.jpg"),
 ];
 
 //react-native-reanimated-carousel resources: 

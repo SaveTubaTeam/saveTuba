@@ -121,7 +121,7 @@ const RegisterScreen = () => {
   return (
     <Container behavior="padding">
       <ImageBackground 
-        source={require("../../../assets/registerScreenBg.png")}
+        source={require("../../assets/registerScreenBg.png")}
         style={styles.imageBackground}
         fadeDuration={0}
       >

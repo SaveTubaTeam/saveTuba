@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import { ScrollView, StyleSheet, ImageBackground } from "react-native";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../styled-components/title-text.component";
-import ImageUpload from "../../components/Grades/minigames/ImageUpload";
+import ImageUpload from "../Modals/ImageUpload";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../redux/slices/curriculumLocationSlice.js";
 
@@ -19,7 +19,7 @@ const SnapshotHandler = ({ objectData, activityType }) => {
   return (
       <Container>
         <ImageBackground 
-          source={require("../../../../../assets/snapshotbg.png")}
+          source={require("../../../assets/snapshotbg.png")}
           style={styles.imageBackground}
           fadeDuration={0}
         >

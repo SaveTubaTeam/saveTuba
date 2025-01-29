@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { View, StyleSheet, TouchableOpacity } from "react-native"
-import { Spacer } from "../../../styled-components/spacer.component"
-import { TitleText } from "../../../styled-components/title-text.component"
-import { Card } from "../../../components/card.component"
+import { Spacer } from "../styled-components/spacer.component"
+import { TitleText } from "../styled-components/title-text.component"
+import { Card } from "../styled-components/card.component"
 import { useSelector } from "react-redux"
 import { useTranslation } from "react-i18next"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
-import ClassCodeModal from "../../Home/ClassCodeModal"
+import ClassCodeModal from "../Home/ClassCodeModal"
 
 export default function ClassroomCard() {
    const { t } = useTranslation();

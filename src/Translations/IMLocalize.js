@@ -15,8 +15,8 @@ import { Platform, NativeModules } from 'react-native';
 //const locale = NativeModules.I18nManager.localeIdentifier // ex. "en_US"
 
 import en from './en';
-import ru from '.ru';
-import kk from '.kk';
+import ru from './ru';
+import kk from './kk';
 
 //***IMLocalize.js is imported into App.js to retrieve the cached language code or set a default before the stack is rendered. Bad file name, I know.
 

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { ScrollView, ActivityIndicator, View, StyleSheet } from "react-native";
-import { TitleText } from "../../../styled-components/title-text.component";
-import { Card } from "../../../components/card.component";
-import { Spacer } from "../../../styled-components/spacer.component";
+import { TitleText } from "../styled-components/title-text.component";
+import { Card } from "../styled-components/card.component";
+import { Spacer } from "../styled-components/spacer.component";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import LeaderboardItem from "./LeaderboardItem";
-import { db } from "../../../../firebase";
+import { db } from "../../firebase";
 
 export default function LeaderboardCard() {
   const [leaderboard, setLeaderboard] = useState(null);

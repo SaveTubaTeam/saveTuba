@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator, StyleSheet, View, Alert } from "react-native";
-import { theme } from "../infrastructure/theme";
+import { theme } from "../styled-components/theme";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { auth } from "../../firebase";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import HomeScreen from "./HomeScreen";
 import AccountNav from "../Settings/accountNav";
 import ProfileScreen from "../Profile/ProfileScreen";
-import AssignmentsPage from "../features/Home/AssignmentsPage";
+import AssignmentsPage from "../Assignments/AssignmentsPage";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useNavigation } from "@react-navigation/native";

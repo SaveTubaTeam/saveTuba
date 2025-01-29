@@ -3,16 +3,16 @@ import styled from "styled-components/native";
 import { Image } from "expo-image";
 import * as ImagePicker from "expo-image-picker";
 import { useTranslation } from "react-i18next";
-import { storage } from "../../../../firebase";
+import { storage } from "../../../firebase";
 import { uploadBytes } from "firebase/storage";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../../../redux/slices/userSlice";
-import CompletionModal from "../../../features/Account/LevelSystem/CompletionModal";
+import { selectCurrentUser } from "../../../redux/slices/userSlice";
+import CompletionModal from "./CompletionModal";
 import { StyleSheet } from "react-native";
-import LoadingModal from "../../../features/Account/LevelSystem/LoadingModal";
+import LoadingModal from "./LoadingModal";
 import Toast from 'react-native-toast-message';
 import FileModal from "./FileModal";
-import { BodyText } from "../../body-text.component";
+import { BodyText } from "../../styled-components/body-text.component";
 
 export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components/native";
 import { ScrollView, View } from "react-native";
-import { ProfileCard } from "../features/Profile/Components/profile-card.component";
-import { Badges } from "../features/Profile/Components/badges.component";
-import LeaderboardCard from "../features/Profile/Components/leaderboard.component";
+import { ProfileCard } from "./profile-card.component";
+import { Badges } from "./badges.component";
+import LeaderboardCard from "./leaderboard.component";
 import { SafeArea } from "../styled-components/safe-area.component";
 import { Spacer } from "../styled-components/spacer.component";
 

@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import { StyleSheet, View, Modal, TouchableOpacity, Image, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
-import { BodyText } from "../../../components/body-text.component";
-import { Spacer } from "../../../styled-components/spacer.component";
+import { BodyText } from "../styled-components/body-text.component";
+import { Spacer } from "../styled-components/spacer.component";
 import SaigaCarousel from "./SaigaCarousel";
 import LottieView from "lottie-react-native";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../../../redux/slices/userSlice";
+import { selectCurrentUser } from "../../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
-import { apiSlice } from "../../../../redux/slices/apiSlice";
-import { db } from "../../../../firebase";
+import { apiSlice } from "../../redux/slices/apiSlice";
+import { db } from "../../firebase";
 
 export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    const { t } = useTranslation();
@@ -74,20 +74,20 @@ export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
 
             <Image 
                style={styles.tubaImage}
-               source={require("../../../../assets/tuba-low-quality.png")}
+               source={require("../../assets/tuba-low-quality.png")}
                fadeDuration={500}
                overflow="visible"
             />
 
             <LottieView 
-               source={require("../../../../assets/lottie-animations/flowers1-animation.json")}
+               source={require("../../assets/lottie-animations/flowers1-animation.json")}
                autoPlay={true}
                loop={false}
                style={styles.flowerAnimationOne}
             />
 
             <LottieView 
-               source={require("../../../../assets/lottie-animations/flowers2-animation.json")}
+               source={require("../../assets/lottie-animations/flowers2-animation.json")}
                autoPlay={true}
                loop={false}
                style={styles.flowerAnimationTwo}

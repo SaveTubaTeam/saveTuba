@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../styled-components/title-text.component";
-import { BodyText } from "../../../body-text.component";
+import { BodyText } from "../../styled-components/body-text.component";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../redux/slices/curriculumLocationSlice.js";
 import CompletionModal from "../Modals/CompletionModal";
@@ -114,7 +114,7 @@ const Start = ({ objectData, activityType }) => {
 
   return (
     <ImageBackground 
-      source={require("../../../../../assets/sortingbg.jpg")}
+      source={require("../../../assets/sortingbg.jpg")}
       style={styles.imageBackground}
       fadeDuration={0}
     >

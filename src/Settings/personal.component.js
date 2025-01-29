@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../../../../redux/slices/userSlice";
-import { TitleText } from "../../../styled-components/title-text.component";
-import { Spacer } from "../../../styled-components/spacer.component";
-import { Card } from "../../../components/card.component";
-import { theme } from "../../../infrastructure/theme";
+import { selectCurrentUser } from "../../redux/slices/userSlice";
+import { TitleText } from "../styled-components/title-text.component";
+import { Spacer } from "../styled-components/spacer.component";
+import { Card } from "../styled-components/card.component";
+import { theme } from "../styled-components/theme";
 import { Image } from "expo-image";
 
 const Row = styled.View`

@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import styled from "styled-components/native";
 import { useSelector } from "react-redux";
 import { FlatList } from "react-native-gesture-handler";
-import { BodyText } from "../../components/body-text.component";
+import { BodyText } from "../styled-components/body-text.component";
 
 export default function HeaderComponent({ title }) {
    const { t } = useTranslation();

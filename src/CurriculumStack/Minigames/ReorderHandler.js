@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import DragList from 'react-native-draglist';
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../styled-components/title-text.component";
-import { BodyText } from "../../../body-text.component";
+import { BodyText } from "../../styled-components/body-text.component";
 import { Spacer } from "../../styled-components/spacer.component";
 import CompletionModal from "../Modals/CompletionModal";
 import { useDispatch } from "react-redux";
@@ -108,7 +108,7 @@ const ReorderHandler = ({ objectData, activityType }) => {
 
   return (
     <ImageBackground 
-      source={require("../../../../../assets/reorderbg.jpg")}
+      source={require("../../../assets/reorderbg.jpg")}
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }} 
       fadeDuration={0}
     >

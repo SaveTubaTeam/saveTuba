@@ -5,7 +5,7 @@ import * as encoding from "text-encoding"; //NECESSARY IMPORT! for i18n I believ
 import { LogBox, Image, Platform, UIManager } from "react-native";
 import 'intl-pluralrules';
 import { ThemeProvider } from "styled-components/native";
-import { theme } from "./src/infrastructure/theme";
+import { theme } from "./src/styled-components/theme";
 import {
   useFonts as useScada,
   Scada_400Regular,

@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { StyleSheet, View, Modal, TouchableOpacity, TextInput, Alert, KeyboardAvoidingView, Platform } from "react-native";
 import { useTranslation } from "react-i18next";
-import SignOut from "../Account/Components/SignOutComponent";
+import SignOut from "../Settings/SignOutComponent";
 import styled from "styled-components";
-import { BodyText } from "../../components/body-text.component";
+import { BodyText } from "../styled-components/body-text.component";
 import { db } from "../../firebase";
 import { useUpdateClassCodeMutation } from "../../redux/slices/apiSlice";
 import { useSelector } from "react-redux";

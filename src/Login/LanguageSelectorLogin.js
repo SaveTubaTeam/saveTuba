@@ -13,9 +13,9 @@ const Flag = ({ source }) => {
 };
 
 const LANGUAGES = [
-  { code: "en", label: <Flag source={require("../../../assets/en.png")} /> },
-  { code: "kk", label: <Flag source={require("../../../assets/kz.jpeg")} /> },
-  { code: "ru", label: <Flag source={require("../../../assets/ru.png")} /> },
+  { code: "en", label: <Flag source={require("../../assets/en.png")} /> },
+  { code: "kk", label: <Flag source={require("../../assets/kz.jpeg")} /> },
+  { code: "ru", label: <Flag source={require("../../assets/ru.png")} /> },
 ];
 
 const SelectorLogin = () => {

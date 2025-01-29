@@ -3,7 +3,7 @@ import { View, ScrollView, StyleSheet, ImageBackground } from "react-native";
 import { Image } from 'expo-image';
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../styled-components/title-text.component";
-import ImageUpload from "../../components/Grades/minigames/ImageUpload";
+import ImageUpload from "../Modals/ImageUpload";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../redux/slices/curriculumLocationSlice.js";
 
@@ -42,7 +42,7 @@ const OpenResponseHandler = ({ objectData, activityType }) => {
   return (
     <View style={{ flex: 1 }}>
       <ImageBackground
-        source={require("../../../../../assets/openResponseBg.jpg")}
+        source={require("../../../assets/openResponseBg.jpg")}
         resizeMode="cover"
         style={styles.imageBackground}
         fadeDuration={0}

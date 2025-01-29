@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
 import { useNavigation, useNavigationState } from "@react-navigation/native";
-import { BodyText } from "../../../components/body-text.component";
+import { BodyText } from "../styled-components/body-text.component";
 import { StackActions } from "@react-navigation/native";
 
 const Flag = ({ source }) => {
@@ -16,9 +16,9 @@ const Flag = ({ source }) => {
 };
 
 const LANGUAGES = [
-  { code: "kk", label: <Flag source={require("../../../../assets/kz.jpeg")} /> },
-  { code: "ru", label: <Flag source={require("../../../../assets/ru.png")} /> },
-  { code: "en", label: <Flag source={require("../../../../assets/en.png")} /> },
+  { code: "kk", label: <Flag source={require("../../assets/kz.jpeg")} /> },
+  { code: "ru", label: <Flag source={require("../../assets/ru.png")} /> },
+  { code: "en", label: <Flag source={require("../../assets/en.png")} /> },
 ];
 
 const Selector = () => {

@@ -213,14 +213,14 @@ const LoginScreen = () => {
   return (
     <Container behavior="padding">
       <ImageBackground 
-        source={require("../../../assets/loginBackground.png")}
+        source={require("../../assets/loginBackground.png")}
         style={styles.container}
         fadeDuration={0}
       >
         <ButtonContainer>
           <ButtonOutLine onPress={googleSignIn}>
             <Image 
-              source={require("../../../assets/googleLogoButton.png")}
+              source={require("../../assets/googleLogoButton.png")}
               style={styles.image}
               fadeDuration={0}
             />

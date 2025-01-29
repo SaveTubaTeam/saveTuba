@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View, Image } from "react-native";
-import { BodyText } from "../../../components/body-text.component";
+import { BodyText } from "../styled-components/body-text.component";
 
 const RANK_COLORS = ["#748816", "#879e1a", "#99b41d", "#acca21", "#bcdc29", "#c3e03e", "#cae354"];
 
@@ -43,7 +43,7 @@ export default function LeaderboardItem({ item, index }) {
             <View style={styles.styleListItemProps}>
                <Image
                   style={styles.leaf} 
-                  source={require("../../../../assets/leaf.png")} 
+                  source={require("../../assets/leaf.png")} 
                   fadeDuration={100}
                />
                <BodyText color="secondary" size="body">

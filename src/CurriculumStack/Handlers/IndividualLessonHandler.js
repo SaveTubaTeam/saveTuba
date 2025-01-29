@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useGetActivitiesDataQuery } from "../../../redux/slices/curriculumApiSlice";
 import { ActivityIndicator, StyleSheet, View } from "react-native";
 import { CurriculumHeader } from "../Components/CurriculumHeader";
-import { SafeArea } from "../../../styled-components/safe-area.component.js/index.js";
+import { SafeArea } from "../../styled-components/safe-area.component";
 import { useDispatch, useSelector } from "react-redux";
 import { addLesson } from "../../../redux/slices/curriculumLocationSlice.js";
 import { updateAssignmentDrill } from "../../../redux/slices/curriculumLocationSlice.js";

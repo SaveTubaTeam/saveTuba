@@ -3,9 +3,9 @@ import { StyleSheet, View, Text, ImageBackground, TouchableOpacity, ActivityIndi
 import { Ionicons } from "@expo/vector-icons"; // 6.2.2
 import { useTranslation } from "react-i18next";
 import { TitleText } from "../../styled-components/title-text.component.js";
-import { BodyText } from "../../../body-text.component.js";
+import { BodyText } from "../../styled-components/body-text.component.js";
 import { Spacer } from "../../styled-components/spacer.component.js";
-import CompletionModal from "../Modals/CompletionModal.js/index.js";
+import CompletionModal from "../Modals/CompletionModal.js";
 import { Image } from "expo-image";
 import { useDispatch } from "react-redux";
 import { addActivity } from "../../../redux/slices/curriculumLocationSlice.js";
@@ -98,7 +98,7 @@ const MemoryHandler = ({ objectData, activityType }) => {
   while(!imagesPrefetched) {
     return (
       <ImageBackground 
-        source={require("../../../../../assets/memorybg.jpg")}
+        source={require("../../../assets/memorybg.jpg")}
         style={styles.container} 
         fadeDuration={0}
       >
@@ -109,7 +109,7 @@ const MemoryHandler = ({ objectData, activityType }) => {
 
   return (
     <ImageBackground 
-      source={require("../../../../../assets/memorybg.jpg")}
+      source={require("../../../assets/memorybg.jpg")}
       style={styles.container} 
       fadeDuration={0}
     >

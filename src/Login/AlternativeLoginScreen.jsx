@@ -111,7 +111,7 @@ const AlternativeLoginScreen = () => {
   return (
     <Container behavior="padding">
       <ImageBackground 
-        source={require("../../../assets/loginBackground.png")}
+        source={require("../../assets/loginBackground.png")}
         style={styles.container}
         fadeDuration={0}
       >

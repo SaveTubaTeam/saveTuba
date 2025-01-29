@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { db } from "../../firebase";
 import AssignmentCard from "./AssignmentCard";
-import HeaderComponent from "./HeaderComponent";
+import HeaderComponent from "../Home/HeaderComponent";
 import sortAssignments from "./sortAssignments";
 
 function AssignmentsPage() {
@@ -79,7 +79,7 @@ function AssignmentsPage() {
          <HeaderComponent title={t("common:assignments")} />
 
          <ImageBackground 
-            source={require("../../../assets/assignmentsBg.jpg")}
+            source={require("../../assets/assignmentsBg.jpg")}
             resizeMode="cover"
             style={styles.imageBackground}
             fadeDuration={0}

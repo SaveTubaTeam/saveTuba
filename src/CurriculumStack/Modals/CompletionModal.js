@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { db } from "../../../firebase";
 import { View, Modal, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import LottieView from "lottie-react-native";
-import { BodyText } from "../../../components/body-text.component";
+import { BodyText } from "../../styled-components/body-text.component";
 import { useNavigation } from "@react-navigation/native";
 import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
@@ -135,7 +135,7 @@ const CompletionModal = ({ score, prompt, startCompletionProcess, content, total
 
         <Image 
           style={styles.tubaImage}
-          source={require("../../../../assets/tuba-low-quality.png")}
+          source={require("../../../assets/tuba-low-quality.png")}
           fadeDuration={100}
           overflow="visible"
         />

@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { View, Modal, TouchableOpacity, StyleSheet, Button } from "react-native";
 import styled from "styled-components/native";
-import { BodyText } from "../../body-text.component";
+import { BodyText } from "../../styled-components/body-text.component";
 import { Image } from "expo-image";
 import { Video, ResizeMode } from 'expo-av';
 

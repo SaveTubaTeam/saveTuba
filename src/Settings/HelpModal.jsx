@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet, View, Modal, TouchableOpacity } from "react-native";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { BodyText } from "../../../components/body-text.component";
-import { Spacer } from "../../../styled-components/spacer.component";
+import { BodyText } from "../styled-components/body-text.component";
+import { Spacer } from "../styled-components/spacer.component";
 import { Image } from "expo-image";
 
 export default function HelpModal({ modalHelpVisible, setModalHelpVisible }) {
