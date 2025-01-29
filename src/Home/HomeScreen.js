@@ -56,54 +56,52 @@ function HomeView() {
       fadeDuration={0}
     >
       <ScrollView style={{ paddingTop: 50 }}>
+
+      <TouchableOpacity
+        onPress={() => { navigation.push("ChaptersHandler", { grade: "Grade2" }); }}
+      >
         <Surface style={styles.roundButton1} elevation={3}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.push("ChaptersHandler", { grade: "Grade2" }); //route.params sent into ChaptersHandler is defined here
-            }}
-          >
-            <Text style={styles.baseText}>2</Text>
-          </TouchableOpacity>
+          <Text style={styles.baseText}>2</Text>
         </Surface>
+      </TouchableOpacity>
 
         {/* <Image //grade3 lock
           style={{ position: "absolute", right: 20, top: 105, zIndex: 1000, width: 60, height: 60 }}
           source={require("../../assets/lock.png")}
         />  */}
 
+      <TouchableOpacity
+        onPress={() => navigation.push("ChaptersHandler", { grade: "Grade3" })} //route.params sent into ChaptersHandler is defined here
+      >
         <Surface style={styles.roundButton2} elevation={3}>
-          <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade3" })} //route.params sent into ChaptersHandler is defined here
-          >
-            <Text style={styles.baseText}>3</Text>
-          </TouchableOpacity>
+          <Text style={styles.baseText}>3</Text>
         </Surface>
+      </TouchableOpacity>
 
         {/* <Image //grade4 lock
           style={{ position: "absolute", left: 100, top: 230, zIndex: 1000, width: 60, height: 60 }}
           source={require("../../assets/lock.png")}
         /> */}
 
+      <TouchableOpacity
+        onPress={() => navigation.push("ChaptersHandler", { grade: "Grade4" })} //route.params sent into ChaptersHandler is defined here
+      >
         <Surface style={styles.roundButton1} elevation={3}>
-          <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade4" })} //route.params sent into ChaptersHandler is defined here
-          >
             <Text style={styles.baseText}>4</Text>
-          </TouchableOpacity>
         </Surface>
+      </TouchableOpacity>
 
         {/* <Image //grade5 lock
           style={{ position: "absolute", right: 20, top: 350, zIndex: 1000, width: 60, height: 60 }}
           source={require("../../assets/lock.png")}
         /> */}
-
+      <TouchableOpacity
+        onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
+      >
         <Surface style={styles.roundButton2} elevation={3}>
-          <TouchableOpacity
-            onPress={() => navigation.push("ChaptersHandler", { grade: "Grade5" })} //route.params sent into ChaptersHandler is defined here
-          >
             <Text style={styles.baseText}>5</Text>
-          </TouchableOpacity>
         </Surface>
+      </TouchableOpacity>
 
       </ScrollView>
 

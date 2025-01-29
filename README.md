@@ -208,13 +208,12 @@ Expo releases a new SDK version every 4-5 months. A list of SDK changelogs can b
 Please thoroughly read through the deprecations section of each changelog before incrementing and do not increment by more than one version at a time. I will advise that we remain one SDK version behind the latest release because the latest releases are often unstable in their first few weeks.
 
 ## Previous Software Team Leads
-
-James Chang (team of '24)  
-Hayden Ossinger (team of '23)  
+  
 Nadja Stojanovic (team of '22)  
+Hayden Ossinger (team of '23)
+James Chang (team of '24)
 
-Malika Buribayeva (External Relations, team of '23 and '24)  
-Malika is from Almaty and has several points of contact in the educational sphere. She is the bridge between us and our external partners. All questions regarding contacts overseas should be directed to her.
+*If you have any regarding contacts overseas from previous years, contact Malika Buribayeva.
 
 ## Miscellaneous
 
