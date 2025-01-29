@@ -15,7 +15,7 @@ https://github.com/user-attachments/assets/7e4e0a23-0f91-4243-9f47-b6932478f484
 * [Developer Access](#developer-access)
 * [Mobile App Deployment](#mobile-app-deployment)
 * [Polyrepo Structure & Data Flow](#polyrepo-structure--data-flow)
-* [Other](#previous-software-team-leads)
+* [Other](#updating-expo-sdk-versions)
 
 ## Learning Resources & General Overview of Tech Stack
 
@@ -54,7 +54,7 @@ cd ./saveTuba
 npm install
 ```
 
-Note that `npm install` installs all of the packages listed in our package.json file. Now we need to install a few CLI packages, the first being eas-cli. eas-cli allows us to use [Expo Application Services (EAS)](https://docs.expo.dev/eas/) for building and deploying our app.
+Note that `npm install` locally installs all of the packages listed in our package.json file. Now we need to install a few CLI packages, the first being eas-cli. eas-cli allows us to use [Expo Application Services (EAS)](https://docs.expo.dev/eas/) for building and deploying our app.
 
 ```
 npm install --global eas-cli
@@ -138,6 +138,8 @@ Please follow the tutorial outlined here to upload to TestFlight: https://www.yo
 
 *as of 10/20/24 you are unable to use TestFlight because it is my personal Apple account*
 
+You can check the EAS build queue here: https://expo.dev/eas-build-status (build queues can take up to 2hrs at peak time before noon; usually there's no build queue after 5pm)
+
 Before moving onto the next step of deploying to production, we need to talk about Firebase Security Rules. Learn more here: https://firebase.google.com/docs/rules
 
 - [Authentication](https://firebase.google.com/docs/rules/rules-and-auth)
@@ -151,6 +153,8 @@ Before moving onto the next step of deploying to production, we need to talk abo
 Unlike Firebase API keys, traditional API keys such as the Google Docs API key used in [/curriculumToFirebase](https://github.com/SaveTubaTeam/curriculumToFirebase) must be kept a secret and should NOT be committed to our repositories. 
 
 *@jac927 10/20/24 | James: if there are additional API keys that need to be hidden during deployment (currently there are none of this kind) you should look to hide them via Google Cloud Functions.*
+
+Be sure to check out this [Firebase security checklist](https://firebase.google.com/support/guides/security-checklist) as a final check of our application's security.
 
 TODO: write pushing to prod tutorial once we get our app store and google play accounts
 
@@ -198,13 +202,18 @@ A. Each student is prompted to enter a class code on their initial sign-in on th
 **Q. Why is our curriculum in Google Docs?**  
 A. Our non-tech teammates need a comfortable place to write new curriculum. They have decided on Google Docs. The challenge for the software team, then, is to convert all 500+ pages of curriculum documents into scriptable JSON which can be fed into Firebase. This challenge is solved by the script in /curriculumToFirebase
 
+## Updating Expo SDK Versions
+Expo releases a new SDK version every 4-5 months. A list of SDK changelogs can be found here: https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/#sdk-changelogs
+
+Please thoroughly read through the deprecations section of each changelog before incrementing and do not increment by more than one version at a time. I will advise that we remain one SDK version behind the latest release because the latest releases are often unstable in their first few weeks.
+
 ## Previous Software Team Leads
 
 James Chang (team of '24)  
 Hayden Ossinger (team of '23)  
 Nadja Stojanovic (team of '22)  
 
-Malika Buribayeva (Head of External Relations, team of '23 and '24)  
+Malika Buribayeva (External Relations, team of '23 and '24)  
 Malika is from Almaty and has several points of contact in the educational sphere. She is the bridge between us and our external partners. All questions regarding contacts overseas should be directed to her.
 
 ## Miscellaneous
@@ -214,14 +223,17 @@ Below you can find a collection of my favorite conference talks, tech videos, ar
 - Josh Comeau's [CSS Blog](https://www.joshwcomeau.com/) ([this](https://www.joshwcomeau.com/css/interactive-guide-to-grid/) and [this](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/) are must reads!)
 - Philip Roberts, ["What the heck is the event loop anyway?"](https://www.youtube.com/watch?v=8aGhZQkoFbQ) (if you watch only one video from this list let it be this one)
 - Anjana Vakil, ["Learning Functional Programming with JavaScript"](https://www.youtube.com/watch?v=e-5obm1G_FY)
+- CodeAesthetic, ["Naming Things in Code"](https://www.youtube.com/watch?v=-J3wNP6u5YU)
+- Serż Kwiatkowski, ["If-statement design: guard clauses"](https://medium.com/@scadge/if-statements-design-guard-clauses-might-be-all-you-need-67219a1a981a)
 - Carson Gross, ["The Grug Brained Developer"](https://grugbrain.dev/)
 - Rich Hickey, ["Hammock Driven Development"](https://www.youtube.com/watch?v=f84n5oFoZBc&t=856s)
-- Michael Chan, ["Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=-NP_upexPFg)
 - Theo Browne, ["Deploying on Fridays"](https://www.youtube.com/watch?v=nCK0ey0qqsk)
-- Stripe's [dev blog](https://increment.com/)
 - Ben Awad on ["Best Practices"](https://www.youtube.com/watch?v=gc8mDZwUlfo)
+- Michael Chan, ["Hot Garbage: Clean Code is Dead"](https://www.youtube.com/watch?v=-NP_upexPFg)
+- Stripe's [dev blog](https://increment.com/)
 - Ben Orenstein, ["How to talk to developers"](https://www.youtube.com/watch?v=l9JXH7JPjR4)
 - Arthur O'Dwyer's [C++ Blog](https://quuxplusone.github.io/blog/2023/11/20/roast-pig/)
 - Rich Harris, ["Rethinking reactivity"](https://youtu.be/AdNJ3fydeao?si=QgQEFlq1wHa9G9OC)
 - Saron Yitbarek, ["Transitions: the easiest way to improve your tech talk"](https://medium.com/@saronyitbarek/transitions-the-easiest-way-to-improve-your-tech-talk-ebe4d40a3257)
 - Theo Browne, ["Rethinking the Technical Interview"](https://www.youtube.com/watch?v=H2OjewTu_fY)
+- Howard Hinnant's [GitHub Pages site](https://howardhinnant.github.io/vote.html)

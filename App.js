@@ -17,7 +17,7 @@ import {
   BalsamiqSans_700Bold,
 } from "@expo-google-fonts/balsamiq-sans";
 import * as SplashScreen from 'expo-splash-screen';
-import "./src/components/Translations/IMLocalize"; //gets cached language or default kk
+import "./src/Translations/IMLocalize"; //gets cached language or default kk
 
 import { enableScreens } from 'react-native-screens';
 enableScreens();
@@ -26,10 +26,10 @@ enableScreens();
 import { NavigationContainer, TabActions } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import LoginScreen from "./src/features/Login/LoginScreen"
-import AlternativeLoginScreen from './src/features/Login/AlternativeLoginScreen';
-import RegisterScreen from "./src/features/Login/RegisterScreen";
-import Main from "./src/components/Main";
+import LoginScreen from "./src/Login/LoginScreen"
+import AlternativeLoginScreen from './src/Login/AlternativeLoginScreen';
+import RegisterScreen from "./src/Login/RegisterScreen";
+import Main from "./src/Home/Main";
 
 // Redux Imports
 import { store } from "./redux/store/store";
@@ -39,19 +39,13 @@ import { Provider } from "react-redux";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Toast from 'react-native-toast-message';
 
-//Trying to implement DraggableFlatList. See App.tsx in https://snack.expo.dev/@computerjazz/draggable-flatlist-examples
-if (Platform.OS === 'android') {
-  UIManager.setLayoutAnimationEnabledExperimental &&
-    UIManager.setLayoutAnimationEnabledExperimental(true);
-}
-
 // Stack navigators works as adding stacks, I don't believe this functions with back buttons, but it works for the login screen
 const Stack = createNativeStackNavigator();
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
-//The below .ignore lines apply only to LogBox and not the actual console. Was a point of confusion for me.
+//The below .ignore lines apply only to LogBox on the emulator and not the actual console. Was a point of confusion for me.
 LogBox.ignoreAllLogs(); //ignores warnings only!
 LogBox.ignoreLogs(["Setting a timer"]); //to ignore all setTimeout warnings (firebase uses long-running timers)
 
