@@ -22,7 +22,7 @@ export default {
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.nadjastojanov.SaveTuba",
+      "bundleIdentifier": "com.jameschang.SaveTuba",
       "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
@@ -42,7 +42,7 @@ export default {
         "foregroundImage": "./assets/playstore-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.nadjastojanov.SaveTuba",
+      "package": "com.jameschang.SaveTuba",
       "googleServicesFile": process.env.GOOGLE_SERVICES_JSON
     },
     "web": {
