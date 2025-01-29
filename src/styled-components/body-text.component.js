@@ -51,14 +51,13 @@ const BText = styled.Text`
   font-family: ${(props) => props.theme.fonts.body};
 `;
 
-export const BodyText = ({ weight, size, color, align, children }) => {
+export const BodyText = ({ 
+  weight = "regular", 
+  size = "body", 
+  color = "primary", 
+  align = "center", 
+  children 
+}) => {
   const variant = getVariant(weight, size, color, align);
   return <BText variant={variant}>{children}</BText>;
-};
-
-BodyText.defaultProps = {
-  weight: "regular",
-  size: "body",
-  color: "primary",
-  align: "center",
 };

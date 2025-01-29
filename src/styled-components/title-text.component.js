@@ -49,14 +49,14 @@ const TText = styled.Text`
   font-family: ${(props) => props.theme.fonts.heading};
 `;
 
-export const TitleText = ({ weight, size, color, align, children }) => {
+export const TitleText = ({ 
+  weight = "regular", 
+  size = "title", 
+  color = "primary", 
+  align = "center", 
+  children 
+}) => {
   const variant = getVariant(weight, size, color, align);
   return <TText variant={variant}>{children}</TText>;
 };
 
-TitleText.defaultProps = {
-  weight: "regular",
-  size: "title",
-  color: "primary",
-  align: "center",
-};
