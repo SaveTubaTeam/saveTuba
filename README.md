@@ -69,7 +69,7 @@ Now, in order to actually run our app, we need two things. One is a valid build 
 
 **For macOS only**, follow the tutorial here to set up Xcode: https://docs.expo.dev/workflow/ios-simulator/. Note: it is recommended that you use Android Studio for development because Xcode sucks. Use Xcode for platform-specific testing. We will be using Android Studio for the rest of this setup guide.
 
-And now for the build, **copy and paste the following link in your Android emulator's browser and install the .apk**: https://expo.dev/accounts/savetubateam/projects/SaveTuba/builds/47edb106-71c1-4229-aa16-659ba1d25dd5 (last updated 10/19/24, note that new builds are invalidated after 2 weeks)
+And now for the build, **copy and paste the following link in your Android emulator's browser and install the .apk**: https://expo.dev/accounts/savetubateam/projects/SaveTuba/builds/bf848d9e-9878-4999-b19e-68803f2c0f9e (last updated 01/30/25, note that new builds are invalidated after 2 weeks)
 
 ![Step 1](./readme/Download_App_Emulator.png)
 
