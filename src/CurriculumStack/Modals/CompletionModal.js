@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../../../firebase";
+import { testDB as db } from "../../../firebaseTest";
 import { View, Modal, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
-import LottieView from "lottie-react-native";
+import LottieView from "lottie-react-native"; s
 import { BodyText } from "../../styled-components/body-text.component";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/nativse";
 import { useTranslation } from "react-i18next";
 import LoadingModal from "./LoadingModal";
 import { useDispatch, useSelector } from "react-redux";

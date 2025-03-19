@@ -1,6 +1,6 @@
 //@ts-check
 
-import { db } from "../../../firebase.js";
+import { testDB as db } from "../../../firebaseTest.js";
 
 async function getUser(userEmail) {
    const start = performance.now(); // Start performance timer

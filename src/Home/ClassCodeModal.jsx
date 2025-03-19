@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import SignOut from "../Settings/SignOutComponent";
 import styled from "styled-components";
 import { BodyText } from "../styled-components/body-text.component";
-import { db } from "../../firebase";
+import { testDB as db } from "../../firebaseTest";
 import { useUpdateClassCodeMutation } from "../../redux/slices/apiSlice";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/slices/userSlice";

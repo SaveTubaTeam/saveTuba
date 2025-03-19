@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import { auth, db } from "../../firebase";
+import { testAuth as auth, testDB as db } from "../../firebaseTest";
 import { GoogleAuthProvider } from 'firebase/auth';
 import { StyleSheet, ImageBackground, Image, View, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
