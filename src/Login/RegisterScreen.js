@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import { TitleText } from "../styled-components/title-text.component";
 import { Alert, ActivityIndicator, StyleSheet, View, ImageBackground } from 'react-native';
 import Toast from 'react-native-toast-message';
-import { testAuth as auth, testDB as db } from "../../firebaseTest";
+import { auth, db } from "../../firebaseConfig.js"; 
 import { useTranslation } from "react-i18next";
 import { useNavigation } from "@react-navigation/native";
 

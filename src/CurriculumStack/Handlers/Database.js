@@ -1,6 +1,6 @@
 //@ts-check
 
-import { testDB as db } from "../../../firebaseTest.js";
+import { db, storage } from "../../../firebaseConfig.js"; 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 //***all documentation falls under web-namespaced api

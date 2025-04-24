@@ -1,43 +1,31 @@
 export default ({ config }) => {
-  // Get the build environment from EAS
+  // Determine build environment
   const buildEnv = process.env.ENVIRONMENT || 'development';
-  if (global._ENV_LOGGED_ !== buildEnv) {
-    console.log(`Building for environment: ${buildEnv}`);
-    global._ENV_LOGGED_ = buildEnv;
-  }
-  
-  // Configure package/bundle IDs based on environment
-  let packageSuffix;
-  if (buildEnv === 'production') {
-    packageSuffix = '';
-  } else if (buildEnv === 'development') {
-    packageSuffix = '.dev';
-  } else {
-    packageSuffix = `.${buildEnv}`;  // For preview and any other environments
-  }
-  
-  const bundleId = `com.kientran.SaveTuba${packageSuffix}`;
-  console.log(`Building with package name: ${bundleId}`);
-  
-  // Simplify Firebase configuration file selection
-  const firebaseConfig = {
+  console.log(`Building for environment: ${buildEnv}`);
+
+  // Configure environment-specific values
+  const envConfig = {
     development: {
-      ios: process.env.GOOGLESERVICE_INFO_PLIST_DEV || process.env.GOOGLESERVICE_INFO_PLIST1,
-      android: process.env.GOOGLE_SERVICES_JSON_DEV || process.env.GOOGLE_SERVICES_JSON1
-    },
-    preview: {
-      ios: process.env.GOOGLESERVICE_INFO_PLIST_PREVIEW || process.env.GOOGLESERVICE_INFO_PLIST1,
-      android: process.env.GOOGLE_SERVICES_JSON_PREVIEW || process.env.GOOGLE_SERVICES_JSON1
+      name: "Save Tuba (development)",
+      packageName: "com.jameschang.SaveTuba", // Original development package name
+      googleServicesIOS: process.env.GOOGLESERVICE_INFO_PLIST, // Original dev iOS config
+      googleServicesAndroid: process.env.GOOGLE_SERVICES_JSON, // Original dev Android config
     },
     production: {
-      ios: process.env.GOOGLESERVICE_INFO_PLIST1,
-      android: process.env.GOOGLE_SERVICES_JSON1
+      name: "Save Tuba",
+      packageName: "edu.creativeInquiry.SaveTuba", // Production package name
+      googleServicesIOS: process.env.GOOGLESERVICE_INFO_PLIST1, // Production iOS config
+      googleServicesAndroid: process.env.GOOGLE_SERVICES_JSON1, // Production Android config
     }
   };
-  
+
+  // Use environment config or fall back to development
+  const currentConfig = envConfig[buildEnv] || envConfig.development;
+  console.log(`Using package name: ${currentConfig.packageName}`);
+
   return {
     "expo": {
-      "name": buildEnv === 'production' ? "Save Tuba" : `Save Tuba (${buildEnv})`,
+      "name": currentConfig.name,
       "primaryColor": "#C6DC3B",
       "description": "A sustainability learning experience for Almaty's youngest citizens.",
       "slug": "SaveTuba",
@@ -59,10 +47,9 @@ export default ({ config }) => {
       ],
       "ios": {
         "supportsTablet": true,
-        "bundleIdentifier": bundleId,
-        "googleServicesFile": firebaseConfig[buildEnv].ios,
+        "bundleIdentifier": currentConfig.packageName,
+        "googleServicesFile": currentConfig.googleServicesIOS,
         "infoPlist": {
-          "ITSAppUsesNonExemptEncryption": false,
           "CFBundleAllowMixedLocalizations": true,
           "NSAppTransportSecurity": {
             "NSExceptionDomains": {
@@ -80,8 +67,8 @@ export default ({ config }) => {
           "foregroundImage": "./assets/playstore-icon.png",
           "backgroundColor": "#FFFFFF"
         },
-        "package": bundleId,
-        "googleServicesFile": firebaseConfig[buildEnv].android,
+        "package": currentConfig.packageName,
+        "googleServicesFile": currentConfig.googleServicesAndroid
       },
       "web": {
         "favicon": "./assets/favicon.png"
@@ -90,13 +77,14 @@ export default ({ config }) => {
         "eas": {
           "projectId": "4bc56c03-41a0-49df-96e2-596bfa1d1aaf"
         },
-        "environment": buildEnv
+        // Make environment available in the app
+        "currentEnvironment": buildEnv
       },
       "plugins": [
         [
           "expo-dev-launcher",
           {
-            "launchMode": "most-recent" // Updated from launchModeExperimental which is deprecated
+            "launchMode": "most-recent" // Fixed the deprecated property
           }
         ],
         "expo-font"

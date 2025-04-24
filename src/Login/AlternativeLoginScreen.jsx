@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import { testAuth as auth, testDB as db } from "../../firebaseTest";
+import { auth, db } from "../../firebaseConfig.js"; 
 import { Alert, Text, StyleSheet, ImageBackground } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Toast from 'react-native-toast-message';

@@ -20,9 +20,6 @@
     "preview": {
       "distribution": "internal",
       "environment": "preview",
-      "env": {
-        "ENVIRONMENT": "preview"
-      },
       "ios": {
         "cocoapods": "1.14.3"
       },
@@ -30,10 +27,7 @@
     },
     "production": {
       "autoIncrement": true,
-      "distribution": "store",
-      "env": {
-        "ENVIRONMENT": "production"
-      },
+      "environment": "production",
       "ios": {
         "image": "sdk-51"
       },

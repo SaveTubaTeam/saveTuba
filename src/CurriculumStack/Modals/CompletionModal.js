@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { testDB as db } from "../../../firebaseTest";
+import { db } from "../../../firebaseConfig.js"; 
 import { View, Modal, TouchableOpacity, Text, StyleSheet, Image } from "react-native";
 import LottieView from "lottie-react-native"; 
 import { BodyText } from "../../styled-components/body-text.component";

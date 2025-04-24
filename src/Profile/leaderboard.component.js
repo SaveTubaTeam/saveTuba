@@ -6,7 +6,7 @@ import { Spacer } from "../styled-components/spacer.component";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import LeaderboardItem from "./LeaderboardItem";
-import { testDB as db } from "../../firebaseTest";
+import { db } from "../../firebaseConfig.js"; 
 
 export default function LeaderboardCard() {
   const [leaderboard, setLeaderboard] = useState(null);

@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/slices/userSlice";
 import { useDispatch } from "react-redux";
 import { apiSlice } from "../../redux/slices/apiSlice";
-import { testDB as db } from "../../firebaseTest";
+import { db } from "../../firebaseConfig.js"; 
  
 export default function AboutModal({ modalAboutVisible, setModalAboutVisible}) {
    const { t } = useTranslation();

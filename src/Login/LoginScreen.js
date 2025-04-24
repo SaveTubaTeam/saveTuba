@@ -3,7 +3,7 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import { testAuth as auth, testDB as db } from "../../firebaseTest";
+import { auth, db } from "../../firebaseConfig.js";
 import { GoogleAuthProvider } from 'firebase/auth';
 import { StyleSheet, ImageBackground, Image, View, ActivityIndicator } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
@@ -11,6 +11,19 @@ import { apiSlice } from "../../redux/slices/apiSlice";
 import SelectorLogin from "./LanguageSelectorLogin";
 import Toast from 'react-native-toast-message';
 import { GoogleSignin, statusCodes, isErrorWithCode } from "@react-native-google-signin/google-signin";
+
+// Import Constants to detect the environment
+import('expo-constants').then(Constants => {
+  const env = Constants.default.expoConfig?.extra?.currentEnvironment || 'development';
+  console.log(`\n\tInitializing Google Sign-In for ${env.toUpperCase()} environment`);
+  
+  const webClientId = env === 'production' 
+    ? "952931746511-4d2j2ne14ohfrdqhkkp9trbak2ln3dk5.apps.googleusercontent.com"  // Production (was incorrectly in development)
+    : "218900793188-0krdujh2ub4j1bkiddti006k2cste6jo.apps.googleusercontent.com";  // Development (was incorrectly in production)
+    
+  GoogleSignin.configure({ webClientId });
+  console.log(`\tConfigured Google Sign-In with client ID for ${env}: ${webClientId}`);
+});
 
 const LoginScreen = () => {
   const userSlice = useSelector(state => state.user);
@@ -22,9 +35,6 @@ const LoginScreen = () => {
   //initial config
   useEffect(() => {
     auth.languageCode = i18n.language;
-    GoogleSignin.configure({
-      webClientId: "952931746511-4d2j2ne14ohfrdqhkkp9trbak2ln3dk5.apps.googleusercontent.com",
-    });
     console.log("\n\tinside LoginScreen.js");
   }, [i18n])
 

@@ -12,7 +12,7 @@ const firebaseTestConfig = {
   appId: "1:952931746511:web:c5086a496048dbb4a22dba",
   measurementId: "G-TD8RYK4JKE"
 };
-  
+
 
 // Initialize Firebase for Testing
 let testApp;
@@ -23,9 +23,10 @@ if (firebase.apps.length === 0) {
 }
 
 // Firestore, Auth, and Storage References
-const testDB = testApp.firestore();
-const testAuth = testApp.auth();
-const testStorage = testApp.storage().ref();
-const testGoogleProvider = new firebase.auth.GoogleAuthProvider();
+const db = testApp.firestore();
+const auth = testApp.auth();
+const storage = testApp.storage().ref();
+const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-export { testDB, testAuth, testApp, testStorage, testGoogleProvider };
+// Export with the same names as firebase.js
+export { db, auth, testApp as app, storage, googleProvider };
