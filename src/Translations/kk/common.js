@@ -49,6 +49,8 @@ export default {
   enteryouranswer: "Жауабыңызды енгізіңіз...",
   pickanimage: "Суретті таңдаңыз",
   restart: "Қайтадан бастаңыз",
+  next:"Келесі",
+  tryagain:"Қайтадан көріңіз",
 
   login: "Кіру",
   signup: "Тіркелу",

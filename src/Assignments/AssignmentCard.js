@@ -50,8 +50,8 @@ const AssignmentCard = ({ content }) => {
 
    async function pushToLesson() {
       //clearing previous push (if any)
-      navigation.dispatch(StackActions.popToTop()); //popping all curriculum screens (which are now stale in relation to the new push)
-      navigation.navigate("Home");
+      // navigation.dispatch(StackActions.popToTop()); //popping all curriculum screens (which are now stale in relation to the new push)
+      navigation.navigate("Grades");
       dispatch(resetLocation()); //resetting curriculumLocationSlice for sanity
 
       console.log(`\t\tpushing to ${grade} ${chapter} ${lesson} . . . `);

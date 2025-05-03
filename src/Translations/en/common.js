@@ -49,6 +49,8 @@ export default {
   enteryouranswer: "Enter your answer...",
   pickanimage: "Upload submissions",
   restart: "Start over",
+  next: "Next",
+  tryagain: "Try again",
 
   login: "Sign In",
   signup: "Register",

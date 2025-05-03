@@ -47,6 +47,8 @@ export default {
   enteryouranswer: "Введите ответ...",
   pickanimage: "Выберите картинку",
   restart: "Начать заново",
+  next:"Следующий",
+  tryagain:"Попробовать ещё раз",
 
   login: "Войти",
   signup: "Зарегистрироваться",
