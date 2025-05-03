@@ -56,14 +56,18 @@ const Start = ({ objectData, activityType }) => {
             <TouchableOpacity
               style={styles.greenButtonModal}
               onPress={() => {
-                if (count < optionsArray.length && optionsArray[count + 1] != null) {
-                  setVisible(!visible);
-                  setCurrentOption(optionsArray[count + 1].title);
-                  setCurrentAnswer(optionsArray[count + 1].name);
-                  setCount(prevCount => prevCount + 1);
-                } else {
-                  setVisible(!visible);
-                  setCompletionModalVisible(!completionModalVisible);
+                // close the feedback modal (next/try again)
+                setVisible(!visible);
+                // move to the next question if the current one is correct
+                if(correct){
+                  if (count < optionsArray.length && optionsArray[count + 1] != null){
+                    setCurrentOption(optionsArray[count + 1].title);
+                    setCurrentAnswer(optionsArray[count + 1].name);
+                    setCount(prevCount => prevCount + 1);
+                  } else {
+                    setVisible(!visible);
+                    setCompletionModalVisible(!completionModalVisible);
+                  }
                 }
               }}
             >
