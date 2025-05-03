@@ -14,6 +14,9 @@ import Toast from 'react-native-toast-message';
 import FileModal from "./FileModal";
 import { BodyText } from "../../styled-components/body-text.component";
 
+import { Platform, Alert, ActionSheetIOS } from "react-native";
+
+
 export default function ImageUpload({ score, prompt }) {
   const [imageAssetsArray, setImageAssetsArray] = useState(null);
   const [finalURIArray, setFinalURIArray] = useState([]);
@@ -35,6 +38,63 @@ export default function ImageUpload({ score, prompt }) {
       visibilityTime: 3000,
     });
   } 
+
+  const pickOrTakeImage = () => {
+    const handleSelection = async (source) => {
+      let result;
+      const pickerOptions = {
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: false,
+        allowsMultipleSelection: true,
+        quality: 0.4,
+        selectionLimit: 10,
+      };
+  
+      if (source === "camera") {
+        const permission = await ImagePicker.requestCameraPermissionsAsync();
+        if (!permission.granted) {
+          alert("Camera permission is required.");
+          return;
+        }
+        result = await ImagePicker.launchCameraAsync(pickerOptions);
+      } else {
+        result = await ImagePicker.launchImageLibraryAsync(pickerOptions);
+      }
+  
+      if (!result.canceled) {
+        const hasExcessivelyLongVideo = result.assets.some(asset => asset.duration > 300000);
+        if (hasExcessivelyLongVideo) {
+          showMaxDurationToast();
+          return;
+        }
+  
+        setImageAssetsArray(result.assets);
+      }
+    };
+  
+    if (Platform.OS === "ios") {
+      ActionSheetIOS.showActionSheetWithOptions(
+        {
+          options: ["Cancel", "Take Photo", "Choose from Library"],
+          cancelButtonIndex: 0,
+        },
+        (buttonIndex) => {
+          if (buttonIndex === 1) handleSelection("camera");
+          if (buttonIndex === 2) handleSelection("library");
+        }
+      );
+    } else {
+      Alert.alert(
+        "Upload",
+        "Select Image Source",
+        [
+          { text: "Camera", onPress: () => handleSelection("camera") },
+          { text: "Library", onPress: () => handleSelection("library") },
+          { text: "Cancel", style: "cancel" },
+        ]
+      );
+    }
+  };
 
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
@@ -98,7 +158,7 @@ export default function ImageUpload({ score, prompt }) {
 
   return (
     <Prompt>
-      <ImageBox onPress={pickImage}>
+      <ImageBox onPress={pickOrTakeImage}>
         <BodyText size="subtitle">{t("common:pickanimage")}</BodyText>
       </ImageBox>
 
