@@ -51,12 +51,18 @@ const ReorderHandler = ({ objectData, activityType }) => {
   function renderItem(info) {
     const { item, onDragStart, onDragEnd, isActive } = info;
 
+    let backgroundColor = isActive ? item.active : item.dormant;
+  
+    // Show color cues only if isCorrect is defined (after submit)
+    if (item.isCorrect !== undefined) {
+      backgroundColor = item.isCorrect ? "#A0E6A0" : "#F28B82"; // green / red
+    }
+  
     return (
       <Item
-        key={item}
         onPressIn={onDragStart}
         onPressOut={onDragEnd}
-        style={{ backgroundColor: isActive ? item.active : item.dormant }}
+        style={{ backgroundColor }}
       >
         <BodyText color="secondary" size="subtitle">{item.text}</BodyText>
       </Item>
@@ -88,23 +94,31 @@ const ReorderHandler = ({ objectData, activityType }) => {
     return (
       <SubmitButton 
         style={{ marginTop: 10 }}
-        onPress={() => {
-        setScore(0);//resetting score
-        //iterating through list to check for correct order and update score.
-        data.forEach((item, index) => {
-          console.log(`\nUser: ${item.text}\nCorrect: ${objectData.content[index].text}`);
-          if (item.text === objectData.content[index].text) { setScore((prevScore) => prevScore + 1); }
-        });
-
-        //setting visibility of modal to true;
-        setCompletionModalVisible(currentVisible => !currentVisible);
-        }}>
+        onPress={handleSubmit}>
         <BodyText color="secondary" size="subtitle">
           {t("common:submit")}
         </BodyText>
       </SubmitButton>
     );
   }
+
+  const handleSubmit = () => {
+    let newScore = 0;
+    const updatedData = data.map((item, index) => {
+      const isCorrect = item.text === objectData.content[index].text;
+      if (isCorrect) newScore++;
+      return { ...item, isCorrect };
+    });
+  
+    setData(updatedData);
+    setScore(newScore);
+  
+    const allCorrect = newScore === objectData.content.length;
+    if (allCorrect) {
+      setCompletionModalVisible(true);
+    }
+  }
+  
 
   return (
     <ImageBackground 
