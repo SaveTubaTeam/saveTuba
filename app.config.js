@@ -22,8 +22,8 @@ export default {
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.jameschang.SaveTuba",
-      "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST,
+      "bundleIdentifier": "edu.creativeInquiry.SaveTuba",
+      "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST1,
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
         "NSAppTransportSecurity": {
@@ -43,7 +43,7 @@ export default {
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.jameschang.SaveTuba",
-      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON
+      "googleServicesFile": process.env.GOOGLE_SERVICES_JSON_KAZ
     },
     "web": {
       "favicon": "./assets/favicon.png"
