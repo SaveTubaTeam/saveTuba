@@ -16,7 +16,7 @@ const Flag = ({ source }) => {
 };
 
 const LANGUAGES = [
-  { code: "kk", label: <Flag source={require("../../assets/kz.jpeg")} /> },
+  { code: "kk", label: <Flag source={require("../../assets/kz.png")} /> },
   { code: "ru", label: <Flag source={require("../../assets/ru.png")} /> },
   { code: "en", label: <Flag source={require("../../assets/en.png")} /> },
 ];
