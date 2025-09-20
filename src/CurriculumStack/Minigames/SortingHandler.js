@@ -72,7 +72,7 @@ const Start = ({ objectData, activityType }) => {
               }}
             >
               <BodyText size="subtitle" color="secondary">
-                Next
+              {correct ? t("common:next") : t("common:tryagain")}
               </BodyText>
             </TouchableOpacity>
           </ModalContainer>

@@ -25,6 +25,7 @@ export default {
       "bundleIdentifier": "edu.creativeInquiry.SaveTuba",
       "googleServicesFile": process.env.GOOGLESERVICE_INFO_PLIST1,
       "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
         "CFBundleAllowMixedLocalizations": true,
         "NSAppTransportSecurity": {
           "NSExceptionDomains": {
@@ -60,7 +61,17 @@ export default {
           "launchModeExperimental": "most-recent"
         }
       ],
-      "expo-font"
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "android":{
+            "compileSdkVersion": 35,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "35.0.0"
+          }
+        }
+      ]
     ],
     "runtimeVersion": {
       "policy": "appVersion"

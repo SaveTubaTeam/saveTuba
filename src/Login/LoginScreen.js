@@ -25,6 +25,7 @@ const LoginScreen = () => {
     GoogleSignin.configure({
       // webClientId: "218900793188-0krdujh2ub4j1bkiddti006k2cste6jo.apps.googleusercontent.com", // DEVELOPMENT
       webClientId: "952931746511-4d2j2ne14ohfrdqhkkp9trbak2ln3dk5.apps.googleusercontent.com", // PRODUCTION
+      
     });
     console.log("\n\tinside LoginScreen.js");
   }, [i18n])
